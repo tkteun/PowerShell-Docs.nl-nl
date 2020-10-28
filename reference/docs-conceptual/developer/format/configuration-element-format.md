@@ -1,12 +1,14 @@
 ---
-title: Configuratie-element (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 90be02f8e27c0bd391e01da1a08ecd8eeb29b84c
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element Configuratie (opmaak)
+description: Het element Configuratie (opmaak)
+ms.openlocfilehash: 0524736d40dd7a7acb0b6fb61d1438b75672c240
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783837"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92655686"
 ---
 # <a name="configuration-element-format"></a>Het element Configuratie (opmaak)
 

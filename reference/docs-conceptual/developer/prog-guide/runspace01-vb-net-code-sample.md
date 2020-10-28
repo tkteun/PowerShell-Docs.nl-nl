@@ -1,12 +1,14 @@
 ---
-title: Runspace01 (VB.NET)-code voorbeeld | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: d40424283057b389d8a4aafeb8ddfa44284f3ba1
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Runspace01-codevoorbeeld (VB.NET)
+description: Runspace01-codevoorbeeld (VB.NET)
+ms.openlocfilehash: 69211662c166c40e6e99e287083f7bd53f9f536f
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87778660"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92653859"
 ---
 # <a name="runspace01-vbnet-code-sample"></a>Runspace01-codevoorbeeld (VB.NET)
 

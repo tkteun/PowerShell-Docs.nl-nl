@@ -1,12 +1,14 @@
 ---
-title: Niet-afsluit fouten | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: d74c248e6ef54151400b8060d76524e89d87352c
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Fouten waarbij de functie of bewerking niet wordt beëindigd
+description: Fouten waarbij de functie of bewerking niet wordt beëindigd
+ms.openlocfilehash: d23642103e005c6d3a6168b317b11f40001b6bbe
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786557"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92655737"
 ---
 # <a name="non-terminating-errors"></a>Fouten waarbij de functie of bewerking niet wordt beëindigd
 

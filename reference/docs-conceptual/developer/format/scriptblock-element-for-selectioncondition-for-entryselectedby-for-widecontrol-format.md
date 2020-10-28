@@ -1,12 +1,14 @@
 ---
-title: Script block-element voor SelectionCondition voor EntrySelectedBy voor WideControl (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: c8f2223d4a1217786a930eb82390c24b81d2f72e
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element ScriptBlock voor SelectionCondition voor EntrySelectedBy voor WideControl (opmaak)
+description: Het element ScriptBlock voor SelectionCondition voor EntrySelectedBy voor WideControl (opmaak)
+ms.openlocfilehash: 53d3eba9d453dbcc96afbe8f81a16b61573f2874
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787611"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92651970"
 ---
 # <a name="scriptblock-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format"></a>Het element ScriptBlock voor SelectionCondition voor EntrySelectedBy voor WideControl (opmaak)
 

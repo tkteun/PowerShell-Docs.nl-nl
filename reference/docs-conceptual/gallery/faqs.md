@@ -1,16 +1,15 @@
 ---
 ms.date: 06/12/2017
-contributor: JKeithB
-keywords: Galerie, Power shell, cmdlet, psgallery
 title: Veelgestelde vragen over PowerShell Gallery
-ms.openlocfilehash: 29f930cf552abec8acbbf02f5570c6ac0a14066d
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+description: Veelgestelde vragen over de PowerShell Gallery
+ms.openlocfilehash: 045db04d49e0c65f807fef254a17bf20bb877ff6
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87777821"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92654153"
 ---
-# <a name="frequently-asked-questions"></a>Veelgestelde vragen
+# <a name="frequently-asked-questions-about-the-powershell-gallery"></a>Veelgestelde vragen over de PowerShell Gallery
 
 ## <a name="what-is-a-powershell-module"></a>Wat is een PowerShell-module?
 
@@ -65,7 +64,7 @@ Elk soort Power shell-module (script modules, binaire modules of manifest module
 
 ## <a name="how-do-i-create-a-correctly-formatted-module-manifest"></a>Hoe kan ik een module manifest maken dat juist is opgemaakt?
 
-De eenvoudigste manier om een module manifest te maken, is door de cmdlet [New-ModuleManifest][] uit te voeren. In Power shell 5,0 of hoger wordt met New-ModuleManifest een module manifest met de juiste indeling gegenereerd met lege velden voor handige meta gegevens, zoals **ProjectUri**, **LicenseUri**en **Tags**. Vul de lege waarden in of gebruik het gegenereerde manifest als voor beeld van de juiste indeling.
+De eenvoudigste manier om een module manifest te maken, is door de cmdlet [New-ModuleManifest][] uit te voeren. In Power shell 5,0 of hoger, New-ModuleManifest genereert een module manifest dat correct is opgemaakt met lege velden voor handige meta gegevens zoals **ProjectUri** , **LicenseUri** en **Tags** . Vul de lege waarden in of gebruik het gegenereerde manifest als voor beeld van de juiste indeling.
 
 Gebruik de cmdlet [test-ModuleManifest][] om te controleren of alle vereiste meta gegevens velden juist zijn gevuld.
 
@@ -94,7 +93,7 @@ Als u bijvoorbeeld zoekt naar PowerShellVersion: ' 2.0 ', worden alleen de resul
 
 ## <a name="how-do-i-create-a-correctly-formatted-script-file"></a>Hoe kan ik een correct opgemaakt script bestand maken?
 
-De eenvoudigste manier om een goed opgemaakt script bestand te maken, is door de cmdlet [New-ScriptFileInfo][] uit te voeren. In Power shell 5,0 genereert New-ScriptFileInfo een correct opgemaakt script bestand met lege velden voor handige meta gegevens zoals **ProjectUri**, **LicenseUri**en **Tags**. Vul de lege waarden in of gebruik het gegenereerde script bestand als een voor beeld van de juiste indeling.
+De eenvoudigste manier om een goed opgemaakt script bestand te maken, is door de cmdlet [New-ScriptFileInfo][] uit te voeren. In Power shell 5,0 genereert New-ScriptFileInfo een correct opgemaakt script bestand met lege velden voor handige meta gegevens zoals **ProjectUri** , **LicenseUri** en **Tags** . Vul de lege waarden in of gebruik het gegenereerde script bestand als een voor beeld van de juiste indeling.
 
 Gebruik de cmdlet [test-ScriptFileInfo][] om te controleren of alle vereiste meta gegevens velden juist zijn gevuld.
 
@@ -112,7 +111,7 @@ Alle modules in de galerie bevatten module manifesten en de meeste van deze modu
 
 Package Management is een gemeen schappelijke interface voor het werken met pakket beheer. Uiteindelijk, of u nu gebruikmaakt van Power shell-modules, MSIs, Ruby edelsteen, NuGet-pakketten of perl-modules, moet u de opdrachten van Package Management (zoek-package en install-package) kunnen gebruiken om ze te zoeken en te installeren. Package Management doet dit door een pakket provider te hebben voor elke pakket manager die wordt aangesloten op Package Management. Providers doen al het werkelijke werk. ze halen inhoud op uit opslag plaatsen en installeren de inhoud lokaal. Vaak verloopt pakket providers gewoon om de bestaande pakket beheer Programma's voor een bepaald pakket type.
 
-PowerShellGet is pakket beheer voor Power shell-pakketten. Er is een PSModule-pakket provider die PowerShellGet-functionaliteit beschikbaar maakt via package management. Daarom kunt u [install-module][] of install-package-provider PSModule uitvoeren om een module te installeren vanuit de PowerShell Gallery. Bepaalde PowerShellGet-functies, waaronder [Update-module][] en [Publish-module][], zijn niet toegankelijk via package management-opdrachten.
+PowerShellGet is pakket beheer voor Power shell-pakketten. Er is een PSModule-pakket provider die PowerShellGet-functionaliteit beschikbaar maakt via package management. Daarom kunt u de [installatie-module][] of Install-Package provider PSModule uitvoeren om een module te installeren vanuit de PowerShell Gallery. Bepaalde PowerShellGet-functies, waaronder [Update-module][] en [Publish-module][], zijn niet toegankelijk via package management-opdrachten.
 
 In samen vatting is PowerShellGet alleen gericht op het beheer van een Premium-ervaring voor Power shell-inhoud. Package Management is gericht op het beschikbaar maken van alle pakket beheer-ervaringen via één algemene set hulpprogram ma's. Als u vindt dat dit antwoord niet voldoet, is er een lang antwoord onder aan dit document, in de sectie **Hoe heeft package management eigenlijk betrekking op de PowerShellGet?**
 
@@ -145,7 +144,7 @@ Afbeelding 1: PowerShellGet-architectuur
 
 In het algemeen raden wij aan de meest recente versie van de PowerShellGet-module te kiezen (Houd er rekening mee dat .NET 4,5 is vereist).
 
-Voor de **PowerShellGet**-module is **PowerShell 3.0 of hoger** vereist.
+Voor de **PowerShellGet** -module is **PowerShell 3.0 of hoger** vereist.
 
 Daarom vereist **PowerShellGet** een van de volgende besturingssystemen:
 

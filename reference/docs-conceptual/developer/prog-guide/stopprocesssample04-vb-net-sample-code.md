@@ -1,19 +1,21 @@
 ---
-title: Voorbeeld code voor StopProcessSample04 (VB.NET) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 5526bec79f3bb38f0de11680302a94699240a3d9
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: StopProcessSample04-codevoorbeeld (VB.NET)
+description: StopProcessSample04-codevoorbeeld (VB.NET)
+ms.openlocfilehash: 6eb2f8de83c17fa000cddf84ccc030b4fb39ff73
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786982"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92653796"
 ---
 # <a name="stopprocesssample04-vbnet-sample-code"></a>StopProcessSample04-codevoorbeeld (VB.NET)
 
-Dit is de volledige VB.NET-voorbeeld code voor de voor beeld-cmdlet StopProc04. Dit is de code voor de `Stop-Process` cmdlet die wordt beschreven in [para meter sets toevoegen aan een cmdlet](../cmdlet/adding-parameter-sets-to-a-cmdlet.md). De `Stop-Process` cmdlet is ontworpen voor het stoppen van processen die worden opgehaald met de cmdlet Get-proc (beschreven in [uw eerste cmdlet maken](../cmdlet/creating-a-cmdlet-without-parameters.md)).
+Dit is de volledige VB.NET-voorbeeld code voor de voor beeld-cmdlet StopProc04. Dit is de code voor de `Stop-Process` cmdlet die wordt beschreven in [para meter sets toevoegen aan een cmdlet](../cmdlet/adding-parameter-sets-to-a-cmdlet.md). De `Stop-Process` cmdlet is ontworpen voor het stoppen van processen die worden opgehaald met behulp van de cmdlet Get-Proc (beschreven in [uw eerste cmdlet maken](../cmdlet/creating-a-cmdlet-without-parameters.md)).
 
 > [!NOTE]
-> U kunt het bron bestand VB.NET (stopprocesssample04. VB) voor deze stop-proc-cmdlet downloaden met behulp van de micro soft Windows Software Development Kit voor Windows Vista en .NET Framework 3,0 runtime-onderdelen. Zie [Windows Power Shell installeren en de Windows Power shell-SDK downloaden](/powershell/scripting/developer/installing-the-windows-powershell-sdk)voor instructies voor het downloaden.
+> U kunt het bron bestand VB.NET (stopprocesssample04. VB) voor deze Stop-Proc-cmdlet downloaden met behulp van de micro soft Windows Software Development Kit voor Windows Vista en .NET Framework 3,0 runtime-onderdelen. Zie [Windows Power Shell installeren en de Windows Power shell-SDK downloaden](/powershell/scripting/developer/installing-the-windows-powershell-sdk)voor instructies voor het downloaden.
 >
 > De gedownloade bron bestanden bevinden zich in de **\<PowerShell Samples>** map.
 

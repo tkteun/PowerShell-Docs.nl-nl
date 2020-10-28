@@ -1,13 +1,13 @@
 ---
 ms.date: 12/31/2019
-keywords: powershell,cmdlet
 title: Het ISEEditor-object
-ms.openlocfilehash: cb63acebc1a8bb9fa6cc07199088ae0d5441bc91
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: Een ISEEditor-object is een exemplaar van de klasse micro soft. Power shell. host. ISE. ISEEditor. Het console venster is een ISEEditor-object.
+ms.openlocfilehash: ffcb6e35e1160beab6efb29cc84847fa9ffd012b
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83811014"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92654061"
 ---
 # <a name="the-iseeditor-object"></a>Het ISEEditor-object
 
@@ -50,7 +50,7 @@ Hiermee stelt u de focus naar de editor.
 $psISE.CurrentPowerShellTab.ConsolePane.Focus()
 ```
 
-### <a name="getlinelengthint-linenumber-"></a>GetLineLength \( int lineNumber\)
+### <a name="getlinelengthint-linenumber-"></a>GetLineLength \( int lineNumber \)
 
 Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
@@ -76,7 +76,7 @@ Hiermee wordt het caret naar het overeenkomende teken verplaatst als de eigensch
 $psISE.CurrentPowerShellTab.ConsolePane.GoToMatch()
 ```
 
-### <a name="inserttext-text-"></a>InsertText- \( tekst\)
+### <a name="inserttext-text-"></a>InsertText- \( tekst \)
 
 Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
@@ -86,11 +86,11 @@ Hiermee wordt de selectie vervangen door tekst of wordt tekst ingevoegd op de hu
 
 Zie het [voor beeld van scripting](#scripting-example) verderop in dit onderwerp.
 
-### <a name="select-startline-startcolumn-endline-endcolumn-"></a>Selecteer \( startLine, start column, endLine, endColumn\)
+### <a name="select-startline-startcolumn-endline-endcolumn-"></a>Selecteer \( startLine, start column, endLine, endColumn \)
 
 Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
-Hiermee selecteert u de tekst van de para meters **startLine**, start **Column**, **endLine**en **endColumn** .
+Hiermee selecteert u de tekst van de para meters **startLine** , start **Column** , **endLine** en **endColumn** .
 
 **startLine** : de regel waar de selectie wordt gestart geheel getal.
 
@@ -100,7 +100,7 @@ Start **Column** : een geheel getal voor de kolom in de begin regel waar de sele
 
 **endColumn** : Hiermee wordt de kolom in de eind regel waarvan de selectie eindigt, geheel getal.
 
-Zie het [voor beeld van scripting](#scripting-example) verderop in dit onderwerp.
+Zie het  [voor beeld van scripting](#scripting-example) verderop in dit onderwerp.
 
 ### <a name="selectcaretline"></a>SelectCaretLine\(\)
 
@@ -115,7 +115,7 @@ $psISE.CurrentFile.Editor.SetCaretPosition(5,1)
 $psISE.CurrentFile.Editor.SelectCaretLine()
 ```
 
-### <a name="setcaretposition-linenumber-columnnumber-"></a>SetCaretPosition \( lineNumber, columnNumber\)
+### <a name="setcaretposition-linenumber-columnnumber-"></a>SetCaretPosition \( lineNumber, columnNumber \)
 
 Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
@@ -204,7 +204,7 @@ Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
 De alleen-lezen eigenschap waarmee de geselecteerde tekst wordt opgehaald uit de editor.
 
-Zie het [voor beeld van scripting](#scripting-example) verderop in dit onderwerp.
+Zie het  [voor beeld van scripting](#scripting-example) verderop in dit onderwerp.
 
 ### <a name="text"></a>Tekst
 

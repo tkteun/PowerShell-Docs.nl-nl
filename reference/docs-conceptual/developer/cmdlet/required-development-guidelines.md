@@ -1,12 +1,14 @@
 ---
-title: Vereiste ontwikkel richtlijnen | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: ca0168050e3c1c2e7537036f96da62f52d50982e
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Vereiste richtlijnen voor de ontwikkeling
+description: Vereiste richtlijnen voor de ontwikkeling
+ms.openlocfilehash: 98db075b314eb7f54f2deb56022799d9f830f9ef
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87781695"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92655750"
 ---
 # <a name="required-development-guidelines"></a>Vereiste richtlijnen voor de ontwikkeling
 
@@ -14,7 +16,7 @@ De volgende richt lijnen moeten worden gevolgd wanneer u uw cmdlets schrijft. Ze
 
 ## <a name="in-this-topic"></a>In dit onderwerp
 
-### <a name="design-guidelines"></a>Ontwerp richtlijnen
+### <a name="design-guidelines"></a>Ontwerprichtlijnen
 
 - [Alleen goedgekeurde werk woorden gebruiken (RD01)](./required-development-guidelines.md#use-only-approved-verbs-rd01)
 
@@ -44,7 +46,7 @@ De volgende richt lijnen moeten worden gevolgd wanneer u uw cmdlets schrijft. Ze
 
 - [Een Windows Power shell-module gebruiken voor het implementeren van uw cmdlets (RC07)](./required-development-guidelines.md#use-a-windows-powershell-module-to-deploy-your-cmdlets-rc07)
 
-## <a name="design-guidelines"></a>Ontwerp richtlijnen
+## <a name="design-guidelines"></a>Ontwerprichtlijnen
 
 De volgende richt lijnen moeten worden gevolgd bij het ontwerpen van cmdlets om een consistente gebruikers ervaring te garanderen tussen het gebruik van uw cmdlets en andere cmdlets. Als u een ontwerp richtlijn vindt die van toepassing is op uw situatie, raadpleegt u de code richtlijnen voor vergelijk bare richt lijnen.
 
@@ -167,7 +169,7 @@ Zie [CmdletAttribute-declaratie](./cmdlet-attribute-declaration.md)voor meer inf
 
 ### <a name="override-an-input-processing-method-rc03"></a>Een invoer verwerkings methode overschrijven (RC03)
 
-Als u de cmdlet wilt gebruiken in de Windows Power shell-omgeving, moet deze ten minste één van de volgende *invoer verwerkings methoden*onderdrukken.
+Als u de cmdlet wilt gebruiken in de Windows Power shell-omgeving, moet deze ten minste één van de volgende *invoer verwerkings methoden* onderdrukken.
 
 [System. Management. Automation. cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) deze methode wordt één keer aangeroepen en wordt gebruikt om de functionaliteit van de voor verwerking te bieden.
 

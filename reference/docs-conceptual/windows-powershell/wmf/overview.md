@@ -2,12 +2,13 @@
 ms.date: 04/19/2019
 keywords: wmf,powershell,installeren
 title: Windows Management Framework (WMF)
-ms.openlocfilehash: d581370fd602e03c86aa549eb8b273ff4d01b4e5
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: WMF is een vereiste voor Windows Power shell. In deze artikelen wordt de geschiedenis van WMF-versies weer gegeven en vindt u informatie over het zoeken en installeren van WMF.
+ms.openlocfilehash: 339b140325befea0b28aa470d4249170937f2c37
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810195"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92654038"
 ---
 # <a name="windows-management-framework"></a>Windows Management Framework
 
@@ -51,13 +52,13 @@ Raadpleeg de onderstaande koppelingen voor meer informatie over verschillende ui
 | Windows Server 2003<br>*Geen ondersteuning meer* |              |                             |              |              | Ja          |
 | Windows XP<br>*Geen ondersteuning meer*          |              |                             |              | Ja          | Ja          |
 
-- Wordt **meegeleverd in box**: de functies van de opgegeven versie van WMF zijn verzonden in de aangegeven versie van Windows-client of Windows Server.
-- **Niet meer beschikbaar: deze**producten worden niet meer ondersteund door micro soft. U moet een upgrade uitvoeren naar een nieuwe versie die wordt ondersteund. Zie de pagina [micro soft Lifecycle-beleid][] voor meer informatie.
+- Wordt **meegeleverd in box** : de functies van de opgegeven versie van WMF zijn verzonden in de aangegeven versie van Windows-client of Windows Server.
+- **Niet meer beschikbaar: deze** producten worden niet meer ondersteund door micro soft. U moet een upgrade uitvoeren naar een nieuwe versie die wordt ondersteund. Zie de pagina [micro soft Lifecycle-beleid][] voor meer informatie.
 
 > [!NOTE]
 > Het installatie programma voor WMF 5,0 is niet meer beschikbaar of wordt niet ondersteund. Het is vervangen door WMF 5,1.
 
-[Micro soft Lifecycle-beleid]: https://support.microsoft.com/lifecycle
+[Microsoft-levenscyclusbeleid]: https://support.microsoft.com/lifecycle
 [WMF 5.1]: https://aka.ms/wmf51download
 [WMF 4.0]: https://aka.ms/wmf4download
 [WMF 3.0]: https://aka.ms/wmf3download

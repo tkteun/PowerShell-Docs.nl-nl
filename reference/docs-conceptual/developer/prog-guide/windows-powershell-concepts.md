@@ -1,12 +1,14 @@
 ---
-title: Windows Power shell-concepten | Microsoft Docs
-ms.date: 6/12/2019
-ms.openlocfilehash: a31c1df784b7b5f872c4647aece8fafa535db66b
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.date: 06/12/2019
+ms.topic: reference
+title: Windows PowerShell-concepten
+description: Windows PowerShell-concepten
+ms.openlocfilehash: d4a6ce0a041ace2e6a66030a0b0abbded111a9a9
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786948"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92653774"
 ---
 # <a name="windows-powershell-concepts"></a>Windows PowerShell-concepten
 
@@ -22,7 +24,7 @@ Deze sectie bevat conceptuele informatie die u helpt bij het begrijpen van Power
 |[Klasse RuntimeDefinedParameter](/dotnet/api/system.management.automation.runtimedefinedparameter)|Runtime parameter declaraties.|
 |[Naam ruimte System. Management. Automation](/dotnet/api/System.Management.Automation)|Overzicht van Power shell-API-naam ruimten.|
 |[Overzicht van Windows PowerShell-providers](../provider/windows-powershell-provider-overview.md)|Overzicht van Power shell-providers die worden gebruikt voor toegang tot gegevens archieven.|
-|[Help schrijven voor Power shell-cmdlets](../help/writing-help-for-windows-powershell-cmdlets.md)|Help bij het schrijven van Power shell-cmdlets.|
+|[Help voor PowerShell-cmdlets schrijven](../help/writing-help-for-windows-powershell-cmdlets.md)|Help bij het schrijven van Power shell-cmdlets.|
 
 ## <a name="see-also"></a>Zie ook
 

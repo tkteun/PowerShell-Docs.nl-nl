@@ -1,12 +1,14 @@
 ---
-title: Overzicht van uitgebreid type systeem
 ms.date: 07/09/2020
-ms.openlocfilehash: 5c190f0d9b852a4b5658227085092f33d71453c9
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Overzicht van uitgebreid type systeem
+description: Overzicht van uitgebreid type systeem
+ms.openlocfilehash: f4a789f779fa8a52f0fe524abff7ec3311e93b6c
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786217"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92655725"
 ---
 # <a name="extended-type-system-overview"></a>Overzicht van uitgebreid type systeem
 
@@ -21,7 +23,7 @@ Ten eerste hebben sommige .NET-objecten niet het vereiste standaard gedrag voor 
 - Sommige .NET-objecten zijn meta-objecten (bijvoorbeeld: WMI-objecten, ADO-objecten en XML-objecten) waarvan de leden de gegevens beschrijven die ze bevatten. In een script omgeving is het echter de Inge sloten gegevens die het interessantst zijn, niet de beschrijving van de Inge sloten gegevens. ETS lost dit probleem op door het begrip te introduceren van adapters die het onderliggende .NET-object aanpassen om de verwachte standaard semantiek te krijgen.
 - Sommige .NET-object leden zijn niet consistent met de naam, bieden een ontoereikende set van open bare leden of bieden onvoldoende mogelijkheden. ETS lost dit probleem op door de mogelijkheid te bieden om het .NET-object uit te breiden met aanvullende leden.
 
-Ten tweede is de Power shell-script taal _typeloos_ omdat een variabele niet van een bepaald type moet worden gedeclareerd. Dat wil zeggen dat de variabelen die een script ontwikkelaar maakt, op hetzelfde _type_zijn. Het Power shell-systeem is echter "type-aangedreven" in dat is afhankelijk van een type naam die kan worden gebruikt voor basis bewerkingen, zoals het uitvoeren van resultaten of het sorteren.
+Ten tweede is de Power shell-script taal _typeloos_ omdat een variabele niet van een bepaald type moet worden gedeclareerd. Dat wil zeggen dat de variabelen die een script ontwikkelaar maakt, op hetzelfde _type_ zijn. Het Power shell-systeem is echter "type-aangedreven" in dat is afhankelijk van een type naam die kan worden gebruikt voor basis bewerkingen, zoals het uitvoeren van resultaten of het sorteren.
 
 Daarom moet een script ontwikkelaar de mogelijkheid hebben om het type van een van de variabelen te vermelden en hun eigen set dynamisch getypte ' objecten ' te bouwen die eigenschappen en methoden bevatten en kunnen deel nemen aan het type systeem. ETS lost dit probleem op door een gemeen schappelijk object te bieden voor de script taal die de mogelijkheid heeft om het type dynamisch in te stellen en leden dynamisch toe te voegen.
 
@@ -94,6 +96,6 @@ Wanneer een base-object een meta-object is, een dat gegevens bevat op een algeme
 
 Naast de leden die beschikbaar zijn gemaakt via het basis object of de aangepaste leden die zijn gemaakt door Power shell, kan een **PSObject** ook uitgebreide leden definiëren waarmee het oorspronkelijke basis object wordt uitgebreid met aanvullende informatie die nuttig is in de script omgeving.
 
-Alle kern-cmdlets die worden meegeleverd met Power shell, zoals de cmdlets Get-content en set-content, hebben bijvoorbeeld een pad-para meter. Om ervoor te zorgen dat deze cmdlets en anderen kunnen werken tegen objecten van verschillende typen, kan een lid van het pad worden toegevoegd aan die objecten, zodat ze hun informatie op een gemeen schappelijke manier vermelden. Dit uitgebreide pad-lid zorgt ervoor dat de cmdlets kunnen samen werken met al deze typen, zelfs als er geen pad naar de basis klasse is.
+U kunt bijvoorbeeld alle kern-cmdlets die worden meegeleverd met Power shell, zoals de Get-Content-en Set-Content-cmdlets, een para meter Path gebruiken. Om ervoor te zorgen dat deze cmdlets en anderen kunnen werken tegen objecten van verschillende typen, kan een lid van het pad worden toegevoegd aan die objecten, zodat ze hun informatie op een gemeen schappelijke manier vermelden. Dit uitgebreide pad-lid zorgt ervoor dat de cmdlets kunnen samen werken met al deze typen, zelfs als er geen pad naar de basis klasse is.
 
 Uitgebreide leden, aangepaste leden en base-object leden zijn allemaal toegankelijk via de eigenschap members.

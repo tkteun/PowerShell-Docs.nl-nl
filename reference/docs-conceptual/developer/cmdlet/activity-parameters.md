@@ -1,12 +1,14 @@
 ---
-title: Activiteit parameters | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: c3014b21aca85f3efa161c185e691bdd1f19f79b
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Activiteitsparameters
+description: Activiteitsparameters
+ms.openlocfilehash: 241fb8a7796d1c9dc10e8410d6daef4db70c9b4e
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784602"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92653698"
 ---
 # <a name="activity-parameters"></a>Activiteitsparameters
 
@@ -48,11 +50,11 @@ De volgende tabel geeft een lijst van de aanbevolen namen en functionaliteiten v
 |**RepairString**<br>Gegevens type: teken reeks|Implementeer deze para meter zodat de gebruiker een teken reeks kan opgeven die moet worden gebruikt wanneer de **herstel** parameter wordt opgegeven.|
 |**Opnieuw proberen**<br>Gegevens type: Int32|Implementeer deze para meter zodat de gebruiker kan opgeven hoe vaak een actie moet worden uitgevoerd met de cmdlet.|
 |**Selecteren**<br>Gegevens type: trefwoord matrix|Implementeer deze para meter zodat de gebruiker een matrix van de typen items kan opgeven.|
-|**Stroom**<br>Gegevens type: SwitchParameter|Implementeer deze para meter zodat de gebruiker meerdere uitvoer objecten kan streamen via de pijp lijn wanneer de para meter is opgegeven.|
+|**Streamen**<br>Gegevens type: SwitchParameter|Implementeer deze para meter zodat de gebruiker meerdere uitvoer objecten kan streamen via de pijp lijn wanneer de para meter is opgegeven.|
 |**Strikt**<br>Gegevens type: SwitchParameter|Implementeer deze para meter zodanig dat alle fouten worden verwerkt als afsluit fouten wanneer de para meter is opgegeven.|
 |**TempLocation**<br>Gegevens type: teken reeks|Implementeer deze para meter zodat de gebruiker de locatie van tijdelijke gegevens kan opgeven die wordt gebruikt tijdens de werking van de cmdlet.|
 |**Out**<br>Gegevens type: Int32|Implementeer deze para meter zodat de gebruiker het time-outinterval (in milliseconden) kan opgeven.|
-|**Truncate**<br>Gegevens type: SwitchParameter|Implementeer deze para meter zodat de cmdlet de acties afkapt wanneer de para meter wordt opgegeven. Als de para meter niet is opgegeven, voert de cmdlet een andere actie uit.|
+|**Afkappen**<br>Gegevens type: SwitchParameter|Implementeer deze para meter zodat de cmdlet de acties afkapt wanneer de para meter wordt opgegeven. Als de para meter niet is opgegeven, voert de cmdlet een andere actie uit.|
 |**Verifiëren**<br>Gegevens type: SwitchParameter|Implementeer deze para meter zodat de cmdlet test om te bepalen of er een actie is uitgevoerd wanneer de para meter is opgegeven.|
 |**Wait**<br>Gegevens type: SwitchParameter|Implementeer deze para meter zodat de cmdlet wacht op invoer van de gebruiker voordat u doorgaat wanneer de para meter is opgegeven.
 |**WaitTime**<br>Gegevens type: Int32|Implementeer deze para meter zodat de gebruiker de duur (in seconden) kan opgeven die door de cmdlet wordt gewacht op de invoer van de gebruiker wanneer de **wait** -para meter is opgegeven.|

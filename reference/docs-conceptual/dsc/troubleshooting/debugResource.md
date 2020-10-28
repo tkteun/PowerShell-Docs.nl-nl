@@ -2,12 +2,13 @@
 ms.date: 06/12/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: Foutopsporing voor DSC-resources
-ms.openlocfilehash: 53ee9ea5652ffb577f0c7fba2f240f63816281db
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+description: In dit artikel wordt beschreven hoe u fout opsporing voor DSC-configuraties inschakelt.
+ms.openlocfilehash: 5dda217e8dc9cc4b8699c82153c1a588d405d99e
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83691956"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92654126"
 ---
 # <a name="debugging-dsc-resources"></a>Foutopsporing voor DSC-resources
 
@@ -16,8 +17,8 @@ ms.locfileid: "83691956"
 In Power shell 5,0 is een nieuwe functie geïntroduceerd in desired state Configuration (DSC) waarmee u fouten kunt opsporen in een DSC-resource als er een configuratie wordt toegepast.
 
 ## <a name="enabling-dsc-debugging"></a>DSC-fout opsporing inschakelen
-Voordat u fouten kunt opsporen in een resource, moet u fout opsporing inschakelen door de cmdlet [Enable-DscDebug](/powershell/module/PSDesiredStateConfiguration/Enable-DscDebug) aan te roepen.
-Deze cmdlet gebruikt een verplichte para meter, **BreakAll**.
+
+Voordat u fouten kunt opsporen in een resource, moet u fout opsporing inschakelen door de cmdlet [Enable-DscDebug](/powershell/module/PSDesiredStateConfiguration/Enable-DscDebug) aan te roepen. Deze cmdlet gebruikt een verplichte para meter, **BreakAll** .
 
 U kunt controleren of de fout opsporing is ingeschakeld door te kijken naar het resultaat van een aanroep naar [Get-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Get-DscLocalConfigurationManager).
 
@@ -41,8 +42,8 @@ PS C:\DebugTest>
 ```
 
 ## <a name="starting-a-configuration-with-debug-enabled"></a>Een configuratie starten met fout opsporing ingeschakeld
-Als u fouten wilt opsporen in een DSC-resource, start u een configuratie die deze bron aanroept.
-In dit voor beeld bekijken we een eenvoudige configuratie die de resource van de **WindowsFeature** oproept om ervoor te zorgen dat de functie ' WindowsPowerShellWebAccess ' is geïnstalleerd:
+
+Als u fouten wilt opsporen in een DSC-resource, start u een configuratie die deze bron aanroept. In dit voor beeld bekijken we een eenvoudige configuratie die de resource van de **WindowsFeature** oproept om ervoor te zorgen dat de functie ' WindowsPowerShellWebAccess ' is geïnstalleerd:
 
 ```powershell
 Configuration PSWebAccess
@@ -60,9 +61,7 @@ Configuration PSWebAccess
 PSWebAccess
 ```
 
-Nadat u de configuratie hebt gecompileerd, start u deze door [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration)aan te roepen.
-De configuratie wordt gestopt wanneer de lokale Configuration Manager (LCM) aanroept in de eerste bron in de configuratie.
-Als u de `-Verbose` `-Wait` para meters en gebruikt, worden de regels weer gegeven die u moet invoeren om de fout opsporing te starten.
+Nadat u de configuratie hebt gecompileerd, start u deze door [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration)aan te roepen. De configuratie wordt gestopt wanneer de lokale Configuration Manager (LCM) aanroept in de eerste bron in de configuratie. Als u de `-Verbose` `-Wait` para meters en gebruikt, worden de regels weer gegeven die u moet invoeren om de fout opsporing te starten.
 
 ```powershell
 Start-DscConfiguration .\PSWebAccess -Wait -Verbose
@@ -85,27 +84,24 @@ Enter-PSHostProcess -Id 9000 -AppDomainName DscPsPluginWkr_AppDomain
 Debug-Runspace -Id 9
 ```
 
-De LCM heeft nu de resource genoemd en komt tot het eerste afbreek punt.
-In de laatste drie regels in de uitvoer ziet u hoe u aan het proces kunt koppelen en de fout opsporing van het resource script start.
+De LCM heeft nu de resource genoemd en komt tot het eerste afbreek punt. In de laatste drie regels in de uitvoer ziet u hoe u aan het proces kunt koppelen en de fout opsporing van het resource script start.
 
 ## <a name="debugging-the-resource-script"></a>Fout opsporing van het resource script
 
-Start een nieuw exemplaar van de Power shell-ISE.
-Voer in het console venster de laatste drie regels uitvoer van de uitvoer in `Start-DscConfiguration` als opdrachten, vervangen `<credentials>` door geldige gebruikers referenties.
-Er wordt nu een prompt weer gegeven die er ongeveer als volgt uitziet:
+Start een nieuw exemplaar van de Power shell-ISE. Voer in het console venster de laatste drie regels uitvoer van de uitvoer in `Start-DscConfiguration` als opdrachten, vervangen `<credentials>` door geldige gebruikers referenties. Er wordt nu een prompt weer gegeven die er ongeveer als volgt uitziet:
 
 ```powershell
 [TEST-SRV]: [DBG]: [Process:9000]: [RemoteHost]: PS C:\DebugTest>>
 ```
 
-Het bron script wordt in het Script-venster geopend en de fout opsporing wordt gestopt op de eerste regel van de functie **test-TargetResource** (de methode **test ()** van een op een klasse gebaseerde bron).
-Nu kunt u de opdrachten voor fout opsporing in de ISE gebruiken om het resource script te door lopen, variabelen waarden bekijken, de aanroep stack bekijken, enzovoort. Houd er rekening mee dat elke regel in het resource script (of de klasse) is ingesteld als een breek punt.
+Het bron script wordt in het Script-venster geopend en de fout opsporing wordt gestopt op de eerste regel van de functie **test-TargetResource** (de methode **test ()** van een op een klasse gebaseerde bron). Nu kunt u de opdrachten voor fout opsporing in de ISE gebruiken om het resource script te door lopen, variabelen waarden bekijken, de aanroep stack bekijken, enzovoort. Houd er rekening mee dat elke regel in het resource script (of de klasse) is ingesteld als een breek punt.
 
 ## <a name="disabling-dsc-debugging"></a>DSC-fout opsporing uitschakelen
 
 Nadat u [Enable-DscDebug](/powershell/module/PSDesiredStateConfiguration/Enable-DscDebug)hebt aangeroepen, worden alle aanroepen naar [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) tot de configuratie van de fout opsporing geleid. Als u wilt toestaan dat configuraties normaal worden uitgevoerd, moet u fout opsporing uitschakelen door de cmdlet [Disable-DscDebug](/powershell/module/PSDesiredStateConfiguration/Disable-DscDebug) aan te roepen.
 
->**Opmerking:** Het opnieuw opstarten van de LCM heeft geen invloed op de status van de fout opsporing. Als fout opsporing is ingeschakeld, wordt het starten van een configuratie na het opnieuw opstarten nog steeds verbroken in het fout opsporingsprogramma.
+> [!NOTE]
+> Het opnieuw opstarten van de LCM heeft geen invloed op de status van de fout opsporing. Als fout opsporing is ingeschakeld, wordt het starten van een configuratie na het opnieuw opstarten nog steeds verbroken in het fout opsporingsprogramma.
 
 ## <a name="see-also"></a>Zie ook
 

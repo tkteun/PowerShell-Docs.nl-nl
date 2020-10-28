@@ -1,13 +1,13 @@
 ---
 ms.date: 06/12/2017
-keywords: wmf,powershell,installeren
 title: Verbeteringen van Just Enough Administration (JEA)
-ms.openlocfilehash: 9bb45ad2ddd459b99fc58610dfd8145992093624
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: JEA is een nieuwe functie in WMF 5,0 waarmee op rollen gebaseerd beheer via Power shell Remoting kan worden ingeschakeld. Hiermee wordt de bestaande beperkte eindpunt infrastructuur uitgebreid, omdat niet-beheerders specifieke opdrachten, scripts en uitvoer bare bestanden kunnen uitvoeren als beheerder.
+ms.openlocfilehash: f255d0ecbd4bbd9a5ade4b6e19f066cc007481fb
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810363"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92654022"
 ---
 # <a name="improvements-to-just-enough-administration-jea"></a>Verbeteringen van Just Enough Administration (JEA)
 
@@ -63,7 +63,7 @@ RunAsVirtualAccount = $false
 > Door groepen beheerde service accounts bieden geen isolatie of beperkt bereik van virtuele accounts.
 > Elke gebruiker die verbinding maakt, deelt dezelfde gMSA-identiteit, die mogelijk machtigingen heeft voor uw hele onderneming. Wees voorzichtig bij het selecteren van een gMSA en gebruik altijd de voor keur aan virtuele accounts die worden beperkt tot de lokale machine wanneer dat mogelijk is.
 
-## <a name="conditional-access-policies"></a>Voorwaardelijk toegangsbeleid
+## <a name="conditional-access-policies"></a>Beleid voor voorwaardelijke toegang
 
 JEA is handig om te beperken wat iemand kan doen wanneer ze zijn verbonden met een systeem om het te beheren, maar wat als u ook wilt beperken *Wanneer* iemand JEA kan gebruiken? Er zijn configuratie opties toegevoegd aan de sessie configuratie bestanden (. pssc) waarmee u beveiligings groepen kunt opgeven waarvoor een gebruiker moet behoren om een JEA-sessie tot stand te brengen. Dit is met name handig als u een just-in-time-systeem (JIT) in uw omgeving hebt en u wilt dat uw gebruikers hun bevoegdheden kunnen verhogen voordat ze toegang krijgen tot een JEA-eind punt met hoge privileges.
 

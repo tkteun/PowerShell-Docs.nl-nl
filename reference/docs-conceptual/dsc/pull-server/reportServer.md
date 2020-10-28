@@ -2,24 +2,26 @@
 ms.date: 06/12/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: Een DSC-rapportserver gebruiken
-ms.openlocfilehash: 1ccd4f96b782b41b7d7c953735cb41b3ba3d2bce
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: De lokale Configuration Manager (LCM) van een knoop punt kan worden geconfigureerd voor het verzenden van rapporten over de configuratie status naar een pull-server waarvoor vervolgens een query kan worden uitgevoerd om die gegevens op te halen.
+ms.openlocfilehash: 58ff1684bbe1d23fa68296aa56dd94ba6bc5b148
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71941682"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92653716"
 ---
 # <a name="using-a-dsc-report-server"></a>Een DSC-rapportserver gebruiken
 
 Van toepassing op: Windows Power shell 5,0
 
 > [!IMPORTANT]
-> De pull-server (Windows *-functie DSC-service*) is een ondersteund onderdeel van Windows Server, maar er zijn geen plannen om nieuwe functies of mogelijkheden aan te bieden. Het wordt aangeraden om te beginnen met het overschakelen van beheerde clients naar [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (inclusief functies die verder gaan dan pull server op Windows Server) of een van de [hieronder vermelde Community](pullserver.md#community-solutions-for-pull-service)-oplossingen.
+> De pull-server (Windows *-functie DSC-service* ) is een ondersteund onderdeel van Windows Server, maar er zijn geen plannen om nieuwe functies of mogelijkheden aan te bieden. Het wordt aangeraden om te beginnen met het overschakelen van beheerde clients naar [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (inclusief functies die verder gaan dan pull server op Windows Server) of een van de [hieronder vermelde Community](pullserver.md#community-solutions-for-pull-service)-oplossingen.
 >
 > [!NOTE]
 > De rapport server die in dit onderwerp wordt beschreven, is niet beschikbaar in Power Shell 4,0.
 
-De lokale Configuration Manager (LCM) van een knoop punt kan worden geconfigureerd voor het verzenden van rapporten over de configuratie status naar een pull-server, die vervolgens kan worden opgevraagd om die gegevens op te halen. Telkens wanneer het knoop punt een configuratie controleert en toepast, wordt een rapport verzonden naar de rapport server. Deze rapporten worden opgeslagen in een Data Base op de server en kunnen worden opgehaald door de webservice voor rapporten aan te roepen. Elk rapport bevat informatie zoals de configuraties die zijn toegepast en of ze zijn geslaagd, de gebruikte resources, fouten die zijn opgetreden, en begin-en eind tijden.
+De lokale Configuration Manager (LCM) van een knoop punt kan worden geconfigureerd voor het verzenden van rapporten over de configuratie status naar een pull-server waarvoor vervolgens een query kan worden uitgevoerd om die gegevens op te halen. Telkens wanneer het knoop punt een configuratie controleert en toepast, wordt een rapport verzonden naar de rapport server. Deze rapporten worden opgeslagen in een Data Base op de server en kunnen worden opgehaald door de webservice voor rapporten aan te roepen.
+Elk rapport bevat informatie zoals de configuraties die zijn toegepast en of ze zijn geslaagd, de gebruikte resources, fouten die zijn opgetreden, en begin-en eind tijden.
 
 ## <a name="configuring-a-node-to-send-reports"></a>Een knoop punt configureren voor het verzenden van rapporten
 
@@ -98,8 +100,11 @@ PullClientConfig
 
 ## <a name="getting-report-data"></a>Rapport gegevens ophalen
 
-Rapporten die worden verzonden naar de pull-server, worden ingevoerd in een Data Base op de server. De rapporten zijn beschikbaar via aanroepen van de webservice. Als u rapporten wilt ophalen voor een specifiek knoop punt, verzendt u een HTTP-aanvraag naar de webservice voor rapporten in de volgende vorm:`http://CONTOSO-REPORT:8080/PSDSCReportServer.svc/Nodes(AgentId='MyNodeAgentId')/Reports`
-waarbij `MyNodeAgentId` de AgentId is van het knoop punt waarvoor u rapporten wilt ophalen. U kunt de AgentID voor een knoop punt ophalen door [Get-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Get-DscLocalConfigurationManager) op dat knoop punt aan te roepen.
+Rapporten die worden verzonden naar de pull-server, worden ingevoerd in een Data Base op de server. De rapporten zijn beschikbaar via aanroepen van de webservice. Als u rapporten wilt ophalen voor een specifiek knoop punt, verzendt u een HTTP-aanvraag naar de webservice voor rapporten in de volgende vorm:
+
+`http://CONTOSO-REPORT:8080/PSDSCReportServer.svc/Nodes(AgentId='MyNodeAgentId')/Reports`
+
+Waarbij `MyNodeAgentId` de AgentId is van het knoop punt waarvoor u rapporten wilt ophalen. U kunt de AgentID voor een knoop punt ophalen door [Get-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Get-DscLocalConfigurationManager) op dat knoop punt aan te roepen.
 
 De rapporten worden geretourneerd als een matrix van JSON-objecten.
 
@@ -110,7 +115,7 @@ function GetReport
 {
     param
     (
-        $AgentId = "$((glcm).AgentId)", 
+        $AgentId = "$((glcm).AgentId)",
         $serviceURL = "http://CONTOSO-REPORT:8080/PSDSCPullServer.svc"
     )
 
@@ -166,7 +171,7 @@ StatusData           : {{"StartDate":"2016-04-03T06:21:43.7220000-07:00","IPV6Ad
 AdditionalData       : {}
 ```
 
-Standaard worden de rapporten gesorteerd op **JobID**. Als u het meest recente rapport wilt ophalen, kunt u de rapporten sorteren op aflopende eigenschap **StartTime** en vervolgens het eerste element van de matrix ophalen:
+Standaard worden de rapporten gesorteerd op **JobID** . Als u het meest recente rapport wilt ophalen, kunt u de rapporten sorteren op aflopende eigenschap **StartTime** en vervolgens het eerste element van de matrix ophalen:
 
 ```powershell
 $reportsByStartTime = $reports | Sort-Object {$_."StartTime" -as [DateTime] } -Descending
@@ -233,7 +238,7 @@ ConfigurationName : Sample_ArchiveFirewall
 InDesiredState    : True
 ```
 
-Deze voor beelden zijn bedoeld om u een idee te geven van wat u met rapport gegevens kunt doen. Zie voor een inleiding over het werken met JSON in Power shell [afspelen met JSON en Power shell](https://blogs.technet.microsoft.com/heyscriptingguy/2015/10/08/playing-with-json-and-powershell/).
+Deze voor beelden zijn bedoeld om u een idee te geven van wat u met rapport gegevens kunt doen. Zie voor een inleiding over het werken met JSON in Power shell [afspelen met JSON en Power shell](https://devblogs.microsoft.com/scripting/playing-with-json-and-powershell/).
 
 ## <a name="see-also"></a>Zie ook
 
