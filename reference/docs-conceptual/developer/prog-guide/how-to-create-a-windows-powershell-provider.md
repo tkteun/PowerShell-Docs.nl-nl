@@ -1,16 +1,14 @@
 ---
-title: Een Windows Power shell-provider maken | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- providers [PowerShell Programmer's Guide]
-- providers [PowerShellProgrammer's Guide], creating
-- Windows PowerShell Programmer's Guide, providers
-ms.openlocfilehash: 5e7424c035d22d0f5eb154b369427a6da80b1c49
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Een Windows PowerShell-provider maken
+description: Een Windows PowerShell-provider maken
+ms.openlocfilehash: 51f19bf0dfa5f976a5045ae1342730c8f22f695e
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787101"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92647486"
 ---
 # <a name="how-to-create-a-windows-powershell-provider"></a>Een Windows PowerShell-provider maken
 

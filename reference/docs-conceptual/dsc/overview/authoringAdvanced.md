@@ -2,12 +2,13 @@
 ms.date: 06/12/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: Informatie over de rol van DSC in een CI/CD-pijp lijn
-ms.openlocfilehash: 6df621f45caed3ac8a8b4dd1afa575d413259e0d
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+description: In dit artikel worden de soorten benaderingen beschreven die beschikbaar zijn voor het combi neren van configuraties en resources in een CI/CD-pijp lijn.
+ms.openlocfilehash: 8d06b86724eb25e657687e6518c01bb29d984264
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783106"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92647029"
 ---
 # <a name="understanding-dscs-role-in-a-cicd-pipeline"></a>Informatie over de rol van DSC in een CI/CD-pijp lijn
 
@@ -82,7 +83,7 @@ Configuration Name
 
 Samengestelde resources bevorderen zowel samen stelling als samen werking met behulp van een pijp lijn tijdens het bouwen van een operationele loop tijd.
 
-Mogelijk maakt u al gebruik van samengestelde resources zonder deze te realiseren. Een voor beeld is **serviceset**.
+Mogelijk maakt u al gebruik van samengestelde resources zonder deze te realiseren. Een voor beeld is **serviceset** .
 Deze resource beheert de status van meerdere Windows-Services zonder deze afzonderlijk te hoeven aanbieden. De eigenschap name accepteert een matrix met teken reeksen om de naam van elke service op te geven. Wanneer de configuratie is gecompileerd, bevat de MOF een unieke service sectie voor elk van de namen die worden door gegeven aan serviceset.
 
 Organisaties kunnen "agents" of "middleware" hebben die op elke server moeten worden geïnstalleerd. Een samengestelde resource is het beste antwoord op het beheren van de afhankelijkheden, het instellen en configureren van dergelijke hulpprogram ma's en hulpprogram ma's.

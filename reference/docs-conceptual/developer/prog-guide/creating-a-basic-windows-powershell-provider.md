@@ -1,15 +1,14 @@
 ---
-title: Een eenvoudige Windows Power shell-provider maken | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- base provider [PowerShell Programmer's Guide]
-- providers [PowerShell Programmer's Guide], base provider
-ms.openlocfilehash: 16cadb6099bb4f315bacda4aea617b89f9af5626
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Een eenvoudige Windows PowerShell-provider ontwerpen
+description: Een eenvoudige Windows PowerShell-provider ontwerpen
+ms.openlocfilehash: 03b5784fd063b5457fc64d92a32e286e3bf9cce4
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787220"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92647514"
 ---
 # <a name="creating-a-basic-windows-powershell-provider"></a>Een eenvoudige Windows PowerShell-provider ontwerpen
 
@@ -40,7 +39,7 @@ U kunt kenmerk trefwoorden instellen om de klasse zo nodig verder te declareren.
 > [!NOTE]
 > De volledig gekwalificeerde naam van de Windows Power shell-provider bevat de assembly naam en andere kenmerken die door Windows Power shell worden bepaald na registratie van de provider.
 
-## <a name="defining-provider-specific-state-information"></a>Provider-specifieke status informatie definiëren
+## <a name="defining-provider-specific-state-information"></a>Provider-Specific status gegevens definiëren
 
 De basis klasse [System. Management. Automation. provider. Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) en alle afgeleide klassen worden beschouwd als stateless omdat de Windows Power shell-runtime alleen provider instanties maakt als dat nodig is. Als uw provider echter volledig beheer en status onderhoud voor providerspecifieke gegevens vereist, moet een klasse worden afgeleid van de klasse [System. Management. Automation. Providerinfo](/dotnet/api/System.Management.Automation.ProviderInfo) . Uw afgeleide klasse moet de leden definiëren die nodig zijn om de status te behouden, zodat de providerspecifieke gegevens kunnen worden geopend wanneer de Windows Power shell-runtime de methode [System. Management. Automation. provider. Cmdletprovider. Start *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start) aanroept om de provider te initialiseren.
 
