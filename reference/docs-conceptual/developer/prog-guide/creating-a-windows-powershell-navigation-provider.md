@@ -1,12 +1,14 @@
 ---
-title: Een Windows PowerShell-navigatieprovider maken
 ms.date: 09/13/2016
-ms.openlocfilehash: 0c9714c396a023516cd1c409e598d61bb6cda3ce
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Een Windows PowerShell-navigatieprovider maken
+description: Een Windows PowerShell-navigatieprovider maken
+ms.openlocfilehash: 73d4971fb91acaef9e1f20226e7b9b883730e394
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87778978"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92658658"
 ---
 # <a name="creating-a-windows-powershell-navigation-provider"></a>Een Windows PowerShell-navigatieprovider maken
 
@@ -43,7 +45,7 @@ Als u de onderliggende items, of hun namen, van het gegevens archief wilt weer g
 
 ## <a name="creating-a-windows-powershell-path"></a>Een Windows Power shell-pad maken
 
-Windows Power shell-navigatie provider gebruiken een provider: intern Windows Power shell-pad om door de items van het gegevens archief te navigeren. Als u een provider-intern pad wilt maken, moet de provider de methode [System. Management. Automation. provider. Navigationcmdletprovider. Makepath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) implementeren om aanroepen van de cmdlet combine-pad te kunnen ondersteunen. Met deze methode wordt een bovenliggend en onderliggend pad gecombineerd in een provider-intern pad, met een providerspecifieke padscheidingsteken tussen de bovenliggende en onderliggende paden.
+Windows Power shell-navigatie provider gebruiken een provider: intern Windows Power shell-pad om door de items van het gegevens archief te navigeren. Als u een provider-intern pad wilt maken, moet de provider de methode [System. Management. Automation. provider. Navigationcmdletprovider. Makepath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) implementeren voor het ondersteunen van aanroepen van de Combine-Path-cmdlet. Met deze methode wordt een bovenliggend en onderliggend pad gecombineerd in een provider-intern pad, met een providerspecifieke padscheidingsteken tussen de bovenliggende en onderliggende paden.
 
 De standaard implementatie heeft paden met "/" of " \\ " als padscheidingsteken, normaliseert het padscheidingsteken naar " \\ ", combineert de bovenliggende en onderliggende paden met het scheidings teken ertussen en retourneert een teken reeks die de gecombineerde paden bevat.
 
@@ -119,7 +121,7 @@ Uw implementatie van de methode [System. Management. Automation. provider. Navig
 
 Nadat het aanroepen van [System. Management. Automation. provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) wordt geretourneerd `true` , moet de methode [System. Management. Automation. provider. Navigationcmdletprovider. Moveitem *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) worden aangeroepen de methode [System. Management. Automation. provider. Cmdletprovider. ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) . Met deze methode wordt een bericht verzonden naar de gebruiker om feedback te geven als de bewerking moet worden voortgezet. Uw provider moet [System. Management. Automation. provider. Cmdletprovider. ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) aanroepen als extra controle op mogelijk schadelijke systeem wijzigingen.
 
-## <a name="attaching-dynamic-parameters-to-the-move-item-cmdlet"></a>Dynamische para meters aan de cmdlet Move-item koppelen
+## <a name="attaching-dynamic-parameters-to-the-move-item-cmdlet"></a>Dynamische para meters aan de Move-Item-cmdlet koppelen
 
 Soms `Move-Item` vereist de cmdlet extra para meters die dynamisch worden opgegeven tijdens runtime. Als u deze dynamische para meters wilt opgeven, moet de navigatie provider de methode [System. Management. Automation. provider. Navigationcmdletprovider. Moveitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItemDynamicParameters) implementeren om de vereiste parameter waarden van het item op het aangegeven pad op te halen en een object retour neren met eigenschappen en velden met kenmerken die vergelijkbaar zijn met een cmdlet-klasse of een [System. Management. Automation. Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) -object.
 

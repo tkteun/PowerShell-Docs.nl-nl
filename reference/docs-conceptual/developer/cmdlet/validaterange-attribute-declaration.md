@@ -1,16 +1,14 @@
 ---
-title: ValidateRange kenmerk declaratie | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- ValidateRange, described
-- ValidateRange attribute
-- attributes, ValidateRange
-ms.openlocfilehash: 9aeaa6f03c170389ff61a058b505dbcf74df6958
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Declaratie van het kenmerk ValidateRange
+description: Declaratie van het kenmerk ValidateRange
+ms.openlocfilehash: 1fec9d1bd36cd21b7f0f23bf6d72338d276dce91
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787781"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92660608"
 ---
 # <a name="validaterange-attribute-declaration"></a>Declaratie van het kenmerk ValidateRange
 

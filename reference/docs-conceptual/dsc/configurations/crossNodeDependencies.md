@@ -2,27 +2,27 @@
 ms.date: 12/12/2018
 keywords: DSC, Power shell, configuratie, installatie
 title: Afhankelijkheden van meerdere knooppunten opgeven
-ms.openlocfilehash: 62e553d894897ae1908745c2788b7b7b9cbe50ff
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: DSC biedt speciale resources die worden gebruikt in configuraties om afhankelijkheden op te geven voor configuraties op andere knoop punten.
+ms.openlocfilehash: a9fc09af922839b37db476c24c113efc5e3e8cb1
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71942053"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92658502"
 ---
 # <a name="specifying-cross-node-dependencies"></a>Afhankelijkheden van meerdere knooppunten opgeven
 
 > Van toepassing op: Windows Power shell 5,0
 
-DSC biedt speciale resources, **WaitForAll**, **WaitForAny**en **WaitForSome** die in configuraties kunnen worden gebruikt om afhankelijkheden op te geven voor configuraties op andere knoop punten. Het gedrag van deze resources is als volgt:
+DSC biedt speciale resources, **WaitForAll** , **WaitForAny** en **WaitForSome** die in configuraties kunnen worden gebruikt om afhankelijkheden op te geven voor configuraties op andere knoop punten. Het gedrag van deze resources is als volgt:
 
-- **WaitForAll**: slaagt als de opgegeven resource de gewenste status heeft op alle doel knooppunten die zijn gedefinieerd in de eigenschap **nodenaam** .
-- **WaitForAny**: slaagt als de opgegeven resource de gewenste status heeft op ten minste één van de doel knooppunten die zijn gedefinieerd in de eigenschap **nodenaam** .
-- **WaitForSome**: Hiermee geeft u een eigenschap **NodeCount** op in aanvulling op de eigenschap **nodenaam** . De resource slaagt als de resource de gewenste status heeft voor een minimum aantal knoop punten (opgegeven door **NodeCount**) dat is gedefinieerd door de eigenschap **nodenaam** .
+- **WaitForAll** : slaagt als de opgegeven resource de gewenste status heeft op alle doel knooppunten die zijn gedefinieerd in de eigenschap **nodenaam** .
+- **WaitForAny** : slaagt als de opgegeven resource de gewenste status heeft op ten minste één van de doel knooppunten die zijn gedefinieerd in de eigenschap **nodenaam** .
+- **WaitForSome** : Hiermee geeft u een eigenschap **NodeCount** op in aanvulling op de eigenschap **nodenaam** . De resource slaagt als de resource de gewenste status heeft voor een minimum aantal knoop punten (opgegeven door **NodeCount** ) dat is gedefinieerd door de eigenschap **nodenaam** .
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
-De **WaitForAll** -en **WaitForAny** -resources delen dezelfde syntaxis. Vervang \<resource\> type in het onderstaande voor beeld door ofwel **WaitForAny** of **WaitForAll**.
-Net als het sleutel woord **DependsOn** moet u de naam als ' [resource type] ResourceName ' Format teren. Als de resource deel uitmaakt van een afzonderlijke [configuratie](configurations.md), neemt u de **configuratiepad** op in de opgemaakte teken reeks ' [resource type] ResourceName:: [configuratiepad]:: [configuratiepad] '. De **knooppunt** naam is de computer of het knoop punt waarop de huidige resource moet wachten.
+De **WaitForAll** -en **WaitForAny** -resources delen dezelfde syntaxis. Vervang `<ResourceType>` in het onderstaande voor beeld door **WaitForAny** of **WaitForAll** . Net als het sleutel woord **DependsOn** moet u de naam opmaken als `[ResourceType]ResourceName` . Als de resource deel uitmaakt van een afzonderlijke [configuratie](configurations.md), neemt u de **configuratiepad** op in de opgemaakte teken reeks `[ResourceType]ResourceName::[ConfigurationName]::[ConfigurationName]` . De **knooppunt** naam is de computer of het knoop punt waarop de huidige resource moet wachten.
 
 ```
 <ResourceType> [string] #ResourceName
@@ -55,13 +55,13 @@ WaitForSome [String] #ResourceName
 
 Alle **WaitForXXXX** delen de volgende syntaxis sleutels.
 
-|Eigenschap|  Beschrijving   |
-|---------|---------------------|
-| RetryIntervalSec| Het aantal seconden voordat een nieuwe poging wordt gedaan. De minimum waarde is 1.|
-| RetryCount| Het maximum aantal keren dat opnieuw moet worden geprobeerd.|
-| ThrottleLimit| Aantal machines om tegelijkertijd verbinding te maken. Standaard instelling `New-CimSession` is standaard.|
-| DependsOn | Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. Zie [DependsOn](resource-depends-on.md) voor meer informatie.|
-| PsDscRunAsCredential | Zie [DSC gebruiken met gebruikers referenties](./runAsUser.md) |
+|       Eigenschap       |                                                                           Beschrijving                                                                           |
+| -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| RetryIntervalSec     | Het aantal seconden voordat een nieuwe poging wordt gedaan. De minimum waarde is 1.                                                                                                            |
+| RetryCount           | Het maximum aantal keren dat opnieuw moet worden geprobeerd.                                                                                                                           |
+| ThrottleLimit        | Aantal machines om tegelijkertijd verbinding te maken. Standaard instelling is `New-CimSession` standaard.                                                                              |
+| DependsOn            | Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. Zie [DependsOn](resource-depends-on.md) voor meer informatie. |
+| PsDscRunAsCredential | Zie [DSC gebruiken met gebruikers referenties](./runAsUser.md)                                                                                                           |
 
 ## <a name="using-waitforxxxx-resources"></a>WaitForXXXX-resources gebruiken
 
@@ -70,7 +70,7 @@ Andere resources in dezelfde configuratie kunnen vervolgens *afhankelijk zijn* v
 
 In de volgende configuratie kan het doel knooppunt bijvoorbeeld wachten tot de **xADDomain** -resource op het **eigendc** -knoop punt is voltooid met een maximum aantal van 30 nieuwe pogingen, met een interval van 15 seconden voordat het doel knooppunt kan worden toegevoegd aan het domein.
 
-De **WaitForXXX** -resources proberen standaard één keer en vervolgens mislukt. Hoewel dit niet vereist is, wilt u meestal een **RetryCount** en **RetryIntervalSec**opgeven.
+De **WaitForXXX** -resources proberen standaard één keer en vervolgens mislukt. Hoewel dit niet vereist is, wilt u meestal een **RetryCount** en **RetryIntervalSec** opgeven.
 
 ```powershell
 Configuration JoinDomain
@@ -120,8 +120,7 @@ Configuration JoinDomain
 Wanneer u de configuratie compileert, worden er twee. MOF-bestanden gegenereerd. Beide '. mof '-bestanden Toep assen op de doel knooppunten met behulp van de cmdlet [Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration)
 
 > [!NOTE]
-> **WaitForXXX** -bronnen gebruiken Windows Remote Management om de status van andere knoop punten te controleren.
-> Zie [beveiligings overwegingen voor externe communicatie van Power shell](/powershell/scripting/learn/remoting/winrmsecurity?view=powershell-6)voor meer informatie over de vereisten voor de poort en de beveiliging van WinRM.
+> **WaitForXXX** -bronnen gebruiken Windows Remote Management om de status van andere knoop punten te controleren. Zie [beveiligings overwegingen voor externe communicatie van Power shell](/powershell/scripting/learn/remoting/winrmsecurity)voor meer informatie over de vereisten voor de poort en de beveiliging van WinRM.
 
 ## <a name="see-also"></a>Zie ook
 

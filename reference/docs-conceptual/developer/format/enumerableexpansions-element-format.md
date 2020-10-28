@@ -1,12 +1,14 @@
 ---
-title: EnumerableExpansions-element (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 2b536b1ab9b34b0089d0a38d3c5dc7a937176443
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element EnumerableExpansions (opmaak)
+description: Het element EnumerableExpansions (opmaak)
+ms.openlocfilehash: 789599e6ff368b4685c7937d5b6eb38618752f9e
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87774011"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92660171"
 ---
 # <a name="enumerableexpansions-element-format"></a>Het element EnumerableExpansions (opmaak)
 

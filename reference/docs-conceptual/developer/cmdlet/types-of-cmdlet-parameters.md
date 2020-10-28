@@ -1,12 +1,14 @@
 ---
-title: Typen cmdlet-para meters | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: e704aae6e23568be9935e228752f652929863a98
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Typen cmdlet-parameters
+description: Typen cmdlet-parameters
+ms.openlocfilehash: 8daaa3c778396e06a826de3b93e0610c51160fb4
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786370"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92660492"
 ---
 # <a name="types-of-cmdlet-parameters"></a>Typen cmdlet-parameters
 

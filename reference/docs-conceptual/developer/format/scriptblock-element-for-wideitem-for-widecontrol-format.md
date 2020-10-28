@@ -1,12 +1,14 @@
 ---
-title: Script block-element voor WideItem voor WideControl (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: be649d6de0d2dfa6bad14f2d7476cced9cd6cb6d
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element ScriptBlock voor WideItem voor WideControl (opmaak)
+description: Het element ScriptBlock voor WideItem voor WideControl (opmaak)
+ms.openlocfilehash: 68e47926e5e6b846c8a0a3dbc16d1f0d59f11dee
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787594"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92659871"
 ---
 # <a name="scriptblock-element-for-wideitem-for-widecontrol-format"></a>Het element ScriptBlock voor WideItem voor WideControl (opmaak)
 

@@ -1,12 +1,14 @@
 ---
-title: Tekst element voor CustomItem voor CustomView voor weer gave (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 94294665b481edabdb8ed920d1a209a609b18fd8
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element Tekst voor CustomItem voor CustomView voor Weergave (opmaak)
+description: Het element Tekst voor CustomItem voor CustomView voor Weergave (opmaak)
+ms.openlocfilehash: b1bbb53473774be56e8422b79db8745fb9700b9b
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783378"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92659728"
 ---
 # <a name="text-element-for-customitem-for-customview-for-view-format"></a>Het element Tekst voor CustomItem voor CustomView voor Weergave (opmaak)
 

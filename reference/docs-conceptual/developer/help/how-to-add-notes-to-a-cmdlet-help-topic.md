@@ -1,12 +1,14 @@
 ---
-title: Notities toevoegen aan een Help-onderwerp voor cmdlets
 ms.date: 10/20/2020
-ms.openlocfilehash: 7f8be34a82de2c12cfd2a05deed139ddb30da95f
-ms.sourcegitcommit: ae8b89e12c6fa2108075888dd6da92788d6c2888
+ms.topic: reference
+title: Notities toevoegen aan een Help-onderwerp voor cmdlets
+description: Notities toevoegen aan een Help-onderwerp voor cmdlets
+ms.openlocfilehash: 61363c26ab0172277d1332ed1e9de080d8da200c
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92298315"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92659560"
 ---
 # <a name="how-to-add-notes-to-a-cmdlet-help-topic"></a>Notities toevoegen aan een Help-onderwerp voor cmdlets
 

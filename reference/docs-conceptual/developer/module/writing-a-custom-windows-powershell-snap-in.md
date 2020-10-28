@@ -1,15 +1,14 @@
 ---
-title: Een aangepaste Windows Power shell-module schrijven | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- snap-ins [PowerShell SDK], custom PSSnapin example
-- cmdlets [PowerShell SDK], specified in snap-ins
-ms.openlocfilehash: 3672dcc2e962b6795888ab5be3d461380e379315
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Een aangepaste Windows PowerShell-module schrijven
+description: Een aangepaste Windows PowerShell-module schrijven
+ms.openlocfilehash: e79c0c3db583fa0add9287745e97958a71360592
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87779213"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92659539"
 ---
 # <a name="writing-a-custom-windows-powershell-snap-in"></a>Een aangepaste Windows PowerShell-module schrijven
 
@@ -44,11 +43,11 @@ Met dit type module kunt u opgeven welke cmdlets, providers, typen of indelingen
 
    In dit voor beeld is de resource van de leverancier:
 
-   > CustomPSSnapInTest is dit een aangepaste Windows Power shell-module die de cmdlets test-HelloWorld en test-CustomSnapinTest bevat.
+   > CustomPSSnapInTest is dit een aangepaste Windows Power shell-module die de Test-HelloWorld en Test-CustomSnapinTest-cmdlets bevat.
 
 8. Geef de cmdlets op die deel uitmaken van de aangepaste module (optioneel) met behulp van de klasse [System. Management. Automation. Runspaces. Cmdletconfigurationentry](/dotnet/api/System.Management.Automation.Runspaces.CmdletConfigurationEntry) . De hier toegevoegde informatie bevat de naam van de cmdlet, het bijbehorende .NET-type en de Help-bestands naam van de cmdlet (de indeling van de Help-bestands naam van de cmdlet moet zijn `name.dll-help.xml` ).
 
-   In dit voor beeld worden de cmdlets test-HelloWorld en TestCustomSnapinTest toegevoegd.
+   In dit voor beeld worden de cmdlets Test-HelloWorld en TestCustomSnapinTest toegevoegd.
 
 9. Geef de providers op die deel uitmaken van de aangepaste module (optioneel).
 

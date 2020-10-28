@@ -1,12 +1,14 @@
 ---
-title: LeftIndent-element voor frame voor besturings elementen voor weer gave (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: e190061152b25f1f63ba5d2d9a9970970b419e0d
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element LeftIndent voor Frame voor Besturingselementen voor Weergave (opmaak)
+description: Het element LeftIndent voor Frame voor Besturingselementen voor Weergave (opmaak)
+ms.openlocfilehash: 99ed1d93f276800eeaf17d722b13766de5aebde4
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783599"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92660126"
 ---
 # <a name="leftindent-element-for-frame-for-controls-for-view-format"></a>Het element LeftIndent voor Frame voor Besturingselementen voor Weergave (opmaak)
 

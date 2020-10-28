@@ -1,14 +1,14 @@
 ---
-title: Een Windows Power shell-module schrijven | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- snap-ins [PowerShell SDK], PSSnapin example
-ms.openlocfilehash: 02603c54fb9852a8b78ecf68e3ee387d1fd418fc
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Een Windows PowerShell-module schrijven
+description: Een Windows PowerShell-module schrijven
+ms.openlocfilehash: f658c2fa1211bfb77d2e8edd3999ce7f92df13bb
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87779105"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92659452"
 ---
 # <a name="writing-a-windows-powershell-snap-in"></a>Een Windows PowerShell-module schrijven
 
@@ -46,7 +46,7 @@ Met dit type module selecteert u niet welke cmdlets en providers u wilt registre
 
 ## <a name="example"></a>Voorbeeld
 
-In dit voor beeld ziet u hoe u een Windows Power shell-module schrijft die kan worden gebruikt om de cmdlet Get-proc te registreren in de Windows Power shell-shell. Houd er rekening mee dat in dit voor beeld de volledige assembly alleen de module GetProcPSSnapIn01 en de `Get-Proc` klasse cmdlet bevat.
+In dit voor beeld ziet u hoe u een Windows Power shell-module schrijft die kan worden gebruikt om de Get-Proc-cmdlet te registreren in de Windows Power shell-shell. Houd er rekening mee dat in dit voor beeld de volledige assembly alleen de module GetProcPSSnapIn01 en de `Get-Proc` klasse cmdlet bevat.
 
 ```csharp
 [RunInstaller(true)]
