@@ -1,12 +1,14 @@
 ---
-title: EntrySelectedBy-element voor CustomEntry voor CustomControl voor weer gave (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 4d4900cefb0d499397fc9dff7e037ce0a541f72f
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element EntrySelectedBy voor CustomEntry voor CustomControl voor Weergave (opmaak)
+description: Het element EntrySelectedBy voor CustomEntry voor CustomControl voor Weergave (opmaak)
+ms.openlocfilehash: 4821f22560f35034f90d018e5a109004f331441f
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783684"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92655351"
 ---
 # <a name="entryselectedby-element-for-customentry-for-customcontrol-for-view-format"></a>Het element EntrySelectedBy voor CustomEntry voor CustomControl voor Weergave (opmaak)
 

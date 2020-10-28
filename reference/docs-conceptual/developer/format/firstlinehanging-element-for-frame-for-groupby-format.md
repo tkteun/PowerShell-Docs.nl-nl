@@ -1,12 +1,14 @@
 ---
-title: FirstLineHanging-element voor frame voor GroupBy (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 3def56e918810d9e201d7a9ae73776d90646d8b3
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element FirstLineHanging voor Frame voor GroupBy (opmaak)
+description: Het element FirstLineHanging voor Frame voor GroupBy (opmaak)
+ms.openlocfilehash: 6a4ded9cced484440636aee694cd8381b2889ba8
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87773603"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92652281"
 ---
 # <a name="firstlinehanging-element-for-frame-for-groupby-format"></a>Het element FirstLineHanging voor Frame voor GroupBy (opmaak)
 

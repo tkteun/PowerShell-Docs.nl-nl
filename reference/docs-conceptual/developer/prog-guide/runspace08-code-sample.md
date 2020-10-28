@@ -1,12 +1,14 @@
 ---
-title: Voor beeld van RunSpace08-code | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 67172a0f8d6daf2f5b9965d1a18f7698daddbe1a
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Runspace08-codevoorbeeld
+description: Runspace08-codevoorbeeld
+ms.openlocfilehash: f8d08e5b6bbd98d0901abe5b05c8b9ee682b8e04
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784687"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92654228"
 ---
 # <a name="runspace08-code-sample"></a>Runspace08-codevoorbeeld
 

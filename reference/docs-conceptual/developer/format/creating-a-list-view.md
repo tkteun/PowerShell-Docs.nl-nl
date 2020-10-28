@@ -1,12 +1,14 @@
 ---
-title: Een lijst weergave maken | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 24eb673e0db011a1439fa5ba1f2966fcc3bdc338
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Een lijstweergave maken
+description: Een lijstweergave maken
+ms.openlocfilehash: c34c4fddc27d4fd016fba37fc465924d693756a5
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783769"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92655635"
 ---
 # <a name="creating-a-list-view"></a>Een lijstweergave maken
 

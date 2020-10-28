@@ -1,12 +1,14 @@
 ---
-title: EntrySelectedBy-element voor CustomEntry voor GroupBy (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 75a0f42e7722b54791a873200a35c8fcbbd665b1
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element EntrySelectedBy voor CustomEntry voor GroupBy (opmaak)
+description: Het element EntrySelectedBy voor CustomEntry voor GroupBy (opmaak)
+ms.openlocfilehash: 5af4abe081ca268699d281a1b586a584107b9a83
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87774130"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92652359"
 ---
 # <a name="entryselectedby-element-for-customentry-for-groupby-format"></a>Het element EntrySelectedBy voor CustomEntry voor GroupBy (opmaak)
 

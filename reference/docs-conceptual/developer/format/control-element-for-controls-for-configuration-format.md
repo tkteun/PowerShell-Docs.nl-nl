@@ -1,12 +1,14 @@
 ---
-title: Control-element voor besturings elementen voor configuratie (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 9447efac84cff3cc33468aeebc97a8bdd6137518
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element Besturingselement voor Besturingselementen voor Configuratie (opmaak)
+description: Het element Besturingselement voor Besturingselementen voor Configuratie (opmaak)
+ms.openlocfilehash: 43424de025cb89d81533e973abd7c39c09533747
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783820"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92655664"
 ---
 # <a name="control-element-for-controls-for-configuration-format"></a>Het element Besturingselement voor Besturingselementen voor Configuratie (opmaak)
 

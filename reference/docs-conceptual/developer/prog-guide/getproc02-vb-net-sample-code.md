@@ -1,12 +1,14 @@
 ---
-title: Voorbeeld code voor GetProc02 (VB.NET) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 98261f2d6678e24bb8e8df6d2c8a405b25203364
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: GetProc02-codevoorbeeld (VB.NET)
+description: GetProc02-codevoorbeeld (VB.NET)
+ms.openlocfilehash: e13da4689b7f4ba4878e83cd826076a6394d9fb2
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787169"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92654360"
 ---
 # <a name="getproc02-vbnet-sample-code"></a>GetProc02-codevoorbeeld (VB.NET)
 

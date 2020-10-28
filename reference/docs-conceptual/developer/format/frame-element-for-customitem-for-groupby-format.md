@@ -1,12 +1,14 @@
 ---
-title: Frame-element voor CustomItem voor GroupBy (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 1568236ff7b6142f7e41be70a3ae5e28307cf790
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element Frame voor CustomItem voor GroupBy (opmaak)
+description: Het element Frame voor CustomItem voor GroupBy (opmaak)
+ms.openlocfilehash: 86b51766974ebfcae06583ade237a77c6db92866
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785758"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92652175"
 ---
 # <a name="frame-element-for-customitem-for-groupby-format"></a>Het element Frame voor CustomItem voor GroupBy (opmaak)
 

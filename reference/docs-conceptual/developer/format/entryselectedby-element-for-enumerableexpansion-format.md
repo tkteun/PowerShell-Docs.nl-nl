@@ -1,12 +1,14 @@
 ---
-title: EntrySelectedBy-element voor EnumerableExpansion (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 031bf10cfb1aed2c737fdd53fa4f20f025351d40
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element EntrySelectedBy voor EnumerableExpansion (opmaak)
+description: Het element EntrySelectedBy voor EnumerableExpansion (opmaak)
+ms.openlocfilehash: 8b2fff2d0b14d0622d0be2c5af3a95194c733a73
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783667"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92652327"
 ---
 # <a name="entryselectedby-element-for-enumerableexpansion-format"></a>Het element EntrySelectedBy voor EnumerableExpansion (opmaak)
 

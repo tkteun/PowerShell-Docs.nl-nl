@@ -1,12 +1,14 @@
 ---
-title: ExpressionBinding-element voor CustomItem voor besturings elementen voor configuratie (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 1ad83fa9d915822eaefb490658f8a219defdddf2
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element ExpressionBinding voor CustomItem voor Besturingselementen voor Configuratie (opmaak)
+description: Het element ExpressionBinding voor CustomItem voor Besturingselementen voor Configuratie (opmaak)
+ms.openlocfilehash: 1abcf2173e18d45839161b4c7e59f1ad238f81a1
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87773909"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92655335"
 ---
 # <a name="expressionbinding-element-for-customitem-for-controls-for-configuration-format"></a>Het element ExpressionBinding voor CustomItem voor Besturingselementen voor Configuratie (opmaak)
 

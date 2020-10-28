@@ -1,12 +1,14 @@
 ---
-title: FirstLineHanging-element voor frame voor besturings elementen voor weer gave (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 88c64619715c935089eb6c5a771584e4f69171d3
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element FirstLineHanging voor Frame voor Besturingselementen voor Weergave (opmaak)
+description: Het element FirstLineHanging voor Frame voor Besturingselementen voor Weergave (opmaak)
+ms.openlocfilehash: a7a2aa533a74bd3c347307ab49a467d1f9844fc3
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87773620"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92655214"
 ---
 # <a name="firstlinehanging-element-for-frame-for-controls-for-view-format"></a>Het element FirstLineHanging voor Frame voor Besturingselementen voor Weergave (opmaak)
 

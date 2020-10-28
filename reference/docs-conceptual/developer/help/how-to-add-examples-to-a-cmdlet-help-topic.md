@@ -1,12 +1,14 @@
 ---
-title: Voorbeelden toevoegen aan een Help-onderwerp voor cmdlets
 ms.date: 09/12/2016
-ms.openlocfilehash: 33a1726f9d52b5a368d5df7962cc17ba9c45246a
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: Voorbeelden toevoegen aan een Help-onderwerp voor cmdlets
+description: Voorbeelden toevoegen aan een Help-onderwerp voor cmdlets
+ms.openlocfilehash: 6b72e29c93740b7953d9b68fc8e68c02eb2f4dee
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86893438"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92654719"
 ---
 # <a name="how-to-add-examples-to-a-cmdlet-help-topic"></a>Voorbeelden toevoegen aan een Help-onderwerp voor cmdlets
 

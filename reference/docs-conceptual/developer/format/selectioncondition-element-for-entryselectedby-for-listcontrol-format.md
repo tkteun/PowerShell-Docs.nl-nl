@@ -1,12 +1,14 @@
 ---
-title: SelectionCondition-element voor EntrySelectedBy voor ListControl (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 29626b181f21d168e1ebf973e01afeb411d9ef54
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element SelectionCondition voor EntrySelectedBy voor ListControl (opmaak)
+description: Het element SelectionCondition voor EntrySelectedBy voor ListControl (opmaak)
+ms.openlocfilehash: e93499691dd0046265e43abd26497b2974546083
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87772770"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92655102"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-listcontrol-format"></a>Het element SelectionCondition voor EntrySelectedBy voor ListControl (opmaak)
 

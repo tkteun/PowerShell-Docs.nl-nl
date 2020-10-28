@@ -1,12 +1,14 @@
 ---
-title: Show Error-element (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 4b48e532aeb51a947b1dc4f49c2487bb41e5d0bb
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element ShowError (opmaak)
+description: Het element ShowError (opmaak)
+ms.openlocfilehash: 278d379c55dc768b703bed3938bf556cbfceabb5
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785214"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92654852"
 ---
 # <a name="showerror-element-format"></a>Het element ShowError (opmaak)
 

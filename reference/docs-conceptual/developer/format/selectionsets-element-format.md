@@ -1,12 +1,14 @@
 ---
-title: SelectionSets-element (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 718b08e02220f285ef215fdca727492fd4407466
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element SelectionSets (opmaak)
+description: Het element SelectionSets (opmaak)
+ms.openlocfilehash: e5c928dfb82bc6963b4a87aef9ec06d34cacfdcb
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785197"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92654929"
 ---
 # <a name="selectionsets-element-format"></a>Het element SelectionSets (opmaak)
 

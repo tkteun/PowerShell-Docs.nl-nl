@@ -1,12 +1,14 @@
 ---
-title: SelectionSetName-element voor EntrySelectedBy voor GroupBy (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 362f7844c09a52494387a62e329adfb309767427
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element SelectionSetName voor EntrySelectedBy voor GroupBy (opmaak)
+description: Het element SelectionSetName voor EntrySelectedBy voor GroupBy (opmaak)
+ms.openlocfilehash: 7ebe5d884061243c8b4af196788187d84c15a92e
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785282"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92651843"
 ---
 # <a name="selectionsetname-element-for-entryselectedby-for-groupby-format"></a>Het element SelectionSetName voor EntrySelectedBy voor GroupBy (opmaak)
 
