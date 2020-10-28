@@ -1,47 +1,49 @@
 ---
-title: Lijst weergave (GroupBy) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 7956d13e196454a3f6da185e9be74f9d3cb8ef63
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Lijstweergave (GroupBy)
+description: Lijstweergave (GroupBy)
+ms.openlocfilehash: e039c38d1e4e93f65a508fe60aaaf35c64ebe2ed
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87773399"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92666617"
 ---
-# <a name="list-view-groupby"></a><span data-ttu-id="f4ec5-102">Lijstweergave (GroupBy)</span><span class="sxs-lookup"><span data-stu-id="f4ec5-102">List View (GroupBy)</span></span>
+# <a name="list-view-groupby"></a><span data-ttu-id="680d0-103">Lijstweergave (GroupBy)</span><span class="sxs-lookup"><span data-stu-id="680d0-103">List View (GroupBy)</span></span>
 
-<span data-ttu-id="f4ec5-103">In dit voor beeld ziet u hoe u een lijst weergave implementeert waarmee de rijen van de lijst worden gescheiden in groepen.</span><span class="sxs-lookup"><span data-stu-id="f4ec5-103">This example shows how to implement a list view that separates the rows of the list into groups.</span></span> <span data-ttu-id="f4ec5-104">In deze lijst weergave worden de eigenschappen van [System. ServiceProcess. servicecontroller weer gegeven? Displayproperty = FullName](/dotnet/api/System.ServiceProcess.ServiceController) objecten die door de [Get-service-](/powershell/module/Microsoft.PowerShell.Management/Get-Service) cmdlet worden geretourneerd.</span><span class="sxs-lookup"><span data-stu-id="f4ec5-104">This list view displays the properties of the [System.Serviceprocess.Servicecontroller?Displayproperty=Fullname](/dotnet/api/System.ServiceProcess.ServiceController) objects returned by the [Get-Service](/powershell/module/Microsoft.PowerShell.Management/Get-Service) cmdlet.</span></span> <span data-ttu-id="f4ec5-105">Zie [een lijst weergave maken](./creating-a-list-view.md)voor meer informatie over de onderdelen van een lijst weergave.</span><span class="sxs-lookup"><span data-stu-id="f4ec5-105">For more information about the components of a list view, see [Creating a List View](./creating-a-list-view.md).</span></span>
+<span data-ttu-id="680d0-104">In dit voor beeld ziet u hoe u een lijst weergave implementeert waarmee de rijen van de lijst worden gescheiden in groepen.</span><span class="sxs-lookup"><span data-stu-id="680d0-104">This example shows how to implement a list view that separates the rows of the list into groups.</span></span> <span data-ttu-id="680d0-105">In deze lijst weergave worden de eigenschappen van [System. ServiceProcess. servicecontroller weer gegeven? Displayproperty = FullName](/dotnet/api/System.ServiceProcess.ServiceController) objecten die door de [Get-service-](/powershell/module/Microsoft.PowerShell.Management/Get-Service) cmdlet worden geretourneerd.</span><span class="sxs-lookup"><span data-stu-id="680d0-105">This list view displays the properties of the [System.Serviceprocess.Servicecontroller?Displayproperty=Fullname](/dotnet/api/System.ServiceProcess.ServiceController) objects returned by the [Get-Service](/powershell/module/Microsoft.PowerShell.Management/Get-Service) cmdlet.</span></span> <span data-ttu-id="680d0-106">Zie [een lijst weergave maken](./creating-a-list-view.md)voor meer informatie over de onderdelen van een lijst weergave.</span><span class="sxs-lookup"><span data-stu-id="680d0-106">For more information about the components of a list view, see [Creating a List View](./creating-a-list-view.md).</span></span>
 
-### <a name="to-load-this-formatting-file"></a><span data-ttu-id="f4ec5-106">Dit indelings bestand laden</span><span class="sxs-lookup"><span data-stu-id="f4ec5-106">To load this formatting file</span></span>
+### <a name="to-load-this-formatting-file"></a><span data-ttu-id="680d0-107">Dit indelings bestand laden</span><span class="sxs-lookup"><span data-stu-id="680d0-107">To load this formatting file</span></span>
 
-1. <span data-ttu-id="f4ec5-107">Kopieer de XML uit de sectie voor beeld van dit onderwerp naar een tekst bestand.</span><span class="sxs-lookup"><span data-stu-id="f4ec5-107">Copy the XML from the Example section of this topic into a text file.</span></span>
+1. <span data-ttu-id="680d0-108">Kopieer de XML uit de sectie voor beeld van dit onderwerp naar een tekst bestand.</span><span class="sxs-lookup"><span data-stu-id="680d0-108">Copy the XML from the Example section of this topic into a text file.</span></span>
 
-2. <span data-ttu-id="f4ec5-108">Sla het tekstbestand op.</span><span class="sxs-lookup"><span data-stu-id="f4ec5-108">Save the text file.</span></span> <span data-ttu-id="f4ec5-109">Zorg ervoor dat u de `format.ps1xml` extensie toevoegt aan het bestand om het te identificeren als een indelings bestand.</span><span class="sxs-lookup"><span data-stu-id="f4ec5-109">Be sure to add the `format.ps1xml` extension to the file to identify it as a formatting file.</span></span>
+2. <span data-ttu-id="680d0-109">Sla het tekstbestand op.</span><span class="sxs-lookup"><span data-stu-id="680d0-109">Save the text file.</span></span> <span data-ttu-id="680d0-110">Zorg ervoor dat u de `format.ps1xml` extensie toevoegt aan het bestand om het te identificeren als een indelings bestand.</span><span class="sxs-lookup"><span data-stu-id="680d0-110">Be sure to add the `format.ps1xml` extension to the file to identify it as a formatting file.</span></span>
 
-3. <span data-ttu-id="f4ec5-110">Open Windows Power shell en voer de volgende opdracht uit om het opmaak bestand in de huidige sessie te laden: `Update-formatdata -prependpath PathToFormattingFile` .</span><span class="sxs-lookup"><span data-stu-id="f4ec5-110">Open Windows PowerShell, and run the following command to load the formatting file into the current session: `Update-formatdata -prependpath PathToFormattingFile`.</span></span>
+3. <span data-ttu-id="680d0-111">Open Windows Power shell en voer de volgende opdracht uit om het opmaak bestand in de huidige sessie te laden: `Update-formatdata -prependpath PathToFormattingFile` .</span><span class="sxs-lookup"><span data-stu-id="680d0-111">Open Windows PowerShell, and run the following command to load the formatting file into the current session: `Update-formatdata -prependpath PathToFormattingFile`.</span></span>
 
    > [!WARNING]
-   > <span data-ttu-id="f4ec5-111">Dit opmaak bestand definieert de weer gave van een object dat al is gedefinieerd door een Windows Power shell-indelings bestand.</span><span class="sxs-lookup"><span data-stu-id="f4ec5-111">This formatting file defines the display of an object that is already defined by a Windows PowerShell formatting file.</span></span> <span data-ttu-id="f4ec5-112">U moet de `prependPath` para meter gebruiken bij het uitvoeren van de cmdlet en u kunt dit indelings bestand niet laden als een module.</span><span class="sxs-lookup"><span data-stu-id="f4ec5-112">You must use the `prependPath` parameter when you run the cmdlet, and you cannot load this formatting file as a module.</span></span>
+   > <span data-ttu-id="680d0-112">Dit opmaak bestand definieert de weer gave van een object dat al is gedefinieerd door een Windows Power shell-indelings bestand.</span><span class="sxs-lookup"><span data-stu-id="680d0-112">This formatting file defines the display of an object that is already defined by a Windows PowerShell formatting file.</span></span> <span data-ttu-id="680d0-113">U moet de `prependPath` para meter gebruiken bij het uitvoeren van de cmdlet en u kunt dit indelings bestand niet laden als een module.</span><span class="sxs-lookup"><span data-stu-id="680d0-113">You must use the `prependPath` parameter when you run the cmdlet, and you cannot load this formatting file as a module.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="f4ec5-113">Demonstreert</span><span class="sxs-lookup"><span data-stu-id="f4ec5-113">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="680d0-114">Demonstreert</span><span class="sxs-lookup"><span data-stu-id="680d0-114">Demonstrates</span></span>
 
-<span data-ttu-id="f4ec5-114">In dit opmaak bestand worden de volgende XML-elementen gedemonstreerd:</span><span class="sxs-lookup"><span data-stu-id="f4ec5-114">This formatting file demonstrates the following XML elements:</span></span>
+<span data-ttu-id="680d0-115">In dit opmaak bestand worden de volgende XML-elementen gedemonstreerd:</span><span class="sxs-lookup"><span data-stu-id="680d0-115">This formatting file demonstrates the following XML elements:</span></span>
 
-- <span data-ttu-id="f4ec5-115">Het [naam](./name-element-for-view-format.md) element voor de weer gave.</span><span class="sxs-lookup"><span data-stu-id="f4ec5-115">The [Name](./name-element-for-view-format.md) element for the view.</span></span>
+- <span data-ttu-id="680d0-116">Het [naam](./name-element-for-view-format.md) element voor de weer gave.</span><span class="sxs-lookup"><span data-stu-id="680d0-116">The [Name](./name-element-for-view-format.md) element for the view.</span></span>
 
-- <span data-ttu-id="f4ec5-116">Het [ViewSelectedBy](./viewselectedby-element-format.md) -element dat definieert welke objecten worden weer gegeven in de weer gave.</span><span class="sxs-lookup"><span data-stu-id="f4ec5-116">The [ViewSelectedBy](./viewselectedby-element-format.md) element that defines what objects are displayed by the view.</span></span>
+- <span data-ttu-id="680d0-117">Het [ViewSelectedBy](./viewselectedby-element-format.md) -element dat definieert welke objecten worden weer gegeven in de weer gave.</span><span class="sxs-lookup"><span data-stu-id="680d0-117">The [ViewSelectedBy](./viewselectedby-element-format.md) element that defines what objects are displayed by the view.</span></span>
 
-- <span data-ttu-id="f4ec5-117">Het element [GroupBy](./viewselectedby-element-format.md) dat definieert hoe een nieuwe groep objecten wordt weer gegeven.</span><span class="sxs-lookup"><span data-stu-id="f4ec5-117">The [GroupBy](./viewselectedby-element-format.md) element that defines how a new group of objects is displayed.</span></span>
+- <span data-ttu-id="680d0-118">Het element [GroupBy](./viewselectedby-element-format.md) dat definieert hoe een nieuwe groep objecten wordt weer gegeven.</span><span class="sxs-lookup"><span data-stu-id="680d0-118">The [GroupBy](./viewselectedby-element-format.md) element that defines how a new group of objects is displayed.</span></span>
 
-- <span data-ttu-id="f4ec5-118">Het element [ListControl](./listcontrol-element-format.md) dat definieert welke eigenschap wordt weer gegeven in de weer gave.</span><span class="sxs-lookup"><span data-stu-id="f4ec5-118">The [ListControl](./listcontrol-element-format.md) element that defines what property is displayed by the view.</span></span>
+- <span data-ttu-id="680d0-119">Het element [ListControl](./listcontrol-element-format.md) dat definieert welke eigenschap wordt weer gegeven in de weer gave.</span><span class="sxs-lookup"><span data-stu-id="680d0-119">The [ListControl](./listcontrol-element-format.md) element that defines what property is displayed by the view.</span></span>
 
-- <span data-ttu-id="f4ec5-119">Het [lijst item](./listitem-element-for-listitems-for-listcontrol-format.md) -element dat definieert wat wordt weer gegeven in een rij van de lijst weergave.</span><span class="sxs-lookup"><span data-stu-id="f4ec5-119">The [ListItem](./listitem-element-for-listitems-for-listcontrol-format.md) element that defines what is displayed in a row of the list view.</span></span>
+- <span data-ttu-id="680d0-120">Het [lijst item](./listitem-element-for-listitems-for-listcontrol-format.md) -element dat definieert wat wordt weer gegeven in een rij van de lijst weergave.</span><span class="sxs-lookup"><span data-stu-id="680d0-120">The [ListItem](./listitem-element-for-listitems-for-listcontrol-format.md) element that defines what is displayed in a row of the list view.</span></span>
 
-- <span data-ttu-id="f4ec5-120">Het element [PropertyName](./propertyname-element-for-listitem-for-listcontrol-format.md) waarmee wordt gedefinieerd welke eigenschap wordt weer gegeven.</span><span class="sxs-lookup"><span data-stu-id="f4ec5-120">The [PropertyName](./propertyname-element-for-listitem-for-listcontrol-format.md) element that defines which property is displayed.</span></span>
+- <span data-ttu-id="680d0-121">Het element [PropertyName](./propertyname-element-for-listitem-for-listcontrol-format.md) waarmee wordt gedefinieerd welke eigenschap wordt weer gegeven.</span><span class="sxs-lookup"><span data-stu-id="680d0-121">The [PropertyName](./propertyname-element-for-listitem-for-listcontrol-format.md) element that defines which property is displayed.</span></span>
 
-## <a name="example"></a><span data-ttu-id="f4ec5-121">Voorbeeld</span><span class="sxs-lookup"><span data-stu-id="f4ec5-121">Example</span></span>
+## <a name="example"></a><span data-ttu-id="680d0-122">Voorbeeld</span><span class="sxs-lookup"><span data-stu-id="680d0-122">Example</span></span>
 
-<span data-ttu-id="f4ec5-122">De volgende XML definieert een lijst weergave waarmee een nieuwe groep wordt gestart wanneer de waarde van de eigenschap [System. ServiceProcess. servicecontroller. status](/dotnet/api/System.ServiceProcess.ServiceController.Status) wordt gewijzigd.</span><span class="sxs-lookup"><span data-stu-id="f4ec5-122">The following XML defines a list view that starts a new group whenever the value of the [System.Serviceprocess.Servicecontroller.Status](/dotnet/api/System.ServiceProcess.ServiceController.Status) property changes.</span></span> <span data-ttu-id="f4ec5-123">Wanneer elke groep wordt gestart, wordt een aangepast label weer gegeven met daarin de nieuwe waarde van de eigenschap.</span><span class="sxs-lookup"><span data-stu-id="f4ec5-123">When each group is started, a custom label is displayed that includes the new value of the property.</span></span>
+<span data-ttu-id="680d0-123">De volgende XML definieert een lijst weergave waarmee een nieuwe groep wordt gestart wanneer de waarde van de eigenschap [System. ServiceProcess. servicecontroller. status](/dotnet/api/System.ServiceProcess.ServiceController.Status) wordt gewijzigd.</span><span class="sxs-lookup"><span data-stu-id="680d0-123">The following XML defines a list view that starts a new group whenever the value of the [System.Serviceprocess.Servicecontroller.Status](/dotnet/api/System.ServiceProcess.ServiceController.Status) property changes.</span></span> <span data-ttu-id="680d0-124">Wanneer elke groep wordt gestart, wordt een aangepast label weer gegeven met daarin de nieuwe waarde van de eigenschap.</span><span class="sxs-lookup"><span data-stu-id="680d0-124">When each group is started, a custom label is displayed that includes the new value of the property.</span></span>
 
 ```xml
 <Configuration>
@@ -77,7 +79,7 @@ ms.locfileid: "87773399"
 </Configuration>
 ```
 
-<span data-ttu-id="f4ec5-124">In het volgende voor beeld ziet u hoe de [System. ServiceProcess. servicecontroller wordt weer gegeven in Windows Power shell? Displayproperty = FullName](/dotnet/api/System.ServiceProcess.ServiceController) objecten nadat dit indelings bestand is geladen.</span><span class="sxs-lookup"><span data-stu-id="f4ec5-124">The following example shows how Windows PowerShell displays the [System.Serviceprocess.Servicecontroller?Displayproperty=Fullname](/dotnet/api/System.ServiceProcess.ServiceController) objects after this format file is loaded.</span></span> <span data-ttu-id="f4ec5-125">De lege regels die voor en na het groeps label worden toegevoegd, worden automatisch toegevoegd door Windows Power shell.</span><span class="sxs-lookup"><span data-stu-id="f4ec5-125">The blank lines added before and after the group label are automatically added by Windows PowerShell.</span></span>
+<span data-ttu-id="680d0-125">In het volgende voor beeld ziet u hoe de [System. ServiceProcess. servicecontroller wordt weer gegeven in Windows Power shell? Displayproperty = FullName](/dotnet/api/System.ServiceProcess.ServiceController) objecten nadat dit indelings bestand is geladen.</span><span class="sxs-lookup"><span data-stu-id="680d0-125">The following example shows how Windows PowerShell displays the [System.Serviceprocess.Servicecontroller?Displayproperty=Fullname](/dotnet/api/System.ServiceProcess.ServiceController) objects after this format file is loaded.</span></span> <span data-ttu-id="680d0-126">De lege regels die voor en na het groeps label worden toegevoegd, worden automatisch toegevoegd door Windows Power shell.</span><span class="sxs-lookup"><span data-stu-id="680d0-126">The blank lines added before and after the group label are automatically added by Windows PowerShell.</span></span>
 
 ```powershell
 Get-Service f*
@@ -129,8 +131,8 @@ DisplayName : Firewall Client Agent
 ServiceType : Win32OwnProcess
 ```
 
-## <a name="see-also"></a><span data-ttu-id="f4ec5-126">Zie ook</span><span class="sxs-lookup"><span data-stu-id="f4ec5-126">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="680d0-127">Zie ook</span><span class="sxs-lookup"><span data-stu-id="680d0-127">See Also</span></span>
 
-[<span data-ttu-id="f4ec5-127">Voorbeelden van opmaakbestanden</span><span class="sxs-lookup"><span data-stu-id="f4ec5-127">Examples of Formatting Files</span></span>](./examples-of-formatting-files.md)
+[<span data-ttu-id="680d0-128">Voorbeelden van opmaakbestanden</span><span class="sxs-lookup"><span data-stu-id="680d0-128">Examples of Formatting Files</span></span>](./examples-of-formatting-files.md)
 
-[<span data-ttu-id="f4ec5-128">Een PowerShell-opmaakbestand schrijven</span><span class="sxs-lookup"><span data-stu-id="f4ec5-128">Writing a PowerShell Formatting File</span></span>](./writing-a-powershell-formatting-file.md)
+[<span data-ttu-id="680d0-129">Een PowerShell-opmaakbestand schrijven</span><span class="sxs-lookup"><span data-stu-id="680d0-129">Writing a PowerShell Formatting File</span></span>](./writing-a-powershell-formatting-file.md)

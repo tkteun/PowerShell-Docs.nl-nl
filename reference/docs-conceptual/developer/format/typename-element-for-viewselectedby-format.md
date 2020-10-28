@@ -1,54 +1,56 @@
 ---
-title: TypeName-element voor ViewSelectedBy (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: e9a391565c3e66041dd9a340455dccfce9ce929b
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element TypeName voor ViewSelectedBy (opmaak)
+description: Het element TypeName voor ViewSelectedBy (opmaak)
+ms.openlocfilehash: 62edc2fe4b4c1c5f1b17dd2f8b0943f28ff5dfb7
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87780029"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667722"
 ---
-# <a name="typename-element-for-viewselectedby-format"></a><span data-ttu-id="9ee08-102">Het element TypeName voor ViewSelectedBy (opmaak)</span><span class="sxs-lookup"><span data-stu-id="9ee08-102">TypeName Element for ViewSelectedBy (Format)</span></span>
+# <a name="typename-element-for-viewselectedby-format"></a><span data-ttu-id="85ae5-103">Het element TypeName voor ViewSelectedBy (opmaak)</span><span class="sxs-lookup"><span data-stu-id="85ae5-103">TypeName Element for ViewSelectedBy (Format)</span></span>
 
-<span data-ttu-id="9ee08-103">Hiermee geeft u een .NET-object op dat wordt weer gegeven in de weer gave.</span><span class="sxs-lookup"><span data-stu-id="9ee08-103">Specifies a .NET object that is displayed by the view.</span></span>
+<span data-ttu-id="85ae5-104">Hiermee geeft u een .NET-object op dat wordt weer gegeven in de weer gave.</span><span class="sxs-lookup"><span data-stu-id="85ae5-104">Specifies a .NET object that is displayed by the view.</span></span>
 
-<span data-ttu-id="9ee08-104">Configuratie-element (indeling) ViewDefinitions element (indeling) element weer geven (indeling) ViewSelectedBy element (Format) voor ViewSelectedBy (indeling)</span><span class="sxs-lookup"><span data-stu-id="9ee08-104">Configuration Element (Format) ViewDefinitions Element (Format) View Element (Format) ViewSelectedBy Element (Format) TypeName Element for ViewSelectedBy (Format)</span></span>
+<span data-ttu-id="85ae5-105">Configuratie-element (indeling) ViewDefinitions element (indeling) element weer geven (indeling) ViewSelectedBy element (Format) voor ViewSelectedBy (indeling)</span><span class="sxs-lookup"><span data-stu-id="85ae5-105">Configuration Element (Format) ViewDefinitions Element (Format) View Element (Format) ViewSelectedBy Element (Format) TypeName Element for ViewSelectedBy (Format)</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="9ee08-105">Syntax</span><span class="sxs-lookup"><span data-stu-id="9ee08-105">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="85ae5-106">Syntax</span><span class="sxs-lookup"><span data-stu-id="85ae5-106">Syntax</span></span>
 
 ```xml
 <TypeName>FullyQualifiedTypeName</TypeName>
 ```
 
-## <a name="attributes-and-elements"></a><span data-ttu-id="9ee08-106">Kenmerken en elementen</span><span class="sxs-lookup"><span data-stu-id="9ee08-106">Attributes and Elements</span></span>
+## <a name="attributes-and-elements"></a><span data-ttu-id="85ae5-107">Kenmerken en elementen</span><span class="sxs-lookup"><span data-stu-id="85ae5-107">Attributes and Elements</span></span>
 
-<span data-ttu-id="9ee08-107">In de volgende secties worden kenmerken, onderliggende elementen en de bovenliggende elementen van het `TypeName` element beschreven.</span><span class="sxs-lookup"><span data-stu-id="9ee08-107">The following sections describe attributes, child elements, and the parent elements of the `TypeName` element.</span></span>
+<span data-ttu-id="85ae5-108">In de volgende secties worden kenmerken, onderliggende elementen en de bovenliggende elementen van het `TypeName` element beschreven.</span><span class="sxs-lookup"><span data-stu-id="85ae5-108">The following sections describe attributes, child elements, and the parent elements of the `TypeName` element.</span></span>
 
-### <a name="attributes"></a><span data-ttu-id="9ee08-108">Kenmerken</span><span class="sxs-lookup"><span data-stu-id="9ee08-108">Attributes</span></span>
+### <a name="attributes"></a><span data-ttu-id="85ae5-109">Kenmerken</span><span class="sxs-lookup"><span data-stu-id="85ae5-109">Attributes</span></span>
 
-<span data-ttu-id="9ee08-109">Geen.</span><span class="sxs-lookup"><span data-stu-id="9ee08-109">None.</span></span>
+<span data-ttu-id="85ae5-110">Geen.</span><span class="sxs-lookup"><span data-stu-id="85ae5-110">None.</span></span>
 
-### <a name="child-elements"></a><span data-ttu-id="9ee08-110">Onderliggende elementen</span><span class="sxs-lookup"><span data-stu-id="9ee08-110">Child Elements</span></span>
+### <a name="child-elements"></a><span data-ttu-id="85ae5-111">Onderliggende elementen</span><span class="sxs-lookup"><span data-stu-id="85ae5-111">Child Elements</span></span>
 
-<span data-ttu-id="9ee08-111">Geen.</span><span class="sxs-lookup"><span data-stu-id="9ee08-111">None.</span></span>
+<span data-ttu-id="85ae5-112">Geen.</span><span class="sxs-lookup"><span data-stu-id="85ae5-112">None.</span></span>
 
-### <a name="parent-elements"></a><span data-ttu-id="9ee08-112">Bovenliggende elementen</span><span class="sxs-lookup"><span data-stu-id="9ee08-112">Parent Elements</span></span>
+### <a name="parent-elements"></a><span data-ttu-id="85ae5-113">Bovenliggende elementen</span><span class="sxs-lookup"><span data-stu-id="85ae5-113">Parent Elements</span></span>
 
-|<span data-ttu-id="9ee08-113">Element</span><span class="sxs-lookup"><span data-stu-id="9ee08-113">Element</span></span>|<span data-ttu-id="9ee08-114">Beschrijving</span><span class="sxs-lookup"><span data-stu-id="9ee08-114">Description</span></span>|
+|<span data-ttu-id="85ae5-114">Element</span><span class="sxs-lookup"><span data-stu-id="85ae5-114">Element</span></span>|<span data-ttu-id="85ae5-115">Beschrijving</span><span class="sxs-lookup"><span data-stu-id="85ae5-115">Description</span></span>|
 |-------------|-----------------|
-|[<span data-ttu-id="9ee08-115">Het element ViewSelectedBy (opmaak)</span><span class="sxs-lookup"><span data-stu-id="9ee08-115">ViewSelectedBy Element (Format)</span></span>](./viewselectedby-element-format.md)|<span data-ttu-id="9ee08-116">Hiermee worden de .NET-objecten gedefinieerd die worden weer gegeven in de weer gave.</span><span class="sxs-lookup"><span data-stu-id="9ee08-116">Defines the .NET objects that are displayed by the view.</span></span>|
+|[<span data-ttu-id="85ae5-116">Het element ViewSelectedBy (opmaak)</span><span class="sxs-lookup"><span data-stu-id="85ae5-116">ViewSelectedBy Element (Format)</span></span>](./viewselectedby-element-format.md)|<span data-ttu-id="85ae5-117">Hiermee worden de .NET-objecten gedefinieerd die worden weer gegeven in de weer gave.</span><span class="sxs-lookup"><span data-stu-id="85ae5-117">Defines the .NET objects that are displayed by the view.</span></span>|
 
-## <a name="text-value"></a><span data-ttu-id="9ee08-117">Tekstwaarde</span><span class="sxs-lookup"><span data-stu-id="9ee08-117">Text Value</span></span>
+## <a name="text-value"></a><span data-ttu-id="85ae5-118">Tekstwaarde</span><span class="sxs-lookup"><span data-stu-id="85ae5-118">Text Value</span></span>
 
-<span data-ttu-id="9ee08-118">Geef de volledig gekwalificeerde naam van het .NET-type op, zoals `System.IO.DirectoryInfo` .</span><span class="sxs-lookup"><span data-stu-id="9ee08-118">Specify the fully qualified name of the .NET type, such as `System.IO.DirectoryInfo`.</span></span>
+<span data-ttu-id="85ae5-119">Geef de volledig gekwalificeerde naam van het .NET-type op, zoals `System.IO.DirectoryInfo` .</span><span class="sxs-lookup"><span data-stu-id="85ae5-119">Specify the fully qualified name of the .NET type, such as `System.IO.DirectoryInfo`.</span></span>
 
-## <a name="remarks"></a><span data-ttu-id="9ee08-119">Opmerkingen</span><span class="sxs-lookup"><span data-stu-id="9ee08-119">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="85ae5-120">Opmerkingen</span><span class="sxs-lookup"><span data-stu-id="85ae5-120">Remarks</span></span>
 
-<span data-ttu-id="9ee08-120">Zie [een tabel weergave maken](./creating-a-table-view.md), een [lijst weergave](./creating-a-list-view.md)maken, [een brede weer gave](./creating-a-wide-view.md)en [aangepaste weergave onderdelen](./creating-custom-controls.md)maken voor meer informatie over hoe dit element wordt gebruikt in verschillende weer gaven.</span><span class="sxs-lookup"><span data-stu-id="9ee08-120">For more information about how this element is used in different views, see [Creating a Table View](./creating-a-table-view.md), [Creating a List View](./creating-a-list-view.md), [Creating a Wide View](./creating-a-wide-view.md), and [Custom View Components](./creating-custom-controls.md).</span></span>
+<span data-ttu-id="85ae5-121">Zie [een tabel weergave maken](./creating-a-table-view.md), een [lijst weergave](./creating-a-list-view.md)maken, [een brede weer gave](./creating-a-wide-view.md)en [aangepaste weergave onderdelen](./creating-custom-controls.md)maken voor meer informatie over hoe dit element wordt gebruikt in verschillende weer gaven.</span><span class="sxs-lookup"><span data-stu-id="85ae5-121">For more information about how this element is used in different views, see [Creating a Table View](./creating-a-table-view.md), [Creating a List View](./creating-a-list-view.md), [Creating a Wide View](./creating-a-wide-view.md), and [Custom View Components](./creating-custom-controls.md).</span></span>
 
-## <a name="example"></a><span data-ttu-id="9ee08-121">Voorbeeld</span><span class="sxs-lookup"><span data-stu-id="9ee08-121">Example</span></span>
+## <a name="example"></a><span data-ttu-id="85ae5-122">Voorbeeld</span><span class="sxs-lookup"><span data-stu-id="85ae5-122">Example</span></span>
 
-<span data-ttu-id="9ee08-122">In het volgende voor beeld ziet u hoe u het object [System. ServiceProcess. servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController) opgeeft voor een lijst weergave.</span><span class="sxs-lookup"><span data-stu-id="9ee08-122">The following example shows how to specify the [System.Serviceprocess.Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController) object for a list view.</span></span> <span data-ttu-id="9ee08-123">Hetzelfde schema wordt gebruikt voor tabel-, brede en aangepaste weer gaven.</span><span class="sxs-lookup"><span data-stu-id="9ee08-123">The same schema is used for table, wide, and custom views.</span></span>
+<span data-ttu-id="85ae5-123">In het volgende voor beeld ziet u hoe u het object [System. ServiceProcess. servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController) opgeeft voor een lijst weergave.</span><span class="sxs-lookup"><span data-stu-id="85ae5-123">The following example shows how to specify the [System.Serviceprocess.Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController) object for a list view.</span></span> <span data-ttu-id="85ae5-124">Hetzelfde schema wordt gebruikt voor tabel-, brede en aangepaste weer gaven.</span><span class="sxs-lookup"><span data-stu-id="85ae5-124">The same schema is used for table, wide, and custom views.</span></span>
 
 ```xml
 <View>
@@ -60,16 +62,16 @@ ms.locfileid: "87780029"
 </View>
 ```
 
-## <a name="see-also"></a><span data-ttu-id="9ee08-124">Zie ook</span><span class="sxs-lookup"><span data-stu-id="9ee08-124">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="85ae5-125">Zie ook</span><span class="sxs-lookup"><span data-stu-id="85ae5-125">See Also</span></span>
 
-[<span data-ttu-id="9ee08-125">Een lijstweergave maken</span><span class="sxs-lookup"><span data-stu-id="9ee08-125">Creating a List View</span></span>](./creating-a-list-view.md)
+[<span data-ttu-id="85ae5-126">Een lijstweergave maken</span><span class="sxs-lookup"><span data-stu-id="85ae5-126">Creating a List View</span></span>](./creating-a-list-view.md)
 
-[<span data-ttu-id="9ee08-126">Een tabelweergave maken</span><span class="sxs-lookup"><span data-stu-id="9ee08-126">Creating a Table View</span></span>](./creating-a-table-view.md)
+[<span data-ttu-id="85ae5-127">Een tabelweergave maken</span><span class="sxs-lookup"><span data-stu-id="85ae5-127">Creating a Table View</span></span>](./creating-a-table-view.md)
 
-[<span data-ttu-id="9ee08-127">Een brede weergave maken</span><span class="sxs-lookup"><span data-stu-id="9ee08-127">Creating a Wide View</span></span>](./creating-a-wide-view.md)
+[<span data-ttu-id="85ae5-128">Een brede weergave maken</span><span class="sxs-lookup"><span data-stu-id="85ae5-128">Creating a Wide View</span></span>](./creating-a-wide-view.md)
 
-[<span data-ttu-id="9ee08-128">Aangepaste besturingselementen maken</span><span class="sxs-lookup"><span data-stu-id="9ee08-128">Creating Custom Controls</span></span>](./creating-custom-controls.md)
+[<span data-ttu-id="85ae5-129">Aangepaste besturingselementen maken</span><span class="sxs-lookup"><span data-stu-id="85ae5-129">Creating Custom Controls</span></span>](./creating-custom-controls.md)
 
-[<span data-ttu-id="9ee08-129">Het element ViewSelectedBy (opmaak)</span><span class="sxs-lookup"><span data-stu-id="9ee08-129">ViewSelectedBy Element (Format)</span></span>](./viewselectedby-element-format.md)
+[<span data-ttu-id="85ae5-130">Het element ViewSelectedBy (opmaak)</span><span class="sxs-lookup"><span data-stu-id="85ae5-130">ViewSelectedBy Element (Format)</span></span>](./viewselectedby-element-format.md)
 
-[<span data-ttu-id="9ee08-130">Een PowerShell-opmaakbestand schrijven</span><span class="sxs-lookup"><span data-stu-id="9ee08-130">Writing a PowerShell Formatting File</span></span>](./writing-a-powershell-formatting-file.md)
+[<span data-ttu-id="85ae5-131">Een PowerShell-opmaakbestand schrijven</span><span class="sxs-lookup"><span data-stu-id="85ae5-131">Writing a PowerShell Formatting File</span></span>](./writing-a-powershell-formatting-file.md)
