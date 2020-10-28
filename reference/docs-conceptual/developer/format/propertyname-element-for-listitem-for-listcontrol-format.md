@@ -1,12 +1,14 @@
 ---
-title: PropertyName-element voor lijst item voor ListControl (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 9ee466d7f73e53b129f8d46f49a21549683bb32c
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element PropertyName voor ListItem voor ListControl (opmaak)
+description: Het element PropertyName voor ListItem voor ListControl (opmaak)
+ms.openlocfilehash: 30cd48f9549e1a091776cd5f8395e1a71314ea1b
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87780828"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92665971"
 ---
 # <a name="propertyname-element-for-listitem-for-listcontrol-format"></a>Het element PropertyName voor ListItem voor ListControl (opmaak)
 

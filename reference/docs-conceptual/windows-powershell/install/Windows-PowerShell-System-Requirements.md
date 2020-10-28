@@ -2,22 +2,23 @@
 ms.date: 12/06/2019
 keywords: powershell,cmdlet
 title: Windows PowerShell-systeemvereisten
-ms.openlocfilehash: 883da2f91c4a0b46e4bccbacd9933a52f8f476f6
-ms.sourcegitcommit: c4906f4c9fa4ef1a16dcd6dd00ff960d19446d71
+description: In dit artikel vindt u een overzicht van de systeem vereisten voor Windows Power Shell 3,0, Windows Power Shell 4,0, Windows Power shell 5,0 en Windows Power shell 5,1.
+ms.openlocfilehash: a82c0b1d6bf53e4a97db8414050a122ae5b7745d
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89236081"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663833"
 ---
 # <a name="windows-powershell-system-requirements"></a>Windows PowerShell-systeemvereisten
 
 In dit artikel vindt u een overzicht van de systeem vereisten voor Windows Power Shell 3,0, Windows Power Shell 4,0, Windows Power shell 5,0 en Windows Power shell 5,1. En speciale functies, zoals Windows Power shell Integrated Scripting Environment (ISE), Common Information Model (CIM)-opdrachten en werk stromen.
 
-Windows® 8,1 en Windows Server® 2012 R2 bevatten alle vereiste Program ma's. Dit artikel is bedoeld voor gebruikers van eerdere versies van Windows.
+Windows &reg; 8,1 en Windows Server &reg; 2012 R2 bevatten alle vereiste Program ma's. Dit artikel is bedoeld voor gebruikers van eerdere versies van Windows.
 
 ## <a name="operating-system-requirements"></a>Vereisten voor het besturingssysteem
 
-### <a name="windows-powershell-51"></a>Windows Power shell 5,1
+### <a name="windows-powershell-51"></a>Windows PowerShell 5.1
 
 Windows Power shell 5,1 wordt uitgevoerd op de volgende versies van Windows. Als u Windows Power shell 5,1 wilt uitvoeren, installeert u Windows Management Framework 5,1. Zie [WMF 5,1 installeren en configureren](../wmf/setup/install-configure.md)voor meer informatie.
 
@@ -57,8 +58,8 @@ Windows Power Shell 4,0 wordt uitgevoerd op de volgende versies van Windows. Als
 | ------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
 | Windows 8.1                                 | Standaard geïnstalleerd                                                                                       |
 | Windows Server 2012 R2                      | Standaard geïnstalleerd                                                                                       |
-| Windows® 7 met Service Pack 1              | Installeer [Windows Management Framework 4,0](https://www.microsoft.com/download/details.aspx?id=40855) |
-| Windows Server® 2008 R2 met Service Pack 1 | Installeer [Windows Management Framework 4,0](https://www.microsoft.com/download/details.aspx?id=40855) |
+| Windows &reg; 7 met Service Pack 1              | Installeer [Windows Management Framework 4,0](https://www.microsoft.com/download/details.aspx?id=40855) |
+| Windows Server &reg; 2008 R2 met Service Pack 1 | Installeer [Windows Management Framework 4,0](https://www.microsoft.com/download/details.aspx?id=40855) |
 
 ### <a name="windows-powershell-30"></a>Windows PowerShell 3.0
 
@@ -68,8 +69,8 @@ Windows Power Shell 3,0 wordt uitgevoerd op de volgende versies van Windows. Als
 | ------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
 | Windows 8                                   | Standaard geïnstalleerd                                                                                       |
 | Windows Server 2012                         | Standaard geïnstalleerd                                                                                       |
-| Windows® 7 met Service Pack 1              | Installeer [Windows Management Framework 3,0](https://www.microsoft.com/download/details.aspx?id=34595) |
-| Windows Server® 2008 R2 met Service Pack 1 | Installeer [Windows Management Framework 3,0](https://www.microsoft.com/download/details.aspx?id=34595) |
+| Windows &reg; 7 met Service Pack 1              | Installeer [Windows Management Framework 3,0](https://www.microsoft.com/download/details.aspx?id=34595) |
+| Windows Server &reg; 2008 R2 met Service Pack 1 | Installeer [Windows Management Framework 3,0](https://www.microsoft.com/download/details.aspx?id=34595) |
 | Windows Server 2008 met Service Pack 2     | Installeer [Windows Management Framework 3,0](https://www.microsoft.com/download/details.aspx?id=34595) |
 
 ## <a name="microsoft-net-framework-requirements"></a>Microsoft .NET Framework-vereisten
@@ -78,7 +79,7 @@ De volgende tabel bevat de .NET Framework vereisten voor Windows Power shell.
 
 |        Versie         |                                                                                 .NET-vereiste                                                                                  |
 | ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Windows Power shell 5,1 | Vereist de volledige installatie van Microsoft .NET Framework 4,5. Windows 8,1 en Windows Server 2012 R2 bevatten standaard Microsoft .NET Framework 4,5.                           |
+| Windows PowerShell 5.1 | Vereist de volledige installatie van Microsoft .NET Framework 4,5. Windows 8,1 en Windows Server 2012 R2 bevatten standaard Microsoft .NET Framework 4,5.                           |
 | Windows PowerShell 5.0 | Vereist de volledige installatie van Microsoft .NET Framework 4,5. Windows 8,1 en Windows Server 2012 R2 bevatten standaard Microsoft .NET Framework 4,5.                           |
 | Windows PowerShell 4.0 | Vereist de volledige installatie van Microsoft .NET Framework 4,5. Windows 8,1 en Windows Server 2012 R2 bevatten standaard Microsoft .NET Framework 4,5.                           |
 | Windows PowerShell 3.0 | Vereist de volledige installatie van Microsoft .NET Framework 4. Windows 8 en Windows Server 2012 bevatten standaard Microsoft .NET Framework 4,5, waarmee aan deze vereiste wordt voldaan. |
@@ -96,7 +97,7 @@ Windows Power shell 5,0 vereist dat Windows Management Framework 4,0 vooraf is g
 
 ## <a name="ws-management-30"></a>WS-Management 3,0
 
-Windows Power Shell 3,0 en Windows Power Shell 4,0 vereisen WS-Management 3,0, dat ondersteuning biedt voor de WinRM-service en het WSMan-protocol. Dit programma is opgenomen in Windows 8,1, Windows Server 2012 R2, Windows 8, Windows Server 2012, Windows Management Framework 4,0 en Windows Management Framework 3,0.
+Windows Power Shell 3,0 en Windows Power Shell 4,0 vereisen WS-Management 3,0, die ondersteuning biedt voor de WinRM-service en het WSMan-protocol. Dit programma is opgenomen in Windows 8,1, Windows Server 2012 R2, Windows 8, Windows Server 2012, Windows Management Framework 4,0 en Windows Management Framework 3,0.
 
 ## <a name="windows-management-instrumentation-30"></a>Windows Management Instrumentation 3,0
 
@@ -137,7 +138,7 @@ Zie [Installing the Windows Power shell 2,0 engine](Installing-the-Windows-Power
 
 Windows Power Shell 2,0, Windows Power Shell 3,0 en Windows Power Shell 4,0 worden uitgevoerd in de Windows Preinstallation Environment (Windows PE). De volgende cmdlets worden echter niet ondersteund.
 
-- Background Intelligent Transfer Service-cmdlets (BITS). Zie [BitsTransfer](/powershell/module/bitstransfer/?view=win10-ps)voor meer informatie.
+- Background Intelligent Transfer Service-cmdlets (BITS). Zie [BitsTransfer](/powershell/module/bitstransfer/)voor meer informatie.
 - [Get-EventLog](/powershell/module/Microsoft.PowerShell.Management/Get-EventLog)
 - [Get-WinEvent](/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent)
 - [Opslaan-Help](/powershell/module/Microsoft.PowerShell.Core/Save-Help)

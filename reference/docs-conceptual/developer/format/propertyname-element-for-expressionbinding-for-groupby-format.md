@@ -1,12 +1,14 @@
 ---
-title: Het element PropertyName voor ExpressionBinding voor GroupBy (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 021cfec8418ec278b2c25a5ec6f3236aeb4ad0ce
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element PropertyName voor ExpressionBinding voor GroupBy (opmaak)
+description: Het element PropertyName voor ExpressionBinding voor GroupBy (opmaak)
+ms.openlocfilehash: af617b146574ffa051eb1592413b12a268009763
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785622"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92666175"
 ---
 # <a name="propertyname-element-for-expressionbinding-for-groupby-format"></a>Het element PropertyName voor ExpressionBinding voor GroupBy (opmaak)
 

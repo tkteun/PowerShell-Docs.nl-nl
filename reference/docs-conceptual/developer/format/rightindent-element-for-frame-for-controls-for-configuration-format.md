@@ -1,12 +1,14 @@
 ---
-title: RightIndent-element voor frame voor besturings elementen voor configuratie (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: edd299f4a39a8f2f55385b750b530de50ffff203
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element RightIndent voor Frame voor Besturingselementen voor Configuratie (opmaak)
+description: Het element RightIndent voor Frame voor Besturingselementen voor Configuratie (opmaak)
+ms.openlocfilehash: 99a3653fb744df9b17bbc60b75d4d3932c672106
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87772991"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92665546"
 ---
 # <a name="rightindent-element-for-frame-for-controls-for-configuration-format"></a>Het element RightIndent voor Frame voor Besturingselementen voor Configuratie (opmaak)
 

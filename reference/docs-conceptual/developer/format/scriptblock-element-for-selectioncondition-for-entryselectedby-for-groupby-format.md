@@ -1,12 +1,14 @@
 ---
-title: Script block-element voor SelectionCondition voor EntrySelectedBy voor GroupBy (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: e70e1555a8f2fe0d15d3e864d80d35527af81b03
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element ScriptBlock voor SelectionCondition voor EntrySelectedBy voor GroupBy (opmaak)
+description: Het element ScriptBlock voor SelectionCondition voor EntrySelectedBy voor GroupBy (opmaak)
+ms.openlocfilehash: cc92aa642b42fa3e4c4f974e954d5eac73179de3
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785384"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92664887"
 ---
 # <a name="scriptblock-element-for-selectioncondition-for-entryselectedby-for-groupby-format"></a>Het element ScriptBlock voor SelectionCondition voor EntrySelectedBy voor GroupBy (opmaak)
 

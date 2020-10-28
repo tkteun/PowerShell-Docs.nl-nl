@@ -1,12 +1,14 @@
 ---
-title: Cmdlets registreren | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 75853a818b119fbd3335e2fe3889f8ab006cc355
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Cmdlets registreren
+description: Cmdlets registreren
+ms.openlocfilehash: 4b48aae4bdd358ec39f482f4a1bd29ed0295cbde
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87779247"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92664538"
 ---
 # <a name="registering-cmdlets"></a>Cmdlets registreren
 

@@ -1,12 +1,14 @@
 ---
-title: SelectionCondition-element voor EntrySelectedBy voor besturings elementen voor weer gave (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 1c14b2638249bdbfe25f7a96e917d66ea10ed239
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element SelectionCondition voor EntrySelectedBy voor Besturingselementen voor Weergave (opmaak)
+description: Het element SelectionCondition voor EntrySelectedBy voor Besturingselementen voor Weergave (opmaak)
+ms.openlocfilehash: 16b048e73195b3d6168724714ff223851dc1b20b
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787577"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92664849"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-controls-for-view-format"></a>Het element SelectionCondition voor EntrySelectedBy voor Besturingselementen voor Weergave (opmaak)
 

@@ -1,12 +1,14 @@
 ---
-title: Het element PropertyName voor ItemSelectionCondition voor GroupBy (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: f6d671035bfd2ef6323b638fdd951bb020bd6548
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element PropertyName voor ItemSelectionCondition voor GroupBy (opmaak)
+description: Het element PropertyName voor ItemSelectionCondition voor GroupBy (opmaak)
+ms.openlocfilehash: 9667a389ded33d0744f0f7f8d739635a8b21d98b
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87780879"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92666107"
 ---
 # <a name="propertyname-element-for-itemselectioncondition-for-groupby-format"></a>Het element PropertyName voor ItemSelectionCondition voor GroupBy (opmaak)
 

@@ -1,12 +1,14 @@
 ---
-title: Script block-element voor GroupBy (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: e761e02a7910cd598449d564e827889162da9f25
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element ScriptBlock voor GroupBy (opmaak)
+description: Het element ScriptBlock voor GroupBy (opmaak)
+ms.openlocfilehash: 117cbef93889046626741449886a1caaa39815cb
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787679"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92665236"
 ---
 # <a name="scriptblock-element-for-groupby-format"></a>Het element ScriptBlock voor GroupBy (opmaak)
 

@@ -1,12 +1,14 @@
 ---
-title: SelectionCondition-element voor EntrySelectedBy voor GroupBy (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 0930d8076c314c12cac6cdfa2b33716b7efeb6a9
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element SelectionCondition voor EntrySelectedBy voor GroupBy (opmaak)
+description: Het element SelectionCondition voor EntrySelectedBy voor GroupBy (opmaak)
+ms.openlocfilehash: 14c293b6bc6d6accc201de35be9219349079801d
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87772838"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92664754"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-groupby-format"></a>Het element SelectionCondition voor EntrySelectedBy voor GroupBy (opmaak)
 

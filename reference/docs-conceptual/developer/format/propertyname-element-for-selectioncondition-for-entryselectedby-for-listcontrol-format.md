@@ -1,12 +1,14 @@
 ---
-title: Het element PropertyName voor SelectionCondition voor de EntrySelectedBy voor ListControl (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 3f0a6b6b381f39492da36dab271503fc7cf6e7fc
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element PropertyName voor SelectionCondition voor EntrySelectedBy voor ListControl (opmaak)
+description: Het element PropertyName voor SelectionCondition voor EntrySelectedBy voor ListControl (opmaak)
+ms.openlocfilehash: 1e318e3a29f07b157b9ae7343ba08759db8efbb5
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785554"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92665818"
 ---
 # <a name="propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format"></a>Het element PropertyName voor SelectionCondition voor EntrySelectedBy voor ListControl (opmaak)
 

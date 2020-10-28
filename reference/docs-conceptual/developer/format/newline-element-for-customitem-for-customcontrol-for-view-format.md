@@ -1,12 +1,14 @@
 ---
-title: Element nieuwe regel voor CustomItem voor CustomControl voor weer gave (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 89fdcfaf8fdea44921ec6967e8e152d81fd63cc9
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element NewLine voor CustomItem voor CustomControl voor Weergave (opmaak)
+description: Het element NewLine voor CustomItem voor CustomControl voor Weergave (opmaak)
+ms.openlocfilehash: 0e51d4b70206d2c9823d4fb788fd30f47d24f848
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785639"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92666413"
 ---
 # <a name="newline-element-for-customitem-for-customcontrol-for-view-format"></a>Het element NewLine voor CustomItem voor CustomControl voor Weergave (opmaak)
 

@@ -1,12 +1,14 @@
 ---
-title: Script block-element voor ItemSeclectionCondition voor besturings elementen voor configuratie (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: f44b1a7f059fa5f41c19eed93762b61eda5110e8
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element ScriptBlock voor ItemSelectionCondition voor Besturingselementen voor Configuratie (opmaak)
+description: Het element ScriptBlock voor ItemSelectionCondition voor Besturingselementen voor Configuratie (opmaak)
+ms.openlocfilehash: 853130da4489e571d7f4026a8d65d029d1889f9b
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87772889"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92665234"
 ---
 # <a name="scriptblock-element-for-itemseclectioncondition-for-controls-for-configuration-format"></a>Het element ScriptBlock voor ItemSelectionCondition voor Besturingselementen voor Configuratie (opmaak)
 

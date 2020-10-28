@@ -1,12 +1,14 @@
 ---
-title: Het element PropertyName voor SelectionCondition voor EntrySelectedBy voor EnumerableExpansion (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: c0081cb724ccaf1c04241aafa177880d7c0e5dbe
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element PropertyName voor SelectionCondition voor EntrySelectedBy voor EnumerableExpansion (opmaak)
+description: Het element PropertyName voor SelectionCondition voor EntrySelectedBy voor EnumerableExpansion (opmaak)
+ms.openlocfilehash: 8e28118894661b50e90a5ccc86a36fbbe77e4b03
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783463"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92665835"
 ---
 # <a name="propertyname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format"></a>Het element PropertyName voor SelectionCondition voor EntrySelectedBy voor EnumerableExpansion (opmaak)
 

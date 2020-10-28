@@ -1,13 +1,14 @@
 ---
 ms.date: 07/17/2020
-keywords: DSC, Power shell, configuratie, installatie
+ms.topic: reference
 title: DSC voor Linux nxGroup-resource
-ms.openlocfilehash: f196c74b94ec27818d58b59d1e489facd8ab0a65
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC voor Linux nxGroup-resource
+ms.openlocfilehash: 3544bee763c0a4456002f9a02fde38de5d4fb65c
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464431"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92664254"
 ---
 # <a name="dsc-for-linux-nxgroup-resource"></a>DSC voor Linux nxGroup-resource
 
@@ -43,7 +44,7 @@ nxGroup <string> #ResourceName
 |Eigenschap |Beschrijving |
 |---|---|
 |DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is bijvoorbeeld als de ID van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is `DependsOn = "[ResourceType]ResourceName"` . |
-|Zo |Hiermee wordt bepaald of er wordt gecontroleerd of de groep bestaat. Stel deze eigenschap in op **presen teren** om te controleren of de groep bestaat. Stel deze in op **afwezig** om te controleren of de groep niet bestaat. De standaard waarde is **aanwezig**. |
+|Zo |Hiermee wordt bepaald of er wordt gecontroleerd of de groep bestaat. Stel deze eigenschap in op **presen teren** om te controleren of de groep bestaat. Stel deze in op **afwezig** om te controleren of de groep niet bestaat. De standaard waarde is **aanwezig** . |
 
 ## <a name="example"></a>Voorbeeld
 

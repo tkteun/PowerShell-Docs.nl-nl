@@ -1,12 +1,14 @@
 ---
-title: PropertyName-element voor ItemSelectionCondition voor ListControl (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 8bdbb05326f7ff5ccffa46215631a5c954080dc1
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element PropertyName voor ItemSelectionCondition voor ListControl (opmaak)
+description: Het element PropertyName voor ItemSelectionCondition voor ListControl (opmaak)
+ms.openlocfilehash: c515efe70afdb1c1186c0a07fe1f52dc49ad57b9
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87780862"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92665988"
 ---
 # <a name="propertyname-element-for-itemselectioncondition-for-listcontrol-format"></a>Het element PropertyName voor ItemSelectionCondition voor ListControl (opmaak)
 

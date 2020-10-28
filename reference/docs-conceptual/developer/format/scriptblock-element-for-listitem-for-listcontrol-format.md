@@ -1,12 +1,14 @@
 ---
-title: Script block-element voor lijst item voor ListControl (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 249d3e36b4246b7baa410815122f8e30340f1862
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element ScriptBlock voor ListItem voor ListControl (opmaak)
+description: Het element ScriptBlock voor ListItem voor ListControl (opmaak)
+ms.openlocfilehash: 0635ac2622cc203a2dc895873621901d956f87da
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785452"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92664975"
 ---
 # <a name="scriptblock-element-for-listitem-for-listcontrol-format"></a>Het element ScriptBlock voor ListItem voor ListControl (opmaak)
 

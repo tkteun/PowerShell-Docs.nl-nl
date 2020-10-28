@@ -1,12 +1,14 @@
 ---
-title: Het element PropertyName voor SelectionCondition voor EntrySelectedBy voor TableRowEntry (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: bec8377fb13b8f288196a809e7aa4e7f46c66e31
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element PropertyName voor SelectionCondition voor EntrySelectedBy voor TableRowEntry (opmaak)
+description: Het element PropertyName voor SelectionCondition voor EntrySelectedBy voor TableRowEntry (opmaak)
+ms.openlocfilehash: dcb59fc438ae217870566f09204fb16b8f031614
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785537"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92665784"
 ---
 # <a name="propertyname-element-for-selectioncondition-for-entryselectedby-for-tablerowentry-format"></a>Het element PropertyName voor SelectionCondition voor EntrySelectedBy voor TableRowEntry (opmaak)
 

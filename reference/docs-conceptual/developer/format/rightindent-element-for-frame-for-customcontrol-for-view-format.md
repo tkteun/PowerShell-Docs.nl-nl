@@ -1,12 +1,14 @@
 ---
-title: RightIndent-element voor frame voor CustomControl voor weer gave (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 6c35215673d118da68274ec91c8294e90879372f
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element RightIndent voor Frame voor CustomControl voor Weergave (opmaak)
+description: Het element RightIndent voor Frame voor CustomControl voor Weergave (opmaak)
+ms.openlocfilehash: 7be87d05dab6de23fc9f66b76655cc4996114818
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87780386"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92665488"
 ---
 # <a name="rightindent-element-for-frame-for-customcontrol-for-view-format"></a>Het element RightIndent voor Frame voor CustomControl voor Weergave (opmaak)
 

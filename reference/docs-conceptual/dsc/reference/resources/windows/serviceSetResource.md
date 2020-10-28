@@ -1,13 +1,14 @@
 ---
 ms.date: 07/16/2020
-keywords: DSC, Power shell, configuratie, installatie
+ms.topic: reference
 title: DSC serviceset-resource
-ms.openlocfilehash: b51cfa86aa6d2114553a0eee681cb88ea93e213f
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC serviceset-resource
+ms.openlocfilehash: 4115dd3e19121656c7448b4088346e5a1abf6af1
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464397"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92664149"
 ---
 # <a name="dsc-serviceset-resource"></a>DSC serviceset-resource
 
@@ -38,9 +39,9 @@ ServiceSet [string] #ResourceName
 |Eigenschap |Beschrijving |
 |---|---|
 |Naam |Hiermee worden de service namen aangegeven. Houd er rekening mee dat dit verschilt van de weergave namen. U kunt een lijst met de services en de huidige status van de `Get-Service` cmdlet ophalen. |
-|Opstart type |Hiermee wordt het opstart type voor de Services aangegeven. De waarden die zijn toegestaan voor deze eigenschap zijn: **automatisch**, **uitgeschakeld**en **hand matig**. |
-|BuiltInAccount |Hiermee wordt het aanmeldings account aangegeven dat moet worden gebruikt voor de services. De waarden die zijn toegestaan voor deze eigenschap zijn: **LocalService**, **LocalSystem**en **Network Service**. |
-|Status |Hiermee wordt de status aangegeven die u voor de services wilt garanderen: **gestopt** of **actief**. |
+|Opstart type |Hiermee wordt het opstart type voor de Services aangegeven. De waarden die zijn toegestaan voor deze eigenschap zijn: **automatisch** , **uitgeschakeld** en **hand matig** . |
+|BuiltInAccount |Hiermee wordt het aanmeldings account aangegeven dat moet worden gebruikt voor de services. De waarden die zijn toegestaan voor deze eigenschap zijn: **LocalService** , **LocalSystem** en **Network Service** . |
+|Staat |Hiermee wordt de status aangegeven die u voor de services wilt garanderen: **gestopt** of **actief** . |
 |Referentie |Hiermee geeft u de referenties op voor het account dat wordt uitgevoerd door de service bron. Deze eigenschap en de eigenschap **BuiltinAccount** kunnen niet tegelijk worden gebruikt. |
 
 ## <a name="common-properties"></a>Algemene eigenschappen
@@ -48,7 +49,7 @@ ServiceSet [string] #ResourceName
 |Eigenschap |Beschrijving |
 |---|---|
 |DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is bijvoorbeeld als de ID van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is `DependsOn = "[ResourceType]ResourceName"` . |
-|Zo |Hiermee wordt aangegeven of de services bestaan op het systeem. Stel deze eigenschap in op **afwezig** om ervoor te zorgen dat de services niet bestaan. Als u deze optie instelt op **presen teren** , zorgt u ervoor dat doel services bestaan. De standaard waarde is **aanwezig**. |
+|Zo |Hiermee wordt aangegeven of de services bestaan op het systeem. Stel deze eigenschap in op **afwezig** om ervoor te zorgen dat de services niet bestaan. Als u deze optie instelt op **presen teren** , zorgt u ervoor dat doel services bestaan. De standaard waarde is **aanwezig** . |
 |PsDscRunAsCredential |Hiermee stelt u de referentie in voor het uitvoeren van de gehele resource als. |
 
 > [!NOTE]

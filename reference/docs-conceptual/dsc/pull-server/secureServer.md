@@ -3,19 +3,19 @@ ms.date: 06/12/2017
 description: Dit document bevat aanbevolen procedures voor het helpen van technici die de DSC-pull-server implementeren.
 keywords: DSC, Power shell, configuratie, installatie
 title: Best practices voor pull-servers
-ms.openlocfilehash: 99009fd73ea08ca4ac42832a055e914a3ce6dbcf
-ms.sourcegitcommit: d757d64ea8c8af4d92596e8fbe15f2f40d48d3ac
+ms.openlocfilehash: 0021baa219a0936405eccf2cc7741e042f8bf09f
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90846946"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92664318"
 ---
 # <a name="pull-server-best-practices"></a>Best practices voor pull-servers
 
 Van toepassing op: Windows Power Shell 4,0, Windows Power shell 5,0
 
 > [!IMPORTANT]
-> De pull-server (Windows *-functie DSC-service*) is een ondersteund onderdeel van Windows Server, maar er zijn geen plannen om nieuwe functies of mogelijkheden aan te bieden. Het wordt aangeraden om te beginnen met het overschakelen van beheerde clients naar [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (inclusief functies die verder gaan dan pull server op Windows Server) of een van de [hieronder vermelde Community](pullserver.md#community-solutions-for-pull-service)-oplossingen.
+> De pull-server (Windows *-functie DSC-service* ) is een ondersteund onderdeel van Windows Server, maar er zijn geen plannen om nieuwe functies of mogelijkheden aan te bieden. Het wordt aangeraden om te beginnen met het overschakelen van beheerde clients naar [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (inclusief functies die verder gaan dan pull server op Windows Server) of een van de [hieronder vermelde Community](pullserver.md#community-solutions-for-pull-service)-oplossingen.
 
 Samen vatting: dit document is bedoeld om proces en uitbreid baarheid te omvatten om de technici te helpen bij het voorbereiden van de oplossing. Details moeten aanbevolen procedures bieden die door klanten worden geïdentificeerd en vervolgens door het product team worden gevalideerd om ervoor te zorgen dat aanbevelingen op de toekomst worden gericht en stabiel worden beschouwd.
 
@@ -72,7 +72,7 @@ Windows Server 2012 R2 bevat een functie met de naam DSC-service. De functie DSC
 
 ### <a name="dsc-resource"></a>DSC-resource
 
-Een pull-Server implementatie kan worden vereenvoudigd door de service in te richten met behulp van een DSC-configuratie script. Dit document bevat configuratie scripts die kunnen worden gebruikt voor het implementeren van een server knooppunt dat gereed is voor productie. Als u de configuratie scripts wilt gebruiken, is een DSC-module vereist die niet is opgenomen in Windows Server. De vereiste module naam is **xPSDesiredStateConfiguration**, die de DSC-resource **xDscWebService**bevat. De xPSDesiredStateConfiguration-module kan [hier](https://gallery.technet.microsoft.com/xPSDesiredStateConfiguratio-417dc71d)worden gedownload.
+Een pull-Server implementatie kan worden vereenvoudigd door de service in te richten met behulp van een DSC-configuratie script. Dit document bevat configuratie scripts die kunnen worden gebruikt voor het implementeren van een server knooppunt dat gereed is voor productie. Als u de configuratie scripts wilt gebruiken, is een DSC-module vereist die niet is opgenomen in Windows Server. De vereiste module naam is **xPSDesiredStateConfiguration** , die de DSC-resource **xDscWebService** bevat. De xPSDesiredStateConfiguration-module kan [hier](https://gallery.technet.microsoft.com/xPSDesiredStateConfiguratio-417dc71d)worden gedownload.
 
 Gebruik de `Install-Module` cmdlet uit de **PowerShellGet** -module.
 
@@ -119,8 +119,7 @@ In test omgevingen wordt doorgaans de hostnaam van de server gebruikt, of het IP
 
 Met een DNS-CNAME kunt u een alias maken om te verwijzen naar uw host (A)-record. Het doel van de aanvullende naam record is om de flexibiliteit te verg Roten, omdat een wijziging in de toekomst nood zakelijk is. Een CNAME kan u helpen de client configuratie te isoleren zodat wijzigingen in de server omgeving, zoals het vervangen van een pull-server of het toevoegen van extra pull-servers, geen overeenkomstige wijziging in de client configuratie nodig heeft.
 
-Houd bij het kiezen van een naam voor de DNS-record de oplossings architectuur in acht.
-Als taak verdeling wordt gebruikt, moet het certificaat dat wordt gebruikt voor het beveiligen van verkeer via HTTPS dezelfde naam hebben als de DNS-record.
+Houd bij het kiezen van een naam voor de DNS-record de oplossings architectuur in acht. Als taak verdeling wordt gebruikt, moet het certificaat dat wordt gebruikt voor het beveiligen van verkeer via HTTPS dezelfde naam hebben als de DNS-record.
 
 |       Scenario        |                                                                                         Best Practice
 |:--------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -140,7 +139,7 @@ Taak plannen
 ### <a name="public-key-infrastructure"></a>Open bare-sleutel infrastructuur
 
 Voor de meeste organisaties moet het netwerk verkeer, met name verkeer dat gevoelige gegevens bevat, worden gevalideerd en/of versleuteld tijdens de overdracht.
-Hoewel het mogelijk is om een pull-server te implementeren met behulp van HTTP, waardoor aanvragen van clients worden vereenvoudigd als ongecodeerde tekst, is het een best practice om verkeer te beveiligen met behulp van HTTPS. De service kan worden geconfigureerd voor het gebruik van HTTPS met behulp van een set para meters in de DSC-resource **xPSDesiredStateConfiguration**.
+Hoewel het mogelijk is om een pull-server te implementeren met behulp van HTTP, waardoor aanvragen van clients worden vereenvoudigd als ongecodeerde tekst, is het een best practice om verkeer te beveiligen met behulp van HTTPS. De service kan worden geconfigureerd voor het gebruik van HTTPS met behulp van een set para meters in de DSC-resource **xPSDesiredStateConfiguration** .
 
 De certificaat vereisten voor het beveiligen van HTTPS-verkeer voor de pull-server zijn niet anders dan het beveiligen van elke andere HTTPS-website. De **webserver** sjabloon in een Windows Server Certificate Services voldoet aan de vereiste mogelijkheden.
 
@@ -203,7 +202,7 @@ Taak plannen
 
 #### <a name="dsc-configurations"></a>DSC-configuraties
 
-Het doel van een pull-server is het bieden van een gecentraliseerd mechanisme voor het distribueren van DSC-configuraties naar client knooppunten. De configuraties worden op de server als MOF-documenten opgeslagen. Elk document krijgt een unieke **GUID**. Wanneer clients zijn geconfigureerd om verbinding te maken met een pull-server, krijgen ze ook de **GUID** voor de configuratie die ze moeten aanvragen. Dit systeem voor het verwijzen naar configuraties door de **GUID** garandeert globale uniekheid en is flexibel, zodat een configuratie kan worden toegepast met granulatie per knoop punt, of als een functie configuratie die veel servers bevat die identieke configuraties moeten hebben.
+Het doel van een pull-server is het bieden van een gecentraliseerd mechanisme voor het distribueren van DSC-configuraties naar client knooppunten. De configuraties worden op de server als MOF-documenten opgeslagen. Elk document krijgt een unieke **GUID** . Wanneer clients zijn geconfigureerd om verbinding te maken met een pull-server, krijgen ze ook de **GUID** voor de configuratie die ze moeten aanvragen. Dit systeem voor het verwijzen naar configuraties door de **GUID** garandeert globale uniekheid en is flexibel, zodat een configuratie kan worden toegepast met granulatie per knoop punt, of als een functie configuratie die veel servers bevat die identieke configuraties moeten hebben.
 
 #### <a name="guids"></a>Guid's
 
@@ -212,7 +211,7 @@ Het plannen van configuratie- **guid's** is extra aandacht wanneer u een pull-Se
 - Het **toewijzen van guid's per server** — biedt een mate van zekerheid dat elke server configuratie afzonderlijk wordt beheerd. Dit biedt een nauwkeurigheids niveau voor updates en kan goed worden gebruikt in omgevingen met weinig servers.
 - Het **toewijzen van guid's per serverrol** : alle servers die dezelfde functie uitvoeren, zoals webservers, gebruiken dezelfde GUID om te verwijzen naar de vereiste configuratie gegevens. Houd er rekening mee dat als veel servers dezelfde GUID delen, deze allemaal tegelijkertijd worden bijgewerkt wanneer de configuratie wordt gewijzigd.
 
-  De GUID is iets wat moet worden beschouwd als gevoelige gegevens omdat deze kan worden gebruikt door iemand met kwaad aardigheid om informatie te verkrijgen over hoe servers worden geïmplementeerd en geconfigureerd in uw omgeving. Zie voor meer informatie [veilig toewijzing van guid's in Power shell pull-modus voor desired state Configuration](https://blogs.msdn.microsoft.com/powershell/2014/12/31/securely-allocating-guids-in-powershell-desired-state-configuration-pull-mode/).
+  De GUID is iets wat moet worden beschouwd als gevoelige gegevens omdat deze kan worden gebruikt door iemand met kwaad aardigheid om informatie te verkrijgen over hoe servers worden geïmplementeerd en geconfigureerd in uw omgeving. Zie voor meer informatie [veilig toewijzing van guid's in Power shell pull-modus voor desired state Configuration](https://devblogs.microsoft.com/powershell/securely-allocating-guids-in-powershell-desired-state-configuration-pull-mode/).
 
 Taak plannen
 
@@ -537,7 +536,7 @@ De Power shell-functie voor het [maken van een controlesom en het publiceren van
 
 Er wordt een gegevens bestand opgeslagen om informatie te maken tijdens de implementatie van een pull-server die de OData-webservice bevat. Het type bestand is afhankelijk van het besturings systeem, zoals hieronder wordt beschreven.
 
-- **Windows Server 2012** Het bestands type is altijd. mdb
-- **Windows Server 2012 R2** Het bestands type wordt standaard ingesteld op. edb tenzij er een. mdb is opgegeven in de configuratie
+- **Windows Server 2012** : het bestands type wordt altijd `.mdb`
+- **Windows Server 2012 R2** : het bestands type wordt standaard ingesteld `.edb` , tenzij er een `.mdb` is opgegeven in de configuratie
 
 In het [geavanceerde voorbeeld script](https://github.com/mgreenegit/Whitepapers/blob/Dev/PullServerCPIG.md#installation-and-configuration-scripts) voor het installeren van een pull-Server vindt u ook een voor beeld van het automatisch beheren van de bestands instellingen van web.config om te voor komen dat er een fout wordt veroorzaakt door het bestands type.

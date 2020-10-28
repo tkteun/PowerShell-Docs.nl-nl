@@ -1,12 +1,14 @@
 ---
-title: TypeName-element voor typen (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 40fad73c66124d6c3b0d969b4268713a492c963a
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element TypeName voor Typen (opmaak)
+description: Het element TypeName voor Typen (opmaak)
+ms.openlocfilehash: c656b8e7e5877b72ff2164e5b417857273cada61
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87772532"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92664615"
 ---
 # <a name="typename-element-for-types-format"></a>Het element TypeName voor Typen (opmaak)
 

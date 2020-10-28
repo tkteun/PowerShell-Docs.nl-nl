@@ -1,12 +1,14 @@
 ---
-title: Het element PropertyName voor SelectionCondition voor EntrySelectedBy voor WideEntry (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: ca2106dbbd8da345e71e83a3ead3cf7a1cb44cb4
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element PropertyName voor SelectionCondition voor EntrySelectedBy voor WideEntry (opmaak)
+description: Het element PropertyName voor SelectionCondition voor EntrySelectedBy voor WideEntry (opmaak)
+ms.openlocfilehash: bda34b0c1e97fb85536132bedcec3986072801b7
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87773110"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92665699"
 ---
 # <a name="propertyname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format"></a>Het element PropertyName voor SelectionCondition voor EntrySelectedBy voor WideEntry (opmaak)
 

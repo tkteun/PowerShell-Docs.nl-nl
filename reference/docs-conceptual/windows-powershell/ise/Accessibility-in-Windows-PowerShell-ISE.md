@@ -1,13 +1,13 @@
 ---
 ms.date: 12/19/2019
-keywords: powershell,cmdlet
 title: Toegankelijkheid in Windows PowerShell ISE
-ms.openlocfilehash: 89eff839d69fdbd5a1fa48b61dab627ef83f751b
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: Dit onderwerp bevat een beschrijving van de toegankelijkheids functies van Windows Power shell Integrated Scripting Environment (ISE) die u mogelijk nuttig vindt.
+ms.openlocfilehash: 18acf447965eaaa7f93bb4c443a304b37216a9ba
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83809992"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663857"
 ---
 # <a name="accessibility-in-windows-powershell-ise"></a>Toegankelijkheid in Windows PowerShell ISE
 
@@ -46,11 +46,11 @@ U kunt de volgende stappen gebruiken om de grootte en locatie van het console ve
 
 Voer een van de volgende handelingen uit:
 
-- Als u het Script venster boven het console venster wilt verplaatsen, drukt u op <kbd>CTRL</kbd> + <kbd>1</kbd> of klikt u op de werk balk op het bovenste pictogram van het **Script venster weer geven** of klikt u in het menu **weer gave** op **Script venster bovenaan weer geven**.
+- Als u het Script venster boven het console venster wilt verplaatsen, drukt u op <kbd>CTRL</kbd> + <kbd>1</kbd> of klikt u op de werk balk op het bovenste pictogram van het **Script venster weer geven** of klikt u in het menu **weer gave** op **Script venster bovenaan weer geven** .
 
-- Als u het Script venster rechts van het console venster wilt verplaatsen, drukt u op <kbd>CTRL</kbd> + <kbd>2</kbd> of klikt u op de werk balk op het pictogram **Script venster rechts tonen** of klikt u in het menu **weer gave** op **Script venster rechts weer geven**.
+- Als u het Script venster rechts van het console venster wilt verplaatsen, drukt u op <kbd>CTRL</kbd> + <kbd>2</kbd> of klikt u op de werk balk op het pictogram **Script venster rechts tonen** of klikt u in het menu **weer gave** op **Script venster rechts weer geven** .
 
-- Om het deel venster script te maximaliseren, drukt u op <kbd>CTRL</kbd> + <kbd>3</kbd> of klikt u op de werk balk op het **deel venster script weer geven pictogram gemaximaliseerd** , of klikt u in het menu **weer gave** op **Script venster gemaximaliseerd weer geven**.
+- Om het deel venster script te maximaliseren, drukt u op <kbd>CTRL</kbd> + <kbd>3</kbd> of klikt u op de werk balk op het **deel venster script weer geven pictogram gemaximaliseerd** , of klikt u in het menu **weer gave** op **Script venster gemaximaliseerd weer geven** .
 
 - Als u het console venster wilt maximaliseren en het deel venster script wilt verbergen, klikt u op het **deel venster script verbergen** in het menu **weer gave** en schakelt u de optie **script paneel weer geven** uit.
 
@@ -60,7 +60,7 @@ Voer een van de volgende handelingen uit:
 
 U kunt de volgende sneltoetsen gebruiken bij het bewerken van tekst.
 
-|           Bewerking            |       Sneltoetsen       |          Gebruiken in           |
+|           Actie            |       Sneltoetsen       |          Gebruiken in           |
 | --------------------------- | ------------------------------ | ------------------------- |
 | **Kopieer**                    | <kbd>CTRL</kbd> + <kbd>C</kbd>   | Script venster, console venster |
 | **Knippen**                     | <kbd>CTRL</kbd> + <kbd>X</kbd>   | Script venster, console venster |
@@ -78,11 +78,11 @@ U kunt de volgende sneltoetsen gebruiken bij het bewerken van tekst.
 
 U kunt de volgende sneltoetsen gebruiken voor het uitvoeren van scripts in het Script-venster.
 
-|            Bewerking            |                                                                                                     Sneltoets                                                                                                      |
+|            Actie            |                                                                                                     Sneltoets                                                                                                      |
 | ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Nieuw**                      | <kbd>CTRL</kbd> + <kbd>N</kbd>                                                                                                                                                                                               |
 | **Openen**                     | <kbd>CTRL</kbd> + <kbd>O</kbd>                                                                                                                                                                                               |
-| **Uitvoeren**                      | <kbd>F5</kbd>                                                                                                                                                                                                              |
+| **Uitvoeringsrun**                      | <kbd>F5</kbd>                                                                                                                                                                                                              |
 | **Selectie uitvoeren**            | <kbd>F8</kbd>                                                                                                                                                                                                              |
 | **Uitvoering stoppen**           | <kbd>CTRL</kbd> + <kbd>Onderbreken</kbd>. <kbd>CTRL</kbd> + <kbd>C</kbd> kan worden gebruikt wanneer de context ondubbelzinnig is (als er geen tekst is geselecteerd).                                                                               |
 | **Tabblad** (naar volgend script)     | <kbd>CTRL</kbd> + <kbd>Tab</kbd> **Opmerking:** tab naar volgende script werkt alleen wanneer er één Power shell-tabblad is geopend of als u meer dan één Power shell-tabblad hebt geopend, maar de focus zich in het Script-venster bevindt.                |
@@ -92,7 +92,7 @@ U kunt de volgende sneltoetsen gebruiken voor het uitvoeren van scripts in het S
 
 U kunt de volgende sneltoetsen gebruiken om de weer gave in Windows PowerShell ISE aan te passen. Ze zijn toegankelijk vanuit alle deel Vensters in de toepassing.
 
-|           Bewerking           |         Sneltoets        |
+|           Actie           |         Sneltoets        |
 | -------------------------- | -------------------------------- |
 | **Naar het console venster gaan**     | <kbd>CTRL</kbd> + <kbd>D</kbd>     |
 | **Naar het Script venster gaan**      | <kbd>CTRL</kbd> + <kbd>Ik heb</kbd>     |
@@ -108,7 +108,7 @@ U kunt de volgende sneltoetsen gebruiken om de weer gave in Windows PowerShell I
 
 U kunt de volgende sneltoetsen gebruiken bij het opsporen van fouten in scripts.
 
-|           Bewerking           |               Sneltoets                |                Gebruiken in                |
+|           Actie           |               Sneltoets                |                Gebruiken in                |
 | -------------------------- | ---------------------------------------------- | ------------------------------------ |
 | **Uitvoeren/door gaan**           | <kbd>F5</kbd>                                  | Script-deel venster bij fout opsporing van een script |
 | **Stap in**              | <kbd>F11</kbd>                                 | Script-deel venster bij fout opsporing van een script |
@@ -123,15 +123,15 @@ U kunt de volgende sneltoetsen gebruiken bij het opsporen van fouten in scripts.
 > [!NOTE]
 > U kunt ook de sneltoetsen gebruiken die zijn ontworpen voor de Windows Power shell-console wanneer u fouten opspoort in scripts in Windows PowerShell ISE. Als u deze sneltoetsen wilt gebruiken, moet u de snelkoppeling in het console venster typen en op <kbd>Enter</kbd>drukken.
 
-|                 Bewerking                  |      Sneltoets       |                Gebruiken in                 |
+|                 Actie                  |      Sneltoets       |                Gebruiken in                 |
 | --------------------------------------- | ---------------------------- | ------------------------------------- |
-| **Doorgaan**                            | <kbd>G</kbd>                 | Console venster, bij fout opsporing van een script |
+| **Doorgaan**                            | <kbd>C</kbd>                 | Console venster, bij fout opsporing van een script |
 | **Stap in**                           | <kbd>S</kbd>                 | Console venster, bij fout opsporing van een script |
 | **Stap over**                           | <kbd>Verticale</kbd>                 | Console venster, bij fout opsporing van een script |
 | **Stap uit**                            | <kbd>O</kbd>                 | Console venster, bij fout opsporing van een script |
-| **Laatste opdracht herhalen**(stap in/over) | <kbd>Voer</kbd>             | Console venster, bij fout opsporing van een script |
-| **Aanroep stack weer geven**                  | <kbd>Middel</kbd>                 | Console venster, bij fout opsporing van een script |
-| **Fout opsporing stoppen**                      | <kbd>Nils</kbd>                 | Console venster, bij fout opsporing van een script |
+| **Laatste opdracht herhalen** (stap in/over) | <kbd>Voer</kbd>             | Console venster, bij fout opsporing van een script |
+| **Aanroep stack weer geven**                  | <kbd>K</kbd>                 | Console venster, bij fout opsporing van een script |
+| **Fout opsporing stoppen**                      | <kbd>Q</kbd>                 | Console venster, bij fout opsporing van een script |
 | **Het script weer geven**                     | <kbd>L</kbd>                 | Console venster, bij fout opsporing van een script |
 | **Opties voor fout opsporing in console weer geven**  | <kbd>H</kbd> of <kbd>?</kbd> | Console venster, bij fout opsporing van een script |
 
@@ -139,7 +139,7 @@ U kunt de volgende sneltoetsen gebruiken bij het opsporen van fouten in scripts.
 
 U kunt de volgende sneltoetsen gebruiken wanneer u Windows Power shell-tabbladen gebruikt.
 
-|             Bewerking              |                                 Sneltoets                                  |
+|             Actie              |                                 Sneltoets                                  |
 | ------------------------------- | ---------------------------------------------------------------------------------- |
 | **Tabblad Power shell sluiten**        | <kbd>CTRL</kbd> + <kbd>W</kbd>                                                       |
 | **Nieuw Power shell-tabblad**          | <kbd>CTRL</kbd> + <kbd>T</kbd>                                                       |
@@ -148,12 +148,12 @@ U kunt de volgende sneltoetsen gebruiken wanneer u Windows Power shell-tabbladen
 
 ## <a name="keyboard-shortcuts-for-starting-and-exiting"></a>Sneltoetsen voor het starten en afsluiten
 
-U kunt de volgende sneltoetsen gebruiken om de Windows Power shell-console (**Power shell. exe**) te starten of Windows PowerShell ISE af te sluiten.
+U kunt de volgende sneltoetsen gebruiken om de Windows Power shell-console ( **PowerShell.exe** ) te starten of Windows PowerShell ISE af te sluiten.
 
-|                        Bewerking                         |               Sneltoets               |
+|                        Actie                         |               Sneltoets               |
 | ----------------------------------------------------- | --------------------------------------------- |
 | **Afsluiten**                                              | <kbd>Alt</kbd> + <kbd>F4</kbd>                  |
-| **Power shell. exe starten** (Windows Power shell-console) | <kbd>CTRL</kbd> + <kbd>SHIFT</kbd> + <kbd>P</kbd> |
+| **PowerShell.exestarten** (Windows Power shell-console) | <kbd>CTRL</kbd> + <kbd>SHIFT</kbd> + <kbd>P</kbd> |
 
 ## <a name="breakpoint-management"></a>Onderbrekings beheer
 

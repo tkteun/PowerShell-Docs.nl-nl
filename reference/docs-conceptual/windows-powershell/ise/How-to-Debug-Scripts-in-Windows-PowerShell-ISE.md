@@ -1,13 +1,13 @@
 ---
 ms.date: 01/02/2020
-keywords: powershell,cmdlet
 title: Fouten opsporen in scripts in Windows PowerShell ISE
-ms.openlocfilehash: 6fbe340cbff832b5d0e2a5515ef432cec574a3c1
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: In dit artikel wordt beschreven hoe u fouten oplost op een lokale computer met behulp van de functies van Windows PowerShell ISE Visual fout opsporing.
+ms.openlocfilehash: c2e45e3b165e16c9dcd6852550d13fc2426986fa
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810671"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663797"
 ---
 # <a name="how-to-debug-scripts-in-windows-powershell-ise"></a>Fouten opsporen in scripts in Windows PowerShell ISE
 
@@ -20,7 +20,7 @@ Zodra het script is onderbroken door een onderbrekings punt, kunt u opdrachten u
 
 U kunt drie typen onderbrekings punten instellen in de Windows Power shell-omgeving voor fout opsporing:
 
-1. **Onderbrekings punt van regel**. Het script wordt gepauzeerd wanneer de aangewezen regel wordt bereikt tijdens de werking van het script
+1. **Onderbrekings punt van regel** . Het script wordt gepauzeerd wanneer de aangewezen regel wordt bereikt tijdens de werking van het script
 
 1. **Onderbrekings punt van variabele.** Het script wordt onderbroken wanneer de waarde van de aangewezen variabele wordt gewijzigd.
 
@@ -30,7 +30,7 @@ Van deze opties kunt u in de omgeving Windows PowerShell ISE fout opsporing alle
 
 ### <a name="to-set-a-breakpoint"></a>Een onderbrekings punt instellen
 
-Een onderbrekings punt kan alleen in een script worden ingesteld nadat het is opgeslagen. Klik met de rechter muisknop op de regel waar u een regel onderbrekings punt wilt instellen en klik vervolgens op **onderbrekings punt in**-en uitschakelen. Of klik op de regel waar u een regel onderbrekings punt wilt instellen en druk op <kbd>F9</kbd> of Klik in het menu **fout opsporing** op **onderbrekings punt in**-en uitschakelen.
+Een onderbrekings punt kan alleen in een script worden ingesteld nadat het is opgeslagen. Klik met de rechter muisknop op de regel waar u een regel onderbrekings punt wilt instellen en klik vervolgens op **onderbrekings punt in** -en uitschakelen. Of klik op de regel waar u een regel onderbrekings punt wilt instellen en druk op <kbd>F9</kbd> of Klik in het menu **fout opsporing** op **onderbrekings punt in** -en uitschakelen.
 
 Het volgende script is een voor beeld van hoe u een variabele-onderbrekings punt vanuit het console venster kunt instellen met behulp van de cmdlet [set-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Set-PSBreakpoint) .
 
@@ -43,7 +43,7 @@ Set-PSBreakpoint -Script sample.ps1 -Variable Server
 
 Geeft alle onderbrekings punten in de huidige Windows Power shell-sessie weer.
 
-Klik in het menu **fout opsporing** op **lijst onderbrekings punten**. Het volgende script is een voor beeld van hoe u alle onderbrekings punten in het console venster kunt weer geven met behulp van de cmdlet [Get-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Get-PSBreakpoint) .
+Klik in het menu **fout opsporing** op **lijst onderbrekings punten** . Het volgende script is een voor beeld van hoe u alle onderbrekings punten in het console venster kunt weer geven met behulp van de cmdlet [Get-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Get-PSBreakpoint) .
 
 ```powershell
 # This command lists all breakpoints in the current session.
@@ -54,8 +54,8 @@ Get-PSBreakpoint
 
 Als u een onderbrekings punt verwijdert, wordt dit verwijderd.
 
-Als u denkt dat u het later opnieuw wilt gebruiken, kunt u overwegen [een onderbrekings punt](#disable-a-breakpoint) in plaats daarvan uit te scha kelen. Klik met de rechter muisknop op de regel waar u een onderbrekings punt wilt verwijderen en klik vervolgens op **ToggleBreakpoint**.
-Of klik op de regel waar u een onderbrekings punt wilt verwijderen en klik in het menu **fout opsporing** op **onderbrekings punt in-/uitschakelen**. Het volgende script is een voor beeld van het verwijderen van een onderbrekings punt met een opgegeven ID vanuit het console venster met behulp van de cmdlet [Remove-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Remove-PSBreakpoint) .
+Als u denkt dat u het later opnieuw wilt gebruiken, kunt u overwegen [een onderbrekings punt](#disable-a-breakpoint) in plaats daarvan uit te scha kelen. Klik met de rechter muisknop op de regel waar u een onderbrekings punt wilt verwijderen en klik vervolgens op **ToggleBreakpoint** .
+Of klik op de regel waar u een onderbrekings punt wilt verwijderen en klik in het menu **fout opsporing** op **onderbrekings punt in-/uitschakelen** . Het volgende script is een voor beeld van het verwijderen van een onderbrekings punt met een opgegeven ID vanuit het console venster met behulp van de cmdlet [Remove-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Remove-PSBreakpoint) .
 
 ```powershell
 # This command deletes the breakpoint with breakpoint ID 2.
@@ -64,7 +64,7 @@ Remove-PSBreakpoint -Id 2
 
 ### <a name="remove-all-breakpoints"></a>Alle onderbrekings punten verwijderen
 
-Als u alle onderbrekings punten die in de huidige sessie zijn gedefinieerd, wilt verwijderen, klikt u in het menu **fout opsporing** op **alle onderbrekings punten verwijderen**.
+Als u alle onderbrekings punten die in de huidige sessie zijn gedefinieerd, wilt verwijderen, klikt u in het menu **fout opsporing** op **alle onderbrekings punten verwijderen** .
 
 Het volgende script is een voor beeld van het verwijderen van alle onderbrekings punten vanuit het console venster met behulp van de cmdlet [Remove-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Remove-PSBreakpoint) .
 
@@ -75,7 +75,7 @@ Get-PSBreakpoint | Remove-PSBreakpoint
 
 ### <a name="disable-a-breakpoint"></a>Een onderbrekings punt uitschakelen
 
-Als u een onderbrekings punt uitschakelt, wordt deze niet verwijderd. het wordt uitgeschakeld totdat deze is ingeschakeld. Als u een specifieke regel onderbreking wilt uitschakelen, klikt u met de rechter muisknop op de regel waar u een onderbrekings punt wilt uitschakelen en klikt u vervolgens op **onderbrekings punt uitschakelen**. Of klik op de regel waar u een onderbrekings punt wilt uitschakelen en druk op <kbd>F9</kbd> of Klik in het menu **fout opsporing** op **onderbrekings punt uitschakelen**. Het volgende script is een voor beeld van hoe u een onderbrekings punt met een opgegeven ID uit het console venster kunt verwijderen met de cmdlet [Disable-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Disable-PSBreakpoint) .
+Als u een onderbrekings punt uitschakelt, wordt deze niet verwijderd. het wordt uitgeschakeld totdat deze is ingeschakeld. Als u een specifieke regel onderbreking wilt uitschakelen, klikt u met de rechter muisknop op de regel waar u een onderbrekings punt wilt uitschakelen en klikt u vervolgens op **onderbrekings punt uitschakelen** . Of klik op de regel waar u een onderbrekings punt wilt uitschakelen en druk op <kbd>F9</kbd> of Klik in het menu **fout opsporing** op **onderbrekings punt uitschakelen** . Het volgende script is een voor beeld van hoe u een onderbrekings punt met een opgegeven ID uit het console venster kunt verwijderen met de cmdlet [Disable-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Disable-PSBreakpoint) .
 
 ```powershell
 # This command disables the breakpoint with breakpoint ID 0.
@@ -84,7 +84,7 @@ Disable-PSBreakpoint -Id 0
 
 ### <a name="disable-all-breakpoints"></a>Alle onderbrekings punten uitschakelen
 
-Als u een onderbrekings punt uitschakelt, wordt deze niet verwijderd. het wordt uitgeschakeld totdat deze is ingeschakeld. Als u alle onderbrekings punten in de huidige sessie wilt uitschakelen, klikt u in het menu **fout opsporing** op **alle onderbrekings punten uitschakelen**. Het volgende script is een voor beeld van hoe u alle onderbrekings punten vanuit het console venster kunt uitschakelen met behulp van de cmdlet [Disable-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Disable-PSBreakpoint) .
+Als u een onderbrekings punt uitschakelt, wordt deze niet verwijderd. het wordt uitgeschakeld totdat deze is ingeschakeld. Als u alle onderbrekings punten in de huidige sessie wilt uitschakelen, klikt u in het menu **fout opsporing** op **alle onderbrekings punten uitschakelen** . Het volgende script is een voor beeld van hoe u alle onderbrekings punten vanuit het console venster kunt uitschakelen met behulp van de cmdlet [Disable-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Disable-PSBreakpoint) .
 
 ```powershell
 # This command disables all breakpoints in the current session.
@@ -94,7 +94,7 @@ Get-PSBreakpoint | Disable-PSBreakpoint
 
 ### <a name="enable-a-breakpoint"></a>Een onderbrekings punt inschakelen
 
-Als u een specifieke onderbrekings punt wilt inschakelen, klikt u met de rechter muisknop op de regel waar u een onderbrekings punt wilt inschakelen en klikt u vervolgens op **onderbrekings punt inschakelen**. Of klik op de regel waar u een onderbrekings punt wilt inschakelen en druk op <kbd>F9</kbd> of Klik in het menu **fout opsporing** op **onderbrekings punt inschakelen**. Het volgende script is een voor beeld van hoe u specifieke onderbrekings punten vanuit het console venster kunt inschakelen met behulp van de cmdlet [Enable-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Enable-PSBreakpoint) .
+Als u een specifieke onderbrekings punt wilt inschakelen, klikt u met de rechter muisknop op de regel waar u een onderbrekings punt wilt inschakelen en klikt u vervolgens op **onderbrekings punt inschakelen** . Of klik op de regel waar u een onderbrekings punt wilt inschakelen en druk op <kbd>F9</kbd> of Klik in het menu **fout opsporing** op **onderbrekings punt inschakelen** . Het volgende script is een voor beeld van hoe u specifieke onderbrekings punten vanuit het console venster kunt inschakelen met behulp van de cmdlet [Enable-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Enable-PSBreakpoint) .
 
 ```powershell
 # This command enables breakpoints with breakpoint IDs 0, 1, and 5.
@@ -103,7 +103,7 @@ Enable-PSBreakpoint -Id 0, 1, 5
 
 ### <a name="enable-all-breakpoints"></a>Alle onderbrekings punten inschakelen
 
-Als u alle onderbrekings punten die in de huidige sessie zijn gedefinieerd, wilt inschakelen, klikt u in het menu **fout opsporing** op **alle onderbrekings punten inschakelen**. Het volgende script is een voor beeld van hoe u alle onderbrekings punten vanuit het console venster kunt inschakelen met behulp van de cmdlet [Enable-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Enable-PSBreakpoint) .
+Als u alle onderbrekings punten die in de huidige sessie zijn gedefinieerd, wilt inschakelen, klikt u in het menu **fout opsporing** op **alle onderbrekings punten inschakelen** . Het volgende script is een voor beeld van hoe u alle onderbrekings punten vanuit het console venster kunt inschakelen met behulp van de cmdlet [Enable-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Enable-PSBreakpoint) .
 
 ```powershell
 # This command enables all breakpoints in the current session.
@@ -118,7 +118,7 @@ Nadat u de fout opsporing hebt gestart, kunt u een script pas bewerken nadat u d
 
 ### <a name="to-start-debugging"></a>Fout opsporing starten
 
-Druk op <kbd>F5</kbd> of klik op de werk balk op het pictogram **script uitvoeren** of Klik in het menu **fout opsporing** op **uitvoeren/door gaan**. Het script wordt uitgevoerd totdat het eerste onderbrekings punt wordt aangetroffen. Hiermee wordt de bewerking gepauzeerd en wordt de regel gemarkeerd waarop deze wordt onderbroken.
+Druk op <kbd>F5</kbd> of klik op de werk balk op het pictogram **script uitvoeren** of Klik in het menu **fout opsporing** op **uitvoeren/door gaan** . Het script wordt uitgevoerd totdat het eerste onderbrekings punt wordt aangetroffen. Hiermee wordt de bewerking gepauzeerd en wordt de regel gemarkeerd waarop deze wordt onderbroken.
 
 ### <a name="to-continue-debugging"></a>Fout opsporing voortzetten
 
@@ -132,7 +132,7 @@ Als u de huidige aanroep stack wilt weer geven, drukt u op <kbd>CTRL</kbd> + <kb
 
 ### <a name="to-stop-debugging"></a>Fout opsporing stoppen
 
-Druk op <kbd>SHIFT</kbd> + <kbd>F5</kbd> of Klik in het menu **fout opsporing** op **debugger stoppen**of typ in het deel venster console het type `Q` en druk vervolgens op <kbd>Enter</kbd>.
+Druk op <kbd>SHIFT</kbd> + <kbd>F5</kbd> of Klik in het menu **fout opsporing** op **debugger stoppen** of typ in het deel venster console het type `Q` en druk vervolgens op <kbd>Enter</kbd>.
 
 ## <a name="how-to-step-over-step-into-and-step-out-while-debugging"></a>Stap over, Step Into en uitstappen tijdens het opsporen van fouten
 
@@ -140,10 +140,10 @@ Step ping is het proces van het uitvoeren van één instructie per keer. U kunt 
 
 | Fout opsporen taak |                                                                                                                   Beschrijving                                                                                                                    |                                                      Hoe u dit kunt doen in Power shell ISE                                                       |
 | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Stap in**  | Voert de huidige instructie uit en stopt bij de volgende instructie. Als de huidige instructie een functie of script aanroep is, worden de stappen voor het fout opsporingsprogramma in die functie of dit script uitgevoerd, anders stopt het met de volgende instructie.                      | Druk op <kbd>F11</kbd> of Klik in het menu **fout opsporing** op **stap in**of typ in het console venster `S` en druk op <kbd>Enter</kbd>.                 |
-| **Stap over**  | Voert de huidige instructie uit en stopt bij de volgende instructie. Als de huidige instructie een functie of script aanroep is, voert het fout opsporingsprogramma de volledige functie of het script uit en stopt het met de volgende instructie na de functie aanroep. | Druk op <kbd>F10</kbd> of Klik in het menu **fout opsporing** op **stap over**, of typ in het deel venster console het type `V` en druk op <kbd>Enter</kbd>.                 |
-| **Stap uit**   | Stappen van de huidige functie en één niveau omhoog als de functie is genest. In de hoofd tekst wordt het script uitgevoerd naar het einde of naar het volgende onderbrekings punt. De overgeslagen instructies worden uitgevoerd, maar niet getrapt via.                   | Druk op <kbd>SHIFT</kbd> + <kbd>F11</kbd>of Klik in het menu **fout opsporing** op **stap uit**, of typ in het deel venster console het type `O` en druk op <kbd>Enter</kbd>. |
-| **Doorgaan**   | Gaat verder met de uitvoering naar het einde of naar het volgende onderbrekings punt. De overgeslagen functies en aanroepen worden uitgevoerd, maar niet door lopen.                                                                                                          | Druk op <kbd>F5</kbd> of Klik in het menu **fout opsporing** op **uitvoeren/door gaan**of typ in het deel venster console het type `C` en druk op <kbd>Enter</kbd>.               |
+| **Stap in**  | Voert de huidige instructie uit en stopt bij de volgende instructie. Als de huidige instructie een functie of script aanroep is, worden de stappen voor het fout opsporingsprogramma in die functie of dit script uitgevoerd, anders stopt het met de volgende instructie.                      | Druk op <kbd>F11</kbd> of Klik in het menu **fout opsporing** op **stap in** of typ in het console venster `S` en druk op <kbd>Enter</kbd>.                 |
+| **Stap over**  | Voert de huidige instructie uit en stopt bij de volgende instructie. Als de huidige instructie een functie of script aanroep is, voert het fout opsporingsprogramma de volledige functie of het script uit en stopt het met de volgende instructie na de functie aanroep. | Druk op <kbd>F10</kbd> of Klik in het menu **fout opsporing** op **stap over** , of typ in het deel venster console het type `V` en druk op <kbd>Enter</kbd>.                 |
+| **Stap uit**   | Stappen van de huidige functie en één niveau omhoog als de functie is genest. In de hoofd tekst wordt het script uitgevoerd naar het einde of naar het volgende onderbrekings punt. De overgeslagen instructies worden uitgevoerd, maar niet getrapt via.                   | Druk op <kbd>SHIFT</kbd> + <kbd>F11</kbd>of Klik in het menu **fout opsporing** op **stap uit** , of typ in het deel venster console het type `O` en druk op <kbd>Enter</kbd>. |
+| **Doorgaan**   | Gaat verder met de uitvoering naar het einde of naar het volgende onderbrekings punt. De overgeslagen functies en aanroepen worden uitgevoerd, maar niet door lopen.                                                                                                          | Druk op <kbd>F5</kbd> of Klik in het menu **fout opsporing** op **uitvoeren/door gaan** of typ in het deel venster console het type `C` en druk op <kbd>Enter</kbd>.               |
 
 ## <a name="how-to-display-the-values-of-variables-while-debugging"></a>De waarden van variabelen weer geven tijdens fout opsporing
 
@@ -151,7 +151,7 @@ U kunt de huidige waarden van variabelen in het script weer geven tijdens het do
 
 ### <a name="to-display-the-values-of-standard-variables"></a>De waarden van standaard variabelen weer geven
 
-Gebruik een van de volgende methoden:
+Hanteer één van de volgende methoden:
 
 - Beweeg de muis aanwijzer over de variabele in het deel venster script om de waarde weer te geven als knop info.
 

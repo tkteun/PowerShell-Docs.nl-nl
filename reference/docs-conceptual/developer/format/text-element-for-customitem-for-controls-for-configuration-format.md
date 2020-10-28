@@ -1,12 +1,14 @@
 ---
-title: Tekst element voor CustomItem voor besturings elementen voor configuratie (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: d9f9687f9fb47f2085b25899193dda85b8fa068b
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element Tekst voor CustomItem voor Besturingselementen voor Configuratie (opmaak)
+description: Het element Tekst voor CustomItem voor Besturingselementen voor Configuratie (opmaak)
+ms.openlocfilehash: 9ea70ade8e86d8278ee95bd4d93dfa5ba9d8160b
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787390"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92664724"
 ---
 # <a name="text-element-for-customitem-for-controls-for-configuration-format"></a>Het element Tekst voor CustomItem voor Besturingselementen voor Configuratie (opmaak)
 

@@ -1,12 +1,14 @@
 ---
-title: ViewDefinitions-element (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: a108c4f8b03e3dec3905181b390aee2c82ab0028
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element ViewDefinitions (opmaak)
+description: Het element ViewDefinitions (opmaak)
+ms.openlocfilehash: fceef0e5ec91e8c59a7b2b90fd31ca422ff0c94d
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87772481"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92664584"
 ---
 # <a name="viewdefinitions-element-format"></a>Het element ViewDefinitions (opmaak)
 

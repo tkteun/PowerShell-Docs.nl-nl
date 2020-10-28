@@ -1,13 +1,14 @@
 ---
 ms.date: 07/14/2020
-keywords: DSC, Power shell, configuratie, installatie
+ms.topic: reference
 title: ApplyConfiguration-methode
-ms.openlocfilehash: bec74ccd6f75448484adfd26bf8a4af4e224eb3f
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: ApplyConfiguration-methode
+ms.openlocfilehash: aa99221b33d39c3ecc70156a11eaee10b540e2dc
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86463836"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92664274"
 ---
 # <a name="applyconfiguration-method"></a>ApplyConfiguration-methode
 
@@ -19,7 +20,7 @@ Als er geen configuratie in behandeling is, past deze methode de huidige configu
 
 ```mof
 uint32 ApplyConfiguration(
-  [in] boolean force
+  [in] boolean force
 );
 ```
 
@@ -27,7 +28,7 @@ uint32 ApplyConfiguration(
 
 ### <a name="force"></a>verkopers
 
-Als dit het **geval**is, wordt de huidige configuratie opnieuw toegepast, zelfs als er een configuratie in behandeling is.
+Als dit het **geval** is, wordt de huidige configuratie opnieuw toegepast, zelfs als er een configuratie in behandeling is.
 
 ## <a name="return-value"></a>Retourwaarde
 
@@ -41,7 +42,7 @@ Dit is een statische methode.
 
 **MOF:** DscCore. MOF
 
-**Naam ruimte**: Root\Microsoft\Windows\DesiredStateConfiguration
+**Naam ruimte** : Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Zie ook
 

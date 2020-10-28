@@ -1,12 +1,14 @@
 ---
-title: RightIndent-element voor frame voor GroupBy (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 6e1d451c2a6f0e3e0a122589efc32f2b55b430e6
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element RightIndent voor Frame voor GroupBy (opmaak)
+description: Het element RightIndent voor Frame voor GroupBy (opmaak)
+ms.openlocfilehash: 9a2734eee3d4c3c27fa6fa7db7ce47fa126304a6
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785520"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92665529"
 ---
 # <a name="rightindent-element-for-frame-for-groupby-format"></a>Het element RightIndent voor Frame voor GroupBy (opmaak)
 

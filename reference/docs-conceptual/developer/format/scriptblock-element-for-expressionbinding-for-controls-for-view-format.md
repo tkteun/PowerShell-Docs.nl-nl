@@ -1,12 +1,14 @@
 ---
-title: Script block-element voor ExpressionBinding voor besturings elementen voor weer gave (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 42946ed9f3241912366192b2ab2fdfb8f8582d83
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element ScriptBlock voor ExpressionBinding voor Besturingselementen voor Weergave (opmaak)
+description: Het element ScriptBlock voor ExpressionBinding voor Besturingselementen voor Weergave (opmaak)
+ms.openlocfilehash: a68d6ecd4a9e1ff1d614d32325e99831be88e516
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785486"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92665293"
 ---
 # <a name="scriptblock-element-for-expressionbinding-for-controls-for-view-format"></a>Het element ScriptBlock voor ExpressionBinding voor Besturingselementen voor Weergave (opmaak)
 

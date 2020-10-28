@@ -1,12 +1,14 @@
 ---
-title: Het element PropertyName voor SelectionCondition voor besturings elementen voor configuratie (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 7730951a840fcfcd8bf819fff5182049bd6b6c23
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element PropertyName voor SelectionCondition voor Besturingselementen voor Configuratie (opmaak)
+description: Het element PropertyName voor SelectionCondition voor Besturingselementen voor Configuratie (opmaak)
+ms.openlocfilehash: 5e4368a9546307c5ff223ae42ecaa1d2872bc587
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87773127"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92665954"
 ---
 # <a name="propertyname-element-for-selectioncondition-for-controls-for-configuration-format"></a>Het element PropertyName voor SelectionCondition voor Besturingselementen voor Configuratie (opmaak)
 

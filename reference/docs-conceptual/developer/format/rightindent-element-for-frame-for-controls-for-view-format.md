@@ -1,12 +1,14 @@
 ---
-title: RightIndent-element voor frame voor besturings elementen voor weer gave (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 7a688997791dc901e81236c5d467425ad145eb33
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element RightIndent voor Frame voor Besturingselementen voor Weergave (opmaak)
+description: Het element RightIndent voor Frame voor Besturingselementen voor Weergave (opmaak)
+ms.openlocfilehash: 6bd7e0239777e1015f34827e3bad75e5fd560fc0
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87780454"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92665492"
 ---
 # <a name="rightindent-element-for-frame-for-controls-for-view-format"></a>Het element RightIndent voor Frame voor Besturingselementen voor Weergave (opmaak)
 

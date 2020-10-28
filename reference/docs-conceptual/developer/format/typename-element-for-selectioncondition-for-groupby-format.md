@@ -1,12 +1,14 @@
 ---
-title: TypeName-element voor SelectionCondition voor GroupBy (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: ea1e0cb50c3a749f6c26d13fff4b001240ce6b95
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element TypeName voor SelectionCondition voor GroupBy (opmaak)
+description: Het element TypeName voor SelectionCondition voor GroupBy (opmaak)
+ms.openlocfilehash: 096d2355e113a7e44cc6ae31ea23efc3f01080a0
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87772549"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92664639"
 ---
 # <a name="typename-element-for-selectioncondition-for-groupby-format"></a>Het element TypeName voor SelectionCondition voor GroupBy (opmaak)
 

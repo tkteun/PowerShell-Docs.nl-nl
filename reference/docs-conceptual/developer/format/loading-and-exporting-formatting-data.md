@@ -1,12 +1,14 @@
 ---
-title: Indelings gegevens laden en exporteren | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: b449b280ccee561679d58f2f2a8b467c83150766
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Opmaakgegevens laden en exporteren
+description: Opmaakgegevens laden en exporteren
+ms.openlocfilehash: 38857526801051bf6d31d300d5be1a3fd2c80391
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87781117"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92666515"
 ---
 # <a name="loading-and-exporting-formatting-data"></a>Opmaakgegevens laden en exporteren
 
@@ -30,7 +32,7 @@ Wanneer een opmaak bestand wordt geladen, wordt het toegevoegd aan een interne l
 
 Er is geen vereiste voor het opslaan van uw indelings bestanden op schijf. Het wordt echter aangeraden om deze op te slaan in de volgende map: `user\documents\windowspowershell\`
 
-#### <a name="loading-a-format-file-using-import-formatdata"></a>Een indelings bestand laden met import-FormatData
+#### <a name="loading-a-format-file-using-import-formatdata"></a>Een indelings bestand laden met behulp van Import-FormatData
 
 1. Sla het opmaak bestand op schijf op.
 

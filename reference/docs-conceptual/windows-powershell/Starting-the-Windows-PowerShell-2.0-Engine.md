@@ -2,12 +2,13 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: De Windows Power Shell 2,0-engine gebruiken
-ms.openlocfilehash: c5ac92159d63e5669643908016186ed32dfb46db
-ms.sourcegitcommit: 3e343f005fe76960c998ef1869a1a093d37ef349
+description: De Windows Power Shell 2,0-engine is uitsluitend bedoeld om te worden gebruikt wanneer een bestaand script of hostprogramma niet kan worden uitgevoerd, omdat host-Program ma's die zijn geschreven voor Windows Power Shell 2,0 en die zijn gecompileerd met CLR 2,0, niet kunnen worden uitgevoerd zonder aanpassing.
+ms.openlocfilehash: 214b87b7314f31974801bb07f98ddea3b68008f0
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85216019"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663999"
 ---
 # <a name="using-the-windows-powershell-20-engine"></a>De Windows Power Shell 2,0-engine gebruiken
 
@@ -40,7 +41,7 @@ PowerShell.exe -Version 2
 
 ## <a name="how-to-start-a-remote-session-with-the-windows-powershell-20-engine"></a>Een externe sessie starten met de Windows Power Shell 2,0-engine
 
-Als u de Windows Power Shell 2,0-engine wilt uitvoeren in een externe sessie, maakt u een sessie configuratie (ook wel een _eind punt_genoemd) op de externe computer die de Windows power Shell 2,0-engine laadt. De sessie configuratie wordt opgeslagen op de externe computer en kan worden gebruikt door een geautoriseerde gebruiker om sessies te maken die gebruikmaken van de Windows Power Shell 2,0-engine.
+Als u de Windows Power Shell 2,0-engine wilt uitvoeren in een externe sessie, maakt u een sessie configuratie (ook wel een _eind punt_ genoemd) op de externe computer die de Windows power Shell 2,0-engine laadt. De sessie configuratie wordt opgeslagen op de externe computer en kan worden gebruikt door een geautoriseerde gebruiker om sessies te maken die gebruikmaken van de Windows Power Shell 2,0-engine.
 
 Dit is een geavanceerde taak die meestal wordt uitgevoerd door een systeem beheerder.
 

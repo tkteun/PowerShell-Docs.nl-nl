@@ -1,13 +1,13 @@
 ---
 ms.date: 01/02/2020
-keywords: powershell,cmdlet
 title: Een PowerShell-tabblad maken in Windows PowerShell ISE
-ms.openlocfilehash: 39df0b76c337bb7c02d36d66b325c5396afbbe00
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: Met de tabbladen in Windows Power shell Integrated Scripting Environment (ISE) kunt u gelijktijdig verschillende uitvoerings omgevingen maken en gebruiken in dezelfde toepassing. Elk Power shell-tabblad komt overeen met een afzonderlijke uitvoerings omgeving of-sessie.
+ms.openlocfilehash: 62054014be9890b3fa0296f717f65a85534628d8
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810300"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663782"
 ---
 # <a name="how-to-create-a-powershell-tab-in-windows-powershell-ise"></a>Een PowerShell-tabblad maken in Windows PowerShell ISE
 
@@ -20,7 +20,7 @@ Gebruik de volgende stappen om een tabblad in Windows Power shell te openen of s
 
 ## <a name="to-create-and-use-a-new-powershell-tab"></a>Een nieuw Power shell-tabblad maken en gebruiken
 
-Klik in het menu **bestand** op **Nieuw Power shell-tabblad**. Het nieuwe Power shell-tabblad wordt altijd geopend als het actieve venster. Power shell-tabbladen worden stapsgewijs genummerd in de volg orde waarin ze zijn geopend. Elk tabblad is gekoppeld aan een eigen Windows Power shell-console venster. U kunt Maxi maal 32 Power shell-tabbladen met een eigen sessie tegelijk openen (dit is beperkt tot 8 op Windows PowerShell ISE 2,0.)
+Klik in het menu **bestand** op **Nieuw Power shell-tabblad** . Het nieuwe Power shell-tabblad wordt altijd geopend als het actieve venster. Power shell-tabbladen worden stapsgewijs genummerd in de volg orde waarin ze zijn geopend. Elk tabblad is gekoppeld aan een eigen Windows Power shell-console venster. U kunt Maxi maal 32 Power shell-tabbladen met een eigen sessie tegelijk openen (dit is beperkt tot 8 op Windows PowerShell ISE 2,0.)
 
 Houd er rekening mee dat door te klikken op de pictogrammen **Nieuw** of **openen** op de werk balk geen nieuw tabblad met een afzonderlijke sessie wordt gemaakt. In plaats daarvan openen deze knoppen een nieuw of bestaand script bestand op het huidige actieve tabblad met een sessie. U kunt meerdere script bestanden openen met elk tabblad en elke sessie. De script tabbladen voor een sessie worden alleen onder de sessie tabbladen weer gegeven wanneer de bijbehorende sessie actief is.
 
@@ -36,7 +36,7 @@ Als u een tabblad wilt sluiten, kunt u een van de volgende technieken gebruiken:
 
 - Klik op het tabblad dat u wilt sluiten.
 
-- Klik in het menu **bestand** op **Power shell-tabblad sluiten**of klik op de knop Sluiten (**X**) op een actief tabblad om het tabblad te sluiten.
+- Klik in het menu **bestand** op **Power shell-tabblad sluiten** of klik op de knop Sluiten ( **X** ) op een actief tabblad om het tabblad te sluiten.
 
 Als u niet-opgeslagen bestanden hebt geopend op het Power shell-tabblad dat u wilt sluiten, wordt u gevraagd of u deze wilt opslaan of negeren. Zie [How to Save a script](How-to-Write-and-Run-Scripts-in-the-Windows-PowerShell-ISE.md#how-to-save-a-script)(Engelstalig) voor meer informatie over het opslaan van een script.
 

@@ -1,24 +1,24 @@
 ---
 ms.date: 01/02/2020
-keywords: powershell,cmdlet
 title: Kennismaking met Windows PowerShell ISE
-ms.openlocfilehash: 03728a8c83962894b27738609a5b1bec841fdb13
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: Dit artikel bevat een overzicht van de functies van de Windows PowerShell ISE
+ms.openlocfilehash: f389ac60da13141329d81baf08e9100b144022c3
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83811105"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663817"
 ---
 # <a name="exploring-the-windows-powershell-ise"></a>Kennismaking met Windows PowerShell ISE
 
-U kunt de Windows Power shell® Integrated Scripting Environment (ISE) gebruiken om opdrachten en scripts te maken, uit te voeren en fouten op te sporen. De Windows PowerShell ISE bestaat uit de menu balk, Windows Power shell-tabbladen, de werk balk, script tabbladen, een script paneel, een console venster, een status balk, een schuif regelaar voor tekst formaat en context gevoelige Help.
+U kunt de Windows Power shell &reg; Integrated Scripting Environment (ISE) gebruiken om opdrachten en scripts te maken, uit te voeren en fouten op te sporen. De Windows PowerShell ISE bestaat uit de menu balk, Windows Power shell-tabbladen, de werk balk, script tabbladen, een script paneel, een console venster, een status balk, een schuif regelaar voor tekst formaat en context gevoelige Help.
 
 > [!NOTE]
 > Vanaf Windows PowerShell ISE 3,0 worden de opdracht-en uitvoer deel Vensters gecombineerd in één console venster.
 
 ## <a name="menu-bar"></a>Menu balk
 
-De menu balk bevat de **menu's bestand**, **bewerken**, **weer gave**, **extra**, **fout opsporing**, **invoeg toepassingen**en **Help** . Met de knoppen in de menu's kunt u taken uitvoeren die betrekking hebben op het schrijven en uitvoeren van scripts en het uitvoeren van opdrachten in de Windows PowerShell ISE. Daarnaast kan een [invoeg programma](object-model/The-ISEAddOnTool-Object.md) worden geplaatst op de menu balk door scripts uit te voeren die gebruikmaken van de [ISE object model hiërarchie](object-model/The-ISE-Object-Model-Hierarchy.md).
+De menu balk bevat de **menu's bestand** , **bewerken** , **weer gave** , **extra** , **fout opsporing** , **invoeg toepassingen** en **Help** . Met de knoppen in de menu's kunt u taken uitvoeren die betrekking hebben op het schrijven en uitvoeren van scripts en het uitvoeren van opdrachten in de Windows PowerShell ISE. Daarnaast kan een [invoeg programma](object-model/The-ISEAddOnTool-Object.md) worden geplaatst op de menu balk door scripts uit te voeren die gebruikmaken van de [ISE object model hiërarchie](object-model/The-ISE-Object-Model-Hierarchy.md).
 
 > [!NOTE]
 > In Windows PowerShell ISE 2,0 zijn de menu's **tools** en **invoeg toepassingen** niet aanwezig.
@@ -46,7 +46,7 @@ De volgende knoppen bevinden zich op de werk balk.
 | **Selectie uitvoeren**              | Hiermee voert u een geselecteerd deel van een script uit.                                                                                                                                             |
 | **Uitvoering stoppen**             | Hiermee stopt u een script dat wordt uitgevoerd.                                                                                                                                                  |
 | **Nieuwe externe Power shell-tabblad**  | Hiermee maakt u een nieuw Power shell-tabblad dat een sessie op een externe computer tot stand brengt. Er wordt een dialoog venster weer gegeven waarin wordt gevraagd om de gegevens op te geven die nodig zijn om de externe verbinding tot stand te brengen. |
-| **Power shell. exe starten**       | Hiermee opent u een Power shell-console.                                                                                                                                                      |
+| **PowerShell.exestarten**       | Hiermee opent u een Power shell-console.                                                                                                                                                      |
 | **Script paneel bovenaan weer geven**       | Hiermee verplaatst u het Script venster naar de bovenkant in de weer gave.                                                                                                                                 |
 | **Script venster rechts weer geven**     | Het deel venster script naar rechts in de weer gave verplaatsen.                                                                                                                               |
 | **Gemaximaliseerd Script venster weer geven** | Maximaliseert het Script-venster.                                                                                                                                                       |
@@ -69,11 +69,11 @@ Hier worden de resultaten weer gegeven van de opdrachten en scripts die u hebt u
 
 Hiermee kunt u opdrachten schrijven. U kunt een opdracht met één regel of een opdracht voor meerdere regels uitvoeren in het opdracht venster. Druk op <kbd>SHIFT</kbd> + <kbd>Enter</kbd> om elke regel van een opdracht voor meerdere regels in te voeren en druk na de laatste regel op <kbd>Enter</kbd> om de opdracht voor meerdere regels uit te voeren. In de prompt boven in het opdracht venster wordt het pad naar de huidige werkmap weer gegeven.
 
-## <a name="status-bar"></a>Statusbalk
+## <a name="status-bar"></a>Status balk
 
 Met kunt u zien of de opdrachten en scripts die u uitvoert, zijn voltooid. De status balk bevindt zich aan de onderkant van de weer gave. Geselecteerde delen van fout berichten worden weer gegeven op de status balk.
 
-## <a name="text-size-slider"></a>Schuif regelaar voor tekst grootte
+## <a name="text-size-slider"></a>Schuif regelaar Text-Size
 
 Hiermee wordt de grootte van de tekst op het scherm verg root of verkleind.
 

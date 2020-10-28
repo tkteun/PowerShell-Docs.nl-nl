@@ -1,12 +1,14 @@
 ---
-title: ListControl-element (Format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 0173b9797bffcca74f1a32903686f771366ebb1b
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element ListControl (opmaak)
+description: Het element ListControl (opmaak)
+ms.openlocfilehash: cd5687ac8e94e2245d1ae2de8b2206185e5b8ca4
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785724"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92666583"
 ---
 # <a name="listcontrol-element-format"></a>Het element ListControl (opmaak)
 

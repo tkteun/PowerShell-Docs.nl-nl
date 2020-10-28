@@ -1,12 +1,14 @@
 ---
-title: Script block-element voor ItemSelectionCondition voor CustomControl voor weer gave (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 31873e886af04f8eedaf859af1d6bc1d5bcfdbf7
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element ScriptBlock voor ItemSelectionCondition voor CustomControl voor Weergave (opmaak)
+description: Het element ScriptBlock voor ItemSelectionCondition voor CustomControl voor Weergave (opmaak)
+ms.openlocfilehash: d762f400f5bb52af314093079fe94223c56d3f31
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87772872"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92665129"
 ---
 # <a name="scriptblock-element-for-itemselectioncondition-for-customcontrol-for-view-format"></a>Het element ScriptBlock voor ItemSelectionCondition voor CustomControl voor Weergave (opmaak)
 

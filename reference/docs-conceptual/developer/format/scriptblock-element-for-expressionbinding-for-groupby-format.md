@@ -1,12 +1,14 @@
 ---
-title: Script block-element voor ExpressionBinding voor GroupBy (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 24268e871e6bc66ad235113b262c60208e74b61c
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element ScriptBlock voor ExpressionBinding voor GroupBy (opmaak)
+description: Het element ScriptBlock voor ExpressionBinding voor GroupBy (opmaak)
+ms.openlocfilehash: db946a4c2fca7543d98f0859a2c102c829aa0e04
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87772923"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92665263"
 ---
 # <a name="scriptblock-element-for-expressionbinding-for-groupby-format"></a>Het element ScriptBlock voor ExpressionBinding voor GroupBy (opmaak)
 
