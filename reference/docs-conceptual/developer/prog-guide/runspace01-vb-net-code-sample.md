@@ -1,18 +1,20 @@
 ---
-title: Runspace01 (VB.NET)-code voorbeeld | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: d40424283057b389d8a4aafeb8ddfa44284f3ba1
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Runspace01-codevoorbeeld (VB.NET)
+description: Runspace01-codevoorbeeld (VB.NET)
+ms.openlocfilehash: 69211662c166c40e6e99e287083f7bd53f9f536f
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87778660"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92653859"
 ---
-# <a name="runspace01-vbnet-code-sample"></a><span data-ttu-id="eff6c-102">Runspace01-codevoorbeeld (VB.NET)</span><span class="sxs-lookup"><span data-stu-id="eff6c-102">Runspace01 (VB.NET) Code Sample</span></span>
+# <a name="runspace01-vbnet-code-sample"></a><span data-ttu-id="ea4de-103">Runspace01-codevoorbeeld (VB.NET)</span><span class="sxs-lookup"><span data-stu-id="ea4de-103">Runspace01 (VB.NET) Code Sample</span></span>
 
-<span data-ttu-id="eff6c-103">Hier volgen de code voorbeelden voor de runs Pace die wordt beschreven in [een console toepassing maken die een opgegeven opdracht uitvoert](/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program).</span><span class="sxs-lookup"><span data-stu-id="eff6c-103">Here are the code samples for the runspace described in [Creating a Console Application That Runs a Specified Command](/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program).</span></span> <span data-ttu-id="eff6c-104">Hiervoor roept de toepassing een runs Pace aan en roept hij een opdracht aan.</span><span class="sxs-lookup"><span data-stu-id="eff6c-104">To do this, the application invokes a runspace, and then invokes a command.</span></span> <span data-ttu-id="eff6c-105">(Houd er rekening mee dat met deze toepassing geen runs Pace-configuratie gegevens worden opgegeven, en dat er geen pijp lijn expliciet wordt gemaakt.) De opdracht die wordt aangeroepen, is de `Get-Process` cmdlet.</span><span class="sxs-lookup"><span data-stu-id="eff6c-105">(Note that this application does not specify runspace configuration information, nor does it explicitly create a pipeline.) The command that is invoked is the `Get-Process` cmdlet.</span></span>
+<span data-ttu-id="ea4de-104">Hier volgen de code voorbeelden voor de runs Pace die wordt beschreven in [een console toepassing maken die een opgegeven opdracht uitvoert](/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program).</span><span class="sxs-lookup"><span data-stu-id="ea4de-104">Here are the code samples for the runspace described in [Creating a Console Application That Runs a Specified Command](/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program).</span></span> <span data-ttu-id="ea4de-105">Hiervoor roept de toepassing een runs Pace aan en roept hij een opdracht aan.</span><span class="sxs-lookup"><span data-stu-id="ea4de-105">To do this, the application invokes a runspace, and then invokes a command.</span></span> <span data-ttu-id="ea4de-106">(Houd er rekening mee dat met deze toepassing geen runs Pace-configuratie gegevens worden opgegeven, en dat er geen pijp lijn expliciet wordt gemaakt.) De opdracht die wordt aangeroepen, is de `Get-Process` cmdlet.</span><span class="sxs-lookup"><span data-stu-id="ea4de-106">(Note that this application does not specify runspace configuration information, nor does it explicitly create a pipeline.) The command that is invoked is the `Get-Process` cmdlet.</span></span>
 
-## <a name="code-sample"></a><span data-ttu-id="eff6c-106">Code voorbeeld</span><span class="sxs-lookup"><span data-stu-id="eff6c-106">Code Sample</span></span>
+## <a name="code-sample"></a><span data-ttu-id="ea4de-107">Code voorbeeld</span><span class="sxs-lookup"><span data-stu-id="ea4de-107">Code Sample</span></span>
 
 ```vb
 Imports System
@@ -64,6 +66,6 @@ End Namespace
 
 <!-- TODO!!!: [!code-csharp[Runspace01.vb](../../powershell-sdk-samples/SDK-2.0/vb/Runspace01/Runspace01.vb#L09-L53 "Runspace01.vb")] -->
 
-## <a name="see-also"></a><span data-ttu-id="eff6c-107">Zie ook</span><span class="sxs-lookup"><span data-stu-id="eff6c-107">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="ea4de-108">Zie ook</span><span class="sxs-lookup"><span data-stu-id="ea4de-108">See Also</span></span>
 
-[<span data-ttu-id="eff6c-108">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="eff6c-108">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
+[<span data-ttu-id="ea4de-109">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="ea4de-109">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
