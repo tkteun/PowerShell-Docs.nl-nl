@@ -2,18 +2,19 @@
 ms.date: 10/30/2018
 keywords: DSC, Power shell, configuratie, installatie
 title: Problemen met DSC oplossen
-ms.openlocfilehash: 83e59b9f7148b52071d4782522ca7642027d795a
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+description: In dit artikel vindt u instructies voor het oplossen van veelvoorkomende fouten.
+ms.openlocfilehash: 2ac86689fa2695add247995bfb91c0ea85e22d60
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83692307"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92656245"
 ---
 # <a name="troubleshooting-dsc"></a>Problemen met DSC oplossen
 
-_Van toepassing op: Windows Power Shell 4,0, Windows Power shell 5,0_
+> Van toepassing op: Windows Power Shell 4,0, Windows Power shell 5,0
 
-In dit onderwerp worden manieren beschreven om problemen met DSC op te lossen wanneer er problemen optreden.
+In dit artikel vindt u instructies voor het oplossen van veelvoorkomende fouten.
 
 ## <a name="winrm-dependency"></a>WinRM-afhankelijkheid
 
@@ -25,7 +26,7 @@ De cmdlet [Get-DscConfigurationStatus](/powershell/module/PSDesiredStateConfigur
 
 - Alle resources die zijn mislukt
 - Alle bronnen waarvoor opnieuw opstarten is aangevraagd
-- Meta configuratie-instellingen op het moment van de configuratie-uitvoering
+- Meta-Configuration instellingen tijdens het uitvoeren van de configuratie
 - Enz.
 
 De volgende parameterset retourneert de status informatie voor de laatste configuratie-uitvoering:
@@ -82,8 +83,8 @@ PSComputerName        :
 
 ## <a name="my-script-wont-run-using-dsc-logs-to-diagnose-script-errors"></a>Mijn script wordt niet uitgevoerd: DSC-Logboeken gebruiken om script fouten te onderzoeken
 
-Net als alle Windows-software registreert DSC fouten en gebeurtenissen in [Logboeken](/windows/desktop/EventLog/about-event-logging) die kunnen worden weer gegeven vanuit het [Logboeken](https://support.microsoft.com/hub/4338813/windows-help).
-Door deze logboeken te controleren, kunt u beter begrijpen waarom een bepaalde bewerking niet kan worden uitgevoerd en hoe u fouten in de toekomst wilt voor komen. Het schrijven van configuratie scripts kan lastig zijn, zodat het bijhouden van fouten eenvoudiger is terwijl u zich aanmeldt, met behulp van de DSC-logboek bron om de voortgang van uw configuratie in het DSC-logboek voor analyse gebeurtenissen te volgen.
+Net als alle Windows-software registreert DSC fouten en gebeurtenissen in [Logboeken](/windows/desktop/EventLog/about-event-logging) die kunnen worden weer gegeven vanuit het [Logboeken](https://support.microsoft.com/hub/4338813/windows-help). Door deze logboeken te controleren, kunt u beter begrijpen waarom een bepaalde bewerking niet kan worden uitgevoerd en hoe u fouten in de toekomst wilt voor komen.
+Het schrijven van configuratie scripts kan lastig zijn, zodat het bijhouden van fouten eenvoudiger is terwijl u zich aanmeldt, met behulp van de DSC-logboek bron om de voortgang van uw configuratie in het DSC-logboek voor analyse gebeurtenissen te volgen.
 
 ## <a name="where-are-dsc-event-logs"></a>Waar worden DSC-gebeurtenis logboeken?
 
@@ -101,8 +102,9 @@ TimeCreated                     Id LevelDisplayName Message
 11/17/2014 10:27:23 PM        4102 Information      Job {02C38626-D95A-47F1-9DA2-C1D44A7128E7} :
 ```
 
-Zoals hierboven wordt weer gegeven, is de primaire logboek naam van DSC **micro soft >Windows->DSC** (andere logboek namen onder Windows worden hier niet weer gegeven voor de boog). De primaire naam wordt toegevoegd aan de kanaal naam om de volledige logboek naam te maken. De DSC-engine schrijft voornamelijk in drie typen logboeken: [operationele, analyse en logboeken voor fout opsporing](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc722404(v=ws.11)). Aangezien de logboeken voor analyse en fout opsporing standaard zijn uitgeschakeld, moet u ze inschakelen in Logboeken. Als u dit wilt doen, opent u Logboeken door in Windows Power shell show-EventLog te typen. of klik op de knop **Start** , klik op **configuratie scherm**, klik op **systeem beheer**en klik vervolgens op **Logboeken**.
-Klik in het menu **beeld** in Logboeken op **analyse logboeken en fout opsporing weer geven**. De logboek naam voor het analytische kanaal is **micro soft-Windows-DSC/analytic**en het fout opsporingsprogramma is **micro soft-Windows-DSC/debug**. U kunt ook het hulp programma [wevtutil](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc732848(v=ws.11)) gebruiken om de logboeken in te scha kelen, zoals wordt weer gegeven in het volgende voor beeld.
+Zoals hierboven wordt weer gegeven, is de primaire logboek naam van DSC **micro soft >Windows->DSC** (andere logboek namen onder Windows worden hier niet weer gegeven voor de boog). De primaire naam wordt toegevoegd aan de kanaal naam om de volledige logboek naam te maken. De DSC-engine schrijft voornamelijk in drie typen logboeken: [operationele, analyse en logboeken voor fout opsporing](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc722404(v=ws.11)).
+Aangezien de logboeken voor analyse en fout opsporing standaard zijn uitgeschakeld, moet u ze inschakelen in Logboeken.
+Als u dit wilt doen, opent u Logboeken door Show-EventLog in Windows Power shell te typen. of klik op de knop **Start** , klik op **configuratie scherm** , klik op **systeem beheer** en klik vervolgens op **Logboeken** . Klik in het menu **beeld** in Logboeken op **analyse logboeken en fout opsporing weer geven** . De logboek naam voor het analytische kanaal is **micro soft-Windows-DSC/analytic** en het fout opsporingsprogramma is **micro soft-Windows-DSC/debug** . U kunt ook het hulp programma [wevtutil](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc732848(v=ws.11)) gebruiken om de logboeken in te scha kelen, zoals wordt weer gegeven in het volgende voor beeld.
 
 ```powershell
 wevtutil.exe set-log "Microsoft-Windows-Dsc/Analytic" /q:true /e:true
@@ -245,7 +247,7 @@ Displaying messages from built-in DSC resources:
 
 ### <a name="4-error-messages-logged-for-recent-failed-operations"></a>4: fout berichten geregistreerd voor recente mislukte bewerkingen
 
-`$SeparateDscOperations[0].Group`bevat een set gebeurtenissen voor de laatste bewerking. Voer de `Where-Object` cmdlet uit om de gebeurtenissen te filteren op basis van de weergave naam van het niveau. De resultaten worden opgeslagen in de `$myFailedEvent` variabele, die verder kan worden opgevolgd om het gebeurtenis bericht op te halen:
+`$SeparateDscOperations[0].Group` bevat een set gebeurtenissen voor de laatste bewerking. Voer de `Where-Object` cmdlet uit om de gebeurtenissen te filteren op basis van de weergave naam van het niveau. De resultaten worden opgeslagen in de `$myFailedEvent` variabele, die verder kan worden opgevolgd om het gebeurtenis bericht op te halen:
 
 ```powershell
 PS C:\> $myFailedEvent = ($SeparateDscOperations[0].Group | Where-Object {$_.LevelDisplayName -eq "Error"})
@@ -254,14 +256,14 @@ PS C:\> $myFailedEvent.Message
 
 Job {5BCA8BE7-5BB6-11E3-BF41-00155D553612} :
 DSC Engine Error :
- Error Message Current configuration does not exist. Execute Start-DscConfiguration command with -Path pa
-rameter to specify a configuration file and create a current configuration first.
+ Error Message Current configuration does not exist. Execute Start-DscConfiguration command with
+ -Path parameter to specify a configuration file and create a current configuration first.
 Error Code : 1
 ```
 
 ### <a name="5-all-events-generated-for-a-particular-job-id"></a>5: alle gebeurtenissen die zijn gegenereerd voor een bepaalde taak-ID.
 
-`$SeparateDscOperations`is een matrix van groepen, die elk een naam hebben als de unieke taak-ID. Door de `Where-Object` cmdlet uit te voeren, kunt u deze groepen gebeurtenissen met een bepaalde taak-id extra heren:
+`$SeparateDscOperations` is een matrix van groepen, die elk een naam hebben als de unieke taak-ID. Door de `Where-Object` cmdlet uit te voeren, kunt u deze groepen gebeurtenissen met een bepaalde taak-id extra heren:
 
 ```powershell
 PS C:\> ($SeparateDscOperations | Where-Object {$_.Name -eq $jobX} ).Group
@@ -489,7 +491,7 @@ Get-Process -Id $dscProcessID | Stop-Process
 
 ## <a name="using-debugmode"></a>DebugMode gebruiken
 
-U kunt de DSC Local Configuration Manager (LCM) configureren die moet worden gebruikt `DebugMode` om de cache altijd te wissen wanneer het hostproces opnieuw wordt gestart. Als deze eigenschap is ingesteld op **True**, wordt de Power shell DSC-resource altijd opnieuw geladen door de engine. Zodra u klaar bent met het schrijven van uw resource, kunt u deze weer instellen op **False** en wordt de engine teruggezet naar het gedrag van het opslaan van de modules in de cache.
+U kunt de DSC Local Configuration Manager (LCM) configureren die moet worden gebruikt `DebugMode` om de cache altijd te wissen wanneer het hostproces opnieuw wordt gestart. Als deze eigenschap is ingesteld op **True** , wordt de Power shell DSC-resource altijd opnieuw geladen door de engine. Zodra u klaar bent met het schrijven van uw resource, kunt u deze weer instellen op **False** en wordt de engine teruggezet naar het gedrag van het opslaan van de modules in de cache.
 
 Hieronder ziet u een demonstratie van hoe u `DebugMode` de cache automatisch kunt vernieuwen. Laten we eerst de standaard configuratie bekijken:
 
@@ -514,7 +516,7 @@ RefreshMode                    : PUSH
 PSComputerName                 :
 ```
 
-U kunt zien dat `DebugMode` is ingesteld op **' geen '**.
+U kunt zien dat `DebugMode` is ingesteld op **' geen '** .
 
 Als u de demonstratie wilt instellen `DebugMode` , gebruikt u de volgende Power shell-resource:
 
@@ -565,7 +567,7 @@ Configuration ConfigTestDebugMode
 ConfigTestDebugMode
 ```
 
-U ziet dat de inhoud van het bestand: `$env:SystemDrive\OutputFromTestProviderDebugMode.txt` **1**is.
+U ziet dat de inhoud van het bestand: `$env:SystemDrive\OutputFromTestProviderDebugMode.txt` **1** is.
 
 Werk nu de provider code bij met het volgende script:
 
@@ -602,7 +604,7 @@ function Test-TargetResource
 "@ | Out-File -FilePath "C:\Program Files\WindowsPowerShell\Modules\MyPowerShellModules\DSCResources\TestProviderDebugMode\TestProviderDebugMode.psm1
 ```
 
-Met dit script wordt een wille keurig getal gegenereerd en wordt de provider code dienovereenkomstig bijgewerkt. Als deze is `DebugMode` ingesteld op False, wordt de inhoud van het bestand '**$env: SystemDrive\OutputFromTestProviderDebugMode.txt**' nooit gewijzigd.
+Met dit script wordt een wille keurig getal gegenereerd en wordt de provider code dienovereenkomstig bijgewerkt. Als deze is `DebugMode` ingesteld op False, wordt de inhoud van het bestand `$env:SystemDrive\OutputFromTestProviderDebugMode.txt` nooit gewijzigd.
 
 Stel nu `DebugMode` in het configuratie script in op **' ForceModuleImport '** :
 
@@ -633,16 +635,15 @@ onlyProperty                            PSComputerName
 
 Wanneer u een-configuratie toepast op een server om deze te registreren met een exemplaar van Windows pull server, kan de volgende fout optreden.
 
-```PowerShell
-Registration of the Dsc Agent with the server https://<serverfqdn>:8080/PSDSCPullServer.svc failed. The underlying error is: The attempt to register Dsc Agent with AgentId <ID> with the server 
+```
+Registration of the Dsc Agent with the server https://<serverfqdn>:8080/PSDSCPullServer.svc failed. The underlying error is: The attempt to register Dsc Agent with AgentId <ID> with the server
 https://<serverfqdn>:8080/PSDSCPullServer.svc/Nodes(AgentId='<ID>') returned unexpected response code InternalServerError. .
     + CategoryInfo          : InvalidResult: (root/Microsoft/...gurationManager:String) [], CimException
     + FullyQualifiedErrorId : RegisterDscAgentUnsuccessful,Microsoft.PowerShell.DesiredStateConfiguration.Commands.RegisterDscAgentCommand
     + PSComputerName        : <computername>
 ```
 
-Dit kan gebeuren wanneer het certificaat dat op de server wordt gebruikt voor het versleutelen van verkeer, een algemene naam (CN) heeft die afwijkt van de DNS-naam die door het knoop punt wordt gebruikt om de URL op te lossen.
-Werk het Windows pull Server-exemplaar bij om een certificaat met een herstelde naam te gebruiken.
+Dit kan gebeuren wanneer het certificaat dat op de server wordt gebruikt voor het versleutelen van verkeer, een algemene naam (CN) heeft die afwijkt van de DNS-naam die door het knoop punt wordt gebruikt om de URL op te lossen. Werk het Windows pull Server-exemplaar bij om een certificaat met een herstelde naam te gebruiken.
 
 ## <a name="error-when-running-sysprep-after-applying-a-dsc-configuration"></a>Fout bij het uitvoeren van Sysprep na het Toep assen van een DSC-configuratie
 
@@ -652,7 +653,7 @@ Wanneer u probeert Sysprep uit te voeren om een Windows Server te generaliseren 
 SYSPRP LaunchDll:Failure occurred while executing 'DscCore.dll,SysPrep_Cleanup', returned error code 0x2
 ```
 
-Het generaliseren van een server nadat deze is geconfigureerd met behulp van de desired state Configuration van Windows Power shell is geen ondersteund scenario.  Pas in plaats daarvan configuraties toe op Windows nadat de fase specialize van Windows Setup is voltooid.
+Het generaliseren van een server nadat deze is geconfigureerd met behulp van de desired state Configuration van Windows Power shell is geen ondersteund scenario. Pas in plaats daarvan configuraties toe op Windows nadat de fase specialize van Windows Setup is voltooid.
 
 ## <a name="see-also"></a>Zie ook
 

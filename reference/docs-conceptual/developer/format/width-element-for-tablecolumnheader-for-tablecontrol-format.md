@@ -1,12 +1,14 @@
 ---
-title: Width-element voor TableColumnHeader voor TableControl (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: e9540d3d351041ad7cb98a21bb360ebea7eca117
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element Breedte voor TableColumnHeader voor TableControl (opmaak)
+description: Het element Breedte voor TableColumnHeader voor TableControl (opmaak)
+ms.openlocfilehash: bde84f1d33b3d6b3b8c4462f870f978611cb434b
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87779910"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92658259"
 ---
 # <a name="width-element-for-tablecolumnheader-for-tablecontrol-format"></a>Het element Breedte voor TableColumnHeader voor TableControl (opmaak)
 

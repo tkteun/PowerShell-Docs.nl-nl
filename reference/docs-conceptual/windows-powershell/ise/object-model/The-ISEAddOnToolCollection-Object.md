@@ -1,13 +1,13 @@
 ---
 ms.date: 12/31/2019
-keywords: powershell,cmdlet
 title: Het ISEAddOnToolCollection-object
-ms.openlocfilehash: e07a47169381307b50ac190165307c926b4ad94e
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: Het ISEAddOnToolCollection-object is een verzameling **ISEAddOnTool** -objecten.
+ms.openlocfilehash: ba08ffd82a7ff2fa469540a5ea542abee8d4dc82
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83811028"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92658303"
 ---
 # <a name="the-iseaddontoolcollection-object"></a>Het ISEAddOnToolCollection-object
 
@@ -25,7 +25,7 @@ Hiermee voegt u een nieuw hulp programma toe aan de verzameling. Hiermee wordt h
 
 **ControlType** -type Hiermee geeft u het besturings element op dat wordt toegevoegd.
 
-** \[ IsVisible \] ** -optionele Booleaanse waarde als deze optie is ingesteld op `$true` , wordt het hulp programma voor toevoegen direct weer gegeven in het bijbehorende deel venster.
+**\[ IsVisible \]** -optionele Booleaanse waarde als deze optie is ingesteld op `$true` , wordt het hulp programma voor toevoegen direct weer gegeven in het bijbehorende deel venster.
 
 ```powershell
 # Load a DLL with an add-on and then add it to the ISE
@@ -47,7 +47,7 @@ Hiermee verwijdert u het opgegeven hulp programma voor invoeg toepassingen uit d
 $psISE.CurrentPowerShellTab.VerticalAddOnTools.Add("Solutions", [ISESimpleSolution.Solution], $true)
 ```
 
-### <a name="setselectedpowershelltab-pstab-"></a>SetSelectedPowerShellTab \( psTab\)
+### <a name="setselectedpowershelltab-pstab-"></a>SetSelectedPowerShellTab \( psTab \)
 
 Ondersteund in Windows PowerShell ISE 3,0 en hoger en niet aanwezig in eerdere versies.
 

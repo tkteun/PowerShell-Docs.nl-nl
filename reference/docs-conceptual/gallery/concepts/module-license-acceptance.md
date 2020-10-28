@@ -1,14 +1,13 @@
 ---
 ms.date: 06/09/2017
-schema: 2.0.0
-keywords: powershell
 title: Modules die instemming met licentie vereisen
-ms.openlocfilehash: a2f7ed72aae8579a6723f65b86dd0993f1a22afd
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: In het artikel wordt uitgelegd hoe u kunt werken met modules die zijn gepubliceerd in de PowerShell Gallery waarvoor een gebruiksrecht overeenkomst moet worden geaccepteerd.
+ms.openlocfilehash: a9486e10b10569ce8bcde47d5c8acf0796a93851
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80082817"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92656120"
 ---
 # <a name="modules-requiring-license-acceptance"></a>Modules die instemming met licentie vereisen
 
@@ -21,22 +20,22 @@ Voor sommige uitgevers van modules moeten klanten expliciet de licentie accepter
 Aan de volgende vereisten moet worden voldaan aan de modules die gebruikers nodig hebben om de licentie te accepteren:
 
 - De sectie PSData van module manifest moet RequireLicenseAcceptance = $True bevatten.
-- De module moet een License. txt-bestand in de hoofdmap bevatten.
+- De module moet license.txt-bestand in de hoofdmap bevatten.
 - Module manifest moet licentie-URI bevatten.
 - De module moet worden gepubliceerd met PowerShellGet-indeling versie 2,0 en hoger.
 
 ## <a name="impact-on-installsaveupdate-module"></a>Gevolgen voor installeren/opslaan/bijwerken-module
 
 - Installeren/opslaan/bijwerken cmdlets ondersteunen een nieuwe para meter **AcceptLicense** die zich gedraagt alsof de gebruiker de licentie heeft gezien.
-- Als **RequiredLicenseAcceptance** is ingesteld op True en **AcceptLicense** niet is opgegeven, wordt de gebruiker `license.txt`weer gegeven en wordt u `Do you accept these license terms
-  (Yes/No/YesToAll/NoToAll)`gevraagd om:.
+- Als **RequiredLicenseAcceptance** is ingesteld op True en **AcceptLicense** niet is opgegeven, wordt de gebruiker weer gegeven `license.txt` en wordt u gevraagd om: `Do you accept these license terms
+  (Yes/No/YesToAll/NoToAll)` .
   - Als de licentie is geaccepteerd
     - **Save-module:** de module wordt gekopieerd naar het systeem van de gebruiker
     - **Installatie-module:** de module wordt naar het systeem van de gebruiker gekopieerd naar de juiste map (op basis van het bereik)
     - **Update-module:** de module is bijgewerkt.
   - Als de licentie wordt afgewezen.
     - De bewerking is geannuleerd.
-    - Alle cmdlets controleren de meta gegevens (**requireLicenseAcceptance** en indelings versie) met de melding dat een acceptatie van de licentie is vereist
+    - Alle cmdlets controleren de meta gegevens ( **requireLicenseAcceptance** en indelings versie) met de melding dat een acceptatie van de licentie is vereist
     - Als de indelings versie van de client ouder is dan 2,0, mislukt de bewerking en wordt de gebruiker gevraagd om de client bij te werken.
     - Als de module is gepubliceerd met een indelings versie ouder dan 2,0, wordt de vlag requireLicenseAcceptance genegeerd.
 
@@ -48,7 +47,7 @@ Aan de volgende vereisten moet worden voldaan aan de modules die gebruikers nodi
 
 ## <a name="impact-on--force"></a>Impact op Force
 
-Opgeven `–Force` is niet voldoende om een licentie te accepteren. `–AcceptLicense`is vereist voor de installatie van. Als `–Force` is opgegeven, RequiredLicenseAcceptance de waarde True heeft `–AcceptLicense` en niet is opgegeven, mislukt de bewerking.
+Opgeven `–Force` is niet voldoende om een licentie te accepteren. `–AcceptLicense` is vereist voor de installatie van. Als `–Force` is opgegeven, RequiredLicenseAcceptance de waarde True heeft en `–AcceptLicense` niet is opgegeven, mislukt de bewerking.
 
 ## <a name="examples"></a>VOORBEELDEN
 
@@ -87,7 +86,7 @@ Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
-Met deze opdracht wordt de licentie `license.txt` uit het bestand weer gegeven en wordt de gebruiker gevraagd om de licentie te accepteren.
+Met deze opdracht wordt de licentie uit het bestand weer gegeven `license.txt` en wordt de gebruiker gevraagd om de licentie te accepteren.
 
 ### <a name="example-3-install-module-requiring-license-acceptance-with--acceptlicense"></a>Voor beeld 3: een module installeren waarvoor een licentie moet worden geaccepteerd met-AcceptLicense
 
@@ -116,7 +115,7 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.1.3.3\PSModule.psm
 
 ### <a name="example-5-install-module-with-dependencies-requiring-license-acceptance"></a>Voor beeld 5: module installeren met afhankelijkheden waarvoor acceptatie van licenties is vereist
 
-Module **ModuleWithDependency** is afhankelijk van module **ModuleRequireLicenseAcceptance**. De gebruiker wordt gevraagd de licentie te accepteren.
+Module **ModuleWithDependency** is afhankelijk van module **ModuleRequireLicenseAcceptance** . De gebruiker wordt gevraagd de licentie te accepteren.
 
 ```powershell
 Install-Module -Name ModuleWithDependency
@@ -138,7 +137,7 @@ Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 
 ### <a name="example-6-install-module-with-dependencies-requiring-license-acceptance-and--acceptlicense"></a>Voor beeld 6: module installeren met afhankelijkheden waarvoor acceptatie van licenties is vereist en-AcceptLicense
 
-Module **ModuleWithDependency** is afhankelijk van module **ModuleRequireLicenseAcceptance**. De gebruiker wordt niet gevraagd om de licentie te accepteren als **AcceptLicense** is opgegeven.
+Module **ModuleWithDependency** is afhankelijk van module **ModuleRequireLicenseAcceptance** . De gebruiker wordt niet gevraagd om de licentie te accepteren als **AcceptLicense** is opgegeven.
 
 ```powershell
 Install-Module -Name ModuleWithDependency -AcceptLicense
@@ -177,7 +176,7 @@ Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
-Met deze opdracht wordt de licentie `license.txt` uit het bestand weer gegeven en wordt de gebruiker gevraagd om de licentie te accepteren.
+Met deze opdracht wordt de licentie uit het bestand weer gegeven `license.txt` en wordt de gebruiker gevraagd om de licentie te accepteren.
 
 ### <a name="example-9-save-module-requiring-license-acceptance-with--acceptlicense"></a>Voor beeld 9: een module opslaan waarvoor een licentie wordt geaccepteerd met-AcceptLicense
 
@@ -208,7 +207,7 @@ Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
-Met deze opdracht wordt de licentie `license.txt` uit het bestand weer gegeven en wordt de gebruiker gevraagd om de licentie te accepteren.
+Met deze opdracht wordt de licentie uit het bestand weer gegeven `license.txt` en wordt de gebruiker gevraagd om de licentie te accepteren.
 
 ### <a name="example-11-update-module-requiring-license-acceptance-with--acceptlicense"></a>Voor beeld 11: Update-module waarvoor licentie acceptatie is vereist met-AcceptLicense
 

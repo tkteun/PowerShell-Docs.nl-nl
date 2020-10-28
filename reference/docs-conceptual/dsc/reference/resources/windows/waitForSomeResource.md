@@ -1,13 +1,14 @@
 ---
 ms.date: 07/16/2020
-keywords: DSC, Power shell, configuratie, installatie
+ms.topic: reference
 title: DSC WaitForSome-resource
-ms.openlocfilehash: ea2618fbb77dd24a0c73fd9357e87862da514b66
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC WaitForSome-resource
+ms.openlocfilehash: fda7ab804854d82d6e715b482e17c2761aa10029
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464380"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92656666"
 ---
 # <a name="dsc-waitforsome-resource"></a>DSC WaitForSome-resource
 
@@ -15,10 +16,10 @@ ms.locfileid: "86464380"
 
 De resource van de desired state Configuration (DSC) **WaitForSome** kan worden gebruikt binnen een knooppunt blok in een [DSC-configuratie](../../../configurations/configurations.md) om afhankelijkheden op te geven voor de configuraties op andere knoop punten.
 
-Deze resource slaagt als de resource die is opgegeven door de eigenschap **ResourceName** de gewenste status heeft voor een minimum aantal knoop punten (opgegeven door **NodeCount**) dat is gedefinieerd door de eigenschap **nodenaam** .
+Deze resource slaagt als de resource die is opgegeven door de eigenschap **ResourceName** de gewenste status heeft voor een minimum aantal knoop punten (opgegeven door **NodeCount** ) dat is gedefinieerd door de eigenschap **nodenaam** .
 
 > [!NOTE]
-> **WaitForSome** -resource maakt gebruik van Windows Remote Management om de status van andere knoop punten te controleren. Zie [beveiligings overwegingen voor externe communicatie van Power shell](/powershell/scripting/learn/remoting/winrmsecurity?view=powershell-6)voor meer informatie over de vereisten voor de poort en de beveiliging van WinRM.
+> **WaitForSome** -resource maakt gebruik van Windows Remote Management om de status van andere knoop punten te controleren. Zie [beveiligings overwegingen voor externe communicatie van Power shell](/powershell/scripting/learn/remoting/winrmsecurity)voor meer informatie over de vereisten voor de poort en de beveiliging van WinRM.
 
 ## <a name="syntax"></a>Syntax
 

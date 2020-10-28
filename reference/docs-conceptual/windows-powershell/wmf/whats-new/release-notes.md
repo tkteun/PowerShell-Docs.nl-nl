@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
-keywords: wmf,powershell,installeren
 title: Opmerkingen bij de WMF 5.x-release
-ms.openlocfilehash: 3fc712dbcbe184c60ae248b260c8f6800f111fdd
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: Opmerkingen bij de WMF 5.x-release
+ms.openlocfilehash: d783592104262b08815b12bd8de01adf13b60372
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83811203"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92655842"
 ---
 # <a name="windows-management-framework-wmf-5x-release-notes"></a>Opmerkingen bij de release van Windows Management Framework (WMF) 5. x
 
@@ -55,7 +54,7 @@ Vanaf versie 5,1 is Power shell beschikbaar in verschillende edities waarin vers
 ### <a name="learn-more-about-using-powershell-editions"></a>Meer informatie over het gebruik van Power shell-edities
 
 - [De actieve editie van Power shell bepalen met behulp van $PSVersionTable](/powershell/module/microsoft.powershell.core/about/about_automatic_variables)
-- [Get-module resultaten filteren op CompatiblePSEditions met behulp van de PSEdition-para meter](/powershell/module/microsoft.powershell.core/get-module)
+- [Get-Module resultaten filteren op CompatiblePSEditions met behulp van de PSEdition-para meter](/powershell/module/microsoft.powershell.core/get-module)
 - [Uitvoering van scripts voor komen tenzij uitgevoerd op een compatibele editie van Power shell](/powershell/scripting/gallery/concepts/script-psedition-support)
 - [De compatibiliteit van een module met specifieke Power shell-versies declareren](/powershell/scripting/gallery/concepts/module-psedition-support)
 
@@ -92,7 +91,7 @@ U had eerder geen manier om een bepaalde module versie op te geven. Als er meerd
 
 In WMF 5,1:
 
-- U kunt de [ModuleSpecification-constructor (hashtabel)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor?view=powershellsdk-1.1.0#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_)gebruiken.
+- U kunt de [ModuleSpecification-constructor (hashtabel)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_)gebruiken.
 
   Deze hash-tabel heeft dezelfde indeling als `Get-Module -FullyQualifiedName` .
 

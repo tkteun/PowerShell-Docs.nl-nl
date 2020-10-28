@@ -1,13 +1,14 @@
 ---
 ms.date: 07/16/2020
-keywords: DSC, Power shell, configuratie, installatie
+ms.topic: reference
 title: DSC WaitForAny-resource
-ms.openlocfilehash: fa895c78f233a2e446552bb27d4491a90076e05a
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC WaitForAny-resource
+ms.openlocfilehash: dde54d8169a66012ad3b5be967b981eaa486b2bd
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86463870"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92656680"
 ---
 # <a name="dsc-waitforany-resource"></a>DSC WaitForAny-resource
 
@@ -18,7 +19,7 @@ De resource van de desired state Configuration (DSC) **WaitForAny** kan worden g
 Deze resource slaagt als de resource die is opgegeven door de eigenschap **ResourceName** de gewenste status heeft op een doel knooppunt dat is gedefinieerd in de eigenschap **nodenaam** .
 
 > [!NOTE]
-> **WaitForAny** -resource maakt gebruik van Windows Remote Management om de status van andere knoop punten te controleren. Zie [beveiligings overwegingen voor externe communicatie van Power shell](/powershell/scripting/learn/remoting/winrmsecurity?view=powershell-6)voor meer informatie over de vereisten voor de poort en de beveiliging van WinRM.
+> **WaitForAny** -resource maakt gebruik van Windows Remote Management om de status van andere knoop punten te controleren. Zie [beveiligings overwegingen voor externe communicatie van Power shell](/powershell/scripting/learn/remoting/winrmsecurity)voor meer informatie over de vereisten voor de poort en de beveiliging van WinRM.
 
 ## <a name="syntax"></a>Syntax
 

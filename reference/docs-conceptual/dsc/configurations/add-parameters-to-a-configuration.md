@@ -2,12 +2,13 @@
 ms.date: 12/12/2018
 keywords: DSC, Power shell, resource, Galerie, Setup
 title: Parameters toevoegen aan een configuratie
-ms.openlocfilehash: 9aa4c746042e89d7767e1b326233dcca1e5c4c24
-ms.sourcegitcommit: b80ce0396550d0896189d0205d6c4b4372ac2015
+description: DSC-configuraties kunnen worden para meters voor het toestaan van meer dynamische configuraties op basis van gebruikers invoer.
+ms.openlocfilehash: aea230d34994a7b20076559c44990abe554d5395
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82141406"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92656815"
 ---
 # <a name="add-parameters-to-a-configuration"></a>Parameters toevoegen aan een configuratie
 
@@ -42,7 +43,7 @@ In tegens telling tot een functie, voegt het kenmerk [CmdletBinding](/powershell
 | `-DependsOn`            | Gebruikt voor het definiëren van [samengestelde configuraties](compositeconfigs.md)                             |
 | `-PSDSCRunAsCredential` | Gebruikt voor het definiëren van [samengestelde configuraties](compositeconfigs.md)                             |
 | `-ConfigurationData`    | Wordt gebruikt voor het door geven van gestructureerde [configuratie gegevens](configData.md) voor gebruik in de configuratie. |
-| `-OutputPath`           | Wordt gebruikt om op te geven\<waar het\>bestand computer naam. mof wordt gecompileerd                      |
+| `-OutputPath`           | Wordt gebruikt om op te geven waar uw ' \<computername\> . MOF-bestand ' wordt gecompileerd                      |
 
 ## <a name="adding-your-own-parameters-to-configurations"></a>Uw eigen para meters aan configuraties toevoegen
 
@@ -60,7 +61,7 @@ Configuration TestConfig
 
 ### <a name="add-a-computername-parameter"></a>Een ComputerName-para meter toevoegen
 
-De eerste para meter die u kunt toevoegen `-Computername` is een para meter, zodat u dynamisch een '. MOF-bestand `-Computername` ' kunt compileren dat u door gegeven aan uw configuratie. Net als functions kunt u ook een standaard waarde definiëren, voor het geval de gebruiker geen waarde doorgeeft voor`-ComputerName`
+De eerste para meter die u kunt toevoegen is een `-Computername` para meter, zodat u dynamisch een '. MOF-bestand ' kunt compileren dat `-Computername` u door gegeven aan uw configuratie. Net als functions kunt u ook een standaard waarde definiëren, voor het geval de gebruiker geen waarde doorgeeft voor `-ComputerName`
 
 ```powershell
 param
@@ -89,7 +90,7 @@ TestConfig -ComputerName "server01"
 
 ### <a name="compiling-multiple-mof-files"></a>Meerdere MOF-bestanden compileren
 
-Het knooppunt blok kan ook een door komma's gescheiden lijst met computer namen accepteren en de MOF-bestanden genereren. U kunt het volgende voor beeld uitvoeren om ". MOF"-bestanden te genereren voor alle computers die worden `-ComputerName` door gegeven aan de para meter.
+Het knooppunt blok kan ook een door komma's gescheiden lijst met computer namen accepteren en de MOF-bestanden genereren. U kunt het volgende voor beeld uitvoeren om ". MOF"-bestanden te genereren voor alle computers die worden door gegeven aan de `-ComputerName` para meter.
 
 ```powershell
 Configuration TestConfig
@@ -119,7 +120,7 @@ TestConfig -ComputerName "server01", "server02", "server03"
 ## <a name="advanced-parameters-in-configurations"></a>Geavanceerde para meters in configuraties
 
 Naast een `-ComputerName` para meter kunnen we para meters voor de service naam en-status toevoegen.
-In het volgende voor beeld wordt een parameter blok `-ServiceName` met een para meter toegevoegd en gebruikt om het **service** bron blok dynamisch te definiëren. Er wordt ook een `-State` para meter toegevoegd om de **status** in het **service** resource blok dynamisch te definiëren.
+In het volgende voor beeld wordt een parameter blok met een `-ServiceName` para meter toegevoegd en gebruikt om het **service** bron blok dynamisch te definiëren. Er wordt ook een `-State` para meter toegevoegd om de **status** in het **service** resource blok dynamisch te definiëren.
 
 ```powershell
 Configuration TestConfig
@@ -153,14 +154,14 @@ Configuration TestConfig
 > [!NOTE]
 > In meer geavanceerde scenario's kan het zinvol zijn om uw dynamische gegevens te verplaatsen naar een gestructureerde [configuratie gegevens](configData.md).
 
-De voorbeeld configuratie heeft nu een dynamische `$ServiceName`, maar als er geen is opgegeven, wordt er een fout opgetreden bij het compileren van resultaten. U kunt bijvoorbeeld een standaard waarde toevoegen, zoals in dit voor beeld.
+De voorbeeld configuratie heeft nu een dynamische `$ServiceName` , maar als er geen is opgegeven, wordt er een fout opgetreden bij het compileren van resultaten. U kunt bijvoorbeeld een standaard waarde toevoegen, zoals in dit voor beeld.
 
 ```powershell
 [String]
 $ServiceName="Spooler"
 ```
 
-In dit geval is het beter om de gebruiker te dwingen een waarde voor de `$ServiceName` para meter op te geven. Met `parameter` het kenmerk kunt u verdere validatie en pijplijn ondersteuning toevoegen aan de para meters van uw configuratie.
+In dit geval is het beter om de gebruiker te dwingen een waarde voor de para meter op te geven `$ServiceName` . `parameter`Met het kenmerk kunt u verdere validatie en pijplijn ondersteuning toevoegen aan de para meters van uw configuratie.
 
 Voeg boven een parameter declaratie het `parameter` kenmerk blok toe, zoals in het onderstaande voor beeld.
 
@@ -170,7 +171,7 @@ Voeg boven een parameter declaratie het `parameter` kenmerk blok toe, zoals in h
 $ServiceName
 ```
 
-U kunt argumenten opgeven voor elk `parameter` kenmerk om aspecten van de gedefinieerde para meter te beheren. In het volgende voor beeld `$ServiceName` wordt een **verplichte** para meter gemaakt.
+U kunt argumenten opgeven voor elk `parameter` kenmerk om aspecten van de gedefinieerde para meter te beheren. In het volgende voor beeld wordt `$ServiceName` een **verplichte** para meter gemaakt.
 
 ```powershell
 [parameter(Mandatory)]
@@ -178,7 +179,7 @@ U kunt argumenten opgeven voor elk `parameter` kenmerk om aspecten van de gedefi
 $ServiceName
 ```
 
-Voor de `$State` para meter willen we voor komen dat de gebruiker waarden opgeeft buiten een vooraf gedefinieerde set (zoals actief, gestopt). het `ValidationSet*`kenmerk zou voor komen dat de gebruiker waarden opgeeft buiten een vooraf gedefinieerde set (zoals actief, gestopt). In het volgende voor beeld `ValidationSet` wordt het kenmerk `$State` toegevoegd aan de para meter. Omdat we de `$State` para meter niet **verplicht**moeten maken, moeten we een standaard waarde voor deze vereiste toevoegen.
+Voor de `$State` para meter willen we voor komen dat de gebruiker waarden opgeeft buiten een vooraf gedefinieerde set (zoals actief, gestopt). het `ValidationSet*` kenmerk zou voor komen dat de gebruiker waarden opgeeft buiten een vooraf gedefinieerde set (zoals actief, gestopt). In het volgende voor beeld wordt het `ValidationSet` kenmerk toegevoegd aan de `$State` para meter. Omdat we de `$State` para meter niet **verplicht** moeten maken, moeten we een standaard waarde voor deze vereiste toevoegen.
 
 ```powershell
 [ValidateSet("Running", "Stopped")]
@@ -187,13 +188,13 @@ $State="Running"
 ```
 
 > [!NOTE]
-> U hoeft geen `parameter` kenmerk op te geven wanneer u een `validation` kenmerk gebruikt.
+> U hoeft geen kenmerk op te geven `parameter` Wanneer u een `validation` kenmerk gebruikt.
 
 Meer informatie over de `parameter` en validatie kenmerken vindt u in [about_Functions_Advanced_Parameters](/powershell/module/microsoft.powershell.core/about/about_Functions_Advanced_Parameters).
 
 ## <a name="fully-parameterized-configuration"></a>Volledig geparametriseerde configuratie
 
-We hebben nu een configuratie met para meters waarmee de gebruiker een `-InstanceName`, `-ServiceName`, en de `-State` para meter valideert.
+We hebben nu een configuratie met para meters waarmee de gebruiker een `-InstanceName` , `-ServiceName` , en de `-State` para meter valideert.
 
 ```powershell
 Configuration TestConfig

@@ -1,23 +1,25 @@
 ---
-title: Een Power shell-module importeren | Microsoft Docs
 ms.date: 02/03/2020
-ms.openlocfilehash: 8cd1938d0a7b49b4a594753d8ce5ebe60625025d
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Een PowerShell-module importeren
+description: Een PowerShell-module importeren
+ms.openlocfilehash: 688509c0943a9a0289e75b80543f278e16cfedfe
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784874"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92658788"
 ---
 # <a name="importing-a-powershell-module"></a>Een PowerShell-module importeren
 
 Wanneer u een module op een systeem hebt geïnstalleerd, wilt u waarschijnlijk de module importeren. Importeren is het proces waarmee de module wordt geladen in actief geheugen, zodat een gebruiker toegang heeft tot die module in hun Power shell-sessie. In Power Shell 2,0 kunt u een nieuw geïnstalleerde Power shell-module importeren met een aanroep van de cmdlet [import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) . In Power Shell 3,0 kan Power shell een module impliciet importeren als een van de functies of cmdlets in de module wordt aangeroepen door een gebruiker. Houd er rekening mee dat beide versies ervan uitgaan dat u de module installeert op een locatie waar Power shell deze kan vinden. Zie [een Power shell-module installeren](./installing-a-powershell-module.md)voor meer informatie.
 U kunt een module manifest gebruiken om te beperken welke onderdelen van uw module worden geëxporteerd en u kunt para meters van de `Import-Module` aanroep gebruiken om te beperken welke onderdelen worden geïmporteerd.
 
-## <a name="importing-a-snap-in-powershell-10"></a>Een module importeren (Power shell 1,0)
+## <a name="importing-a-snap-in-powershell-10"></a>Een Snap-In importeren (Power shell 1,0)
 
 Modules zijn niet aanwezig in Power shell 1,0: in plaats daarvan moest u de modules registreren en gebruiken. Het wordt echter niet aanbevolen deze technologie op dit moment te gebruiken, omdat modules doorgaans eenvoudiger te installeren en te importeren zijn. Zie [een Windows Power shell-module maken](../cmdlet/how-to-create-a-windows-powershell-snap-in.md)voor meer informatie.
 
-## <a name="importing-a-module-with-import-module-powershell-20"></a>Een module importeren met import-module (Power Shell 2,0)
+## <a name="importing-a-module-with-import-module-powershell-20"></a>Een module importeren met Import-Module (Power Shell 2,0)
 
 Power Shell 2,0 maakt gebruik van de juiste benoemde cmdlet [import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) voor het importeren van modules. Wanneer deze cmdlet wordt uitgevoerd, zoekt Windows Power shell naar de opgegeven module binnen de mappen die zijn opgegeven in de `PSModulePath` variabele. Wanneer de opgegeven map wordt gevonden, zoekt Windows Power shell naar bestanden in de volgende volg orde: module manifest bestanden (. psd1), script module bestanden (. psm1), binaire module bestanden (. dll). Zie voor meer informatie over het toevoegen van mappen aan de zoek opdracht het installatiepad van [PSModulePath wijzigen](./modifying-the-psmodulepath-installation-path.md).
 De volgende code beschrijft hoe een module moet worden geïmporteerd:
@@ -32,7 +34,7 @@ Ervan uitgaande dat myModule zich in Power Shell bevindt `PSModulePath` , wordt 
 Import-Module -Name C:\myRandomDirectory\myModule -Verbose
 ```
 
-U kunt ook de `-Verbose` para meter gebruiken om te bepalen wat wordt geëxporteerd uit de module en wat wordt geïmporteerd in actief geheugen. Zowel de export als de invoer beperken wat er aan de gebruiker wordt blootgesteld: het verschil is wie de zicht baarheid beheert. In wezen worden exports beheerd door code binnen de module. De invoer wordt daarentegen bepaald door de `Import-Module` aanroep. Zie voor meer informatie **het beperken van leden die hieronder worden geïmporteerd**.
+U kunt ook de `-Verbose` para meter gebruiken om te bepalen wat wordt geëxporteerd uit de module en wat wordt geïmporteerd in actief geheugen. Zowel de export als de invoer beperken wat er aan de gebruiker wordt blootgesteld: het verschil is wie de zicht baarheid beheert. In wezen worden exports beheerd door code binnen de module. De invoer wordt daarentegen bepaald door de `Import-Module` aanroep. Zie voor meer informatie **het beperken van leden die hieronder worden geïmporteerd** .
 
 ## <a name="implicitly-importing-a-module-powershell-30"></a>Een module impliciet importeren (Power Shell 3,0)
 
@@ -64,13 +66,13 @@ De cmdlet [import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Mo
 Wanneer een module wordt geïmporteerd met behulp van de cmdlet [import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) , worden alle geëxporteerde module leden standaard in de sessie geïmporteerd, met inbegrip van opdrachten die naar de module worden geëxporteerd door een geneste module. Variabelen en aliassen worden standaard niet geëxporteerd. Als u de geëxporteerde leden wilt beperken, gebruikt u een [module manifest](./how-to-write-a-powershell-module-manifest.md).
 Gebruik de volgende para meters van de cmdlet om de leden te beperken die worden geïmporteerd `Import-Module` .
 
-- **Functie**: deze para meter beperkt de functies die worden geëxporteerd. (Als u een module manifest gebruikt, raadpleegt u de sleutel FunctionsToExport.)
+- **Functie** : deze para meter beperkt de functies die worden geëxporteerd. (Als u een module manifest gebruikt, raadpleegt u de sleutel FunctionsToExport.)
 
-- `**Cmdlet**: deze para meter beperkt de cmdlets die worden geëxporteerd (als u een module manifest gebruikt, raadpleegt u de sleutel CmdletsToExport.)
+- `**Cmdlet** : deze para meter beperkt de cmdlets die worden geëxporteerd (als u een module manifest gebruikt, raadpleegt u de sleutel CmdletsToExport.)
 
-- **Variabele**: met deze para meter worden de variabelen beperkt die worden geëxporteerd (als u een module manifest gebruikt, raadpleegt u de sleutel VariablesToExport.)
+- **Variabele** : met deze para meter worden de variabelen beperkt die worden geëxporteerd (als u een module manifest gebruikt, raadpleegt u de sleutel VariablesToExport.)
 
-- **Alias**: met deze para meter worden de aliassen beperkt die worden geëxporteerd (als u een module manifest gebruikt, raadpleegt u de sleutel AliasesToExport.)
+- **Alias** : met deze para meter worden de aliassen beperkt die worden geëxporteerd (als u een module manifest gebruikt, raadpleegt u de sleutel AliasesToExport.)
 
 ## <a name="see-also"></a>Zie ook
 

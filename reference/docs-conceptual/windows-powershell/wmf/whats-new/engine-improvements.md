@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
-keywords: wmf,powershell,installeren
 title: Verbeteringen van PowerShell-engine in WMF 5.1
-ms.openlocfilehash: cccfcf8872ac60e0902669bcc797d0ed250317ba
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: Dit artikel bevat een overzicht van de prestatie verbeteringen in Windows Power shell 5,1
+ms.openlocfilehash: 34a4ed1ae4b00f5763848deaf2edad895e70c59a
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810377"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92655856"
 ---
 # <a name="powershell-engine-improvements"></a>Verbeteringen in Power shell-engine
 
@@ -26,8 +25,8 @@ Enkele voor beelden van verbeteringen (uw resultaten kunnen variëren, afhankeli
 | Scenario | 5,0 tijd (MS) | 5,1 tijd (MS) |
 | -------- | :---------------: | :---------------: |
 | `powershell -command "echo 1"` | 900 | 250 |
-| Eerste keer dat Power shell wordt uitgevoerd:`powershell -command "Unknown-Command"` | 30.000 | 13000 |
-| Ingebouwde opdracht analyse cache:`powershell -command "Unknown-Command"` | 7000 | 520 |
+| Eerste keer dat Power shell wordt uitgevoerd: `powershell -command "Unknown-Command"` | 30.000 | 13000 |
+| Ingebouwde opdracht analyse cache: `powershell -command "Unknown-Command"` | 7000 | 520 |
 | <code>1..1000000 &#124; % { }</code> | 1400 | 750 |
 
 > [!NOTE]

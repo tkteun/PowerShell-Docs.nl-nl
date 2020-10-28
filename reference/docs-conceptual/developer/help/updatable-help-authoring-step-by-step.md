@@ -1,12 +1,14 @@
 ---
-title: Bij te werken hulp bij het ontwerpen-stap voor stap
 ms.date: 09/13/2016
-ms.openlocfilehash: c9214be3c3363a4e6354595b50cf76a17d49aa67
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: Bij te werken hulp bij het ontwerpen-stap voor stap
+description: Bij te werken hulp bij het ontwerpen-stap voor stap
+ms.openlocfilehash: c4aecdb801cac16c9cb07853317835fd87e6a0a8
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86893115"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92658814"
 ---
 # <a name="updatable-help-authoring-step-by-step"></a>Ontwerpen van Help die kan worden bijgewerkt: stap voor stap
 

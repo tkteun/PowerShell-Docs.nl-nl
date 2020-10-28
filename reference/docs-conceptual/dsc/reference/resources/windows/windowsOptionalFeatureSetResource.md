@@ -1,13 +1,14 @@
 ---
 ms.date: 07/16/2020
-keywords: DSC, Power shell, configuratie, installatie
+ms.topic: reference
 title: DSC WindowsOptionalFeatureSet-resource
-ms.openlocfilehash: e4f88f1cae6d7ddb3596ab4f27eb3766259f1a31
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC WindowsOptionalFeatureSet-resource
+ms.openlocfilehash: 7357df5289ded797ffc09b7d457749452d5a9e1a
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464159"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92656526"
 ---
 # <a name="dsc-windowsoptionalfeatureset-resource"></a>DSC WindowsOptionalFeatureSet-resource
 
@@ -39,8 +40,8 @@ WindowsOptionalFeatureSet [string] #ResourceName
 |---|---|
 |Naam |Hiermee geeft u de naam op van de functies die u wilt inschakelen, worden in-of uitgeschakeld. |
 |NoWindowsUpdateCheck |Hiermee geeft u op of DISM-contact personen Windows Update (WU) bij het zoeken naar de bron bestanden om functies in te scha kelen. Als `$true` kan DISM geen contact opnemen met Wu. |
-|RemoveFilesOnDisable |Stel deze waarde in `$true` om alle bestanden te verwijderen die zijn **Ensure** gekoppeld aan de functies wanneer het is ingesteld op **afwezig**. |
-|Logniveau |Het maximale uitvoer niveau dat wordt weer gegeven in de logboeken. De geaccepteerde waarden zijn: **ErrorsOnly**, **ErrorsAndWarning**en **ErrorsAndWarningAndInformation**. |
+|RemoveFilesOnDisable |Stel deze waarde in `$true` om alle bestanden te verwijderen die zijn **Ensure** gekoppeld aan de functies wanneer het is ingesteld op **afwezig** . |
+|Logniveau |Het maximale uitvoer niveau dat wordt weer gegeven in de logboeken. De geaccepteerde waarden zijn: **ErrorsOnly** , **ErrorsAndWarning** en **ErrorsAndWarningAndInformation** . |
 |Logboekpad |Het pad naar een logboek bestand waar de resource provider de bewerking moet registreren. |
 
 ## <a name="common-properties"></a>Algemene eigenschappen
@@ -48,7 +49,7 @@ WindowsOptionalFeatureSet [string] #ResourceName
 |Eigenschap |Beschrijving |
 |---|---|
 |DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is bijvoorbeeld als de ID van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is `DependsOn = "[ResourceType]ResourceName"` . |
-|Zo |Hiermee wordt aangegeven of de functies zijn ingeschakeld. Stel deze eigenschap in op **inschakelen**om ervoor te zorgen dat de functies zijn ingeschakeld. Stel de eigenschap in op **uitschakelen**om ervoor te zorgen dat de functies zijn uitgeschakeld. De standaard waarde is **ingeschakeld**. |
+|Zo |Hiermee wordt aangegeven of de functies zijn ingeschakeld. Stel deze eigenschap in op **inschakelen** om ervoor te zorgen dat de functies zijn ingeschakeld. Stel de eigenschap in op **uitschakelen** om ervoor te zorgen dat de functies zijn uitgeschakeld. De standaard waarde is **ingeschakeld** . |
 |PsDscRunAsCredential |Hiermee stelt u de referentie in voor het uitvoeren van de gehele resource als. |
 
 > [!NOTE]

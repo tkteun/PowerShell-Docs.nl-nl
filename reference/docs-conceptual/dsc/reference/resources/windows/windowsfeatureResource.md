@@ -1,13 +1,14 @@
 ---
 ms.date: 07/16/2020
-keywords: DSC, Power shell, configuratie, installatie
+ms.topic: reference
 title: DSC-WindowsFeature-resource
-ms.openlocfilehash: b15b267c6898697816b386a381e5a6d59acd492a
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC-WindowsFeature-resource
+ms.openlocfilehash: b47febd201a9f7aff3b9ff712bd033ee30f974f9
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464108"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92656388"
 ---
 # <a name="dsc-windowsfeature-resource"></a>DSC-WindowsFeature-resource
 
@@ -44,7 +45,7 @@ WindowsFeature [string] #ResourceName
 |Eigenschap |Beschrijving |
 |---|---|
 |DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is bijvoorbeeld als de ID van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is `DependsOn = "[ResourceType]ResourceName"` . |
-|Zo |Hiermee wordt aangegeven of de functie of het onderdeel is toegevoegd. Stel deze eigenschap in op **aanwezig**om te controleren of de functie of het onderdeel is toegevoegd. Om ervoor te zorgen dat de functie of het onderdeel wordt verwijderd, stelt u de eigenschap in op **afwezig**. De standaard waarde is **aanwezig**. |
+|Zo |Hiermee wordt aangegeven of de functie of het onderdeel is toegevoegd. Stel deze eigenschap in op **aanwezig** om te controleren of de functie of het onderdeel is toegevoegd. Om ervoor te zorgen dat de functie of het onderdeel wordt verwijderd, stelt u de eigenschap in op **afwezig** . De standaard waarde is **aanwezig** . |
 |PsDscRunAsCredential |Hiermee stelt u de referentie in voor het uitvoeren van de gehele resource als. |
 
 > [!NOTE]

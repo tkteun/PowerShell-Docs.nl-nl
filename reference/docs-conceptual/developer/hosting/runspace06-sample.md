@@ -1,16 +1,18 @@
 ---
-title: Runspace06-voor beeld | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: c16324c61ee3c7123777294952999f75b2f7aef2
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Voorbeeld Runspace06
+description: Voorbeeld Runspace06
+ms.openlocfilehash: 39841478f115eda089e4d4b1f822954b6ba7d09b
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87771988"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92657674"
 ---
 # <a name="runspace06-sample"></a>Voorbeeld Runspace06
 
-In dit voor beeld ziet u hoe u een module kunt toevoegen aan een [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) -object, zodat de module wordt geladen wanneer de runs Pace wordt geopend. De module biedt een Get-proc-cmdlet (gedefinieerd door het GetProcessSample02-voor [beeld](../cmdlet/getprocesssample02-sample.md)) die synchroon wordt uitgevoerd met behulp van een [System. Management. Automation. Power shell](/dotnet/api/system.management.automation.powershell) -object.
+In dit voor beeld ziet u hoe u een module kunt toevoegen aan een [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) -object, zodat de module wordt geladen wanneer de runs Pace wordt geopend. De module bevat een Get-Proc-cmdlet (gedefinieerd door het voor [beeld GetProcessSample02](../cmdlet/getprocesssample02-sample.md)) die synchroon wordt uitgevoerd met behulp van een [System. Management. Automation. Power shell](/dotnet/api/system.management.automation.powershell) -object.
 
 ## <a name="requirements"></a>Vereisten
 
@@ -36,7 +38,7 @@ In dit voor beeld ziet u het volgende.
 
 ## <a name="example"></a>Voorbeeld
 
-In dit voor beeld wordt een runs Pace gemaakt die gebruikmaakt van een [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) -object om de elementen te definiëren die beschikbaar zijn wanneer de runs Pace wordt geopend. In dit voor beeld wordt een module die een Get-proc-cmdlet definieert, toegevoegd aan de eerste sessie status.
+In dit voor beeld wordt een runs Pace gemaakt die gebruikmaakt van een [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) -object om de elementen te definiëren die beschikbaar zijn wanneer de runs Pace wordt geopend. In dit voor beeld wordt een module die een Get-Proc-cmdlet definieert, toegevoegd aan de oorspronkelijke sessie status.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces

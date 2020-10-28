@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
-contributor: manikb
-keywords: Galerie, Power shell, cmdlet, psget
 title: Script met compatibele Power shell-edities
-ms.openlocfilehash: e364879f611429a8583e550fb7704431e456fbb1
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: In dit artikel wordt uitgelegd hoe de PowerShellGet-cmdlets het bureau blad en de kern edities van Power shell-scripts ondersteunen.
+ms.openlocfilehash: c9d8af24be8138283027263c62140b3fd04d6b24
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71328880"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92656049"
 ---
 # <a name="script-with-compatible-powershell-editions"></a>Script met compatibele Power shell-edities
 
@@ -35,7 +34,7 @@ PSRemotingProtocolVersion      2.3
 SerializationVersion           1.1.0.1
 ```
 
-Auteurs van het script kunnen voor komen dat een script wordt uitgevoerd, tenzij dit wordt uitgevoerd op een compatibele editie van Power shell met `#requires` behulp van de para meter PSEdition in een-instructie.
+Auteurs van het script kunnen voor komen dat een script wordt uitgevoerd, tenzij dit wordt uitgevoerd op een compatibele editie van Power shell met behulp van de para meter PSEdition in een- `#requires` instructie.
 
 ```powershell
 Set-Content C:\script.ps1 -Value "#requires -PSEdition Core

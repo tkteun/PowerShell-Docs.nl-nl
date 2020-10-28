@@ -1,13 +1,14 @@
 ---
 ms.date: 07/16/2020
-keywords: DSC, Power shell, configuratie, installatie
+ms.topic: reference
 title: DSC WindowsProcess-resource
-ms.openlocfilehash: a1f8840a5894049efd27c5d213a66363cd8dbebc
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC WindowsProcess-resource
+ms.openlocfilehash: 3958d1cf90f0ce19b28b5b26cc1fbb8da03626a3
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464125"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92656437"
 ---
 # <a name="dsc-windowsprocess-resource"></a>DSC WindowsProcess-resource
 
@@ -50,5 +51,5 @@ WindowsProcess [string] #ResourceName
 |Eigenschap |Beschrijving |
 |---|---|
 |DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is bijvoorbeeld als de ID van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is `DependsOn = "[ResourceType]ResourceName"` . |
-|Zo |Hiermee wordt aangegeven of het proces bestaat. Stel deze eigenschap in op **aanwezig** om te zorgen dat het proces bestaat. Als dat niet het geval is, stelt u deze in op **afwezig**. De standaard waarde is **aanwezig**. |
+|Zo |Hiermee wordt aangegeven of het proces bestaat. Stel deze eigenschap in op **aanwezig** om te zorgen dat het proces bestaat. Als dat niet het geval is, stelt u deze in op **afwezig** . De standaard waarde is **aanwezig** . |
 |PsDscRunAsCredential |Hiermee stelt u de referentie in voor het uitvoeren van de gehele resource als. |

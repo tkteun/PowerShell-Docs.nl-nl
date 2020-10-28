@@ -1,12 +1,14 @@
 ---
-title: Cmdlets importeren met modules | Microsoft Docs
 ms.date: 08/28/2019
-ms.openlocfilehash: fa8d629c14b06e3f9e9d6151cf09aa6b4acce358
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Cmdlets importeren met modules
+description: Cmdlets importeren met modules
+ms.openlocfilehash: 485a4be4d2accaf050a6536e7f92a0673f62a30b
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87779366"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92657290"
 ---
 # <a name="how-to-import-cmdlets-using-modules"></a>Cmdlets importeren met modules
 

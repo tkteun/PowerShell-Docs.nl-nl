@@ -1,12 +1,14 @@
 ---
-title: Host06-voor beeld | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 5dfcdb2b8a968d91e938c27c6e1e6a8503c90aba
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Voorbeeld Host06
+description: Voorbeeld Host06
+ms.openlocfilehash: 24838b1dbebca841783c4d75adb360d3fd784150
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783242"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92658057"
 ---
 # <a name="host06-sample"></a>Voorbeeld Host06
 

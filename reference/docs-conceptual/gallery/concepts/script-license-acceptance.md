@@ -1,20 +1,19 @@
 ---
 ms.date: 06/09/2017
-schema: 2.0.0
-keywords: powershell
 title: Acceptatie van de licentie vereisen voor scripts
-ms.openlocfilehash: e7101eb6a480dd87965b7b9be9d49583042b603f
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: In het artikel wordt uitgelegd hoe u kunt werken met scripts die zijn gepubliceerd in de PowerShell Gallery waarvoor een gebruiksrecht overeenkomst moet worden geaccepteerd.
+ms.openlocfilehash: d82974810fd1e73ef8d9e5771fc430d0f7964e87
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71328894"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92656081"
 ---
 # <a name="requiring-license-acceptance-for-scripts"></a>Acceptatie van de licentie vereisen voor scripts
 
 Acceptatie van licenties wordt niet ondersteund voor scripts. Het scenario waarbij een script afhankelijk is van een module waarvoor acceptatie van licenties vereist is, wordt echter wel ondersteund.
 
-Script opdrachten (install-script/Save-script/update-script) ondersteunen een nieuwe para meter-AcceptLicense die zich gedraagt alsof de gebruiker de licentie heeft gezien. If-AcceptLicense is niet opgegeven. de gebruiker krijgt de licentie. txt voor de afhankelijke module te zien en u wordt gevraagd de licentie te accepteren.
+De PowerShellGet-script opdrachten ondersteunen de para meter **AcceptLicense** die zich gedraagt alsof de gebruiker de licentie heeft gezien. Als **AcceptLicense** niet is opgegeven, wordt de gebruiker het `license.txt` bestand voor de afhankelijke module weer gegeven en wordt u gevraagd de licentie te accepteren.
 
 ## <a name="examples"></a>VOORBEELDEN
 

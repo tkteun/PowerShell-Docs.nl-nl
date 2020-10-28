@@ -1,13 +1,14 @@
 ---
 ms.date: 07/16/2020
-keywords: DSC, Power shell, configuratie, installatie
+ms.topic: reference
 title: DSC WindowsFeatureSet-resource
-ms.openlocfilehash: 856c56e0b35a26add729ef77db9dca71fdc0a4d0
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC WindowsFeatureSet-resource
+ms.openlocfilehash: f7706679e3dfe85a8cf5a6795bc100657b018678
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86463853"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92656640"
 ---
 # <a name="dsc-windowsfeatureset-resource"></a>DSC WindowsFeatureSet-resource
 
@@ -37,7 +38,7 @@ WindowsFeatureSet [string] #ResourceName
 
 |  Eigenschap  |  Beschrijving   |
 |---|---|
-|Naam |De namen van de functies of onderdelen die u wilt controleren, worden toegevoegd of verwijderd. Dit is hetzelfde als de **naam** eigenschap van de cmdlet [Get-WindowsFeature](/powershell/module/servermanager/get-windowsfeature?view=winserver2012r2-ps) en niet de weergave naam van de functies of onderdelen. |
+|Naam |De namen van de functies of onderdelen die u wilt controleren, worden toegevoegd of verwijderd. Dit is hetzelfde als de **naam** eigenschap van de cmdlet [Get-WindowsFeature](/powershell/module/servermanager/get-windowsfeature) en niet de weergave naam van de functies of onderdelen. |
 |Bron |Hiermee wordt de locatie aangegeven van het bron bestand dat moet worden gebruikt voor installatie, indien nodig. |
 |IncludeAllSubFeature |Stel deze eigenschap in op `$true` om alle vereiste subonderdelen toe te voegen met de functies die u opgeeft met de eigenschap **naam** . |
 |Referentie |De referenties die moeten worden gebruikt om de functies of onderdelen toe te voegen of te verwijderen. |
@@ -48,7 +49,7 @@ WindowsFeatureSet [string] #ResourceName
 |Eigenschap |Beschrijving |
 |---|---|
 |DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is bijvoorbeeld als de ID van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is `DependsOn = "[ResourceType]ResourceName"` . |
-|Zo |Hiermee wordt aangegeven of de functies of onderdelen worden toegevoegd. Stel deze eigenschap in op **presen teren**om ervoor te zorgen dat de functies of onderdelen worden toegevoegd. Om ervoor te zorgen dat de functies of onderdelen worden verwijderd, stelt u de eigenschap in op **afwezig**. De standaard waarde is **aanwezig**. |
+|Zo |Hiermee wordt aangegeven of de functies of onderdelen worden toegevoegd. Stel deze eigenschap in op **presen teren** om ervoor te zorgen dat de functies of onderdelen worden toegevoegd. Om ervoor te zorgen dat de functies of onderdelen worden verwijderd, stelt u de eigenschap in op **afwezig** . De standaard waarde is **aanwezig** . |
 |PsDscRunAsCredential |Hiermee stelt u de referentie in voor het uitvoeren van de gehele resource als. |
 
 > [!NOTE]

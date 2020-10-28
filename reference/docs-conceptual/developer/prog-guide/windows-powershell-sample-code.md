@@ -1,19 +1,21 @@
 ---
-title: Voorbeeld code voor Windows Power shell | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 8dcbe6d8760d77666a8191ca78416ef63dfebdeb
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Windows PowerShell-voorbeeldcode
+description: Windows PowerShell-voorbeeldcode
+ms.openlocfilehash: bfda7d2edc4ab4e01808367c8e2edd01517a5f48
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786931"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92656970"
 ---
 # <a name="windows-powershell-sample-code"></a>Windows PowerShell-voorbeeldcode
 
 Windows Power shell®-voor beelden zijn beschikbaar via de Windows SDK. Deze sectie bevat de voorbeeld code die is opgenomen in de Windows SDK-voor beelden.
 
 > [!NOTE]
-> Wanneer de Windows SDK is geïnstalleerd, wordt er een map met voor **beelden** gemaakt waarin alle voor beelden van Windows Power shell beschikbaar worden gesteld. Een typische installatie directory is **C:\Program Files\Microsoft SDKs\Windows\v6.0**. Start Windows Power shell en typ **' cd Samples\SysMgmt\PowerShell '** om de map met Windows Power shell-voor beelden te vinden. In dit document wordt de map met voor beelden van Windows Power shell aangeduid als **\<PowerShell Samples>** .
+> Wanneer de Windows SDK is geïnstalleerd, wordt er een map met voor **beelden** gemaakt waarin alle voor beelden van Windows Power shell beschikbaar worden gesteld. Een typische installatie directory is **C:\Program Files\Microsoft SDKs\Windows\v6.0** . Start Windows Power shell en typ **' cd Samples\SysMgmt\PowerShell '** om de map met Windows Power shell-voor beelden te vinden. In dit document wordt de map met voor beelden van Windows Power shell aangeduid als **\<PowerShell Samples>** .
 
 ## <a name="sample-code-listing"></a>Voorbeeld code weer geven
 
@@ -26,7 +28,7 @@ Windows Power shell®-voor beelden zijn beschikbaar via de Windows SDK. Deze sec
 | [AccessDBProviderSample05-codevoorbeeld](./accessdbprovidersample05-code-sample.md) | Dit is de provider die wordt beschreven in [een Windows Power shell-navigatie provider maken](./creating-a-windows-powershell-navigation-provider.md).                                                                                                                                                  |
 | [AccessDBProviderSample06-codevoorbeeld](./accessdbprovidersample06-code-sample.md) | Dit is de provider die wordt beschreven in [een Windows Power shell-inhouds provider maken](./creating-a-windows-powershell-content-provider.md).                                                                                                                                                        |
 | [GetProc01-codevoorbeelden](./getproc01-code-samples.md)                             | Dit is het basis `Get-Process` voorbeeld van de cmdlet die wordt beschreven in [uw eerste cmdlet maken](../cmdlet/creating-a-cmdlet-without-parameters.md).                                                                                                                                                     |
-| [GetProc02-codevoorbeelden](./getproc02-code-samples.md)                             | Dit is het `Get-Process` cmdlet-voor beeld dat wordt beschreven in [para meters toevoegen die opdracht regel invoer verwerken](../cmdlet/adding-parameters-that-process-command-line-input.md).                                                                                                                       |
+| [GetProc02-codevoorbeelden](./getproc02-code-samples.md)                             | Dit is het `Get-Process` cmdlet-voor beeld dat wordt beschreven in [para meters toevoegen die Command-Line invoer verwerken](../cmdlet/adding-parameters-that-process-command-line-input.md).                                                                                                                       |
 | [GetProc03-codevoorbeelden](./getproc03-code-samples.md)                             | Dit is het `Get-Process` cmdlet-voor beeld dat wordt beschreven in [para meters toevoegen die de invoer van de pijp lijn verwerken](../cmdlet/adding-parameters-that-process-pipeline-input.md).                                                                                                                               |
 | [GetProc04-codevoorbeelden](./getproc04-code-samples.md)                             | Dit is het `Get-Process` cmdlet-voor beeld dat wordt beschreven in het toevoegen van niet- [afsluitende fout rapportage aan uw cmdlet](../cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md).                                                                                                                |
 | [GetProc05-codevoorbeelden](./getproc05-code-samples.md)                             | Deze `Get-Process` cmdlet is vergelijkbaar met de cmdlet die wordt beschreven in het toevoegen van niet- [afsluitende fout rapportage aan uw cmdlet](../cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md).                                                                                                     |

@@ -1,12 +1,14 @@
 ---
-title: De Windows PowerShell SDK installeren
 ms.date: 03/30/2020
-ms.openlocfilehash: 91cf57510bb7f44799cfdaf7cadcc7bcd505c977
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: De Windows PowerShell SDK installeren
+description: De Windows PowerShell SDK installeren
+ms.openlocfilehash: 07108ede640b8c6c02bea6d9e2b63116b5b8f969
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87771971"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92657298"
 ---
 # <a name="installing-the-windows-powershell-sdk"></a>De Windows PowerShell SDK installeren
 
@@ -74,8 +76,8 @@ SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\` . In de volgende secties v
 - Runspace02: laat zien hoe u de Power shell-klasse kunt gebruiken om de- `Get-Process` en- `Sort-Object` cmdlets synchroon uit te voeren. De `Get-Process` cmdlet retourneert proces objecten voor elk proces dat wordt uitgevoerd op de lokale computer en de `Sort-Object` objecten worden gesorteerd op basis van de bijbehorende id-eigenschap. De resultaten van deze opdrachten worden weer gegeven met behulp van een DataGridView-besturings element.
 - Runspace03: laat zien hoe u de Power shell-klasse kunt gebruiken om een script synchroon uit te voeren en om niet-afsluit fouten te verwerken. Het script ontvangt een lijst met proces namen en haalt deze processen vervolgens op. De resultaten van het script, met inbegrip van eventuele niet-afsluit fouten die zijn gegenereerd bij het uitvoeren van het script, worden weer gegeven in een console venster.
 - Runspace04: toont hoe u de Power shell-klasse gebruikt om opdrachten uit te voeren en hoe u afsluit fouten kunt opvangen die worden gegenereerd bij het uitvoeren van de opdrachten. Er worden twee opdrachten uitgevoerd en de laatste opdracht is een ongeldig parameter argument door gegeven. Als gevolg hiervan worden er geen objecten geretourneerd en wordt er een afsluit fout gegenereerd.
-- Runspace05: laat zien hoe u een module kunt toevoegen aan een InitialSessionState-object, zodat de cmdlet van de module beschikbaar is wanneer de runs Pace wordt geopend. De module biedt een Get-proc-cmdlet (gedefinieerd door het GetProcessSample01-voor beeld) die synchroon wordt uitgevoerd met behulp van een Power shell-object.
-- Runspace06: laat zien hoe u een module aan een InitialSessionState-object toevoegt, zodat de module wordt geladen wanneer de runs Pace wordt geopend. De module biedt een Get-proc-cmdlet (gedefinieerd door het GetProcessSample02-voor beeld) die synchroon wordt uitgevoerd met behulp van een Power shell-object.
+- Runspace05: laat zien hoe u een module kunt toevoegen aan een InitialSessionState-object, zodat de cmdlet van de module beschikbaar is wanneer de runs Pace wordt geopend. De module bevat een Get-Proc-cmdlet (gedefinieerd door het voor beeld GetProcessSample01) die synchroon wordt uitgevoerd met behulp van een Power shell-object.
+- Runspace06: laat zien hoe u een module aan een InitialSessionState-object toevoegt, zodat de module wordt geladen wanneer de runs Pace wordt geopend. De module biedt een Get-Proc-cmdlet (gedefinieerd door het voor beeld GetProcessSample02) die synchroon wordt uitgevoerd met behulp van een Power shell-object.
 - Runspace07: laat zien hoe u een runs Pace maakt en vervolgens die runs Pace gebruikt om twee cmdlets synchroon uit te voeren met behulp van een Power shell-object.
 - Runspace08: laat zien hoe u opdrachten en argumenten kunt toevoegen aan de pijp lijn van een Power shell-object en hoe de opdrachten synchroon moeten worden uitgevoerd.
 - Runspace09: hier wordt uitgelegd hoe u een script toevoegt aan de pijp lijn van een Power shell-object en hoe u het script asynchroon uitvoert. Gebeurtenissen worden gebruikt voor het afhandelen van de uitvoer van het script.

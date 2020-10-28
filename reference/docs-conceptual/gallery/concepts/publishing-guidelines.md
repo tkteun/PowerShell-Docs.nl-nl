@@ -1,15 +1,13 @@
 ---
 ms.date: 06/12/2017
-contributor: JKeithB, SydneyhSmith
-keywords: Galerie, Power shell, cmdlet, psgallery
-description: Richt lijnen voor uitgevers
+description: In dit artikel worden de aanbevolen stappen beschreven om ervoor te zorgen dat de pakketten die zijn gepubliceerd op de PowerShell Gallery, algemeen worden goedgekeurd en hoge waarde bieden aan gebruikers.
 title: Richt lijnen voor publicatie PowerShell Gallery en aanbevolen procedures
-ms.openlocfilehash: c58b23b0021e0745ee690a78f7e42c821d59cdb0
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.openlocfilehash: 949340aeba36df26c68f92422b8c11869ed3bf11
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87777851"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92656145"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>Richt lijnen voor publicatie van PowerShellGallery en aanbevolen procedures
 
@@ -43,7 +41,7 @@ Elk van deze wordt kort beschreven in de onderstaande secties.
 
 ## <a name="use-psscriptanalyzer"></a>PSScriptAnalyzer gebruiken
 
-[PSScriptAnalyzer](https://www.powershellgallery.com/packages/PSScriptAnalyzer) is een gratis hulp programma voor statische code analyse dat kan worden uitgevoerd op Power shell-code. **PSScriptAnalyzer** identificeert de meest voorkomende problemen die in Power shell-code worden weer gegeven en vaak een aanbeveling om het probleem op te lossen. Het hulp programma is eenvoudig te gebruiken en categoriseert de problemen als fouten (ernstig, moeten worden geadresseerd), waarschuwing (moet worden gecontroleerd en moet worden opgelost) en informatie (voor aanbevolen procedures wordt uitgecheckt). Alle pakketten die naar het PowerShell Gallery worden gepubliceerd, worden gescand met **PSScriptAnalyzer**en eventuele fouten worden weer gegeven aan de eigenaar en moeten worden verholpen.
+[PSScriptAnalyzer](https://www.powershellgallery.com/packages/PSScriptAnalyzer) is een gratis hulp programma voor statische code analyse dat kan worden uitgevoerd op Power shell-code. **PSScriptAnalyzer** identificeert de meest voorkomende problemen die in Power shell-code worden weer gegeven en vaak een aanbeveling om het probleem op te lossen. Het hulp programma is eenvoudig te gebruiken en categoriseert de problemen als fouten (ernstig, moeten worden geadresseerd), waarschuwing (moet worden gecontroleerd en moet worden opgelost) en informatie (voor aanbevolen procedures wordt uitgecheckt). Alle pakketten die naar het PowerShell Gallery worden gepubliceerd, worden gescand met **PSScriptAnalyzer** en eventuele fouten worden weer gegeven aan de eigenaar en moeten worden verholpen.
 
 Het best practice moet worden uitgevoerd `Invoke-ScriptAnalyzer` met en er wordt een `-Recurse` waarschuwing gegeven `-Severity` .
 
@@ -52,7 +50,7 @@ Bekijk de resultaten en zorg ervoor dat:
 - Alle fouten worden gecorrigeerd of behandeld in de documentatie.
 - Alle waarschuwingen worden beoordeeld en zo nodig opgelost.
 
-Gebruikers die pakketten downloaden van de PowerShell Gallery worden ten zeerste aanbevolen om **PSScriptAnalyzer** uit te voeren en alle fouten en waarschuwingen te evalueren. Gebruikers zijn zeer waarschijnlijk contact met pakket eigen aars als ze zien dat er een fout is gemeld door **PSScriptAnalyzer**. Als er een goede reden voor uw pakket is om code te houden die als een fout wordt gemarkeerd, voegt u die informatie toe aan uw documentatie om te voor komen dat u dezelfde vraag meermaals beantwoordt.
+Gebruikers die pakketten downloaden van de PowerShell Gallery worden ten zeerste aanbevolen om **PSScriptAnalyzer** uit te voeren en alle fouten en waarschuwingen te evalueren. Gebruikers zijn zeer waarschijnlijk contact met pakket eigen aars als ze zien dat er een fout is gemeld door **PSScriptAnalyzer** . Als er een goede reden voor uw pakket is om code te houden die als een fout wordt gemarkeerd, voegt u die informatie toe aan uw documentatie om te voor komen dat u dezelfde vraag meermaals beantwoordt.
 
 ## <a name="include-documentation-and-examples"></a>Documentatie en voor beelden toevoegen
 
@@ -73,7 +71,7 @@ Een goed patroon voor voor beelden vindt u in de [module PSDscResource](https://
 
 ## <a name="manage-dependencies"></a>Afhankelijkheden beheren
 
-Het is belang rijk om modules op te geven waarvan uw module afhankelijk is in het module manifest. Hierdoor hoeft de eind gebruiker zich geen zorgen te maken over het installeren van de juiste versies van de modules waarvan u afhankelijk bent. Als u afhankelijke modules wilt opgeven, moet u het vereiste module veld gebruiken in het module manifest. Hiermee worden alle vermelde modules in de globale omgeving geladen voordat de module wordt geïmporteerd, tenzij ze al zijn geladen. Sommige modules kunnen bijvoorbeeld al zijn geladen door een andere module. Het is ook mogelijk om een specifieke versie op te geven die moet worden geladen met behulp van het veld **RequiredVersion** in plaats van het veld **ModuleVersion** . Wanneer u **ModuleVersion**gebruikt, wordt de nieuwste versie geladen die beschikbaar is met een minimum van de opgegeven versie. Als u het veld **RequiredVersion** niet gebruikt om een specifieke versie op te geven, is het belang rijk om versie-updates te controleren naar de vereiste module. Het is vooral belang rijk dat u op de hoogte bent van eventuele wijzigingen die van invloed kunnen zijn op de gebruikers ervaring met uw module.
+Het is belang rijk om modules op te geven waarvan uw module afhankelijk is in het module manifest. Hierdoor hoeft de eind gebruiker zich geen zorgen te maken over het installeren van de juiste versies van de modules waarvan u afhankelijk bent. Als u afhankelijke modules wilt opgeven, moet u het vereiste module veld gebruiken in het module manifest. Hiermee worden alle vermelde modules in de globale omgeving geladen voordat de module wordt geïmporteerd, tenzij ze al zijn geladen. Sommige modules kunnen bijvoorbeeld al zijn geladen door een andere module. Het is ook mogelijk om een specifieke versie op te geven die moet worden geladen met behulp van het veld **RequiredVersion** in plaats van het veld **ModuleVersion** . Wanneer u **ModuleVersion** gebruikt, wordt de nieuwste versie geladen die beschikbaar is met een minimum van de opgegeven versie. Als u het veld **RequiredVersion** niet gebruikt om een specifieke versie op te geven, is het belang rijk om versie-updates te controleren naar de vereiste module. Het is vooral belang rijk dat u op de hoogte bent van eventuele wijzigingen die van invloed kunnen zijn op de gebruikers ervaring met uw module.
 
 ```powershell
 Example: RequiredModules = @(@{ModuleName="myDependentModule"; ModuleVersion="2.0"; Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})
@@ -85,10 +83,9 @@ Example: RequiredModules = @(@{ModuleName="myDependentModule"; RequiredVersion="
 
 Pakket eigen aars die op de juiste manier reageren op feedback, zijn zeer waard door de community. Gebruikers die feitelijke feedback bieden, zijn belang rijk om te reageren op, aangezien ze voldoende zijn in het pakket om het te helpen verbeteren.
 
-Er zijn twee feedback methoden beschikbaar in de PowerShell Gallery:
+Er is één feedback methode beschikbaar in de PowerShell Gallery:
 
 - Eigenaar van contact persoon: Hiermee kan een gebruiker een e-mail verzenden naar de eigenaar van het pakket. Als pakket eigenaar is het belang rijk om het e-mail adres dat wordt gebruikt met de PowerShell Gallery-pakketten te controleren en te reageren op problemen die zijn opgetreden. Het enige nadeel van deze methode is dat alleen de gebruiker en de eigenaar ooit de communicatie kunnen zien, zodat de eigenaar mogelijk dezelfde vraag meermaals moet beantwoorden.
-- Opmerkingen: aan de onderkant van de pakket pagina is een **opmerkings** veld. Het voor deel van dit systeem is dat andere gebruikers de opmerkingen en reacties kunnen zien, waardoor het aantal keren dat een enkele vraag moet worden beantwoord, kleiner wordt. Als pakket eigenaar wordt u ten zeerste aangeraden de opmerkingen voor elk pakket te volgen. Zie [feedback geven via sociale media of opmerkingen](../how-to/working-with-packages/social-media-feedback.md) voor meer informatie over hoe u dit doet.
 
 Eigen aren die reageren op feedback constructively worden door de Community gewaardeerd. Gebruik de verkoop kans in het rapport om meer informatie aan te vragen. Als dat nodig is, kunt u een tijdelijke oplossing opgeven of vaststellen of een update een probleem corrigeert.
 
@@ -142,7 +139,7 @@ De doelen voor de test dekking worden in de documentatie voor de [resource modul
 
 ## <a name="include-andor-link-to-license-terms"></a>Toevoegen en/of koppelen aan licentie voorwaarden
 
-Alle pakketten die naar het PowerShell Gallery worden gepubliceerd, moeten de licentie voorwaarden opgeven of gebonden zijn aan de licentie die is opgenomen in de [gebruiks voorwaarden](https://www.powershellgallery.com/policies/Terms) onder **een**. De beste manier om een andere licentie op te geven, is door een koppeling naar de licentie te geven met behulp van de **LicenseURI** in **PSData**. Zie voor meer informatie [packages-manifest en Galerie-gebruikers interface](package-manifest-affecting-ui.md).
+Alle pakketten die naar het PowerShell Gallery worden gepubliceerd, moeten de licentie voorwaarden opgeven of gebonden zijn aan de licentie die is opgenomen in de [gebruiks voorwaarden](https://www.powershellgallery.com/policies/Terms) onder **een** . De beste manier om een andere licentie op te geven, is door een koppeling naar de licentie te geven met behulp van de **LicenseURI** in **PSData** . Zie voor meer informatie [packages-manifest en Galerie-gebruikers interface](package-manifest-affecting-ui.md).
 
 ```powershell
 PrivateData = @{
@@ -193,9 +190,9 @@ De PowerShell Gallery is niet ontworpen om een doel te zijn voor het testen van 
 - Stel een lokale PowerShell Gallery-instantie in met behulp van het PS-project in de [persoonlijke galerie](https://github.com/PowerShell/PSPrivateGallery) in github. Dit preview-project helpt u bij het instellen van een exemplaar van de PowerShell Gallery dat u kunt beheren en gebruiken voor uw tests.
 - Stel een [interne Nuget-opslag plaats](https://blogs.msdn.microsoft.com/powershell/2014/05/20/setting-up-an-internal-powershellget-repository/)in.
   Hiervoor moet meer werk worden ingesteld, maar heeft het voor deel dat er een aantal meer vereisten wordt gevalideerd, met name het gebruik van een API-sleutel en of er afhankelijkheden in het doel aanwezig zijn wanneer u publiceert.
-- Stel een bestands share in als test **opslagplaats**. Dit is eenvoudig te configureren, maar omdat het een bestands share is, zullen de hierboven vermelde validaties niet worden uitgevoerd. Een potentiële voor deel in dit geval is dat de bestands share niet de vereiste API-sleutel controleert, zodat u dezelfde sleutel kunt gebruiken die u gebruikt om naar de PowerShell Gallery te publiceren.
+- Stel een bestands share in als test **opslagplaats** . Dit is eenvoudig te configureren, maar omdat het een bestands share is, zullen de hierboven vermelde validaties niet worden uitgevoerd. Een potentiële voor deel in dit geval is dat de bestands share niet de vereiste API-sleutel controleert, zodat u dezelfde sleutel kunt gebruiken die u gebruikt om naar de PowerShell Gallery te publiceren.
 
-Met een van deze oplossingen gebruikt u `Register-PSRepository` voor het definiëren van een nieuwe **opslag plaats**die u in de `-Repository` para meter voor gebruikt `Publish-Module` .
+Met een van deze oplossingen gebruikt u `Register-PSRepository` voor het definiëren van een nieuwe **opslag plaats** die u in de `-Repository` para meter voor gebruikt `Publish-Module` .
 
 Een extra punt over het testen van publicaties: elk pakket dat u naar de PowerShell Gallery publiceert, kan niet worden verwijderd zonder hulp van het operations-team, dat ervoor zorgt dat niets afhankelijk is van het pakket dat u wilt publiceren. Daarom bieden we geen ondersteuning voor de PowerShell Gallery als test doel en nemen ze contact op met elke uitgever.
 
@@ -204,7 +201,7 @@ Een extra punt over het testen van publicaties: elk pakket dat u naar de PowerSh
 Het wordt ten zeerste aanbevolen dat uitgevers `Publish-Module` de `Publish-Script` cmdlets en gebruiken bij het werken met de PowerShell Gallery. **PowerShellGet** is gemaakt om u te helpen voor komen dat u belang rijke informatie over de installatie van en publiceert op de PowerShell Gallery. In sommige gevallen hebben uitgevers ervoor gekozen om **PowerShellGet** over te slaan en de **NuGet** -client of **Package Management** -cmdlets te gebruiken, in plaats van `Publish-Module` . Er zijn een aantal details die eenvoudig worden gemist, wat leidt tot een aantal ondersteunings aanvragen.
 
 Als er een reden is dat u of niet kunt gebruiken `Publish-Module` `Publish-Script` , laat het ons dan weten.
-Verstrek een probleem in de **PowerShellGet** github opslag plaats en geef de details op die ervoor zorgen dat u **NuGet** of **Package Management**kunt kiezen.
+Verstrek een probleem in de **PowerShellGet** github opslag plaats en geef de details op die ervoor zorgen dat u **NuGet** of **Package Management** kunt kiezen.
 
 ## <a name="recommended-workflow"></a>Aanbevolen werk stroom
 

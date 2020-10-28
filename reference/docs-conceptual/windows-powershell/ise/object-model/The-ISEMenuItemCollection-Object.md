@@ -1,17 +1,17 @@
 ---
 ms.date: 12/31/2019
-keywords: powershell,cmdlet
 title: Het ISEMenuItemCollection-object
-ms.openlocfilehash: 39e8547c9b19ba323d4b224a46eda416542b2807
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: Een ISEMenuItemCollection-object is een verzameling ISEMenuItem-objecten.
+ms.openlocfilehash: cd86768d13b1326a8f35c44f0391ab60669cee4f
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810937"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92655995"
 ---
 # <a name="the-isemenuitemcollection-object"></a>Het ISEMenuItemCollection-object
 
-Een **ISEMenuItemCollection** -object is een verzameling **ISEMenuItem** -objecten. Het is een exemplaar van de klasse **micro soft. Power shell. host. ISE. ISEMenuItemCollection** . Een voor beeld is het `$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus` object dat wordt gebruikt voor het aanpassen van het **invoeg** menu in Windows Power Shell® integrated SCRIPTING Environment (ISE).
+Een **ISEMenuItemCollection** -object is een verzameling **ISEMenuItem** -objecten. Het is een exemplaar van de klasse **micro soft. Power shell. host. ISE. ISEMenuItemCollection** . Een voor beeld is het `$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus` object dat wordt gebruikt voor het aanpassen van het **invoeg** menu in Windows Power shell &reg; Integrated Scripting Environment (ISE).
 
 ## <a name="method"></a>Methode
 

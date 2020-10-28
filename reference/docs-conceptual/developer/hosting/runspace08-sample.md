@@ -1,12 +1,14 @@
 ---
-title: Runspace08-voor beeld | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 4fcf58eceb415f9f02391c22d2719e9140c77ea9
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Voorbeeld Runspace08
+description: Voorbeeld Runspace08
+ms.openlocfilehash: ce60e85919a78143f26ff695a9c9104c86cd4f6a
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783157"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92657645"
 ---
 # <a name="runspace08-sample"></a>Voorbeeld Runspace08
 

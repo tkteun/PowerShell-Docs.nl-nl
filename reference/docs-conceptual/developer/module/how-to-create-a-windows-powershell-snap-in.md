@@ -1,14 +1,14 @@
 ---
-title: Een Windows Power shell-module maken | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- snap-ins [PowerShell SDK], examples
-ms.openlocfilehash: 4150ba582544d1daa4a898f0ff20b169c24a0ee0
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Een Windows PowerShell-module maken
+description: Een Windows PowerShell-module maken
+ms.openlocfilehash: 29394ebcd2f7c4a547aabcb88685ff494b2c381d
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787322"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92657267"
 ---
 # <a name="how-to-create-a-windows-powershell-snap-in"></a>Een Windows PowerShell-module maken
 

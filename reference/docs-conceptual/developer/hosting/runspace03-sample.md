@@ -1,12 +1,14 @@
 ---
-title: Runspace03-voor beeld | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: d4fa3bca883fb8d78ca1bc8b0c0f9b70f304be06
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Voorbeeld Runspace03
+description: Voorbeeld Runspace03
+ms.openlocfilehash: fff699bf0545bb1419aa45b8c46bbd9c2cf0a99e
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87772175"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92657852"
 ---
 # <a name="runspace03-sample"></a>Voorbeeld Runspace03
 

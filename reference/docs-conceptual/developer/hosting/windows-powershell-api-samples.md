@@ -1,12 +1,14 @@
 ---
-title: Windows Power shell-API-voor beelden | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: d7232bb16851f1d568cbdfc4374e287d0875adc8
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Voorbeelden van Windows PowerShell-API's
+description: Voorbeelden van Windows PowerShell-API's
+ms.openlocfilehash: b6336ae7a2abb98cbbaa69bf6c9455f893db2d94
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87780165"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92657541"
 ---
 # <a name="windows-powershell-api-samples"></a>Voorbeelden van Windows PowerShell-API's
 

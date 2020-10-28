@@ -1,12 +1,14 @@
 ---
-title: Een naam geven aan een HelpInfo-XML-bestand
 ms.date: 09/12/2016
-ms.openlocfilehash: 9505a7f66852a569d25ac0c1be86e68f870a7930
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: Een naam geven aan een HelpInfo-XML-bestand
+description: Een naam geven aan een HelpInfo-XML-bestand
+ms.openlocfilehash: 55bc2ef9530fc457e4d9ddf18e79e7226c991663
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86892928"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92659043"
 ---
 # <a name="how-to-name-a-helpinfo-xml-file"></a>Een naam geven aan een HelpInfo-XML-bestand
 

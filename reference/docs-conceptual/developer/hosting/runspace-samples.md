@@ -1,12 +1,14 @@
 ---
-title: Voor beelden van runs Pace | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: f7c11101a570f89657f9ffc4d52fa6ebce3a91e1
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Voorbeelden van runspaces
+description: Voorbeelden van runspaces
+ms.openlocfilehash: 0171622f3ade3b341bc226f14398d6d293262f0c
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87772209"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92657958"
 ---
 # <a name="runspace-samples"></a>Voorbeelden van runspaces
 
@@ -25,9 +27,9 @@ Deze sectie bevat voorbeeld code die laat zien hoe u verschillende soorten runsp
 
  [Runspace04](./runspace04-sample.md) -voor beeld In dit voor beeld ziet u hoe u de klasse [System. Management. Automation. Power shell](/dotnet/api/system.management.automation.powershell) gebruikt om opdrachten uit te voeren en hoe u afsluit fouten kunt opvangen die worden gegenereerd bij het uitvoeren van de opdrachten. Er worden twee opdrachten uitgevoerd en de laatste opdracht is een ongeldig parameter argument door gegeven. Als gevolg hiervan worden er geen objecten geretourneerd en wordt er een afsluit fout gegenereerd.
 
- [Runspace05](./runspace05-sample.md) -voor beeld In dit voor beeld ziet u hoe u een module kunt toevoegen aan een [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) -object, zodat de cmdlet van de module beschikbaar is wanneer de runs Pace wordt geopend. De module bevat een Get-proc-cmdlet (gedefinieerd door het GetProcessSample01-voor [beeld](../cmdlet/getprocesssample01-sample.md)) die synchroon wordt uitgevoerd met behulp van een [System. Management. Automation. Power shell](/dotnet/api/system.management.automation.powershell) -object.
+ [Runspace05](./runspace05-sample.md) -voor beeld In dit voor beeld ziet u hoe u een module kunt toevoegen aan een [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) -object, zodat de cmdlet van de module beschikbaar is wanneer de runs Pace wordt geopend. De module bevat een Get-Proc-cmdlet (gedefinieerd door het voor [beeld GetProcessSample01](../cmdlet/getprocesssample01-sample.md)) die synchroon wordt uitgevoerd met behulp van een [System. Management. Automation. Power shell](/dotnet/api/system.management.automation.powershell) -object.
 
- [Runspace06](./runspace06-sample.md) -voor beeld In dit voor beeld ziet u hoe u een module kunt toevoegen aan een [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) -object, zodat de module wordt geladen wanneer de runs Pace wordt geopend. De module bevat een Get-proc-cmdlet (gedefinieerd door het GetProcessSample02-voor [beeld](../cmdlet/getprocesssample02-sample.md)) die synchroon wordt uitgevoerd met behulp van een [System. Management. Automation. Power shell](/dotnet/api/system.management.automation.powershell) -object.
+ [Runspace06](./runspace06-sample.md) -voor beeld In dit voor beeld ziet u hoe u een module kunt toevoegen aan een [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) -object, zodat de module wordt geladen wanneer de runs Pace wordt geopend. De module biedt een Get-Proc-cmdlet (gedefinieerd door het voor [beeld GetProcessSample02](../cmdlet/getprocesssample02-sample.md)) die synchroon wordt uitgevoerd met behulp van een [System. Management. Automation. Power shell](/dotnet/api/system.management.automation.powershell) -object.
 
  [Runspace07](./runspace07-sample.md) -voor beeld In dit voor beeld ziet u hoe u een runs Pace maakt en vervolgens die runs Pace gebruikt om twee cmdlets synchroon uit te voeren met behulp van een [System. Management. Automation. Power shell](/dotnet/api/system.management.automation.powershell) -object.
 

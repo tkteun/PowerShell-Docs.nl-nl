@@ -1,12 +1,14 @@
 ---
-title: CAB-bestand voor een Help die kan worden bijgewerkt een naam geven
 ms.date: 09/12/2016
-ms.openlocfilehash: 42486461d92f1f6fcff452a4539edf5be7a66f22
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: CAB-bestand voor een Help die kan worden bijgewerkt een naam geven
+description: CAB-bestand voor een Help die kan worden bijgewerkt een naam geven
+ms.openlocfilehash: 57ea188d07a382d1a986a49c9ae22c5919dafa8e
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86892996"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92658913"
 ---
 # <a name="how-to-name-an-updatable-help-cab-file"></a>CAB-bestand voor een Help die kan worden bijgewerkt een naam geven
 

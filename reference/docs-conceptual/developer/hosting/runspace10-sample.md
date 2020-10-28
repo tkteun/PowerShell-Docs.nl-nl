@@ -1,12 +1,14 @@
 ---
-title: Runspace10-voor beeld | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 4d858c432c6221f2347f6de664d1e4ee299f5801
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Voorbeeld Runspace10
+description: Voorbeeld Runspace10
+ms.openlocfilehash: fd58cea553e6b830a56df7edfa7901d39f46a06c
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784942"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92657576"
 ---
 # <a name="runspace10-sample"></a>Voorbeeld Runspace10
 
@@ -34,7 +36,7 @@ In dit voor beeld ziet u het volgende.
 
 ## <a name="example"></a>Voorbeeld
 
-In dit voor beeld wordt een runs Pace gemaakt die gebruikmaakt van een [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) -object om de elementen te definiëren die beschikbaar zijn wanneer de runs Pace wordt geopend. In dit voor beeld wordt de cmdlet Get-proc (gedefinieerd door de hosttoepassing) toegevoegd aan de eerste sessie status en wordt de cmdlet synchroon uitgevoerd met behulp van een [System. Management. Automation. Power shell](/dotnet/api/system.management.automation.powershell) -object.
+In dit voor beeld wordt een runs Pace gemaakt die gebruikmaakt van een [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) -object om de elementen te definiëren die beschikbaar zijn wanneer de runs Pace wordt geopend. In dit voor beeld wordt de cmdlet Get-Proc (gedefinieerd door de hosttoepassing) toegevoegd aan de eerste sessie status en wordt de cmdlet synchroon uitgevoerd met behulp van een [System. Management. Automation. Power shell](/dotnet/api/system.management.automation.powershell) -object.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces

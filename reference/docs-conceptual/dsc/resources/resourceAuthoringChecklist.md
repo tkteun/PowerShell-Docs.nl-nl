@@ -2,12 +2,13 @@
 ms.date: 07/08/2020
 keywords: DSC, Power shell, configuratie, installatie
 title: Controlelijst voor het ontwerpen van resource
-ms.openlocfilehash: f21e2e8563880e0c10cf50b044e9c56ca09fe0fa
-ms.sourcegitcommit: d26e2237397483c6333abcf4331bd82f2e72b4e3
+description: Dit artikel bevat een controle lijst met aanbevolen procedures die moeten worden gebruikt bij het ontwerpen van een nieuwe DSC-resource.
+ms.openlocfilehash: 5b618511f730c80104620c84e693c13ae4f536ac
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86217641"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92656340"
 ---
 # <a name="resource-authoring-checklist"></a>Controlelijst voor het ontwerpen van resource
 
@@ -119,7 +120,7 @@ Hier volgt een meer concrete voor beeld van het gebruik van een register resourc
 
 Zorg ervoor dat u de `Get/Set/Test-TargetResource` functies in uw Resource test door deze rechtstreeks aan te roepen en te controleren of ze werken zoals verwacht.
 
-## <a name="verify-end-to-end-using-start-dscconfiguration"></a>End-to-end controleren met start-DscConfiguration
+## <a name="verify-end-to-end-using-start-dscconfiguration"></a>End-to-end controleren met behulp van Start-DscConfiguration
 
 `Get/Set/Test-TargetResource`Het is belang rijk om functies te testen door ze rechtstreeks aan te roepen, maar niet alle problemen worden op deze manier gedetecteerd. Het is belang rijk dat u zich richt op `Start-DscConfiguration` het gebruik of de pull-server. Dit is in feite hoe gebruikers de resource gaan gebruiken, dus te laag inschatten de significantie van dit type tests niet op. Mogelijke typen problemen:
 
@@ -134,7 +135,7 @@ De resource moet werken op alle door DSC ondersteunde platforms (Windows Server 
 
 Een zeer veelvoorkomende test hiaat is het verifiëren van de bron alleen op Server versies van Windows. Veel resources zijn ook ontworpen om te werken met client-Sku's, dus als dat in uw geval waar is, vergeet dan niet om deze ook op deze platforms te testen.
 
-## <a name="get-dscresource-lists-the-resource"></a>Get-Dscresource bieden geeft de resource weer
+## <a name="get-dscresource-lists-the-resource"></a>Get-DSCResource bevat de resource
 
 Nadat u de module hebt geïmplementeerd, `Get-DscResource` moet u de resource onder andere aanroepen als gevolg van een lijst. Als u uw resource niet kunt vinden in de lijst, moet u ervoor zorgen dat het schema. MOF-bestand voor die bron bestaat.
 

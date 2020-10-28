@@ -2,19 +2,19 @@
 ms.date: 07/08/2020
 keywords: DSC, Power shell, configuratie, installatie
 title: Het hulp programma resource Designer gebruiken
-ms.openlocfilehash: 04fd2fbcc5afd9f1c7cbfaa44d6bdfde93bca399
-ms.sourcegitcommit: d26e2237397483c6333abcf4331bd82f2e72b4e3
+description: Het hulp programma resource Designer is een set cmdlets die wordt weer gegeven door de xDscResourceDesigner-module, waardoor het maken van Power shell DSC-resources eenvoudiger wordt.
+ms.openlocfilehash: efe36d045ac3fba3823cb1f812bb5761d238fdf1
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86217488"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92656496"
 ---
 # <a name="using-the-resource-designer-tool"></a>Het hulp programma resource Designer gebruiken
 
 > Van toepassing op: Windows Power Shell 4,0, Windows Power shell 5,0
 
-Het hulp programma resource Designer is een set cmdlets die wordt weer gegeven door de **xDscResourceDesigner** -module, waardoor DSC-resources (desired state Configuration) van Windows Power shell eenvoudiger kunnen worden gemaakt. De cmdlets in deze resource helpen u bij het maken van het MOF-schema, de script module en de mapstructuur voor uw nieuwe resource. Zie voor meer informatie over DSC-resources [aangepaste Windows Power shell-configuratie bronnen voor de gewenste status bouwen](authoringResource.md).
-In dit onderwerp gaan we een DSC-resource maken die Active Directory gebruikers beheert. Gebruik de cmdlet [install-module](/powershell/module/PowershellGet/Install-Module) om de **xDscResourceDesigner** -module te installeren.
+Het hulp programma resource Designer is een set cmdlets die wordt weer gegeven door de **xDscResourceDesigner** -module, waardoor DSC-resources (desired state Configuration) van Windows Power shell eenvoudiger kunnen worden gemaakt. De cmdlets in deze resource helpen u bij het maken van het MOF-schema, de script module en de mapstructuur voor uw nieuwe resource. Zie voor meer informatie over DSC-resources [aangepaste Windows Power shell-configuratie bronnen voor de gewenste status bouwen](authoringResource.md). In dit artikel maken we een DSC-resource waarmee Active Directory gebruikers worden beheerd. Gebruik de cmdlet [install-module](/powershell/module/PowershellGet/Install-Module) om de **xDscResourceDesigner** -module te installeren.
 
 ## <a name="creating-resource-properties"></a>Resource-eigenschappen maken
 
@@ -22,10 +22,10 @@ Het eerste wat u moet doen, is beslissen over eigenschappen die de resource besc
 
 Parameter naam beschrijving
 
-- **Gebruikers naam**: sleutel eigenschap die een unieke identificatie vormt van een gebruiker.
-- **Zorg ervoor**: Hiermee geeft u op of het gebruikers account aanwezig of afwezig moet zijn. Deze para meter heeft slechts twee mogelijke waarden.
-- **DomainCredential**: het domein wachtwoord voor de gebruiker.
-- **Wacht woord**: het gewenste wacht woord voor de gebruiker, zodat een configuratie het gebruikers wachtwoord zo nodig kan wijzigen.
+- **Gebruikers naam** : sleutel eigenschap die een unieke identificatie vormt van een gebruiker.
+- **Zorg ervoor** : Hiermee geeft u op of het gebruikers account aanwezig of afwezig moet zijn. Deze para meter heeft slechts twee mogelijke waarden.
+- **DomainCredential** : het domein wachtwoord voor de gebruiker.
+- **Wacht woord** : het gewenste wacht woord voor de gebruiker, zodat een configuratie het gebruikers wachtwoord zo nodig kan wijzigen.
 
 We gebruiken de-cmdlet om de eigenschappen te maken `New-xDscResourceProperty` . De volgende Power shell-opdrachten maken de eigenschappen die hierboven worden beschreven.
 

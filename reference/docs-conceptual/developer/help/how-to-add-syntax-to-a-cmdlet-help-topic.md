@@ -1,12 +1,14 @@
 ---
-title: Syntaxis toevoegen aan een Help-onderwerp voor cmdlets
 ms.date: 09/12/2016
-ms.openlocfilehash: 3457341a577b283bf3da5dc010de9bbbb36b78d2
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: Syntaxis toevoegen aan een Help-onderwerp voor cmdlets
+description: Syntaxis toevoegen aan een Help-onderwerp voor cmdlets
+ms.openlocfilehash: bcc037d22051c162cd0f70702da17afe7ed9c01a
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86893047"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92659065"
 ---
 # <a name="how-to-add-syntax-to-a-cmdlet-help-topic"></a>Syntaxis toevoegen aan een Help-onderwerp voor cmdlets
 
@@ -52,7 +54,7 @@ Normaal gesp roken zijn parameter waarden die tijdelijke aanduidingen zijn verei
    ```
 
 1. Een lijst met alle para meters van de cmdlet. Typ een afbreek streepje ( `-` ) (ASCII 45) voor elke parameter naam.
-   De para meters in parameter sets scheiden (sommige cmdlets hebben mogelijk slechts één para meter ingesteld). In dit voor beeld heeft de cmdlet Get-tech twee parameter sets.
+   De para meters in parameter sets scheiden (sommige cmdlets hebben mogelijk slechts één para meter ingesteld). In dit voor beeld heeft de cmdlet Get-Tech twee parameter sets.
 
    ```
    SYNTAX
@@ -81,9 +83,9 @@ Normaal gesp roken zijn parameter waarden die tijdelijke aanduidingen zijn verei
        Get-Tech -ID int -list -type basic advanced
    ```
 
-   Kortings typen, zolang ze duidelijk zijn, zoals **teken reeks** voor **System. String** en **int** voor **System. Int32**.
+   Kortings typen, zolang ze duidelijk zijn, zoals **teken reeks** voor **System. String** en **int** voor **System. Int32** .
 
-   Alle waarden van opsommingen weer geven, zoals de `-type` para meter in het vorige voor beeld, die kunnen worden ingesteld op **Basic** of **Advanced**.
+   Alle waarden van opsommingen weer geven, zoals de `-type` para meter in het vorige voor beeld, die kunnen worden ingesteld op **Basic** of **Advanced** .
 
    Switch-para meters, zoals `-list` in het vorige voor beeld, hebben geen waarden.
 

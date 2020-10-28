@@ -1,13 +1,13 @@
 ---
 ms.date: 12/31/2019
-keywords: powershell,cmdlet
 title: Het ISESnippetCollection-object
-ms.openlocfilehash: 6cdc43dd1d82e94f66122d7f7b313c02e755fed7
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: Het ISESnippetCollection-object is een verzameling ISESnippet-objecten. De verzameling bestanden die is gekoppeld aan een PowerShellTab-object, is een lid van deze klasse.
+ms.openlocfilehash: e6170ddf72d5ead840aa3015d4de1dcb21dbfeff
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810055"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92655969"
 ---
 # <a name="the-isesnippetcollection-object"></a>Het ISESnippetCollection-object
 
@@ -15,13 +15,13 @@ Het **ISESnippetCollection** -object is een verzameling **ISESnippet** -objecten
 
 ## <a name="methods"></a>Methoden
 
-### <a name="load-filepathname-"></a>Load \( filepath\)
+### <a name="load-filepathname-"></a>Load \( filepath \)
 
 Ondersteund in Windows PowerShell ISE 3,0 en hoger en niet aanwezig in eerdere versies.
 
 Hiermee wordt een `.snippets.ps1xml` bestand geladen dat door de gebruiker gedefinieerde fragmenten bevat. De eenvoudigste manier om fragmenten te maken, is door de `New-IseSnippet` cmdlet te gebruiken, die deze automatisch opslaat in de profielmap, zodat ze elke keer dat u begint Windows PowerShell ISE worden geladen.
 
-**Filepath** -teken reeks het pad en de bestands naam naar een. fragmenten. ps1xml-bestand dat fragment definities bevat.
+**Filepath** -teken reeks het pad en de bestands naam naar een .snippets.ps1XML-bestand dat fragment definities bevat.
 
 ```powershell
 # Loads a custom snippet file into the current PowerShell tab.

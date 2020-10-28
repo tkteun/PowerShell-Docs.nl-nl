@@ -1,14 +1,16 @@
 ---
-title: Help schrijven voor Power shell-cmdlets
 ms.date: 09/13/2016
-ms.openlocfilehash: 4e1070e90cf3ed83c1d97a3b620e00f65d09989e
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: Help voor PowerShell-cmdlets schrijven
+description: Help voor PowerShell-cmdlets schrijven
+ms.openlocfilehash: b1deaa5998dbc54add93764db785d57afcc0a779
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86893081"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92658098"
 ---
-# <a name="writing-help-for-powershell-cmdlets"></a>Help schrijven voor Power shell-cmdlets
+# <a name="writing-help-for-powershell-cmdlets"></a>Help voor PowerShell-cmdlets schrijven
 
 Power shell-cmdlets kunnen nuttig zijn, maar tenzij in uw Help-onderwerpen duidelijk wordt uitgelegd wat de cmdlet doet en hoe u deze kunt gebruiken, kan de cmdlet mogelijk niet worden gebruikt of, zelfs als dit niet mogelijk is, kan de gebruiker de gegevens weer geven. De Help-indeling van het XML-cmdlet-bestand verbetert de consistentie, maar er is veel meer hulp nodig.
 
@@ -26,7 +28,7 @@ Gebruik eenvoudige woorden en zinsdelen. Vermijd jargon. Houd er rekening mee da
 
 ### <a name="write-consistently"></a>Consistent schrijven
 
-Help voor gerelateerde cmdlets moet vergelijkbaar zijn (bijvoorbeeld Get-x en set-x). Gebruik de standaard beschrijvingen voor standaard parameters, zoals **Force** en **input object**. (Kopieer ze in de Help voor de kern-cmdlets.) Gebruik standaard termen. Gebruik bijvoorbeeld "para meter", niet "argument" en gebruik "cmdlet" niet "opdracht" of "opdracht-Let".
+Help voor gerelateerde cmdlets moet vergelijkbaar zijn (bijvoorbeeld Get-x en set-x). Gebruik de standaard beschrijvingen voor standaard parameters, zoals **Force** en **input object** . (Kopieer ze in de Help voor de kern-cmdlets.) Gebruik standaard termen. Gebruik bijvoorbeeld "para meter", niet "argument" en gebruik "cmdlet" niet "opdracht" of "opdracht-Let".
 
 ### <a name="start-the-synopsis-with-a-verb"></a>De samen vatting starten met een werk woord
 
@@ -42,7 +44,7 @@ Geef een kort overzicht van alles wat met de cmdlet kan worden uitgevoerd in de 
 
 ### <a name="use-conventional-syntax"></a>Conventionele syntaxis gebruiken
 
-Gebruik de standaard Backus-Naur-indeling die gebruikelijk is voor Windows-en UNIX-opdracht regel ondersteuning.
+Gebruik de standaard Backus-Naur indeling die gebruikelijk is voor Windows-en UNIX-opdracht regel Help.
 
 ### <a name="use-microsoft-net-types-for-parameter-values"></a>Microsoft .NET typen voor parameter waarden gebruiken
 

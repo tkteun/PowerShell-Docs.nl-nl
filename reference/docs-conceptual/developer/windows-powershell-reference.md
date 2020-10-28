@@ -1,14 +1,14 @@
 ---
-title: Naslag informatie voor Windows Power shell | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- Windows PowerShell SDK
-ms.openlocfilehash: 1c1a3a4de2df2043fe12cad6a69b7bc36ab9d3d7
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Naslaginformatie over Windows PowerShell
+description: Naslaginformatie over Windows PowerShell
+ms.openlocfilehash: bea8fb0057a8294abcbbf8e9c5e098290048a903
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786676"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92656883"
 ---
 # <a name="windows-powershell-reference"></a>Naslaginformatie over Windows PowerShell
 
@@ -41,7 +41,7 @@ Gebruik Windows Live Search om andere Windows Power shell-blogs en-bronnen te vi
 
 [System. Management. Automation. provider](/dotnet/api/System.Management.Automation.Provider) deze naam ruimte bevat de klassen, opsommingen en interfaces die zijn vereist voor het implementeren van een Windows Power shell-provider. Met name de klasse [System. Management. Automation. provider. Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) is de basis klasse waaruit alle Windows Power shell-provider klassen moeten worden afgeleid.
 
-[Micro soft. Power shell. opdrachten](/dotnet/api/Microsoft.PowerShell.Commands) deze naam ruimte bevat de klassen voor de cmdlets en providers die worden geïmplementeerd door Windows Power shell. Het is ook raadzaam dat *u een naam*maakt. De naam ruimte van opdrachten voor de cmdlets die u implementeert.
+[Micro soft. Power shell. opdrachten](/dotnet/api/Microsoft.PowerShell.Commands) deze naam ruimte bevat de klassen voor de cmdlets en providers die worden geïmplementeerd door Windows Power shell. Het is ook raadzaam dat *u een naam* maakt. De naam ruimte van opdrachten voor de cmdlets die u implementeert.
 
 [System. Management. Automation. host](/dotnet/api/System.Management.Automation.Host) deze naam ruimte bevat de klassen, opsommingen en interfaces die de cmdlet gebruikt voor het definiëren van de interactie tussen de gebruiker en Windows Power shell.
 

@@ -2,17 +2,17 @@
 ms.date: 12/12/2018
 keywords: DSC, Power shell, configuratie, installatie
 title: Import-DSCResource gebruiken
-ms.openlocfilehash: 0fa11755558510b986ac24df120579ea15a43689
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+description: Import-DSCResource is een dynamisch sleutel woord dat alleen kan worden gebruikt binnen een configuratie script blok. Het wordt gebruikt voor het importeren van de resource modules die nodig zijn in uw configuratie.
+ms.openlocfilehash: f6dcad2c56848ec25eb79332c96fe6b0d438fe95
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786710"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92658508"
 ---
 # <a name="using-import-dscresource"></a>Import-DSCResource gebruiken
 
-`Import-DScResource` is een dynamisch sleutel woord dat alleen kan worden gebruikt binnen een configuratie script blok. Het `Import-DSCResource` sleutel woord voor het importeren van alle resources die nodig zijn in uw configuratie.
-Resources onder `$pshome` worden automatisch geïmporteerd, maar worden nog steeds beschouwd als best practice voor het expliciet importeren van alle resources die worden gebruikt in uw [configuratie](Configurations.md).
+`Import-DSCResource` is een dynamisch sleutel woord dat alleen kan worden gebruikt binnen een configuratie script blok om alle resources te importeren die nodig zijn in uw configuratie. Resources onder `$PSHOME` worden automatisch geïmporteerd, maar worden nog steeds beschouwd als best practice voor het expliciet importeren van alle resources die worden gebruikt in uw [configuratie](Configurations.md).
 
 De syntaxis voor `Import-DSCResource` wordt hieronder weer gegeven. Wanneer u modules op naam opgeeft, is het een vereiste om elk op een nieuwe regel te vermelden.
 
@@ -30,7 +30,7 @@ Import-DscResource [-Name <ResourceName(s)>] [-ModuleName <ModuleName>] [-Module
 Import-DscResource -ModuleName xActiveDirectory
 ```
 
-## <a name="example-use-import-dscresource-within-a-configuration"></a>Voor beeld: import-Dscresource bieden binnen een configuratie gebruiken
+## <a name="example-use-import-dscresource-within-a-configuration"></a>Voor beeld: Import-DSCResource gebruiken in een configuratie
 
 ```powershell
 Configuration MSDSCConfiguration
@@ -77,7 +77,7 @@ Dit gebruik heeft de volgende voor delen:
 > [!NOTE]
 > In Power shell 5,0 kunnen DSC-resources meerdere versies hebben en kunnen versies worden geïnstalleerd op een computer naast elkaar. Dit wordt geïmplementeerd door meerdere versies van een resource module te hebben die zich in dezelfde module map bevinden. Zie [resources met meerdere versies gebruiken](sxsresource.md)voor meer informatie.
 
-## <a name="intellisense-with-import-dscresource"></a>IntelliSense met import-Dscresource bieden
+## <a name="intellisense-with-import-dscresource"></a>IntelliSense met Import-DSCResource
 
 Bij het ontwerpen van de DSC-configuratie in ISE biedt Power shell IntelliSence voor resources en resource-eigenschappen. Bron definities onder het `$pshome` pad naar de module worden automatisch geladen.
 Wanneer u resources importeert met behulp van het `Import-DSCResource` tref woord, worden de opgegeven resource definities toegevoegd en wordt IntelliSense uitgebreid met het schema van de geïmporteerde resource.
@@ -132,7 +132,7 @@ Met IntelliSense en schema validatie kunt u meer fouten tijdens de parsering-en 
 > class MSFT_ServiceResource : OMI_BaseResource
 > ```
 >
-> Wanneer u deze bron in een configuratie gebruikt, kunt u **MSFT_ServiceResource** of **service**opgeven.
+> Wanneer u deze bron in een configuratie gebruikt, kunt u **MSFT_ServiceResource** of **service** opgeven.
 
 ## <a name="powershell-v4-and-v5-differences"></a>Verschillen Power shell v4 en V5
 

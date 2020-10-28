@@ -1,13 +1,13 @@
 ---
 ms.date: 06/05/2017
-keywords: powershell,cmdlet
 title: Het PowerShellTabCollection-object
-ms.openlocfilehash: 0aad885afd3ba3ae3b00f5c11d2c62a9ff303798
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: Het PowerShellTab-verzamelings object is een verzameling PowerShellTab-objecten. Elk PowerShellTab-object fungeert als een afzonderlijke runtime-omgeving.
+ms.openlocfilehash: 60f8001f096b50bd8433a5685f1f70a350f07f61
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810048"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92658267"
 ---
 # <a name="the-powershelltabcollection-object"></a>Het PowerShellTabCollection-object
 

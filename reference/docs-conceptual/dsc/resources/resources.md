@@ -2,12 +2,13 @@
 ms.date: 07/23/2020
 keywords: DSC, Power shell, configuratie, installatie
 title: DSC-resources
-ms.openlocfilehash: 6ab831c9d423c6189951b43bfab92f800366ceca
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+description: DSC-resources bieden de bouw stenen voor een DSC-configuratie. Een resource beschrijft eigenschappen die kunnen worden geconfigureerd (schema) en bevat de Power shell-script functies die door de LCM worden gebruikt om de configuratie toe te passen.
+ms.openlocfilehash: 1634db84deff8de3b33c941ad738dc21cf3017ac
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87777920"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92658443"
 ---
 # <a name="dsc-resources"></a>DSC-resources
 
@@ -19,11 +20,10 @@ Resources voor desired state Configuration (DSC) bieden de bouw stenen voor een 
 
 Een resource kan een model als algemeen hebben als een bestand of als een IIS-server instelling. Groepen van like-resources worden gecombineerd in naar een DSC-module, waarmee alle vereiste bestanden in worden ingedeeld in een geportablee structuur en die meta gegevens bevat om te bepalen hoe de resources zijn bedoeld om te worden gebruikt.
 
-Elke resource heeft een *-schema dat bepaalt de syntaxis die nodig is voor het gebruik van de bron in een [configuratie](../configurations/configurations.md).
-Het schema van een resource kan op de volgende manieren worden gedefinieerd:
+Elke resource heeft een *-schema dat bepaalt de syntaxis die nodig is voor het gebruik van de bron in een [configuratie](../configurations/configurations.md). Het schema van een resource kan op de volgende manieren worden gedefinieerd:
 
 - `Schema.Mof` bestand: de meeste resources definiëren hun _schema_ in een `schema.mof` bestand met behulp van [Managed Object Format](/windows/desktop/wmisdk/managed-object-format--mof-).
-- `<Resource Name>.schema.psm1` bestand: [samengestelde resources](../configurations/compositeConfigs.md) definiëren hun _schema_ in een `<ResourceName>.schema.psm1` bestand met behulp van een [parameter blok](/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-6#functions-with-parameters).
+- `<Resource Name>.schema.psm1` bestand: [samengestelde resources](../configurations/compositeConfigs.md) definiëren hun _schema_ in een `<ResourceName>.schema.psm1` bestand met behulp van een [parameter blok](/powershell/module/microsoft.powershell.core/about/about_functions#functions-with-parameters).
 - `<Resource Name>.psm1` bestand: DSC-resources op basis van klassen definiëren hun _schema_ in de klassedefinitie. Syntaxis items worden aangeduid als klasse-eigenschappen. Zie [about_Classes](/powershell/module/psdesiredstateconfiguration/about/about_classes_and_dsc)voor meer informatie.
 
 Als u de syntaxis voor een DSC-resource wilt ophalen, gebruikt u de cmdlet [Get-dscresource bieden](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) met de para meter **syntax** . Dit gebruik is vergelijkbaar met het gebruik van [Get-opdracht](/powershell/module/microsoft.powershell.core/get-command) met de **syntaxis** parameter om de syntaxis van de cmdlet op te halen. De uitvoer die wordt weer gegeven, toont de sjabloon die wordt gebruikt voor een resource blok voor de resource die u opgeeft.
@@ -66,11 +66,13 @@ Binnen een configuratie kan een **service** bron blok er als volgt uitzien, om *
 ```powershell
 Configuration TestConfig
 {
-    # It is best practice to always directly import resources, even if the resource is a built-in resource.
+    # It is best practice to always directly import resources, even if the
+    # resource is a built-in resource.
     Import-DSCResource -Name Service
     Node localhost
     {
-        # The name of this resource block, can be anything you choose, as long as it is of type [String] as indicated by the schema.
+        # The name of this resource block, can be anything you choose, as l
+        # ong as it is of type [String] as indicated by the schema.
         Service "Spooler:Running"
         {
             Name = "Spooler"
@@ -85,18 +87,21 @@ Configuraties kunnen meerdere exemplaren van hetzelfde bron type bevatten. Elk e
 ```powershell
 Configuration TestConfig
 {
-    # It is best practice to always directly import resources, even if the resource is a built-in resource.
+    # It is best practice to always directly import resources, even if the
+    # resource is a built-in resource.
     Import-DSCResource -Name Service
     Node localhost
     {
-        # The name of this resource block, can be anything you choose, as long as it is of type [String] as indicated by the schema.
+        # The name of this resource block, can be anything you choose, as
+        # long as it is of type [String] as indicated by the schema.
         Service "Spooler:Running"
         {
             Name = "Spooler"
             State = "Running"
         }
 
-        # To configure a second service resource block, add another Service resource block and use a unique name.
+        # To configure a second service resource block, add another Service
+        # resource block and use a unique name.
         Service "DHCP:Running"
         {
             Name = "DHCP"
@@ -113,7 +118,7 @@ Configuration TestConfig
 
 ## <a name="types-of-resources"></a>Typen resources
 
-Windows wordt geleverd met ingebouwde resources en Linux heeft specifieke resources voor het besturings systeem. Er zijn resources voor [afhankelijkheden tussen knoop punten](../configurations/crossNodeDependencies.md), resources voor pakket beheer en[resources die eigendom](https://github.com/dsccommunity)zijn van de community. U kunt de bovenstaande stappen gebruiken om de syntaxis van deze resources te bepalen en hoe u deze gebruikt. De pagina's van deze resources zijn onder **verwijzing**gearchiveerd.
+Windows wordt geleverd met ingebouwde resources en Linux heeft specifieke resources voor het besturings systeem. Er zijn resources voor [afhankelijkheden tussen knoop punten](../configurations/crossNodeDependencies.md), resources voor pakket beheer en[resources die eigendom](https://github.com/dsccommunity)zijn van de community. U kunt de bovenstaande stappen gebruiken om de syntaxis van deze resources te bepalen en hoe u deze gebruikt. De pagina's van deze resources zijn onder **verwijzing** gearchiveerd.
 
 ### <a name="windows-built-in-resources"></a>Ingebouwde Windows-resources
 

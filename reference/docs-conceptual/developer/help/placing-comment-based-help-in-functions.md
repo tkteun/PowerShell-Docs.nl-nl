@@ -1,18 +1,20 @@
 ---
-title: Help op basis van opmerkingen in functies plaatsen
 ms.date: 09/12/2016
-ms.openlocfilehash: c7a8f8db6c71fa2ef12aaa4df0f78815626ec8d6
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: Help op basis van opmerkingen in functies plaatsen
+description: Help op basis van opmerkingen in functies plaatsen
+ms.openlocfilehash: 3bd72f0c71d8f6ad54c43c99f044423c072fdeeb
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86893200"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92658214"
 ---
 # <a name="placing-comment-based-help-in-functions"></a>Help op basis van opmerkingen in functies plaatsen
 
 In dit onderwerp wordt uitgelegd waar u op opmerkingen gebaseerde hulp voor een functie kunt plaatsen zodat de `Get-Help` cmdlet het Help-onderwerp op basis van opmerkingen koppelt aan de juiste functie.
 
-## <a name="where-to-place-comment-based-help-for-a-function"></a>Waar kunt u op opmerkingen gebaseerde hulp voor een functie plaatsen
+## <a name="where-to-place-comment-based-help-for-a-function"></a>Waar kunt u Comment-Based hulp voor een functie plaatsen
 
 - Aan het begin van de hoofd tekst van de functie.
 
