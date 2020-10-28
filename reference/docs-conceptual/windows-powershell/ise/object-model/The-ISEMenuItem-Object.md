@@ -1,26 +1,26 @@
 ---
 ms.date: 12/31/2019
-keywords: powershell,cmdlet
 title: Het ISEMenuItem-object
-ms.openlocfilehash: c3ffe6e8f0b28987543fe0a873c552292dc5158a
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: Een ISEMenuItem-object is een exemplaar van de klasse micro soft. Power shell. host. ISE. ISEMenuItem. Alle menu-objecten in het menu **invoeg toepassingen** zijn exemplaren van de klasse ISEMenuItem.
+ms.openlocfilehash: 15036e3551687a21dfbe50834a89247c80949656
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810650"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663441"
 ---
-# <a name="the-isemenuitem-object"></a><span data-ttu-id="bff70-103">Het ISEMenuItem-object</span><span class="sxs-lookup"><span data-stu-id="bff70-103">The ISEMenuItem Object</span></span>
+# <a name="the-isemenuitem-object"></a><span data-ttu-id="77c5d-104">Het ISEMenuItem-object</span><span class="sxs-lookup"><span data-stu-id="77c5d-104">The ISEMenuItem Object</span></span>
 
-<span data-ttu-id="bff70-104">Een **ISEMenuItem** -object is een exemplaar van de klasse **micro soft. Power shell. host. ISE. ISEMenuItem** .</span><span class="sxs-lookup"><span data-stu-id="bff70-104">An **ISEMenuItem** object is an instance of the **Microsoft.PowerShell.Host.ISE.ISEMenuItem** class.</span></span>
-<span data-ttu-id="bff70-105">Alle menu-objecten in het menu **met invoeg toepassingen** zijn exemplaren van de klasse **micro soft. Power shell. host. ISE. ISEMenuItem** .</span><span class="sxs-lookup"><span data-stu-id="bff70-105">All menu objects on the **Add-ons** menu are instances of the **Microsoft.PowerShell.Host.ISE.ISEMenuItem** class.</span></span>
+<span data-ttu-id="77c5d-105">Een **ISEMenuItem** -object is een exemplaar van de klasse **micro soft. Power shell. host. ISE. ISEMenuItem** .</span><span class="sxs-lookup"><span data-stu-id="77c5d-105">An **ISEMenuItem** object is an instance of the **Microsoft.PowerShell.Host.ISE.ISEMenuItem** class.</span></span>
+<span data-ttu-id="77c5d-106">Alle menu-objecten in het menu **met invoeg toepassingen** zijn exemplaren van de klasse **micro soft. Power shell. host. ISE. ISEMenuItem** .</span><span class="sxs-lookup"><span data-stu-id="77c5d-106">All menu objects on the **Add-ons** menu are instances of the **Microsoft.PowerShell.Host.ISE.ISEMenuItem** class.</span></span>
 
-## <a name="properties"></a><span data-ttu-id="bff70-106">Eigenschappen</span><span class="sxs-lookup"><span data-stu-id="bff70-106">Properties</span></span>
+## <a name="properties"></a><span data-ttu-id="77c5d-107">Eigenschappen</span><span class="sxs-lookup"><span data-stu-id="77c5d-107">Properties</span></span>
 
-### <a name="displayname"></a><span data-ttu-id="bff70-107">DisplayName</span><span class="sxs-lookup"><span data-stu-id="bff70-107">DisplayName</span></span>
+### <a name="displayname"></a><span data-ttu-id="77c5d-108">DisplayName</span><span class="sxs-lookup"><span data-stu-id="77c5d-108">DisplayName</span></span>
 
-<span data-ttu-id="bff70-108">Ondersteund in Windows PowerShell ISE 2,0 en hoger.</span><span class="sxs-lookup"><span data-stu-id="bff70-108">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
+<span data-ttu-id="77c5d-109">Ondersteund in Windows PowerShell ISE 2,0 en hoger.</span><span class="sxs-lookup"><span data-stu-id="77c5d-109">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
 
-<span data-ttu-id="bff70-109">De alleen-lezen eigenschap waarmee de weergave naam van de menu opdracht wordt opgehaald.</span><span class="sxs-lookup"><span data-stu-id="bff70-109">The read-only property that gets the display name of the menu item.</span></span>
+<span data-ttu-id="77c5d-110">De alleen-lezen eigenschap waarmee de weergave naam van de menu opdracht wordt opgehaald.</span><span class="sxs-lookup"><span data-stu-id="77c5d-110">The read-only property that gets the display name of the menu item.</span></span>
 
 ```powershell
 # Get the display name of the Add-ons menu item
@@ -29,11 +29,11 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Add('_Process', {Get-Process}, '
 $psISE.CurrentPowerShellTab.AddOnsMenu.DisplayName
 ```
 
-### <a name="action"></a><span data-ttu-id="bff70-110">Bewerking</span><span class="sxs-lookup"><span data-stu-id="bff70-110">Action</span></span>
+### <a name="action"></a><span data-ttu-id="77c5d-111">Actie</span><span class="sxs-lookup"><span data-stu-id="77c5d-111">Action</span></span>
 
-<span data-ttu-id="bff70-111">Ondersteund in Windows PowerShell ISE 2,0 en hoger.</span><span class="sxs-lookup"><span data-stu-id="bff70-111">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
+<span data-ttu-id="77c5d-112">Ondersteund in Windows PowerShell ISE 2,0 en hoger.</span><span class="sxs-lookup"><span data-stu-id="77c5d-112">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
 
-<span data-ttu-id="bff70-112">De alleen-lezen eigenschap waarmee het script blok wordt opgehaald.</span><span class="sxs-lookup"><span data-stu-id="bff70-112">The read-only property that gets the block of script.</span></span> <span data-ttu-id="bff70-113">De actie wordt geactiveerd wanneer u op de menu opdracht klikt.</span><span class="sxs-lookup"><span data-stu-id="bff70-113">It invokes the action when you click the menu item.</span></span>
+<span data-ttu-id="77c5d-113">De alleen-lezen eigenschap waarmee het script blok wordt opgehaald.</span><span class="sxs-lookup"><span data-stu-id="77c5d-113">The read-only property that gets the block of script.</span></span> <span data-ttu-id="77c5d-114">De actie wordt geactiveerd wanneer u op de menu opdracht klikt.</span><span class="sxs-lookup"><span data-stu-id="77c5d-114">It invokes the action when you click the menu item.</span></span>
 
 ```powershell
 # Get the action associated with the first submenu item.
@@ -45,11 +45,11 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Action
 $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Action.Invoke()
 ```
 
-### <a name="shortcut"></a><span data-ttu-id="bff70-114">Shortcutdimensie</span><span class="sxs-lookup"><span data-stu-id="bff70-114">Shortcut</span></span>
+### <a name="shortcut"></a><span data-ttu-id="77c5d-115">Shortcutdimensie</span><span class="sxs-lookup"><span data-stu-id="77c5d-115">Shortcut</span></span>
 
-<span data-ttu-id="bff70-115">Ondersteund in Windows PowerShell ISE 2,0 en hoger.</span><span class="sxs-lookup"><span data-stu-id="bff70-115">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
+<span data-ttu-id="77c5d-116">Ondersteund in Windows PowerShell ISE 2,0 en hoger.</span><span class="sxs-lookup"><span data-stu-id="77c5d-116">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
 
-<span data-ttu-id="bff70-116">De alleen-lezen eigenschap waarmee de Windows-invoer toetsenbord snel wordt opgehaald voor de menu opdracht.</span><span class="sxs-lookup"><span data-stu-id="bff70-116">The read-only property that gets the Windows input keyboard shortcut for the menu item.</span></span>
+<span data-ttu-id="77c5d-117">De alleen-lezen eigenschap waarmee de Windows-invoer toetsenbord snel wordt opgehaald voor de menu opdracht.</span><span class="sxs-lookup"><span data-stu-id="77c5d-117">The read-only property that gets the Windows input keyboard shortcut for the menu item.</span></span>
 
 ```powershell
 # Get the shortcut for the first submenu item.
@@ -58,11 +58,11 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Add('_Process', {Get-Process}, '
 $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Shortcut
 ```
 
-### <a name="submenus"></a><span data-ttu-id="bff70-117">Submenu's</span><span class="sxs-lookup"><span data-stu-id="bff70-117">Submenus</span></span>
+### <a name="submenus"></a><span data-ttu-id="77c5d-118">Submenu's</span><span class="sxs-lookup"><span data-stu-id="77c5d-118">Submenus</span></span>
 
-<span data-ttu-id="bff70-118">Ondersteund in Windows PowerShell ISE 2,0 en hoger.</span><span class="sxs-lookup"><span data-stu-id="bff70-118">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
+<span data-ttu-id="77c5d-119">Ondersteund in Windows PowerShell ISE 2,0 en hoger.</span><span class="sxs-lookup"><span data-stu-id="77c5d-119">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
 
-<span data-ttu-id="bff70-119">De alleen-lezen eigenschap waarmee de [lijst met](The-ISEMenuItemCollection-Object.md) submenu's van de menu opdracht wordt opgehaald.</span><span class="sxs-lookup"><span data-stu-id="bff70-119">The read-only property that gets the [list of submenus](The-ISEMenuItemCollection-Object.md) of the menu item.</span></span>
+<span data-ttu-id="77c5d-120">De alleen-lezen eigenschap waarmee de [lijst met](The-ISEMenuItemCollection-Object.md) submenu's van de menu opdracht wordt opgehaald.</span><span class="sxs-lookup"><span data-stu-id="77c5d-120">The read-only property that gets the [list of submenus](The-ISEMenuItemCollection-Object.md) of the menu item.</span></span>
 
 ```powershell
 # List the submenus of the Add-ons menu
@@ -71,9 +71,9 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Add('_Process', {Get-Process}, '
 $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus
 ```
 
-## <a name="scripting-example"></a><span data-ttu-id="bff70-120">Script voorbeeld</span><span class="sxs-lookup"><span data-stu-id="bff70-120">Scripting example</span></span>
+## <a name="scripting-example"></a><span data-ttu-id="77c5d-121">Script voorbeeld</span><span class="sxs-lookup"><span data-stu-id="77c5d-121">Scripting example</span></span>
 
-<span data-ttu-id="bff70-121">Lees het volgende script voorbeeld voor meer informatie over het gebruik van het menu add-ins en de eigenschappen van het script.</span><span class="sxs-lookup"><span data-stu-id="bff70-121">To better understand the use of the Add-ons menu and its scriptable properties, read through the following scripting example.</span></span>
+<span data-ttu-id="77c5d-122">Lees het volgende script voorbeeld voor meer informatie over het gebruik van het menu add-ins en de eigenschappen van het script.</span><span class="sxs-lookup"><span data-stu-id="77c5d-122">To better understand the use of the Add-ons menu and its scriptable properties, read through the following scripting example.</span></span>
 
 ```powershell
 # This is a scripting example that shows the use of the Add-ons menu.
@@ -81,15 +81,15 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus
 $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Clear()
 
 # Add an Add-ons menu item with an shortcut and fast access key.
-# Note the use of “_”  as opposed to the “&” for mapping to the fast access key letter for the menu item.
+# Note the use of "_"  as opposed to the "&" for mapping to the fast access key letter for the menu item.
 $menuAdded = $psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add('_Process', {Get-Process}, 'Alt+P')
 # Add a nested menu - a parent and a child submenu item.
 $parentAdded = $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Add('Parent', $null, $null)
 $parentAdded.SubMenus.Add('_Dir', {dir}, 'Alt+D')
 ```
 
-## <a name="see-also"></a><span data-ttu-id="bff70-122">Zie ook</span><span class="sxs-lookup"><span data-stu-id="bff70-122">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="77c5d-123">Zie ook</span><span class="sxs-lookup"><span data-stu-id="77c5d-123">See Also</span></span>
 
-- [<span data-ttu-id="bff70-123">Het ISEMenuItemCollection-object</span><span class="sxs-lookup"><span data-stu-id="bff70-123">The ISEMenuItemCollection Object</span></span>](The-ISEMenuItemCollection-Object.md)
-- [<span data-ttu-id="bff70-124">Doel van het scriptobjectmodel van Windows PowerShell ISE</span><span class="sxs-lookup"><span data-stu-id="bff70-124">Purpose of the Windows PowerShell ISE Scripting Object Model</span></span>](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
-- [<span data-ttu-id="bff70-125">De ISE-object model hiërarchie</span><span class="sxs-lookup"><span data-stu-id="bff70-125">The ISE Object Model Hierarchy</span></span>](The-ISE-Object-Model-Hierarchy.md)
+- [<span data-ttu-id="77c5d-124">Het ISEMenuItemCollection-object</span><span class="sxs-lookup"><span data-stu-id="77c5d-124">The ISEMenuItemCollection Object</span></span>](The-ISEMenuItemCollection-Object.md)
+- [<span data-ttu-id="77c5d-125">Doel van het scriptobjectmodel van Windows PowerShell ISE</span><span class="sxs-lookup"><span data-stu-id="77c5d-125">Purpose of the Windows PowerShell ISE Scripting Object Model</span></span>](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [<span data-ttu-id="77c5d-126">De ISE-object model hiërarchie</span><span class="sxs-lookup"><span data-stu-id="77c5d-126">The ISE Object Model Hierarchy</span></span>](The-ISE-Object-Model-Hierarchy.md)
