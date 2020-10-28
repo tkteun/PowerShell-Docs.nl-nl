@@ -1,34 +1,36 @@
 ---
-title: Voorbeelden toevoegen aan een Help-onderwerp voor cmdlets
 ms.date: 09/12/2016
-ms.openlocfilehash: 33a1726f9d52b5a368d5df7962cc17ba9c45246a
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: Voorbeelden toevoegen aan een Help-onderwerp voor cmdlets
+description: Voorbeelden toevoegen aan een Help-onderwerp voor cmdlets
+ms.openlocfilehash: 6b72e29c93740b7953d9b68fc8e68c02eb2f4dee
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86893438"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92654719"
 ---
-# <a name="how-to-add-examples-to-a-cmdlet-help-topic"></a><span data-ttu-id="c08b6-102">Voorbeelden toevoegen aan een Help-onderwerp voor cmdlets</span><span class="sxs-lookup"><span data-stu-id="c08b6-102">How to Add Examples to a Cmdlet Help Topic</span></span>
+# <a name="how-to-add-examples-to-a-cmdlet-help-topic"></a><span data-ttu-id="cdfe5-103">Voorbeelden toevoegen aan een Help-onderwerp voor cmdlets</span><span class="sxs-lookup"><span data-stu-id="cdfe5-103">How to Add Examples to a Cmdlet Help Topic</span></span>
 
-## <a name="things-to-know-about-examples-in-cmdlet-help"></a><span data-ttu-id="c08b6-103">Wat u moet weten over voor beelden in cmdlet Help</span><span class="sxs-lookup"><span data-stu-id="c08b6-103">Things to Know about Examples in Cmdlet Help</span></span>
+## <a name="things-to-know-about-examples-in-cmdlet-help"></a><span data-ttu-id="cdfe5-104">Wat u moet weten over voor beelden in cmdlet Help</span><span class="sxs-lookup"><span data-stu-id="cdfe5-104">Things to Know about Examples in Cmdlet Help</span></span>
 
-- <span data-ttu-id="c08b6-104">Een lijst met alle parameter namen in de opdracht, zelfs wanneer de parameter namen optioneel zijn.</span><span class="sxs-lookup"><span data-stu-id="c08b6-104">List all of the parameter names in the command, even when the parameter names are optional.</span></span> <span data-ttu-id="c08b6-105">Op deze manier kan de gebruiker de opdracht eenvoudig interpreteren.</span><span class="sxs-lookup"><span data-stu-id="c08b6-105">This helps the user to interpret the command easily.</span></span>
+- <span data-ttu-id="cdfe5-105">Een lijst met alle parameter namen in de opdracht, zelfs wanneer de parameter namen optioneel zijn.</span><span class="sxs-lookup"><span data-stu-id="cdfe5-105">List all of the parameter names in the command, even when the parameter names are optional.</span></span> <span data-ttu-id="cdfe5-106">Op deze manier kan de gebruiker de opdracht eenvoudig interpreteren.</span><span class="sxs-lookup"><span data-stu-id="cdfe5-106">This helps the user to interpret the command easily.</span></span>
 
-- <span data-ttu-id="c08b6-106">Vermijd aliassen en gedeeltelijke parameter namen, ook al werken ze in Power shell.</span><span class="sxs-lookup"><span data-stu-id="c08b6-106">Avoid aliases and partial parameter names, even though they work in PowerShell.</span></span>
+- <span data-ttu-id="cdfe5-107">Vermijd aliassen en gedeeltelijke parameter namen, ook al werken ze in Power shell.</span><span class="sxs-lookup"><span data-stu-id="cdfe5-107">Avoid aliases and partial parameter names, even though they work in PowerShell.</span></span>
 
-- <span data-ttu-id="c08b6-107">In het voor beeld wordt de rationele uitleg uitgelegd voor het bouwen van de opdracht.</span><span class="sxs-lookup"><span data-stu-id="c08b6-107">In the example description, explain the rational for the construction of the command.</span></span> <span data-ttu-id="c08b6-108">Leg uit waarom u specifieke para meters en waarden hebt gekozen en hoe u variabelen gebruikt.</span><span class="sxs-lookup"><span data-stu-id="c08b6-108">Explain why you chose particular parameters and values, and how you use variables.</span></span>
+- <span data-ttu-id="cdfe5-108">In het voor beeld wordt de rationele uitleg uitgelegd voor het bouwen van de opdracht.</span><span class="sxs-lookup"><span data-stu-id="cdfe5-108">In the example description, explain the rational for the construction of the command.</span></span> <span data-ttu-id="cdfe5-109">Leg uit waarom u specifieke para meters en waarden hebt gekozen en hoe u variabelen gebruikt.</span><span class="sxs-lookup"><span data-stu-id="cdfe5-109">Explain why you chose particular parameters and values, and how you use variables.</span></span>
 
-- <span data-ttu-id="c08b6-109">Als de opdracht expressies gebruikt, moet u deze gedetailleerd uitleggen.</span><span class="sxs-lookup"><span data-stu-id="c08b6-109">If the command uses expressions, explain them in detail.</span></span>
+- <span data-ttu-id="cdfe5-110">Als de opdracht expressies gebruikt, moet u deze gedetailleerd uitleggen.</span><span class="sxs-lookup"><span data-stu-id="cdfe5-110">If the command uses expressions, explain them in detail.</span></span>
 
-- <span data-ttu-id="c08b6-110">Als de opdracht Eigenschappen en methoden van objecten gebruikt, met name eigenschappen die niet worden weer gegeven in de standaard weergave, kunt u het voor beeld gebruiken om de gebruiker over het object te informeren.</span><span class="sxs-lookup"><span data-stu-id="c08b6-110">If the command uses properties and methods of objects, especially properties that do not appear in the default display, use the example as an opportunity tell the user about the object.</span></span>
+- <span data-ttu-id="cdfe5-111">Als de opdracht Eigenschappen en methoden van objecten gebruikt, met name eigenschappen die niet worden weer gegeven in de standaard weergave, kunt u het voor beeld gebruiken om de gebruiker over het object te informeren.</span><span class="sxs-lookup"><span data-stu-id="cdfe5-111">If the command uses properties and methods of objects, especially properties that do not appear in the default display, use the example as an opportunity tell the user about the object.</span></span>
 
-## <a name="help-views-that-display-examples"></a><span data-ttu-id="c08b6-111">Help-weer gaven waarin voor beelden worden weer gegeven</span><span class="sxs-lookup"><span data-stu-id="c08b6-111">Help Views that Display Examples</span></span>
+## <a name="help-views-that-display-examples"></a><span data-ttu-id="cdfe5-112">Help-weer gaven waarin voor beelden worden weer gegeven</span><span class="sxs-lookup"><span data-stu-id="cdfe5-112">Help Views that Display Examples</span></span>
 
-<span data-ttu-id="c08b6-112">Voor beelden worden alleen weer gegeven in de gedetailleerde en volledige weer gave van de Help van de cmdlet.</span><span class="sxs-lookup"><span data-stu-id="c08b6-112">Examples appear only in the Detailed and Full views of cmdlet Help.</span></span>
+<span data-ttu-id="cdfe5-113">Voor beelden worden alleen weer gegeven in de gedetailleerde en volledige weer gave van de Help van de cmdlet.</span><span class="sxs-lookup"><span data-stu-id="cdfe5-113">Examples appear only in the Detailed and Full views of cmdlet Help.</span></span>
 
-## <a name="adding-an-examples-node"></a><span data-ttu-id="c08b6-113">Een voor beeld-knoop punt toevoegen</span><span class="sxs-lookup"><span data-stu-id="c08b6-113">Adding an Examples Node</span></span>
+## <a name="adding-an-examples-node"></a><span data-ttu-id="cdfe5-114">Een voor beeld-knoop punt toevoegen</span><span class="sxs-lookup"><span data-stu-id="cdfe5-114">Adding an Examples Node</span></span>
 
-<span data-ttu-id="c08b6-114">In het volgende XML-bestand ziet u hoe u een knoop punt **voor beelden** kunt toevoegen die één **voorbeeld** knooppunt bevat.</span><span class="sxs-lookup"><span data-stu-id="c08b6-114">The following XML shows how to add an **Examples** node that contains a single **Example** node.</span></span> <span data-ttu-id="c08b6-115">Voeg extra voorbeeld knooppunten toe voor elk voor beeld dat u wilt toevoegen in het onderwerp.</span><span class="sxs-lookup"><span data-stu-id="c08b6-115">Add additional example nodes for each examples you want to include in the topic.</span></span>
+<span data-ttu-id="cdfe5-115">In het volgende XML-bestand ziet u hoe u een knoop punt **voor beelden** kunt toevoegen die één **voorbeeld** knooppunt bevat.</span><span class="sxs-lookup"><span data-stu-id="cdfe5-115">The following XML shows how to add an **Examples** node that contains a single **Example** node.</span></span> <span data-ttu-id="cdfe5-116">Voeg extra voorbeeld knooppunten toe voor elk voor beeld dat u wilt toevoegen in het onderwerp.</span><span class="sxs-lookup"><span data-stu-id="cdfe5-116">Add additional example nodes for each examples you want to include in the topic.</span></span>
 
 ```xml
 <command:examples>
@@ -37,9 +39,9 @@ ms.locfileid: "86893438"
 </command:examples>
 ```
 
-## <a name="adding-an-example-title"></a><span data-ttu-id="c08b6-116">Een voorbeeld titel toevoegen</span><span class="sxs-lookup"><span data-stu-id="c08b6-116">Adding an Example Title</span></span>
+## <a name="adding-an-example-title"></a><span data-ttu-id="cdfe5-117">Een voorbeeld titel toevoegen</span><span class="sxs-lookup"><span data-stu-id="cdfe5-117">Adding an Example Title</span></span>
 
-<span data-ttu-id="c08b6-117">In het volgende XML-bestand ziet u hoe u een **titel** kunt toevoegen voor het voor beeld.</span><span class="sxs-lookup"><span data-stu-id="c08b6-117">The following XML shows how to add a **title** for the example.</span></span> <span data-ttu-id="c08b6-118">De **titel** wordt gebruikt om het voor beeld uit te stellen uit andere voor beelden.</span><span class="sxs-lookup"><span data-stu-id="c08b6-118">The **title** is used to set the example apart from other examples.</span></span> <span data-ttu-id="c08b6-119">Power shell gebruikt een standaard header die een opeenvolgend voorbeeld nummer bevat.</span><span class="sxs-lookup"><span data-stu-id="c08b6-119">PowerShell uses a standard header that includes a sequential example number.</span></span>
+<span data-ttu-id="cdfe5-118">In het volgende XML-bestand ziet u hoe u een **titel** kunt toevoegen voor het voor beeld.</span><span class="sxs-lookup"><span data-stu-id="cdfe5-118">The following XML shows how to add a **title** for the example.</span></span> <span data-ttu-id="cdfe5-119">De **titel** wordt gebruikt om het voor beeld uit te stellen uit andere voor beelden.</span><span class="sxs-lookup"><span data-stu-id="cdfe5-119">The **title** is used to set the example apart from other examples.</span></span> <span data-ttu-id="cdfe5-120">Power shell gebruikt een standaard header die een opeenvolgend voorbeeld nummer bevat.</span><span class="sxs-lookup"><span data-stu-id="cdfe5-120">PowerShell uses a standard header that includes a sequential example number.</span></span>
 
 ```xml
 <command:examples>
@@ -49,9 +51,9 @@ ms.locfileid: "86893438"
 </command:examples>
 ```
 
-## <a name="adding-preceding-characters"></a><span data-ttu-id="c08b6-120">Voorafgaande tekens toevoegen</span><span class="sxs-lookup"><span data-stu-id="c08b6-120">Adding Preceding Characters</span></span>
+## <a name="adding-preceding-characters"></a><span data-ttu-id="cdfe5-121">Voorafgaande tekens toevoegen</span><span class="sxs-lookup"><span data-stu-id="cdfe5-121">Adding Preceding Characters</span></span>
 
-<span data-ttu-id="c08b6-121">In het volgende XML-bestand ziet u hoe u tekens kunt toevoegen, zoals de Windows Power shell-prompt, die direct vóór de voor beeld-opdracht worden weer gegeven (zonder tussenliggende spaties).</span><span class="sxs-lookup"><span data-stu-id="c08b6-121">The following XML shows how to add characters, such as the Windows PowerShell prompt, that are displayed immediately before the example command (without any intervening spaces).</span></span> <span data-ttu-id="c08b6-122">Power Shell maakt gebruik van de Windows Power shell-prompt: `C:\PS>` .</span><span class="sxs-lookup"><span data-stu-id="c08b6-122">PowerShell uses the Windows PowerShell prompt: `C:\PS>`.</span></span>
+<span data-ttu-id="cdfe5-122">In het volgende XML-bestand ziet u hoe u tekens kunt toevoegen, zoals de Windows Power shell-prompt, die direct vóór de voor beeld-opdracht worden weer gegeven (zonder tussenliggende spaties).</span><span class="sxs-lookup"><span data-stu-id="cdfe5-122">The following XML shows how to add characters, such as the Windows PowerShell prompt, that are displayed immediately before the example command (without any intervening spaces).</span></span> <span data-ttu-id="cdfe5-123">Power Shell maakt gebruik van de Windows Power shell-prompt: `C:\PS>` .</span><span class="sxs-lookup"><span data-stu-id="cdfe5-123">PowerShell uses the Windows PowerShell prompt: `C:\PS>`.</span></span>
 
 ```xml
 <command:examples>
@@ -64,9 +66,9 @@ ms.locfileid: "86893438"
 </command:examples>
 ```
 
-## <a name="adding-the-command"></a><span data-ttu-id="c08b6-123">De opdracht toevoegen</span><span class="sxs-lookup"><span data-stu-id="c08b6-123">Adding the Command</span></span>
+## <a name="adding-the-command"></a><span data-ttu-id="cdfe5-124">De opdracht toevoegen</span><span class="sxs-lookup"><span data-stu-id="cdfe5-124">Adding the Command</span></span>
 
-<span data-ttu-id="c08b6-124">In het volgende XML-bestand ziet u hoe u de werkelijke opdracht van het voor beeld kunt toevoegen.</span><span class="sxs-lookup"><span data-stu-id="c08b6-124">The following XML shows how to add the actual command of the example.</span></span> <span data-ttu-id="c08b6-125">Wanneer u de opdracht toevoegt, typt u de volledige naam (geen alias gebruiken) van cmdlets en para meters.</span><span class="sxs-lookup"><span data-stu-id="c08b6-125">When adding the command, type the entire name (do not use alias) of cmdlets and parameters.</span></span> <span data-ttu-id="c08b6-126">Gebruik waar mogelijk kleine letters.</span><span class="sxs-lookup"><span data-stu-id="c08b6-126">Also, use lowercase characters whenever possible.</span></span>
+<span data-ttu-id="cdfe5-125">In het volgende XML-bestand ziet u hoe u de werkelijke opdracht van het voor beeld kunt toevoegen.</span><span class="sxs-lookup"><span data-stu-id="cdfe5-125">The following XML shows how to add the actual command of the example.</span></span> <span data-ttu-id="cdfe5-126">Wanneer u de opdracht toevoegt, typt u de volledige naam (geen alias gebruiken) van cmdlets en para meters.</span><span class="sxs-lookup"><span data-stu-id="cdfe5-126">When adding the command, type the entire name (do not use alias) of cmdlets and parameters.</span></span> <span data-ttu-id="cdfe5-127">Gebruik waar mogelijk kleine letters.</span><span class="sxs-lookup"><span data-stu-id="cdfe5-127">Also, use lowercase characters whenever possible.</span></span>
 
 ```xml
 <command:examples>
@@ -80,9 +82,9 @@ ms.locfileid: "86893438"
 </command:examples>
 ```
 
-## <a name="adding-a-description"></a><span data-ttu-id="c08b6-127">Een beschrijving toevoegen</span><span class="sxs-lookup"><span data-stu-id="c08b6-127">Adding a Description</span></span>
+## <a name="adding-a-description"></a><span data-ttu-id="cdfe5-128">Een beschrijving toevoegen</span><span class="sxs-lookup"><span data-stu-id="cdfe5-128">Adding a Description</span></span>
 
-<span data-ttu-id="c08b6-128">In het volgende XML-bestand ziet u hoe u een beschrijving voor het voor beeld kunt toevoegen.</span><span class="sxs-lookup"><span data-stu-id="c08b6-128">The following XML shows how to add a description for the example.</span></span> <span data-ttu-id="c08b6-129">Power shell gebruikt één set `<maml:para>` Tags voor de beschrijving, zelfs als er meerdere `<maml:para>` Tags kunnen worden gebruikt.</span><span class="sxs-lookup"><span data-stu-id="c08b6-129">PowerShell uses a single set of `<maml:para>` tags for the description, even though multiple `<maml:para>` tags can be used.</span></span>
+<span data-ttu-id="cdfe5-129">In het volgende XML-bestand ziet u hoe u een beschrijving voor het voor beeld kunt toevoegen.</span><span class="sxs-lookup"><span data-stu-id="cdfe5-129">The following XML shows how to add a description for the example.</span></span> <span data-ttu-id="cdfe5-130">Power shell gebruikt één set `<maml:para>` Tags voor de beschrijving, zelfs als er meerdere `<maml:para>` Tags kunnen worden gebruikt.</span><span class="sxs-lookup"><span data-stu-id="cdfe5-130">PowerShell uses a single set of `<maml:para>` tags for the description, even though multiple `<maml:para>` tags can be used.</span></span>
 
 ```xml
 <command:examples>
@@ -99,10 +101,10 @@ ms.locfileid: "86893438"
 </command:examples>
 ```
 
-## <a name="adding-example-output"></a><span data-ttu-id="c08b6-130">Voorbeeld uitvoer toevoegen</span><span class="sxs-lookup"><span data-stu-id="c08b6-130">Adding Example Output</span></span>
+## <a name="adding-example-output"></a><span data-ttu-id="cdfe5-131">Voorbeeld uitvoer toevoegen</span><span class="sxs-lookup"><span data-stu-id="cdfe5-131">Adding Example Output</span></span>
 
-<span data-ttu-id="c08b6-131">In het volgende XML-bestand ziet u hoe de uitvoer van de opdracht kan worden toegevoegd.</span><span class="sxs-lookup"><span data-stu-id="c08b6-131">The following XML shows how to add the output of the command.</span></span> <span data-ttu-id="c08b6-132">De gegevens van de opdracht resultaten zijn optioneel, maar in sommige gevallen is het handig om te demonstreren wat het effect is van het gebruik van specifieke para meters.</span><span class="sxs-lookup"><span data-stu-id="c08b6-132">The command results information is optional, but in some cases it is helpful to demonstrate the effect of using specific parameters.</span></span>
-<span data-ttu-id="c08b6-133">Power shell gebruikt twee sets lege `<maml:para>` Tags voor het scheiden van de uitvoer van de opdracht van de opdracht.</span><span class="sxs-lookup"><span data-stu-id="c08b6-133">PowerShell uses two sets of blank `<maml:para>` tags to separate the command output from the command.</span></span>
+<span data-ttu-id="cdfe5-132">In het volgende XML-bestand ziet u hoe de uitvoer van de opdracht kan worden toegevoegd.</span><span class="sxs-lookup"><span data-stu-id="cdfe5-132">The following XML shows how to add the output of the command.</span></span> <span data-ttu-id="cdfe5-133">De gegevens van de opdracht resultaten zijn optioneel, maar in sommige gevallen is het handig om te demonstreren wat het effect is van het gebruik van specifieke para meters.</span><span class="sxs-lookup"><span data-stu-id="cdfe5-133">The command results information is optional, but in some cases it is helpful to demonstrate the effect of using specific parameters.</span></span>
+<span data-ttu-id="cdfe5-134">Power shell gebruikt twee sets lege `<maml:para>` Tags voor het scheiden van de uitvoer van de opdracht van de opdracht.</span><span class="sxs-lookup"><span data-stu-id="cdfe5-134">PowerShell uses two sets of blank `<maml:para>` tags to separate the command output from the command.</span></span>
 
 ```xml
 <command:examples>

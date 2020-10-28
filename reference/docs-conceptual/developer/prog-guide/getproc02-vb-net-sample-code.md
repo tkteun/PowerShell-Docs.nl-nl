@@ -1,21 +1,23 @@
 ---
-title: Voorbeeld code voor GetProc02 (VB.NET) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 98261f2d6678e24bb8e8df6d2c8a405b25203364
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: GetProc02-codevoorbeeld (VB.NET)
+description: GetProc02-codevoorbeeld (VB.NET)
+ms.openlocfilehash: e13da4689b7f4ba4878e83cd826076a6394d9fb2
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787169"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92654360"
 ---
-# <a name="getproc02-vbnet-sample-code"></a><span data-ttu-id="2fc80-102">GetProc02-codevoorbeeld (VB.NET)</span><span class="sxs-lookup"><span data-stu-id="2fc80-102">GetProc02 (VB.NET) Sample Code</span></span>
+# <a name="getproc02-vbnet-sample-code"></a><span data-ttu-id="ef1b0-103">GetProc02-codevoorbeeld (VB.NET)</span><span class="sxs-lookup"><span data-stu-id="ef1b0-103">GetProc02 (VB.NET) Sample Code</span></span>
 
-<span data-ttu-id="2fc80-103">De volgende code toont de implementatie van een `Get-Process` cmdlet die opdracht regel invoer accepteert.</span><span class="sxs-lookup"><span data-stu-id="2fc80-103">The following code shows the implementation of a `Get-Process` cmdlet that accepts command-line input.</span></span> <span data-ttu-id="2fc80-104">In deze implementatie wordt een `Name` para meter gedefinieerd voor het toestaan van opdracht regel invoer en wordt de methode [WriteObject (System. object, System. Boolean)](/dotnet/api/system.management.automation.cmdlet.writeobject?view=pscore-6.2.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_) gebruikt als uitvoer mechanisme voor het verzenden van uitvoer objecten naar de pijp lijn.</span><span class="sxs-lookup"><span data-stu-id="2fc80-104">Notice that this implementation defines a `Name` parameter to allow command-line input, and it uses the [WriteObject(System.Object,System.Boolean)](/dotnet/api/system.management.automation.cmdlet.writeobject?view=pscore-6.2.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_) method as the output mechanism for sending output objects to the pipeline.</span></span>
+<span data-ttu-id="ef1b0-104">De volgende code toont de implementatie van een `Get-Process` cmdlet die opdracht regel invoer accepteert.</span><span class="sxs-lookup"><span data-stu-id="ef1b0-104">The following code shows the implementation of a `Get-Process` cmdlet that accepts command-line input.</span></span> <span data-ttu-id="ef1b0-105">In deze implementatie wordt een `Name` para meter gedefinieerd voor het toestaan van opdracht regel invoer en wordt de methode [WriteObject (System. object, System. Boolean)](/dotnet/api/system.management.automation.cmdlet.writeobject?view=pscore-6.2.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_) gebruikt als uitvoer mechanisme voor het verzenden van uitvoer objecten naar de pijp lijn.</span><span class="sxs-lookup"><span data-stu-id="ef1b0-105">Notice that this implementation defines a `Name` parameter to allow command-line input, and it uses the [WriteObject(System.Object,System.Boolean)](/dotnet/api/system.management.automation.cmdlet.writeobject?view=pscore-6.2.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_) method as the output mechanism for sending output objects to the pipeline.</span></span>
 
-## <a name="code-sample"></a><span data-ttu-id="2fc80-105">Code voorbeeld</span><span class="sxs-lookup"><span data-stu-id="2fc80-105">Code Sample</span></span>
+## <a name="code-sample"></a><span data-ttu-id="ef1b0-106">Code voorbeeld</span><span class="sxs-lookup"><span data-stu-id="ef1b0-106">Code Sample</span></span>
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplesgetproc02#getproc02vball](Msh_samplesgetproc02#getproc02vball)]  -->
 
-## <a name="see-also"></a><span data-ttu-id="2fc80-106">Zie ook</span><span class="sxs-lookup"><span data-stu-id="2fc80-106">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="ef1b0-107">Zie ook</span><span class="sxs-lookup"><span data-stu-id="ef1b0-107">See Also</span></span>
 
-[<span data-ttu-id="2fc80-107">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="2fc80-107">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
+[<span data-ttu-id="ef1b0-108">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="ef1b0-108">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
