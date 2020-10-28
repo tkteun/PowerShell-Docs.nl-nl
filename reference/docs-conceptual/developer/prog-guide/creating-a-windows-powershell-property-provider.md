@@ -1,15 +1,14 @@
 ---
-title: Een Windows Power shell-eigenschaps provider maken | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- property providers [PowerShell Programmer's Guide]
-- providers [PowerShell Programmer's Guide], property provider
-ms.openlocfilehash: e8ef92629fe036154cdd2f0facbe0cbe8add7533
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Een Windows PowerShell-eigenschapsprovider maken
+description: Een Windows PowerShell-eigenschapsprovider maken
+ms.openlocfilehash: ec9c707f094366c14498613f363b7de1cdbfe5ab
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87778941"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92654592"
 ---
 # <a name="creating-a-windows-powershell-property-provider"></a>Een Windows PowerShell-eigenschapsprovider maken
 
@@ -52,7 +51,7 @@ De volgende voor waarden zijn mogelijk van toepassing op uw implementatie van [S
 
 - Standaard moeten onderdrukkingen van deze methode geen lezer ophalen voor objecten die verborgen zijn voor de gebruiker, tenzij de eigenschap [System. Management. Automation. provider. Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) is ingesteld op `true` . Er moet een fout worden geschreven als het pad een item vertegenwoordigt dat is verborgen voor de gebruiker en [System. Management. Automation. provider. Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) is ingesteld op `false` .
 
-## <a name="attaching-dynamic-parameters-to-the-get-itemproperty-cmdlet"></a>Dynamische para meters aan de cmdlet Get-item Property koppelen
+## <a name="attaching-dynamic-parameters-to-the-get-itemproperty-cmdlet"></a>Dynamische para meters aan de Get-ItemProperty-cmdlet koppelen
 
 `Get-ItemProperty`Voor de cmdlet zijn mogelijk aanvullende para meters vereist die dynamisch worden opgegeven tijdens runtime. Als u deze dynamische para meters wilt opgeven, moet de Windows Power shell-eigenschaps provider de methode [System. Management. Automation. provider. Ipropertycmdletprovider. Getpropertydynamicparameters *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetPropertyDynamicParameters) implementeren. De `path` para meter geeft een volledig gekwalificeerde provider (intern pad) aan, terwijl de `providerSpecificPickList` para meter de providerspecifieke eigenschappen specificeert die worden ingevoerd op de opdracht regel. Deze para meter kan `null` of leeg zijn als de eigenschappen worden gepiped naar de cmdlet. In dit geval retourneert deze methode een object met eigenschappen en velden met kenmerken die vergelijkbaar zijn met een cmdlet-klasse of een [System. Management. Automation. Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) -object. De Windows Power shell-runtime maakt gebruik van het geretourneerde object om de para meters toe te voegen aan de cmdlet.
 
@@ -69,7 +68,7 @@ Dit is de standaard implementatie van [System. Management. Automation. provider.
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testcmdletspropertyprovidersetproperty](Msh_samplestestcmdlets#testcmdletspropertyprovidersetproperty)]  -->
 
-#### <a name="things-to-remember-about-implementing-set-itemproperty"></a>Wat u moet weten over de implementatie van set-item Property
+#### <a name="things-to-remember-about-implementing-set-itemproperty"></a>Wat u moet weten over het implementeren van Set-ItemProperty
 
 De volgende voor waarden zijn mogelijk van toepassing op een implementatie van [System. Management. Automation. provider. Ipropertycmdletprovider. SetProperty *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty):
 
@@ -82,7 +81,7 @@ De volgende voor waarden zijn mogelijk van toepassing op een implementatie van [
 
   Nadat het aanroepen van [System. Management. Automation. provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) wordt geretourneerd `true` , moeten de methode System. Management. Automation [. provider. Ipropertycmdletprovider. SetProperty *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty) worden aangeroepen als er mogelijk gevaarlijke systeem [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) wijzigingen kunnen worden aangebracht. Met deze methode wordt een bevestigings bericht naar de gebruiker verzonden zodat er extra feedback kan worden gegeven om aan te geven dat de bewerking moet worden voortgezet.
 
-## <a name="attaching-dynamic-parameters-for-the-set-itemproperty-cmdlet"></a>Dynamische para meters voor de cmdlet Set-item Property koppelen
+## <a name="attaching-dynamic-parameters-for-the-set-itemproperty-cmdlet"></a>Dynamische para meters voor de cmdlet Set-ItemProperty worden gekoppeld
 
 `Set-ItemProperty`Voor de cmdlet zijn mogelijk aanvullende para meters vereist die dynamisch worden opgegeven tijdens runtime. Als u deze dynamische para meters wilt opgeven, moet de Windows Power shell-eigenschaps provider de methode [System. Management. Automation. provider. Ipropertycmdletprovider. Setpropertydynamicparameters *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetPropertyDynamicParameters) implementeren. Deze methode retourneert een object met eigenschappen en velden met kenmerken die vergelijkbaar zijn met een cmdlet-klasse of een [System. Management. Automation. Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) -object. De `null` waarde kan worden geretourneerd als er geen dynamische para meters moeten worden toegevoegd.
 
@@ -111,7 +110,7 @@ De volgende voor waarden zijn mogelijk van toepassing op uw implementatie van [S
 
   Nadat het aanroepen van [System. Management. Automation. provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) wordt geretourneerd `true` , moeten de methode System. Management. Automation [. provider. Ipropertycmdletprovider. Clearproperty *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty) worden aangeroepen als er mogelijk gevaarlijke systeem [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) wijzigingen kunnen worden aangebracht. Met deze methode wordt een bevestigings bericht naar de gebruiker verzonden zodat er extra feedback kan worden gegeven om aan te geven dat de potentieel gevaarlijke bewerking moet worden voortgezet.
 
-## <a name="attaching-dynamic-parameters-to-the-clear-itemproperty-cmdlet"></a>Dynamische para meters aan de cmdlet Clear-item Property koppelen
+## <a name="attaching-dynamic-parameters-to-the-clear-itemproperty-cmdlet"></a>Dynamische para meters aan de Clear-ItemProperty-cmdlet koppelen
 
 `Clear-ItemProperty`Voor de cmdlet zijn mogelijk aanvullende para meters vereist die dynamisch worden opgegeven tijdens runtime. Als u deze dynamische para meters wilt opgeven, moet de Windows Power shell-eigenschaps provider de methode [System. Management. Automation. provider. Ipropertycmdletprovider. Clearpropertydynamicparameters *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearPropertyDynamicParameters) implementeren. Deze methode retourneert een object met eigenschappen en velden met kenmerken die vergelijkbaar zijn met een cmdlet-klasse of een [System. Management. Automation. Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) -object. De `null` waarde kan worden geretourneerd als er geen dynamische para meters moeten worden toegevoegd.
 

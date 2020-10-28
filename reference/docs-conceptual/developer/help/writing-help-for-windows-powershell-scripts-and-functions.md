@@ -1,12 +1,14 @@
 ---
-title: Hulp voor het schrijven van Power shell-scripts en-functies
 ms.date: 09/13/2016
-ms.openlocfilehash: 381c501d87b7381075f89412f654c6121493856e
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: Hulp voor het schrijven van Power shell-scripts en-functies
+description: Hulp voor het schrijven van Power shell-scripts en-functies
+ms.openlocfilehash: f72742e2a131f41ba8ffdcec4901c7c3ea1da1ad
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86892911"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92654644"
 ---
 # <a name="writing-help-for-powershell-scripts-and-functions"></a>Hulp voor het schrijven van Power shell-scripts en-functies
 
@@ -19,11 +21,11 @@ In dit document worden de indeling en de juiste plaatsing van de Help-onderwerpe
 
 ## <a name="types-of-script-and-function-help"></a>Typen script en functie Help
 
-### <a name="comment-based-help"></a>Help op basis van opmerkingen
+### <a name="comment-based-help"></a>Help bij Comment-Based
 
 Het Help-onderwerp waarin een script of functie wordt beschreven, kan worden geïmplementeerd als een set opmerkingen binnen het script of de functie. Wanneer u op opmerkingen gebaseerde Help voor een script en voor functies in een script schrijft, moet u zorgvuldig letten op de regels voor het plaatsen van de op opmerkingen gebaseerde Help. De plaatsing bepaalt of de `Get-Help` cmdlet het Help-onderwerp koppelt aan het script of een functie. Zie [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help)voor meer informatie over het schrijven van Help-onderwerpen over opmerkingen.
 
-### <a name="xml-based-command-help"></a>Help voor op XML gebaseerde opdracht
+### <a name="xml-based-command-help"></a>Help bij XML-Based-opdracht
 
 Het Help-onderwerp waarin een script of functie wordt beschreven, kan worden geïmplementeerd in een XML-bestand dat gebruikmaakt van het opdracht Help-schema. Als u het script of de functie wilt koppelen aan het XML-bestand, gebruikt u het `ExternalHelp` sleutel woord opmerking, gevolgd door het pad en de naam van het XML-bestand.
 
@@ -42,10 +44,10 @@ U kunt de onderwerpen en de bijbehorende Url's echter op de Internet lijst plaat
 
 - In alle beschrijvingen, raadpleegt u de opdracht als een script of functie. Deze informatie helpt de gebruiker om de opdracht te begrijpen en te beheren.
 
-  Met de volgende gedetailleerde beschrijving wordt bijvoorbeeld aangegeven dat de opdracht New-Topic een script is.
+  Met de volgende gedetailleerde beschrijving wordt bijvoorbeeld aangegeven dat de New-Topic opdracht een script is.
   Dit herinnert gebruikers dat ze het pad en de volledige naam moeten opgeven wanneer ze dit uitvoeren.
 
-  > "Met het script New-Topic maakt u een leeg conceptueel onderwerp voor elke onderwerpnaam in het invoer bestand..."
+  > "Het New-Topic script maakt een leeg conceptueel onderwerp voor elke onderwerpnaam in het invoer bestand..."
 
   In de volgende gedetailleerde beschrijving staat `Disable-PSRemoting` een functie. Deze informatie is vooral nuttig voor gebruikers wanneer de sessie meerdere opdrachten met dezelfde naam bevat, waarvan sommige worden verborgen met een opdracht met een hogere prioriteit.
 

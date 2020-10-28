@@ -1,14 +1,16 @@
 ---
-title: Hulp voor het schrijven van Power shell-modules
 ms.date: 04/10/2020
-ms.openlocfilehash: 115ea3f3c5941e74ed6ddbc8480d4a21576bc5c6
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: Help voor PowerShell-modules schrijven
+description: Help voor PowerShell-modules schrijven
+ms.openlocfilehash: 3bef45c0dd8a7e63bc419bb3e5a7a1783810105b
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86893064"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92654649"
 ---
-# <a name="writing-help-for-powershell-modules"></a>Hulp voor het schrijven van Power shell-modules
+# <a name="writing-help-for-powershell-modules"></a>Help voor PowerShell-modules schrijven
 
 Power shell-modules kunnen Help-onderwerpen bevatten over de module en over de module leden, zoals cmdlets, providers, functies en scripts. De `Get-Help` cmdlet geeft de Help-onderwerpen van de module weer in dezelfde indeling als de Help-informatie voor andere Power shell-items en gebruikers gebruiken standaard `Get-Help` opdrachten om de Help-onderwerpen te ontvangen.
 
@@ -18,15 +20,15 @@ In dit document vindt u informatie over de indeling en de juiste plaatsing van d
 
 Een module kan de volgende soorten Help bevatten.
 
-- **Help voor cmdlets**. De Help-onderwerpen waarin cmdlets in een module worden beschreven, zijn XML-bestanden die gebruikmaken van het opdracht Help-schema
+- **Help voor cmdlets** . De Help-onderwerpen waarin cmdlets in een module worden beschreven, zijn XML-bestanden die gebruikmaken van het opdracht Help-schema
 
-- **Help**voor de provider. De Help-onderwerpen waarin providers in een module worden beschreven, zijn XML-bestanden die gebruikmaken van het Help-schema van de provider.
+- **Help** voor de provider. De Help-onderwerpen waarin providers in een module worden beschreven, zijn XML-bestanden die gebruikmaken van het Help-schema van de provider.
 
-- **Functie Help**. De Help-onderwerpen die functies in een module beschrijven, kunnen XML-bestanden zijn die gebruikmaken van de opdracht Help-schema of de Help-onderwerpen op basis van opmerkingen in de functie, of het script of de script module
+- **Functie Help** . De Help-onderwerpen die functies in een module beschrijven, kunnen XML-bestanden zijn die gebruikmaken van de opdracht Help-schema of de Help-onderwerpen op basis van opmerkingen in de functie, of het script of de script module
 
-- **Help voor scripts**. De Help-onderwerpen waarin scripts in een module worden beschreven, kunnen XML-bestanden zijn die gebruikmaken van de opdracht Help-schema of de Help-onderwerpen op basis van opmerkingen in de script-of script module.
+- **Help voor scripts** . De Help-onderwerpen waarin scripts in een module worden beschreven, kunnen XML-bestanden zijn die gebruikmaken van de opdracht Help-schema of de Help-onderwerpen op basis van opmerkingen in de script-of script module.
 
-- **Conceptuele informatie ("about")**. U kunt een conceptueel ("about") Help-onderwerp gebruiken om de module en de bijbehorende leden te beschrijven en te uitleggen hoe de leden kunnen worden gebruikt om taken uit te voeren.
+- **Conceptuele informatie ("about")** . U kunt een conceptueel ("about") Help-onderwerp gebruiken om de module en de bijbehorende leden te beschrijven en te uitleggen hoe de leden kunnen worden gebruikt om taken uit te voeren.
   Conceptuele Help-onderwerpen zijn tekst bestanden met Unicode-code ring (UTF-8). De bestands naam moet de `about_<name>.help.txt` indeling gebruiken, bijvoorbeeld `about_MyModule.help.txt` . Power shell bevat standaard meer dan 100 van de volgende conceptuele informatie over Help-onderwerpen en ze zijn ingedeeld zoals in het volgende voor beeld.
 
   ```Output
@@ -109,7 +111,7 @@ Zie ondersteuning voor online- [Help](./supporting-online-help.md)voor meer info
 
 ## <a name="see-also"></a>Zie ook
 
-[Een Power shell-module schrijven](../module/writing-a-windows-powershell-module.md)
+[Een PowerShell-module schrijven](../module/writing-a-windows-powershell-module.md)
 
 [Ondersteunende help die kan worden bijgewerkt](./supporting-updatable-help.md)
 
