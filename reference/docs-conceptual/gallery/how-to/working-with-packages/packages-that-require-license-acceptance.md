@@ -1,18 +1,17 @@
 ---
 ms.date: 06/12/2017
-contributor: Farehar
-keywords: Galerie, Power shell, psgallery
 title: Acceptatie van de licentie vereisen
-ms.openlocfilehash: 4b293ea693062cf9717fa4ca913c3eb9abaf7014
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: De pakket licentie weer geven op de pagina met item Details
+ms.openlocfilehash: 0d8a9ed671f7993726bc3fa41d11159b366e5a28
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78278641"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662301"
 ---
 # <a name="require-license-acceptance"></a>Acceptatie van de licentie vereisen
 
-Acceptatie tekst van licentie vereisen wordt weer gegeven op de pagina met item gegevens voor modules waarvoor acceptatie van licenties is vereist. De licentie voor de module kan worden weer gegeven door te klikken op de koppeling License. txt weer geven.
+Acceptatie tekst van licentie vereisen wordt weer gegeven op de pagina met item gegevens voor modules waarvoor acceptatie van licenties is vereist. De licentie voor de module kan worden weer gegeven door te klikken op de koppeling **weer geven License.txt** .
 
 ![Acceptatie van de licentie vereisen](media/packages-that-require-license-acceptance/RequireLicenseAcceptance.png)
 
@@ -26,5 +25,5 @@ Als de module die wordt geïmplementeerd op Azure Automation vereist acceptatie 
 
 ## <a name="more-details"></a>Meer informatie
 
-[Acceptatie van de licentie vereisen in de PowerShellGet](../../concepts/module-license-acceptance.md)
-[Azure Automation-website](/azure/automation)
+[Acceptatie van de licentie vereisen in PowerShellGet](../../concepts/module-license-acceptance.md) 
+ [Azure Automation website](/azure/automation)

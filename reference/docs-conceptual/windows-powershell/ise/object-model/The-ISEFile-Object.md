@@ -1,17 +1,17 @@
 ---
 ms.date: 12/31/2019
-keywords: powershell,cmdlet
 title: Het ISEFile-object
-ms.openlocfilehash: 1069e46aa586b8df2050129194a909b90f77b745
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: Een ISEFile-object vertegenwoordigt een bestand in Windows PowerShell ISE.
+ms.openlocfilehash: 0de19c45bde7e5629d5721635150d3b0915aaa7d
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83811224"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662135"
 ---
 # <a name="the-isefile-object"></a>Het ISEFile-object
 
-Een **ISEFile** -object vertegenwoordigt een bestand in Windows power shell® Integrated Scripting Environment (ISE). Het is een exemplaar van de klasse **micro soft. Power shell. host. ISE. ISEFile** . In dit onderwerp worden de methoden en lideigenschappen van leden vermeld. De `$psISE.CurrentFile` bestanden in de verzameling bestanden in een Power shell-tabblad zijn alle exemplaren van de klasse * * * * micro soft. Power shell. host. ISE. ISEFile * *.
+Een **ISEFile** -object vertegenwoordigt een bestand in Windows Power shell &reg; Integrated SCRIPTING Environment (ISE). Het is een exemplaar van de klasse **micro soft. Power shell. host. ISE. ISEFile** . In dit onderwerp worden de methoden en lideigenschappen van leden vermeld. De `$psISE.CurrentFile` bestanden in de verzameling bestanden in een Power shell-tabblad zijn alle exemplaren van de klasse * * * * micro soft. Power shell. host. ISE. ISEFile * *.
 
 ## <a name="methods"></a>Methoden
 
@@ -21,11 +21,11 @@ Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
 Hiermee slaat u het bestand op schijf.
 
-** \[ saveEncoding \] ** -optioneel [System. Text. encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx) een optionele teken coderings parameter die moet worden gebruikt voor het opgeslagen bestand. De standaard waarde is **utf8**.
+**\[ saveEncoding \]** -optioneel [System. Text. encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx) een optionele teken coderings parameter die moet worden gebruikt voor het opgeslagen bestand. De standaard waarde is **utf8** .
 
 ### <a name="exceptions"></a>Uitzonderingen
 
-- **System. io. IOException**: het bestand kan niet worden opgeslagen.
+- **System. io. IOException** : het bestand kan niet worden opgeslagen.
 
 ```powershell
 # Save the file using the default encoding (UTF8)
@@ -47,13 +47,13 @@ Hiermee slaat u het bestand op met de opgegeven bestands naam en-code ring.
 
 **Bestands naam** : de naam van de teken reeks die moet worden gebruikt om het bestand op te slaan.
 
-** \[ saveEncoding \] ** -optioneel [System. Text. encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx) een optionele teken coderings parameter die moet worden gebruikt voor het opgeslagen bestand. De standaard waarde is **utf8**.
+**\[ saveEncoding \]** -optioneel [System. Text. encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx) een optionele teken coderings parameter die moet worden gebruikt voor het opgeslagen bestand. De standaard waarde is **utf8** .
 
 ### <a name="exceptions"></a>Uitzonderingen
 
-- **System. ArgumentNullException**: de **filename** -para meter is null.
-- **System. ArgumentException**: de **filename** -para meter is leeg.
-- **System. io. IOException**: het bestand kan niet worden opgeslagen.
+- **System. ArgumentNullException** : de **filename** -para meter is null.
+- **System. ArgumentException** : de **filename** -para meter is leeg.
+- **System. io. IOException** : het bestand kan niet worden opgeslagen.
 
 ```powershell
 # Save the file with a full path and name.

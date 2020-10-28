@@ -1,14 +1,13 @@
 ---
 ms.date: 09/11/2018
-contributor: JKeithB
-keywords: Galerie, Power shell, psgallery
 title: Pakket handmatig downloaden
-ms.openlocfilehash: 3e29437c4e35e47ab2028a7eea9f408daf1a59e1
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+description: Hierin wordt beschreven hoe u een pakket hand matig downloadt van de PowerShell Gallery.
+ms.openlocfilehash: 50cd51d970bf21f8e957e60ceed2e98f306b57ab
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87782851"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662279"
 ---
 # <a name="manual-package-download"></a>Pakket handmatig downloaden
 
@@ -24,7 +23,7 @@ Elke pagina heeft een koppeling voor hand matig downloaden, zoals hier wordt wee
 
 ![Pagina pakket weer geven met installatie opties](media/manual-download/packagedisplaypagewithpseditions.png)
 
-Als u hand matig wilt downloaden, klikt u op **het onbewerkte nupkg-bestand downloaden**. Er wordt een kopie van het pakket gekopieerd naar de downloadmap voor uw browser met de naam `<name>.<version>.nupkg` .
+Als u hand matig wilt downloaden, klikt u op **het onbewerkte nupkg-bestand downloaden** . Er wordt een kopie van het pakket gekopieerd naar de downloadmap voor uw browser met de naam `<name>.<version>.nupkg` .
 
 Een NuGet-pakket is een ZIP-archief met extra bestanden met informatie over de inhoud van het pakket. In sommige browsers, zoals Internet Explorer, wordt de `.nupkg` bestands extensie automatisch vervangen door `.zip` . Als u het pakket wilt uitbreiden, wijzigt u de naam van het `.nupkg` bestand in `.zip` , indien nodig, en extraheert u vervolgens de inhoud naar een lokale map.
 
@@ -47,10 +46,10 @@ Zie voor de lijst met NuGet-elementen [hand matig downloaden gebruiken om een pa
 De stappen zijn als volgt:
 
 1. Deblokkeren van het door internet gedownloade NuGet package ( `.nupkg` )-bestand, bijvoorbeeld met behulp van de `Unblock-File -Path C:\Downloads\module.nupkg` cmdlet.
-2. Pak de inhoud van het NuGet-pakket uit naar een lokale map.
-2. Verwijder de NuGet elementen uit de map.
-3. Wijzig de naam van de map. De naam van de standaardmap is doorgaans `<name>.<version>` . De versie kan bevatten `-prerelease` als de module is gelabeld als een voorlopige versie. Wijzig de naam van de map in alleen de module. `azurerm.storage.5.0.4-preview` wordt bijvoorbeeld `azurerm.storage`.
-4. Kopieer de map naar een van de mappen in de `$env:PSModulePath value` . `$env:PSModulePath` is een door punt komma's gescheiden set paden waarin Power shell naar modules moet zoeken.
+1. Pak de inhoud van het NuGet-pakket uit naar een lokale map.
+1. Verwijder de NuGet elementen uit de map.
+1. Wijzig de naam van de map. De naam van de standaardmap is doorgaans `<name>.<version>` . De versie kan bevatten `-prerelease` als de module is gelabeld als een voorlopige versie. Wijzig de naam van de map in alleen de module. `azurerm.storage.5.0.4-preview` wordt bijvoorbeeld `azurerm.storage`.
+1. Kopieer de map naar een van de mappen in de `$env:PSModulePath value` . `$env:PSModulePath` is een door punt komma's gescheiden set paden waarin Power shell naar modules moet zoeken.
 
 > [!IMPORTANT]
 > De hand matige down load bevat geen afhankelijkheden die nodig zijn voor de module. Als het pakket afhankelijkheden heeft, moeten deze op het systeem worden geïnstalleerd om deze module correct te laten werken. Het PowerShell Gallery toont alle afhankelijkheden die vereist zijn voor het pakket.
@@ -65,9 +64,9 @@ De eenvoudigste manier is om het NuGet-pakket uit te pakken en vervolgens het sc
 De stappen zijn als volgt:
 
 1. Deblokkeren van het door internet gedownloade NuGet package ( `.nupkg` )-bestand, bijvoorbeeld met behulp van de `Unblock-File -Path C:\Downloads\package.nupkg` cmdlet.
-2. Pak de inhoud van het NuGet-pakket uit.
-2. Het `.PS1` bestand in de map kan rechtstreeks vanuit deze locatie worden gebruikt.
-3. U kunt de NuGet-specifieke elementen in de map verwijderen.
+1. Pak de inhoud van het NuGet-pakket uit.
+1. Het `.PS1` bestand in de map kan rechtstreeks vanuit deze locatie worden gebruikt.
+1. U kunt de NuGet-specifieke elementen in de map verwijderen.
 
 Zie voor de lijst met NuGet-elementen [hand matig downloaden gebruiken om een pakket te verkrijgen](#using-manual-download-to-acquire-a-package).
 

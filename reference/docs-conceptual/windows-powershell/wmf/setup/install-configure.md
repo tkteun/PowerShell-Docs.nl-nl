@@ -1,15 +1,13 @@
 ---
 ms.date: 06/10/2020
-ms.topic: conceptual
-keywords: wmf,powershell,installeren
-contributor: keithb
 title: WMF 5.1 installeren en configureren
-ms.openlocfilehash: 9e0b4b6ed387b0a0d7fcf62a913677986d70de92
-ms.sourcegitcommit: 4a283fe5419f47102e6c1de7060880a934842ee9
+description: In dit artikel wordt beschreven hoe u WMF 5,1 en de bijbehorende vereisten installeert.
+ms.openlocfilehash: 0e076bfab684b6c83d62d236eea3bbd7ab2ad411
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84671390"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92660836"
 ---
 # <a name="install-and-configure-wmf-51"></a>WMF 5,1 installeren en configureren
 
@@ -57,7 +55,7 @@ Voor de installatie van WMF 5,1 op Windows Server 2008 R2 SP1 of Windows 7 SP1 i
 
 1. Navigeer naar de map waarin u het ZIP-bestand hebt gedownload.
 
-1. Klik met de rechter muisknop op het ZIP-bestand en selecteer **Alles uitpakken...**. Het ZIP-bestand bevat twee bestanden: een MSU en het `Install-WMF5.1.ps1` script bestand. Zodra u het ZIP-bestand hebt uitgepakt, kunt u de inhoud kopiëren naar een computer met Windows 7 of Windows Server 2008 R2.
+1. Klik met de rechter muisknop op het ZIP-bestand en selecteer **Alles uitpakken...** . Het ZIP-bestand bevat twee bestanden: een MSU en het `Install-WMF5.1.ps1` script bestand. Zodra u het ZIP-bestand hebt uitgepakt, kunt u de inhoud kopiëren naar een computer met Windows 7 of Windows Server 2008 R2.
 
 1. Nadat u de inhoud van het ZIP-bestand hebt uitgepakt, opent u Power shell als beheerder en navigeert u naar de map met de inhoud van het ZIP-bestand.
 
@@ -65,8 +63,8 @@ Voor de installatie van WMF 5,1 op Windows Server 2008 R2 SP1 of Windows 7 SP1 i
 
    `Install-WMF5.1.ps1` neemt de volgende para meters op om de installatie van Windows Server 2008 R2 en Windows 7 te vereenvoudigen:
 
-   - **AcceptEula**: als deze para meter wordt opgenomen, wordt de gebruiksrecht overeenkomst automatisch geaccepteerd en wordt deze niet weer gegeven.
-   - **AllowRestart**: deze para meter kan alleen worden gebruikt als AcceptEula is opgegeven. Als deze para meter is opgenomen en de computer opnieuw moet worden opgestart na de installatie van de WMF 5,1, wordt de computer opnieuw opgestart zonder dat u onmiddellijk wordt gevraagd of de installatie is voltooid.
+   - **AcceptEula** : als deze para meter wordt opgenomen, wordt de gebruiksrecht overeenkomst automatisch geaccepteerd en wordt deze niet weer gegeven.
+   - **AllowRestart** : deze para meter kan alleen worden gebruikt als AcceptEula is opgegeven. Als deze para meter is opgenomen en de computer opnieuw moet worden opgestart na de installatie van de WMF 5,1, wordt de computer opnieuw opgestart zonder dat u onmiddellijk wordt gevraagd of de installatie is voltooid.
 
 ## <a name="winrm-dependency"></a>WinRM-afhankelijkheid
 

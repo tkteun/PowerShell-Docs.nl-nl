@@ -1,14 +1,13 @@
 ---
 ms.date: 09/26/2017
-contributor: keithb
-keywords: Galerie, Power shell, cmdlet, psget
 title: Versies van de module Prerelease
-ms.openlocfilehash: eced067dd21082de0db653daf3b838217154f1dd
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: De PowerShellGet-module biedt ondersteuning voor het labelen van modules met grotere versies dan 1.0.0 als een prerelease met behulp van semantische versie beheer.
+ms.openlocfilehash: f794722f0a89f98f8f445ecd45dad9d3d2d7f3cb
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71328936"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92661528"
 ---
 # <a name="prerelease-module-versions"></a>Versies van de module Prerelease
 
@@ -17,8 +16,8 @@ Vanaf versie 1.6.0, PowerShellGet en de PowerShell Gallery bieden ondersteuning 
 Op hoog niveau zijn de functies van de prerelease-module onder andere:
 
 - Als u een prerelease-teken reeks toevoegt aan de sectie PSData van het module manifest, wordt de module geïdentificeerd als een voorlopige versie. Wanneer de module wordt gepubliceerd naar de PowerShell Gallery, worden deze gegevens geëxtraheerd uit het manifest en gebruikt om voorlopige pakketten te identificeren.
-- Voor het verkrijgen van voorlopige pakketten moet `-AllowPrerelease` u een markering toevoegen aan `Find-Module`de `Install-Module`PowerShellGet `Update-Module`-opdrachten `Save-Module`,, en. Als de vlag niet is opgegeven, worden er geen voorlopige pakketten weer gegeven.
-- Module versies die worden `Find-Module`weer `Get-InstalledModule`gegeven door, en in de PowerShell Gallery worden weer gegeven als één teken reeks met de teken reeks Prerelease toegevoegd, zoals in 2.5.0-alpha.
+- Voor het verkrijgen van voorlopige pakketten moet `-AllowPrerelease` u een markering toevoegen aan de PowerShellGet `Find-Module` -opdrachten,, `Install-Module` `Update-Module` en `Save-Module` . Als de vlag niet is opgegeven, worden er geen voorlopige pakketten weer gegeven.
+- Module versies die worden weer gegeven door `Find-Module` , `Get-InstalledModule` en in de PowerShell Gallery worden weer gegeven als één teken reeks met de teken reeks Prerelease toegevoegd, zoals in 2.5.0-alpha.
 
 Hieronder vindt u meer informatie over de functies.
 
@@ -63,12 +62,12 @@ Wanneer u publiceert naar de PowerShell Gallery, moet de versie van de module di
 
 ## <a name="finding-and-acquiring-prerelease-packages-using-powershellget-commands"></a>Voorlopige pakketten zoeken en ophalen met behulp van PowerShellGet-opdrachten
 
-Voor het verwerken van pakketten die gebruikmaken van de PowerShellGet find-module, install-module, update-module en Save-module-opdrachten moet u de vlag-AllowPrerelease toevoegen. Als-AllowPrerelease is opgegeven, worden voorlopige pakketten opgenomen als deze aanwezig zijn. Als u de vlag-AllowPrerelease niet opgeeft, worden er geen voorlopige pakketten weer gegeven.
+Voor het verwerken van prerelease-pakketten met behulp van PowerShellGet find-module, install-module, update-module en Save-Module-opdrachten moet u de vlag-AllowPrerelease toevoegen. Als-AllowPrerelease is opgegeven, worden voorlopige pakketten opgenomen als deze aanwezig zijn. Als u de vlag-AllowPrerelease niet opgeeft, worden er geen voorlopige pakketten weer gegeven.
 
 De enige uitzonde ringen hierop in de PowerShellGet-module opdrachten zijn Get-InstalledModule en sommige gevallen met Uninstall-module.
 
-- Get-InstalledModule toont altijd automatisch de voorlopige gegevens in de versie teken reeks voor modules.
-- Uninstall: als __er geen versie__ is opgegeven, wordt de meest recente versie van een module standaard verwijderd. Dat gedrag is niet gewijzigd. Als er echter een prerelease-versie is opgegeven met-RequiredVersion,-AllowPrerelease is vereist.
+- Get-InstalledModule wordt altijd automatisch de voorlopige gegevens weer gegeven in de versie teken reeks voor modules.
+- Uninstall-Module wordt standaard de meest recente versie van een module verwijderd als __er geen versie__ is opgegeven. Dat gedrag is niet gewijzigd. Als er echter een prerelease-versie is opgegeven met-RequiredVersion,-AllowPrerelease is vereist.
 
 ## <a name="examples"></a>Voorbeelden
 
@@ -123,7 +122,7 @@ Version         Name          Repository  Description
 1.9.0-alpha     TestPackage   PSGallery   Package used to validate changes to the PowerShe...
 ```
 
-Gelijktijdige installatie van versies van een module die alleen verschillen als gevolg van de opgegeven Prerelease, wordt niet ondersteund. Wanneer u een module installeert met behulp van PowerShellGet, worden verschillende versies van dezelfde module naast elkaar geïnstalleerd door de naam van een map te maken met behulp van de ModuleVersion. De ModuleVersion, zonder de voorlopige release teken reeks, wordt gebruikt voor de mapnaam. Als een gebruiker MyModule-versie 2.5.0-alpha installeert, wordt deze in de `MyModule\2.5.0` map geïnstalleerd. Als de gebruiker vervolgens 2.5.0-beta installeert, wordt de inhoud van de `MyModule\2.5.0`map **overschreven** door de versie van de 2.5.0-Beta. Een voor deel van deze benadering is dat het niet nodig is om de installatie van de voorlopige versie ongedaan te maken na installatie van de productie-gereede versie. In het voor beeld hieronder ziet u wat u kunt verwachten:
+Gelijktijdige installatie van versies van een module die alleen verschillen als gevolg van de opgegeven Prerelease, wordt niet ondersteund. Wanneer u een module installeert met behulp van PowerShellGet, worden verschillende versies van dezelfde module naast elkaar geïnstalleerd door de naam van een map te maken met behulp van de ModuleVersion. De ModuleVersion, zonder de voorlopige release teken reeks, wordt gebruikt voor de mapnaam. Als een gebruiker MyModule-versie 2.5.0-alpha installeert, wordt deze in de `MyModule\2.5.0` map geïnstalleerd. Als de gebruiker vervolgens 2.5.0-beta installeert, wordt de inhoud van de map **overschreven** door de versie van de 2.5.0-Beta `MyModule\2.5.0` . Een voor deel van deze benadering is dat het niet nodig is om de installatie van de voorlopige versie ongedaan te maken na installatie van de productie-gereede versie. In het voor beeld hieronder ziet u wat u kunt verwachten:
 
 ``` powershell
 C:\windows\system32> Get-InstalledModule TestPackage -AllVersions
@@ -151,7 +150,7 @@ Version         Name           Repository  Description
 
 ```
 
-Uninstall-module verwijdert de meest recente versie van een module als-RequiredVersion niet is opgegeven.
+Uninstall-Module wordt de meest recente versie van een module verwijderd als-RequiredVersion niet is opgegeven.
 Als-RequiredVersion is opgegeven en een prerelease is, moet-AllowPrerelease worden toegevoegd aan de opdracht.
 
 ``` powershell

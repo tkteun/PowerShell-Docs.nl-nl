@@ -1,21 +1,19 @@
 ---
 ms.date: 06/12/2017
-contributor: JKeithB
-keywords: Galerie, Power shell, cmdlet, psgallery
 title: Zoek resultaten filteren
-ms.openlocfilehash: 51f8d243cb9b1f4ff7413eec8839697299e8dd52
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+description: In dit artikel wordt de gebruikers interface beschreven waarmee inhoud in het PowerShell Gallery wordt gefilterd.
+ms.openlocfilehash: cc375f3ddb35c95ed134776500bd326bc3db6b1a
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83691460"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92661405"
 ---
 # <a name="filtering-search-results"></a>Zoek resultaten filteren
 
 Op het [tabblad pakketten](https://www.powershellgallery.com/packages) worden alle beschik bare pakketten weer gegeven in de PowerShell Gallery.
 
-Er zijn verschillende manieren waarop u de pakketten kunt filteren, sorteren en doorzoeken.
-Klik op het pakket voor meer informatie over een bepaald pakket.
+Er zijn verschillende manieren waarop u de pakketten kunt filteren, sorteren en doorzoeken. Klik op het pakket voor meer informatie over een bepaald pakket.
 
 ## <a name="filter-by"></a>Filteren op
 
@@ -38,15 +36,10 @@ Met de selectie vakjes in de vervolg keuzelijst kunnen gebruikers de resultaten 
   - Functie mogelijkheid
   - Werkstroom
 
-Als u alleen modules in de PowerShell Gallery wilt weer geven, controleert u module in de pakket typen.
-Als u alleen scripts wilt weer geven in de PowerShell Gallery, controleert u het script in de pakket typen.
+Als u alleen modules in de PowerShell Gallery wilt weer geven, controleert u module in de pakket typen. Als u alleen scripts wilt weer geven in de PowerShell Gallery, controleert u het script in de pakket typen.
 
 > [!NOTE]
-> Filters zijn inclusief.
-> Voor beeld: een pakket met cmdlets en functies wordt weer gegeven als de cmdlet of functie (of beide) is ingeschakeld.
-> Als geen van beide is geselecteerd, wordt het pakket niet weer gegeven.
-> Als alle categorieën zijn geselecteerd, worden alleen pakketten met een van deze categorieën weer gegeven.
-> **Pakketten die geen deel uitmaken van een van deze categorieën, worden niet weer gegeven.**
+> Filters zijn inclusief. Voor beeld: een pakket met cmdlets en functies wordt weer gegeven als de cmdlet of functie (of beide) is ingeschakeld. Als geen van beide is geselecteerd, wordt het pakket niet weer gegeven. Als alle categorieën zijn geselecteerd, worden alleen pakketten met een van deze categorieën weer gegeven. **Pakketten die geen deel uitmaken van een van deze categorieën, worden niet weer gegeven.**
 
 ## <a name="sort-by"></a>Sorteren op
 

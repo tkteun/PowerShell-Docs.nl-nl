@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
-contributor: JKeithB
-keywords: Galerie, Power shell, cmdlet, psgallery
 title: Implementeren naar Azure Automation
-ms.openlocfilehash: 5d09a0777c59b642400d683c8cb6f881319fb881
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: In dit artikel wordt beschreven hoe u de PowerShell Gallery kunt gebruiken om een pakket te implementeren op Azure Automation.
+ms.openlocfilehash: e9de079ee6cc950c8a268423b9eabd515959b718
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78278700"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662378"
 ---
 # <a name="deploy-to-azure-automation"></a>Implementeren naar Azure Automation
 
@@ -16,13 +15,12 @@ Met de knop implementeren op Azure Automation op de pagina pakket Details wordt 
 
 ![De knop implementeren op Azure Automation](media/deploy-to-azure-automation/DeployToAzureAutomationButton.png)
 
-Als u hierop klikt, wordt u omgeleid naar de Azure-Beheerportal, waar u zich aanmeldt met de referenties van uw Azure-account.
-Als het pakket afhankelijkheden bevat, worden alle afhankelijkheden ook geïmplementeerd in Azure Automation.
+Als u hierop klikt, wordt u omgeleid naar de Azure-Beheerportal, waar u zich aanmeldt met de referenties van uw Azure-account. Als het pakket afhankelijkheden bevat, worden alle afhankelijkheden ook geïmplementeerd in Azure Automation.
 
 > [!WARNING]
 > Als hetzelfde pakket en dezelfde versie al bestaan in uw Automation-account, wordt het pakket in uw Automation-account overschreven door het opnieuw te implementeren vanaf de PowerShell Gallery.
 
-Als u een module implementeert, wordt deze weer gegeven in de sectie modules van Azure Automation.  Als u een script implementeert, wordt dit weer gegeven in de sectie Runbooks van Azure Automation.
+Als u een module implementeert, wordt deze weer gegeven in de sectie modules van Azure Automation. Als u een script implementeert, wordt dit weer gegeven in de sectie Runbooks van Azure Automation.
 
 U kunt de knop implementeren op Azure Automation uitschakelen door de tag AzureAutomationNotSupported toe te voegen aan de meta gegevens van het pakket.
 

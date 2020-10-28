@@ -1,14 +1,13 @@
 ---
 ms.date: 12/11/2018
-contributor: JKeithB, SydneyhSmith
-keywords: Galerie, Power shell, cmdlet, psgallery
 title: Pakketten met compatibele Power shell-edities of besturings systeem
-ms.openlocfilehash: fce1383fa604a555a40b050ce92c5cc45ca7054c
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+description: In dit artikel wordt beschreven hoe u de PowerShell Gallery doorzoekt door compatibiliteit met een specifiek platform of andere editie.
+ms.openlocfilehash: 9806c09c85febfd74bb69adf3d294fb4f559ff23
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83691446"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92661244"
 ---
 # <a name="packages-with-compatible-powershell-editions-or-operating-systems"></a>Pakketten met compatibele Power shell-edities of-besturings systemen
 
@@ -32,18 +31,17 @@ U kunt ook zoeken naar compatibele pakketten met behulp van Power shell.
 
 Tags: "PSEdition_Desktop" en Tags: "PSEdition_Core" gebruiken om de pakketten op PowerShell Gallery te filteren.
 
-### <a name="use-tagspsedition_core-to-search-items-compatible-with-powershell-core-edition"></a>Tags gebruiken: ' PSEdition_Core ' om items te zoeken die compatibel zijn met Power shell Core Edition.
+### <a name="use-tagspsedition_core-to-search-items-compatible-with-powershell-core-edition"></a>Tags gebruiken: ' PSEdition_Core ' om items te zoeken die compatibel zijn met de Power shell Core Edition
 
 ![Zoek resultaten voor items die compatibel zijn met Core PSEdition](media/searching-by-compatibility/searchresultswithpseditions.PNG)
 
-### <a name="use-tagspsedition_desktop-to-search-items-compatible-with-powershell-desktop-edition"></a>Tags gebruiken: ' PSEdition_Desktop ' om items te zoeken die compatibel zijn met Power shell Desktop Edition.
+### <a name="use-tagspsedition_desktop-to-search-items-compatible-with-powershell-desktop-edition"></a>Tags gebruiken: ' PSEdition_Desktop ' om items te zoeken die compatibel zijn met Power shell Desktop Edition
 
 ![Zoek resultaten voor items die compatibel zijn met Desktop PSEdition](media/searching-by-compatibility/searchresultswithpseditionsdesktop.PNG)
 
 ### <a name="search-for-packages-to-find-compatible-editions-using-powershell"></a>Pakketten zoeken om compatibele versies te vinden met behulp van Power shell
-U kunt labels opgeven voor het filteren van de Power shell-editie en het besturings systeem.
-U gebruikt de `Find-Package` cmdlet waarmee de `-Tag` para meter wordt opgegeven voor de editie (en het besturings systeem) waarop u zich wilt richten.
-Zo:
+
+U kunt labels opgeven voor het filteren van de Power shell-editie en het besturings systeem. U gebruikt de `Find-Package` cmdlet waarmee de `-Tag` para meter wordt opgegeven voor de editie (en het besturings systeem) waarop u zich wilt richten. Dat werkt als volgt:
 
 ```powershell
 # Find modules compatible with PowerShell Core:

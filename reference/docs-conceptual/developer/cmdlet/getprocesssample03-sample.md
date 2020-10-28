@@ -1,12 +1,14 @@
 ---
-title: GetProcessSample03-voor beeld | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 09df93792ab611e167279bc35755d8d6c28e7cf3
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Voorbeeld GetProcessSample03
+description: Voorbeeld GetProcessSample03
+ms.openlocfilehash: 7827247238f3dad2018b55e396b73d1fa434eb97
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784211"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92660723"
 ---
 # <a name="getprocesssample03-sample"></a>Voorbeeld GetProcessSample03
 
@@ -18,7 +20,7 @@ In dit voor beeld ziet u hoe u een cmdlet implementeert waarmee de processen op 
 
 2. Dubbel klik op het pictogram van het oplossings bestand (. SLN). Hiermee opent u het voorbeeld project in Visual Studio.
 
-3. Selecteer in het menu **Build** de optie **Build Solution**.
+3. Selecteer in het menu **Build** de optie **Build Solution** .
 
     De bibliotheek voor het voor beeld wordt opgebouwd in de standaard mappen \Bin of \bin\debug.
 
@@ -60,7 +62,7 @@ In dit voor beeld ziet u het volgende.
 
 ## <a name="example"></a>Voorbeeld
 
-Dit voor beeld toont een implementatie van de cmdlet Get-proc die een `Name` para meter bevat die invoer van de pijp lijn accepteert.
+Dit voor beeld toont een implementatie van de cmdlet Get-Proc die een `Name` para meter bevat die invoer van de pijp lijn accepteert.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Commands

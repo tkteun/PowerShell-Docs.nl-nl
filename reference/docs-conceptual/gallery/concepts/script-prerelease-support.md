@@ -1,14 +1,14 @@
 ---
 ms.date: 10/17/2017
-contributor: keithb
-keywords: Galerie, Power shell, cmdlet, psget
 title: Voorlopige versies van scripts
-ms.openlocfilehash: c0198c2f575d2c004949ccebab49d93ce54716be
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: De PowerShellGet-module biedt ondersteuning voor het labelen van scripts met versies groter dan 1.0.0 als een prerelease met behulp van semantische versie beheer.
+ms.openlocfilehash: e9873a69148fd80553e566b31c7455a4ecaee5ce
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71329174"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92661471"
+---
 ---
 # <a name="prerelease-versions-of-scripts"></a>Voorlopige versies van scripts
 
@@ -56,12 +56,12 @@ Wanneer u publiceert naar de PowerShell Gallery, moet de versie van het script d
 
 ## <a name="finding-and-acquiring-prerelease-packages-using-powershellget-commands"></a>Voorlopige pakketten zoeken en ophalen met behulp van PowerShellGet-opdrachten
 
-Voor het verwerken van prerelease-pakketten met behulp van PowerShellGet zoeken-script, install-script, update-script en Save-script opdrachten moet u de vlag-AllowPrerelease toevoegen. Als-AllowPrerelease is opgegeven, worden voorlopige pakketten opgenomen als deze aanwezig zijn. Als u de vlag-AllowPrerelease niet opgeeft, worden er geen voorlopige pakketten weer gegeven.
+Voor het verwerken van prerelease-pakketten met behulp van PowerShellGet Zoek-script, install-script, update-script en Save-Script opdrachten moet u de vlag-AllowPrerelease toevoegen. Als-AllowPrerelease is opgegeven, worden voorlopige pakketten opgenomen als deze aanwezig zijn. Als u de vlag-AllowPrerelease niet opgeeft, worden er geen voorlopige pakketten weer gegeven.
 
 De enige uitzonde ringen hierop in de PowerShellGet-script opdrachten zijn Get-InstalledScript en sommige gevallen met uninstall-script.
 
-- Get-InstalledScript toont altijd automatisch de voorlopige gegevens in de versie teken reeks als deze aanwezig is.
-- Uninstall-script wordt standaard de meest recente versie van een script verwijderd als **er geen versie** is opgegeven. Dat gedrag is niet gewijzigd. Als er echter een prerelease-versie is opgegeven `-RequiredVersion`met `-AllowPrerelease` , is vereist.
+- Get-InstalledScript wordt altijd automatisch de voorlopige gegevens weer gegeven in de versie teken reeks als deze aanwezig is.
+- Uninstall-Script wordt standaard de meest recente versie van een script verwijderd als **er geen versie** is opgegeven. Dat gedrag is niet gewijzigd. Als er echter een prerelease-versie is opgegeven met `-RequiredVersion` , is `-AllowPrerelease` vereist.
 
 ## <a name="examples"></a>Voorbeelden
 
@@ -106,7 +106,7 @@ Version         Name                                Repository           Descrip
 # If -RequiredVersion is not specified, all installed scripts will be displayed by Get-InstalledScript
 ```
 
-Uninstall-script verwijdert de huidige versie van een script wanneer-RequiredVersion niet is opgegeven.
+Uninstall-Script wordt de huidige versie van een script verwijderd als-RequiredVersion niet is opgegeven.
 Als-RequiredVersion is opgegeven en een prerelease is, moet-AllowPrerelease worden toegevoegd aan de opdracht.
 
 ``` powershell

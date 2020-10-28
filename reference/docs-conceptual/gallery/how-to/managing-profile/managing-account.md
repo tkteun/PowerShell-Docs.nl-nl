@@ -1,14 +1,13 @@
 ---
 ms.date: 09/05/2018
-contributor: JKeithB
-keywords: Galerie, Power shell, cmdlet, psgallery
 title: PowerShell Gallery-accountinstellingen
-ms.openlocfilehash: b71c7f0658c24ec2eeddb050e48b777a37c11917
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+description: In dit artikel worden de instellingen van uw account profiel in de PowerShell Gallery beschreven.
+ms.openlocfilehash: ab0e09aae6fea26ac6d85a35e30c8d06f31b121a
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87771784"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662749"
 ---
 # <a name="powershell-gallery-account-settings"></a>PowerShell Gallery-accountinstellingen
 
@@ -51,22 +50,22 @@ Als u het aanmeldings account wilt wijzigen, moet u zijn aangemeld met het huidi
 
 ![Instellingen voor aanmeldings account wijzigen](media/managing-account/PSGallery_LoginAccountSettings.png)
 
-1. Klik op **account wijzigen**. In een pop-upvenster wordt uitgelegd dat het wijzigen van het aanmeldings account van toepassing is op alle toepassingen van dat account in de PowerShell Gallery. Lees de informatie en klik vervolgens op **OK** om door te gaan.
+1. Klik op **account wijzigen** . In een pop-upvenster wordt uitgelegd dat het wijzigen van het aanmeldings account van toepassing is op alle toepassingen van dat account in de PowerShell Gallery. Lees de informatie en klik vervolgens op **OK** om door te gaan.
 
    ![Wijzigings bevestiging: OK/Annuleren](media/managing-account/PSGallery_LoginAccountChange-1.png)
 
-2. U wordt vervolgens gevraagd om u aan te melden met het _nieuwe account_.
+2. U wordt vervolgens gevraagd om u aan te melden met het _nieuwe account_ .
 
    ![Meld u aan met het nieuwe account](media/managing-account/PSGallery_LoginAccountChange-2.png)
 
-3. Wanneer u op **volgende**klikt, wordt er een bericht weer gegeven dat u bent aangemeld met het huidige account.
-   Klik op **Afmelden en meld u aan met een ander account**.
+3. Wanneer u op **volgende** klikt, wordt er een bericht weer gegeven dat u bent aangemeld met het huidige account.
+   Klik op **Afmelden en meld u aan met een ander account** .
 
    ![Afmelden en aanmelden met een ander account](media/managing-account/PSGallery_LoginAccountChange-3.png)
 
 4. Voer het wacht woord van het nieuwe account in. Nadat u het wacht woord hebt ingevoerd, keert u terug naar de pagina account instellingen, waarin wordt weer gegeven dat het aanmeldings account is bijgewerkt.
 
-## <a name="enable-two-factor-authentication-2fa"></a>Twee ledige verificatie inschakelen (twee ledige)
+## <a name="enable-two-factor-authentication-2fa"></a>Two-Factor-verificatie inschakelen (twee ledige)
 
 Verificatie met twee factoren wordt aanbevolen voor alle gebruikers die hand matig naar de PowerShell Gallery publiceren. Als u twee ledige verificatie wilt inschakelen, moet er ten minste twee geregistreerde verificaties zijn geregistreerd voor het aanmeldings account. De ene is een wacht woord en de andere formulieren kunnen de volgende zijn:
 

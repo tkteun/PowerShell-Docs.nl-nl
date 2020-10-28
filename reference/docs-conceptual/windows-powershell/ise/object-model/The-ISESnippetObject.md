@@ -1,13 +1,13 @@
 ---
 ms.date: 06/05/2017
-keywords: powershell,cmdlet
 title: Het ISESnippet-object
-ms.openlocfilehash: f810e6b26f0ded04be15bdc37f336d7890e29dad
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: Een ISESnippet-object is een exemplaar van de klasse micro soft. Power shell. host. ISE. ISESnippet.
+ms.openlocfilehash: 602b344686cbcfb1e994914d4e26438ff7e4b1de
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810930"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663406"
 ---
 # <a name="the-isesnippetobject"></a>Het ISESnippet-object
 

@@ -1,13 +1,14 @@
 ---
 ms.date: 07/16/2020
-keywords: DSC, Power shell, configuratie, installatie
+ms.topic: reference
 title: DSC-register resource
-ms.openlocfilehash: da4be9152a58d9945051f9c811270e871612ca0d
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC-register resource
+ms.openlocfilehash: d2b88a4aefe704aa4d337ec53202669b43412802
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86463615"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92661555"
 ---
 # <a name="dsc-registry-resource"></a>DSC-register resource
 
@@ -37,7 +38,7 @@ Registry [string] #ResourceName
 |Eigenschap |Beschrijving |
 |---|---|
 |Sleutel |Hiermee geeft u het pad van de register sleutel op waarvan u een specifieke status wilt waarborgen. Dit pad moet de Hive bevatten. |
-|ValueName |Hiermee wordt de naam van de register waarde aangegeven. Als u een register sleutel wilt toevoegen of verwijderen, geeft u deze eigenschap op als een lege teken reeks zonder **Value type** of **ValueData**op te geven. Als u de standaard waarde van een register sleutel wilt wijzigen of verwijderen, geeft u deze eigenschap op als een lege teken reeks terwijl u ook **Value type** of **ValueData**opgeeft. |
+|ValueName |Hiermee wordt de naam van de register waarde aangegeven. Als u een register sleutel wilt toevoegen of verwijderen, geeft u deze eigenschap op als een lege teken reeks zonder **Value type** of **ValueData** op te geven. Als u de standaard waarde van een register sleutel wilt wijzigen of verwijderen, geeft u deze eigenschap op als een lege teken reeks terwijl u ook **Value type** of **ValueData** opgeeft. |
 |Force |Als de opgegeven register sleutel aanwezig is, wordt deze door **geforceerd** overschreven met de nieuwe waarde. Als u een register sleutel met subsleutels verwijdert, moet dit zijn `$true` . |
 |Bovenaanzicht |Hiermee wordt aangegeven of gegevens in hexadecimale indeling worden weer gegeven. Indien opgegeven, worden de DWORD/QWORD-waardegegevens weer gegeven in hexadecimale notatie. Niet geldig voor andere typen. De standaardwaarde is `$false`. |
 |ValueData |De gegevens voor de register waarde. |
@@ -48,7 +49,7 @@ Registry [string] #ResourceName
 |Eigenschap |Beschrijving |
 |---|---|
 |DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is bijvoorbeeld als de ID van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is `DependsOn = "[ResourceType]ResourceName"` . |
-|Zo |Hiermee wordt aangegeven of de sleutel en de waarde bestaan. Stel deze eigenschap in op **presen teren**om ervoor te zorgen dat ze wel aanwezig zijn. Om ervoor te zorgen dat ze niet bestaan, stelt u de eigenschap in op **afwezig**. De standaard waarde is **aanwezig**. |
+|Zo |Hiermee wordt aangegeven of de sleutel en de waarde bestaan. Stel deze eigenschap in op **presen teren** om ervoor te zorgen dat ze wel aanwezig zijn. Om ervoor te zorgen dat ze niet bestaan, stelt u de eigenschap in op **afwezig** . De standaard waarde is **aanwezig** . |
 |PsDscRunAsCredential |Hiermee stelt u de referentie in voor het uitvoeren van de gehele resource als. |
 
 > [!NOTE]
@@ -75,7 +76,7 @@ Configuration RegistryTest
 
 ### <a name="example-2-ensure-specified-registry-key-exists"></a>Voor beeld 2: controleren of de opgegeven register sleutel bestaat
 
-In dit voor beeld wordt ervoor gezorgd dat een sleutel met de naam ' ExampleKey2 ' aanwezig is in de ** \_ lokale \_ machine** -component HKEY.
+In dit voor beeld wordt ervoor gezorgd dat een sleutel met de naam ' ExampleKey2 ' aanwezig is in de **\_ lokale \_ machine** -component HKEY.
 
 ```powershell
 Configuration RegistryTest

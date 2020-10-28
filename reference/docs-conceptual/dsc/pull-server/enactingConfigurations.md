@@ -2,12 +2,13 @@
 ms.date: 10/16/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: Configuraties doorvoeren
-ms.openlocfilehash: 1437521471d95fd80dc6a6cec62a0b75df4224ec
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+description: 'Er zijn twee manieren om Power shell DSC-configuraties te nemen: push-modus en pull-modus.'
+ms.openlocfilehash: 466eb43cd266ceb4ae81cc997a7b338e041f8a15
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783072"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92661724"
 ---
 # <a name="enacting-configurations"></a>Configuraties doorvoeren
 

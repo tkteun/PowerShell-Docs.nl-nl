@@ -1,12 +1,14 @@
 ---
-title: Parametergegevens toevoegen
 ms.date: 09/12/2016
-ms.openlocfilehash: 15d0194a1d5449c65977703faf245e449d75d176
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: Parametergegevens toevoegen
+description: Parametergegevens toevoegen
+ms.openlocfilehash: 8f4fc46ef256a77b058df4ba506124f80732cb39
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86893387"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663058"
 ---
 # <a name="how-to-add-parameter-information"></a>Parametergegevens toevoegen
 
@@ -165,7 +167,7 @@ Hier volgen enkele dingen die u moet onthouden wanneer u para meters toevoegt.
 
 De standaard waarde van de para meter is de waarde die wordt gebruikt als de para meter niet is opgegeven op de opdracht regel. Houd er rekening mee dat de standaard waarde Optioneel is en niet nodig is voor sommige para meters, zoals de vereiste para meters. U moet echter een standaard waarde opgeven voor de meeste optionele para meters.
 
-De standaard waarde helpt de gebruiker bij het begrijpen van het effect van het gebruik van de para meter. Beschrijf de standaard waarde zeer specifiek, zoals de ' huidige map ' of de ' Power shell-installatiemap ( `$PSHOME` ) ' voor een optioneel pad. U kunt ook een zin schrijven waarin de standaard waarde wordt beschreven, zoals de volgende zin die wordt gebruikt voor de para meter **PassThru** : "als PassThru niet is opgegeven, geeft de cmdlet geen objecten uit de pijp lijn." Omdat de waarde tegenover de **standaard waarde**van de veld naam wordt weer gegeven, hoeft u niet de term ' standaard waarde ' in de vermelding op te geven.
+De standaard waarde helpt de gebruiker bij het begrijpen van het effect van het gebruik van de para meter. Beschrijf de standaard waarde zeer specifiek, zoals de ' huidige map ' of de ' Power shell-installatiemap ( `$PSHOME` ) ' voor een optioneel pad. U kunt ook een zin schrijven waarin de standaard waarde wordt beschreven, zoals de volgende zin die wordt gebruikt voor de para meter **PassThru** : "als PassThru niet is opgegeven, geeft de cmdlet geen objecten uit de pijp lijn." Omdat de waarde tegenover de **standaard waarde** van de veld naam wordt weer gegeven, hoeft u niet de term ' standaard waarde ' in de vermelding op te geven.
 
 De standaard waarde van de para meter wordt niet weer gegeven in alle weer gaven van het Help-onderwerp van de cmdlet. Het wordt echter weer gegeven in een tabel (samen met de parameter kenmerken), gevolgd door de parameter beschrijving wanneer de gebruiker de **volledige** ( `Get-Help <cmdletname> -full` ) of de **para meter** ( `Get-Help
 <cmdletname> -parameter` )-weer gave van het onderwerp vraagt.

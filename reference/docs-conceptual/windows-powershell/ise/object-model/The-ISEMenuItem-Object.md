@@ -1,13 +1,13 @@
 ---
 ms.date: 12/31/2019
-keywords: powershell,cmdlet
 title: Het ISEMenuItem-object
-ms.openlocfilehash: c3ffe6e8f0b28987543fe0a873c552292dc5158a
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: Een ISEMenuItem-object is een exemplaar van de klasse micro soft. Power shell. host. ISE. ISEMenuItem. Alle menu-objecten in het menu **invoeg toepassingen** zijn exemplaren van de klasse ISEMenuItem.
+ms.openlocfilehash: 15036e3551687a21dfbe50834a89247c80949656
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810650"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663441"
 ---
 # <a name="the-isemenuitem-object"></a>Het ISEMenuItem-object
 
@@ -29,7 +29,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Add('_Process', {Get-Process}, '
 $psISE.CurrentPowerShellTab.AddOnsMenu.DisplayName
 ```
 
-### <a name="action"></a>Bewerking
+### <a name="action"></a>Actie
 
 Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
@@ -81,7 +81,7 @@ Lees het volgende script voorbeeld voor meer informatie over het gebruik van het
 $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Clear()
 
 # Add an Add-ons menu item with an shortcut and fast access key.
-# Note the use of “_”  as opposed to the “&” for mapping to the fast access key letter for the menu item.
+# Note the use of "_"  as opposed to the "&" for mapping to the fast access key letter for the menu item.
 $menuAdded = $psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add('_Process', {Get-Process}, 'Alt+P')
 # Add a nested menu - a parent and a child submenu item.
 $parentAdded = $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Add('Parent', $null, $null)

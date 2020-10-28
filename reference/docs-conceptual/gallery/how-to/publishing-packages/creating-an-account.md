@@ -1,27 +1,26 @@
 ---
 ms.date: 09/11/2018
-contributor: JKeithB
-keywords: Galerie, Power shell, cmdlet, psgallery
 title: Een PowerShell Gallery-account maken
-ms.openlocfilehash: f43d7e65bb8bf9a9bbdda9790cc622786377fa38
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: In dit artikel worden de vereisten voor gebruikers accounts voor de PowerShell Gallery beschreven
+ms.openlocfilehash: 24c7531e61128415a284d1b438b43f3af0d1053a
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78278774"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662602"
 ---
 # <a name="creating-a-powershell-gallery-account"></a>Een PowerShell Gallery-account maken
 
 U moet een PowerShell Gallery account maken voordat u iets publiceert naar de PowerShell Gallery.
 PowerShell Gallery accounts moeten worden gekoppeld aan een aanmeldings account waarvoor een e-mail is ingeschakeld. Dit account kan een Azure Active Directory account of een micro soft-ID zijn, zoals een e-mail account van outlook.com of hotmail.com.
 
-Als u een PowerShell Gallery account wilt maken, [https://PowerShellGallery.com](https://PowerShellGallery.com) gaat u naar en klikt u op **Aanmelden** , zoals wordt weer gegeven in de volgende afbeelding.
+Als u een PowerShell Gallery account wilt maken, gaat u naar [https://PowerShellGallery.com](https://PowerShellGallery.com) en klikt u op **Aanmelden** , zoals wordt weer gegeven in de volgende afbeelding.
 
 ![Nieuw account registreren](media/creating-an-account/CreateAccount-Register.png)
 
-Als u een Azure Active Directory account wilt gebruiken, selecteert u **werk-of school account**en meldt u zich aan met uw account. Als u een micro soft-ID wilt gebruiken, kiest u **persoonlijk account** en meldt u zich aan.
+Als u een Azure Active Directory account wilt gebruiken, selecteert u **werk-of school account** en meldt u zich aan met uw account. Als u een micro soft-ID wilt gebruiken, kiest u **persoonlijk account** en meldt u zich aan.
 
-Vervolgens wordt u gevraagd om een gebruikers naam voor de PowerShell Gallery te maken. Lees de gebruiks voorwaarden en het privacybeleid, voer een gebruikers naam in en klik vervolgens op **registreren**.
+Vervolgens wordt u gevraagd om een gebruikers naam voor de PowerShell Gallery te maken. Lees de gebruiks voorwaarden en het privacybeleid, voer een gebruikers naam in en klik vervolgens op **registreren** .
 
 > [!NOTE]
 > De account naam kan niet worden gewijzigd nadat deze is gemaakt. Zie [package Owners beheren](managing-package-owners.md)voor meer informatie.

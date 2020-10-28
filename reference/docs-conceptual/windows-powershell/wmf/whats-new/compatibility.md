@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
-keywords: wmf,powershell,installeren
 title: Productcompatibiliteitsstatus
-ms.openlocfilehash: c740b2560162ecdab40daac2f9ae36c29811ac13
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: Dit artikel bevat een lijst met software die compatibel is met WMF 5,1.
+ms.openlocfilehash: 5610c668059b07f7c2f6e832b6ed1bd2eb9719b2
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810426"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92660657"
 ---
 # <a name="product-compatibility-status"></a>Productcompatibiliteitsstatus
 

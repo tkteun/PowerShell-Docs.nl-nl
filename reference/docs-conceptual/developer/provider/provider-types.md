@@ -1,12 +1,14 @@
 ---
-title: Provider typen | Microsoft Docs
 ms.date: 08/21/2019
-ms.openlocfilehash: 03b6b2d02d603632399ea455c2832742e0964d62
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Typen providers
+description: Typen providers
+ms.openlocfilehash: 9d3b458d7647a297fcda086db3540a0c15c576db
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87778255"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92661751"
 ---
 # <a name="provider-types"></a>Typen providers
 
@@ -112,7 +114,7 @@ De interface **System. Management. Automation. provider. IContentCmdletProvider*
 ## <a name="property-enabled-providers"></a>Providers met eigenschappen
 
 Met eigenschappen ingeschakelde providers kunnen gebruikers de eigenschappen van de items in het gegevens archief beheren.
-Voor het maken van een provider met een eigenschap, moet uw provider klasse de methoden van [System. Management. Automation. provider. IPropertyCmdletProvider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider) en [System. Management. Automation. provider. IDynamicPropertyCmdletProvider](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider) implementeren. In de meeste gevallen moet u, ter ondersteuning van een provider-cmdlet, de methode overschrijven die door de Power shell-engine wordt aangeroepen om de cmdlet aan te roepen, zoals de `ClearProperty` methode voor de cmdlet Clear-Property, en u kunt desgewenst een tweede methode overschrijven, zoals `ClearPropertyDynamicParameters` , voor het toevoegen van dynamische para meters aan de cmdlet.
+Voor het maken van een provider met een eigenschap, moet uw provider klasse de methoden van [System. Management. Automation. provider. IPropertyCmdletProvider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider) en [System. Management. Automation. provider. IDynamicPropertyCmdletProvider](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider) implementeren. In de meeste gevallen moet u de methode overschrijven die door de Power shell-engine wordt aangeroepen om de cmdlet aan te roepen, zoals de `ClearProperty` methode voor de Clear-Property-cmdlet, en kunt u desgewenst een tweede methode overschrijven, zoals `ClearPropertyDynamicParameters` , voor het toevoegen van dynamische para meters aan de cmdlet.
 
 De interface **System. Management. Automation. provider. IPropertyCmdletProvider** definieert de volgende methoden voor het implementeren van specifieke provider-cmdlets:
 

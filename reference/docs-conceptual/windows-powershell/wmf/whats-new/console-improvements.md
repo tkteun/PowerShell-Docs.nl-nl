@@ -1,19 +1,19 @@
 ---
 ms.date: 06/12/2017
-keywords: wmf,powershell,installeren
 title: Verbeteringen van de console in WMF 5.1
-ms.openlocfilehash: ae3d08a34a09bc32d40a8a45788999ee9c54a562
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: WMF 5,1 voegt nieuwe functies toe aan de console-ervaring voor Windows Power shell 5,1.
+ms.openlocfilehash: 9a86a2ed4787554e7255bedf1c2ae6e798fefa45
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810419"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92660759"
 ---
 # <a name="console-improvements-in-wmf-51"></a>Verbeteringen van de console in WMF 5.1
 
 ## <a name="powershell-console-improvements"></a>Verbeteringen in de Power shell-console
 
-De volgende wijzigingen zijn aangebracht in Power shell. exe in WMF 5,1 om de console-ervaring te verbeteren:
+De volgende wijzigingen zijn aangebracht in powershell.exe in WMF 5,1 om de console-ervaring te verbeteren:
 
 ### <a name="vt100-support"></a>VT100-ondersteuning
 

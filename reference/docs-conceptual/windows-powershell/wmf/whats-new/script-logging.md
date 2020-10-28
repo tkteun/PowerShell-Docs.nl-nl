@@ -1,28 +1,28 @@
 ---
 ms.date: 06/12/2017
-keywords: wmf,powershell,installeren
 title: Tracering en logboekregistratie voor scripts
-ms.openlocfilehash: dd18453c041428d5a6537c413c3ebe324a62dfee
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: Windows Power shell 5. x voegt nieuwe gebeurtenis logboek registratie toe waarmee u de uitvoering van een script blok kunt controleren.
+ms.openlocfilehash: d47fb6fdd1ee4b9372fab7b81e6dc94fb45b8880
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83811196"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663127"
 ---
 # <a name="script-tracing-and-logging"></a>Tracering en logboekregistratie voor scripts
 
-Hoewel Power shell al over de groepsbeleid **LogPipelineExecutionDetails** -instelling beschikt voor het vastleggen van de aanroep van cmdlets, heeft de script taal van Power shell verschillende functies die u mogelijk wilt registreren en controleren. De nieuwe uitgebreide functie voor het traceren van scripts biedt gedetailleerde tracering en analyse van Power shell-script activiteit op een systeem. Nadat u gedetailleerde script tracering hebt ingeschakeld, worden alle script blokken in Power shell geregistreerd in het ETW-gebeurtenis logboek, **micro soft-Windows-Power shell/operationeel**. Als een script blok een ander script blok maakt, bijvoorbeeld door aanroepen `Invoke-Expression` , wordt het aangeroepen script blok ook vastgelegd.
+Hoewel Power shell al over de groepsbeleid **LogPipelineExecutionDetails** -instelling beschikt voor het vastleggen van de aanroep van cmdlets, heeft de script taal van Power shell verschillende functies die u mogelijk wilt registreren en controleren. De nieuwe uitgebreide functie voor het traceren van scripts biedt gedetailleerde tracering en analyse van Power shell-script activiteit op een systeem. Nadat u gedetailleerde script tracering hebt ingeschakeld, worden alle script blokken in Power shell geregistreerd in het ETW-gebeurtenis logboek, **micro soft-Windows-Power shell/operationeel** . Als een script blok een ander script blok maakt, bijvoorbeeld door aanroepen `Invoke-Expression` , wordt het aangeroepen script blok ook vastgelegd.
 
-Logboek registratie wordt ingeschakeld via de instelling **logboek registratie van Power shell-script blok inschakelen** Groepsbeleid in **Beheersjablonen**  ->  **Windows-onderdelen**  ->  **Windows Power shell**.
+Logboek registratie wordt ingeschakeld via de instelling **logboek registratie van Power shell-script blok inschakelen** Groepsbeleid in **Beheersjablonen**  ->  **Windows-onderdelen**  ->  **Windows Power shell** .
 
 De gebeurtenissen zijn:
 
-| Kanaal |                               Functioneren                               |
+| Kanaal |                               Operationeel                               |
 | ------- | ----------------------------------------------------------------------- |
-| Niveau   | Verbose                                                                 |
+| Niveau   | Uitgebreid                                                                 |
 | Code  | Maken                                                                  |
 | Taak    | CommandStart                                                            |
-| Zoek | Runs                                                                |
+| Zoek | Runspace                                                                |
 | Gebeurtenis | Engine_ScriptBlockCompiled (0x1008 = 4104)                              |
 | Bericht | Script Block-tekst maken (%1 van %2): </br> %3 </br> Script Block-ID: %4 |
 
@@ -30,18 +30,18 @@ De Inge sloten tekst in het bericht is de omvang van het gecompileerde script bl
 
 Als u uitgebreide logboek registratie inschakelt, schrijft de functie begin-en eind Markeringen:
 
-| Kanaal |                                 Functioneren                                |
+| Kanaal |                                 Operationeel                                |
 | ------- | -------------------------------------------------------------------------- |
-| Niveau   | Verbose                                                                    |
+| Niveau   | Uitgebreid                                                                    |
 | Code  | Openen/sluiten                                                               |
 | Taak    | CommandStart / CommandStop                                                 |
-| Zoek | Runs                                                                   |
+| Zoek | Runspace                                                                   |
 | Gebeurtenis | Script Block \_ roep \_ Start \_ detail (0x1009 = 4105)/ </br> Script Block \_ aanroepen \_ volledige \_ Details (0x100A = 4106) |
 | Bericht | Gestart/voltooide aanroep van script Block-ID: %1 </br> Runs Pace-ID: %2 |
 
 De ID is de GUID die het script blok vertegenwoordigt (dat kan worden gecorreleerd met gebeurtenis-ID 0x1008) en de runs Pace-ID vertegenwoordigt de runs Pace waarin dit script blok is uitgevoerd.
 
-Procent tekens in het aanroep bericht vertegenwoordigen Structured ETW-eigenschappen. Hoewel ze worden vervangen door de werkelijke waarden in de tekst van het bericht, is een krachtigere manier om ze te openen, het bericht op te halen met de cmdlet Get-Wine vent en vervolgens de **Eigenschappen** matrix van het bericht te gebruiken.
+Procent tekens in het aanroep bericht vertegenwoordigen Structured ETW-eigenschappen. Hoewel ze worden vervangen door de werkelijke waarden in de tekst van het bericht, is een krachtigere manier om ze te openen, het bericht op te halen met de cmdlet Get-WinEvent en vervolgens de **Eigenschappen** matrix van het bericht te gebruiken.
 
 Hier volgt een voor beeld van hoe deze functionaliteit kan helpen bij het inpakken van een schadelijke poging om een script te versleutelen en af te schrijven:
 

@@ -1,13 +1,13 @@
 ---
 ms.date: 06/12/2017
-keywords: wmf,powershell,installeren
 title: Nieuwe en bijgewerkte cmdlets
-ms.openlocfilehash: ffd5db2d4fc9bf8f67ef5e352633ad3209f72c87
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: Windows Power shell 5,1 bevat veel nieuwe of bijgewerkte cmdlets.
+ms.openlocfilehash: bdfbe5a263864a172aefb0aa5731f59b95ab43ca
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810510"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663219"
 ---
 # <a name="new-and-updated-cmdlets"></a>Nieuwe en bijgewerkte cmdlets
 
@@ -30,7 +30,7 @@ Deze genereren en valideren Windows-catalogus bestanden.
 
 ## <a name="clipboard-cmdlets"></a>Klembord-cmdlets
 
-`Get-Clipboard`en `Set-Clipboard` Maak het eenvoudiger voor u om inhoud over te dragen van en naar een Windows Power shell-sessie. De Klembord-cmdlets ondersteunen installatie kopieën, audio bestanden, bestands lijsten en tekst.
+`Get-Clipboard` en `Set-Clipboard` Maak het eenvoudiger voor u om inhoud over te dragen van en naar een Windows Power shell-sessie. De Klembord-cmdlets ondersteunen installatie kopieën, audio bestanden, bestands lijsten en tekst.
 
 Zie voor meer informatie:
 
@@ -41,7 +41,7 @@ Zie voor meer informatie:
 
 De syntaxis cmdlets van cryptografische berichten ondersteunen de versleuteling en ontsleuteling van inhoud met behulp van de IETF-standaard indeling voor het cryptografisch beveiligen van berichten zoals beschreven door [RFC5652](https://tools.ietf.org/html/rfc5652.html).
 
-De CMS Encryption Standard implementeert open bare-sleutel cryptografie, waarbij de sleutel die wordt gebruikt voor het versleutelen van inhoud (de *open bare sleutel*) en de sleutel die wordt gebruikt voor het ontsleutelen van inhoud (de *persoonlijke sleutel*), gescheiden zijn.
+De CMS Encryption Standard implementeert open bare-sleutel cryptografie, waarbij de sleutel die wordt gebruikt voor het versleutelen van inhoud (de *open bare sleutel* ) en de sleutel die wordt gebruikt voor het ontsleutelen van inhoud (de *persoonlijke sleutel* ), gescheiden zijn.
 
 Uw open bare sleutel kan algemeen worden gedeeld en bevat geen gevoelige gegevens. Alle inhoud die is versleuteld met de open bare sleutel kan alleen worden ontsleuteld met de persoonlijke sleutel. Zie voor meer informatie [open bare-sleutel cryptografie](https://en.wikipedia.org/wiki/Public-key_cryptography).
 
@@ -59,7 +59,7 @@ Get-ChildItem Cert:\CurrentUser -DocumentEncryptionCert -Recurse
 
 ## <a name="extract-and-parse-structured-objects-from-string-content"></a>Gestructureerde objecten uit teken reeks inhoud extra heren en parseren
 
-### <a name="convertfrom-string"></a>ConvertFrom-teken reeks
+### <a name="convertfrom-string"></a>ConvertFrom-String
 
 De nieuwe `ConvertFrom-String` cmdlet ondersteunt twee modi:
 
@@ -74,14 +74,14 @@ Zie [ConvertFrom-string (](/powershell/module/Microsoft.PowerShell.Utility/Conve
 
 ### <a name="convert-string"></a>Convert-String
 
-`Convert-String`Hiermee kunt u vóór en na voor beelden opgeven hoe tekst eruit moet zien. De cmdlet formatteert uw tekst automatisch.
+`Convert-String` Hiermee kunt u vóór en na voor beelden opgeven hoe tekst eruit moet zien. De cmdlet formatteert uw tekst automatisch.
 
 Zie [Convert-string](/powershell/module/Microsoft.PowerShell.Utility/Convert-String)(Engelstalig) voor meer informatie.
 
 ## <a name="updates-to-fileinfo-object"></a>Updates voor FileInfo-object
 
 Informatie over de bestands versie kan misleidend zijn, met name in gevallen waarin het bestand is gerepareerd. WMF 5,0 voegt nieuwe **FileVersionRaw** -en **ProductVersionRaw** -script eigenschappen toe aan **file info** -objecten.
-Dit zijn de eigenschappen die worden weer gegeven voor Power shell. exe (ervan uitgaande dat $pid de ID is van het Power Shell-proces):
+Dit zijn de eigenschappen die worden weer gegeven voor powershell.exe (ervan uitgaande dat $pid de ID van het Power Shell-proces is):
 
 ```powershell
 Get-Process -Id $pid -FileVersionInfo | Format-List *version*
@@ -96,13 +96,13 @@ ProductVersion    : 10.0.17763.1
 
 ## <a name="format-hex"></a>Format-Hex
 
-`Format-Hex`Hiermee kunt u tekst of binaire gegevens in hexadecimale indeling weer geven.
+`Format-Hex` Hiermee kunt u tekst of binaire gegevens in hexadecimale indeling weer geven.
 
 Zie [Format-hex](/powershell/module/microsoft.powershell.utility/format-hex)voor meer informatie.
 
-## <a name="get-childitem-has--depth-parameter"></a>Get-Child item heeft para meter-Depth
+## <a name="get-childitem-has--depth-parameter"></a>Get-ChildItem heeft de para meter-Depth
 
-`Get-ChildItem`heeft nu een **diepte** parameter voor gebruik met **recursie** om de recursie te beperken:
+`Get-ChildItem` heeft nu een **diepte** parameter voor gebruik met **recursie** om de recursie te beperken:
 
 ## <a name="modules-support-for-declaring-version-ranges-1-etc"></a>Modules ondersteunen voor het declareren van versie bereiken (1. *, etc.)
 
@@ -172,7 +172,7 @@ De cmdlet item en enkele verwante cmdlets zijn uitgebreid ter ondersteuning van 
 
 ### <a name="symbolic-link-files"></a>Symbolische koppelings bestanden
 
-In dit voor beeld maken we een nieuw symbolische koppelings bestand met de naam MySymLinkFile. txt in C:\Temp dat is gekoppeld aan $pshome \profile.ps1. Alle drie de voor beelden produceren hetzelfde resultaat.
+In dit voor beeld maken we een nieuw symbolische koppelings bestand met de naam MySymLinkFile.txt in C:\Temp dat is gekoppeld aan $pshome\profile.ps1. Alle drie de voor beelden produceren hetzelfde resultaat.
 
 ```powershell
 New-Item -ItemType SymbolicLink -Path C:\Temp -Name MySymLinkFile.txt -Value $pshome\profile.ps1
@@ -206,9 +206,9 @@ Dezelfde combi Naties van **pad** en **naam** zijn toegestaan zoals hierboven is
 New-Item -ItemType Junction -Path C:\Temp\MyJunctionDir -Value $pshome
 ```
 
-### <a name="get-childitem"></a>Get-Child item
+### <a name="get-childitem"></a>Get-ChildItem
 
-`Get-ChildItem`in wordt nu een ' l ' weer gegeven in de eigenschap **mode** om een symbolische koppelings bestand of-map aan te geven.
+`Get-ChildItem` in wordt nu een ' l ' weer gegeven in de eigenschap **mode** om een symbolische koppelings bestand of-map aan te geven.
 
 ```powershell
 Get-ChildItem C:\Temp | sort LastWriteTime -Descending
@@ -225,7 +225,7 @@ d----l 6/13/2014 3:22 PM        MySymLinkDir
 d----l 6/13/2014 3:24 PM        MyJunctionDir
 ```
 
-### <a name="remove-item"></a>Verwijderen-item
+### <a name="remove-item"></a>Remove-Item
 
 Het verwijderen van symbolische koppelingen werkt zoals bij het verwijderen van een ander item type.
 

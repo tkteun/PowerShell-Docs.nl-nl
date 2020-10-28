@@ -1,17 +1,17 @@
 ---
 ms.date: 08/25/2017
-keywords: powershell,cmdlet
 title: Het ObjectModelRoot-object
-ms.openlocfilehash: cd94e69de2e62f7ce9fac413e15458ae9986540e
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: Het $psISE-object, het hoofd object in Power shell ISE is een exemplaar van de klasse micro soft. Power shell. host. ISE. ObjectModelRoot. In dit onderwerp worden de eigenschappen van het object ObjectModelRoot beschreven.
+ms.openlocfilehash: c8ae703c2663256ca037090fd3b1eb239cfc431a
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810916"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92660942"
 ---
 # <a name="the-objectmodelroot-object"></a>Het ObjectModelRoot-object
 
-Het `$psISE` object, het hoofd object in Windows Power shell® Integrated Scripting Environment (ISE) is een exemplaar van de klasse micro soft. Power shell. host. ISE. ObjectModelRoot. In dit onderwerp worden de eigenschappen van het object **ObjectModelRoot** beschreven.
+Het `$psISE` -object, dat het hoofd object is in Windows Power shell &reg; Integrated Scripting Environment (ISE), is een exemplaar van de klasse micro soft. Power shell. host. ISE. ObjectModelRoot. In dit onderwerp worden de eigenschappen van het object **ObjectModelRoot** beschreven.
 
 ## <a name="properties"></a>Eigenschappen
 

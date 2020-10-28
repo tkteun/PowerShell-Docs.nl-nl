@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
-contributor: JKeithB
-keywords: Galerie, Power shell, cmdlet, psgallery
 title: Een item maken en publiceren
-ms.openlocfilehash: 1aa9cc84f259869ca6f8b8e2f6952e43eaac14df
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: In dit artikel worden de mechanismen beschreven en de belangrijkste stappen voor het voorbereiden van een script of module, en het publiceren naar de PowerShell Gallery
+ms.openlocfilehash: be846799aff71d38bdd0c98b3f43eaee5aef7798
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71328782"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662505"
 ---
 # <a name="creating-and-publishing-an-item"></a>Een item maken en publiceren
 
@@ -21,7 +20,7 @@ De minimale vereisten voor het publiceren van een item naar de PowerShell Galler
 - Een PowerShell Gallery-account en de bijbehorende API-sleutel hebben
 - Zorg ervoor dat de vereiste meta gegevens zich in uw item bevindt
 - Gebruik de Prevalidatie-hulpprogram ma's om ervoor te zorgen dat uw item gereed is voor publicatie
-- Publiceer het item naar het PowerShell Gallery met behulp van de opdrachten publicatie-module en publiceren-script
+- Publiceer het item naar het PowerShell Gallery met behulp van de Publish-Module-en Publish-Script-opdrachten
 - Reageer op vragen of problemen met betrekking tot uw object
 
 De PowerShell Gallery accepteert Power shell-modules en Power shell-scripts. Wanneer we naar scripts verwijzen, betekenen we een Power shell-script dat één bestand is en geen deel uitmaakt van een grotere module.
@@ -62,12 +61,13 @@ Auteurs en eigen aren van PowerShell Gallery items zijn gerelateerde concepten, 
 Er zijn een aantal hulpprogram ma's die u moet uitvoeren op uw code voordat u uw item naar de PowerShell Gallery publiceert:
 
 - [Power shell-script analyse](https://www.powershellgallery.com/packages/PSScriptAnalyzer/), die zich in de PowerShell Gallery bevindt
-- Voor modules test-ModuleManifest die deel uitmaakt van Power shell
-- Voor scripts, test-ScriptFileInfo die wordt geleverd met Power shell Get
+- Voor modules Test-ModuleManifest die deel uitmaken van Power shell
+- Voor scripts, Test-ScriptFileInfo die worden geleverd met Power shell Get
 
 [Power shell script Analyzer](https://www.powershellgallery.com/packages/PSScriptAnalyzer/) is een hulp programma voor statische code analyse waarmee uw code wordt gescand zodat deze voldoet aan de basis richtlijnen voor Power shell-code ring. Dit hulp programma identificeert veelvoorkomende en kritieke problemen in uw code en moet regel matig worden uitgevoerd tijdens de ontwikkeling om u te helpen uw item gereed te maken voor publicatie. Power shell script Analyzer bevat een lijst met problemen die zijn geïdentificeerd als fouten, waarschuwingen en informatie. Alle fouten moeten worden opgelost voordat u naar de PowerShell Gallery publiceert. Waarschuwingen moeten worden gecontroleerd en het meeste moet worden opgelost. Power shell script Analyzer wordt uitgevoerd telkens wanneer een item wordt gepubliceerd of bijgewerkt in de PowerShell Gallery. Het Galerie bewerkings team neemt contact op met de eigenaar van het item om de gevonden fouten te verhelpen.
 
-Als de informatie in het manifest van uw item niet kan worden gelezen door de PowerShell Gallery-infra structuur, kunt u deze niet publiceren. Met [test-ModuleManifest](/powershell/module/microsoft.powershell.core/test-modulemanifest) worden veelvoorkomende problemen onderschept die ertoe leiden dat de module niet bruikbaar is wanneer deze wordt geïnstalleerd. Deze moet voor elke module worden uitgevoerd voordat deze naar de PowerShell Gallery wordt gepubliceerd.
+Als de informatie in het manifest van uw item niet kan worden gelezen door de PowerShell Gallery-infra structuur, kunt u deze niet publiceren.
+Met [test-ModuleManifest](/powershell/module/microsoft.powershell.core/test-modulemanifest) worden veelvoorkomende problemen onderschept die ertoe leiden dat de module niet bruikbaar is wanneer deze wordt geïnstalleerd. Deze moet voor elke module worden uitgevoerd voordat deze naar de PowerShell Gallery wordt gepubliceerd.
 
 Op dezelfde manier wordt met [test-ScriptFileInfo](/powershell/module/PowerShellGet/test-scriptfileinfo) de meta gegevens in een script gevalideerd en moeten ze worden uitgevoerd op elk script (dat afzonderlijk wordt gepubliceerd vanuit een module) voordat het naar de PowerShell Gallery wordt gepubliceerd.
 
@@ -94,4 +94,3 @@ Alle items die worden gepubliceerd naar de PowerShell Gallery worden gescand op 
 Zodra u een item naar de PowerShell Gallery hebt gepubliceerd, moet u controleren of u feedback hebt over uw object.
 
 - Zorg ervoor dat u het e-mail adres bewaakt dat is gekoppeld aan het account dat wordt gepubliceerd. Gebruikers en het PowerShell Gallery Operations-team geven feedback via dat account, met inbegrip van problemen met de PSSA of antivirus scans. Als het e-mail account ongeldig is of als er ernstige problemen aan het account zijn gerapporteerd en gedurende lange tijd niet zijn opgelost, kunnen de items worden beschouwd als ingetrokken en uit de PowerShell Gallery worden verwijderd zoals beschreven in de [gebruiks voorwaarden](https://www.powershellgallery.com/policies/Terms).
-- U wordt aangeraden om zich te abonneren op opmerkingen voor elk PowerShell Gallery item dat u publiceert. Hiermee krijgt u een melding als er opmerkingen over uw items in de PowerShell Gallery. Dit is optioneel, omdat er een account moet worden gemaakt met LiveFyre.

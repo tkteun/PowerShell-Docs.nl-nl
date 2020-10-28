@@ -1,12 +1,14 @@
 ---
-title: Dynamische para meters van provider-cmdlet | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 4aaa5ee39e98de9a9925fc65cac3cc6c32d9c2bc
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Dynamische parameters voor provider-cmdlets
+description: Dynamische parameters voor provider-cmdlets
+ms.openlocfilehash: ac05a847afb0729c34d733fa4ba8da11f46746fe
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786812"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662979"
 ---
 # <a name="provider-cmdlet-dynamic-parameters"></a>Dynamische parameters voor provider-cmdlets
 
@@ -66,7 +68,7 @@ Hier volgt een lijst met de statische para meters die kunnen worden gebruikt om 
 
 `Copy-Item` -cmdlet kunt u dynamische para meters definiëren die worden geactiveerd door de `Path` `Destination` `Recurse` para meters, en, door de `Copy-Item` implementatie van de methode [System. Management. Automation. provider. Containercmdletprovider. Copyitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItemDynamicParameters) .
 
-De cmdlet Get-ChildItems kunt u dynamische para meters definiëren die door de `Path` `Recurse` para meters van de cmdlet worden geactiveerd `Get-ChildItem` door de implementatie van de methoden [System. Management. Automation. provider. Containercmdletprovider. Getchilditemsdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItemsDynamicParameters) en [System. Management. Automation. provider. Containercmdletprovider. Getchildnamesdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNamesDynamicParameters) .
+Get-ChildItems-cmdlet kunt u dynamische para meters definiëren die door de `Path` `Recurse` para meters van de cmdlet worden geactiveerd `Get-ChildItem` door de implementatie van de methoden [System. Management. Automation. provider. Containercmdletprovider. Getchilditemsdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItemsDynamicParameters) en [System. Management. Automation. provider. Containercmdletprovider. Getchildnamesdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNamesDynamicParameters) .
 
 `Get-Content` cmdlet kunt u dynamische para meters definiëren die worden geactiveerd door de `Path` para meter van de `Get-Content` cmdlet door de methode [System. Management. Automation. provider. Icontentcmdletprovider. Getcontentreaderdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReaderDynamicParameters) te implementeren.
 

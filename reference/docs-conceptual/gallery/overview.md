@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
-contributor: JKeithB
-keywords: Galerie, Power shell, cmdlet, psgallery, psget
 title: De PowerShell Gallery
-ms.openlocfilehash: e489d2dd4db087b53eb07d2a8793c8f586c9b210
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: De PowerShell Gallery is de centrale opslag plaats voor Power shell-modules, scripts en DSC-resources.
+ms.openlocfilehash: 1aa3d351e71211259cac4e6d6f0ebd68c0df6ff1
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80500566"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662115"
 ---
 # <a name="the-powershell-gallery"></a>De PowerShell Gallery
 
@@ -27,7 +26,7 @@ Raadpleeg de pagina [Aan de slag](getting-started.md) voor meer informatie over 
 
 ## <a name="supported-operating-systems"></a>Ondersteunde besturingssystemen
 
-Voor de **PowerShellGet**-module is **PowerShell 3.0 of hoger** vereist.
+Voor de **PowerShellGet** -module is **PowerShell 3.0 of hoger** vereist.
 
 **PowerShellGet** vereist .NET Framework 4,5 of hoger. U kunt .NET Framework 4.5 of hoger [hier](https://msdn.microsoft.com/library/5a4x27ek.aspx) installeren.
 

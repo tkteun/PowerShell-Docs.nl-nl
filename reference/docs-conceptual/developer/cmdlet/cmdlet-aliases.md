@@ -1,12 +1,14 @@
 ---
-title: Cmdlet-aliassen | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: fed4055f09e01c5f3fa87584d48551918606f4eb
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Cmdlet-aliassen
+description: Cmdlet-aliassen
+ms.openlocfilehash: 734553a9911aef256df563afa6abcdb23d7a62e6
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784534"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92660784"
 ---
 # <a name="cmdlet-aliases"></a>Cmdlet-aliassen
 

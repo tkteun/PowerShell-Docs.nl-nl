@@ -2,17 +2,17 @@
 ms.date: 08/15/2019
 keywords: DSC, Power shell, configuratie, installatie
 title: Aan de slag met de desired state Configuration (DSC) voor Windows
-ms.openlocfilehash: 00e1cf545b19f054b4b1ff468c9f6ad94e5cef55
-ms.sourcegitcommit: c4906f4c9fa4ef1a16dcd6dd00ff960d19446d71
+description: In dit onderwerp wordt uitgelegd hoe u aan de slag kunt gaan met behulp van Power shell desired state Configuration (DSC) voor Windows.
+ms.openlocfilehash: 2b9ddba2023a3933e3ad70d7bfee798ff07f0484
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89236319"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662821"
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-windows"></a>Aan de slag met de desired state Configuration (DSC) voor Windows
 
-In dit onderwerp wordt uitgelegd hoe u aan de slag kunt gaan met behulp van Power shell desired state Configuration (DSC) voor Windows.
-Zie [aan de slag met Windows Power shell desired state Configuration](../overview/overview.md)(Engelstalig) voor algemene informatie over DSC.
+In dit onderwerp wordt uitgelegd hoe u aan de slag kunt gaan met behulp van Power shell desired state Configuration (DSC) voor Windows. Zie [aan de slag met Windows Power shell desired state Configuration](../overview/overview.md)(Engelstalig) voor algemene informatie over DSC.
 
 ## <a name="supported-windows-operation-system-versions"></a>Ondersteunde versies van Windows-besturings systeem
 
@@ -115,8 +115,7 @@ Remove-DscConfigurationDocument -Stage Current -Verbose
 
 #### <a name="configure-settings-in-local-configuration-manager"></a>Instellingen in lokale Configuration Manager configureren
 
-Pas een MOF-bestand met de meta configuratie toe met de cmdlet [set-DSCLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Set-DscLocalConfigurationManager) .
-Vereist het pad naar de meta configuratie-MOF.
+Pas een MOF-bestand met de meta configuratie toe met de cmdlet [set-DSCLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Set-DscLocalConfigurationManager) . Vereist het pad naar de meta configuratie-MOF.
 
 ```powershell
 Set-DSCLocalConfigurationManager -Path 'c:\metaconfig\localhost.meta.mof' -Verbose

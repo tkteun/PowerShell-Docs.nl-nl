@@ -1,13 +1,13 @@
 ---
 ms.date: 06/05/2017
-keywords: powershell,cmdlet
 title: Het PowerShellTab-object
-ms.openlocfilehash: 55e3678a8285f0ec7e8131d98c87478216c26f37
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: Het PowerShellTab-object vertegenwoordigt een Windows Power shell runtime-omgeving.
+ms.openlocfilehash: ac89875e408a41a92d7e3d1a83a849466296c3c6
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810909"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663398"
 ---
 # <a name="the-powershelltab-object"></a>Het PowerShellTab-object
 
@@ -32,7 +32,7 @@ Voert het opgegeven script uit op het Power shell-tabblad.
 $psISE.PowerShellTabs[1].Invoke({dir})
 ```
 
-### <a name="invokesynchronous-script-usenewscope-millisecondstimeout-"></a>InvokeSynchronous \( script, \[ useNewScope \] , millisecondsTimeout\)
+### <a name="invokesynchronous-script-usenewscope-millisecondstimeout-"></a>InvokeSynchronous \( script, \[ useNewScope \] , millisecondsTimeout \)
 
 Ondersteund in Windows PowerShell ISE 3,0 en hoger en niet aanwezig in eerdere versies.
 
@@ -43,9 +43,9 @@ Voert het opgegeven script uit op het Power shell-tabblad.
 
 **Script** -System. Management. Automation. script block of teken reeks het uit te voeren script blok.
 
-** \[ useNewScope \] ** : een optionele Booleaanse waarde die standaard `$true` wordt ingesteld op `$true` , wordt een nieuwe scope gemaakt waarin de opdracht wordt uitgevoerd. De runtime-omgeving van het Power shell-tabblad dat is opgegeven door de opdracht wordt niet gewijzigd.
+**\[ useNewScope \]** : een optionele Booleaanse waarde die standaard `$true` wordt ingesteld op `$true` , wordt een nieuwe scope gemaakt waarin de opdracht wordt uitgevoerd. De runtime-omgeving van het Power shell-tabblad dat is opgegeven door de opdracht wordt niet gewijzigd.
 
-** \[ millisecondsTimeout \] ** : een optioneel geheel getal dat standaard wordt ingesteld op **500**.
+**\[ millisecondsTimeout \]** : een optioneel geheel getal dat standaard wordt ingesteld op **500** .
 Als de opdracht niet binnen de opgegeven tijd wordt voltooid, wordt door de opdracht een **TimeoutException** gegenereerd met het bericht ' er is een time-out van de bewerking opgetreden. '
 
 ```powershell
@@ -109,7 +109,7 @@ $secondTab.CanInvoke
 
 ### <a name="consolepane"></a>ConsolePane
 
-Ondersteund in Windows PowerShell ISE 3,0 en hoger en niet aanwezig in eerdere versies. In Windows PowerShell ISE 2,0 heeft dit de naam **CommandPane**.
+Ondersteund in Windows PowerShell ISE 3,0 en hoger en niet aanwezig in eerdere versies. In Windows PowerShell ISE 2,0 heeft dit de naam **CommandPane** .
 
 De alleen-lezen eigenschap waarmee het console venster [Editor](The-ISEEditor-Object.md) -object wordt opgehaald.
 
@@ -165,11 +165,11 @@ De alleen-lezen eigenschap waarmee het uitvoer deel venster van de huidige [Edit
 $psISE.CurrentPowerShellTab.output.clear()
 ```
 
-### <a name="prompt"></a>Vraag
+### <a name="prompt"></a>Prompt
 
 Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
-De alleen-lezen eigenschap waarmee de huidige prompt tekst wordt opgehaald. Opmerking: de functie **prompt** kan worden overschreven door het profiel van de gebruiker™ s. Als het resultaat geen eenvoudige teken reeks is, retourneert deze eigenschap niets.
+De alleen-lezen eigenschap waarmee de huidige prompt tekst wordt opgehaald. Opmerking: de functie **prompt** kan worden overschreven door het profiel van de gebruiker &trade; . Als het resultaat geen eenvoudige teken reeks is, retourneert deze eigenschap niets.
 
 ```powershell
 # Gets the current prompt text.
@@ -204,7 +204,7 @@ $psISE.CurrentPowerShellTab.StatusText
 
 Ondersteund in Windows PowerShell ISE 3,0 en hoger en niet aanwezig in eerdere versies.
 
-De alleen-lezen eigenschap waarmee wordt aangegeven of het deel venster met horizontale invoeg toepassingen momenteel is geopend.
+De alleen-lezen eigenschap waarmee wordt aangegeven of het horizontale Add-Ons tools deel venster momenteel is geopend.
 
 ```powershell
 # Gets the current state of the horizontal Add-ons tool pane.
@@ -215,7 +215,7 @@ $psISE.CurrentPowerShellTab.HorizontalAddOnToolsPaneOpened
 
 Ondersteund in Windows PowerShell ISE 3,0 en hoger en niet aanwezig in eerdere versies.
 
-De alleen-lezen eigenschap waarmee wordt aangegeven of het deel venster met verticale invoeg toepassingen momenteel is geopend.
+De alleen-lezen eigenschap waarmee wordt aangegeven of het verticale Add-Ons tools venster momenteel is geopend.
 
 ```powershell
 # Turns on the Commands pane

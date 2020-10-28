@@ -1,13 +1,13 @@
 ---
 ms.date: 06/12/2017
-keywords: wmf,powershell,installeren
 title: Bekende problemen in WMF 5.0
-ms.openlocfilehash: 1db656884736c742ef78354b7452879e319d4a0a
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: Bekende problemen in WMF 5.0
+ms.openlocfilehash: 3f8dcf0f7aab27ff9d3c3a17377959988844a430
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810489"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663375"
 ---
 # <a name="known-issues-in-wmf-50"></a>Bekende problemen in WMF 5.0
 
@@ -42,7 +42,7 @@ Bij de installatie van WMF 5,0 op een Windows Server 2012 R2 waarop SIL al wordt
 
 **Oplossing:** Voer de `Start-SilLogging` cmdlet eenmaal na de WMF-installatie uit, terwijl het installatie proces de functie voor logboek registratie van software-inventarisatie foutievelijk stoppen.
 
-## <a name="get-childitem-does-not-work-if--literalpath-and--recurse-are-used-together"></a>`Get-ChildItem`werkt niet als-LiteralPath en-recursieve samen worden gebruikt
+## <a name="get-childitem-does-not-work-if--literalpath-and--recurse-are-used-together"></a>`Get-ChildItem` werkt niet als-LiteralPath en-recursieve samen worden gebruikt
 
 Als een mapnaam een ongeldig Joker teken bevat, worden er `Get-ChildItem` geen verwachte resultaten gegenereerd wanneer zowel LiteralPath als-recursief worden gebruikt.
 
@@ -52,7 +52,7 @@ Als een mapnaam een ongeldig Joker teken bevat, worden er `Get-ChildItem` geen v
 
 Er zijn twee tijdelijke oplossingen voor dit probleem, afhankelijk van de versie van Windows Server die u gebruikt.
 
-**Opgelost**
+**Oplossing:**
 
 - Voor systemen met **Windows Server 2008 R2**
   1. Power shell openen als beheerder
@@ -78,8 +78,8 @@ Er zijn twee tijdelijke oplossingen voor dit probleem, afhankelijk van de versie
 
 - Voor systemen met **Windows Server 2012**
   1. Meld u aan als beheerder nadat u WMF 5,0 op de server hebt geïnstalleerd als Sysprep.
-  2. Kopieer Generize. XML vanuit `\Windows\System32\Sysprep\ActionFiles\` een map naar een locatie buiten de Windows-map, `C:\` bijvoorbeeld.
-  3. Open uw generaliseer. XML-kopie met Klad blok.
+  2. Kopieer Generize.xml van map `\Windows\System32\Sysprep\ActionFiles\` naar een locatie buiten de Windows-map, `C:\` bijvoorbeeld.
+  3. Open uw Generalize.xml-exemplaar met Klad blok.
   4. Zoek en verwijder de volgende tekst, één exemplaar van elke moet worden verwijderd (ze worden bijna het einde van het document).
 
      ```xml
@@ -87,9 +87,9 @@ Er zijn twee tijdelijke oplossingen voor dit probleem, afhankelijk van de versie
      <sysprepOrder order="0x3300"></sysprepOrder>
      ```
 
-  5. Sla de bewerkte kopie van generaliseer. XML op en sluit het bestand.
+  5. Sla de bewerkte kopie van Generalize.xml op en sluit het bestand.
   6. Open een opdracht prompt als beheerder
-  7. Voer de volgende opdracht uit om eigenaar te worden van het bestand generalize. XML in de map System32:
+  7. Voer de volgende opdracht uit om eigenaar te worden van het Generalize.xml-bestand in de map System32:
 
      ```powershell
      Takeown /f C:\Windows\System32\Sysprep\ActionFiles\Generalize.xml
@@ -111,6 +111,6 @@ Er zijn twee tijdelijke oplossingen voor dit probleem, afhankelijk van de versie
      ```
 
      - Antwoord Ja om te overschrijven (Houd er rekening mee dat als er geen prompt is om te overschrijven, Controleer het ingevoerde pad).
-     - Er wordt van uitgegaan dat uw bewerkte kopie van generalize. XML is gekopieerd naar C:\.
+     - Er wordt van uitgegaan dat uw bewerkte kopie van Generalize.xml is gekopieerd naar C:\.
 
-  10. Generalize. XML wordt nu bijgewerkt met de tijdelijke oplossing. Voer Sysprep uit met de optie generalize ingeschakeld.
+  10. Generalize.xml is nu bijgewerkt met de tijdelijke oplossing. Voer Sysprep uit met de optie generalize ingeschakeld.

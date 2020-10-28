@@ -1,12 +1,14 @@
 ---
-title: Cmdlet-para meters voor provider | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 04ce4f3dc2b4549b0ff0f0b7e92a4d2b4f383996
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Parameters voor provider-cmdlets
+description: Parameters voor provider-cmdlets
+ms.openlocfilehash: 6fd340f22202d984b7111c34806e3461a356c670
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87771597"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662783"
 ---
 # <a name="provider-cmdlet-parameters"></a>Parameters voor provider-cmdlets
 
@@ -24,7 +26,7 @@ Statische para meters worden gedefinieerd door Windows Power shell. Een groot aa
 
 `Copy-Item` -cmdlet kunt u definiëren hoe de provider de waarden gebruikt die zijn door gegeven aan de `Path` `Destination` `Recurse` para meters, en, `Copy-Item` door de implementatie van de methode [System. Management. Automation. provider. ContainerCmdletProvider. CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) .
 
-De cmdlet Get-ChildItems kunt u definiëren hoe de-provider de waarden gebruikt die zijn door gegeven aan de `Path` `Recurse` para meters van de `Get-ChildItem` cmdlet door de implementatie van de methoden [System. Management. Automation. provider. Containercmdletprovider. Getchilditems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) en [System. Management. Automation. provider. Containercmdletprovider. Getchildnames *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames) .
+Get-ChildItems-cmdlet kunt u definiëren hoe de provider de waarden gebruikt die zijn door gegeven aan de `Path` `Recurse` para meters van de `Get-ChildItem` cmdlet door de implementatie van de methoden [System. Management. Automation. provider. Containercmdletprovider. Getchilditems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) en [System. Management. Automation. provider. Containercmdletprovider. Getchildnames *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames) .
 
 `Get-Content` cmdlet kunt u definiëren hoe de provider de waarden gebruikt die zijn door gegeven aan de `Path` para meter van de `Get-Content` cmdlet door de methode [System. Management. Automation. provider. Icontentcmdletprovider. Getcontentreader *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader) te implementeren.
 

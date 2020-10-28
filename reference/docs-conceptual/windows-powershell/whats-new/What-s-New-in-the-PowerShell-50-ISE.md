@@ -2,16 +2,17 @@
 ms.date: 09/06/2019
 keywords: powershell,cmdlet
 title: Wat is er nieuw in de Power shell 5,0 ISE
-ms.openlocfilehash: 1f5d32d583165ff8ead0a95b1c882386cf654326
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: In dit artikel worden de nieuwe en bijgewerkte functies beschreven die zijn geïntroduceerd in versie 5,0 van de Windows Power shell Integrated Scripting Environment (ISE).
+ms.openlocfilehash: 75d37d0dafe381c84898ac48343336cd525d2dd1
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810524"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92660816"
 ---
 # <a name="whats-new-in-the-windows-powershell-50-ise"></a>Wat is er nieuw in de Windows Power shell 5,0 ISE
 
-In dit onderwerp worden de nieuwe en bijgewerkte functies beschreven die zijn geïntroduceerd in versie 5,0 van de Windows Power shell Integrated Scripting Environment (ISE).
+In dit artikel worden de nieuwe en bijgewerkte functies beschreven die zijn geïntroduceerd in versie 5,0 van de Windows Power shell Integrated Scripting Environment (ISE).
 
 > [!NOTE]
 > De Power shell-ISE is niet langer beschikbaar voor het ontwikkelen van actieve functies. Als onderdeel van Windows-verzen ding wordt het officieel ondersteund voor beveiligings updates en onderhoud met hoge prioriteit.
@@ -54,7 +55,7 @@ U kunt met behulp van fragmenten snel scripts verzamelen en maken om uw omgeving
 
 **Wat werkt er anders?**
 
-Als u fragmenten wilt gebruiken in Windows Power Shell 3,0 of hoger, klikt u in het menu **bewerken** op **fragmenten starten**of drukt u op <kbd>CTRL</kbd> + <kbd>J</kbd>.
+Als u fragmenten wilt gebruiken in Windows Power Shell 3,0 of hoger, klikt u in het menu **bewerken** op **fragmenten starten** of drukt u op <kbd>CTRL</kbd> + <kbd>J</kbd>.
 
 ## <a name="add-on-tools"></a>Invoeg toepassingen
 
@@ -116,7 +117,7 @@ De afzonderlijke opdracht-en uitvoer deel Vensters die beschikbaar waren in de e
 - Fout melding
 - Volledige Unicode-ondersteuning
 - Context afhankelijke Help van <kbd>F1</kbd>
-- <kbd>CTRL</kbd> + <kbd>F1</kbd> context gevoelige weer gave-opdracht
+- <kbd>CTRL</kbd> + <kbd>F1</kbd> context gevoelige Show-Command
 - Ondersteuning voor complex schrift en van rechts naar links
 - Lettertype ondersteuning
 - Zoom
@@ -135,9 +136,9 @@ Windows PowerShell ISE 2,0 heeft afzonderlijke opdracht-en uitvoer deel Vensters
 
 > Toegevoegd in Power Shell 3,0
 
-Als u Windows PowerShell ISE start vanaf de opdracht regel (door **powershell_ise. exe**te typen), kunt u de volgende nieuwe opdracht regel opties toevoegen.
+Als u Windows PowerShell ISE start vanaf de opdracht regel (door **powershell_ise.exe** te typen), kunt u de volgende nieuwe opdracht regel opties toevoegen.
 
-- `-NoProfile`: Start Windows PowerShell ISE zonder uit te voeren`$profile`
+- `-NoProfile`: Start Windows PowerShell ISE zonder uit te voeren `$profile`
 - `-Help`: Hiermee wordt een Help-venster weer gegeven
 - `-mta`: Hiermee wordt Windows PowerShell ISE gestart in de modus voor meerdere threads. De standaard bewerkings modus voor de Windows PowerShell ISE is modus met één thread of `-sta` .
 
@@ -180,7 +181,7 @@ Als u op <kbd>F1</kbd> drukt wanneer uw cursor zich in een cmdlet bevindt of als
 
 Voordat u deze functie gebruikt, downloadt u de meest recente versie van de Help-onderwerpen voor Windows Power shell op de website van micro soft. De eenvoudigste methode voor het downloaden van de Help-onderwerpen is het uitvoeren `Update-Help` van de cmdlet in het console venster wanneer u Windows PowerShell ISE als Administrator uitvoert.
 
-U kunt wijzigen waar de <kbd>F1</kbd> -toets naar Help zoekt. In het menu **extra** / **Opties** , op het tabblad **algemene instellingen** onder **andere instellingen**, kunt u het selectie vakje **lokale Help-inhoud gebruiken in plaats van online inhoud**in-of uitschakelen. Als u dit selectie vakje inschakelt, zoekt de client naar de Help van de cmdlet in de gedownloade Help die in de map modules is gevonden. Als het selectie vakje is uitgeschakeld, zoekt de client online naar Help.
+U kunt wijzigen waar de <kbd>F1</kbd> -toets naar Help zoekt. In het menu **extra** / **Opties** , op het tabblad **algemene instellingen** onder **andere instellingen** , kunt u het selectie vakje **lokale Help-inhoud gebruiken in plaats van online inhoud** in-of uitschakelen. Als u dit selectie vakje inschakelt, zoekt de client naar de Help van de cmdlet in de gedownloade Help die in de map modules is gevonden. Als het selectie vakje is uitgeschakeld, zoekt de client online naar Help.
 
 **Wat is de toegevoegde waarde van deze wijziging?**
 
@@ -190,20 +191,20 @@ Context gevoelige Help zonder uw huidige cmdlet of script te verlaten biedt een 
 
 Als u op <kbd>F1</kbd> drukt in vorige versies van Windows PowerShell ISE hebt u het Help-bestand op de lokale computer geopend. In Windows PowerShell ISE 3,0 en hoger wordt een venster geopend met de Help voor de cmdlet die kan worden doorzocht en geconfigureerd. Deze Help-ervaring is nieuw voor Windows PowerShell ISE 3,0 en de bijwerk bare Help is nieuw voor Windows Power Shell 3,0.
 
-## <a name="show-command-cmdlet"></a>Show-opdracht-cmdlet
+## <a name="show-command-cmdlet"></a>Show-Command-cmdlet
 
 > Toegevoegd in Power Shell 3,0
 
 `Show-Command`Met de cmdlet kunt u een cmdlet of functie samen stellen of uitvoeren door een grafisch formulier in te vullen. Met het formulier kunnen gebruikers werken met Windows Power shell in een grafische omgeving.
-`Show-Command`biedt geavanceerde scripters ook de mogelijkheid een snelle, op Windows Power shell gebaseerde GUI te maken.
+`Show-Command` biedt geavanceerde scripters ook de mogelijkheid een snelle, op Windows Power shell gebaseerde GUI te maken.
 
 **Wat is de toegevoegde waarde van deze wijziging?**
 
-Met `Show-Command` in uw Windows Power shell-scripts kunt u uw gebruikers voorzien van de grafische omgeving waarmee ze bekend zijn. `Show-Command`kan de inleidende gebruikers ook helpen bij het leren van Windows Power shell.
+Met `Show-Command` in uw Windows Power shell-scripts kunt u uw gebruikers voorzien van de grafische omgeving waarmee ze bekend zijn. `Show-Command` kan de inleidende gebruikers ook helpen bij het leren van Windows Power shell.
 
 **Wat werkt er anders?**
 
-`Show-Command`is nieuw Windows PowerShell ISE 3,0.
+`Show-Command` is nieuw Windows PowerShell ISE 3,0.
 
 ## <a name="see-also"></a>Zie ook
 

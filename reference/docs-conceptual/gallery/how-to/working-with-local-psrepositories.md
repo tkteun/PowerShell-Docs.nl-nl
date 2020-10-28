@@ -1,14 +1,13 @@
 ---
 ms.date: 11/06/2018
-contributor: JKeithB
-keywords: Galerie, Power shell, cmdlet, psgallery, psget
 title: Werken met lokale PSRepositories
-ms.openlocfilehash: 421b73c141c7551224e2298f51464a19bc736d0e
-ms.sourcegitcommit: 105c69ecedfe5180d8c12e8015d667c5f1a71579
+description: De PowerShellGet-module ondersteunt andere opslag plaatsen dan de PowerShell Gallery. In dit artikel wordt beschreven hoe u een lokale Power shell-opslag plaats instelt.
+ms.openlocfilehash: 24a2fd23124b3897952d64a347d103d9ee10248f
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85837576"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662351"
 ---
 # <a name="working-with-private-powershellget-repositories"></a>Werken met PowerShellGet-privé-opslagplaatsen
 
@@ -62,7 +61,7 @@ Zorg ervoor dat uw gebruikers machtigingen hebben voor toegang tot de bestands s
 ## <a name="registering-a-local-repository"></a>Een lokale opslag plaats registreren
 
 Voordat een opslag plaats kan worden gebruikt, moet deze worden geregistreerd met behulp van de `Register-PSRepository` opdracht.
-In de onderstaande voor beelden wordt de **InstallationPolicy** ingesteld op *vertrouwd*, op de veronderstelling dat u uw eigen opslag plaats vertrouwt.
+In de onderstaande voor beelden wordt de **InstallationPolicy** ingesteld op *vertrouwd* , op de veronderstelling dat u uw eigen opslag plaats vertrouwt.
 
 ```powershell
 # Register a NuGet-based server
@@ -72,7 +71,7 @@ Register-PSRepository -Name LocalPSRepo -SourceLocation http://MyLocalNuget/Api/
 Register-PSRepository -Name LocalPSRepo -SourceLocation '\\localhost\PSRepoLocal\' -ScriptSourceLocation '\\localhost\PSRepoLocal\' -InstallationPolicy Trusted
 ```
 
-Let op het verschil tussen hoe de twee opdrachten **ScriptSourceLocation**verwerken. Voor opslag plaatsen op basis van een bestands share moeten de **SourceLocation** en **ScriptSourceLocation** overeenkomen. Voor een op het web gebaseerde opslag plaatsen moeten ze verschillend zijn, dus in dit voor beeld wordt een navolgende toegevoegd aan de **SourceLocation**.
+Let op het verschil tussen hoe de twee opdrachten **ScriptSourceLocation** verwerken. Voor opslag plaatsen op basis van een bestands share moeten de **SourceLocation** en **ScriptSourceLocation** overeenkomen. Voor een op het web gebaseerde opslag plaatsen moeten ze verschillend zijn, dus in dit voor beeld wordt een navolgende toegevoegd aan de **SourceLocation** .
 
 Als u de zojuist gemaakte PSRepository de standaard opslagplaats wilt maken, moet u de registratie van alle andere PSRepositories ongedaan maken. Bijvoorbeeld:
 

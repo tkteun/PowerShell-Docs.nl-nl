@@ -1,14 +1,14 @@
 ---
-title: Hand leiding voor Windows Power Shell-programmeur&#39;s | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- Windows PowerShell Programmer's Guide
-ms.openlocfilehash: 64feb66b8e42ab12b279025ebe6c86d7f91ecae5
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Hand leiding voor Windows Power shell-programmeer&#39;s
+description: Hand leiding voor Windows Power shell-programmeer&#39;s
+ms.openlocfilehash: d390b15e49f7558fb7dfd766d50d5be68ef347d2
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87771563"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92661779"
 ---
 # <a name="windows-powershell-programmer39s-guide"></a>Hand leiding voor Windows Power shell-programmeer&#39;s
 
@@ -60,7 +60,7 @@ De Windows Power shell-runtime is de uitvoerings engine die opdracht verwerking 
 
 De Windows Power shell-taal biedt script functies en mechanismen voor het aanroepen van opdrachten. Zie de Windows Power shell-taal referentie die wordt geleverd bij Windows Power shell voor meer informatie over het uitvoeren van scripts.
 
-### <a name="extended-type-system-ets"></a>Uitgebreid type systeem (ETS)
+### <a name="extended-type-system-ets"></a>Extended Type System (ETS)
 
 Windows Power shell biedt toegang tot verschillende objecten, zoals .NET en XML-objecten. Als gevolg hiervan wordt een gemeen schappelijke samen vatting voor alle object typen weer gegeven, maar wordt het uitgebreide type systeem (ETS) gebruikt. De meeste ETS-functionaliteit is transparant voor de gebruiker, maar het script of .NET-ontwikkel aars gebruiken deze voor de volgende doel einden:
 

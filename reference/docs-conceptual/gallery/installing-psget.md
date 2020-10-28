@@ -1,14 +1,13 @@
 ---
 ms.date: 09/19/2019
-contributor: manikb
-keywords: Galerie, Power shell, cmdlet, psget
 title: PowerShellGet installeren
-ms.openlocfilehash: 4a10699be9ff2b64e5848c6749bdd3dedf55e3c7
-ms.sourcegitcommit: f05f18154913d346012527c23020d48d87ccac74
+description: In dit artikel wordt uitgelegd hoe u de PowerShellGet-module installeert in verschillende versies van Power shell.
+ms.openlocfilehash: 06ec331446849784bb8464912fbce0e5a940823f
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88162508"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662143"
 ---
 # <a name="installing-powershellget"></a>PowerShellGet installeren
 
@@ -21,7 +20,7 @@ ms.locfileid: "88162508"
 
 ## <a name="get-the-latest-version-from-powershell-gallery"></a>De nieuwste versie van PowerShell Gallery ophalen
 
-Voordat u **PowerShellGet**bijwerkt, moet u altijd de meest recente **NuGet** -provider installeren. Voer de volgende opdracht uit vanuit een Power shell-sessie met verhoogde bevoegdheden.
+Voordat u **PowerShellGet** bijwerkt, moet u altijd de meest recente **NuGet** -provider installeren. Voer de volgende opdracht uit vanuit een Power shell-sessie met verhoogde bevoegdheden.
 
 ```powershell
 Install-PackageProvider -Name NuGet -Force
@@ -56,7 +55,7 @@ Zie [Save-module](/powershell/module/PowershellGet/Save-Module)voor meer informa
 #### <a name="preparatory-step-on-computers-running-powershell-30"></a>Voorbereidende stap op computers met Power Shell 3,0
 
 Met de instructies in de volgende secties worden de modules in Directory geïnstalleerd `$env:ProgramFiles\WindowsPowerShell\Modules` .
-In Power Shell 3,0 wordt deze map niet `$env:PSModulePath` standaard vermeld, dus moet u deze toevoegen om de modules automatisch te laden. 
+In Power Shell 3,0 wordt deze map niet `$env:PSModulePath` standaard vermeld, dus moet u deze toevoegen om de modules automatisch te laden.
 
 Open een Power shell-sessie met verhoogde bevoegdheden en voer de volgende opdracht uit (die wordt toegepast tijdens toekomstige sessies):
 
@@ -70,11 +69,11 @@ Open een Power shell-sessie met verhoogde bevoegdheden en voer de volgende opdra
 
 #### <a name="computers-with-the-packagemanagement-preview-installed"></a>Computers waarop het package management-voor beeld is geïnstalleerd
 
-> [!NOTE] 
+> [!NOTE]
 > De preview-versie van Package Management is een downloadbaar onderdeel dat PowerShellGet beschikbaar maakte voor Power shell-versie 3 en 4, maar niet langer beschikbaar is.
 > Voer uit om te testen of het op een bepaalde computer is geïnstalleerd `Get-Module -ListAvailable PowerShellGet` .
 
-1. Gebruik vanuit een Power shell-sessie `Save-Module` om de huidige versie van **PowerShellGet**te downloaden. Er worden twee mappen gedownload: **PowerShellGet** en **Package Management**. Elke map bevat een submap met een versie nummer.
+1. Gebruik vanuit een Power shell-sessie `Save-Module` om de huidige versie van **PowerShellGet** te downloaden. Er worden twee mappen gedownload: **PowerShellGet** en **Package Management** . Elke map bevat een submap met een versie nummer.
 
    ```powershell
    Save-Module -Name PowerShellGet -Path C:\LocalFolder -Repository PSGallery
@@ -85,7 +84,7 @@ Open een Power shell-sessie met verhoogde bevoegdheden en voer de volgende opdra
 1. Open de Power shell-console opnieuw met verhoogde machtigingen en voer de volgende opdracht uit.
 
    ```powershell
-   'PowerShellGet', 'PackageManagement' | % { 
+   'PowerShellGet', 'PackageManagement' | % {
      $targetDir = "$env:ProgramFiles\WindowsPowerShell\Modules\$_"
      Remove-Item $targetDir\* -Recurse -Force
      Copy-Item C:\LocalFolder\$_\*\* $targetDir\ -Recurse -Force
@@ -96,14 +95,14 @@ Open een Power shell-sessie met verhoogde bevoegdheden en voer de volgende opdra
 
 Voor computers waarop geen versie van **PowerShellGet** is geïnstalleerd (testen met `Get-Module -ListAvailable PowerShellGet` ), is een computer met **PowerShellGet** geïnstalleerd nodig om de modules te downloaden.
 
-1. Op de computer waarop **PowerShellGet** is geïnstalleerd, gebruikt `Save-Module` u om de huidige versie van **PowerShellGet**te downloaden. Er worden twee mappen gedownload: **PowerShellGet** en **Package Management**. Elke map bevat een submap met een versie nummer.
+1. Op de computer waarop **PowerShellGet** is geïnstalleerd, gebruikt `Save-Module` u om de huidige versie van **PowerShellGet** te downloaden. Er worden twee mappen gedownload: **PowerShellGet** en **Package Management** . Elke map bevat een submap met een versie nummer.
 
    ```powershell
    Save-Module -Name PowerShellGet -Path C:\LocalFolder -Repository PSGallery
    ```
 
 1. Kopieer de desbetreffende `<version>` submap in de **PowerShellGet** -en **Package Management** -mappen naar de computer waarop geen **PowerShellGet** is geïnstalleerd, naar mappen `$env:ProgramFiles\WindowsPowerShell\Modules\PowerShellGet\` en `$env:ProgramFiles\WindowsPowerShell\Modules\PackageManagement\` een verhoogde sessie.
-   
+
 1. Als u bijvoorbeeld toegang hebt tot de downloadmap op de andere computer, zegt u `ws1` , vanaf de doel computer via een UNC-pad, `\\ws1\C$\LocalFolder` een Power shell-console openen met verhoogde machtigingen en voert u de volgende opdracht uit:
 
    ```powershell

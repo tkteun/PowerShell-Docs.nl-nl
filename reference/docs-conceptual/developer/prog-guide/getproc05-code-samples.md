@@ -1,12 +1,14 @@
 ---
-title: Voor beelden van GetProc05-code | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 66758028bc964912495d636af90947101dd37923
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: GetProc05-codevoorbeelden
+description: GetProc05-codevoorbeelden
+ms.openlocfilehash: 1280048aeec35512f1e6061bdf58919d83a461cd
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87778726"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92661847"
 ---
 # <a name="getproc05-code-samples"></a>GetProc05-codevoorbeelden
 

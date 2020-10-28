@@ -1,14 +1,13 @@
 ---
 ms.date: 09/10/2018
-contributor: JKeithB
-keywords: Galerie, Power shell, cmdlet, psgallery
 title: API-sleutels beheren
-ms.openlocfilehash: c428689d065c63716db6bc546434623e9375f8ba
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+description: De PowerShell Gallery gebruikt API-sleutels om de toegang tot de galerie voor inhouds uitgevers te verifiëren.
+ms.openlocfilehash: 4b70ac7d56fc1d63719c2acf93da3dd4ac22abed
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87777592"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92661137"
 ---
 # <a name="managing-api-keys"></a>API-sleutels beheren
 
@@ -21,7 +20,7 @@ In de volgende afbeelding ziet u de beschik bare opties bij het maken van een sc
 
 ![API-sleutels maken](media/creating-APIkeys/PSGallery_KeyScoped.png)
 
-In dit voor beeld hebben we een API-sleutel met de naam **AzureRMDataFactory**gemaakt. Deze sleutel waarde kan worden gebruikt om pakketten te pushen met namen die beginnen met ' AzureRM. DataFactory ' en die 365 dagen geldig zijn. Dit is een typisch scenario wanneer verschillende teams binnen dezelfde organisatie op verschillende pakketten werken. De leden van het team beschikken over een sleutel waarmee ze bevoegdheden worden verleend voor het specifieke pakket waaraan ze werken.
+In dit voor beeld hebben we een API-sleutel met de naam **AzureRMDataFactory** gemaakt. Deze sleutel waarde kan worden gebruikt om pakketten te pushen met namen die beginnen met ' AzureRM. DataFactory ' en die 365 dagen geldig zijn. Dit is een typisch scenario wanneer verschillende teams binnen dezelfde organisatie op verschillende pakketten werken. De leden van het team beschikken over een sleutel waarmee ze bevoegdheden worden verleend voor het specifieke pakket waaraan ze werken.
 De verloop waarde voor komt het gebruik van verouderde of verg eten sleutels.
 
 ## <a name="using-glob-patterns"></a>Globs-patronen gebruiken

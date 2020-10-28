@@ -1,16 +1,14 @@
 ---
-title: Een Windows Power shell-schijf provider maken | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- drive providers [PowerShell Programmer's Guide]
-- providers [PowerShell Programmer's Guide], drive provider
-- drives [PowerShell Programmer's Guide]
-ms.openlocfilehash: 2a2178714ed548986fe1a1a4de8828e8e0a938cb
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Een Windows PowerShell-stationprovider maken
+description: Een Windows PowerShell-stationprovider maken
+ms.openlocfilehash: 639518fce27d941b7529b091364c5905c91a5c0c
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787186"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663030"
 ---
 # <a name="creating-a-windows-powershell-drive-provider"></a>Een Windows PowerShell-stationprovider maken
 
@@ -130,7 +128,7 @@ Wanneer uw Windows Power shell-provider is geregistreerd bij Windows Power shell
    mydb     AccessDB     c:\ps\northwind.mdb
    ```
 
-4. Valideer de verbinding. Omdat de verbinding als een lid van het station is gedefinieerd, kunt u deze controleren met behulp van de Get-PDDrive-cmdlet.
+4. Valideer de verbinding. Omdat de verbinding als een lid van het station is gedefinieerd, kunt u deze controleren met behulp van de cmdlet Get-PDDrive.
 
    > [!NOTE]
    > De gebruiker kan nog niet communiceren met de provider als een station, omdat de provider container functionaliteit voor die interactie nodig heeft. Zie [een Windows Power shell-container provider maken](./creating-a-windows-powershell-container-provider.md)voor meer informatie.

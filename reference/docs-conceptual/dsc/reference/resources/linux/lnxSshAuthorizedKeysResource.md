@@ -1,13 +1,14 @@
 ---
 ms.date: 07/17/2020
-keywords: DSC, Power shell, configuratie, installatie
+ms.topic: reference
 title: DSC voor Linux nxSshAuthorizedKeys-resource
-ms.openlocfilehash: 3a62bb7a3dbdebae4f0ca6084db1624c1b76ab1f
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC voor Linux nxSshAuthorizedKeys-resource
+ms.openlocfilehash: 881e94aa583a745cdac7f01b6e445352ef4ca937
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464465"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662755"
 ---
 # <a name="dsc-for-linux-nxsshauthorizedkeys-resource"></a>DSC voor Linux nxSshAuthorizedKeys-resource
 
@@ -31,8 +32,8 @@ nxAuthorizedKeys <string> #ResourceName
 |Eigenschap |Beschrijving |
 |---|---|
 |Opmerkingaanwijzer |Een unieke opmerking voor de sleutel. Dit wordt gebruikt om sleutels uniek te identificeren. |
-|Gebruikersnaam |De gebruikers naam voor het beheren van geautoriseerde SSH-sleutels voor. Als dit niet is gedefinieerd, is de standaard gebruiker **root**. |
-|Sleutel |De inhoud van de sleutel. Dit is vereist als **dat** is ingesteld op **aanwezig**.|
+|Gebruikersnaam |De gebruikers naam voor het beheren van geautoriseerde SSH-sleutels voor. Als dit niet is gedefinieerd, is de standaard gebruiker **root** . |
+|Sleutel |De inhoud van de sleutel. Dit is vereist als **dat** is ingesteld op **aanwezig** .|
 
 ## <a name="common-properties"></a>Algemene eigenschappen
 

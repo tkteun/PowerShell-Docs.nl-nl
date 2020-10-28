@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
-keywords: wmf,powershell,installeren
 title: Oplossingen voor bugs in WMF 5.1
-ms.openlocfilehash: 8edf295eb6304dc04de2fa5d3792b1c2fc4b01f3
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: In dit artikel worden de fouten vermeld die zijn opgelost in de release van WMF 5,1.
+ms.openlocfilehash: 2673860852ecd6e0b6582f6f69076f8c463eeccc
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83810643"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92660767"
 ---
 # <a name="bug-fixes-in-wmf-51"></a>Oplossingen voor bugs in WMF 5.1
 
@@ -18,7 +17,7 @@ De volgende belang rijke fouten zijn opgelost in WMF 5,1:
 
 ### <a name="module-auto-discovery-fully-honors-psmodulepath"></a>Automatische detectie van module honoreert PSModulePath volledig
 
-Module-automatische detectie (modules automatisch laden zonder expliciete import-module bij het aanroepen van een opdracht) werd geïntroduceerd in WMF 3. Power shell is ingecheckt voor opdrachten in `$PSHome\Modules` voordat u gaat gebruiken `$env:PSModulePath` .
+Module-automatische detectie (modules automatisch laden zonder een expliciete Import-Module bij het aanroepen van een opdracht) werd geïntroduceerd in WMF 3. Power shell is ingecheckt voor opdrachten in `$PSHome\Modules` voordat u gaat gebruiken `$env:PSModulePath` .
 
 WMF 5,1 wijzigt dit gedrag `$env:PSModulePath` volledig. Dit maakt het mogelijk voor een door de gebruiker gemaakte module waarmee opdrachten worden gedefinieerd die worden verschaft door Power shell (bijvoorbeeld `Get-ChildItem` ) om automatisch te worden geladen en de ingebouwde opdracht correct te vervangen.
 
@@ -49,7 +48,7 @@ $obj = New-Object -ComObject WScript.Shell
 $obj.SendKeys([char]173)
 ```
 
-De methode **SendKeys** verwacht een teken reeks, maar Power Shell heeft het teken niet omgezet naar een teken reeks, waardoor de conversie naar **IDispatch:: Invoke**wordt uitgesteld, waarbij **VariantChangeType** wordt gebruikt om de conversie uit te voeren. In dit voor beeld heeft dit ertoe geleid dat de sleutels ' 1 ', ' 7 ' en ' 3 ' worden verzonden in plaats van het verwachte **volume. Mute** -sleutel.
+De methode **SendKeys** verwacht een teken reeks, maar Power Shell heeft het teken niet omgezet naar een teken reeks, waardoor de conversie naar **IDispatch:: Invoke** wordt uitgesteld, waarbij **VariantChangeType** wordt gebruikt om de conversie uit te voeren. In dit voor beeld heeft dit ertoe geleid dat de sleutels ' 1 ', ' 7 ' en ' 3 ' worden verzonden in plaats van het verwachte **volume. Mute** -sleutel.
 
 #### <a name="enumerable-com-objects-not-always-handled-correctly"></a>Het inventariseren van COM-objecten wordt niet altijd correct verwerkt
 
@@ -71,7 +70,7 @@ In het bovenstaande voor beeld heeft WMF 5,0 de **Scripting. Dictionary** onjuis
 
 ### <a name="ordered-was-not-allowed-inside-classes"></a>[gelast] is niet toegestaan binnen klassen
 
-WMF 5,0 heeft klassen met validatie van type letterlijke waarden in klassen geïntroduceerd. `[ordered]`het lijkt op een letterlijke type, maar is geen echt .NET-type. WMF 5,0 heeft foutief een fout gerapporteerd `[ordered]` binnen een klasse:
+WMF 5,0 heeft klassen met validatie van type letterlijke waarden in klassen geïntroduceerd. `[ordered]` het lijkt op een letterlijke type, maar is geen echt .NET-type. WMF 5,0 heeft foutief een fout gerapporteerd `[ordered]` binnen een klasse:
 
 ```powershell
 class CThing
@@ -89,14 +88,14 @@ Als er meerdere versies van een module op zijn about_PSReadline geïnstalleerd, 
 
 WMF 5,1 corrigeert dit door de Help voor de meest recente versie van het onderwerp te retour neren.
 
-`Get-Help`biedt geen manier om de versie op te geven waarvoor u hulp nodig hebt. Om dit te omzeilen, gaat u naar de map modules en bekijkt u de Help rechtstreeks met een hulp programma zoals uw favoriete editor.
+`Get-Help` biedt geen manier om de versie op te geven waarvoor u hulp nodig hebt. Om dit te omzeilen, gaat u naar de map modules en bekijkt u de Help rechtstreeks met een hulp programma zoals uw favoriete editor.
 
-### <a name="powershellexe-reading-from-stdin-stopped-working"></a>het lezen van Power shell. exe van STDIN werkt niet meer
+### <a name="powershellexe-reading-from-stdin-stopped-working"></a>powershell.exe lezen van STDIN gestopt
 
 Klanten gebruiken `powershell -command -` systeem eigen apps om Power shell uit te voeren in het script via stdin. Dit is helaas verbroken door andere wijzigingen in de console-host.
 
 Dit probleem is opgelost in versie 5,1 van de jubileum update van Windows 10.
 
-### <a name="powershellexe-creates-spike-in-cpu-usage-on-startup"></a>Power shell. exe maakt pieken in het CPU-gebruik bij het opstarten
+### <a name="powershellexe-creates-spike-in-cpu-usage-on-startup"></a>powershell.exe maakt pieken in het CPU-gebruik bij het opstarten
 
-Power shell gebruikt een WMI-query om te controleren of deze is gestart via groepsbeleid om te voor komen dat de aanmelding vertraging veroorzaakt. De WMI-query beëindigt het injecteren van tzres. MUI. dll in elk proces op het systeem, omdat de WMI- **Win32_Process** klasse probeert lokale tijdzone gegevens op te halen. Dit resulteert in een grote CPU-piek in **WMIPRVSE** (de host van de WMI-provider). Correctie is het gebruik van Win32 API-aanroepen om dezelfde informatie te verkrijgen in plaats van WMI te gebruiken.
+Power shell gebruikt een WMI-query om te controleren of deze is gestart via groepsbeleid om te voor komen dat de aanmelding vertraging veroorzaakt. De WMI-query beëindigt het injecteren van tzres.mui.dll in elk proces op het systeem, omdat de WMI- **Win32_Process** klasse gegevens van de lokale tijd zone probeert op te halen. Dit resulteert in een grote CPU-piek in **WMIPRVSE** (de host van de WMI-provider). Correctie is het gebruik van Win32 API-aanroepen om dezelfde informatie te verkrijgen in plaats van WMI te gebruiken.

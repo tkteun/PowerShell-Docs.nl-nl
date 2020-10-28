@@ -1,13 +1,13 @@
 ---
 ms.date: 06/12/2017
-keywords: wmf,powershell,installeren
 title: WMF 5.0 verwijderen
-ms.openlocfilehash: fa76bacb4b62025d0d2350b9a0e072068ca83ab1
-ms.sourcegitcommit: c4906f4c9fa4ef1a16dcd6dd00ff960d19446d71
+description: In dit artikel wordt uitgelegd hoe u WMF van oudere versies van Windows kunt verwijderen.
+ms.openlocfilehash: d8078ea918db2c1cf9a7ddd6ea8d1413b593c0ff
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89236302"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92660803"
 ---
 # <a name="uninstallation-instructions"></a>Instructies voor verwijderen
 
@@ -37,6 +37,6 @@ wusa /uninstall /kb:3134760
 ## <a name="using-control-panel"></a>Configuratie scherm gebruiken
 
 1. Open **het configuratie scherm.**
-2. Open **Program ma's**en open vervolgens **een programma verwijderen.**
+2. Open **Program ma's** en open vervolgens **een programma verwijderen.**
 3. Klik op **geïnstalleerde updates weer geven.**
-4. Selecteer **Windows Management Framework 5,0** in de lijst met geïnstalleerde updates. Dit komt overeen met *KB3134758*, *KB3134759*of *KB3134760*. Klik op **verwijderen.**
+4. Selecteer **Windows Management Framework 5,0** in de lijst met geïnstalleerde updates. Dit komt overeen met *KB3134758* , *KB3134759* of *KB3134760* . Klik op **verwijderen.**

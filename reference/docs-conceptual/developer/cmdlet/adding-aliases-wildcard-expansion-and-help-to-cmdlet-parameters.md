@@ -1,24 +1,26 @@
 ---
-title: Aliassen, uitbrei ding van joker tekens en Help voor cmdlet-para meters toevoegen | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 244c50c73972c2760e0029c7fa4f4b5764b066da
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Aliassen, jokertekenuitbreiding en Help toevoegen aan cmdlet-parameters
+description: Aliassen, jokertekenuitbreiding en Help toevoegen aan cmdlet-parameters
+ms.openlocfilehash: f0f07796370b4613b1ca0ad17b16c6598bfa438d
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87774963"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92660638"
 ---
 # <a name="adding-aliases-wildcard-expansion-and-help-to-cmdlet-parameters"></a>Aliassen, jokertekenuitbreiding en Help toevoegen aan cmdlet-parameters
 
-In deze sectie wordt beschreven hoe u aliassen, uitbrei ding van joker tekens en Help-berichten toevoegt aan de para meters van de cmdlet stop-proc (beschreven in [een cmdlet maken die het systeem wijzigt](./creating-a-cmdlet-that-modifies-the-system.md)).
+In deze sectie wordt beschreven hoe u aliassen, uitbrei ding van joker tekens en Help-berichten toevoegt aan de para meters van de Stop-Proc cmdlet (beschreven in [een cmdlet maken die het systeem wijzigt](./creating-a-cmdlet-that-modifies-the-system.md)).
 
-Deze Stop-proc-cmdlet probeert processen te stoppen die worden opgehaald met de cmdlet Get-proc (beschreven in [uw eerste cmdlet maken](./creating-a-cmdlet-without-parameters.md)).
+Deze Stop-Proc cmdlet probeert processen te stoppen die worden opgehaald met de cmdlet Get-Proc (beschreven in [uw eerste cmdlet maken](./creating-a-cmdlet-without-parameters.md)).
 
 ## <a name="defining-the-cmdlet"></a>De cmdlet definiëren
 
 De eerste stap bij het maken van de cmdlet is altijd de naam van de cmdlet en het declareren van de .NET-klasse die de cmdlet implementeert. Omdat u een cmdlet schrijft om het systeem te wijzigen, moet dit dienovereenkomstig een naam hebben. Omdat met deze cmdlet systeem processen worden gestopt, wordt de term ' Stop ' gebruikt, die door de [System. Management. Automation. Verbslifecycle](/dotnet/api/System.Management.Automation.VerbsLifeCycle) -klasse is gedefinieerd, met het zelfstandig naam woord ' proc ' om het proces aan te geven. Zie [cmdlet verb names](./approved-verbs-for-windows-powershell-commands.md)(Engelstalig) voor meer informatie over goedgekeurde cmdlet-termen.
 
-De volgende code is de klassedefinitie voor deze stop-proc-cmdlet.
+De volgende code is de klassen definitie voor deze Stop-Proc-cmdlet.
 
 ```csharp
 [Cmdlet(VerbsLifecycle.Stop, "proc",
@@ -63,7 +65,7 @@ Naast het gebruik van het kenmerk [System. Management. Automation. Aliasattribut
 
 Met Windows Power shell kunt u Help maken voor cmdlet-para meters. Doe dit voor alle para meters die worden gebruikt voor systeem wijzigingen en gebruikers feedback. Voor elke para meter om hulp te ondersteunen, kunt u het `HelpMessage` sleutel woord kenmerk instellen in de kenmerk declaratie [System. Management. Automation. Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) . Dit sleutel woord definieert de tekst die voor de gebruiker moet worden weer gegeven voor hulp bij het gebruik van de para meter. U kunt ook het `HelpMessageBaseName` tref woord instellen om de basis naam te identificeren van een resource die moet worden gebruikt voor het bericht. Als u dit tref woord hebt ingesteld, moet u ook het `HelpMessageResourceId` tref woord instellen om de resource-id op te geven.
 
-Met de volgende code uit deze stop-proc-cmdlet wordt het `HelpMessage` sleutel woord attribute voor de `Name` para meter gedefinieerd.
+Met de volgende code uit deze Stop-Proc-cmdlet wordt het `HelpMessage` sleutel woord attribute voor de `Name` para meter gedefinieerd.
 
 ```csharp
 /// <summary>
@@ -135,9 +137,9 @@ Na de implementatie van een cmdlet moet deze met Windows Power shell zijn geregi
 
 ## <a name="testing-the-cmdlet"></a>De cmdlet testen
 
-Als uw cmdlet is geregistreerd bij Windows Power shell, kunt u deze testen door deze uit te voeren op de opdracht regel. We gaan de voor beeld van de cmdlet stop-proc testen. Zie aan de slag [met Windows Power shell](/powershell/scripting/getting-started/getting-started-with-windows-powershell)voor meer informatie over het gebruik van cmdlets vanaf de opdracht regel.
+Als uw cmdlet is geregistreerd bij Windows Power shell, kunt u deze testen door deze uit te voeren op de opdracht regel. We gaan de voor beeld-Stop-Proc-cmdlet testen. Zie aan de slag [met Windows Power shell](/powershell/scripting/getting-started/getting-started-with-windows-powershell)voor meer informatie over het gebruik van cmdlets vanaf de opdracht regel.
 
-- Start Windows Power shell en gebruik stop-proc om een proces te stoppen met de alias van de procesnaam voor de `Name` para meter.
+- Start Windows Power shell en gebruik Stop-Proc om een proces te stoppen met de alias van de procesnaam voor de `Name` para meter.
 
     ```powershell
     PS> stop-proc -ProcessName notepad

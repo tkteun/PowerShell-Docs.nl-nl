@@ -1,12 +1,14 @@
 ---
-title: HelpInfo-XML-schema
 ms.date: 09/12/2016
-ms.openlocfilehash: f94d053b8fc558d9efc13e6b9fbd597287970e38
-ms.sourcegitcommit: 37abf054ad9eda8813be8ff4487803b10e1842ef
+ms.topic: reference
+title: HelpInfo-XML-schema
+description: HelpInfo-XML-schema
+ms.openlocfilehash: 157fd9c0f47c57efbaa9b7888fa174a34ad9567d
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86953247"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662021"
 ---
 # <a name="helpinfo-xml-schema"></a>HelpInfo-XML-schema
 
@@ -55,4 +57,4 @@ Het HelpInfo XML-bestand bevat de volgende elementen.
 
 - **UICultureName** : bevat de taal code voor de UI-cultuur waarin de Help-bestanden zijn geschreven.
 
-- **UICultureVersion** -bevat een versie nummer van 4 onderdelen in N1. N2. N3. N4: dit is de indeling die de versie van het CAB-bestand van de Help vertegenwoordigt in de UI-cultuur. Verhoog dit versie nummer telkens wanneer u nieuwe CAB-bestanden van de Help uploadt in de UI-cultuur die is opgegeven door **UICultureName**. Zie [versie klasse](/dotnet/api/system.version)voor meer informatie over deze waarde.
+- **UICultureVersion** -bevat een versie nummer van 4 onderdelen in N1. N2. N3. N4: dit is de indeling die de versie van het CAB-bestand van de Help vertegenwoordigt in de UI-cultuur. Verhoog dit versie nummer telkens wanneer u nieuwe CAB-bestanden van de Help uploadt in de UI-cultuur die is opgegeven door **UICultureName** . Zie [versie klasse](/dotnet/api/system.version)voor meer informatie over deze waarde.
