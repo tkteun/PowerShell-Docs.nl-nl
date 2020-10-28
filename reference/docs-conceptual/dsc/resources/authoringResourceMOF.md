@@ -2,18 +2,20 @@
 ms.date: 07/08/2020
 keywords: DSC, Power shell, configuratie, installatie
 title: Een aangepaste DSC-resource schrijven met MOF
-ms.openlocfilehash: ba857fa504bfd84accfd7f260b1fff1228db40ba
-ms.sourcegitcommit: d26e2237397483c6333abcf4331bd82f2e72b4e3
+description: Dit artikel definieert het schema voor een aangepaste DSC-resource in een MOF-bestand en implementeert de bron in een Power shell-script bestand.
+ms.openlocfilehash: e79a37699c468b2c55c307c96f1c193a2c1595b3
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86217522"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667178"
 ---
 # <a name="writing-a-custom-dsc-resource-with-mof"></a>Een aangepaste DSC-resource schrijven met MOF
 
 > Van toepassing op: Windows Power Shell 4,0, Windows Power shell 5,0
 
-In dit onderwerp definiëren we het schema voor een aangepaste Windows Power shell-resource voor desired state Configuration (DSC) in een MOF-bestand en implementeert u de bron in een Windows Power shell-script bestand. Deze aangepaste resource is voor het maken en onderhouden van een website.
+In dit artikel definiëren we het schema voor een aangepaste Windows Power shell-resource voor desired state Configuration (DSC) in een MOF-bestand en implementeert u de bron in een Windows Power shell-script bestand.
+Deze aangepaste resource is voor het maken en onderhouden van een website.
 
 ## <a name="creating-the-mof-schema"></a>Het MOF-schema maken
 
@@ -68,8 +70,7 @@ Let op het volgende voor gaande code:
 
 ### <a name="writing-the-resource-script"></a>Het resource script wordt geschreven
 
-Het bron script implementeert de logica van de resource. In deze module moet u drie functies met de naam `Get-TargetResource` , `Set-TargetResource` en hebben `Test-TargetResource` . Alle drie de functies moeten een parameterset hebben die identiek is aan de set eigenschappen die zijn gedefinieerd in het MOF-schema dat u voor uw resource hebt gemaakt. In dit document wordt deze set eigenschappen aangeduid als de ' resource-eigenschappen '. Sla deze drie functies op in een bestand met de naam `<ResourceName>.psm1` .
-In het volgende voor beeld worden de functies opgeslagen in een bestand met de naam `Demo_IISWebsite.psm1` .
+Het bron script implementeert de logica van de resource. In deze module moet u drie functies met de naam `Get-TargetResource` , `Set-TargetResource` en hebben `Test-TargetResource` . Alle drie de functies moeten een parameterset hebben die identiek is aan de set eigenschappen die zijn gedefinieerd in het MOF-schema dat u voor uw resource hebt gemaakt. In dit document wordt deze set eigenschappen aangeduid als de ' resource-eigenschappen '. Sla deze drie functies op in een bestand met de naam `<ResourceName>.psm1` . In het volgende voor beeld worden de functies opgeslagen in een bestand met de naam `Demo_IISWebsite.psm1` .
 
 > [!NOTE]
 > Wanneer u hetzelfde configuratie script voor uw resource meer dan één keer uitvoert, worden er geen fouten weer gegeven en moet de resource dezelfde status blijven als het script eenmaal uit te voeren. Om dit te bewerkstelligen, moet u ervoor zorgen dat de- `Get-TargetResource` en `Test-TargetResource` -functies de resource ongewijzigd laten en dat de `Set-TargetResource` functie meerdere keren wordt aangeroepen in een reeks met dezelfde parameter waarden, altijd gelijk is aan het aanroepen van deze.
@@ -77,7 +78,8 @@ In het volgende voor beeld worden de functies opgeslagen in een bestand met de n
 Gebruik in de `Get-TargetResource` functie-implementatie de belangrijkste eigenschaps waarden van de bron die zijn opgegeven als para meters om de status van het opgegeven bron exemplaar te controleren. Deze functie moet een hash-tabel retour neren met een lijst van alle bron eigenschappen als sleutels en de werkelijke waarden van deze eigenschappen als de bijbehorende waarden. De volgende code bevat een voor beeld.
 
 ```powershell
-# DSC uses the Get-TargetResource function to fetch the status of the resource instance specified in the parameters for the target machine
+# DSC uses the Get-TargetResource function to fetch the status of the resource instance
+# specified in the parameters for the target machine
 function Get-TargetResource
 {
     param
@@ -105,8 +107,11 @@ function Get-TargetResource
 
         $getTargetResourceResult = $null;
 
-        <# Insert logic that uses the mandatory parameter values to get the website and assign it to a variable called $Website #>
-        <# Set $ensureResult to "Present" if the requested website exists and to "Absent" otherwise #>
+        <#
+          Insert logic that uses the mandatory parameter values to get the website and
+          assign it to a variable called $Website
+          Set $ensureResult to "Present" if the requested website exists and to "Absent" otherwise
+        #>
 
         # Add all Website properties to the hash table
         # This simple example assumes that $Website is not null
@@ -161,10 +166,14 @@ function Set-TargetResource
         [string[]]$Protocol
     )
 
-    <# If Ensure is set to "Present" and the website specified in the mandatory input parameters does not exist, then create it using the specified parameter values #>
-    <# Else, if Ensure is set to "Present" and the website does exist, then update its properties to match the values provided in the non-mandatory parameter values #>
-    <# Else, if Ensure is set to "Absent" and the website does not exist, then do nothing #>
-    <# Else, if Ensure is set to "Absent" and the website does exist, then delete the website #>
+    <#
+        If Ensure is set to "Present" and the website specified in the mandatory input parameters
+          does not exist, then create it using the specified parameter values
+        Else, if Ensure is set to "Present" and the website does exist, then update its properties
+          to match the values provided in the non-mandatory parameter values
+        Else, if Ensure is set to "Absent" and the website does not exist, then do nothing
+        Else, if Ensure is set to "Absent" and the website does exist, then delete the website
+    #>
 }
 ```
 
@@ -208,18 +217,19 @@ function Test-TargetResource
     # Get the current state
     $currentState = Get-TargetResource -Ensure $Ensure -Name $Name -PhysicalPath $PhysicalPath -State $State -ApplicationPool $ApplicationPool -BindingInfo $BindingInfo -Protocol $Protocol
 
-    #Write-Verbose "Use this cmdlet to deliver information about command processing."
+    # Write-Verbose "Use this cmdlet to deliver information about command processing."
 
-    #Write-Debug "Use this cmdlet to write debug information while troubleshooting."
+    # Write-Debug "Use this cmdlet to write debug information while troubleshooting."
 
-    #Include logic to
+    # Include logic to
     $result = [System.Boolean]
-    #Add logic to test whether the website is present and its status matches the supplied parameter values. If it does, return true. If it does not, return false.
+    # Add logic to test whether the website is present and its status matches the supplied
+    # parameter values. If it does, return true. If it does not, return false.
     $result
 }
 ```
 
-> [!Note]
+> [!NOTE]
 > Voor eenvoudiger fout opsporing gebruikt u de `Write-Verbose` cmdlet in uw implementatie van de vorige drie functies. Met deze cmdlet wordt tekst naar de uitgebreide berichten stroom geschreven. De uitgebreide berichten stroom wordt standaard niet weer gegeven, maar u kunt deze weer geven door de waarde van de **$VerbosePreference** variabele te wijzigen of door de **uitgebreide** para meter in de DSC-cmdlets = New te gebruiken.
 
 ### <a name="creating-the-module-manifest"></a>Het module manifest maken
@@ -307,4 +317,4 @@ $global:DSCMachineStatus = 1
 ```
 
 Om het knoop punt opnieuw op te starten, moet de **RebootNodeIfNeeded** -vlag worden ingesteld op `$true` .
-De **ActionAfterReboot** -instelling moet ook worden ingesteld op **ContinueConfiguration**. Dit is de standaard waarde. Zie [de lokale Configuration Manager configureren](../managing-nodes/metaConfig.md)of [de lokale Configuration Manager configureren (v4)](../managing-nodes/metaConfig4.md)voor meer informatie over het configureren van de LCM.
+De **ActionAfterReboot** -instelling moet ook worden ingesteld op **ContinueConfiguration** . Dit is de standaard waarde. Zie [de lokale Configuration Manager configureren](../managing-nodes/metaConfig.md)of [de lokale Configuration Manager configureren (v4)](../managing-nodes/metaConfig4.md)voor meer informatie over het configureren van de LCM.

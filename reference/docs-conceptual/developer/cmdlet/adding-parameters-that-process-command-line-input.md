@@ -1,19 +1,14 @@
 ---
-title: Para meters toevoegen die opdracht regel invoer verwerken | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- cmdlets [PowerShell Programmer's Guide], parameters
-- Get-Proc cmdlet [PowerShell Programmer's Guide]
-- cmdlets [PowerShell Programmer's Guide], command line input
-- command line input [PowerShell Programmer's Guide]
-- parameters [PowerShell Programmer's Guide]
-- cmdlets [PowerShell Programmer's Guide], creating
-ms.openlocfilehash: 6ccc873d9c6b93546b3dae8c0d2e406763fdfb8a
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Parameters toevoegen die opdrachtregelinvoer verwerken
+description: Parameters toevoegen die opdrachtregelinvoer verwerken
+ms.openlocfilehash: cf2a21aa6b54b463b1af611848c6bf5ecfbadc4a
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784568"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92668368"
 ---
 # <a name="adding-parameters-that-process-command-line-input"></a>Parameters toevoegen die opdrachtregelinvoer verwerken
 
@@ -97,7 +92,7 @@ Deze cmdlet gebruikt een matrix met teken reeksen voor de `Name` para meter. Als
 
 ## <a name="declaring-parameters-as-positional-or-named"></a>Para meters declareren als positioneel of benoemd
 
-Voor een cmdlet moet elke para meter worden ingesteld als een positie of para meter met de naam. Beide soorten para meters accepteren enkele argumenten, meerdere argumenten gescheiden door komma's en Booleaanse instellingen. Een Booleaanse para meter, ook wel een *Switch*genoemd, verwerkt alleen Boole-instellingen. De switch wordt gebruikt om de aanwezigheid van de para meter te bepalen. De aanbevolen standaard waarde is `false` .
+Voor een cmdlet moet elke para meter worden ingesteld als een positie of para meter met de naam. Beide soorten para meters accepteren enkele argumenten, meerdere argumenten gescheiden door komma's en Booleaanse instellingen. Een Booleaanse para meter, ook wel een *Switch* genoemd, verwerkt alleen Boole-instellingen. De switch wordt gebruikt om de aanwezigheid van de para meter te bepalen. De aanbevolen standaard waarde is `false` .
 
 De voor beeld- `Get-Proc` cmdlet definieert de `Name` para meter als een positionele para meter met positie
 0. Dit betekent dat het eerste argument dat de gebruiker invoert op de opdracht regel automatisch wordt ingevoegd voor deze para meter. Als u een benoemde para meter wilt definiëren waarvoor de gebruiker de parameter naam moet opgeven vanaf de opdracht regel, blijft u het `Position` sleutel woord uit de kenmerk declaratie.

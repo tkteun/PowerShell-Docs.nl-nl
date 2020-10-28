@@ -1,17 +1,17 @@
 ---
 ms.date: 06/05/2017
-keywords: powershell,cmdlet
 title: Het ISEAddOnTool-object
-ms.openlocfilehash: a5357005ec1a883f5a14882a42e3150e09ff33a2
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: Een ISEAddonTool-object vertegenwoordigt een geïnstalleerd hulp programma voor invoeg toepassingen dat extra functionaliteit biedt om Windows PowerShell ISE.
+ms.openlocfilehash: cc2d50881b7d0033e08de9af5d4cc9e1a9aa55db
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83811035"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667127"
 ---
 # <a name="the-iseaddontool-object"></a>Het ISEAddOnTool-object
 
-Een **ISEAddonTool** -object vertegenwoordigt een geïnstalleerd add-on hulp programma dat extra functionaliteit biedt ToWindows Power shell ISE. Een voor beeld is het hulp programma **opdrachten** dat u kunt weer geven door te klikken op **weer geven**en vervolgens **op invoeg toepassing opdracht weer geven**. Dit hulp programma is vervolgens toegankelijk voor u door de verschillende beschik bare **ISEAddOnTool** -objecten te bewerken.
+Een **ISEAddonTool** -object vertegenwoordigt een geïnstalleerd hulp programma voor invoeg toepassingen dat extra functionaliteit biedt om Windows PowerShell ISE. Een voor beeld is het hulp programma **opdrachten** dat u kunt weer geven door te klikken op **weer geven** en vervolgens **op invoeg toepassing opdracht weer geven** . Dit hulp programma is vervolgens toegankelijk voor u door de verschillende beschik bare **ISEAddOnTool** -objecten te bewerken.
 
 Elk hulp programma voor invoeg toepassingen kan worden gekoppeld aan het verticale deel venster of het horizontale deel venster. Het verticale deel venster is gedokt aan de rechter kant van Windows PowerShell ISE. Het horizontale deel venster is gedokt aan de onderkant.
 

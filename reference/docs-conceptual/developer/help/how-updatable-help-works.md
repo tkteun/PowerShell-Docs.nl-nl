@@ -1,18 +1,20 @@
 ---
-title: De werking van Help die kan worden bijgewerkt
 ms.date: 09/13/2016
-ms.openlocfilehash: 4849ce81e31171c6822a9078a77ebb45729185a3
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: De werking van Help die kan worden bijgewerkt
+description: De werking van Help die kan worden bijgewerkt
+ms.openlocfilehash: c0d2413a27b661cdb9a12fa8a0beae5dee8a21b4
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86893285"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667603"
 ---
 # <a name="how-updatable-help-works"></a>De werking van Help die kan worden bijgewerkt
 
 In dit onderwerp wordt uitgelegd hoe u met behulp van bijwerk bare Help het HelpInfo XML-bestand en de CAB-bestanden voor elke module kunt verwerken, en wordt bijgewerkte Help voor gebruikers geïnstalleerd.
 
-## <a name="the-update-help-process"></a>De update-Help proces
+## <a name="the-update-help-process"></a>Het Update-Help proces
 
 De volgende lijst bevat de acties van de cmdlet [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) wanneer een gebruiker een opdracht uitvoert om de Help-bestanden voor een module in een bepaalde UI-cultuur bij te werken.
 
@@ -27,7 +29,7 @@ De volgende lijst bevat de acties van de cmdlet [Update-Help](/powershell/module
 1. `Update-Help` Hiermee maakt u een lokaal HelpInfo XML-bestand door het externe HelpInfo XML-bestand te kopiëren. Het lokale HelpInfo XML-bestand wordt zodanig bewerkt dat het alleen elementen bevat voor het CAB-bestand dat het heeft geïnstalleerd.
    Vervolgens wordt het lokale HelpInfo XML-bestand in de module directory opgeslagen en wordt de update beëindigd.
 
-## <a name="the-save-help-process"></a>Het Help-proces voor opslaan
+## <a name="the-save-help-process"></a>Het Save-Help proces
 
 In de volgende lijst worden de acties beschreven van de cmdlets [Save-Help](/powershell/module/Microsoft.PowerShell.Core/Save-Help) en [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) wanneer een gebruiker opdrachten uitvoert om de Help-bestanden in een bestands share bij te werken en vervolgens deze bestanden gebruiken om de Help-bestanden op de computer van de gebruiker bij te werken.
 

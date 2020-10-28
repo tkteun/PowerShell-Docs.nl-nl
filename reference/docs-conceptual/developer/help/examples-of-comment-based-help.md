@@ -1,18 +1,20 @@
 ---
-title: Voorbeelden van de Help op basis van opmerkingen
 ms.date: 09/12/2016
-ms.openlocfilehash: fe5d054c84952367a4e7c2d5d9e32551a4e5c3a8
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Voorbeelden van de Help op basis van opmerkingen
+description: Voorbeelden van de Help op basis van opmerkingen
+ms.openlocfilehash: 35fe9103a261483c56af629f620dbd6b3c642e68
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87772294"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667637"
 ---
 # <a name="examples-of-comment-based-help"></a>Voorbeelden van de Help op basis van opmerkingen
 
 Dit onderwerp bevat voor beelden van informatie over het gebruik van op opmerkingen gebaseerde hulp voor scripts en functies.
 
-## <a name="example-1-comment-based-help-for-a-function"></a>Voor beeld 1: Help op basis van opmerkingen voor een functie
+## <a name="example-1-comment-based-help-for-a-function"></a>Voor beeld 1: Help-Comment-Based voor een functie
 
  De volgende voorbeeld functie bevat Help op basis van opmerkingen.
 
@@ -134,7 +136,7 @@ C:\PS> get-help add-extension -full
             Set-Item
 ```
 
-## <a name="example-2-comment-based-help-for-a-script"></a>Voor beeld 2: Help op basis van opmerkingen voor een script
+## <a name="example-2-comment-based-help-for-a-script"></a>Voor beeld 2: Help-Comment-Based voor een script
 
 De volgende voorbeeld functie bevat Help op basis van opmerkingen.
 
@@ -304,7 +306,7 @@ function Add-Extension
 
 ## <a name="example-5--redirecting-to-a-different-help-topic"></a>Voor beeld 5: omleiden naar een ander Help-onderwerp
 
-De volgende code is een uittreksel van het begin van de ingebouwde `Help` functie in Power shell, waarmee een scherm met Help-tekst per keer wordt weer gegeven. Omdat in het Help-onderwerp voor de cmdlet Get-Help de Help-functie wordt beschreven, gebruikt de Help-functie de `.ForwardHelpTargetName` sleutel woorden en wordt de `.ForwardHelpCategory` gebruiker omgeleid naar het Help-onderwerp Get-Help cmdlet.
+De volgende code is een uittreksel van het begin van de ingebouwde `Help` functie in Power shell, waarmee een scherm met Help-tekst per keer wordt weer gegeven. Omdat in het Help-onderwerp voor de Get-Help-cmdlet de Help-functie wordt beschreven, gebruikt de Help-functie de `.ForwardHelpTargetName` sleutel woorden en wordt de `.ForwardHelpCategory` gebruiker omgeleid naar het Help-onderwerp van de Get-Help-cmdlet.
 
 ```powershell
 function help

@@ -1,12 +1,14 @@
 ---
-title: Taken ondersteunen | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 7ae4e6c118965c73ba6b3d4d38b1bd3171d2b3da
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Taken ondersteunen
+description: Taken ondersteunen
+ms.openlocfilehash: d755093e941aa660032f8d283cb43ba5eeec8c4b
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786625"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92666974"
 ---
 # <a name="how-to-support-jobs"></a>Taken ondersteunen
 

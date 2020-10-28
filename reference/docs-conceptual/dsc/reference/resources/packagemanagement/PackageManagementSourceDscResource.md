@@ -1,13 +1,14 @@
 ---
 ms.date: 07/15/2020
-keywords: DSC, Power shell, configuratie, installatie
+ms.topic: reference
 title: DSC PackageManagementSource-resource
-ms.openlocfilehash: b24558574f192347aace5a809d57385e01d9acb3
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC PackageManagementSource-resource
+ms.openlocfilehash: 4842a13dbf06073080c0dd02be986b0d7ba051d0
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86463887"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667348"
 ---
 # <a name="dsc-packagemanagementsource-resource"></a>DSC PackageManagementSource-resource
 
@@ -42,7 +43,7 @@ PackageManagementSource [String] #ResourceName
 |Naam |Hiermee geeft u de naam van de pakket bron moet worden geregistreerd of niet geregistreerd op uw systeem. |
 |ProviderName |Hiermee geeft u de naam van de OneGet-provider op waarmee u interop met de pakket bron kunt doen. |
 |SourceLocation |Hiermee geeft u de URI van de pakket bron. |
-|InstallationPolicy |Wordt gebruikt door providers zoals de ingebouwde Nuget-provider. Hiermee wordt bepaald of u de bron van het pakket vertrouwt. Een van: **niet-vertrouwd** of **vertrouwd**. |
+|InstallationPolicy |Wordt gebruikt door providers zoals de ingebouwde Nuget-provider. Hiermee wordt bepaald of u de bron van het pakket vertrouwt. Een van: **niet-vertrouwd** of **vertrouwd** . |
 |SourceCredential |Biedt toegang tot het pakket op een externe bron. |
 
 ## <a name="common-properties"></a>Algemene eigenschappen
@@ -50,7 +51,7 @@ PackageManagementSource [String] #ResourceName
 |Eigenschap |Beschrijving |
 |---|---|
 |DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is bijvoorbeeld als de ID van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is `DependsOn = "[ResourceType]ResourceName"` . |
-|Zo |Hiermee wordt bepaald of de bron van het pakket moet worden geregistreerd of verwijderd. De standaard waarde is **aanwezig**. |
+|Zo |Hiermee wordt bepaald of de bron van het pakket moet worden geregistreerd of verwijderd. De standaard waarde is **aanwezig** . |
 |PsDscRunAsCredential |Hiermee stelt u de referentie in voor het uitvoeren van de gehele resource als. |
 
 > [!NOTE]

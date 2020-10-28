@@ -1,12 +1,14 @@
 ---
-title: Element formats Tring voor TableColumnItem voor TableControl (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 848583e697d0ab7bd5b017c14c47aba3c51a3c17
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element FormatString voor TableColumnItem voor TableControl (opmaak)
+description: Het element FormatString voor TableColumnItem voor TableControl (opmaak)
+ms.openlocfilehash: 3d386e61ac321c05e0b298019c2298f76b391b21
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87781542"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667892"
 ---
 # <a name="formatstring-element-for-tablecolumnitem-for-tablecontrol-format"></a>Het element FormatString voor TableColumnItem voor TableControl (opmaak)
 

@@ -2,12 +2,13 @@
 ms.date: 07/08/2020
 keywords: DSC, Power shell, configuratie, installatie
 title: Een aangepaste DSC-resource schrijven met Power shell-klassen
-ms.openlocfilehash: b7f6d3135cb1da7ade106f8a4cc41e3afb7306af
-ms.sourcegitcommit: d26e2237397483c6333abcf4331bd82f2e72b4e3
+description: In dit artikel wordt beschreven hoe u een eenvoudige bron maakt die een bestand beheert in een opgegeven pad.
+ms.openlocfilehash: 72a828795c29e10ff66f164b8871b0fea7a1e0a8
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86217556"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667314"
 ---
 # <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>Een aangepaste DSC-resource schrijven met Power shell-klassen
 
@@ -17,7 +18,7 @@ Met de introductie van Power shell-klassen in Windows Power shell 5,0 kunt u nu 
 
 In een DSC-resource op basis van een klasse wordt het schema gedefinieerd als eigenschappen van de klasse die kan worden gewijzigd met kenmerken om het eigenschaps type op te geven. De resource wordt geïmplementeerd door `Get()` , `Set()` en- `Test()` methoden (gelijk aan de `Get-TargetResource` `Set-TargetResource` functies, en `Test-TargetResource` in een script bron.
 
-In dit onderwerp maakt u een eenvoudige resource met de naam **FileResource** die een bestand beheert in een opgegeven pad.
+In dit artikel maken we een eenvoudige resource met de naam **FileResource** die een bestand beheert in een opgegeven pad.
 
 Zie voor meer informatie over DSC-resources [aangepaste Windows Power shell-configuratie resources voor desired state bouwen](authoringResource.md)
 
@@ -66,10 +67,10 @@ Het DSC-resource schema is gedefinieerd als eigenschappen van de klasse. We decl
 
 U ziet dat de eigenschappen zijn gewijzigd op basis van kenmerken. De betekenis van de kenmerken is als volgt:
 
-- **DscProperty (sleutel)**: de eigenschap is vereist. De eigenschap is een sleutel. De waarden van alle eigenschappen die als sleutels zijn gemarkeerd, moeten combi neren om een bron exemplaar binnen een configuratie uniek te identificeren.
-- **DscProperty (verplicht)**: de eigenschap is vereist.
-- **DscProperty (NotConfigurable)**: de eigenschap is alleen-lezen. Eigenschappen die zijn gemarkeerd met dit kenmerk, kunnen niet worden ingesteld met een configuratie, maar worden gevuld door de `Get()` methode wanneer deze aanwezig is.
-- **DscProperty ()**: de eigenschap kan worden geconfigureerd, maar dit is niet vereist.
+- **DscProperty (sleutel)** : de eigenschap is vereist. De eigenschap is een sleutel. De waarden van alle eigenschappen die als sleutels zijn gemarkeerd, moeten combi neren om een bron exemplaar binnen een configuratie uniek te identificeren.
+- **DscProperty (verplicht)** : de eigenschap is vereist.
+- **DscProperty (NotConfigurable)** : de eigenschap is alleen-lezen. Eigenschappen die zijn gemarkeerd met dit kenmerk, kunnen niet worden ingesteld met een configuratie, maar worden gevuld door de `Get()` methode wanneer deze aanwezig is.
+- **DscProperty ()** : de eigenschap kan worden geconfigureerd, maar dit is niet vereist.
 
 De `$Path` `$SourcePath` Eigenschappen en zijn beide teken reeksen. De `$CreationTime` eigenschap is een [datum/tijd](/dotnet/api/system.datetime) . De `$Ensure` eigenschap is een opsommings type dat als volgt is gedefinieerd.
 
@@ -481,14 +482,14 @@ De eigenschap **PsDscRunAsCredential** kan worden gebruikt in [DSC-configuratie]
 
 ### <a name="require-or-disallow-psdscrunascredential-for-your-resource"></a>PsDscRunAsCredential voor uw resource vereisen of weigeren
 
-Het `DscResource()` kenmerk accepteert een optionele para meter **RunAsCredential**. Deze para meter heeft een van de drie volgende waarden:
+Het `DscResource()` kenmerk accepteert een optionele para meter **RunAsCredential** . Deze para meter heeft een van de drie volgende waarden:
 
 - `Optional`**PsDscRunAsCredential** is optioneel voor configuraties die deze bron aanroepen. Dit is de standaardwaarde.
 - `Mandatory`**PsDscRunAsCredential** moet worden gebruikt voor elke configuratie die deze bron aanroept.
-- `NotSupported` Configuraties die deze resource aanroepen, kunnen **PsDscRunAsCredential**niet gebruiken.
+- `NotSupported` Configuraties die deze resource aanroepen, kunnen **PsDscRunAsCredential** niet gebruiken.
 - `Default` Hetzelfde als `Optional` .
 
-Gebruik bijvoorbeeld het volgende kenmerk om op te geven dat uw aangepaste resource geen ondersteuning biedt voor het gebruik van **PsDscRunAsCredential**:
+Gebruik bijvoorbeeld het volgende kenmerk om op te geven dat uw aangepaste resource geen ondersteuning biedt voor het gebruik van **PsDscRunAsCredential** :
 
 ```powershell
 [DscResource(RunAsCredential=NotSupported)]

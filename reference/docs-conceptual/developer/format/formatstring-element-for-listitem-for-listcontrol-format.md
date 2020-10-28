@@ -1,12 +1,14 @@
 ---
-title: Element formats Tring voor lijst item voor ListControl (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 9ec73aa1c2e8180258722627e30344de4e67bda5
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element FormatString voor ListItem voor ListControl (opmaak)
+description: Het element FormatString voor ListItem voor ListControl (opmaak)
+ms.openlocfilehash: 1c16da92928ea632241942f4f2c63390c4fea706
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87781576"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667909"
 ---
 # <a name="formatstring-element-for-listitem-for-listcontrol--format"></a>Het element FormatString voor ListItem voor ListControl (opmaak)
 

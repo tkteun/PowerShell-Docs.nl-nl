@@ -1,12 +1,14 @@
 ---
-title: CustomControl-element voor besturings elementen voor weer gave (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 2020725bf6afb086901e14a976abbdc04366869c
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element CustomControl voor Besturingselement voor Besturingselementen voor Weergave (opmaak)
+description: Het element CustomControl voor Besturingselement voor Besturingselementen voor Weergave (opmaak)
+ms.openlocfilehash: 141e44d80ab27861baac39d5a5ae1ff1f673e99b
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786098"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92668028"
 ---
 # <a name="customcontrol-element-for-control-for-controls-for-view-format"></a>Het element CustomControl voor Besturingselement voor Besturingselementen voor Weergave (opmaak)
 

@@ -2,12 +2,13 @@
 ms.date: 07/08/2020
 keywords: DSC, Power shell, configuratie, installatie
 title: 'Een DSC-resource in C ontwerpen #'
-ms.openlocfilehash: 4652d5d99c32685e124f2cd1b718f973380ab16a
-ms.sourcegitcommit: d26e2237397483c6333abcf4331bd82f2e72b4e3
+description: In dit artikel wordt beschreven hoe u een DSC-resource maakt als een cmdlet die is geschreven in C#.
+ms.openlocfilehash: 61c4d1e332a22f97a89cd740e03235ddfdcfabd2
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86217505"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667161"
 ---
 # <a name="authoring-a-dsc-resource-in-c"></a>Een DSC-resource in C ontwerpen\#
 
@@ -29,9 +30,9 @@ Hier volgt de MOF-resource definitie.
 [ClassVersion("1.0.0"), FriendlyName("xDemoFile")]
 class MSFT_XDemoFile : OMI_BaseResource
 {
-                [Key, Description("path")] String Path;
-                [Write, Description("Should the file be present"), ValueMap{"Present","Absent"}, Values{"Present","Absent"}] String Ensure;
-                [Write, Description("Contentof file.")] String Content;
+     [Key, Description("path")] String Path;
+     [Write, Description("Should the file be present"), ValueMap{"Present","Absent"}, Values{"Present","Absent"}] String Ensure;
+     [Write, Description("Contentof file.")] String Content;
 };
 ```
 
@@ -42,9 +43,9 @@ class MSFT_XDemoFile : OMI_BaseResource
 1. Open Visual Studio.
 1. Maak een C#-project en geef de naam op.
 1. Selecteer **Class Library** uit de beschik bare project sjablonen.
-1. Klik op **OK**.
+1. Klik op **OK** .
 1. Voeg een assembly-verwijzing naar System.Automation.Management.dll toe aan uw project.
-1. Wijzig de naam van de assembly zodat deze overeenkomt met de naam van de resource. In dit geval moet de assembly de naam **MSFT_XDemoFile**hebben.
+1. Wijzig de naam van de assembly zodat deze overeenkomt met de naam van de resource. In dit geval moet de assembly de naam **MSFT_XDemoFile** hebben.
 
 ### <a name="writing-the-cmdlet-code"></a>De cmdlet-code schrijven
 
@@ -68,8 +69,9 @@ namespace cSharpDSCResourceExample
         public string Path { get; set; }
 
         /// <summary>
-        /// Implement the logic to return the current state of the resource as a hashtable with keys being the resource properties
-        /// and the values are the corresponding current value on the machine.
+        /// Implement the logic to return the current state of the resource as a hashtable with
+        /// keys being the resource properties and the values are the corresponding current
+        /// value on the machine.
         /// </summary>
         protected override void ProcessRecord()
         {

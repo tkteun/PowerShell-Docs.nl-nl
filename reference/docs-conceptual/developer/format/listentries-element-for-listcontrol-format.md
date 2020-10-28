@@ -1,12 +1,14 @@
 ---
-title: Element List entries voor ListControl (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 0fe07e739c2d2fec153599ec6c0c0b3ecc14df18
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element ListEntries voor ListControl (opmaak)
+description: Het element ListEntries voor ListControl (opmaak)
+ms.openlocfilehash: d4d6625bb92ea27863fc30d5bf5625f9275e4f69
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785707"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92666600"
 ---
 # <a name="listentries-element-for-listcontrol-format"></a>Het element ListEntries voor ListControl (opmaak)
 

@@ -1,12 +1,14 @@
 ---
-title: Voor beeld van AccessDbProviderSample03-code | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 6eddbec6369fd861a3a67bbbebe3d6f98c4bc164
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: AccessDBProviderSample03-codevoorbeeld
+description: AccessDBProviderSample03-codevoorbeeld
+ms.openlocfilehash: 2a8ae91a96fc9d2f123709480234296c2d75392b
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787288"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667552"
 ---
 # <a name="accessdbprovidersample03-code-sample"></a>AccessDBProviderSample03-codevoorbeeld
 

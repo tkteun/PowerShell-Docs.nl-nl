@@ -720,8 +720,6 @@
               href: gallery/how-to/working-with-packages/packages-that-require-license-acceptance.md
             - name: Contact opnemen met pakketeigenaren
               href: gallery/how-to/working-with-packages/contacting-package-owners.md
-            - name: Feedback geven via sociale media of opmerkingen
-              href: gallery/how-to/working-with-packages/social-media-feedback.md
         - name: Accountprofielen beheren
           items:
             - name: PowerShell Gallery-accountinstellingen

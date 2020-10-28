@@ -1,24 +1,18 @@
 ---
-title: Cmdlet-para meters | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- optional parameters [PowerShell SDK]
-- aliases [PowerShell SDK]
-- parameter sets [PowerShell SDK]
-- parameters [PowerShell SDK]
-- mandatory parameters [PowerShell SDK]
-- positional parameters [PowerShell SDK]
-- cmdlets [PowerShell SDK], parameters
-ms.openlocfilehash: 98b1d5fd0e7ffbf2d4d161f1bed73fb96a737bd4
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Cmdlet-parameters
+description: Cmdlet-parameters
+ms.openlocfilehash: 1ab495cb674f6b2cd769c3f64d899aec67704216
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87774759"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92668266"
 ---
 # <a name="cmdlet-parameters"></a>Cmdlet-parameters
 
-Cmdlet-para meters bieden het mechanisme waarmee een cmdlet invoer kan accepteren. Para meters kunnen rechtstreeks invoer accepteren vanaf de opdracht regel of vanuit objecten die zijn door gegeven aan de cmdlet via de pijp lijn. de argumenten (ook wel aangeduid als *waarden*) van deze para meters kunnen de invoer opgeven die de cmdlet accepteert, hoe de cmdlet de acties moet uitvoeren en de gegevens die de cmdlet retourneert naar de pijp lijn.
+Cmdlet-para meters bieden het mechanisme waarmee een cmdlet invoer kan accepteren. Para meters kunnen rechtstreeks invoer accepteren vanaf de opdracht regel of vanuit objecten die zijn door gegeven aan de cmdlet via de pijp lijn. de argumenten (ook wel aangeduid als *waarden* ) van deze para meters kunnen de invoer opgeven die de cmdlet accepteert, hoe de cmdlet de acties moet uitvoeren en de gegevens die de cmdlet retourneert naar de pijp lijn.
 
 ## <a name="in-this-section"></a>In deze sectie
 

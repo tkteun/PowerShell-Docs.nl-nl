@@ -1,12 +1,14 @@
 ---
-title: Overzicht van het format teren van bestanden | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: efdd3eed15c5f3c88636fcbe7a39f6c6cfb20ced
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Overzicht voor opmaakbestanden
+description: Overzicht voor opmaakbestanden
+ms.openlocfilehash: b86119c304c895ec08ac67de693b3a052bc7a2a0
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87773501"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667824"
 ---
 # <a name="formatting-file-overview"></a>Overzicht voor opmaakbestanden
 
@@ -23,7 +25,7 @@ Elk opmaak bestand kan de volgende onderdelen definiëren die kunnen worden gede
 
 - De standaard configuratie-instelling, zoals of de gegevens in de rijen met tabellen worden weer gegeven op de volgende regel als de gegevens langer zijn dan de breedte van de kolom. Zie [algemene configuratie-instellingen definiëren](./defining-common-configuration-features.md)voor meer informatie over deze instellingen.
 
-- Sets van objecten die kunnen worden weer gegeven in een van de weer gaven van het opmaak bestand. Zie [sets met objecten definiëren](./defining-selection-sets.md)voor meer informatie over deze sets (ook wel *selectie sets*genoemd).
+- Sets van objecten die kunnen worden weer gegeven in een van de weer gaven van het opmaak bestand. Zie [sets met objecten definiëren](./defining-selection-sets.md)voor meer informatie over deze sets (ook wel *selectie sets* genoemd).
 
 - Algemene besturings elementen die kunnen worden gebruikt door alle weer gaven van het opmaak bestand. Met besturings elementen krijgt u meer controle over de manier waarop gegevens worden weer gegeven. Zie [aangepaste besturings elementen definiëren](./creating-custom-controls.md)voor meer informatie over besturings elementen.
 

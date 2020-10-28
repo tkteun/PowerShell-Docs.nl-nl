@@ -1,12 +1,14 @@
 ---
-title: TypeName-element voor EntrySelectedBy voor besturings elementen voor configuratie (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 994cd368872392abe47b4e9422c661cd8c03e05c
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element TypeName voor EntrySelectedBy voor Besturingselementen voor Configuratie (opmaak)
+description: Het element TypeName voor EntrySelectedBy voor Besturingselementen voor Configuratie (opmaak)
+ms.openlocfilehash: ce74c23ca35597902c6b94fdccd44324ba8e0233
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783344"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667739"
 ---
 # <a name="typename-element-for-entryselectedby-for-controls-for-configuration-format"></a>Het element TypeName voor EntrySelectedBy voor Besturingselementen voor Configuratie (opmaak)
 

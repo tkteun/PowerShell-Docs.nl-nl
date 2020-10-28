@@ -1,12 +1,14 @@
 ---
-title: Element formats Tring voor WideItem voor WideControl (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 4f1f0826a1cebb1526858875df640baac9d4ce48
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element FormatString voor WideItem voor WideControl (opmaak)
+description: Het element FormatString voor WideItem voor WideControl (opmaak)
+ms.openlocfilehash: f67a18e3ec4f1323e7f9be8904db518c679d53e5
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87781525"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667875"
 ---
 # <a name="formatstring-element-for-wideitem-for-widecontrol-format"></a>Het element FormatString voor WideItem voor WideControl (opmaak)
 

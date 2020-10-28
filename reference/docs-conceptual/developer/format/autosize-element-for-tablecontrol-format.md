@@ -1,12 +1,14 @@
 ---
-title: Het element AutoSize voor TableControl (Format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: f29b3eb278fd9ff29d2f6f4fbd000513dcaeec7b
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element AutoSize voor TableControl (opmaak)
+description: Het element AutoSize voor TableControl (opmaak)
+ms.openlocfilehash: 39d2f6f10796266cb6e9f1613b68337fb489278a
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783888"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92668113"
 ---
 # <a name="autosize-element-for-tablecontrol-format"></a>Het element AutoSize voor TableControl (opmaak)
 

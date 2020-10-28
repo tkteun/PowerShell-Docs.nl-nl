@@ -1,18 +1,20 @@
 ---
-title: Richt lijnen voor advies ontwikkeling | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: dc8ef586954106f6d7fbce550dc22cd935018936
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Geadviseerde richtlijnen voor de ontwikkeling
+description: Geadviseerde richtlijnen voor de ontwikkeling
+ms.openlocfilehash: 1ac18925bbc2506e6a03810d24f58c2f3113fd55
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87782426"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92668317"
 ---
 # <a name="advisory-development-guidelines"></a>Geadviseerde richtlijnen voor de ontwikkeling
 
 In deze sectie worden richt lijnen beschreven waarmee u rekening moet houden om te zorgen voor een goede ontwikkeling en gebruikers ervaring. Soms kunnen ze van toepassing zijn, en soms ook niet.
 
-## <a name="design-guidelines"></a>Ontwerp richtlijnen
+## <a name="design-guidelines"></a>Ontwerprichtlijnen
 
 Bij het ontwerpen van cmdlets moet u rekening houden met de volgende richt lijnen. Als u een ontwerp richtlijn vindt die van toepassing is op uw situatie, raadpleegt u de code richtlijnen voor vergelijk bare richt lijnen.
 

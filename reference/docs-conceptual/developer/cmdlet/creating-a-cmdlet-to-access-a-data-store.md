@@ -1,18 +1,20 @@
 ---
-title: Een cmdlet maken om toegang te krijgen tot een gegevensarchief
 ms.date: 09/13/2016
-ms.openlocfilehash: a595805a820c355937e581f0e00fa2a9a9fc3df0
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Een cmdlet maken om toegang te krijgen tot een gegevensarchief
+description: Een cmdlet maken om toegang te krijgen tot een gegevensarchief
+ms.openlocfilehash: d6ae4779a96b0789f11952a1d66bb96a394c3211
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87782137"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92668181"
 ---
 # <a name="creating-a-cmdlet-to-access-a-data-store"></a>Een cmdlet maken om toegang te krijgen tot een gegevensarchief
 
 In deze sectie wordt beschreven hoe u een cmdlet maakt waarmee u opgeslagen gegevens kunt openen via een Windows Power shell-provider. Dit type cmdlet maakt gebruik van de Windows Power shell-provider infrastructuur van de Windows Power shell-runtime en de cmdlet-klasse moet daarom worden afgeleid van de basis klasse [System. Management. Automation. PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) .
 
-De cmdlet Select-Str die hier wordt beschreven, kan teken reeksen in een bestand of object zoeken en selecteren. De patronen die worden gebruikt om de teken reeks te identificeren, kunnen expliciet worden opgegeven via de `Path` para meter van de cmdlet of impliciet door de `Script` para meter.
+Met de cmdlet Select-Str die hier wordt beschreven, kunt u teken reeksen in een bestand of object zoeken en selecteren. De patronen die worden gebruikt om de teken reeks te identificeren, kunnen expliciet worden opgegeven via de `Path` para meter van de cmdlet of impliciet door de `Script` para meter.
 
 De cmdlet is ontworpen voor het gebruik van een Windows Power shell-provider die is afgeleid van [System. Management. Automation. provider. Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider). Met de cmdlet kan bijvoorbeeld de bestandssysteem provider worden opgegeven of de provider van de variabele die wordt verschaft door Windows Power shell. Zie [uw Windows Power shell-provider ontwerpen](../prog-guide/designing-your-windows-powershell-provider.md)voor meer informatie AboutWindows Power shell-providers.
 
@@ -22,7 +24,7 @@ De eerste stap bij het maken van de cmdlet is altijd de naam van de cmdlet en he
 
 De .NET-klasse voor deze cmdlet moet worden afgeleid van de basis klasse [System. Management. Automation. PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) , omdat deze de ondersteuning biedt die nodig is voor de Windows Power shell-runtime om de infra structuur van de Windows Power shell-provider beschikbaar te maken. Houd er rekening mee dat deze cmdlet ook gebruikmaakt van de .NET Framework reguliere expressies klassen, zoals [System. Text. RegularExpressions. regex](/dotnet/api/System.Text.RegularExpressions.Regex).
 
-De volgende code is de klassen definitie voor deze cmdlet Select-Str.
+De volgende code is de klassen definitie voor deze Select-Str-cmdlet.
 
 ```csharp
 [Cmdlet(VerbsCommon.Select, "Str", DefaultParameterSetName="PatternParameterSet")]
@@ -368,7 +370,7 @@ protected override void ProcessRecord()
 
 Uw cmdlet moet de provider openen die is aangegeven door het Windows Power shell-pad, zodat deze toegang heeft tot de gegevens. Het object [System. Management. Automation. sessionState](/dotnet/api/System.Management.Automation.SessionState) voor de runs Pace wordt gebruikt voor toegang tot de provider, terwijl de eigenschap [System. Management. Automation. PSCmdlet. Invokeprovider *](/dotnet/api/System.Management.Automation.PSCmdlet.InvokeProvider) van de cmdlet wordt gebruikt om de provider te openen. Toegang tot inhoud wordt gegeven door het ophalen van het [System. Management. Automation. Providerintrinsics](/dotnet/api/System.Management.Automation.ProviderIntrinsics) -object voor de provider die is geopend.
 
-Deze voor beeld-cmdlet Select-Str maakt gebruik van de eigenschap [System. Management. Automation. Providerintrinsics. content *](/dotnet/api/System.Management.Automation.ProviderIntrinsics.Content) om de inhoud weer te geven die u wilt scannen. Vervolgens kan de methode [System. Management. Automation. Contentcmdletproviderintrinsics. getreader *](/dotnet/api/System.Management.Automation.ContentCmdletProviderIntrinsics.GetReader) worden aangeroepen, waarbij het vereiste Windows Power shell-pad wordt door gegeven.
+In dit voor beeld Select-Str cmdlet wordt gebruikgemaakt van de eigenschap [System. Management. Automation. Providerintrinsics. content *](/dotnet/api/System.Management.Automation.ProviderIntrinsics.Content) om de inhoud weer te geven die u wilt scannen. Vervolgens kan de methode [System. Management. Automation. Contentcmdletproviderintrinsics. getreader *](/dotnet/api/System.Management.Automation.ContentCmdletProviderIntrinsics.GetReader) worden aangeroepen, waarbij het vereiste Windows Power shell-pad wordt door gegeven.
 
 ## <a name="code-sample"></a>Code voorbeeld
 
@@ -1087,7 +1089,7 @@ Nadat u een cmdlet hebt geïmplementeerd, moet u deze met Windows Power shell re
 
 ## <a name="testing-the-cmdlet"></a>De cmdlet testen
 
-Als uw cmdlet is geregistreerd bij Windows Power shell, kunt u deze testen door deze uit te voeren op de opdracht regel. De volgende procedure kan worden gebruikt om de voor beeld-cmdlet Select-Str te testen.
+Als uw cmdlet is geregistreerd bij Windows Power shell, kunt u deze testen door deze uit te voeren op de opdracht regel. De volgende procedure kan worden gebruikt om de voor beeld-Select-Str-cmdlet te testen.
 
 1. Start Windows Power shell en zoek in het notitie bestand naar exemplaren van regels met de expressie ".NET". Houd er rekening mee dat de aanhalings tekens rond de naam van het pad alleen vereist zijn als het pad uit meer dan één woord bestaat.
 

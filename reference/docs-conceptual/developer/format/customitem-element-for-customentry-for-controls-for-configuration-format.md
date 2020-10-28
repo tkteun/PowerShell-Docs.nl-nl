@@ -1,12 +1,14 @@
 ---
-title: CustomItem-element voor CustomEntry voor besturings elementen voor configuratie (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: bb8124242496f192717127f201674bc1428e5de0
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element CustomItem voor CustomEntry voor Besturingselementen voor Configuratie (opmaak)
+description: Het element CustomItem voor CustomEntry voor Besturingselementen voor Configuratie (opmaak)
+ms.openlocfilehash: 06c399e982b6ac0fba9c11e20c468fe8bef6f694
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785860"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92666770"
 ---
 # <a name="customitem-element-for-customentry-for-controls-for-configuration-format"></a>Het element CustomItem voor CustomEntry voor Besturingselementen voor Configuratie (opmaak)
 

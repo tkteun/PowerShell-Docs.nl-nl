@@ -1,12 +1,14 @@
 ---
-title: Kenmerk typen | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 96fdd38ba10eb748ab0762f0c910463dd472494d
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Typen kenmerken
+description: Typen kenmerken
+ms.openlocfilehash: 65640f2f8449887dedb9fae137eb16b6252f1d57
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87782375"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667110"
 ---
 # <a name="attribute-types"></a>Typen kenmerken
 

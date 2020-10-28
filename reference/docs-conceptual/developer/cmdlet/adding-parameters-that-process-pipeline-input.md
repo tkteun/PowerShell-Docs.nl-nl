@@ -1,27 +1,26 @@
 ---
-title: Para meters toevoegen die de invoer van de pijp lijn verwerken | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- cmdlets [PowerShell Programmer's Guide], pipeline input
-- parameters [PowerShell Programmer's Guide], pipeline input
-ms.openlocfilehash: a678df30a13086b317d5680ee0fbc4d3c3391235
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Parameters toevoegen die pijplijninvoer verwerken
+description: Parameters toevoegen die pijplijninvoer verwerken
+ms.openlocfilehash: b150d5be93207d9c010a6d2d4de901b4526f1d79
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784551"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92668351"
 ---
 # <a name="adding-parameters-that-process-pipeline-input"></a>Parameters toevoegen die pijplijninvoer verwerken
 
-Eén invoer bron voor een cmdlet is een object in de pijp lijn dat afkomstig is uit een upstream-cmdlet. In deze sectie wordt beschreven hoe u een para meter kunt toevoegen aan de cmdlet Get-proc (die wordt beschreven in [uw eerste cmdlet maken](./creating-a-cmdlet-without-parameters.md)), zodat de cmdlet pijplijn objecten kan verwerken.
+Eén invoer bron voor een cmdlet is een object in de pijp lijn dat afkomstig is uit een upstream-cmdlet. In deze sectie wordt beschreven hoe u een para meter kunt toevoegen aan de Get-Proc cmdlet (beschreven in [het maken van uw eerste cmdlet](./creating-a-cmdlet-without-parameters.md)) zodat de cmdlet pijplijn objecten kan verwerken.
 
-In deze Get-proc-cmdlet wordt een `Name` para meter gebruikt die invoer van een pijplijn object accepteert, proces informatie ophaalt van de lokale computer op basis van de opgegeven namen en vervolgens informatie over de processen op de opdracht regel weergeeft.
+Met deze Get-Proc cmdlet wordt een `Name` para meter gebruikt die invoer van een pijplijn object accepteert, worden proces gegevens van de lokale computer opgehaald op basis van de opgegeven namen, en wordt vervolgens informatie weer gegeven over de processen op de opdracht regel.
 
 ## <a name="defining-the-cmdlet-class"></a>De cmdlet-klasse definiëren
 
 De eerste stap bij het maken van de cmdlet is altijd de naam van de cmdlet en het declareren van de .NET-klasse die de cmdlet implementeert. Met deze cmdlet worden proces gegevens opgehaald, zodat de naam van de term ' Get ' is. (Bijna elk soort cmdlet waarmee informatie kan worden opgehaald, kan opdracht regel invoer verwerken.) Zie [cmdlet verb names](./approved-verbs-for-windows-powershell-commands.md)(Engelstalig) voor meer informatie over goedgekeurde cmdlet-termen.
 
-Hier volgt de definitie voor deze Get-proc-cmdlet. Details van deze definitie vindt u in [het maken van uw eerste cmdlet](./creating-a-cmdlet-without-parameters.md).
+Hier volgt de definitie voor deze Get-Proc-cmdlet. Details van deze definitie vindt u in [het maken van uw eerste cmdlet](./creating-a-cmdlet-without-parameters.md).
 
 ```csharp
 [Cmdlet(VerbsCommon.Get, "proc")]
@@ -36,12 +35,12 @@ Public Class GetProcCommand
 
 ## <a name="defining-input-from-the-pipeline"></a>Invoer van de pijp lijn definiëren
 
-In deze sectie wordt beschreven hoe u de invoer van de pijp lijn voor een cmdlet definieert. Deze Get-proc-cmdlet definieert een eigenschap die de `Name` para meter vertegenwoordigt, zoals wordt beschreven in [para meters toevoegen die opdracht regel invoer verwerken](./adding-parameters-that-process-command-line-input.md).
+In deze sectie wordt beschreven hoe u de invoer van de pijp lijn voor een cmdlet definieert. Deze Get-Proc-cmdlet definieert een eigenschap die de `Name` para meter vertegenwoordigt, zoals wordt beschreven in [para meters toevoegen die opdracht regel invoer verwerken](./adding-parameters-that-process-command-line-input.md).
 (Zie het onderwerp voor algemene informatie over het declareren van para meters.)
 
 Wanneer een cmdlet echter de invoer van de pijp lijn moet verwerken, moeten de para meters zijn gekoppeld aan invoer waarden door de Windows Power shell-runtime. U kunt dit doen door het `ValueFromPipeline` tref woord toe te voegen of het `ValueFromPipelineByProperty` tref woord toe te voegen aan de kenmerk declaratie [System. Management. Automation. Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) . Geef het `ValueFromPipeline` tref woord op als de cmdlet het volledige invoer object opent. Geef op `ValueFromPipelineByProperty` of de cmdlet alleen een eigenschap van het object heeft geopend.
 
-Dit is de parameter declaratie voor de `Name` para meter van deze Get-proc-cmdlet die de invoer van de pijp lijn accepteert.
+Dit is de parameter declaratie voor de `Name` para meter van deze Get-Proc-cmdlet die de invoer van de pijp lijn accepteert.
 
 :::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/GetProcessSample03/GetProcessSample03.cs" range="35-44":::
 
@@ -71,7 +70,7 @@ Met de vorige declaratie wordt het `ValueFromPipeline` sleutel woord ingesteld o
 
 Als uw cmdlet de invoer van de pijp lijn moet afhandelen, moet de juiste invoer methoden worden overschreven. De basis methoden voor invoer verwerking zijn geïntroduceerd bij het [maken van uw eerste cmdlet](./creating-a-cmdlet-without-parameters.md).
 
-Deze Get-proc-cmdlet onderdrukt de methode [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) om de `Name` parameter invoer van de gebruiker of een script af te handelen. Met deze methode worden de processen voor elke aangevraagde proces naam of alle processen opgehaald als er geen naam is opgegeven. U ziet dat in [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)de aanroep van [WriteObject (System. object, System. Boolean)](/dotnet/api/system.management.automation.cmdlet.writeobject#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_) het uitvoer mechanisme is voor het verzenden van uitvoer objecten naar de pijp lijn. De tweede para meter van deze aanroep, `enumerateCollection` , wordt ingesteld op `true` om de Windows Power shell-runtime te laten opsommen van de matrix van proces objecten en een proces per keer naar de opdracht regel te schrijven.
+Deze Get-Proc-cmdlet overschrijft de methode [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) om de `Name` parameter invoer van de gebruiker of een script af te handelen. Met deze methode worden de processen voor elke aangevraagde proces naam of alle processen opgehaald als er geen naam is opgegeven. U ziet dat in [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)de aanroep van [WriteObject (System. object, System. Boolean)](/dotnet/api/system.management.automation.cmdlet.writeobject#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_) het uitvoer mechanisme is voor het verzenden van uitvoer objecten naar de pijp lijn. De tweede para meter van deze aanroep, `enumerateCollection` , wordt ingesteld op `true` om de Windows Power shell-runtime te laten opsommen van de matrix van proces objecten en een proces per keer naar de opdracht regel te schrijven.
 
 ```csharp
 protected override void ProcessRecord()

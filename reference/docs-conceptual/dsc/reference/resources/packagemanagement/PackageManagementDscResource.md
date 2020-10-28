@@ -1,13 +1,14 @@
 ---
 ms.date: 07/15/2020
-keywords: DSC, Power shell, configuratie, installatie
+ms.topic: reference
 title: DSC Package Management-resource
-ms.openlocfilehash: 983a288398f710ecc5d2bc557028282ccd58561b
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC Package Management-resource
+ms.openlocfilehash: b6676860acea094e04479e38f29ee7c72430851b
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464261"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667365"
 ---
 # <a name="dsc-packagemanagement-resource"></a>DSC Package Management-resource
 
@@ -57,14 +58,14 @@ De volgende tabel bevat de opties voor de eigenschap AdditionalParameters.
 |Parameter |Beschrijving |
 |---|---|
 |DestinationPath |Wordt gebruikt door providers zoals de ingebouwde Nuget-provider. Hiermee geeft u een bestands locatie op waar het pakket moet worden geïnstalleerd. |
-|InstallationPolicy |Wordt gebruikt door providers zoals de ingebouwde Nuget-provider. Hiermee wordt bepaald of u de bron van het pakket vertrouwt. Een van: **niet-vertrouwd** of **vertrouwd**. |
+|InstallationPolicy |Wordt gebruikt door providers zoals de ingebouwde Nuget-provider. Hiermee wordt bepaald of u de bron van het pakket vertrouwt. Een van: **niet-vertrouwd** of **vertrouwd** . |
 
 ## <a name="common-properties"></a>Algemene eigenschappen
 
 |Eigenschap |Beschrijving |
 |---|---|
 |DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is bijvoorbeeld als de ID van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is `DependsOn = "[ResourceType]ResourceName"` . |
-|Zo |Hiermee wordt bepaald of het pakket moet worden geïnstalleerd of verwijderd. De standaard waarde is **aanwezig**. |
+|Zo |Hiermee wordt bepaald of het pakket moet worden geïnstalleerd of verwijderd. De standaard waarde is **aanwezig** . |
 |PsDscRunAsCredential |Hiermee stelt u de referentie in voor het uitvoeren van de gehele resource als. |
 
 > [!NOTE]

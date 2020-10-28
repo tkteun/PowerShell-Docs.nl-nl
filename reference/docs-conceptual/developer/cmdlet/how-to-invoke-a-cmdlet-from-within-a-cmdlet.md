@@ -1,12 +1,14 @@
 ---
-title: Een cmdlet aanroepen vanuit een cmdlet | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 2d5b0788d3310d0dd7b311f86c497afe8eec9d11
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Een cmdlet aanroepen vanuit een cmdlet
+description: Een cmdlet aanroepen vanuit een cmdlet
+ms.openlocfilehash: d137ac895f66000329de76a2c16a74b02c0e82ca
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784143"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667042"
 ---
 # <a name="how-to-invoke-a-cmdlet-from-within-a-cmdlet"></a>Een cmdlet aanroepen vanuit een cmdlet
 

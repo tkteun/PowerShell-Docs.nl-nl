@@ -1,16 +1,18 @@
 ---
-title: Algemene parameter namen | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: d0939cfa5bf90ec55f0c0afcdeff56223d9dc78d
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Namen van veelvoorkomende parameters
+description: Namen van veelvoorkomende parameters
+ms.openlocfilehash: cf39dd3b04660076718336857d79d55c3784ccd1
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87782222"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92668215"
 ---
 # <a name="common-parameter-names"></a>Namen van veelvoorkomende parameters
 
-De para meters die in dit onderwerp worden beschreven, worden *algemene para meters*genoemd. Ze worden toegevoegd aan cmdlets door de Windows Power shell-runtime en kunnen niet worden gedeclareerd door de cmdlet.
+De para meters die in dit onderwerp worden beschreven, worden *algemene para meters* genoemd. Ze worden toegevoegd aan cmdlets door de Windows Power shell-runtime en kunnen niet worden gedeclareerd door de cmdlet.
 
 > [!NOTE]
 > Deze para meters worden ook toegevoegd aan provider-cmdlets en aan functies die met het kenmerk zijn gedecoreerd `CmdletBinding` .
@@ -35,13 +37,13 @@ Deze para meter geeft aan welke actie moet worden uitgevoerd als er een fout opt
 
 Gegevens type: teken reeks
 
-Met deze para meter wordt de variabele opgegeven waarin objecten worden geplaatst wanneer er een fout optreedt. Als u wilt toevoegen aan deze variabele, gebruikt u +*varnaam* in plaats van de variabele uit te scha kelen en in te stellen.
+Met deze para meter wordt de variabele opgegeven waarin objecten worden geplaatst wanneer er een fout optreedt. Als u wilt toevoegen aan deze variabele, gebruikt u + *varnaam* in plaats van de variabele uit te scha kelen en in te stellen.
 
 ### <a name="outvariable-alias-ov"></a>Outvariable (alias: OV)
 
 Gegevens type: teken reeks
 
-Met deze para meter geeft u de variabele op waarin alle uitvoer objecten worden geplaatst die door de cmdlet worden gegenereerd. Als u wilt toevoegen aan deze variabele, gebruikt u +*varnaam* in plaats van de variabele uit te scha kelen en in te stellen.
+Met deze para meter geeft u de variabele op waarin alle uitvoer objecten worden geplaatst die door de cmdlet worden gegenereerd. Als u wilt toevoegen aan deze variabele, gebruikt u + *varnaam* in plaats van de variabele uit te scha kelen en in te stellen.
 
 ### <a name="outbuffer-alias-ob"></a>Outbuffer (alias: OB)
 
@@ -65,9 +67,9 @@ Deze para meter geeft aan welke actie moet worden uitgevoerd wanneer de cmdlet e
 
 Gegevens type: teken reeks
 
-Met deze para meter geeft u de variabele op waarin waarschuwings berichten kunnen worden opgeslagen. Als u wilt toevoegen aan deze variabele, gebruikt u +*varnaam* in plaats van de variabele uit te scha kelen en in te stellen.
+Met deze para meter geeft u de variabele op waarin waarschuwings berichten kunnen worden opgeslagen. Als u wilt toevoegen aan deze variabele, gebruikt u + *varnaam* in plaats van de variabele uit te scha kelen en in te stellen.
 
-## <a name="risk-mitigation-parameters"></a>Para meters voor risico beperking
+## <a name="risk-mitigation-parameters"></a>Risk-Mitigation para meters
 
 De volgende para meters worden toegevoegd aan cmdlets die bevestiging aanvragen voordat ze hun actie uitvoeren. Zie [bevestiging aanvragen](./requesting-confirmation-from-cmdlets.md)voor meer informatie over bevestigings aanvragen. Deze para meters worden gedefinieerd door de klasse [System. Management. Automation. internal. Shouldprocessparameters](/dotnet/api/System.Management.Automation.Internal.ShouldProcessParameters) .
 

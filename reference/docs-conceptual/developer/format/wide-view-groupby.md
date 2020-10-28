@@ -1,12 +1,14 @@
 ---
-title: Brede weer gave (GroupBy) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: e53714f0b4240b5fe7f62cccda83af1e5badd33c
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Brede weergave (GroupBy)
+description: Brede weergave (GroupBy)
+ms.openlocfilehash: 807bea2a5d44c38e2c9977f792bea2fb9bca0fc3
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784993"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667671"
 ---
 # <a name="wide-view-groupby"></a>Brede weergave (GroupBy)
 

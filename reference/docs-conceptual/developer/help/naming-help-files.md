@@ -1,12 +1,14 @@
 ---
-title: Naamgeving van Help-bestanden
 ms.date: 09/12/2016
-ms.openlocfilehash: ea95e6d6c87e553ed11fe6e3f058fc9a1b3d03f8
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: Naamgeving van Help-bestanden
+description: Naamgeving van Help-bestanden
+ms.openlocfilehash: b77af8f9b9510785a4198fed9da1263184a27b99
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86893268"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667586"
 ---
 # <a name="naming-help-files"></a>Naamgeving van Help-bestanden
 

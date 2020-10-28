@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
-keywords: wmf,powershell,installeren
 title: Verbeteringen van DSC in WMF 5.1
-ms.openlocfilehash: 445d0f7bb54c6b21b6af26c4174f3d6422caf6dd
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+description: In dit artikel vindt u een overzicht van de verbeteringen in desired state Configuration (DSC) die zijn opgenomen in WMF 5,1
+ms.openlocfilehash: 564cf0e8321b6b2b2e5d856acd4d3644d6566100
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87771546"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667220"
 ---
 # <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>Verbeteringen in desired state Configuration (DSC) in WMF 5,1
 
@@ -17,9 +16,9 @@ ms.locfileid: "87771546"
 In WMF 5,1 hebben we de volgende bekende problemen opgelost:
 
 - Get-DscConfiguration kan lege waarden (null) of fouten retour neren als een complex/hash-tabel type wordt geretourneerd door de functie Get () van een DSC-resource op basis van een klasse.
-- Get-DscConfiguration retourneert een fout als de RunAs-referentie wordt gebruikt in de DSC-configuratie.
+- Get-DscConfiguration retourneert een fout als de RunAs-referentie in de DSC-configuratie wordt gebruikt.
 - Op klassen gebaseerde resource kan niet worden gebruikt in een samengestelde configuratie.
-- Start-DscConfiguration loopt vast als op de klasse gebaseerde resource een eigenschap van een eigen type heeft.
+- Start-DscConfiguration vastloopt als op de klasse gebaseerde resource een eigenschap van een eigen type heeft.
 - Bron op basis van een klasse kan niet worden gebruikt als exclusieve resource.
 
 ## <a name="dsc-resource-debugging-improvements"></a>Verbeteringen in DSC-bron fout opsporing
@@ -149,7 +148,7 @@ Bekijk de onderstaande moment opnamen:
 
 Er is ondersteuning toegevoegd voor het gebruik van [PsDscRunAsCredential](/powershell/scripting/dsc/configurations/runAsUser) met DSC- [samengestelde](/powershell/scripting/dsc/resources/authoringresourcecomposite) resources.
 
-U kunt nu een waarde opgeven voor **PsDscRunAsCredential** bij het gebruik van samengestelde resources binnen configuraties. Als u deze opgeeft, worden alle resources in een samengestelde resource uitgevoerd als een runas-gebruiker. Als een samengestelde resource een andere samengestelde resource aanroept, worden alle resources ook uitgevoerd als runas-gebruiker. Runas-referenties worden door gegeven aan elk niveau van de samengestelde resource hiërarchie. Als een resource in een samengestelde resource een eigen waarde voor **PsDscRunAsCredential**opgeeft, wordt er tijdens het compileren van de configuratie een samenvoeg fout veroorzaakt.
+U kunt nu een waarde opgeven voor **PsDscRunAsCredential** bij het gebruik van samengestelde resources binnen configuraties. Als u deze opgeeft, worden alle resources in een samengestelde resource uitgevoerd als een runas-gebruiker. Als een samengestelde resource een andere samengestelde resource aanroept, worden alle resources ook uitgevoerd als runas-gebruiker. Runas-referenties worden door gegeven aan elk niveau van de samengestelde resource hiërarchie. Als een resource in een samengestelde resource een eigen waarde voor **PsDscRunAsCredential** opgeeft, wordt er tijdens het compileren van de configuratie een samenvoeg fout veroorzaakt.
 
 In dit voor beeld ziet u het gebruik van de [WindowsFeatureSet](/powershell/scripting/dsc/reference/resources/windows/windowsfeaturesetresource) -samengestelde resource die is opgenomen in de PSDesiredStateConfiguration-module.
 

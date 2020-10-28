@@ -1,12 +1,14 @@
 ---
-title: Cmdlet-para meters declareren | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 97e86a1eb715f149a8383a1a4529c00da4f0eba8
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Cmdlet-parameters declareren
+description: Cmdlet-parameters declareren
+ms.openlocfilehash: ed53f9788c9afb142b137e08966dff33551b9d0f
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87774385"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667093"
 ---
 # <a name="how-to-declare-cmdlet-parameters"></a>Cmdlet-parameters declareren
 

@@ -1,12 +1,14 @@
 ---
-title: Weer gegeven gegevens opmaken | Microsoft Docs
 ms.date: 09/12/2016
-ms.openlocfilehash: 97d23b3079b2779e518b6b6d2f2ac0c5e9d1f3a3
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Weergegeven gegevens opmaken
+description: Weergegeven gegevens opmaken
+ms.openlocfilehash: 40f6b3b4fa36062ee0bad3f197ad159f571445c8
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87781508"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667858"
 ---
 # <a name="formatting-displayed-data"></a>Weergegeven gegevens opmaken
 

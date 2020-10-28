@@ -1,12 +1,14 @@
 ---
-title: DefaultSettings-element (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 7da7948fc0814e38a8f3910596e223470ec27d75
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element DefaultSettings (opmaak)
+description: Het element DefaultSettings (opmaak)
+ms.openlocfilehash: 1c2055b38a416fe2d75fa20c6c87e92d9eed4285
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787730"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92666719"
 ---
 # <a name="defaultsettings-element-format"></a>Het element DefaultSettings (opmaak)
 

@@ -1,12 +1,14 @@
 ---
-title: Alignment-element voor TableColumnHeader voor TableControl (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 1bf395b84af90d725c14b2f0ef569f72b5fcc613
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element Uitlijning voor TableColumnHeader voor TableControl (opmaak)
+description: Het element Uitlijning voor TableColumnHeader voor TableControl (opmaak)
+ms.openlocfilehash: cf8b90c12c28951283b5870186e2c88d427318a5
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783922"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92666821"
 ---
 # <a name="alignment-element-for-tablecolumnheader-for-tablecontrol-format"></a>Het element Uitlijning voor TableColumnHeader voor TableControl (opmaak)
 

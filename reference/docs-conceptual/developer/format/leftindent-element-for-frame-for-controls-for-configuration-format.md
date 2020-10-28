@@ -1,12 +1,14 @@
 ---
-title: LeftIndent-element voor frame voor besturings elementen voor configuratie (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 8de21173780047cb8af6bb76ea51c092b38d30a9
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element LeftIndent voor Frame voor Besturingselementen voor Configuratie (opmaak)
+description: Het element LeftIndent voor Frame voor Besturingselementen voor Configuratie (opmaak)
+ms.openlocfilehash: 9a6b2832b8c06d4217e743a2a13958b883959b57
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783582"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667773"
 ---
 # <a name="leftindent-element-for-frame-for-controls-for-configuration-format"></a>Het element LeftIndent voor Frame voor Besturingselementen voor Configuratie (opmaak)
 

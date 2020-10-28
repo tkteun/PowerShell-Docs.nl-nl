@@ -1,12 +1,14 @@
 ---
-title: Dynamische para meters declareren | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: c8839aa8841bf94a9b7f8f930ca315fe0ccedb30
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Dynamische parameters declareren
+description: Dynamische parameters declareren
+ms.openlocfilehash: 0f5a8f249b414663aa9702a908ea5c8ca24755ff
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784177"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667076"
 ---
 # <a name="how-to-declare-dynamic-parameters"></a>Dynamische parameters declareren
 

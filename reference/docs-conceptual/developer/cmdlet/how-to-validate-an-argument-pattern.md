@@ -1,14 +1,14 @@
 ---
-title: Een argument patroon valideren | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- ValidatePattern attribute, example
-ms.openlocfilehash: 35104e786d4b809a711d97fea52ae0e348dd5ca3
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Een argumentenpatroon valideren
+description: Een argumentenpatroon valideren
+ms.openlocfilehash: ab5777c918a53c0a3900f87c52e7f14f9cb9b726
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87782086"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92666906"
 ---
 # <a name="how-to-validate-an-argument-pattern"></a>Een argumentenpatroon valideren
 
