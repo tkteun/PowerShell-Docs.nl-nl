@@ -1,12 +1,14 @@
 ---
-title: Een Windows PowerShell-containerprovider maken
 ms.date: 09/13/2016
-ms.openlocfilehash: a5bcba425909eb98c010a1ea010cb02b995771f3
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Een Windows PowerShell-containerprovider maken
+description: Een Windows PowerShell-containerprovider maken
+ms.openlocfilehash: 999bd69e3c16bfc0a74519986654ec15bbc0da6d
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787203"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92645357"
 ---
 # <a name="creating-a-windows-powershell-container-provider"></a>Een Windows PowerShell-containerprovider maken
 
@@ -122,7 +124,7 @@ De volgende voor waarden zijn mogelijk van toepassing op uw implementatie van [S
 
 - Uw implementatie van [System. Management. Automation. provider. Containercmdletprovider. Getchilditems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) is verantwoordelijk voor het voor komen van oneindige recursie wanneer er circulaire koppelingen zijn en het soort gelijke. Er moet een geschikte afsluit uitzondering worden gegenereerd om een dergelijke voor waarde weer te geven.
 
-## <a name="attaching-dynamic-parameters-to-the-get-childitem-cmdlet"></a>Dynamische para meters aan de cmdlet Get-Child item koppelen
+## <a name="attaching-dynamic-parameters-to-the-get-childitem-cmdlet"></a>Dynamische para meters aan de Get-ChildItem-cmdlet koppelen
 
 Soms `Get-ChildItem` vereist de cmdlet die [System. Management. Automation. provider. Containercmdletprovider. Getchilditems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) aanroept, extra para meters die dynamisch worden opgegeven tijdens runtime. Als u deze dynamische para meters wilt opgeven, moet de Windows Power shell-container provider de methode [System. Management. Automation. provider. Containercmdletprovider. Getchilditemsdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItemsDynamicParameters) implementeren. Met deze methode worden dynamische para meters voor het item op het aangegeven pad opgehaald en wordt een object geretourneerd dat eigenschappen en velden bevat met het parseren van kenmerken die vergelijkbaar zijn met een cmdlet-klasse of een [System. Management. Automation. Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) -object. De Windows Power shell-runtime maakt gebruik van het geretourneerde object om de para meters toe te voegen aan de `Get-ChildItem` cmdlet.
 
@@ -197,7 +199,7 @@ De volgende voor waarden zijn mogelijk van toepassing op uw implementatie van [S
 
 - Uw implementatie van [System. Management. Automation. provider. Containercmdletprovider. Getchildnames *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames) is verantwoordelijk voor het voor komen van oneindige recursie wanneer er circulaire koppelingen zijn en het soort gelijke. Er moet een geschikte afsluit uitzondering worden gegenereerd om een dergelijke voor waarde weer te geven.
 
-## <a name="attaching-dynamic-parameters-to-the-get-childitem-cmdlet-name"></a>Dynamische para meters aan de Get-Child item-cmdlet (naam) koppelen
+## <a name="attaching-dynamic-parameters-to-the-get-childitem-cmdlet-name"></a>Dynamische para meters aan de Get-ChildItem-cmdlet (naam) koppelen
 
 Soms `Get-ChildItem` vereist de cmdlet (met de `Name` para meter) extra para meters die dynamisch worden opgegeven tijdens runtime. Als u deze dynamische para meters wilt opgeven, moet de Windows Power shell-container provider de methode [System. Management. Automation. provider. Containercmdletprovider. Getchildnamesdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNamesDynamicParameters) implementeren. Met deze methode worden de dynamische para meters voor het item op het aangegeven pad opgehaald en wordt een object geretourneerd dat eigenschappen en velden bevat met het parseren van kenmerken die vergelijkbaar zijn met een cmdlet-klasse of een [System. Management. Automation. Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) -object. De Windows Power shell-runtime maakt gebruik van het geretourneerde object om de para meters toe te voegen aan de `Get-ChildItem` cmdlet.
 
@@ -229,7 +231,7 @@ De volgende voor waarden zijn mogelijk van toepassing op uw implementatie van [S
 
   Nadat het aanroepen van [System. Management. Automation. provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) wordt geretourneerd `true` , moet de methode [System. Management. Automation. provider. Containercmdletprovider. Renameitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItem) worden aangeroepen de methode [System. Management. Automation. provider. Cmdletprovider. ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) . Met deze methode wordt een bericht met een bevestigings bericht verzonden naar de gebruiker om extra feedback te geven om te zeggen dat de bewerking moet worden voortgezet. Een provider moet [System. Management. Automation. provider. Cmdletprovider. ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) aanroepen als extra controle op mogelijk schadelijke systeem wijzigingen.
 
-## <a name="attaching-dynamic-parameters-to-the-rename-item-cmdlet"></a>Dynamische para meters aan de cmdlet Rename-item koppelen
+## <a name="attaching-dynamic-parameters-to-the-rename-item-cmdlet"></a>Dynamische para meters aan de Rename-Item-cmdlet koppelen
 
 Soms `Rename-Item` vereist de cmdlet extra para meters die dynamisch worden opgegeven tijdens runtime. Als u deze dynamische para meters wilt opgeven, moet u de Windows Power shell-container provider de methode [System. Management. Automation. provider. Containercmdletprovider. Renameitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItemDynamicParameters) implementeren. Met deze methode worden de para meters voor het item op het aangegeven pad opgehaald en wordt een object geretourneerd dat eigenschappen en velden bevat met kenmerken die vergelijkbaar zijn met een cmdlet-klasse of een [System. Management. Automation. Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) -object. De Windows Power shell-runtime maakt gebruik van het geretourneerde object om de para meters toe te voegen aan de `Rename-Item` cmdlet.
 
@@ -275,7 +277,7 @@ De volgende voor waarden zijn mogelijk van toepassing op uw implementatie van [S
 
 - Uw implementatie van de methode [System. Management. Automation. provider. Containercmdletprovider. NewItem mag *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) moet [System. Management. Automation. provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) aanroepen en de geretourneerde waarde controleren voordat wijzigingen in het gegevens archief worden aangebracht. Nadat het aanroepen van [System. Management. Automation. provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) is ingesteld op True, moet de [methode System](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) [. Management. Automation. provider. Containercmdletprovider. NewItem mag *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) worden aangeroepen als extra controle op mogelijke schadelijke systeem wijzigingen.
 
-## <a name="attaching-dynamic-parameters-to-the-new-item-cmdlet"></a>Dynamische para meters aan de cmdlet New-item koppelen
+## <a name="attaching-dynamic-parameters-to-the-new-item-cmdlet"></a>Dynamische para meters aan de New-Item-cmdlet koppelen
 
 Soms `New-Item` vereist de cmdlet extra para meters die dynamisch worden opgegeven tijdens runtime. Als u deze dynamische para meters wilt opgeven, moet de container provider de methode [System. Management. Automation. provider. Containercmdletprovider. Newitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItemDynamicParameters) implementeren. Met deze methode worden de para meters voor het item op het aangegeven pad opgehaald en wordt een object geretourneerd dat eigenschappen en velden bevat met kenmerken die vergelijkbaar zijn met een cmdlet-klasse of een [System. Management. Automation. Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) -object. De Windows Power shell-runtime maakt gebruik van het geretourneerde object om de para meters toe te voegen aan de `New-Item` cmdlet.
 
@@ -303,7 +305,7 @@ De volgende voor waarden zijn mogelijk van toepassing op uw implementatie van [S
 
 - Uw implementatie van de methode [System. Management. Automation. provider. Containercmdletprovider. RemoveItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem) moet [System. Management. Automation. provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) aanroepen en de geretourneerde waarde controleren voordat wijzigingen in het gegevens archief worden aangebracht. Nadat de aanroep van [System. Management. Automation. provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) wordt geretourneerd `true` , moet de methode [System](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) [. Management. Automation. provider. Containercmdletprovider. RemoveItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem) worden aangeroepen als extra controle op mogelijke schadelijke systeem wijzigingen.
 
-## <a name="attaching-dynamic-parameters-to-the-remove-item-cmdlet"></a>Dynamische para meters aan de Remove-item-cmdlet koppelen
+## <a name="attaching-dynamic-parameters-to-the-remove-item-cmdlet"></a>Dynamische para meters aan de Remove-Item-cmdlet koppelen
 
 Soms `Remove-Item` vereist de cmdlet extra para meters die dynamisch worden opgegeven tijdens runtime. Als u deze dynamische para meters wilt opgeven, moet de container provider de methode [System. Management. Automation. provider. Containercmdletprovider. Removeitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItemDynamicParameters) implementeren om deze para meters af te handelen. Met deze methode worden de dynamische para meters voor het item op het aangegeven pad opgehaald en wordt een object geretourneerd dat eigenschappen en velden bevat met het parseren van kenmerken die vergelijkbaar zijn met een cmdlet-klasse of een [System. Management. Automation. Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) -object. De Windows Power shell-runtime maakt gebruik van het geretourneerde object om de para meters toe te voegen aan de `Remove-Item` cmdlet.
 
@@ -352,7 +354,7 @@ De volgende voor waarden zijn mogelijk van toepassing op uw implementatie van [S
 
 - Uw implementatie van de methode [System. Management. Automation. provider. ContainerCmdletProvider. CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) moet [System. Management. Automation. provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) aanroepen en de geretourneerde waarde controleren voordat wijzigingen in het gegevens archief worden aangebracht. Nadat het aanroepen van [System. Management. Automation. provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) is ingesteld op True, moet de methode [System. Management. Automation. provider. ContainerCmdletProvider. CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) de methode [System. Management. Automation. provider. Cmdletprovider. ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) aanroepen als een extra controle op mogelijk schadelijke systeem wijzigingen. Zie [items van een andere naam wijzigen](#renaming-items)voor meer informatie over het aanroepen van deze methoden.
 
-## <a name="attaching-dynamic-parameters-to-the-copy-item-cmdlet"></a>Dynamische para meters aan de copy-item-cmdlet koppelen
+## <a name="attaching-dynamic-parameters-to-the-copy-item-cmdlet"></a>Dynamische para meters aan de Copy-Item-cmdlet koppelen
 
 Soms `Copy-Item` vereist de cmdlet extra para meters die dynamisch worden opgegeven tijdens runtime. Als u deze dynamische para meters wilt opgeven, moet de Windows Power shell-container provider de methode [System. Management. Automation. provider. Containercmdletprovider. Copyitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItemDynamicParameters) implementeren om deze para meters af te handelen. Met deze methode worden de para meters voor het item op het aangegeven pad opgehaald en wordt een object geretourneerd dat eigenschappen en velden bevat met kenmerken die vergelijkbaar zijn met een cmdlet-klasse of een [System. Management. Automation. Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) -object. De Windows Power shell-runtime maakt gebruik van het geretourneerde object om de para meters toe te voegen aan de `Copy-Item` cmdlet.
 

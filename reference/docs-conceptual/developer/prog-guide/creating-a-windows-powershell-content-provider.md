@@ -1,12 +1,14 @@
 ---
-title: Een Windows PowerShell-inhoudsprovider maken
 ms.date: 09/13/2016
-ms.openlocfilehash: b4bc0c8d1f8ef9f85bd711fdc2770b54418bbf4a
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Een Windows PowerShell-inhoudsprovider maken
+description: Een Windows PowerShell-inhoudsprovider maken
+ms.openlocfilehash: 7890f0ab8d1cc7f29bdc077b342bae950cfa7827
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87779062"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92645370"
 ---
 # <a name="creating-a-windows-powershell-content-provider"></a>Een Windows PowerShell-inhoudsprovider maken
 
@@ -90,7 +92,7 @@ De volgende voor waarden zijn mogelijk van toepassing op een implementatie van [
 
 - Standaard moeten onderdrukkingen van deze methode geen lezer ophalen voor objecten die verborgen zijn voor de gebruiker, tenzij de eigenschap [System. Management. Automation. provider. Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) is ingesteld op `true` . Er moet een fout worden geschreven als het pad een item vertegenwoordigt dat is verborgen voor de gebruiker en [System. Management. Automation. provider. Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) is ingesteld op `false` .
 
-## <a name="attaching-dynamic-parameters-to-the-get-content-cmdlet"></a>Dynamische para meters aan de cmdlet Get-Content koppelen
+## <a name="attaching-dynamic-parameters-to-the-get-content-cmdlet"></a>Dynamische para meters aan de Get-Content-cmdlet koppelen
 
 `Get-Content`Voor de cmdlet zijn mogelijk aanvullende para meters vereist die dynamisch worden opgegeven tijdens runtime. Als u deze dynamische para meters wilt opgeven, moet de Windows Power shell-inhouds provider de methode [System. Management. Automation. provider. Icontentcmdletprovider. Getcontentreaderdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReaderDynamicParameters) implementeren. Met deze methode worden dynamische para meters voor het item op het aangegeven pad opgehaald en wordt een object geretourneerd dat eigenschappen en velden bevat met het parseren van kenmerken die vergelijkbaar zijn met een cmdlet-klasse of een [System. Management. Automation. Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) -object. De Windows Power shell-runtime maakt gebruik van het geretourneerde object om de para meters toe te voegen aan de cmdlet.
 
@@ -142,7 +144,7 @@ De volgende voor waarden zijn mogelijk van toepassing op uw implementatie van [S
 
 - Standaard moeten onderdrukkingen van deze methode geen schrijver ophalen voor objecten die verborgen zijn voor de gebruiker, tenzij de eigenschap [System. Management. Automation. provider. Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) is ingesteld op `true` . Er moet een fout worden geschreven als het pad een item vertegenwoordigt dat is verborgen voor de gebruiker en [System. Management. Automation. provider. Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) is ingesteld op `false` .
 
-## <a name="attaching-dynamic-parameters-to-the-add-content-and-set-content-cmdlets"></a>Dynamische para meters koppelen aan de cmdlets Add-content en set-content
+## <a name="attaching-dynamic-parameters-to-the-add-content-and-set-content-cmdlets"></a>Dynamische para meters koppelen aan de Add-Content-en Set-Content-cmdlets
 
 Voor `Add-Content` de `Set-Content` cmdlets en zijn mogelijk extra dynamische para meters vereist die een runtime toevoegen. Als u deze dynamische para meters wilt opgeven, moet de Windows Power shell-inhouds provider de methode [System. Management. Automation. provider. Icontentcmdletprovider. Getcontentwriterdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentWriterDynamicParameters) implementeren om deze para meters af te handelen. Met deze methode worden dynamische para meters voor het item op het aangegeven pad opgehaald en wordt een object geretourneerd dat eigenschappen en velden bevat met het parseren van kenmerken die vergelijkbaar zijn met een cmdlet-klasse of een [System. Management. Automation. Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) -object. De Windows Power shell-runtime maakt gebruik van het geretourneerde object om de para meters toe te voegen aan de cmdlets.
 
@@ -170,7 +172,7 @@ De volgende voor waarden zijn mogelijk van toepassing op een implementatie van [
 
   Nadat het aanroepen van [System. Management. Automation. provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) wordt geretourneerd `true` , moet de methode [System. Management. Automation. provider. Icontentcmdletprovider. Clearcontent *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent) worden aangeroepen de methode [System. Management. Automation. provider. Cmdletprovider. ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) . Met deze methode wordt een bericht verzonden naar de gebruiker om te controleren of de bewerking moet worden voortgezet. De aanroep van [System. Management. Automation. provider. Cmdletprovider. ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) biedt een extra controle op mogelijk schadelijke systeem wijzigingen.
 
-## <a name="attaching-dynamic-parameters-to-the-clear-content-cmdlet"></a>Dynamische para meters aan de cmdlet voor het wissen van inhoud koppelen
+## <a name="attaching-dynamic-parameters-to-the-clear-content-cmdlet"></a>Dynamische para meters aan de Clear-Content-cmdlet koppelen
 
 `Clear-Content`Voor de cmdlet zijn mogelijk extra dynamische para meters vereist die tijdens runtime worden toegevoegd. Als u deze dynamische para meters wilt opgeven, moet de Windows Power shell-inhouds provider de methode [System. Management. Automation. provider. Icontentcmdletprovider. Clearcontentdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContentDynamicParameters) implementeren om deze para meters af te handelen. Met deze methode worden de para meters voor het item op het aangegeven pad opgehaald. Met deze methode worden dynamische para meters voor het item op het aangegeven pad opgehaald en wordt een object geretourneerd dat eigenschappen en velden bevat met het parseren van kenmerken die vergelijkbaar zijn met een cmdlet-klasse of een [System. Management. Automation. Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) -object. De Windows Power shell-runtime maakt gebruik van het geretourneerde object om de para meters toe te voegen aan de cmdlet.
 

@@ -1,13 +1,14 @@
 ---
 ms.date: 07/14/2020
-keywords: DSC, Power shell, configuratie, installatie
+ms.topic: reference
 title: DisableDebugConfiguration-methode
-ms.openlocfilehash: 52d55ff6b1fd126482bbaa9480efc131ab2f100c
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DisableDebugConfiguration-methode
+ms.openlocfilehash: 6894f86d9626ca03f93477477f573f45a5de4c49
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86463751"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92648990"
 ---
 # <a name="disabledebugconfiguration-method"></a>DisableDebugConfiguration-methode
 
@@ -35,7 +36,7 @@ Dit is een statische methode.
 
 **MOF:** DscCore. MOF
 
-**Naam ruimte**: Root\Microsoft\Windows\DesiredStateConfiguration
+**Naam ruimte** : Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Zie ook
 

@@ -1,15 +1,14 @@
 ---
-title: Cmdlet-kenmerken | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- attributes [PowerShell SDK]
-- attributes [PowerShell SDK], described
-ms.openlocfilehash: f22c2882fbe5b2f51ca5ea218b921192b0a7d41f
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Cmdlet-kenmerken
+description: Cmdlet-kenmerken
+ms.openlocfilehash: 6a106f33cb34c6c33b88a981815543bc9af4e4ba
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784517"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92653513"
 ---
 # <a name="cmdlet-attributes"></a>Cmdlet-kenmerken
 

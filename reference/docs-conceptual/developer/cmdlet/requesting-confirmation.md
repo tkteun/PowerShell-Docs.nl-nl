@@ -1,12 +1,14 @@
 ---
-title: Bevestiging aanvragen | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 42ab001e3e8894f2ca17332634214af108fc5918
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Bevestiging vragen
+description: Bevestiging vragen
+ms.openlocfilehash: fd7b9eb9f697e15577d1836b8d8b689f231d33a1
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87781780"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92648483"
 ---
 # <a name="requesting-confirmation"></a>Bevestiging vragen
 

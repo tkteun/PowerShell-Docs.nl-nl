@@ -1,19 +1,21 @@
 ---
-title: Ondersteuning voor jokertekens in de cmdlet-parameters
 ms.date: 08/26/2019
-ms.openlocfilehash: 062e3d50dddd0bc84e57f5254a93289acbabe38b
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Ondersteuning voor jokertekens in de cmdlet-parameters
+description: Ondersteuning voor jokertekens in de cmdlet-parameters
+ms.openlocfilehash: 06693c62cd2613050bdeb9d6b12ad6e9597a9894
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786404"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92646387"
 ---
 # <a name="supporting-wildcard-characters-in-cmdlet-parameters"></a>Ondersteuning voor jokertekens in de cmdlet-parameters
 
 Vaak moet u een cmdlet ontwerpen om uit te voeren op basis van een groep resources en niet op basis van één resource. Een cmdlet kan bijvoorbeeld alle bestanden in een gegevens archief met dezelfde naam of extensie moeten zoeken. U moet ondersteuning bieden voor joker tekens wanneer u een cmdlet ontwerpt die wordt uitgevoerd voor een groep resources.
 
 > [!NOTE]
-> Het gebruik van joker tekens wordt soms ook wel *globbing*genoemd.
+> Het gebruik van joker tekens wordt soms ook wel *globbing* genoemd.
 
 ## <a name="windows-powershell-cmdlets-that-use-wildcards"></a>Windows Power shell-cmdlets die gebruikmaken van joker tekens
 

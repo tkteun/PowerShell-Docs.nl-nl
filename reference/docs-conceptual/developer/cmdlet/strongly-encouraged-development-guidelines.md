@@ -1,18 +1,20 @@
 ---
-title: Sterk aangeraden ontwikkel richtlijnen | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 02488fea557b42ed30ea5cfde177b3efe0b3f559
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Zeer aangeraden richtlijnen voor de ontwikkeling
+description: Zeer aangeraden richtlijnen voor de ontwikkeling
+ms.openlocfilehash: 786ce66ed6289e91b532b0c31ed797afad4574b3
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787815"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92646442"
 ---
 # <a name="strongly-encouraged-development-guidelines"></a>Zeer aangeraden richtlijnen voor de ontwikkeling
 
 In deze sectie worden richt lijnen beschreven die u moet volgen wanneer u uw cmdlets schrijft. Ze zijn onderverdeeld in richt lijnen voor het ontwerpen van cmdlets en richt lijnen voor het schrijven van uw cmdlet-code. Het kan voor komen dat deze richt lijnen niet van toepassing zijn op elk scenario. Als ze echter wel van toepassing zijn en u deze richt lijnen niet volgt, hebben uw gebruikers mogelijk een slechte ervaring wanneer ze uw cmdlets gebruiken.
 
-## <a name="design-guidelines"></a>Ontwerp richtlijnen
+## <a name="design-guidelines"></a>Ontwerprichtlijnen
 
 - [Een specifiek zelfstandig naam woord gebruiken voor een Cmdletnaam (SD01)](./strongly-encouraged-development-guidelines.md#use-a-specific-noun-for-a-cmdlet-name-sd01)
 
@@ -32,9 +34,9 @@ In deze sectie worden richt lijnen beschreven die u moet volgen wanneer u uw cmd
 
 - [Eén record naar de pijp lijn schrijven (SC03)](./strongly-encouraged-development-guidelines.md#write-single-records-to-the-pipeline-sc03)
 
-- [Cmdlets hoofdletter gevoelig maken en case-behoud (SC04)](./strongly-encouraged-development-guidelines.md#make-cmdlets-case-insensitive-and-case-preserving-sc04)
+- [Cmdlets Case-Insensitive en Case-Preserving maken (SC04)](./strongly-encouraged-development-guidelines.md#make-cmdlets-case-insensitive-and-case-preserving-sc04)
 
-## <a name="design-guidelines"></a>Ontwerp richtlijnen
+## <a name="design-guidelines"></a>Ontwerprichtlijnen
 
 De volgende richt lijnen moeten worden gevolgd bij het ontwerpen van cmdlets om een consistente gebruikers ervaring te garanderen tussen het gebruik van uw cmdlets en andere cmdlets. Als u een ontwerp richtlijn vindt die van toepassing is op uw situatie, raadpleegt u de code richtlijnen voor vergelijk bare richt lijnen.
 
@@ -42,7 +44,7 @@ De volgende richt lijnen moeten worden gevolgd bij het ontwerpen van cmdlets om 
 
 Zelfstandige naam woorden die worden gebruikt voor de naamgeving van de cmdlet moeten zeer specifiek zijn, zodat de gebruiker uw cmdlets kan detecteren. Voor voegsel van algemene zelfstandige naam woorden, zoals ' server ', met een kortere versie van de product naam. Als een zelfstandig naam woord bijvoorbeeld verwijst naar een server waarop een exemplaar van Microsoft SQL Server, gebruikt u een zelfstandignaam zoals ' SQLServer '. De combi natie van specifieke samen stellingen en de korte lijst met goedgekeurde werk woorden stelt de gebruiker in staat om snel te ontdekken en te anticiperen op functionaliteit, terwijl dubbele namen van cmdlets worden vermeden.
 
-Als u de gebruikers ervaring wilt verbeteren, moet u een zelfstandig naam woord opgeven voor een cmdletnaam. Gebruik bijvoorbeeld de naam `Get-Process` in plaats van **Get-processen**. U kunt deze regel het beste voor alle namen van cmdlets volgen, zelfs wanneer een cmdlet waarschijnlijk op meer dan één item reageert.
+Als u de gebruikers ervaring wilt verbeteren, moet u een zelfstandig naam woord opgeven voor een cmdletnaam. Gebruik bijvoorbeeld de naam `Get-Process` in plaats van **Get-processen** . U kunt deze regel het beste voor alle namen van cmdlets volgen, zelfs wanneer een cmdlet waarschijnlijk op meer dan één item reageert.
 
 ### <a name="use-pascal-case-for-cmdlet-names-sd02"></a>Pascal-cases gebruiken voor cmdlet-namen (SD02)
 
@@ -84,7 +86,7 @@ Er zijn twee manieren om een para meter te maken waarvan de waarde kan worden ge
 
 Gebruik voor de consistentie met andere cmdlets standaard typen voor para meters die ooit mogelijk zijn. Zie voor meer informatie over de typen die moeten worden gebruikt voor de verschillende para meters [standaard-cmdlet-parameter namen en-typen](./standard-cmdlet-parameter-names-and-types.md). In dit onderwerp vindt u koppelingen naar verschillende onderwerpen waarin de namen en .NET Framework typen worden beschreven voor groepen van standaard parameters, zoals de ' activiteit parameters '.
 
-#### <a name="use-strongly-typed-net-framework-types"></a>Sterk getypeerde .NET Framework typen gebruiken
+#### <a name="use-strongly-typed-net-framework-types"></a>Strongly-Typed .NET Framework typen gebruiken
 
 Para meters moeten worden gedefinieerd als .NET Framework typen voor een betere validatie van de para meters. Para meters die zijn beperkt tot één waarde uit een set waarden, moeten bijvoorbeeld worden gedefinieerd als een opsommings type. Als u een URI-waarde (Uniform Resource Identifier) wilt ondersteunen, definieert u de para meter als een [System. URI](/dotnet/api/System.Uri) -type. Vermijd Basic string-para meters voor alle eigenschappen van een vrije-vorm tekst.
 
@@ -197,7 +199,7 @@ Standaard leden definiëren voor het uitbreiden van een object type in een aange
 
 Als u een-object ontwerpt voor een cmdlet, moet u ervoor zorgen dat de leden rechtstreeks zijn gekoppeld aan de para meters van de cmdlets die deze gaan gebruiken. Met deze toewijzing kan het object eenvoudig naar de pijp lijn worden verzonden en worden door gegeven van de ene cmdlet naar de andere.
 
-Bestaande .NET Framework objecten die worden geretourneerd door cmdlets, missen vaak enkele belang rijke of handige leden die nodig zijn voor de script ontwikkelaar of gebruiker. Deze ontbrekende leden kunnen met name belang rijk zijn voor weer gave en voor het maken van de juiste lidnamen, zodat het object correct kan worden door gegeven aan de pijp lijn. Maak een aangepast Types.ps1XML-bestand om deze vereiste leden te documenteren. Wanneer u dit bestand maakt, raden we u aan de volgende naam Conventie toe te voegen: *<Your_Product_Name>*.Types.ps1XML.
+Bestaande .NET Framework objecten die worden geretourneerd door cmdlets, missen vaak enkele belang rijke of handige leden die nodig zijn voor de script ontwikkelaar of gebruiker. Deze ontbrekende leden kunnen met name belang rijk zijn voor weer gave en voor het maken van de juiste lidnamen, zodat het object correct kan worden door gegeven aan de pijp lijn. Maak een aangepast Types.ps1XML-bestand om deze vereiste leden te documenteren. Wanneer u dit bestand maakt, raden we u aan de volgende naam Conventie toe te voegen: *<Your_Product_Name>* .Types.ps1XML.
 
 U kunt bijvoorbeeld een `Mode` script eigenschap toevoegen aan het type [System. io. file info](/dotnet/api/System.IO.FileInfo) om de kenmerken van een bestand duidelijker weer te geven. Daarnaast kunt u een `Count` alias eigenschap toevoegen aan het type [System. array](/dotnet/api/System.Array) om het consistente gebruik van die eigenschaps naam (in plaats van) toe te staan `Length` .
 
@@ -207,7 +209,7 @@ Implementeer een [System. IComparable](/dotnet/api/System.IComparable) -interfac
 
 ##### <a name="update-display-information"></a>Weer gave-informatie bijwerken
 
-Als de weer gave voor een object niet de verwachte resultaten geeft, maakt u een aangepast *\<YourProductName>*.Format.ps1XML-bestand voor dat object.
+Als de weer gave voor een object niet de verwachte resultaten geeft, maakt u een aangepast *\<YourProductName>* .Format.ps1XML-bestand voor dat object.
 
 ### <a name="support-well-defined-pipeline-input-sc02"></a>Ondersteuning van goed gedefinieerde pijplijn invoer (SC02)
 
@@ -229,7 +231,7 @@ Voor het accepteren van alle records uit de voor gaande cmdlet in de pijp lijn m
 
 Wanneer een cmdlet objecten retourneert, moet de cmdlet de objecten onmiddellijk schrijven wanneer ze worden gegenereerd. De cmdlet mag niet worden ingecheckt om deze te bufferen in een gecombineerde matrix. De cmdlets die de objecten als invoer ontvangen, kunnen vervolgens de uitvoer objecten zonder vertraging verwerken, weer geven of verwerken en weer geven. Een cmdlet waarmee uitvoer objecten per keer worden gegenereerd moet de methode [System. Management. Automation. cmdlet. WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) aanroepen. Een cmdlet waarmee uitvoer objecten worden gegenereerd in batches (bijvoorbeeld omdat een onderliggende API een matrix van uitvoer objecten retourneert) moet de methode [System. Management. Automation. cmdlet. WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) aanroepen met de tweede para meter ingesteld op `true` .
 
-### <a name="make-cmdlets-case-insensitive-and-case-preserving-sc04"></a>Cmdlets hoofdletter gevoelig maken en case-behoud (SC04)
+### <a name="make-cmdlets-case-insensitive-and-case-preserving-sc04"></a>Cmdlets Case-Insensitive en Case-Preserving maken (SC04)
 
 Windows Power shell is standaard niet hoofdletter gevoelig. Omdat de IT-omgeving echter veel bestaande systemen behandelt, houdt Windows Power shell cases bij om de werking en compatibiliteit te vereenvoudigen. Met andere woorden, als een teken in hoofd letters wordt opgegeven, wordt het in Windows Power shell in hoofd letters bewaard. Voor een goede werking van systemen moet een cmdlet deze Conventie volgen. Als dat mogelijk is, moet deze op een niet-hoofdletter gevoelige manier worden uitgevoerd. De oorspronkelijke Case voor cmdlets die later in een opdracht of in de pijp lijn worden uitgevoerd, blijft echter behouden.
 

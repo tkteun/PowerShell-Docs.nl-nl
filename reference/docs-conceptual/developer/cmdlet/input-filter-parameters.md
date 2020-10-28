@@ -1,12 +1,14 @@
 ---
-title: Invoer filter parameters | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: ccaf6c4859d2a4f14866ec1252b999e90e1a830f
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Filterparameters voor invoer
+description: Filterparameters voor invoer
+ms.openlocfilehash: 419ffea2afb4aa534a3e19ecdfce6d6af1da46a6
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784041"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92648529"
 ---
 # <a name="input-filter-parameters"></a>Filterparameters voor invoer
 

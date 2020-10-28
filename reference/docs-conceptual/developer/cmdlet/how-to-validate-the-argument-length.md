@@ -1,14 +1,14 @@
 ---
-title: De lengte van het argument valideren | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- ValidateLength attribute, example
-ms.openlocfilehash: aa0545def6d9628f6b41090a425f0c5af25f6ad7
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Een argumentlengte valideren
+description: Een argumentlengte valideren
+ms.openlocfilehash: 460aedbe6847033f976cb7bf70b6c77ac5a3a3c9
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784075"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92652628"
 ---
 # <a name="how-to-validate-the-argument-length"></a>Een argumentlengte valideren
 

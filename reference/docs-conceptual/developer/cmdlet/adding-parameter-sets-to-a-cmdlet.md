@@ -1,14 +1,14 @@
 ---
-title: Parameter sets toevoegen aan een cmdlet | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- parameter sets [PowerShell Programmer's Guide]
-ms.openlocfilehash: b1e808694b02676d81101a2678cbea341c7bd52c
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Parametersets toevoegen aan een cmdlet
+description: Parametersets toevoegen aan een cmdlet
+ms.openlocfilehash: dd5ee2a880a4d516ea82e5afe0ced12369197243
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87774980"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92648644"
 ---
 # <a name="adding-parameter-sets-to-a-cmdlet"></a>Parametersets toevoegen aan een cmdlet
 
@@ -20,7 +20,7 @@ Een voor beeld van een cmdlet die gebruikmaakt van twee parameters sets om versc
 
 Twee belang rijke zaken die u moet onthouden over parameter sets is dat de Windows Power shell-runtime slechts één para meterset voor een bepaalde invoer gebruikt en dat elke parameterset ten minste één para meter moet hebben die uniek is voor de ingestelde para meter.
 
-Ter illustratie van dat laatste punt gebruikt deze stop-proc-cmdlet drie parameter sets: `ProcessName` , `ProcessId` en `InputObject` . Elk van deze parameter sets heeft één para meter die zich niet in de andere parameter sets bevindt. De parameters sets kunnen andere para meters delen, maar de cmdlet gebruikt de unieke para meters, `ProcessName` `ProcessId` en `InputObject` om te identificeren welke set para meters de Windows Power shell-runtime moet gebruiken.
+Om dat laatste punt te illustreren, gebruikt deze Stop-Proc cmdlet drie parameter sets: `ProcessName` , `ProcessId` en `InputObject` . Elk van deze parameter sets heeft één para meter die zich niet in de andere parameter sets bevindt. De parameters sets kunnen andere para meters delen, maar de cmdlet gebruikt de unieke para meters, `ProcessName` `ProcessId` en `InputObject` om te identificeren welke set para meters de Windows Power shell-runtime moet gebruiken.
 
 ## <a name="declaring-the-cmdlet-class"></a>De cmdlet-klasse declareren
 
@@ -29,7 +29,7 @@ De eerste stap bij het maken van de cmdlet is altijd de naam van de cmdlet en he
 > [!NOTE]
 > Zie voor meer informatie over de namen van goedgekeurde cmdlet- [verbs](./approved-verbs-for-windows-powershell-commands.md).
 
-De volgende code is de klassedefinitie voor deze stop-proc-cmdlet.
+De volgende code is de klassen definitie voor deze Stop-Proc-cmdlet.
 
 ```csharp
 [Cmdlet(VerbsLifecycle.Stop, "Proc",
@@ -220,7 +220,7 @@ Nadat u een cmdlet hebt geïmplementeerd, moet u deze met Windows Power shell re
 
 Als uw cmdlet is geregistreerd bij Windows Power shell, kunt u deze testen door deze uit te voeren op de opdracht regel. Hier volgen enkele tests die laten zien hoe de `ProcessId` en- `InputObject` para meters kunnen worden gebruikt om de parameter sets te testen om een proces te stoppen.
 
-- Als Windows Power shell is gestart, voert u de cmdlet stop-proc uit met de `ProcessId` para meter ingesteld op het stoppen van een proces op basis van de id. In dit geval gebruikt de cmdlet de `ProcessId` para meter die is ingesteld om het proces te stoppen.
+- Als Windows Power shell is gestart, voert u de Stop-Proc cmdlet uit met de `ProcessId` para meter ingesteld op het stoppen van een proces op basis van de id. In dit geval gebruikt de cmdlet de `ProcessId` para meter die is ingesteld om het proces te stoppen.
 
   ```
   PS> stop-proc -Id 444
@@ -230,7 +230,7 @@ Als uw cmdlet is geregistreerd bij Windows Power shell, kunt u deze testen door 
   [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): Y
   ```
 
-- Als Windows Power shell is gestart, voert u de cmdlet stop-proc uit met de `InputObject` para meter ingesteld op het stoppen van processen voor het Notepad-object dat is opgehaald met de `Get-Process` opdracht.
+- Als Windows Power shell is gestart, voert u de Stop-Proc cmdlet uit met de `InputObject` para meter ingesteld op het stoppen van processen voor het Notepad-object dat is opgehaald met de `Get-Process` opdracht.
 
   ```
   PS> get-process notepad | stop-proc

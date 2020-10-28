@@ -1,12 +1,14 @@
 ---
-title: SelectStr-zelfstudie
 ms.date: 09/13/2016
-ms.openlocfilehash: 500cf055afe1ccc04f6a4a28f92abb80886dfa43
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: SelectStr-zelfstudie
+description: SelectStr-zelfstudie
+ms.openlocfilehash: 06c74dfceeb93d75c139d2782c1e40bcaf986992
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786489"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92652565"
 ---
 # <a name="selectstr-tutorial"></a>SelectStr-zelfstudie
 

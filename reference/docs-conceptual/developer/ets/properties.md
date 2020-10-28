@@ -1,12 +1,14 @@
 ---
-title: Uitgebreide-type systeem eigenschappen
 ms.date: 07/09/2020
-ms.openlocfilehash: c0a994e5b946117dcc1a2d647d07ae62af883861
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Uitgebreide-type systeem eigenschappen
+description: Uitgebreide-type systeem eigenschappen
+ms.openlocfilehash: cccd3c400a8822ee25c44e8e1625e35571420259
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786200"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92646135"
 ---
 # <a name="ets-properties"></a>ETS-eigenschappen
 
@@ -45,7 +47,7 @@ Een eigenschap Note is een eigenschap die een naam/waarde-koppeling heeft. Met b
 - Eigenschap **IsSettable** : geeft aan of de waarde van de eigenschap Note kan worden ingesteld.
 - Eigenschap **member type** : een **NoteProperty** -opsommings constante die deze eigenschap definieert als een notitie-eigenschap.
 - Eigenschap **TypeNameOfValue** : de volledig gekwalificeerde type naam van het object dat door de Get-bewerking van de eigenschap Note wordt geretourneerd.
-- **Waarde**: de waarde van de eigenschap Note.
+- **Waarde** : de waarde van de eigenschap Note.
 
 ## <a name="powershell-property"></a>Power shell-eigenschap
 
@@ -54,7 +56,7 @@ Een Power shell-eigenschap is een eigenschap die is gedefinieerd in het basis ob
 - Eigenschap **IsGettable** : geeft aan of de waarde van de eigenschap base of aangepast kan worden opgehaald.
 - Eigenschap **IsSettable** : geeft aan of de waarde van de eigenschap base of aangepast kan worden ingesteld.
 - Eigenschap **member type** : een opsommings constante voor eigenschappen die deze eigenschap definieert als een Power shell-eigenschap.
-- Eigenschap **TypeNameOfValue** : de volledig gekwalificeerde naam van het type eigenschaps waarde. Bijvoorbeeld, voor een eigenschap waarvan de waarde een teken reeks is, is het type eigenschaps waarde **System. String**.
+- Eigenschap **TypeNameOfValue** : de volledig gekwalificeerde naam van het type eigenschaps waarde. Bijvoorbeeld, voor een eigenschap waarvan de waarde een teken reeks is, is het type eigenschaps waarde **System. String** .
 - Eigenschap **waarde** : de waarde van de eigenschap. Als de Get-of set-bewerking wordt aangeroepen voor een eigenschap die deze bewerking niet ondersteunt, wordt een **GetValueException** -of **SetValueException** -uitzonde ring gegenereerd
 
 ## <a name="powershell-script-property"></a>Power shell-script eigenschap

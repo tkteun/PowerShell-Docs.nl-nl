@@ -2,19 +2,20 @@
 ms.date: 12/12/2018
 keywords: DSC, Power shell, configuratie, installatie
 title: Een pull-client instellen met configuratie-Id's in Power Shell 4,0
-ms.openlocfilehash: 9259c624c8725f7d76f61e9ad7caa42e1bfa308c
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: In dit artikel wordt uitgelegd hoe u een pull-client instelt met behulp van configuratie-Id's in Power Shell 4,0
+ms.openlocfilehash: 2a3d7b79f29030620cddc2b2131cb4432e41e4eb
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71942781"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92649003"
 ---
 # <a name="set-up-a-pull-client-using-configuration-ids-in-powershell-40"></a>Een pull-client instellen met configuratie-Id's in Power Shell 4,0
 
 >Van toepassing op: Windows Power Shell 4,0, Windows Power shell 5,0
 
 > [!IMPORTANT]
-> De pull-server (Windows *-functie DSC-service*) is een ondersteund onderdeel van Windows Server, maar er zijn geen plannen om nieuwe functies of mogelijkheden aan te bieden. Het wordt aangeraden om te beginnen met het overschakelen van beheerde clients naar [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (inclusief functies die verder gaan dan pull server op Windows Server) of een van de [hieronder vermelde Community](pullserver.md#community-solutions-for-pull-service)-oplossingen.
+> De pull-server (Windows *-functie DSC-service* ) is een ondersteund onderdeel van Windows Server, maar er zijn geen plannen om nieuwe functies of mogelijkheden aan te bieden. Het wordt aangeraden om te beginnen met het overschakelen van beheerde clients naar [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (inclusief functies die verder gaan dan pull server op Windows Server) of een van de [hieronder vermelde Community](pullserver.md#community-solutions-for-pull-service)-oplossingen.
 
 Voordat u een pull-client instelt, moet u een pull-server instellen. Deze volg orde is niet vereist, maar helpt bij het oplossen van problemen en helpt u ervoor te zorgen dat de registratie is geslaagd. U kunt de volgende hand leidingen gebruiken om een pull-server in te stellen:
 
@@ -25,7 +26,7 @@ Elk doel knooppunt kan worden geconfigureerd voor het downloaden van configurati
 
 ## <a name="configure-the-pull-client-lcm"></a>De pull-client LCM configureren
 
-Als u een van de onderstaande voor beelden uitvoert, maakt u een nieuwe uitvoermap met de naam **PullClientConfigID** en plaatst u daar een MOF-bestand met de meta configuratie. In dit geval wordt het MOF-bestand van de meta configuratie `localhost.meta.mof`aangeduid met de naam.
+Als u een van de onderstaande voor beelden uitvoert, maakt u een nieuwe uitvoermap met de naam **PullClientConfigID** en plaatst u daar een MOF-bestand met de meta configuratie. In dit geval wordt het MOF-bestand van de meta configuratie aangeduid met de naam `localhost.meta.mof` .
 
 Als u de configuratie wilt Toep assen, roept u de cmdlet **set-DscLocalConfigurationManager** aan, waarbij het **pad** is ingesteld op de locatie van het MOF-bestand met de meta configuratie. Bijvoorbeeld:
 
@@ -33,9 +34,9 @@ Als u de configuratie wilt Toep assen, roept u de cmdlet **set-DscLocalConfigura
 Set-DSCLocalConfigurationManager –ComputerName localhost –Path .\PullClientConfigId –Verbose.
 ```
 
-## <a name="configuration-id"></a>Configuratie-ID
+## <a name="configuration-id"></a>Configuratie-id
 
-In de onderstaande voor beelden wordt de eigenschap **ConfigurationID** van de LCM ingesteld op een **GUID** die eerder is gemaakt voor dit doel. De **ConfigurationID** is wat de LCM gebruikt om de juiste configuratie op de pull-server te vinden. Het MOF-configuratie bestand op de pull-server moet `ConfigurationID.mof`een naam hebben, waarbij *ConfigurationID* de waarde is van de eigenschap **ConfigurationID** van de LCM van het doel knooppunt. Zie [configuraties publiceren naar een pull-server (v4/V5)](publishConfigs.md)voor meer informatie.
+In de onderstaande voor beelden wordt de eigenschap **ConfigurationID** van de LCM ingesteld op een **GUID** die eerder is gemaakt voor dit doel. De **ConfigurationID** is wat de LCM gebruikt om de juiste configuratie op de pull-server te vinden. Het MOF-configuratie bestand op de pull-server moet een naam `ConfigurationID.mof` hebben, waarbij *ConfigurationID* de waarde is van de eigenschap **ConfigurationID** van de LCM van het doel knooppunt. Zie [configuraties publiceren naar een pull-server (v4/V5)](publishConfigs.md)voor meer informatie.
 
 U kunt een wille keurige **GUID** maken met behulp van het onderstaande voor beeld.
 
@@ -49,7 +50,7 @@ Elke client moet worden geconfigureerd in de **pull** -modus en krijgt de URL va
 
 ## <a name="http-dsc-pull-server"></a>HTTP DSC-pull-server
 
-Als de pull-server is ingesteld als een webservice, stelt u de **DownloadManagerName** in op **WebDownloadManager**. De **WebDownloadManager** vereist dat u een **ServerUrl** opgeeft bij de **DownloadManagerCustomData** -sleutel. U kunt ook een waarde opgeven voor **AllowUnsecureConnection**, zoals in het onderstaande voor beeld. Met het volgende script wordt de LCM geconfigureerd voor het ophalen van configuraties van een server met de naam ' PullServer '.
+Als de pull-server is ingesteld als een webservice, stelt u de **DownloadManagerName** in op **WebDownloadManager** . De **WebDownloadManager** vereist dat u een **ServerUrl** opgeeft bij de **DownloadManagerCustomData** -sleutel. U kunt ook een waarde opgeven voor **AllowUnsecureConnection** , zoals in het onderstaande voor beeld. Met het volgende script wordt de LCM geconfigureerd voor het ophalen van configuraties van een server met de naam ' PullServer '.
 
 ```powershell
 Configuration PullClientConfigId
@@ -71,7 +72,7 @@ PullClientConfigId -Output "."
 
 ## <a name="smb-share"></a>SMB-share
 
-Als de pull-server is ingesteld als een SMB-bestands share in plaats van een webservice, stelt u de **DownloadManagerName** in op **DscFileDownloadManager** in plaats van de **WebDownLoadManager**. De **DscFileDownloadManager** vereist dat u een eigenschap **SourcePath** opgeeft in de **DownloadManagerCustomData**. Met het volgende script wordt de LCM geconfigureerd voor het ophalen van configuraties van een SMB-share met de naam ' SmbDscShare ' op een server met de naam ' CONTOSO-SERVER '.
+Als de pull-server is ingesteld als een SMB-bestands share in plaats van een webservice, stelt u de **DownloadManagerName** in op **DscFileDownloadManager** in plaats van de **WebDownLoadManager** . De **DscFileDownloadManager** vereist dat u een eigenschap **SourcePath** opgeeft in de **DownloadManagerCustomData** . Met het volgende script wordt de LCM geconfigureerd voor het ophalen van configuraties van een SMB-share met de naam ' SmbDscShare ' op een server met de naam ' CONTOSO-SERVER '.
 
 ```powershell
 Configuration PullClientConfigId

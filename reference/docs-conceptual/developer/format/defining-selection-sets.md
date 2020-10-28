@@ -1,12 +1,14 @@
 ---
-title: Selectie sets definiëren | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 58c812b69f92c33304bf7fc7b2891cc2a0227918
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Selectiereeksen definiëren
+description: Selectiereeksen definiëren
+ms.openlocfilehash: d709a368a45623d56fdbf4e98a11a5e5f8a193fa
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87774300"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92648256"
 ---
 # <a name="defining-selection-sets"></a>Selectiereeksen definiëren
 

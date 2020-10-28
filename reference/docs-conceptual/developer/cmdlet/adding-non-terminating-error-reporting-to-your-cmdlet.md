@@ -1,12 +1,14 @@
 ---
-title: Niet-beëindigde fout rapportage toevoegen aan uw cmdlet | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 6421d510f3701c12807568ad8786459123e80223
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Rapportage aan uw cmdlet toevoegen voor fouten die niet leiden tot de beëindiging van een functie of bewerking
+description: Rapportage aan uw cmdlet toevoegen voor fouten die niet leiden tot de beëindiging van een functie of bewerking
+ms.openlocfilehash: 883ff2d522266495e409fb0d45f29713baa6f047
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784585"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92648674"
 ---
 # <a name="adding-non-terminating-error-reporting-to-your-cmdlet"></a>Rapportage aan uw cmdlet toevoegen voor fouten die niet leiden tot de beëindiging van een functie of bewerking
 
@@ -35,9 +37,9 @@ Public Class GetProcCommand
 
 ## <a name="defining-parameters"></a>Para meters definiëren
 
-Als dat nodig is, moet uw cmdlet para meters definiëren voor het verwerken van invoer. Deze Get-proc-cmdlet definieert een **naam** parameter zoals beschreven in [para meters toevoegen die opdracht regel invoer verwerken](adding-parameters-that-process-command-line-input.md).
+Als dat nodig is, moet uw cmdlet para meters definiëren voor het verwerken van invoer. Deze Get-Proc-cmdlet definieert een **naam** parameter zoals beschreven in [para meters toevoegen die Command-Line invoer verwerken](adding-parameters-that-process-command-line-input.md).
 
-Hier volgt de parameter declaratie voor de para meter **name** van deze Get-proc-cmdlet.
+Hier volgt de parameter declaratie voor de para meter **name** van deze Get-Proc-cmdlet.
 
 ```csharp
 [Parameter(
@@ -76,7 +78,7 @@ Alle cmdlets moeten ten minste één van de invoer verwerkings methoden van de k
 > [!NOTE]
 > De cmdlet moet elke record zo onafhankelijk mogelijk verwerken.
 
-Deze Get-proc-cmdlet onderdrukt de methode [System. Management. Automation. cmdlet. ProcessRecord][] om de para meter **name** te verwerken voor de invoer van de gebruiker of een script. Met deze methode worden de processen voor elke aangevraagde proces naam of alle processen opgehaald als er geen naam is opgegeven. Details van deze onderdrukking zijn gegeven bij [het maken van uw eerste cmdlet](creating-a-cmdlet-without-parameters.md).
+Deze Get-Proc-cmdlet overschrijft de methode [System. Management. Automation. cmdlet. ProcessRecord][] om de para meter **name** te verwerken voor de invoer van de gebruiker of een script. Met deze methode worden de processen voor elke aangevraagde proces naam of alle processen opgehaald als er geen naam is opgegeven. Details van deze onderdrukking zijn gegeven bij [het maken van uw eerste cmdlet](creating-a-cmdlet-without-parameters.md).
 
 ### <a name="things-to-remember-when-reporting-errors"></a>Dingen die u moet onthouden bij het rapporteren van fouten
 
@@ -110,7 +112,7 @@ Niet-verwerkte uitzonde ringen worden niet in de volgende omstandigheden door Po
 
 Een van de invoer verwerkings methoden kan een niet-afsluit fout melden aan de uitvoer stroom met behulp van de methode [System. Management. Automation. cmdlet. WriteError][] .
 
-Hier volgt een code voorbeeld van deze Get-proc-cmdlet die de aanroep van [System. Management. Automation. cmdlet. WriteError][] in de onderdrukking van de methode [System. Management. Automation. cmdlet. ProcessRecord][] illustreert. In dit geval wordt de aanroep gedaan als de cmdlet geen proces voor een opgegeven proces-id kan vinden.
+Hier volgt een code voorbeeld van deze Get-Proc-cmdlet die de aanroep van [System. Management. Automation. cmdlet. WriteError][] in de onderdrukking van de methode [System. Management. Automation. cmdlet. ProcessRecord][] illustreert. In dit geval wordt de aanroep gedaan als de cmdlet geen proces voor een opgegeven proces-id kan vinden.
 
 ```csharp
 protected override void ProcessRecord()
@@ -172,9 +174,9 @@ Nadat u een cmdlet hebt geïmplementeerd, moet u deze met Windows Power shell re
 
 ## <a name="testing-the-cmdlet"></a>De cmdlet testen
 
-Als uw cmdlet is geregistreerd bij Power shell, kunt u deze testen door deze uit te voeren op de opdracht regel. We gaan de voor beeld van de cmdlet Get-proc testen om te zien of er een fout melding wordt weer gegeven:
+Als uw cmdlet is geregistreerd bij Power shell, kunt u deze testen door deze uit te voeren op de opdracht regel. We gaan de voor beeld-Get-Proc-cmdlet testen om te zien of er een fout melding wordt weer gegeven:
 
-- Start Power shell en gebruik de cmdlet Get-proc om de processen met de naam TEST op te halen.
+- Start Power shell en gebruik de cmdlet Get-Proc om de processen met de naam TEST op te halen.
 
   ```powershell
   get-proc -name test
@@ -192,7 +194,7 @@ Als uw cmdlet is geregistreerd bij Power shell, kunt u deze testen door deze uit
 
 [Parameters toevoegen die pijplijninvoer verwerken](./adding-parameters-that-process-pipeline-input.md)
 
-[Para meters toevoegen die opdracht regel invoer verwerken](./adding-parameters-that-process-command-line-input.md)
+[Para meters toevoegen die Command-Line invoer verwerken](./adding-parameters-that-process-command-line-input.md)
 
 [Uw eerste cmdlet maken](./creating-a-cmdlet-without-parameters.md)
 

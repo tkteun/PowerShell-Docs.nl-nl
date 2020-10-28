@@ -1,18 +1,20 @@
 ---
-title: Help op basis van opmerkingen in scripts plaatsen
 ms.date: 09/12/2016
-ms.openlocfilehash: a3ade6c3138826b924939056b9d1ffb233006d44
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: Help op basis van opmerkingen in scripts plaatsen
+description: Help op basis van opmerkingen in scripts plaatsen
+ms.openlocfilehash: b0d32b7ab063269085899a643b0c3a17da2073fc
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86893183"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92645437"
 ---
 # <a name="placing-comment-based-help-in-scripts"></a>Help op basis van opmerkingen in scripts plaatsen
 
 In dit onderwerp wordt uitgelegd waar u op opmerkingen gebaseerde hulp voor een script kunt plaatsen zodat de `Get-Help` cmdlet het Help-onderwerp op basis van opmerkingen koppelt aan scripts en niet met functies die mogelijk in het script zijn.
 
-## <a name="where-to-place-comment-based-help-for-a-script"></a>Waar kunt u op opmerkingen gebaseerde hulp voor een script plaatsen
+## <a name="where-to-place-comment-based-help-for-a-script"></a>Waar kunt u Comment-Based Help voor een script plaatsen
 
 - Aan het begin van het script bestand.
 

@@ -1,12 +1,14 @@
 ---
-title: Ondersteunende online help
 ms.date: 09/13/2016
-ms.openlocfilehash: b2d8eae2137e0e564a9baf271962b8669dd5eac5
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: Ondersteunende online help
+description: Ondersteunende online help
+ms.openlocfilehash: 0164b5e6c6c8d66a6ab2467a8adfb7efffe0fe17
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86892860"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92645420"
 ---
 # <a name="supporting-online-help"></a>Ondersteunende online help
 
@@ -18,7 +20,7 @@ Online-Help is altijd een essentieel onderdeel van Power shell. Hoewel `Get-Help
 
 Met de komst van bij te werken Help in Power Shell 3,0 speelt online Help nog steeds een belang rijke rol af. Naast de flexibele gebruikers ervaring biedt de online Help hulp bij gebruikers die geen Bewerk bare Help kunnen gebruiken om Help-onderwerpen te downloaden.
 
-## <a name="how-get-help--online-works"></a>Help-online werken
+## <a name="how-get-help--online-works"></a>Hoe Get-Help online werkt
 
 Om gebruikers te helpen de online-Help-onderwerpen voor-opdrachten te vinden, `Get-Help` heeft de opdracht een online-para meter waarmee de online versie van het Help-onderwerp voor een opdracht in de standaard browser van de gebruiker wordt geopend.
 

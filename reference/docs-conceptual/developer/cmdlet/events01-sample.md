@@ -1,12 +1,14 @@
 ---
-title: Events01-voor beeld | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: c7b0f759ca6f3c078649a462eac1713e8214a237
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Voorbeeld Events01
+description: Voorbeeld Events01
+ms.openlocfilehash: 1d9ef1f71fe38ca788cc50c02367701986ed87b2
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87774454"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92652963"
 ---
 # <a name="events01-sample"></a>Voorbeeld Events01
 
@@ -22,7 +24,7 @@ Dit voor beeld is afgeleid van de basis klasse [micro soft. Power shell. command
 2. Dubbel klik op het pictogram van het oplossings bestand (. SLN).
    Hiermee opent u het voorbeeld project in micro soft Visual Studio.
 
-3. Selecteer in het menu **Build** de optie **Build Solution**.
+3. Selecteer in het menu **Build** de optie **Build Solution** .
    De bibliotheek voor het voor beeld wordt opgebouwd in de standaard- `\bin` of- `\bin\debug` mappen.
 
 ### <a name="how-to-run-the-sample"></a>Het voorbeeld uitvoeren
@@ -41,7 +43,7 @@ Dit voor beeld is afgeleid van de basis klasse [micro soft. Power shell. command
     import-module events01
     ```
 
-5. Gebruik de cmdlet REGI ster-FileSystemEvent om een actie te registreren waarmee een bericht wordt geschreven wanneer een bestand wordt gemaakt in de map TEMP.
+5. Gebruik de cmdlet Register-FileSystemEvent om een actie te registreren waarmee een bericht wordt geschreven wanneer een bestand wordt gemaakt in de map TEMP.
 
     ```powershell
     Register-FileSystemEvent $env:temp Created -filter "*.txt" -action { Write-Host "A file was created in the TEMP directory" }

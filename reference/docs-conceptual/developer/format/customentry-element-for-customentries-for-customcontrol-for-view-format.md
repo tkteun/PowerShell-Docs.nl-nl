@@ -1,12 +1,14 @@
 ---
-title: CustomEntry-element voor CustomEntries voor CustomControl voor weer gave (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: a13e83ec941bed80eaab02e40131054432fcce00
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element CustomEntry voor CustomEntries voor CustomControl voor Weergave (opmaak)
+description: Het element CustomEntry voor CustomEntries voor CustomControl voor Weergave (opmaak)
+ms.openlocfilehash: ff481f13e6f16267bdda4c3053faebc96d9a6d3a
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785877"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92646055"
 ---
 # <a name="customentry-element-for-customentries-for-customcontrol-for-view-format"></a>Het element CustomEntry voor CustomEntries voor CustomControl voor Weergave (opmaak)
 

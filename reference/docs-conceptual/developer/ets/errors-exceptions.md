@@ -1,16 +1,18 @@
 ---
-title: Fouten en uitzonde ringen in het uitgebreide-type systeem
 ms.date: 07/09/2020
-ms.openlocfilehash: f60c53e33c031168eda53726e0d296bf91139fda
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Fouten en uitzonde ringen in het uitgebreide-type systeem
+description: Fouten en uitzonde ringen in het uitgebreide-type systeem
+ms.openlocfilehash: 295c16ad9abb67b0c4967bf32125bfc7ee0a35da
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786285"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92652475"
 ---
 # <a name="errors-and-exceptions-in-the-extended-type-system"></a>Fouten en uitzonde ringen in het uitgebreide-type systeem
 
-Er kunnen fouten optreden in ETS tijdens de initialisatie van type gegevens en bij het openen van een lid van een **PSObject** -object of het gebruik van een van de hulpprogramma klassen zoals **LanguagePrimitives**.
+Er kunnen fouten optreden in ETS tijdens de initialisatie van type gegevens en bij het openen van een lid van een **PSObject** -object of het gebruik van een van de hulpprogramma klassen zoals **LanguagePrimitives** .
 
 ## <a name="runtime-errors"></a>Runtime-fouten
 
@@ -31,7 +33,7 @@ Alle fouten die optreden bij het aanroepen van een ETS-methode veroorzaken een *
 
 ## <a name="casting-errors"></a>Fouten casten
 
-Wanneer een ongeldige cast wordt geprobeerd, wordt een **PSInvalidCastException** gegenereerd. Omdat deze uitzonde ring is afgeleid van **System. InvalidCastException**, kan deze niet rechtstreeks worden onderschept vanuit het script. Houd er rekening mee dat de entiteit die de cast probeert, **PSInvalidCastException** in een **PSRuntimeException** moet teruglopen zodat deze kan worden onderschept door scripts. Als er een poging wordt gedaan om de waarde van een **PSPropertySet**, **PSMemberSet**, **PSMethodInfo**of een lid van de **ReadOnlyPSMemberInfoCollection ' 1 '** in te stellen, wordt een **NotSupportedException** gegenereerd.
+Wanneer een ongeldige cast wordt geprobeerd, wordt een **PSInvalidCastException** gegenereerd. Omdat deze uitzonde ring is afgeleid van **System. InvalidCastException** , kan deze niet rechtstreeks worden onderschept vanuit het script. Houd er rekening mee dat de entiteit die de cast probeert, **PSInvalidCastException** in een **PSRuntimeException** moet teruglopen zodat deze kan worden onderschept door scripts. Als er een poging wordt gedaan om de waarde van een **PSPropertySet** , **PSMemberSet** , **PSMethodInfo** of een lid van de **ReadOnlyPSMemberInfoCollection ' 1 '** in te stellen, wordt een **NotSupportedException** gegenereerd.
 
 ## <a name="common-runtime-errors"></a>Veelvoorkomende runtime-fouten
 

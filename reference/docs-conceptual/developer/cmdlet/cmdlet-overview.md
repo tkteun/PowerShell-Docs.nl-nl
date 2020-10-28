@@ -1,12 +1,14 @@
 ---
-title: Overzicht van cmdlets
 ms.date: 06/11/2020
-ms.openlocfilehash: 576df03f35dff80479d1fce18cf4306c9219d42f
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Overzicht van cmdlets
+description: Overzicht van cmdlets
+ms.openlocfilehash: ed3082e1a821bb9643ea2eef13b7348eb48488e4
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784398"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92653228"
 ---
 # <a name="cmdlet-overview"></a>Overzicht van cmdlets
 
@@ -115,8 +117,8 @@ Zie [richt lijnen voor het ontwikkelen van cmdlets](./cmdlet-development-guideli
 
 ## <a name="see-also"></a>Zie ook
 
-[Concepten van Power shell-cmdlets](./windows-powershell-cmdlet-concepts.md)
+[Concepten voor PowerShell-cmdlets](./windows-powershell-cmdlet-concepts.md)
 
-[Een Power shell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)
+[Een PowerShell-cmdlet schrijven](./writing-a-windows-powershell-cmdlet.md)
 
 [PowerShell SDK](../windows-powershell-reference.md)

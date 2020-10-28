@@ -2,12 +2,13 @@
 ms.date: 10/13/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: Overzicht Desired State Configuration voor technici
-ms.openlocfilehash: dbed274d5333c216970247b88d2a0956025e969d
-ms.sourcegitcommit: a5e945e0889d0635b7af767d80d6a13bc5526269
+description: Dit document is bedoeld voor ontwikkel aars-en IT-teams om inzicht te krijgen in de voor delen van Power shell desired state Configuration (DSC).
+ms.openlocfilehash: c98295d0e78f4dc89e5df429e3c1de9a0c024054
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82584519"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92646935"
 ---
 # <a name="desired-state-configuration-overview-for-engineers"></a>Overzicht Desired State Configuration voor technici
 
@@ -67,7 +68,7 @@ else
 }
 ```
 
-Dit script is complexere, met veel logica en fout afhandeling. Het script is ingewik kelder omdat u niet meer weet wat u wilt doen, maar hoe u _Dit doet_.
+Dit script is complexere, met veel logica en fout afhandeling. Het script is ingewik kelder omdat u niet meer weet wat u wilt doen, maar hoe u _Dit doet_ .
 
 Met DSC kunt u zeggen wat u wilt doen en de onderliggende logica wordt abstract gemaakt.
 
@@ -108,7 +109,7 @@ De logische paden en fout afhandeling zijn nog steeds aanwezig in de [resource](
 Een gemeen schappelijk patroon in DevOps is om meerdere omgevingen te hebben voor de implementatie. Er kan bijvoorbeeld een ' dev ' omgeving worden gebruikt om snel nieuwe code te prototypen. De code van de omgeving ' dev ' gaat in een test omgeving, waar andere personen de nieuwe functionaliteit verifiëren. Ten slotte gaat de code naar ' Prod ' of de productie omgeving van de live site.
 
 DSC-configuraties voldoen aan deze dev-test-Prod-pijp lijn door het gebruik van [configuratie gegevens](../configurations/configData.md).
-Hiermee wordt het verschil tussen de structuur van de configuratie van de knoop punten die worden beheerd, verder abstract. U kunt bijvoorbeeld een configuratie definiëren waarvoor een SQL-Server, een IIS-server en een server voor de middelste laag zijn vereist. Ongeacht welke knoop punten de verschillende onderdelen van deze configuratie ontvangen, zullen deze drie elementen altijd aanwezig zijn. U kunt configuratie gegevens gebruiken om alle drie de elementen op dezelfde machine te laten wijzen voor een ontwikkel omgeving, de drie elementen van elkaar te scheiden op drie verschillende machines voor een test omgeving, en ten slotte naar alle productie servers voor de Prod-omgeving. Als u wilt implementeren in de verschillende omgevingen, kunt `Start-DscConfiguration` u aanroepen met de juiste configuratie gegevens voor de omgeving die u wilt instellen.
+Hiermee wordt het verschil tussen de structuur van de configuratie van de knoop punten die worden beheerd, verder abstract. U kunt bijvoorbeeld een configuratie definiëren waarvoor een SQL-Server, een IIS-server en een server voor de middelste laag zijn vereist. Ongeacht welke knoop punten de verschillende onderdelen van deze configuratie ontvangen, zullen deze drie elementen altijd aanwezig zijn. U kunt configuratie gegevens gebruiken om alle drie de elementen op dezelfde machine te laten wijzen voor een ontwikkel omgeving, de drie elementen van elkaar te scheiden op drie verschillende machines voor een test omgeving, en ten slotte naar alle productie servers voor de Prod-omgeving. Als u wilt implementeren in de verschillende omgevingen, kunt u aanroepen `Start-DscConfiguration` met de juiste configuratie gegevens voor de omgeving die u wilt instellen.
 
 ## <a name="see-also"></a>Zie ook
 
@@ -116,4 +117,4 @@ Hiermee wordt het verschil tussen de structuur van de configuratie van de knoop 
 
 [Configuratiegegevens](../configurations/configData.md)
 
-[Resources](../resources/resources.md)
+[Bronnen](../resources/resources.md)

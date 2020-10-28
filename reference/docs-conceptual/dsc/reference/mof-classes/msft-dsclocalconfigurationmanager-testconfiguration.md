@@ -1,13 +1,14 @@
 ---
 ms.date: 07/17/2020
-keywords: DSC, Power shell, configuratie, installatie
+ms.topic: reference
 title: TestConfiguration-methode
-ms.openlocfilehash: 0611c4d5543c49b879bef9b60cafdd0b055c9b86
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: TestConfiguration-methode
+ms.openlocfilehash: ed26fcad2286ca753fb4b1845b8c6ad0741d491b
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464295"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92648916"
 ---
 # <a name="testconfiguration-method"></a>TestConfiguration-methode
 
@@ -17,10 +18,10 @@ Hiermee wordt het configuratie document naar het beheerde knoop punt verzonden e
 
 ```mof
 uint32 TestConfiguration(
-  [in]  uint8                          configurationData[],
-  [out] boolean                        InDesiredState,
-  [out] MSFT_ResourceInDesiredState    ResourcesInDesiredState[],
-  [out] MSFT_ResourceNotInDesiredState ResourcesNotInDesiredState[]
+  [in]  uint8                          configurationData[],
+  [out] boolean                        InDesiredState,
+  [out] MSFT_ResourceInDesiredState    ResourcesInDesiredState[],
+  [out] MSFT_ResourceNotInDesiredState ResourcesNotInDesiredState[]
 );
 ```
 
@@ -46,7 +47,7 @@ Dit is een statische methode.
 
 **MOF:** DscCore. MOF
 
-**Naam ruimte**: Root\Microsoft\Windows\DesiredStateConfiguration
+**Naam ruimte** : Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Zie ook
 

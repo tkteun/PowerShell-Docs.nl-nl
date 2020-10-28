@@ -1,12 +1,14 @@
 ---
-title: Een container provider schrijven | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: da91f18226d6e6c236c6a6e469db0f692af48abf
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Een containerprovider schrijven
+description: Een containerprovider schrijven
+ms.openlocfilehash: e7e0eb00dd37eb847b2533152de339aedffe3736
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786795"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92645157"
 ---
 # <a name="writing-a-container-provider"></a>Een containerprovider schrijven
 

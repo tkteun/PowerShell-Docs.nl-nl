@@ -1,12 +1,14 @@
 ---
-title: Gebruikers vragen om bevestiging | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 6f0effb35a110f33248a582fab874e3ab95c7df4
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Gebruikers die bevestiging vragen
+description: Gebruikers die bevestiging vragen
+ms.openlocfilehash: 58dbe27635ca38886b728f585fec063645b3597e
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786336"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92646304"
 ---
 # <a name="users-requesting-confirmation"></a>Gebruikers die bevestiging vragen
 

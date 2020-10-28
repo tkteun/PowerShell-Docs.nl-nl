@@ -1,15 +1,14 @@
 ---
-title: Richt lijnen voor het ontwikkelen van cmdlets | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- development guidelines [PowerShell Programmer's Guide]
-- cmdlets [PowerShell Programmer's Guide], development guidelines
-ms.openlocfilehash: 5dd83b12a9052ff5f146c4c4e077a9358907cbd0
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Richtlijnen voor de ontwikkeling van cmdlets
+description: Richtlijnen voor de ontwikkeling van cmdlets
+ms.openlocfilehash: 8c31f64da0a3f6d8f03f09539c053fe6c61b9a9c
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784483"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92653475"
 ---
 # <a name="cmdlet-development-guidelines"></a>Richtlijnen voor de ontwikkeling van cmdlets
 

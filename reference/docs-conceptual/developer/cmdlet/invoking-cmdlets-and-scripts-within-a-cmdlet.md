@@ -1,12 +1,14 @@
 ---
-title: Cmdlets en scripts aanroepen binnen een cmdlet | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 3d5f76242c02763c41b81215bbb031e19869066a
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Cmdlets en scripts in een cmdlet aanroepen
+description: Cmdlets en scripts in een cmdlet aanroepen
+ms.openlocfilehash: 246c61661f2d290e7e7ac62a8ad303b05bdc7582
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786574"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92652640"
 ---
 # <a name="invoking-cmdlets-and-scripts-within-a-cmdlet"></a>Cmdlets en scripts in een cmdlet aanroepen
 

@@ -1,12 +1,14 @@
 ---
-title: Parameter aliassen | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: e320eeb4d2ab91acf2116fdc817a50e93c82aead
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Parameteraliassen
+description: Parameteraliassen
+ms.openlocfilehash: 0895e2c4df3a149ae75a9741fb65134a8e1122c1
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87781984"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92648514"
 ---
 # <a name="parameter-aliases"></a>Parameteraliassen
 

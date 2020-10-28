@@ -1,18 +1,14 @@
 ---
-title: Fout rapportage voor cmdlet | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- error records [PowerShell], terminating
-- non-terminating errors [PowerShell]
-- error records [PowerShell]
-- terminating errors [PowerShell]
-- error records [PowerShell], non-terminating
-ms.openlocfilehash: 30b19914253db5f517f5ab76623b54aced0c0598
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Foutrapportage voor cmdlets
+description: Foutrapportage voor cmdlets
+ms.openlocfilehash: f06cf98183d56249080623895bd1f5a3e070cefd
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784466"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92653405"
 ---
 # <a name="cmdlet-error-reporting"></a>Fout rapportage voor cmdlets
 
@@ -40,7 +36,7 @@ De rapportage van een niet-afsluitende fout moet altijd worden uitgevoerd binnen
 
 ## <a name="reporting-terminating-errors"></a>Fout bij het rapporteren van het rapport
 
-Afsluit fouten worden gerapporteerd door uitzonde ringen te genereren of door het aanroepen van de methode [System. Management. Automation. cmdlet. ThrowTerminatingError](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) . Houd er rekening mee dat cmdlets ook uitzonde ringen kunnen ondervangen en genereren, zoals **OutOfMemory**, maar ze zijn niet vereist voor het opnieuw genereren van uitzonde ringen omdat de Power shell-runtime deze ook kan onderscheppen.
+Afsluit fouten worden gerapporteerd door uitzonde ringen te genereren of door het aanroepen van de methode [System. Management. Automation. cmdlet. ThrowTerminatingError](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) . Houd er rekening mee dat cmdlets ook uitzonde ringen kunnen ondervangen en genereren, zoals **OutOfMemory** , maar ze zijn niet vereist voor het opnieuw genereren van uitzonde ringen omdat de Power shell-runtime deze ook kan onderscheppen.
 
 U kunt ook uw eigen uitzonde ringen definiëren voor problemen die specifiek zijn voor uw situatie, of extra informatie toevoegen aan een bestaande uitzonde ring met behulp van de fout record.
 
@@ -73,9 +69,9 @@ De volgende richt lijnen moeten worden gevolgd wanneer fout-id's worden opgegeve
 
 Fout categorieën worden gebruikt om fouten te groeperen voor de gebruiker. In Power shell worden deze categorieën en cmdlets en Power shell-providers gedefinieerd om te kiezen bij het genereren van de fout record.
 
-Zie [System. Management. Automation. ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory) -inventarisatie voor een beschrijving van de fout categorieën die beschikbaar zijn. Over het algemeen moet u voor komen dat u, indien mogelijk, **UndefinedError**en **algemene fout** **gebruiken.**
+Zie [System. Management. Automation. ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory) -inventarisatie voor een beschrijving van de fout categorieën die beschikbaar zijn. Over het algemeen moet u voor komen dat u, indien mogelijk, **UndefinedError** en **algemene fout** **gebruiken.**
 
-Gebruikers kunnen fouten weer geven op basis van categorie wanneer ze zijn ingesteld `$ErrorView` op **CategoryView**.
+Gebruikers kunnen fouten weer geven op basis van categorie wanneer ze zijn ingesteld `$ErrorView` op **CategoryView** .
 
 ## <a name="see-also"></a>Zie ook
 

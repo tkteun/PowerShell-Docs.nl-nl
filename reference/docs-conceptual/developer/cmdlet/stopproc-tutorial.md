@@ -1,16 +1,18 @@
 ---
-title: Zelf studie voor StopProc | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: e298c729b7ac59141638052d19b95ab77aa25cd6
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: StopProc-zelfstudie
+description: StopProc-zelfstudie
+ms.openlocfilehash: 95229ee3c4905d295bd6991fe8ccf8c9840c3cdd
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786472"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92646443"
 ---
 # <a name="stopproc-tutorial"></a>StopProc-zelfstudie
 
-Deze sectie bevat een zelf studie voor het maken van de cmdlet stop-proc, die vergelijkbaar is met de [Stop-process-](/powershell/module/Microsoft.PowerShell.Management/Stop-Process) cmdlet van Windows Power shell. Deze zelf studie bevat fragmenten van code die illustreert hoe cmdlets worden geïmplementeerd en een uitleg van de code.
+In deze sectie vindt u een zelf studie voor het maken van de Stop-Proc-cmdlet, die vergelijkbaar is met de [Stop-process-](/powershell/module/Microsoft.PowerShell.Management/Stop-Process) cmdlet van Windows Power shell. Deze zelf studie bevat fragmenten van code die illustreert hoe cmdlets worden geïmplementeerd en een uitleg van de code.
 
 ## <a name="topics-in-this-tutorial"></a>Onderwerpen in deze zelf studie
 

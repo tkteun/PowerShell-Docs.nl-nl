@@ -1,20 +1,22 @@
 ---
-title: Achtergrond taken | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 2a1297b8dfe087474564078cca2a5a0526ed0f36
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Achtergrondtaken
+description: Achtergrondtaken
+ms.openlocfilehash: 5478789a2ee1f2eabc71a46673e3a707643cdba8
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87774844"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92648613"
 ---
 # <a name="background-jobs"></a>Achtergrondtaken
 
-Cmdlets kunnen hun actie intern of als Windows Power shell-*achtergrond taak*uitvoeren. Wanneer een cmdlet wordt uitgevoerd als een achtergrond taak, wordt het werk asynchroon uitgevoerd in een eigen thread, gescheiden van de pijplijn thread die de cmdlet gebruikt. Wanneer een cmdlet wordt uitgevoerd als achtergrond taak, retourneert de opdracht prompt onmiddellijk, zelfs als de taak een lange tijd lang duurt om te worden voltooid, en de gebruiker kan zonder onderbreking door gaan terwijl de taak wordt uitgevoerd.
+Cmdlets kunnen hun actie intern of als Windows Power shell- *achtergrond taak* uitvoeren. Wanneer een cmdlet wordt uitgevoerd als een achtergrond taak, wordt het werk asynchroon uitgevoerd in een eigen thread, gescheiden van de pijplijn thread die de cmdlet gebruikt. Wanneer een cmdlet wordt uitgevoerd als achtergrond taak, retourneert de opdracht prompt onmiddellijk, zelfs als de taak een lange tijd lang duurt om te worden voltooid, en de gebruiker kan zonder onderbreking door gaan terwijl de taak wordt uitgevoerd.
 
 ## <a name="background-jobs-child-jobs-and-the-job-repository"></a>Achtergrond taken, onderliggende taken en de taak opslagplaats
 
-Het taak object dat wordt geretourneerd door de cmdlets die ondersteuning bieden voor achtergrond taken, definieert de taak. (De cmdlet [Start-job](/powershell/module/Microsoft.PowerShell.Core/Start-Job) retourneert ook een taak object.) De naam van de taak, een id die wordt gebruikt om de taak op te geven, de status informatie en de onderliggende taken zijn opgenomen in deze definitie. De taak voert geen werk uit. Elke achtergrond taak heeft ten minste één onderliggende taak omdat de onderliggende taak het werkelijke werk uitvoert. Wanneer u een cmdlet uitvoert zodat het werk wordt uitgevoerd als een achtergrond taak, moet de cmdlet de taak en de onderliggende taken toevoegen aan een algemene opslag plaats, waarnaar wordt verwezen als de *taak opslagplaats*.
+Het taak object dat wordt geretourneerd door de cmdlets die ondersteuning bieden voor achtergrond taken, definieert de taak. (De cmdlet [Start-job](/powershell/module/Microsoft.PowerShell.Core/Start-Job) retourneert ook een taak object.) De naam van de taak, een id die wordt gebruikt om de taak op te geven, de status informatie en de onderliggende taken zijn opgenomen in deze definitie. De taak voert geen werk uit. Elke achtergrond taak heeft ten minste één onderliggende taak omdat de onderliggende taak het werkelijke werk uitvoert. Wanneer u een cmdlet uitvoert zodat het werk wordt uitgevoerd als een achtergrond taak, moet de cmdlet de taak en de onderliggende taken toevoegen aan een algemene opslag plaats, waarnaar wordt verwezen als de *taak opslagplaats* .
 
 Zie het volgende voor meer informatie over de manier waarop achtergrond taken worden verwerkt op de opdracht regel:
 
@@ -40,7 +42,7 @@ Als u een cmdlet wilt schrijven die als achtergrond taak kan worden uitgevoerd, 
 
 Zie [taken ondersteunen](./how-to-support-jobs.md)voor een code voorbeeld.
 
-## <a name="background-job-related-apis"></a>Api's met betrekking tot achtergrond taken
+## <a name="background-job-related-apis"></a>Api's voor achtergrond Job-Related
 
 De volgende Api's worden verzorgd door Windows Power shell voor het beheren van achtergrond taken.
 

@@ -1,14 +1,16 @@
 ---
-title: Conversie Programma's van type uitgebreid type systeem
 ms.date: 07/09/2020
-ms.openlocfilehash: 0d04293fffde9901ed2e33a9bab21e6612ce9cd5
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Conversie Programma's van type uitgebreid type systeem
+description: Conversie Programma's van type uitgebreid type systeem
+ms.openlocfilehash: 0774e9eaae1187162b3d55cc45b902f7411a1f18
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786183"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92648435"
 ---
-# <a name="ets-type-converters"></a>Type conversieprogramma's voor ETS
+# <a name="ets-type-converters"></a>Conversieprogramma's voor ETS-type
 
 ETS gebruikt twee basis typen van type conversie Programma's wanneer een aanroep wordt gedaan aan de `LanguagePrimitives.ConvertTo(System.Object, System.Type)` methode. Wanneer deze methode wordt aangeroepen, probeert Power shell de type conversie uit te voeren met behulp van de standaard Power shell-taal conversieprogramma's of een aangepast conversie programma. Als Power shell de conversie niet kan uitvoeren, wordt er een **PSInvalidCastException** -uitzonde ring gegenereerd.
 
@@ -21,14 +23,14 @@ Deze standaard conversies worden gecontroleerd vóór aangepaste conversies en k
 | Null                  | Tekenreeks            | ""                                                                                                                                                                  |
 | Null                  | Char              | \ 0                                                                                                                                                                |
 | Null                  | Numeriek           | `0` van het type dat is opgegeven in de para meter **resultType** .                                                                                                          |
-| Null                  | Booleaans           | De resultaten van het aanroepen van de `IsTrue(System.Object)(Null)` methode.                                                                                                        |
-| Null                  | PSObject          | Nieuw object van het type **PSObject**.                                                                                                                                    |
+| Null                  | Boolean-waarde           | De resultaten van het aanroepen van de `IsTrue(System.Object)(Null)` methode.                                                                                                        |
+| Null                  | PSObject          | Nieuw object van het type **PSObject** .                                                                                                                                    |
 | Null                  | Niet-waarde-type    | Null.                                                                                                                                                               |
 | Null                  | Nullable &lt; T&gt; | Null.                                                                                                                                                               |
 | Afgeleide klasse         | Basis klasse        | **valueToConvert**                                                                                                                                                  |
 | +              | Ongeldige              | **AutomationNull. waarde**                                                                                                                                            |
 | +              | Tekenreeks            | Mechanisme voor aanroepen `ToString` .                                                                                                                                         |
-| +              | Booleaans           | `IsTrue(System.Object) (valueToConvert)`                                                                                                                            |
+| +              | Boolean-waarde           | `IsTrue(System.Object) (valueToConvert)`                                                                                                                            |
 | +              | PSObject          | De resultaten van het aanroepen van de `AsPSObject(System.Object) (valueToConvert)` methode.                                                                                         |
 | +              | XML-document      | Zet **valueToConvert** om in een teken reeks en roept de constructor **XMLDocument** aan.                                                                                      |
 | Matrix                 | Matrix             | Probeert elk element van de matrix te converteren.                                                                                                                      |
@@ -36,8 +38,8 @@ Deze standaard conversies worden gecontroleerd vóór aangepaste conversies en k
 | IDictionary           | Hash-tabel        | Resultaten van de aanroep van hashtabel (valueToConvert).                                                                                                                       |
 | Tekenreeks                | Char []            | `valueToConvert.ToCharArray`                                                                                                                                        |
 | Tekenreeks                | Reguliere             | Resultaten van aanroepen van `Regx(valueToConvert)` .                                                                                                                          |
-| Tekenreeks                | Type              | Retourneert het juiste type met behulp van de para meter **valueToConvert** om te zoeken in **RunspaceConfiguration. assemblies**.                                                 |
-| Tekenreeks                | Numeriek           | Als **valueToConvert** is "", wordt geretourneerd `0` van het **resultType**. Anders wordt de cultuur "cultuur invariant" gebruikt voor het produceren van een numerieke waarde.                       |
+| Tekenreeks                | Type              | Retourneert het juiste type met behulp van de para meter **valueToConvert** om te zoeken in **RunspaceConfiguration. assemblies** .                                                 |
+| Tekenreeks                | Numeriek           | Als **valueToConvert** is "", wordt geretourneerd `0` van het **resultType** . Anders wordt de cultuur "cultuur invariant" gebruikt voor het produceren van een numerieke waarde.                       |
 | Geheel getal               | System. enum       | Converteert het gehele getal naar de constante als het geheel getal door de opsomming wordt gedefinieerd. Als het geheel getal niet is gedefinieerd, wordt er een **PSInvalidCastException** -uitzonde ring gegenereerd. |
 
 ## <a name="custom-conversions"></a>Aangepaste conversies
@@ -72,8 +74,8 @@ Als het object type van de para meter **resultType** een constructor heeft met �
 
 ## <a name="implicit-cast-operator-converter"></a>Conversie programma voor impliciete cast-operator
 
-Als de para meter **valueToConvert** een impliciete cast-operator heeft die converteert naar een **resultType**, wordt de bijbehorende cast-operator aangeroepen. Als de **resultType** -para meter een impliciete cast-operator heeft die van **valueToConvert**wordt geconverteerd, wordt de conversie operator aangeroepen.
+Als de para meter **valueToConvert** een impliciete cast-operator heeft die converteert naar een **resultType** , wordt de bijbehorende cast-operator aangeroepen. Als de **resultType** -para meter een impliciete cast-operator heeft die van **valueToConvert** wordt geconverteerd, wordt de conversie operator aangeroepen.
 
 ## <a name="explicit-cast-operator-converter"></a>Conversie programma voor expliciete conversie operator
 
-Als de para meter **valueToConvert** een expliciete cast-operator heeft die converteert naar een **resultType**, wordt de bijbehorende cast-operator aangeroepen. Als de **resultType** -para meter een expliciete cast-operator heeft die van **valueToConvert**wordt geconverteerd, wordt de conversie operator aangeroepen.
+Als de para meter **valueToConvert** een expliciete cast-operator heeft die converteert naar een **resultType** , wordt de bijbehorende cast-operator aangeroepen. Als de **resultType** -para meter een expliciete cast-operator heeft die van **valueToConvert** wordt geconverteerd, wordt de conversie operator aangeroepen.

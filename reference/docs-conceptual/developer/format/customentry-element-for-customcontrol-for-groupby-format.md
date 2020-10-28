@@ -1,12 +1,14 @@
 ---
-title: CustomEntry-element voor CustomControl voor GroupBy (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 4df8e5b96868b3814c6d84fa329950bb5345ef6e
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element CustomEntry voor CustomControl voor GroupBy (opmaak)
+description: Het element CustomEntry voor CustomControl voor GroupBy (opmaak)
+ms.openlocfilehash: 0df2ff9c15308939e6d2552f51e2961bdabc59fb
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785911"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92646064"
 ---
 # <a name="customentry-element-for-customcontrol-for-groupby-format"></a>Het element CustomEntry voor CustomControl voor GroupBy (opmaak)
 

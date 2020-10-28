@@ -1,13 +1,14 @@
 ---
 ms.date: 07/16/2020
-keywords: DSC, Power shell, configuratie, installatie
+ms.topic: reference
 title: DSC-archief resource
-ms.openlocfilehash: cbe32012c2035fb3e145bd06fadd73cdba93fd3e
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC-archief resource
+ms.openlocfilehash: 1116ed068fab09b61daaeb7cdeba7bdbd27da6d8
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86463785"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92648688"
 ---
 # <a name="dsc-archive-resource"></a>DSC-archief resource
 
@@ -38,17 +39,17 @@ Archive [string] #ResourceName
 |---|---|
 | Doel | Hiermee geeft u de locatie op waar de archief inhoud moet worden uitgepakt. |
 | Pad | Hiermee geeft u het bronpad van het archief bestand. |
-| Controlesom | Hiermee wordt bepaald welk type moet worden gebruikt om te bepalen of twee bestanden hetzelfde zijn. Als er geen **controlesom** is opgegeven, wordt alleen de naam van het bestand of de map gebruikt voor de vergelijking. Geldige waarden zijn: **SHA-1**, **SHA-256**, **SHA-512**, **createdDate**, **modifiedDate**. Als u **controlesom** zonder **validatie**opgeeft, mislukt de configuratie. |
+| Controlesom | Hiermee wordt bepaald welk type moet worden gebruikt om te bepalen of twee bestanden hetzelfde zijn. Als er geen **controlesom** is opgegeven, wordt alleen de naam van het bestand of de map gebruikt voor de vergelijking. Geldige waarden zijn: **SHA-1** , **SHA-256** , **SHA-512** , **createdDate** , **modifiedDate** . Als u **controlesom** zonder **validatie** opgeeft, mislukt de configuratie. |
 | Referentie | De referentie van een gebruikers account met machtigingen voor toegang tot het opgegeven pad en de bestemming van het archief, indien nodig. |
-| Force | Bepaalde bestands bewerkingen (zoals het overschrijven van een bestand of het verwijderen van een map die niet leeg is), resulteren in een fout. Met behulp van de eigenschap **Force** worden dergelijke fouten genegeerd. De standaard waarde is **False**. |
-| Valideren| Maakt gebruik van de eigenschap **checksum** om te bepalen of het archief overeenkomt met de hand tekening. Als u **controlesom** zonder **validatie**opgeeft, mislukt de configuratie. Als u **Validate** zonder **controlesom**opgeeft, wordt standaard een _SHA-256-_ **controlesom** gebruikt. |
+| Force | Bepaalde bestands bewerkingen (zoals het overschrijven van een bestand of het verwijderen van een map die niet leeg is), resulteren in een fout. Met behulp van de eigenschap **Force** worden dergelijke fouten genegeerd. De standaard waarde is **False** . |
+| Valideren| Maakt gebruik van de eigenschap **checksum** om te bepalen of het archief overeenkomt met de hand tekening. Als u **controlesom** zonder **validatie** opgeeft, mislukt de configuratie. Als u **Validate** zonder **controlesom** opgeeft, wordt standaard een _SHA-256-_ **controlesom** gebruikt. |
 
 ## <a name="common-properties"></a>Algemene eigenschappen
 
 |Eigenschap |Beschrijving |
 |---|---|
 |DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is bijvoorbeeld als de ID van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is `DependsOn = "[ResourceType]ResourceName"` . |
-|Zo |Hiermee wordt bepaald of wordt gecontroleerd of de inhoud van het archief bestaat op de **bestemming**. Stel deze eigenschap in op **aanwezig** om te controleren of de inhoud bestaat. Stel deze in op **afwezig** om ervoor te zorgen dat ze niet bestaan. De standaard waarde is **aanwezig**. |
+|Zo |Hiermee wordt bepaald of wordt gecontroleerd of de inhoud van het archief bestaat op de **bestemming** . Stel deze eigenschap in op **aanwezig** om te controleren of de inhoud bestaat. Stel deze in op **afwezig** om ervoor te zorgen dat ze niet bestaan. De standaard waarde is **aanwezig** . |
 |PsDscRunAsCredential |Hiermee stelt u de referentie in voor het uitvoeren van de gehele resource als. |
 
 > [!NOTE]

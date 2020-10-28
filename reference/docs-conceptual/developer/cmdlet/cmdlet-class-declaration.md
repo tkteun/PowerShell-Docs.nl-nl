@@ -1,15 +1,14 @@
 ---
-title: Cmdlet-klassen declaratie | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- cmdlets [PowerShell SDK], declaring
-- declaring cmdlets [PowerShell SDK]
-ms.openlocfilehash: 96ce8144795346b6f46878ee6163ce69cdb1799a
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Declaratie van cmdlet-klassen
+description: Declaratie van cmdlet-klassen
+ms.openlocfilehash: 854b0a4ca9f6c87c4fad3b71ee726beade585e02
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784500"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92653489"
 ---
 # <a name="cmdlet-class-declaration"></a>Declaratie van cmdlet-klassen
 
@@ -23,7 +22,7 @@ Wanneer u het **cmdlet** -kenmerk opgeeft, moet u de combi natie van verb en sam
 
 Het zelfstandige naam woord van de cmdlet specificeert de resources waarop de cmdlet optreedt. Het zelfstandig naam woord onderscheidt uw cmdlets van andere cmdlets.
 
-Zelfstandige naam woorden in de namen van de cmdlets moeten specifiek zijn en in het geval van algemene zelfstandig naam woorden, zoals *Server*, is het raadzaam om een kort voor voegsel toe te voegen waarmee uw resource van andere vergelijk bare bronnen wordt onderscheiden. Bijvoorbeeld een naam van een cmdlet die een zelfstandig nummer met een voor voegsel bevat `Get-SQLServer` . Met de combi natie van een specifiek zelfstandig naam woord met een meer algemene term kan de gebruiker snel de cmdlet vinden op basis van de actie en vervolgens de cmdlet identificeren aan de hand van de bijbehorende resource, terwijl het voor komen van onnodige naam duplicatie van de cmdlet.
+Zelfstandige naam woorden in de namen van de cmdlets moeten specifiek zijn en in het geval van algemene zelfstandig naam woorden, zoals *Server* , is het raadzaam om een kort voor voegsel toe te voegen waarmee uw resource van andere vergelijk bare bronnen wordt onderscheiden. Bijvoorbeeld een naam van een cmdlet die een zelfstandig nummer met een voor voegsel bevat `Get-SQLServer` . Met de combi natie van een specifiek zelfstandig naam woord met een meer algemene term kan de gebruiker snel de cmdlet vinden op basis van de actie en vervolgens de cmdlet identificeren aan de hand van de bijbehorende resource, terwijl het voor komen van onnodige naam duplicatie van de cmdlet.
 
 Zie [vereiste ontwikkel richtlijnen](./required-development-guidelines.md)voor een lijst met speciale tekens die niet kunnen worden gebruikt in cmdlet-namen.
 

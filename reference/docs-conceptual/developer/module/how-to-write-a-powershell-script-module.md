@@ -1,12 +1,14 @@
 ---
-title: Een Power shell-script module schrijven | Microsoft Docs
 ms.date: 11/21/2019
-ms.openlocfilehash: dc387909a9e55df9f1846b02755e284c408f7dc6
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Een PowerShell-scriptmodule schrijven
+description: Een PowerShell-scriptmodule schrijven
+ms.openlocfilehash: c44b09a915501fb10773ab11cf13136d5035ba69
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784891"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92649147"
 ---
 # <a name="how-to-write-a-powershell-script-module"></a>Een PowerShell-scriptmodule schrijven
 
@@ -82,7 +84,7 @@ In de volgende stappen wordt beschreven hoe u een Power shell-module maakt.
    > [!NOTE]
    > `Remove-Module` Hiermee wordt een module verwijderd uit de huidige Power shell-sessie, maar wordt de module niet verwijderd of worden de bestanden van de module verwijderd.
 
-## <a name="show-calendar-code-example"></a>Voor beeld van agenda code weer geven
+## <a name="show-calendar-code-example"></a>Voor beeld van Show-Calendar code
 
 Het volgende voor beeld is een script module met een enkele functie met de naam `Show-Calendar` . Met deze functie wordt een visuele weer gave van een kalender weer gegeven. Het voor beeld bevat de Help-teken reeksen van Power shell voor de samen vatting, beschrijving, parameter waarden en code. Wanneer de module wordt geïmporteerd, `Export-ModuleMember` zorgt de opdracht ervoor dat de `Show-Calendar` functie wordt geëxporteerd als een module-lid.
 

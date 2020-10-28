@@ -1,21 +1,18 @@
 ---
-title: Concepten voor fouten rapportage | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- non-terminating errors [PowerShell SDK]
-- errors [PowerShell SDK], described
-- terminating errors [PowerShell SDK]
-- errors [PowerShell SDK]
-ms.openlocfilehash: ff010bbe1a87daa351ec13ed249ffc899781a8c3
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Concepten voor foutrapportage
+description: Concepten voor foutrapportage
+ms.openlocfilehash: 353e628c63667a2db010556b2ed9169809b742f4
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87774504"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92653045"
 ---
 # <a name="error-reporting-concepts"></a>Concepten voor foutrapportage
 
-Windows Power shell biedt twee mechanismen voor het rapporteren van fouten: één mechanisme voor het *beëindigen van fouten* en een ander mechanisme voor *niet-afsluit fouten*. Het is belang rijk om ervoor te zorgen dat uw cmdlet fouten correct rapporteert, zodat de hosttoepassing waarop uw cmdlets worden uitgevoerd, op de juiste manier kan reageren.
+Windows Power shell biedt twee mechanismen voor het rapporteren van fouten: één mechanisme voor het *beëindigen van fouten* en een ander mechanisme voor *niet-afsluit fouten* . Het is belang rijk om ervoor te zorgen dat uw cmdlet fouten correct rapporteert, zodat de hosttoepassing waarop uw cmdlets worden uitgevoerd, op de juiste manier kan reageren.
 
 De cmdlet moet de methode [System. Management. Automation. cmdlet. Throwterminatingerror *](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) aanroepen als er een fout optreedt waarbij de cmdlet de invoer objecten niet kan blijven verwerken. De cmdlet moet de methode [System. Management. Automation. cmdlet. WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) aanroepen om niet-afsluit fouten te rapporteren wanneer de cmdlet de verwerking van de invoer objecten kan voortzetten. Beide methoden bieden een fout record die de hosttoepassing kan gebruiken om de oorzaak van de fout te onderzoeken.
 

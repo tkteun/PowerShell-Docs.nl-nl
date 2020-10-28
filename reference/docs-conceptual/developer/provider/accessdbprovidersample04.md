@@ -1,12 +1,14 @@
 ---
-title: AccessDBProviderSample04 | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 097591528fd12cdf9f134a0fd8a0bd278f216fab
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: AccessDBProviderSample04
+description: AccessDBProviderSample04
+ms.openlocfilehash: 962d0ab673ff797a60b56ccae7a16a810cc43c58
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786863"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92649041"
 ---
 # <a name="accessdbprovidersample04"></a>AccessDBProviderSample04
 
@@ -22,8 +24,8 @@ In dit voor beeld ziet u het volgende:
 - Declareer het `CmdletProvider` kenmerk.
 - Een provider klasse definiëren die is afgeleid van de klasse [System. Management. Automation. provider. Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) .
 - De methode [System. Management. Automation. provider. ContainerCmdletProvider. CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) wordt overschreven om het gedrag van de cmdlet te wijzigen `Copy-Item` waarmee de gebruiker items van de ene locatie naar de andere kan kopiëren. (In dit voor beeld wordt niet weer gegeven hoe u dynamische para meters aan de cmdlet kunt toevoegen `Copy-Item` .)
-- De methode [System. Management. Automation. provider. Containercmdletprovider. Getchilditems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) wordt overschreven om het gedrag van de cmdlet Get-ChildItems te wijzigen, waarmee de gebruiker de onderliggende items van het bovenliggende item kan ophalen. (In dit voor beeld wordt niet weer gegeven hoe u dynamische para meters toevoegt aan de cmdlet Get-ChildItems.)
-- De methode [System. Management. Automation. provider. Containercmdletprovider. Getchildnames *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames) wordt overschreven om het gedrag van de cmdlet Get-ChildItems te wijzigen wanneer de `Name` para meter van de cmdlet wordt opgegeven.
+- Het overschrijven van de methode [System. Management. Automation. provider. Containercmdletprovider. Getchilditems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) voor het wijzigen van het gedrag van de cmdlet Get-ChildItems, waarmee de gebruiker de onderliggende items van het bovenliggende item kan ophalen. (In dit voor beeld wordt niet weer gegeven hoe u dynamische para meters toevoegt aan de Get-ChildItems cmdlet.)
+- Het overschrijven van de methode [System. Management. Automation. provider. Containercmdletprovider. Getchildnames *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames) om het gedrag van de cmdlet Get-ChildItems te wijzigen wanneer de `Name` para meter van de cmdlet wordt opgegeven.
 - De methode [System. Management. Automation. provider. Containercmdletprovider. NewItem mag *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) wordt overschreven om het gedrag van de cmdlet te wijzigen `New-Item` , waardoor de gebruiker items kan toevoegen aan het gegevens archief. (In dit voor beeld wordt niet weer gegeven hoe u dynamische para meters aan de cmdlet kunt toevoegen `New-Item` .)
 - De methode [System. Management. Automation. provider. Containercmdletprovider. RemoveItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem) wordt overschreven om het gedrag van de cmdlet te wijzigen `Remove-Item` . (In dit voor beeld wordt niet weer gegeven hoe u dynamische para meters aan de cmdlet kunt toevoegen `Remove-Item` .)
 

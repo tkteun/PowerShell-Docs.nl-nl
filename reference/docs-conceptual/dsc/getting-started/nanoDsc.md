@@ -2,12 +2,13 @@
 ms.date: 06/12/2017
 keywords: DSC, Power shell, configuratie, installatie
 title: DSC gebruiken op Nano Server
-ms.openlocfilehash: fb826455c21833ae4c8dc2ecd731ffce6bf7eaba
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: DSC is een optioneel pakket dat kan worden geïnstalleerd wanneer u een VHD maakt voor een Windows nano-server.
+ms.openlocfilehash: 18585323359abd85515d4db194dae4adbad7c3d8
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71941878"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92647067"
 ---
 # <a name="using-dsc-on-nano-server"></a>DSC gebruiken op Nano Server
 
@@ -44,7 +45,7 @@ Zowel push-als pull-modi
 - [Remove-DscConfigurationDocument](/powershell/module/PSDesiredStateConfiguration/Remove-DscConfigurationDocument)
 - [Get-DscConfigurationStatus](/powershell/module/PSDesiredStateConfiguration/Get-DscConfigurationStatus)
 - [Invoke-Dscresource bieden](/powershell/module/PSDesiredStateConfiguration/Invoke-DscResource)
-- [Zoeken-Dscresource bieden](/powershell/module/powershellget/find-dscresource?view=powershell-6)
+- [Zoeken-Dscresource bieden](/powershell/module/powershellget/find-dscresource)
 - [Get-Dscresource bieden](/powershell/module/PSDesiredStateConfiguration/Get-DscResource)
 - [New-DscChecksum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum)
 
@@ -80,34 +81,38 @@ Zowel push-als pull-modi
 
 - Volledig functionele bronnen
 
-- **Archiveren**
-- **Omgeving**
-- **Bestand**
-- **Logbestand**
-- **ProcessSet**
-- **Registersubsleutel**
-- **Schriften**
-- **WindowsPackageCab**
-- **WindowsProcess**
-- **WaitForAll** (Zie [afhankelijkheden van meerdere knoop punten opgeven](../configurations/crossNodeDependencies.md))
-- **WaitForAny** (Zie [afhankelijkheden van meerdere knoop punten opgeven](../configurations/crossNodeDependencies.md))
-- **WaitForSome** (Zie [afhankelijkheden van meerdere knoop punten opgeven](../configurations/crossNodeDependencies.md))
+  - **Archiveren**
+  - **Omgeving**
+  - **File**
+  - **Logbestand**
+  - **ProcessSet**
+  - **Register**
+  - **Script**
+  - **WindowsPackageCab**
+  - **WindowsProcess**
+  - **WaitForAll** (Zie [afhankelijkheden van meerdere knoop punten opgeven](../configurations/crossNodeDependencies.md))
+  - **WaitForAny** (Zie [afhankelijkheden van meerdere knoop punten opgeven](../configurations/crossNodeDependencies.md))
+  - **WaitForSome** (Zie [afhankelijkheden van meerdere knoop punten opgeven](../configurations/crossNodeDependencies.md))
 
 - Resources die gedeeltelijk functioneel zijn
-- **Groep**
-- **GroupSet**
 
-  **Probleem:** De bovenstaande bronnen mislukken als een specifiek exemplaar twee maal wordt aangeroepen (twee keer dezelfde configuratie uitvoeren)
+  - **Groep**
+  - **GroupSet**
 
-- **Service**
-- **ServiceSet**
+    **Probleem:** De bovenstaande bronnen mislukken als een specifiek exemplaar twee maal wordt aangeroepen (twee keer dezelfde configuratie uitvoeren)
 
-  **Probleem:** Werkt alleen voor starten/stoppen (status)-service. Mislukt als er wordt geprobeerd andere service kenmerken te wijzigen, zoals opstart type, referenties, Description, enzovoort. De fout die wordt gegenereerd, is vergelijkbaar met:
+  - **Service**
+  - **ServiceSet**
 
-  *Kan type [management. managementobject] niet vinden: Controleer of de assembly met dit type is geladen.*
+    **Probleem:** Werkt alleen voor starten/stoppen (status)-service. Mislukt als er wordt geprobeerd andere service kenmerken te wijzigen, zoals opstart type, referenties, Description, enzovoort. De fout die wordt gegenereerd, is vergelijkbaar met:
+
+    ```
+    Cannot find type [management.managementobject]: verify that the assembly containing this type is loaded.
+    ```
 
 - Resources die niet functioneel zijn
-- **Gebruiker**
+
+  - **Gebruiker**
 
 ## <a name="dsc-features-not-available-on-nano-server"></a>DSC-functies zijn niet beschikbaar op nano server
 

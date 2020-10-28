@@ -1,12 +1,14 @@
 ---
-title: EnumerateCollection-element voor ExpressionBinding voor besturings elementen voor configuratie (indeling) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: fc2dd140f77b1ccd40f43094ceb0ab2d044ef3a8
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Het element EnumerateCollection voor ExpressionBinding voor Besturingselementen voor Configuratie (opmaak)
+description: Het element EnumerateCollection voor ExpressionBinding voor Besturingselementen voor Configuratie (opmaak)
+ms.openlocfilehash: 372824835cbfcc92868e46aca43d09dd25762283
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87773977"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92648223"
 ---
 # <a name="enumeratecollection-element-for-expressionbinding-for-controls-for-configuration-format"></a>Het element EnumerateCollection voor ExpressionBinding voor Besturingselementen voor Configuratie (opmaak)
 

@@ -1,13 +1,14 @@
 ---
 ms.date: 07/17/2020
-keywords: DSC, Power shell, configuratie, installatie
+ms.topic: reference
 title: SendMetaConfigurationApply-methode
-ms.openlocfilehash: 896afe2f3370e108b48583aafb33ee7b0eb1301b
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: SendMetaConfigurationApply-methode
+ms.openlocfilehash: 27c58819c0249ace011c475e500e565e5daed9bb
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86463717"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92648962"
 ---
 # <a name="sendmetaconfigurationapply-method"></a>SendMetaConfigurationApply-methode
 
@@ -17,8 +18,8 @@ Hiermee stelt u de lokale Configuration Manager-instellingen in die worden gebru
 
 ```mof
 uint32 SendMetaConfigurationApply(
-  [in] uint8   ConfigurationData[],
-  [in] boolean force
+  [in] uint8   ConfigurationData[],
+  [in] boolean force
 );
 ```
 
@@ -40,7 +41,7 @@ Dit is een statische methode.
 
 **MOF:** DscCore. MOF
 
-**Naam ruimte**: Root\Microsoft\Windows\DesiredStateConfiguration
+**Naam ruimte** : Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Zie ook
 

@@ -1,15 +1,14 @@
 ---
-title: Een Windows Power shell-item provider maken | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- item providers [PowerShell Programmer's Guide]
-- providers [PowerShell Programmer's Guide], item provider
-ms.openlocfilehash: b00af7d6fbb75b08027dc18ee6647472d23b83b7
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Een Windows PowerShell-itemprovider maken
+description: Een Windows PowerShell-itemprovider maken
+ms.openlocfilehash: f98ea90bf9ce7222076a91fb26dc42977c70bff2
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87779039"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92645187"
 ---
 # <a name="creating-a-windows-powershell-item-provider"></a>Een Windows PowerShell-itemprovider maken
 
@@ -63,7 +62,7 @@ De volgende voor waarden zijn mogelijk van toepassing op uw implementatie van [S
 
 - De implementatie van deze methode moet elke vorm van toegang tot het item afhandelen waardoor het item zichtbaar voor de gebruiker kan worden gemaakt. Bijvoorbeeld, als een gebruiker schrijf toegang heeft tot een bestand via de bestandssysteem provider (geleverd door Windows Power shell), maar geen lees toegang, het bestand nog bestaat en [System. Management. Automation. provider. Itemcmdletprovider. Itemexists *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) wordt geretourneerd `true` . Voor uw implementatie moet mogelijk een bovenliggend item worden gecontroleerd om te zien of het onderliggende item kan worden geïnventariseerd.
 
-## <a name="attaching-dynamic-parameters-to-the-test-path-cmdlet"></a>Dynamische para meters aan de cmdlet test-Path koppelen
+## <a name="attaching-dynamic-parameters-to-the-test-path-cmdlet"></a>Dynamische para meters aan de Test-Path-cmdlet koppelen
 
 Soms `Test-Path` vereist de cmdlet die [System. Management. Automation. provider. Itemcmdletprovider. Itemexists *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) aanroept, extra para meters die dynamisch worden opgegeven tijdens runtime. Als u deze dynamische para meters wilt opgeven, moet de Windows Power shell-item provider de methode [System. Management. Automation. provider. Itemcmdletprovider. Itemexistsdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExistsDynamicParameters) implementeren. Met deze methode worden de dynamische para meters voor het item op het aangegeven pad opgehaald en wordt een object geretourneerd dat eigenschappen en velden bevat met het parseren van kenmerken die vergelijkbaar zijn met een cmdlet-klasse of een [System. Management. Automation. Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) -object. De Windows Power shell-runtime maakt gebruik van het geretourneerde object om de para meters toe te voegen aan de `Test-Path` cmdlet.
 
@@ -87,7 +86,7 @@ De volgende voor waarden zijn mogelijk van toepassing op een implementatie van [
 
 - Standaard moeten onderdrukkingen van deze methode geen objecten ophalen die doorgaans verborgen zijn voor de gebruiker, tenzij de eigenschap [System. Management. Automation. provider. Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) is ingesteld op `true` . De methode [System. Management. Automation. provider. Itemcmdletprovider. GetItem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) voor de File System Provider controleert bijvoorbeeld de eigenschap [System. Management. Automation. provider. Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) voordat wordt geprobeerd [System. Management. Automation. provider. Cmdletprovider. Writeitemobject *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) aan te roepen voor verborgen of systeem bestanden.
 
-## <a name="attaching-dynamic-parameters-to-the-get-item-cmdlet"></a>Dynamische para meters aan de Get-item-cmdlet koppelen
+## <a name="attaching-dynamic-parameters-to-the-get-item-cmdlet"></a>Dynamische para meters aan de Get-Item-cmdlet koppelen
 
 Soms `Get-Item` vereist de cmdlet extra para meters die dynamisch worden opgegeven tijdens runtime. Als u deze dynamische para meters wilt opgeven, moet de Windows Power shell-item provider de methode [System. Management. Automation. provider. Itemcmdletprovider. Getitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItemDynamicParameters) implementeren. Met deze methode worden de dynamische para meters voor het item op het aangegeven pad opgehaald en wordt een object geretourneerd dat eigenschappen en velden bevat met het parseren van kenmerken die vergelijkbaar zijn met een cmdlet-klasse of een [System. Management. Automation. Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) -object. De Windows Power shell-runtime maakt gebruik van het geretourneerde object om de para meters toe te voegen aan de `Get-Item` cmdlet.
 

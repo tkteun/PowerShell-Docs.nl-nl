@@ -1,12 +1,14 @@
 ---
-title: Een Power shell-module installeren | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 201679c97acdccae9aa4c2be641ee1da09a8275c
-ms.sourcegitcommit: d073e69708bd499ea42642b4b923ce5f11cca295
+ms.topic: reference
+title: Een PowerShell-module installeren
+description: Een PowerShell-module installeren
+ms.openlocfilehash: 3c7a4413168934ca4de1912c9615a6ae0fc45788
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92197822"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92645342"
 ---
 # <a name="installing-a-powershell-module"></a>Een PowerShell-module installeren
 
@@ -55,7 +57,7 @@ De waarde van de omgevings variabele **PSModulePath** bevat standaard de volgend
   ```
 
   > [!IMPORTANT]
-  > Zodra u het pad naar **PSModulePath**hebt toegevoegd, moet u een omgevings bericht over de wijziging uitzenden. Door de wijziging uit te zenden, kunnen andere toepassingen, zoals de shell, de wijziging ophalen. Als u de wijziging wilt door sturen, laat u uw product installatie code een **WM_SETTINGCHANGE** -bericht verzenden `lParam` dat is ingesteld op de teken reeks omgeving. Zorg ervoor dat u het bericht verzendt nadat de module-installatie code het **PSModulePath**heeft bijgewerkt.
+  > Zodra u het pad naar **PSModulePath** hebt toegevoegd, moet u een omgevings bericht over de wijziging uitzenden. Door de wijziging uit te zenden, kunnen andere toepassingen, zoals de shell, de wijziging ophalen. Als u de wijziging wilt door sturen, laat u uw product installatie code een **WM_SETTINGCHANGE** -bericht verzenden `lParam` dat is ingesteld op de teken reeks omgeving. Zorg ervoor dat u het bericht verzendt nadat de module-installatie code het **PSModulePath** heeft bijgewerkt.
 
 ### <a name="use-the-correct-module-directory-name"></a>De juiste naam voor de module directory gebruiken
 

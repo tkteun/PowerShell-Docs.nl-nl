@@ -1,12 +1,14 @@
 ---
-title: Voor beelden van cmdlet-code | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 2d2597d3d3f64cae1c1494eb2f05873f6feae5e0
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Voorbeelden van cmdlet-code
+description: Voorbeelden van cmdlet-code
+ms.openlocfilehash: 91dd2019300504697ad9a7a0c155a04600d09c58
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784330"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92652915"
 ---
 # <a name="examples-of-cmdlet-code"></a>Voorbeelden van cmdlet-code
 

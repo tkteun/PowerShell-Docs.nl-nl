@@ -1,13 +1,14 @@
 ---
 ms.date: 07/17/2020
-keywords: DSC, Power shell, configuratie, installatie
+ms.topic: reference
 title: DSC voor Linux nxArchive-resource
-ms.openlocfilehash: 386378fa6e1608117d6934b983dcebe23e55d60d
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC voor Linux nxArchive-resource
+ms.openlocfilehash: 2705829ccae0c1baa27324030433340e7f3949c1
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464244"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92648859"
 ---
 # <a name="dsc-for-linux-nxarchive-resource"></a>DSC voor Linux nxArchive-resource
 
@@ -33,7 +34,7 @@ nxArchive <string> #ResourceName
 |---|---|
 |Bronpad |Hiermee geeft u het bronpad van het archief bestand. Dit moet een. tar-,. zip-of. tar. gz-bestand zijn. |
 |DestinationPath |Hiermee geeft u de locatie op waar de archief inhoud moet worden uitgepakt. |
-|Controlesom |Hiermee wordt bepaald welk type moet worden gebruikt om te bepalen of het bron archief is bijgewerkt. Waarden zijn: **ctime**, **mtime**of **MD5**. De standaard waarde is **MD5**. |
+|Controlesom |Hiermee wordt bepaald welk type moet worden gebruikt om te bepalen of het bron archief is bijgewerkt. Waarden zijn: **ctime** , **mtime** of **MD5** . De standaard waarde is **MD5** . |
 |Force |Bepaalde bestands bewerkingen (zoals het overschrijven van een bestand of het verwijderen van een map die niet leeg is), resulteren in een fout. Met behulp van de eigenschap **Force** worden dergelijke fouten genegeerd. De standaardwaarde is `$false`. |
 
 ## <a name="common-properties"></a>Algemene eigenschappen
@@ -41,7 +42,7 @@ nxArchive <string> #ResourceName
 |Eigenschap |Beschrijving |
 |---|---|
 |DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is bijvoorbeeld als de ID van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is `DependsOn = "[ResourceType]ResourceName"` . |
-|Zo |Hiermee wordt bepaald of wordt gecontroleerd of de inhoud van het archief bestaat op de **bestemming**. Stel deze eigenschap in op **aanwezig** om te controleren of de inhoud bestaat. Stel deze in op **afwezig** om ervoor te zorgen dat ze niet bestaan. De standaard waarde is **aanwezig**. |
+|Zo |Hiermee wordt bepaald of wordt gecontroleerd of de inhoud van het archief bestaat op de **bestemming** . Stel deze eigenschap in op **aanwezig** om te controleren of de inhoud bestaat. Stel deze in op **afwezig** om ervoor te zorgen dat ze niet bestaan. De standaard waarde is **aanwezig** . |
 
 ## <a name="example"></a>Voorbeeld
 
