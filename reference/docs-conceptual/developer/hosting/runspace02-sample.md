@@ -1,36 +1,38 @@
 ---
-title: Runspace02-voor beeld | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 7a2dce436aceb1d8744377c37671a66398614851
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Voorbeeld Runspace02
+description: Voorbeeld Runspace02
+ms.openlocfilehash: 0206e1a80f3e5488fd2dd5628985756a5ca343c8
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784959"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92657902"
 ---
-# <a name="runspace02-sample"></a><span data-ttu-id="35876-102">Voorbeeld Runspace02</span><span class="sxs-lookup"><span data-stu-id="35876-102">Runspace02 Sample</span></span>
+# <a name="runspace02-sample"></a><span data-ttu-id="d7e5d-103">Voorbeeld Runspace02</span><span class="sxs-lookup"><span data-stu-id="d7e5d-103">Runspace02 Sample</span></span>
 
-<span data-ttu-id="35876-103">In dit voor beeld ziet u hoe u de klasse [System. Management. Automation. Power shell](/dotnet/api/system.management.automation.powershell) gebruikt om de cmdlets voor [Get-process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) en [Sort-object](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object) synchroon uit te voeren.</span><span class="sxs-lookup"><span data-stu-id="35876-103">This sample shows how to use the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) class to run the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) and [Sort-Object](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object) cmdlets synchronously.</span></span> <span data-ttu-id="35876-104">De cmdlet [Get-process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) retourneert [System. Diagnostics. process](/dotnet/api/System.Diagnostics.Process) -objecten voor elk proces dat wordt uitgevoerd op de lokale computer en de `Sort-Object` objecten worden gesorteerd op basis van hun [System.Diagnostics.process.id \*](/dotnet/api/System.Diagnostics.Process.Id) -eigenschap.</span><span class="sxs-lookup"><span data-stu-id="35876-104">The [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet returns [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) objects for each process running on the local computer, and the `Sort-Object` sorts the objects based on their [System.Diagnostics.Process.Id\*](/dotnet/api/System.Diagnostics.Process.Id) property.</span></span> <span data-ttu-id="35876-105">De resultaten van deze opdrachten worden weer gegeven met behulp van een [System. Windows. Forms. DataGridView](/dotnet/api/System.Windows.Forms.DataGridView) -besturings element.</span><span class="sxs-lookup"><span data-stu-id="35876-105">The results of these commands is displayed by using a [System.Windows.Forms.Datagridview](/dotnet/api/System.Windows.Forms.DataGridView) control.</span></span>
+<span data-ttu-id="d7e5d-104">In dit voor beeld ziet u hoe u de klasse [System. Management. Automation. Power shell](/dotnet/api/system.management.automation.powershell) gebruikt om de cmdlets voor [Get-process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) en [Sort-object](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object) synchroon uit te voeren.</span><span class="sxs-lookup"><span data-stu-id="d7e5d-104">This sample shows how to use the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) class to run the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) and [Sort-Object](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object) cmdlets synchronously.</span></span> <span data-ttu-id="d7e5d-105">De cmdlet [Get-process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) retourneert [System. Diagnostics. process](/dotnet/api/System.Diagnostics.Process) -objecten voor elk proces dat wordt uitgevoerd op de lokale computer en de `Sort-Object` objecten worden gesorteerd op basis van hun [System.Diagnostics.process.id \*](/dotnet/api/System.Diagnostics.Process.Id) -eigenschap.</span><span class="sxs-lookup"><span data-stu-id="d7e5d-105">The [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet returns [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) objects for each process running on the local computer, and the `Sort-Object` sorts the objects based on their [System.Diagnostics.Process.Id\*](/dotnet/api/System.Diagnostics.Process.Id) property.</span></span> <span data-ttu-id="d7e5d-106">De resultaten van deze opdrachten worden weer gegeven met behulp van een [System. Windows. Forms. DataGridView](/dotnet/api/System.Windows.Forms.DataGridView) -besturings element.</span><span class="sxs-lookup"><span data-stu-id="d7e5d-106">The results of these commands is displayed by using a [System.Windows.Forms.Datagridview](/dotnet/api/System.Windows.Forms.DataGridView) control.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="35876-106">Vereisten</span><span class="sxs-lookup"><span data-stu-id="35876-106">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="d7e5d-107">Vereisten</span><span class="sxs-lookup"><span data-stu-id="d7e5d-107">Requirements</span></span>
 
-<span data-ttu-id="35876-107">Voor dit voor beeld is Windows Power Shell 2,0 vereist.</span><span class="sxs-lookup"><span data-stu-id="35876-107">This sample requires Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="d7e5d-108">Voor dit voor beeld is Windows Power Shell 2,0 vereist.</span><span class="sxs-lookup"><span data-stu-id="d7e5d-108">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="35876-108">Demonstreert</span><span class="sxs-lookup"><span data-stu-id="35876-108">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="d7e5d-109">Demonstreert</span><span class="sxs-lookup"><span data-stu-id="d7e5d-109">Demonstrates</span></span>
 
-<span data-ttu-id="35876-109">In dit voor beeld ziet u het volgende.</span><span class="sxs-lookup"><span data-stu-id="35876-109">This sample demonstrates the following.</span></span>
+<span data-ttu-id="d7e5d-110">In dit voor beeld ziet u het volgende.</span><span class="sxs-lookup"><span data-stu-id="d7e5d-110">This sample demonstrates the following.</span></span>
 
-- <span data-ttu-id="35876-110">Een [System. Management. Automation. Power shell](/dotnet/api/system.management.automation.powershell) -object maken om opdrachten uit te voeren.</span><span class="sxs-lookup"><span data-stu-id="35876-110">Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object to run commands.</span></span>
+- <span data-ttu-id="d7e5d-111">Een [System. Management. Automation. Power shell](/dotnet/api/system.management.automation.powershell) -object maken om opdrachten uit te voeren.</span><span class="sxs-lookup"><span data-stu-id="d7e5d-111">Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object to run commands.</span></span>
 
-- <span data-ttu-id="35876-111">Opdrachten toevoegen aan de pijp lijn van [System. Management. Automation. Power shell](/dotnet/api/system.management.automation.powershell) -object.</span><span class="sxs-lookup"><span data-stu-id="35876-111">Adding commands to the pipeline of [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
+- <span data-ttu-id="d7e5d-112">Opdrachten toevoegen aan de pijp lijn van [System. Management. Automation. Power shell](/dotnet/api/system.management.automation.powershell) -object.</span><span class="sxs-lookup"><span data-stu-id="d7e5d-112">Adding commands to the pipeline of [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
 
-- <span data-ttu-id="35876-112">De opdrachten synchroon uit te voeren.</span><span class="sxs-lookup"><span data-stu-id="35876-112">Running the commands synchronously.</span></span>
+- <span data-ttu-id="d7e5d-113">De opdrachten synchroon uit te voeren.</span><span class="sxs-lookup"><span data-stu-id="d7e5d-113">Running the commands synchronously.</span></span>
 
-- <span data-ttu-id="35876-113">Het besturings element [System. Windows. Forms. DataGridView](/dotnet/api/System.Windows.Forms.DataGridView) gebruiken om de uitvoer van de opdrachten in een Windows Forms-toepassing weer te geven.</span><span class="sxs-lookup"><span data-stu-id="35876-113">Using a [System.Windows.Forms.Datagridview](/dotnet/api/System.Windows.Forms.DataGridView) control to display the output of the commands in a Windows Forms application.</span></span>
+- <span data-ttu-id="d7e5d-114">Het besturings element [System. Windows. Forms. DataGridView](/dotnet/api/System.Windows.Forms.DataGridView) gebruiken om de uitvoer van de opdrachten in een Windows Forms-toepassing weer te geven.</span><span class="sxs-lookup"><span data-stu-id="d7e5d-114">Using a [System.Windows.Forms.Datagridview](/dotnet/api/System.Windows.Forms.DataGridView) control to display the output of the commands in a Windows Forms application.</span></span>
 
-## <a name="example"></a><span data-ttu-id="35876-114">Voorbeeld</span><span class="sxs-lookup"><span data-stu-id="35876-114">Example</span></span>
+## <a name="example"></a><span data-ttu-id="d7e5d-115">Voorbeeld</span><span class="sxs-lookup"><span data-stu-id="d7e5d-115">Example</span></span>
 
-<span data-ttu-id="35876-115">In dit voor beeld worden de cmdlets [Get-process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) en [Sort-object](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object) synchroon uitgevoerd in de standaard runs Pace van Windows Power shell.</span><span class="sxs-lookup"><span data-stu-id="35876-115">This sample runs the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) and [Sort-Object](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object) cmdlets synchronously in the default runspace provided by Windows PowerShell.</span></span> <span data-ttu-id="35876-116">De uitvoer wordt weer gegeven in een formulier met behulp van een [System. Windows. Forms. DataGridView](/dotnet/api/System.Windows.Forms.DataGridView) -besturings element.</span><span class="sxs-lookup"><span data-stu-id="35876-116">The output is displayed in a form using a [System.Windows.Forms.Datagridview](/dotnet/api/System.Windows.Forms.DataGridView) control.</span></span>
+<span data-ttu-id="d7e5d-116">In dit voor beeld worden de cmdlets [Get-process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) en [Sort-object](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object) synchroon uitgevoerd in de standaard runs Pace van Windows Power shell.</span><span class="sxs-lookup"><span data-stu-id="d7e5d-116">This sample runs the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) and [Sort-Object](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object) cmdlets synchronously in the default runspace provided by Windows PowerShell.</span></span> <span data-ttu-id="d7e5d-117">De uitvoer wordt weer gegeven in een formulier met behulp van een [System. Windows. Forms. DataGridView](/dotnet/api/System.Windows.Forms.DataGridView) -besturings element.</span><span class="sxs-lookup"><span data-stu-id="d7e5d-117">The output is displayed in a form using a [System.Windows.Forms.Datagridview](/dotnet/api/System.Windows.Forms.DataGridView) control.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces
@@ -107,6 +109,6 @@ namespace Microsoft.Samples.PowerShell.Runspaces
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="35876-117">Zie ook</span><span class="sxs-lookup"><span data-stu-id="35876-117">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="d7e5d-118">Zie ook</span><span class="sxs-lookup"><span data-stu-id="d7e5d-118">See Also</span></span>
 
-[<span data-ttu-id="35876-118">Een Windows PowerShell-hosttoepassing schrijven</span><span class="sxs-lookup"><span data-stu-id="35876-118">Writing a Windows PowerShell Host Application</span></span>](./writing-a-windows-powershell-host-application.md)
+[<span data-ttu-id="d7e5d-119">Een Windows PowerShell-hosttoepassing schrijven</span><span class="sxs-lookup"><span data-stu-id="d7e5d-119">Writing a Windows PowerShell Host Application</span></span>](./writing-a-windows-powershell-host-application.md)

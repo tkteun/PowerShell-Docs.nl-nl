@@ -2,18 +2,19 @@
 ms.date: 12/12/2018
 keywords: DSC, Power shell, resource, Galerie, Setup
 title: Parameters toevoegen aan een configuratie
-ms.openlocfilehash: 9aa4c746042e89d7767e1b326233dcca1e5c4c24
-ms.sourcegitcommit: b80ce0396550d0896189d0205d6c4b4372ac2015
+description: DSC-configuraties kunnen worden para meters voor het toestaan van meer dynamische configuraties op basis van gebruikers invoer.
+ms.openlocfilehash: aea230d34994a7b20076559c44990abe554d5395
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82141406"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92656815"
 ---
-# <a name="add-parameters-to-a-configuration"></a><span data-ttu-id="020e6-103">Parameters toevoegen aan een configuratie</span><span class="sxs-lookup"><span data-stu-id="020e6-103">Add Parameters to a Configuration</span></span>
+# <a name="add-parameters-to-a-configuration"></a><span data-ttu-id="a6f33-104">Parameters toevoegen aan een configuratie</span><span class="sxs-lookup"><span data-stu-id="a6f33-104">Add Parameters to a Configuration</span></span>
 
-<span data-ttu-id="020e6-104">Net als-functies kunnen [configuraties](configurations.md) worden para meters om meer dynamische configuraties op basis van gebruikers invoer toe te staan.</span><span class="sxs-lookup"><span data-stu-id="020e6-104">Like Functions, [Configurations](configurations.md) can be parameterized to allow more dynamic configurations based on user input.</span></span> <span data-ttu-id="020e6-105">De stappen zijn vergelijkbaar met die beschreven in [functies met para meters](/powershell/module/microsoft.powershell.core/about/about_functions).</span><span class="sxs-lookup"><span data-stu-id="020e6-105">The steps are similar to those described in [Functions with Parameters](/powershell/module/microsoft.powershell.core/about/about_functions).</span></span>
+<span data-ttu-id="a6f33-105">Net als-functies kunnen [configuraties](configurations.md) worden para meters om meer dynamische configuraties op basis van gebruikers invoer toe te staan.</span><span class="sxs-lookup"><span data-stu-id="a6f33-105">Like Functions, [Configurations](configurations.md) can be parameterized to allow more dynamic configurations based on user input.</span></span> <span data-ttu-id="a6f33-106">De stappen zijn vergelijkbaar met die beschreven in [functies met para meters](/powershell/module/microsoft.powershell.core/about/about_functions).</span><span class="sxs-lookup"><span data-stu-id="a6f33-106">The steps are similar to those described in [Functions with Parameters](/powershell/module/microsoft.powershell.core/about/about_functions).</span></span>
 
-<span data-ttu-id="020e6-106">Dit voor beeld begint met een basis configuratie waarmee de ' Spooler-service ' wordt uitgevoerd '.</span><span class="sxs-lookup"><span data-stu-id="020e6-106">This example starts with a basic Configuration that configures the "Spooler" service to be "Running".</span></span>
+<span data-ttu-id="a6f33-107">Dit voor beeld begint met een basis configuratie waarmee de ' Spooler-service ' wordt uitgevoerd '.</span><span class="sxs-lookup"><span data-stu-id="a6f33-107">This example starts with a basic Configuration that configures the "Spooler" service to be "Running".</span></span>
 
 ```powershell
 Configuration TestConfig
@@ -32,22 +33,22 @@ Configuration TestConfig
 }
 ```
 
-## <a name="built-in-configuration-parameters"></a><span data-ttu-id="020e6-107">Ingebouwde configuratie parameters</span><span class="sxs-lookup"><span data-stu-id="020e6-107">Built-in Configuration parameters</span></span>
+## <a name="built-in-configuration-parameters"></a><span data-ttu-id="a6f33-108">Ingebouwde configuratie parameters</span><span class="sxs-lookup"><span data-stu-id="a6f33-108">Built-in Configuration parameters</span></span>
 
-<span data-ttu-id="020e6-108">In tegens telling tot een functie, voegt het kenmerk [CmdletBinding](/powershell/module/microsoft.powershell.core/about/about_functions_cmdletbindingattribute) geen functionaliteit toe.</span><span class="sxs-lookup"><span data-stu-id="020e6-108">Unlike a Function though, the [CmdletBinding](/powershell/module/microsoft.powershell.core/about/about_functions_cmdletbindingattribute) attribute adds no functionality.</span></span> <span data-ttu-id="020e6-109">Naast de [algemene para meters](/powershell/module/microsoft.powershell.core/about/about_commonparameters)kunnen configuraties ook gebruikmaken van de volgende ingebouwde para meters, zonder dat u ze hoeft te definiëren.</span><span class="sxs-lookup"><span data-stu-id="020e6-109">In addition to [Common Parameters](/powershell/module/microsoft.powershell.core/about/about_commonparameters), Configurations can also use the following built in parameters, without requiring you to define them.</span></span>
+<span data-ttu-id="a6f33-109">In tegens telling tot een functie, voegt het kenmerk [CmdletBinding](/powershell/module/microsoft.powershell.core/about/about_functions_cmdletbindingattribute) geen functionaliteit toe.</span><span class="sxs-lookup"><span data-stu-id="a6f33-109">Unlike a Function though, the [CmdletBinding](/powershell/module/microsoft.powershell.core/about/about_functions_cmdletbindingattribute) attribute adds no functionality.</span></span> <span data-ttu-id="a6f33-110">Naast de [algemene para meters](/powershell/module/microsoft.powershell.core/about/about_commonparameters)kunnen configuraties ook gebruikmaken van de volgende ingebouwde para meters, zonder dat u ze hoeft te definiëren.</span><span class="sxs-lookup"><span data-stu-id="a6f33-110">In addition to [Common Parameters](/powershell/module/microsoft.powershell.core/about/about_commonparameters), Configurations can also use the following built in parameters, without requiring you to define them.</span></span>
 
-|        <span data-ttu-id="020e6-110">Parameter</span><span class="sxs-lookup"><span data-stu-id="020e6-110">Parameter</span></span>        |                                         <span data-ttu-id="020e6-111">Beschrijving</span><span class="sxs-lookup"><span data-stu-id="020e6-111">Description</span></span>                                          |
+|        <span data-ttu-id="a6f33-111">Parameter</span><span class="sxs-lookup"><span data-stu-id="a6f33-111">Parameter</span></span>        |                                         <span data-ttu-id="a6f33-112">Beschrijving</span><span class="sxs-lookup"><span data-stu-id="a6f33-112">Description</span></span>                                          |
 | ----------------------- | -------------------------------------------------------------------------------------------- |
-| `-InstanceName`         | <span data-ttu-id="020e6-112">Gebruikt voor het definiëren van [samengestelde configuraties](compositeconfigs.md)</span><span class="sxs-lookup"><span data-stu-id="020e6-112">Used in defining [Composite Configurations](compositeconfigs.md)</span></span>                             |
-| `-DependsOn`            | <span data-ttu-id="020e6-113">Gebruikt voor het definiëren van [samengestelde configuraties](compositeconfigs.md)</span><span class="sxs-lookup"><span data-stu-id="020e6-113">Used in defining [Composite Configurations](compositeconfigs.md)</span></span>                             |
-| `-PSDSCRunAsCredential` | <span data-ttu-id="020e6-114">Gebruikt voor het definiëren van [samengestelde configuraties](compositeconfigs.md)</span><span class="sxs-lookup"><span data-stu-id="020e6-114">Used in defining [Composite Configurations](compositeconfigs.md)</span></span>                             |
-| `-ConfigurationData`    | <span data-ttu-id="020e6-115">Wordt gebruikt voor het door geven van gestructureerde [configuratie gegevens](configData.md) voor gebruik in de configuratie.</span><span class="sxs-lookup"><span data-stu-id="020e6-115">Used to pass in structured [Configuration Data](configData.md) for use in the Configuration.</span></span> |
-| `-OutputPath`           | <span data-ttu-id="020e6-116">Wordt gebruikt om op te geven\<waar het\>bestand computer naam. mof wordt gecompileerd</span><span class="sxs-lookup"><span data-stu-id="020e6-116">Used to specify where your "\<computername\>.mof" file will be compiled</span></span>                      |
+| `-InstanceName`         | <span data-ttu-id="a6f33-113">Gebruikt voor het definiëren van [samengestelde configuraties](compositeconfigs.md)</span><span class="sxs-lookup"><span data-stu-id="a6f33-113">Used in defining [Composite Configurations](compositeconfigs.md)</span></span>                             |
+| `-DependsOn`            | <span data-ttu-id="a6f33-114">Gebruikt voor het definiëren van [samengestelde configuraties](compositeconfigs.md)</span><span class="sxs-lookup"><span data-stu-id="a6f33-114">Used in defining [Composite Configurations](compositeconfigs.md)</span></span>                             |
+| `-PSDSCRunAsCredential` | <span data-ttu-id="a6f33-115">Gebruikt voor het definiëren van [samengestelde configuraties](compositeconfigs.md)</span><span class="sxs-lookup"><span data-stu-id="a6f33-115">Used in defining [Composite Configurations](compositeconfigs.md)</span></span>                             |
+| `-ConfigurationData`    | <span data-ttu-id="a6f33-116">Wordt gebruikt voor het door geven van gestructureerde [configuratie gegevens](configData.md) voor gebruik in de configuratie.</span><span class="sxs-lookup"><span data-stu-id="a6f33-116">Used to pass in structured [Configuration Data](configData.md) for use in the Configuration.</span></span> |
+| `-OutputPath`           | <span data-ttu-id="a6f33-117">Wordt gebruikt om op te geven waar uw ' \<computername\> . MOF-bestand ' wordt gecompileerd</span><span class="sxs-lookup"><span data-stu-id="a6f33-117">Used to specify where your "\<computername\>.mof" file will be compiled</span></span>                      |
 
-## <a name="adding-your-own-parameters-to-configurations"></a><span data-ttu-id="020e6-117">Uw eigen para meters aan configuraties toevoegen</span><span class="sxs-lookup"><span data-stu-id="020e6-117">Adding your own parameters to Configurations</span></span>
+## <a name="adding-your-own-parameters-to-configurations"></a><span data-ttu-id="a6f33-118">Uw eigen para meters aan configuraties toevoegen</span><span class="sxs-lookup"><span data-stu-id="a6f33-118">Adding your own parameters to Configurations</span></span>
 
-<span data-ttu-id="020e6-118">Naast de ingebouwde para meters kunt u ook uw eigen para meters aan uw configuraties toevoegen.</span><span class="sxs-lookup"><span data-stu-id="020e6-118">In addition to the built-in parameters, you can also add your own parameters to your Configurations.</span></span>
-<span data-ttu-id="020e6-119">Het parameter blok gaat direct in de configuratie declaratie, net als een functie.</span><span class="sxs-lookup"><span data-stu-id="020e6-119">The parameter block goes directly inside the Configuration declaration, just like a Function.</span></span> <span data-ttu-id="020e6-120">Een configuratie parameter blok moet zich buiten eventuele **knooppunt** declaraties bevinden en boven alle *import* instructies.</span><span class="sxs-lookup"><span data-stu-id="020e6-120">A Configuration parameter block should be outside any **Node** declarations, and above any *import* statements.</span></span> <span data-ttu-id="020e6-121">Door para meters toe te voegen, kunt u uw configuraties robuuster en dynamisch maken.</span><span class="sxs-lookup"><span data-stu-id="020e6-121">By adding parameters, you can make your Configurations more robust and dynamic.</span></span>
+<span data-ttu-id="a6f33-119">Naast de ingebouwde para meters kunt u ook uw eigen para meters aan uw configuraties toevoegen.</span><span class="sxs-lookup"><span data-stu-id="a6f33-119">In addition to the built-in parameters, you can also add your own parameters to your Configurations.</span></span>
+<span data-ttu-id="a6f33-120">Het parameter blok gaat direct in de configuratie declaratie, net als een functie.</span><span class="sxs-lookup"><span data-stu-id="a6f33-120">The parameter block goes directly inside the Configuration declaration, just like a Function.</span></span> <span data-ttu-id="a6f33-121">Een configuratie parameter blok moet zich buiten eventuele **knooppunt** declaraties bevinden en boven alle *import* instructies.</span><span class="sxs-lookup"><span data-stu-id="a6f33-121">A Configuration parameter block should be outside any **Node** declarations, and above any *import* statements.</span></span> <span data-ttu-id="a6f33-122">Door para meters toe te voegen, kunt u uw configuraties robuuster en dynamisch maken.</span><span class="sxs-lookup"><span data-stu-id="a6f33-122">By adding parameters, you can make your Configurations more robust and dynamic.</span></span>
 
 ```powershell
 Configuration TestConfig
@@ -58,9 +59,9 @@ Configuration TestConfig
     )
 ```
 
-### <a name="add-a-computername-parameter"></a><span data-ttu-id="020e6-122">Een ComputerName-para meter toevoegen</span><span class="sxs-lookup"><span data-stu-id="020e6-122">Add a ComputerName parameter</span></span>
+### <a name="add-a-computername-parameter"></a><span data-ttu-id="a6f33-123">Een ComputerName-para meter toevoegen</span><span class="sxs-lookup"><span data-stu-id="a6f33-123">Add a ComputerName parameter</span></span>
 
-<span data-ttu-id="020e6-123">De eerste para meter die u kunt toevoegen `-Computername` is een para meter, zodat u dynamisch een '. MOF-bestand `-Computername` ' kunt compileren dat u door gegeven aan uw configuratie.</span><span class="sxs-lookup"><span data-stu-id="020e6-123">The first parameter you might add is a `-Computername` parameter so you can dynamically compile a ".mof" file for any `-Computername` you pass to your configuration.</span></span> <span data-ttu-id="020e6-124">Net als functions kunt u ook een standaard waarde definiëren, voor het geval de gebruiker geen waarde doorgeeft voor`-ComputerName`</span><span class="sxs-lookup"><span data-stu-id="020e6-124">Like Functions, you can also define a default value, in case the user does not pass in a value for `-ComputerName`</span></span>
+<span data-ttu-id="a6f33-124">De eerste para meter die u kunt toevoegen is een `-Computername` para meter, zodat u dynamisch een '. MOF-bestand ' kunt compileren dat `-Computername` u door gegeven aan uw configuratie.</span><span class="sxs-lookup"><span data-stu-id="a6f33-124">The first parameter you might add is a `-Computername` parameter so you can dynamically compile a ".mof" file for any `-Computername` you pass to your configuration.</span></span> <span data-ttu-id="a6f33-125">Net als functions kunt u ook een standaard waarde definiëren, voor het geval de gebruiker geen waarde doorgeeft voor `-ComputerName`</span><span class="sxs-lookup"><span data-stu-id="a6f33-125">Like Functions, you can also define a default value, in case the user does not pass in a value for `-ComputerName`</span></span>
 
 ```powershell
 param
@@ -70,7 +71,7 @@ param
 )
 ```
 
-<span data-ttu-id="020e6-125">Binnen uw configuratie kunt u vervolgens uw `-ComputerName` para meter opgeven wanneer u het knooppunt blok wilt definiëren.</span><span class="sxs-lookup"><span data-stu-id="020e6-125">Within your configuration, you can then specify your `-ComputerName` parameter when defining your Node block.</span></span>
+<span data-ttu-id="a6f33-126">Binnen uw configuratie kunt u vervolgens uw `-ComputerName` para meter opgeven wanneer u het knooppunt blok wilt definiëren.</span><span class="sxs-lookup"><span data-stu-id="a6f33-126">Within your configuration, you can then specify your `-ComputerName` parameter when defining your Node block.</span></span>
 
 ```powershell
 Node $ComputerName
@@ -79,17 +80,17 @@ Node $ComputerName
 }
 ```
 
-### <a name="calling-your-configuration-with-parameters"></a><span data-ttu-id="020e6-126">Uw configuratie met para meters aanroepen</span><span class="sxs-lookup"><span data-stu-id="020e6-126">Calling your Configuration with parameters</span></span>
+### <a name="calling-your-configuration-with-parameters"></a><span data-ttu-id="a6f33-127">Uw configuratie met para meters aanroepen</span><span class="sxs-lookup"><span data-stu-id="a6f33-127">Calling your Configuration with parameters</span></span>
 
-<span data-ttu-id="020e6-127">Nadat u para meters aan uw configuratie hebt toegevoegd, kunt u ze op dezelfde manier gebruiken als met een cmdlet.</span><span class="sxs-lookup"><span data-stu-id="020e6-127">After you have added parameters to your Configuration, you can use them just like you would with a cmdlet.</span></span>
+<span data-ttu-id="a6f33-128">Nadat u para meters aan uw configuratie hebt toegevoegd, kunt u ze op dezelfde manier gebruiken als met een cmdlet.</span><span class="sxs-lookup"><span data-stu-id="a6f33-128">After you have added parameters to your Configuration, you can use them just like you would with a cmdlet.</span></span>
 
 ```powershell
 TestConfig -ComputerName "server01"
 ```
 
-### <a name="compiling-multiple-mof-files"></a><span data-ttu-id="020e6-128">Meerdere MOF-bestanden compileren</span><span class="sxs-lookup"><span data-stu-id="020e6-128">Compiling multiple .mof files</span></span>
+### <a name="compiling-multiple-mof-files"></a><span data-ttu-id="a6f33-129">Meerdere MOF-bestanden compileren</span><span class="sxs-lookup"><span data-stu-id="a6f33-129">Compiling multiple .mof files</span></span>
 
-<span data-ttu-id="020e6-129">Het knooppunt blok kan ook een door komma's gescheiden lijst met computer namen accepteren en de MOF-bestanden genereren.</span><span class="sxs-lookup"><span data-stu-id="020e6-129">The Node block can also accept a comma-separated list of computer names and will generate ".mof" files for each.</span></span> <span data-ttu-id="020e6-130">U kunt het volgende voor beeld uitvoeren om ". MOF"-bestanden te genereren voor alle computers die worden `-ComputerName` door gegeven aan de para meter.</span><span class="sxs-lookup"><span data-stu-id="020e6-130">You can run the following example to generate ".mof" files for all of the computers passed to the `-ComputerName` parameter.</span></span>
+<span data-ttu-id="a6f33-130">Het knooppunt blok kan ook een door komma's gescheiden lijst met computer namen accepteren en de MOF-bestanden genereren.</span><span class="sxs-lookup"><span data-stu-id="a6f33-130">The Node block can also accept a comma-separated list of computer names and will generate ".mof" files for each.</span></span> <span data-ttu-id="a6f33-131">U kunt het volgende voor beeld uitvoeren om ". MOF"-bestanden te genereren voor alle computers die worden door gegeven aan de `-ComputerName` para meter.</span><span class="sxs-lookup"><span data-stu-id="a6f33-131">You can run the following example to generate ".mof" files for all of the computers passed to the `-ComputerName` parameter.</span></span>
 
 ```powershell
 Configuration TestConfig
@@ -116,10 +117,10 @@ Configuration TestConfig
 TestConfig -ComputerName "server01", "server02", "server03"
 ```
 
-## <a name="advanced-parameters-in-configurations"></a><span data-ttu-id="020e6-131">Geavanceerde para meters in configuraties</span><span class="sxs-lookup"><span data-stu-id="020e6-131">Advanced parameters in Configurations</span></span>
+## <a name="advanced-parameters-in-configurations"></a><span data-ttu-id="a6f33-132">Geavanceerde para meters in configuraties</span><span class="sxs-lookup"><span data-stu-id="a6f33-132">Advanced parameters in Configurations</span></span>
 
-<span data-ttu-id="020e6-132">Naast een `-ComputerName` para meter kunnen we para meters voor de service naam en-status toevoegen.</span><span class="sxs-lookup"><span data-stu-id="020e6-132">In addition to a `-ComputerName` parameter, we can add parameters for the service name and state.</span></span>
-<span data-ttu-id="020e6-133">In het volgende voor beeld wordt een parameter blok `-ServiceName` met een para meter toegevoegd en gebruikt om het **service** bron blok dynamisch te definiëren.</span><span class="sxs-lookup"><span data-stu-id="020e6-133">The following example adds a parameter block with a `-ServiceName` parameter and uses it to dynamically define the **Service** resource block.</span></span> <span data-ttu-id="020e6-134">Er wordt ook een `-State` para meter toegevoegd om de **status** in het **service** resource blok dynamisch te definiëren.</span><span class="sxs-lookup"><span data-stu-id="020e6-134">It also adds a `-State` parameter to dynamically define the **State** in the **Service** resource block.</span></span>
+<span data-ttu-id="a6f33-133">Naast een `-ComputerName` para meter kunnen we para meters voor de service naam en-status toevoegen.</span><span class="sxs-lookup"><span data-stu-id="a6f33-133">In addition to a `-ComputerName` parameter, we can add parameters for the service name and state.</span></span>
+<span data-ttu-id="a6f33-134">In het volgende voor beeld wordt een parameter blok met een `-ServiceName` para meter toegevoegd en gebruikt om het **service** bron blok dynamisch te definiëren.</span><span class="sxs-lookup"><span data-stu-id="a6f33-134">The following example adds a parameter block with a `-ServiceName` parameter and uses it to dynamically define the **Service** resource block.</span></span> <span data-ttu-id="a6f33-135">Er wordt ook een `-State` para meter toegevoegd om de **status** in het **service** resource blok dynamisch te definiëren.</span><span class="sxs-lookup"><span data-stu-id="a6f33-135">It also adds a `-State` parameter to dynamically define the **State** in the **Service** resource block.</span></span>
 
 ```powershell
 Configuration TestConfig
@@ -151,18 +152,18 @@ Configuration TestConfig
 ```
 
 > [!NOTE]
-> <span data-ttu-id="020e6-135">In meer geavanceerde scenario's kan het zinvol zijn om uw dynamische gegevens te verplaatsen naar een gestructureerde [configuratie gegevens](configData.md).</span><span class="sxs-lookup"><span data-stu-id="020e6-135">In more advanced scenarios, it might make more sense to move your dynamic data into a structured [Configuration Data](configData.md).</span></span>
+> <span data-ttu-id="a6f33-136">In meer geavanceerde scenario's kan het zinvol zijn om uw dynamische gegevens te verplaatsen naar een gestructureerde [configuratie gegevens](configData.md).</span><span class="sxs-lookup"><span data-stu-id="a6f33-136">In more advanced scenarios, it might make more sense to move your dynamic data into a structured [Configuration Data](configData.md).</span></span>
 
-<span data-ttu-id="020e6-136">De voorbeeld configuratie heeft nu een dynamische `$ServiceName`, maar als er geen is opgegeven, wordt er een fout opgetreden bij het compileren van resultaten.</span><span class="sxs-lookup"><span data-stu-id="020e6-136">The example Configuration now takes a dynamic `$ServiceName`, but if one is not specified, compiling results in an error.</span></span> <span data-ttu-id="020e6-137">U kunt bijvoorbeeld een standaard waarde toevoegen, zoals in dit voor beeld.</span><span class="sxs-lookup"><span data-stu-id="020e6-137">You could add a default value like this example.</span></span>
+<span data-ttu-id="a6f33-137">De voorbeeld configuratie heeft nu een dynamische `$ServiceName` , maar als er geen is opgegeven, wordt er een fout opgetreden bij het compileren van resultaten.</span><span class="sxs-lookup"><span data-stu-id="a6f33-137">The example Configuration now takes a dynamic `$ServiceName`, but if one is not specified, compiling results in an error.</span></span> <span data-ttu-id="a6f33-138">U kunt bijvoorbeeld een standaard waarde toevoegen, zoals in dit voor beeld.</span><span class="sxs-lookup"><span data-stu-id="a6f33-138">You could add a default value like this example.</span></span>
 
 ```powershell
 [String]
 $ServiceName="Spooler"
 ```
 
-<span data-ttu-id="020e6-138">In dit geval is het beter om de gebruiker te dwingen een waarde voor de `$ServiceName` para meter op te geven.</span><span class="sxs-lookup"><span data-stu-id="020e6-138">In this instance though, it makes more sense to simply force the user to specify a value for the `$ServiceName` parameter.</span></span> <span data-ttu-id="020e6-139">Met `parameter` het kenmerk kunt u verdere validatie en pijplijn ondersteuning toevoegen aan de para meters van uw configuratie.</span><span class="sxs-lookup"><span data-stu-id="020e6-139">The `parameter` attribute allows you to add further validation and pipeline support to your Configuration's parameters.</span></span>
+<span data-ttu-id="a6f33-139">In dit geval is het beter om de gebruiker te dwingen een waarde voor de para meter op te geven `$ServiceName` .</span><span class="sxs-lookup"><span data-stu-id="a6f33-139">In this instance though, it makes more sense to simply force the user to specify a value for the `$ServiceName` parameter.</span></span> <span data-ttu-id="a6f33-140">`parameter`Met het kenmerk kunt u verdere validatie en pijplijn ondersteuning toevoegen aan de para meters van uw configuratie.</span><span class="sxs-lookup"><span data-stu-id="a6f33-140">The `parameter` attribute allows you to add further validation and pipeline support to your Configuration's parameters.</span></span>
 
-<span data-ttu-id="020e6-140">Voeg boven een parameter declaratie het `parameter` kenmerk blok toe, zoals in het onderstaande voor beeld.</span><span class="sxs-lookup"><span data-stu-id="020e6-140">Above any parameter declaration, add the `parameter` attribute block as in the example below.</span></span>
+<span data-ttu-id="a6f33-141">Voeg boven een parameter declaratie het `parameter` kenmerk blok toe, zoals in het onderstaande voor beeld.</span><span class="sxs-lookup"><span data-stu-id="a6f33-141">Above any parameter declaration, add the `parameter` attribute block as in the example below.</span></span>
 
 ```powershell
 [parameter()]
@@ -170,7 +171,7 @@ $ServiceName="Spooler"
 $ServiceName
 ```
 
-<span data-ttu-id="020e6-141">U kunt argumenten opgeven voor elk `parameter` kenmerk om aspecten van de gedefinieerde para meter te beheren.</span><span class="sxs-lookup"><span data-stu-id="020e6-141">You can specify arguments to each `parameter` attribute, to control aspects of the defined parameter.</span></span> <span data-ttu-id="020e6-142">In het volgende voor beeld `$ServiceName` wordt een **verplichte** para meter gemaakt.</span><span class="sxs-lookup"><span data-stu-id="020e6-142">The following example makes the `$ServiceName` a **Mandatory** parameter.</span></span>
+<span data-ttu-id="a6f33-142">U kunt argumenten opgeven voor elk `parameter` kenmerk om aspecten van de gedefinieerde para meter te beheren.</span><span class="sxs-lookup"><span data-stu-id="a6f33-142">You can specify arguments to each `parameter` attribute, to control aspects of the defined parameter.</span></span> <span data-ttu-id="a6f33-143">In het volgende voor beeld wordt `$ServiceName` een **verplichte** para meter gemaakt.</span><span class="sxs-lookup"><span data-stu-id="a6f33-143">The following example makes the `$ServiceName` a **Mandatory** parameter.</span></span>
 
 ```powershell
 [parameter(Mandatory)]
@@ -178,7 +179,7 @@ $ServiceName
 $ServiceName
 ```
 
-<span data-ttu-id="020e6-143">Voor de `$State` para meter willen we voor komen dat de gebruiker waarden opgeeft buiten een vooraf gedefinieerde set (zoals actief, gestopt). het `ValidationSet*`kenmerk zou voor komen dat de gebruiker waarden opgeeft buiten een vooraf gedefinieerde set (zoals actief, gestopt).</span><span class="sxs-lookup"><span data-stu-id="020e6-143">For the `$State` parameter, we would like to prevent the user from specifying values outside of a predefined set (like Running, Stopped) the `ValidationSet*`attribute would prevent the user from specifying values outside of a predefined set (like Running, Stopped).</span></span> <span data-ttu-id="020e6-144">In het volgende voor beeld `ValidationSet` wordt het kenmerk `$State` toegevoegd aan de para meter.</span><span class="sxs-lookup"><span data-stu-id="020e6-144">The following example adds the `ValidationSet` attribute to the `$State` parameter.</span></span> <span data-ttu-id="020e6-145">Omdat we de `$State` para meter niet **verplicht**moeten maken, moeten we een standaard waarde voor deze vereiste toevoegen.</span><span class="sxs-lookup"><span data-stu-id="020e6-145">Since we do not want to make the `$State` parameter **Mandatory**, we will need to add a default value for it.</span></span>
+<span data-ttu-id="a6f33-144">Voor de `$State` para meter willen we voor komen dat de gebruiker waarden opgeeft buiten een vooraf gedefinieerde set (zoals actief, gestopt). het `ValidationSet*` kenmerk zou voor komen dat de gebruiker waarden opgeeft buiten een vooraf gedefinieerde set (zoals actief, gestopt).</span><span class="sxs-lookup"><span data-stu-id="a6f33-144">For the `$State` parameter, we would like to prevent the user from specifying values outside of a predefined set (like Running, Stopped) the `ValidationSet*`attribute would prevent the user from specifying values outside of a predefined set (like Running, Stopped).</span></span> <span data-ttu-id="a6f33-145">In het volgende voor beeld wordt het `ValidationSet` kenmerk toegevoegd aan de `$State` para meter.</span><span class="sxs-lookup"><span data-stu-id="a6f33-145">The following example adds the `ValidationSet` attribute to the `$State` parameter.</span></span> <span data-ttu-id="a6f33-146">Omdat we de `$State` para meter niet **verplicht** moeten maken, moeten we een standaard waarde voor deze vereiste toevoegen.</span><span class="sxs-lookup"><span data-stu-id="a6f33-146">Since we do not want to make the `$State` parameter **Mandatory** , we will need to add a default value for it.</span></span>
 
 ```powershell
 [ValidateSet("Running", "Stopped")]
@@ -187,13 +188,13 @@ $State="Running"
 ```
 
 > [!NOTE]
-> <span data-ttu-id="020e6-146">U hoeft geen `parameter` kenmerk op te geven wanneer u een `validation` kenmerk gebruikt.</span><span class="sxs-lookup"><span data-stu-id="020e6-146">You do not need to specify a `parameter` attribute when using a `validation` attribute.</span></span>
+> <span data-ttu-id="a6f33-147">U hoeft geen kenmerk op te geven `parameter` Wanneer u een `validation` kenmerk gebruikt.</span><span class="sxs-lookup"><span data-stu-id="a6f33-147">You do not need to specify a `parameter` attribute when using a `validation` attribute.</span></span>
 
-<span data-ttu-id="020e6-147">Meer informatie over de `parameter` en validatie kenmerken vindt u in [about_Functions_Advanced_Parameters](/powershell/module/microsoft.powershell.core/about/about_Functions_Advanced_Parameters).</span><span class="sxs-lookup"><span data-stu-id="020e6-147">You can read more about the `parameter` and validation attributes in [about_Functions_Advanced_Parameters](/powershell/module/microsoft.powershell.core/about/about_Functions_Advanced_Parameters).</span></span>
+<span data-ttu-id="a6f33-148">Meer informatie over de `parameter` en validatie kenmerken vindt u in [about_Functions_Advanced_Parameters](/powershell/module/microsoft.powershell.core/about/about_Functions_Advanced_Parameters).</span><span class="sxs-lookup"><span data-stu-id="a6f33-148">You can read more about the `parameter` and validation attributes in [about_Functions_Advanced_Parameters](/powershell/module/microsoft.powershell.core/about/about_Functions_Advanced_Parameters).</span></span>
 
-## <a name="fully-parameterized-configuration"></a><span data-ttu-id="020e6-148">Volledig geparametriseerde configuratie</span><span class="sxs-lookup"><span data-stu-id="020e6-148">Fully parameterized Configuration</span></span>
+## <a name="fully-parameterized-configuration"></a><span data-ttu-id="a6f33-149">Volledig geparametriseerde configuratie</span><span class="sxs-lookup"><span data-stu-id="a6f33-149">Fully parameterized Configuration</span></span>
 
-<span data-ttu-id="020e6-149">We hebben nu een configuratie met para meters waarmee de gebruiker een `-InstanceName`, `-ServiceName`, en de `-State` para meter valideert.</span><span class="sxs-lookup"><span data-stu-id="020e6-149">We now have a parameterized Configuration that forces the user to specify an `-InstanceName`, `-ServiceName`, and validates the `-State` parameter.</span></span>
+<span data-ttu-id="a6f33-150">We hebben nu een configuratie met para meters waarmee de gebruiker een `-InstanceName` , `-ServiceName` , en de `-State` para meter valideert.</span><span class="sxs-lookup"><span data-stu-id="a6f33-150">We now have a parameterized Configuration that forces the user to specify an `-InstanceName`, `-ServiceName`, and validates the `-State` parameter.</span></span>
 
 ```powershell
 Configuration TestConfig
@@ -226,9 +227,9 @@ Configuration TestConfig
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="020e6-150">Zie ook</span><span class="sxs-lookup"><span data-stu-id="020e6-150">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a6f33-151">Zie ook</span><span class="sxs-lookup"><span data-stu-id="a6f33-151">See also</span></span>
 
-- [<span data-ttu-id="020e6-151">Help schrijven voor DSC-configuraties</span><span class="sxs-lookup"><span data-stu-id="020e6-151">Write help for DSC configurations</span></span>](configHelp.md)
-- [<span data-ttu-id="020e6-152">Dynamische configuraties</span><span class="sxs-lookup"><span data-stu-id="020e6-152">Dynamic Configurations</span></span>](flow-control-in-configurations.md)
-- [<span data-ttu-id="020e6-153">Configuratie gegevens in uw configuraties gebruiken</span><span class="sxs-lookup"><span data-stu-id="020e6-153">Use Configuration Data in your Configurations</span></span>](configData.md)
-- [<span data-ttu-id="020e6-154">Afzonderlijke configuratie-en omgevings gegevens</span><span class="sxs-lookup"><span data-stu-id="020e6-154">Separate configuration and environment data</span></span>](separatingEnvData.md)
+- [<span data-ttu-id="a6f33-152">Help schrijven voor DSC-configuraties</span><span class="sxs-lookup"><span data-stu-id="a6f33-152">Write help for DSC configurations</span></span>](configHelp.md)
+- [<span data-ttu-id="a6f33-153">Dynamische configuraties</span><span class="sxs-lookup"><span data-stu-id="a6f33-153">Dynamic Configurations</span></span>](flow-control-in-configurations.md)
+- [<span data-ttu-id="a6f33-154">Configuratie gegevens in uw configuraties gebruiken</span><span class="sxs-lookup"><span data-stu-id="a6f33-154">Use Configuration Data in your Configurations</span></span>](configData.md)
+- [<span data-ttu-id="a6f33-155">Afzonderlijke configuratie-en omgevings gegevens</span><span class="sxs-lookup"><span data-stu-id="a6f33-155">Separate configuration and environment data</span></span>](separatingEnvData.md)

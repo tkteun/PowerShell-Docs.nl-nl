@@ -1,34 +1,36 @@
 ---
-title: RemoteRunspace01-voor beeld | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: f9ae846d70412858b32bfe32ba5bfbf2063d9eb1
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Voorbeeld RemoteRunspace01
+description: Voorbeeld RemoteRunspace01
+ms.openlocfilehash: 13c6213089700e779eb185fe48a67c1616fad437
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783208"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92658012"
 ---
-# <a name="remoterunspace01-sample"></a><span data-ttu-id="ca19a-102">Voorbeeld RemoteRunspace01</span><span class="sxs-lookup"><span data-stu-id="ca19a-102">RemoteRunspace01 Sample</span></span>
+# <a name="remoterunspace01-sample"></a><span data-ttu-id="3e9b4-103">Voorbeeld RemoteRunspace01</span><span class="sxs-lookup"><span data-stu-id="3e9b4-103">RemoteRunspace01 Sample</span></span>
 
-<span data-ttu-id="ca19a-103">Dit voor beeld laat zien hoe u een externe runs Pace maakt die wordt gebruikt om een externe verbinding tot stand te brengen.</span><span class="sxs-lookup"><span data-stu-id="ca19a-103">This sample shows how to create a remote runspace that is used to establish a remote connection.</span></span>
+<span data-ttu-id="3e9b4-104">Dit voor beeld laat zien hoe u een externe runs Pace maakt die wordt gebruikt om een externe verbinding tot stand te brengen.</span><span class="sxs-lookup"><span data-stu-id="3e9b4-104">This sample shows how to create a remote runspace that is used to establish a remote connection.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="ca19a-104">Vereisten</span><span class="sxs-lookup"><span data-stu-id="ca19a-104">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="3e9b4-105">Vereisten</span><span class="sxs-lookup"><span data-stu-id="3e9b4-105">Requirements</span></span>
 
- <span data-ttu-id="ca19a-105">Voor dit voor beeld is Windows Power Shell 2,0 vereist.</span><span class="sxs-lookup"><span data-stu-id="ca19a-105">This sample requires Windows PowerShell 2.0.</span></span>
+ <span data-ttu-id="3e9b4-106">Voor dit voor beeld is Windows Power Shell 2,0 vereist.</span><span class="sxs-lookup"><span data-stu-id="3e9b4-106">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="ca19a-106">Demonstreert</span><span class="sxs-lookup"><span data-stu-id="ca19a-106">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="3e9b4-107">Demonstreert</span><span class="sxs-lookup"><span data-stu-id="3e9b4-107">Demonstrates</span></span>
 
-- <span data-ttu-id="ca19a-107">Een [System. Management. Automation. Runspaces. Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) -object maken.</span><span class="sxs-lookup"><span data-stu-id="ca19a-107">Creating a [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object.</span></span>
+- <span data-ttu-id="3e9b4-108">Een [System. Management. Automation. Runspaces. Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) -object maken.</span><span class="sxs-lookup"><span data-stu-id="3e9b4-108">Creating a [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object.</span></span>
 
-- <span data-ttu-id="ca19a-108">Het instellen van de eigenschappen [System. Management. Automation. Runspaces. Runspaceconnectioninfo. Operationtimeout \*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout) en [System. Management. Automation. Runspaces. Runspaceconnectioninfo. opentimeout \*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout) van het object [System. Management. Automation. Runspaces. Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) .</span><span class="sxs-lookup"><span data-stu-id="ca19a-108">Setting the [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Operationtimeout\*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout) and [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Opentimeout\*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout) properties of the [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object.</span></span>
+- <span data-ttu-id="3e9b4-109">Het instellen van de eigenschappen [System. Management. Automation. Runspaces. Runspaceconnectioninfo. Operationtimeout \*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout) en [System. Management. Automation. Runspaces. Runspaceconnectioninfo. opentimeout \*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout) van het object [System. Management. Automation. Runspaces. Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) .</span><span class="sxs-lookup"><span data-stu-id="3e9b4-109">Setting the [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Operationtimeout\*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout) and [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Opentimeout\*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout) properties of the [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object.</span></span>
 
-- <span data-ttu-id="ca19a-109">Er wordt een externe runs Pace gemaakt die gebruikmaakt van het object [System. Management. Automation. Runspaces. Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) om de externe verbinding tot stand te brengen.</span><span class="sxs-lookup"><span data-stu-id="ca19a-109">Creating a remote runspace that uses the [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object to establish the remote connection.</span></span>
+- <span data-ttu-id="3e9b4-110">Er wordt een externe runs Pace gemaakt die gebruikmaakt van het object [System. Management. Automation. Runspaces. Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) om de externe verbinding tot stand te brengen.</span><span class="sxs-lookup"><span data-stu-id="3e9b4-110">Creating a remote runspace that uses the [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object to establish the remote connection.</span></span>
 
-- <span data-ttu-id="ca19a-110">De externe runs Pace sluiten om de externe verbinding vrij te geven.</span><span class="sxs-lookup"><span data-stu-id="ca19a-110">Closing the remote runspace to release the remote connection.</span></span>
+- <span data-ttu-id="3e9b4-111">De externe runs Pace sluiten om de externe verbinding vrij te geven.</span><span class="sxs-lookup"><span data-stu-id="3e9b4-111">Closing the remote runspace to release the remote connection.</span></span>
 
-## <a name="example"></a><span data-ttu-id="ca19a-111">Voorbeeld</span><span class="sxs-lookup"><span data-stu-id="ca19a-111">Example</span></span>
+## <a name="example"></a><span data-ttu-id="3e9b4-112">Voorbeeld</span><span class="sxs-lookup"><span data-stu-id="3e9b4-112">Example</span></span>
 
-<span data-ttu-id="ca19a-112">In dit voor beeld wordt een externe verbinding gedefinieerd en wordt die verbindings informatie gebruikt om een externe verbinding tot stand te brengen.</span><span class="sxs-lookup"><span data-stu-id="ca19a-112">This sample defines a remote connection and then uses that connection information to establish a remote connection.</span></span>
+<span data-ttu-id="3e9b4-113">In dit voor beeld wordt een externe verbinding gedefinieerd en wordt die verbindings informatie gebruikt om een externe verbinding tot stand te brengen.</span><span class="sxs-lookup"><span data-stu-id="3e9b4-113">This sample defines a remote connection and then uses that connection information to establish a remote connection.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces

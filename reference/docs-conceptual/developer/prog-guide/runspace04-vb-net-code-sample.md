@@ -1,23 +1,25 @@
 ---
-title: RunSpace04 (VB.NET)-code voorbeeld | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 853e3d223843fb39b2e6a08a21d041a5e696ce2c
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Runspace04-codevoorbeeld (VB.NET)
+description: Runspace04-codevoorbeeld (VB.NET)
+ms.openlocfilehash: 16d46eb4b4f2c1bc6d32b35c29a5d638beba6e24
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784755"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92657002"
 ---
-# <a name="runspace04--vbnet-code-sample"></a><span data-ttu-id="a2944-102">Runspace04-codevoorbeeld (VB.NET)</span><span class="sxs-lookup"><span data-stu-id="a2944-102">RunSpace04  (VB.NET) Code Sample</span></span>
+# <a name="runspace04--vbnet-code-sample"></a><span data-ttu-id="61941-103">Runspace04-codevoorbeeld (VB.NET)</span><span class="sxs-lookup"><span data-stu-id="61941-103">RunSpace04  (VB.NET) Code Sample</span></span>
 
-<span data-ttu-id="a2944-103">Dit is de VB.NET-bron code voor het Runspace04-voor beeld.</span><span class="sxs-lookup"><span data-stu-id="a2944-103">Here is the VB.NET source code for the Runspace04 sample.</span></span> <span data-ttu-id="a2944-104">In dit voor beeld wordt de klasse [System. Management. Automation. Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) gebruikt om een script uit te voeren waarmee een afsluit fout wordt gegenereerd.</span><span class="sxs-lookup"><span data-stu-id="a2944-104">This sample uses the [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) class to execute a script that generates a terminating error.</span></span> <span data-ttu-id="a2944-105">De hosttoepassing is verantwoordelijk voor het afvangen van de fout en het interpreteren van de fout record.</span><span class="sxs-lookup"><span data-stu-id="a2944-105">The host application is responsible for catching the error and interpreting the error record.</span></span>
+<span data-ttu-id="61941-104">Dit is de VB.NET-bron code voor het Runspace04-voor beeld.</span><span class="sxs-lookup"><span data-stu-id="61941-104">Here is the VB.NET source code for the Runspace04 sample.</span></span> <span data-ttu-id="61941-105">In dit voor beeld wordt de klasse [System. Management. Automation. Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) gebruikt om een script uit te voeren waarmee een afsluit fout wordt gegenereerd.</span><span class="sxs-lookup"><span data-stu-id="61941-105">This sample uses the [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) class to execute a script that generates a terminating error.</span></span> <span data-ttu-id="61941-106">De hosttoepassing is verantwoordelijk voor het afvangen van de fout en het interpreteren van de fout record.</span><span class="sxs-lookup"><span data-stu-id="61941-106">The host application is responsible for catching the error and interpreting the error record.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="a2944-106">U kunt het VB.NET-bron bestand (runspace02. VB) voor dit voor beeld downloaden met behulp van de Windows Software Development Kit voor Windows Vista en Microsoft .NET Framework 3,0 runtime-onderdelen.</span><span class="sxs-lookup"><span data-stu-id="a2944-106">You can download the VB.NET source file (runspace02.vb) for this sample by using the Windows Software Development Kit for Windows Vista and Microsoft .NET Framework 3.0 Runtime Components.</span></span> <span data-ttu-id="a2944-107">Zie [Windows Power Shell installeren en de Windows Power shell-SDK downloaden](/powershell/scripting/developer/installing-the-windows-powershell-sdk)voor instructies voor het downloaden.</span><span class="sxs-lookup"><span data-stu-id="a2944-107">For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).</span></span>
+> <span data-ttu-id="61941-107">U kunt het VB.NET-bron bestand (runspace02. VB) voor dit voor beeld downloaden met behulp van de Windows Software Development Kit voor Windows Vista en Microsoft .NET Framework 3,0 runtime-onderdelen.</span><span class="sxs-lookup"><span data-stu-id="61941-107">You can download the VB.NET source file (runspace02.vb) for this sample by using the Windows Software Development Kit for Windows Vista and Microsoft .NET Framework 3.0 Runtime Components.</span></span> <span data-ttu-id="61941-108">Zie [Windows Power Shell installeren en de Windows Power shell-SDK downloaden](/powershell/scripting/developer/installing-the-windows-powershell-sdk)voor instructies voor het downloaden.</span><span class="sxs-lookup"><span data-stu-id="61941-108">For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).</span></span>
 >
-> <span data-ttu-id="a2944-108">De gedownloade bron bestanden bevinden zich in de **\<PowerShell Samples>** map.</span><span class="sxs-lookup"><span data-stu-id="a2944-108">The downloaded source files are available in the **\<PowerShell Samples>** directory.</span></span>
+> <span data-ttu-id="61941-109">De gedownloade bron bestanden bevinden zich in de **\<PowerShell Samples>** map.</span><span class="sxs-lookup"><span data-stu-id="61941-109">The downloaded source files are available in the **\<PowerShell Samples>** directory.</span></span>
 
-## <a name="code-sample"></a><span data-ttu-id="a2944-109">Code voorbeeld</span><span class="sxs-lookup"><span data-stu-id="a2944-109">Code Sample</span></span>
+## <a name="code-sample"></a><span data-ttu-id="61941-110">Code voorbeeld</span><span class="sxs-lookup"><span data-stu-id="61941-110">Code Sample</span></span>
 
 ```vb
 Imports System
@@ -108,8 +110,8 @@ End Namespace
 
 <!-- TODO!!!: [!code-csharp[Runspace04.vb](../../powershell-sdk-samples/SDK-2.0/vb/Runspace01/Runspace04.vb#L09-L92 "Runspace04.vb")] -->
 
-## <a name="see-also"></a><span data-ttu-id="a2944-110">Zie ook</span><span class="sxs-lookup"><span data-stu-id="a2944-110">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="61941-111">Zie ook</span><span class="sxs-lookup"><span data-stu-id="61941-111">See Also</span></span>
 
-[<span data-ttu-id="a2944-111">Handleiding voor Windows PowerShell-programmeurs</span><span class="sxs-lookup"><span data-stu-id="a2944-111">Windows PowerShell Programmer's Guide</span></span>](./windows-powershell-programmer-s-guide.md)
+[<span data-ttu-id="61941-112">Handleiding voor Windows PowerShell-programmeurs</span><span class="sxs-lookup"><span data-stu-id="61941-112">Windows PowerShell Programmer's Guide</span></span>](./windows-powershell-programmer-s-guide.md)
 
-[<span data-ttu-id="a2944-112">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="a2944-112">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
+[<span data-ttu-id="61941-113">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="61941-113">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
