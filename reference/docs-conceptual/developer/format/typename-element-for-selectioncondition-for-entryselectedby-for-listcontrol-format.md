@@ -10,52 +10,52 @@ ms.contentlocale: nl-NL
 ms.lasthandoff: 10/27/2020
 ms.locfileid: "92645556"
 ---
-# <a name="typename-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format"></a><span data-ttu-id="18e53-103">Het element TypeName voor SelectionCondition voor EntrySelectedBy voor ListControl (opmaak)</span><span class="sxs-lookup"><span data-stu-id="18e53-103">TypeName Element for SelectionCondition for EntrySelectedBy for ListControl (Format)</span></span>
+# <a name="typename-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format"></a><span data-ttu-id="fcd24-103">Het element TypeName voor SelectionCondition voor EntrySelectedBy voor ListControl (opmaak)</span><span class="sxs-lookup"><span data-stu-id="fcd24-103">TypeName Element for SelectionCondition for EntrySelectedBy for ListControl (Format)</span></span>
 
-<span data-ttu-id="18e53-104">Hiermee geeft u een .NET-type op waarmee de voor waarde wordt geactiveerd.</span><span class="sxs-lookup"><span data-stu-id="18e53-104">Specifies a .NET type that triggers the condition.</span></span> <span data-ttu-id="18e53-105">Wanneer dit type aanwezig is, wordt de vermelding in de lijst gebruikt.</span><span class="sxs-lookup"><span data-stu-id="18e53-105">When this type is present, the list entry is used.</span></span>
+<span data-ttu-id="fcd24-104">Hiermee geeft u een .NET-type op waarmee de voor waarde wordt geactiveerd.</span><span class="sxs-lookup"><span data-stu-id="fcd24-104">Specifies a .NET type that triggers the condition.</span></span> <span data-ttu-id="fcd24-105">Wanneer dit type aanwezig is, wordt de vermelding in de lijst gebruikt.</span><span class="sxs-lookup"><span data-stu-id="fcd24-105">When this type is present, the list entry is used.</span></span>
 
-<span data-ttu-id="18e53-106">Configuratie-element (indeling) ViewDefinitions element (indeling) element van het object (indeling) ListControl element (indeling) (Format) element list item voor ListControl (indeling) element List entry voor List Entries (Format) EntrySelectedBy element voor List entry voor ListControl (Format) SelectionCondition-element voor het object voor de ListControl (Format) voor de SelectionCondition voor ListControl (indeling)</span><span class="sxs-lookup"><span data-stu-id="18e53-106">Configuration Element (Format) ViewDefinitions Element (Format) View Element (Format) ListControl Element (Format) ListEntries Element for ListControl (Format) ListEntry Element for ListEntries for ListControl (Format) EntrySelectedBy Element for ListEntry for ListControl (Format) SelectionCondition Element for EntrySelectedBy for ListControl (Format) TypeName Element for SelectionCondition for EntrySelectedBy for ListControl (Format)</span></span>
+<span data-ttu-id="fcd24-106">Configuratie-element (indeling) ViewDefinitions element (indeling) element van het object (indeling) ListControl element (indeling) (Format) element list item voor ListControl (indeling) element List entry voor List Entries (Format) EntrySelectedBy element voor List entry voor ListControl (Format) SelectionCondition-element voor het object voor de ListControl (Format) voor de SelectionCondition voor ListControl (indeling)</span><span class="sxs-lookup"><span data-stu-id="fcd24-106">Configuration Element (Format) ViewDefinitions Element (Format) View Element (Format) ListControl Element (Format) ListEntries Element for ListControl (Format) ListEntry Element for ListEntries for ListControl (Format) EntrySelectedBy Element for ListEntry for ListControl (Format) SelectionCondition Element for EntrySelectedBy for ListControl (Format) TypeName Element for SelectionCondition for EntrySelectedBy for ListControl (Format)</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="18e53-107">Syntax</span><span class="sxs-lookup"><span data-stu-id="18e53-107">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="fcd24-107">Syntax</span><span class="sxs-lookup"><span data-stu-id="fcd24-107">Syntax</span></span>
 
 ```xml
 <TypeName>Nameof.NetType</TypeName>
 ```
 
-## <a name="attributes-and-elements"></a><span data-ttu-id="18e53-108">Kenmerken en elementen</span><span class="sxs-lookup"><span data-stu-id="18e53-108">Attributes and Elements</span></span>
+## <a name="attributes-and-elements"></a><span data-ttu-id="fcd24-108">Kenmerken en elementen</span><span class="sxs-lookup"><span data-stu-id="fcd24-108">Attributes and Elements</span></span>
 
-<span data-ttu-id="18e53-109">In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het `TypeName` element beschreven.</span><span class="sxs-lookup"><span data-stu-id="18e53-109">The following sections describe attributes, child elements, and the parent element of the `TypeName` element.</span></span>
+<span data-ttu-id="fcd24-109">In de volgende secties worden kenmerken, onderliggende elementen en het bovenliggende element van het `TypeName` element beschreven.</span><span class="sxs-lookup"><span data-stu-id="fcd24-109">The following sections describe attributes, child elements, and the parent element of the `TypeName` element.</span></span>
 
-### <a name="attributes"></a><span data-ttu-id="18e53-110">Kenmerken</span><span class="sxs-lookup"><span data-stu-id="18e53-110">Attributes</span></span>
+### <a name="attributes"></a><span data-ttu-id="fcd24-110">Kenmerken</span><span class="sxs-lookup"><span data-stu-id="fcd24-110">Attributes</span></span>
 
-<span data-ttu-id="18e53-111">Geen.</span><span class="sxs-lookup"><span data-stu-id="18e53-111">None.</span></span>
+<span data-ttu-id="fcd24-111">Geen.</span><span class="sxs-lookup"><span data-stu-id="fcd24-111">None.</span></span>
 
-### <a name="child-elements"></a><span data-ttu-id="18e53-112">Onderliggende elementen</span><span class="sxs-lookup"><span data-stu-id="18e53-112">Child Elements</span></span>
+### <a name="child-elements"></a><span data-ttu-id="fcd24-112">Onderliggende elementen</span><span class="sxs-lookup"><span data-stu-id="fcd24-112">Child Elements</span></span>
 
-<span data-ttu-id="18e53-113">Geen.</span><span class="sxs-lookup"><span data-stu-id="18e53-113">None.</span></span>
+<span data-ttu-id="fcd24-113">Geen.</span><span class="sxs-lookup"><span data-stu-id="fcd24-113">None.</span></span>
 
-### <a name="parent-elements"></a><span data-ttu-id="18e53-114">Bovenliggende elementen</span><span class="sxs-lookup"><span data-stu-id="18e53-114">Parent Elements</span></span>
+### <a name="parent-elements"></a><span data-ttu-id="fcd24-114">Bovenliggende elementen</span><span class="sxs-lookup"><span data-stu-id="fcd24-114">Parent Elements</span></span>
 
-|<span data-ttu-id="18e53-115">Element</span><span class="sxs-lookup"><span data-stu-id="18e53-115">Element</span></span>|<span data-ttu-id="18e53-116">Beschrijving</span><span class="sxs-lookup"><span data-stu-id="18e53-116">Description</span></span>|
+|<span data-ttu-id="fcd24-115">Element</span><span class="sxs-lookup"><span data-stu-id="fcd24-115">Element</span></span>|<span data-ttu-id="fcd24-116">Beschrijving</span><span class="sxs-lookup"><span data-stu-id="fcd24-116">Description</span></span>|
 |-------------|-----------------|
-|[<span data-ttu-id="18e53-117">Het element SelectionCondition voor EntrySelectedBy voor ListControl (opmaak)</span><span class="sxs-lookup"><span data-stu-id="18e53-117">SelectionCondition Element for EntrySelectedBy for ListControl (Format)</span></span>](./selectioncondition-element-for-entryselectedby-for-listcontrol-format.md)|<span data-ttu-id="18e53-118">Hiermee definieert u de voor waarde die moet bestaan voor het gebruik van deze lijst vermelding.</span><span class="sxs-lookup"><span data-stu-id="18e53-118">Defines the condition that must exist for this list entry to be used.</span></span>|
+|[<span data-ttu-id="fcd24-117">Het element SelectionCondition voor EntrySelectedBy voor ListControl (opmaak)</span><span class="sxs-lookup"><span data-stu-id="fcd24-117">SelectionCondition Element for EntrySelectedBy for ListControl (Format)</span></span>](./selectioncondition-element-for-entryselectedby-for-listcontrol-format.md)|<span data-ttu-id="fcd24-118">Hiermee definieert u de voor waarde die moet bestaan voor het gebruik van deze lijst vermelding.</span><span class="sxs-lookup"><span data-stu-id="fcd24-118">Defines the condition that must exist for this list entry to be used.</span></span>|
 
-## <a name="text-value"></a><span data-ttu-id="18e53-119">Tekstwaarde</span><span class="sxs-lookup"><span data-stu-id="18e53-119">Text Value</span></span>
+## <a name="text-value"></a><span data-ttu-id="fcd24-119">Tekstwaarde</span><span class="sxs-lookup"><span data-stu-id="fcd24-119">Text Value</span></span>
 
-<span data-ttu-id="18e53-120">Geef de volledig gekwalificeerde naam van het .NET-type op, zoals `System.IO.DirectoryInfo` .</span><span class="sxs-lookup"><span data-stu-id="18e53-120">Specify the fully qualified name of the .NET type, such as `System.IO.DirectoryInfo`.</span></span>
+<span data-ttu-id="fcd24-120">Geef de volledig gekwalificeerde naam van het .NET-type op, zoals `System.IO.DirectoryInfo` .</span><span class="sxs-lookup"><span data-stu-id="fcd24-120">Specify the fully qualified name of the .NET type, such as `System.IO.DirectoryInfo`.</span></span>
 
-## <a name="remarks"></a><span data-ttu-id="18e53-121">Opmerkingen</span><span class="sxs-lookup"><span data-stu-id="18e53-121">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="fcd24-121">Opmerkingen</span><span class="sxs-lookup"><span data-stu-id="fcd24-121">Remarks</span></span>
 
-<span data-ttu-id="18e53-122">Met de selectie voorwaarde kan een wille keurig aantal .NET-typen of-selectie sets worden opgegeven, maar kan niet beide worden opgegeven.</span><span class="sxs-lookup"><span data-stu-id="18e53-122">The selection condition can specify any number of .NET types or selection sets, but cannot specify both.</span></span> <span data-ttu-id="18e53-123">Zie voor [waarden definiëren voor wanneer gegevens worden weer gegeven](./defining-conditions-for-displaying-data.md)voor meer informatie over het gebruik van selectie voorwaarden.</span><span class="sxs-lookup"><span data-stu-id="18e53-123">For more information about how to use selection conditions, see [Defining Conditions for when Data is Displayed](./defining-conditions-for-displaying-data.md).</span></span>
+<span data-ttu-id="fcd24-122">Met de selectie voorwaarde kan een wille keurig aantal .NET-typen of-selectie sets worden opgegeven, maar kan niet beide worden opgegeven.</span><span class="sxs-lookup"><span data-stu-id="fcd24-122">The selection condition can specify any number of .NET types or selection sets, but cannot specify both.</span></span> <span data-ttu-id="fcd24-123">Zie voor [waarden definiëren voor wanneer gegevens worden weer gegeven](./defining-conditions-for-displaying-data.md)voor meer informatie over het gebruik van selectie voorwaarden.</span><span class="sxs-lookup"><span data-stu-id="fcd24-123">For more information about how to use selection conditions, see [Defining Conditions for when Data is Displayed](./defining-conditions-for-displaying-data.md).</span></span>
 
-<span data-ttu-id="18e53-124">Zie [een lijst weergave maken](./creating-a-list-view.md)voor meer informatie over andere onderdelen van een lijst weergave.</span><span class="sxs-lookup"><span data-stu-id="18e53-124">For more information about other the components of a list view, see [Creating a List View](./creating-a-list-view.md).</span></span>
+<span data-ttu-id="fcd24-124">Zie [een lijst weergave maken](./creating-a-list-view.md)voor meer informatie over andere onderdelen van een lijst weergave.</span><span class="sxs-lookup"><span data-stu-id="fcd24-124">For more information about other the components of a list view, see [Creating a List View](./creating-a-list-view.md).</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="18e53-125">Zie ook</span><span class="sxs-lookup"><span data-stu-id="18e53-125">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="fcd24-125">Zie ook</span><span class="sxs-lookup"><span data-stu-id="fcd24-125">See Also</span></span>
 
-[<span data-ttu-id="18e53-126">Een lijstweergave maken</span><span class="sxs-lookup"><span data-stu-id="18e53-126">Creating a List View</span></span>](./creating-a-list-view.md)
+[<span data-ttu-id="fcd24-126">Een lijstweergave maken</span><span class="sxs-lookup"><span data-stu-id="fcd24-126">Creating a List View</span></span>](./creating-a-list-view.md)
 
-[<span data-ttu-id="18e53-127">Voor waarden definiëren voor wanneer gegevens worden weer gegeven</span><span class="sxs-lookup"><span data-stu-id="18e53-127">Defining Conditions for When Data Is Displayed</span></span>](./defining-conditions-for-displaying-data.md)
+[<span data-ttu-id="fcd24-127">Voor waarden definiëren voor wanneer gegevens worden weer gegeven</span><span class="sxs-lookup"><span data-stu-id="fcd24-127">Defining Conditions for When Data Is Displayed</span></span>](./defining-conditions-for-displaying-data.md)
 
-[<span data-ttu-id="18e53-128">Het element SelectionCondition voor EntrySelectedBy voor ListControl (opmaak)</span><span class="sxs-lookup"><span data-stu-id="18e53-128">SelectionCondition Element for EntrySelectedBy for ListControl (Format)</span></span>](./selectioncondition-element-for-entryselectedby-for-listcontrol-format.md)
+[<span data-ttu-id="fcd24-128">Het element SelectionCondition voor EntrySelectedBy voor ListControl (opmaak)</span><span class="sxs-lookup"><span data-stu-id="fcd24-128">SelectionCondition Element for EntrySelectedBy for ListControl (Format)</span></span>](./selectioncondition-element-for-entryselectedby-for-listcontrol-format.md)
 
-[<span data-ttu-id="18e53-129">Een PowerShell-opmaakbestand schrijven</span><span class="sxs-lookup"><span data-stu-id="18e53-129">Writing a PowerShell Formatting File</span></span>](./writing-a-powershell-formatting-file.md)
+[<span data-ttu-id="fcd24-129">Een PowerShell-opmaakbestand schrijven</span><span class="sxs-lookup"><span data-stu-id="fcd24-129">Writing a PowerShell Formatting File</span></span>](./writing-a-powershell-formatting-file.md)
