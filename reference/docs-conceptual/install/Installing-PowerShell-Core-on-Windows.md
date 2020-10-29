@@ -2,12 +2,12 @@
 title: PowerShell installeren in Windows
 description: Informatie over het installeren van Power shell in Windows
 ms.date: 09/14/2020
-ms.openlocfilehash: 8f1b60ef6bfef5c2434b0affabb5e0e7af392b96
-ms.sourcegitcommit: 30c0c1563f8e840f24b65297e907f3583d90e677
+ms.openlocfilehash: 17d9326503434ec67ba3c96d9f41ce987ccf4aeb
+ms.sourcegitcommit: c1e4739f5d52282fb05a8cff92b0f5d10e2edac1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90574450"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92909161"
 ---
 # <a name="installing-powershell-on-windows"></a>PowerShell installeren in Windows
 
@@ -132,26 +132,25 @@ Windows 10 IoT Enter prise wordt geleverd met Windows Power shell en kan worden 
    # Be sure to use the -PowerShellHome parameter otherwise it'll try to create a new
    # endpoint with Windows PowerShell 5.1
    .\Install-PowerShellRemoting.ps1 -PowerShellHome .
-   # You'll get an error message and will be disconnected from the device because it has to restart WinRM
+   # You'll get an error message and will be disconnected from the device because
+   # it has to restart WinRM
    ```
 
 1. Verbinding maken met het Power shell 7-eind punt op het apparaat
 
    ```powershell
-   # Be sure to use the -Configuration parameter.  If you omit it, you will connect to Windows PowerShell 5.1
+   # Be sure to use the -Configuration parameter. If you omit it, you will connect to Windows PowerShell 5.1
    Enter-PSSession -ComputerName <deviceIp> -Credential Administrator -Configuration powershell.<version>
    ```
 
 ## <a name="deploying-on-windows-10-iot-core"></a>Implementeren in Windows 10 IoT core
 
-Windows 10 IoT core voegt Windows Power shell toe wanneer u *IOT_POWERSHELL* -functie opneemt, die we kunnen gebruiken om Power shell 7 te implementeren.
-De stappen die hierboven voor Windows 10 IoT Enter prise zijn gedefinieerd, kunnen ook worden gevolgd voor IoT core.
+Windows 10 IoT core voegt Windows Power shell toe wanneer u _IOT_POWERSHELL_ -functie opneemt, die we kunnen gebruiken om Power shell 7 te implementeren. De stappen die hierboven voor Windows 10 IoT Enter prise zijn gedefinieerd, kunnen ook worden gevolgd voor IoT core.
 
-Voor het toevoegen van de meest recente Power shell in de verzend installatie kopie gebruikt u de opdracht [import-PSCoreRelease](https://github.com/ms-iot/iot-adk-addonkit/blob/master/Tools/IoTCoreImaging/Docs/Import-PSCoreRelease.md#Import-PSCoreRelease) om het pakket op te zetten in de workarea en voegt u *OPENSRC_POWERSHELL* functie toe aan uw installatie kopie.
+Voor het toevoegen van de meest recente Power shell in de verzend installatie kopie gebruikt u de opdracht [import-PSCoreRelease][] om het pakket op te zetten in de workarea en voegt u _OPENSRC_POWERSHELL_ functie toe aan uw installatie kopie.
 
 > [!NOTE]
-> Voor ARM64-architectuur wordt Windows Power shell niet toegevoegd wanneer u *IOT_POWERSHELL*opneemt. De op ZIP gebaseerde installatie werkt dus niet.
-> U moet de opdracht import-PSCoreRelease gebruiken om deze toe te voegen aan de installatie kopie.
+> Voor ARM64-architectuur wordt Windows Power shell niet toegevoegd wanneer u _IOT_POWERSHELL_ opneemt. De op ZIP gebaseerde installatie werkt dus niet. U moet `Import-PSCoreRelease` de opdracht gebruiken om deze toe te voegen aan de installatie kopie.
 
 ## <a name="deploying-on-nano-server"></a>Implementeren op nano server
 
@@ -169,7 +168,7 @@ In beide gevallen hebt u het Windows 10 x64 ZIP-release pakket nodig. Voer de op
 1. Gebruik uw favoriete zip-hulp programma om het pakket uit te pakken naar een map in de gekoppelde nano server-installatie kopie.
 1. Ontkoppel de installatie kopie en start deze op.
 1. Maak verbinding met het ingebouwde exemplaar van Windows Power shell.
-1. Volg de instructies voor het maken van een extern eind punt met behulp van de ["andere instantie techniek"](../learn/remoting/wsman-remoting-in-powershell-core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register).
+1. Volg de instructies voor het maken van een extern eind punt met behulp van de ["andere instantie techniek"][].
 
 ### <a name="online-deployment-of-powershell"></a>Online implementatie van Power shell
 
@@ -200,7 +199,7 @@ Implementeer Power shell naar nano server met behulp van de volgende stappen.
   Expand-Archive -Path C:\powershell-<version>-win-x64.zip -DestinationPath "C:\PowerShell_<version>"
   ```
 
-- Als u externe toegang op basis van WSMan wilt gebruiken, volgt u de instructies voor het maken van een extern eind punt met behulp van de ["andere instantie techniek"](../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register).
+- Als u externe toegang op basis van WSMan wilt gebruiken, volgt u de instructies voor het maken van een extern eind punt met behulp van de ["andere instantie techniek"][].
 
 ## <a name="install-as-a-net-global-tool"></a>Installeren als een Global .NET-hulp programma
 
@@ -218,7 +217,7 @@ Het hulp programma DotNet tool wordt toegevoegd `$env:USERPROFILE\dotnet\tools` 
 
 > [!NOTE]
 > Het `winget` hulp programma is momenteel een preview-versie. Niet alle geplande functionaliteit is op dit moment beschikbaar.
-> De opties en functies van het hulp programma zijn onderhevig aan wijzigingen. U moet deze methode niet gebruiken in een scenario voor productie-implementatie. Raadpleeg de [Winget] -documentatie voor een lijst met systeem vereisten en installatie-instructies.
+> U moet deze methode niet gebruiken in een scenario voor productie-implementatie. Raadpleeg de [Winget] -documentatie voor een lijst met systeem vereisten en installatie-instructies.
 
 De volgende opdrachten kunnen worden gebruikt om Power shell te installeren met behulp van de gepubliceerde `winget` pakketten:
 
@@ -249,6 +248,10 @@ Power shell ondersteunt het Power shell Remoting Protocol (PSRP) voor zowel WSMa
 - [Externe SSH-communicatie in Power shell core][ssh-remoting]
 - [Externe WSMan-communicatie in Power shell core][wsman-remoting]
 
+## <a name="upgrading-an-existing-installation"></a>Een bestaande installatie upgraden
+
+Voor de beste resultaten bij het uitvoeren van een upgrade moet u dezelfde installatie methode gebruiken die u hebt gebruikt toen u Power shell voor het eerst installeerde. Elke installatie methode installeert Power shell op een andere locatie. Als u niet zeker weet hoe Power shell is geïnstalleerd, kunt u de geïnstalleerde locatie vergelijken met de pakket gegevens in dit artikel. Als u via het MSI-pakket hebt geïnstalleerd, wordt die informatie weer gegeven in het onderdeel **Program ma's en onderdelen** van het configuratie scherm.
+
 ## <a name="installation-support"></a>Ondersteuning voor installatie
 
 Micro soft ondersteunt de installatie methoden in dit document. Er zijn mogelijk andere methoden van installatie beschikbaar van andere bronnen. Deze hulpprogram ma's en methoden kunnen werken, maar deze methoden kunnen niet door micro soft worden ondersteund.
@@ -260,3 +263,5 @@ Micro soft ondersteunt de installatie methoden in dit document. Er zijn mogelijk
 [wsman-remoting]: ../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md
 [AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
 [winget]: /windows/package-manager/winget
+["een andere instantie-techniek"]: ../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register
+[Import-PSCoreRelease]: https://github.com/ms-iot/iot-adk-addonkit/blob/master/Tools/IoTCoreImaging/Docs/Import-PSCoreRelease.md#Import-PSCoreRelease
