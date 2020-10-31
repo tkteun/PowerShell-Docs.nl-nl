@@ -3,12 +3,12 @@ ms.date: 07/16/2020
 ms.topic: reference
 title: DSC-script resource
 description: DSC-script resource
-ms.openlocfilehash: f0df91032cdf4f28b0a2d97e864a66f830531f39
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: f404bf3137caa9f57ad56034895cb15c8944ec07
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92662696"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93142970"
 ---
 # <a name="dsc-script-resource"></a>DSC-script resource
 
@@ -16,6 +16,8 @@ ms.locfileid: "92662696"
 
 De `Script` resource in Windows Power shell desired state Configuration (DSC) biedt een mechanisme voor het uitvoeren van Windows Power shell-script blokken op doel knooppunten. De `Script` resource gebruikt `GetScript` 
  `SetScript` en `TestScript` eigenschappen die script blokken bevatten die u definieert om de bijbehorende DSC-status bewerkingen uit te voeren.
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## <a name="syntax"></a>Syntax
 

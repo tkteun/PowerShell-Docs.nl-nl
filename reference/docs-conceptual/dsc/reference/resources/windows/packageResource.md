@@ -3,18 +3,20 @@ ms.date: 07/16/2020
 ms.topic: reference
 title: DSC-pakket resource
 description: DSC-pakket resource
-ms.openlocfilehash: 44a975f33012ca9d49bf69aaafc0b23f625d1424
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 4bcc6dc68a37ebe434e30339452cd7269f984ae9
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92662727"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93142868"
 ---
 # <a name="dsc-package-resource"></a>DSC-pakket resource
 
 > Van toepassing op: Windows Power Shell 4,0, Windows Power shell 5. x
 
 De **pakket** resource in Windows Power shell desired state Configuration (DSC) biedt een mechanisme voor het installeren of verwijderen van pakketten, zoals Windows Installer en setup.exe pakketten, op een doel knooppunt.
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## <a name="syntax"></a>Syntax
 

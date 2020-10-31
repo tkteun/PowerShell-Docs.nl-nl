@@ -3,18 +3,20 @@ ms.date: 07/16/2020
 ms.topic: reference
 title: DSC-archief resource
 description: DSC-archief resource
-ms.openlocfilehash: 1116ed068fab09b61daaeb7cdeba7bdbd27da6d8
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 28e2436683d7cb3b69f894ac75bb1a58b8eb1e8a
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92648688"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93142397"
 ---
 # <a name="dsc-archive-resource"></a>DSC-archief resource
 
 > Van toepassing op: Windows Power Shell 4,0, Windows Power shell 5. x
 
 De archief resource in Windows Power shell desired state Configuration (DSC) biedt een mechanisme voor het uitpakken van archief bestanden (. zip) op een specifiek pad.
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## <a name="syntax"></a>Syntax
 

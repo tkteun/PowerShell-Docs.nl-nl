@@ -1,21 +1,22 @@
 ---
 title: PowerShell Core in ARM installeren
 description: Power shell Core installeren op ARM-gebaseerde systemen
-ms.date: 08/06/2018
-ms.openlocfilehash: d59fa943d3e24ea70da85793021f11537b3b879e
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.date: 10/30/2020
+ms.openlocfilehash: 843c90c1a00ba96eedbb7f86ce89f372c51f6880
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80977451"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93142766"
 ---
 # <a name="powershell-core-on-arm"></a>PowerShell Core in ARM
 
-Vandaag de dag werkt Power shell Core op sommige ARM-apparaten, waaronder Windows 10 ARM32/ARM64 en Raspbian.
-Power shell Core for ARM is een experimentele release die niet wordt ondersteund.
+Ondersteuning van Power shell op ARM is gebaseerd op het beleid voor de [levens cyclus van .net core-besturings systemen](https://github.com/dotnet/core/blob/master/release-notes/3.1/3.1-supported-os.md).
+Power shell wordt ondersteund op het platform dat wordt ondersteund in het kader van dit beleid.
 
-Zie de installatie-instructies voor [Windows 10 IOT Enter prise](installing-powershell-core-on-windows.md#deploying-on-windows-10-iot-enterprise),[Windows 10 IOT core](installing-powershell-core-on-windows.md#deploying-on-windows-10-iot-core) en [Raspbian](installing-powershell-core-on-linux.md#raspbian)voor meer informatie over het installeren van deze experimentele builds.
+Raadpleeg de volgende artikelen voor installatie-instructies:
 
-Meer informatie is hier beschikbaar als ons ARM64-artikel.
-
-Kom regelmatig terug voor het laatste nieuws!
+- [Windows 10 op ARM](installing-powershell-core-on-windows.md#installing-the-zip-package)
+- [Windows 10 IoT Enterprise](installing-powershell-core-on-windows.md#deploying-on-windows-10-iot-enterprise)
+- [Windows 10 IoT Core](installing-powershell-core-on-windows.md#deploying-on-windows-10-iot-core)
+- [Raspbian](installing-powershell-core-on-linux.md#raspbian)

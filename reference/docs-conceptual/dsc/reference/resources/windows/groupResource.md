@@ -3,18 +3,20 @@ ms.date: 07/16/2020
 ms.topic: reference
 title: DSC-groeps resource
 description: DSC-groeps resource
-ms.openlocfilehash: 9e8931fe1227f3ac258c46fb1aecf4586958de66
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 8e2d1139c9573d7e310fec2410b14df04b79e1b2
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92650529"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93142443"
 ---
 # <a name="dsc-group-resource"></a>DSC-groeps resource
 
 > Van toepassing op: Windows Power Shell 4,0, Windows Power shell 5. x
 
 De **groeps** bron in Windows Power shell desired state Configuration (DSC) biedt een mechanisme voor het beheren van lokale groepen op het doel knooppunt.
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## <a name="syntax"></a>Syntax
 

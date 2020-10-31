@@ -3,18 +3,20 @@ ms.date: 09/20/2019
 ms.topic: reference
 title: DSC-Service Resource
 description: DSC-Service Resource
-ms.openlocfilehash: 68055983a8d2880b4d556fe990310f439afffe41
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 24121688bc46dcef70e3751d243d140fb7fcc7c9
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92664197"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93142621"
 ---
 # <a name="dsc-service-resource"></a>DSC-Service Resource
 
 > Van toepassing op: Windows Power Shell 4,0, Windows Power shell 5. x
 
 De **service** resource in Windows Power shell desired state Configuration (DSC) biedt een mechanisme voor het beheren van services op het doel knooppunt.
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## <a name="syntax"></a>Syntax
 
@@ -24,18 +26,15 @@ Service [string] #ResourceName
     Name = [string]
     [ BuiltInAccount = [string] { LocalService | LocalSystem | NetworkService }  ]
     [ Credential = [PSCredential] ]
-    [ StartupTimeout = [uint32]]
     [ StartupType = [string] { Automatic | Disabled | Manual }  ]
     [ State = [string] { Ignore | Running | Stopped }  ]
     [ Dependencies = [string[]] ]
     [ Description = [string] ]
-    [ DesktopInteract = [boolean]]
     [ DisplayName = [string] ]
     [ Path = [string] ]
     [ DependsOn = [string[]] ]
     [ Ensure = [string] { Absent | Present } ]
     [ PsDscRunAsCredential = [PSCredential] ]
-    [ TerminateTimeout = [uint32] ]
 }
 ```
 
@@ -46,13 +45,10 @@ Service [string] #ResourceName
 |Naam |Hiermee wordt de service naam aangegeven. Houd er rekening mee dat dit verschilt van de weergave naam. U kunt een lijst met de services en de huidige status van de `Get-Service` cmdlet ophalen. |
 |BuiltInAccount |Hiermee wordt het aanmeldings account aangegeven dat moet worden gebruikt voor de service. De waarden die zijn toegestaan voor deze eigenschap zijn: **LocalService** , **LocalSystem** en **Network Service** . |
 |Referentie |Hiermee geeft u de referenties op voor het account waaronder de service wordt uitgevoerd. Deze eigenschap en de eigenschap **BuiltinAccount** kunnen niet tegelijk worden gebruikt. |
-|StartupTimeout | De tijd die moet worden gewacht voordat de service wordt uitgevoerd in milliseconden.|
 |Opstart type |Hiermee geeft u het opstart type voor de service. De waarden die zijn toegestaan voor deze eigenschap zijn: **automatisch** , **uitgeschakeld** en **hand matig** . |
 |Staat |Hiermee wordt de status aangegeven die u voor de service wilt controleren. De waarden zijn: **actief** of **gestopt** . |
-|TerminateTimeout |De tijd die moet worden gewacht voordat de service wordt gestopt in milliseconden.|
 |Afhankelijkheden | Een matrix met de namen van de afhankelijkheden die de service moet hebben. |
 |Beschrijving |Hiermee wordt de beschrijving van de doel service aangegeven. |
-|DesktopInteract | Hiermee wordt aangegeven of de service kan communiceren met een venster op het bureau blad. Moet onwaar zijn voor services die niet als LocalSystem worden uitgevoerd.|
 |DisplayName |Hiermee wordt de weergave naam van de doel service aangegeven. |
 |Pad |Hiermee wordt het pad naar het binaire bestand voor een nieuwe service aangegeven. |
 

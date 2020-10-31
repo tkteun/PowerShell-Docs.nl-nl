@@ -3,12 +3,12 @@ ms.date: 07/16/2020
 ms.topic: reference
 title: DSC serviceset-resource
 description: DSC serviceset-resource
-ms.openlocfilehash: 4115dd3e19121656c7448b4088346e5a1abf6af1
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: bcb8382440d80c37179cdc1d1e17376b2511c3f3
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92664149"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93142953"
 ---
 # <a name="dsc-serviceset-resource"></a>DSC serviceset-resource
 
@@ -17,6 +17,8 @@ ms.locfileid: "92664149"
 De **serviceset** -resource in Windows Power shell desired state Configuration (DSC) biedt een mechanisme voor het beheren van services op het doel knooppunt. Deze resource is een [samengestelde resource](../../../resources/authoringResourceComposite.md) die de [Service Resource](serviceResource.md) aanroept voor elke service die in de eigenschap **name** is opgegeven.
 
 Gebruik deze resource als u een aantal services wilt configureren met dezelfde status.
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## <a name="syntax"></a>Syntax
 

@@ -3,12 +3,12 @@ ms.date: 07/15/2020
 ms.topic: reference
 title: DSC PackageManagementSource-resource
 description: DSC PackageManagementSource-resource
-ms.openlocfilehash: 4842a13dbf06073080c0dd02be986b0d7ba051d0
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 495b6548ef86f639e93b914ec8bd8ea7818ff8dd
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92667348"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93142851"
 ---
 # <a name="dsc-packagemanagementsource-resource"></a>DSC PackageManagementSource-resource
 
@@ -19,6 +19,8 @@ De **PackageManagementSource** -resource in Windows Power shell desired state Co
 
 > [!IMPORTANT]
 > De **Package Management** -module moet ten minste versie 1.1.7.0 zijn voor de volgende eigenschaps gegevens die u wilt corrigeren.
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## <a name="syntax"></a>Syntax
 

@@ -3,18 +3,20 @@ ms.date: 07/16/2020
 ms.topic: reference
 title: DSC-bestands resource
 description: DSC-bestands resource
-ms.openlocfilehash: 66b81f28060c209e15b2a1817e9b794c081386e1
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: b62b9b80beb1f433715b32b41445dd0a8bb19d84
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92667331"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93142936"
 ---
 # <a name="dsc-file-resource"></a>DSC-bestands resource
 
 > Van toepassing op: Windows Power Shell 4,0, Windows Power shell 5. x
 
 De bron van het **bestand** in Windows Power shell desired state Configuration (DSC) biedt een mechanisme voor het beheren van bestanden en mappen op het doel knooppunt. **Doelpad** en **bronpad** moeten beide toegankelijk zijn voor het doel knooppunt.
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## <a name="syntax"></a>Syntax
 

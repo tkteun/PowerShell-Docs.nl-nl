@@ -3,12 +3,12 @@ ms.date: 08/28/2020
 ms.topic: reference
 title: DSC WindowsOptionalFeature-resource
 description: DSC WindowsOptionalFeature-resource
-ms.openlocfilehash: edaa69f956033e6036b88f63b6b40832ad3a32f9
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 1c7e888ea49b0d1710cc22c975cb618999238f67
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92656606"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93143055"
 ---
 # <a name="dsc-windowsoptionalfeature-resource"></a>DSC WindowsOptionalFeature-resource
 
@@ -18,6 +18,8 @@ De **WindowsOptionalFeature** -resource in Windows Power shell desired state Con
 
 > [!NOTE]
 > **WindowsOptionalFeature** werkt alleen op Windows-client computers zoals Windows 10.
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## <a name="syntax"></a>Syntax
 

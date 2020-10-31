@@ -3,18 +3,20 @@ ms.date: 07/16/2020
 ms.topic: reference
 title: DSC-WindowsFeature-resource
 description: DSC-WindowsFeature-resource
-ms.openlocfilehash: b47febd201a9f7aff3b9ff712bd033ee30f974f9
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 0089e1d2a045e9398aa53a3cedc3f64285c7cd58
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92656388"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93142987"
 ---
 # <a name="dsc-windowsfeature-resource"></a>DSC-WindowsFeature-resource
 
 > Van toepassing op: Windows Power Shell 4,0, Windows Power shell 5. x
 
 De resource **WindowsFeature** in Windows Power shell desired state Configuration (DSC) biedt een mechanisme om ervoor te zorgen dat rollen en functies worden toegevoegd aan of verwijderd uit een doel knooppunt.
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## <a name="syntax"></a>Syntax
 
