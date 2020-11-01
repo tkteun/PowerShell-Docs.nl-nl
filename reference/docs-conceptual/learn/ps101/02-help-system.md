@@ -5,12 +5,12 @@ ms.date: 06/02/2020
 ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
-ms.openlocfilehash: 8325a32ad8ec137781300e9d46cab52705f0805a
-ms.sourcegitcommit: eaac7af89171379df2e20464ebee9fc7e7d7674a
+ms.openlocfilehash: 98876cf324b367fd5bb3c3462cb90ea6d7c7d5b9
+ms.sourcegitcommit: 0942a6de384f4a1c624e89b1889434a30d22f4d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/05/2020
-ms.locfileid: "89493654"
+ms.lasthandoff: 11/01/2020
+ms.locfileid: "93143311"
 ---
 # <a name="chapter-2---the-help-system"></a>Hoofd stuk 2: het Help-systeem
 
@@ -94,7 +94,7 @@ Elk van de volgende para meters bevinden zich in verschillende parameter sets:
 - Parameter
 - ShowWindow
 
-Alle cryptische syntaxis, zoals vier Kante en punt haken in de syntaxis sectie, betekent iets, maar wordt wel behandeld in bijlage A van dit boek. Het is belang rijk dat u leert hoe de cryptische syntaxis vaak moeilijk te bewaren is voor iemand die geen ervaring heeft met Power shell en deze mogelijk niet dagelijks gebruikt.
+Alle cryptische syntaxis, zoals vier Kante en punt haken in de syntaxis sectie, betekent iets, maar wordt wel behandeld in bijlage A van dit boek. Het is belang rijk dat u weet dat de cryptische syntaxis vaak moeilijk te bewaren is voor iemand die geen ervaring heeft met Power shell en deze mogelijk niet dagelijks gebruikt.
 
 Zie [bijlage A][]voor meer informatie over het beter begrijpen van de cryptische syntaxis.
 
@@ -121,7 +121,7 @@ Neem even de tijd om dit voor beeld uit te voeren op uw computer, Bekijk de uitv
 
 U ziet dat met behulp van de **volledige** para meter verschillende extra secties zijn geretourneerd, een van de para meters die meer informatie bevat dan de sectie cryptische syntaxis.
 
-De **volledige** para meter is een switch parameter. Een para meter waarvoor geen waarde is vereist, wordt een switch parameter genoemd. Wanneer een switch parameter wordt opgegeven, is de waarde True en wanneer dit niet het geval is, is de waarde false.
+De **volledige** para meter is een switch parameter. Een para meter waarvoor geen waarde is vereist, wordt een switch parameter genoemd. Wanneer een switch parameter wordt opgegeven, is de waarde ervan True en wanneer dat niet het geval is, is de waarde false.
 
 Als u dit hoofd stuk in de Power shell-console hebt door lopen, hebt u opgemerkt dat de vorige opdracht om het volledige Help-onderwerp voor vloog weer te geven `Get-Help` op het scherm, zonder dat u de kans krijgt om het te lezen. Er is een betere manier.
 
@@ -434,7 +434,7 @@ Cmdlet          Wait-Process                                       3.1.0.0    Mi
 
 In het vorige voor beeld waar `Get-Command` is uitgevoerd, wordt de para meter **zelfstandig** gebruikt en `Process` wordt deze opgegeven als de waarde voor de para meter **zelfstandig** . Wat als u niet weet hoe u de cmdlet moet gebruiken `Get-Command` ? U kunt gebruiken `Get-Help` om het Help-onderwerp voor weer te geven `Get-Command` .
 
-De para meters **name**, zelfstandig naam **woord**en **Verb** accepteren joker tekens. In het volgende voor beeld ziet u Joker tekens die worden gebruikt met de para meter **name** :
+De para meters **name** , zelfstandig naam **woord** en **Verb** accepteren joker tekens. In het volgende voor beeld ziet u Joker tekens die worden gebruikt met de para meter **name** :
 
 ```Output
 Get-Command -Name *service*
