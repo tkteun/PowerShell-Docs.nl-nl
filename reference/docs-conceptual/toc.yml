@@ -75,6 +75,8 @@
           href: learn/deep-dives/everything-about-shouldprocess.md
         - name: Schrijfvoortgang tijdens multithreading
           href: learn/deep-dives/write-progress-across-multiple-threads.md
+        - name: Referentieondersteuning toevoegen aan PowerShell-functies
+          href: learn/deep-dives/add-credentials-to-powershell-functions.md
     - name: Externe communicatie van powershell
       items:
         - name: Just Enough Administration (JEA)
@@ -564,6 +566,8 @@
       href: community/hall-of-fame.md
     - name: Wat is er nieuw voor Docs
       items:
+        - name: 2020-K4
+          href: community/2020-Q4.md
         - name: 2020-K3
           href: community/2020-Q3.md
         - name: 2020-K2
