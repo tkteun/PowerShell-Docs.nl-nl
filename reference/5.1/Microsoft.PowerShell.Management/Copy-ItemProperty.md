@@ -1,0 +1,326 @@
+---
+external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+keywords: powershell,cmdlet
+Locale: en-US
+Module Name: Microsoft.PowerShell.Management
+ms.date: 10/18/2018
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/copy-itemproperty?view=powershell-5.1&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: Copy-ItemProperty
+ms.openlocfilehash: 7af5a414a84bad8048c997803c94c0d94e549989
+ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.translationtype: MT
+ms.contentlocale: nl-NL
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "93250826"
+---
+# <span data-ttu-id="f0123-103">Copy-ItemProperty</span><span class="sxs-lookup"><span data-stu-id="f0123-103">Copy-ItemProperty</span></span>
+
+## <span data-ttu-id="f0123-104">SAMENVATTING</span><span class="sxs-lookup"><span data-stu-id="f0123-104">SYNOPSIS</span></span>
+
+<span data-ttu-id="f0123-105">Hiermee kopieert u een eigenschap en waarde van een opgegeven locatie naar een andere locatie.</span><span class="sxs-lookup"><span data-stu-id="f0123-105">Copies a property and value from a specified location to another location.</span></span>
+
+## <span data-ttu-id="f0123-106">SYNTAXIS</span><span class="sxs-lookup"><span data-stu-id="f0123-106">SYNTAX</span></span>
+
+### <span data-ttu-id="f0123-107">Pad (standaard)</span><span class="sxs-lookup"><span data-stu-id="f0123-107">Path (Default)</span></span>
+
+```
+Copy-ItemProperty [-Path] <String[]> [-Name] <String> [-Destination] <String> [-PassThru] [-Force]
+ [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Credential <PSCredential>] [-WhatIf]
+ [-Confirm] [-UseTransaction] [<CommonParameters>]
+```
+
+### <span data-ttu-id="f0123-108">LiteralPath</span><span class="sxs-lookup"><span data-stu-id="f0123-108">LiteralPath</span></span>
+
+```
+Copy-ItemProperty -LiteralPath <String[]> [-Name] <String> [-Destination] <String> [-PassThru] [-Force]
+ [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Credential <PSCredential>] [-WhatIf]
+ [-Confirm] [-UseTransaction] [<CommonParameters>]
+```
+
+## <span data-ttu-id="f0123-109">BESCHRIJVING</span><span class="sxs-lookup"><span data-stu-id="f0123-109">DESCRIPTION</span></span>
+
+<span data-ttu-id="f0123-110">`Copy-ItemProperty`Met de cmdlet worden een eigenschap en waarde van een opgegeven locatie naar een andere locatie gekopieerd.</span><span class="sxs-lookup"><span data-stu-id="f0123-110">The `Copy-ItemProperty` cmdlet copies a property and value from a specified location to another location.</span></span>
+<span data-ttu-id="f0123-111">U kunt deze cmdlet bijvoorbeeld gebruiken om een of meer Register vermeldingen van een register sleutel naar een andere register sleutel te kopiëren.</span><span class="sxs-lookup"><span data-stu-id="f0123-111">For instance, you can use this cmdlet to copy one or more registry entries from one registry key to another registry key.</span></span>
+
+## <span data-ttu-id="f0123-112">VOORBEELDEN</span><span class="sxs-lookup"><span data-stu-id="f0123-112">EXAMPLES</span></span>
+
+### <span data-ttu-id="f0123-113">Voor beeld 1: een eigenschap van een register sleutel naar een andere register sleutel kopiëren</span><span class="sxs-lookup"><span data-stu-id="f0123-113">Example 1: Copy a property from a registry key to another registry key</span></span>
+
+<span data-ttu-id="f0123-114">Met deze opdracht wordt de eigenschap met de naam ' MyProperty ' gekopieerd van de register sleutel ' mijn toepassing ' naar de register sleutel ' MyApplicationRev2 '.</span><span class="sxs-lookup"><span data-stu-id="f0123-114">This command copies the property named "MyProperty" from the "MyApplication" registry key to the "MyApplicationRev2" registry key.</span></span>
+
+```powershell
+Copy-ItemProperty -Path "MyApplication" -Destination "HKLM:\Software\MyApplicationRev2" -Name "MyProperty"
+```
+
+## <span data-ttu-id="f0123-115">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="f0123-115">PARAMETERS</span></span>
+
+### <span data-ttu-id="f0123-116">-Credential</span><span class="sxs-lookup"><span data-stu-id="f0123-116">-Credential</span></span>
+
+<span data-ttu-id="f0123-117">Hiermee geeft u een gebruikers account op dat is gemachtigd om deze actie uit te voeren.</span><span class="sxs-lookup"><span data-stu-id="f0123-117">Specifies a user account that has permission to perform this action.</span></span>
+<span data-ttu-id="f0123-118">Standaard is dit de huidige gebruiker.</span><span class="sxs-lookup"><span data-stu-id="f0123-118">The default is the current user.</span></span>
+
+<span data-ttu-id="f0123-119">Typ een gebruikers naam, zoals "gebruiker01" of "Domain01\User01", of voer een **PSCredential** -object in, zoals het account dat is gegenereerd door de `Get-Credential` cmdlet.</span><span class="sxs-lookup"><span data-stu-id="f0123-119">Type a user name, such as "User01" or "Domain01\User01", or enter a **PSCredential** object, such as one generated by the `Get-Credential` cmdlet.</span></span>
+<span data-ttu-id="f0123-120">Als u een gebruikers naam typt, wordt u gevraagd een wacht woord op te vragen.</span><span class="sxs-lookup"><span data-stu-id="f0123-120">If you type a user name, you are prompted for a password.</span></span>
+
+> [!WARNING]
+> <span data-ttu-id="f0123-121">Deze para meter wordt niet ondersteund door providers die zijn geïnstalleerd met Windows Power shell.</span><span class="sxs-lookup"><span data-stu-id="f0123-121">This parameter is not supported by any providers installed with Windows PowerShell.</span></span>
+
+```yaml
+Type: System.Management.Automation.PSCredential
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: Current user
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f0123-122">-Bestemming</span><span class="sxs-lookup"><span data-stu-id="f0123-122">-Destination</span></span>
+
+<span data-ttu-id="f0123-123">Hiermee geeft u het pad naar de doel locatie.</span><span class="sxs-lookup"><span data-stu-id="f0123-123">Specifies the path to the destination location.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f0123-124">-Uitsluiten</span><span class="sxs-lookup"><span data-stu-id="f0123-124">-Exclude</span></span>
+
+<span data-ttu-id="f0123-125">Geeft als een teken reeks matrix een item of items die met deze cmdlet worden uitgesloten.</span><span class="sxs-lookup"><span data-stu-id="f0123-125">Specifies, as a string array, an item or items that this cmdlet excludes.</span></span>
+<span data-ttu-id="f0123-126">De waarde van deze para meter komt in aanmerking voor de para meter **Path** .</span><span class="sxs-lookup"><span data-stu-id="f0123-126">The value of this parameter qualifies the **Path** parameter.</span></span>
+<span data-ttu-id="f0123-127">Voer een element of patroon van een pad in, zoals \*. txt.</span><span class="sxs-lookup"><span data-stu-id="f0123-127">Enter a path element or pattern, such as "\*.txt".</span></span>
+<span data-ttu-id="f0123-128">Joker tekens zijn toegestaan.</span><span class="sxs-lookup"><span data-stu-id="f0123-128">Wildcard characters are permitted.</span></span>
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: True
+```
+
+### <span data-ttu-id="f0123-129">-Filter</span><span class="sxs-lookup"><span data-stu-id="f0123-129">-Filter</span></span>
+
+<span data-ttu-id="f0123-130">Hiermee geeft u een filter op in de indeling of taal van de provider.</span><span class="sxs-lookup"><span data-stu-id="f0123-130">Specifies a filter in the format or language of the provider.</span></span>
+<span data-ttu-id="f0123-131">De waarde van deze para meter komt in aanmerking voor de para meter **Path** .</span><span class="sxs-lookup"><span data-stu-id="f0123-131">The value of this parameter qualifies the **Path** parameter.</span></span>
+
+<span data-ttu-id="f0123-132">De syntaxis van het filter, inclusief het gebruik van joker tekens, is afhankelijk van de provider.</span><span class="sxs-lookup"><span data-stu-id="f0123-132">The syntax of the filter, including the use of wildcard characters, depends on the provider.</span></span>
+<span data-ttu-id="f0123-133">Filters zijn efficiënter dan andere para meters, omdat deze door de provider worden toegepast wanneer de cmdlet de objecten ophaalt in plaats van dat Power shell de objecten heeft gefilterd nadat ze zijn opgehaald.</span><span class="sxs-lookup"><span data-stu-id="f0123-133">Filters are more efficient than other parameters, because the provider applies them when the cmdlet gets the objects rather than having PowerShell filter the objects after they are retrieved.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: True
+```
+
+### <span data-ttu-id="f0123-134">-Force</span><span class="sxs-lookup"><span data-stu-id="f0123-134">-Force</span></span>
+
+<span data-ttu-id="f0123-135">Hiermee wordt de opdracht uitgevoerd zonder dat de gebruiker om bevestiging wordt gevraagd.</span><span class="sxs-lookup"><span data-stu-id="f0123-135">Forces the command to run without asking for user confirmation.</span></span>
+<span data-ttu-id="f0123-136">De implementatie varieert van provider tot provider.</span><span class="sxs-lookup"><span data-stu-id="f0123-136">Implementation varies from provider to provider.</span></span>
+<span data-ttu-id="f0123-137">Zie [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)voor meer informatie.</span><span class="sxs-lookup"><span data-stu-id="f0123-137">For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f0123-138">-Include</span><span class="sxs-lookup"><span data-stu-id="f0123-138">-Include</span></span>
+
+<span data-ttu-id="f0123-139">Hiermee wordt een teken reeks matrix opgegeven, een item of items die met deze cmdlet in de bewerking zijn opgenomen.</span><span class="sxs-lookup"><span data-stu-id="f0123-139">Specifies, as a string array, an item or items that this cmdlet includes in the operation.</span></span>
+<span data-ttu-id="f0123-140">De waarde van deze para meter komt in aanmerking voor de para meter **Path** .</span><span class="sxs-lookup"><span data-stu-id="f0123-140">The value of this parameter qualifies the **Path** parameter.</span></span>
+<span data-ttu-id="f0123-141">Voer een element of patroon van een pad in, zoals \*. txt.</span><span class="sxs-lookup"><span data-stu-id="f0123-141">Enter a path element or pattern, such as "\*.txt".</span></span>
+<span data-ttu-id="f0123-142">Joker tekens zijn toegestaan.</span><span class="sxs-lookup"><span data-stu-id="f0123-142">Wildcard characters are permitted.</span></span>
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f0123-143">-LiteralPath</span><span class="sxs-lookup"><span data-stu-id="f0123-143">-LiteralPath</span></span>
+
+<span data-ttu-id="f0123-144">Hiermee geeft u het pad op naar de huidige locatie van de eigenschap.</span><span class="sxs-lookup"><span data-stu-id="f0123-144">Specifies the path to the current location of the property.</span></span>
+<span data-ttu-id="f0123-145">In tegens telling tot de para meter **Path** wordt de waarde van **LiteralPath** precies zo gebruikt als deze wordt getypt.</span><span class="sxs-lookup"><span data-stu-id="f0123-145">Unlike the **Path** parameter, the value of **LiteralPath** is used exactly as it is typed.</span></span>
+<span data-ttu-id="f0123-146">Geen tekens worden geïnterpreteerd als joker tekens.</span><span class="sxs-lookup"><span data-stu-id="f0123-146">No characters are interpreted as wildcards.</span></span>
+<span data-ttu-id="f0123-147">Als het pad escape tekens bevat, plaatst u het tussen enkele aanhalings tekens.</span><span class="sxs-lookup"><span data-stu-id="f0123-147">If the path includes escape characters, enclose it in single quotation marks.</span></span>
+<span data-ttu-id="f0123-148">Enkele aanhalings tekens geven aan dat Power shell geen karakters interpreteert als escape reeksen.</span><span class="sxs-lookup"><span data-stu-id="f0123-148">Single quotation marks tell PowerShell not to interpret any characters as escape sequences.</span></span>
+
+```yaml
+Type: System.String[]
+Parameter Sets: LiteralPath
+Aliases: PSPath
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f0123-149">-Name</span><span class="sxs-lookup"><span data-stu-id="f0123-149">-Name</span></span>
+
+<span data-ttu-id="f0123-150">Hiermee geeft u de naam op van de eigenschap die moet worden gekopieerd.</span><span class="sxs-lookup"><span data-stu-id="f0123-150">Specifies the name of the property to be copied.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: PSProperty
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f0123-151">-PassThru</span><span class="sxs-lookup"><span data-stu-id="f0123-151">-PassThru</span></span>
+
+<span data-ttu-id="f0123-152">Retourneert een object dat het item vertegenwoordigt waarmee u werkt.</span><span class="sxs-lookup"><span data-stu-id="f0123-152">Returns an object representing the item with which you are working.</span></span>
+<span data-ttu-id="f0123-153">Deze cmdlet genereert standaard geen uitvoer.</span><span class="sxs-lookup"><span data-stu-id="f0123-153">By default, this cmdlet does not generate any output.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f0123-154">-Path</span><span class="sxs-lookup"><span data-stu-id="f0123-154">-Path</span></span>
+
+<span data-ttu-id="f0123-155">Geeft als een teken reeks matrix het pad naar de eigenschap die moet worden gekopieerd.</span><span class="sxs-lookup"><span data-stu-id="f0123-155">Specifies, as a string array, the path to the property to be copied.</span></span>
+
+```yaml
+Type: System.String[]
+Parameter Sets: Path
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f0123-156">-UseTransaction</span><span class="sxs-lookup"><span data-stu-id="f0123-156">-UseTransaction</span></span>
+<span data-ttu-id="f0123-157">Hiermee wordt de opdracht opgenomen in de actieve transactie.</span><span class="sxs-lookup"><span data-stu-id="f0123-157">Includes the command in the active transaction.</span></span>
+<span data-ttu-id="f0123-158">Deze parameter is alleen geldig wanneer een transactie wordt uitgevoerd.</span><span class="sxs-lookup"><span data-stu-id="f0123-158">This parameter is valid only when a transaction is in progress.</span></span>
+<span data-ttu-id="f0123-159">Zie about_Transactions voor meer informatie.</span><span class="sxs-lookup"><span data-stu-id="f0123-159">For more information, see about_Transactions.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: usetx
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f0123-160">-Confirm</span><span class="sxs-lookup"><span data-stu-id="f0123-160">-Confirm</span></span>
+<span data-ttu-id="f0123-161">Hiermee wordt u gevraagd om bevestiging voordat u de cmdlet uitvoert.</span><span class="sxs-lookup"><span data-stu-id="f0123-161">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f0123-162">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="f0123-162">-WhatIf</span></span>
+
+<span data-ttu-id="f0123-163">Hiermee wordt weergegeven wat er zou gebeuren als u de cmdlet uitvoert.</span><span class="sxs-lookup"><span data-stu-id="f0123-163">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="f0123-164">De cmdlet wordt niet uitgevoerd.</span><span class="sxs-lookup"><span data-stu-id="f0123-164">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f0123-165">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="f0123-165">CommonParameters</span></span>
+
+<span data-ttu-id="f0123-166">Deze cmdlet biedt ondersteuning voor de algemene para meters: `-Debug` , `-ErrorAction` , `-ErrorVariable` , `-InformationAction` , `-InformationVariable` , `-OutVariable` , `-OutBuffer` , `-PipelineVariable` , `-Verbose` , `-WarningAction` en `-WarningVariable` .</span><span class="sxs-lookup"><span data-stu-id="f0123-166">This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`, `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`, `-Verbose`, `-WarningAction`, and `-WarningVariable`.</span></span> <span data-ttu-id="f0123-167">Zie [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md)voor meer informatie.</span><span class="sxs-lookup"><span data-stu-id="f0123-167">For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).</span></span>
+
+## <span data-ttu-id="f0123-168">INVOER</span><span class="sxs-lookup"><span data-stu-id="f0123-168">INPUTS</span></span>
+
+### <span data-ttu-id="f0123-169">System. String</span><span class="sxs-lookup"><span data-stu-id="f0123-169">System.String</span></span>
+
+<span data-ttu-id="f0123-170">U kunt een teken reeks met een pad naar deze cmdlet door sluizen.</span><span class="sxs-lookup"><span data-stu-id="f0123-170">You can pipe a string that contains a path to this cmdlet.</span></span>
+
+## <span data-ttu-id="f0123-171">UITVOER</span><span class="sxs-lookup"><span data-stu-id="f0123-171">OUTPUTS</span></span>
+
+### <span data-ttu-id="f0123-172">Geen of System. Management. Automation. PSCustomObject</span><span class="sxs-lookup"><span data-stu-id="f0123-172">None or System.Management.Automation.PSCustomObject</span></span>
+
+<span data-ttu-id="f0123-173">Wanneer u de para meter **PassThru** gebruikt, genereert deze cmdlet een **PsCustomObject** die de eigenschap van het gekopieerde item weergeeft.</span><span class="sxs-lookup"><span data-stu-id="f0123-173">When you use the **Passthru** parameter, this cmdlet generates a **PsCustomObject** representing the copied item property.</span></span>
+<span data-ttu-id="f0123-174">Anders wordt met deze cmdlet geen uitvoer gegenereerd.</span><span class="sxs-lookup"><span data-stu-id="f0123-174">Otherwise, this cmdlet does not generate any output.</span></span>
+
+## <span data-ttu-id="f0123-175">OPMERKINGEN</span><span class="sxs-lookup"><span data-stu-id="f0123-175">NOTES</span></span>
+
+<span data-ttu-id="f0123-176">Deze cmdlet is ontworpen om te werken met de gegevens die door elke provider worden weer gegeven.</span><span class="sxs-lookup"><span data-stu-id="f0123-176">This cmdlet is designed to work with the data exposed by any provider.</span></span> <span data-ttu-id="f0123-177">Als u een lijst wilt weer geven van de providers die beschikbaar zijn in uw sessie, typt u `Get-PSProvider` .</span><span class="sxs-lookup"><span data-stu-id="f0123-177">To list the providers available in your session, type `Get-PSProvider`.</span></span> <span data-ttu-id="f0123-178">Zie about_Providers voor meer informatie.</span><span class="sxs-lookup"><span data-stu-id="f0123-178">For more information, see about_Providers.</span></span>
+
+## <span data-ttu-id="f0123-179">GERELATEERDE KOPPELINGEN</span><span class="sxs-lookup"><span data-stu-id="f0123-179">RELATED LINKS</span></span>
+
+[<span data-ttu-id="f0123-180">Wissen-item Property</span><span class="sxs-lookup"><span data-stu-id="f0123-180">Clear-ItemProperty</span></span>](Clear-ItemProperty.md)
+
+[<span data-ttu-id="f0123-181">Get-item Property</span><span class="sxs-lookup"><span data-stu-id="f0123-181">Get-ItemProperty</span></span>](Get-ItemProperty.md)
+
+[<span data-ttu-id="f0123-182">Verplaatsen-item Property</span><span class="sxs-lookup"><span data-stu-id="f0123-182">Move-ItemProperty</span></span>](Move-ItemProperty.md)
+
+[<span data-ttu-id="f0123-183">Nieuw-item Property</span><span class="sxs-lookup"><span data-stu-id="f0123-183">New-ItemProperty</span></span>](New-ItemProperty.md)
+
+[<span data-ttu-id="f0123-184">Naam wijzigen-item Property</span><span class="sxs-lookup"><span data-stu-id="f0123-184">Rename-ItemProperty</span></span>](Rename-ItemProperty.md)
+
+[<span data-ttu-id="f0123-185">Set-item Property</span><span class="sxs-lookup"><span data-stu-id="f0123-185">Set-ItemProperty</span></span>](Set-ItemProperty.md)
+
+[<span data-ttu-id="f0123-186">Get-PSProvider</span><span class="sxs-lookup"><span data-stu-id="f0123-186">Get-PSProvider</span></span>](Get-PSProvider.md)
