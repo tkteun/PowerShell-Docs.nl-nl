@@ -2,30 +2,28 @@
 ms.date: 01/02/2020
 title: Kennismaking met Windows PowerShell ISE
 description: Dit artikel bevat een overzicht van de functies van de Windows PowerShell ISE
-ms.openlocfilehash: f389ac60da13141329d81baf08e9100b144022c3
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.topic: landing-page
+ms.custom: ISE-F1-page
+ms.openlocfilehash: 4ef3f471f11c2f1de818491a193fcf34201cb04a
+ms.sourcegitcommit: 109ff625773389be56e98e994b7e56146f2b9d93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92663817"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93296365"
 ---
 # <a name="exploring-the-windows-powershell-ise"></a>Kennismaking met Windows PowerShell ISE
 
-U kunt de Windows Power shell &reg; Integrated Scripting Environment (ISE) gebruiken om opdrachten en scripts te maken, uit te voeren en fouten op te sporen. De Windows PowerShell ISE bestaat uit de menu balk, Windows Power shell-tabbladen, de werk balk, script tabbladen, een script paneel, een console venster, een status balk, een schuif regelaar voor tekst formaat en context gevoelige Help.
-
-> [!NOTE]
-> Vanaf Windows PowerShell ISE 3,0 worden de opdracht-en uitvoer deel Vensters gecombineerd in één console venster.
+U kunt de Windows Power shell Integrated Scripting Environment (ISE) gebruiken om opdrachten en scripts te maken, uit te voeren en fouten op te sporen. De Windows PowerShell ISE bestaat uit de menu balk, Windows Power shell-tabbladen, de werk balk, script tabbladen, een script paneel, een console venster, een status balk, een schuif regelaar voor tekst formaat en context gevoelige Help.
 
 ## <a name="menu-bar"></a>Menu balk
 
 De menu balk bevat de **menu's bestand** , **bewerken** , **weer gave** , **extra** , **fout opsporing** , **invoeg toepassingen** en **Help** . Met de knoppen in de menu's kunt u taken uitvoeren die betrekking hebben op het schrijven en uitvoeren van scripts en het uitvoeren van opdrachten in de Windows PowerShell ISE. Daarnaast kan een [invoeg programma](object-model/The-ISEAddOnTool-Object.md) worden geplaatst op de menu balk door scripts uit te voeren die gebruikmaken van de [ISE object model hiërarchie](object-model/The-ISE-Object-Model-Hierarchy.md).
 
-> [!NOTE]
-> In Windows PowerShell ISE 2,0 zijn de menu's **tools** en **invoeg toepassingen** niet aanwezig.
-
 ## <a name="windows-powershell-tabs"></a>Windows Power shell-tabbladen
 
 Een Windows Power shell-tabblad is de omgeving waarin een Windows Power shell-script wordt uitgevoerd. U kunt nieuwe Windows Power shell-tabbladen in de Windows PowerShell ISE openen om afzonderlijke omgevingen op uw lokale computer of op externe computers te maken. U kunt Maxi maal acht Power shell-tabbladen tegelijkertijd openen.
+
+Zie [een Power shell-tabblad maken in Windows PowerShell ISE](How-to-Create-a-PowerShell-Tab-in-Windows-PowerShell-ISE.md)voor meer informatie.
 
 ## <a name="toolbar"></a>Werkbalk
 
@@ -59,15 +57,17 @@ Wanneer u het tabblad script aanwijst, wordt het volledig gekwalificeerde pad na
 
 ## <a name="script-pane"></a>Script venster
 
-Hiermee kunt u scripts maken en uitvoeren. U kunt bestaande scripts openen, bewerken en uitvoeren in het Script-venster.
+Hiermee kunt u scripts maken en uitvoeren. U kunt bestaande scripts openen, bewerken en uitvoeren in het Script-venster. Zie [scripts schrijven en uitvoeren in de Windows PowerShell ISE](How-to-Write-and-Run-Scripts-in-the-Windows-PowerShell-ISE.md)voor meer informatie.
 
-## <a name="output-pane"></a>Deel venster uitvoer
+## <a name="console-pane"></a>Console venster
 
-Hier worden de resultaten weer gegeven van de opdrachten en scripts die u hebt uitgevoerd. U kunt ook de inhoud kopiëren en wissen in het deel venster uitvoer.
+Hier worden de resultaten weer gegeven van de opdrachten en scripts die u hebt uitgevoerd. U kunt opdrachten uitvoeren in het console venster. U kunt ook de inhoud in het console venster kopiëren en wissen.
 
-## <a name="command-pane"></a>Opdracht venster
+Raadpleeg voor meer informatie de volgende artikelen:
 
-Hiermee kunt u opdrachten schrijven. U kunt een opdracht met één regel of een opdracht voor meerdere regels uitvoeren in het opdracht venster. Druk op <kbd>SHIFT</kbd> + <kbd>Enter</kbd> om elke regel van een opdracht voor meerdere regels in te voeren en druk na de laatste regel op <kbd>Enter</kbd> om de opdracht voor meerdere regels uit te voeren. In de prompt boven in het opdracht venster wordt het pad naar de huidige werkmap weer gegeven.
+- [Het gebruik van het console venster in de Windows PowerShell ISE](How-to-Use-the-Console-Pane-in-the-Windows-PowerShell-ISE.md)
+- [How to Debug Scripts in Windows PowerShell ISE](How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md) (Fouten opsporen in scripts met Windows PowerShell ISE)
+- [Tab-aanvulling gebruiken in het scriptvenster en consolevenster](How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md)
 
 ## <a name="status-bar"></a>Status balk
 
@@ -79,9 +79,11 @@ Hiermee wordt de grootte van de tekst op het scherm verg root of verkleind.
 
 ## <a name="help"></a>Help
 
-Help voor Windows PowerShell ISE is beschikbaar op internet in de TechNet-bibliotheek. U kunt de Help openen door te klikken op **Windows PowerShell ISE Help** in het menu **Help** of door op de <kbd>F1</kbd> -toets te drukken, behalve wanneer de cursor zich op een naam van de cmdlet bevindt in het deel venster script of in het console venster.
-Vanuit het menu **Help** kunt u ook de `Update-Help` cmdlet uitvoeren en het opdracht venster weer geven dat u helpt bij het maken van opdrachten door alle para meters voor een cmdlet weer te geven en u in staat te stellen de para meters in een gemakkelijk te gebruiken formulier in te vullen.
+Help voor Windows PowerShell ISE is beschikbaar op internet in de TechNet-bibliotheek. U kunt de Help openen door te klikken op **Windows PowerShell ISE Help** in het menu **Help** of door op de <kbd>F1</kbd> -toets te drukken, behalve wanneer de cursor zich op een naam van de cmdlet bevindt in het deel venster script of in het console venster. Vanuit het menu **Help** kunt u ook de `Update-Help` cmdlet uitvoeren en het opdracht venster weer geven dat u helpt bij het maken van opdrachten door alle para meters voor een cmdlet weer te geven en u in staat te stellen de para meters in een gemakkelijk te gebruiken formulier in te vullen.
 
 ## <a name="see-also"></a>Zie ook
 
 - [Introductie van de Windows PowerShell ISE](Introducing-the-Windows-PowerShell-ISE.md)
+- [Profielen gebruiken in Windows PowerShell ISE](How-to-Use-Profiles-in-Windows-PowerShell-ISE.md)
+- [Toegankelijkheid in Windows PowerShell ISE](Accessibility-in-Windows-PowerShell-ISE.md)
+- [Sneltoetsen voor de Windows PowerShell ISE](Keyboard-Shortcuts-for-the-Windows-PowerShell-ISE.md)

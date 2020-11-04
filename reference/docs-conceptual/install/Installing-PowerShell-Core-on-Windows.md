@@ -2,12 +2,12 @@
 title: PowerShell installeren in Windows
 description: Informatie over het installeren van Power shell in Windows
 ms.date: 10/30/2020
-ms.openlocfilehash: 1b341b496cef34a2a98afeac9d24f0a51e8dbda0
-ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
+ms.openlocfilehash: 825c9066d0a4e4734b9255514520b32f0876ecea
+ms.sourcegitcommit: 109ff625773389be56e98e994b7e56146f2b9d93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/31/2020
-ms.locfileid: "93142783"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93296379"
 ---
 # <a name="installing-powershell-on-windows"></a>PowerShell installeren in Windows
 
@@ -24,7 +24,7 @@ Als u externe communicatie van Power shell wilt inschakelen via WSMan, moeten aa
 
 ## <a name="download-the-installer-package"></a>Het installatie pakket downloaden
 
-Als u Power shell in Windows wilt installeren, downloadt u het installatie pakket van onze pagina met GitHub- [releases][releases] . Schuif omlaag naar de sectie **assets** van de pagina release. De sectie **assets** kan worden samengevouwen, dus u moet mogelijk op klikken om deze uit te vouwen.
+Als u Power shell in Windows wilt installeren, downloadt u het [meest recente][] installatie pakket van github. U kunt ook de nieuwste preview-versie vinden op de pagina [releases][] . Schuif omlaag naar de sectie **assets** van de pagina release. De sectie **assets** kan worden samengevouwen, dus u moet mogelijk op klikken om deze uit te vouwen.
 
 ## <a name="installing-the-msi-package"></a><a id="msi" />Het MSI-pakket installeren
 
@@ -83,7 +83,7 @@ Dit kan worden gebruikt door beheerders en ontwikkel aars om het pad naar Power 
 > [!NOTE]
 > Het MSIX-pakket wordt op dit moment niet officieel ondersteund. We blijven het pakket alleen voor interne test doeleinden bouwen.
 
-Als u het MSIX-pakket hand matig wilt installeren op een Windows 10-client, downloadt u het MSIX-pakket van de pagina met GitHub- [releases][releases] . Schuif omlaag naar de sectie **assets** van de release die u wilt installeren. De sectie assets kan worden samengevouwen, dus u moet mogelijk op klikken om deze uit te vouwen.
+Als u het MSIX-pakket hand matig wilt installeren op een Windows 10-client, downloadt u het MSIX-pakket van[onze pagina] [met releases van github.] Schuif omlaag naar de sectie **assets** van de release die u wilt installeren. De sectie assets kan worden samengevouwen, dus u moet mogelijk op klikken om deze uit te vouwen.
 
 Het MSIX-bestand ziet er als volgt uit: `PowerShell-<version>-win-<os-arch>.msix`
 
@@ -95,7 +95,7 @@ Add-AppxPackage PowerShell-<version>-win-<os-arch>.msix
 
 ## <a name="installing-the-zip-package"></a><a id="zip" />Het ZIP-pakket installeren
 
-Binaire ZIP-archieven van Power shell zijn beschikbaar om geavanceerde implementatie scenario's mogelijk te maken. Down load een van de volgende ZIP-archieven op de pagina [releases][releases] .
+Binaire ZIP-archieven van Power shell zijn beschikbaar om geavanceerde implementatie scenario's mogelijk te maken. Down load een van de volgende ZIP-archieven [op de pagina release releases][releases] .
 
 - PowerShell-7.0.3-win-x64.zip
 - PowerShell-7.0.3-win-x86.zip
@@ -267,7 +267,8 @@ Micro soft ondersteunt de installatie methoden in dit document. Er zijn mogelijk
 
 <!-- link references -->
 
-[releases]: https://github.com/PowerShell/PowerShell/releases
+[shell]: https://github.com/PowerShell/PowerShell/releases
+[meest recente]: https://github.com/PowerShell/PowerShell/releases/latest
 [ssh-remoting]: ../learn/remoting/SSH-Remoting-in-PowerShell-Core.md
 [wsman-remoting]: ../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md
 [AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
