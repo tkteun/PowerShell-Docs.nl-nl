@@ -3,36 +3,36 @@ ms.date: 09/13/2016
 ms.topic: reference
 title: Voorbeeld Host01
 description: Voorbeeld Host01
-ms.openlocfilehash: 535d9ea6b2519023ad2ac4429d383e61b12db005
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: b4f1a81044a51855ad7decc25e1f5b1215ab0d62
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92649239"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93355473"
 ---
-# <a name="host01-sample"></a><span data-ttu-id="e73fc-103">Voorbeeld Host01</span><span class="sxs-lookup"><span data-stu-id="e73fc-103">Host01 Sample</span></span>
+# <a name="host01-sample"></a><span data-ttu-id="623b6-103">Voorbeeld Host01</span><span class="sxs-lookup"><span data-stu-id="623b6-103">Host01 Sample</span></span>
 
-<span data-ttu-id="e73fc-104">In dit voor beeld ziet u hoe u een host-toepassing implementeert die gebruikmaakt van een aangepaste host.</span><span class="sxs-lookup"><span data-stu-id="e73fc-104">This sample shows how to implement a host application that uses a custom host.</span></span> <span data-ttu-id="e73fc-105">In dit voor beeld wordt een runs Pace gemaakt die gebruikmaakt van de aangepaste host en vervolgens wordt de API [System. Management. Automation. Power shell](/dotnet/api/System.Management.Automation.PowerShell) gebruikt om een script uit te voeren waarmee "Exit" wordt aangeroepen.</span><span class="sxs-lookup"><span data-stu-id="e73fc-105">In this sample a runspace is created that uses the custom host, and then the [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) API is used to run a script that calls "exit."</span></span> <span data-ttu-id="e73fc-106">De hosttoepassing bekijkt vervolgens de uitvoer van het script en de resultaten worden afgedrukt.</span><span class="sxs-lookup"><span data-stu-id="e73fc-106">The host application then looks at the output of the script and prints out the results.</span></span>
+<span data-ttu-id="623b6-104">In dit voor beeld ziet u hoe u een host-toepassing implementeert die gebruikmaakt van een aangepaste host.</span><span class="sxs-lookup"><span data-stu-id="623b6-104">This sample shows how to implement a host application that uses a custom host.</span></span> <span data-ttu-id="623b6-105">In dit voor beeld wordt een runs Pace gemaakt die gebruikmaakt van de aangepaste host en vervolgens wordt de API [System. Management. Automation. Power shell](/dotnet/api/System.Management.Automation.PowerShell) gebruikt om een script uit te voeren waarmee "Exit" wordt aangeroepen.</span><span class="sxs-lookup"><span data-stu-id="623b6-105">In this sample a runspace is created that uses the custom host, and then the [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) API is used to run a script that calls "exit."</span></span> <span data-ttu-id="623b6-106">De hosttoepassing bekijkt vervolgens de uitvoer van het script en de resultaten worden afgedrukt.</span><span class="sxs-lookup"><span data-stu-id="623b6-106">The host application then looks at the output of the script and prints out the results.</span></span>
 
- <span data-ttu-id="e73fc-107">In dit voor beeld worden de standaard functies van de gebruikers interface van Windows Power shell gebruikt.</span><span class="sxs-lookup"><span data-stu-id="e73fc-107">This sample uses the default UI features provided by Windows PowerShell.</span></span> <span data-ttu-id="e73fc-108">Zie Host02-voor [beeld](./host02-sample.md)voor meer informatie over het implementeren van de functies van de gebruikers interface van een aangepaste host.</span><span class="sxs-lookup"><span data-stu-id="e73fc-108">For more information about implementing the UI features of a custom host, see [Host02 Sample](./host02-sample.md).</span></span>
+<span data-ttu-id="623b6-107">In dit voor beeld worden de standaard functies van de gebruikers interface van Windows Power shell gebruikt.</span><span class="sxs-lookup"><span data-stu-id="623b6-107">This sample uses the default UI features provided by Windows PowerShell.</span></span> <span data-ttu-id="623b6-108">Zie Host02-voor [beeld](./host02-sample.md)voor meer informatie over het implementeren van de functies van de gebruikers interface van een aangepaste host.</span><span class="sxs-lookup"><span data-stu-id="623b6-108">For more information about implementing the UI features of a custom host, see [Host02 Sample](./host02-sample.md).</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="e73fc-109">Vereisten</span><span class="sxs-lookup"><span data-stu-id="e73fc-109">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="623b6-109">Vereisten</span><span class="sxs-lookup"><span data-stu-id="623b6-109">Requirements</span></span>
 
- <span data-ttu-id="e73fc-110">Voor dit voor beeld is Windows Power Shell 2,0 vereist.</span><span class="sxs-lookup"><span data-stu-id="e73fc-110">This sample requires Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="623b6-110">Voor dit voor beeld is Windows Power Shell 2,0 vereist.</span><span class="sxs-lookup"><span data-stu-id="623b6-110">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="e73fc-111">Demonstreert</span><span class="sxs-lookup"><span data-stu-id="e73fc-111">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="623b6-111">Demonstreert</span><span class="sxs-lookup"><span data-stu-id="623b6-111">Demonstrates</span></span>
 
-- <span data-ttu-id="e73fc-112">Er wordt een aangepaste host-klasse gemaakt die is afgeleid van de [System. Management. Automation. host. PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) -klasse.</span><span class="sxs-lookup"><span data-stu-id="e73fc-112">Creating a custom host class that derives from the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class.</span></span>
+- <span data-ttu-id="623b6-112">Er wordt een aangepaste host-klasse gemaakt die is afgeleid van de [System. Management. Automation. host. PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) -klasse.</span><span class="sxs-lookup"><span data-stu-id="623b6-112">Creating a custom host class that derives from the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class.</span></span>
 
-- <span data-ttu-id="e73fc-113">Een runs Pace maken die gebruikmaakt van de aangepaste host-klasse.</span><span class="sxs-lookup"><span data-stu-id="e73fc-113">Creating a runspace that uses the custom host class.</span></span>
+- <span data-ttu-id="623b6-113">Een runs Pace maken die gebruikmaakt van de aangepaste host-klasse.</span><span class="sxs-lookup"><span data-stu-id="623b6-113">Creating a runspace that uses the custom host class.</span></span>
 
-- <span data-ttu-id="e73fc-114">Maken van een [System. Management. Automation. Power shell](/dotnet/api/System.Management.Automation.PowerShell) -object dat een script uitvoert dat afsluiten aanroept.</span><span class="sxs-lookup"><span data-stu-id="e73fc-114">Creating a [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object that runs a script that calls exit.</span></span>
+- <span data-ttu-id="623b6-114">Maken van een [System. Management. Automation. Power shell](/dotnet/api/System.Management.Automation.PowerShell) -object dat een script uitvoert dat afsluiten aanroept.</span><span class="sxs-lookup"><span data-stu-id="623b6-114">Creating a [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object that runs a script that calls exit.</span></span>
 
-- <span data-ttu-id="e73fc-115">Controleren of de juiste afsluit code is gebruikt tijdens het afsluit proces.</span><span class="sxs-lookup"><span data-stu-id="e73fc-115">Verifying that the correct exit code was used in the exit process.</span></span>
+- <span data-ttu-id="623b6-115">Controleren of de juiste afsluit code is gebruikt tijdens het afsluit proces.</span><span class="sxs-lookup"><span data-stu-id="623b6-115">Verifying that the correct exit code was used in the exit process.</span></span>
 
-## <a name="example"></a><span data-ttu-id="e73fc-116">Voorbeeld</span><span class="sxs-lookup"><span data-stu-id="e73fc-116">Example</span></span>
+## <a name="example-1"></a><span data-ttu-id="623b6-116">Voorbeeld 1</span><span class="sxs-lookup"><span data-stu-id="623b6-116">Example 1</span></span>
 
- <span data-ttu-id="e73fc-117">De volgende code toont een implementatie van een host-toepassing die gebruikmaakt van een eenvoudige aangepaste host-interface.</span><span class="sxs-lookup"><span data-stu-id="e73fc-117">The following code shows an implementation of a host application that uses a simple custom host interface.</span></span>
+<span data-ttu-id="623b6-117">De volgende code toont een implementatie van een host-toepassing die gebruikmaakt van een eenvoudige aangepaste host-interface.</span><span class="sxs-lookup"><span data-stu-id="623b6-117">The following code shows an implementation of a host application that uses a simple custom host interface.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -132,9 +132,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a><span data-ttu-id="e73fc-118">Voorbeeld</span><span class="sxs-lookup"><span data-stu-id="e73fc-118">Example</span></span>
+## <a name="example-2"></a><span data-ttu-id="623b6-118">Voorbeeld 2</span><span class="sxs-lookup"><span data-stu-id="623b6-118">Example 2</span></span>
 
- <span data-ttu-id="e73fc-119">De volgende code is de implementatie van de klasse [System. Management. Automation. host. PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) die wordt gebruikt door deze hosttoepassing.</span><span class="sxs-lookup"><span data-stu-id="e73fc-119">The following code is the implementation of the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class that is used by this host application.</span></span> <span data-ttu-id="e73fc-120">Deze elementen die niet zijn geïmplementeerd, genereren een uitzonde ring of retour neren niets.</span><span class="sxs-lookup"><span data-stu-id="e73fc-120">Those elements that are not implemented throw an exception or return nothing.</span></span>
+<span data-ttu-id="623b6-119">De volgende code is de implementatie van de klasse [System. Management. Automation. host. PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) die wordt gebruikt door deze hosttoepassing.</span><span class="sxs-lookup"><span data-stu-id="623b6-119">The following code is the implementation of the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class that is used by this host application.</span></span> <span data-ttu-id="623b6-120">Deze elementen die niet zijn geïmplementeerd, genereren een uitzonde ring of retour neren niets.</span><span class="sxs-lookup"><span data-stu-id="623b6-120">Those elements that are not implemented throw an exception or return nothing.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -303,4 +303,4 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="e73fc-121">Zie ook</span><span class="sxs-lookup"><span data-stu-id="e73fc-121">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="623b6-121">Zie ook</span><span class="sxs-lookup"><span data-stu-id="623b6-121">See Also</span></span>
