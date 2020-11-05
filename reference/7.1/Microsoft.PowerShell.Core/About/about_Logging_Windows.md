@@ -1,23 +1,22 @@
 ---
-description: Power shell registreert interne bewerkingen van de engine, providers en cmdlets.
+description: Power shell registreert interne bewerkingen van de engine, providers en cmdlets naar het Windows-gebeurtenis logboek.
 keywords: powershell
 Locale: en-US
 ms.date: 03/30/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_logging_windows?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Logging-Windows
-ms.openlocfilehash: dbc11e15642673d3159d4f02a40147e68fbf1d7d
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 960394838097e4bfad1af5f4f0af7a813a50e761
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93252043"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93355014"
 ---
 # <a name="about-logging-windows"></a>Over logboek registratie van Windows
 
 ## <a name="short-description"></a>Korte beschrijving
-
-Power shell registreert interne bewerkingen van de engine, providers en cmdlets.
+Power shell registreert interne bewerkingen van de engine, providers en cmdlets naar het Windows-gebeurtenis logboek.
 
 ## <a name="long-description"></a>Lange beschrijving
 
@@ -32,14 +31,14 @@ Power shell-logboeken kunnen worden weer gegeven met behulp van de Windows-Logbo
 
 Wanneer de logboek registratie van script blokken is ingeschakeld, registreert Power shell de volgende gebeurtenissen in het `PowerShellCore/Operational` logboek:
 
-|Veld| Waarde|
-|-|-|
-|Gebeurtenis|`4104` / `0x1008`|
-|Kanaal|`Operational`|
-|Niveau|`Verbose`|
-|Code|`Create`|
-|Taak|`CommandStart`|
-|Zoek|`Runspace`|
+|  Veld  |       Waarde       |
+| ------- | ----------------- |
+| Gebeurtenis | `4104` / `0x1008` |
+| Kanaal | `Operational`     |
+| Niveau   | `Verbose`         |
+| Code  | `Create`          |
+| Taak    | `CommandStart`    |
+| Zoek | `Runspace`        |
 
 ### <a name="registering-the-powershell-event-provider-on-windows"></a>De Power shell-gebeurtenis provider registreren in Windows
 
@@ -144,4 +143,3 @@ Get-WinEvent Microsoft-Windows-PowerShell/Operational |
 
 <!-- link references -->
 [SIEM]: https://wikipedia.org/wiki/Security_information_and_event_management
-

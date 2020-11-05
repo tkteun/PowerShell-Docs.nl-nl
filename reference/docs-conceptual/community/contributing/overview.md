@@ -1,14 +1,14 @@
 ---
 title: Bijdragen aan Power shell-documentatie
-description: Dit artikel bevat een overzicht van hoe u als inzender aan de slag kunt gaan met PowerShell-documentatie.
+description: In dit artikel vindt u een overzicht van de stappen die nodig zijn om aan de Power shell-documentatie te bijdragen.
 ms.date: 03/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: 3ea08c3acf4a31cbb7262aac57bf28b75388275d
-ms.sourcegitcommit: b0488ca6557501184f20c8343b0ed5147b09e3fe
+ms.openlocfilehash: 255b74a75b8412ed509f6da930eb722d54233711
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86158153"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93354399"
 ---
 # <a name="contributing-to-powershell-documentation"></a>Bijdragen aan Power shell-documentatie
 
@@ -68,7 +68,7 @@ Bekijk de volgende documenten:
 - [Stijlgids voor PowerShell-documentatie](powershell-style-guide.md)
 - [Naslaginformatie voor cmdlets bewerken](editing-cmdlet-ref.md)
 
-Aanvullende bronnen
+Aanvullende resources
 
 - [Redactionele controlelijst](editorial-checklist.md)
 - [De manier waarop we problemen beheren](managing-issues.md)

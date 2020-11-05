@@ -3,12 +3,12 @@ ms.date: 09/13/2016
 ms.topic: reference
 title: Windows PowerShell-foutrecords
 description: Windows PowerShell-foutrecords
-ms.openlocfilehash: 35f814a4b4323adefb310a2f2bac11dc7644af40
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 899acf08508b1469b7ec3985d5665367fc2c1531
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92666855"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93355592"
 ---
 # <a name="windows-powershell-error-records"></a>Windows PowerShell-foutrecords
 
@@ -22,7 +22,8 @@ Als de cmdlet geen uitzonde ring heeft ondervangen, moet deze een nieuwe uitzond
 
 - Een fout-id die een bepaalde aanduiding levert die kan worden gebruikt voor diagnostische doel einden en Windows Power shell-scripts voor het afhandelen van specifieke fout voorwaarden met specifieke fout afhandeling. Elke fout record moet een fout-id bevatten (Zie fout-id).
 
-- Een fout categorie die een algemene aanduiding biedt die kan worden gebruikt voor diagnostische doel einden. Elke fout record moet een fout categorie (Zie fout categorie) opgeven.
+- Een fout categorie die een algemene aanduiding biedt die kan worden gebruikt voor diagnostische doel einden.
+  Elke fout record moet een fout categorie (Zie fout categorie) opgeven.
 
 - Een optioneel vervangend fout bericht en een aanbevolen actie (Zie vervangings fout bericht).
 
@@ -50,9 +51,10 @@ Gebruik de volgende richt lijnen om fout-id's te genereren wanneer u fout record
 
 ## <a name="error-category"></a>Fout categorie
 
-Wanneer u een fout record maakt, geeft u de categorie van de fout op met behulp van een van de constanten die zijn gedefinieerd door de inventarisatie [System. Management. Automation. ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0) . Windows Power shell gebruikt de fout categorie om fout gegevens weer te geven wanneer gebruikers de `$ErrorView` variabele instellen op `"CategoryView"` .
+Wanneer u een fout record maakt, geeft u de categorie van de fout op met behulp van een van de constanten die zijn gedefinieerd door de inventarisatie [System. Management. Automation. ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory) . Windows Power shell gebruikt de fout categorie om fout gegevens weer te geven wanneer gebruikers de `$ErrorView` variabele instellen op `"CategoryView"` .
 
-Vermijd het gebruik van de constante [System. Management. Automation. ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0) **NotSpecified** . Als u informatie over de fout hebt of over de bewerking die de fout heeft veroorzaakt, kiest u de categorie die het beste de fout of de bewerking beschrijft, zelfs als de categorie geen perfecte overeenkomst is.
+Vermijd het gebruik van de constante [System. Management. Automation. ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory) 
+ **NotSpecified** . Als u informatie over de fout hebt of over de bewerking die de fout heeft veroorzaakt, kiest u de categorie die het beste de fout of de bewerking beschrijft, zelfs als de categorie geen perfecte overeenkomst is.
 
 De informatie die wordt weer gegeven door Windows Power shell wordt aangeduid als de categorie-weergave teken reeks en wordt samengesteld op basis van de eigenschappen van de klasse [System. Management. Automation. Errorcategoryinfo](/dotnet/api/System.Management.Automation.ErrorCategoryInfo) . (Deze klasse wordt geopend via de eigenschap [System. Management. Automation. ErrorRecord. CategoryInfo](/dotnet/api/System.Management.Automation.ErrorRecord.CategoryInfo) .)
 
@@ -62,9 +64,10 @@ De informatie die wordt weer gegeven door Windows Power shell wordt aangeduid al
 
 De volgende lijst bevat de informatie die wordt weer gegeven:
 
-- Categorie: een door Windows Power shell gedefinieerde [System. Management. Automation. ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0) -constante.
+- Categorie: een door Windows Power shell gedefinieerde [System. Management. Automation. ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory) -constante.
 
-- TargetName: standaard is dit de naam van het object dat door de cmdlet werd verwerkt toen de fout optrad. Of een andere cmdlet-gedefinieerde teken reeks.
+- TargetName: standaard is dit de naam van het object dat door de cmdlet werd verwerkt toen de fout optrad.
+  Of een andere cmdlet-gedefinieerde teken reeks.
 
 - Target Type: standaard is dit het soort van het doel object. Of een andere cmdlet-gedefinieerde teken reeks.
 
@@ -78,9 +81,9 @@ Wanneer u een fout record voor een cmdlet ontwikkelt, wordt het standaard fout b
 
 Het vervangende bericht wordt gegeven door een [System. Management. Automation. error Details](/dotnet/api/System.Management.Automation.ErrorDetails) -object. Gebruik een van de volgende constructors van dit object omdat deze aanvullende lokalisatie gegevens bieden die kunnen worden gebruikt door Windows Power shell.
 
-- [Error Details (cmdlet, String, String, object [])](/dotnet/api/system.management.automation.errordetails.-ctor?view=pscore-6.2.0#System_Management_Automation_ErrorDetails__ctor_System_Management_Automation_Cmdlet_System_String_System_String_System_Object___): gebruik deze constructor als uw sjabloon reeks een resource teken reeks is in dezelfde assembly waarin de cmdlet is geïmplementeerd, of als u de sjabloon reeks wilt laden via een onderdrukking van de methode  [System. Management. Automation. cmdlet. GetResourceString](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString) .
+- [Error Details (cmdlet, String, String, object [])](/dotnet/api/system.management.automation.errordetails.-ctor#System_Management_Automation_ErrorDetails__ctor_System_Management_Automation_Cmdlet_System_String_System_String_System_Object___): gebruik deze constructor als uw sjabloon reeks een resource teken reeks is in dezelfde assembly waarin de cmdlet is geïmplementeerd, of als u de sjabloon reeks wilt laden via een onderdrukking van de methode [System. Management. Automation. cmdlet. GetResourceString](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString) .
 
-- [Error Details (assembly, String, String, object [])](/dotnet/api/system.management.automation.errordetails.-ctor?view=pscore-6.2.0#System_Management_Automation_ErrorDetails__ctor_System_Reflection_Assembly_System_String_System_String_System_Object___): gebruik deze constructor als de sjabloon teken reeks zich in een andere assembly bevindt en u deze niet laadt via een onderdrukking van [System. Management. Automation. cmdlet. GetResourceString](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString).
+- [Error Details (assembly, String, String, object [])](/dotnet/api/system.management.automation.errordetails.-ctor#System_Management_Automation_ErrorDetails__ctor_System_Reflection_Assembly_System_String_System_String_System_Object___): gebruik deze constructor als de sjabloon teken reeks zich in een andere assembly bevindt en u deze niet laadt via een onderdrukking van [System. Management. Automation. cmdlet. GetResourceString](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString).
 
 Het vervangings bericht moet voldoen aan de .NET Framework ontwerp richtlijnen voor het schrijven van uitzonderings berichten met een klein verschil. In de richt lijnen staat dat uitzonderings berichten moeten worden geschreven voor ontwikkel aars. Deze vervangings berichten moeten worden geschreven voor de cmdlet-gebruiker.
 
@@ -100,7 +103,7 @@ Wanneer een cmdlet [System. Management. Automation. cmdlet. WriteError](/dotnet/
 
 [System. Management. Automation. cmdlet. Throwterminatingerror *](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)
 
-[System. Management. Automation. ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0)
+[System. Management. Automation. ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory)
 
 [System. Management. Automation. Errorcategoryinfo](/dotnet/api/System.Management.Automation.ErrorCategoryInfo)
 

@@ -3,12 +3,12 @@ ms.date: 09/13/2016
 ms.topic: reference
 title: Een navigatieprovider schrijven
 description: Een navigatieprovider schrijven
-ms.openlocfilehash: d9e2bcb02d8f2a396db453d7102ff356570d7bfc
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 3123672d3365c97714557bd0e72a6e444ac228a0
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92647339"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93355218"
 ---
 # <a name="writing-a-navigation-provider"></a>Een navigatieprovider schrijven
 
@@ -20,7 +20,7 @@ Zie [Windows Power shell provider Overview](./windows-powershell-provider-overvi
 
 ## <a name="implementing-navigation-methods"></a>Navigatie methoden implementeren
 
-De klasse [System. Management. Automation. provider. Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) implementeert methoden die ondersteuning bieden voor geneste containers, relatieve paden en het verplaatsen van items. Zie [NavigationCmdletProvider-methoden](/dotnet/api/system.management.automation.provider.navigationcmdletprovider?view=pscore-6.2.0#methods)voor een volledige lijst van deze methoden.
+De klasse [System. Management. Automation. provider. Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) implementeert methoden die ondersteuning bieden voor geneste containers, relatieve paden en het verplaatsen van items. Zie [NavigationCmdletProvider-methoden](/dotnet/api/system.management.automation.provider.navigationcmdletprovider#methods)voor een volledige lijst van deze methoden.
 
 > [!NOTE]
 > Dit onderwerp is gebaseerd op de informatie in de Quick Start van de [Windows Power shell-provider](./windows-powershell-provider-quickstart.md). Dit onderwerp heeft geen betrekking op de basis beginselen van het instellen van een provider project of het implementeren van de methoden die zijn overgenomen van de klasse [System. Management. Automation. provider. Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) die stations maken en verwijderen. In dit onderwerp wordt ook beschreven hoe u methoden implementeert die worden weer gegeven door de klassen [System. Management. Automation. provider. Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) of [System. Management. Automation. provider. Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) . Zie [een item provider schrijven](./writing-an-item-provider.md)voor een voor beeld waarin wordt getoond hoe u cmdlets voor items implementeert. Zie [een container provider schrijven](./writing-a-container-provider.md)voor een voor beeld waarin wordt getoond hoe u container-cmdlets implementeert.

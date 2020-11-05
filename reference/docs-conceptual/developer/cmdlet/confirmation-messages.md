@@ -3,12 +3,12 @@ ms.date: 09/13/2016
 ms.topic: reference
 title: Bevestigingsberichten
 description: Bevestigingsberichten
-ms.openlocfilehash: bcef63dac3594c3fe790173a938d7978aa130724
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 76302b2f8d8ca6dcdfe1b3c36f71aad23a53f7cf
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92668198"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93355184"
 ---
 # <a name="confirmation-messages"></a>Bevestigingsberichten
 
@@ -19,9 +19,9 @@ Hier zijn verschillende bevestigings berichten die kunnen worden weer gegeven, a
 
 ## <a name="specifying-the-resource"></a>De resource opgeven
 
-U kunt de resource opgeven die moet worden gewijzigd door het aanroepen van [System. Management. Automation. cmdlet. Shouldprocess% 2a? Methode Displayproperty = FullName](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess?view=powershellsdk-1.1.0) . In dit geval geeft u de resource op met behulp `target` van de para meter van de methode. de bewerking wordt toegevoegd door Windows Power shell. In het volgende bericht is de tekst ' MyResource ' de resource die wordt verwerkt en de bewerking is de naam van de opdracht die de aanroep uitvoert.
+U kunt de resource opgeven die moet worden gewijzigd door het aanroepen van [System. Management. Automation. cmdlet. Shouldprocess% 2a? Methode Displayproperty = FullName](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) . In dit geval geeft u de resource op met behulp `target` van de para meter van de methode. de bewerking wordt toegevoegd door Windows Power shell. In het volgende bericht is de tekst ' MyResource ' de resource die wordt verwerkt en de bewerking is de naam van de opdracht die de aanroep uitvoert.
 
-```output
+```Output
 Confirm
 Are you sure you want to perform this action?
 Performing operation "Test-RequestConfirmationTemplate1" on Target "MyResource".
@@ -30,7 +30,7 @@ Performing operation "Test-RequestConfirmationTemplate1" on Target "MyResource".
 
 Als de gebruiker **Ja** of **Ja selecteert voor** de bevestigings aanvraag (zoals weer gegeven in het volgende voor beeld), wordt een aanroep van de methode [System. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) uitgevoerd, waardoor een tweede bevestigings bericht wordt weer gegeven.
 
-```output
+```Output
 Confirm
 Are you sure you want to perform this action?
 Performing operation "Test-RequestConfirmationTemplate1" on Target "MyResource".
@@ -43,9 +43,9 @@ Continue with this operation?
 
 ## <a name="specifying-the-operation-and-resource"></a>De bewerking en resource opgeven
 
-U kunt de resource opgeven die moet worden gewijzigd en de bewerking die de opdracht gaat uitvoeren door het aanroepen van [System. Management. Automation. cmdlet. Shouldprocess% 2a? Methode Displayproperty = FullName](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess?view=powershellsdk-1.1.0) . In dit geval geeft u de bron op met behulp van de `target` para meter en de bewerking met behulp van de `target` para meter. In het volgende bericht is de tekst ' MyResource ' de resource die wordt verwerkt en ' MyAction ' de bewerking die moet worden uitgevoerd.
+U kunt de resource opgeven die moet worden gewijzigd en de bewerking die de opdracht gaat uitvoeren door het aanroepen van [System. Management. Automation. cmdlet. Shouldprocess% 2a? Methode Displayproperty = FullName](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) . In dit geval geeft u de bron op met behulp van de `target` para meter en de bewerking met behulp van de `target` para meter. In het volgende bericht is de tekst ' MyResource ' de resource die wordt verwerkt en ' MyAction ' de bewerking die moet worden uitgevoerd.
 
-```output
+```Output
 Confirm
 Are you sure you want to perform this action?
 Performing operation "MyAction" on Target "MyResource".
@@ -54,7 +54,7 @@ Performing operation "MyAction" on Target "MyResource".
 
 Als de gebruiker **Ja** of **Ja selecteert voor** het vorige bericht, wordt een aanroep van de methode [System. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) uitgevoerd, waardoor een tweede bevestigings bericht wordt weer gegeven.
 
-```output
+```Output
 Confirm
 Are you sure you want to perform this action?
 Performing operation "MyAction" on Target "MyResource".

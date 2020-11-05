@@ -2,16 +2,16 @@
 description: Hierin wordt het concept van de scope in Power shell beschreven en wordt getoond hoe u het bereik van elementen kunt instellen en wijzigen.
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 03/13/2020
+ms.date: 11/04/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_scopes?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_scopes
-ms.openlocfilehash: 3e165867be5887ae15890f795531b5a3048c4550
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 15c3d606ec13166e137bbcd633269dbf03ab7817
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93252230"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93354845"
 ---
 # <a name="about-scopes"></a>Over bereiken
 
@@ -36,22 +36,26 @@ Als u een item in een bereik maakt en de naam van het item is gedeeld met een it
 
 Power shell ondersteunt de volgende bereiken:
 
-- Global: de scope die van toepassing is wanneer Power shell wordt gestart. Variabelen en functies die aanwezig zijn wanneer Power shell wordt gestart, zijn gemaakt in het globale bereik, zoals automatische variabelen en voorkeurs variabelen. De variabelen, aliassen en functies in uw Power shell-profielen worden ook in het globale bereik gemaakt.
+- Global: het bereik dat van toepassing is wanneer Power shell wordt gestart of wanneer u een nieuwe sessie of runs Pace maakt. Variabelen en functies die aanwezig zijn wanneer Power shell wordt gestart, zijn gemaakt in het globale bereik, zoals automatische variabelen en voorkeurs variabelen. De variabelen, aliassen en functies in uw Power shell-profielen worden ook in het globale bereik gemaakt. Het globale bereik is het bovenliggende hoofd bereik in een sessie.
 
 - Lokaal: het huidige bereik. Het lokale bereik kan het globale bereik of een ander bereik zijn.
 
 - Script: het bereik dat is gemaakt tijdens het uitvoeren van een script bestand. Alleen de opdrachten in het script worden uitgevoerd in het bereik van het script. Met de opdrachten in een script is het bereik van het script het lokale bereik.
 
 > [!NOTE]
-> **Privé** is geen bereik. Het is een [optie](#private-option) waarmee de zicht baarheid van een item wordt gewijzigd buiten het bereik waarin het item is gedefinieerd.
+> **Privé** is geen bereik. Het is een [optie](#private-option) waarmee de zicht baarheid van een item buiten het bereik waarin het item is gedefinieerd, wordt gewijzigd.
 
 ## <a name="parent-and-child-scopes"></a>Bovenliggende en onderliggende bereiken
 
-U kunt een nieuwe scope maken door een script of functie uit te voeren door een sessie te maken of door een nieuw exemplaar van Power shell te starten. Wanneer u een nieuwe scope maakt, is het resultaat een bovenliggend bereik (het oorspronkelijke bereik) en een onderliggend bereik (het bereik dat u hebt gemaakt).
-
-In Power shell zijn alle bereiken onderliggende bereiken van het globale bereik, maar u kunt een groot aantal bereiken maken en veel recursieve bereiken.
+U kunt een nieuw onderliggend bereik maken door een script of functie aan te roepen. Het aanroepende bereik is het bovenliggende bereik. De aangeroepen script of functie is het onderliggende bereik.
+De functies of scripts die u aanroept, kunnen andere functies aanroepen en een hiërarchie van onderliggende bereiken maken waarvan het hoofd bereik het globale bereik is.
 
 Tenzij u de items expliciet aanmaakt, zijn de items in het bovenliggende bereik beschikbaar voor het onderliggende bereik. Items die u in het onderliggende bereik maakt en wijzigt, hebben echter geen invloed op het bovenliggende bereik, tenzij u expliciet het bereik opgeeft wanneer u de items maakt.
+
+> [!NOTE]
+> Functies van een module kunnen niet worden uitgevoerd in een onderliggend bereik van het aanroepende bereik.
+> Modules hebben hun eigen sessie status die is gekoppeld aan het globale bereik.
+> Alle module code wordt uitgevoerd in een module-specifieke hiërarchie van bereiken met een eigen hoofd bereik.
 
 ## <a name="inheritance"></a>Overname
 

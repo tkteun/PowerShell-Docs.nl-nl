@@ -3,12 +3,12 @@ ms.date: 06/12/2019
 ms.topic: reference
 title: Windows PowerShell-concepten
 description: Windows PowerShell-concepten
-ms.openlocfilehash: d4a6ce0a041ace2e6a66030a0b0abbded111a9a9
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: a9b88a2e575b7ff7c036ce0fcbc035f0b55d0f5f
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92653774"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93355355"
 ---
 # <a name="windows-powershell-concepts"></a>Windows PowerShell-concepten
 
@@ -30,7 +30,7 @@ Deze sectie bevat conceptuele informatie die u helpt bij het begrijpen van Power
 
 [Power shell-klasse](/dotnet/api/system.management.automation.powershell)
 
-[Power shell core API-naslag informatie](/dotnet/api/?view=pscore-6.2.0)
+[Power shell core API-naslag informatie](/dotnet/api/?view=pscore-6.2.0&preserve-view=true)
 
 [Handleiding voor Windows PowerShell-programmeurs](windows-powershell-programmer-s-guide.md)
 
@@ -38,6 +38,6 @@ Deze sectie bevat conceptuele informatie die u helpt bij het begrijpen van Power
 
 [Een Windows Power shell-provider schrijven](../provider/writing-a-windows-powershell-provider.md)
 
-[Windows Power shell API-naslag informatie](/dotnet/api/?view=powershellsdk-1.1.0)
+[Windows Power shell API-naslag informatie](/dotnet/api/?view=powershellsdk-1.1.0&preserve-view=true)
 
 [Naslaginformatie over Windows PowerShell](../windows-powershell-reference.md)

@@ -3,12 +3,12 @@ title: Alles wat u wilt weten over hashtabellen
 description: Hashtabellen zijn heel belang rijk in Power shell, zodat het goed is om een duidelijker beeld te krijgen.
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: c67f00911b6c9d05fa9b5b5a700bbae795cf9244
-ms.sourcegitcommit: d0461273abb6db099c5e784ef00f57fd551be4a6
+ms.openlocfilehash: 1539cf6444cab718c1108384c640193d66c85daf
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85353818"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93354419"
 ---
 # <a name="everything-you-wanted-to-know-about-hashtables"></a>Alles wat u wilt weten over hashtabellen
 
@@ -854,7 +854,7 @@ if($message -match 'My Name is (?<Name>.+) and my SSN is (?<SSN>.+)\.')
 
 In het bovenstaande voor beeld `(?<Name>.*)` is de een benoemde subexpression. Deze waarde wordt vervolgens in de `$Matches.Name` eigenschap geplaatst.
 
-## <a name="group-object--ashashtable"></a>Groep-object-AsHashtable
+## <a name="group-object--ashashtable"></a>Group-Object-AsHashtable
 
 Een weinig bekende functie van `Group-Object` is dat deze gegevens sets kan omzetten in een hashtabel voor u.
 
@@ -966,7 +966,7 @@ Ik heb veel moeite gedekt. Ik hoop dat u er geen zorgen meer meer over hebt, of 
 [Als u prestatie problemen hebt, test u deze]: https://github.com/PoshCode/PowerShellPracticeAndStyle/blob/master/Best-Practices/Performance.md
 [splatting]: /powershell/module/microsoft.powershell.core/about/about_splatting
 [pscustomobject]: everything-about-pscustomobject.md
-[JavaScriptSerializer]: /dotnet/api/system.web.script.serialization.javascriptserializer?view=netframework-4.8
+[JavaScriptSerializer]: /dotnet/api/system.web.script.serialization.javascriptserializer?view=netframework-4.8&preserve-view=true
 [PSBoundParameters]: https://tommymaynard.com/the-psboundparameters-automatic-variable-2016/
 [about_Automatic_Variables]: /powershell/module/microsoft.powershell.core/about/about_automatic_variables
 [Automatische standaard waarden]: https://www.simple-talk.com/sysadmin/PowerShell/PowerShell-time-saver-automatic-defaults/

@@ -3,12 +3,12 @@ ms.date: 09/13/2016
 ms.topic: reference
 title: Voorbeeld Host02
 description: Voorbeeld Host02
-ms.openlocfilehash: c3588abcac0d5ae7ba1c49e58cc119f657807a06
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 7bb07dec3fd6b7ac5844d247a7a06cbda67c619e
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92649234"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93355456"
 ---
 # <a name="host02-sample"></a>Voorbeeld Host02
 
@@ -16,11 +16,11 @@ In dit voor beeld ziet u hoe u een host-toepassing schrijft die gebruikmaakt van
 
 ## <a name="requirements"></a>Vereisten
 
- Voor dit voor beeld is Windows Power Shell 2,0 vereist.
+Voor dit voor beeld is Windows Power Shell 2,0 vereist.
 
 ## <a name="demonstrates"></a>Demonstreert
 
-- Het maken van een aangepaste host waarvan de klassen zijn afgeleid van de klasse [System. Management. Automation. host. PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) , de klasse [System. Management. Automation. host. Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) en de klasse [System. Management. Automation. host. Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) .
+- Het maken van een aangepaste host waarvan de klassen zijn afgeleid van de klasse [System. Management. Automation. host. PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) , de klasse [System. Management. Automation. host. PSHostUserInterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) en de klasse [System. Management. Automation. host. PSHostRawUserInterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) .
 
 - Een runs Pace maken die gebruikmaakt van de aangepaste host.
 
@@ -28,9 +28,9 @@ In dit voor beeld ziet u hoe u een host-toepassing schrijft die gebruikmaakt van
 
 - Het maken van een [System. Management. Automation. Power shell](/dotnet/api/system.management.automation.powershell) -object dat een script uitvoert om de processen op te halen en te sorteren, haalt de huidige datum op die in het Duits wordt weer gegeven.
 
-## <a name="example"></a>Voorbeeld
+## <a name="example-1"></a>Voorbeeld 1
 
- De volgende code toont een implementatie van een host-toepassing die gebruikmaakt van de aangepaste host.
+De volgende code toont een implementatie van een host-toepassing die gebruikmaakt van de aangepaste host.
 
 ```csharp
 // Copyright (c) 2006 Microsoft Corporation. All rights reserved.
@@ -127,9 +127,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a>Voorbeeld
+## <a name="example-2"></a>Voorbeeld 2
 
- De volgende code is de implementatie van de klasse [System. Management. Automation. host. PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) die wordt gebruikt door deze hosttoepassing. Deze elementen die niet zijn geïmplementeerd, genereren een uitzonde ring of retour neren niets.
+De volgende code is de implementatie van de klasse [System. Management. Automation. host. PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) die wordt gebruikt door deze hosttoepassing. Deze elementen die niet zijn geïmplementeerd, genereren een uitzonde ring of retour neren niets.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -309,9 +309,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a>Voorbeeld
+## <a name="example-3"></a>Voorbeeld 3
 
- De volgende code is de implementatie van de klasse [System. Management. Automation. host. Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) die wordt gebruikt door deze hosttoepassing.
+De volgende code is de implementatie van de klasse [System. Management. Automation. host. PSHostUserInterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) die wordt gebruikt door deze hosttoepassing.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -560,9 +560,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a>Voorbeeld
+## <a name="example-4"></a>Voorbeeld 4
 
- De volgende code is de implementatie van de klasse [System. Management. Automation. host. Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) die wordt gebruikt door deze hosttoepassing. Deze elementen die niet zijn geïmplementeerd, genereren een uitzonde ring of retour neren niets.
+De volgende code is de implementatie van de klasse [System. Management. Automation. host. PSHostRawUserInterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) die wordt gebruikt door deze hosttoepassing. Deze elementen die niet zijn geïmplementeerd, genereren een uitzonde ring of retour neren niets.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host

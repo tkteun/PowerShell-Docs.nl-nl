@@ -3,22 +3,22 @@ ms.date: 09/13/2016
 ms.topic: reference
 title: Voorbeeld Host01
 description: Voorbeeld Host01
-ms.openlocfilehash: 535d9ea6b2519023ad2ac4429d383e61b12db005
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: b4f1a81044a51855ad7decc25e1f5b1215ab0d62
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92649239"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93355473"
 ---
 # <a name="host01-sample"></a>Voorbeeld Host01
 
 In dit voor beeld ziet u hoe u een host-toepassing implementeert die gebruikmaakt van een aangepaste host. In dit voor beeld wordt een runs Pace gemaakt die gebruikmaakt van de aangepaste host en vervolgens wordt de API [System. Management. Automation. Power shell](/dotnet/api/System.Management.Automation.PowerShell) gebruikt om een script uit te voeren waarmee "Exit" wordt aangeroepen. De hosttoepassing bekijkt vervolgens de uitvoer van het script en de resultaten worden afgedrukt.
 
- In dit voor beeld worden de standaard functies van de gebruikers interface van Windows Power shell gebruikt. Zie Host02-voor [beeld](./host02-sample.md)voor meer informatie over het implementeren van de functies van de gebruikers interface van een aangepaste host.
+In dit voor beeld worden de standaard functies van de gebruikers interface van Windows Power shell gebruikt. Zie Host02-voor [beeld](./host02-sample.md)voor meer informatie over het implementeren van de functies van de gebruikers interface van een aangepaste host.
 
 ## <a name="requirements"></a>Vereisten
 
- Voor dit voor beeld is Windows Power Shell 2,0 vereist.
+Voor dit voor beeld is Windows Power Shell 2,0 vereist.
 
 ## <a name="demonstrates"></a>Demonstreert
 
@@ -30,9 +30,9 @@ In dit voor beeld ziet u hoe u een host-toepassing implementeert die gebruikmaak
 
 - Controleren of de juiste afsluit code is gebruikt tijdens het afsluit proces.
 
-## <a name="example"></a>Voorbeeld
+## <a name="example-1"></a>Voorbeeld 1
 
- De volgende code toont een implementatie van een host-toepassing die gebruikmaakt van een eenvoudige aangepaste host-interface.
+De volgende code toont een implementatie van een host-toepassing die gebruikmaakt van een eenvoudige aangepaste host-interface.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -132,9 +132,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a>Voorbeeld
+## <a name="example-2"></a>Voorbeeld 2
 
- De volgende code is de implementatie van de klasse [System. Management. Automation. host. PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) die wordt gebruikt door deze hosttoepassing. Deze elementen die niet zijn geïmplementeerd, genereren een uitzonde ring of retour neren niets.
+De volgende code is de implementatie van de klasse [System. Management. Automation. host. PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) die wordt gebruikt door deze hosttoepassing. Deze elementen die niet zijn geïmplementeerd, genereren een uitzonde ring of retour neren niets.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host

@@ -2,12 +2,12 @@
 title: Wat is er nieuw in Power shell Core 6,1
 description: Nieuwe functies en wijzigingen die zijn uitgebracht in Power shell Core 6,1
 ms.date: 09/13/2018
-ms.openlocfilehash: 16159059285f89c2ddd85b506b0920f0aa8748ae
-ms.sourcegitcommit: d757d64ea8c8af4d92596e8fbe15f2f40d48d3ac
+ms.openlocfilehash: 4ff70be239197c7a4f64019d2aab42433f82f36c
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90846912"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93354657"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>Wat is er nieuw in Power shell Core 6,1
 
@@ -19,16 +19,16 @@ En we noemen we een aantal van de onderstaande namen, hartelijk dank voor [alle 
 
 ## <a name="net-core-21"></a>.NET Core 2.1
 
-Power shell Core 6,1 is verplaatst naar .NET Core 2,1 nadat deze is [uitgebracht in mei](https://blogs.msdn.microsoft.com/dotnet/2018/05/30/announcing-net-core-2-1/), wat resulteert in een aantal verbeteringen in Power shell, met inbegrip van:
+Power shell Core 6,1 is verplaatst naar .NET Core 2,1 nadat deze is [uitgebracht in mei](https://devblogs.microsoft.com/dotnet/announcing-net-core-2-1/), wat resulteert in een aantal verbeteringen in Power shell, met inbegrip van:
 
 - prestatie verbeteringen (Zie [hieronder](#performance-improvements))
 - Ondersteuning voor Alpine Linux (preview-versie)
 - [Ondersteuning voor algemeen hulp programma van .net](/dotnet/core/tools/global-tools) -binnenkort beschikbaar in Power shell
-- [`Span<T>`](/dotnet/api/system.span-1?view=netcore-2.1)
+- [`Span<T>`](/dotnet/api/system.span-1)
 
 ## <a name="windows-compatibility-pack-for-net-core"></a>Windows-compatibiliteits pakket voor .NET core
 
-In Windows leverde het .NET-team het [Windows-compatibiliteits pakket voor .net core](https://blogs.msdn.microsoft.com/dotnet/2017/11/16/announcing-the-windows-compatibility-pack-for-net-core/), een set assembly's die een aantal verwijderde api's toevoegen aan .net core in Windows.
+In Windows leverde het .NET-team het [Windows-compatibiliteits pakket voor .net core](https://devblogs.microsoft.com/dotnet/announcing-the-windows-compatibility-pack-for-net-core/), een set assembly's die een aantal verwijderde api's toevoegen aan .net core in Windows.
 
 We hebben het Windows-compatibiliteits pakket toegevoegd aan Power shell Core 6,1-release, zodat alle modules of scripts die gebruikmaken van deze Api's, kunnen worden gebruikt om ze beschikbaar te stellen.
 
@@ -36,7 +36,7 @@ Met het Windows-compatibiliteits pakket kan Power shell core gebruikmaken **van 
 
 ## <a name="support-for-application-allow-lists"></a>Ondersteuning voor lijsten voor het toestaan van toepassingen
 
-Power shell Core 6,1 heeft pariteit met Windows Power shell 5,1 met ondersteuning voor [AppLocker](/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview) en lijsten voor het toestaan van de [device Guard](/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control) -toepassing. Met lijsten met toepassingen kunt u nauw keurig bepalen welke binaire bestanden mogen worden uitgevoerd in de Power shell- [modus voor beperkte taal](https://blogs.msdn.microsoft.com/powershell/2017/11/02/powershell-constrained-language-mode/).
+Power shell Core 6,1 heeft pariteit met Windows Power shell 5,1 met ondersteuning voor [AppLocker](/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview) en lijsten voor het toestaan van de [device Guard](/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control) -toepassing. Met lijsten met toepassingen kunt u nauw keurig bepalen welke binaire bestanden mogen worden uitgevoerd in de Power shell- [modus voor beperkte taal](https://devblogs.microsoft.com/powershell/powershell-constrained-language-mode/).
 
 ## <a name="performance-improvements"></a>Prestatieverbeteringen
 
@@ -48,7 +48,7 @@ Power shell Core 6,0 heeft enkele belang rijke prestatie verbeteringen aangebrac
 Measure-Command { 1..100000 | % {Get-Random -Minimum 1 -Maximum 10000} | Group-Object }
 ```
 
-|    Gegevens    | Windows PowerShell 5.1 | Power shell Core 6,0 | Power shell Core 6,1 |
+|    Metrisch gegeven    | Windows PowerShell 5.1 | Power shell Core 6,0 | Power shell Core 6,1 |
 | ------------ | ---------------------- | ------------------- | ------------------- |
 | Tijd (SEC)   | 25,178                 | 19,653              | 6,641               |
 | Versnellen (%) | N.v.t.                    | 21,9%               | 66,2%               |
@@ -59,7 +59,7 @@ Op dezelfde manier kunnen sorterings scenario's zoals deze worden verbeterd met 
 Measure-Command { 1..100000 | % {Get-Random -Minimum 1 -Maximum 10000} | Sort-Object }
 ```
 
-|    Gegevens    | Windows PowerShell 5.1 | Power shell Core 6,0 | Power shell Core 6,1 |
+|    Metrisch gegeven    | Windows PowerShell 5.1 | Power shell Core 6,0 | Power shell Core 6,1 |
 | ------------ | ---------------------- | ------------------- | ------------------- |
 | Tijd (SEC)   | 12,170                 | 8,493               | 7,08                |
 | Versnellen (%) | N.v.t.                    | 30,2%               | 16,6%               |
@@ -71,7 +71,7 @@ In het volgende voor beeld wordt een CSV van de test met 26.616 rijen en zes kol
 Measure-Command {$a = Import-Csv foo.csv}
 ```
 
-|    Gegevens    | Windows PowerShell 5.1 | Power shell Core 6,0 |  Power shell Core 6,1   |
+|    Metrisch gegeven    | Windows PowerShell 5.1 | Power shell Core 6,0 |  Power shell Core 6,1   |
 | ------------ | ---------------------- | ------------------- | ---------------------- |
 | Tijd (SEC)   | 0,441                  | 1,069               | 0,268                  |
 | Versnellen (%) | N.v.t.                    | -142,4%             | 74,9% (39,2% van WPS) |
@@ -83,7 +83,7 @@ In het volgende voor beeld wordt een JSON-test bestand van ~ 2 MB gebruikt:
 Measure-Command {Get-Content .\foo.json | ConvertFrom-Json}
 ```
 
-|    Gegevens    | Windows PowerShell 5.1 | Power shell Core 6,0 |  Power shell Core 6,1   |
+|    Metrisch gegeven    | Windows PowerShell 5.1 | Power shell Core 6,0 |  Power shell Core 6,1   |
 | ------------ | ---------------------- | ------------------- | ---------------------- |
 | Tijd (SEC)   | 0,259                  | 0,577               | 0,125                  |
 | Versnellen (%) | N.v.t.                    | -122,8%             | 78,3% (51,7% van WPS) |
@@ -168,7 +168,7 @@ Er zijn enkele cmdlets toegevoegd in 6,1 waarmee u de verkortings documenten kun
 
 Een voor beeld `Show-Markdown` : Hiermee wordt een bestand met een prijs opgave in de-console weer gegeven.
 
-![Voor beeld van korting weer geven](media/What-s-New-in-PowerShell-Core-61/markdown_example.png)
+![Show-Markdown-voor beeld](media/What-s-New-in-PowerShell-Core-61/markdown_example.png)
 
 Bekijk [deze rfc's](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0025-Native-Markdown-Rendering.md)voor meer informatie over de werking van deze cmdlets.
 
@@ -496,7 +496,7 @@ Om te voor komen dat niet-versleuteld verkeer wordt gebruikt, is het gebruik van
 
 Voor meer informatie over deze wijzigingen raadpleegt u [Issue #6779](https://github.com/PowerShell/PowerShell/issues/6779).
 
-### <a name="removed-visualbasic-as-a-supported-language-in-add-type"></a>Verwijderd `VisualBasic` als een ondersteunde taal in het invoeg type
+### <a name="removed-visualbasic-as-a-supported-language-in-add-type"></a>Verwijderd `VisualBasic` als een ondersteunde taal in Add-Type
 
 In het verleden kunt u Visual Basic code compileren met behulp van de `Add-Type` cmdlet. Visual Basic wordt zelden gebruikt met `Add-Type` . Deze functie is verwijderd om de grootte van Power shell te reduceren.
 
@@ -504,7 +504,7 @@ In het verleden kunt u Visual Basic code compileren met behulp van de `Add-Type`
 
 Zie [PR #6708](https://github.com/PowerShell/PowerShell/pull/6708)voor meer informatie over deze wijzigingen.
 
-### <a name="group-object-now-sorts-the-groups"></a>Groep-object sorteert nu de groepen
+### <a name="group-object-now-sorts-the-groups"></a>Group-Object worden nu de groepen gesorteerd
 
 Als onderdeel van de verbetering van de prestaties `Group-Object` retourneert nu een gesorteerde lijst van de groepen.
 Hoewel het niet nodig is om de volg orde te gebruiken, kunt u deze wijziging door lopen als u de eerste groep wilt gebruiken. We hebben besloten dat deze verbetering van de prestaties de verandering waard was, omdat de impact van de afhankelijkheid van het vorige gedrag laag is.

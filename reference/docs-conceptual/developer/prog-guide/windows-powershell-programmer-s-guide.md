@@ -3,12 +3,12 @@ ms.date: 09/13/2016
 ms.topic: reference
 title: Hand leiding voor Windows Power shell-programmeer&#39;s
 description: Hand leiding voor Windows Power shell-programmeer&#39;s
-ms.openlocfilehash: d390b15e49f7558fb7dfd766d50d5be68ef347d2
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 446be2241bb7b05b4bd7ffe8b7797214a7564944
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92661779"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93355286"
 ---
 # <a name="windows-powershell-programmer39s-guide"></a>Hand leiding voor Windows Power shell-programmeer&#39;s
 
@@ -62,7 +62,8 @@ De Windows Power shell-taal biedt script functies en mechanismen voor het aanroe
 
 ### <a name="extended-type-system-ets"></a>Extended Type System (ETS)
 
-Windows Power shell biedt toegang tot verschillende objecten, zoals .NET en XML-objecten. Als gevolg hiervan wordt een gemeen schappelijke samen vatting voor alle object typen weer gegeven, maar wordt het uitgebreide type systeem (ETS) gebruikt. De meeste ETS-functionaliteit is transparant voor de gebruiker, maar het script of .NET-ontwikkel aars gebruiken deze voor de volgende doel einden:
+Windows Power shell biedt toegang tot verschillende objecten, zoals .NET en XML-objecten.
+Als gevolg hiervan wordt een gemeen schappelijke samen vatting voor alle object typen weer gegeven, maar wordt het uitgebreide type systeem (ETS) gebruikt. De meeste ETS-functionaliteit is transparant voor de gebruiker, maar het script of .NET-ontwikkel aars gebruiken deze voor de volgende doel einden:
 
 - Een subset van de leden van specifieke objecten weer geven. Windows Power shell biedt een ' aangepaste ' weer gave van verschillende specifieke object typen.
 
@@ -74,7 +75,7 @@ Windows Power shell biedt toegang tot verschillende objecten, zoals .NET en XML-
 
   Met behulp van ETS kunt u flexibele nieuwe typen maken die compatibel zijn met de Windows Power shell-taal. Als u een .NET-ontwikkelaar bent, kunt u werken met objecten die dezelfde semantiek gebruiken als de Windows Power shell-taal van toepassing op scripting, bijvoorbeeld om te bepalen of een object wordt geëvalueerd `true` .
 
-  Zie [Windows Power shell-object concepten](/powershell/scripting/learn/understanding-important-powershell-concepts?view=powershell-6)voor meer informatie over ETS en hoe Windows Power shell objecten gebruikt.
+  Zie [Windows Power shell-object concepten](/powershell/scripting/learn/understanding-important-powershell-concepts)voor meer informatie over ETS en hoe Windows Power shell objecten gebruikt.
 
 ## <a name="programming-for-windows-powershell"></a>Program meren voor Windows Power shell
 

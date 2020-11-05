@@ -5,12 +5,12 @@ ms.date: 04/09/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_numeric_literals?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Numerieke letterlijke waarden
-ms.openlocfilehash: 62f00ae9f3643724808146134fd03b6f01c29bce
-ms.sourcegitcommit: ae8b89e12c6fa2108075888dd6da92788d6c2888
+ms.openlocfilehash: dc1a55dbec1f0de99e06011645e6884b37480233
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "93253101"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93354826"
 ---
 # <a name="about-numeric-literals"></a>Numerieke letterlijke waarden
 
@@ -22,7 +22,7 @@ Letterlijke tekens kunnen worden geschreven in decimale of hexadecimale notatie.
 
 Letterlijke tekens van een geheel getal kunnen een type achtervoegsel en een vermenigvuldigings achtervoegsel hebben.
 
-| Achtervoegsel |            Betekenis             |          Opmerking           |
+| Achtervoegsel |            Betekenis             |          Notitie           |
 | ------ | ------------------------------ | ----------------------- |
 | y      | gegevens type van ondertekend byte          | Toegevoegd in Power shell 6,2 |
 | uy     | gegevens type niet-ondertekend byte        | Toegevoegd in Power shell 6,2 |
@@ -108,7 +108,7 @@ PS> 0x12Lpb
 
 Power shell ondersteunt de volgende typen Accelerators:
 
-| Accelerator |         Opmerking         |           Beschrijving            |
+| Accelerator |         Notitie         |           Beschrijving            |
 | ----------- | -------------------- | -------------------------------- |
 | `[byte]`    |                      | Byte (niet ondertekend)                  |
 | `[sbyte]`   |                      | Byte (ondertekend)                    |
@@ -210,4 +210,4 @@ Int32
 De eerste twee voor beelden werken zonder tussen haakjes, omdat de Power shell-parser kan bepalen waar de numerieke letterlijke waarde eindigt en de **gettype** -methode wordt gestart.
 
 <!-- reference links -->
-[bigint]: /dotnet/api/system.numerics.biginteger?view=netcore-2.2
+[bigint]: /dotnet/api/system.numerics.biginteger

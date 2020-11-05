@@ -3,12 +3,12 @@ ms.date: 09/13/2016
 ms.topic: reference
 title: Een itemprovider schrijven
 description: Een itemprovider schrijven
-ms.openlocfilehash: ca25809178a4b812cff8b46ea456702d142f6fd6
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: f70c6ee50277988c4e3b7c255dc4548bc30319dd
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92647208"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93355201"
 ---
 # <a name="writing-an-item-provider"></a>Een itemprovider schrijven
 
@@ -20,7 +20,13 @@ Zie [Windows Power shell provider Overview](./windows-powershell-provider-overvi
 
 ## <a name="implementing-item-methods"></a>Artikel methoden implementeren
 
-De klasse [System. Management. Automation. provider. Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) biedt verschillende methoden die kunnen worden gebruikt voor toegang tot en het bewerken van de items in een gegevens archief. Zie [ItemCmdletProvider-methoden](/dotnet/api/system.management.automation.provider.itemcmdletprovider?view=pscore-6.2.0#methods)voor een volledige lijst van deze methoden. In dit voor beeld worden vier van deze methoden geïmplementeerd. [System. Management. Automation. provider. Itemcmdletprovider. GetItem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) haalt een item op in een opgegeven pad. [System. Management. Automation. provider. Itemcmdletprovider. SetItem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) stelt de waarde van het opgegeven item in. [System. Management. Automation. provider. Itemcmdletprovider. Itemexists *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) controleert of een item bestaat op het opgegeven pad. [System. Management. Automation. provider. Itemcmdletprovider. Isvalidpath *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath) controleert een pad om te zien of het is toegewezen aan een locatie in het gegevens archief.
+De klasse [System. Management. Automation. provider. Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) biedt verschillende methoden die kunnen worden gebruikt voor toegang tot en het bewerken van de items in een gegevens archief.
+Zie [ItemCmdletProvider-methoden](/dotnet/api/system.management.automation.provider.itemcmdletprovider#methods)voor een volledige lijst van deze methoden.
+In dit voor beeld worden vier van deze methoden geïmplementeerd.
+[System. Management. Automation. provider. Itemcmdletprovider. GetItem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) haalt een item op in een opgegeven pad.
+[System. Management. Automation. provider. Itemcmdletprovider. SetItem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) stelt de waarde van het opgegeven item in.
+[System. Management. Automation. provider. Itemcmdletprovider. Itemexists *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) controleert of een item bestaat op het opgegeven pad.
+[System. Management. Automation. provider. Itemcmdletprovider. Isvalidpath *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath) controleert een pad om te zien of het is toegewezen aan een locatie in het gegevens archief.
 
 > [!NOTE]
 > Dit onderwerp is gebaseerd op de informatie in de Quick Start van de [Windows Power shell-provider](./windows-powershell-provider-quickstart.md). Dit onderwerp heeft geen betrekking op de basis beginselen van het instellen van een provider project of het implementeren van de methoden die zijn overgenomen van de klasse [System. Management. Automation. provider. Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) die stations maken en verwijderen.
@@ -82,7 +88,7 @@ protected override void GetItem(string path)
 
 De methode [System. Management. Automation. provider. Itemcmdletprovider. SetItem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) wordt aangeroepen door de Power shell-engine aanroepen wanneer een gebruiker de cmdlet [micro soft. Power shell. commands. SetItemCommand](/dotnet/api/Microsoft.PowerShell.Commands.setitemcommand) aanroept. De waarde van het item wordt ingesteld op het opgegeven pad.
 
-In het voor beeld van de Access-Data Base is het zinvol om de waarde van een item in te stellen als dat item een rij is, waardoor de methode [NotSupportedException](/dotnet/api/system.notsupportedexception?view=netframework-4.8) genereert wanneer het item geen rij is.
+In het voor beeld van de Access-Data Base is het zinvol om de waarde van een item in te stellen als dat item een rij is, waardoor de methode [NotSupportedException](/dotnet/api/system.notsupportedexception) genereert wanneer het item geen rij is.
 
 ```csharp
 protected override void SetItem(string path, object values)

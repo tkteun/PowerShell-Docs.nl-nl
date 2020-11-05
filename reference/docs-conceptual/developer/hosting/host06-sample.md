@@ -3,12 +3,12 @@ ms.date: 09/13/2016
 ms.topic: reference
 title: Voorbeeld Host06
 description: Voorbeeld Host06
-ms.openlocfilehash: 24838b1dbebca841783c4d75adb360d3fd784150
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 8e94a8cf61e746adcdd22869ec853c0f2a27be91
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92658057"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93355388"
 ---
 # <a name="host06-sample"></a>Voorbeeld Host06
 
@@ -17,7 +17,6 @@ Dit voor beeld laat zien hoe u een interactieve op een console gebaseerde host-t
 ## <a name="requirements"></a>Vereisten
 
 - Voor dit voor beeld is Windows Power Shell 2,0 vereist.
-
 - Deze toepassing moet worden uitgevoerd in de modus met verhoogde bevoegdheden (als administrator uitvoeren).
 
 ## <a name="demonstrates"></a>Demonstreert
@@ -29,22 +28,19 @@ Dit voor beeld laat zien hoe u een interactieve op een console gebaseerde host-t
 - Een `$profile` variabele maken en de volgende profielen laden.
 
   - huidige gebruiker, huidige host
-
   - huidige gebruiker, alle hosts
-
   - alle gebruikers, huidige host
-
   - alle gebruikers, alle hosts
 
-- Implementeer de interface [System. Management. Automation. host. Ihostuisupportsmultiplechoiceselection](/dotnet/api/System.Management.Automation.Host.IHostUISupportsMultipleChoiceSelection) .
+- Implementeer de interface [System. Management. Automation. host. IHostUISupportsMultipleChoiceSelection](/dotnet/api/System.Management.Automation.Host.IHostUISupportsMultipleChoiceSelection) .
 
-- Implementeer de interface [System. Management. Automation. host. Ihostsupportsinteractivesession](/dotnet/api/System.Management.Automation.Host.IHostSupportsInteractiveSession) ter ondersteuning van interactieve externe toegang met behulp van de cmdlets [Enter-PsSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) en [Exit-PsSession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) .
+- Implementeer de interface [System. Management. Automation. host. IHostSupportsInteractiveSession](/dotnet/api/System.Management.Automation.Host.IHostSupportsInteractiveSession) ter ondersteuning van interactieve externe toegang met behulp van de cmdlets [Enter-PsSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) en [Exit-PsSession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) .
 
 - Gebruik de Tokenize-API om de opdracht regel in te vullen terwijl deze wordt getypt.
 
-## <a name="example"></a>Voorbeeld
+## <a name="example-1"></a>Voorbeeld 1
 
- In dit voor beeld kan de gebruiker opdrachten invoeren op de opdracht regel, worden deze opdrachten verwerkt en worden de resultaten afgedrukt.
+In dit voor beeld kan de gebruiker opdrachten invoeren op de opdracht regel, worden deze opdrachten verwerkt en worden de resultaten afgedrukt.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -405,9 +401,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a>Voorbeeld
+## <a name="example-2"></a>Voorbeeld 2
 
- De volgende code is de implementatie van de klasse [System. Management. Automation. host. PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) die wordt gebruikt door deze hosttoepassing. Deze elementen die niet zijn geïmplementeerd, genereren een uitzonde ring of retour neren niets.
+De volgende code is de implementatie van de klasse [System. Management. Automation. host. PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) die wordt gebruikt door deze hosttoepassing. Deze elementen die niet zijn geïmplementeerd, genereren een uitzonde ring of retour neren niets.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -629,9 +625,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a>Voorbeeld
+## <a name="example-3"></a>Voorbeeld 3
 
- De volgende code is de implementatie van de klasse [System. Management. Automation. host. Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) die wordt gebruikt door deze hosttoepassing.
+De volgende code is de implementatie van de klasse [System. Management. Automation. host. Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) die wordt gebruikt door deze hosttoepassing.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -1147,9 +1143,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a>Voorbeeld
+## <a name="example-4"></a>Voorbeeld 4
 
- De volgende code is de implementatie van de klasse [System. Management. Automation. host. Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) die wordt gebruikt door deze hosttoepassing. Deze elementen die niet zijn geïmplementeerd, genereren een uitzonde ring of retour neren niets.
+De volgende code is de implementatie van de klasse [System. Management. Automation. host. Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) die wordt gebruikt door deze hosttoepassing. Deze elementen die niet zijn geïmplementeerd, genereren een uitzonde ring of retour neren niets.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -1359,9 +1355,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a>Voorbeeld
+## <a name="example-5"></a>Voorbeeld 5
 
- Met de volgende code wordt de opdracht regel gelezen en wordt de tekst getypt. Tokens worden bepaald door gebruik te maken van de methode [System. Management. Automation. Psparser. Tokenize *](/dotnet/api/System.Management.Automation.PSParser.Tokenize) .
+Met de volgende code wordt de opdracht regel gelezen en wordt de tekst getypt. Tokens worden bepaald door gebruik te maken van de methode [System. Management. Automation. Psparser. Tokenize *](/dotnet/api/System.Management.Automation.PSParser.Tokenize) .
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host

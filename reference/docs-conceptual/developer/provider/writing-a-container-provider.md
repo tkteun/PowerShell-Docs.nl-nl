@@ -3,12 +3,12 @@ ms.date: 09/13/2016
 ms.topic: reference
 title: Een containerprovider schrijven
 description: Een containerprovider schrijven
-ms.openlocfilehash: e7e0eb00dd37eb847b2533152de339aedffe3736
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 17ec3e11258ee77a8e569df1af3a0e9bcd9798b6
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92645157"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93354929"
 ---
 # <a name="writing-a-container-provider"></a>Een containerprovider schrijven
 
@@ -20,7 +20,7 @@ Zie [Windows Power shell provider Overview](./windows-powershell-provider-overvi
 
 ## <a name="implementing-container-methods"></a>Container methoden implementeren
 
-De klasse [System. Management. Automation. provider. Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) implementeert methoden die ondersteuning bieden voor containers en maken, kopiëren en verwijderen van items. Zie [System. Management. Automation. provider. ContainerCmdletProvider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider?view=pscore-6.2.0#methods)voor een volledige lijst van deze methoden.
+De klasse [System. Management. Automation. provider. Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) implementeert methoden die ondersteuning bieden voor containers en maken, kopiëren en verwijderen van items. Zie [System. Management. Automation. provider. ContainerCmdletProvider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider#methods)voor een volledige lijst van deze methoden.
 
 > [!NOTE]
 > Dit onderwerp is gebaseerd op de informatie in de Quick Start van de [Windows Power shell-provider](./windows-powershell-provider-quickstart.md). Dit onderwerp heeft geen betrekking op de basis beginselen van het instellen van een provider project of het implementeren van de methoden die zijn overgenomen van de klasse [System. Management. Automation. provider. Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) die stations maken en verwijderen. In dit onderwerp wordt ook beschreven hoe u methoden implementeert die worden weer gegeven door de klasse [System. Management. Automation. provider. Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) . Zie [een item provider schrijven](./writing-an-item-provider.md)voor een voor beeld waarin wordt getoond hoe u cmdlets voor items implementeert.
@@ -533,7 +533,8 @@ protected override void RemoveItem(string path, bool recurse)
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Een typische Real-World-provider kan items van het ene naar het andere pad verplaatsen binnen het station. Zie [een navigatie provider schrijven](./writing-a-navigation-provider.md)voor een voor beeld van een provider die het verplaatsen van items ondersteunt.
+Een typische Real-World-provider kan items van het ene naar het andere pad verplaatsen binnen het station.
+Zie [een navigatie provider schrijven](./writing-a-navigation-provider.md)voor een voor beeld van een provider die het verplaatsen van items ondersteunt.
 
 ## <a name="see-also"></a>Zie ook
 

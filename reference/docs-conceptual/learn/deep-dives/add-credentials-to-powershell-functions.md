@@ -1,16 +1,16 @@
 ---
-title: Referentie ondersteuning toevoegen aan Power shell-functies
+title: Referentieondersteuning toevoegen aan PowerShell-functies
 description: Referentie parameters toevoegen aan uw Power shell-scripts,-functies en-cmdlets.
 ms.date: 10/29/2020
 ms.custom: contributor-JoshDuffney
-ms.openlocfilehash: fb85d47121dc106ae04742254f418e2c727f6157
-ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
+ms.openlocfilehash: 3e4a3f41ccbca1cf97f2e96fd60f22d89be7bc5a
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/31/2020
-ms.locfileid: "93143179"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93354623"
 ---
-# <a name="add-credential-support-to-powershell-functions"></a>Referentie ondersteuning toevoegen aan Power shell-functies
+# <a name="add-credential-support-to-powershell-functions"></a>Referentieondersteuning toevoegen aan PowerShell-functies
 
 > [!NOTE]
 > De [oorspronkelijke versie][] van dit artikel is gepubliceerd op de blog geschreven door [@joshduffney][] . Dit artikel is bewerkt voor opname op deze site. De Power shell-team dank Josh voor het delen van deze inhoud met ons. Raadpleeg zijn blog op [duffney.io][].
@@ -65,7 +65,7 @@ function Get-Something {
 
 De code in dit voor beeld is voldoende om een para meter voor een werk referentie te hebben, maar er zijn een aantal dingen die u kunt toevoegen om het betrouwbaarder te maken.
 
-- Voeg het `[ValidateNotNull()]` validatie kenmerk toe om te controleren of de waarde wordt door gegeven aan de **referentie** . Als de waarde van de para meter null is, voor komt dit kenmerk dat de functie wordt uitgevoerd met ongeldige referenties.
+- Voeg het `[ValidateNotNull()]` validatie kenmerk toe om te controleren of de waarde wordt door gegeven aan de **referentie**. Als de waarde van de para meter null is, voor komt dit kenmerk dat de functie wordt uitgevoerd met ongeldige referenties.
 
 - Toevoegen `[System.Management.Automation.Credential()]` . Zo kunt u een gebruikers naam door geven als een teken reeks en een interactieve prompt voor het wacht woord hebben.
 
@@ -292,7 +292,7 @@ Het is veilig om referentie objecten te maken en op te slaan. De volgende bronne
 [BetterCredentials]: https://www.powershellgallery.com/packages/BetterCredentials/
 [Azure Key Vault]: https://azure.microsoft.com/services/key-vault/
 [Kluis project]: https://www.vaultproject.io/
-[Splatting-para meters in geavanceerde functies]: http://duffney.io/Splatting-Parameters-Within-AdvancedFunctions
+[Splatting-para meters in geavanceerde functies]: https://duffney.io/Splatting-Parameters-Within-AdvancedFunctions
 [Automatiseren met Jenkins en Power shell in Windows-deel 2]: https://hodgkins.io/automating-with-jenkins-and-powershell-on-windows-part-2
 [PSCredential]: /dotnet/api/system.management.automation.pscredential
 [Het ziekte-boek]: https://leanpub.com/the-pester-book

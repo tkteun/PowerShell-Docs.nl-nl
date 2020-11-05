@@ -5,12 +5,12 @@ ms.date: 04/12/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_numeric_literals?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Numerieke letterlijke waarden
-ms.openlocfilehash: 25518b80f87c90c59829bb575b059f0efcadd566
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 19ed71c2571a6cd343adf622a8cf71d6e5589aff
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93252957"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93354980"
 ---
 # <a name="about-numeric-literals"></a>Numerieke letterlijke waarden
 
@@ -23,7 +23,7 @@ Hexadecimale letterlijke waarden worden voorafgegaan door `0x` en binaire letter
 
 Letterlijke tekens van een geheel getal kunnen een type achtervoegsel en een vermenigvuldigings achtervoegsel hebben.
 
-| Achtervoegsel |            Betekenis             |          Opmerking           |
+| Achtervoegsel |            Betekenis             |          Notitie           |
 | ------ | ------------------------------ | ----------------------- |
 | y      | gegevens type van ondertekend byte          | Toegevoegd in Power shell 6,2 |
 | uy     | gegevens type niet-ondertekend byte        | Toegevoegd in Power shell 6,2 |
@@ -112,7 +112,7 @@ PS> 0x12Lpb
 
 Power shell ondersteunt de volgende typen Accelerators:
 
-| Accelerator |         Opmerking         |           Beschrijving            |
+| Accelerator |         Notitie         |           Beschrijving            |
 | ----------- | -------------------- | -------------------------------- |
 | `[byte]`    |                      | Byte (niet ondertekend)                  |
 | `[sbyte]`   |                      | Byte (ondertekend)                    |
@@ -295,4 +295,4 @@ PS> 111111111111111111111111111111111111111111111111111111n
 Ook waarden tussen `[ulong]::MaxValue` en `[decimal]::MaxValue` moeten worden aangegeven met het decimale achtervoegsel `D` om nauw keurigheid te behouden. Zonder achtervoegsel worden deze waarden geparseerd als `[Double]` het gebruik van de modus voor real-parseren.
 
 <!-- reference links -->
-[bigint]: /dotnet/api/system.numerics.biginteger?view=netcore-2.2
+[bigint]: /dotnet/api/system.numerics.biginteger

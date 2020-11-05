@@ -3,12 +3,12 @@ ms.date: 09/13/2016
 ms.topic: reference
 title: Overzicht van Windows PowerShell-providers
 description: Overzicht van Windows PowerShell-providers
-ms.openlocfilehash: 9877647f936d36b2f195d5d9178f882e79258639
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 2f1c5f5991a64fb2b85ece7feba915164ebd34ee
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92647352"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93355507"
 ---
 # <a name="windows-powershell-provider-overview"></a>Overzicht van Windows PowerShell-providers
 
@@ -22,7 +22,8 @@ Wanneer u een provider schrijft, kunt u standaard stations opgeven die automatis
 
 ## <a name="type-of-providers"></a>Type providers
 
-Er zijn verschillende typen providers, die elk een ander niveau van functionaliteit bieden. Een provider wordt geïmplementeerd als een klasse die is afgeleid van een van de descendanten van de klasse [System. Management. Automation. SessionStateCategory](/dotnet/api/system.management.automation.sessionstatecategory?view=pscore-6.2.0) **CmdletProvider** . Zie voor meer informatie over de verschillende typen providers [provider typen](./provider-types.md).
+Er zijn verschillende typen providers, die elk een ander niveau van functionaliteit bieden. Een provider wordt geïmplementeerd als een klasse die is afgeleid van een van de descendanten van de klasse [System. Management. Automation. SessionStateCategory](/dotnet/api/system.management.automation.sessionstatecategory) 
+ **CmdletProvider** . Zie voor meer informatie over de verschillende typen providers [provider typen](./provider-types.md).
 
 ## <a name="provider-cmdlets"></a>Provider-cmdlets
 
@@ -58,7 +59,9 @@ Providers kunnen dynamische para meters definiëren die worden toegevoegd aan ee
 
 ## <a name="provider-capabilities"></a>Provider mogelijkheden
 
-De opsomming [System. Management. Automation. provider. Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) definieert een aantal mogelijkheden die providers kunnen ondersteunen. Dit zijn onder andere de mogelijkheid om joker tekens te gebruiken, items te filteren en trans acties te ondersteunen. Als u mogelijkheden voor een provider wilt opgeven, voegt u een lijst met waarden van de inventarisatie  [System. Management. Automation. provider. Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) toe, gecombineerd met een logische `OR` bewerking, als [System. Management. Automation. provider. Cmdletproviderattribute. Providercapabilities *](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute.ProviderCapabilities) (de tweede para meter van het kenmerk) van het kenmerk [System. Management. Automation. provider. Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) voor uw provider klasse. Het volgende kenmerk geeft bijvoorbeeld aan dat de provider de functies [System. Management. Automation. provider. Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities?view=pscore-6.2.0) **ShouldProcess** en [System. Management. Automation. provider. Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities?view=pscore-6.2.0) - **trans acties** ondersteunt.
+De opsomming [System. Management. Automation. provider. Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) definieert een aantal mogelijkheden die providers kunnen ondersteunen. Dit zijn onder andere de mogelijkheid om joker tekens te gebruiken, items te filteren en trans acties te ondersteunen. Als u mogelijkheden voor een provider wilt opgeven, voegt u een lijst met waarden van de inventarisatie [System. Management. Automation. provider. Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) toe, gecombineerd met een logische `OR` bewerking, als [System. Management. Automation. provider. Cmdletproviderattribute. Providercapabilities *](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute.ProviderCapabilities) (de tweede para meter van het kenmerk) van het kenmerk [System. Management. Automation. provider. Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) voor uw provider klasse. Het volgende kenmerk geeft bijvoorbeeld aan dat de provider de functies [System. Management. Automation. provider. Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) 
+ **ShouldProcess** en [System. Management. Automation. provider. Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)- 
+ **trans acties** ondersteunt.
 
 ```csharp
 [CmdletProvider(RegistryProvider.ProviderName, ProviderCapabilities.ShouldProcess | ProviderCapabilities.Transactions)]
@@ -67,9 +70,11 @@ De opsomming [System. Management. Automation. provider. Providercapabilities](/d
 
 ## <a name="provider-cmdlet-help"></a>Help voor provider-cmdlets
 
-Wanneer u een provider schrijft, kunt u uw eigen Help implementeren voor de provider-cmdlets die u ondersteunt. Dit omvat één Help-onderwerp voor elke provider-cmdlet of meerdere versies van een Help-onderwerp voor gevallen waarbij de provider-cmdlet anders reageert op basis van het gebruik van dynamische para meters. Ter ondersteuning van de cmdlet-specifieke Help van de provider moet uw provider de interface [System. Management. Automation. provider. Icmdletprovidersupportshelp](/dotnet/api/System.Management.Automation.Provider.ICmdletProviderSupportsHelp) implementeren.
+Wanneer u een provider schrijft, kunt u uw eigen Help implementeren voor de provider-cmdlets die u ondersteunt.
+Dit omvat één Help-onderwerp voor elke provider-cmdlet of meerdere versies van een Help-onderwerp voor gevallen waarbij de provider-cmdlet anders reageert op basis van het gebruik van dynamische para meters. Ter ondersteuning van de cmdlet-specifieke Help van de provider moet uw provider de interface [System. Management. Automation. provider. Icmdletprovidersupportshelp](/dotnet/api/System.Management.Automation.Provider.ICmdletProviderSupportsHelp) implementeren.
 
-De Windows Power shell-engine roept de methode [System. Management. Automation. provider. Icmdletprovidersupportshelp. Gethelpmaml *](/dotnet/api/System.Management.Automation.Provider.ICmdletProviderSupportsHelp.GetHelpMaml) aan om het Help-onderwerp voor uw provider-cmdlets weer te geven. De engine bevat de naam van de cmdlet die de gebruiker heeft opgegeven bij het uitvoeren `Get-Help` van de cmdlet en het huidige pad van de gebruiker. Het huidige pad is vereist als uw provider verschillende versies van dezelfde provider-cmdlet voor verschillende stations implementeert. De-methode moet een teken reeks retour neren die de XML voor de Help van de cmdlet bevat.
+De Windows Power shell-engine roept de methode [System. Management. Automation. provider. Icmdletprovidersupportshelp. Gethelpmaml *](/dotnet/api/System.Management.Automation.Provider.ICmdletProviderSupportsHelp.GetHelpMaml) aan om het Help-onderwerp voor uw provider-cmdlets weer te geven. De engine bevat de naam van de cmdlet die de gebruiker heeft opgegeven bij het uitvoeren `Get-Help` van de cmdlet en het huidige pad van de gebruiker.
+Het huidige pad is vereist als uw provider verschillende versies van dezelfde provider-cmdlet voor verschillende stations implementeert. De-methode moet een teken reeks retour neren die de XML voor de Help van de cmdlet bevat.
 
 De inhoud van het Help-bestand wordt geschreven met behulp van PSMAML XML. Dit is hetzelfde XML-schema dat wordt gebruikt voor het schrijven van Help-inhoud voor zelfstandige cmdlets. Voeg de inhoud voor de Help van uw aangepaste cmdlet toe aan het Help-bestand voor uw provider onder het- `CmdletHelpPaths` element. In het volgende voor beeld ziet `command` u het-element voor een cmdlet van één provider en ziet u hoe u de naam van de provider-cmdlet opgeeft die uw provider heeft. steun
 

@@ -3,16 +3,16 @@ ms.date: 09/13/2016
 ms.topic: reference
 title: GetProc02-codevoorbeeld (C#)
 description: GetProc02-codevoorbeeld (C#)
-ms.openlocfilehash: da04b4184de10f4bd734ce0a5892527073b6e622
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 17fd0d0c0829ed21ef955fd2e62e9ee089d62190
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92657254"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93355609"
 ---
 # <a name="getproc02-c-sample-code"></a>GetProc02-codevoorbeeld (C#)
 
-De volgende code toont de implementatie van een `Get-Process` cmdlet die opdracht regel invoer accepteert. In deze implementatie wordt een `Name` para meter gedefinieerd voor het toestaan van opdracht regel invoer en wordt de methode [WriteObject (System. object, System. Boolean)](/dotnet/api/system.management.automation.cmdlet.writeobject?view=pscore-6.2.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_) gebruikt als uitvoer mechanisme voor het verzenden van uitvoer objecten naar de pijp lijn.
+De volgende code toont de implementatie van een `Get-Process` cmdlet die opdracht regel invoer accepteert. In deze implementatie wordt een `Name` para meter gedefinieerd voor het toestaan van opdracht regel invoer en wordt de methode [WriteObject (System. object, System. Boolean)](/dotnet/api/system.management.automation.cmdlet.writeobject#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_) gebruikt als uitvoer mechanisme voor het verzenden van uitvoer objecten naar de pijp lijn.
 
 ## <a name="code-sample"></a>Code voorbeeld
 

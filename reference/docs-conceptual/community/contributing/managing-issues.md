@@ -1,18 +1,18 @@
 ---
 title: De manier waarop we problemen beheren
-description: In dit artikel wordt uitgelegd hoe het Power shell-docs-team pull-aanvragen beheert.
+description: In dit artikel wordt uitgelegd hoe het PowerShell-Docs-team problemen beheert.
 ms.date: 03/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: 018200f1a9384f1ea956c9b27a7605db21f2da9e
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+ms.openlocfilehash: 56f0ea5b4c5c700db8fdd0b16e3ce1c4040a43dc
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83692528"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93354589"
 ---
 # <a name="how-we-manage-issues"></a>De manier waarop we problemen beheren
 
-In dit artikel wordt beschreven hoe we problemen beheren in de Power shell-docs opslag plaats. Dit artikel is bedoeld als taak hulp voor leden van het Power shell-docs-team. Dit wordt hier gepubliceerd om proces transparantie te bieden voor de open bare mede werkers.
+In dit artikel wordt beschreven hoe we problemen beheren in de PowerShell-Docs opslag plaats. Dit artikel is bedoeld als taak hulp voor leden van het PowerShell-Docs team. Dit wordt hier gepubliceerd om proces transparantie te bieden voor de open bare mede werkers.
 
 ## <a name="sources-of-issues"></a>Bronnen van problemen
 
@@ -39,7 +39,7 @@ In dit artikel wordt beschreven hoe we problemen beheren in de Power shell-docs 
 |Status  | Wordt gebruikt om de status van het werk item aan te geven                        |
 |Wachten | Wordt gebruikt om aan te geven dat wij wachten op iets                   |
 
-#### <a name="milestones"></a>Milestones
+#### <a name="milestones"></a>Mijlpalen
 
 Problemen en pull moeten worden gelabeld met de juiste mijl paal. Als het probleem niet is gericht op een specifieke versie, wordt er geen mijl paal gebruikt. Problemen voor docs pull die nog moeten worden samengevoegd met de Power shell-code basis, moeten worden toegewezen aan de **toekomstige** mijl paal. Nadat de code wijziging is samengevoegd, wijzigt u de mijl paal naar de juiste versie.
 
@@ -63,7 +63,7 @@ Het Power shell docs-team voldoet slechts één keer per week voor het bespreken
   | DocSet    | URL van product feedback                                           |
   | --------- | -------------------------------------------------------------- |
   | ontwikkelaar | `https://github.com/PowerShell/PowerShell/issues/new/choose`   |
-  | DSC       | `https://windowsserver.uservoice.com/forums/301869-powershell` |
+  | dsc       | `https://windowsserver.uservoice.com/forums/301869-powershell` |
   | galerie   | `https://github.com/powershell/powershellgallery/issues/new`   |
   | JEA       | `https://github.com/powershell/jea/issues/new`                 |
   | referentielaag | `https://github.com/PowerShell/PowerShell/issues/new/choose`   |
