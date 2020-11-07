@@ -7,12 +7,12 @@ ms.date: 10/28/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/out-printer?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Out-Printer
-ms.openlocfilehash: 69d78550d68457c92deb3e4d690483bf742544b0
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: bc16c7129dff2f2982d1756d5642d86481cd573d
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93251277"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94344351"
 ---
 # Out-Printer
 
@@ -117,6 +117,8 @@ U kunt elk object door sluizen naar `Out-Printer` .
 
 ## OPMERKINGEN
 
+Deze cmdlet is alleen beschikbaar op Windows-platforms.
+
 De cmdlets die de term bevatten, `Out` hebben geen-objecten. Ze worden alleen weer gegeven en verzonden naar de opgegeven weergave bestemming. Als u een niet-opgemaakt object naar een `Out` cmdlet verzendt, verzendt de cmdlet het naar een format-cmdlet voordat deze wordt weer gegeven.
 
 `Out-Printer` Hiermee verzendt u gegevens naar de printer, maar worden er geen uitvoer objecten naar de pijp lijn verzonden. Als u de uitvoer van naar toesluist `Out-Printer` `Get-Member` , `Get-Member` rapporten dat er geen objecten zijn opgegeven.
@@ -126,4 +128,3 @@ De cmdlets die de term bevatten, `Out` hebben geen-objecten. Ze worden alleen we
 [Out-file](Out-File.md)
 
 [Out-teken reeks](Out-String.md)
-

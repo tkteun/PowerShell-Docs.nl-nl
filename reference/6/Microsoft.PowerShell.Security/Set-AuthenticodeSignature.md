@@ -7,12 +7,12 @@ ms.date: 04/10/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/set-authenticodesignature?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-AuthenticodeSignature
-ms.openlocfilehash: d4d0b6cf71ac1f856d66639bccd1fce8ab91ccc1
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 8c78366eacec964ced28aaed8ef17534df4abff4
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93251156"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94344810"
 ---
 # Set-AuthenticodeSignature
 
@@ -303,6 +303,8 @@ U kunt een teken reeks die het bestandspad bevat door sluizen naar `Set-Authenti
 ### System. Management. Automation. Signature
 
 ## OPMERKINGEN
+
+Deze cmdlet is alleen beschikbaar op Windows-platforms.
 
 ## GERELATEERDE KOPPELINGEN
 

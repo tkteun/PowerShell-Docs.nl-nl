@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/wait-process?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Wait-Process
-ms.openlocfilehash: bff2b77523613d526c7153cc970d5e188e759c18
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 2d991ec8e992d98425cf72f7e63e0f7f6e2089c0
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93249984"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94345745"
 ---
 # Wait-Process
 
@@ -183,9 +183,9 @@ Met deze cmdlet wordt geen uitvoer gegenereerd.
 
 ## OPMERKINGEN
 
-* Deze cmdlet maakt gebruik van de methode **WaitForExit** van de klasse System. Diagnostics. process. Zie de Microsoft .NET Framework SDK voor meer informatie over deze methode.
+De cmdlet wordt alleen ondersteund op Windows-platforms.
 
-*
+Deze cmdlet maakt gebruik van de methode **WaitForExit** van de klasse **System. Diagnostics. process** .
 
 ## GERELATEERDE KOPPELINGEN
 
@@ -198,4 +198,3 @@ Met deze cmdlet wordt geen uitvoer gegenereerd.
 [Stoppen-proces](Stop-Process.md)
 
 [Wacht proces](Wait-Process.md)
-

@@ -7,12 +7,12 @@ ms.date: 03/28/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/disable-pssessionconfiguration?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Disable-PSSessionConfiguration
-ms.openlocfilehash: 4e551c42c0ae6e447906c5541fb100ef0ef82681
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 075071f83e8443d186dcc99e13fa102504dc23af
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93250706"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94345524"
 ---
 # Disable-PSSessionConfiguration
 
@@ -206,6 +206,8 @@ U kunt een sessie configuratie object of een teken reeks die de naam van een ses
 Met deze cmdlet worden geen objecten geretourneerd.
 
 ## OPMERKINGEN
+
+Deze cmdlet is alleen beschikbaar op Windows-platforms.
 
 Als u deze cmdlet wilt uitvoeren, moet u Power shell starten met de optie **als administrator uitvoeren** .
 

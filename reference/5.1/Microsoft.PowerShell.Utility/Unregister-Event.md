@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/unregister-event?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Unregister-Event
-ms.openlocfilehash: f1f42c1e8831896feac398228e45fc0890136fff
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 3cc2983def049e705a67bad05ee39bdbd71d3888
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93250356"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94344419"
 ---
 # Unregister-Event
 
@@ -34,13 +34,12 @@ Unregister-Event [-SubscriptionId] <Int32> [-Force] [-WhatIf] [-Confirm] [<Commo
 ```
 
 ## BESCHRIJVING
-De **registratie ongedaan maken-Event** cmdlet annuleert een gebeurtenis abonnement dat is gemaakt met behulp van de cmdlet REGI ster-EngineEvent, REGI ster-ObjectEvent of Register-WmiEvent.
 
-Wanneer een gebeurtenis abonnement wordt geannuleerd, wordt de gebeurtenis abonnee verwijderd uit de sessie en worden de geabonneerde gebeurtenissen niet meer toegevoegd aan de gebeurtenis wachtrij.
-Wanneer u een abonnement opzegt op een gebeurtenis die is gemaakt met behulp van de cmdlet New-Event, wordt de nieuwe gebeurtenis ook verwijderd uit de sessie.
+De `Unregister-Event` cmdlet annuleert een gebeurtenis abonnement dat is gemaakt met behulp van de `Register-EngineEvent` -, `Register-ObjectEvent` -of- `Register-WmiEvent` cmdlet.
 
-**Registratie ongedaan maken:** er worden geen gebeurtenissen uit de gebeurtenis wachtrij verwijderd.
-Als u gebeurtenissen wilt verwijderen, gebruikt u de cmdlet Remove-Event.
+Wanneer een gebeurtenis abonnement wordt geannuleerd, wordt de gebeurtenis abonnee verwijderd uit de sessie en worden de geabonneerde gebeurtenissen niet meer toegevoegd aan de gebeurtenis wachtrij. Wanneer u een abonnement opzegt op een gebeurtenis die is gemaakt met behulp van de `New-Event` cmdlet, wordt de nieuwe gebeurtenis ook verwijderd uit de sessie.
+
+`Unregister-Event` verwijdert geen gebeurtenissen uit de wachtrij van de gebeurtenis. Als u gebeurtenissen wilt verwijderen, gebruikt u de `Remove-Event` cmdlet.
 
 ## VOORBEELDEN
 
@@ -52,8 +51,7 @@ PS C:\> Unregister-Event -SourceIdentifier "ProcessStarted"
 
 Met deze opdracht wordt het gebeurtenis abonnement met de bron-id ProcessStarted geannuleerd.
 
-Gebruik de cmdlet Get-Event om de bron-id van een gebeurtenis te vinden.
-Als u de bron-id van een gebeurtenis abonnement wilt zoeken, gebruikt u de cmdlet **Get-EventSubscriber** .
+Gebruik de cmdlet om de bron-id van een gebeurtenis te vinden `Get-Event` . Als u de bron-id van een gebeurtenis abonnement wilt zoeken, gebruikt u de `Get-EventSubscriber` cmdlet.
 
 ### Voor beeld 2: een gebeurtenis abonnement op abonnements-id annuleren
 
@@ -63,7 +61,7 @@ PS C:\> Unregister-Event -SubscriptionId 2
 
 Met deze opdracht wordt het gebeurtenis abonnement met de abonnements-id 2 geannuleerd.
 
-Gebruik de cmdlet **Get-EventSubscriber** om de abonnements-id van een gebeurtenis abonnement te vinden.
+Gebruik de cmdlet om de abonnements-id van een gebeurtenis abonnement te vinden `Get-EventSubscriber` .
 
 ### Voor beeld 3: alle gebeurtenis abonnementen annuleren
 
@@ -73,15 +71,15 @@ PS C:\> Get-EventSubscriber -Force | Unregister-Event -Force
 
 Met deze opdracht worden alle gebeurtenis abonnementen in de sessie geannuleerd.
 
-De opdracht maakt gebruik van de cmdlet **Get-EventSubscriber** om alle Event Subscriber-objecten in de sessie op te halen, met inbegrip van de abonnees die zijn verborgen met de para meter *SupportEvent* van de cmdlets voor gebeurtenis registratie.
+De opdracht gebruikt de `Get-EventSubscriber` cmdlet om alle Event Subscriber-objecten in de sessie op te halen, met inbegrip van de abonnees die zijn verborgen met behulp van de para meter **SupportEvent** van de cmdlets voor gebeurtenis registratie.
 
-Er wordt gebruikgemaakt van een pijplijn operator (|) om de abonnee objecten te verzenden om de **registratie ongedaan te maken** , waardoor ze uit de sessie worden verwijderd.
-Voor het volt ooien van de taak is de para meter *Forces* ook vereist voor het **ongedaan maken** van de registratie van de gebeurtenis.
+Er wordt gebruikgemaakt van een pijplijn operator ( `|` ) om de abonnee objecten te verzenden `Unregister-Event` , waardoor ze uit de sessie worden verwijderd. Voor het volt ooien van de taak is de para meter **Forces** ook vereist voor `Unregister-Event` .
 
 ## PARAMETERS
 
 ### -Force
-Hiermee annuleert u alle gebeurtenis abonnementen, inclusief abonnementen die zijn verborgen met de para meter *SupportEvent* van **REGI ster-ObjectEvent** , **REGI ster-WmiEvent** en **REGI ster-EngineEvent**.
+
+Annuleert alle gebeurtenis abonnementen, inclusief abonnementen die zijn verborgen met de para meter **SupportEvent** van `Register-ObjectEvent` , `Register-WmiEvent` en `Register-EngineEvent` .
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -96,9 +94,10 @@ Accept wildcard characters: False
 ```
 
 ### -SourceIdentifier
+
 Hiermee geeft u een bron-id op die met deze cmdlet gebeurtenis abonnementen annuleert.
 
-Een *SourceIdentifier* -of *SubscriptionId* -para meter moet worden opgenomen in elke opdracht.
+Een **SourceIdentifier** -of **SubscriptionId** -para meter moet worden opgenomen in elke opdracht.
 
 ```yaml
 Type: System.String
@@ -113,9 +112,10 @@ Accept wildcard characters: False
 ```
 
 ### -SubscriptionId
+
 Hiermee geeft u een bron-id-ID op die met deze cmdlet gebeurtenis abonnementen annuleert.
 
-Een *SourceIdentifier* -of *SubscriptionId* -para meter moet worden opgenomen in elke opdracht.
+Een **SourceIdentifier** -of **SubscriptionId** -para meter moet worden opgenomen in elke opdracht.
 
 ```yaml
 Type: System.Int32
@@ -130,6 +130,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Hiermee wordt u gevraagd om bevestiging voordat u de cmdlet uitvoert.
 
 ```yaml
@@ -145,8 +146,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Hiermee wordt weergegeven wat er zou gebeuren als u de cmdlet uitvoert.
-De cmdlet wordt niet uitgevoerd.
+
+Hiermee wordt weergegeven wat er zou gebeuren als u de cmdlet uitvoert. De cmdlet wordt niet uitgevoerd.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -161,26 +162,27 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable. Zie [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)voor meer informatie.
 
 ## INVOER
 
 ### System. Management. Automation. PSEventSubscriber
-U kunt de uitvoer van Get-EventSubscriber voor het **opheffen van de registratie-gebeurtenis** door sluizen.
+
+U kunt de uitvoer door sluizen van `Get-EventSubscriber` naar `Unregister-Event` .
 
 ## UITVOER
 
 ### Geen
+
 Met deze cmdlet wordt geen uitvoer geretourneerd.
 
 ## OPMERKINGEN
 
-* Gebeurtenissen, gebeurtenis abonnementen en de gebeurtenis wachtrij bestaan alleen in de huidige sessie. Als u de huidige sessie sluit, wordt de gebeurtenis wachtrij verwijderd en wordt het gebeurtenis abonnement geannuleerd.
 
-  **Registratie ongedaan maken: gebeurtenis** kan geen gebeurtenissen verwijderen die zijn gemaakt met behulp van de cmdlet New-Event, tenzij u bent geabonneerd op de gebeurtenis met behulp van de cmdlet **REGI ster-EngineEvent** .
-Als u een aangepaste gebeurtenis uit de sessie wilt verwijderen, moet u deze programmatisch verwijderen of de sessie sluiten.
+Gebeurtenissen, gebeurtenis abonnementen en de gebeurtenis wachtrij bestaan alleen in de huidige sessie. Als u de huidige sessie sluit, wordt de gebeurtenis wachtrij verwijderd en wordt het gebeurtenis abonnement geannuleerd.
 
-*
+`Unregister-Event` kan geen gebeurtenissen verwijderen die zijn gemaakt met behulp van de `New-Event` cmdlet tenzij u bent geabonneerd op de gebeurtenis met behulp van de `Register-EngineEvent` cmdlet. Als u een aangepaste gebeurtenis uit de sessie wilt verwijderen, moet u deze programmatisch verwijderen of de sessie sluiten.
 
 ## GERELATEERDE KOPPELINGEN
 

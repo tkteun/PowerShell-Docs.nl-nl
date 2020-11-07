@@ -7,12 +7,12 @@ ms.date: 03/28/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/unregister-pssessionconfiguration?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Unregister-PSSessionConfiguration
-ms.openlocfilehash: c622642a572509e9069fceff2492baf0cc8ea911
-ms.sourcegitcommit: 37abf054ad9eda8813be8ff4487803b10e1842ef
+ms.openlocfilehash: f9cc2f83ec0fca1c957c670e13ac7b455c322adb
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "93251593"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94345338"
 ---
 # Unregister-PSSessionConfiguration
 
@@ -208,6 +208,8 @@ U kunt een sessie configuratie object door sluizen van `Get-PSSessionConfigurati
 Met deze cmdlet worden geen objecten geretourneerd.
 
 ## OPMERKINGEN
+
+Deze cmdlet is alleen beschikbaar op Windows-platforms.
 
 Als u deze cmdlet wilt uitvoeren, moet u Power shell starten met de optie **als administrator uitvoeren** .
 

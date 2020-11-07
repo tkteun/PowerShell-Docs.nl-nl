@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/disconnect-pssession?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Disconnect-PSSession
-ms.openlocfilehash: efe80ab22af8552860e3dfa8f9e2766b07bcfd5d
-ms.sourcegitcommit: 37abf054ad9eda8813be8ff4487803b10e1842ef
+ms.openlocfilehash: 2588d0d0a8d7ce9cddf65c94dcc79700df9deeb7
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "93251600"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94345558"
 ---
 # Disconnect-PSSession
 
@@ -444,6 +444,8 @@ U kunt een sessie door sluizen naar `Disconnect-PSSession` .
 
 ## OPMERKINGEN
 
+Deze cmdlet is alleen beschikbaar op Windows-platforms.
+
 - De `Disconnect-PSSession` cmdlet werkt alleen als op de lokale en externe computers Power shell 3,0 of hoger wordt uitgevoerd.
 - Als u de `Disconnect-PSSession` cmdlet gebruikt voor een niet-verbonden sessie, heeft de opdracht geen effect op de sessie en worden er geen fouten gegenereerd.
 - Verbroken loop Back-sessies met interactieve beveiligings tokens (die zijn gemaakt met de para meter **EnableNetworkAccess** ) kunnen alleen opnieuw worden verbonden vanaf de computer waarop de sessie is gemaakt. Met deze beperking wordt de computer beschermd tegen kwaadwillende toegang.
@@ -486,4 +488,3 @@ U kunt een sessie door sluizen naar `Disconnect-PSSession` .
 [about_Remote](About/about_Remote.md)
 
 [about_Remote_Disconnected_Sessions](About/about_Remote_Disconnected_Sessions.md)
-

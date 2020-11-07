@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/stop-service?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Stop-Service
-ms.openlocfilehash: fac6369859c3f8e3181a9044d381d01c12fea062
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: ed62e60e18594624c4c7aa940cc90bd09a1aa83c
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93250012"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94345065"
 ---
 # Stop-Service
 
@@ -44,8 +44,7 @@ Stop-Service [-Force] [-NoWait] [-PassThru] -DisplayName <String[]> [-Include <S
 
 ## BESCHRIJVING
 
-De **Stop-Service-** cmdlet verzendt een Stop bericht naar de Windows-service controller voor elk van de opgegeven services.
-U kunt de services opgeven met hun service namen of weergave namen, of u kunt de para meter **input object** gebruiken om een service object door te geven dat de service vertegenwoordigt die u wilt stoppen.
+De `Stop-Service` cmdlet verzendt een Stop bericht naar de Windows-service controller voor elk van de opgegeven services. U kunt de services opgeven met hun service namen of weergave namen, of u kunt de para meter **input object** gebruiken om een service object door te geven dat de service vertegenwoordigt die u wilt stoppen.
 
 ## VOORBEELDEN
 
@@ -63,9 +62,7 @@ Met deze opdracht wordt de Performance Logs and Alerts-service (SysmonLog) op de
 PS C:\> Get-Service -DisplayName "telnet" | Stop-Service
 ```
 
-Met deze opdracht wordt de Telnet-service op de lokale computer gestopt.
-De opdracht gebruikt **Get-service** om een object op te halen dat de Telnet-service vertegenwoordigt.
-De pijplijn operator (|) sluizen het object om te **stoppen-service** , waardoor de service wordt gestopt.
+Met deze opdracht wordt de Telnet-service op de lokale computer gestopt. De opdracht wordt gebruikt `Get-Service` om een object op te halen dat de Telnet-service vertegenwoordigt. De pijplijn operator ( `|` ) sluizen het object naar `Stop-Service` , waardoor de service wordt gestopt.
 
 ### Voor beeld 3: een service met afhankelijke services stoppen
 
@@ -74,17 +71,11 @@ PS C:\> Get-Service -Name "iisadmin" | Format-List -Property Name, DependentServ
 PS C:\> Stop-Service -Name "iisadmin" -Force -Confirm
 ```
 
-In dit voor beeld wordt de IISAdmin-service op de lokale computer gestopt.
-Omdat het stoppen van deze service ook de services stopt die afhankelijk zijn van de IISAdmin-service, is het raadzaam om de service te **stoppen** met een opdracht met een lijst met de services die afhankelijk zijn van de IISADMIN-service.
+In dit voor beeld wordt de IISAdmin-service op de lokale computer gestopt. Omdat het stoppen van deze service ook de services stopt die afhankelijk zijn van de IISAdmin-service, is het raadzaam om te beginnen `Stop-Service` met een opdracht met een lijst met de services die afhankelijk zijn van de IISADMIN-service.
 
-De eerste opdracht geeft de services weer die afhankelijk zijn van IISAdmin.
-Er wordt **Get-service** gebruikt om een object op te halen dat de IISADMIN-service vertegenwoordigt.
-De pijplijn operator (|) geeft het resultaat door aan de cmdlet Format-List.
-De opdracht gebruikt de *eigenschaps* parameter van de **notatie lijst** om alleen de eigenschappen **name** en **DependentServices** van de service weer te geven.
+De eerste opdracht geeft de services weer die afhankelijk zijn van IISAdmin. Er wordt gebruikgemaakt van `Get-Service` om een object op te halen dat de IISADMIN-service vertegenwoordigt. De pijplijn operator ( `|` ) geeft het resultaat door aan de `Format-List` cmdlet. De opdracht gebruikt de para meter **Property** van `Format-List` om alleen de eigenschappen **name** en **DependentServices** van de service weer te geven.
 
-Met de tweede opdracht wordt de IISAdmin-service gestopt.
-De para meter *Force* is vereist voor het stoppen van een service met afhankelijke services.
-De opdracht gebruikt de *confirm* -para meter om een bevestiging van de gebruiker aan te vragen voordat de service wordt gestopt.
+Met de tweede opdracht wordt de IISAdmin-service gestopt. De para meter **Force** is vereist voor het stoppen van een service met afhankelijke services. De opdracht gebruikt de **confirm** -para meter om een bevestiging van de gebruiker aan te vragen voordat de service wordt gestopt.
 
 ## PARAMETERS
 
@@ -107,10 +98,7 @@ Accept wildcard characters: True
 
 ### -Uitsluiten
 
-Hiermee geeft u de services die door deze cmdlet worden wegge laten.
-De waarde van deze para meter komt in aanmerking voor de para meter *name* .
-Voer een naam element of patroon in, zoals s *.
-Joker tekens zijn toegestaan.
+Hiermee geeft u de services die door deze cmdlet worden wegge laten. De waarde van deze para meter komt in aanmerking voor de para meter **name** . Voer een naam element of patroon in, zoals s *. Joker tekens zijn toegestaan.
 
 ```yaml
 Type: System.String[]
@@ -142,10 +130,7 @@ Accept wildcard characters: False
 
 ### -Include
 
-Hiermee geeft u de services op die met deze cmdlet worden gestopt.
-De waarde van deze para meter komt in aanmerking voor de para meter *name* .
-Voer een naam element of patroon in, zoals s *.
-Joker tekens zijn toegestaan.
+Hiermee geeft u de services op die met deze cmdlet worden gestopt. De waarde van deze para meter komt in aanmerking voor de para meter **name** . Voer een naam element of patroon in, zoals s *. Joker tekens zijn toegestaan.
 
 ```yaml
 Type: System.String[]
@@ -161,8 +146,7 @@ Accept wildcard characters: True
 
 ### -Input object
 
-Hiermee geeft u de **ServiceController** -objecten op die de services vertegenwoordigen die moeten worden gestopt.
-Voer een variabele in die de objecten bevat, of typ een opdracht of expressie waarmee de objecten worden opgehaald.
+Hiermee geeft u de **ServiceController** -objecten op die de services vertegenwoordigen die moeten worden gestopt. Voer een variabele in die de objecten bevat, of typ een opdracht of expressie waarmee de objecten worden opgehaald.
 
 ```yaml
 Type: System.ServiceProcess.ServiceController[]
@@ -178,8 +162,7 @@ Accept wildcard characters: False
 
 ### -Name
 
-Hiermee geeft u de service namen op van de services die moeten worden gestopt.
-Joker tekens zijn toegestaan.
+Hiermee geeft u de service namen op van de services die moeten worden gestopt. Joker tekens zijn toegestaan.
 
 ```yaml
 Type: System.String[]
@@ -211,8 +194,7 @@ Accept wildcard characters: False
 
 ### -PassThru
 
-Retourneert een object dat de service vertegenwoordigt.
-Deze cmdlet genereert standaard geen uitvoer.
+Retourneert een object dat de service vertegenwoordigt. Deze cmdlet genereert standaard geen uitvoer.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -244,8 +226,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-Hiermee wordt weergegeven wat er zou gebeuren als u de cmdlet uitvoert.
-De cmdlet wordt niet uitgevoerd.
+Hiermee wordt weergegeven wat er zou gebeuren als u de cmdlet uitvoert. De cmdlet wordt niet uitgevoerd.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -273,20 +254,17 @@ U kunt een service object of een teken reeks die de naam van een service bevat, 
 
 ### Geen, System. ServiceProcess. ServiceController
 
-Met deze cmdlet wordt een **System. ServiceProcess. ServiceController** -object gegenereerd dat de service vertegenwoordigt, als u de para meter *PassThru* gebruikt.
-Anders wordt met deze cmdlet geen uitvoer gegenereerd.
+Met deze cmdlet wordt een **System. ServiceProcess. ServiceController** -object gegenereerd dat de service vertegenwoordigt, als u de para meter **PassThru** gebruikt. Anders wordt met deze cmdlet geen uitvoer gegenereerd.
 
 ## OPMERKINGEN
 
-* U kunt ook verwijzen naar **Stop-Service** door de ingebouwde alias, **spsv**. Zie about_Aliases voor meer informatie.
+Deze cmdlet is alleen beschikbaar op Windows-platforms.
 
-  **Stop-Service** kan alleen services bepalen wanneer de huidige gebruiker gemachtigd is om dit te doen.
-Als een opdracht niet correct werkt, beschikt u mogelijk niet over de vereiste machtigingen.
+U kunt ook verwijzen naar `Stop-Service` de ingebouwde alias, **spsv**. Zie about_Aliases voor meer informatie.
 
-  Als u de service namen wilt zoeken en de namen van de services op uw systeem wilt weer geven, typt u `Get-Service` .
-De service namen worden weer gegeven in de kolom **naam** en de weergave namen worden weer gegeven in de kolom **DisplayName** .
+`Stop-Service` kan alleen services bepalen wanneer de huidige gebruiker gemachtigd is om dit te doen. Als een opdracht niet correct werkt, beschikt u mogelijk niet over de vereiste machtigingen.
 
-*
+Als u de service namen wilt zoeken en de namen van de services op uw systeem wilt weer geven, typt u `Get-Service` . De service namen worden weer gegeven in de kolom **naam** en de weergave namen worden weer gegeven in de kolom **DisplayName** .
 
 ## GERELATEERDE KOPPELINGEN
 

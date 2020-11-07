@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/resume-service?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Resume-Service
-ms.openlocfilehash: 00de396b049259904433843e01879c75e3982ca1
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: ee44a29c4b657828accc2d8b5e5773b5c1ea6086
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93250026"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94345150"
 ---
 # Resume-Service
 
@@ -44,10 +44,7 @@ Resume-Service [-PassThru] -DisplayName <String[]> [-Include <String[]>] [-Exclu
 
 ## BESCHRIJVING
 
-De cmdlet **Resume-service** stuurt een resume-bericht naar de Windows-service controller voor elk van de opgegeven services.
-Als een service wordt onderbroken, wordt deze hervat.
-Als deze momenteel wordt uitgevoerd, wordt het bericht genegeerd.
-U kunt de services opgeven met hun service namen of weergave namen, of u kunt de para meter *input object* gebruiken om een service object door te geven dat staat voor de services die u wilt hervatten.
+De `Resume-Service` cmdlet verzendt een resume-bericht naar de Windows-service controller voor elk van de opgegeven services. Als een service wordt onderbroken, wordt deze hervat. Als deze momenteel wordt uitgevoerd, wordt het bericht genegeerd. U kunt de services opgeven met hun service namen of weergave namen, of u kunt de para meter **input object** gebruiken om een service object door te geven dat staat voor de services die u wilt hervatten.
 
 ## VOORBEELDEN
 
@@ -57,9 +54,7 @@ U kunt de services opgeven met hun service namen of weergave namen, of u kunt de
 PS C:\> Resume-Service "sens"
 ```
 
-Met deze opdracht wordt de systeem gebeurtenis meldings service op de lokale computer hervat.
-De service naam wordt weer gegeven in de opdracht door Sens.
-De opdracht gebruikt de para meter *name* om de service naam van de service op te geven, maar de opdracht laat de parameter naam achterwege omdat de parameter naam optioneel is.
+Met deze opdracht wordt de systeem gebeurtenis meldings service op de lokale computer hervat. De service naam wordt weer gegeven in de opdracht door Sens. De opdracht gebruikt de para meter **name** om de service naam van de service op te geven, maar de opdracht laat de parameter naam achterwege omdat de parameter naam optioneel is.
 
 ### Voor beeld 2: alle onderbroken services hervatten
 
@@ -67,12 +62,9 @@ De opdracht gebruikt de para meter *name* om de service naam van de service op t
 PS C:\> Get-Service | Where-Object {$_.Status -eq "Paused"} | Resume-Service
 ```
 
-Met deze opdracht worden alle onderbroken services op de computer hervat.
-Met de opdracht cmdlet Get-Service worden alle services op de computer opgehaald.
-De pijplijn operator (|) geeft de resultaten door aan de cmdlet Where-Object, die de Services selecteert waarvan de eigenschap **status** is onderbroken.
-De volgende pijplijn operator verzendt de resultaten naar **hervatten-service** , waardoor de onderbroken services worden hervat.
+Met deze opdracht worden alle onderbroken services op de computer hervat. De `Get-Service` cmdlet opdracht haalt alle services op de computer op. De pijplijn operator ( `|` ) geeft de resultaten door aan de `Where-Object` cmdlet, die de Services selecteert waarvan de eigenschap **status** is onderbroken. De volgende pijplijn operator verzendt de resultaten naar `Resume-Service` , waardoor de onderbroken services worden hervat.
 
-In de praktijk gebruikt u de para meter *WhatIf* om het effect van de opdracht te bepalen voordat u deze uitvoert.
+In de praktijk gebruikt u de para meter **WhatIf** om het effect van de opdracht te bepalen voordat u deze uitvoert.
 
 ## PARAMETERS
 
@@ -95,10 +87,7 @@ Accept wildcard characters: True
 
 ### -Uitsluiten
 
-Hiermee geeft u de services die door deze cmdlet worden wegge laten.
-De waarde van deze para meter komt in aanmerking voor de para meter *name* .
-Voer een naam element of patroon in, zoals s *.
-Joker tekens zijn toegestaan.
+Hiermee geeft u de services die door deze cmdlet worden wegge laten. De waarde van deze para meter komt in aanmerking voor de para meter **name** . Voer een naam element of patroon in, zoals s *. Joker tekens zijn toegestaan.
 
 ```yaml
 Type: System.String[]
@@ -114,10 +103,7 @@ Accept wildcard characters: True
 
 ### -Include
 
-Hiermee geeft u de services op die u wilt hervatten.
-Met de waarde van deze para meter wordt de para meter *name* gekwalificeerd.
-Voer een naam element of patroon in, zoals s *.
-Joker tekens zijn toegestaan.
+Hiermee geeft u de services op die u wilt hervatten. Met de waarde van deze para meter wordt de para meter **name** gekwalificeerd. Voer een naam element of patroon in, zoals s *. Joker tekens zijn toegestaan.
 
 ```yaml
 Type: System.String[]
@@ -133,8 +119,7 @@ Accept wildcard characters: True
 
 ### -Input object
 
-Hiermee geeft u de **ServiceController** -objecten op die de services vertegenwoordigen om te hervatten.
-Voer een variabele in die de objecten bevat, of typ een opdracht of expressie waarmee de objecten worden opgehaald.
+Hiermee geeft u de **ServiceController** -objecten op die de services vertegenwoordigen om te hervatten. Voer een variabele in die de objecten bevat, of typ een opdracht of expressie waarmee de objecten worden opgehaald.
 
 ```yaml
 Type: System.ServiceProcess.ServiceController[]
@@ -166,8 +151,7 @@ Accept wildcard characters: False
 
 ### -PassThru
 
-Retourneert een object dat de service vertegenwoordigt.
-Deze cmdlet genereert standaard geen uitvoer.
+Retourneert een object dat de service vertegenwoordigt. Deze cmdlet genereert standaard geen uitvoer.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -199,8 +183,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-Hiermee wordt weergegeven wat er zou gebeuren als u de cmdlet uitvoert.
-De cmdlet wordt niet uitgevoerd.
+Hiermee wordt weergegeven wat er zou gebeuren als u de cmdlet uitvoert. De cmdlet wordt niet uitgevoerd.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -228,14 +211,16 @@ U kunt een service object of een teken reeks die een service naam bevat door slu
 
 ### Geen, System. ServiceProcess. ServiceController
 
-Met deze cmdlet wordt een **System. ServiceProcess. ServiceController** -object gegenereerd dat de hervatde service vertegenwoordigt, als u de para meter *PassThru* opgeeft.
-Anders wordt met deze cmdlet geen uitvoer gegenereerd.
+Met deze cmdlet wordt een **System. ServiceProcess. ServiceController** -object gegenereerd dat de hervatde service vertegenwoordigt, als u de para meter **PassThru** opgeeft. Anders wordt met deze cmdlet geen uitvoer gegenereerd.
 
 ## OPMERKINGEN
 
-* De status van de services die zijn onderbroken, wordt onderbroken. Wanneer Services worden hervat, wordt de status ervan uitgevoerd.
-* **Resume-service** kan alleen services bepalen wanneer de huidige gebruiker gemachtigd is om dit uit te voeren. Als een opdracht niet correct werkt, beschikt u mogelijk niet over de vereiste machtigingen.
-* Als u de service namen wilt zoeken en de namen van de services op uw systeem wilt weer geven, typt u `Get-Service` . De service namen worden weer gegeven in de kolom **naam** en de weergave namen worden weer gegeven in de kolom **DisplayName** .
+Deze cmdlet is alleen beschikbaar op Windows-platforms.
+
+- De status van de services die zijn onderbroken, wordt onderbroken. Wanneer Services worden hervat, wordt de status ervan uitgevoerd.
+- `Resume-Service` kan alleen services bepalen wanneer de huidige gebruiker gemachtigd is om dit te doen. Als een opdracht niet correct werkt, beschikt u mogelijk niet over de vereiste machtigingen.
+- Als u de service namen wilt zoeken en de namen van de services op uw systeem wilt weer geven, typt u `Get-Service` .
+  De service namen worden weer gegeven in de kolom **naam** en de weergave namen worden weer gegeven in de kolom **DisplayName** .
 
 ## GERELATEERDE KOPPELINGEN
 

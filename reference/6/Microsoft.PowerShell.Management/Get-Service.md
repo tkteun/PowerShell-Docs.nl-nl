@@ -7,12 +7,12 @@ ms.date: 10/30/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-service?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Service
-ms.openlocfilehash: 8c10e9e97c3371e8de46ed76e4c8a1195bc21513
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 425b5e56286c22b6595954916d8aa66eec807d83
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93250702"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94345252"
 ---
 # Get-Service
 
@@ -297,6 +297,8 @@ U kunt een service object of een service naam door sluizen naar deze cmdlet.
 Deze cmdlet retourneert objecten die de services op de computer vertegenwoordigen.
 
 ## OPMERKINGEN
+
+Deze cmdlet is alleen beschikbaar op Windows-platforms.
 
 Vanaf Power shell 6,0 worden de volgende eigenschappen toegevoegd aan de **ServiceController** -objecten: **username** , **Description** , **DelayedAutoStart** , **BinaryPathName** en **opstart type** .
 

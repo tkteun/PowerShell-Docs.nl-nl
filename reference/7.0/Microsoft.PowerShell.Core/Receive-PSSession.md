@@ -7,12 +7,12 @@ ms.date: 12/11/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/receive-pssession?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Receive-PSSession
-ms.openlocfilehash: 43f9823f19df9ceec44f1e27d5183cca418647ba
-ms.sourcegitcommit: 37abf054ad9eda8813be8ff4487803b10e1842ef
+ms.openlocfilehash: b0177a00bbbf93659775ee94f7d4898a99f570f3
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "93251555"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94345575"
 ---
 # Receive-PSSession
 
@@ -758,6 +758,8 @@ U kunt sessie namen aan deze cmdlet door sluizen.
 Met deze cmdlet worden de resultaten geretourneerd van opdrachten die zijn uitgevoerd in de verbroken sessie, indien van toepassing. Als de waarde of de standaard waarde van de para meter **outtarget** een taak is, `Receive-PSSession` wordt een taak object geretourneerd. Anders worden objecten geretourneerd die de opdracht resultaten vertegenwoordigen.
 
 ## OPMERKINGEN
+
+Deze cmdlet is alleen beschikbaar op Windows-platforms.
 
 `Receive-PSSession` Hiermee worden alleen resultaten opgehaald van sessies die zijn losgekoppeld. Alleen sessies die zijn verbonden met of eindigen op computers waarop Power Shell 3,0 of hoger wordt uitgevoerd, kunnen worden losgekoppeld en opnieuw worden aangesloten.
 

@@ -7,12 +7,12 @@ ms.date: 10/28/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/out-gridview?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Out-GridView
-ms.openlocfilehash: 22e6a8de2b52039e0a23cab135f81ff74bdf929a
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 840aa38ff17ceaf7dc65ca838da020c3d8c27952
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93251278"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94344385"
 ---
 # Out-GridView
 
@@ -148,7 +148,7 @@ Deze opdracht regel kan worden gebruikt in een Windows-snelkoppeling. Zonder de 
 
 Hiermee geeft u het object op dat door de cmdlet wordt geaccepteerd als invoer voor `Out-GridView` .
 
-Wanneer u de para meter **input object** gebruikt voor het verzenden van een verzameling objecten naar `Out-GridView` , `Out-GridView` behandelt de verzameling als één verzamelings object en wordt één rij met de verzameling weer gegeven. Als u wilt dat elk object in de verzameling wordt weer gegeven, gebruikt u een pijplijn operator (|) om objecten te verzenden naar `Out-GridView` .
+Wanneer u de para meter **input object** gebruikt voor het verzenden van een verzameling objecten naar `Out-GridView` , `Out-GridView` behandelt de verzameling als één verzamelings object en wordt één rij met de verzameling weer gegeven. Als u wilt weer geven van elk object in de verzameling, gebruikt u een pijplijn operator ( `|` ) om objecten te verzenden naar `Out-GridView` .
 
 ```yaml
 Type: System.Management.Automation.PSObject
@@ -255,6 +255,8 @@ U kunt elk object verzenden naar deze cmdlet.
 Normaal gesp roken worden `Out-GridView` er geen objecten geretourneerd. Wanneer u de para meter **PassThru** gebruikt, worden de objecten die de geselecteerde rijen vertegenwoordigen, geretourneerd naar de pijp lijn.
 
 ## OPMERKINGEN
+
+Deze cmdlet is alleen beschikbaar op Windows-platforms.
 
 U kunt een externe opdracht niet gebruiken om een raster weergave venster op een andere computer te openen.
 

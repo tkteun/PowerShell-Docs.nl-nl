@@ -7,12 +7,12 @@ ms.date: 10/29/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/show-command?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Show-Command
-ms.openlocfilehash: 976a9ba6047d79bc1ac6225896c7285702daf38a
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: e6995da1e9ff2a1678c5703b79223481533bc9a5
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93249502"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94346153"
 ---
 # Show-Command
 
@@ -40,7 +40,7 @@ Wanneer u klaar bent, klikt u op **kopiëren** om de opdracht die u hebt gemaakt
 
 In Power shell Integrated Scripting Environment (ISE) wordt standaard een variant van het `Show-Command` venster weer gegeven. Zie de Help-onderwerpen over Power shell ISE voor meer informatie over het gebruik van dit opdracht venster.
 
-Deze cmdlet is opnieuw geïntroduceerd in Power shell 7. 
+Deze cmdlet is opnieuw geïntroduceerd in Power shell 7.
 
 Omdat deze cmdlet een gebruikers interface vereist, werkt deze niet op Windows Server Core of Windows nano server. Deze cmdlet is alleen beschikbaar op Windows-systemen die ondersteuning bieden voor het Windows-bureau blad.
 
@@ -271,6 +271,8 @@ U kunt geen pipe invoer naar `Show-Command` .
 Wanneer u de para meter **PassThru** gebruikt, `Show-Command` wordt een opdracht reeks geretourneerd. Wanneer u de para meter **ErrorPopup** gebruikt, `Show-Command` wordt de uitvoer van de opdracht (een wille keurig object) geretourneerd. Anders `Show-Command` wordt er geen uitvoer gegenereerd.
 
 ## OPMERKINGEN
+
+Deze cmdlet is alleen beschikbaar op Windows-platforms.
 
 `Show-Command` werkt niet in externe sessies.
 

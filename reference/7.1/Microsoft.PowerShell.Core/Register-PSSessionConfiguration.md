@@ -7,12 +7,12 @@ ms.date: 03/28/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/register-pssessionconfiguration?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Register-PSSessionConfiguration
-ms.openlocfilehash: e3b8a075b42d7d612aed1acd6c8c71452d842cb6
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 028e28e071bf6e19f2d0aef72b4eec45da6c45b7
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93251192"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94345881"
 ---
 # Register-PSSessionConfiguration
 
@@ -642,6 +642,8 @@ U kunt geen invoer van een pipe naar deze cmdlet.
 
 ## OPMERKINGEN
 
+Deze cmdlet is alleen beschikbaar op Windows-platforms.
+
 Als u deze cmdlet wilt uitvoeren, moet u Power shell starten met de optie **als administrator uitvoeren** .
 
 Met deze cmdlet wordt XML gegenereerd die een invoeg toepassings configuratie voor webservices (WS-Management) vertegenwoordigt en wordt de XML naar WS-Management verzonden, waarmee de invoeg toepassing op de lokale computer ( `New-Item wsman:\localhost\plugin` ) wordt geregistreerd.
@@ -669,4 +671,3 @@ De eigenschappen van een sessie configuratie object zijn afhankelijk van de opti
 [about_Session_Configurations](About/about_Session_Configurations.md)
 
 [about_Session_Configuration_Files](About/about_Session_Configuration_Files.md)
-

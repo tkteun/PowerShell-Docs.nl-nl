@@ -7,12 +7,12 @@ ms.date: 5/1/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/rename-computer?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Rename-Computer
-ms.openlocfilehash: e2d4f321609a386c6795949a4a706323b4889f69
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 54624058b57b88b820391cc5afba638aa39ff873
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93250967"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94345228"
 ---
 # Rename-Computer
 
@@ -199,9 +199,9 @@ Accept wildcard characters: False
 
 Hiermee geeft u het mechanisme op dat wordt gebruikt voor het verifiëren van de gebruikers referenties wanneer deze cmdlet gebruikmaakt van het WSMan-protocol. De aanvaardbare waarden voor deze parameter zijn:
 
-- **Basic**
+- **Standaard**
 - **CredSSP**
-- **Prijs**
+- **Standaard**
 - **Samenvatting**
 - **Kerberos**
 - **Afspraken**
@@ -271,8 +271,7 @@ Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - Er
 
 ### Geen
 
-Deze cmdlet heeft geen para meters die invoer door waarde krijgen.
-U kunt de waarden van de eigenschappen **ComputerName** en **newname** van objecten echter door sluizen naar deze cmdlet.
+Deze cmdlet heeft geen para meters die invoer door waarde krijgen. U kunt de waarden van de eigenschappen **ComputerName** en **newname** van objecten echter door sluizen naar deze cmdlet.
 
 ## UITVOER
 
@@ -282,6 +281,8 @@ Met deze cmdlet wordt een **ComputerChangeInfo** -object geretourneerd als u de 
 Anders wordt er geen uitvoer geretourneerd.
 
 ## OPMERKINGEN
+
+Deze cmdlet is alleen beschikbaar op Windows-platforms.
 
 ## GERELATEERDE KOPPELINGEN
 
