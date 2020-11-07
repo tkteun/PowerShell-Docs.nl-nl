@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/start-service?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Service
-ms.openlocfilehash: d5a7588022331aac6315b1e37159bdbd6994b64a
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 02c0b7e699b386a36b962517901a381d45ccaeff
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93249608"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94346357"
 ---
 # Start-Service
 
@@ -252,12 +252,14 @@ Met deze cmdlet wordt een **System. ServiceProcess. ServiceController** -object 
 
 ## OPMERKINGEN
 
-* U kunt ook verwijzen naar `Start-Service` de ingebouwde alias `sasv` . Zie [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md)voor meer informatie.
-* `Start-Service` Hiermee kunnen alleen services worden beheerd als de huidige gebruiker gemachtigd is om dit te doen. Als een opdracht niet correct werkt, beschikt u mogelijk niet over de vereiste machtigingen.
-* Als u de service namen wilt zoeken en de namen van de services op uw systeem wilt weer geven, typt u `Get-Service` .
+Deze cmdlet is alleen beschikbaar op Windows-platforms.
+
+- U kunt ook verwijzen naar `Start-Service` de ingebouwde alias `sasv` . Zie [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md)voor meer informatie.
+- `Start-Service` Hiermee kunnen alleen services worden beheerd als de huidige gebruiker gemachtigd is om dit te doen. Als een opdracht niet correct werkt, beschikt u mogelijk niet over de vereiste machtigingen.
+- Als u de service namen wilt zoeken en de namen van de services op uw systeem wilt weer geven, typt u `Get-Service` .
   De service namen worden weer gegeven in de kolom **naam** en de weergave namen worden weer gegeven in de kolom **DisplayName** .
-* U kunt alleen de services starten die het begin type hand matig, automatisch of automatisch hebben (vertraagd starten). U kunt de services die het begin type uitgeschakeld hebben niet starten. Als een `Start-Service` opdracht mislukt met het bericht `Cannot start service \<service-name\> on computer` , gebruikt `Get-CimInstance` u om het start type van de service te vinden. Als u dat wilt, gebruikt u de `Set-Service` cmdlet om het start type van de service te wijzigen.
-* Sommige services, zoals Performance Logs and Alerts (SysmonLog), worden automatisch gestopt als ze geen werk hebben. Wanneer Power shell een service start die zichzelf bijna onmiddellijk stopt, wordt het volgende bericht weer gegeven: `Service \<display-name\> start failed.`
+- U kunt alleen de services starten die het begin type hand matig, automatisch of automatisch hebben (vertraagd starten). U kunt de services die het begin type uitgeschakeld hebben niet starten. Als een `Start-Service` opdracht mislukt met het bericht `Cannot start service \<service-name\> on computer` , gebruikt `Get-CimInstance` u om het start type van de service te vinden. Als u dat wilt, gebruikt u de `Set-Service` cmdlet om het start type van de service te wijzigen.
+- Sommige services, zoals Performance Logs and Alerts (SysmonLog), worden automatisch gestopt als ze geen werk hebben. Wanneer Power shell een service start die zichzelf bijna onmiddellijk stopt, wordt het volgende bericht weer gegeven: `Service \<display-name\> start failed.`
 
 ## GERELATEERDE KOPPELINGEN
 

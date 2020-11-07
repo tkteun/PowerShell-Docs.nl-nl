@@ -7,12 +7,12 @@ ms.date: 10/25/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/new-service?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-Service
-ms.openlocfilehash: c34c581b9af74f3199437b26971b902f6b39620f
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 81920303d130a306674033b2b1ba57a3e71c949c
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93249853"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94347428"
 ---
 # New-Service
 
@@ -186,8 +186,7 @@ Accept wildcard characters: False
 
 ### -Name
 
-Hiermee geeft u de naam van de service.
-Deze parameter is vereist.
+Hiermee geeft u de naam van de service. Deze parameter is vereist.
 
 ```yaml
 Type: System.String
@@ -261,8 +260,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-Hiermee wordt weergegeven wat er zou gebeuren als u de cmdlet uitvoert.
-De cmdlet wordt niet uitgevoerd.
+Hiermee wordt weergegeven wat er zou gebeuren als u de cmdlet uitvoert. De cmdlet wordt niet uitgevoerd.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -294,7 +292,9 @@ Met deze cmdlet wordt een object geretourneerd dat de nieuwe service vertegenwoo
 
 ## OPMERKINGEN
 
-Als u deze cmdlet wilt uitvoeren op Windows Vista en latere versies van het Windows-besturings systeem, start u Power shell met de optie als administrator uitvoeren.
+Deze cmdlet is alleen beschikbaar op Windows-platforms.
+
+Als u deze cmdlet wilt uitvoeren, start u Power shell met de optie **als administrator uitvoeren** .
 
 ## GERELATEERDE KOPPELINGEN
 
@@ -313,4 +313,3 @@ Als u deze cmdlet wilt uitvoeren op Windows Vista en latere versies van het Wind
 [Suspend-Service](Suspend-Service.md)
 
 [Verwijderen-service](Remove-Service.md)
-

@@ -7,12 +7,12 @@ ms.date: 09/18/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/set-timezone?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-TimeZone
-ms.openlocfilehash: 618f2ceca435e836a0c733f98533b62dfc86290b
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 4bade5a583533c3156fb923a5257ebb7a4453a2b
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93251399"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94347530"
 ---
 # Set-TimeZone
 
@@ -183,7 +183,8 @@ Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - Er
 
 ## OPMERKINGEN
 
+Deze cmdlet is alleen beschikbaar op Windows-platforms.
+
 ## GERELATEERDE KOPPELINGEN
 
 [Get-time zone](Get-TimeZone.md)
-

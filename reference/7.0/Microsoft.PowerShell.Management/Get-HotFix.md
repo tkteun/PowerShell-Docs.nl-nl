@@ -7,12 +7,12 @@ ms.date: 05/20/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-hotfix?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-HotFix
-ms.openlocfilehash: 355257d0e403143d6983886de592d491241c6253
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 277dd2678b54c9e708d09f6ca27d82ab9afd4c1c
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93250070"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94347615"
 ---
 # Get-HotFix
 
@@ -183,6 +183,8 @@ U kunt een of meer computer namen door geven om-HotFix op te halen.
 `Get-HotFix` retourneert objecten die de hotfixes op de computer vertegenwoordigen.
 
 ## OPMERKINGEN
+
+Deze cmdlet is alleen beschikbaar op Windows-platforms.
 
 De **Win32_QuickFixEngineering** [WMI-klasse](/windows/desktop/WmiSdk/retrieving-a-class) Win32_QuickFixEngineering vertegenwoordigt een kleine update van het hele systeem, vaak een QFE-update (Quick-Fix Engineering) genoemd, toegepast op het huidige besturings systeem. Deze klasse retourneert alleen de updates die zijn geleverd door CBS (Component Based Servicing). Deze updates worden niet vermeld in het REGI ster. Updates die zijn geleverd door Microsoft Windows Installer (MSI) of de [Windows Update](https://update.microsoft.com) -site, worden niet door **Win32_QuickFixEngineering** geretourneerd. Zie [Win32_QuickFixEngineering class](/windows/desktop/CIMWin32Prov/win32-quickfixengineering)voor meer informatie.
 

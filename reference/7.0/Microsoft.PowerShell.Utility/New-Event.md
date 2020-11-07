@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/new-event?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-Event
-ms.openlocfilehash: df78675e6593fcc7378f151002c1861a68c081b4
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: e842aca53947b4dc9e606f2f6b17532c7c9e0cb4
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93249389"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94346646"
 ---
 # New-Event
 
@@ -28,16 +28,13 @@ New-Event [-SourceIdentifier] <String> [[-Sender] <PSObject>] [[-EventArguments]
 
 ## BESCHRIJVING
 
-Met de cmdlet **New-Event** maakt u een nieuwe aangepaste gebeurtenis.
+Met de `New-Event` cmdlet maakt u een nieuwe aangepaste gebeurtenis.
 
 U kunt aangepaste gebeurtenissen gebruiken om gebruikers op de hoogte te stellen van status wijzigingen in uw programma en elke wijziging die uw programma kan detecteren, waaronder de hardware-of systeem voorwaarden, de toepassings status, de status van het netwerk of het volt ooien van een achtergrond taak.
 
-Aangepaste gebeurtenissen worden automatisch toegevoegd aan de gebeurtenis wachtrij in uw sessie wanneer deze worden gegenereerd. u hoeft zich niet aan te melden.
-Als u echter een gebeurtenis wilt door sturen naar de lokale sessie of een actie wilt opgeven om te reageren op de gebeurtenis, gebruikt u de Register-EngineEvent cmdlet om u te abonneren op de aangepaste gebeurtenis.
+Aangepaste gebeurtenissen worden automatisch toegevoegd aan de gebeurtenis wachtrij in uw sessie wanneer deze worden gegenereerd. u hoeft zich niet aan te melden. Als u echter een gebeurtenis wilt door sturen naar de lokale sessie of een actie wilt opgeven om te reageren op de gebeurtenis, gebruikt u de `Register-EngineEvent` cmdlet om u te abonneren op de aangepaste gebeurtenis.
 
-Wanneer u zich abonneert op een aangepaste gebeurtenis, wordt de gebeurtenis abonnee toegevoegd aan uw sessie.
-Als u het gebeurtenis abonnement annuleert met behulp van de cmdlet Unregister-Event, worden de gebeurtenis abonnee en de aangepaste gebeurtenis verwijderd uit de sessie.
-Als u zich niet hebt geabonneerd op de aangepaste gebeurtenis, moet u de programma voorwaarden wijzigen of de Power shell-sessie sluiten om de gebeurtenis te verwijderen.
+Wanneer u zich abonneert op een aangepaste gebeurtenis, wordt de gebeurtenis abonnee toegevoegd aan uw sessie. Als u het gebeurtenis abonnement met behulp van de cmdlet annuleert `Unregister-Event` , worden de gebeurtenis abonnee en de aangepaste gebeurtenis verwijderd uit de sessie. Als u zich niet hebt geabonneerd op de aangepaste gebeurtenis, moet u de programma voorwaarden wijzigen of de Power shell-sessie sluiten om de gebeurtenis te verwijderen.
 
 ## VOORBEELDEN
 
@@ -47,8 +44,7 @@ Als u zich niet hebt geabonneerd op de aangepaste gebeurtenis, moet u de program
 PS C:\> New-Event -SourceIdentifier Timer -Sender windows.timer -MessageData "Test"
 ```
 
-Met deze opdracht maakt u een nieuwe gebeurtenis in de Power shell-gebeurtenis wachtrij.
-Er wordt gebruikgemaakt van een **Windows. timer** -object voor het verzenden van de gebeurtenis.
+Met deze opdracht maakt u een nieuwe gebeurtenis in de Power shell-gebeurtenis wachtrij. Er wordt gebruikgemaakt van een **Windows. timer** -object voor het verzenden van de gebeurtenis.
 
 ### Voor beeld 2: een gebeurtenis activeren als reactie op een andere gebeurtenis
 
@@ -65,11 +61,9 @@ PS C:\> function Enable-ProcessCreationEvent
 }
 ```
 
-Deze voorbeeld functie maakt gebruik van de cmdlet **New-Event** om een gebeurtenis te genereren als reactie op een andere gebeurtenis.
-De opdracht gebruikt de cmdlet Register-ObjectEvent om u te abonneren op de gebeurtenis Windows Management Instrumentation (WMI) die wordt geactiveerd wanneer een nieuw proces wordt gemaakt.
-De opdracht gebruikt de *actie* parameter van de cmdlet voor het aanroepen van de **nieuwe-gebeurtenis-** cmdlet, waardoor de nieuwe gebeurtenis wordt gemaakt.
+Deze voorbeeld functie maakt gebruik `New-Event` van de cmdlet om een gebeurtenis te genereren als reactie op een andere gebeurtenis. De opdracht gebruikt de `Register-ObjectEvent` cmdlet om u te abonneren op de gebeurtenis Windows Management Instrumentation (WMI) die wordt geactiveerd wanneer een nieuw proces wordt gemaakt. De opdracht gebruikt de **actie** parameter van de cmdlet om de cmdlet aan te roepen `New-Event` , waardoor de nieuwe gebeurtenis wordt gemaakt.
 
-Omdat de gebeurtenissen die worden gegenereerd door **nieuwe gebeurtenissen** automatisch worden toegevoegd aan de Power shell-gebeurtenis wachtrij, hoeft u zich niet te registreren voor die gebeurtenis.
+Omdat de gebeurtenissen die `New-Event` worden gegenereerd automatisch worden toegevoegd aan de Power shell-gebeurtenis wachtrij, hoeft u zich niet te registreren voor die gebeurtenis.
 
 ## PARAMETERS
 
@@ -91,8 +85,7 @@ Accept wildcard characters: False
 
 ### -MessageData
 
-Hiermee geeft u aanvullende gegevens op die zijn gekoppeld aan de gebeurtenis.
-De waarde van deze para meter wordt weer gegeven in de eigenschap **MessageData** van het object Event.
+Hiermee geeft u aanvullende gegevens op die zijn gekoppeld aan de gebeurtenis. De waarde van deze para meter wordt weer gegeven in de eigenschap **MessageData** van het object Event.
 
 ```yaml
 Type: System.Management.Automation.PSObject
@@ -108,8 +101,7 @@ Accept wildcard characters: False
 
 ### -Sender
 
-Hiermee geeft u het object op waarmee de gebeurtenis wordt gegenereerd.
-De standaard waarde is de Power shell-engine.
+Hiermee geeft u het object op waarmee de gebeurtenis wordt gegenereerd. De standaard waarde is de Power shell-engine.
 
 ```yaml
 Type: System.Management.Automation.PSObject
@@ -125,8 +117,7 @@ Accept wildcard characters: False
 
 ### -SourceIdentifier
 
-Hiermee geeft u een naam op voor de nieuwe gebeurtenis.
-Deze para meter is vereist en moet uniek zijn in de sessie.
+Hiermee geeft u een naam op voor de nieuwe gebeurtenis. Deze para meter is vereist en moet uniek zijn in de sessie.
 
 De waarde van deze para meter wordt weer gegeven in de eigenschap **SourceIdentifier** van de gebeurtenissen.
 
@@ -158,7 +149,10 @@ U kunt geen invoer van een pipe naar deze cmdlet.
 
 ## OPMERKINGEN
 
-De nieuwe aangepaste gebeurtenis, het gebeurtenis abonnement en de gebeurtenis wachtrij bestaan alleen in de huidige sessie. Als u de huidige sessie sluit, wordt de gebeurtenis wachtrij verwijderd en wordt het gebeurtenis abonnement geannuleerd.
+Er zijn geen gebeurtenis bronnen beschikbaar op de Linux-of macOS-platforms.
+
+De nieuwe aangepaste gebeurtenis, het gebeurtenis abonnement en de gebeurtenis wachtrij bestaan alleen in de huidige sessie.
+Als u de huidige sessie sluit, wordt de gebeurtenis wachtrij verwijderd en wordt het gebeurtenis abonnement geannuleerd.
 
 ## GERELATEERDE KOPPELINGEN
 

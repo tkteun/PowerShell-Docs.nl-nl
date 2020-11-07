@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/remove-event?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Remove-Event
-ms.openlocfilehash: 2730e413a79b2af5355cd2ece7c1e8a6d219d708
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 0dd55280d2d010a151945065d0fcf4f032c980ad
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93249534"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94346748"
 ---
 # Remove-Event
 
@@ -34,10 +34,10 @@ Remove-Event [-EventIdentifier] <Int32> [-WhatIf] [-Confirm] [<CommonParameters>
 ```
 
 ## BESCHRIJVING
-Met de cmdlet **Remove-Event** worden gebeurtenissen uit de gebeurtenis wachtrij in de huidige sessie verwijderd.
 
-Met deze cmdlet worden alleen de gebeurtenissen uit de wachtrij verwijderd.
-Als u gebeurtenis registraties wilt annuleren of zich wilt afmelden, gebruikt u de Unregister-Event-cmdlet.
+De `Remove-Event` cmdlet verwijdert gebeurtenissen uit de gebeurtenis wachtrij in de huidige sessie.
+
+Met deze cmdlet worden alleen de gebeurtenissen uit de wachtrij verwijderd. Als u gebeurtenis registraties wilt annuleren of zich wilt afmelden, gebruikt u de `Unregister-Event` cmdlet.
 
 ## VOORBEELDEN
 
@@ -68,8 +68,8 @@ Met deze opdracht worden alle gebeurtenissen uit de gebeurtenis wachtrij verwijd
 ## PARAMETERS
 
 ### -EventIdentifier
-Hiermee geeft u de gebeurtenis-id op waarvoor de cmdlet wordt verwijderd.
-Een *EventIdentifier* -of *SourceIdentifier* -para meter is vereist in elke opdracht.
+
+Hiermee geeft u de gebeurtenis-id op waarvoor de cmdlet wordt verwijderd. Een **EventIdentifier** -of **SourceIdentifier** -para meter is vereist in elke opdracht.
 
 ```yaml
 Type: System.Int32
@@ -84,9 +84,8 @@ Accept wildcard characters: False
 ```
 
 ### -SourceIdentifier
-Hiermee geeft u de bron-id op waarvoor met deze cmdlet gebeurtenissen worden verwijderd.
-Joker tekens zijn niet toegestaan.
-Een *EventIdentifier* -of *SourceIdentifier* -para meter is vereist in elke opdracht.
+
+Hiermee geeft u de bron-id op waarvoor met deze cmdlet gebeurtenissen worden verwijderd. Joker tekens zijn niet toegestaan. Een **EventIdentifier** -of **SourceIdentifier** -para meter is vereist in elke opdracht.
 
 ```yaml
 Type: System.String
@@ -101,6 +100,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Hiermee wordt u gevraagd om bevestiging voordat u de cmdlet uitvoert.
 
 ```yaml
@@ -116,8 +116,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Hiermee wordt weergegeven wat er zou gebeuren als u de cmdlet uitvoert.
-De cmdlet wordt niet uitgevoerd.
+
+Hiermee wordt weergegeven wat er zou gebeuren als u de cmdlet uitvoert. De cmdlet wordt niet uitgevoerd.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -132,23 +132,26 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable. Zie [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)voor meer informatie.
 
 ## INVOER
 
 ### System. Management. Automation. PSEventArgs
-U kunt gebeurtenissen van Get-Event naar **Remove-Event** door sluizen.
+
+U kunt gebeurtenissen door sluizen van `Get-Event` naar `Remove-Event` .
 
 ## UITVOER
 
 ### Geen
+
 De cmdlet genereert geen uitvoer.
 
 ## OPMERKINGEN
 
-* Gebeurtenissen, gebeurtenis abonnementen en de gebeurtenis wachtrij bestaan alleen in de huidige sessie. Als u de huidige sessie sluit, wordt de gebeurtenis wachtrij verwijderd en wordt het gebeurtenis abonnement geannuleerd.
+Er zijn geen gebeurtenis bronnen beschikbaar op de Linux-of macOS-platforms.
 
-*
+Gebeurtenissen, gebeurtenis abonnementen en de gebeurtenis wachtrij bestaan alleen in de huidige sessie. Als u de huidige sessie sluit, wordt de gebeurtenis wachtrij verwijderd en wordt het gebeurtenis abonnement geannuleerd.
 
 ## GERELATEERDE KOPPELINGEN
 

@@ -7,12 +7,12 @@ ms.date: 03/28/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/register-pssessionconfiguration?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Register-PSSessionConfiguration
-ms.openlocfilehash: c0dd413e315d5905467d5591ed64eb971cbb0dbe
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: c72641c73851521ceb3b696e8eda5ad02a4e46d2
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93249562"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94347513"
 ---
 # Register-PSSessionConfiguration
 
@@ -641,6 +641,8 @@ U kunt geen invoer van een pipe naar deze cmdlet.
 ### Micro soft. WSMan. Management. WSManConfigContainerElement
 
 ## OPMERKINGEN
+
+Deze cmdlet is alleen beschikbaar op Windows-platforms.
 
 Als u deze cmdlet wilt uitvoeren, moet u Power shell starten met de optie **als administrator uitvoeren** .
 

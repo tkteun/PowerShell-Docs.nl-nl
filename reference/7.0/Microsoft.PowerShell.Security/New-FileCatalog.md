@@ -7,12 +7,12 @@ ms.date: 11/02/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/new-filecatalog?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-FileCatalog
-ms.openlocfilehash: aef0f6e63be07f0568927f8e65df675ff4f9eba7
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 007b486b7b65d9b6481839643fe839eda49a1113
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93249506"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94346952"
 ---
 # New-FileCatalog
 
@@ -28,13 +28,9 @@ New-FileCatalog [-CatalogVersion <Int32>] [-CatalogFilePath] <String> [[-Path] <
 
 ## BESCHRIJVING
 
-`New-FileCatalog` Hiermee maakt u een [Windows-catalogus bestand](/windows-hardware/drivers/install/catalog-files) voor een set mappen en bestanden.
-Dit catalogus bestand bevat hashes voor alle bestanden in de gegeven paden.
-Gebruikers kunnen de catalogus vervolgens distribueren met hun bestanden, zodat gebruikers kunnen valideren of er wijzigingen zijn aangebracht in de mappen sinds de aanmaak tijd van de catalogus.
+`New-FileCatalog` Hiermee maakt u een [Windows-catalogus bestand](/windows-hardware/drivers/install/catalog-files) voor een set mappen en bestanden. Dit catalogus bestand bevat hashes voor alle bestanden in de gegeven paden. Gebruikers kunnen de catalogus vervolgens distribueren met hun bestanden, zodat gebruikers kunnen valideren of er wijzigingen zijn aangebracht in de mappen sinds de aanmaak tijd van de catalogus.
 
-Catalogus versies 1 en 2 worden ondersteund. Versie 1 maakt gebruik van het (afgeschafte) SHA1 hash-algoritme om bestands-hashes te maken en versie 2 maakt gebruik van SHA256.
-Catalogus versie 2 wordt niet ondersteund in Windows Server 2008 R2 of Windows 7.
-U moet Catalog versie 2 gebruiken voor Windows 8, Windows Server 2012 en latere besturings systemen.
+Catalogus versies 1 en 2 worden ondersteund. Versie 1 maakt gebruik van het (afgeschafte) SHA1 hash-algoritme om bestands-hashes te maken en versie 2 maakt gebruik van SHA256. Catalogus versie 2 wordt niet ondersteund in Windows Server 2008 R2 of Windows 7. U moet Catalog versie 2 gebruiken voor Windows 8, Windows Server 2012 en latere besturings systemen.
 
 ## VOORBEELDEN
 
@@ -54,8 +50,7 @@ Mode                LastWriteTime         Length Name
 
 ### -CatalogFilePath
 
-Een pad naar een bestand of map waar het catalogus bestand (. cat) moet worden geplaatst.
-Als er een mappad is opgegeven, wordt de standaard bestandsnaam `catalog.cat` gebruikt.
+Een pad naar een bestand of map waar het catalogus bestand (. cat) moet worden geplaatst. Als er een mappad is opgegeven, wordt de standaard bestandsnaam `catalog.cat` gebruikt.
 
 ```yaml
 Type: System.String
@@ -71,8 +66,7 @@ Accept wildcard characters: False
 
 ### -CatalogVersion
 
-Accepteert `1.0` of `2.0` als mogelijke waarden voor het opgeven van de catalogus versie.
-`1.0` moet zoveel mogelijk worden gebruikt, aangezien het het onveilige SHA-1-hash-algoritme gebruikt, terwijl `2.0` het beveiligde SHA-256-algoritme wordt gebruikt `1.0` . Dit is echter het enige ondersteunde algoritme voor Windows 7 en Server 2008R2.
+Accepteert `1.0` of `2.0` als mogelijke waarden voor het opgeven van de catalogus versie. `1.0` moet zoveel mogelijk worden gebruikt, aangezien het het onveilige SHA-1-hash-algoritme gebruikt, terwijl `2.0` het beveiligde SHA-256-algoritme wordt gebruikt `1.0` . Dit is echter het enige ondersteunde algoritme voor Windows 7 en Server 2008R2.
 
 ```yaml
 Type: System.Int32
@@ -83,6 +77,22 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Path
+
+Hiermee wordt een pad of matrix met paden geaccepteerd naar bestanden of mappen die moeten worden opgenomen in het catalogus bestand. Als er een map is opgegeven, worden ook alle bestanden in de map opgenomen.
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
@@ -102,27 +112,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Path
-
-Hiermee wordt een pad of matrix met paden geaccepteerd naar bestanden of mappen die moeten worden opgenomen in het catalogus bestand.
-Als er een map is opgegeven, worden ook alle bestanden in de map opgenomen.
-
-```yaml
-Type: System.String[]
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 1
-Default value: None
-Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
-```
-
 ### -WhatIf
 
-Hiermee wordt weergegeven wat er zou gebeuren als u de cmdlet uitvoert.
-De cmdlet wordt niet uitgevoerd.
+Hiermee wordt weergegeven wat er zou gebeuren als u de cmdlet uitvoert. De cmdlet wordt niet uitgevoerd.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -151,6 +143,8 @@ De pijp lijn neemt een teken reeks die wordt gebruikt als de naam van de catalog
 ### System. IO. file info
 
 ## OPMERKINGEN
+
+Deze cmdlet is alleen beschikbaar op Windows-platforms.
 
 ## GERELATEERDE KOPPELINGEN
 

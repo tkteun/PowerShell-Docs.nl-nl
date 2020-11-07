@@ -7,12 +7,12 @@ ms.date: 3/22/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/get-executionpolicy?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-ExecutionPolicy
-ms.openlocfilehash: d33961d9c0b1980d84d35a33c45d965e84231914
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 347ffa733068d4e7f4896eb18358c7a852c88d0a
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93251308"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94347275"
 ---
 # Get-ExecutionPolicy
 
@@ -205,6 +205,8 @@ Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - Er
 
 ### Microsoft.PowerShell.ExecutionPolicy
 
+De cmdlet retourneert altijd **onbeperkt** op Linux-en macOS-platforms.
+
 ## OPMERKINGEN
 
 Een uitvoerings beleid maakt deel uit van de Power shell-beveiligings strategie. Uitvoerings beleid bepaalt of u configuratie bestanden kunt laden, zoals uw Power shell-profiel, of scripts moet uitvoeren. En, of scripts digitaal moeten worden ondertekend voordat ze worden uitgevoerd.
@@ -220,4 +222,3 @@ Een uitvoerings beleid maakt deel uit van de Power shell-beveiligings strategie.
 [Set-AuthenticodeSignature](Set-AuthenticodeSignature.md)
 
 [Set-ExecutionPolicy](Set-ExecutionPolicy.md)
-

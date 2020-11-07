@@ -7,12 +7,12 @@ ms.date: 11/02/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/new-filecatalog?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-FileCatalog
-ms.openlocfilehash: eb753ea7713f3a8577aba6751a284b989c798d18
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 949c2f5678204c46d610ef4be9b2e54823afad1b
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93250043"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94347258"
 ---
 # New-FileCatalog
 
@@ -28,13 +28,9 @@ New-FileCatalog [-CatalogVersion <Int32>] [-CatalogFilePath] <String> [[-Path] <
 
 ## BESCHRIJVING
 
-`New-FileCatalog` Hiermee maakt u een [Windows-catalogus bestand](/windows-hardware/drivers/install/catalog-files) voor een set mappen en bestanden.
-Dit catalogus bestand bevat hashes voor alle bestanden in de gegeven paden.
-Gebruikers kunnen de catalogus vervolgens distribueren met hun bestanden, zodat gebruikers kunnen valideren of er wijzigingen zijn aangebracht in de mappen sinds de aanmaak tijd van de catalogus.
+`New-FileCatalog` Hiermee maakt u een [Windows-catalogus bestand](/windows-hardware/drivers/install/catalog-files) voor een set mappen en bestanden. Dit catalogus bestand bevat hashes voor alle bestanden in de gegeven paden. Gebruikers kunnen de catalogus vervolgens distribueren met hun bestanden, zodat gebruikers kunnen valideren of er wijzigingen zijn aangebracht in de mappen sinds de aanmaak tijd van de catalogus.
 
-Catalogus versies 1 en 2 worden ondersteund. Versie 1 maakt gebruik van het (afgeschafte) SHA1 hash-algoritme om bestands-hashes te maken en versie 2 maakt gebruik van SHA256.
-Catalogus versie 2 wordt niet ondersteund in Windows Server 2008 R2 of Windows 7.
-U moet Catalog versie 2 gebruiken voor Windows 8, Windows Server 2012 en latere besturings systemen.
+Catalogus versies 1 en 2 worden ondersteund. Versie 1 maakt gebruik van het (afgeschafte) SHA1 hash-algoritme om bestands-hashes te maken en versie 2 maakt gebruik van SHA256. Catalogus versie 2 wordt niet ondersteund in Windows Server 2008 R2 of Windows 7. U moet Catalog versie 2 gebruiken voor Windows 8, Windows Server 2012 en latere besturings systemen.
 
 ## VOORBEELDEN
 
@@ -54,8 +50,7 @@ Mode                LastWriteTime         Length Name
 
 ### -CatalogFilePath
 
-Een pad naar een bestand of map waar het catalogus bestand (. cat) moet worden geplaatst.
-Als er een mappad is opgegeven, wordt de standaard bestandsnaam `catalog.cat` gebruikt.
+Een pad naar een bestand of map waar het catalogus bestand (. cat) moet worden geplaatst. Als er een mappad is opgegeven, wordt de standaard bestandsnaam `catalog.cat` gebruikt.
 
 ```yaml
 Type: System.String
@@ -71,8 +66,7 @@ Accept wildcard characters: False
 
 ### -CatalogVersion
 
-Accepteert `1.0` of `2.0` als mogelijke waarden voor het opgeven van de catalogus versie.
-`1.0` moet zoveel mogelijk worden gebruikt, aangezien het het onveilige SHA-1-hash-algoritme gebruikt, terwijl `2.0` het beveiligde SHA-256-algoritme wordt gebruikt `1.0` . Dit is echter het enige ondersteunde algoritme voor Windows 7 en Server 2008R2.
+Accepteert `1.0` of `2.0` als mogelijke waarden voor het opgeven van de catalogus versie. `1.0` moet zoveel mogelijk worden gebruikt, aangezien het het onveilige SHA-1-hash-algoritme gebruikt, terwijl `2.0` het beveiligde SHA-256-algoritme wordt gebruikt `1.0` . Dit is echter het enige ondersteunde algoritme voor Windows 7 en Server 2008R2.
 
 ```yaml
 Type: System.Int32
@@ -87,6 +81,8 @@ Accept wildcard characters: False
 ```
 
 ### -Path
+
+Hiermee wordt een pad of matrix met paden geaccepteerd naar bestanden of mappen die moeten worden opgenomen in het catalogus bestand. Als er een map is opgegeven, worden ook alle bestanden in de map opgenomen.
 
 ```yaml
 Type: System.String[]
@@ -118,8 +114,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-Hiermee wordt weergegeven wat er zou gebeuren als u de cmdlet uitvoert.
-De cmdlet wordt niet uitgevoerd.
+Hiermee wordt weergegeven wat er zou gebeuren als u de cmdlet uitvoert. De cmdlet wordt niet uitgevoerd.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -149,9 +144,10 @@ De pijp lijn neemt een teken reeks die wordt gebruikt als de naam van de catalog
 
 ## OPMERKINGEN
 
+Deze cmdlet is alleen beschikbaar op Windows-platforms.
+
 ## GERELATEERDE KOPPELINGEN
 
 [Test-FileCatalog](Test-FileCatalog.md)
 
 [PowerShellGet](/powerShell/module/powershellget)
-

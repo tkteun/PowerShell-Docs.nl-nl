@@ -7,12 +7,12 @@ ms.date: 10/28/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/out-printer?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Out-Printer
-ms.openlocfilehash: 552ccc39cc19d625c5173df360fa20a10c6040c1
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: bd9a141537c7f075d3c02827af4694813d6f0db6
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93249539"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94346918"
 ---
 # Out-Printer
 
@@ -116,6 +116,8 @@ U kunt elk object door sluizen naar `Out-Printer` .
 `Out-Printer` retourneert geen objecten.
 
 ## OPMERKINGEN
+
+Deze cmdlet is alleen beschikbaar op Windows-platforms.
 
 De cmdlets die de term bevatten, `Out` hebben geen-objecten. Ze worden alleen weer gegeven en verzonden naar de opgegeven weergave bestemming. Als u een niet-opgemaakt object naar een `Out` cmdlet verzendt, verzendt de cmdlet het naar een format-cmdlet voordat deze wordt weer gegeven.
 

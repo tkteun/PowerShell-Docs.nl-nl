@@ -7,12 +7,12 @@ ms.date: 02/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/register-engineevent?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Register-EngineEvent
-ms.openlocfilehash: 26a8ef5bfb9fd520fabc836ca1e5da40558e0e8a
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: cff52e9a321428cde31977f6d91e2d1047faa2ee
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93249537"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94346850"
 ---
 # Register-EngineEvent
 
@@ -256,6 +256,8 @@ U kunt geen pipe invoer naar `Register-EngineEvent` .
 Als u de **actie** parameter gebruikt, `Register-EngineEvent` retourneert een **System. Management. Automation. PSEventJob** -object. Anders wordt er geen uitvoer gegenereerd.
 
 ## OPMERKINGEN
+
+Er zijn geen gebeurtenis bronnen beschikbaar op de Linux-of macOS-platforms.
 
 Gebeurtenissen, gebeurtenis abonnementen en de gebeurtenis wachtrij bestaan alleen in de huidige sessie. Als u de huidige sessie sluit, wordt de gebeurtenis wachtrij verwijderd en wordt het gebeurtenis abonnement geannuleerd.
 

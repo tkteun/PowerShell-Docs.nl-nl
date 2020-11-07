@@ -7,12 +7,12 @@ ms.date: 10/25/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/set-service?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Service
-ms.openlocfilehash: d58d26a93e9b785bcba425537ea570feeffa1606
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: c6aa8a16bd5ccbeb00252b872e997018b1997181
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93249615"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94346697"
 ---
 # Set-Service
 
@@ -418,6 +418,8 @@ U kunt de pijp lijn gebruiken om een service object of een teken reeks die een s
 Er worden standaard `Set-Service` geen objecten geretourneerd. Gebruik de para meter **PassThru** voor het uitvoeren van een **ServiceController** -object.
 
 ## OPMERKINGEN
+
+Deze cmdlet is alleen beschikbaar op Windows-platforms.
 
 `Set-Service` vereist verhoogde machtigingen. Gebruik de optie **als administrator uitvoeren** .
 

@@ -7,12 +7,12 @@ ms.date: 03/25/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/get-acl?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Acl
-ms.openlocfilehash: 0a247be8c7a8067455e3153ac48cacde78eaa26d
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 118c3e563743cee03dc7a75ca68e0979c1522f07
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93251315"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94347071"
 ---
 # Get-Acl
 
@@ -241,6 +241,8 @@ U kunt een teken reeks met een pad naar door sluizen `Get-Acl` .
 
 ## OPMERKINGEN
 
+Deze cmdlet is alleen beschikbaar op Windows-platforms.
+
 `Get-Acl`Geeft standaard het Power shell-pad naar de resource ( `<provider>::<resource-path>` ), de eigenaar van de resource en ' toegang ', een lijst (matrix) van de vermeldingen voor toegangs beheer in de discretionaire toegangs beheer lijst (DACL) voor de bron. De lijst met DACL'S wordt beheerd door de resource-eigenaar.
 
 Wanneer u het resultaat opmaakt als een lijst, ( `Get-Acl | Format-List` ) naast het pad, de eigenaar en de toegangs lijst, worden in Power shell de volgende eigenschappen en eigenschaps waarden weer gegeven:
@@ -254,4 +256,3 @@ Omdat `Get-Acl` het bestands systeem en register providers worden ondersteund, k
 ## GERELATEERDE KOPPELINGEN
 
 [Set-ACL](Set-Acl.md)
-
