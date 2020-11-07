@@ -7,19 +7,19 @@ ms.date: 06/24/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/new-pssessionconfigurationfile?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-PSSessionConfigurationFile
-ms.openlocfilehash: f7cad4b85a8501081152768c2e3bfdf7fb3e59fd
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 939dc011307b4c98340bb376032b96289e1c1bc3
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93251296"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94345949"
 ---
-# <span data-ttu-id="ff2af-103">New-PSSessionConfigurationFile</span><span class="sxs-lookup"><span data-stu-id="ff2af-103">New-PSSessionConfigurationFile</span></span>
+# <span data-ttu-id="50c1a-103">New-PSSessionConfigurationFile</span><span class="sxs-lookup"><span data-stu-id="50c1a-103">New-PSSessionConfigurationFile</span></span>
 
-## <span data-ttu-id="ff2af-104">SAMENVATTING</span><span class="sxs-lookup"><span data-stu-id="ff2af-104">SYNOPSIS</span></span>
-<span data-ttu-id="ff2af-105">Hiermee maakt u een bestand dat een sessie configuratie definieert.</span><span class="sxs-lookup"><span data-stu-id="ff2af-105">Creates a file that defines a session configuration.</span></span>
+## <span data-ttu-id="50c1a-104">SAMENVATTING</span><span class="sxs-lookup"><span data-stu-id="50c1a-104">SYNOPSIS</span></span>
+<span data-ttu-id="50c1a-105">Hiermee maakt u een bestand dat een sessie configuratie definieert.</span><span class="sxs-lookup"><span data-stu-id="50c1a-105">Creates a file that defines a session configuration.</span></span>
 
-## <span data-ttu-id="ff2af-106">SYNTAXIS</span><span class="sxs-lookup"><span data-stu-id="ff2af-106">SYNTAX</span></span>
+## <span data-ttu-id="50c1a-106">SYNTAXIS</span><span class="sxs-lookup"><span data-stu-id="50c1a-106">SYNTAX</span></span>
 
 ```
 New-PSSessionConfigurationFile [-Path] <String> [-SchemaVersion <Version>] [-Guid <Guid>]
@@ -36,38 +36,38 @@ New-PSSessionConfigurationFile [-Path] <String> [-SchemaVersion <Version>] [-Gui
  [-FormatsToProcess <String[]>] [-AssembliesToLoad <String[]>] [-Full] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="ff2af-107">BESCHRIJVING</span><span class="sxs-lookup"><span data-stu-id="ff2af-107">DESCRIPTION</span></span>
+## <span data-ttu-id="50c1a-107">BESCHRIJVING</span><span class="sxs-lookup"><span data-stu-id="50c1a-107">DESCRIPTION</span></span>
 
-<span data-ttu-id="ff2af-108">`New-PSSessionConfigurationFile`Met de cmdlet wordt een bestand met instellingen gemaakt waarmee een sessie configuratie en de omgeving van sessies worden gedefinieerd die worden gemaakt met behulp van de sessie configuratie.</span><span class="sxs-lookup"><span data-stu-id="ff2af-108">The `New-PSSessionConfigurationFile` cmdlet creates a file of settings that define a session configuration and the environment of sessions that are created by using the session configuration.</span></span>
-<span data-ttu-id="ff2af-109">Als u het bestand in een sessie configuratie wilt gebruiken, gebruikt u de para meter **Path** van de `Register-PSSessionConfiguration` `Set-PSSessionConfiguration` cmdlets.</span><span class="sxs-lookup"><span data-stu-id="ff2af-109">To use the file in a session configuration, use the **Path** parameter of the `Register-PSSessionConfiguration` or `Set-PSSessionConfiguration` cmdlets.</span></span>
+<span data-ttu-id="50c1a-108">`New-PSSessionConfigurationFile`Met de cmdlet wordt een bestand met instellingen gemaakt waarmee een sessie configuratie en de omgeving van sessies worden gedefinieerd die worden gemaakt met behulp van de sessie configuratie.</span><span class="sxs-lookup"><span data-stu-id="50c1a-108">The `New-PSSessionConfigurationFile` cmdlet creates a file of settings that define a session configuration and the environment of sessions that are created by using the session configuration.</span></span>
+<span data-ttu-id="50c1a-109">Als u het bestand in een sessie configuratie wilt gebruiken, gebruikt u de para meter **Path** van de `Register-PSSessionConfiguration` `Set-PSSessionConfiguration` cmdlets.</span><span class="sxs-lookup"><span data-stu-id="50c1a-109">To use the file in a session configuration, use the **Path** parameter of the `Register-PSSessionConfiguration` or `Set-PSSessionConfiguration` cmdlets.</span></span>
 
-<span data-ttu-id="ff2af-110">Het bestand met de sessie configuratie dat wordt `New-PSSessionConfigurationFile` gemaakt, is een tekst bestand dat is gelezen met menselijke Lees baarheid dat een hash-tabel van de eigenschappen en waarden van de sessie configuratie bevat.</span><span class="sxs-lookup"><span data-stu-id="ff2af-110">The session configuration file that `New-PSSessionConfigurationFile` creates is a human-readable text file that contains a hash table of the session configuration properties and values.</span></span> <span data-ttu-id="ff2af-111">Het bestand heeft de `.pssc` bestands extensie.</span><span class="sxs-lookup"><span data-stu-id="ff2af-111">The file has a `.pssc` filename extension.</span></span>
+<span data-ttu-id="50c1a-110">Het bestand met de sessie configuratie dat wordt `New-PSSessionConfigurationFile` gemaakt, is een tekst bestand dat is gelezen met menselijke Lees baarheid dat een hash-tabel van de eigenschappen en waarden van de sessie configuratie bevat.</span><span class="sxs-lookup"><span data-stu-id="50c1a-110">The session configuration file that `New-PSSessionConfigurationFile` creates is a human-readable text file that contains a hash table of the session configuration properties and values.</span></span> <span data-ttu-id="50c1a-111">Het bestand heeft de `.pssc` bestands extensie.</span><span class="sxs-lookup"><span data-stu-id="50c1a-111">The file has a `.pssc` filename extension.</span></span>
 
-<span data-ttu-id="ff2af-112">Alle para meters van `New-PSSessionConfigurationFile` zijn optioneel, met uitzonde ring van de para meter **Path** .</span><span class="sxs-lookup"><span data-stu-id="ff2af-112">All parameters of `New-PSSessionConfigurationFile` are optional, except for the **Path** parameter.</span></span>
-<span data-ttu-id="ff2af-113">Als u een para meter weglaat, wordt de bijbehorende sleutel in het sessie configuratie bestand commentaar-out, behalve wanneer vermeld in de parameter beschrijving.</span><span class="sxs-lookup"><span data-stu-id="ff2af-113">If you omit a parameter, the corresponding key in the session configuration file is commented-out, except where noted in the parameter description.</span></span>
+<span data-ttu-id="50c1a-112">Alle para meters van `New-PSSessionConfigurationFile` zijn optioneel, met uitzonde ring van de para meter **Path** .</span><span class="sxs-lookup"><span data-stu-id="50c1a-112">All parameters of `New-PSSessionConfigurationFile` are optional, except for the **Path** parameter.</span></span>
+<span data-ttu-id="50c1a-113">Als u een para meter weglaat, wordt de bijbehorende sleutel in het sessie configuratie bestand commentaar-out, behalve wanneer vermeld in de parameter beschrijving.</span><span class="sxs-lookup"><span data-stu-id="50c1a-113">If you omit a parameter, the corresponding key in the session configuration file is commented-out, except where noted in the parameter description.</span></span>
 
-<span data-ttu-id="ff2af-114">Een sessie configuratie, ook wel een eind punt genoemd, is een verzameling instellingen op de lokale computer die de omgeving definiëren voor Power shell-sessies ( **PSSessions** ) die verbinding maken met de computer.</span><span class="sxs-lookup"><span data-stu-id="ff2af-114">A session configuration, also known as an endpoint, is a collection of settings on the local computer that define the environment for PowerShell sessions ( **PSSessions** ) that connect to the computer.</span></span> <span data-ttu-id="ff2af-115">Alle **PSSessions** gebruiken een sessie configuratie.</span><span class="sxs-lookup"><span data-stu-id="ff2af-115">All **PSSessions** use a session configuration.</span></span> <span data-ttu-id="ff2af-116">Als u een bepaalde sessie configuratie wilt opgeven, gebruikt u de para meter **configuratiepad** van cmdlets die een sessie maken, zoals de `New-PSSession` cmdlet.</span><span class="sxs-lookup"><span data-stu-id="ff2af-116">To specify a particular session configuration, use the **ConfigurationName** parameter of cmdlets that create a session, such as the `New-PSSession` cmdlet.</span></span>
+<span data-ttu-id="50c1a-114">Een sessie configuratie, ook wel een eind punt genoemd, is een verzameling instellingen op de lokale computer die de omgeving definiëren voor Power shell-sessies ( **PSSessions** ) die verbinding maken met de computer.</span><span class="sxs-lookup"><span data-stu-id="50c1a-114">A session configuration, also known as an endpoint, is a collection of settings on the local computer that define the environment for PowerShell sessions ( **PSSessions** ) that connect to the computer.</span></span> <span data-ttu-id="50c1a-115">Alle **PSSessions** gebruiken een sessie configuratie.</span><span class="sxs-lookup"><span data-stu-id="50c1a-115">All **PSSessions** use a session configuration.</span></span> <span data-ttu-id="50c1a-116">Als u een bepaalde sessie configuratie wilt opgeven, gebruikt u de para meter **configuratiepad** van cmdlets die een sessie maken, zoals de `New-PSSession` cmdlet.</span><span class="sxs-lookup"><span data-stu-id="50c1a-116">To specify a particular session configuration, use the **ConfigurationName** parameter of cmdlets that create a session, such as the `New-PSSession` cmdlet.</span></span>
 
-<span data-ttu-id="ff2af-117">Met een sessie configuratie bestand kunt u eenvoudig een sessie configuratie definiëren zonder complexe scripts of code-assembly's.</span><span class="sxs-lookup"><span data-stu-id="ff2af-117">A session configuration file makes it easy to define a session configuration without complex scripts or code assemblies.</span></span> <span data-ttu-id="ff2af-118">De instellingen in het bestand worden gebruikt met het optionele opstart script en alle assembly's in de sessie configuratie.</span><span class="sxs-lookup"><span data-stu-id="ff2af-118">The settings in the file are used with the optional startup script and any assemblies in the session configuration.</span></span>
+<span data-ttu-id="50c1a-117">Met een sessie configuratie bestand kunt u eenvoudig een sessie configuratie definiëren zonder complexe scripts of code-assembly's.</span><span class="sxs-lookup"><span data-stu-id="50c1a-117">A session configuration file makes it easy to define a session configuration without complex scripts or code assemblies.</span></span> <span data-ttu-id="50c1a-118">De instellingen in het bestand worden gebruikt met het optionele opstart script en alle assembly's in de sessie configuratie.</span><span class="sxs-lookup"><span data-stu-id="50c1a-118">The settings in the file are used with the optional startup script and any assemblies in the session configuration.</span></span>
 
-<span data-ttu-id="ff2af-119">Zie [about_Session_Configurations](About/about_Session_Configurations.md) en [about_Session_Configuration_Files](About/about_Session_Configuration_Files.md)voor meer informatie over sessie configuraties en sessie configuratie bestanden.</span><span class="sxs-lookup"><span data-stu-id="ff2af-119">For more information about session configurations and session configuration files, see [about_Session_Configurations](About/about_Session_Configurations.md) and [about_Session_Configuration_Files](About/about_Session_Configuration_Files.md).</span></span>
+<span data-ttu-id="50c1a-119">Zie [about_Session_Configurations](About/about_Session_Configurations.md) en [about_Session_Configuration_Files](About/about_Session_Configuration_Files.md)voor meer informatie over sessie configuraties en sessie configuratie bestanden.</span><span class="sxs-lookup"><span data-stu-id="50c1a-119">For more information about session configurations and session configuration files, see [about_Session_Configurations](About/about_Session_Configurations.md) and [about_Session_Configuration_Files](About/about_Session_Configuration_Files.md).</span></span>
 
-<span data-ttu-id="ff2af-120">Deze cmdlet is geïntroduceerd in Power Shell 3,0.</span><span class="sxs-lookup"><span data-stu-id="ff2af-120">This cmdlet was introduced in PowerShell 3.0.</span></span>
+<span data-ttu-id="50c1a-120">Deze cmdlet is geïntroduceerd in Power Shell 3,0.</span><span class="sxs-lookup"><span data-stu-id="50c1a-120">This cmdlet was introduced in PowerShell 3.0.</span></span>
 
-## <span data-ttu-id="ff2af-121">VOORBEELDEN</span><span class="sxs-lookup"><span data-stu-id="ff2af-121">EXAMPLES</span></span>
+## <span data-ttu-id="50c1a-121">VOORBEELDEN</span><span class="sxs-lookup"><span data-stu-id="50c1a-121">EXAMPLES</span></span>
 
-### <span data-ttu-id="ff2af-122">Voor beeld 1: een geen-taal sessie maken en gebruiken</span><span class="sxs-lookup"><span data-stu-id="ff2af-122">Example 1: Creating and using a NoLanguage session</span></span>
+### <span data-ttu-id="50c1a-122">Voor beeld 1: een geen-taal sessie maken en gebruiken</span><span class="sxs-lookup"><span data-stu-id="50c1a-122">Example 1: Creating and using a NoLanguage session</span></span>
 
-<span data-ttu-id="ff2af-123">In dit voor beeld ziet u hoe u een sessie zonder taal maakt en hoe u deze kunt gebruiken.</span><span class="sxs-lookup"><span data-stu-id="ff2af-123">This example show how to create and the effects of using a no-language session.</span></span>
+<span data-ttu-id="50c1a-123">In dit voor beeld ziet u hoe u een sessie zonder taal maakt en hoe u deze kunt gebruiken.</span><span class="sxs-lookup"><span data-stu-id="50c1a-123">This example show how to create and the effects of using a no-language session.</span></span>
 
-<span data-ttu-id="ff2af-124">De stappen zijn onder andere:</span><span class="sxs-lookup"><span data-stu-id="ff2af-124">The steps include:</span></span>
+<span data-ttu-id="50c1a-124">De stappen zijn onder andere:</span><span class="sxs-lookup"><span data-stu-id="50c1a-124">The steps include:</span></span>
 
-1. <span data-ttu-id="ff2af-125">Maak een nieuw configuratie bestand.</span><span class="sxs-lookup"><span data-stu-id="ff2af-125">Create a new configuration file.</span></span>
-1. <span data-ttu-id="ff2af-126">Registreer de configuratie.</span><span class="sxs-lookup"><span data-stu-id="ff2af-126">Register the configuration.</span></span>
-1. <span data-ttu-id="ff2af-127">Maak een nieuwe sessie die gebruikmaakt van de configuratie.</span><span class="sxs-lookup"><span data-stu-id="ff2af-127">Create a new session that uses the configuration.</span></span>
-1. <span data-ttu-id="ff2af-128">Voer opdrachten in die nieuwe sessie uit.</span><span class="sxs-lookup"><span data-stu-id="ff2af-128">Run commands in that new session.</span></span>
+1. <span data-ttu-id="50c1a-125">Maak een nieuw configuratie bestand.</span><span class="sxs-lookup"><span data-stu-id="50c1a-125">Create a new configuration file.</span></span>
+1. <span data-ttu-id="50c1a-126">Registreer de configuratie.</span><span class="sxs-lookup"><span data-stu-id="50c1a-126">Register the configuration.</span></span>
+1. <span data-ttu-id="50c1a-127">Maak een nieuwe sessie die gebruikmaakt van de configuratie.</span><span class="sxs-lookup"><span data-stu-id="50c1a-127">Create a new session that uses the configuration.</span></span>
+1. <span data-ttu-id="50c1a-128">Voer opdrachten in die nieuwe sessie uit.</span><span class="sxs-lookup"><span data-stu-id="50c1a-128">Run commands in that new session.</span></span>
 
-<span data-ttu-id="ff2af-129">Als u de opdrachten in dit voor beeld wilt uitvoeren, start u Power shell met de optie als administrator uitvoeren.</span><span class="sxs-lookup"><span data-stu-id="ff2af-129">To run the commands in this example, start PowerShell by using the Run as administrator option.</span></span> <span data-ttu-id="ff2af-130">Deze optie is vereist om de cmdlet uit te voeren `Register-PSSessionConfiguration` .</span><span class="sxs-lookup"><span data-stu-id="ff2af-130">This option is required to run the `Register-PSSessionConfiguration` cmdlet.</span></span>
+<span data-ttu-id="50c1a-129">Als u de opdrachten in dit voor beeld wilt uitvoeren, start u Power shell met de optie als administrator uitvoeren.</span><span class="sxs-lookup"><span data-stu-id="50c1a-129">To run the commands in this example, start PowerShell by using the Run as administrator option.</span></span> <span data-ttu-id="50c1a-130">Deze optie is vereist om de cmdlet uit te voeren `Register-PSSessionConfiguration` .</span><span class="sxs-lookup"><span data-stu-id="50c1a-130">This option is required to run the `Register-PSSessionConfiguration` cmdlet.</span></span>
 
 ```powershell
 New-PSSessionConfigurationFile -Path .\NoLanguage.pssc -LanguageMode NoLanguage
@@ -85,20 +85,20 @@ The syntax is not supported by this runspace. This might be because it is in no-
     + PSComputerName        : localhost
 ```
 
-<span data-ttu-id="ff2af-131">In dit voor beeld `Invoke-Command` mislukt de fout omdat de **LanguageMode** is ingesteld op ' geen **taal** '.</span><span class="sxs-lookup"><span data-stu-id="ff2af-131">In this example, the `Invoke-Command` fails because the **LanguageMode** is set to **NoLanguage**.</span></span>
+<span data-ttu-id="50c1a-131">In dit voor beeld `Invoke-Command` mislukt de fout omdat de **LanguageMode** is ingesteld op ' geen **taal** '.</span><span class="sxs-lookup"><span data-stu-id="50c1a-131">In this example, the `Invoke-Command` fails because the **LanguageMode** is set to **NoLanguage**.</span></span>
 
-### <span data-ttu-id="ff2af-132">Voor beeld 2: een RestrictedLanguage-sessie maken en gebruiken</span><span class="sxs-lookup"><span data-stu-id="ff2af-132">Example 2: Creating and using a RestrictedLanguage session</span></span>
+### <span data-ttu-id="50c1a-132">Voor beeld 2: een RestrictedLanguage-sessie maken en gebruiken</span><span class="sxs-lookup"><span data-stu-id="50c1a-132">Example 2: Creating and using a RestrictedLanguage session</span></span>
 
-<span data-ttu-id="ff2af-133">In dit voor beeld ziet u hoe u een sessie zonder taal maakt en hoe u deze kunt gebruiken.</span><span class="sxs-lookup"><span data-stu-id="ff2af-133">This example show how to create and the effects of using a no-language session.</span></span>
+<span data-ttu-id="50c1a-133">In dit voor beeld ziet u hoe u een sessie zonder taal maakt en hoe u deze kunt gebruiken.</span><span class="sxs-lookup"><span data-stu-id="50c1a-133">This example show how to create and the effects of using a no-language session.</span></span>
 
-<span data-ttu-id="ff2af-134">De stappen zijn onder andere:</span><span class="sxs-lookup"><span data-stu-id="ff2af-134">The steps include:</span></span>
+<span data-ttu-id="50c1a-134">De stappen zijn onder andere:</span><span class="sxs-lookup"><span data-stu-id="50c1a-134">The steps include:</span></span>
 
-1. <span data-ttu-id="ff2af-135">Maak een nieuw configuratie bestand.</span><span class="sxs-lookup"><span data-stu-id="ff2af-135">Create a new configuration file.</span></span>
-1. <span data-ttu-id="ff2af-136">Registreer de configuratie.</span><span class="sxs-lookup"><span data-stu-id="ff2af-136">Register the configuration.</span></span>
-1. <span data-ttu-id="ff2af-137">Maak een nieuwe sessie die gebruikmaakt van de configuratie.</span><span class="sxs-lookup"><span data-stu-id="ff2af-137">Create a new session that uses the configuration.</span></span>
-1. <span data-ttu-id="ff2af-138">Voer opdrachten in die nieuwe sessie uit.</span><span class="sxs-lookup"><span data-stu-id="ff2af-138">Run commands in that new session.</span></span>
+1. <span data-ttu-id="50c1a-135">Maak een nieuw configuratie bestand.</span><span class="sxs-lookup"><span data-stu-id="50c1a-135">Create a new configuration file.</span></span>
+1. <span data-ttu-id="50c1a-136">Registreer de configuratie.</span><span class="sxs-lookup"><span data-stu-id="50c1a-136">Register the configuration.</span></span>
+1. <span data-ttu-id="50c1a-137">Maak een nieuwe sessie die gebruikmaakt van de configuratie.</span><span class="sxs-lookup"><span data-stu-id="50c1a-137">Create a new session that uses the configuration.</span></span>
+1. <span data-ttu-id="50c1a-138">Voer opdrachten in die nieuwe sessie uit.</span><span class="sxs-lookup"><span data-stu-id="50c1a-138">Run commands in that new session.</span></span>
 
-<span data-ttu-id="ff2af-139">Als u de opdrachten in dit voor beeld wilt uitvoeren, start u Power shell met de optie als administrator uitvoeren.</span><span class="sxs-lookup"><span data-stu-id="ff2af-139">To run the commands in this example, start PowerShell by using the Run as administrator option.</span></span> <span data-ttu-id="ff2af-140">Deze optie is vereist om de cmdlet uit te voeren `Register-PSSessionConfiguration` .</span><span class="sxs-lookup"><span data-stu-id="ff2af-140">This option is required to run the `Register-PSSessionConfiguration` cmdlet.</span></span>
+<span data-ttu-id="50c1a-139">Als u de opdrachten in dit voor beeld wilt uitvoeren, start u Power shell met de optie als administrator uitvoeren.</span><span class="sxs-lookup"><span data-stu-id="50c1a-139">To run the commands in this example, start PowerShell by using the Run as administrator option.</span></span> <span data-ttu-id="50c1a-140">Deze optie is vereist om de cmdlet uit te voeren `Register-PSSessionConfiguration` .</span><span class="sxs-lookup"><span data-stu-id="50c1a-140">This option is required to run the `Register-PSSessionConfiguration` cmdlet.</span></span>
 
 ```powershell
 New-PSSessionConfigurationFile -Path .\NoLanguage.pssc -LanguageMode RestrictedLanguage
@@ -113,31 +113,31 @@ Invoke-Command -Session $RestrictedSession -ScriptBlock {
 Before
 ```
 
-<span data-ttu-id="ff2af-141">In dit voor beeld `Invoke-Command` is het gelukt omdat de **LanguageMode** is ingesteld op **RestrictedLanguage**.</span><span class="sxs-lookup"><span data-stu-id="ff2af-141">In this example, the `Invoke-Command` succeeds because the **LanguageMode** is set to **RestrictedLanguage**.</span></span>
+<span data-ttu-id="50c1a-141">In dit voor beeld `Invoke-Command` is het gelukt omdat de **LanguageMode** is ingesteld op **RestrictedLanguage**.</span><span class="sxs-lookup"><span data-stu-id="50c1a-141">In this example, the `Invoke-Command` succeeds because the **LanguageMode** is set to **RestrictedLanguage**.</span></span>
 
-### <span data-ttu-id="ff2af-142">Voor beeld 3: een sessie configuratie bestand wijzigen</span><span class="sxs-lookup"><span data-stu-id="ff2af-142">Example 3: Changing a Session Configuration File</span></span>
+### <span data-ttu-id="50c1a-142">Voor beeld 3: een sessie configuratie bestand wijzigen</span><span class="sxs-lookup"><span data-stu-id="50c1a-142">Example 3: Changing a Session Configuration File</span></span>
 
-<span data-ttu-id="ff2af-143">In dit voor beeld ziet u hoe u het sessie configuratie bestand wijzigt dat wordt gebruikt in een bestaande sessie met de naam ' ITTasks '.</span><span class="sxs-lookup"><span data-stu-id="ff2af-143">This example shows how to change the session configuration file that is used in an existing session named "ITTasks".</span></span> <span data-ttu-id="ff2af-144">Voorheen hadden deze sessies alleen de kern modules en een interne **ITTasks** -module.</span><span class="sxs-lookup"><span data-stu-id="ff2af-144">Previously, these sessions had only the core modules and an internal **ITTasks** module.</span></span> <span data-ttu-id="ff2af-145">De beheerder wil de **PSScheduledJob** -module toevoegen aan sessies die zijn gemaakt met behulp van de ITTasks-sessie configuratie.</span><span class="sxs-lookup"><span data-stu-id="ff2af-145">The administrator wants to add the **PSScheduledJob** module to sessions created by using the ITTasks session configuration.</span></span>
+<span data-ttu-id="50c1a-143">In dit voor beeld ziet u hoe u het sessie configuratie bestand wijzigt dat wordt gebruikt in een bestaande sessie met de naam ' ITTasks '.</span><span class="sxs-lookup"><span data-stu-id="50c1a-143">This example shows how to change the session configuration file that is used in an existing session named "ITTasks".</span></span> <span data-ttu-id="50c1a-144">Voorheen hadden deze sessies alleen de kern modules en een interne **ITTasks** -module.</span><span class="sxs-lookup"><span data-stu-id="50c1a-144">Previously, these sessions had only the core modules and an internal **ITTasks** module.</span></span> <span data-ttu-id="50c1a-145">De beheerder wil de **PSScheduledJob** -module toevoegen aan sessies die zijn gemaakt met behulp van de ITTasks-sessie configuratie.</span><span class="sxs-lookup"><span data-stu-id="50c1a-145">The administrator wants to add the **PSScheduledJob** module to sessions created by using the ITTasks session configuration.</span></span>
 
 ```powershell
 New-PSSessionConfigurationFile -Path .\New-ITTasks.pssc -ModulesToImport Microsoft*, ITTasks, PSScheduledJob
 Set-PSSessionConfiguration -Name ITTasks -Path .\New-ITTasks.pssc
 ```
 
-<span data-ttu-id="ff2af-146">De `New-PSSessionConfigurationFile` cmdlet voor het maken van een sessie configuratie bestand waarmee de vereiste modules worden geïmporteerd.</span><span class="sxs-lookup"><span data-stu-id="ff2af-146">The `New-PSSessionConfigurationFile` cmdlet to create a session configuration file that imports the required modules.</span></span> <span data-ttu-id="ff2af-147">De `Set-PSSessionConfiguration` cmdlet vervangt het huidige configuratie bestand door de nieuwe.</span><span class="sxs-lookup"><span data-stu-id="ff2af-147">The `Set-PSSessionConfiguration` cmdlet replaces the current configuration file with the new one.</span></span> <span data-ttu-id="ff2af-148">Deze nieuwe configuratie is alleen van invloed op nieuwe sessies die zijn gemaakt na de wijziging.</span><span class="sxs-lookup"><span data-stu-id="ff2af-148">This new configuration only affects new sessions created after the change.</span></span>
-<span data-ttu-id="ff2af-149">Bestaande ' ITTasks-sessies worden niet beïnvloed.</span><span class="sxs-lookup"><span data-stu-id="ff2af-149">Existing "ITTasks" sessions are not affected.</span></span>
+<span data-ttu-id="50c1a-146">De `New-PSSessionConfigurationFile` cmdlet voor het maken van een sessie configuratie bestand waarmee de vereiste modules worden geïmporteerd.</span><span class="sxs-lookup"><span data-stu-id="50c1a-146">The `New-PSSessionConfigurationFile` cmdlet to create a session configuration file that imports the required modules.</span></span> <span data-ttu-id="50c1a-147">De `Set-PSSessionConfiguration` cmdlet vervangt het huidige configuratie bestand door de nieuwe.</span><span class="sxs-lookup"><span data-stu-id="50c1a-147">The `Set-PSSessionConfiguration` cmdlet replaces the current configuration file with the new one.</span></span> <span data-ttu-id="50c1a-148">Deze nieuwe configuratie is alleen van invloed op nieuwe sessies die zijn gemaakt na de wijziging.</span><span class="sxs-lookup"><span data-stu-id="50c1a-148">This new configuration only affects new sessions created after the change.</span></span>
+<span data-ttu-id="50c1a-149">Bestaande ' ITTasks-sessies worden niet beïnvloed.</span><span class="sxs-lookup"><span data-stu-id="50c1a-149">Existing "ITTasks" sessions are not affected.</span></span>
 
-### <span data-ttu-id="ff2af-150">Voor beeld 4: een sessie configuratie bestand bewerken</span><span class="sxs-lookup"><span data-stu-id="ff2af-150">Example 4: Editing a Session Configuration File</span></span>
+### <span data-ttu-id="50c1a-150">Voor beeld 4: een sessie configuratie bestand bewerken</span><span class="sxs-lookup"><span data-stu-id="50c1a-150">Example 4: Editing a Session Configuration File</span></span>
 
-<span data-ttu-id="ff2af-151">In dit voor beeld ziet u hoe u een sessie configuratie wijzigt door de configuratie kopie van de actieve sessie van het configuratie bestand te bewerken.</span><span class="sxs-lookup"><span data-stu-id="ff2af-151">This example shows how to change a session configuration by editing the active session configuration copy of the configuration file.</span></span> <span data-ttu-id="ff2af-152">Als u de sessie configuratie kopie van het configuratie bestand wilt wijzigen, moet u volledige controle over de toegang tot het bestand hebben.</span><span class="sxs-lookup"><span data-stu-id="ff2af-152">To modify the session configuration copy of the configuration file, you must have full control access to the file.</span></span> <span data-ttu-id="ff2af-153">Hiervoor moet u mogelijk de machtigingen voor het bestand wijzigen.</span><span class="sxs-lookup"><span data-stu-id="ff2af-153">This may require you to change the permissions on the file.</span></span>
+<span data-ttu-id="50c1a-151">In dit voor beeld ziet u hoe u een sessie configuratie wijzigt door de configuratie kopie van de actieve sessie van het configuratie bestand te bewerken.</span><span class="sxs-lookup"><span data-stu-id="50c1a-151">This example shows how to change a session configuration by editing the active session configuration copy of the configuration file.</span></span> <span data-ttu-id="50c1a-152">Als u de sessie configuratie kopie van het configuratie bestand wilt wijzigen, moet u volledige controle over de toegang tot het bestand hebben.</span><span class="sxs-lookup"><span data-stu-id="50c1a-152">To modify the session configuration copy of the configuration file, you must have full control access to the file.</span></span> <span data-ttu-id="50c1a-153">Hiervoor moet u mogelijk de machtigingen voor het bestand wijzigen.</span><span class="sxs-lookup"><span data-stu-id="50c1a-153">This may require you to change the permissions on the file.</span></span>
 
-<span data-ttu-id="ff2af-154">In dit scenario willen we een nieuwe alias voor de `Select-String` cmdlet toevoegen door het actieve configuratie bestand te bewerken.</span><span class="sxs-lookup"><span data-stu-id="ff2af-154">In this scenario, we want to add a new alias for the `Select-String` cmdlet by editing the active configuration file.</span></span>
+<span data-ttu-id="50c1a-154">In dit scenario willen we een nieuwe alias voor de `Select-String` cmdlet toevoegen door het actieve configuratie bestand te bewerken.</span><span class="sxs-lookup"><span data-stu-id="50c1a-154">In this scenario, we want to add a new alias for the `Select-String` cmdlet by editing the active configuration file.</span></span>
 
-<span data-ttu-id="ff2af-155">De voorbeeld code hieronder voert de volgende stappen uit om deze wijziging door te voeren:</span><span class="sxs-lookup"><span data-stu-id="ff2af-155">The example code below performs the following steps to make this change:</span></span>
+<span data-ttu-id="50c1a-155">De voorbeeld code hieronder voert de volgende stappen uit om deze wijziging door te voeren:</span><span class="sxs-lookup"><span data-stu-id="50c1a-155">The example code below performs the following steps to make this change:</span></span>
 
-1. <span data-ttu-id="ff2af-156">Het pad naar het configuratie bestand voor de ITConfig-sessie ophalen.</span><span class="sxs-lookup"><span data-stu-id="ff2af-156">Get the configuration file path for the ITConfig session.</span></span>
-1. <span data-ttu-id="ff2af-157">De gebruiker bewerkt het configuratie bestand met **Notepad.exe** om de waarde **AliasDefinitions** als volgt te wijzigen: `AliasDefinitions = @(@{Name='slst';Value='Select-String'})` .</span><span class="sxs-lookup"><span data-stu-id="ff2af-157">The user edits the configuration file using **Notepad.exe** to change the **AliasDefinitions** value as follows: `AliasDefinitions = @(@{Name='slst';Value='Select-String'})`.</span></span>
-1. <span data-ttu-id="ff2af-158">Het bijgewerkte configuratie bestand testen.</span><span class="sxs-lookup"><span data-stu-id="ff2af-158">Test the updated configuration file.</span></span>
+1. <span data-ttu-id="50c1a-156">Het pad naar het configuratie bestand voor de ITConfig-sessie ophalen.</span><span class="sxs-lookup"><span data-stu-id="50c1a-156">Get the configuration file path for the ITConfig session.</span></span>
+1. <span data-ttu-id="50c1a-157">De gebruiker bewerkt het configuratie bestand met **Notepad.exe** om de waarde **AliasDefinitions** als volgt te wijzigen: `AliasDefinitions = @(@{Name='slst';Value='Select-String'})` .</span><span class="sxs-lookup"><span data-stu-id="50c1a-157">The user edits the configuration file using **Notepad.exe** to change the **AliasDefinitions** value as follows: `AliasDefinitions = @(@{Name='slst';Value='Select-String'})`.</span></span>
+1. <span data-ttu-id="50c1a-158">Het bijgewerkte configuratie bestand testen.</span><span class="sxs-lookup"><span data-stu-id="50c1a-158">Test the updated configuration file.</span></span>
 
 ```powershell
 $ITConfig = Get-PSSessionConfiguration -Name ITConfig
@@ -149,14 +149,14 @@ Test-PSSessionConfigurationFile -Path $ITConfig.ConfigFilePath
 True
 ```
 
-<span data-ttu-id="ff2af-159">Gebruik de para meter **uitgebreid** `Test-PSSessionConfigurationFile` om eventuele fouten weer te geven die zijn gedetecteerd.</span><span class="sxs-lookup"><span data-stu-id="ff2af-159">Use the **Verbose** parameter with `Test-PSSessionConfigurationFile` to display any errors that are detected.</span></span> <span data-ttu-id="ff2af-160">De cmdlet wordt geretourneerd `$True` als er geen fouten worden gedetecteerd in het bestand.</span><span class="sxs-lookup"><span data-stu-id="ff2af-160">The cmdlet returns `$True` if no errors are detected in the file.</span></span>
+<span data-ttu-id="50c1a-159">Gebruik de para meter **uitgebreid** `Test-PSSessionConfigurationFile` om eventuele fouten weer te geven die zijn gedetecteerd.</span><span class="sxs-lookup"><span data-stu-id="50c1a-159">Use the **Verbose** parameter with `Test-PSSessionConfigurationFile` to display any errors that are detected.</span></span> <span data-ttu-id="50c1a-160">De cmdlet wordt geretourneerd `$True` als er geen fouten worden gedetecteerd in het bestand.</span><span class="sxs-lookup"><span data-stu-id="50c1a-160">The cmdlet returns `$True` if no errors are detected in the file.</span></span>
 
-### <span data-ttu-id="ff2af-161">Voor beeld 5: een voorbeeld configuratie bestand maken</span><span class="sxs-lookup"><span data-stu-id="ff2af-161">Example 5: Create a sample configuration file</span></span>
+### <span data-ttu-id="50c1a-161">Voor beeld 5: een voorbeeld configuratie bestand maken</span><span class="sxs-lookup"><span data-stu-id="50c1a-161">Example 5: Create a sample configuration file</span></span>
 
-<span data-ttu-id="ff2af-162">In dit voor beeld ziet u een `New-PSSessionConfigurationFile` opdracht die gebruikmaakt van alle cmdlet-para meters.</span><span class="sxs-lookup"><span data-stu-id="ff2af-162">This example shows a `New-PSSessionConfigurationFile` command that uses all the cmdlet parameters.</span></span>
-<span data-ttu-id="ff2af-163">Het is opgenomen om de juiste invoer indeling voor elke para meter weer te geven.</span><span class="sxs-lookup"><span data-stu-id="ff2af-163">It is included to show the correct input format for each parameter.</span></span>
+<span data-ttu-id="50c1a-162">In dit voor beeld ziet u een `New-PSSessionConfigurationFile` opdracht die gebruikmaakt van alle cmdlet-para meters.</span><span class="sxs-lookup"><span data-stu-id="50c1a-162">This example shows a `New-PSSessionConfigurationFile` command that uses all the cmdlet parameters.</span></span>
+<span data-ttu-id="50c1a-163">Het is opgenomen om de juiste invoer indeling voor elke para meter weer te geven.</span><span class="sxs-lookup"><span data-stu-id="50c1a-163">It is included to show the correct input format for each parameter.</span></span>
 
-<span data-ttu-id="ff2af-164">De resulterende SampleFile. pssc wordt weer gegeven in de uitvoer.</span><span class="sxs-lookup"><span data-stu-id="ff2af-164">The resulting SampleFile.pssc is displayed in the output.</span></span>
+<span data-ttu-id="50c1a-164">De resulterende SampleFile. pssc wordt weer gegeven in de uitvoer.</span><span class="sxs-lookup"><span data-stu-id="50c1a-164">The resulting SampleFile.pssc is displayed in the output.</span></span>
 
 ```powershell
 $configSettings = @{
@@ -295,18 +295,18 @@ AssembliesToLoad = 'System.Web.Services', 'FSharp.Compiler.CodeDom.dll'
 }
 ```
 
-## <span data-ttu-id="ff2af-165">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="ff2af-165">PARAMETERS</span></span>
+## <span data-ttu-id="50c1a-165">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="50c1a-165">PARAMETERS</span></span>
 
-### <span data-ttu-id="ff2af-166">-AliasDefinitions</span><span class="sxs-lookup"><span data-stu-id="ff2af-166">-AliasDefinitions</span></span>
+### <span data-ttu-id="50c1a-166">-AliasDefinitions</span><span class="sxs-lookup"><span data-stu-id="50c1a-166">-AliasDefinitions</span></span>
 
-<span data-ttu-id="ff2af-167">Voegt de opgegeven aliassen toe aan sessies die gebruikmaken van de sessie configuratie.</span><span class="sxs-lookup"><span data-stu-id="ff2af-167">Adds the specified aliases to sessions that use the session configuration.</span></span> <span data-ttu-id="ff2af-168">Voer een hash-tabel in met de volgende sleutels:</span><span class="sxs-lookup"><span data-stu-id="ff2af-168">Enter a hash table with the following keys:</span></span>
+<span data-ttu-id="50c1a-167">Voegt de opgegeven aliassen toe aan sessies die gebruikmaken van de sessie configuratie.</span><span class="sxs-lookup"><span data-stu-id="50c1a-167">Adds the specified aliases to sessions that use the session configuration.</span></span> <span data-ttu-id="50c1a-168">Voer een hash-tabel in met de volgende sleutels:</span><span class="sxs-lookup"><span data-stu-id="50c1a-168">Enter a hash table with the following keys:</span></span>
 
-- <span data-ttu-id="ff2af-169">Naam: naam van de alias.</span><span class="sxs-lookup"><span data-stu-id="ff2af-169">Name - Name of the alias.</span></span> <span data-ttu-id="ff2af-170">Deze sleutel is vereist.</span><span class="sxs-lookup"><span data-stu-id="ff2af-170">This key is required.</span></span>
-- <span data-ttu-id="ff2af-171">Waarde: de opdracht die door de alias wordt vertegenwoordigd.</span><span class="sxs-lookup"><span data-stu-id="ff2af-171">Value - The command that the alias represents.</span></span> <span data-ttu-id="ff2af-172">Deze sleutel is vereist.</span><span class="sxs-lookup"><span data-stu-id="ff2af-172">This key is required.</span></span>
-- <span data-ttu-id="ff2af-173">Beschrijving: een teken reeks waarmee de alias wordt beschreven.</span><span class="sxs-lookup"><span data-stu-id="ff2af-173">Description - A text string that describes the alias.</span></span> <span data-ttu-id="ff2af-174">Deze sleutel is optioneel.</span><span class="sxs-lookup"><span data-stu-id="ff2af-174">This key is optional.</span></span>
-- <span data-ttu-id="ff2af-175">Opties-alias opties.</span><span class="sxs-lookup"><span data-stu-id="ff2af-175">Options - Alias options.</span></span> <span data-ttu-id="ff2af-176">Deze sleutel is optioneel.</span><span class="sxs-lookup"><span data-stu-id="ff2af-176">This key is optional.</span></span> <span data-ttu-id="ff2af-177">De standaard waarde is **geen**.</span><span class="sxs-lookup"><span data-stu-id="ff2af-177">The default value is **None**.</span></span> <span data-ttu-id="ff2af-178">De acceptabele waarden voor deze para meter zijn: geen, alleen-lezen, constant, privé of AllScope.</span><span class="sxs-lookup"><span data-stu-id="ff2af-178">The acceptable values for this parameter are: None, ReadOnly, Constant, Private, or AllScope.</span></span>
+- <span data-ttu-id="50c1a-169">Naam: naam van de alias.</span><span class="sxs-lookup"><span data-stu-id="50c1a-169">Name - Name of the alias.</span></span> <span data-ttu-id="50c1a-170">Deze sleutel is vereist.</span><span class="sxs-lookup"><span data-stu-id="50c1a-170">This key is required.</span></span>
+- <span data-ttu-id="50c1a-171">Waarde: de opdracht die door de alias wordt vertegenwoordigd.</span><span class="sxs-lookup"><span data-stu-id="50c1a-171">Value - The command that the alias represents.</span></span> <span data-ttu-id="50c1a-172">Deze sleutel is vereist.</span><span class="sxs-lookup"><span data-stu-id="50c1a-172">This key is required.</span></span>
+- <span data-ttu-id="50c1a-173">Beschrijving: een teken reeks waarmee de alias wordt beschreven.</span><span class="sxs-lookup"><span data-stu-id="50c1a-173">Description - A text string that describes the alias.</span></span> <span data-ttu-id="50c1a-174">Deze sleutel is optioneel.</span><span class="sxs-lookup"><span data-stu-id="50c1a-174">This key is optional.</span></span>
+- <span data-ttu-id="50c1a-175">Opties-alias opties.</span><span class="sxs-lookup"><span data-stu-id="50c1a-175">Options - Alias options.</span></span> <span data-ttu-id="50c1a-176">Deze sleutel is optioneel.</span><span class="sxs-lookup"><span data-stu-id="50c1a-176">This key is optional.</span></span> <span data-ttu-id="50c1a-177">De standaard waarde is **geen**.</span><span class="sxs-lookup"><span data-stu-id="50c1a-177">The default value is **None**.</span></span> <span data-ttu-id="50c1a-178">De acceptabele waarden voor deze para meter zijn: geen, alleen-lezen, constant, privé of AllScope.</span><span class="sxs-lookup"><span data-stu-id="50c1a-178">The acceptable values for this parameter are: None, ReadOnly, Constant, Private, or AllScope.</span></span>
 
-<span data-ttu-id="ff2af-179">Bijvoorbeeld: `@{Name='hlp';Value='Get-Help';Description='Gets help';Options='ReadOnly'}`</span><span class="sxs-lookup"><span data-stu-id="ff2af-179">For example: `@{Name='hlp';Value='Get-Help';Description='Gets help';Options='ReadOnly'}`</span></span>
+<span data-ttu-id="50c1a-179">Bijvoorbeeld: `@{Name='hlp';Value='Get-Help';Description='Gets help';Options='ReadOnly'}`</span><span class="sxs-lookup"><span data-stu-id="50c1a-179">For example: `@{Name='hlp';Value='Get-Help';Description='Gets help';Options='ReadOnly'}`</span></span>
 
 ```yaml
 Type: System.Collections.IDictionary[]
@@ -320,9 +320,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ff2af-180">-AssembliesToLoad</span><span class="sxs-lookup"><span data-stu-id="ff2af-180">-AssembliesToLoad</span></span>
+### <span data-ttu-id="50c1a-180">-AssembliesToLoad</span><span class="sxs-lookup"><span data-stu-id="50c1a-180">-AssembliesToLoad</span></span>
 
-<span data-ttu-id="ff2af-181">Hiermee geeft u de assembly's op die moeten worden geladen in de sessies die gebruikmaken van de sessie configuratie.</span><span class="sxs-lookup"><span data-stu-id="ff2af-181">Specifies the assemblies to load into the sessions that use the session configuration.</span></span>
+<span data-ttu-id="50c1a-181">Hiermee geeft u de assembly's op die moeten worden geladen in de sessies die gebruikmaken van de sessie configuratie.</span><span class="sxs-lookup"><span data-stu-id="50c1a-181">Specifies the assemblies to load into the sessions that use the session configuration.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -336,9 +336,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ff2af-182">-Author</span><span class="sxs-lookup"><span data-stu-id="ff2af-182">-Author</span></span>
+### <span data-ttu-id="50c1a-182">-Author</span><span class="sxs-lookup"><span data-stu-id="50c1a-182">-Author</span></span>
 
-<span data-ttu-id="ff2af-183">Hiermee geeft u de auteur van de sessie configuratie of het configuratie bestand.</span><span class="sxs-lookup"><span data-stu-id="ff2af-183">Specifies the author of the session configuration or the configuration file.</span></span> <span data-ttu-id="ff2af-184">Standaard is dit de huidige gebruiker.</span><span class="sxs-lookup"><span data-stu-id="ff2af-184">The default is the current user.</span></span> <span data-ttu-id="ff2af-185">De waarde van deze para meter is zichtbaar in het sessie configuratie bestand, maar is geen eigenschap van het sessie configuratie object.</span><span class="sxs-lookup"><span data-stu-id="ff2af-185">The value of this parameter is visible in the session configuration file, but it is not a property of the session configuration object.</span></span>
+<span data-ttu-id="50c1a-183">Hiermee geeft u de auteur van de sessie configuratie of het configuratie bestand.</span><span class="sxs-lookup"><span data-stu-id="50c1a-183">Specifies the author of the session configuration or the configuration file.</span></span> <span data-ttu-id="50c1a-184">Standaard is dit de huidige gebruiker.</span><span class="sxs-lookup"><span data-stu-id="50c1a-184">The default is the current user.</span></span> <span data-ttu-id="50c1a-185">De waarde van deze para meter is zichtbaar in het sessie configuratie bestand, maar is geen eigenschap van het sessie configuratie object.</span><span class="sxs-lookup"><span data-stu-id="50c1a-185">The value of this parameter is visible in the session configuration file, but it is not a property of the session configuration object.</span></span>
 
 ```yaml
 Type: System.String
@@ -352,9 +352,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ff2af-186">-CompanyName</span><span class="sxs-lookup"><span data-stu-id="ff2af-186">-CompanyName</span></span>
+### <span data-ttu-id="50c1a-186">-CompanyName</span><span class="sxs-lookup"><span data-stu-id="50c1a-186">-CompanyName</span></span>
 
-<span data-ttu-id="ff2af-187">Hiermee geeft u het bedrijf op dat de sessie configuratie of het configuratie bestand heeft gemaakt.</span><span class="sxs-lookup"><span data-stu-id="ff2af-187">Specifies the company that created the session configuration or the configuration file.</span></span> <span data-ttu-id="ff2af-188">De standaard waarde is **onbekend**.</span><span class="sxs-lookup"><span data-stu-id="ff2af-188">The default value is **Unknown**.</span></span> <span data-ttu-id="ff2af-189">De waarde van deze para meter is zichtbaar in het sessie configuratie bestand, maar is geen eigenschap van het sessie configuratie object.</span><span class="sxs-lookup"><span data-stu-id="ff2af-189">The value of this parameter is visible in the session configuration file, but it is not a property of the session configuration object.</span></span>
+<span data-ttu-id="50c1a-187">Hiermee geeft u het bedrijf op dat de sessie configuratie of het configuratie bestand heeft gemaakt.</span><span class="sxs-lookup"><span data-stu-id="50c1a-187">Specifies the company that created the session configuration or the configuration file.</span></span> <span data-ttu-id="50c1a-188">De standaard waarde is **onbekend**.</span><span class="sxs-lookup"><span data-stu-id="50c1a-188">The default value is **Unknown**.</span></span> <span data-ttu-id="50c1a-189">De waarde van deze para meter is zichtbaar in het sessie configuratie bestand, maar is geen eigenschap van het sessie configuratie object.</span><span class="sxs-lookup"><span data-stu-id="50c1a-189">The value of this parameter is visible in the session configuration file, but it is not a property of the session configuration object.</span></span>
 
 ```yaml
 Type: System.String
@@ -368,27 +368,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ff2af-190">-Copyright</span><span class="sxs-lookup"><span data-stu-id="ff2af-190">-Copyright</span></span>
+### <span data-ttu-id="50c1a-190">-Copyright</span><span class="sxs-lookup"><span data-stu-id="50c1a-190">-Copyright</span></span>
 
-<span data-ttu-id="ff2af-191">Hiermee geeft u een copyright het configuratie bestand voor de sessie.</span><span class="sxs-lookup"><span data-stu-id="ff2af-191">Specifies a copyright the session configuration file.</span></span> <span data-ttu-id="ff2af-192">De waarde van deze para meter is zichtbaar in het sessie configuratie bestand, maar is geen eigenschap van het sessie configuratie object.</span><span class="sxs-lookup"><span data-stu-id="ff2af-192">The value of this parameter is visible in the session configuration file, but it is not a property of the session configuration object.</span></span>
+<span data-ttu-id="50c1a-191">Hiermee geeft u een copyright het configuratie bestand voor de sessie.</span><span class="sxs-lookup"><span data-stu-id="50c1a-191">Specifies a copyright the session configuration file.</span></span> <span data-ttu-id="50c1a-192">De waarde van deze para meter is zichtbaar in het sessie configuratie bestand, maar is geen eigenschap van het sessie configuratie object.</span><span class="sxs-lookup"><span data-stu-id="50c1a-192">The value of this parameter is visible in the session configuration file, but it is not a property of the session configuration object.</span></span>
 
-<span data-ttu-id="ff2af-193">Als u deze para meter weglaat, `New-PSSessionConfigurationFile` genereert een copyright verklaring met behulp van de waarde van de para meter **Auteur** .</span><span class="sxs-lookup"><span data-stu-id="ff2af-193">If you omit this parameter, `New-PSSessionConfigurationFile` generates a copyright statement by using the value of the **Author** parameter.</span></span>
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### <span data-ttu-id="ff2af-194">-Beschrijving</span><span class="sxs-lookup"><span data-stu-id="ff2af-194">-Description</span></span>
-
-<span data-ttu-id="ff2af-195">Hiermee geeft u een beschrijving van de sessie configuratie of het sessie configuratie bestand op.</span><span class="sxs-lookup"><span data-stu-id="ff2af-195">Specifies a description of the session configuration or the session configuration file.</span></span> <span data-ttu-id="ff2af-196">De waarde van deze para meter is zichtbaar in het sessie configuratie bestand, maar is geen eigenschap van het sessie configuratie object.</span><span class="sxs-lookup"><span data-stu-id="ff2af-196">The value of this parameter is visible in the session configuration file, but it is not a property of the session configuration object.</span></span>
+<span data-ttu-id="50c1a-193">Als u deze para meter weglaat, `New-PSSessionConfigurationFile` genereert een copyright verklaring met behulp van de waarde van de para meter **Auteur** .</span><span class="sxs-lookup"><span data-stu-id="50c1a-193">If you omit this parameter, `New-PSSessionConfigurationFile` generates a copyright statement by using the value of the **Author** parameter.</span></span>
 
 ```yaml
 Type: System.String
@@ -402,11 +386,27 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ff2af-197">-Omgevings variabelen</span><span class="sxs-lookup"><span data-stu-id="ff2af-197">-EnvironmentVariables</span></span>
+### <span data-ttu-id="50c1a-194">-Beschrijving</span><span class="sxs-lookup"><span data-stu-id="50c1a-194">-Description</span></span>
 
-<span data-ttu-id="ff2af-198">Hiermee voegt u omgevings variabelen toe aan de sessie.</span><span class="sxs-lookup"><span data-stu-id="ff2af-198">Adds environment variables to the session.</span></span> <span data-ttu-id="ff2af-199">Voer een hash-tabel in waarin de sleutels de namen van omgevings variabelen zijn en de waarden zijn de waarden van omgevings variabelen.</span><span class="sxs-lookup"><span data-stu-id="ff2af-199">Enter a hash table in which the keys are the environment variable names and the values are the environment variable values.</span></span>
+<span data-ttu-id="50c1a-195">Hiermee geeft u een beschrijving van de sessie configuratie of het sessie configuratie bestand op.</span><span class="sxs-lookup"><span data-stu-id="50c1a-195">Specifies a description of the session configuration or the session configuration file.</span></span> <span data-ttu-id="50c1a-196">De waarde van deze para meter is zichtbaar in het sessie configuratie bestand, maar is geen eigenschap van het sessie configuratie object.</span><span class="sxs-lookup"><span data-stu-id="50c1a-196">The value of this parameter is visible in the session configuration file, but it is not a property of the session configuration object.</span></span>
 
-<span data-ttu-id="ff2af-200">Bijvoorbeeld: `EnvironmentVariables=@{TestShare='\\Server01\TestShare'}`</span><span class="sxs-lookup"><span data-stu-id="ff2af-200">For example: `EnvironmentVariables=@{TestShare='\\Server01\TestShare'}`</span></span>
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="50c1a-197">-Omgevings variabelen</span><span class="sxs-lookup"><span data-stu-id="50c1a-197">-EnvironmentVariables</span></span>
+
+<span data-ttu-id="50c1a-198">Hiermee voegt u omgevings variabelen toe aan de sessie.</span><span class="sxs-lookup"><span data-stu-id="50c1a-198">Adds environment variables to the session.</span></span> <span data-ttu-id="50c1a-199">Voer een hash-tabel in waarin de sleutels de namen van omgevings variabelen zijn en de waarden zijn de waarden van omgevings variabelen.</span><span class="sxs-lookup"><span data-stu-id="50c1a-199">Enter a hash table in which the keys are the environment variable names and the values are the environment variable values.</span></span>
+
+<span data-ttu-id="50c1a-200">Bijvoorbeeld: `EnvironmentVariables=@{TestShare='\\Server01\TestShare'}`</span><span class="sxs-lookup"><span data-stu-id="50c1a-200">For example: `EnvironmentVariables=@{TestShare='\\Server01\TestShare'}`</span></span>
 
 ```yaml
 Type: System.Collections.IDictionary
@@ -420,9 +420,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ff2af-201">-ExecutionPolicy</span><span class="sxs-lookup"><span data-stu-id="ff2af-201">-ExecutionPolicy</span></span>
+### <span data-ttu-id="50c1a-201">-ExecutionPolicy</span><span class="sxs-lookup"><span data-stu-id="50c1a-201">-ExecutionPolicy</span></span>
 
-<span data-ttu-id="ff2af-202">Hiermee geeft u het uitvoerings beleid op van sessies die gebruikmaken van de sessie configuratie.</span><span class="sxs-lookup"><span data-stu-id="ff2af-202">Specifies the execution policy of sessions that use the session configuration.</span></span> <span data-ttu-id="ff2af-203">Als u deze para meter weglaat, wordt de waarde van de sleutel **ExecutionPolicy** in het sessie configuratie bestand **beperkt**.</span><span class="sxs-lookup"><span data-stu-id="ff2af-203">If you omit this parameter, the value of the **ExecutionPolicy** key in the session configuration file is **Restricted**.</span></span> <span data-ttu-id="ff2af-204">Zie [about_Execution_Policies](about/about_Execution_Policies.md)voor meer informatie over uitvoerings beleid in Power shell.</span><span class="sxs-lookup"><span data-stu-id="ff2af-204">For information about execution policies in PowerShell, see [about_Execution_Policies](about/about_Execution_Policies.md).</span></span>
+<span data-ttu-id="50c1a-202">Hiermee geeft u het uitvoerings beleid op van sessies die gebruikmaken van de sessie configuratie.</span><span class="sxs-lookup"><span data-stu-id="50c1a-202">Specifies the execution policy of sessions that use the session configuration.</span></span> <span data-ttu-id="50c1a-203">Als u deze para meter weglaat, wordt de waarde van de sleutel **ExecutionPolicy** in het sessie configuratie bestand **beperkt**.</span><span class="sxs-lookup"><span data-stu-id="50c1a-203">If you omit this parameter, the value of the **ExecutionPolicy** key in the session configuration file is **Restricted**.</span></span> <span data-ttu-id="50c1a-204">Zie [about_Execution_Policies](about/about_Execution_Policies.md)voor meer informatie over uitvoerings beleid in Power shell.</span><span class="sxs-lookup"><span data-stu-id="50c1a-204">For information about execution policies in PowerShell, see [about_Execution_Policies](about/about_Execution_Policies.md).</span></span>
 
 ```yaml
 Type: Microsoft.PowerShell.ExecutionPolicy
@@ -437,10 +437,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ff2af-205">-FormatsToProcess</span><span class="sxs-lookup"><span data-stu-id="ff2af-205">-FormatsToProcess</span></span>
+### <span data-ttu-id="50c1a-205">-FormatsToProcess</span><span class="sxs-lookup"><span data-stu-id="50c1a-205">-FormatsToProcess</span></span>
 
-<span data-ttu-id="ff2af-206">Hiermee geeft u de indelings bestanden (. ps1xml) op die worden uitgevoerd in sessies die gebruikmaken van de sessie configuratie.</span><span class="sxs-lookup"><span data-stu-id="ff2af-206">Specifies the formatting files (.ps1xml) that run in sessions that use the session configuration.</span></span>
-<span data-ttu-id="ff2af-207">De waarde van deze para meter moet een volledig of absoluut pad van de indelings bestanden zijn.</span><span class="sxs-lookup"><span data-stu-id="ff2af-207">The value of this parameter must be a full or absolute path of the formatting files.</span></span>
+<span data-ttu-id="50c1a-206">Hiermee geeft u de indelings bestanden (. ps1xml) op die worden uitgevoerd in sessies die gebruikmaken van de sessie configuratie.</span><span class="sxs-lookup"><span data-stu-id="50c1a-206">Specifies the formatting files (.ps1xml) that run in sessions that use the session configuration.</span></span>
+<span data-ttu-id="50c1a-207">De waarde van deze para meter moet een volledig of absoluut pad van de indelings bestanden zijn.</span><span class="sxs-lookup"><span data-stu-id="50c1a-207">The value of this parameter must be a full or absolute path of the formatting files.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -454,9 +454,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ff2af-208">-Volledig</span><span class="sxs-lookup"><span data-stu-id="ff2af-208">-Full</span></span>
+### <span data-ttu-id="50c1a-208">-Volledig</span><span class="sxs-lookup"><span data-stu-id="50c1a-208">-Full</span></span>
 
-<span data-ttu-id="ff2af-209">Geeft aan dat deze bewerking alle mogelijke configuratie-eigenschappen in het sessie configuratie bestand bevat.</span><span class="sxs-lookup"><span data-stu-id="ff2af-209">Indicates that this operation includes all possible configuration properties in the session configuration file.</span></span>
+<span data-ttu-id="50c1a-209">Geeft aan dat deze bewerking alle mogelijke configuratie-eigenschappen in het sessie configuratie bestand bevat.</span><span class="sxs-lookup"><span data-stu-id="50c1a-209">Indicates that this operation includes all possible configuration properties in the session configuration file.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -470,15 +470,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ff2af-210">-FunctionDefinitions</span><span class="sxs-lookup"><span data-stu-id="ff2af-210">-FunctionDefinitions</span></span>
+### <span data-ttu-id="50c1a-210">-FunctionDefinitions</span><span class="sxs-lookup"><span data-stu-id="50c1a-210">-FunctionDefinitions</span></span>
 
-<span data-ttu-id="ff2af-211">Voegt de opgegeven functies toe aan sessies die gebruikmaken van de sessie configuratie.</span><span class="sxs-lookup"><span data-stu-id="ff2af-211">Adds the specified functions to sessions that use the session configuration.</span></span> <span data-ttu-id="ff2af-212">Voer een hash-tabel in met de volgende sleutels:</span><span class="sxs-lookup"><span data-stu-id="ff2af-212">Enter a hash table with the following keys:</span></span>
+<span data-ttu-id="50c1a-211">Voegt de opgegeven functies toe aan sessies die gebruikmaken van de sessie configuratie.</span><span class="sxs-lookup"><span data-stu-id="50c1a-211">Adds the specified functions to sessions that use the session configuration.</span></span> <span data-ttu-id="50c1a-212">Voer een hash-tabel in met de volgende sleutels:</span><span class="sxs-lookup"><span data-stu-id="50c1a-212">Enter a hash table with the following keys:</span></span>
 
-- <span data-ttu-id="ff2af-213">Naam: naam van de functie.</span><span class="sxs-lookup"><span data-stu-id="ff2af-213">Name - Name of the function.</span></span> <span data-ttu-id="ff2af-214">Deze sleutel is vereist.</span><span class="sxs-lookup"><span data-stu-id="ff2af-214">This key is required.</span></span>
-- <span data-ttu-id="ff2af-215">Script block-functie hoofd tekst.</span><span class="sxs-lookup"><span data-stu-id="ff2af-215">ScriptBlock - Function body.</span></span> <span data-ttu-id="ff2af-216">Voer een script blok in.</span><span class="sxs-lookup"><span data-stu-id="ff2af-216">Enter a script block.</span></span> <span data-ttu-id="ff2af-217">Deze sleutel is vereist.</span><span class="sxs-lookup"><span data-stu-id="ff2af-217">This key is required.</span></span>
-- <span data-ttu-id="ff2af-218">Opties-functie opties.</span><span class="sxs-lookup"><span data-stu-id="ff2af-218">Options - Function options.</span></span> <span data-ttu-id="ff2af-219">Deze sleutel is optioneel.</span><span class="sxs-lookup"><span data-stu-id="ff2af-219">This key is optional.</span></span> <span data-ttu-id="ff2af-220">De standaard waarde is **geen**.</span><span class="sxs-lookup"><span data-stu-id="ff2af-220">The default value is **None**.</span></span> <span data-ttu-id="ff2af-221">De acceptabele waarden voor deze para meter zijn: geen, alleen-lezen, constant, privé of AllScope.</span><span class="sxs-lookup"><span data-stu-id="ff2af-221">The acceptable values for this parameter are: None, ReadOnly, Constant, Private, or AllScope.</span></span>
+- <span data-ttu-id="50c1a-213">Naam: naam van de functie.</span><span class="sxs-lookup"><span data-stu-id="50c1a-213">Name - Name of the function.</span></span> <span data-ttu-id="50c1a-214">Deze sleutel is vereist.</span><span class="sxs-lookup"><span data-stu-id="50c1a-214">This key is required.</span></span>
+- <span data-ttu-id="50c1a-215">Script block-functie hoofd tekst.</span><span class="sxs-lookup"><span data-stu-id="50c1a-215">ScriptBlock - Function body.</span></span> <span data-ttu-id="50c1a-216">Voer een script blok in.</span><span class="sxs-lookup"><span data-stu-id="50c1a-216">Enter a script block.</span></span> <span data-ttu-id="50c1a-217">Deze sleutel is vereist.</span><span class="sxs-lookup"><span data-stu-id="50c1a-217">This key is required.</span></span>
+- <span data-ttu-id="50c1a-218">Opties-functie opties.</span><span class="sxs-lookup"><span data-stu-id="50c1a-218">Options - Function options.</span></span> <span data-ttu-id="50c1a-219">Deze sleutel is optioneel.</span><span class="sxs-lookup"><span data-stu-id="50c1a-219">This key is optional.</span></span> <span data-ttu-id="50c1a-220">De standaard waarde is **geen**.</span><span class="sxs-lookup"><span data-stu-id="50c1a-220">The default value is **None**.</span></span> <span data-ttu-id="50c1a-221">De acceptabele waarden voor deze para meter zijn: geen, alleen-lezen, constant, privé of AllScope.</span><span class="sxs-lookup"><span data-stu-id="50c1a-221">The acceptable values for this parameter are: None, ReadOnly, Constant, Private, or AllScope.</span></span>
 
-<span data-ttu-id="ff2af-222">Bijvoorbeeld: `@{Name='Get-PowerShellProcess';ScriptBlock={Get-Process PowerShell};Options='AllScope'}`</span><span class="sxs-lookup"><span data-stu-id="ff2af-222">For example: `@{Name='Get-PowerShellProcess';ScriptBlock={Get-Process PowerShell};Options='AllScope'}`</span></span>
+<span data-ttu-id="50c1a-222">Bijvoorbeeld: `@{Name='Get-PowerShellProcess';ScriptBlock={Get-Process PowerShell};Options='AllScope'}`</span><span class="sxs-lookup"><span data-stu-id="50c1a-222">For example: `@{Name='Get-PowerShellProcess';ScriptBlock={Get-Process PowerShell};Options='AllScope'}`</span></span>
 
 ```yaml
 Type: System.Collections.IDictionary[]
@@ -492,9 +492,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ff2af-223">-GroupManagedServiceAccount</span><span class="sxs-lookup"><span data-stu-id="ff2af-223">-GroupManagedServiceAccount</span></span>
+### <span data-ttu-id="50c1a-223">-GroupManagedServiceAccount</span><span class="sxs-lookup"><span data-stu-id="50c1a-223">-GroupManagedServiceAccount</span></span>
 
-<span data-ttu-id="ff2af-224">Hiermee configureert u sessies met behulp van deze sessie configuratie om uit te voeren in de context van het opgegeven beheerde service account van de groep.</span><span class="sxs-lookup"><span data-stu-id="ff2af-224">Configures sessions using this session configuration to run under the context of the specified Group Managed Service Account.</span></span> <span data-ttu-id="ff2af-225">De computer waarvoor deze sessie configuratie is geregistreerd, moet gemachtigd zijn om het gMSA-wacht woord aan te vragen om de sessies te kunnen maken.</span><span class="sxs-lookup"><span data-stu-id="ff2af-225">The machine where this session configuration is registered must have permission to request the gMSA password in order for sessions to be created successfully.</span></span> <span data-ttu-id="ff2af-226">Dit veld kan niet worden gebruikt met de para meter **RunAsVirtualAccount** .</span><span class="sxs-lookup"><span data-stu-id="ff2af-226">This field cannot be used with the **RunAsVirtualAccount** parameter.</span></span>
+<span data-ttu-id="50c1a-224">Hiermee configureert u sessies met behulp van deze sessie configuratie om uit te voeren in de context van het opgegeven beheerde service account van de groep.</span><span class="sxs-lookup"><span data-stu-id="50c1a-224">Configures sessions using this session configuration to run under the context of the specified Group Managed Service Account.</span></span> <span data-ttu-id="50c1a-225">De computer waarvoor deze sessie configuratie is geregistreerd, moet gemachtigd zijn om het gMSA-wacht woord aan te vragen om de sessies te kunnen maken.</span><span class="sxs-lookup"><span data-stu-id="50c1a-225">The machine where this session configuration is registered must have permission to request the gMSA password in order for sessions to be created successfully.</span></span> <span data-ttu-id="50c1a-226">Dit veld kan niet worden gebruikt met de para meter **RunAsVirtualAccount** .</span><span class="sxs-lookup"><span data-stu-id="50c1a-226">This field cannot be used with the **RunAsVirtualAccount** parameter.</span></span>
 
 ```yaml
 Type: System.String
@@ -508,9 +508,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ff2af-227">-GUID</span><span class="sxs-lookup"><span data-stu-id="ff2af-227">-Guid</span></span>
+### <span data-ttu-id="50c1a-227">-GUID</span><span class="sxs-lookup"><span data-stu-id="50c1a-227">-Guid</span></span>
 
-<span data-ttu-id="ff2af-228">Hiermee geeft u een unieke id voor het sessie configuratie bestand op.</span><span class="sxs-lookup"><span data-stu-id="ff2af-228">Specifies a unique identifier for the session configuration file.</span></span> <span data-ttu-id="ff2af-229">Als u deze para meter weglaat, `New-PSSessionConfigurationFile` genereert een GUID voor het bestand.</span><span class="sxs-lookup"><span data-stu-id="ff2af-229">If you omit this parameter, `New-PSSessionConfigurationFile` generates a GUID for the file.</span></span> <span data-ttu-id="ff2af-230">Als u een nieuwe GUID wilt maken in Power shell, typt u `New-Guid` .</span><span class="sxs-lookup"><span data-stu-id="ff2af-230">To create a new GUID in PowerShell, type `New-Guid`.</span></span>
+<span data-ttu-id="50c1a-228">Hiermee geeft u een unieke id voor het sessie configuratie bestand op.</span><span class="sxs-lookup"><span data-stu-id="50c1a-228">Specifies a unique identifier for the session configuration file.</span></span> <span data-ttu-id="50c1a-229">Als u deze para meter weglaat, `New-PSSessionConfigurationFile` genereert een GUID voor het bestand.</span><span class="sxs-lookup"><span data-stu-id="50c1a-229">If you omit this parameter, `New-PSSessionConfigurationFile` generates a GUID for the file.</span></span> <span data-ttu-id="50c1a-230">Als u een nieuwe GUID wilt maken in Power shell, typt u `New-Guid` .</span><span class="sxs-lookup"><span data-stu-id="50c1a-230">To create a new GUID in PowerShell, type `New-Guid`.</span></span>
 
 ```yaml
 Type: System.Guid
@@ -524,22 +524,22 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ff2af-231">-LanguageMode</span><span class="sxs-lookup"><span data-stu-id="ff2af-231">-LanguageMode</span></span>
+### <span data-ttu-id="50c1a-231">-LanguageMode</span><span class="sxs-lookup"><span data-stu-id="50c1a-231">-LanguageMode</span></span>
 
-<span data-ttu-id="ff2af-232">Hiermee wordt bepaald welke elementen van de Power shell-taal zijn toegestaan in sessies die gebruikmaken van deze sessie configuratie.</span><span class="sxs-lookup"><span data-stu-id="ff2af-232">Determines which elements of the PowerShell language are permitted in sessions that use this session configuration.</span></span> <span data-ttu-id="ff2af-233">U kunt deze para meter gebruiken om de opdrachten te beperken die bepaalde gebruikers op de computer kunnen uitvoeren.</span><span class="sxs-lookup"><span data-stu-id="ff2af-233">You can use this parameter to restrict the commands that particular users can run on the computer.</span></span>
+<span data-ttu-id="50c1a-232">Hiermee wordt bepaald welke elementen van de Power shell-taal zijn toegestaan in sessies die gebruikmaken van deze sessie configuratie.</span><span class="sxs-lookup"><span data-stu-id="50c1a-232">Determines which elements of the PowerShell language are permitted in sessions that use this session configuration.</span></span> <span data-ttu-id="50c1a-233">U kunt deze para meter gebruiken om de opdrachten te beperken die bepaalde gebruikers op de computer kunnen uitvoeren.</span><span class="sxs-lookup"><span data-stu-id="50c1a-233">You can use this parameter to restrict the commands that particular users can run on the computer.</span></span>
 
-<span data-ttu-id="ff2af-234">De aanvaardbare waarden voor deze parameter zijn:</span><span class="sxs-lookup"><span data-stu-id="ff2af-234">The acceptable values for this parameter are:</span></span>
+<span data-ttu-id="50c1a-234">De aanvaardbare waarden voor deze parameter zijn:</span><span class="sxs-lookup"><span data-stu-id="50c1a-234">The acceptable values for this parameter are:</span></span>
 
-- <span data-ttu-id="ff2af-235">FullLanguage: alle taal elementen zijn toegestaan.</span><span class="sxs-lookup"><span data-stu-id="ff2af-235">FullLanguage - All language elements are permitted.</span></span>
-- <span data-ttu-id="ff2af-236">ConstrainedLanguage-opdrachten die scripts bevatten die moeten worden geëvalueerd, zijn niet toegestaan.</span><span class="sxs-lookup"><span data-stu-id="ff2af-236">ConstrainedLanguage - Commands that contain scripts to be evaluated are not allowed.</span></span> <span data-ttu-id="ff2af-237">De ConstrainedLanguage-modus beperkt de gebruikers toegang tot Microsoft .NET Framework-typen,-objecten of-methoden.</span><span class="sxs-lookup"><span data-stu-id="ff2af-237">The ConstrainedLanguage mode restricts user access to Microsoft .NET Framework types, objects, or methods.</span></span>
-- <span data-ttu-id="ff2af-238">Taal: gebruikers kunnen cmdlets en functies uitvoeren, maar mogen geen taal elementen gebruiken, zoals script blokken, variabelen of Opera tors.</span><span class="sxs-lookup"><span data-stu-id="ff2af-238">NoLanguage - Users may run cmdlets and functions, but are not permitted to use any language elements, such as script blocks, variables, or operators.</span></span>
-- <span data-ttu-id="ff2af-239">RestrictedLanguage: gebruikers kunnen cmdlets en functies uitvoeren, maar mogen geen script blokken of variabelen gebruiken, met uitzonde ring van de volgende toegestane variabelen: `$PSCulture` , `$PSUICulture` , `$True` , en `$False` `$Null` .</span><span class="sxs-lookup"><span data-stu-id="ff2af-239">RestrictedLanguage - Users may run cmdlets and functions, but are not permitted to use script blocks or variables except for the following permitted variables: `$PSCulture`, `$PSUICulture`, `$True`, `$False`, and `$Null`.</span></span> <span data-ttu-id="ff2af-240">Gebruikers kunnen alleen de basis vergelijkings operatoren ( `-eq` , `-gt` ,) gebruiken `-lt` .</span><span class="sxs-lookup"><span data-stu-id="ff2af-240">Users may use only the basic comparison operators (`-eq`, `-gt`, `-lt`).</span></span> <span data-ttu-id="ff2af-241">Toewijzings instructies, verwijzingen naar eigenschappen en methode aanroepen zijn niet toegestaan.</span><span class="sxs-lookup"><span data-stu-id="ff2af-241">Assignment statements, property references, and method calls are not permitted.</span></span>
+- <span data-ttu-id="50c1a-235">FullLanguage: alle taal elementen zijn toegestaan.</span><span class="sxs-lookup"><span data-stu-id="50c1a-235">FullLanguage - All language elements are permitted.</span></span>
+- <span data-ttu-id="50c1a-236">ConstrainedLanguage-opdrachten die scripts bevatten die moeten worden geëvalueerd, zijn niet toegestaan.</span><span class="sxs-lookup"><span data-stu-id="50c1a-236">ConstrainedLanguage - Commands that contain scripts to be evaluated are not allowed.</span></span> <span data-ttu-id="50c1a-237">De ConstrainedLanguage-modus beperkt de gebruikers toegang tot Microsoft .NET Framework-typen,-objecten of-methoden.</span><span class="sxs-lookup"><span data-stu-id="50c1a-237">The ConstrainedLanguage mode restricts user access to Microsoft .NET Framework types, objects, or methods.</span></span>
+- <span data-ttu-id="50c1a-238">Taal: gebruikers kunnen cmdlets en functies uitvoeren, maar mogen geen taal elementen gebruiken, zoals script blokken, variabelen of Opera tors.</span><span class="sxs-lookup"><span data-stu-id="50c1a-238">NoLanguage - Users may run cmdlets and functions, but are not permitted to use any language elements, such as script blocks, variables, or operators.</span></span>
+- <span data-ttu-id="50c1a-239">RestrictedLanguage: gebruikers kunnen cmdlets en functies uitvoeren, maar mogen geen script blokken of variabelen gebruiken, met uitzonde ring van de volgende toegestane variabelen: `$PSCulture` , `$PSUICulture` , `$True` , en `$False` `$Null` .</span><span class="sxs-lookup"><span data-stu-id="50c1a-239">RestrictedLanguage - Users may run cmdlets and functions, but are not permitted to use script blocks or variables except for the following permitted variables: `$PSCulture`, `$PSUICulture`, `$True`, `$False`, and `$Null`.</span></span> <span data-ttu-id="50c1a-240">Gebruikers kunnen alleen de basis vergelijkings operatoren ( `-eq` , `-gt` ,) gebruiken `-lt` .</span><span class="sxs-lookup"><span data-stu-id="50c1a-240">Users may use only the basic comparison operators (`-eq`, `-gt`, `-lt`).</span></span> <span data-ttu-id="50c1a-241">Toewijzings instructies, verwijzingen naar eigenschappen en methode aanroepen zijn niet toegestaan.</span><span class="sxs-lookup"><span data-stu-id="50c1a-241">Assignment statements, property references, and method calls are not permitted.</span></span>
 
-<span data-ttu-id="ff2af-242">De standaard waarde van de para meter **LanguageMode** is afhankelijk van de waarde van de para meter **SessionType** .</span><span class="sxs-lookup"><span data-stu-id="ff2af-242">The default value of the **LanguageMode** parameter depends on the value of the **SessionType** parameter.</span></span>
+<span data-ttu-id="50c1a-242">De standaard waarde van de para meter **LanguageMode** is afhankelijk van de waarde van de para meter **SessionType** .</span><span class="sxs-lookup"><span data-stu-id="50c1a-242">The default value of the **LanguageMode** parameter depends on the value of the **SessionType** parameter.</span></span>
 
-- <span data-ttu-id="ff2af-243">Lege-de taal</span><span class="sxs-lookup"><span data-stu-id="ff2af-243">Empty - NoLanguage</span></span>
-- <span data-ttu-id="ff2af-244">RestrictedRemoteServer-taal</span><span class="sxs-lookup"><span data-stu-id="ff2af-244">RestrictedRemoteServer - NoLanguage</span></span>
-- <span data-ttu-id="ff2af-245">Default-FullLanguage</span><span class="sxs-lookup"><span data-stu-id="ff2af-245">Default - FullLanguage</span></span>
+- <span data-ttu-id="50c1a-243">Lege-de taal</span><span class="sxs-lookup"><span data-stu-id="50c1a-243">Empty - NoLanguage</span></span>
+- <span data-ttu-id="50c1a-244">RestrictedRemoteServer-taal</span><span class="sxs-lookup"><span data-stu-id="50c1a-244">RestrictedRemoteServer - NoLanguage</span></span>
+- <span data-ttu-id="50c1a-245">Default-FullLanguage</span><span class="sxs-lookup"><span data-stu-id="50c1a-245">Default - FullLanguage</span></span>
 
 ```yaml
 Type: System.Management.Automation.PSLanguageMode
@@ -554,19 +554,19 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ff2af-246">-ModulesToImport</span><span class="sxs-lookup"><span data-stu-id="ff2af-246">-ModulesToImport</span></span>
+### <span data-ttu-id="50c1a-246">-ModulesToImport</span><span class="sxs-lookup"><span data-stu-id="50c1a-246">-ModulesToImport</span></span>
 
-<span data-ttu-id="ff2af-247">Hiermee geeft u de modules en modules op die automatisch worden geïmporteerd in sessies die gebruikmaken van de sessie configuratie.</span><span class="sxs-lookup"><span data-stu-id="ff2af-247">Specifies the modules and snap-ins that are automatically imported into sessions that use the session configuration.</span></span>
+<span data-ttu-id="50c1a-247">Hiermee geeft u de modules en modules op die automatisch worden geïmporteerd in sessies die gebruikmaken van de sessie configuratie.</span><span class="sxs-lookup"><span data-stu-id="50c1a-247">Specifies the modules and snap-ins that are automatically imported into sessions that use the session configuration.</span></span>
 
-<span data-ttu-id="ff2af-248">Standaard wordt alleen de module **micro soft. Power shell. core** geïmporteerd in externe sessies, maar tenzij de cmdlets worden uitgesloten, kunnen gebruikers de `Import-Module` cmdlets en gebruiken `Add-PSSnapin` om modules en modules toe te voegen aan de sessie.</span><span class="sxs-lookup"><span data-stu-id="ff2af-248">By default, only the **Microsoft.PowerShell.Core** snap-in is imported into remote sessions, but unless the cmdlets are excluded, users can use the `Import-Module` and `Add-PSSnapin` cmdlets to add modules and snap-ins to the session.</span></span>
+<span data-ttu-id="50c1a-248">Standaard wordt alleen de module **micro soft. Power shell. core** geïmporteerd in externe sessies, maar tenzij de cmdlets worden uitgesloten, kunnen gebruikers de `Import-Module` cmdlets en gebruiken `Add-PSSnapin` om modules en modules toe te voegen aan de sessie.</span><span class="sxs-lookup"><span data-stu-id="50c1a-248">By default, only the **Microsoft.PowerShell.Core** snap-in is imported into remote sessions, but unless the cmdlets are excluded, users can use the `Import-Module` and `Add-PSSnapin` cmdlets to add modules and snap-ins to the session.</span></span>
 
-<span data-ttu-id="ff2af-249">Elke module of module in de waarde van deze para meter kan worden vertegenwoordigd door een teken reeks of als een hash-tabel.</span><span class="sxs-lookup"><span data-stu-id="ff2af-249">Each module or snap-in in the value of this parameter can be represented by a string or as a hash table.</span></span> <span data-ttu-id="ff2af-250">Een module teken reeks bestaat alleen uit de naam van de module of module.</span><span class="sxs-lookup"><span data-stu-id="ff2af-250">A module string consists only of the name of the module or snap-in.</span></span> <span data-ttu-id="ff2af-251">Een module-hash-tabel kan **module** -, **ModuleVersion** -en **GUID** -sleutels bevatten.</span><span class="sxs-lookup"><span data-stu-id="ff2af-251">A module hash table can include **ModuleName** , **ModuleVersion** , and **GUID** keys.</span></span> <span data-ttu-id="ff2af-252">Alleen de **module** sleutel is vereist.</span><span class="sxs-lookup"><span data-stu-id="ff2af-252">Only the **ModuleName** key is required.</span></span>
+<span data-ttu-id="50c1a-249">Elke module of module in de waarde van deze para meter kan worden vertegenwoordigd door een teken reeks of als een hash-tabel.</span><span class="sxs-lookup"><span data-stu-id="50c1a-249">Each module or snap-in in the value of this parameter can be represented by a string or as a hash table.</span></span> <span data-ttu-id="50c1a-250">Een module teken reeks bestaat alleen uit de naam van de module of module.</span><span class="sxs-lookup"><span data-stu-id="50c1a-250">A module string consists only of the name of the module or snap-in.</span></span> <span data-ttu-id="50c1a-251">Een module-hash-tabel kan **module** -, **ModuleVersion** -en **GUID** -sleutels bevatten.</span><span class="sxs-lookup"><span data-stu-id="50c1a-251">A module hash table can include **ModuleName** , **ModuleVersion** , and **GUID** keys.</span></span> <span data-ttu-id="50c1a-252">Alleen de **module** sleutel is vereist.</span><span class="sxs-lookup"><span data-stu-id="50c1a-252">Only the **ModuleName** key is required.</span></span>
 
-<span data-ttu-id="ff2af-253">De volgende waarde bestaat bijvoorbeeld uit een teken reeks en een hash-tabel.</span><span class="sxs-lookup"><span data-stu-id="ff2af-253">For example, the following value consists of a string and a hash table.</span></span> <span data-ttu-id="ff2af-254">Een combi natie van teken reeksen en hash-tabellen, in een wille keurige volg orde, is geldig.</span><span class="sxs-lookup"><span data-stu-id="ff2af-254">Any combination of strings and hash tables, in any order, is valid.</span></span>
+<span data-ttu-id="50c1a-253">De volgende waarde bestaat bijvoorbeeld uit een teken reeks en een hash-tabel.</span><span class="sxs-lookup"><span data-stu-id="50c1a-253">For example, the following value consists of a string and a hash table.</span></span> <span data-ttu-id="50c1a-254">Een combi natie van teken reeksen en hash-tabellen, in een wille keurige volg orde, is geldig.</span><span class="sxs-lookup"><span data-stu-id="50c1a-254">Any combination of strings and hash tables, in any order, is valid.</span></span>
 
 `'TroubleshootingPack', @{ModuleName='PSDiagnostics'; ModuleVersion='1.0.0.0';GUID='c61d6278-02a3-4618-ae37-a524d40a7f44'}`
 
-<span data-ttu-id="ff2af-255">De waarde van de para meter **ModulesToImport** van de `Register-PSSessionConfiguration` cmdlet krijgt voor rang op de waarde van de **ModulesToImport** -sleutel in het configuratie bestand voor de sessie.</span><span class="sxs-lookup"><span data-stu-id="ff2af-255">The value of the **ModulesToImport** parameter of the `Register-PSSessionConfiguration` cmdlet takes precedence over the value of the **ModulesToImport** key in the session configuration file.</span></span>
+<span data-ttu-id="50c1a-255">De waarde van de para meter **ModulesToImport** van de `Register-PSSessionConfiguration` cmdlet krijgt voor rang op de waarde van de **ModulesToImport** -sleutel in het configuratie bestand voor de sessie.</span><span class="sxs-lookup"><span data-stu-id="50c1a-255">The value of the **ModulesToImport** parameter of the `Register-PSSessionConfiguration` cmdlet takes precedence over the value of the **ModulesToImport** key in the session configuration file.</span></span>
 
 ```yaml
 Type: System.Object[]
@@ -580,11 +580,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ff2af-256">-MountUserDrive</span><span class="sxs-lookup"><span data-stu-id="ff2af-256">-MountUserDrive</span></span>
+### <span data-ttu-id="50c1a-256">-MountUserDrive</span><span class="sxs-lookup"><span data-stu-id="50c1a-256">-MountUserDrive</span></span>
 
-<span data-ttu-id="ff2af-257">Hiermee configureert u sessies die gebruikmaken van deze sessie configuratie om de PSDrive zichtbaar te maken `User:` .</span><span class="sxs-lookup"><span data-stu-id="ff2af-257">Configures sessions that use this session configuration to expose the `User:` PSDrive.</span></span> <span data-ttu-id="ff2af-258">Gebruikers stations zijn uniek voor elke gebruiker die verbinding maakt en waarmee gebruikers gegevens kunnen kopiëren van en naar Power shell-eind punten, zelfs als de bestandssysteem provider niet wordt weer gegeven.</span><span class="sxs-lookup"><span data-stu-id="ff2af-258">User drives are unique for each connecting user and allow users to copy data to and from PowerShell endpoints even if the File System provider is not exposed.</span></span> <span data-ttu-id="ff2af-259">Roots van het gebruikers station worden gemaakt onder `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\DriveRoots\` .</span><span class="sxs-lookup"><span data-stu-id="ff2af-259">User drive roots are created under `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\DriveRoots\`.</span></span> <span data-ttu-id="ff2af-260">Voor elke gebruiker die verbinding maakt met het eind punt, wordt een map met de naam gemaakt `$env:USERDOMAIN_$env:USERNAME` .</span><span class="sxs-lookup"><span data-stu-id="ff2af-260">For each user connecting to the endpoint, a folder is created with the name `$env:USERDOMAIN_$env:USERNAME`.</span></span>
+<span data-ttu-id="50c1a-257">Hiermee configureert u sessies die gebruikmaken van deze sessie configuratie om de PSDrive zichtbaar te maken `User:` .</span><span class="sxs-lookup"><span data-stu-id="50c1a-257">Configures sessions that use this session configuration to expose the `User:` PSDrive.</span></span> <span data-ttu-id="50c1a-258">Gebruikers stations zijn uniek voor elke gebruiker die verbinding maakt en waarmee gebruikers gegevens kunnen kopiëren van en naar Power shell-eind punten, zelfs als de bestandssysteem provider niet wordt weer gegeven.</span><span class="sxs-lookup"><span data-stu-id="50c1a-258">User drives are unique for each connecting user and allow users to copy data to and from PowerShell endpoints even if the File System provider is not exposed.</span></span> <span data-ttu-id="50c1a-259">Roots van het gebruikers station worden gemaakt onder `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\DriveRoots\` .</span><span class="sxs-lookup"><span data-stu-id="50c1a-259">User drive roots are created under `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\DriveRoots\`.</span></span> <span data-ttu-id="50c1a-260">Voor elke gebruiker die verbinding maakt met het eind punt, wordt een map met de naam gemaakt `$env:USERDOMAIN_$env:USERNAME` .</span><span class="sxs-lookup"><span data-stu-id="50c1a-260">For each user connecting to the endpoint, a folder is created with the name `$env:USERDOMAIN_$env:USERNAME`.</span></span>
 
-<span data-ttu-id="ff2af-261">De inhoud van het gebruikers station blijft achter gebruikers sessies en wordt niet automatisch verwijderd.</span><span class="sxs-lookup"><span data-stu-id="ff2af-261">Contents in the user drive persist across user sessions and are not automatically removed.</span></span> <span data-ttu-id="ff2af-262">Standaard kunnen gebruikers alleen de 50 MB van gegevens in het gebruikers station opslaan.</span><span class="sxs-lookup"><span data-stu-id="ff2af-262">By default, users can only store up to 50MB of data in the user drive.</span></span> <span data-ttu-id="ff2af-263">Dit kan worden aangepast met de para meter **UserDriveMaximumSize** .</span><span class="sxs-lookup"><span data-stu-id="ff2af-263">This can be customized with the **UserDriveMaximumSize** parameter.</span></span>
+<span data-ttu-id="50c1a-261">De inhoud van het gebruikers station blijft achter gebruikers sessies en wordt niet automatisch verwijderd.</span><span class="sxs-lookup"><span data-stu-id="50c1a-261">Contents in the user drive persist across user sessions and are not automatically removed.</span></span> <span data-ttu-id="50c1a-262">Standaard kunnen gebruikers alleen de 50 MB van gegevens in het gebruikers station opslaan.</span><span class="sxs-lookup"><span data-stu-id="50c1a-262">By default, users can only store up to 50MB of data in the user drive.</span></span> <span data-ttu-id="50c1a-263">Dit kan worden aangepast met de para meter **UserDriveMaximumSize** .</span><span class="sxs-lookup"><span data-stu-id="50c1a-263">This can be customized with the **UserDriveMaximumSize** parameter.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -598,9 +598,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ff2af-264">-Path</span><span class="sxs-lookup"><span data-stu-id="ff2af-264">-Path</span></span>
+### <span data-ttu-id="50c1a-264">-Path</span><span class="sxs-lookup"><span data-stu-id="50c1a-264">-Path</span></span>
 
-<span data-ttu-id="ff2af-265">Hiermee geeft u het pad en de bestands naam van het sessie configuratie bestand.</span><span class="sxs-lookup"><span data-stu-id="ff2af-265">Specifies the path and filename of the session configuration file.</span></span> <span data-ttu-id="ff2af-266">Het bestand moet een `.pssc` bestandsnaam extensie hebben.</span><span class="sxs-lookup"><span data-stu-id="ff2af-266">The file must have a `.pssc` file name extension.</span></span>
+<span data-ttu-id="50c1a-265">Hiermee geeft u het pad en de bestands naam van het sessie configuratie bestand.</span><span class="sxs-lookup"><span data-stu-id="50c1a-265">Specifies the path and filename of the session configuration file.</span></span> <span data-ttu-id="50c1a-266">Het bestand moet een `.pssc` bestandsnaam extensie hebben.</span><span class="sxs-lookup"><span data-stu-id="50c1a-266">The file must have a `.pssc` file name extension.</span></span>
 
 ```yaml
 Type: System.String
@@ -614,11 +614,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ff2af-267">-PowerShellVersion</span><span class="sxs-lookup"><span data-stu-id="ff2af-267">-PowerShellVersion</span></span>
+### <span data-ttu-id="50c1a-267">-PowerShellVersion</span><span class="sxs-lookup"><span data-stu-id="50c1a-267">-PowerShellVersion</span></span>
 
-<span data-ttu-id="ff2af-268">Hiermee geeft u de versie van de Power shell-engine in sessies die gebruikmaken van de sessie configuratie.</span><span class="sxs-lookup"><span data-stu-id="ff2af-268">Specifies the version of the PowerShell engine in sessions that use the session configuration.</span></span> <span data-ttu-id="ff2af-269">De acceptabele waarden voor deze para meter zijn: 2,0 en 3,0.</span><span class="sxs-lookup"><span data-stu-id="ff2af-269">The acceptable values for this parameter are: 2.0 and 3.0.</span></span> <span data-ttu-id="ff2af-270">Als u deze para meter weglaat, wordt de **PowerShellVersion** -sleutel commentaar-out en de nieuwste versie van Power shell-uitvoeringen in de sessie.</span><span class="sxs-lookup"><span data-stu-id="ff2af-270">If you omit this parameter, the **PowerShellVersion** key is commented-out and newest version of PowerShell runs in the session.</span></span>
+<span data-ttu-id="50c1a-268">Hiermee geeft u de versie van de Power shell-engine in sessies die gebruikmaken van de sessie configuratie.</span><span class="sxs-lookup"><span data-stu-id="50c1a-268">Specifies the version of the PowerShell engine in sessions that use the session configuration.</span></span> <span data-ttu-id="50c1a-269">De acceptabele waarden voor deze para meter zijn: 2,0 en 3,0.</span><span class="sxs-lookup"><span data-stu-id="50c1a-269">The acceptable values for this parameter are: 2.0 and 3.0.</span></span> <span data-ttu-id="50c1a-270">Als u deze para meter weglaat, wordt de **PowerShellVersion** -sleutel commentaar-out en de nieuwste versie van Power shell-uitvoeringen in de sessie.</span><span class="sxs-lookup"><span data-stu-id="50c1a-270">If you omit this parameter, the **PowerShellVersion** key is commented-out and newest version of PowerShell runs in the session.</span></span>
 
-<span data-ttu-id="ff2af-271">De waarde van de para meter **PSVersion** van de `Register-PSSessionConfiguration` cmdlet krijgt voor rang op de waarde van de **PowerShellVersion** -sleutel in het configuratie bestand voor de sessie.</span><span class="sxs-lookup"><span data-stu-id="ff2af-271">The value of the **PSVersion** parameter of the `Register-PSSessionConfiguration` cmdlet takes precedence over the value of the **PowerShellVersion** key in the session configuration file.</span></span>
+<span data-ttu-id="50c1a-271">De waarde van de para meter **PSVersion** van de `Register-PSSessionConfiguration` cmdlet krijgt voor rang op de waarde van de **PowerShellVersion** -sleutel in het configuratie bestand voor de sessie.</span><span class="sxs-lookup"><span data-stu-id="50c1a-271">The value of the **PSVersion** parameter of the `Register-PSSessionConfiguration` cmdlet takes precedence over the value of the **PowerShellVersion** key in the session configuration file.</span></span>
 
 ```yaml
 Type: System.Version
@@ -632,35 +632,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ff2af-272">-RequiredGroups</span><span class="sxs-lookup"><span data-stu-id="ff2af-272">-RequiredGroups</span></span>
+### <span data-ttu-id="50c1a-272">-RequiredGroups</span><span class="sxs-lookup"><span data-stu-id="50c1a-272">-RequiredGroups</span></span>
 
-<span data-ttu-id="ff2af-273">Hiermee geeft u regels voor voorwaardelijke toegang op voor gebruikers die verbinding maken met sessies die gebruikmaken van deze sessie configuratie.</span><span class="sxs-lookup"><span data-stu-id="ff2af-273">Specifies conditional access rules for users connecting to sessions that use this session configuration.</span></span>
+<span data-ttu-id="50c1a-273">Hiermee geeft u regels voor voorwaardelijke toegang op voor gebruikers die verbinding maken met sessies die gebruikmaken van deze sessie configuratie.</span><span class="sxs-lookup"><span data-stu-id="50c1a-273">Specifies conditional access rules for users connecting to sessions that use this session configuration.</span></span>
 
-<span data-ttu-id="ff2af-274">Voer een hashtabel in om de lijst met regels te maken met slechts één sleutel per hashtabel, ' en ' of ' of ', en stel de waarde in op een matrix met namen van beveiligings groepen of extra hashtabellen.</span><span class="sxs-lookup"><span data-stu-id="ff2af-274">Enter a hashtable to compose your list of rules using only 1 key per hashtable, 'And' or 'Or', and set the value to an array of security group names or additional hashtables.</span></span>
+<span data-ttu-id="50c1a-274">Voer een hashtabel in om de lijst met regels te maken met slechts één sleutel per hashtabel, ' en ' of ' of ', en stel de waarde in op een matrix met namen van beveiligings groepen of extra hashtabellen.</span><span class="sxs-lookup"><span data-stu-id="50c1a-274">Enter a hashtable to compose your list of rules using only 1 key per hashtable, 'And' or 'Or', and set the value to an array of security group names or additional hashtables.</span></span>
 
-<span data-ttu-id="ff2af-275">Voor beeld waarbij gebruikers worden verbonden om lid te zijn van één groep: `@{ And = 'MyRequiredGroup' }`</span><span class="sxs-lookup"><span data-stu-id="ff2af-275">Example requiring connecting users to be members of a single group: `@{ And = 'MyRequiredGroup' }`</span></span>
+<span data-ttu-id="50c1a-275">Voor beeld waarbij gebruikers worden verbonden om lid te zijn van één groep: `@{ And = 'MyRequiredGroup' }`</span><span class="sxs-lookup"><span data-stu-id="50c1a-275">Example requiring connecting users to be members of a single group: `@{ And = 'MyRequiredGroup' }`</span></span>
 
-<span data-ttu-id="ff2af-276">Voor beeld dat gebruikers moeten deel uitmaken van groep A of beide groepen B en C om toegang te krijgen tot het eind punt: `@{ Or = 'GroupA', @{ And = 'GroupB', 'GroupC' } }`</span><span class="sxs-lookup"><span data-stu-id="ff2af-276">Example requiring users to belong to group A, or both groups B and C, to access the endpoint: `@{ Or = 'GroupA', @{ And = 'GroupB', 'GroupC' } }`</span></span>
-
-```yaml
-Type: System.Collections.IDictionary
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### <span data-ttu-id="ff2af-277">-RoleDefinitions</span><span class="sxs-lookup"><span data-stu-id="ff2af-277">-RoleDefinitions</span></span>
-
-<span data-ttu-id="ff2af-278">Hiermee geeft u de toewijzing op tussen beveiligings groepen (of gebruikers) en functie mogelijkheden.</span><span class="sxs-lookup"><span data-stu-id="ff2af-278">Specifies the mapping between security groups (or users) and role capabilities.</span></span> <span data-ttu-id="ff2af-279">Gebruikers krijgen toegang tot alle functie mogelijkheden die van toepassing zijn op hun groepslid maatschap op het moment dat de sessie wordt gemaakt.</span><span class="sxs-lookup"><span data-stu-id="ff2af-279">Users will be granted access to all role capabilities which apply to their group membership at the time the session is created.</span></span>
-
-<span data-ttu-id="ff2af-280">Voer een hash-tabel in waarin de sleutels de naam van de beveiligings groep zijn en de waarden zijn hash-tabellen die een lijst met functie mogelijkheden bevatten die beschikbaar moeten worden gemaakt voor de beveiligings groep.</span><span class="sxs-lookup"><span data-stu-id="ff2af-280">Enter a hash table in which the keys are the name of the security group and the values are hash tables that contain a list of role capabilities that should be made available to the security group.</span></span>
-
-<span data-ttu-id="ff2af-281">Bijvoorbeeld: `@{'Contoso\Level 2 Helpdesk Users' = @{ RoleCapabilities = 'Maintenance', 'ADHelpDesk' }}`</span><span class="sxs-lookup"><span data-stu-id="ff2af-281">For example: `@{'Contoso\Level 2 Helpdesk Users' = @{ RoleCapabilities = 'Maintenance', 'ADHelpDesk' }}`</span></span>
+<span data-ttu-id="50c1a-276">Voor beeld dat gebruikers moeten deel uitmaken van groep A of beide groepen B en C om toegang te krijgen tot het eind punt: `@{ Or = 'GroupA', @{ And = 'GroupB', 'GroupC' } }`</span><span class="sxs-lookup"><span data-stu-id="50c1a-276">Example requiring users to belong to group A, or both groups B and C, to access the endpoint: `@{ Or = 'GroupA', @{ And = 'GroupB', 'GroupC' } }`</span></span>
 
 ```yaml
 Type: System.Collections.IDictionary
@@ -674,9 +654,29 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ff2af-282">-RunAsVirtualAccount</span><span class="sxs-lookup"><span data-stu-id="ff2af-282">-RunAsVirtualAccount</span></span>
+### <span data-ttu-id="50c1a-277">-RoleDefinitions</span><span class="sxs-lookup"><span data-stu-id="50c1a-277">-RoleDefinitions</span></span>
 
-<span data-ttu-id="ff2af-283">Hiermee configureert u sessies met behulp van deze sessie configuratie om te worden uitgevoerd als het virtuele beheerders account van de computer.</span><span class="sxs-lookup"><span data-stu-id="ff2af-283">Configures sessions using this session configuration to be run as the computer's (virtual) administrator account.</span></span> <span data-ttu-id="ff2af-284">Dit veld kan niet worden gebruikt met de para meter **GroupManagedServiceAccount** .</span><span class="sxs-lookup"><span data-stu-id="ff2af-284">This field cannot be used with the **GroupManagedServiceAccount** parameter.</span></span>
+<span data-ttu-id="50c1a-278">Hiermee geeft u de toewijzing op tussen beveiligings groepen (of gebruikers) en functie mogelijkheden.</span><span class="sxs-lookup"><span data-stu-id="50c1a-278">Specifies the mapping between security groups (or users) and role capabilities.</span></span> <span data-ttu-id="50c1a-279">Gebruikers krijgen toegang tot alle functie mogelijkheden die van toepassing zijn op hun groepslid maatschap op het moment dat de sessie wordt gemaakt.</span><span class="sxs-lookup"><span data-stu-id="50c1a-279">Users will be granted access to all role capabilities which apply to their group membership at the time the session is created.</span></span>
+
+<span data-ttu-id="50c1a-280">Voer een hash-tabel in waarin de sleutels de naam van de beveiligings groep zijn en de waarden zijn hash-tabellen die een lijst met functie mogelijkheden bevatten die beschikbaar moeten worden gemaakt voor de beveiligings groep.</span><span class="sxs-lookup"><span data-stu-id="50c1a-280">Enter a hash table in which the keys are the name of the security group and the values are hash tables that contain a list of role capabilities that should be made available to the security group.</span></span>
+
+<span data-ttu-id="50c1a-281">Bijvoorbeeld: `@{'Contoso\Level 2 Helpdesk Users' = @{ RoleCapabilities = 'Maintenance', 'ADHelpDesk' }}`</span><span class="sxs-lookup"><span data-stu-id="50c1a-281">For example: `@{'Contoso\Level 2 Helpdesk Users' = @{ RoleCapabilities = 'Maintenance', 'ADHelpDesk' }}`</span></span>
+
+```yaml
+Type: System.Collections.IDictionary
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="50c1a-282">-RunAsVirtualAccount</span><span class="sxs-lookup"><span data-stu-id="50c1a-282">-RunAsVirtualAccount</span></span>
+
+<span data-ttu-id="50c1a-283">Hiermee configureert u sessies met behulp van deze sessie configuratie om te worden uitgevoerd als het virtuele beheerders account van de computer.</span><span class="sxs-lookup"><span data-stu-id="50c1a-283">Configures sessions using this session configuration to be run as the computer's (virtual) administrator account.</span></span> <span data-ttu-id="50c1a-284">Dit veld kan niet worden gebruikt met de para meter **GroupManagedServiceAccount** .</span><span class="sxs-lookup"><span data-stu-id="50c1a-284">This field cannot be used with the **GroupManagedServiceAccount** parameter.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -690,9 +690,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ff2af-285">-RunAsVirtualAccountGroups</span><span class="sxs-lookup"><span data-stu-id="ff2af-285">-RunAsVirtualAccountGroups</span></span>
+### <span data-ttu-id="50c1a-285">-RunAsVirtualAccountGroups</span><span class="sxs-lookup"><span data-stu-id="50c1a-285">-RunAsVirtualAccountGroups</span></span>
 
-<span data-ttu-id="ff2af-286">Hiermee geeft u de beveiligings groepen op die moeten worden gekoppeld aan het virtuele account wanneer een sessie die gebruikmaakt van de sessie configuratie, als een virtueel account wordt uitgevoerd.</span><span class="sxs-lookup"><span data-stu-id="ff2af-286">Specifies the security groups to be associated with the virtual account when a session that uses the session configuration is run as a virtual account.</span></span> <span data-ttu-id="ff2af-287">Als u dit weglaat, behoort het virtuele account bij domein Administrators op domein controllers en beheerders op alle andere computers.</span><span class="sxs-lookup"><span data-stu-id="ff2af-287">If omitted, the virtual account belongs to Domain Admins on domain controllers and Administrators on all other computers.</span></span>
+<span data-ttu-id="50c1a-286">Hiermee geeft u de beveiligings groepen op die moeten worden gekoppeld aan het virtuele account wanneer een sessie die gebruikmaakt van de sessie configuratie, als een virtueel account wordt uitgevoerd.</span><span class="sxs-lookup"><span data-stu-id="50c1a-286">Specifies the security groups to be associated with the virtual account when a session that uses the session configuration is run as a virtual account.</span></span> <span data-ttu-id="50c1a-287">Als u dit weglaat, behoort het virtuele account bij domein Administrators op domein controllers en beheerders op alle andere computers.</span><span class="sxs-lookup"><span data-stu-id="50c1a-287">If omitted, the virtual account belongs to Domain Admins on domain controllers and Administrators on all other computers.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -706,9 +706,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ff2af-288">-SchemaVersion</span><span class="sxs-lookup"><span data-stu-id="ff2af-288">-SchemaVersion</span></span>
+### <span data-ttu-id="50c1a-288">-SchemaVersion</span><span class="sxs-lookup"><span data-stu-id="50c1a-288">-SchemaVersion</span></span>
 
-<span data-ttu-id="ff2af-289">Hiermee geeft u de versie van het schema van het configuratie bestand voor de sessie.</span><span class="sxs-lookup"><span data-stu-id="ff2af-289">Specifies the version of the session configuration file schema.</span></span> <span data-ttu-id="ff2af-290">De standaard waarde is "1.0.0.0".</span><span class="sxs-lookup"><span data-stu-id="ff2af-290">The default value is "1.0.0.0".</span></span>
+<span data-ttu-id="50c1a-289">Hiermee geeft u de versie van het schema van het configuratie bestand voor de sessie.</span><span class="sxs-lookup"><span data-stu-id="50c1a-289">Specifies the version of the session configuration file schema.</span></span> <span data-ttu-id="50c1a-290">De standaard waarde is "1.0.0.0".</span><span class="sxs-lookup"><span data-stu-id="50c1a-290">The default value is "1.0.0.0".</span></span>
 
 ```yaml
 Type: System.Version
@@ -722,9 +722,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ff2af-291">-ScriptsToProcess</span><span class="sxs-lookup"><span data-stu-id="ff2af-291">-ScriptsToProcess</span></span>
+### <span data-ttu-id="50c1a-291">-ScriptsToProcess</span><span class="sxs-lookup"><span data-stu-id="50c1a-291">-ScriptsToProcess</span></span>
 
-<span data-ttu-id="ff2af-292">Voegt de opgegeven scripts toe aan sessies die gebruikmaken van de sessie configuratie.</span><span class="sxs-lookup"><span data-stu-id="ff2af-292">Adds the specified scripts to sessions that use the session configuration.</span></span> <span data-ttu-id="ff2af-293">Geef het pad en de bestands namen van de scripts op.</span><span class="sxs-lookup"><span data-stu-id="ff2af-293">Enter the path and file names of the scripts.</span></span> <span data-ttu-id="ff2af-294">De waarde van deze para meter moet een volledig of absoluut pad van script bestandsnamen zijn.</span><span class="sxs-lookup"><span data-stu-id="ff2af-294">The value of this parameter must be a full or absolute path of script file names.</span></span>
+<span data-ttu-id="50c1a-292">Voegt de opgegeven scripts toe aan sessies die gebruikmaken van de sessie configuratie.</span><span class="sxs-lookup"><span data-stu-id="50c1a-292">Adds the specified scripts to sessions that use the session configuration.</span></span> <span data-ttu-id="50c1a-293">Geef het pad en de bestands namen van de scripts op.</span><span class="sxs-lookup"><span data-stu-id="50c1a-293">Enter the path and file names of the scripts.</span></span> <span data-ttu-id="50c1a-294">De waarde van deze para meter moet een volledig of absoluut pad van script bestandsnamen zijn.</span><span class="sxs-lookup"><span data-stu-id="50c1a-294">The value of this parameter must be a full or absolute path of script file names.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -738,14 +738,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ff2af-295">-SessionType</span><span class="sxs-lookup"><span data-stu-id="ff2af-295">-SessionType</span></span>
+### <span data-ttu-id="50c1a-295">-SessionType</span><span class="sxs-lookup"><span data-stu-id="50c1a-295">-SessionType</span></span>
 
-<span data-ttu-id="ff2af-296">Hiermee geeft u het type sessie op dat wordt gemaakt met behulp van de sessie configuratie.</span><span class="sxs-lookup"><span data-stu-id="ff2af-296">Specifies the type of session that is created by using the session configuration.</span></span> <span data-ttu-id="ff2af-297">De standaard waarde is standaard.</span><span class="sxs-lookup"><span data-stu-id="ff2af-297">The default value is Default.</span></span> <span data-ttu-id="ff2af-298">De aanvaardbare waarden voor deze parameter zijn:</span><span class="sxs-lookup"><span data-stu-id="ff2af-298">The acceptable values for this parameter are:</span></span>
+<span data-ttu-id="50c1a-296">Hiermee geeft u het type sessie op dat wordt gemaakt met behulp van de sessie configuratie.</span><span class="sxs-lookup"><span data-stu-id="50c1a-296">Specifies the type of session that is created by using the session configuration.</span></span> <span data-ttu-id="50c1a-297">De standaard waarde is standaard.</span><span class="sxs-lookup"><span data-stu-id="50c1a-297">The default value is Default.</span></span> <span data-ttu-id="50c1a-298">De aanvaardbare waarden voor deze parameter zijn:</span><span class="sxs-lookup"><span data-stu-id="50c1a-298">The acceptable values for this parameter are:</span></span>
 
-- <span data-ttu-id="ff2af-299">Leeg: er worden standaard geen modules aan de sessie toegevoegd.</span><span class="sxs-lookup"><span data-stu-id="ff2af-299">Empty - No modules are added to session by default.</span></span> <span data-ttu-id="ff2af-300">Gebruik de para meters van deze cmdlet om modules, functies, scripts en andere functies aan de sessie toe te voegen.</span><span class="sxs-lookup"><span data-stu-id="ff2af-300">Use the parameters of this cmdlet to add modules, functions, scripts, and other features to the session.</span></span> <span data-ttu-id="ff2af-301">Deze optie is bedoeld om aangepaste sessies te maken door geselecteerde opdrachten toe te voegen.</span><span class="sxs-lookup"><span data-stu-id="ff2af-301">This option is designed for you to create custom sessions by adding selected commands.</span></span> <span data-ttu-id="ff2af-302">Als u geen opdrachten toevoegt aan een lege sessie, is de sessie beperkt tot expressies en is deze mogelijk niet bruikbaar.</span><span class="sxs-lookup"><span data-stu-id="ff2af-302">If you do not add commands to an empty session, the session is limited to expressions and might not be usable.</span></span>
-- <span data-ttu-id="ff2af-303">Default-de module micro soft. Power shell. core wordt toegevoegd aan de sessie.</span><span class="sxs-lookup"><span data-stu-id="ff2af-303">Default - Adds the Microsoft.PowerShell.Core module to the session.</span></span> <span data-ttu-id="ff2af-304">Deze module bevat de `Import-Module` cmdlet die gebruikers kunnen gebruiken om andere modules te importeren, tenzij u deze cmdlet expliciet niet toestaat.</span><span class="sxs-lookup"><span data-stu-id="ff2af-304">This module includes the `Import-Module` cmdlet that users can use to import other modules unless you explicitly prohibit this cmdlet.</span></span>
-- <span data-ttu-id="ff2af-305">RestrictedRemoteServer.</span><span class="sxs-lookup"><span data-stu-id="ff2af-305">RestrictedRemoteServer.</span></span> <span data-ttu-id="ff2af-306">Bevat alleen de volgende proxy functies: `Exit-PSSession` , `Get-Command` , `Get-FormatData` , `Get-Help` ,, en `Measure-Object` `Out-Default` `Select-Object` .</span><span class="sxs-lookup"><span data-stu-id="ff2af-306">Includes only the following proxy functions: `Exit-PSSession`, `Get-Command`, `Get-FormatData`, `Get-Help`, `Measure-Object`, `Out-Default`, and `Select-Object`.</span></span>
-  <span data-ttu-id="ff2af-307">Gebruik de para meters van deze cmdlet om modules, functies, scripts en andere functies aan de sessie toe te voegen.</span><span class="sxs-lookup"><span data-stu-id="ff2af-307">Use the parameters of this cmdlet to add modules, functions, scripts, and other features to the session.</span></span>
+- <span data-ttu-id="50c1a-299">Leeg: er worden standaard geen modules aan de sessie toegevoegd.</span><span class="sxs-lookup"><span data-stu-id="50c1a-299">Empty - No modules are added to session by default.</span></span> <span data-ttu-id="50c1a-300">Gebruik de para meters van deze cmdlet om modules, functies, scripts en andere functies aan de sessie toe te voegen.</span><span class="sxs-lookup"><span data-stu-id="50c1a-300">Use the parameters of this cmdlet to add modules, functions, scripts, and other features to the session.</span></span> <span data-ttu-id="50c1a-301">Deze optie is bedoeld om aangepaste sessies te maken door geselecteerde opdrachten toe te voegen.</span><span class="sxs-lookup"><span data-stu-id="50c1a-301">This option is designed for you to create custom sessions by adding selected commands.</span></span> <span data-ttu-id="50c1a-302">Als u geen opdrachten toevoegt aan een lege sessie, is de sessie beperkt tot expressies en is deze mogelijk niet bruikbaar.</span><span class="sxs-lookup"><span data-stu-id="50c1a-302">If you do not add commands to an empty session, the session is limited to expressions and might not be usable.</span></span>
+- <span data-ttu-id="50c1a-303">Default-de module micro soft. Power shell. core wordt toegevoegd aan de sessie.</span><span class="sxs-lookup"><span data-stu-id="50c1a-303">Default - Adds the Microsoft.PowerShell.Core module to the session.</span></span> <span data-ttu-id="50c1a-304">Deze module bevat de `Import-Module` cmdlet die gebruikers kunnen gebruiken om andere modules te importeren, tenzij u deze cmdlet expliciet niet toestaat.</span><span class="sxs-lookup"><span data-stu-id="50c1a-304">This module includes the `Import-Module` cmdlet that users can use to import other modules unless you explicitly prohibit this cmdlet.</span></span>
+- <span data-ttu-id="50c1a-305">RestrictedRemoteServer.</span><span class="sxs-lookup"><span data-stu-id="50c1a-305">RestrictedRemoteServer.</span></span> <span data-ttu-id="50c1a-306">Bevat alleen de volgende proxy functies: `Exit-PSSession` , `Get-Command` , `Get-FormatData` , `Get-Help` ,, en `Measure-Object` `Out-Default` `Select-Object` .</span><span class="sxs-lookup"><span data-stu-id="50c1a-306">Includes only the following proxy functions: `Exit-PSSession`, `Get-Command`, `Get-FormatData`, `Get-Help`, `Measure-Object`, `Out-Default`, and `Select-Object`.</span></span>
+  <span data-ttu-id="50c1a-307">Gebruik de para meters van deze cmdlet om modules, functies, scripts en andere functies aan de sessie toe te voegen.</span><span class="sxs-lookup"><span data-stu-id="50c1a-307">Use the parameters of this cmdlet to add modules, functions, scripts, and other features to the session.</span></span>
 
 ```yaml
 Type: System.Management.Automation.Remoting.SessionType
@@ -760,9 +760,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ff2af-308">-TranscriptDirectory</span><span class="sxs-lookup"><span data-stu-id="ff2af-308">-TranscriptDirectory</span></span>
+### <span data-ttu-id="50c1a-308">-TranscriptDirectory</span><span class="sxs-lookup"><span data-stu-id="50c1a-308">-TranscriptDirectory</span></span>
 
-<span data-ttu-id="ff2af-309">Hiermee geeft u de map voor het plaatsen van sessie transcripten voor sessies met behulp van deze sessie configuratie.</span><span class="sxs-lookup"><span data-stu-id="ff2af-309">Specifies the directory to place session transcripts for sessions using this session configuration.</span></span>
+<span data-ttu-id="50c1a-309">Hiermee geeft u de map voor het plaatsen van sessie transcripten voor sessies met behulp van deze sessie configuratie.</span><span class="sxs-lookup"><span data-stu-id="50c1a-309">Specifies the directory to place session transcripts for sessions using this session configuration.</span></span>
 
 ```yaml
 Type: System.String
@@ -776,9 +776,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ff2af-310">-TypesToProcess</span><span class="sxs-lookup"><span data-stu-id="ff2af-310">-TypesToProcess</span></span>
+### <span data-ttu-id="50c1a-310">-TypesToProcess</span><span class="sxs-lookup"><span data-stu-id="50c1a-310">-TypesToProcess</span></span>
 
-<span data-ttu-id="ff2af-311">Voegt de opgegeven `.ps1xml` type bestanden toe aan sessies die gebruikmaken van de sessie configuratie.</span><span class="sxs-lookup"><span data-stu-id="ff2af-311">Adds the specified `.ps1xml` type files to sessions that use the session configuration.</span></span> <span data-ttu-id="ff2af-312">Voer de bestands namen van het type in.</span><span class="sxs-lookup"><span data-stu-id="ff2af-312">Enter the type filenames.</span></span> <span data-ttu-id="ff2af-313">De waarde van deze para meter moet een volledig of absoluut pad zijn om bestands namen te kunnen typen.</span><span class="sxs-lookup"><span data-stu-id="ff2af-313">The value of this parameter must be a full or absolute path to type filenames.</span></span>
+<span data-ttu-id="50c1a-311">Voegt de opgegeven `.ps1xml` type bestanden toe aan sessies die gebruikmaken van de sessie configuratie.</span><span class="sxs-lookup"><span data-stu-id="50c1a-311">Adds the specified `.ps1xml` type files to sessions that use the session configuration.</span></span> <span data-ttu-id="50c1a-312">Voer de bestands namen van het type in.</span><span class="sxs-lookup"><span data-stu-id="50c1a-312">Enter the type filenames.</span></span> <span data-ttu-id="50c1a-313">De waarde van deze para meter moet een volledig of absoluut pad zijn om bestands namen te kunnen typen.</span><span class="sxs-lookup"><span data-stu-id="50c1a-313">The value of this parameter must be a full or absolute path to type filenames.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -792,12 +792,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ff2af-314">-UserDriveMaximumSize</span><span class="sxs-lookup"><span data-stu-id="ff2af-314">-UserDriveMaximumSize</span></span>
+### <span data-ttu-id="50c1a-314">-UserDriveMaximumSize</span><span class="sxs-lookup"><span data-stu-id="50c1a-314">-UserDriveMaximumSize</span></span>
 
-<span data-ttu-id="ff2af-315">Hiermee geeft u de maximale grootte op voor gebruikers stations die worden weer gegeven in sessies die gebruikmaken van deze sessie configuratie.</span><span class="sxs-lookup"><span data-stu-id="ff2af-315">Specifies the maximum size for user drives exposed in sessions that use this session configuration.</span></span>
-<span data-ttu-id="ff2af-316">Als u dit weglaat, is de standaard grootte van elke hoofdmap van het `User:` station 50 MB.</span><span class="sxs-lookup"><span data-stu-id="ff2af-316">When omitted, the default size of each `User:` drive root is 50MB.</span></span>
+<span data-ttu-id="50c1a-315">Hiermee geeft u de maximale grootte op voor gebruikers stations die worden weer gegeven in sessies die gebruikmaken van deze sessie configuratie.</span><span class="sxs-lookup"><span data-stu-id="50c1a-315">Specifies the maximum size for user drives exposed in sessions that use this session configuration.</span></span>
+<span data-ttu-id="50c1a-316">Als u dit weglaat, is de standaard grootte van elke hoofdmap van het `User:` station 50 MB.</span><span class="sxs-lookup"><span data-stu-id="50c1a-316">When omitted, the default size of each `User:` drive root is 50MB.</span></span>
 
-<span data-ttu-id="ff2af-317">Deze para meter moet worden gebruikt met **MountUserDrive**.</span><span class="sxs-lookup"><span data-stu-id="ff2af-317">This parameter should be used with **MountUserDrive**.</span></span>
+<span data-ttu-id="50c1a-317">Deze para meter moet worden gebruikt met **MountUserDrive**.</span><span class="sxs-lookup"><span data-stu-id="50c1a-317">This parameter should be used with **MountUserDrive**.</span></span>
 
 ```yaml
 Type: System.Int64
@@ -811,15 +811,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ff2af-318">-VariableDefinitions</span><span class="sxs-lookup"><span data-stu-id="ff2af-318">-VariableDefinitions</span></span>
+### <span data-ttu-id="50c1a-318">-VariableDefinitions</span><span class="sxs-lookup"><span data-stu-id="50c1a-318">-VariableDefinitions</span></span>
 
-<span data-ttu-id="ff2af-319">Voegt de opgegeven variabelen toe aan sessies die gebruikmaken van de sessie configuratie.</span><span class="sxs-lookup"><span data-stu-id="ff2af-319">Adds the specified variables to sessions that use the session configuration.</span></span> <span data-ttu-id="ff2af-320">Voer een hash-tabel in met de volgende sleutels:</span><span class="sxs-lookup"><span data-stu-id="ff2af-320">Enter a hash table with the following keys:</span></span>
+<span data-ttu-id="50c1a-319">Voegt de opgegeven variabelen toe aan sessies die gebruikmaken van de sessie configuratie.</span><span class="sxs-lookup"><span data-stu-id="50c1a-319">Adds the specified variables to sessions that use the session configuration.</span></span> <span data-ttu-id="50c1a-320">Voer een hash-tabel in met de volgende sleutels:</span><span class="sxs-lookup"><span data-stu-id="50c1a-320">Enter a hash table with the following keys:</span></span>
 
-- <span data-ttu-id="ff2af-321">Naam: naam van de variabele.</span><span class="sxs-lookup"><span data-stu-id="ff2af-321">Name - Name of the variable.</span></span> <span data-ttu-id="ff2af-322">Deze sleutel is vereist.</span><span class="sxs-lookup"><span data-stu-id="ff2af-322">This key is required.</span></span>
-- <span data-ttu-id="ff2af-323">Waarde variabele.</span><span class="sxs-lookup"><span data-stu-id="ff2af-323">Value - Variable value.</span></span> <span data-ttu-id="ff2af-324">Deze sleutel is vereist.</span><span class="sxs-lookup"><span data-stu-id="ff2af-324">This key is required.</span></span>
-- <span data-ttu-id="ff2af-325">Opties: variabele opties.</span><span class="sxs-lookup"><span data-stu-id="ff2af-325">Options - Variable options.</span></span> <span data-ttu-id="ff2af-326">Deze sleutel is optioneel.</span><span class="sxs-lookup"><span data-stu-id="ff2af-326">This key is optional.</span></span> <span data-ttu-id="ff2af-327">De standaard waarde is **geen**.</span><span class="sxs-lookup"><span data-stu-id="ff2af-327">The default value is **None**.</span></span> <span data-ttu-id="ff2af-328">De acceptabele waarden voor deze para meter zijn: geen, alleen-lezen, constant, privé of AllScope.</span><span class="sxs-lookup"><span data-stu-id="ff2af-328">The acceptable values for this parameter are: None, ReadOnly, Constant, Private, or AllScope.</span></span>
+- <span data-ttu-id="50c1a-321">Naam: naam van de variabele.</span><span class="sxs-lookup"><span data-stu-id="50c1a-321">Name - Name of the variable.</span></span> <span data-ttu-id="50c1a-322">Deze sleutel is vereist.</span><span class="sxs-lookup"><span data-stu-id="50c1a-322">This key is required.</span></span>
+- <span data-ttu-id="50c1a-323">Waarde variabele.</span><span class="sxs-lookup"><span data-stu-id="50c1a-323">Value - Variable value.</span></span> <span data-ttu-id="50c1a-324">Deze sleutel is vereist.</span><span class="sxs-lookup"><span data-stu-id="50c1a-324">This key is required.</span></span>
+- <span data-ttu-id="50c1a-325">Opties: variabele opties.</span><span class="sxs-lookup"><span data-stu-id="50c1a-325">Options - Variable options.</span></span> <span data-ttu-id="50c1a-326">Deze sleutel is optioneel.</span><span class="sxs-lookup"><span data-stu-id="50c1a-326">This key is optional.</span></span> <span data-ttu-id="50c1a-327">De standaard waarde is **geen**.</span><span class="sxs-lookup"><span data-stu-id="50c1a-327">The default value is **None**.</span></span> <span data-ttu-id="50c1a-328">De acceptabele waarden voor deze para meter zijn: geen, alleen-lezen, constant, privé of AllScope.</span><span class="sxs-lookup"><span data-stu-id="50c1a-328">The acceptable values for this parameter are: None, ReadOnly, Constant, Private, or AllScope.</span></span>
 
-<span data-ttu-id="ff2af-329">Bijvoorbeeld: `@{Name='WarningPreference';Value='SilentlyContinue';Options='AllScope'}`</span><span class="sxs-lookup"><span data-stu-id="ff2af-329">For example: `@{Name='WarningPreference';Value='SilentlyContinue';Options='AllScope'}`</span></span>
+<span data-ttu-id="50c1a-329">Bijvoorbeeld: `@{Name='WarningPreference';Value='SilentlyContinue';Options='AllScope'}`</span><span class="sxs-lookup"><span data-stu-id="50c1a-329">For example: `@{Name='WarningPreference';Value='SilentlyContinue';Options='AllScope'}`</span></span>
 
 ```yaml
 Type: System.Object
@@ -833,13 +833,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ff2af-330">-VisibleAliases</span><span class="sxs-lookup"><span data-stu-id="ff2af-330">-VisibleAliases</span></span>
+### <span data-ttu-id="50c1a-330">-VisibleAliases</span><span class="sxs-lookup"><span data-stu-id="50c1a-330">-VisibleAliases</span></span>
 
-<span data-ttu-id="ff2af-331">Hiermee worden de aliassen in de sessie beperkt tot die welke zijn opgegeven in de waarde van deze para meter, plus alle aliassen die u definieert in de para meter **AliasDefinition** .</span><span class="sxs-lookup"><span data-stu-id="ff2af-331">Limits the aliases in the session to those specified in the value of this parameter, plus any aliases that you define in the **AliasDefinition** parameter.</span></span> <span data-ttu-id="ff2af-332">Joker tekens worden ondersteund.</span><span class="sxs-lookup"><span data-stu-id="ff2af-332">Wildcard characters are supported.</span></span> <span data-ttu-id="ff2af-333">Standaard worden alle aliassen die zijn gedefinieerd door de Power shell-engine en alle aliassen die modules exporteren, weer gegeven in de sessie.</span><span class="sxs-lookup"><span data-stu-id="ff2af-333">By default, all aliases that are defined by the PowerShell engine and all aliases that modules export are visible in the session.</span></span>
+<span data-ttu-id="50c1a-331">Hiermee worden de aliassen in de sessie beperkt tot die welke zijn opgegeven in de waarde van deze para meter, plus alle aliassen die u definieert in de para meter **AliasDefinition** .</span><span class="sxs-lookup"><span data-stu-id="50c1a-331">Limits the aliases in the session to those specified in the value of this parameter, plus any aliases that you define in the **AliasDefinition** parameter.</span></span> <span data-ttu-id="50c1a-332">Joker tekens worden ondersteund.</span><span class="sxs-lookup"><span data-stu-id="50c1a-332">Wildcard characters are supported.</span></span> <span data-ttu-id="50c1a-333">Standaard worden alle aliassen die zijn gedefinieerd door de Power shell-engine en alle aliassen die modules exporteren, weer gegeven in de sessie.</span><span class="sxs-lookup"><span data-stu-id="50c1a-333">By default, all aliases that are defined by the PowerShell engine and all aliases that modules export are visible in the session.</span></span>
 
-<span data-ttu-id="ff2af-334">Bijvoorbeeld: `VisibleAliases='gcm', 'gp'`</span><span class="sxs-lookup"><span data-stu-id="ff2af-334">For example: `VisibleAliases='gcm', 'gp'`</span></span>
+<span data-ttu-id="50c1a-334">Bijvoorbeeld: `VisibleAliases='gcm', 'gp'`</span><span class="sxs-lookup"><span data-stu-id="50c1a-334">For example: `VisibleAliases='gcm', 'gp'`</span></span>
 
-<span data-ttu-id="ff2af-335">Wanneer een **zicht bare** para meter is opgenomen in het configuratie bestand van de sessie, verwijdert Power shell de `Import-Module` cmdlet en de ipmo-alias uit de sessie.</span><span class="sxs-lookup"><span data-stu-id="ff2af-335">When any **Visible** parameter is included in the session configuration file, PowerShell removes the `Import-Module` cmdlet and its ipmo alias from the session.</span></span>
+<span data-ttu-id="50c1a-335">Wanneer een **zicht bare** para meter is opgenomen in het configuratie bestand van de sessie, verwijdert Power shell de `Import-Module` cmdlet en de ipmo-alias uit de sessie.</span><span class="sxs-lookup"><span data-stu-id="50c1a-335">When any **Visible** parameter is included in the session configuration file, PowerShell removes the `Import-Module` cmdlet and its ipmo alias from the session.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -853,13 +853,13 @@ Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
-### <span data-ttu-id="ff2af-336">-VisibleCmdlets</span><span class="sxs-lookup"><span data-stu-id="ff2af-336">-VisibleCmdlets</span></span>
+### <span data-ttu-id="50c1a-336">-VisibleCmdlets</span><span class="sxs-lookup"><span data-stu-id="50c1a-336">-VisibleCmdlets</span></span>
 
-<span data-ttu-id="ff2af-337">Hiermee worden de cmdlets in de sessie beperkt tot die welke zijn opgegeven in de waarde van deze para meter.</span><span class="sxs-lookup"><span data-stu-id="ff2af-337">Limits the cmdlets in the session to those specified in the value of this parameter.</span></span> <span data-ttu-id="ff2af-338">Joker tekens en modules met gekwalificeerde namen worden ondersteund.</span><span class="sxs-lookup"><span data-stu-id="ff2af-338">Wildcard characters and Module Qualified Names are supported.</span></span>
+<span data-ttu-id="50c1a-337">Hiermee worden de cmdlets in de sessie beperkt tot die welke zijn opgegeven in de waarde van deze para meter.</span><span class="sxs-lookup"><span data-stu-id="50c1a-337">Limits the cmdlets in the session to those specified in the value of this parameter.</span></span> <span data-ttu-id="50c1a-338">Joker tekens en modules met gekwalificeerde namen worden ondersteund.</span><span class="sxs-lookup"><span data-stu-id="50c1a-338">Wildcard characters and Module Qualified Names are supported.</span></span>
 
-<span data-ttu-id="ff2af-339">Standaard worden alle cmdlets die modules in de sessie exporteren, weer gegeven in de sessie.</span><span class="sxs-lookup"><span data-stu-id="ff2af-339">By default, all cmdlets that modules in the session export are visible in the session.</span></span> <span data-ttu-id="ff2af-340">Gebruik de para meters **SessionType** en **ModulesToImport** om te bepalen welke modules en modules in de sessie worden geïmporteerd.</span><span class="sxs-lookup"><span data-stu-id="ff2af-340">Use the **SessionType** and **ModulesToImport** parameters to determine which modules and snap-ins are imported into the session.</span></span> <span data-ttu-id="ff2af-341">Als er geen modules in **ModulesToImport** de cmdlet beschikbaar maken, probeert de juiste module automatisch te laden.</span><span class="sxs-lookup"><span data-stu-id="ff2af-341">If no modules in **ModulesToImport** expose the cmdlet, the appropriate module will attempt to be autoloaded.</span></span>
+<span data-ttu-id="50c1a-339">Standaard worden alle cmdlets die modules in de sessie exporteren, weer gegeven in de sessie.</span><span class="sxs-lookup"><span data-stu-id="50c1a-339">By default, all cmdlets that modules in the session export are visible in the session.</span></span> <span data-ttu-id="50c1a-340">Gebruik de para meters **SessionType** en **ModulesToImport** om te bepalen welke modules en modules in de sessie worden geïmporteerd.</span><span class="sxs-lookup"><span data-stu-id="50c1a-340">Use the **SessionType** and **ModulesToImport** parameters to determine which modules and snap-ins are imported into the session.</span></span> <span data-ttu-id="50c1a-341">Als er geen modules in **ModulesToImport** de cmdlet beschikbaar maken, probeert de juiste module automatisch te laden.</span><span class="sxs-lookup"><span data-stu-id="50c1a-341">If no modules in **ModulesToImport** expose the cmdlet, the appropriate module will attempt to be autoloaded.</span></span>
 
-<span data-ttu-id="ff2af-342">Wanneer een **zicht bare** para meter is opgenomen in het configuratie bestand van de sessie, verwijdert Power shell de `Import-Module` cmdlet en de ipmo-alias uit de sessie.</span><span class="sxs-lookup"><span data-stu-id="ff2af-342">When any **Visible** parameter is included in the session configuration file, PowerShell removes the `Import-Module` cmdlet and its ipmo alias from the session.</span></span>
+<span data-ttu-id="50c1a-342">Wanneer een **zicht bare** para meter is opgenomen in het configuratie bestand van de sessie, verwijdert Power shell de `Import-Module` cmdlet en de ipmo-alias uit de sessie.</span><span class="sxs-lookup"><span data-stu-id="50c1a-342">When any **Visible** parameter is included in the session configuration file, PowerShell removes the `Import-Module` cmdlet and its ipmo alias from the session.</span></span>
 
 ```yaml
 Type: System.Object[]
@@ -873,13 +873,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ff2af-343">-VisibleExternalCommands</span><span class="sxs-lookup"><span data-stu-id="ff2af-343">-VisibleExternalCommands</span></span>
+### <span data-ttu-id="50c1a-343">-VisibleExternalCommands</span><span class="sxs-lookup"><span data-stu-id="50c1a-343">-VisibleExternalCommands</span></span>
 
-<span data-ttu-id="ff2af-344">Hiermee beperkt u de externe binaire bestanden, scripts en opdrachten die in de sessie kunnen worden uitgevoerd en die zijn opgegeven in de waarde van deze para meter.</span><span class="sxs-lookup"><span data-stu-id="ff2af-344">Limits the external binaries, scripts, and commands that can be executed in the session to those specified in the value of this parameter.</span></span> <span data-ttu-id="ff2af-345">Joker tekens worden ondersteund.</span><span class="sxs-lookup"><span data-stu-id="ff2af-345">Wildcard characters are supported.</span></span>
+<span data-ttu-id="50c1a-344">Hiermee beperkt u de externe binaire bestanden, scripts en opdrachten die in de sessie kunnen worden uitgevoerd en die zijn opgegeven in de waarde van deze para meter.</span><span class="sxs-lookup"><span data-stu-id="50c1a-344">Limits the external binaries, scripts, and commands that can be executed in the session to those specified in the value of this parameter.</span></span> <span data-ttu-id="50c1a-345">Joker tekens worden ondersteund.</span><span class="sxs-lookup"><span data-stu-id="50c1a-345">Wildcard characters are supported.</span></span>
 
-<span data-ttu-id="ff2af-346">Standaard zijn er geen externe opdrachten zichtbaar in de sessie.</span><span class="sxs-lookup"><span data-stu-id="ff2af-346">By default, no external commands are visible in the session.</span></span>
+<span data-ttu-id="50c1a-346">Standaard zijn er geen externe opdrachten zichtbaar in de sessie.</span><span class="sxs-lookup"><span data-stu-id="50c1a-346">By default, no external commands are visible in the session.</span></span>
 
-<span data-ttu-id="ff2af-347">Wanneer een **zicht bare** para meter is opgenomen in het configuratie bestand van de sessie, verwijdert Power shell de `Import-Module` cmdlet en de ipmo-alias van de sessie.</span><span class="sxs-lookup"><span data-stu-id="ff2af-347">When any **Visible** parameter is included in the session configuration file, PowerShell, removes the `Import-Module` cmdlet and its ipmo alias from the session.</span></span>
+<span data-ttu-id="50c1a-347">Wanneer een **zicht bare** para meter is opgenomen in het configuratie bestand van de sessie, verwijdert Power shell de `Import-Module` cmdlet en de ipmo-alias van de sessie.</span><span class="sxs-lookup"><span data-stu-id="50c1a-347">When any **Visible** parameter is included in the session configuration file, PowerShell, removes the `Import-Module` cmdlet and its ipmo alias from the session.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -893,13 +893,13 @@ Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
-### <span data-ttu-id="ff2af-348">-VisibleFunctions</span><span class="sxs-lookup"><span data-stu-id="ff2af-348">-VisibleFunctions</span></span>
+### <span data-ttu-id="50c1a-348">-VisibleFunctions</span><span class="sxs-lookup"><span data-stu-id="50c1a-348">-VisibleFunctions</span></span>
 
-<span data-ttu-id="ff2af-349">Hiermee beperkt u de functies in de sessie die zijn opgegeven in de waarde van deze para meter, plus de functies die u definieert in de para meter **FunctionDefinition** .</span><span class="sxs-lookup"><span data-stu-id="ff2af-349">Limits the functions in the session to those specified in the value of this parameter, plus any functions that you define in the **FunctionDefinition** parameter.</span></span> <span data-ttu-id="ff2af-350">Joker tekens worden ondersteund.</span><span class="sxs-lookup"><span data-stu-id="ff2af-350">Wildcard characters are supported.</span></span>
+<span data-ttu-id="50c1a-349">Hiermee beperkt u de functies in de sessie die zijn opgegeven in de waarde van deze para meter, plus de functies die u definieert in de para meter **FunctionDefinition** .</span><span class="sxs-lookup"><span data-stu-id="50c1a-349">Limits the functions in the session to those specified in the value of this parameter, plus any functions that you define in the **FunctionDefinition** parameter.</span></span> <span data-ttu-id="50c1a-350">Joker tekens worden ondersteund.</span><span class="sxs-lookup"><span data-stu-id="50c1a-350">Wildcard characters are supported.</span></span>
 
-<span data-ttu-id="ff2af-351">Standaard zijn alle functies die modules in de sessie exporteren, weer gegeven in de sessie.</span><span class="sxs-lookup"><span data-stu-id="ff2af-351">By default, all functions that modules in the session export are visible in the session.</span></span> <span data-ttu-id="ff2af-352">Gebruik de para meters **SessionType** en **ModulesToImport** om te bepalen welke modules en modules in de sessie worden geïmporteerd.</span><span class="sxs-lookup"><span data-stu-id="ff2af-352">Use the **SessionType** and **ModulesToImport** parameters to determine which modules and snap-ins are imported into the session.</span></span>
+<span data-ttu-id="50c1a-351">Standaard zijn alle functies die modules in de sessie exporteren, weer gegeven in de sessie.</span><span class="sxs-lookup"><span data-stu-id="50c1a-351">By default, all functions that modules in the session export are visible in the session.</span></span> <span data-ttu-id="50c1a-352">Gebruik de para meters **SessionType** en **ModulesToImport** om te bepalen welke modules en modules in de sessie worden geïmporteerd.</span><span class="sxs-lookup"><span data-stu-id="50c1a-352">Use the **SessionType** and **ModulesToImport** parameters to determine which modules and snap-ins are imported into the session.</span></span>
 
-<span data-ttu-id="ff2af-353">Wanneer een **zicht bare** para meter is opgenomen in het configuratie bestand van de sessie, verwijdert Power shell de `Import-Module` cmdlet en de ipmo-alias uit de sessie.</span><span class="sxs-lookup"><span data-stu-id="ff2af-353">When any **Visible** parameter is included in the session configuration file, PowerShell removes the `Import-Module` cmdlet and its ipmo alias from the session.</span></span>
+<span data-ttu-id="50c1a-353">Wanneer een **zicht bare** para meter is opgenomen in het configuratie bestand van de sessie, verwijdert Power shell de `Import-Module` cmdlet en de ipmo-alias uit de sessie.</span><span class="sxs-lookup"><span data-stu-id="50c1a-353">When any **Visible** parameter is included in the session configuration file, PowerShell removes the `Import-Module` cmdlet and its ipmo alias from the session.</span></span>
 
 ```yaml
 Type: System.Object[]
@@ -913,14 +913,14 @@ Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
-### <span data-ttu-id="ff2af-354">-VisibleProviders</span><span class="sxs-lookup"><span data-stu-id="ff2af-354">-VisibleProviders</span></span>
+### <span data-ttu-id="50c1a-354">-VisibleProviders</span><span class="sxs-lookup"><span data-stu-id="50c1a-354">-VisibleProviders</span></span>
 
-<span data-ttu-id="ff2af-355">Hiermee worden de Power shell-providers in de sessie beperkt tot die welke zijn opgegeven in de waarde van deze para meter.</span><span class="sxs-lookup"><span data-stu-id="ff2af-355">Limits the PowerShell providers in the session to those specified in the value of this parameter.</span></span>
-<span data-ttu-id="ff2af-356">Joker tekens worden ondersteund.</span><span class="sxs-lookup"><span data-stu-id="ff2af-356">Wildcard characters are supported.</span></span>
+<span data-ttu-id="50c1a-355">Hiermee worden de Power shell-providers in de sessie beperkt tot die welke zijn opgegeven in de waarde van deze para meter.</span><span class="sxs-lookup"><span data-stu-id="50c1a-355">Limits the PowerShell providers in the session to those specified in the value of this parameter.</span></span>
+<span data-ttu-id="50c1a-356">Joker tekens worden ondersteund.</span><span class="sxs-lookup"><span data-stu-id="50c1a-356">Wildcard characters are supported.</span></span>
 
-<span data-ttu-id="ff2af-357">Standaard worden alle providers die modules in de sessie exporteren, weer gegeven in de sessie.</span><span class="sxs-lookup"><span data-stu-id="ff2af-357">By default, all providers that modules in the session export are visible in the session.</span></span> <span data-ttu-id="ff2af-358">Gebruik de para meters **SessionType** en **ModulesToImport** om te bepalen welke modules in de sessie worden geïmporteerd.</span><span class="sxs-lookup"><span data-stu-id="ff2af-358">Use the **SessionType** and **ModulesToImport** parameters to determine which modules are imported into the session.</span></span>
+<span data-ttu-id="50c1a-357">Standaard worden alle providers die modules in de sessie exporteren, weer gegeven in de sessie.</span><span class="sxs-lookup"><span data-stu-id="50c1a-357">By default, all providers that modules in the session export are visible in the session.</span></span> <span data-ttu-id="50c1a-358">Gebruik de para meters **SessionType** en **ModulesToImport** om te bepalen welke modules in de sessie worden geïmporteerd.</span><span class="sxs-lookup"><span data-stu-id="50c1a-358">Use the **SessionType** and **ModulesToImport** parameters to determine which modules are imported into the session.</span></span>
 
-<span data-ttu-id="ff2af-359">Wanneer een **zicht bare** para meter is opgenomen in het configuratie bestand van de sessie, verwijdert Power shell de `Import-Module` cmdlet en de bijbehorende `ipmo` alias uit de sessie.</span><span class="sxs-lookup"><span data-stu-id="ff2af-359">When any **Visible** parameter is included in the session configuration file, PowerShell removes the `Import-Module` cmdlet and its `ipmo` alias from the session.</span></span>
+<span data-ttu-id="50c1a-359">Wanneer een **zicht bare** para meter is opgenomen in het configuratie bestand van de sessie, verwijdert Power shell de `Import-Module` cmdlet en de bijbehorende `ipmo` alias uit de sessie.</span><span class="sxs-lookup"><span data-stu-id="50c1a-359">When any **Visible** parameter is included in the session configuration file, PowerShell removes the `Import-Module` cmdlet and its `ipmo` alias from the session.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -934,49 +934,51 @@ Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
-### <span data-ttu-id="ff2af-360">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="ff2af-360">CommonParameters</span></span>
+### <span data-ttu-id="50c1a-360">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="50c1a-360">CommonParameters</span></span>
 
-<span data-ttu-id="ff2af-361">Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="ff2af-361">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="ff2af-362">Zie [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)voor meer informatie.</span><span class="sxs-lookup"><span data-stu-id="ff2af-362">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+<span data-ttu-id="50c1a-361">Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="50c1a-361">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="50c1a-362">Zie [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)voor meer informatie.</span><span class="sxs-lookup"><span data-stu-id="50c1a-362">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="ff2af-363">INVOER</span><span class="sxs-lookup"><span data-stu-id="ff2af-363">INPUTS</span></span>
+## <span data-ttu-id="50c1a-363">INVOER</span><span class="sxs-lookup"><span data-stu-id="50c1a-363">INPUTS</span></span>
 
-### <span data-ttu-id="ff2af-364">Geen</span><span class="sxs-lookup"><span data-stu-id="ff2af-364">None</span></span>
+### <span data-ttu-id="50c1a-364">Geen</span><span class="sxs-lookup"><span data-stu-id="50c1a-364">None</span></span>
 
-<span data-ttu-id="ff2af-365">U kunt geen objecten door sluizen naar deze cmdlet.</span><span class="sxs-lookup"><span data-stu-id="ff2af-365">You cannot pipe any objects to this cmdlet.</span></span>
+<span data-ttu-id="50c1a-365">U kunt geen objecten door sluizen naar deze cmdlet.</span><span class="sxs-lookup"><span data-stu-id="50c1a-365">You cannot pipe any objects to this cmdlet.</span></span>
 
-## <span data-ttu-id="ff2af-366">UITVOER</span><span class="sxs-lookup"><span data-stu-id="ff2af-366">OUTPUTS</span></span>
+## <span data-ttu-id="50c1a-366">UITVOER</span><span class="sxs-lookup"><span data-stu-id="50c1a-366">OUTPUTS</span></span>
 
-### <span data-ttu-id="ff2af-367">Geen</span><span class="sxs-lookup"><span data-stu-id="ff2af-367">None</span></span>
+### <span data-ttu-id="50c1a-367">Geen</span><span class="sxs-lookup"><span data-stu-id="50c1a-367">None</span></span>
 
-<span data-ttu-id="ff2af-368">Met deze cmdlet wordt geen uitvoer gegenereerd.</span><span class="sxs-lookup"><span data-stu-id="ff2af-368">This cmdlet does not generate any output.</span></span>
+<span data-ttu-id="50c1a-368">Met deze cmdlet wordt geen uitvoer gegenereerd.</span><span class="sxs-lookup"><span data-stu-id="50c1a-368">This cmdlet does not generate any output.</span></span>
 
-## <span data-ttu-id="ff2af-369">OPMERKINGEN</span><span class="sxs-lookup"><span data-stu-id="ff2af-369">NOTES</span></span>
+## <span data-ttu-id="50c1a-369">OPMERKINGEN</span><span class="sxs-lookup"><span data-stu-id="50c1a-369">NOTES</span></span>
 
-- <span data-ttu-id="ff2af-370">In para meters, zoals **VisibleCmdlets** en **VisibleProviders** , worden geen items geïmporteerd in de sessie.</span><span class="sxs-lookup"><span data-stu-id="ff2af-370">Parameters, such as **VisibleCmdlets** and **VisibleProviders** , do not import items into the session.</span></span> <span data-ttu-id="ff2af-371">In plaats daarvan selecteren ze uit de items die in de sessie worden geïmporteerd.</span><span class="sxs-lookup"><span data-stu-id="ff2af-371">Instead, they select from among the items imported into the session.</span></span> <span data-ttu-id="ff2af-372">Als de waarde van de para meter **VisibleProviders** bijvoorbeeld de certificaat provider is, maar de **ModulesToImport** -para meter geeft geen **micro soft. Power shell. Security** -module op die de certificaat provider bevat, is de certificaat provider niet zichtbaar in de sessie.</span><span class="sxs-lookup"><span data-stu-id="ff2af-372">For example, if the value of the **VisibleProviders** parameter is the Certificate provider, but the **ModulesToImport** parameter does not specify the **Microsoft.PowerShell.Security** module that contains the Certificate provider, the Certificate provider is not visible in the session.</span></span>
-- <span data-ttu-id="ff2af-373">`New-PSSessionConfigurationFile` Hiermee maakt u een sessie configuratie bestand met de bestandsnaam extensie. pssc in het pad dat u opgeeft in de para meter **Path** .</span><span class="sxs-lookup"><span data-stu-id="ff2af-373">`New-PSSessionConfigurationFile` creates a session configuration file that has a .pssc file name extension in the path that you specify in the **Path** parameter.</span></span> <span data-ttu-id="ff2af-374">Wanneer u het sessie configuratie bestand gebruikt om een sessie configuratie te maken, `Register-PSSessionConfiguration` kopieert de cmdlet het configuratie bestand en slaat het een actieve kopie van het bestand op in de **SessionConfig** -submap van de `$PSHOME` map.</span><span class="sxs-lookup"><span data-stu-id="ff2af-374">When you use the session configuration file to create a session configuration, the `Register-PSSessionConfiguration` cmdlet copies the configuration file and saves an active copy of the file in the **SessionConfig** subdirectory of the `$PSHOME` directory.</span></span>
+<span data-ttu-id="50c1a-370">Deze cmdlet is alleen beschikbaar op Windows-platforms.</span><span class="sxs-lookup"><span data-stu-id="50c1a-370">This cmdlet is only available on Windows platforms.</span></span>
 
-  <span data-ttu-id="ff2af-375">De eigenschap **ConfigFilePath** van de sessie configuratie bevat het volledig gekwalificeerde pad van het configuratie bestand van de actieve sessie.</span><span class="sxs-lookup"><span data-stu-id="ff2af-375">The **ConfigFilePath** property of the session configuration contains the fully qualified path of the active session configuration file.</span></span> <span data-ttu-id="ff2af-376">U kunt het actieve configuratie bestand `$PSHOME` op elk gewenst moment in de Directory wijzigen met behulp van een tekst editor.</span><span class="sxs-lookup"><span data-stu-id="ff2af-376">You can modify the active configuration file in the `$PSHOME` directory at any time using any text editor.</span></span> <span data-ttu-id="ff2af-377">De wijzigingen die u aanbrengt, zijn van invloed op alle nieuwe sessies die gebruikmaken van de sessie configuratie, maar niet op bestaande sessies.</span><span class="sxs-lookup"><span data-stu-id="ff2af-377">The changes that you make affect all new sessions that use the session configuration, but not existing sessions.</span></span>
+- <span data-ttu-id="50c1a-371">In para meters, zoals **VisibleCmdlets** en **VisibleProviders** , worden geen items geïmporteerd in de sessie.</span><span class="sxs-lookup"><span data-stu-id="50c1a-371">Parameters, such as **VisibleCmdlets** and **VisibleProviders** , do not import items into the session.</span></span> <span data-ttu-id="50c1a-372">In plaats daarvan selecteren ze uit de items die in de sessie worden geïmporteerd.</span><span class="sxs-lookup"><span data-stu-id="50c1a-372">Instead, they select from among the items imported into the session.</span></span> <span data-ttu-id="50c1a-373">Als de waarde van de para meter **VisibleProviders** bijvoorbeeld de certificaat provider is, maar de **ModulesToImport** -para meter geeft geen **micro soft. Power shell. Security** -module op die de certificaat provider bevat, is de certificaat provider niet zichtbaar in de sessie.</span><span class="sxs-lookup"><span data-stu-id="50c1a-373">For example, if the value of the **VisibleProviders** parameter is the Certificate provider, but the **ModulesToImport** parameter does not specify the **Microsoft.PowerShell.Security** module that contains the Certificate provider, the Certificate provider is not visible in the session.</span></span>
+- <span data-ttu-id="50c1a-374">`New-PSSessionConfigurationFile` Hiermee maakt u een sessie configuratie bestand met de bestandsnaam extensie. pssc in het pad dat u opgeeft in de para meter **Path** .</span><span class="sxs-lookup"><span data-stu-id="50c1a-374">`New-PSSessionConfigurationFile` creates a session configuration file that has a .pssc file name extension in the path that you specify in the **Path** parameter.</span></span> <span data-ttu-id="50c1a-375">Wanneer u het sessie configuratie bestand gebruikt om een sessie configuratie te maken, `Register-PSSessionConfiguration` kopieert de cmdlet het configuratie bestand en slaat het een actieve kopie van het bestand op in de **SessionConfig** -submap van de `$PSHOME` map.</span><span class="sxs-lookup"><span data-stu-id="50c1a-375">When you use the session configuration file to create a session configuration, the `Register-PSSessionConfiguration` cmdlet copies the configuration file and saves an active copy of the file in the **SessionConfig** subdirectory of the `$PSHOME` directory.</span></span>
 
-  <span data-ttu-id="ff2af-378">Voordat u een bewerkte sessie configuratie bestand gebruikt, gebruikt `Test-PSSessionConfigurationFile` u de cmdlet om te controleren of de vermeldingen van het configuratie bestand geldig zijn.</span><span class="sxs-lookup"><span data-stu-id="ff2af-378">Before using an edited session configuration file, use the `Test-PSSessionConfigurationFile` cmdlet to verify that the configuration file entries are valid.</span></span>
+  <span data-ttu-id="50c1a-376">De eigenschap **ConfigFilePath** van de sessie configuratie bevat het volledig gekwalificeerde pad van het configuratie bestand van de actieve sessie.</span><span class="sxs-lookup"><span data-stu-id="50c1a-376">The **ConfigFilePath** property of the session configuration contains the fully qualified path of the active session configuration file.</span></span> <span data-ttu-id="50c1a-377">U kunt het actieve configuratie bestand `$PSHOME` op elk gewenst moment in de Directory wijzigen met behulp van een tekst editor.</span><span class="sxs-lookup"><span data-stu-id="50c1a-377">You can modify the active configuration file in the `$PSHOME` directory at any time using any text editor.</span></span> <span data-ttu-id="50c1a-378">De wijzigingen die u aanbrengt, zijn van invloed op alle nieuwe sessies die gebruikmaken van de sessie configuratie, maar niet op bestaande sessies.</span><span class="sxs-lookup"><span data-stu-id="50c1a-378">The changes that you make affect all new sessions that use the session configuration, but not existing sessions.</span></span>
 
-## <span data-ttu-id="ff2af-379">GERELATEERDE KOPPELINGEN</span><span class="sxs-lookup"><span data-stu-id="ff2af-379">RELATED LINKS</span></span>
+  <span data-ttu-id="50c1a-379">Voordat u een bewerkte sessie configuratie bestand gebruikt, gebruikt `Test-PSSessionConfigurationFile` u de cmdlet om te controleren of de vermeldingen van het configuratie bestand geldig zijn.</span><span class="sxs-lookup"><span data-stu-id="50c1a-379">Before using an edited session configuration file, use the `Test-PSSessionConfigurationFile` cmdlet to verify that the configuration file entries are valid.</span></span>
 
-[<span data-ttu-id="ff2af-380">Disable-PSSessionConfiguration</span><span class="sxs-lookup"><span data-stu-id="ff2af-380">Disable-PSSessionConfiguration</span></span>](Disable-PSSessionConfiguration.md)
+## <span data-ttu-id="50c1a-380">GERELATEERDE KOPPELINGEN</span><span class="sxs-lookup"><span data-stu-id="50c1a-380">RELATED LINKS</span></span>
 
-[<span data-ttu-id="ff2af-381">Enable-PSSessionConfiguration</span><span class="sxs-lookup"><span data-stu-id="ff2af-381">Enable-PSSessionConfiguration</span></span>](Enable-PSSessionConfiguration.md)
+[<span data-ttu-id="50c1a-381">Disable-PSSessionConfiguration</span><span class="sxs-lookup"><span data-stu-id="50c1a-381">Disable-PSSessionConfiguration</span></span>](Disable-PSSessionConfiguration.md)
 
-[<span data-ttu-id="ff2af-382">Get-PSSessionConfiguration</span><span class="sxs-lookup"><span data-stu-id="ff2af-382">Get-PSSessionConfiguration</span></span>](Get-PSSessionConfiguration.md)
+[<span data-ttu-id="50c1a-382">Enable-PSSessionConfiguration</span><span class="sxs-lookup"><span data-stu-id="50c1a-382">Enable-PSSessionConfiguration</span></span>](Enable-PSSessionConfiguration.md)
 
-[<span data-ttu-id="ff2af-383">Register-PSSessionConfiguration</span><span class="sxs-lookup"><span data-stu-id="ff2af-383">Register-PSSessionConfiguration</span></span>](Register-PSSessionConfiguration.md)
+[<span data-ttu-id="50c1a-383">Get-PSSessionConfiguration</span><span class="sxs-lookup"><span data-stu-id="50c1a-383">Get-PSSessionConfiguration</span></span>](Get-PSSessionConfiguration.md)
 
-[<span data-ttu-id="ff2af-384">Set-PSSessionConfiguration</span><span class="sxs-lookup"><span data-stu-id="ff2af-384">Set-PSSessionConfiguration</span></span>](Set-PSSessionConfiguration.md)
+[<span data-ttu-id="50c1a-384">Register-PSSessionConfiguration</span><span class="sxs-lookup"><span data-stu-id="50c1a-384">Register-PSSessionConfiguration</span></span>](Register-PSSessionConfiguration.md)
 
-[<span data-ttu-id="ff2af-385">Test-PSSessionConfigurationFile</span><span class="sxs-lookup"><span data-stu-id="ff2af-385">Test-PSSessionConfigurationFile</span></span>](Test-PSSessionConfigurationFile.md)
+[<span data-ttu-id="50c1a-385">Set-PSSessionConfiguration</span><span class="sxs-lookup"><span data-stu-id="50c1a-385">Set-PSSessionConfiguration</span></span>](Set-PSSessionConfiguration.md)
 
-[<span data-ttu-id="ff2af-386">Registratie ongedaan maken-PSSessionConfiguration</span><span class="sxs-lookup"><span data-stu-id="ff2af-386">Unregister-PSSessionConfiguration</span></span>](Unregister-PSSessionConfiguration.md)
+[<span data-ttu-id="50c1a-386">Test-PSSessionConfigurationFile</span><span class="sxs-lookup"><span data-stu-id="50c1a-386">Test-PSSessionConfigurationFile</span></span>](Test-PSSessionConfigurationFile.md)
 
-[<span data-ttu-id="ff2af-387">WSMan Provider</span><span class="sxs-lookup"><span data-stu-id="ff2af-387">WSMan Provider</span></span>](../Microsoft.WsMan.Management/About/about_WSMan_Provider.md)
+[<span data-ttu-id="50c1a-387">Registratie ongedaan maken-PSSessionConfiguration</span><span class="sxs-lookup"><span data-stu-id="50c1a-387">Unregister-PSSessionConfiguration</span></span>](Unregister-PSSessionConfiguration.md)
 
-[<span data-ttu-id="ff2af-388">about_Session_Configurations</span><span class="sxs-lookup"><span data-stu-id="ff2af-388">about_Session_Configurations</span></span>](About/about_Session_Configurations.md)
+[<span data-ttu-id="50c1a-388">WSMan Provider</span><span class="sxs-lookup"><span data-stu-id="50c1a-388">WSMan Provider</span></span>](../Microsoft.WsMan.Management/About/about_WSMan_Provider.md)
 
-[<span data-ttu-id="ff2af-389">about_Session_Configuration_Files</span><span class="sxs-lookup"><span data-stu-id="ff2af-389">about_Session_Configuration_Files</span></span>](About/about_Session_Configuration_Files.md)
+[<span data-ttu-id="50c1a-389">about_Session_Configurations</span><span class="sxs-lookup"><span data-stu-id="50c1a-389">about_Session_Configurations</span></span>](About/about_Session_Configurations.md)
+
+[<span data-ttu-id="50c1a-390">about_Session_Configuration_Files</span><span class="sxs-lookup"><span data-stu-id="50c1a-390">about_Session_Configuration_Files</span></span>](About/about_Session_Configuration_Files.md)
