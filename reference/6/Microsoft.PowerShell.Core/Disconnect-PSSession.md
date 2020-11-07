@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/disconnect-pssession?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Disconnect-PSSession
-ms.openlocfilehash: c0eed3d571cfb243c3f0ba4d0a4b7ddfaf4f04fb
-ms.sourcegitcommit: 37abf054ad9eda8813be8ff4487803b10e1842ef
+ms.openlocfilehash: 41f278541d1375697ccb95504b7d7b1d28027786
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "93251553"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94344062"
 ---
 # Disconnect-PSSession
 
@@ -443,6 +443,8 @@ U kunt een sessie door sluizen naar `Disconnect-PSSession` .
 `Disconnect-PSSession` retourneert een object dat de sessie vertegenwoordigt waarvan de verbinding is verbroken.
 
 ## OPMERKINGEN
+
+Deze cmdlet is alleen beschikbaar op Windows-platforms.
 
 - De `Disconnect-PSSession` cmdlet werkt alleen als op de lokale en externe computers Power shell 3,0 of hoger wordt uitgevoerd.
 - Als u de `Disconnect-PSSession` cmdlet gebruikt voor een niet-verbonden sessie, heeft de opdracht geen effect op de sessie en worden er geen fouten gegenereerd.

@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/remove-service?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Remove-Service
-ms.openlocfilehash: c55a7ef01171e63e8c64ee03446ca1bdcd838e2a
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: d5189dfb39e9505efd39bfd55791d512e40a7c3e
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93251170"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94343790"
 ---
 # Remove-Service
 
@@ -140,6 +140,8 @@ U kunt een service object of een teken reeks die de naam van een service bevat, 
 Met deze cmdlet wordt geen uitvoer geretourneerd.
 
 ## OPMERKINGEN
+
+Deze cmdlet is alleen beschikbaar op Windows-platforms.
 
 Als u deze cmdlet wilt uitvoeren, start u Power shell met de optie **als administrator uitvoeren** .
 

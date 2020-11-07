@@ -7,12 +7,12 @@ ms.date: 06/24/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/new-pssessionconfigurationfile?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-PSSessionConfigurationFile
-ms.openlocfilehash: 1045c22cdaadb9fe1a45ec01ea86d5d8a276b05a
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: e393916f00e3670cd1ed3b5772bf165c43cc3a2f
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93251042"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94343943"
 ---
 # New-PSSessionConfigurationFile
 
@@ -951,6 +951,8 @@ U kunt geen objecten door sluizen naar deze cmdlet.
 Met deze cmdlet wordt geen uitvoer gegenereerd.
 
 ## OPMERKINGEN
+
+Deze cmdlet is alleen beschikbaar op Windows-platforms.
 
 - In para meters, zoals **VisibleCmdlets** en **VisibleProviders** , worden geen items geïmporteerd in de sessie. In plaats daarvan selecteren ze uit de items die in de sessie worden geïmporteerd. Als de waarde van de para meter **VisibleProviders** bijvoorbeeld de certificaat provider is, maar de **ModulesToImport** -para meter geeft geen **micro soft. Power shell. Security** -module op die de certificaat provider bevat, is de certificaat provider niet zichtbaar in de sessie.
 - `New-PSSessionConfigurationFile` Hiermee maakt u een sessie configuratie bestand met de bestandsnaam extensie. pssc in het pad dat u opgeeft in de para meter **Path** . Wanneer u het sessie configuratie bestand gebruikt om een sessie configuratie te maken, `Register-PSSessionConfiguration` kopieert de cmdlet het configuratie bestand en slaat het een actieve kopie van het bestand op in de **SessionConfig** -submap van de `$PSHOME` map.

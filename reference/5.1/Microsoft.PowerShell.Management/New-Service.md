@@ -7,12 +7,12 @@ ms.date: 10/25/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/new-service?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-Service
-ms.openlocfilehash: 3249ce91a63417f2790997d37e2420c6fcb374d8
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 5647f9bfa909cba9740e7be17f262b6be0e5c8e9
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93250594"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94342923"
 ---
 # New-Service
 
@@ -177,8 +177,7 @@ Accept wildcard characters: False
 
 ### -Name
 
-Hiermee geeft u de naam van de service.
-Deze parameter is vereist.
+Hiermee geeft u de naam van de service. Deze parameter is vereist.
 
 ```yaml
 Type: System.String
@@ -236,8 +235,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-Hiermee wordt weergegeven wat er zou gebeuren als u de cmdlet uitvoert.
-De cmdlet wordt niet uitgevoerd.
+Hiermee wordt weergegeven wat er zou gebeuren als u de cmdlet uitvoert. De cmdlet wordt niet uitgevoerd.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -269,7 +267,7 @@ Met deze cmdlet wordt een object geretourneerd dat de nieuwe service vertegenwoo
 
 ## OPMERKINGEN
 
-Als u deze cmdlet wilt uitvoeren op Windows Vista en latere versies van het Windows-besturings systeem, start u Power shell met de optie als administrator uitvoeren.
+Als u deze cmdlet wilt uitvoeren, start u Power shell met de optie **als administrator uitvoeren** .
 
 Als u een service wilt verwijderen, gebruikt u Sc.exe of gebruikt `Get-CimInstance` u de cmdlet om het **Win32_Service** -object op te halen dat de service vertegenwoordigt en gebruikt u vervolgens de **Delete** -methode om de service te verwijderen. Het `Get-Service` geretourneerde object heeft geen verwijderings methode.
 

@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-event?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Event
-ms.openlocfilehash: d8f10fd9a0244d6f6bf84d2042b188d5c73215b7
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 45d9e45bfbbeba7b9467985dc6abf3a28cd8702b
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93249683"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94342345"
 ---
 # Get-Event
 
@@ -35,15 +35,11 @@ Get-Event [-EventIdentifier] <Int32> [<CommonParameters>]
 
 ## BESCHRIJVING
 
-De cmdlet **Get-Event** haalt gebeurtenissen op in de Power shell-gebeurtenis wachtrij voor de huidige sessie.
-U kunt alle gebeurtenissen ophalen of de para meter *EventIdentifier* of *SourceIdentifier* gebruiken om de gebeurtenissen op te geven.
+De `Get-Event` cmdlet haalt gebeurtenissen op in de Power shell-gebeurtenis wachtrij voor de huidige sessie. U kunt alle gebeurtenissen ophalen of de para meter **EventIdentifier** of **SourceIdentifier** gebruiken om de gebeurtenissen op te geven.
 
-Wanneer er een gebeurtenis optreedt, wordt deze toegevoegd aan de gebeurtenis wachtrij.
-De gebeurtenis wachtrij bevat gebeurtenissen waarvoor u bent geregistreerd, gebeurtenissen die zijn gemaakt met behulp van de cmdlet New-Event en de gebeurtenis die wordt gegenereerd wanneer Power shell wordt afgesloten.
-U kunt **Get-Event** of Wait-Event gebruiken om de gebeurtenissen op te halen.
+Wanneer er een gebeurtenis optreedt, wordt deze toegevoegd aan de gebeurtenis wachtrij. De gebeurtenissen wachtrij bevat gebeurtenissen waarvoor u bent geregistreerd, gebeurtenissen die zijn gemaakt met behulp van de `New-Event` cmdlet en de gebeurtenis die optreedt wanneer Power shell wordt afgesloten. U kunt `Get-Event` of gebruiken `Wait-Event` om de gebeurtenissen op te halen.
 
-Met deze cmdlet worden geen gebeurtenissen uit de Logboeken Logboeken opgehaald.
-Gebruik Get-WinEvent of Get-EventLog om deze gebeurtenissen op te halen.
+Met deze cmdlet worden geen gebeurtenissen uit de Logboeken Logboeken opgehaald. Gebruik of om deze gebeurtenissen op te halen `Get-WinEvent` `Get-EventLog` .
 
 ## VOORBEELDEN
 
@@ -90,13 +86,11 @@ MessageData      :
 
 In dit voor beeld ziet u hoe u gebeurtenissen kunt ophalen met behulp van andere eigenschappen dan SourceIdentifier.
 
-Met de eerste opdracht worden alle gebeurtenissen in de gebeurtenis wachtrij opgehaald en opgeslagen in de variabele $Events.
+Met de eerste opdracht worden alle gebeurtenissen in de gebeurtenis wachtrij opgehaald en opgeslagen in de `$Events` variabele.
 
-De tweede opdracht maakt gebruik van Matrix notatie om de eerste (0-index) gebeurtenis op te halen in de matrix in de variabele $Events.
-De opdracht maakt gebruik van een pijplijn operator (|) om de gebeurtenis naar de Format-List opdracht te verzenden, waarin alle eigenschappen van de gebeurtenis in een lijst worden weer gegeven.
-Hiermee kunt u de eigenschappen van het gebeurtenis object controleren.
+De tweede opdracht maakt gebruik van de matrix notatie om de eerste (0-index) gebeurtenis op te halen in de matrix in de `$Events` variabele. De opdracht maakt gebruik van een pijplijn operator ( `|` ) om de gebeurtenis naar de `Format-List` opdracht te verzenden, waarin alle eigenschappen van de gebeurtenis in een lijst worden weer gegeven. Hiermee kunt u de eigenschappen van het gebeurtenis object controleren.
 
-De derde opdracht laat zien hoe u de Where-Object cmdlet kunt gebruiken om een gebeurtenis op te halen op basis van de tijd dat deze is gegenereerd.
+De derde opdracht laat zien hoe u de `Where-Object` cmdlet gebruikt om een gebeurtenis op te halen op basis van de tijd dat deze is gegenereerd.
 
 ### Voor beeld 4: een gebeurtenis op basis van de id ophalen
 
@@ -126,9 +120,7 @@ Accept wildcard characters: False
 
 ### -SourceIdentifier
 
-Hiermee geeft u de bron-id's op waarvoor deze cmdlet gebeurtenissen ontvangt.
-De standaard instelling is alle gebeurtenissen in de wachtrij van de gebeurtenis.
-Joker tekens zijn niet toegestaan.
+Hiermee geeft u de bron-id's op waarvoor deze cmdlet gebeurtenissen ontvangt. De standaard instelling is alle gebeurtenissen in de wachtrij van de gebeurtenis. Joker tekens zijn niet toegestaan.
 
 ```yaml
 Type: System.String
@@ -156,52 +148,34 @@ U kunt geen invoer van een pipe naar deze cmdlet.
 
 ### System. Management. Automation. PSEventArgs
 
-**Get-Event** retourneert een **PSEventArgs** -object voor elke gebeurtenis.
-Als u een beschrijving van dit object wilt weer geven, typt `Get-Help Get-Event -Full` en raadpleegt u de sectie Notities van het Help-onderwerp.
+`Get-Event` retourneert een **PSEventArgs** -object voor elke gebeurtenis. Als u een beschrijving van dit object wilt weer geven, typt `Get-Help Get-Event -Full` en raadpleegt u de sectie Notities van het Help-onderwerp.
 
 ## OPMERKINGEN
 
-* Gebeurtenissen, gebeurtenis abonnementen en de gebeurtenis wachtrij bestaan alleen in de huidige sessie. Als u de huidige sessie sluit, wordt de gebeurtenis wachtrij verwijderd en wordt het gebeurtenis abonnement geannuleerd.
+Er zijn geen gebeurtenis bronnen beschikbaar op de Linux-of macOS-platforms.
 
-  De cmdlet **Get-Event** retourneert een **PSEventArgs** -object ( **System. Management. Automation. PSEventArgs** ) met de volgende eigenschappen:
+Gebeurtenissen, gebeurtenis abonnementen en de gebeurtenis wachtrij bestaan alleen in de huidige sessie. Als u de huidige sessie sluit, wordt de gebeurtenis wachtrij verwijderd en wordt het gebeurtenis abonnement geannuleerd.
 
-  - ComputerName.
-De naam van de computer waarop de gebeurtenis heeft plaatsgevonden.
-Deze eigenschaps waarde wordt alleen ingevuld wanneer de gebeurtenis wordt doorgestuurd vanaf een externe computer.
+De `Get-Event` cmdlet retourneert een **PSEventArgs** -object ( **System. Management. Automation. PSEventArgs** ) met de volgende eigenschappen:
 
-  - RunspaceId.
-Een GUID die een unieke identificatie vormt van de sessie waarin de gebeurtenis heeft plaatsgevonden.
-Deze eigenschaps waarde wordt alleen ingevuld wanneer de gebeurtenis wordt doorgestuurd vanaf een externe computer.
+- ComputerName. De naam van de computer waarop de gebeurtenis heeft plaatsgevonden. Deze eigenschaps waarde wordt alleen ingevuld wanneer de gebeurtenis wordt doorgestuurd vanaf een externe computer.
 
-  - EventIdentifier.
-Een geheel getal (INT32) waarmee de gebeurtenis melding in de huidige sessie op unieke wijze wordt geïdentificeerd.
+- RunspaceId. Een GUID die een unieke identificatie vormt van de sessie waarin de gebeurtenis heeft plaatsgevonden. Deze eigenschaps waarde wordt alleen ingevuld wanneer de gebeurtenis wordt doorgestuurd vanaf een externe computer.
 
-  - SenderName.
-Het object dat de gebeurtenis heeft gegenereerd.
-In de waarde van de *actie* parameter bevat de $Sender automatische variabele het object Sender.
+- EventIdentifier. Een geheel getal (INT32) waarmee de gebeurtenis melding in de huidige sessie op unieke wijze wordt geïdentificeerd.
 
-  - SourceEventArgs.
-De eerste para meter die is afgeleid van EventArgs, als deze bestaat.
-In een verstreken timer gebeurtenis waarbij de hand tekening de afzender van het formulier object, timers. ElapsedEventArgs e heeft, bevat de eigenschap SourceEventArgs de timers. ElapsedEventArgs.
-In de waarde van de *actie* parameter bevat de $EventArgs automatische variabele deze waarde.
+- SenderName. Het object dat de gebeurtenis heeft gegenereerd. In de waarde van de **actie** parameter bevat de `$Sender` Automatische variabele het object Sender.
 
-  - SourceArgs.
-Alle para meters van de oorspronkelijke gebeurtenis handtekening.
-Voor een standaard gebeurtenis handtekening $Args \[ 0 \] staat voor de afzender en $args \[ 1 staat voor \] de SourceEventArgs.
-In de waarde van de *actie* parameter bevat de $args automatische variabele deze waarde.
+- SourceEventArgs. De eerste para meter die is afgeleid van EventArgs, als deze bestaat. In een verstreken timer gebeurtenis waarbij de hand tekening de afzender van het formulier object, **timers. ElapsedEventArgs** e heeft, bevat de eigenschap **SourceEventArgs** de **timers. ElapsedEventArgs**. In de waarde van de **actie** parameter bevat de `$EventArgs` Automatische variabele deze waarde.
 
-  - SourceIdentifier.
-Een teken reeks waarmee het gebeurtenis abonnement wordt geïdentificeerd.
-In de waarde van de *actie* parameter bevat de eigenschap SourceIdentifier van de automatische variabele $Event deze waarde.
+- SourceArgs. Alle para meters van de oorspronkelijke gebeurtenis handtekening. Voor een standaard gebeurtenis handtekening `$Args[0]` vertegenwoordigt de afzender en `$Args[1]` vertegenwoordigt het **SourceEventArgs**. In de waarde van de **actie** parameter bevat de `$Args` Automatische variabele deze waarde.
 
-  - TimeGenerated.
-Een **DateTime** -object dat het tijdstip vertegenwoordigt waarop de gebeurtenis is gegenereerd.
-In de waarde van de *actie* parameter bevat de eigenschap TimeGenerated van de automatische variabele $Event deze waarde.
+- SourceIdentifier. Een teken reeks waarmee het gebeurtenis abonnement wordt geïdentificeerd. In de waarde van de **actie** parameter bevat de eigenschap **SourceIdentifier** van de `$Event` Automatische variabele deze waarde.
 
-  - MessageData.
-Gegevens die zijn gekoppeld aan het gebeurtenis abonnement.
-Gebruikers geven deze gegevens op wanneer ze een gebeurtenis registreren.
-In de waarde van de *actie* parameter bevat de eigenschap MessageData van de automatische variabele $Event deze waarde.
+- TimeGenerated. Een **DateTime** -object dat het tijdstip vertegenwoordigt waarop de gebeurtenis is gegenereerd.
+  In de waarde van de **actie** parameter bevat de eigenschap **TimeGenerated** van de `$Event` Automatische variabele deze waarde.
+
+- MessageData. Gegevens die zijn gekoppeld aan het gebeurtenis abonnement. Gebruikers geven deze gegevens op wanneer ze een gebeurtenis registreren. In de waarde van de **actie** parameter bevat de eigenschap **MessageData** van de `$Event` Automatische variabele deze waarde.
 
 ## GERELATEERDE KOPPELINGEN
 

@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/restart-service?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Restart-Service
-ms.openlocfilehash: 7d12d92d0c11ef0f06ffe8c53d3c2a1f8bf8b42c
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 06db89e107e7589dcdd4439fff54e04676adcc1c
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93249550"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94342889"
 ---
 # Restart-Service
 
@@ -44,9 +44,7 @@ Restart-Service [-Force] [-PassThru] -DisplayName <String[]> [-Include <String[]
 
 ## BESCHRIJVING
 
-De cmdlet **restart-service** verzendt een Stop bericht en vervolgens een start bericht naar de Windows-service controller voor een opgegeven service.
-Als een service al is gestopt, wordt deze gestart zonder dat u wordt gewaarschuwd als er een fout optreedt.
-U kunt de services opgeven met hun service namen of weergave namen, of u kunt de para meter *input object* gebruiken om een object door te geven dat elke service vertegenwoordigt die u opnieuw wilt opstarten.
+De `Restart-Service` cmdlet verzendt een Stop bericht en vervolgens een start bericht naar de Windows-service controller voor een opgegeven service. Als een service al is gestopt, wordt deze gestart zonder dat u wordt gewaarschuwd als er een fout optreedt. U kunt de services opgeven met hun service namen of weergave namen, of u kunt de para meter **input object** gebruiken om een object door te geven dat elke service vertegenwoordigt die u opnieuw wilt opstarten.
 
 ## VOORBEELDEN
 
@@ -74,18 +72,15 @@ PS C:\> Get-Service -Name "net*" | Where-Object {$_.Status -eq "Stopped"} | Rest
 
 Met deze opdracht worden alle gestopte netwerk services op de computer gestart.
 
-Met deze opdracht wordt de cmdlet Get-Service gebruikt om objecten op te halen die de services vertegenwoordigen waarvan de service naam begint met net.
-De pijplijn operator (|) verzendt het object Services naar de cmdlet Where-Object, waarmee alleen de services worden geselecteerd die de status gestopt hebben.
-Een andere pijplijn operator verzendt de geselecteerde services om de **service opnieuw te starten**.
+Met deze opdracht wordt de `Get-Service` cmdlet gebruikt om objecten op te halen die de services vertegenwoordigen waarvan de service naam begint met net. De pijplijn operator ( `|` ) verzendt het object Services naar de `Where-Object` cmdlet, waarmee alleen de services worden geselecteerd die de status gestopt hebben. Een andere pijplijn operator verzendt de geselecteerde services naar `Restart-Service` .
 
-In de praktijk gebruikt u de para meter *WhatIf* om het effect van de opdracht te bepalen voordat u deze uitvoert.
+In de praktijk gebruikt u de para meter **WhatIf** om het effect van de opdracht te bepalen voordat u deze uitvoert.
 
 ## PARAMETERS
 
 ### -DisplayName
 
-Hiermee geeft u de weergave namen op van de services die opnieuw moeten worden gestart.
-Joker tekens zijn toegestaan.
+Hiermee geeft u de weergave namen op van de services die opnieuw moeten worden gestart. Joker tekens zijn toegestaan.
 
 ```yaml
 Type: System.String[]
@@ -101,10 +96,7 @@ Accept wildcard characters: True
 
 ### -Uitsluiten
 
-Hiermee geeft u de services die door deze cmdlet worden wegge laten.
-De waarde van deze para meter komt in aanmerking voor de para meter *name* .
-Voer een naam element of patroon in, zoals s *.
-Joker tekens zijn toegestaan.
+Hiermee geeft u de services die door deze cmdlet worden wegge laten. De waarde van deze para meter komt in aanmerking voor de para meter **name** . Voer een naam element of patroon in, zoals s *. Joker tekens zijn toegestaan.
 
 ```yaml
 Type: System.String[]
@@ -136,10 +128,7 @@ Accept wildcard characters: False
 
 ### -Include
 
-Hiermee geeft u de services op die met deze cmdlet opnieuw worden gestart.
-De waarde van deze para meter komt in aanmerking voor de para meter *name* .
-Voer een naam element of patroon in, zoals s *.
-Joker tekens zijn toegestaan.
+Hiermee geeft u de services op die met deze cmdlet opnieuw worden gestart. De waarde van deze para meter komt in aanmerking voor de para meter **name** . Voer een naam element of patroon in, zoals s *. Joker tekens zijn toegestaan.
 
 ```yaml
 Type: System.String[]
@@ -155,8 +144,7 @@ Accept wildcard characters: True
 
 ### -Input object
 
-Hiermee geeft u **ServiceController** -objecten op die de services vertegenwoordigen die opnieuw moeten worden gestart.
-Voer een variabele in die de objecten bevat, of typ een opdracht of expressie waarmee de objecten worden opgehaald.
+Hiermee geeft u **ServiceController** -objecten op die de services vertegenwoordigen die opnieuw moeten worden gestart. Voer een variabele in die de objecten bevat, of typ een opdracht of expressie waarmee de objecten worden opgehaald.
 
 ```yaml
 Type: System.ServiceProcess.ServiceController[]
@@ -188,8 +176,7 @@ Accept wildcard characters: True
 
 ### -PassThru
 
-Retourneert een object dat de service vertegenwoordigt.
-Deze cmdlet genereert standaard geen uitvoer.
+Retourneert een object dat de service vertegenwoordigt. Deze cmdlet genereert standaard geen uitvoer.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -221,8 +208,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-Hiermee wordt weergegeven wat er zou gebeuren als u de cmdlet uitvoert.
-De cmdlet wordt niet uitgevoerd.
+Hiermee wordt weergegeven wat er zou gebeuren als u de cmdlet uitvoert. De cmdlet wordt niet uitgevoerd.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -250,13 +236,15 @@ U kunt een service object of een teken reeks die een service naam bevat door slu
 
 ### Geen, System. ServiceProcess. ServiceController
 
-Met deze cmdlet wordt een **System. ServiceProcess. ServiceController** -object gegenereerd dat de opnieuw gestarte service vertegenwoordigt als u de para meter *PassThru* opgeeft.
-Anders wordt met deze cmdlet geen uitvoer gegenereerd.
+Met deze cmdlet wordt een **System. ServiceProcess. ServiceController** -object gegenereerd dat de opnieuw gestarte service vertegenwoordigt als u de para meter **PassThru** opgeeft. Anders wordt met deze cmdlet geen uitvoer gegenereerd.
 
 ## OPMERKINGEN
 
-* **Restart: Service** kan alleen services bepalen wanneer de huidige gebruiker gemachtigd is om dit uit te voeren. Als een opdracht niet correct werkt, beschikt u mogelijk niet over de vereiste machtigingen.
-* Typ **Get-service** om de service namen te vinden en de namen van de services op uw systeem weer te geven. De service namen worden weer gegeven in de kolom **naam** en de weergave namen worden weer gegeven in de kolom **DisplayName** .
+Deze cmdlet is alleen beschikbaar op Windows-platforms.
+
+- `Restart-Service` kan alleen services bepalen wanneer de huidige gebruiker gemachtigd is om dit te doen. Als een opdracht niet correct werkt, beschikt u mogelijk niet over de vereiste machtigingen.
+- Als u de service namen wilt zoeken en de namen van de services op uw systeem wilt weer geven, typt u `Get-Service` '.
+  De service namen worden weer gegeven in de kolom **naam** en de weergave namen worden weer gegeven in de kolom **DisplayName** .
 
 ## GERELATEERDE KOPPELINGEN
 

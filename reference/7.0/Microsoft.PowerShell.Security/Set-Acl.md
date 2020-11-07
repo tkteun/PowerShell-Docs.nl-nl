@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/set-acl?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Acl
-ms.openlocfilehash: 3c8f26884ac0eda1ece799bbd49a7863b6d2239c
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 56a9625a42062cf787f0c92aaa319a0a344b5919
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93249767"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94342532"
 ---
 # Set-Acl
 
@@ -135,11 +135,9 @@ Met deze opdracht wordt de groep **BUILTIN\Administrators** volledig beheer over
 
 Met de eerste opdracht wordt de `Get-Acl` cmdlet gebruikt om de security descriptor van het Dog.txt bestand op te halen.
 
-Volgende variabelen worden gemaakt om de groep **BUILTIN\Administrators** volledig beheer over het Dog.txt-bestand te geven. De `$identity` variabele is ingesteld op de naam van een [gebruikers account](/dotnet/api/system.security.accesscontrol.filesystemaccessrule.-ctor).
-De `$fileSystemRights` variabele is ingesteld op FullControl en kan een van de [FileSystemRights](/dotnet/api/system.security.accesscontrol.filesystemrights) -waarden zijn die het type bewerking opgeeft dat is gekoppeld aan de toegangs regel. De `$type` variabele is ingesteld op ' toestaan ' om aan te geven of de bewerking moet worden toegestaan of geweigerd. De `$fileSystemAccessRuleArgumentList` variabele is een lijst met argumenten die moet worden door gegeven bij het maken van het nieuwe **FileSystemAccessRule** -object. Vervolgens wordt er een nieuw **FileSystemAccessRule** -object gemaakt en het **FileSystemAccessRule** -object wordt door gegeven aan de methode **SetAccessRule ()** , voegt de nieuwe toegangs regel toe.
+Volgende variabelen worden gemaakt om de groep **BUILTIN\Administrators** volledig beheer over het Dog.txt-bestand te geven. De `$identity` variabele is ingesteld op de naam van een [gebruikers account](/dotnet/api/system.security.accesscontrol.filesystemaccessrule.-ctor). De `$fileSystemRights` variabele is ingesteld op FullControl en kan een van de [FileSystemRights](/dotnet/api/system.security.accesscontrol.filesystemrights) -waarden zijn die het type bewerking opgeeft dat is gekoppeld aan de toegangs regel. De `$type` variabele is ingesteld op ' toestaan ' om aan te geven of de bewerking moet worden toegestaan of geweigerd. De `$fileSystemAccessRuleArgumentList` variabele is een lijst met argumenten die moet worden door gegeven bij het maken van het nieuwe **FileSystemAccessRule** -object. Vervolgens wordt er een nieuw **FileSystemAccessRule** -object gemaakt en het **FileSystemAccessRule** -object wordt door gegeven aan de methode **SetAccessRule ()** , voegt de nieuwe toegangs regel toe.
 
-De laatste opdracht wordt gebruikt `Set-Acl` om de security descriptor van toe te passen op Dog.txt.
-Wanneer de opdracht is voltooid, heeft de **BUILTIN\Administrators** -groep volledig beheer over de Dog.txt.
+De laatste opdracht wordt gebruikt `Set-Acl` om de security descriptor van toe te passen op Dog.txt. Wanneer de opdracht is voltooid, heeft de **BUILTIN\Administrators** -groep volledig beheer over de Dog.txt.
 
 ## PARAMETERS
 
@@ -349,13 +347,13 @@ U kunt een ACL-object of een security descriptor door sluizen naar `Set-Acl` .
 
 ### System. Security. AccessControl. FileSecurity
 
-`Set-Acl`Er wordt standaard geen uitvoer gegenereerd.
-Als u echter de para meter **PassThru** gebruikt, wordt er een beveiligings object gegenereerd.
-Het type van het beveiligings object is afhankelijk van het type van het item.
+`Set-Acl`Er wordt standaard geen uitvoer gegenereerd. Als u echter de para meter **PassThru** gebruikt, wordt er een beveiligings object gegenereerd. Het type van het beveiligings object is afhankelijk van het type van het item.
 
 ## OPMERKINGEN
 
- De `Set-Acl` cmdlet wordt ondersteund door het Power shell-bestands systeem en de register providers. Zo kunt u het gebruiken om de security descriptors van bestanden, directory's en register sleutels te wijzigen.
+Deze cmdlet is alleen beschikbaar op Windows-platforms.
+
+De `Set-Acl` cmdlet wordt ondersteund door het Power shell-bestands systeem en de register providers. Zo kunt u het gebruiken om de security descriptors van bestanden, directory's en register sleutels te wijzigen.
 
 ## GERELATEERDE KOPPELINGEN
 

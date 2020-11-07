@@ -7,12 +7,12 @@ ms.date: 07/16/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enable-psremoting?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Enable-PSRemoting
-ms.openlocfilehash: 2e05348e3741b84b8ad40bcb6ad542a54354176f
-ms.sourcegitcommit: 0e0f45d0d8deb8c9088a4f4a32218edde052b686
+ms.openlocfilehash: 6dd0b6a997551aba0df2da666eb21dddeb2e1fcf
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "93251439"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94344079"
 ---
 # Enable-PSRemoting
 
@@ -267,6 +267,8 @@ U kunt geen invoer van een pipe naar deze cmdlet.
 Deze cmdlet retourneert teken reeksen die de resultaten beschrijven.
 
 ## OPMERKINGEN
+
+Deze cmdlet is alleen beschikbaar op Windows-platforms.
 
 Op Server versies van het Windows-besturings systeem `Enable-PSRemoting` maakt u firewall regels voor privé-en domein netwerken die externe toegang toestaan en maakt u een firewall regel voor open bare netwerken die alleen externe toegang vanaf computers in hetzelfde lokale subnet mogelijk maken.
 

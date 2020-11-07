@@ -3,16 +3,16 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 06/09/2017
+ms.date: 11/06/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/exit-pshostprocess?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Exit-PSHostProcess
-ms.openlocfilehash: 0f076d21ce590b4f1d3eb5b06e891d753dbea638
-ms.sourcegitcommit: 2e497178126b2b33a169ff04c31e251e0b59e89b
+ms.openlocfilehash: 1734758d34e89020f579fffa217cef58eb222736
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "93249259"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94344045"
 ---
 # Exit-PSHostProcess
 
@@ -27,7 +27,7 @@ Exit-PSHostProcess [<CommonParameters>]
 
 ## BESCHRIJVING
 
-Met de cmdlet **Exit-PSHostProcess** wordt een interactieve sessie gesloten met een lokaal proces dat u hebt geopend door de Enter-PSHostProcess-cmdlet uit te voeren. U voert de cmdlet **Exit-PSHostProcess** uit vanuit het proces, wanneer u klaar bent met het opsporen van fouten of het oplossen van problemen met een script dat in een proces wordt uitgevoerd.
+De `Exit-PSHostProcess` cmdlet sluit een interactieve sessie met een lokaal proces dat u hebt geopend door de cmdlet uit te voeren `Enter-PSHostProcess` . U voert de `Exit-PSHostProcess` cmdlet uit vanuit het proces, wanneer u klaar bent met het opsporen van fouten of het oplossen van problemen met een script dat in een proces wordt uitgevoerd. Vanaf Power shell 6,2 wordt deze cmdlet ondersteund op niet-Windows-platforms.
 
 ## VOORBEELDEN
 
@@ -38,8 +38,8 @@ Met de cmdlet **Exit-PSHostProcess** wordt een interactieve sessie gesloten met 
 PS>
 ```
 
-In dit voor beeld hebt u in een actief proces gewerkt om fouten op te sporen in een script dat wordt uitgevoerd in een runs Pace in het proces, zoals beschreven in Enter-PSHostProcess. Nadat u de opdracht **Exit** hebt getypt om de fout opsporing af te sluiten, voert u de cmdlet **Exit-PSHostProcess** uit om uw interactieve sessie met het proces te sluiten.
-De cmdlet sluit uw sessie in het proces en keert u terug naar de PS C:- \\ \> prompt.
+In dit voor beeld hebt u in een actief proces gewerkt om fouten op te sporen in een script dat wordt uitgevoerd in een runs Pace in het proces, zoals beschreven in `Enter-PSHostProcess` . Nadat u de `exit` opdracht voor het fout opsporingsprogramma hebt getypt, voert u de `Exit-PSHostProcess` cmdlet uit om uw interactieve sessie met het proces te sluiten.
+De cmdlet sluit uw sessie in het proces en keert u terug naar de `PS C:\>` prompt.
 
 ## PARAMETERS
 

@@ -7,12 +7,12 @@ ms.date: 09/21/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-clipboard?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Clipboard
-ms.openlocfilehash: da1df360d7c471d925bd2f57f5258ecb2d60e631
-ms.sourcegitcommit: fcf7bd222f5ee3fdbe21ffddcae47050cffe7e42
+ms.openlocfilehash: 5fce0c872871006dd760ee8df2fb692faaa1aab9
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93253297"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94342362"
 ---
 # Get-Clipboard
 
@@ -30,7 +30,7 @@ Get-Clipboard [-Raw] [<CommonParameters>]
 `Get-Clipboard`Met de cmdlet wordt de inhoud van het klem bord opgehaald als tekst. Meerdere tekst regels worden geretourneerd als een matrix met teken reeksen die vergelijkbaar zijn met `Get-Content` .
 
 > [!NOTE]
-> Op Linux moet voor deze cmdlet het `xclip` hulp programma zich in het pad bevinden.
+> Op Linux moet voor deze cmdlet het `xclip` hulp programma zich in het pad bevinden. Deze cmdlet wordt niet ondersteund in macOS.
 
 ## VOORBEELDEN
 
@@ -79,4 +79,3 @@ Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - Er
 ## GERELATEERDE KOPPELINGEN
 
 [Set-klem bord](Set-Clipboard.md)
-
