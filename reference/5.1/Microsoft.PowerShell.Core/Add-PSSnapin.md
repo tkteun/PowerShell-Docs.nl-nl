@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/add-pssnapin?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-PSSnapin
-ms.openlocfilehash: 5adba912d91369250ee9891ee2bb2ca0f8cba796
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: a21c2974fd66a9b02929752ae487c8995579b8a7
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93249982"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94388821"
 ---
 # Add-PSSnapin
 
@@ -136,15 +136,15 @@ Met deze cmdlet wordt een PSSnapInInfo-object geretourneerd dat de module verteg
 
 ## OPMERKINGEN
 
-* Vanaf Windows Power Shell 3,0 worden de kern opdrachten die met Windows Power shell zijn geïnstalleerd, verpakt in modules. In Windows Power Shell 2,0, en in host-Program ma's die oudere sessies maken in latere versies van Windows Power shell, worden de kern opdrachten verpakt in modules (PSSnapins). De uitzonde ring is **micro soft. Power shell. core**. Dit is altijd een module. Externe sessies, zoals computers die zijn gestart door de New-PSSession cmdlet, zijn ook oudere sessies met kern modules.
+- Vanaf Windows Power Shell 3,0 worden de kern opdrachten die met Windows Power shell zijn geïnstalleerd, verpakt in modules. In Windows Power Shell 2,0, en in host-Program ma's die oudere sessies maken in latere versies van Windows Power shell, worden de kern opdrachten verpakt in modules (PSSnapins). De uitzonde ring is **micro soft. Power shell. core**. Dit is altijd een module. Externe sessies, zoals computers die zijn gestart door de New-PSSession cmdlet, zijn ook oudere sessies met kern modules.
 
-  Zie de [methode CreateDefault2](https://msdn.microsoft.com/library/system.management.automation.runspaces.initialsessionstate.createdefault2) in de MSDN-bibliotheek voor meer informatie over de **CreateDefault2** -methode voor het maken van nieuwere sessies met kern modules.
+  Zie de [methode CreateDefault2](/dotnet/api/system.management.automation.runspaces.initialsessionstate.createdefault2#System_Management_Automation_Runspaces_InitialSessionState_CreateDefault2)voor informatie over de **CreateDefault2** -methode waarmee nieuwe-stijl sessies met kern modules worden gemaakt.
 
-* Zie [about_PSSnapins](About/about_PSSnapins.md) en [een Windows Power shell-module maken](/powershell/scripting/developer/cmdlet/how-to-create-a-windows-powershell-snap-in)voor meer informatie over modules.
-* `Add-PSSnapin` Hiermee wordt de module alleen toegevoegd aan de huidige sessie. Als u de module wilt toevoegen aan alle Windows Power shell-sessies, voegt u deze toe aan uw Windows Power shell-profiel. Zie about_Profiles voor meer informatie.
-* U kunt elke module die is geregistreerd met behulp van het hulp programma voor installatie van Microsoft .NET Framework toevoegen. Zie voor meer informatie [cmdlets, providers en hosttoepassingen registreren](/previous-versions//ms714644(v=vs.85)).
-* Als u een lijst wilt weer geven met modules die zijn geregistreerd op uw computer, typt u `Get-PSSnapin -Registered` .
-* Voordat u een module toevoegt, `Add-PSSnapin` controleert u de versie van de module om te controleren of deze compatibel is met de huidige versie van Windows Power shell. Als de invoeg toepassing de versie controle mislukt, wordt een fout gerapporteerd in Windows Power shell.
+- Zie [about_PSSnapins](About/about_PSSnapins.md) en [een Windows Power shell-module maken](/powershell/scripting/developer/cmdlet/how-to-create-a-windows-powershell-snap-in)voor meer informatie over modules.
+- `Add-PSSnapin` Hiermee wordt de module alleen toegevoegd aan de huidige sessie. Als u de module wilt toevoegen aan alle Windows Power shell-sessies, voegt u deze toe aan uw Windows Power shell-profiel. Zie about_Profiles voor meer informatie.
+- U kunt elke module die is geregistreerd met behulp van het hulp programma voor installatie van Microsoft .NET Framework toevoegen. Zie voor meer informatie [cmdlets, providers en hosttoepassingen registreren](/previous-versions//ms714644(v=vs.85)).
+- Als u een lijst wilt weer geven met modules die zijn geregistreerd op uw computer, typt u `Get-PSSnapin -Registered` .
+- Voordat u een module toevoegt, `Add-PSSnapin` controleert u de versie van de module om te controleren of deze compatibel is met de huidige versie van Windows Power shell. Als de invoeg toepassing de versie controle mislukt, wordt een fout gerapporteerd in Windows Power shell.
 
 ## GERELATEERDE KOPPELINGEN
 

@@ -7,12 +7,12 @@ ms.date: 4/30/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/set-date?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Date
-ms.openlocfilehash: 4a7deaeb0570516c5d0cb1be704f0e1cb7bfe13c
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 63742cf1cc7431668a769bec5d4798b23db8c2ae
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93251008"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94386890"
 ---
 # Set-Date
 
@@ -131,12 +131,9 @@ Accept wildcard characters: False
 
 Hiermee geeft u op welke elementen van de datum en tijd worden weer gegeven. De acceptabele waarden voor deze para meter zijn:
 
-- Vallen.
-  geeft alleen de datum weer.
-- Tijd.
-  geeft alleen de tijd weer.
-- DateTime.
-  Hier worden de datum en tijd weer gegeven.
+- **Datum** : alleen de datum weer gegeven.
+- **Tijd** : alleen de tijd weer gegeven.
+- **DateTime** : geeft de datum en tijd weer.
 
 Deze para meter is alleen van invloed op de weer gave.
 Dit heeft geen invloed op het **DateTime** -object dat wordt `Get-Date` opgehaald.
@@ -208,7 +205,7 @@ U kunt een datum door sluizen naar `Set-Date` .
 - Gebruik deze cmdlet voorzichtig bij het wijzigen van de datum en tijd op de computer. De wijziging kan ertoe leiden dat de computer geen systeem gebeurtenissen en updates ontvangt die worden geactiveerd door een datum of tijd. Gebruik de **WhatIf** en **Bevestig** de para meters om fouten te voor komen.
 - U kunt standaard .NET-methoden gebruiken met de **DateTime** -en **time span** -objecten die worden gebruikt met `Set-Date` , zoals **addDays** , **AddMonths** en **FromFileTime**. Zie [DateTime-methoden](/dotnet/api/system.datetime) en voor meer informatie
 
-  [Time span-methoden](/dotnet/api/system.timespan) in de MSDN-bibliotheek.
+  [Time span-methoden](/dotnet/api/system.timespan) in de .NET SDK.
 
 ## GERELATEERDE KOPPELINGEN
 

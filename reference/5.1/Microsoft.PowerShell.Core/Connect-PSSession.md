@@ -7,12 +7,12 @@ ms.date: 5/15/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/connect-pssession?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Connect-PSSession
-ms.openlocfilehash: 8aff8a2b3962b3bf09d158247c06b36f99eaf527
-ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
+ms.openlocfilehash: 3352055e9c77dd944ffd66fa5db9863166ad7e95
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94342515"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94388804"
 ---
 # Connect-PSSession
 
@@ -213,7 +213,6 @@ Geeft aan dat deze cmdlet omleiding van deze verbinding met een alternatieve URI
 Wanneer u de para meter **ConnectionURI** gebruikt, kan de externe bestemming een instructie retour neren die wordt omgeleid naar een andere URI. Standaard worden verbindingen niet door Power shell omgeleid, maar u kunt deze para meter gebruiken om de verbinding te omleiden.
 
 U kunt ook het aantal keren beperken dat de verbinding wordt omgeleid door de waarde van de **MaximumConnectionRedirectionCount** -sessie optie te wijzigen. Gebruik de para meter **MaximumRedirection** van de `New-PSSessionOption` cmdlet of stel de eigenschap **MaximumConnectionRedirectionCount** van de voorkeurs variabele **$PSSessionOption** in. De standaard waarde is 5.
-De standaard waarde is 5.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -261,7 +260,7 @@ Hiermee geeft u het mechanisme op dat wordt gebruikt voor het verifiëren van ge
 
 De standaard waarde is standaard.
 
-Zie [AuthenticationMechanism Enumeration (Engelstalig)](https://msdn.microsoft.com/library/system.management.automation.runspaces.authenticationmechanism) in de MSDN-bibliotheek voor meer informatie over de waarden van deze para meter.
+Zie [AuthenticationMechanism Enumeration (Engelstalig)](/dotnet/api/system.management.automation.runspaces.authenticationmechanism)voor meer informatie over de waarden van deze para meter.
 
 > [!CAUTION]
 > De verificatie van de referentie provider (CredSSP), waarbij de referenties van de gebruiker worden door gegeven aan een externe computer die moet worden geverifieerd, is ontworpen voor opdrachten waarvoor verificatie is vereist voor meer dan één bron, zoals het openen van een externe netwerk share. Dit mechanisme verhoogt het beveiligings risico van de externe bewerking. Als er is geknoeid met de externe computer, kunnen de referenties die aan worden door gegeven, worden gebruikt om de netwerk sessie te beheren.
@@ -611,9 +610,9 @@ Met deze cmdlet wordt een object geretourneerd dat de sessie vertegenwoordigt wa
 
   Een **beschikbaarheids** waarde van geen geeft aan dat u verbinding kunt maken met de sessie. De waarde bezet geeft aan dat u geen verbinding kunt maken met de **PSSession** omdat deze is verbonden met een andere sessie.
 
-  Zie [RunspaceState Enumeration (Engelstalig)](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspacestate) in de MSDN-bibliotheek voor meer informatie over de waarden van de eigenschap **State** van sessies.
+  Zie [RunspaceState Enumeration (Engelstalig)](/dotnet/api/system.management.automation.runspaces.runspacestate)voor meer informatie over de waarden van de eigenschap **State** van sessies.
 
-  Zie [RunspaceAvailability Enumeration (Engelstalig)](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspaceavailability) in de MSDN-bibliotheek voor meer informatie over de waarden van de eigenschap **Availability** van sessies.
+  Zie [RunspaceAvailability Enumeration (Engelstalig)](/dotnet/api/system.management.automation.runspaces.runspaceavailability)voor meer informatie over de waarden van de eigenschap **Beschik baarheid** van sessies.
 
 - U kunt de time-outwaarde voor inactiviteit van een **PSSession** niet wijzigen wanneer u verbinding maakt met de **PSSession**. De para meter **SessionOption** van `Connect-PSSession` maakt een **SessionOption** -object met een **IdleTimeout** -waarde. De waarde **IdleTimeout** van het object **SessionOption** en de waarde **IdleTimeout** van de `$PSSessionOption` variabele wordt echter genegeerd wanneer er verbinding wordt gemaakt met een **PSSession**.
 

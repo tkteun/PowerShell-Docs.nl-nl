@@ -7,12 +7,12 @@ ms.date: 11/06/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/connect-pssession?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Connect-PSSession
-ms.openlocfilehash: 36a03257d8241dbe7e9c851a95eaaa3e3dbbda27
-ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
+ms.openlocfilehash: 8f782a7d1cc4403c3f212ff7973eb2c173be4342
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94345541"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94387580"
 ---
 # Connect-PSSession
 
@@ -264,7 +264,7 @@ Hiermee geeft u het mechanisme op dat wordt gebruikt voor het verifiëren van ge
 
 De standaard waarde is standaard.
 
-Zie [AuthenticationMechanism Enumeration (Engelstalig)](https://msdn.microsoft.com/library/system.management.automation.runspaces.authenticationmechanism) in de MSDN-bibliotheek voor meer informatie over de waarden van deze para meter.
+Zie [AuthenticationMechanism Enumeration (Engelstalig)](/dotnet/api/system.management.automation.runspaces.authenticationmechanism)voor meer informatie over de waarden van deze para meter.
 
 > [!CAUTION]
 > De verificatie van de referentie provider (CredSSP), waarbij de referenties van de gebruiker worden door gegeven aan een externe computer die moet worden geverifieerd, is ontworpen voor opdrachten waarvoor verificatie is vereist voor meer dan één bron, zoals het openen van een externe netwerk share. Dit mechanisme verhoogt het beveiligings risico van de externe bewerking. Als er is geknoeid met de externe computer, kunnen de referenties die aan worden door gegeven, worden gebruikt om de netwerk sessie te beheren.
@@ -614,9 +614,9 @@ Met deze cmdlet wordt een object geretourneerd dat de sessie vertegenwoordigt wa
 
   Een **beschikbaarheids** waarde van geen geeft aan dat u verbinding kunt maken met de sessie. De waarde bezet geeft aan dat u geen verbinding kunt maken met de **PSSession** omdat deze is verbonden met een andere sessie.
 
-  Zie [RunspaceState Enumeration (Engelstalig)](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspacestate) in de MSDN-bibliotheek voor meer informatie over de waarden van de eigenschap **State** van sessies.
+  Zie [RunspaceState Enumeration (Engelstalig)](/dotnet/api/system.management.automation.runspaces.runspacestate)voor meer informatie over de waarden van de eigenschap **State** van sessies.
 
-  Zie [RunspaceAvailability Enumeration (Engelstalig)](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspaceavailability) in de MSDN-bibliotheek voor meer informatie over de waarden van de eigenschap **Availability** van sessies.
+  Zie [RunspaceAvailability Enumeration (Engelstalig)](/dotnet/api/system.management.automation.runspaces.runspaceavailability)voor meer informatie over de waarden van de eigenschap **Beschik baarheid** van sessies.
 
 - U kunt de time-outwaarde voor inactiviteit van een **PSSession** niet wijzigen wanneer u verbinding maakt met de **PSSession**. De para meter **SessionOption** van `Connect-PSSession` maakt een **SessionOption** -object met een **IdleTimeout** -waarde. De waarde **IdleTimeout** van het object **SessionOption** en de waarde **IdleTimeout** van de `$PSSessionOption` variabele wordt echter genegeerd wanneer er verbinding wordt gemaakt met een **PSSession**.
 

@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/select-xml?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Select-Xml
-ms.openlocfilehash: 62d88dc105121ea0f6194dcdcfe3a234b654c6ee
-ms.sourcegitcommit: 37abf054ad9eda8813be8ff4487803b10e1842ef
+ms.openlocfilehash: d3cadbc6ca08741f8e747ad59456e5b6924e1688
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "93251585"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94386911"
 ---
 # Select-Xml
 
@@ -327,7 +327,7 @@ U kunt een pad of XML-knoop punt door sluizen naar deze cmdlet.
 
 ## OPMERKINGEN
 
-* XPath is een standaard taal die is ontworpen om delen van een XML-document te identificeren. Zie [XPath-verwijzing](https://msdn.microsoft.com/library/ms256115) en de sectie selectie filters van de [gebeurtenis selectie](https://msdn.microsoft.com/library/aa385231) in de MSDN-bibliotheek voor meer informatie over de XPath-taal.
+XPath is een standaard taal die is ontworpen om delen van een XML-document te identificeren. Zie [XPath-verwijzing](/dotnet/standard/data/xml/select-nodes-using-xpath-navigation) en het gedeelte selectie filters van de [gebeurtenis selectie](/previous-versions//aa385231(v=vs.85))voor meer informatie over de XPath-taal.
 
 ## GERELATEERDE KOPPELINGEN
 

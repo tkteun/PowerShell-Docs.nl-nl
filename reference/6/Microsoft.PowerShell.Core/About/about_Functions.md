@@ -6,12 +6,12 @@ ms.date: 2/27/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Functions
-ms.openlocfilehash: 4bc921b19951290efd1c8cbe5c8bb014912695f0
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 944cb3fc77406cfbf288655d2740bad6ddcceee4
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93252332"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94387631"
 ---
 # <a name="about-functions"></a>Over Functions
 
@@ -41,7 +41,7 @@ Een filter is een speciaal soort functie die gebruikmaakt van het `Filter` sleut
 
 Functies kunnen ook fungeren als-cmdlets. U kunt een functie maken die werkt op dezelfde manier als een cmdlet zonder `C#` Program meren te gebruiken. Zie [about_Functions_Advanced](about_Functions_Advanced.md)voor meer informatie.
 
-## <a name="syntax"></a>Syntax
+## <a name="syntax"></a>Syntaxis
 
 Hier volgt de syntaxis voor een functie:
 
@@ -486,9 +486,9 @@ U kunt op een van de volgende twee manieren hulp voor een functie schrijven:
 
   Als u de functie wilt koppelen aan het Help-onderwerp met XML, gebruikt u het `.ExternalHelp` tref woord Help op basis van opmerkingen. Zonder dit sleutel woord `Get-Help` kan het Help-onderwerp van de functie niet worden gevonden en wordt aanroepen naar `Get-Help` voor de functie retourneert alleen automatisch gegenereerde Help.
 
-  Zie about_Comment_Based_Help voor meer informatie over het `ExternalHelp` tref [about_Comment_Based_Help](about_Comment_Based_Help.md)woord. Zie [instructies voor het schrijven van cmdlets](https://go.microsoft.com/fwlink/?LinkID=123415) in de MSDN-bibliotheek voor meer informatie over Help op basis van XML.
+  Zie about_Comment_Based_Help voor meer informatie over het `ExternalHelp` tref [about_Comment_Based_Help](about_Comment_Based_Help.md)woord. Zie [instructies voor het schrijven van cmdlets](/powershell/scripting/developer/help/writing-help-for-windows-powershell-cmdlets)voor meer informatie over Help op basis van XML.
 
-## <a name="see-also"></a>Zie ook
+## <a name="see-also"></a>Zie tevens
 
 [about_Automatic_Variables](about_Automatic_Variables.md)
 

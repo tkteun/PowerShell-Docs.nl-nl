@@ -6,12 +6,12 @@ ms.date: 11/28/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_hash_tables?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Hash_Tables
-ms.openlocfilehash: ecc4cbb02522766b04414c30c65d4d6acde3bb8a
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: c48eace3f0b63014e0121d3cbc7a48966d5bcbef
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93252322"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94387546"
 ---
 # <a name="about-hash-tables"></a>Hash-tabellen
 
@@ -32,7 +32,7 @@ De sleutels en waarde in hash-tabellen zijn ook .NET-objecten. Ze zijn meestal t
 
 Hash-tabellen worden vaak gebruikt, omdat ze zeer efficiënt zijn voor het zoeken en ophalen van gegevens. U kunt hash-tabellen gebruiken om lijsten op te slaan en berekende eigenschappen in Power shell te maken. En Power Shell heeft een cmdlet, ConvertFrom-StringData, waarmee teken reeksen naar een hash-tabel worden geconverteerd.
 
-### <a name="syntax"></a>Syntax
+### <a name="syntax"></a>Syntaxis
 
 De syntaxis van een hash-tabel is als volgt:
 
@@ -245,20 +245,20 @@ Als u bijvoorbeeld de tijd = nu sleutel/waarde-paar uit de hash-tabel wilt verwi
 $hash.Remove("Time")
 ```
 
-U kunt alle eigenschappen en methoden van hashtabel-objecten in Power shell gebruiken, inclusief contains, Clear, clone en CopyTo. Zie ' System. Collections. hashtabel ' op MSDN voor meer informatie over Hashtable-objecten.
+U kunt alle eigenschappen en methoden van hashtabel-objecten in Power shell gebruiken, inclusief contains, Clear, clone en CopyTo. Zie [System. Collections. hashtabel](/dotnet/api/system.collections.hashtable)voor meer informatie over hashtabel-objecten.
 
 ### <a name="object-types-in-hashtables"></a>Object typen in hashtabellen
 
 De sleutels en waarden in een hash-tabel kunnen elk .NET-object type hebben en een enkele hash-tabel kan sleutels en waarden van meerdere typen hebben.
 
-Met de volgende instructie maakt u een hash-tabel met proces naam reeksen en proces object waarden en slaat u deze op in de \$ variabele p.
+Met de volgende instructie maakt u een hash-tabel met proces naam reeksen en proces object waarden en slaat u deze op in de `$p` variabele.
 
 ```powershell
 $p = @{"PowerShell" = (Get-Process PowerShell);
 "Notepad" = (Get-Process notepad)}
 ```
 
-U kunt de hash-tabel weer geven in \$ p en de eigenschappen van de sleutel naam gebruiken om de waarden weer te geven.
+U kunt de hash-tabel weer geven in en de eigenschappen van de `$p` sleutel naam gebruiken om de waarden weer te geven.
 
 ```powershell
 C:\PS> $p
@@ -279,7 +279,7 @@ C:\PS> $p.keys | foreach {$p.$_.handles}
 251
 ```
 
-De sleutels in een hash-tabel kunnen ook elk .NET-type zijn. De volgende instructie voegt een sleutel/waarde-paar toe aan de hash-tabel in de \$ variabele p. De sleutel is een service object dat de WinRM-service vertegenwoordigt en de waarde is de huidige status van de service.
+De sleutels in een hash-tabel kunnen ook elk .NET-type zijn. De volgende instructie voegt een sleutel/waarde-paar toe aan de hash-tabel in de `$p` variabele. De sleutel is een service object dat de WinRM-service vertegenwoordigt en de waarde is de huidige status van de service.
 
 ```powershell
 C:\PS> $p = $p + @{(Get-Service WinRM) = ((Get-Service WinRM).Status)}
@@ -308,7 +308,7 @@ C:\PS> $p.keys | foreach {$_.name}
 winrm
 ```
 
-De sleutels en waarden in een hash-tabel kunnen ook hash-objecten zijn. De volgende instructie voegt een sleutel/waarde-paar toe aan de hash-tabel in de \$ p-variabele waarin de sleutel een teken reeks, Hash2 en de waarde is een hash-tabel met drie sleutel-waardeparen.
+De sleutels en waarden in een hash-tabel kunnen ook hash-objecten zijn. De volgende instructie voegt een sleutel/waarde-paar toe aan de hash-tabel in de `$p` variabele waarin de sleutel een teken reeks, Hash2 is en de waarde is een hash-tabel met drie sleutel-waardeparen.
 
 ```powershell
 C:\PS> $p = $p + @{"Hash2"= @{a=1; b=2; c=3}}
@@ -344,7 +344,7 @@ De items in een hash-tabel zijn niet in de juiste volg orde. De sleutel-waardepa
 
 Hoewel u een hashtabel kunt niet sorteren, kunt u de GetEnumerator-methode van hash-tabellen gebruiken om de sleutels en waarden op te sommen en vervolgens de cmdlet Sort-Object gebruiken om de opgesomde waarden voor weer gave te sorteren.
 
-Met de volgende opdrachten worden bijvoorbeeld de sleutels en waarden in de hash-tabel in de \$ variabele p opgesomd en vervolgens de sleutels in alfabetische volg orde gesorteerd.
+Met de volgende opdrachten worden bijvoorbeeld de sleutels en waarden in de hash-tabel in de `$p` variabele opgesomd en vervolgens de sleutels in alfabetische volg orde gesorteerd.
 
 ```powershell
 C:\PS> $p.GetEnumerator() | Sort-Object -Property key

@@ -7,12 +7,12 @@ ms.date: 4/30/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/set-date?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Date
-ms.openlocfilehash: c3cc162fdb8b3d04236f2186438fa14b8a0b42b3
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 36e49d36ffe7e4000926cf821767dfb158efcf46
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93250371"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94387971"
 ---
 # Set-Date
 
@@ -131,12 +131,9 @@ Accept wildcard characters: False
 
 Hiermee geeft u op welke elementen van de datum en tijd worden weer gegeven. De acceptabele waarden voor deze para meter zijn:
 
-- **Datum**.
-  geeft alleen de datum weer.
-- **Tijd**.
-  geeft alleen de tijd weer.
-- **Datum/tijd**.
-  Hier worden de datum en tijd weer gegeven.
+- **Datum** : alleen de datum weer gegeven.
+- **Tijd** : alleen de tijd weer gegeven.
+- **DateTime** : geeft de datum en tijd weer.
 
 Deze para meter is alleen van invloed op de weer gave.
 Dit heeft geen invloed op het **DateTime** -object dat wordt `Get-Date` opgehaald.
@@ -208,7 +205,7 @@ U kunt een datum door sluizen naar `Set-Date` .
 - Gebruik deze cmdlet voorzichtig bij het wijzigen van de datum en tijd op de computer. De wijziging kan ertoe leiden dat de computer geen systeem gebeurtenissen en updates ontvangt die worden geactiveerd door een datum of tijd. Gebruik de **WhatIf** en **Bevestig** de para meters om fouten te voor komen.
 - U kunt standaard .NET-methoden gebruiken met de **DateTime** -en **time span** -objecten die worden gebruikt met `Set-Date` , zoals **addDays** , **AddMonths** en **FromFileTime**. Zie [DateTime-methoden](/dotnet/api/system.datetime) en voor meer informatie
 
-  [Time span-methoden](/dotnet/api/system.timespan) in de MSDN-bibliotheek.
+  [Time span-methoden](/dotnet/api/system.timespan) in de .NET SDK.
 
 ## GERELATEERDE KOPPELINGEN
 

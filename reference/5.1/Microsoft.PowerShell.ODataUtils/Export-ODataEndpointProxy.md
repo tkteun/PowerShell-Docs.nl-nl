@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.odatautils/export-odataendpointproxy?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Export-ODataEndpointProxy
-ms.openlocfilehash: 7550e2df319e5f195e65609ae29ebb00830ec8d2
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 846aca6974190863a073773fe5148f0c57d77dc3
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93250516"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94388192"
 ---
 # Export-ODataEndpointProxy
 
@@ -310,7 +310,7 @@ Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - Er
 
 ## GERELATEERDE KOPPELINGEN
 
-[OData-bibliotheek](https://technet.microsoft.com/windowsserver/hh525392(v=vs.85).aspx?f=255&MSPPError=-2147217396)
+[OData-bibliotheek](/previous-versions/dotnet/wcf-data-services/hh525392(v=vs.103))
 
 [Wat is het OData-Protocol?](https://www.odata.org/)
 

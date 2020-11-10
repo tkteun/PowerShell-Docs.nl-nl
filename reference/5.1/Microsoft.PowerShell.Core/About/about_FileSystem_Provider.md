@@ -6,12 +6,12 @@ ms.date: 10/18/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_filesystem_provider?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Bestandssysteem provider
-ms.openlocfilehash: 3b37f6e4eb53ef7291c30cbc9820caf83641a9bb
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 204a90dc346e6d4ff483777b9adf7a70017ef093
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93252802"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94386906"
 ---
 # <a name="filesystem-provider"></a>Bestandssysteem provider
 
@@ -206,7 +206,7 @@ Met deze opdracht wordt een [System. Security. accesscontrol. FileSecurity](/dot
 Get-Acl -Path test.txt | Format-List -Property *
 ```
 
-Voor meer informatie over dit object pipet u de opdracht naar de cmdlet [Get-member](xref:Microsoft.PowerShell.Utility.Get-Member) . Of Zie '[FileSecurity](/dotnet/api/system.security.accesscontrol.filesecurity) class ' in de MSDN-bibliotheek (micro soft Developer Network).
+Voor meer informatie over dit object pipet u de opdracht naar de cmdlet [Get-member](xref:Microsoft.PowerShell.Utility.Get-Member) . Of Zie [FileSecurity](/dotnet/api/system.security.accesscontrol.filesecurity) -klasse.
 
 ### <a name="modify-the-acl-for-a-file"></a>De ACL voor een bestand wijzigen
 
@@ -522,10 +522,6 @@ Hiermee worden de tekens voor nieuwe regels genegeerd. Retourneert inhoud als é
 
 - [Get-Content](xref:Microsoft.PowerShell.Management.Get-Content)
 
-#### <a name="cmdlets-supported"></a>Ondersteunde cmdlets
-
-- [Get-Content](xref:Microsoft.PowerShell.Management.Get-Content)
-
 ### <a name="itemtype-string"></a>Item type \<String\>
 
 Met deze para meter kunt u de Tye opgeven van het item dat moet worden gemaakt met `New-Item`
@@ -563,6 +559,6 @@ Get-Help Get-ChildItem
 Get-Help Get-ChildItem -Path c:
 ```
 
-## <a name="see-also"></a>Zie ook
+## <a name="see-also"></a>Zie tevens
 
 [about_Providers](../About/about_Providers.md)

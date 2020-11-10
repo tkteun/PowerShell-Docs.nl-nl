@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/psscheduledjob/set-scheduledjob?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-ScheduledJob
-ms.openlocfilehash: 99dbdc84430c0a8b5cf505a22b139cd07236e160
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 6144d9f19b86727bc09d07e94f4bcf158e3b7071
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93250289"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94387903"
 ---
 # Set-ScheduledJob
 
@@ -149,8 +149,7 @@ De aanvaardbare waarden voor deze parameter zijn:
 - Negotiate
 - NegotiateWithImplicitCredential
 
-De standaard waarde is standaard.
-Zie [AuthenticationMechanism Enumeration (Engelstalig)](https://msdn.microsoft.com/library/system.management.automation.runspaces.authenticationmechanism) in de MSDN-bibliotheek voor meer informatie over de waarden van deze para meter.
+De standaard waarde is standaard. Zie [AuthenticationMechanism-inventarisatie](/dotnet/api/system.management.automation.runspaces.authenticationmechanism) in de Power shell SDK voor meer informatie over de waarden van deze para meter.
 
 Let op: de verificatie van de referentie provider (CredSSP), waarbij de referenties van de gebruiker worden door gegeven aan een externe computer die moet worden geverifieerd, is ontworpen voor opdrachten die verificatie vereisen voor meer dan één bron, zoals het openen van een externe netwerk share.
 Dit mechanisme verhoogt het beveiligings risico van de externe bewerking.

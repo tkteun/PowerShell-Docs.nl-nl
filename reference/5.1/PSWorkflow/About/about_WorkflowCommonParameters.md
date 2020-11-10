@@ -6,12 +6,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/psworkflow/about/about_workflowcommonparameters?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_WorkflowCommonParameters
-ms.openlocfilehash: 386200475c1dab9735921edd60abbde20ee354c4
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: c371666d4f58386848e7ef715b7c804dc1e8f28e
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93252393"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94387784"
 ---
 # <a name="about-workflowcommonparameters"></a>Over WorkflowCommonParameters
 
@@ -69,7 +69,7 @@ Hiermee geeft u het mechanisme op dat wordt gebruikt om de referenties van de ge
 
 Geldige waarden zijn:
 
-- **Prijs**
+- **Standaard**
 - **Basic**
 - **CredSSP**
 - **Samenvatting**
@@ -79,7 +79,7 @@ Geldige waarden zijn:
 
 De standaard waarde is **standaard**.
 
-Zie de beschrijving van de inventarisatie in MSDN voor meer informatie over de waarden van deze para meter `System.Management.Automation.Runspaces.AuthenticationMechanism` .
+Voor informatie over de waarden van deze para meter, zie de beschrijving van de `System.Management.Automation.Runspaces.AuthenticationMechanism` inventarisatie in de Power shell-SDK.
 
 > [!WARNING]
 > CredSSP-verificatie (Credential Security service provider), waarbij de referenties van de gebruiker worden door gegeven aan een externe computer die moet worden geverifieerd, is ontworpen voor opdrachten waarvoor verificatie is vereist voor meer dan één bron, zoals het openen van een externe netwerk share. Dit mechanisme verhoogt het beveiligings risico van de externe bewerking. Als er is geknoeid met de externe computer, kunnen de referenties die aan worden door gegeven, worden gebruikt om de netwerk sessie te beheren.
@@ -94,7 +94,7 @@ Geldige waarden zijn:
 |Naam |Beschrijving |
 |---------|---------|
 |**Behoudt** | Het verificatie niveau is hetzelfde als de vorige opdracht. |
-|**Prijs** | Windows-verificatie. |
+|**Standaard** | Windows-verificatie. |
 |**Geen** | Geen COM-verificatie.   |
 |**Verbinding maken** | COM-verificatie op verbinding niveau.|
 |**Call** | COM-verificatie op aanroep niveau.   |

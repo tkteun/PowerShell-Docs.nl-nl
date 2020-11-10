@@ -6,12 +6,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/psworkflow/about/about_activitycommonparameters?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_ActivityCommonParameters
-ms.openlocfilehash: b745bf17e4ae26156042ecdc25211830177bc692
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 93fdcdb9c5afe0b73e843baf2474ec7d3f96a6cf
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93252408"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94387801"
 ---
 # <a name="about-activitycommonparameters"></a>Over ActivityCommonParameters
 
@@ -150,7 +150,7 @@ De WinRM-service gebruikt de naam van de toepassing om een listener te selectere
 
 Hiermee geeft u het mechanisme op dat wordt gebruikt om de referenties van de gebruiker te verifiëren wanneer er verbinding wordt gemaakt met de doel computers. Geldige waarden zijn default, Basic, CredSSP, Digest, Kerberos, Negotiate en NegotiateWithImplicitCredential. De standaard waarde is standaard. Deze algemene activiteit para meter is ook een algemene werk stroom parameter.
 
-Voor informatie over de waarden van deze para meter raadpleegt u de beschrijving van de inventarisatie **System. Management. Automation. Runspaces. AuthenticationMechanism** in MSDN.
+Voor informatie over de waarden van deze para meter, zie de beschrijving van de inventarisatie **System. Management. Automation. Runspaces. AuthenticationMechanism** in de Power shell-SDK.
 
 > [!WARNING]
 > CredSSP-verificatie (Credential Security service provider), waarbij de referenties van de gebruiker worden door gegeven aan een externe computer die moet worden geverifieerd, is ontworpen voor opdrachten waarvoor verificatie is vereist voor meer dan één bron, zoals het openen van een externe netwerk share. Dit mechanisme verhoogt het beveiligings risico van de externe bewerking. Als er is geknoeid met de externe computer, kunnen de referenties die aan worden door gegeven, worden gebruikt om de netwerk sessie te beheren.

@@ -7,12 +7,12 @@ ms.date: 04/08/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/export-pssession?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Export-PSSession
-ms.openlocfilehash: 67501a78ba577f63c97e595f4bacd28160fea416
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 11533a9b127dc6d088258392c0e142bfbe5c070c
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93250451"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94388022"
 ---
 # Export-PSSession
 
@@ -294,16 +294,14 @@ Accept wildcard characters: False
 
 ### -FullyQualifiedModule
 
-Hiermee geeft u modules op met namen die zijn opgegeven in de vorm van **ModuleSpecification** -objecten.
-Zie de sectie opmerkingen van de [ModuleSpecification-constructor (hashtabel)](https://msdn.microsoft.com/library/jj136290).
+Hiermee geeft u modules op met namen die zijn opgegeven in de vorm van **ModuleSpecification** -objecten. Zie de sectie opmerkingen van de [ModuleSpecification-constructor (hashtabel)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_).
 
 De para meter **FullyQualifiedModule** accepteert bijvoorbeeld een module naam die is opgegeven in een van de volgende indelingen:
 
-`@{ModuleName = "modulename"; ModuleVersion = "version_number"}`
+- `@{ModuleName = "modulename"; ModuleVersion = "version_number"}`
+- `@{ModuleName = "modulename"; ModuleVersion = "version_number"; Guid = "GUID"}`
 
-`@{ModuleName = "modulename"; ModuleVersion = "version_number"; Guid = "GUID"}`
-
-**Module** naam en **ModuleVersion** zijn vereist, maar **GUID** is optioneel. U kunt de para meter **FullyQualifiedModule** niet opgeven in dezelfde opdracht als een **module** parameter; de twee para meters sluiten elkaar wederzijds uit.
+**Module** naam en **ModuleVersion** zijn vereist, maar **GUID** is optioneel. U kunt de para meter **FullyQualifiedModule** niet opgeven in dezelfde opdracht als een **module** parameter. de twee para meters sluiten elkaar wederzijds uit.
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.ModuleSpecification[]

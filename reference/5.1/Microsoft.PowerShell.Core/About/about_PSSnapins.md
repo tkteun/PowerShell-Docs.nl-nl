@@ -6,12 +6,12 @@ ms.date: 01/03/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pssnapins?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_PSSnapins
-ms.openlocfilehash: cc22f8de0b9d8a55dcfa12f3b47f3852d891e67b
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 494b3275e4fe8a3aacdc358317950542962957cf
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93252595"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94388889"
 ---
 # <a name="about-pssnapins"></a>Over PSSnapins
 
@@ -57,7 +57,7 @@ De ingebouwde modules worden geregistreerd in het systeem en toegevoegd aan de s
 
 Een Windows Power shell-module is een programma dat is geschreven in een .NET Framework taal die in een. dll-bestand is gecompileerd. Als u de providers en cmdlets in een module wilt gebruiken, moet u eerst de module registreren (Voeg deze toe aan het REGI ster).
 
-De meeste modules bevatten een installatie programma (een exe-of MSI-bestand) dat het dll-bestand voor u registreert. Als u echter een module ontvangt als een dll-bestand, kunt u deze registreren op uw systeem. Zie [cmdlets, providers en hosttoepassingen registreren](https://go.microsoft.com/fwlink/?LinkID=143619) in de MSDN-bibliotheek voor meer informatie.
+De meeste modules bevatten een installatie programma (een exe-of MSI-bestand) dat het dll-bestand voor u registreert. Als u echter een module ontvangt als een dll-bestand, kunt u deze registreren op uw systeem. Zie voor meer informatie [cmdlets, providers en hosttoepassingen registreren](/previous-versions//ms714644(v=vs.85)).
 
 Als u alle geregistreerde modules op uw systeem wilt ophalen of als u wilt controleren of een module is geregistreerd, typt u:
 

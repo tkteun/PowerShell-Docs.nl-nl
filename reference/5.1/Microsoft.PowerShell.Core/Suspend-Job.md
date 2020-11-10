@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/suspend-job?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Suspend-Job
-ms.openlocfilehash: 6ab50342e963832d89b3dfc4128a22fc16405926
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 9b18782fae77fa0776aa2cfaa39b74a2292099d9
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93250132"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94388462"
 ---
 # Suspend-Job
 
@@ -58,28 +58,18 @@ Suspend-Job [-Force] [-Wait] [-State] <JobState> [-WhatIf] [-Confirm] [<CommonPa
 ```
 
 ## BESCHRIJVING
-Met de cmdlet **suspend-job** worden werk stroom taken onderbroken.
-Suspend betekent dat een werk stroom taak tijdelijk moet worden onderbroken of onderbroken.
-Met deze cmdlet kunnen gebruikers die werk stromen uitvoeren, de werk stroom onderbreken.
-Dit is een aanvulling op de activiteit Suspend-workflow https://go.microsoft.com/fwlink/?LinkId=267141 , een opdracht in de werk stroom waarmee de werk stroom wordt onderbroken.
 
-De cmdlet **suspend-job** werkt alleen op werk stroom taken.
-Deze functie werkt niet op standaard achtergrond taken, zoals die worden gestart met behulp van de cmdlet Start-Job.
+De `Suspend-Job` cmdlet suspendeert werk stroom taken. Suspend betekent dat een werk stroom taak tijdelijk moet worden onderbroken of onderbroken. Met deze cmdlet kunnen gebruikers die werk stromen uitvoeren, de werk stroom onderbreken. Dit is een aanvulling op de activiteit Suspend-workflow https://go.microsoft.com/fwlink/?LinkId=267141 , een opdracht in de werk stroom waarmee de werk stroom wordt onderbroken.
 
-Zoek naar een waarde van PSWorkflowJob in de eigenschap **PSJobTypeName** van de taak om een werk stroom taak te identificeren.
-Zie de Help-onderwerpen voor het aangepaste taak type om te bepalen of een bepaald aangepast taak type de cmdlet **pause-job** ondersteunt.
+De `Suspend-Job` cmdlet werkt alleen op werk stroom taken. Deze functie werkt niet op standaard achtergrond taken, zoals die worden gestart met behulp van de `Start-Job` cmdlet.
 
-Wanneer u een werk stroom taak uitbreekt, wordt de werk stroom taak uitgevoerd op het volgende controle punt, wordt deze onderbroken en wordt er onmiddellijk een werk stroom taak object geretourneerd.
-Als u wilt wachten tot de onderbreking is voltooid voordat u de taak kunt ophalen, gebruikt u de para meter *wait* of **pause-job** of de cmdlet Wait-Job.
-Wanneer de werk stroom taak is onderbroken, wordt de waarde van de eigenschap **State** van de taak onderbroken.
+Zoek naar een waarde van PSWorkflowJob in de eigenschap **PSJobTypeName** van de taak om een werk stroom taak te identificeren. `Suspend-Job`Zie de Help-onderwerpen voor het aangepaste taak type om te bepalen of een bepaald aangepast taak type de cmdlet ondersteunt.
 
-Het onderbreken van de wacht stand is afhankelijk van controle punten.
-De huidige taak status, meta gegevens en uitvoer worden opgeslagen in het controle punt zodat de werk stroom taak kan worden hervat zonder dat de status of gegevens verloren gaan.
-Als de werk stroom taak geen controle punten heeft, kan deze niet goed worden onderbroken.
-Als u controle punten wilt toevoegen aan een werk stroom die u uitvoert, gebruikt u de algemene para meter *PSPersist* workflow.
-U kunt de para meter *Force* gebruiken om een werk stroom taak onmiddellijk te onderbreken en een werk stroom taak te onderbreken die geen controle punten heeft, maar de actie kan leiden tot verlies van status en gegevens.
+Wanneer u een werk stroom taak uitbreekt, wordt de werk stroom taak uitgevoerd op het volgende controle punt, wordt deze onderbroken en wordt er onmiddellijk een werk stroom taak object geretourneerd. Als u wilt wachten tot de onderbreking is voltooid, gebruikt u de para meter **wait** van `Suspend-Job` of de `Wait-Job` cmdlet. Wanneer de werk stroom taak is onderbroken, wordt de waarde van de eigenschap **State** van de taak onderbroken.
 
-Voordat u een taak-cmdlet voor een aangepast taak type gebruikt, zoals een werk stroom taak ( **PSWorkflowJob** ), moet u de module importeren die het aangepaste taak type ondersteunt, hetzij met behulp van de cmdlet Import-Module, hetzij met behulp van een cmdlet in de module.
+Het onderbreken van de wacht stand is afhankelijk van controle punten. De huidige taak status, meta gegevens en uitvoer worden opgeslagen in het controle punt zodat de werk stroom taak kan worden hervat zonder dat de status of gegevens verloren gaan. Als de werk stroom taak geen controle punten heeft, kan deze niet goed worden onderbroken. Als u controle punten wilt toevoegen aan een werk stroom die u uitvoert, gebruikt u de algemene para meter **PSPersist** workflow. U kunt de para meter **Force** gebruiken om een werk stroom taak onmiddellijk te onderbreken en een werk stroom taak te onderbreken die geen controle punten heeft, maar de actie kan leiden tot verlies van status en gegevens.
+
+Voordat u een taak-cmdlet voor een aangepast taak type gebruikt, zoals een werk stroom taak ( **PSWorkflowJob** ), moet u de module importeren die het aangepaste taak type ondersteunt, hetzij met behulp van de cmdlet, hetzij met behulp van `Import-Module` een cmdlet in de module.
 
 Deze cmdlet is geïntroduceerd in Windows Power Shell 3,0.
 
@@ -87,8 +77,17 @@ Deze cmdlet is geïntroduceerd in Windows Power Shell 3,0.
 
 ### Voor beeld 1: een werk stroom taak op naam onderbreken
 
+In dit voor beeld ziet u hoe u een werk stroom taak uitbreekt.
+
+Met de eerste opdracht wordt de `Get-SystemLog` werk stroom gemaakt. De werk stroom gebruikt de `CheckPoint-Workflow` activiteit om een controle punt in de werk stroom te definiëren.
+
+De tweede opdracht maakt gebruik van de para meter **AsJob** die gemeen schappelijk is voor alle werk stromen om de `Get-SystemLog` werk stroom als achtergrond taak uit te voeren. De opdracht gebruikt de algemene para meter **JobName** workflow om een beschrijvende naam voor de werk stroom taak op te geven.
+
+De derde opdracht gebruikt de `Get-Job` cmdlet om de `Get-SystemLogJob` werk stroom taak op te halen. In de uitvoer ziet u dat de waarde van de eigenschap **PSJobTypeName** PSWorkflowJob is.
+
+De vierde opdracht gebruikt de `Suspend-Job` cmdlet om de taak te onderbreken `Get-SystemLogJob` . De taak wordt uitgevoerd op het controle punt en wordt vervolgens onderbroken.
+
 ```
-The first command creates the Get-SystemLog workflow. The workflow uses the CheckPoint-Workflow activity to define a checkpoint in the workflow.
 #Sample WorkflowWorkflow Get-SystemLog
 {
     $Events = Get-WinEvent -LogName System
@@ -96,47 +95,47 @@ The first command creates the Get-SystemLog workflow. The workflow uses the Chec
     InlineScript {\\Server01\Scripts\Analyze-SystemEvents.ps1 -Events $Events}
 }
 
-The second command uses the *AsJob* parameter that is common to all workflows to run the Get-SystemLog workflow as a background job. The command uses the *JobName* workflow common parameter to specify a friendly name for the workflow job.
 PS C:\> Get-SystemLog -AsJob -JobName "Get-SystemLogJob"
 
-The third command uses the **Get-Job** cmdlet to get the Get-SystemLogJob workflow job. The output shows that the value of the **PSJobTypeName** property is PSWorkflowJob.
 PS C:\> Get-Job -Name Get-SystemLogJob
 Id     Name              PSJobTypeName   State       HasMoreData     Location   Command
 --     ----              -------------   -----       -----------     --------   -------
 4      Get-SystemLogJob  PSWorkflowJob   Running     True            localhost   Get-SystemLog
 
-The fourth command uses the **Suspend-Job** cmdlet to suspend the Get-SystemLogJob job. The job runs to the checkpoint and then suspends.
 PS C:\> Suspend-Job -Name Get-SystemLogJob
 Id     Name              PSJobTypeName   State       HasMoreData     Location   Command
 --     ----              -------------   -----       -----------     --------   -------
 4      Get-SystemLogJob  PSWorkflowJob   Suspended   True            localhost   Get-SystemLog
 ```
 
-In dit voor beeld ziet u hoe u een werk stroom taak uitbreekt.
 
 ### Voor beeld 2: een werk stroom taak opschorten en hervatten
 
+In dit voor beeld ziet u hoe u een werk stroom taak uitbreekt en hervat.
+
+Met de eerste opdracht wordt de LogWorkflowJob-taak onderbroken. De opdracht wordt direct geretourneerd. In de uitvoer ziet u dat de werk stroom taak nog actief is, ook al wordt deze onderbroken.
+
+De tweede opdracht gebruikt de `Get-Job` cmdlet om de LogWorkflowJob-taak op te halen. In de uitvoer ziet u dat de werk stroom taak is onderbroken.
+
+De derde opdracht gebruikt de `Get-Job` cmdlet om de LogWorkflowJob-taak en de `Resume-Job` cmdlet te krijgen om deze te hervatten. In de uitvoer ziet u dat de werk stroom taak is hervat en nu wordt uitgevoerd.
+
 ```
-The first command suspends the LogWorkflowJob job.The command returns immediately. The output shows that the workflow job is still running, even though it is being suspended.
 PS C:\> Suspend-Job -Name LogWorkflowJob
 Id     Name          PSJobTypeName      State         HasMoreData     Location             Command
 --     ----          -------------      -----         -----------     --------             -------
 67     LogflowJob    PSWorkflowJob      Running       True            localhost            LogWorkflow
 
-The second command uses the **Get-Job** cmdlet to get the LogWorkflowJob job. The output shows that the workflow job suspended successfully.
 PS C:\> Get-Job -Name LogWorkflowJob
 Id     Name          PSJobTypeName      State         HasMoreData     Location             Command
 --     ----          -------------      -----         -----------     --------             -------
 67     LogflowJob    PSWorkflowJob      Suspended     True            localhost            LogWorkflow
 
-The third command uses the **Get-Job** cmdlet to get the LogWorkflowJob job and the Resume-Job cmdlet to resume it. The output shows that the workflow job resumed successfully and is now running.
 PS C:\> Get-Job -Name LogWorkflowJob | Resume-Job
 Id     Name          PSJobTypeName      State         HasMoreData     Location             Command
 --     ----          -------------      -----         -----------     --------             -------
 67     LogflowJob    PSWorkflowJob      Running       True            localhost            LogWorkflow
 ```
 
-In dit voor beeld ziet u hoe u een werk stroom taak uitbreekt en hervat.
 
 ### Voor beeld 3: een werk stroom taak op een externe computer onderbreken
 
@@ -144,8 +143,7 @@ In dit voor beeld ziet u hoe u een werk stroom taak uitbreekt en hervat.
 PS C:\> Invoke-Command -ComputerName Srv01 -Scriptblock {Suspend-Job -Filter @{CustomID="031589"}
 ```
 
-Met deze opdracht wordt de cmdlet Invoke-Command gebruikt om een werk stroom taak op de externe computer Srv01 te onderbreken.
-De waarde van de *filter* parameter is een hash-tabel waarin een CustomID-waarde wordt opgegeven.
+Met deze opdracht wordt de `Invoke-Command` cmdlet gebruikt om een werk stroom taak op de externe computer Srv01 te onderbreken. De waarde van de **filter** parameter is een hash-tabel waarin een CustomID-waarde wordt opgegeven.
 Dit **CustomID** is taak-meta gegevens ( **PSPrivateMetadata** ).
 
 ### Voor beeld 4: wachten tot de werk stroom taak is onderbroken
@@ -157,9 +155,7 @@ Id     Name          PSJobTypeName      State         HasMoreData     Location  
  5     VersionCheck  PSWorkflowJob      Suspended     True            localhost            LogWorkflow
 ```
 
-Met deze opdracht wordt de werk stroom taak VersionCheck onderbroken.
-De opdracht gebruikt de *wait* -para meter om te wachten tot de werk stroom taak is onderbroken.
-Wanneer de werk stroom taak wordt uitgevoerd op het volgende controle punt en is onderbroken, wordt de opdracht beëindigd en wordt het taak object geretourneerd.
+Met deze opdracht wordt de werk stroom taak VersionCheck onderbroken. De opdracht gebruikt de **wait** -para meter om te wachten tot de werk stroom taak is onderbroken. Wanneer de werk stroom taak wordt uitgevoerd op het volgende controle punt en is onderbroken, wordt de opdracht beëindigd en wordt het taak object geretourneerd.
 
 ### Voor beeld 5: een werk stroom taak geforceerd onderbreken
 
@@ -167,15 +163,13 @@ Wanneer de werk stroom taak wordt uitgevoerd op het volgende controle punt en is
 PS C:\> Suspend-Job Maintenance -Force
 ```
 
-Met deze opdracht wordt de werk stroom taak geforceerd onderbroken.
-De onderhouds taak heeft geen controle punten.
-Het kan niet juist worden onderbroken en wordt mogelijk niet goed hervat.
+Met deze opdracht wordt de werk stroom taak geforceerd onderbroken. De onderhouds taak heeft geen controle punten. Het kan niet juist worden onderbroken en wordt mogelijk niet goed hervat.
 
 ## PARAMETERS
 
 ### -Filter
-Hiermee geeft u een hash-tabel met voor waarden op.
-Met deze cmdlet worden taken opgeschort die voldoen aan alle voor waarden.
+
+Hiermee geeft u een hash-tabel met voor waarden op. Met deze cmdlet worden taken opgeschort die voldoen aan alle voor waarden.
 Voer een hash-tabel in waarbij de sleutels taak eigenschappen zijn en de waarden van de taak eigenschaps waarden.
 
 ```yaml
@@ -191,10 +185,10 @@ Accept wildcard characters: False
 ```
 
 ### -Force
-Hiermee wordt de werk stroom taak onmiddellijk onderbroken.
-Deze actie kan leiden tot verlies van status en gegevens.
 
-Standaard kan de werk stroom **taak worden uitgevoerd** tot het volgende controle punt. vervolgens wordt de taak onderbroken.
+Hiermee wordt de werk stroom taak onmiddellijk onderbroken. Deze actie kan leiden tot verlies van status en gegevens.
+
+Standaard kan `Suspend-Job` de werk stroom taak worden uitgevoerd tot het volgende controle punt en wordt deze vervolgens onderbroken.
 U kunt deze para meter ook gebruiken om werk stroom taken te onderbreken die geen controle punten hebben.
 
 ```yaml
@@ -210,12 +204,10 @@ Accept wildcard characters: False
 ```
 
 ### -Id
+
 Hiermee geeft u de Id's op van taken die met deze cmdlet worden onderbroken.
 
-De ID is een geheel getal dat de taak op unieke wijze identificeert in de huidige sessie.
-Het is gemakkelijker te onthouden en te typen dan de exemplaar-ID, maar is alleen uniek in de huidige sessie.
-U kunt een of meer Id's typen, gescheiden door komma's.
-Gebruik de cmdlet Get-Job om de ID van een taak te vinden.
+De ID is een geheel getal dat de taak op unieke wijze identificeert in de huidige sessie. Het is gemakkelijker te onthouden en te typen dan de exemplaar-ID, maar is alleen uniek in de huidige sessie. U kunt een of meer Id's typen, gescheiden door komma's. Gebruik de cmdlet om de ID van een taak te vinden `Get-Job` .
 
 ```yaml
 Type: System.Int32[]
@@ -230,11 +222,10 @@ Accept wildcard characters: False
 ```
 
 ### -InstanceId
-Hiermee geeft u de exemplaar-Id's op van de taken die met deze cmdlet worden onderbroken.
-De standaard waarde is alle taken.
 
-Een exemplaar-ID is een GUID die de taak op de computer uniek identificeert.
-Gebruik **Get-job** om de exemplaar-id van een taak te vinden.
+Hiermee geeft u de exemplaar-Id's op van de taken die met deze cmdlet worden onderbroken. De standaard waarde is alle taken.
+
+Een exemplaar-ID is een GUID die de taak op de computer uniek identificeert. Gebruik om de exemplaar-ID van een taak te vinden `Get-Job` .
 
 ```yaml
 Type: System.Guid[]
@@ -249,9 +240,8 @@ Accept wildcard characters: False
 ```
 
 ### -Taak
-Hiermee geeft u de werk stroom taken op die met deze cmdlet worden gestopt.
-Voer een variabele in die de werk stroom taken bevat of een opdracht waarmee de werk stroom taken worden opgehaald.
-U kunt werk stroom taken ook pipet naar de cmdlet **pause-job** .
+
+Hiermee geeft u de werk stroom taken op die met deze cmdlet worden gestopt. Voer een variabele in die de werk stroom taken bevat of een opdracht waarmee de werk stroom taken worden opgehaald. U kunt werk stroom taken ook door sluizen naar de `Suspend-Job` cmdlet.
 
 ```yaml
 Type: System.Management.Automation.Job[]
@@ -266,8 +256,8 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Hiermee geeft u beschrijvende namen op van taken die met deze cmdlet worden onderbroken.
-Voer een of meer werk stroom taak namen in.
+
+Hiermee geeft u beschrijvende namen op van taken die met deze cmdlet worden onderbroken. Voer een of meer werk stroom taak namen in.
 Joker tekens worden ondersteund.
 
 ```yaml
@@ -283,9 +273,8 @@ Accept wildcard characters: False
 ```
 
 ### -Status
-Hiermee geeft u een taak status op.
-Met deze cmdlet worden alleen taken in de opgegeven status gestopt.
-De aanvaardbare waarden voor deze parameter zijn:
+
+Hiermee geeft u een taak status op. Met deze cmdlet worden alleen taken in de opgegeven status gestopt. De aanvaardbare waarden voor deze parameter zijn:
 
 - NotStarted
 - Wordt uitgevoerd
@@ -298,9 +287,9 @@ De aanvaardbare waarden voor deze parameter zijn:
 - Onderbreken
 - Stoppen
 
-**Suspend: taak** suspendeert alleen werk stroom taken met de status **actief** .
+`Suspend-Job` Hiermee worden alleen werk stroom taken met de status **actief** onderbroken.
 
-Zie [JobState Enumeration (Engelstalig)](https://msdn.microsoft.com/library/system.management.automation.jobstate) in de MSDN-bibliotheek voor meer informatie over de status van de taak.
+Zie [JobState Enumeration](/dotnet/api/system.management.automation.jobstate)(Engelstalig) voor meer informatie over de status van een taak.
 
 ```yaml
 Type: System.Management.Automation.JobState
@@ -316,10 +305,10 @@ Accept wildcard characters: False
 ```
 
 ### -Wachten
-Geeft aan dat deze cmdlet de opdracht prompt onderdrukt totdat de werk stroom taak de status onderbroken heeft.
-Standaard wordt de **suspend-taak** onmiddellijk geretourneerd, zelfs als de werk stroom taak nog niet de status onderbroken heeft.
 
-De *wait* -para meter is gelijk aan het sluizen van een **suspend-job-** opdracht naar de cmdlet **wait-job** .
+Geeft aan dat deze cmdlet de opdracht prompt onderdrukt totdat de werk stroom taak de status onderbroken heeft. Standaard wordt `Suspend-Job` direct geretourneerd, zelfs als de werk stroom taak nog niet de status onderbroken heeft.
+
+De **wait** -para meter is gelijk aan het sluizen van een `Suspend-Job` opdracht aan de `Wait-Job` cmdlet.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -334,6 +323,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Hiermee wordt u gevraagd om bevestiging voordat u de cmdlet uitvoert.
 
 ```yaml
@@ -349,8 +339,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Hiermee wordt weergegeven wat er zou gebeuren als u de cmdlet uitvoert.
-De cmdlet wordt niet uitgevoerd.
+
+Hiermee wordt weergegeven wat er zou gebeuren als u de cmdlet uitvoert. De cmdlet wordt niet uitgevoerd.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -365,13 +355,14 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable. Zie [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)voor meer informatie.
 
 ## INVOER
 
 ### System. Management. Automation. job
-U kunt alle typen taken naar deze cmdlet pipeen.
-Als **opschorting-taak** echter een taak van een niet-ondersteund type krijgt, wordt een afsluit fout geretourneerd.
+
+U kunt alle typen taken naar deze cmdlet pipeen. Als er echter `Suspend-Job` een taak van een niet-ondersteund type wordt opgehaald, wordt een afsluit fout geretourneerd.
 
 ## UITVOER
 
@@ -380,13 +371,14 @@ Met deze cmdlet worden de taken geretourneerd die zijn onderbroken.
 
 ## OPMERKINGEN
 
-* Het mechanisme en de locatie voor het opslaan van een onderbroken taak kunnen variëren afhankelijk van het taak type. Onderbroken werk stroom taken worden bijvoorbeeld standaard opgeslagen in een plat bestands archief, maar kunnen ook worden opgeslagen in een Data Base.
-* Als u een werk stroom taak indient die niet wordt uitgevoerd, wordt er een waarschuwings bericht weer gegeven in de **suspend-taak** . Als u de waarschuwing wilt onderdrukken, gebruikt u de gemeen schappelijke *WarningAction* para meter met de waarde SilentlyContinue.
+- Het mechanisme en de locatie voor het opslaan van een onderbroken taak kunnen variëren afhankelijk van het taak type. Onderbroken werk stroom taken worden bijvoorbeeld standaard opgeslagen in een plat bestands archief, maar kunnen ook worden opgeslagen in een Data Base.
+- Als u een werk stroom taak indient die niet wordt uitgevoerd, `Suspend-Job` wordt een waarschuwings bericht weer gegeven. Als u de waarschuwing wilt onderdrukken, gebruikt u de gemeen schappelijke **WarningAction** para meter met de waarde SilentlyContinue.
 
-  Als een taak niet van een type is dat opschorting ondersteunt, retourneert **suspend-taak** een afsluit fout.
+  Als een taak niet van een type is dat opschorting ondersteunt, `Suspend-Job` wordt een afsluit fout geretourneerd.
 
-* Gebruik de para meter *State* van de cmdlet **Get-job** om werk stroom taken met de status onderbroken te krijgen om de werk stroom taken te vinden die zijn onderbroken.
-* Sommige taak typen hebben opties of eigenschappen die verhinderen dat Windows Power shell de taak onderbreekt. Als er wordt geprobeerd de taak te onderbreken, controleert u of de taak opties en eigenschappen het blok keren toestaan.
+- Gebruik de para meter **State** van de cmdlet om werk stroom taken met de status onderbroken te krijgen om de werk stroom taken te vinden die zijn onderbroken `Get-Job` .
+- Sommige taak typen hebben opties of eigenschappen die verhinderen dat Windows Power shell de taak onderbreekt.
+  Als er wordt geprobeerd de taak te onderbreken, controleert u of de taak opties en eigenschappen het blok keren toestaan.
 
 ## GERELATEERDE KOPPELINGEN
 

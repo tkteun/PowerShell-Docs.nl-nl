@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/add-computer?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-Computer
-ms.openlocfilehash: c1527c04d795206b8de968daf62456837627a098
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: e3d1c5c071a334bddbfbc547ef2cc07e9e5c90aa
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93250846"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94388345"
 ---
 # Add-Computer
 
@@ -40,8 +40,7 @@ Add-Computer [-ComputerName <String[]>] [-LocalCredential <PSCredential>] [-Cred
 
 ## BESCHRIJVING
 
-De `Add-Computer` cmdlet voegt de lokale computer of externe computers toe aan een domein of werk groep, of verplaatst ze van het ene domein naar het andere.
-Er wordt ook een domein account gemaakt als de computer wordt toegevoegd aan het domein zonder een account.
+De `Add-Computer` cmdlet voegt de lokale computer of externe computers toe aan een domein of werk groep, of verplaatst ze van het ene domein naar het andere. Er wordt ook een domein account gemaakt als de computer wordt toegevoegd aan het domein zonder een account.
 
 U kunt de para meters van deze cmdlet gebruiken om een organisatie-eenheid (OE) en domein controller op te geven of een niet-beveiligde samen voeging uit te voeren.
 
@@ -90,10 +89,7 @@ De para meter OUPath wordt gebruikt om de organisatie-eenheid voor de nieuwe acc
 Add-Computer -ComputerName Server01 -LocalCredential Server01\Admin01 -DomainName Domain02 -Credential Domain02\Admin02 -Restart -Force
 ```
 
-Met deze opdracht wordt de Server01-computer toegevoegd aan het domein Domain02.
-De para meter **LocalCredential** wordt gebruikt om een gebruikers account op te geven dat is gemachtigd om verbinding te maken met de Server01-computer.
-De para meter **Credential** wordt gebruikt om een gebruikers account op te geven dat gemachtigd is om computers aan het domein toe te voegen.
-De para meter **restart** wordt gebruikt om de computer opnieuw op te starten nadat de samen voeging is voltooid en de para meter **Force** om bevestigings berichten van gebruikers te onderdrukken.
+Met deze opdracht wordt de Server01-computer toegevoegd aan het domein Domain02. De para meter **LocalCredential** wordt gebruikt om een gebruikers account op te geven dat is gemachtigd om verbinding te maken met de Server01-computer. De para meter **Credential** wordt gebruikt om een gebruikers account op te geven dat gemachtigd is om computers aan het domein toe te voegen. De para meter **restart** wordt gebruikt om de computer opnieuw op te starten nadat de samen voeging is voltooid en de para meter **Force** om bevestigings berichten van gebruikers te onderdrukken.
 
 ### Voor beeld 6: een groep computers verplaatsen naar een nieuw domein
 
@@ -103,9 +99,7 @@ Add-Computer -ComputerName Server01, Server02, localhost -DomainName Domain02 -L
 
 Met deze opdracht worden de Server01-en Server02-computers en de lokale computer verplaatst van Domain01 naar Domain02.
 
-De para meter **LocalCredential** wordt gebruikt om een gebruikers account op te geven dat is gemachtigd om verbinding te maken met de drie betrokken computers.
-De para meter **UnjoinDomainCredential** wordt gebruikt om een gebruikers account op te geven dat gemachtigd is om de computers uit het domein Domain01 te ontkoppelen en de para meter **Credential** om een gebruikers account op te geven dat gemachtigd is om de computers toe te voegen aan het Domain02-domein.
-De para meter **restart** wordt gebruikt om alle drie de computers opnieuw op te starten nadat de verplaatsing is voltooid.
+De para meter **LocalCredential** wordt gebruikt om een gebruikers account op te geven dat is gemachtigd om verbinding te maken met de drie betrokken computers. De para meter **UnjoinDomainCredential** wordt gebruikt om een gebruikers account op te geven dat gemachtigd is om de computers uit het domein Domain01 te ontkoppelen en de para meter **Credential** om een gebruikers account op te geven dat gemachtigd is om de computers toe te voegen aan het Domain02-domein. De para meter **restart** wordt gebruikt om alle drie de computers opnieuw op te starten nadat de verplaatsing is voltooid.
 
 ### Voor beeld 7: een computer verplaatsen naar een nieuw domein en de naam van de computer wijzigen
 
@@ -115,8 +109,7 @@ Add-Computer -ComputerName Server01 -DomainName Domain02 -NewName Server044 -Cre
 
 Met deze opdracht wordt de Server01-computer verplaatst naar de Domain02 en wordt de naam van de computer gewijzigd in Server044.
 
-Met de opdracht wordt de referentie van de huidige gebruiker gebruikt om verbinding te maken met de Server01-computer en ontkoppelt van het huidige domein.
-De para meter **Credential** wordt gebruikt om een gebruikers account op te geven dat gemachtigd is om de computer toe te voegen aan het domein Domain02.
+Met de opdracht wordt de referentie van de huidige gebruiker gebruikt om verbinding te maken met de Server01-computer en ontkoppelt van het huidige domein. De para meter **Credential** wordt gebruikt om een gebruikers account op te geven dat gemachtigd is om de computer toe te voegen aan het domein Domain02.
 
 ### Voor beeld 8: computers die worden vermeld in een bestand toevoegen aan een nieuw domein
 
@@ -124,9 +117,7 @@ De para meter **Credential** wordt gebruikt om een gebruikers account op te geve
 Add-Computer -ComputerName (Get-Content Servers.txt) -DomainName Domain02 -Credential Domain02\Admin02 -Options Win9xUpgrade  -Restart
 ```
 
-Met deze opdracht worden de computers die worden vermeld in het Servers.txt-bestand toegevoegd aan het domein Domain02.
-De para meter **Options** wordt gebruikt om de optie **Win9xUpgrade** op te geven.
-Met de para meter **restart** worden alle pas toegevoegde computers opnieuw opgestart nadat de samen voeging is voltooid.
+Met deze opdracht worden de computers die worden vermeld in het Servers.txt-bestand toegevoegd aan het domein Domain02. De para meter **Options** wordt gebruikt om de optie **Win9xUpgrade** op te geven. Met de para meter **restart** worden alle pas toegevoegde computers opnieuw opgestart nadat de samen voeging is voltooid.
 
 ### Voor beeld 9: een computer toevoegen aan een domein met behulp van vooraf gedefinieerde computer referenties
 
@@ -144,8 +135,7 @@ $joinCred = New-Object pscredential -ArgumentList ([pscustomobject]@{
 Add-Computer -Domain "Domain03" -Options UnsecuredJoin,PasswordPass -Credential $joinCred
 ```
 
-Met deze combi natie van opdrachten maakt u een nieuw computer account met een vooraf gedefinieerde naam en een tijdelijk wacht woord voor samen voegen in een domein met een bestaande computer die lid is van een domein.
-Vervolgens wordt de computer met de vooraf gedefinieerde naam afzonderlijk toegevoegd aan het domein met alleen de computer naam en het tijdelijke wacht woord voor samen voegen.
+Met deze combi natie van opdrachten maakt u een nieuw computer account met een vooraf gedefinieerde naam en een tijdelijk wacht woord voor samen voegen in een domein met een bestaande computer die lid is van een domein. Vervolgens wordt de computer met de vooraf gedefinieerde naam afzonderlijk toegevoegd aan het domein met alleen de computer naam en het tijdelijke wacht woord voor samen voegen.
 Het vooraf gedefinieerde wacht woord wordt alleen gebruikt ter ondersteuning van de koppelings bewerking en wordt vervangen als onderdeel van de normale procedure voor computer accounts nadat de verbinding met de computer is voltooid.
 
 ## PARAMETERS
@@ -155,11 +145,9 @@ Het vooraf gedefinieerde wacht woord wordt alleen gebruikt ter ondersteuning van
 Specificeert de computers die aan een domein of werk groep moeten worden toegevoegd.
 Standaard is dit de lokale computer.
 
-Typ de NetBIOS-naam, een Internet Protocol IP-adres of een Fully Qualified Domain Name van elke externe computer.
-Typ de computer naam, een punt (.) of ' localhost ' om de lokale computer op te geven.
+Typ de NetBIOS-naam, een Internet Protocol IP-adres of een Fully Qualified Domain Name van elke externe computer. Typ de computer naam, een punt ( `.` ) of ' localhost ' om de lokale computer op te geven.
 
-Deze para meter is niet gebaseerd op externe communicatie met Windows Power shell.
-U kunt de para meter **ComputerName** gebruiken `Add-Computer` , zelfs als uw computer niet is geconfigureerd om externe opdrachten uit te voeren.
+Deze para meter is niet gebaseerd op externe communicatie met Windows Power shell. U kunt de para meter **ComputerName** gebruiken `Add-Computer` , zelfs als uw computer niet is geconfigureerd om externe opdrachten uit te voeren.
 
 Deze para meter is geïntroduceerd in Windows Power Shell 3,0.
 
@@ -180,11 +168,9 @@ Accept wildcard characters: False
 Hiermee geeft u een gebruikers account op dat gemachtigd is om de computers toe te voegen aan een nieuw domein.
 Standaard is dit de huidige gebruiker.
 
-Typ een gebruikers naam, zoals "gebruiker01" of "Domain01\User01", of voer een **PSCredential** -object in, zoals het account dat is gegenereerd door de `Get-Credential` cmdlet.
-Als u een gebruikers naam typt, wordt u gevraagd een wacht woord op te vragen.
+Typ een gebruikers naam, zoals "gebruiker01" of "Domain01\User01", of voer een **PSCredential** -object in, zoals het account dat is gegenereerd door de `Get-Credential` cmdlet. Als u een gebruikers naam typt, wordt u gevraagd een wacht woord op te vragen.
 
-Als u een gebruikers account wilt opgeven dat is gemachtigd om de computer uit het huidige domein te verwijderen, gebruikt u de para meter **UnjoinDomainCredential** .
-Als u een gebruikers account wilt opgeven dat is gemachtigd om verbinding te maken met een externe computer, gebruikt u de para meter **LocalCredential** .
+Als u een gebruikers account wilt opgeven dat is gemachtigd om de computer uit het huidige domein te verwijderen, gebruikt u de para meter **UnjoinDomainCredential** . Als u een gebruikers account wilt opgeven dat is gemachtigd om verbinding te maken met een externe computer, gebruikt u de para meter **LocalCredential** .
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -200,8 +186,7 @@ Accept wildcard characters: False
 
 ### -DomainName
 
-Hiermee geeft u het domein waaraan de computers worden toegevoegd.
-Deze para meter is vereist bij het toevoegen van de computers aan een domein.
+Hiermee geeft u het domein waaraan de computers worden toegevoegd. Deze para meter is vereist bij het toevoegen van de computers aan een domein.
 
 ```yaml
 Type: System.String
@@ -217,8 +202,7 @@ Accept wildcard characters: False
 
 ### -Force
 
-Onderdrukt de vraag om bevestiging van de gebruiker.
-Als u deze para meter niet opgeeft, `Add-Computer` moet u de toevoeging van elke computer bevestigen.
+Onderdrukt de vraag om bevestiging van de gebruiker. Als u deze para meter niet opgeeft, `Add-Computer` moet u de toevoeging van elke computer bevestigen.
 
 Deze para meter is geïntroduceerd in Windows Power Shell 3,0.
 
@@ -236,14 +220,11 @@ Accept wildcard characters: False
 
 ### -LocalCredential
 
-Hiermee geeft u een gebruikers account op dat is gemachtigd om verbinding te maken met de computers die zijn opgegeven door de para meter **ComputerName** .
-Standaard is dit de huidige gebruiker.
+Hiermee geeft u een gebruikers account op dat is gemachtigd om verbinding te maken met de computers die zijn opgegeven door de para meter **ComputerName** . Standaard is dit de huidige gebruiker.
 
-Typ een gebruikers naam, zoals "gebruiker01" of "Domain01\User01", of voer een **PSCredential** -object in, zoals het account dat is gegenereerd door de `Get-Credential` cmdlet.
-Als u een gebruikers naam typt, wordt u gevraagd een wacht woord op te vragen.
+Typ een gebruikers naam, zoals "gebruiker01" of "Domain01\User01", of voer een **PSCredential** -object in, zoals het account dat is gegenereerd door de `Get-Credential` cmdlet. Als u een gebruikers naam typt, wordt u gevraagd een wacht woord op te vragen.
 
-Als u een gebruikers account wilt opgeven dat gemachtigd is om de computers toe te voegen aan een nieuw domein, gebruikt u de para meter **Credential** .
-Als u een gebruikers account wilt opgeven dat gemachtigd is om de computers uit hun huidige domein te verwijderen, gebruikt u de para meter **UnjoinDomainCredential** .
+Als u een gebruikers account wilt opgeven dat gemachtigd is om de computers toe te voegen aan een nieuw domein, gebruikt u de para meter **Credential** . Als u een gebruikers account wilt opgeven dat gemachtigd is om de computers uit hun huidige domein te verwijderen, gebruikt u de para meter **UnjoinDomainCredential** .
 
 Deze para meter is geïntroduceerd in Windows Power Shell 3,0.
 
@@ -261,8 +242,7 @@ Accept wildcard characters: False
 
 ### -NewName
 
-Hiermee geeft u een nieuwe naam voor de computer in het nieuwe domein.
-Deze para meter is alleen geldig wanneer er één computer wordt toegevoegd of verplaatst.
+Hiermee geeft u een nieuwe naam voor de computer in het nieuwe domein. Deze para meter is alleen geldig wanneer er één computer wordt toegevoegd of verplaatst.
 
 Deze para meter is geïntroduceerd in Windows Power Shell 3,0.
 
@@ -280,8 +260,7 @@ Accept wildcard characters: False
 
 ### -Opties
 
-Hiermee geeft u geavanceerde opties op voor de **toevoeg bewerking toevoegen** aan de computer.
-Voer een of meer waarden in een door komma's gescheiden teken reeks in.
+Hiermee geeft u geavanceerde opties op voor de **toevoeg bewerking toevoegen** aan de computer. Voer een of meer waarden in een door komma's gescheiden teken reeks in.
 
 De aanvaardbare waarden voor deze parameter zijn:
 
@@ -297,7 +276,8 @@ De aanvaardbare waarden voor deze parameter zijn:
 
 - **JoinReadOnly** : gebruikt een bestaand machine account om de computer toe te voegen aan een alleen-lezen domein controller. Het computer account moet worden toegevoegd aan de lijst met toegestane accounts voor het beleid voor wachtwoord replicatie en het account wachtwoord moet worden gerepliceerd naar de alleen-lezen domein controller vóór de koppelings bewerking.
 
-- **InstallInvoke** : stelt de vlaggen Create (0x2) en Delete (0x4) van de para meter **FJoinOptions** van de methode **JoinDomainOrWorkgroup** in. Zie de [methode JoinDomainOrWorkgroup van de klasse Win32_ComputerSystem](https://msdn.microsoft.com/library/aa392154) in de MSDN-bibliotheek voor meer informatie over de **JoinDomainOrWorkgroup** -methode. Zie de [functie NetJoinDomain](https://msdn.microsoft.com/library/aa370433) in de MSDN-bibliotheek voor meer informatie over deze opties.
+- **InstallInvoke** : stelt de vlaggen Create (0x2) en Delete (0x4) van de para meter **FJoinOptions** van de methode **JoinDomainOrWorkgroup** in. Zie de [methode JoinDomainOrWorkgroup van de klasse Win32_ComputerSystem](/windows/win32/cimwin32prov/joindomainorworkgroup-method-in-class-win32-computersystem)voor meer informatie over de methode **JoinDomainOrWorkgroup** .
+  Zie de [functie NetJoinDomain](/windows/win32/api/lmjoin/nf-lmjoin-netjoindomain)voor meer informatie over deze opties.
 
 Deze para meter is geïntroduceerd in Windows Power Shell 3,0.
 
@@ -316,9 +296,7 @@ Accept wildcard characters: False
 
 ### -OUPath
 
-Hiermee geeft u een organisatie-eenheid (OE) voor het domein account op.
-Voer tussen aanhalings tekens de volledige DN-naam van de organisatie-eenheid in.
-De standaard waarde is de standaard organisatie-eenheid voor computer objecten in het domein.
+Hiermee geeft u een organisatie-eenheid (OE) voor het domein account op. Voer tussen aanhalings tekens de volledige DN-naam van de organisatie-eenheid in. De standaard waarde is de standaard organisatie-eenheid voor computer objecten in het domein.
 
 ```yaml
 Type: System.String
@@ -334,8 +312,7 @@ Accept wildcard characters: False
 
 ### -PassThru
 
-Retourneert een object dat het item vertegenwoordigt waarmee u werkt.
-Deze cmdlet genereert standaard geen uitvoer.
+Retourneert een object dat het item vertegenwoordigt waarmee u werkt. Deze cmdlet genereert standaard geen uitvoer.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -351,8 +328,7 @@ Accept wildcard characters: False
 
 ### -Restart
 
-Hiermee worden de computers die zijn toegevoegd aan het domein of de werk groep opnieuw opgestart.
-Het is vaak nood zakelijk om opnieuw op te starten om de wijziging van kracht te laten worden.
+Hiermee worden de computers die zijn toegevoegd aan het domein of de werk groep opnieuw opgestart. Het is vaak nood zakelijk om opnieuw op te starten om de wijziging van kracht te laten worden.
 
 Deze para meter is geïntroduceerd in Windows Power Shell 3,0.
 
@@ -370,9 +346,7 @@ Accept wildcard characters: False
 
 ### -Server
 
-Hiermee geeft u de naam van een domein controller die de computer aan het domein toevoegt.
-Geef de naam op in de DomainName\ComputerName-indeling.
-Standaard is er geen domein controller opgegeven.
+Hiermee geeft u de naam van een domein controller die de computer aan het domein toevoegt. Geef de naam op in de DomainName\ComputerName-indeling. Standaard is er geen domein controller opgegeven.
 
 ```yaml
 Type: System.String
@@ -388,15 +362,11 @@ Accept wildcard characters: False
 
 ### -UnjoinDomainCredential
 
-Hiermee geeft u een gebruikers account op dat gemachtigd is om de computers uit hun huidige domeinen te verwijderen.
-Standaard is dit de huidige gebruiker.
+Hiermee geeft u een gebruikers account op dat gemachtigd is om de computers uit hun huidige domeinen te verwijderen. Standaard is dit de huidige gebruiker.
 
-Typ een gebruikers naam, zoals "gebruiker01" of "Domain01\User01", of voer een **PSCredential** -object in, zoals het account dat is gegenereerd door de `Get-Credential` cmdlet.
-Als u een gebruikers naam typt, wordt u gevraagd een wacht woord op te vragen.
+Typ een gebruikers naam, zoals "gebruiker01" of "Domain01\User01", of voer een **PSCredential** -object in, zoals het account dat is gegenereerd door de `Get-Credential` cmdlet. Als u een gebruikers naam typt, wordt u gevraagd een wacht woord op te vragen.
 
-Gebruik deze para meter wanneer u computers verplaatst naar een ander domein.
-Als u een gebruikers account wilt opgeven dat is gemachtigd om lid te worden van het nieuwe domein, gebruikt u de para meter **Credential** .
-Als u een gebruikers account wilt opgeven dat is gemachtigd om verbinding te maken met een externe computer, gebruikt u de para meter **LocalCredential** .
+Gebruik deze para meter wanneer u computers verplaatst naar een ander domein. Als u een gebruikers account wilt opgeven dat is gemachtigd om lid te worden van het nieuwe domein, gebruikt u de para meter **Credential** . Als u een gebruikers account wilt opgeven dat is gemachtigd om verbinding te maken met een externe computer, gebruikt u de para meter **LocalCredential** .
 
 Deze para meter is geïntroduceerd in Windows Power Shell 3,0.
 
@@ -430,8 +400,7 @@ Accept wildcard characters: False
 
 ### -Werkgroepnaam
 
-Hiermee geeft u de naam op van een werk groep waaraan de computers worden toegevoegd.
-De standaard waarde is werk groep.
+Hiermee geeft u de naam op van een werk groep waaraan de computers worden toegevoegd. De standaard waarde is werk groep.
 
 ```yaml
 Type: System.String

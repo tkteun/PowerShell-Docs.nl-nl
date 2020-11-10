@@ -6,16 +6,17 @@ ms.date: 11/27/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_aliases?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Aliases
-ms.openlocfilehash: 5595c1595a36ebbc6ae7c77afb45f95996815f8f
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 9094e34d4d3cbb8ee951593e15411e8e3234fa1a
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93252387"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94387767"
 ---
 # <a name="about-aliases"></a>Over aliassen
 
 ## <a name="short-description"></a>KORTE BESCHRIJVING
+
 Hierin wordt beschreven hoe u alternatieve namen gebruikt voor cmdlets en opdrachten in Power shell.
 
 ## <a name="long-description"></a>LANGE BESCHRIJVING
@@ -171,7 +172,7 @@ Get-Help about_Functions
 
 ## <a name="alias-objects"></a>ALIAS OBJECTEN
 
-Power shell-aliassen worden vertegenwoordigd door objecten die exemplaren zijn van de klasse System. Management. Automation. AliasInfo. Zie [AliasInfo-klasse][aliasinfo] in de MSDN-bibliotheek (micro soft Developer Network) voor meer informatie over dit type object.
+Power shell-aliassen worden vertegenwoordigd door objecten die exemplaren zijn van de klasse System. Management. Automation. AliasInfo. Zie [AliasInfo-klasse][aliasinfo] in de Power shell-SDK voor meer informatie over dit type object.
 
 Als u de eigenschappen en methoden van de alias objecten wilt bekijken, moet u de aliassen ophalen.
 Vervolgens kunt u ze naar de Get-Member-cmdlet sluizen. Bijvoorbeeld:

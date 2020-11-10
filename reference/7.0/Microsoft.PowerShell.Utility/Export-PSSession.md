@@ -7,12 +7,12 @@ ms.date: 04/08/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/export-pssession?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Export-PSSession
-ms.openlocfilehash: ff1b709b363684e27a1f4eb8fdeada2d5ae1d588
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 5aa9b9967ec6a79a569c9f0e7ca93db9e9e4d5b6
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93249718"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94387036"
 ---
 # Export-PSSession
 
@@ -213,7 +213,7 @@ De acceptabele waarden voor deze para meter zijn als volgt:
 - ExternalScript. Alle. ps1-bestanden in de paden die worden vermeld in de Path-omgevings variabele ( `$env:path` ).
 - Filter en functie. Alle Power shell-functies.
 - Schriften. Script blokken in de huidige sessie.
-- Workflowconfiguraties. Een Power shell-werk stroom. Zie [about_Workflows](/powershell/module/psworkflow/about/about_workflows?view=powershell-5.1)voor meer informatie.
+- Workflowconfiguraties. Een Power shell-werk stroom. Zie [about_Workflows](/powershell/module/PSWorkflow/About/about_Workflows)voor meer informatie.
 
 ```yaml
 Type: System.Management.Automation.CommandTypes
@@ -243,7 +243,6 @@ De acceptabele waarden voor deze para meter zijn als volgt:
 - `utf8BOM`: Code ring in UTF-8-indeling met byte order Mark (BOM)
 - `utf8NoBOM`: Code ring in UTF-8-indeling zonder byte order Mark (BOM)
 - `utf32`: Gecodeerd in UTF-32-indeling.
-
 
 Vanaf Power shell 6,2 kunnen met de para meter **Encoding** ook numerieke id's van geregistreerde code pagina's (zoals `-Encoding 1251` ) of teken reeks namen van geregistreerde code pagina's (zoals) worden toegestaan `-Encoding "windows-1251"` . Zie de .NET-documentatie voor [code ring. code tabel](/dotnet/api/system.text.encoding.codepage?view=netcore-2.2)voor meer informatie.
 
@@ -300,16 +299,14 @@ Accept wildcard characters: False
 
 ### -FullyQualifiedModule
 
-Hiermee geeft u modules op met namen die zijn opgegeven in de vorm van **ModuleSpecification** -objecten.
-Zie de sectie opmerkingen van de [ModuleSpecification-constructor (hashtabel)](https://msdn.microsoft.com/library/jj136290).
+Hiermee geeft u modules op met namen die zijn opgegeven in de vorm van **ModuleSpecification** -objecten. Zie de sectie opmerkingen van de [ModuleSpecification-constructor (hashtabel)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_).
 
 De para meter **FullyQualifiedModule** accepteert bijvoorbeeld een module naam die is opgegeven in een van de volgende indelingen:
 
-`@{ModuleName = "modulename"; ModuleVersion = "version_number"}`
+- `@{ModuleName = "modulename"; ModuleVersion = "version_number"}`
+- `@{ModuleName = "modulename"; ModuleVersion = "version_number"; Guid = "GUID"}`
 
-`@{ModuleName = "modulename"; ModuleVersion = "version_number"; Guid = "GUID"}`
-
-**Module** naam en **ModuleVersion** zijn vereist, maar **GUID** is optioneel. U kunt de para meter **FullyQualifiedModule** niet opgeven in dezelfde opdracht als een **module** parameter; de twee para meters sluiten elkaar wederzijds uit.
+**Module** naam en **ModuleVersion** zijn vereist, maar **GUID** is optioneel. U kunt de para meter **FullyQualifiedModule** niet opgeven in dezelfde opdracht als een **module** parameter. de twee para meters sluiten elkaar wederzijds uit.
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.ModuleSpecification[]

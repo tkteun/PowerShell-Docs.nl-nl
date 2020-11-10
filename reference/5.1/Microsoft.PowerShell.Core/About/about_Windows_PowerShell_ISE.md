@@ -6,12 +6,12 @@ ms.date: 01/03/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_windows_powershell_ise?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Windows_PowerShell_ISE
-ms.openlocfilehash: ec99dec9ea5012b41c10a56a688b23a6fa2c9dd8
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: ff543024d7c62c70217eeaf3ded192a5a24c4757
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93252721"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94388838"
 ---
 # <a name="about-windows-powershell-ise"></a>Over Windows PowerShell ISE
 
@@ -121,7 +121,7 @@ Windows PowerShell ISE is een optionele Windows-functie die standaard is ingesch
 Omdat Windows PowerShell ISE een gebruikers interface vereist, werkt deze niet op Server Core-installaties van Windows Server. Als u echter de functie Windows PowerShell ISE toevoegt, wordt de installatie automatisch geconverteerd naar een server met een grafische gebruikers interface.
 
 Windows PowerShell ISE is gebaseerd op de Windows Presentation Foundation (WPF).
-Als de grafische elementen van Windows PowerShell ISE niet correct worden weer gegeven op uw systeem, kunt u het probleem oplossen door de instellingen voor het weer geven van afbeeldingen van WPF-hardwareversnelling uitschakelen op uw systeem toe te voegen of aan te passen. Zie de [register instellingen voor grafische rendering](/dotnet/framework/wpf/graphics-multimedia/graphics-rendering-registry-settings) in de MSDN-bibliotheek voor meer informatie.
+Als de grafische elementen van Windows PowerShell ISE niet correct worden weer gegeven op uw systeem, kunt u het probleem oplossen door de instellingen voor het weer geven van afbeeldingen van WPF-hardwareversnelling uitschakelen op uw systeem toe te voegen of aan te passen. Zie de [register instellingen voor afbeeldings rendering](/dotnet/framework/wpf/graphics-multimedia/graphics-rendering-registry-settings)voor meer informatie.
 
 ## <a name="see-also"></a>ZIE OOK
 

@@ -6,12 +6,12 @@ ms.date: 07/23/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_desiredstateconfiguration?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_DesiredStateConfiguration
-ms.openlocfilehash: 2f043104c67078b98355b3e54171a8993e534837
-ms.sourcegitcommit: ae8b89e12c6fa2108075888dd6da92788d6c2888
+ms.openlocfilehash: 5d088934ffc953ad19be401bce72f6287f0fde07
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "93253151"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94387019"
 ---
 # <a name="about_desiredstateconfiguration"></a>about_DesiredStateConfiguration
 
@@ -27,12 +27,12 @@ DSC biedt een set Power shell-taal extensies, nieuwe cmdlets en resources die u 
 
 DSC is geïntroduceerd in Power Shell 4,0.
 
-Voor gedetailleerde informatie over DSC, Zie [Power shell desired state Configuration Overview](/powershell/scripting/dsc/overview/overview) (Engelstalig) in de TechNet-bibliotheek.
+Voor gedetailleerde informatie over DSC, Zie [Power shell desired state Configuration Overview](/powershell/scripting/dsc/overview/overview)(Engelstalig).
 
 ## <a name="developing-dsc-resources-with-classes"></a>DSC-RESOURCES ONTWIKKELEN MET KLASSEN
 
 Vanaf Power shell 5,0 kunt u DSC-resources ontwikkelen met behulp van klassen.
-Zie [about_Classes](about_Classes.md)en [Schrijf een aangepaste DSC-resource met Power shell-klassen](/previous-versions//dn948461(v=technet.10)) op micro soft TechNet voor meer informatie.
+Zie [about_Classes](about_Classes.md)en [Schrijf een aangepaste DSC-resource met Power shell-klassen](/powershell/scripting/dsc/resources/authoringresourceclass)voor meer informatie.
 
 ## <a name="using-dsc"></a>DSC GEBRUIKEN
 
@@ -102,7 +102,7 @@ Test-DscConfiguration -CimSession $session
 
 U kunt de volgende ingebouwde bronnen gebruiken in uw configuratie scripts:
 
-|Naam                  |Eigenschappen                                         |
+|Name                  |Eigenschappen                                         |
 |----------------------|---------------------------------------------------|
 |Bestand                  |{Doelpad, kenmerken, controlesom, inhoud...}|
 |Archiveren               |{Doel, pad, controlesom, referentie...}       |
