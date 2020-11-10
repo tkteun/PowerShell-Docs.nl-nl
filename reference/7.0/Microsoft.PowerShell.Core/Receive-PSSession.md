@@ -7,12 +7,12 @@ ms.date: 12/11/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/receive-pssession?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Receive-PSSession
-ms.openlocfilehash: b0177a00bbbf93659775ee94f7d4898a99f570f3
-ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
+ms.openlocfilehash: 5c7783cb6f865aead9aae7ae0df77d9ee2db7b16
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94345575"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94391354"
 ---
 # Receive-PSSession
 
@@ -789,7 +789,7 @@ Wanneer u een **PSSession** verbreekt, wordt de sessie status losgekoppeld en is
 - De waarde van de eigenschap **State** is relatief ten opzichte van de huidige sessie. Als de waarde voor de verbinding is verbroken, betekent dit dat de **PSSession** niet is verbonden met de huidige sessie. Dit betekent echter niet dat de **PSSession** van de verbinding met alle sessies is verbroken. Deze is mogelijk verbonden met een andere sessie.
   Gebruik de eigenschap **Beschik baarheid** om te bepalen of u verbinding kunt maken met de sessie of er opnieuw verbinding mee wilt maken.
 - Een **beschikbaarheids** waarde van geen geeft aan dat u verbinding kunt maken met de sessie. De waarde bezet geeft aan dat u geen verbinding kunt maken met de **PSSession** , omdat deze is verbonden met een andere sessie.
-- Zie [RunspaceState](/dotnet/api/system.management.automation.runspaces.runspacestate) in de MSDN-bibliotheek voor meer informatie over de waarden van de eigenschap **State** van sessies.
+- Zie [RunspaceState](/dotnet/api/system.management.automation.runspaces.runspacestate)voor meer informatie over de waarden van de eigenschap **State** van sessies.
 - Zie [RunspaceAvailability](/dotnet/api/system.management.automation.runspaces.runspaceavailability)voor meer informatie over de waarden van de eigenschap **Beschik baarheid** van sessies.
 
 ## GERELATEERDE KOPPELINGEN

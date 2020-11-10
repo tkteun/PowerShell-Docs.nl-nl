@@ -3,12 +3,12 @@ ms.date: 08/21/2020
 keywords: powershell,cmdlet
 title: Externe opdrachten uitvoeren
 description: Hierin worden de methoden beschreven voor het uitvoeren van opdrachten op externe systemen met behulp van Power shell.
-ms.openlocfilehash: e9e07fec96cbd93d3bf06be2a1f98ec7aa7d8f19
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
+ms.openlocfilehash: cff18a4f51c3ed8e3ed2c1f35862a88911e7ceb5
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92501351"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94391405"
 ---
 # <a name="running-remote-commands"></a>Externe opdrachten uitvoeren
 
@@ -130,29 +130,29 @@ Windows Power shell Remote Management begint hier gewoon. Door gebruik te maken 
 
 Windows Power shell bevat een WSMan-provider. De provider maakt een `WSMAN:` station waarmee u kunt navigeren door een hiërarchie van configuratie-instellingen op de lokale computer en externe computers.
 
-Zie voor meer informatie over de WSMan-provider [wsman-provider](https://technet.microsoft.com/library/dd819476.aspx) en [over WS-Management-cmdlets](/powershell/module/microsoft.wsman.management/about/about_ws-management_cmdlets), of typ in de Windows Power shell-console `Get-Help wsman` .
+Zie voor meer informatie over de WSMan-provider [wsman-provider](/powershell/module/microsoft.wsman.management/about/about_wsman_provider) en [over WS-Management-cmdlets](/powershell/module/microsoft.wsman.management/about/about_ws-management_cmdlets), of typ in de Windows Power shell-console `Get-Help wsman` .
 
 Zie voor meer informatie:
 
-- [Over externe Veelgestelde vragen](https://technet.microsoft.com/library/dd315359.aspx)
-- [Register-PSSessionConfiguration](https://go.microsoft.com/fwlink/?LinkId=821508)
-- [Import-PSSession](https://go.microsoft.com/fwlink/?LinkId=821821)
+- [Over externe Veelgestelde vragen](/powershell/module/microsoft.powershell.core/about/about_remote_faq)
+- [Register-PSSessionConfiguration](xref:Microsoft.PowerShell.Core.Register-PSSessionConfiguration)
+- [Import-PSSession](xref:Microsoft.PowerShell.Utility.Import-PSSession)
 
-Zie [about_Remote_Troubleshooting](https://technet.microsoft.com/library/dd347642.aspx)voor hulp bij externe fouten.
+Zie [about_Remote_Troubleshooting](/powershell/module/microsoft.powershell.core/about/about_Remote_Troubleshooting)voor hulp bij externe fouten.
 
 ## <a name="see-also"></a>Zie ook
 
-- [about_Remote](https://technet.microsoft.com/library/9b4a5c87-9162-4adf-bdfe-fbc80b9b8970)
-- [about_Remote_FAQ](https://technet.microsoft.com/library/e23702fd-9415-4a98-9975-390a4d3adc42)
-- [about_Remote_Requirements](https://technet.microsoft.com/library/da213949-134c-4741-b307-81f4492ba1bd)
-- [about_Remote_Troubleshooting](https://technet.microsoft.com/library/2f890148-8578-49ed-85ea-79a489dd6317)
-- [about_PSSessions](https://technet.microsoft.com/library/7a9b4e0e-fa1b-47b0-92f6-6e2995d70acb)
-- [about_WS-Management_Cmdlets](https://technet.microsoft.com/library/6ed3370a-ea10-45a5-9493-696aeace27ed)
-- [Invoke-opdracht](/powershell/module/microsoft.powershell.core/invoke-command)
-- [Import-PSSession](https://go.microsoft.com/fwlink/?LinkId=821821)
-- [New-PSSession](https://go.microsoft.com/fwlink/?LinkId=821498)
-- [Register-PSSessionConfiguration](https://go.microsoft.com/fwlink/?LinkId=821508)
-- [WSMan Provider](https://technet.microsoft.com/library/66fe1241-e08f-49ca-832f-a84c33ca8735)
+- [about_Remote](/powershell/module/microsoft.powershell.core/about/about_remote_faq)
+- [about_Remote_FAQ](/powershell/module/microsoft.powershell.core/about/about_remote_faq)
+- [about_Remote_Requirements](/powershell/module/microsoft.powershell.core/about/about_remote_requirements)
+- [about_Remote_Troubleshooting](/powershell/module/microsoft.powershell.core/about/about_Remote_Troubleshooting)
+- [about_PSSessions](/powershell/module/microsoft.powershell.core/about/about_PSSessions)
+- [about_WS-Management_Cmdlets](/powershell/module/microsoft.wsman.management/about/about_ws-management_cmdlets)
+- [Invoke-opdracht](xref:Microsoft.PowerShell.Core.Invoke-Command)
+- [Import-PSSession](xref:Microsoft.PowerShell.Utility.Import-PSSession)
+- [New-PSSession](xref:Microsoft.PowerShell.Core.New-PSSession)
+- [Register-PSSessionConfiguration](xref:Microsoft.PowerShell.Core.Register-PSSessionConfiguration)
+- [WSMan Provider](/powershell/module/microsoft.wsman.management/about/about_wsman_provider)
 
 [wsman-remoting]: WSMan-Remoting-in-PowerShell-Core.md
 [ssh-remoting]: SSH-Remoting-in-PowerShell-Core.md

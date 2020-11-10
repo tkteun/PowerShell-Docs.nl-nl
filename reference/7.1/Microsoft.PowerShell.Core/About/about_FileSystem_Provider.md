@@ -6,16 +6,17 @@ ms.date: 06/18/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_filesystem_provider?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Bestandssysteem provider
-ms.openlocfilehash: 8407dd11c3c9ead10b081b937fbac3db82735eb3
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: fb4135663d368867661e87327aa52a9213757d08
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93252166"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94391473"
 ---
 # <a name="filesystem-provider"></a>Bestandssysteem provider
 
 ## <a name="provider-name"></a>Provider naam
+
 Bestandssysteem
 
 ## <a name="drives"></a>Aandrijfeenheden
@@ -210,7 +211,7 @@ Met deze opdracht wordt een [System. Security. accesscontrol. FileSecurity](/dot
 Get-Acl -Path test.txt | Format-List -Property *
 ```
 
-Voor meer informatie over dit object pipet u de opdracht naar de cmdlet [Get-member](xref:Microsoft.PowerShell.Utility.Get-Member) . Of Zie '[FileSecurity](/dotnet/api/system.security.accesscontrol.filesecurity) class ' in de MSDN-bibliotheek (micro soft Developer Network).
+Voor meer informatie over dit object pipet u de opdracht naar de cmdlet [Get-member](xref:Microsoft.PowerShell.Utility.Get-Member) . Of Zie [FileSecurity](/dotnet/api/system.security.accesscontrol.filesecurity) -klasse.
 
 ### <a name="modify-the-acl-for-a-file"></a>De ACL voor een bestand wijzigen
 
@@ -563,7 +564,6 @@ Get-Help Get-ChildItem
 Get-Help Get-ChildItem -Path c:
 ```
 
-## <a name="see-also"></a>Zie ook
+## <a name="see-also"></a>Zie tevens
 
 [about_Providers](../About/about_Providers.md)
-

@@ -2,12 +2,12 @@
 ms.date: 12/31/2019
 title: Het ISEOptions-object
 description: Het ISEOptions-object vertegenwoordigt verschillende instellingen voor Windows PowerShell ISE.
-ms.openlocfilehash: 4f790550796f40c7a2d4882cc0444fa7a55eeee9
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 9823a4a0ea32420d830735a0a61a6c03a6458fb7
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92661032"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94391507"
 ---
 # <a name="the-iseoptions-object"></a>Het ISEOptions-object
 
@@ -492,7 +492,7 @@ $psISE.Options.UseEnterToSelectInConsolePaneIntellisense = $true
 
 Ondersteund in Windows PowerShell ISE 3,0 en hoger en niet aanwezig in eerdere versies.
 
-Hiermee geeft u op of de lokaal geïnstalleerde Help of de Help van de online TechNet-bibliotheek wordt weer gegeven wanneer u op <kbd>F1</kbd> drukt met de cursor in een tref woord. Als `$true` deze is ingesteld op, wordt in een pop-upvenster inhoud weer gegeven van de lokaal geïnstalleerde Help. U kunt de Help-bestanden installeren door de opdracht uit te voeren `Update-Help` . Als `$false` deze is ingesteld op, wordt uw browser geopend op een pagina in de TechNet-bibliotheek.
+Hiermee geeft u op of de lokaal geïnstalleerde Help of de online-Help wordt weer gegeven wanneer u op <kbd>F1</kbd> drukt met de cursor in een tref woord. Als `$true` deze is ingesteld op, wordt in een pop-upvenster inhoud weer gegeven van de lokaal geïnstalleerde Help. U kunt de Help-bestanden installeren door de opdracht uit te voeren `Update-Help` . Als `$false` deze is ingesteld op, wordt uw browser geopend met een pagina op docs.Microsoft.com.
 
 ```powershell
 # Sets the option for the online help to be displayed.

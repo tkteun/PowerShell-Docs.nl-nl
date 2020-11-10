@@ -2,16 +2,16 @@
 ms.date: 12/31/2019
 title: Het ISEFile-object
 description: Een ISEFile-object vertegenwoordigt een bestand in Windows PowerShell ISE.
-ms.openlocfilehash: 0de19c45bde7e5629d5721635150d3b0915aaa7d
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: b5ea70219787f254fe85d728518cbc4746c00250
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92662135"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94391490"
 ---
 # <a name="the-isefile-object"></a>Het ISEFile-object
 
-Een **ISEFile** -object vertegenwoordigt een bestand in Windows Power shell &reg; Integrated SCRIPTING Environment (ISE). Het is een exemplaar van de klasse **micro soft. Power shell. host. ISE. ISEFile** . In dit onderwerp worden de methoden en lideigenschappen van leden vermeld. De `$psISE.CurrentFile` bestanden in de verzameling bestanden in een Power shell-tabblad zijn alle exemplaren van de klasse * * * * micro soft. Power shell. host. ISE. ISEFile * *.
+Een **ISEFile** -object vertegenwoordigt een bestand in Windows Power shell Integrated Scripting Environment (ISE). Het is een exemplaar van de klasse **micro soft. Power shell. host. ISE. ISEFile** . In dit onderwerp worden de methoden en lideigenschappen van leden vermeld. De `$psISE.CurrentFile` bestanden in de verzameling bestanden in een Power shell-tabblad zijn alle exemplaren van de klasse * * * * micro soft. Power shell. host. ISE. ISEFile * *.
 
 ## <a name="methods"></a>Methoden
 
@@ -21,7 +21,7 @@ Ondersteund in Windows PowerShell ISE 2,0 en hoger.
 
 Hiermee slaat u het bestand op schijf.
 
-**\[ saveEncoding \]** -optioneel [System. Text. encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx) een optionele teken coderings parameter die moet worden gebruikt voor het opgeslagen bestand. De standaard waarde is **utf8** .
+`[saveEncoding]` -optioneel [System. Text. encoding](/dotnet/api/system.text.encoding) een optionele teken coderings parameter die moet worden gebruikt voor het opgeslagen bestand. De standaard waarde is **utf8**.
 
 ### <a name="exceptions"></a>Uitzonderingen
 
@@ -47,7 +47,7 @@ Hiermee slaat u het bestand op met de opgegeven bestands naam en-code ring.
 
 **Bestands naam** : de naam van de teken reeks die moet worden gebruikt om het bestand op te slaan.
 
-**\[ saveEncoding \]** -optioneel [System. Text. encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx) een optionele teken coderings parameter die moet worden gebruikt voor het opgeslagen bestand. De standaard waarde is **utf8** .
+`[saveEncoding]` -optioneel [System. Text. encoding](/dotnet/api/system.text.encoding) een optionele teken coderings parameter die moet worden gebruikt voor het opgeslagen bestand. De standaard waarde is **utf8**.
 
 ### <a name="exceptions"></a>Uitzonderingen
 

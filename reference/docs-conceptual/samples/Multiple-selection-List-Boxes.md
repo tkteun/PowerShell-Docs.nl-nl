@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Meerdere selectielijstvelden
 description: In dit artikel wordt beschreven hoe u een keuze lijst met meerdere selectie vakjes kunt maken met behulp van de functies .NET Framework formulier maken in Windows Power shell.
-ms.openlocfilehash: e11d1f545f748e0503b92c02bc7a101d8014bd96
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
+ms.openlocfilehash: 2724188695f054d1115b385987cda8a578c102de
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92500280"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94391524"
 ---
 # <a name="multiple-selection-list-boxes"></a>Keuze lijsten met meerdere keuze mogelijkheden
 
@@ -74,7 +74,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 }
 ```
 
-Het script begint met het laden van twee .NET Framework klassen: **System. Drawing** en **System. Windows. Forms**. Vervolgens start u een nieuw exemplaar van het .NET Framework-klassen **systeem. Windows. Forms. Form**; Dit biedt een leeg formulier of venster waaraan u besturings elementen kunt toevoegen.
+Het script begint met het laden van twee .NET Framework klassen: **System. Drawing** en **System. Windows. Forms**. Vervolgens start u een nieuw exemplaar van het .NET Framework-klassen **systeem. Windows. Forms. Form** ; Dit biedt een leeg formulier of venster waaraan u besturings elementen kunt toevoegen.
 
 ```powershell
 $form = New-Object System.Windows.Forms.Form
@@ -86,7 +86,8 @@ Nadat u een exemplaar van de formulier klasse hebt gemaakt, wijst u waarden toe 
 
 - **Size.** Dit is de grootte van het formulier, in pixels. Met het voor gaande script maakt u een formulier dat 300 pixels breed is en 200 pixels hoog.
 
-- **StartingPosition.** Deze optionele eigenschap wordt ingesteld op **CenterScreen** in het voor gaande script. Als u deze eigenschap niet toevoegt, selecteert Windows een locatie wanneer het formulier wordt geopend. Door de **StartingPosition** in te stellen op **CenterScreen**, wordt het formulier telkens wanneer het wordt geladen automatisch in het midden van het scherm weer gegeven.
+- **StartingPosition.** Deze optionele eigenschap wordt ingesteld op **CenterScreen** in het voor gaande script.
+  Als u deze eigenschap niet toevoegt, selecteert Windows een locatie wanneer het formulier wordt geopend. Door de **StartingPosition** in te stellen op **CenterScreen** , wordt het formulier telkens wanneer het wordt geladen automatisch in het midden van het scherm weer gegeven.
 
 ```powershell
 $form.Text = 'Data Entry Form'
@@ -128,7 +129,7 @@ $label.Text = 'Please make a selection from the list below:'
 $form.Controls.Add($label)
 ```
 
-Voeg het besturings element (in dit geval een keuze lijst) toe waarmee gebruikers de informatie kunnen opgeven die u in de label tekst hebt beschreven. Er zijn veel andere besturings elementen die u kunt Toep assen naast tekst vakken. Zie [System. Windows. Forms naam ruimte](https://msdn.microsoft.com/library/k50ex0x9(v=vs.110).aspx) op MSDN voor meer besturings elementen.
+Voeg het besturings element (in dit geval een keuze lijst) toe waarmee gebruikers de informatie kunnen opgeven die u in de label tekst hebt beschreven. Er zijn veel andere besturings elementen die u kunt Toep assen naast tekst vakken. Zie [System. Windows. Forms naam ruimte](/dotnet/api/system.windows.forms)voor meer besturings elementen.
 
 ```powershell
 $listBox = New-Object System.Windows.Forms.Listbox
@@ -183,6 +184,6 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 
 ## <a name="see-also"></a>Zie ook
 
-- [Weekend scripter: Power shell GUI-voor beelden worden hersteld](https://go.microsoft.com/fwlink/?LinkId=506644)
+- [Weekend scripter: Power shell GUI-voor beelden worden hersteld](https://devblogs.microsoft.com/scripting/weekend-scripter-fixing-powershell-gui-examples/)
 - [GitHub: de WinFormsExampleUpdates van Dave Wyatt](https://github.com/dlwyatt/WinFormsExampleUpdates)
-- [Windows Power shell-Tip van de week: meervoudige selectie vakken-en meer!](https://technet.microsoft.com/library/ff730950.aspx)
+- [Windows Power shell-Tip van de week: meervoudige selectie vakken-en meer!](/previous-versions/windows/it-pro/windows-powershell-1.0/ff730950(v=technet.10))

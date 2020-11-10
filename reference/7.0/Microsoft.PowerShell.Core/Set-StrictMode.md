@@ -7,12 +7,12 @@ ms.date: 04/09/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/set-strictmode?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-StrictMode
-ms.openlocfilehash: ef80c2c63855bffcd23f51474009b241f8f4b3ba
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: aea54dfa2ade8a9b7b67ca82fb0d6365e6eea3c4
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93249431"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94391337"
 ---
 # Set-StrictMode
 
@@ -67,12 +67,7 @@ $a -gt 5
 ```
 
 ```Output
-The variable $a cannot be retrieved because it has not been set yet.
-
-At line:1 char:3
-+ $a <<<<  -gt 5
-+ CategoryInfo          : InvalidOperation: (a:Token) [], RuntimeException
-+ FullyQualifiedErrorId : VariableIsUndefined
+InvalidOperation: The variable '$a' cannot be retrieved because it has not been set.
 ```
 
 Wanneer de strikte modus is ingesteld op versie 1,0, wordt geprobeerd te verwijzen naar variabelen die niet zijn geïnitialiseerd.
@@ -111,18 +106,13 @@ add(3,4)
 ```
 
 ```Output
-The function or command was called like a method. Parameters should be separated by spaces,
-as described in 'Get-Help about_Parameter.'
-At line:1 char:4
-+ add <<<< (3,4)
-+ CategoryInfo          : InvalidOperation: (:) [], RuntimeException
-+ FullyQualifiedErrorId : StrictModeFunctionCallWithParens
+InvalidOperation: The function or command was called as if it were a method. Parameters should be separated by spaces. For information about parameters, see the about_Parameters Help topic.
 ```
 
 ```powershell
 Set-StrictMode -Off
 $string = "This is a string."
-$string.Month -eq $null
+$null -eq $string.Month
 ```
 
 ```Output
@@ -132,15 +122,11 @@ True
 ```powershell
 Set-StrictMode -Version 2.0
 $string = "This is a string."
-$string.Month -eq $null
+$null -eq $string.Month
 ```
 
 ```Output
-Property 'Month' cannot be found on this object; make sure it exists.
-At line:1 char:9
-+ $string. <<<< month
-+ CategoryInfo          : InvalidOperation: (.:OperatorToken) [], RuntimeException
-+ FullyQualifiedErrorId : PropertyNotFoundStrict
+PropertyNotFoundException: The property 'Month' cannot be found on this object. Verify that the property exists.
 ```
 
 Met deze opdracht wordt de strikte modus ingeschakeld en wordt deze ingesteld op versie 2,0. Als gevolg hiervan retourneert Power shell een fout melding als u syntaxis van de methode gebruikt, waarbij gebruik wordt gemaakt van haakjes en komma's, voor een functie aanroep of verwijzing naar niet-geïnitialiseerde variabelen of niet-bestaande eigenschappen.
@@ -158,8 +144,8 @@ Als de strikte modus is ingesteld op **uit** , is het resultaat van een ongeldig
 ```powershell
 # Strict mode is off by default.
 $a = @(1)
-$a[2] -eq $null
-$a['abc'] -eq $null
+$null -eq $a[2]
+$null -eq $a['abc']
 ```
 
 ```Output
@@ -170,24 +156,14 @@ True
 ```powershell
 Set-StrictMode -Version 3
 $a = @(1)
-$a[2] -eq $null
-$a['abc'] -eq $null
+$null -eq $a[2]
+$null -eq $a['abc']
 ```
 
 ```Output
-Index was outside the bounds of the array.
-At line:1 char:1
-+ $a[2] -eq $null
-+ ~~~~~~~~~~~~~~~
-    + CategoryInfo          : OperationStopped: (:) [], IndexOutOfRangeException
-    + FullyQualifiedErrorId : System.IndexOutOfRangeException
+OperationStopped: Index was outside the bounds of the array.
 
-Cannot convert value "abc" to type "System.Int32". Error: "Input string was not in a correct format."
-At line:1 char:1
-+ $a['abc'] -eq $null
-+ ~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : InvalidArgument: (:) [], RuntimeException
-    + FullyQualifiedErrorId : InvalidCastFromStringToInteger
+InvalidArgument: Cannot convert value "abc" to type "System.Int32". Error: "Input string was not in a correct format."
 ```
 
 Als de strikte modus is ingesteld op versie 3 of hoger, zijn ongeldige of buiten grenzende indexen resulteren in fouten.
