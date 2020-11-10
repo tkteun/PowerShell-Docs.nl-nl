@@ -4,12 +4,12 @@ title: Kennismaking met Windows PowerShell ISE
 description: Dit artikel bevat een overzicht van de functies van de Windows PowerShell ISE
 ms.topic: landing-page
 ms.custom: ISE-F1-page
-ms.openlocfilehash: 4ef3f471f11c2f1de818491a193fcf34201cb04a
-ms.sourcegitcommit: 109ff625773389be56e98e994b7e56146f2b9d93
+ms.openlocfilehash: 91faedfcda70228807cdab6690912e7ad0944303
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93296365"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94391252"
 ---
 # <a name="exploring-the-windows-powershell-ise"></a>Kennismaking met Windows PowerShell ISE
 
@@ -35,7 +35,7 @@ De volgende knoppen bevinden zich op de werk balk.
 | **Openen**                       | Hiermee opent u een bestaand script of bestand.                                                                                                                                                |
 | **Opslaan**                       | Hiermee slaat u een script of bestand op.                                                                                                                                                          |
 | **Knippen**                        | Hiermee knipt u de geselecteerde tekst en kopieert u deze naar het klem bord.                                                                                                                           |
-| **Kopieer**                       | Hiermee wordt de geselecteerde tekst naar het klem bord gekopieerd.                                                                                                                                       |
+| **Kopiëren**                       | Hiermee wordt de geselecteerde tekst naar het klem bord gekopieerd.                                                                                                                                       |
 | **Plakken**                      | Hiermee wordt de inhoud van het klem bord op de cursor locatie geplakt.                                                                                                                     |
 | **Uitvoer venster wissen**          | Hiermee wordt alle inhoud in het deel venster Uitvoer gewist.                                                                                                                                           |
 | **Ongedaan maken**                       | Hiermee wordt de zojuist uitgevoerde actie omgedraaid.                                                                                                                                     |
@@ -79,7 +79,8 @@ Hiermee wordt de grootte van de tekst op het scherm verg root of verkleind.
 
 ## <a name="help"></a>Help
 
-Help voor Windows PowerShell ISE is beschikbaar op internet in de TechNet-bibliotheek. U kunt de Help openen door te klikken op **Windows PowerShell ISE Help** in het menu **Help** of door op de <kbd>F1</kbd> -toets te drukken, behalve wanneer de cursor zich op een naam van de cmdlet bevindt in het deel venster script of in het console venster. Vanuit het menu **Help** kunt u ook de `Update-Help` cmdlet uitvoeren en het opdracht venster weer geven dat u helpt bij het maken van opdrachten door alle para meters voor een cmdlet weer te geven en u in staat te stellen de para meters in een gemakkelijk te gebruiken formulier in te vullen.
+Help voor Windows PowerShell ISE is beschikbaar op docs.microsoft.com. U kunt de Help openen door te klikken op **Windows PowerShell ISE Help** in het menu **Help** of door op de <kbd>F1</kbd> -toets te drukken, behalve wanneer de cursor zich op een naam van de cmdlet bevindt in het deel venster script of in het console venster.
+Vanuit het menu **Help** kunt u ook de `Update-Help` cmdlet uitvoeren en het opdracht venster weer geven dat u helpt bij het maken van opdrachten door alle para meters voor een cmdlet weer te geven en u in staat te stellen de para meters in een gemakkelijk te gebruiken formulier in te vullen.
 
 ## <a name="see-also"></a>Zie ook
 

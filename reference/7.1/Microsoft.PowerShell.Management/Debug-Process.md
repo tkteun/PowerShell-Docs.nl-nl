@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/debug-process?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Debug-Process
-ms.openlocfilehash: 905f3522a071fdd3f59d020b734c689a59e68a63
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: ea2f18017f6e65d2dd712f24acec4f3a50c9408d
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93251353"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94390487"
 ---
 # Debug-Process
 
@@ -41,11 +41,10 @@ Debug-Process -InputObject <Process[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 
 ## BESCHRIJVING
 
-De cmdlet **debug-process** voegt een fout opsporingsprogramma toe aan een of meer actieve processen op een lokale computer.
+De `Debug-Process` cmdlet voegt een fout opsporingsprogramma toe aan een of meer actieve processen op een lokale computer.
 U kunt de processen opgeven op basis van hun proces naam of proces-ID (PID), of u kunt proces objecten door sluizen naar deze cmdlet.
 
-Met deze cmdlet wordt het fout opsporingsprogramma dat momenteel is geregistreerd voor het proces, gekoppeld.
-Voordat u deze cmdlet kunt gebruiken, moet u controleren of een fout opsporingsprogramma is gedownload en correct is geconfigureerd.
+Met deze cmdlet wordt het fout opsporingsprogramma dat momenteel is geregistreerd voor het proces, gekoppeld. Voordat u deze cmdlet kunt gebruiken, moet u controleren of een fout opsporingsprogramma is gedownload en correct is geconfigureerd.
 
 ## VOORBEELDEN
 
@@ -87,10 +86,9 @@ Met deze opdracht wordt een fout opsporingsprogramma gekoppeld aan de processen 
 PS C:\> Get-Process "Windows PowerShell" | Debug-Process
 ```
 
-Met deze opdracht wordt een fout opsporingsprogramma gekoppeld aan de Power shell-processen op de computer.
-De cmdlet **Get-process** wordt gebruikt om de Power shell-processen op de computer op te halen en maakt gebruik van een pijplijn operator (|) om de processen te verzenden naar de cmdlet **debug-process** .
+Met deze opdracht wordt een fout opsporingsprogramma gekoppeld aan de Power shell-processen op de computer. De cmdlet wordt gebruikt `Get-Process` om de Power shell-processen op de computer op te halen en maakt gebruik van een pijplijn operator ( `|` ) om de processen naar de cmdlet te verzenden `Debug-Process` .
 
-Als u een bepaald Power Shell-proces wilt opgeven, gebruikt u de para meter ID van **Get-process**.
+Als u een bepaald Power Shell-proces wilt opgeven, gebruikt u de para meter ID van `Get-Process` .
 
 ### Voor beeld 6: een fout opsporingsprogramma koppelen aan een huidig proces op de lokale computer
 
@@ -100,10 +98,9 @@ PS C:\> $PID | Debug-Process
 
 Met deze opdracht wordt een fout opsporingsprogramma gekoppeld aan de huidige Power shell-processen op de computer.
 
-De opdracht maakt gebruik van de $PID automatische variabele, die de proces-ID van het huidige Power Shell-proces bevat.
-Vervolgens wordt een pijplijn operator (|) gebruikt om de proces-ID te verzenden naar de cmdlet **debug-process** .
+De opdracht maakt gebruik `$PID` van de automatische variabele, die de proces-id van het huidige Power Shell-proces bevat. Vervolgens wordt een pijplijn operator ( `|` ) gebruikt om de proces-id naar de cmdlet te verzenden `Debug-Process` .
 
-Zie about_Automatic_Variables voor meer informatie over de automatische variabele $PID.
+Zie about_Automatic_Variables voor meer informatie over de `$PID` Automatische variabele.
 
 ### Voor beeld 7: een fout opsporingsprogramma koppelen aan een proces dat gebruikmaakt van de para meter input object
 
@@ -114,17 +111,15 @@ PS C:\> Debug-Process -InputObject $P
 
 Met deze opdracht wordt een fout opsporingsprogramma gekoppeld aan de Power shell-processen op de lokale computer.
 
-De eerste opdracht maakt gebruik van de cmdlet **Get-process** om de Power shell-processen op de computer op te halen.
-Het resulterende proces object wordt opgeslagen in de variabele met de naam $P.
+De eerste opdracht gebruikt de `Get-Process` cmdlet om de Power shell-processen op de computer op te halen. Het resulterende proces object wordt opgeslagen in de variabele met de naam `$P` .
 
-De tweede opdracht maakt gebruik van de para meter *input object* van de cmdlet **debug-process** om het proces object in de variabele $P te verzenden.
+De tweede opdracht maakt gebruik van de para meter **input object** van de `Debug-Process` cmdlet om het proces object in de variabele in te dienen `$P` .
 
 ## PARAMETERS
 
 ### -Id
 
-Hiermee geeft u de proces-Id's op van de processen waarvoor u fouten wilt opsporen.
-De *id-* parameter naam is optioneel.
+Hiermee geeft u de proces-Id's op van de processen waarvoor u fouten wilt opsporen. De **id-** parameter naam is optioneel.
 
 Als u de proces-ID van een proces wilt zoeken, typt u `Get-Process` .
 
@@ -142,9 +137,7 @@ Accept wildcard characters: False
 
 ### -Input object
 
-Hiermee geeft u de proces objecten op die processen vertegenwoordigen waarvoor fouten worden opgespoord.
-Voer een variabele in die de proces objecten bevat of een opdracht waarmee de proces objecten worden opgehaald, zoals de cmdlet Get-Process.
-U kunt ook proces objecten naar deze cmdlet pipeen.
+Hiermee geeft u de proces objecten op die processen vertegenwoordigen waarvoor fouten worden opgespoord. Voer een variabele in die de proces objecten bevat of een opdracht die de proces objecten, zoals de- `Get-Process` cmdlet, ophalen. U kunt ook proces objecten naar deze cmdlet pipeen.
 
 ```yaml
 Type: System.Diagnostics.Process[]
@@ -160,9 +153,7 @@ Accept wildcard characters: False
 
 ### -Name
 
-Hiermee geeft u de namen van de processen waarvoor u fouten wilt opsporen.
-Als er meer dan één proces met dezelfde naam is, voegt deze cmdlet een fout opsporingsprogramma toe aan alle processen met die naam.
-De para meter *name* is optioneel.
+Hiermee geeft u de namen van de processen waarvoor u fouten wilt opsporen. Als er meer dan één proces met dezelfde naam is, voegt deze cmdlet een fout opsporingsprogramma toe aan alle processen met die naam. De para meter **name** is optioneel.
 
 ```yaml
 Type: System.String[]
@@ -194,8 +185,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-Hiermee wordt weergegeven wat er zou gebeuren als u de cmdlet uitvoert.
-De cmdlet wordt niet uitgevoerd.
+Hiermee wordt weergegeven wat er zou gebeuren als u de cmdlet uitvoert. De cmdlet wordt niet uitgevoerd.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -227,7 +217,7 @@ Met deze cmdlet wordt geen uitvoer gegenereerd.
 
 ## OPMERKINGEN
 
-* Deze cmdlet maakt gebruik van de methode AttachDebugger van de klasse Windows Management Instrumentation (WMI) Win32_Process. Zie [AttachDebugger-methode](https://go.microsoft.com/fwlink/?LinkId=143640) in de MSDN-bibliotheek voor meer informatie over deze methode.
+Deze cmdlet maakt gebruik van de methode AttachDebugger van de klasse Windows Management Instrumentation (WMI) Win32_Process. Zie [AttachDebugger-methode](https://go.microsoft.com/fwlink/?LinkId=143640) in de MSDN-bibliotheek voor meer informatie over deze methode.
 
 ## GERELATEERDE KOPPELINGEN
 
@@ -240,4 +230,3 @@ Met deze cmdlet wordt geen uitvoer gegenereerd.
 [Stoppen-proces](Stop-Process.md)
 
 [Wacht proces](Wait-Process.md)
-

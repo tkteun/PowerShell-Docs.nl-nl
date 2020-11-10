@@ -7,12 +7,12 @@ ms.date: 04/23/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/export-pssession?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Export-PSSession
-ms.openlocfilehash: 2fda80c934db3e868f0e49e131e6721c7b899f7c
-ms.sourcegitcommit: b0488ca6557501184f20c8343b0ed5147b09e3fe
+ms.openlocfilehash: 5d5841720c6187863902a929632e15d1687685e1
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "93251435"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94389399"
 ---
 # Export-PSSession
 
@@ -213,7 +213,7 @@ De acceptabele waarden voor deze para meter zijn als volgt:
 - ExternalScript. Alle. ps1-bestanden in de paden die worden vermeld in de Path-omgevings variabele ( `$env:path` ).
 - Filter en functie. Alle Power shell-functies.
 - Schriften. Script blokken in de huidige sessie.
-- Workflowconfiguraties. Een Power shell-werk stroom. Zie [about_Workflows](/powershell/module/psworkflow/about/about_workflows?view=powershell-5.1)voor meer informatie.
+- Workflowconfiguraties. Een Power shell-werk stroom. Zie [about_Workflows](/powershell/module/PSWorkflow/About/about_Workflows)voor meer informatie.
 
 ```yaml
 Type: System.Management.Automation.CommandTypes
@@ -300,16 +300,14 @@ Accept wildcard characters: False
 
 ### -FullyQualifiedModule
 
-Hiermee geeft u modules op met namen die zijn opgegeven in de vorm van **ModuleSpecification** -objecten.
-Zie de sectie opmerkingen van de [ModuleSpecification-constructor (hashtabel)](https://msdn.microsoft.com/library/jj136290).
+Hiermee geeft u modules op met namen die zijn opgegeven in de vorm van **ModuleSpecification** -objecten. Zie de sectie opmerkingen van de [ModuleSpecification-constructor (hashtabel)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_).
 
 De para meter **FullyQualifiedModule** accepteert bijvoorbeeld een module naam die is opgegeven in een van de volgende indelingen:
 
-`@{ModuleName = "modulename"; ModuleVersion = "version_number"}`
+- `@{ModuleName = "modulename"; ModuleVersion = "version_number"}`
+- `@{ModuleName = "modulename"; ModuleVersion = "version_number"; Guid = "GUID"}`
 
-`@{ModuleName = "modulename"; ModuleVersion = "version_number"; Guid = "GUID"}`
-
-**Module** naam en **ModuleVersion** zijn vereist, maar **GUID** is optioneel. U kunt de para meter **FullyQualifiedModule** niet opgeven in dezelfde opdracht als een **module** parameter; de twee para meters sluiten elkaar wederzijds uit.
+**Module** naam en **ModuleVersion** zijn vereist, maar **GUID** is optioneel. U kunt de para meter **FullyQualifiedModule** niet opgeven in dezelfde opdracht als een **module** parameter. de twee para meters sluiten elkaar wederzijds uit.
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.ModuleSpecification[]

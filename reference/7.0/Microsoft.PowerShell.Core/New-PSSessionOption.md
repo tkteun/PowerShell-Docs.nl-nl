@@ -7,12 +7,12 @@ ms.date: 02/07/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/new-pssessionoption?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-PSSessionOption
-ms.openlocfilehash: 3a9336fedece67c2c84532f226cec01de14cbb2a
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 6002003b413cede3cbdb0eeeb40646facb566f61
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93249627"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94389756"
 ---
 # New-PSSessionOption
 
@@ -532,7 +532,7 @@ Hiermee wordt bepaald welk mechanisme wordt gebruikt voor het omzetten van de ho
 
 De standaard waarde is geen.
 
-Zie [ProxyAccessType Enumeration (Engelstalig)](/dotnet/api/system.management.automation.remoting.proxyaccesstype?redirectedfrom=MSDN&view=powershellsdk-1.1.0)voor meer informatie over de waarden van deze para meter.
+Zie [ProxyAccessType Enumeration (Engelstalig)](/dotnet/api/system.management.automation.remoting.proxyaccesstype)voor meer informatie over de waarden van deze para meter.
 
 ```yaml
 Type: System.Management.Automation.Remoting.ProxyAccessType
@@ -551,7 +551,7 @@ Accept wildcard characters: False
 
 Hiermee geeft u de verificatie methode op die wordt gebruikt voor het omzetten van de proxy. De acceptabele waarden voor deze para meter zijn: **Basic** , **Digest** en **Negotiate**. De standaard waarde is **Negotiate**.
 
-Zie [AuthenticationMechanism Enumeration (Engelstalig)](/dotnet/api/system.management.automation.runspaces.authenticationmechanism?redirectedfrom=MSDN&view=powershellsdk-1.1.0)voor meer informatie over de waarden van deze para meter.
+Zie [AuthenticationMechanism Enumeration (Engelstalig)](/dotnet/api/system.management.automation.runspaces.authenticationmechanism)voor meer informatie over de waarden van deze para meter.
 
 ```yaml
 Type: System.Management.Automation.Runspaces.AuthenticationMechanism

@@ -6,12 +6,12 @@ ms.date: 04/08/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_methods?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Methods
-ms.openlocfilehash: 7160b049cffffa35263fc75fd595997c98ca2e34
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 39ebd876b99d77d699c5026e298acc931b501382
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93252597"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94388940"
 ---
 # <a name="about-methods"></a>Over methoden
 
@@ -81,7 +81,7 @@ Vanaf Power Shell 4,0 wordt de methode aanroep met behulp van dynamische methode
 
 ### <a name="learning-about-methods"></a>Leren over methoden
 
-Als u definities van de methoden van een object wilt vinden, gaat u naar Help-onderwerp voor het object type in MSDN en zoekt u naar de pagina methoden. De volgende pagina beschrijft bijvoorbeeld de methoden van proces objecten [System. Diagnostics. process](/dotnet/api/system.diagnostics.process#methods).
+Als u definities van de methoden van een object wilt vinden, gaat u naar Help-onderwerp voor het object type en zoekt u de pagina methoden. De volgende pagina beschrijft bijvoorbeeld de methoden van proces objecten [System. Diagnostics. process](/dotnet/api/system.diagnostics.process#methods).
 
 U kunt de argumenten van een methode bepalen door de methode definitie te bekijken, zoals het syntaxis diagram van een Power shell-cmdlet.
 

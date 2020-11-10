@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Items selecteren in een keuzelijst
 description: In dit artikel wordt beschreven hoe u een besturings element keuze lijst maakt met behulp van de functies voor het maken van .NET Framework formulier in Windows Power shell.
-ms.openlocfilehash: cfd6110a9cfcc3cea891d68d8ce7be5b332a949a
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
+ms.openlocfilehash: d6f881f0b92f294da105ae7df5e25e8c20ce5094
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92501045"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94391235"
 ---
 # <a name="selecting-items-from-a-list-box"></a>Items selecteren in een keuzelijst
 
@@ -75,7 +75,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 }
 ```
 
-Het script begint met het laden van twee .NET Framework klassen: **System. Drawing** en **System. Windows. Forms**. Vervolgens start u een nieuw exemplaar van het .NET Framework-klassen **systeem. Windows. Forms. Form**; Dit biedt een leeg formulier of venster waaraan u besturings elementen kunt toevoegen.
+Het script begint met het laden van twee .NET Framework klassen: **System. Drawing** en **System. Windows. Forms**. Vervolgens start u een nieuw exemplaar van het .NET Framework-klassen **systeem. Windows. Forms. Form** ; Dit biedt een leeg formulier of venster waaraan u besturings elementen kunt toevoegen.
 
 ```powershell
 Add-Type -AssemblyName System.Windows.Forms
@@ -89,7 +89,7 @@ Nadat u een exemplaar van de formulier klasse hebt gemaakt, wijst u waarden toe 
 - **Size.** Dit is de grootte van het formulier, in pixels. Met het voor gaande script maakt u een formulier dat 300 pixels breed is en 200 pixels hoog.
 
 - **StartingPosition.** Deze optionele eigenschap wordt ingesteld op **CenterScreen** in het voor gaande script.
-  Als u deze eigenschap niet toevoegt, selecteert Windows een locatie wanneer het formulier wordt geopend. Door de **StartingPosition** in te stellen op **CenterScreen**, wordt het formulier telkens wanneer het wordt geladen automatisch in het midden van het scherm weer gegeven.
+  Als u deze eigenschap niet toevoegt, selecteert Windows een locatie wanneer het formulier wordt geopend. Door de **StartingPosition** in te stellen op **CenterScreen** , wordt het formulier telkens wanneer het wordt geladen automatisch in het midden van het scherm weer gegeven.
 
 ```powershell
 $form.Text = 'Select a Computer'
@@ -131,7 +131,7 @@ $label.Text = 'Please select a computer:'
 $form.Controls.Add($label)
 ```
 
-Voeg het besturings element (in dit geval een keuze lijst) toe waarmee gebruikers de informatie kunnen opgeven die u in de label tekst hebt beschreven. Er zijn veel andere besturings elementen die u kunt Toep assen naast keuze lijsten. Zie [System. Windows. Forms naam ruimte](/dotnet/api/system.windows.forms) op MSDN voor meer besturings elementen.
+Voeg het besturings element (in dit geval een keuze lijst) toe waarmee gebruikers de informatie kunnen opgeven die u in de label tekst hebt beschreven. Er zijn veel andere besturings elementen die u kunt Toep assen naast keuze lijsten. Zie [System. Windows. Forms naam ruimte](/dotnet/api/system.windows.forms)voor meer besturings elementen.
 
 ```powershell
 $listBox = New-Object System.Windows.Forms.ListBox

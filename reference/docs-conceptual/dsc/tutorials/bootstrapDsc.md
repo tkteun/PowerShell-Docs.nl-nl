@@ -1,14 +1,14 @@
 ---
-ms.date: 06/12/2017
+ms.date: 11/09/2020
 keywords: DSC, Power shell, configuratie, installatie
 title: Een virtuele machine configureren bij de eerste keer opstarten met behulp van DSC
-description: In dit artikel wordt beschreven hoe u een virtuele machine kunt configureren bij de eerste keer opstarten met behulp van DSC
-ms.openlocfilehash: 9fa8c4a21486aaef87e1c0a3097e5983a378d98d
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+description: In dit artikel wordt uitgelegd hoe u een virtuele machine bij de eerste keer opstarten configureert met behulp van DSC
+ms.openlocfilehash: 09449053ff085209dec6ccbfa800e5d112d1c769
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92656192"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94389994"
 ---
 # <a name="configure-a-virtual-machines-at-initial-boot-up-by-using-dsc"></a>Een virtuele machine configureren bij de eerste keer opstarten met behulp van DSC
 
@@ -18,11 +18,11 @@ ms.locfileid: "92656192"
 ## <a name="requirements"></a>Vereisten
 
 > [!NOTE]
-> De register sleutel **DSCAutomationHostEnabled** die in dit onderwerp wordt beschreven, is niet beschikbaar in power Shell 4,0. Voor informatie over het configureren van nieuwe virtuele machines bij de eerste keer opstarten in Power Shell 4,0, raadpleegt [u uw machines automatisch configureren met DSC bij de eerste keer opstarten?](https://blogs.msdn.microsoft.com/powershell/2014/02/28/want-to-automatically-configure-your-machines-using-dsc-at-initial-boot-up/)
+> De register sleutel **DSCAutomationHostEnabled** die in dit onderwerp wordt beschreven, is niet beschikbaar in power Shell 4,0. Voor informatie over het configureren van nieuwe virtuele machines bij de eerste keer opstarten in Power Shell 4,0, raadpleegt [u uw machines automatisch configureren met DSC bij de eerste keer opstarten?](https://devblogs.microsoft.com/powershell/want-to-automatically-configure-your-machines-using-dsc-at-initial-boot-up/)
 
 Als u deze voor beelden wilt uitvoeren, hebt u het volgende nodig:
 
-- Een opstart bare VHD om mee te werken. U kunt een ISO downloaden met een evaluatie versie van Windows Server 2016 op [TechNet Evaluation Center](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016).
+- Een opstart bare VHD om mee te werken. U kunt een ISO downloaden met een evaluatie versie van Windows Server 2016 op [Evaluation Center](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016).
   U vindt instructies over het maken van een VHD op basis van een ISO-installatie kopie bij [het maken van opstart bare virtuele harde schijven](/previous-versions/windows/it-pro/windows-7/gg318049(v=ws.10)).
 - Een hostcomputer waarop Hyper-V is ingeschakeld. Zie [Hyper-V Overview](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831531(v=ws.11))(Engelstalig) voor meer informatie.
 
@@ -177,25 +177,18 @@ de sleutel is ingesteld op 2, waardoor een DSC-configuratie kan worden uitgevoer
 1. Laad de `HKLM\Software` registersubsleutel van de VHD door aan te roepen `reg load` .
 
    ```powershell
-   reg load HKLM\Vhd E:\Windows\System32\Config\Software`
+   reg load HKLM\Vhd E:\Windows\System32\Config\Software
    ```
 
-1. Ga naar de `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System` door de Power shell-register provider te gebruiken.
+1. Wijzig de waarde van in `DSCAutomationHostEnabled` 0 in de geladen component.
 
    ```powershell
-   Set-Location HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies\System`
+   reg add "HKLM\Vhd\Software\Microsoft\Windows\CurrentVersion\Policies\System" /v DSCAutomationHostEnabled /t REG_DWORD /d 0 /f
    ```
 
-1. Wijzig de waarde van `DSCAutomationHostEnabled` in 0.
+1. Verwijder het REGI ster door de volgende opdrachten uit te voeren:
 
    ```powershell
-   Set-ItemProperty -Path . -Name DSCAutomationHostEnabled -Value 0
-   ```
-
-5. Verwijder het REGI ster door de volgende opdrachten uit te voeren:
-
-   ```powershell
-   [gc]::Collect()
    reg unload HKLM\Vhd
    ```
 

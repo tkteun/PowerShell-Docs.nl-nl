@@ -2,12 +2,12 @@
 ms.date: 01/02/2020
 title: Sneltoetsen voor Windows PowerShell ISE
 description: Dit artikel bevat een lijst met de sneltoetsen die worden gebruikt in de Power shell ISE.
-ms.openlocfilehash: b7749f49d3ac2923b097e2ab94488263436980bd
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: d4e78c5e8e8e172ef3cdd30b0099d56ce6b6b01e
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92663461"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94391201"
 ---
 # <a name="keyboard-shortcuts-for-the-windows-powershell-ise"></a>Sneltoetsen voor Windows PowerShell ISE
 
@@ -19,8 +19,8 @@ U kunt de volgende sneltoetsen gebruiken bij het bewerken van tekst.
 
 |              Actie              |       Sneltoetsen       |                                                                                                                                                 Gebruiken in                                                                                                                                                 |
 | -------------------------------- | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Help**                         | <kbd>Step</kbd>                  | Script venster **belang rijk:** u kunt opgeven dat <kbd>F1</kbd> Help afkomstig is uit de TechNet-bibliotheek op internet of gedownloade Help (Zie `Update-Help` ). Als u wilt selecteren, klikt u op **extra** , **Opties** en vervolgens op het tabblad **algemene instellingen** , stelt **u lokale Help-inhoud gebruiken in plaats van online inhoud** in of uit. |
-| **Kopieer**                         | <kbd>CTRL</kbd> + <kbd>C</kbd>   | Script deel venster, opdracht deel venster, uitvoer venster                                                                                                                                                                                                                                                                 |
+| **Help**                         | <kbd>Step</kbd>                  | Script venster **belang rijk:** u kunt opgeven dat <kbd>F1</kbd> help afkomstig is van docs.Microsoft.com of gedownloade Help (Zie `Update-Help` ). Als u wilt selecteren, klikt u op **extra** , **Opties** en vervolgens op het tabblad **algemene instellingen** , stelt **u lokale Help-inhoud gebruiken in plaats van online inhoud** in of uit. |
+| **Kopiëren**                         | <kbd>CTRL</kbd> + <kbd>C</kbd>   | Script deel venster, opdracht deel venster, uitvoer venster                                                                                                                                                                                                                                                                 |
 | **Knippen**                          | <kbd>CTRL</kbd> + <kbd>X</kbd>   | Script deel venster, opdracht venster                                                                                                                                                                                                                                                                              |
 | **Overzicht uitvouwen of samen vouwen** | <kbd>CTRL</kbd> + <kbd>M</kbd>   | Script venster                                                                                                                                                                                                                                                                                            |
 | **Zoeken in script**               | <kbd>CTRL</kbd> + <kbd>F</kbd>   | Script venster                                                                                                                                                                                                                                                                                            |
@@ -43,7 +43,7 @@ U kunt de volgende sneltoetsen gebruiken voor het uitvoeren van scripts in het S
 | ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Nieuw**                      | <kbd>CTRL</kbd> + <kbd>N</kbd>                                                                                                                                                                                                              |
 | **Openen**                     | <kbd>CTRL</kbd> + <kbd>O</kbd>                                                                                                                                                                                                              |
-| **Uitvoeringsrun**                      | <kbd>F5</kbd>                                                                                                                                                                                                                             |
+| **Uitvoeren**                      | <kbd>F5</kbd>                                                                                                                                                                                                                             |
 | **Selectie uitvoeren**            | <kbd>F8</kbd>                                                                                                                                                                                                                             |
 | **Uitvoering stoppen**           | <kbd>CTRL</kbd> + <kbd>Onderbreken</kbd>. <kbd>CTRL</kbd> + <kbd>C</kbd> kan worden gebruikt wanneer de context ondubbelzinnig is (als er geen tekst is geselecteerd).                                                                                              |
 | **Tabblad** (naar volgend script)     | <kbd>CTRL</kbd> + <kbd>Tab</kbd> **Opmerking:** het tabblad naar het volgende script werkt alleen wanneer er een enkel Windows Power shell-tabblad is geopend of als u meer dan één Windows Power shell-tabblad hebt geopend, maar de focus zich in het Script-venster bevindt.               |

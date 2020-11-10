@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 title: Zoek resultaten filteren
 description: In dit artikel wordt de gebruikers interface beschreven waarmee inhoud in het PowerShell Gallery wordt gefilterd.
-ms.openlocfilehash: cc375f3ddb35c95ed134776500bd326bc3db6b1a
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: a769daae903e614b96be1056e3ff14eca41970bd
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92661405"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94389824"
 ---
 # <a name="filtering-search-results"></a>Zoek resultaten filteren
 
@@ -22,7 +22,7 @@ De vervolg keuzelijst onder filteren op staat gebruikers toe om de resultaten te
 - Voorlopige versie toevoegen
 - Alleen stabiel
 
-Zie [prerelease-versie die is toegevoegd aan PowerShellGet en PowerShell Gallery](https://blogs.msdn.microsoft.com/powershell/2017/12/05/prerelease-versioning-added-to-powershellget-and-powershell-gallery/) in het Power shell-team blog voor meer informatie over ' Prerelease ' en ' stabiele '.
+Zie [prerelease-versie die is toegevoegd aan PowerShellGet en PowerShell Gallery](https://devblogs.microsoft.com/powershell/prerelease-versioning-added-to-powershellget-and-powershell-gallery/) in het Power shell-team blog voor meer informatie over ' Prerelease ' en ' stabiele '.
 
 Met de selectie vakjes in de vervolg keuzelijst kunnen gebruikers de resultaten filteren door:
 

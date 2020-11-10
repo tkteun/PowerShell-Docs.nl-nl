@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Een aangepast invoervak maken
 description: In dit artikel wordt beschreven hoe u een aangepast invoervak maakt met behulp van de functies .NET Framework formulier maken in Windows Power shell.
-ms.openlocfilehash: 18fba743b169010936d2ea83dca4e95203664fe9
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
+ms.openlocfilehash: b7786706d2461c329da429c1bd4971d7dc874d6d
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92500552"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94390079"
 ---
 # <a name="creating-a-custom-input-box"></a>Een aangepast invoervak maken
 
@@ -66,7 +66,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 }
 ```
 
-Het script begint met het laden van twee .NET Framework klassen: **System. Drawing** en **System. Windows. Forms**. Vervolgens start u een nieuw exemplaar van het .NET Framework-klassen **systeem. Windows. Forms. Form**; Dit biedt een leeg formulier of venster waaraan u besturings elementen kunt toevoegen.
+Het script begint met het laden van twee .NET Framework klassen: **System. Drawing** en **System. Windows. Forms**. Vervolgens start u een nieuw exemplaar van het .NET Framework-klassen **systeem. Windows. Forms. Form** ; Dit biedt een leeg formulier of venster waaraan u besturings elementen kunt toevoegen.
 
 ```powershell
 $form = New-Object System.Windows.Forms.Form
@@ -79,7 +79,7 @@ Nadat u een exemplaar van de formulier klasse hebt gemaakt, wijst u waarden toe 
 - **Size.** Dit is de grootte van het formulier, in pixels. Met het voor gaande script maakt u een formulier dat 300 pixels breed is en 200 pixels hoog.
 
 - **StartingPosition.** Deze optionele eigenschap wordt ingesteld op **CenterScreen** in het voor gaande script.
-  Als u deze eigenschap niet toevoegt, selecteert Windows een locatie wanneer het formulier wordt geopend. Door de **StartingPosition** in te stellen op **CenterScreen**, wordt het formulier telkens wanneer het wordt geladen automatisch in het midden van het scherm weer gegeven.
+  Als u deze eigenschap niet toevoegt, selecteert Windows een locatie wanneer het formulier wordt geopend. Door de **StartingPosition** in te stellen op **CenterScreen** , wordt het formulier telkens wanneer het wordt geladen automatisch in het midden van het scherm weer gegeven.
 
 ```powershell
 $form.Text = 'Data Entry Form'
@@ -121,7 +121,7 @@ $label.Text = 'Please enter the information in the space below:'
 $form.Controls.Add($label)
 ```
 
-Voeg het besturings element (in dit geval een tekstvak) toe waarmee gebruikers de informatie kunnen opgeven die u in de label tekst hebt beschreven. Er zijn veel andere besturings elementen die u kunt Toep assen naast tekst vakken. Zie [System. Windows. Forms naam ruimte](/dotnet/api/system.windows.forms) op MSDN voor meer besturings elementen.
+Voeg het besturings element (in dit geval een tekstvak) toe waarmee gebruikers de informatie kunnen opgeven die u in de label tekst hebt beschreven. Er zijn veel andere besturings elementen die u kunt Toep assen naast tekst vakken. Zie [System. Windows. Forms naam ruimte](/dotnet/api/system.windows.forms)voor meer besturings elementen.
 
 ```powershell
 $textBox = New-Object System.Windows.Forms.TextBox

@@ -3,12 +3,12 @@ ms.date: 07/06/2020
 keywords: DSC, Power shell, configuratie, installatie
 title: Het MOF-bestand beveiligen
 description: In dit artikel wordt beschreven hoe u ervoor zorgt dat het MOF-bestand is versleuteld met het doel knooppunt.
-ms.openlocfilehash: e8b495a5c3c18dca5cde29cbbcf7d3f3cdab8f48
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: b8958c8cc9e2035aede87a855905b1a34707117d
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92662791"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94390866"
 ---
 # <a name="securing-the-mof-file"></a>Het MOF-bestand beveiligen
 
@@ -25,9 +25,9 @@ Vanaf Power shell versie 5,0 wordt het volledige MOF-bestand standaard versleute
 
 Zorg ervoor dat u over het volgende beschikt om de referenties te versleutelen die worden gebruikt voor het beveiligen van een DSC-configuratie:
 
-- **Een aantal manieren om certificaten te verlenen en te distribueren** . In dit onderwerp en de voor beelden wordt ervan uitgegaan dat u Active Directory certificerings instantie gebruikt. Zie [Active Directory Certificate Services Overview](https://technet.microsoft.com/library/hh831740.aspx) and [Active Directory Certificate Services in Windows Server 2008](https://technet.microsoft.com/windowsserver/dd448615.aspx)(Engelstalig) voor meer achtergrond informatie over Active Directory Certificate Services.
-- **Beheerders toegang tot het doel knooppunt of de knoop punten** .
-- **Elk doel knooppunt heeft een persoonlijk archief dat geschikt is voor versleuteling** . Het pad naar de Store van Windows Power shell is certificaat: \ LocalMachine\My. In de voor beelden in dit onderwerp wordt gebruikgemaakt van de sjabloon voor verificatie van werk station, die u kunt vinden (samen met andere certificaat sjablonen) op [standaard certificaat sjablonen](https://technet.microsoft.com/library/cc740061(v=WS.10).aspx).
+- **Een aantal manieren om certificaten te verlenen en te distribueren**. In dit onderwerp en de voor beelden wordt ervan uitgegaan dat u Active Directory certificerings instantie gebruikt. Zie [Active Directory Certificate Services Overview](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831740(v=ws.11))(Engelstalig) voor meer achtergrond informatie over Active Directory Certificate Services.
+- **Beheerders toegang tot het doel knooppunt of de knoop punten**.
+- **Elk doel knooppunt heeft een persoonlijk archief dat geschikt is voor versleuteling**. Het pad naar de Store van Windows Power shell is certificaat: \ LocalMachine\My. In de voor beelden in dit onderwerp wordt gebruikgemaakt van de sjabloon voor verificatie van werk station, die u kunt vinden (samen met andere certificaat sjablonen) op [standaard certificaat sjablonen](/previous-versions/windows/it-pro/windows-server-2003/cc740061(v=ws.10)).
 - Als u deze configuratie op een andere computer dan het doel knooppunt wilt uitvoeren, **exporteert u de open bare sleutel van het certificaat** en importeert u het vervolgens naar de computer waarop u de configuratie wilt uitvoeren. Zorg ervoor dat u alleen de **open bare** sleutel exporteert. Zorg ervoor dat de persoonlijke sleutel is beveiligd.
 
 > [!NOTE]
@@ -74,7 +74,7 @@ Methode 1 wordt aanbevolen omdat de persoonlijke sleutel die wordt gebruikt voor
 De persoonlijke sleutel moet geheim blijven, omdat deze wordt gebruikt voor het ontsleutelen van de MOF op het **doel knooppunt** de eenvoudigste manier om dat te doen, is door het certificaat voor de persoonlijke sleutel te maken op het **doel knooppunt** en het certificaat van de **open bare sleutel** te kopiëren naar de computer die wordt gebruikt om de DSC-configuratie te schrijven naar een MOF-bestand. Het volgende voor beeld:
 
 1. Hiermee maakt u een certificaat op het **doel knooppunt**
-1. exporteert het certificaat van de open bare sleutel op het **doel knooppunt** .
+1. exporteert het certificaat van de open bare sleutel op het **doel knooppunt**.
 1. Hiermee wordt het certificaat van de open bare sleutel in **het certificaat archief van het** **ontwerp knooppunt** geïmporteerd.
 
 #### <a name="on-the-target-node-create-and-export-the-certificate"></a>Op het doel knooppunt: het certificaat maken en exporteren
@@ -88,7 +88,7 @@ $cert = New-SelfSignedCertificate -Type DocumentEncryptionCertLegacyCsp -DnsName
 $cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
 ```
 
-Na het exporteren `DscPublicKey.cer` moet de worden gekopieerd naar het **ontwerp knooppunt** .
+Na het exporteren `DscPublicKey.cer` moet de worden gekopieerd naar het **ontwerp knooppunt**.
 
 > Doel knooppunt: Windows Server 2012 R2/Windows 8,1 en eerder
 
@@ -119,7 +119,7 @@ $Cert = Get-ChildItem -Path cert:\LocalMachine\My | Where-Object {
 $cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
 ```
 
-Na het exporteren ```DscPublicKey.cer``` moet de worden gekopieerd naar het **ontwerp knooppunt** .
+Na het exporteren ```DscPublicKey.cer``` moet de worden gekopieerd naar het **ontwerp knooppunt**.
 
 #### <a name="on-the-authoring-node-import-the-certs-public-key"></a>Op het ontwerp knooppunt: de open bare sleutel van het certificaat importeren
 
@@ -130,13 +130,13 @@ Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cer
 
 ### <a name="creating-the-certificate-on-the-authoring-node"></a>Het certificaat maken op het ontwerp knooppunt
 
-Het versleutelings certificaat kan ook worden gemaakt op het **ontwerp knooppunt** , met de **persoonlijke sleutel** geëxporteerd als een pfx-bestand en vervolgens worden geïmporteerd op het **doel knooppunt** . Dit is de huidige methode voor het implementeren van DSC-referentie versleuteling op _nano server_ . Hoewel de PFX met een wacht woord is beveiligd, moet deze tijdens de overdracht veilig worden bewaard. Het volgende voor beeld:
+Het versleutelings certificaat kan ook worden gemaakt op het **ontwerp knooppunt** , met de **persoonlijke sleutel** geëxporteerd als een pfx-bestand en vervolgens worden geïmporteerd op het **doel knooppunt**. Dit is de huidige methode voor het implementeren van DSC-referentie versleuteling op _nano server_. Hoewel de PFX met een wacht woord is beveiligd, moet deze tijdens de overdracht veilig worden bewaard. Het volgende voor beeld:
 
-1. Hiermee maakt u een certificaat op het **ontwerp knooppunt** .
-1. exporteert het certificaat inclusief de persoonlijke sleutel op het **ontwerp knooppunt** .
+1. Hiermee maakt u een certificaat op het **ontwerp knooppunt**.
+1. exporteert het certificaat inclusief de persoonlijke sleutel op het **ontwerp knooppunt**.
 1. Hiermee verwijdert u de persoonlijke sleutel van het **ontwerp knooppunt** , maar behoudt u het certificaat voor de open bare sleutel in de **mijn** Store.
-1. importeert het certificaat van de persoonlijke sleutel in het certificaat archief mijn (persoonlijk) op het **doel knooppunt** .
-   - het moet worden toegevoegd aan het hoofd archief zodat het wordt vertrouwd door het **doel knooppunt** .
+1. importeert het certificaat van de persoonlijke sleutel in het certificaat archief mijn (persoonlijk) op het **doel knooppunt**.
+   - het moet worden toegevoegd aan het hoofd archief zodat het wordt vertrouwd door het **doel knooppunt**.
 
 #### <a name="on-the-authoring-node-create-and-export-the-certificate"></a>Op het ontwerp knooppunt: het certificaat maken en exporteren
 
@@ -154,7 +154,7 @@ $cert | Remove-Item -Force
 Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cert:\LocalMachine\My
 ```
 
-Na het exporteren `DscPrivateKey.pfx` moet de worden gekopieerd naar het **doel knooppunt** .
+Na het exporteren `DscPrivateKey.pfx` moet de worden gekopieerd naar het **doel knooppunt**.
 
 > Doel knooppunt: Windows Server 2012 R2/Windows 8,1 en eerder
 
@@ -205,8 +205,8 @@ In het configuratie gegevens blok worden de doel knooppunten gedefinieerd waarop
 De volgende elementen kunnen worden geconfigureerd voor elk knoop punt dat is gerelateerd aan referentie versleuteling:
 
 - **Nodenaam** : de naam van het doel knooppunt waarvoor de referentie versleuteling wordt geconfigureerd.
-- **PsDscAllowPlainTextPassword** : Hiermee wordt aangegeven of niet-versleutelde referenties mogen worden door gegeven aan dit knoop punt. Dit wordt **niet aanbevolen** .
-- **Vinger afdruk** : de vinger afdruk van het certificaat dat wordt gebruikt voor het ontsleutelen van de referenties in de DSC-configuratie op het _doel knooppunt_ . **Dit certificaat moet aanwezig zijn in het certificaat archief van de lokale computer op het doel knooppunt.**
+- **PsDscAllowPlainTextPassword** : Hiermee wordt aangegeven of niet-versleutelde referenties mogen worden door gegeven aan dit knoop punt. Dit wordt **niet aanbevolen**.
+- **Vinger afdruk** : de vinger afdruk van het certificaat dat wordt gebruikt voor het ontsleutelen van de referenties in de DSC-configuratie op het _doel knooppunt_. **Dit certificaat moet aanwezig zijn in het certificaat archief van de lokale computer op het doel knooppunt.**
 - **CertificateFile** : het certificaat bestand (alleen de open bare sleutel) dat moet worden gebruikt om de referenties voor het _doel knooppunt_ te versleutelen. Dit moet een DER Encoded Binary X. 509 of base-64 Encoded X. 509-indeling certificaat bestand.
 
 In dit voor beeld wordt een blok van een configuratie gegevens weer gegeven waarin een doel knooppunt wordt opgegeven voor het uitvoeren van de naam targetNode, het pad naar het certificaat bestand met de open bare sleutel (met de naam targetNode. CER) en de vinger afdruk voor de open bare sleutel.

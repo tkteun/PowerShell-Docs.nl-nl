@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-process?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Process
-ms.openlocfilehash: 69b37b3735dcc746fb7961bbe9af732ab0317c79
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: d9435f8a0012ca1a7738cfd47d202d64b80f0f95
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93250703"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94389127"
 ---
 # Get-Process
 
@@ -59,13 +59,11 @@ Get-Process -InputObject <Process[]> [-Module] [-FileVersionInfo] [<CommonParame
 
 ## BESCHRIJVING
 
-De `Get-Process` cmdlet haalt de processen op een lokale computer op.
+De `Get-Process` cmdlet haalt de processen op een lokale of externe computer op.
 
-Zonder para meters haalt deze cmdlet alle processen op de lokale computer op.
-U kunt ook een bepaald proces opgeven op basis van de proces naam of proces-ID (PID) of een proces object door de pijp lijn door geven aan deze cmdlet.
+Zonder para meters haalt deze cmdlet alle processen op de lokale computer op. U kunt ook een bepaald proces opgeven op basis van de proces naam of proces-ID (PID) of een proces object door de pijp lijn door geven aan deze cmdlet.
 
-Met deze cmdlet wordt standaard een proces object geretourneerd dat gedetailleerde informatie over het proces bevat en methoden ondersteunt waarmee u het proces kunt starten en stoppen.
-U kunt ook de para meters van de `Get-Process` cmdlet gebruiken om informatie over de bestands versie op te halen voor het programma dat wordt uitgevoerd in het proces en om de modules op te halen die het proces heeft geladen.
+Met deze cmdlet wordt standaard een proces object geretourneerd dat gedetailleerde informatie over het proces bevat en methoden ondersteunt waarmee u het proces kunt starten en stoppen. U kunt ook de para meters van de `Get-Process` cmdlet gebruiken om informatie over de bestands versie op te halen voor het programma dat wordt uitgevoerd in het proces en om de modules op te halen die het proces heeft geladen.
 
 ## VOORBEELDEN
 
@@ -75,8 +73,7 @@ U kunt ook de para meters van de `Get-Process` cmdlet gebruiken om informatie ov
 Get-Process
 ```
 
-Met deze opdracht wordt een lijst met alle actieve processen opgehaald die worden uitgevoerd op de lokale computer.
-Zie de sectie [opmerkingen](#notes) voor een definitie van elke kolom.
+Met deze opdracht wordt een lijst met alle actieve processen opgehaald die worden uitgevoerd op de lokale computer. Zie de sectie [opmerkingen](#notes) voor een definitie van elke kolom.
 
 ### Voor beeld 2: alle beschik bare gegevens over een of meer processen ophalen
 
@@ -84,12 +81,9 @@ Zie de sectie [opmerkingen](#notes) voor een definitie van elke kolom.
 Get-Process winword, explorer | Format-List *
 ```
 
-Met deze opdracht worden alle beschik bare gegevens over de processen Winword en Explorer op de computer opgehaald.
-Hierbij wordt de para meter **name** gebruikt voor het opgeven van de processen, maar de naam van de optionele para meter wordt wegge laten.
-De pijplijn operator `|` geeft de gegevens door aan de `Format-List` cmdlet, die alle beschik bare eigenschappen `*` van de objecten Winword en Explorer-proces weergeeft.
+Met deze opdracht worden alle beschik bare gegevens over de processen Winword en Explorer op de computer opgehaald. Hierbij wordt de para meter **name** gebruikt voor het opgeven van de processen, maar de naam van de optionele para meter wordt wegge laten. De pijplijn operator `|` geeft de gegevens door aan de `Format-List` cmdlet, die alle beschik bare eigenschappen `*` van de objecten Winword en Explorer-proces weergeeft.
 
-U kunt de processen ook identificeren aan de hand van hun proces-Id's.
-Bijvoorbeeld `Get-Process -Id 664, 2060`.
+U kunt de processen ook identificeren aan de hand van hun proces-Id's. Bijvoorbeeld `Get-Process -Id 664, 2060`.
 
 ### Voor beeld 3: alle processen ophalen met een werkset die groter is dan een opgegeven grootte
 
@@ -97,13 +91,9 @@ Bijvoorbeeld `Get-Process -Id 664, 2060`.
 Get-Process | Where-Object {$_.WorkingSet -gt 20000000}
 ```
 
-Met deze opdracht worden alle processen opgehaald die een werkset hebben die groter is dan 20 MB.
-De cmdlet wordt gebruikt `Get-Process`  voor het ophalen van alle actieve processen.
-De pijplijn operator `|` geeft de proces objecten door aan de `Where-Object` cmdlet, waarmee alleen het object wordt geselecteerd met een waarde die groter is dan 20.000.000 bytes voor de eigenschap **workingset** .
+Met deze opdracht worden alle processen opgehaald die een werkset hebben die groter is dan 20 MB. De cmdlet wordt gebruikt `Get-Process` voor het ophalen van alle actieve processen. De pijplijn operator `|` geeft de proces objecten door aan de `Where-Object` cmdlet, waarmee alleen het object wordt geselecteerd met een waarde die groter is dan 20.000.000 bytes voor de eigenschap **workingset** .
 
-**Workingset** is een van de vele eigenschappen van proces objecten.
-Als u alle eigenschappen wilt weer geven, typt u `Get-Process | Get-Member` .
-Standaard worden de waarden van alle eigenschappen van het bedrag in bytes weer gegeven, zelfs als de standaard weergave deze in kilo bytes en mega bytes vermeldt.
+**Workingset** is een van de vele eigenschappen van proces objecten. Als u alle eigenschappen wilt weer geven, typt u `Get-Process | Get-Member` . Standaard worden de waarden van alle eigenschappen van het bedrag in bytes weer gegeven, zelfs als de standaard weergave deze in kilo bytes en mega bytes vermeldt.
 
 ### Voor beeld 4: processen op de computer in groepen weer geven op basis van prioriteit
 
@@ -112,8 +102,7 @@ $A = Get-Process
 $A | Get-Process | Format-Table -View priority
 ```
 
-Met deze opdrachten worden de processen op de computer in groepen weer geven op basis van hun prioriteits klasse.
-De eerste opdracht haalt alle processen op de computer op en slaat deze vervolgens op in de `$A` variabele.
+Met deze opdrachten worden de processen op de computer in groepen weer geven op basis van hun prioriteits klasse. De eerste opdracht haalt alle processen op de computer op en slaat deze vervolgens op in de `$A` variabele.
 
 Met de tweede opdracht pipet u het **proces** object dat in de `$A` variabele is opgeslagen, naar de `Get-Process` cmdlet en vervolgens naar de `Format-Table` cmdlet, waarmee de processen worden opgemaakt met behulp van de weer gave **prioriteit** .
 
@@ -139,7 +128,7 @@ NPM(K) PM(K) WS(K) VM(M) CPU(s)   Id MachineName ProcessName
     27 54572 54520   576 5.52   4428 .           pwsh
 ```
 
-Dit voor beeld bevat een `Format-Table` opdracht waarmee de eigenschap **MachineName** wordt toegevoegd aan de standaard `Get-Process` uitvoer weergave.
+In dit voor beeld worden processen opgehaald van de lokale computer en een externe computer (S1). De opgehaalde processen worden door gegeven aan de `Format-Table` opdracht waarmee de eigenschap **MachineName** wordt toegevoegd aan de standaard `Get-Process` uitvoer weergave.
 
 ### Voor beeld 6: versie-informatie voor een proces ophalen
 
@@ -207,8 +196,7 @@ NPM(K)    PM(M)      WS(M)     CPU(s)      Id  SI ProcessName
     83    96.21      77.53       4.39    1192  10 pwsh
 ```
 
-Deze opdrachten laten zien hoe u de `$PID` Automatische variabele gebruikt om het proces te identificeren dat als host fungeert voor de huidige Power shell-sessie.
-U kunt deze methode gebruiken om het hostproces te onderscheiden van andere Power shell-processen die u mogelijk wilt stoppen of sluiten.
+Deze opdrachten laten zien hoe u de `$PID` Automatische variabele gebruikt om het proces te identificeren dat als host fungeert voor de huidige Power shell-sessie. U kunt deze methode gebruiken om het hostproces te onderscheiden van andere Power shell-processen die u mogelijk wilt stoppen of sluiten.
 
 Met de eerste opdracht worden alle Power shell-processen in de huidige sessie opgehaald.
 
@@ -222,8 +210,7 @@ Get-Process | Where-Object {$_.mainWindowTitle} | Format-Table Id, Name, mainWin
 
 Met deze opdracht worden alle processen opgehaald die een hoofd venster titel hebben en worden deze weer gegeven in een tabel met de proces-ID en de proces naam.
 
-De eigenschap **mainWindowTitle** is slechts een van de vele handige eigenschappen van het **proces** object dat `Get-Process` retourneert.
-Als u alle eigenschappen wilt weer geven, pipet u de resultaten van een `Get-Process` opdracht naar de `Get-Member` cmdlet `Get-Process | Get-Member` .
+De eigenschap **mainWindowTitle** is slechts een van de vele handige eigenschappen van het **proces** object dat `Get-Process` retourneert. Als u alle eigenschappen wilt weer geven, pipet u de resultaten van een `Get-Process` opdracht naar de `Get-Member` cmdlet `Get-Process | Get-Member` .
 
 ## PARAMETERS
 
@@ -235,9 +222,7 @@ In Windows Vista en latere versies van Windows moet u Power shell openen met de 
 
 Als u informatie over de bestands versie wilt ophalen voor een proces op een externe computer, gebruikt u de `Invoke-Command` cmdlet.
 
-Het gebruik van deze para meter komt overeen met het ophalen van de eigenschap **MainModule. FileVersionInfo** van elk proces object.
-Wanneer u deze para meter gebruikt, `Get-Process` retourneert een **FileVersionInfo** -object **System. Diagnostics. FileVersionInfo** , geen process-object.
-U kunt de uitvoer van de opdracht dus niet door sluizen naar een cmdlet die een proces object verwacht, zoals `Stop-Process` .
+Het gebruik van deze para meter komt overeen met het ophalen van de eigenschap **MainModule. FileVersionInfo** van elk proces object. Wanneer u deze para meter gebruikt, `Get-Process` retourneert een **FileVersionInfo** -object **System. Diagnostics. FileVersionInfo** , geen process-object. U kunt de uitvoer van de opdracht dus niet door sluizen naar een cmdlet die een proces object verwacht, zoals `Stop-Process` .
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -253,9 +238,7 @@ Accept wildcard characters: False
 
 ### -Id
 
-Hiermee geeft u een of meer processen op proces-ID (PID).
-Als u meerdere Id's wilt opgeven, gebruikt u komma's om de Id's van elkaar te scheiden.
-Als u de PID van een proces wilt vinden, typt u `Get-Process` .
+Hiermee geeft u een of meer processen op proces-ID (PID). Als u meerdere Id's wilt opgeven, gebruikt u komma's om de Id's van elkaar te scheiden. Als u de PID van een proces wilt vinden, typt u `Get-Process` .
 
 ```yaml
 Type: System.Int32[]
@@ -287,8 +270,7 @@ Accept wildcard characters: False
 
 ### -Input object
 
-Hiermee geeft u een of meer proces objecten op.
-Voer een variabele in die de objecten bevat, of typ een opdracht of expressie waarmee de objecten worden opgehaald.
+Hiermee geeft u een of meer proces objecten op. Voer een variabele in die de objecten bevat, of typ een opdracht of expressie waarmee de objecten worden opgehaald.
 
 ```yaml
 Type: System.Diagnostics.Process[]
@@ -306,13 +288,11 @@ Accept wildcard characters: False
 
 Geeft aan dat met deze cmdlet de modules worden opgehaald die zijn geladen door de processen.
 
-In Windows Vista en latere versies van Windows moet u Power shell openen met de optie als administrator uitvoeren om deze para meter te gebruiken voor processen waarvan u geen eigenaar bent.
+In Windows Vista en latere versies van Windows moet u Power shell openen met de optie **als administrator uitvoeren** om deze para meter te gebruiken voor processen waarvan u geen eigenaar bent.
 
 Gebruik de cmdlet om de modules op te halen die zijn geladen door een proces op een externe computer `Invoke-Command` .
 
-Deze para meter is gelijk aan het ophalen van de eigenschap **modules** van elk proces object.
-Wanneer u deze para meter gebruikt, retourneert deze cmdlet een **ProcessModule** -object **System. Diagnostics. ProcessModule** , geen process-object.
-U kunt de uitvoer van de opdracht dus niet door sluizen naar een cmdlet die een proces object verwacht, zoals `Stop-Process` .
+Deze para meter is gelijk aan het ophalen van de eigenschap **modules** van elk proces object. Wanneer u deze para meter gebruikt, retourneert deze cmdlet een **ProcessModule** -object **System. Diagnostics. ProcessModule** , geen process-object. U kunt de uitvoer van de opdracht dus niet door sluizen naar een cmdlet die een proces object verwacht, zoals `Stop-Process` .
 
 Wanneer u zowel de *module* -als de **FileVersionInfo** -para meters in dezelfde opdracht gebruikt, retourneert deze cmdlet een **FileVersionInfo** -object met informatie over de bestands versie van alle modules.
 
@@ -330,9 +310,7 @@ Accept wildcard characters: False
 
 ### -Name
 
-Hiermee geeft u een of meer processen op proces naam.
-U kunt meerdere proces namen typen (gescheiden door komma's) en Joker tekens gebruiken.
-De parameter naam ("naam") is optioneel.
+Hiermee geeft u een of meer processen op proces naam. U kunt meerdere proces namen typen (gescheiden door komma's) en Joker tekens gebruiken. De parameter naam ("naam") is optioneel.
 
 ```yaml
 Type: System.String[]
@@ -360,16 +338,14 @@ U kunt een proces object door sluizen naar deze cmdlet.
 
 ### System. Diagnostics. proces, System. Diagnostics. FileVersionInfo, System. Diagnostics. ProcessModule
 
-Met deze cmdlet wordt standaard een **System. Diagnostics. process** -object geretourneerd.
-Als u de para meter **FileVersionInfo** gebruikt, wordt een **System. Diagnostics. FileVersionInfo** -object geretourneerd.
-Als u de **module** parameter gebruikt zonder de para meter **FileVersionInfo** , wordt er een **System. Diagnostics. ProcessModule** -object geretourneerd.
+Met deze cmdlet wordt standaard een **System. Diagnostics. process** -object geretourneerd. Als u de para meter **FileVersionInfo** gebruikt, wordt een **System. Diagnostics. FileVersionInfo** -object geretourneerd. Als u de **module** parameter gebruikt zonder de para meter **FileVersionInfo** , wordt er een **System. Diagnostics. ProcessModule** -object geretourneerd.
 
 ## OPMERKINGEN
 
 - U kunt ook naar deze cmdlet verwijzen door de ingebouwde aliassen ps en GPS te gebruiken. Zie [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md)voor meer informatie.
 - Op computers waarop een 64-bits versie van Windows wordt uitgevoerd, worden door de 64-bits versie van Power shell alleen de 64-bits proces modules en de 32-bits versie van Power shell alleen 32-bits proces modules opgehaald.
 - U kunt de eigenschappen en methoden van het Windows Management Instrumentation (WMI) Win32_Process-object in Power shell gebruiken. Zie `Get-WmiObject` en de WMI-SDK voor meer informatie.
-- De standaard weergave van een proces is een tabel die de volgende kolommen bevat. Zie Eigenschappen van het [proces](/dotnet/api/system.diagnostics.process) in de MSDN-bibliotheek voor een beschrijving van alle eigenschappen van proces objecten.
+- De standaard weergave van een proces is een tabel die de volgende kolommen bevat. Zie [Eigenschappen](/dotnet/api/system.diagnostics.process)van het proces voor een beschrijving van alle eigenschappen van proces objecten.
   - Handgrepen: het aantal ingangen dat het proces heeft geopend.
   - NPM (K): de hoeveelheid niet-wisselbaar geheugen die door het proces wordt gebruikt, in kilo bytes.
   - PM (K): de hoeveelheid wisselbaar geheugen die door het proces wordt gebruikt, in kilo bytes.
@@ -379,8 +355,7 @@ Als u de **module** parameter gebruikt zonder de para meter **FileVersionInfo** 
     Virtueel geheugen bevat opslag in de Wissel bestanden op schijf.
   - CPU ('s): de hoeveelheid processor tijd die het proces heeft gebruikt op alle processors, in seconden.
   - ID: de proces-ID (PID) van het proces.
-  - Verwerker: de naam van het proces.
-    Zie de woorden lijst in Help en ondersteuning en de Help voor taak beheer voor uitleg van de concepten die betrekking hebben op processen.
+  - Verwerker: de naam van het proces. Zie de woorden lijst in Help en ondersteuning en de Help voor taak beheer voor uitleg van de concepten die betrekking hebben op processen.
 - U kunt ook de ingebouwde alternatieve weer gaven van de beschik bare processen gebruiken `Format-Table` , zoals **StartTime** en **prioriteit** , en u kunt uw eigen weer gaven ontwerpen.
 
 ## GERELATEERDE KOPPELINGEN

@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 title: Veelgestelde vragen over PowerShell Gallery
 description: Veelgestelde vragen over de PowerShell Gallery
-ms.openlocfilehash: 045db04d49e0c65f807fef254a17bf20bb877ff6
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 52c89d570041e1fce3466f574af7de25f05ec4c5
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92654153"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94389889"
 ---
 # <a name="frequently-asked-questions-about-the-powershell-gallery"></a>Veelgestelde vragen over de PowerShell Gallery
 
@@ -17,14 +17,14 @@ Een Power shell-module is een herbruikbaar pakket met een Power shell-functional
 
 ## <a name="what-is-a-powershell-script"></a>Wat is een PowerShell-script?
 
-Een Power shell-script is een reeks opdrachten die zijn opgeslagen in een. ps1-bestand om het opnieuw gebruiken en delen mogelijk te maken. Power shell-werk stromen zijn ook Power shell-scripts, die een overzicht maken van een reeks taken en het bepalen van sequentiëren voor deze taken. Ga voor meer informatie naar [aan de slag met Power shell-werk stroom](https://technet.microsoft.com/library/jj134242.aspx).
+Een Power shell-script is een reeks opdrachten die zijn opgeslagen in een. ps1-bestand om het opnieuw gebruiken en delen mogelijk te maken. Power shell-werk stromen zijn ook Power shell-scripts, die een overzicht maken van een reeks taken en het bepalen van sequentiëren voor deze taken. Ga voor meer informatie naar [aan de slag met Power shell-werk stroom](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134242(v=ws.11)).
 
 ## <a name="how-are-powershell-scripts-different-from-powershell-modules"></a>Wat is het verschil tussen Power shell-scripts en Power shell-modules?
 
 Modules zijn over het algemeen beter te delen, maar we scha kelen het delen van scripts in om het voor u gemakkelijker te maken om werk stromen en scripts naar de community te bijdragen. Ga voor meer informatie naar de volgende blogs:
 
-- [Geen scripts schrijven, Power shell-modules schrijven](https://blogs.technet.microsoft.com/heyscriptingguy/2011/06/27/dont-write-scripts-write-powershell-modules/)
-- [Informatie over Power shell-modules](https://blogs.technet.microsoft.com/heyscriptingguy/2015/07/10/understanding-powershell-modules/)
+- [Geen scripts schrijven, Power shell-modules schrijven](https://devblogs.microsoft.com/scripting/dont-write-scripts-write-powershell-modules/)
+- [Informatie over Power shell-modules](https://devblogs.microsoft.com/scripting/understanding-powershell-modules/)
 
 ## <a name="how-can-i-publish-to-the-powershell-gallery"></a>Hoe kan ik publiceren naar de PowerShell Gallery?
 
@@ -64,7 +64,7 @@ Elk soort Power shell-module (script modules, binaire modules of manifest module
 
 ## <a name="how-do-i-create-a-correctly-formatted-module-manifest"></a>Hoe kan ik een module manifest maken dat juist is opgemaakt?
 
-De eenvoudigste manier om een module manifest te maken, is door de cmdlet [New-ModuleManifest][] uit te voeren. In Power shell 5,0 of hoger, New-ModuleManifest genereert een module manifest dat correct is opgemaakt met lege velden voor handige meta gegevens zoals **ProjectUri** , **LicenseUri** en **Tags** . Vul de lege waarden in of gebruik het gegenereerde manifest als voor beeld van de juiste indeling.
+De eenvoudigste manier om een module manifest te maken, is door de cmdlet [New-ModuleManifest][] uit te voeren. In Power shell 5,0 of hoger, New-ModuleManifest genereert een module manifest dat correct is opgemaakt met lege velden voor handige meta gegevens zoals **ProjectUri** , **LicenseUri** en **Tags**. Vul de lege waarden in of gebruik het gegenereerde manifest als voor beeld van de juiste indeling.
 
 Gebruik de cmdlet [test-ModuleManifest][] om te controleren of alle vereiste meta gegevens velden juist zijn gevuld.
 
@@ -84,7 +84,7 @@ Elk type Power shell-script (scripts of werk stromen) kan worden gepubliceerd in
 Typ wat u zoekt in het tekstvak. Als u bijvoorbeeld modules wilt zoeken die verwant zijn aan Azure SQL, typt u ' Azure SQL '. Onze zoek machine zoekt naar deze tref woorden in alle gepubliceerde pakketten, met inbegrip van titels, beschrijvingen en andere meta gegevens. Op basis van een score met een gewogen kwaliteit worden de meest overeenkomende resultaten weer gegeven. U kunt ook zoeken op specifiek veld met de syntaxis Field: ' value ' in de zoek query voor de volgende velden:
 
 - Tags
-- Functions
+- Functies
 - Cmdlets
 - DscResources
 - PowerShellVersion
@@ -93,7 +93,7 @@ Als u bijvoorbeeld zoekt naar PowerShellVersion: ' 2.0 ', worden alleen de resul
 
 ## <a name="how-do-i-create-a-correctly-formatted-script-file"></a>Hoe kan ik een correct opgemaakt script bestand maken?
 
-De eenvoudigste manier om een goed opgemaakt script bestand te maken, is door de cmdlet [New-ScriptFileInfo][] uit te voeren. In Power shell 5,0 genereert New-ScriptFileInfo een correct opgemaakt script bestand met lege velden voor handige meta gegevens zoals **ProjectUri** , **LicenseUri** en **Tags** . Vul de lege waarden in of gebruik het gegenereerde script bestand als een voor beeld van de juiste indeling.
+De eenvoudigste manier om een goed opgemaakt script bestand te maken, is door de cmdlet [New-ScriptFileInfo][] uit te voeren. In Power shell 5,0 genereert New-ScriptFileInfo een correct opgemaakt script bestand met lege velden voor handige meta gegevens zoals **ProjectUri** , **LicenseUri** en **Tags**. Vul de lege waarden in of gebruik het gegenereerde script bestand als een voor beeld van de juiste indeling.
 
 Gebruik de cmdlet [test-ScriptFileInfo][] om te controleren of alle vereiste meta gegevens velden juist zijn gevuld.
 
@@ -156,7 +156,7 @@ Daarom vereist **PowerShellGet** een van de volgende besturingssystemen:
 - Windows Server 2012 R2
 - Windows Server 2008 R2 SP1
 
-**PowerShellGet** vereist ook .NET Framework 4,5 of hoger. U kunt .NET Framework 4.5 of hoger [hier](https://msdn.microsoft.com/library/5a4x27ek.aspx) installeren.
+**PowerShellGet** vereist ook .NET Framework 4,5 of hoger. Zie [de .NET Framework voor ontwikkel aars installeren](/dotnet/framework/install/guide-for-developers)voor meer informatie.
 
 ## <a name="is-it-possible-to-reserve-names-for-packages-that-will-be-published-in-future"></a>Is het mogelijk namen te reserveren voor pakketten die in de toekomst zullen worden gepubliceerd?
 

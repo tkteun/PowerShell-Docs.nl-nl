@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 description: In dit artikel worden de aanbevolen stappen beschreven om ervoor te zorgen dat de pakketten die zijn gepubliceerd op de PowerShell Gallery, algemeen worden goedgekeurd en hoge waarde bieden aan gebruikers.
 title: Richt lijnen voor publicatie PowerShell Gallery en aanbevolen procedures
-ms.openlocfilehash: 949340aeba36df26c68f92422b8c11869ed3bf11
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 97af3761fad1efb849b7197761a3855c9f1b05a4
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92656145"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94391167"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>Richt lijnen voor publicatie van PowerShellGallery en aanbevolen procedures
 
@@ -50,7 +50,7 @@ Bekijk de resultaten en zorg ervoor dat:
 - Alle fouten worden gecorrigeerd of behandeld in de documentatie.
 - Alle waarschuwingen worden beoordeeld en zo nodig opgelost.
 
-Gebruikers die pakketten downloaden van de PowerShell Gallery worden ten zeerste aanbevolen om **PSScriptAnalyzer** uit te voeren en alle fouten en waarschuwingen te evalueren. Gebruikers zijn zeer waarschijnlijk contact met pakket eigen aars als ze zien dat er een fout is gemeld door **PSScriptAnalyzer** . Als er een goede reden voor uw pakket is om code te houden die als een fout wordt gemarkeerd, voegt u die informatie toe aan uw documentatie om te voor komen dat u dezelfde vraag meermaals beantwoordt.
+Gebruikers die pakketten downloaden van de PowerShell Gallery worden ten zeerste aanbevolen om **PSScriptAnalyzer** uit te voeren en alle fouten en waarschuwingen te evalueren. Gebruikers zijn zeer waarschijnlijk contact met pakket eigen aars als ze zien dat er een fout is gemeld door **PSScriptAnalyzer**. Als er een goede reden voor uw pakket is om code te houden die als een fout wordt gemarkeerd, voegt u die informatie toe aan uw documentatie om te voor komen dat u dezelfde vraag meermaals beantwoordt.
 
 ## <a name="include-documentation-and-examples"></a>Documentatie en voor beelden toevoegen
 
@@ -139,7 +139,7 @@ De doelen voor de test dekking worden in de documentatie voor de [resource modul
 
 ## <a name="include-andor-link-to-license-terms"></a>Toevoegen en/of koppelen aan licentie voorwaarden
 
-Alle pakketten die naar het PowerShell Gallery worden gepubliceerd, moeten de licentie voorwaarden opgeven of gebonden zijn aan de licentie die is opgenomen in de [gebruiks voorwaarden](https://www.powershellgallery.com/policies/Terms) onder **een** . De beste manier om een andere licentie op te geven, is door een koppeling naar de licentie te geven met behulp van de **LicenseURI** in **PSData** . Zie voor meer informatie [packages-manifest en Galerie-gebruikers interface](package-manifest-affecting-ui.md).
+Alle pakketten die naar het PowerShell Gallery worden gepubliceerd, moeten de licentie voorwaarden opgeven of gebonden zijn aan de licentie die is opgenomen in de [gebruiks voorwaarden](https://www.powershellgallery.com/policies/Terms) onder **een**. De beste manier om een andere licentie op te geven, is door een koppeling naar de licentie te geven met behulp van de **LicenseURI** in **PSData**. Zie voor meer informatie [packages-manifest en Galerie-gebruikers interface](package-manifest-affecting-ui.md).
 
 ```powershell
 PrivateData = @{
@@ -188,9 +188,9 @@ Power shell is gemaakt voordat SemVer werd gepubliceerd, waardoor ondersteuning 
 De PowerShell Gallery is niet ontworpen om een doel te zijn voor het testen van het publicatie proces. De beste manier om het end-to-end proces van publiceren naar het PowerShell Gallery te testen, is door uw eigen lokale opslag plaats in te stellen en te gebruiken. Dit kan op verschillende manieren worden gedaan, waaronder:
 
 - Stel een lokale PowerShell Gallery-instantie in met behulp van het PS-project in de [persoonlijke galerie](https://github.com/PowerShell/PSPrivateGallery) in github. Dit preview-project helpt u bij het instellen van een exemplaar van de PowerShell Gallery dat u kunt beheren en gebruiken voor uw tests.
-- Stel een [interne Nuget-opslag plaats](https://blogs.msdn.microsoft.com/powershell/2014/05/20/setting-up-an-internal-powershellget-repository/)in.
+- Stel een [interne Nuget-opslag plaats](https://devblogs.microsoft.com/powershell/setting-up-an-internal-powershellget-repository/)in.
   Hiervoor moet meer werk worden ingesteld, maar heeft het voor deel dat er een aantal meer vereisten wordt gevalideerd, met name het gebruik van een API-sleutel en of er afhankelijkheden in het doel aanwezig zijn wanneer u publiceert.
-- Stel een bestands share in als test **opslagplaats** . Dit is eenvoudig te configureren, maar omdat het een bestands share is, zullen de hierboven vermelde validaties niet worden uitgevoerd. Een potentiële voor deel in dit geval is dat de bestands share niet de vereiste API-sleutel controleert, zodat u dezelfde sleutel kunt gebruiken die u gebruikt om naar de PowerShell Gallery te publiceren.
+- Stel een bestands share in als test **opslagplaats**. Dit is eenvoudig te configureren, maar omdat het een bestands share is, zullen de hierboven vermelde validaties niet worden uitgevoerd. Een potentiële voor deel in dit geval is dat de bestands share niet de vereiste API-sleutel controleert, zodat u dezelfde sleutel kunt gebruiken die u gebruikt om naar de PowerShell Gallery te publiceren.
 
 Met een van deze oplossingen gebruikt u `Register-PSRepository` voor het definiëren van een nieuwe **opslag plaats** die u in de `-Repository` para meter voor gebruikt `Publish-Module` .
 

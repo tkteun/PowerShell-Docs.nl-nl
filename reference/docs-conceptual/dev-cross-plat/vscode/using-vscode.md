@@ -2,12 +2,12 @@
 title: Visual Studio code for Power Shell Development gebruiken
 description: Visual Studio code for Power Shell Development gebruiken
 ms.date: 11/07/2019
-ms.openlocfilehash: 181746e7d3df2880223d1f15a0c8b99b324f5b98
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.openlocfilehash: 8a4ceb3da669716915449af2d211aaf2ae61bb4f
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87782528"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94390288"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>Visual Studio code for Power Shell Development gebruiken
 
@@ -38,13 +38,13 @@ Zie [Windows Power Shell installeren][install-winps]voor traditionele workloads 
 
 ## <a name="editing-with-visual-studio-code"></a>Bewerken met Visual Studio code
 
-1. Installeer Visual Studio code. Zie voor meer informatie het overzicht instellen [van Visual Studio code][vsc-setup].
+1. Installeer Visual Studio Code. Zie voor meer informatie het overzicht instellen [van Visual Studio code][vsc-setup].
 
    Er zijn installatie-instructies voor elk platform:
 
-   - **Windows**: Volg de installatie-instructies op de pagina [Visual Studio code uitvoeren op Windows][vsc-setup-win] .
-   - **macOS**: Volg de installatie-instructies op de pagina [Visual Studio code uitvoeren op MacOS][vsc-setup-macOS] .
-   - **Linux**: Volg de installatie-instructies op de pagina [Visual Studio code uitvoeren op Linux][vsc-setup-linux] .
+   - **Windows** : Volg de installatie-instructies op de pagina [Visual Studio code uitvoeren op Windows][vsc-setup-win] .
+   - **macOS** : Volg de installatie-instructies op de pagina [Visual Studio code uitvoeren op MacOS][vsc-setup-macOS] .
+   - **Linux** : Volg de installatie-instructies op de pagina [Visual Studio code uitvoeren op Linux][vsc-setup-linux] .
 
 1. Installeer de Power shell-extensie.
 
@@ -174,7 +174,7 @@ Als u de standaard-Power shell-versie wilt instellen, stelt u de waarde `powersh
 }
 ```
 
-Nadat u deze instelling hebt geconfigureerd, start u Visual Studio code opnieuw of laadt u het huidige venster Visual Studio-code opnieuw vanuit het **opdracht palet**, typt u **ontwikkelaar: venster opnieuw laden**.
+Nadat u deze instelling hebt geconfigureerd, start u Visual Studio code opnieuw of laadt u het huidige venster Visual Studio-code opnieuw vanuit het **opdracht palet** , typt u **ontwikkelaar: venster opnieuw laden**.
 
 Als u het menu sessie opent, ziet u nu uw extra Power shell-versies!
 
@@ -225,7 +225,7 @@ Voer de volgende stappen uit om een configuratie bestand voor fout opsporing te 
 
 1. Open de weer gave **fout opsporing** in Windows of Linux door op <kbd>CTRL</kbd> + <kbd>+ SHIFT</kbd> + <kbd>D</kbd>te drukken. Druk op macOS op <kbd>cmd</kbd> + <kbd>SHIFT</kbd> + <kbd>D</kbd>.
 1. Klik op de koppeling **een launch.jsmaken op bestand** .
-1. Kies **Power shell**in het venster **omgeving selecteren** .
+1. Kies **Power shell** in het venster **omgeving selecteren** .
 1. Kies het type fout opsporing dat u wilt gebruiken:
 
    - Het **huidige bestand starten** -starten en fouten opsporen in het bestand in het huidige venster van de editor
@@ -317,7 +317,7 @@ Als u geïnteresseerd bent in bijdragen, worden pull-aanvragen aanzienlijk gewaa
 [getting-started]:        https://devblogs.microsoft.com/scripting/get-started-with-powershell-development-in-visual-studio-code/
 [psdbgblog]:              https://johnpapa.net/debugging-with-visual-studio-code/
 [psdbg-gh]:               https://github.com/PowerShell/vscode-powershell/tree/master/examples
-[pscdn]:                  https://blogs.msdn.microsoft.com/cdndevs/2015/12/11/visual-studio-code-powershell-extension/
+[pscdn]:                  https://docs.microsoft.com/archive/blogs/cdndevs/visual-studio-code-powershell-extension
 
 <!-- issues -->
 [Problemen met GitHub]:          https://github.com/PowerShell/vscode-powershell/issues

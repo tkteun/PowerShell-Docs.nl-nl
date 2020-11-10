@@ -7,12 +7,12 @@ ms.date: 4/26/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/add-member?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-Member
-ms.openlocfilehash: 29a39e88d6d39659df1dd9d2e05318351dc47f3a
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 8c27ebe1c5f1a0c53f5012f1faa17a9fdb1cdcff
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93249551"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94391031"
 ---
 # Add-Member
 
@@ -244,7 +244,7 @@ De aanvaardbare waarden voor deze parameter zijn:
 - ScriptMethod
 - CodeMethod
 
-Zie [PSMemberTypes Enumeration (Engelstalig)](/dotnet/api/system.management.automation.psmembertypes) in de MSDN-bibliotheek voor meer informatie over deze waarden.
+Zie [PSMemberTypes-inventarisatie](/dotnet/api/system.management.automation.psmembertypes) in de Power shell-SDK voor meer informatie over deze waarden.
 
 Niet alle objecten hebben elk type lid.
 Als u een lidtype opgeeft dat het object niet heeft, retourneert Power shell een fout.

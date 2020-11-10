@@ -3,12 +3,12 @@ ms.date: 09/12/2016
 ms.topic: reference
 title: Retourwaarden toevoegen aan een Help-onderwerp voor cmdlets
 description: Retourwaarden toevoegen aan een Help-onderwerp voor cmdlets
-ms.openlocfilehash: f66e642d65c3f679ec3262736f4eff558265ab8f
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 8c556821a257451a320916231cb20fc82e75ebb4
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92649600"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94389739"
 ---
 # <a name="how-to-add-return-values-to-a-cmdlet-help-topic"></a>Retourwaarden toevoegen aan een Help-onderwerp voor cmdlets
 
@@ -49,7 +49,7 @@ De volgende XML-code toont een voor beeld van het gebruik van het `<maml:returnV
   <command:returnValue>
     <dev:type>
       <maml:name> System.DateTime </maml:name>
-      <maml:uri>  https://msdn.microsoft.com/library/system.datetime.aspx </maml:uri>
+      <maml:uri>  https://docs.microsoft.com/dotnet/api/system.datetime </maml:uri>
       <maml:description/>
     </dev:type>
     <maml:description>

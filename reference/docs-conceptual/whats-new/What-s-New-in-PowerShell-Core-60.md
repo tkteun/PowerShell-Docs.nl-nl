@@ -2,12 +2,12 @@
 title: Wat is er nieuw in Power shell Core 6,0
 description: Nieuwe functies en wijzigingen die zijn uitgebracht in Power shell Core 6,0
 ms.date: 08/06/2018
-ms.openlocfilehash: 68060356b2ec79a81a822a256db8e50812f9d738
-ms.sourcegitcommit: b0488ca6557501184f20c8343b0ed5147b09e3fe
+ms.openlocfilehash: bccfb663d180d59531efbc897474e53f632f29d9
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86158204"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94389535"
 ---
 # <a name="whats-new-in-powershell-core-60"></a>Wat is er nieuw in Power shell Core 6,0
 
@@ -29,7 +29,7 @@ Power shell biedt nu officieel ondersteuning voor macOS en Linux, waaronder:
 
 - Windows 7, 8,1 en 10
 - Windows Server 2008 R2, 2012 R2, 2016
-- [Windows Server Semi-Annual-kanaal][semi-annual]
+- [Windows Server-Semi-Annual kanaal][semi-annual]
 - Ubuntu 14,04, 16,04 en 17,04
 - Debian 8,7 + en 9
 - CentOS 7
@@ -149,7 +149,7 @@ Dit betekent dat u cmdlets zoals en kunt `Enter-PSSession` gebruiken `New-PSSess
 
 Zie voor meer informatie over het configureren en gebruiken van op SSH gebaseerde externe communicatie [Power shell voor externe toegang via SSH][ssh-remoting].
 
-## <a name="default-encoding-is-utf-8-without-a-bom-except-for-new-modulemanifest"></a>Standaard codering is UTF-8 zonder een stuk lijst, met uitzonde ring van New-ModuleManifest
+## <a name="default-encoding-is-utf-8-without-a-bom-except-for-new-modulemanifest"></a>Standaard codering is UTF-8 zonder stuk lijst, met uitzonde ring van New-ModuleManifest
 
 In het verleden hebben Windows Power shell-cmdlets, zoals `Get-Content` `Set-Content` ASCII en UTF-16, gebruikt voor verschillende code ringen. Bij het combi neren van cmdlets worden er problemen met de variantie in de standaard waarden gegenereerd zonder dat er een code ring wordt opgegeven.
 
@@ -157,16 +157,16 @@ Niet-Windows-platforms gebruiken traditioneel UTF-8 zonder een byte order Mark (
 
 Dit betekent dat alle ingebouwde cmdlets die gebruikmaken `-Encoding` van de para meter, `UTF8NoBOM` standaard de waarde gebruiken. De volgende cmdlets worden beïnvloed door deze wijziging:
 
-- Add-content
-- Exporteren-Clixml
+- Add-Content
+- Export-Clixml
 - Export-Csv
-- Exporteren-PSSession
+- Export-PSSession
 - Format-Hex
 - Get-Content
 - Import-Csv
-- Out-file
-- Selecteer teken reeks
-- Bericht verzenden
+- Out-File
+- Select-String
+- Send-MailMessage
 - Set-Content
 
 Deze cmdlets zijn ook bijgewerkt zodat de `-Encoding` para meter universele wordt geaccepteerd `System.Text.Encoding` .
@@ -247,7 +247,7 @@ Door `&` aan het einde van een pijp lijn te plaatsen, wordt de pijp lijn uitgevo
 - Herstel Web-cmdlets om het HTTP-antwoord in de uitzonde ring op te halen wanneer de status code van de reactie niet is geslaagd. (#3201)
 - Wijzig Web-cmdlets `UserAgent` van `WindowsPowerShell` naar `PowerShell` . (#4914) (Bedankt [@markekraus](https://github.com/markekraus) )
 - Expliciete `ContentType` detectie toevoegen aan `Invoke-RestMethod` (#4692)
-- Herstel Web-cmdlets `-SkipHeaderValidation` om te werken met niet-standaard headers van de gebruikers agent. (#4479 &
+- Herstel Web-cmdlets `-SkipHeaderValidation` om te werken met niet-standaard User-Agent kopteksten. (#4479 &
   #<a name="4512-thanks-markekraus"></a>4512) (bedankt [@markekraus](https://github.com/markekraus) )
 
 ### <a name="json-cmdlets"></a>JSON-cmdlets
@@ -342,7 +342,7 @@ Daarnaast hebben we een aantal bugs in Power shell core opgelost. Bekijk onze [w
 
 Als u deze telemetrie wilt afmelden, maakt u `POWERSHELL_TELEMETRY_OPTOUT` een omgevings variabele met een van de volgende waarden: `true` , `1` of `yes` . Het maken van de variabele omzeilt alle telemetrie, zelfs vóór de eerste uitvoering van Power shell. We zijn ook van plan om deze telemetriegegevens en de inzichten die we beschikken van de telemetrie in het [dash board][community-dashboard]van de community beschikbaar te stellen. Meer informatie over hoe we deze gegevens in dit [blog bericht][telemetry-blog]gebruiken, vindt u hier.
 
-[.NET Blog]: https://blogs.msdn.microsoft.com/dotnet/2016/09/26/introducing-net-standard
+[.NET Blog]: https://devblogs.microsoft.com/dotnet/introducing-net-standard/
 [.NET Core 2.0]: /dotnet/core/
 [.NET Standard]: /dotnet/standard/net-standard
 [breaking-changes]: breaking-changes-ps6.md

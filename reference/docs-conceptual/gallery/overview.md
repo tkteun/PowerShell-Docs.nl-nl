@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 title: De PowerShell Gallery
 description: De PowerShell Gallery is de centrale opslag plaats voor Power shell-modules, scripts en DSC-resources.
-ms.openlocfilehash: 1aa3d351e71211259cac4e6d6f0ebd68c0df6ff1
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 4fff1f9476c919e95c25ae7729aaa7573be53f07
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92662115"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94390810"
 ---
 # <a name="the-powershell-gallery"></a>De PowerShell Gallery
 
@@ -28,7 +28,7 @@ Raadpleeg de pagina [Aan de slag](getting-started.md) voor meer informatie over 
 
 Voor de **PowerShellGet** -module is **PowerShell 3.0 of hoger** vereist.
 
-**PowerShellGet** vereist .NET Framework 4,5 of hoger. U kunt .NET Framework 4.5 of hoger [hier](https://msdn.microsoft.com/library/5a4x27ek.aspx) installeren.
+**PowerShellGet** vereist .NET Framework 4,5 of hoger. Zie [de .NET Framework voor ontwikkel aars installeren](/dotnet/framework/install/guide-for-developers)voor meer informatie.
 
 Aangezien **Power shell core** meerdere platformen heeft, betekent dit dat het werkt in Windows, Linux en MacOS, waardoor **PowerShellGet** ook beschikbaar is op deze systemen. Zie [Power Shell installeren](/powershell/scripting/install/installing-powershell)voor een volledige lijst met systemen die worden ondersteund door **Power shell core** .
 

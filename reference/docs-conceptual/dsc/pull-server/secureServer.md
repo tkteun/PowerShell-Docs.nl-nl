@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 description: Dit document bevat aanbevolen procedures voor het helpen van technici die de DSC-pull-server implementeren.
 keywords: DSC, Power shell, configuratie, installatie
 title: Best practices voor pull-servers
-ms.openlocfilehash: 0021baa219a0936405eccf2cc7741e042f8bf09f
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 6c754e6d035cc714a86da86ec916ba2c7f833268
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92664318"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94389382"
 ---
 # <a name="pull-server-best-practices"></a>Best practices voor pull-servers
 
@@ -72,7 +72,7 @@ Windows Server 2012 R2 bevat een functie met de naam DSC-service. De functie DSC
 
 ### <a name="dsc-resource"></a>DSC-resource
 
-Een pull-Server implementatie kan worden vereenvoudigd door de service in te richten met behulp van een DSC-configuratie script. Dit document bevat configuratie scripts die kunnen worden gebruikt voor het implementeren van een server knooppunt dat gereed is voor productie. Als u de configuratie scripts wilt gebruiken, is een DSC-module vereist die niet is opgenomen in Windows Server. De vereiste module naam is **xPSDesiredStateConfiguration** , die de DSC-resource **xDscWebService** bevat. De xPSDesiredStateConfiguration-module kan [hier](https://gallery.technet.microsoft.com/xPSDesiredStateConfiguratio-417dc71d)worden gedownload.
+Een pull-Server implementatie kan worden vereenvoudigd door de service in te richten met behulp van een DSC-configuratie script. Dit document bevat configuratie scripts die kunnen worden gebruikt voor het implementeren van een server knooppunt dat gereed is voor productie. Als u de configuratie scripts wilt gebruiken, is een DSC-module vereist die niet is opgenomen in Windows Server. De vereiste module naam is **xPSDesiredStateConfiguration** , die de DSC-resource **xDscWebService** bevat. De xPSDesiredStateConfiguration-module kan [hier](https://github.com/dsccommunity/xPSDesiredStateConfiguration)worden gedownload.
 
 Gebruik de `Install-Module` cmdlet uit de **PowerShellGet** -module.
 
@@ -139,7 +139,7 @@ Taak plannen
 ### <a name="public-key-infrastructure"></a>Open bare-sleutel infrastructuur
 
 Voor de meeste organisaties moet het netwerk verkeer, met name verkeer dat gevoelige gegevens bevat, worden gevalideerd en/of versleuteld tijdens de overdracht.
-Hoewel het mogelijk is om een pull-server te implementeren met behulp van HTTP, waardoor aanvragen van clients worden vereenvoudigd als ongecodeerde tekst, is het een best practice om verkeer te beveiligen met behulp van HTTPS. De service kan worden geconfigureerd voor het gebruik van HTTPS met behulp van een set para meters in de DSC-resource **xPSDesiredStateConfiguration** .
+Hoewel het mogelijk is om een pull-server te implementeren met behulp van HTTP, waardoor aanvragen van clients worden vereenvoudigd als ongecodeerde tekst, is het een best practice om verkeer te beveiligen met behulp van HTTPS. De service kan worden geconfigureerd voor het gebruik van HTTPS met behulp van een set para meters in de DSC-resource **xPSDesiredStateConfiguration**.
 
 De certificaat vereisten voor het beveiligen van HTTPS-verkeer voor de pull-server zijn niet anders dan het beveiligen van elke andere HTTPS-website. De **webserver** sjabloon in een Windows Server Certificate Services voldoet aan de vereiste mogelijkheden.
 
@@ -202,7 +202,7 @@ Taak plannen
 
 #### <a name="dsc-configurations"></a>DSC-configuraties
 
-Het doel van een pull-server is het bieden van een gecentraliseerd mechanisme voor het distribueren van DSC-configuraties naar client knooppunten. De configuraties worden op de server als MOF-documenten opgeslagen. Elk document krijgt een unieke **GUID** . Wanneer clients zijn geconfigureerd om verbinding te maken met een pull-server, krijgen ze ook de **GUID** voor de configuratie die ze moeten aanvragen. Dit systeem voor het verwijzen naar configuraties door de **GUID** garandeert globale uniekheid en is flexibel, zodat een configuratie kan worden toegepast met granulatie per knoop punt, of als een functie configuratie die veel servers bevat die identieke configuraties moeten hebben.
+Het doel van een pull-server is het bieden van een gecentraliseerd mechanisme voor het distribueren van DSC-configuraties naar client knooppunten. De configuraties worden op de server als MOF-documenten opgeslagen. Elk document krijgt een unieke **GUID**. Wanneer clients zijn geconfigureerd om verbinding te maken met een pull-server, krijgen ze ook de **GUID** voor de configuratie die ze moeten aanvragen. Dit systeem voor het verwijzen naar configuraties door de **GUID** garandeert globale uniekheid en is flexibel, zodat een configuratie kan worden toegepast met granulatie per knoop punt, of als een functie configuratie die veel servers bevat die identieke configuraties moeten hebben.
 
 #### <a name="guids"></a>Guid's
 

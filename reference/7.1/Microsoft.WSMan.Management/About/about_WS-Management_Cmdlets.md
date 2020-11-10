@@ -6,12 +6,12 @@ ms.date: 01/04/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.wsman.management/about/about_ws-management_cmdlets?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_WS Management_Cmdlets
-ms.openlocfilehash: 5188ad9e1bbf8c2bcbfbedc08f73751c5330d3f6
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: c9d89d0559bf844927976c78bde6fca58ffa8855
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93252047"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94390504"
 ---
 # <a name="about-ws-management-cmdlets"></a>Over WS-Management-cmdlets
 
@@ -90,7 +90,7 @@ De volgende WS-Management-cmdlets zijn beschikbaar.
 
 ## <a name="additional-ws-management-information"></a>Aanvullende informatie over WS-Management
 
-Zie de volgende onderwerpen in de MSDN-bibliotheek (micro soft Developer Network) voor meer informatie over WS-Management.
+Zie de volgende onderwerpen in de Windows-documentatie voor meer informatie over WS-Management.
 
 [Windows Remote Management](/windows/win32/winrm/portal)
 

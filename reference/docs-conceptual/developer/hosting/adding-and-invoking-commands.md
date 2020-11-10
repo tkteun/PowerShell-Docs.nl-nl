@@ -3,12 +3,12 @@ ms.date: 09/13/2016
 ms.topic: reference
 title: Opdrachten toevoegen en aanroepen
 description: Opdrachten toevoegen en aanroepen
-ms.openlocfilehash: 476ab754ad6c61f18295157c5e215011c67dfdcb
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 90c86d10dd145664722d12254054e6b831386624
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92664569"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94389161"
 ---
 # <a name="adding-and-invoking-commands"></a>Opdrachten toevoegen en aanroepen
 
@@ -16,7 +16,7 @@ Nadat u een runs Pace hebt gemaakt, kunt u Windows-PowerShellcommands en-scripts
 
 ## <a name="creating-a-pipeline"></a>Een pijplijn maken
 
- De klasse [System. Management. Automation. Power shell](/dotnet/api/system.management.automation.powershell) biedt verschillende methoden om opdrachten, para meters en scripts toe te voegen aan de pijp lijn. U kunt de pijp lijn synchroon aanroepen door het aanroepen van een overbelasting van de methode [System. Management. Automation. Power shell. Invoke *](/dotnet/api/System.Management.Automation.PowerShell.Invoke) of asynchroon door het aanroepen van een overbelasting van [System. Management. Automation. Power shell. BeginInvoke *](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) en vervolgens naar de methode [System. Management. Automation. Power shell. Endinvoke *](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke) .
+De klasse [System. Management. Automation. Power shell](/dotnet/api/system.management.automation.powershell) biedt verschillende methoden om opdrachten, para meters en scripts toe te voegen aan de pijp lijn. U kunt de pijp lijn synchroon aanroepen door het aanroepen van een overbelasting van de methode [System. Management. Automation. Power shell. Invoke *](/dotnet/api/System.Management.Automation.PowerShell.Invoke) of asynchroon door het aanroepen van een overbelasting van [System. Management. Automation. Power shell. BeginInvoke *](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) en vervolgens naar de methode [System. Management. Automation. Power shell. Endinvoke *](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke) .
 
 ### <a name="addcommand"></a>AddCommand
 
@@ -38,7 +38,7 @@ Nadat u een runs Pace hebt gemaakt, kunt u Windows-PowerShellcommands en-scripts
    ps.Invoke();
    ```
 
- Als u de methode [System. Management. Automation. Power shell. Addcommand *](/dotnet/api/System.Management.Automation.PowerShell.AddCommand) meer dan eens aanroept voordat u de methode [System. Management. Automation. Power shell. Invoke *](/dotnet/api/System.Management.Automation.PowerShell.Invoke) aanroept, wordt het resultaat van de eerste opdracht naar de tweede, enzovoort. Als u het resultaat van een vorige opdracht niet wilt door geven aan een opdracht, voegt u dit toe door het aanroepen van [System. Management. Automation. Power shell. Addstatement *](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) in plaats daarvan.
+Als u de methode [System. Management. Automation. Power shell. Addcommand *](/dotnet/api/System.Management.Automation.PowerShell.AddCommand) meer dan eens aanroept voordat u de methode [System. Management. Automation. Power shell. Invoke *](/dotnet/api/System.Management.Automation.PowerShell.Invoke) aanroept, wordt het resultaat van de eerste opdracht naar de tweede, enzovoort. Als u het resultaat van een vorige opdracht niet wilt door geven aan een opdracht, voegt u dit toe door het aanroepen van [System. Management. Automation. Power shell. Addstatement *](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) in plaats daarvan.
 
 ### <a name="addparameter"></a>AddParameter
 
@@ -50,7 +50,7 @@ PowerShell.Create().AddCommand("Get-Process")
                    .Invoke();
 ```
 
- U kunt aanvullende para meters toevoegen door [System. Management. Automation. Pscommand. Addparameter *](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) herhaaldelijk aan te roepen.
+U kunt aanvullende para meters toevoegen door [System. Management. Automation. Pscommand. Addparameter *](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) herhaaldelijk aan te roepen.
 
 ```csharp
 PowerShell.Create().AddCommand("Get-Process")
@@ -59,7 +59,7 @@ PowerShell.Create().AddCommand("Get-Process")
                    .Invoke();
 ```
 
- U kunt ook een woorden lijst met parameter namen en-waarden toevoegen door de methode [System. Management. Automation. Power shell. AddParameters *](/dotnet/api/System.Management.Automation.PowerShell.AddParameters) aan te roepen.
+U kunt ook een woorden lijst met parameter namen en-waarden toevoegen door de methode [System. Management. Automation. Power shell. AddParameters *](/dotnet/api/System.Management.Automation.PowerShell.AddParameters) aan te roepen.
 
 ```csharp
 IDictionary parameters = new Dictionary<String, String>();
@@ -74,7 +74,7 @@ PowerShell.Create().AddCommand("Get-Process")
 
 ### <a name="addstatement"></a>AddStatement
 
- U kunt batching simuleren met behulp van de methode [System. Management. Automation. Power shell. Addstatement *](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) , waarmee een extra instructie aan het einde van de pijp lijn wordt toegevoegd met de volgende code wordt een lijst met actieve processen met de naam opgehaald `PowerShell` en wordt vervolgens de lijst met actieve services opgehaald.
+U kunt batching simuleren met behulp van de methode [System. Management. Automation. Power shell. Addstatement *](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) , waarmee een extra instructie aan het einde van de pijp lijn wordt toegevoegd met de volgende code wordt een lijst met actieve processen met de naam opgehaald `PowerShell` en wordt vervolgens de lijst met actieve services opgehaald.
 
 ```csharp
 PowerShell ps = PowerShell.Create();
@@ -85,14 +85,14 @@ ps.Invoke();
 
 ### <a name="addscript"></a>AddScript
 
- U kunt een bestaand script uitvoeren door de methode [System. Management. Automation. Power shell. addScript *](/dotnet/api/System.Management.Automation.PowerShell.AddScript) aan te roepen. In het volgende voor beeld wordt een script aan de pijp lijn toegevoegd en uitgevoerd. In dit voor beeld wordt ervan uitgegaan dat er al een script `MyScript.ps1` met de naam in een map wordt genoemd `D:\PSScripts` .
+U kunt een bestaand script uitvoeren door de methode [System. Management. Automation. Power shell. addScript *](/dotnet/api/System.Management.Automation.PowerShell.AddScript) aan te roepen. In het volgende voor beeld wordt een script aan de pijp lijn toegevoegd en uitgevoerd. In dit voor beeld wordt ervan uitgegaan dat er al een script `MyScript.ps1` met de naam in een map wordt genoemd `D:\PSScripts` .
 
 ```csharp
 PowerShell ps = PowerShell.Create();
 ps.AddScript("D:\PSScripts\MyScript.ps1").Invoke();
 ```
 
- Er is ook een versie van de methode [System. Management. Automation. Power shell. addScript *](/dotnet/api/System.Management.Automation.PowerShell.AddScript) die een Boole-para meter met de naam heeft `useLocalScope` . Als deze para meter is ingesteld op `true` , wordt het script uitgevoerd in het lokale bereik. Met de volgende code wordt het script uitgevoerd in het lokale bereik.
+Er is ook een versie van de methode [System. Management. Automation. Power shell. addScript *](/dotnet/api/System.Management.Automation.PowerShell.AddScript) die een Boole-para meter met de naam heeft `useLocalScope` . Als deze para meter is ingesteld op `true` , wordt het script uitgevoerd in het lokale bereik. Met de volgende code wordt het script uitgevoerd in het lokale bereik.
 
 ```csharp
 PowerShell ps = PowerShell.Create();
@@ -101,7 +101,7 @@ ps.AddScript(@"D:\PSScripts\MyScript.ps1", true).Invoke();
 
 ### <a name="invoking-a-pipeline-synchronously"></a>Een pijp lijn synchroon aanroepen
 
- Nadat u elementen aan de pijp lijn hebt toegevoegd, kunt u deze aanroepen. Als u de pijp lijn synchroon wilt aanroepen, roept u een overbelasting aan van de methode [System. Management. Automation. Power shell. Invoke *](/dotnet/api/System.Management.Automation.PowerShell.Invoke) . In het volgende voor beeld ziet u hoe u een pijp lijn synchroon kunt aanroepen.
+Nadat u elementen aan de pijp lijn hebt toegevoegd, kunt u deze aanroepen. Als u de pijp lijn synchroon wilt aanroepen, roept u een overbelasting aan van de methode [System. Management. Automation. Power shell. Invoke *](/dotnet/api/System.Management.Automation.PowerShell.Invoke) . In het volgende voor beeld ziet u hoe u een pijp lijn synchroon kunt aanroepen.
 
 ```csharp
 using System;
@@ -133,7 +133,7 @@ namespace HostPS1e
 
 ### <a name="invoking-a-pipeline-asynchronously"></a>Een pijp lijn asynchroon aanroepen
 
- U roept een pijp lijn asynchroon aan door een overbelasting van [System. Management. Automation. Power shell. BeginInvoke *](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) aan te roepen om een object [IAsyncResult](https://msdn.microsoft.com/library/system.iasyncresult\(v=vs.110\).aspx) te maken en vervolgens de methode [System. Management. Automation. Power shell. Endinvoke *](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke) aan te roepen.
+U roept een pijp lijn asynchroon aan door een overbelasting van [System. Management. Automation. Power shell. BeginInvoke *](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) aan te roepen om een object [IAsyncResult](/dotnet/api/system.iasyncresult) te maken en vervolgens de methode [System. Management. Automation. Power shell. Endinvoke *](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke) aan te roepen.
 
  In het volgende voor beeld ziet u hoe u een pijp lijn asynchroon aanroept.
 

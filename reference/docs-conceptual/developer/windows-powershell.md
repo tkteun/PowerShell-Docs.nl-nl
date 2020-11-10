@@ -3,25 +3,25 @@ ms.date: 09/13/2016
 ms.topic: reference
 title: Windows PowerShell SDK
 description: Windows PowerShell SDK
-ms.openlocfilehash: 5709ad09fa08158bce4581d9d6ef41deed8fbc6d
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 751ccb02741db0ea63df1768dec4a19c5fa9ce92
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92647158"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94390198"
 ---
 # <a name="windows-powershell"></a>Windows PowerShell
 
 Bijgewerkt: 8 juli 2013
 
-Windows Power shell® is een op taken gebaseerde opdracht regel shell en script taal die speciaal is ontworpen voor systeem beheer. Windows Power shell-® is gebouwd op basis van de .NET Framework en helpt IT-professionals en hoofd gebruikers te beheren en het beheer van het Windows-besturings systeem en de toepassingen die worden uitgevoerd in Windows te automatiseren.
+Windows Power shell &reg; is een op taken gebaseerde opdracht regel shell en script taal die speciaal is ontworpen voor systeem beheer. Windows Power shell is gebouwd op basis van de .NET Framework en &reg; helpt IT-professionals en hoofd gebruikers om het beheer van het Windows-besturings systeem en de toepassingen die worden uitgevoerd in Windows te automatiseren.
 
 De documenten die hier worden gepubliceerd, worden voornamelijk geschreven voor de ontwikkel aars van de cmdlet, provider en host die referentie gegevens nodig hebben over de Api's van Windows Power shell.
 Systeem beheerders kunnen de informatie die door deze documenten wordt verstrekt, echter ook nuttig vinden.
 
 Zie aan de slag met Windows Power shell voor de basis informatie die nodig is om te beginnen met het gebruik van Windows Power shell.
 
-## <a name="windows-powershell-documents-on-msdn"></a>Windows Power shell-documenten op MSDN
+## <a name="windows-powershell-documents"></a>Windows Power shell-documenten
 
 - [De Windows Power shell SDK installeren](./installing-the-windows-powershell-sdk.md) Bevat informatie over het installeren van de Windows Power shell-SDK.
 

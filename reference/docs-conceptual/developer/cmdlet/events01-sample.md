@@ -3,29 +3,24 @@ ms.date: 09/13/2016
 ms.topic: reference
 title: Voorbeeld Events01
 description: Voorbeeld Events01
-ms.openlocfilehash: 1d9ef1f71fe38ca788cc50c02367701986ed87b2
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: ed8b7903537504609602e27693351847d322f904
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92652963"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94390402"
 ---
 # <a name="events01-sample"></a>Voorbeeld Events01
 
-In dit voor beeld ziet u hoe u een cmdlet maakt waarmee de gebruiker zich kan registreren voor gebeurtenissen die worden gegenereerd door [System. io. FileSystemWatcher](/dotnet/api/System.IO.FileSystemWatcher).
-Met deze cmdlet kunnen gebruikers een actie registreren die moet worden uitgevoerd wanneer een bestand wordt gemaakt in een specifieke map.
-Dit voor beeld is afgeleid van de basis klasse [micro soft. Power shell. commands. ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) .
+In dit voor beeld ziet u hoe u een cmdlet maakt waarmee de gebruiker zich kan registreren voor gebeurtenissen die worden gegenereerd door [System. io. FileSystemWatcher](/dotnet/api/System.IO.FileSystemWatcher). Met deze cmdlet kunnen gebruikers een actie registreren die moet worden uitgevoerd wanneer een bestand wordt gemaakt in een specifieke map. Dit voor beeld is afgeleid van de basis klasse [micro soft. Power shell. commands. ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) .
 
 ## <a name="how-to-build-the-sample-by-using-visual-studio"></a>Het voor beeld maken met behulp van Visual Studio.
 
-1. Terwijl de Windows Power Shell 2,0 SDK is geïnstalleerd, gaat u naar de map Events01.
-   De standaardlocatie is `C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\Events01`.
+1. Terwijl de Windows Power Shell 2,0 SDK is geïnstalleerd, gaat u naar de map Events01. De standaardlocatie is `C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\Events01`.
 
-2. Dubbel klik op het pictogram van het oplossings bestand (. SLN).
-   Hiermee opent u het voorbeeld project in micro soft Visual Studio.
+2. Dubbel klik op het pictogram van het oplossings bestand (. SLN). Hiermee opent u het voorbeeld project in micro soft Visual Studio.
 
-3. Selecteer in het menu **Build** de optie **Build Solution** .
-   De bibliotheek voor het voor beeld wordt opgebouwd in de standaard- `\bin` of- `\bin\debug` mappen.
+3. Selecteer in het menu **Build** de optie **Build Solution**. De bibliotheek voor het voor beeld wordt opgebouwd in de standaard- `\bin` of- `\bin\debug` mappen.
 
 ### <a name="how-to-run-the-sample"></a>Het voorbeeld uitvoeren
 
@@ -78,8 +73,7 @@ In dit voor beeld ziet u het volgende.
 
 ### <a name="how-to-write-a-cmdlet-for-event-registration"></a>Een cmdlet schrijven voor gebeurtenis registratie
 
-De cmdlet is afgeleid van de klasse [micro soft. Power shell. commands. ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) , die ondersteuning biedt voor de algemene para meters van de `Register-*Event` cmdlets.
-Cmdlets die zijn afgeleid van [micro soft. Power shell. commands. ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) hoeven alleen de specifieke para meters te definiëren en de `GetSourceObject` en `GetSourceObjectEventName` abstracte methoden te negeren.
+De cmdlet is afgeleid van de klasse [micro soft. Power shell. commands. ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) , die ondersteuning biedt voor de algemene para meters van de `Register-*Event` cmdlets. Cmdlets die zijn afgeleid van [micro soft. Power shell. commands. ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) hoeven alleen de specifieke para meters te definiëren en de `GetSourceObject` en `GetSourceObjectEventName` abstracte methoden te negeren.
 
 ## <a name="example"></a>Voorbeeld
 
@@ -124,7 +118,7 @@ namespace Sample
         /// Gets or sets the name of the event to which the cmdlet registers.
         /// <para>
         /// Currently System.IO.FileSystemWatcher exposes 6 events: Changed, Created,
-        /// Deleted, Disposed, Error, and Renamed. Check the MSDN documentation of
+        /// Deleted, Disposed, Error, and Renamed. Check the documentation of
         /// FileSystemWatcher for details on each event.
         /// </para>
         /// </summary>

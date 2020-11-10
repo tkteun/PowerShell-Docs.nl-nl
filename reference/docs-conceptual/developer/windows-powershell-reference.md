@@ -3,12 +3,12 @@ ms.date: 09/13/2016
 ms.topic: reference
 title: Naslaginformatie over Windows PowerShell
 description: Naslaginformatie over Windows PowerShell
-ms.openlocfilehash: bea8fb0057a8294abcbbf8e9c5e098290048a903
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 9c1547ac5ec5134c99aa9213e6aaca1af8d5b3e9
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92656883"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94390232"
 ---
 # <a name="windows-powershell-reference"></a>Naslaginformatie over Windows PowerShell
 
@@ -30,7 +30,7 @@ Naast de Windows Power shell SDK bevatten de volgende bronnen meer informatie.
 
 [Een Windows Power shell-cmdlet schrijven](./cmdlet/writing-a-windows-powershell-cmdlet.md) Bevat informatie en code voorbeelden voor programma managers die cmdlets ontwerpen en voor ontwikkel aars die cmdlet-code implementeren.
 
-[Windows Power shell-team blog](https://blogs.msdn.microsoft.com/PowerShell/) De beste resource voor het leren van en samen werken met andere Windows Power shell-gebruikers. Lees de blog van het Windows Power shell-team en Word lid van het Windows Power shell-gebruikers Forum (micro soft. public. Windows. Power shell).
+[Windows Power shell-team blog](https://devblogs.microsoft.com/powershell/) De beste resource voor het leren van en samen werken met andere Windows Power shell-gebruikers. Lees de blog van het Windows Power shell-team en Word lid van het Windows Power shell-gebruikers Forum (micro soft. public. Windows. Power shell).
 Gebruik Windows Live Search om andere Windows Power shell-blogs en-bronnen te vinden. Wanneer u uw expertise ontwikkelt, kunt u uw ideeën dan vrij bijdragen.
 
 [Browser van de Power shell-module](/powershell/module/) Bevat de meest recente versies van de Help-onderwerpen voor de opdracht regel.

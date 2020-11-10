@@ -3,19 +3,19 @@ ms.date: 09/13/2016
 ms.topic: reference
 title: Windows PowerShell-voorbeeldcode
 description: Windows PowerShell-voorbeeldcode
-ms.openlocfilehash: bfda7d2edc4ab4e01808367c8e2edd01517a5f48
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: da916fa3557f44ecc9126ecef38235109aa391ec
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92656970"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94390130"
 ---
 # <a name="windows-powershell-sample-code"></a>Windows PowerShell-voorbeeldcode
 
-Windows Power shell®-voor beelden zijn beschikbaar via de Windows SDK. Deze sectie bevat de voorbeeld code die is opgenomen in de Windows SDK-voor beelden.
+Windows Power shell-voor &reg; beelden zijn beschikbaar via de Windows SDK. Deze sectie bevat de voorbeeld code die is opgenomen in de Windows SDK-voor beelden.
 
 > [!NOTE]
-> Wanneer de Windows SDK is geïnstalleerd, wordt er een map met voor **beelden** gemaakt waarin alle voor beelden van Windows Power shell beschikbaar worden gesteld. Een typische installatie directory is **C:\Program Files\Microsoft SDKs\Windows\v6.0** . Start Windows Power shell en typ **' cd Samples\SysMgmt\PowerShell '** om de map met Windows Power shell-voor beelden te vinden. In dit document wordt de map met voor beelden van Windows Power shell aangeduid als **\<PowerShell Samples>** .
+> Wanneer de Windows SDK is geïnstalleerd, wordt er een map met voor **beelden** gemaakt waarin alle voor beelden van Windows Power shell beschikbaar worden gesteld. Een typische installatie directory is **C:\Program Files\Microsoft SDKs\Windows\v6.0**. Start Windows Power shell en typ **' cd Samples\SysMgmt\PowerShell '** om de map met Windows Power shell-voor beelden te vinden. In dit document wordt de map met voor beelden van Windows Power shell aangeduid als **\<PowerShell Samples>** .
 
 ## <a name="sample-code-listing"></a>Voorbeeld code weer geven
 
@@ -38,11 +38,11 @@ Windows Power shell®-voor beelden zijn beschikbaar via de Windows SDK. Deze sec
 | [Runspace02-codevoorbeelden](./runspace02-code-samples.md)                           | In dit voor beeld wordt de klasse [System. Management. Automation. Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) gebruikt om de cmdlet synchroon uit te voeren `Get-Process` .                                                                                                            |
 | [Runspace03-codevoorbeelden](./runspace03-code-samples.md)                           | Dit zijn de code voorbeelden voor de runs Pace die wordt beschreven in een console toepassing maken die een opgegeven script uitvoert.                                                                                                                                                                         |
 | [Runspace04-codevoorbeelden](./runspace04-code-samples.md)                           | Dit is een code voorbeeld voor een runs Pace die gebruikmaakt van de klasse [System. Management. Automation. Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) om een script uit te voeren dat een afsluit fout genereert.                                                                         |
-| [Runspace05-codevoorbeeld](./runspace05-code-sample.md)                             | Dit is de bron code voor het Runspace05-voor beeld dat wordt beschreven in [een runs Pace configureren met behulp van RunspaceConfiguration](https://msdn.microsoft.com/42681d19-2d05-4975-befd-afb1990e79b2).                                                                                                           |
-| [Runspace06-codevoorbeeld](./runspace06-code-sample.md)                             | Dit is de bron code voor het Runspace06-voor beeld dat wordt beschreven in [een runs Pace configureren met een Windows Power shell-module](https://msdn.microsoft.com/a7289ee8-9732-49ee-91c7-d533e9538b83).                                                                                                    |
-| [Runspace07-codevoorbeeld](./runspace07-code-sample.md)                             | Dit is de bron code voor het Runspace07-voor beeld dat wordt beschreven in [een console toepassing maken waarmee opdrachten worden toegevoegd aan een pijp lijn](https://msdn.microsoft.com/01eb7808-e97b-4905-80be-9e2fa38c262e).                                                                                              |
-| [Runspace08-codevoorbeeld](./runspace08-code-sample.md)                             | Dit is de bron code voor het Runspace08-voor beeld dat wordt beschreven in [een console toepassing maken die para meters toevoegt aan een opdracht](https://msdn.microsoft.com/848b2b46-60f1-4a86-b448-cfc7c0cccfba).                                                                                             |
-| [Runspace09-codevoorbeeld](./runspace09-code-sample.md)                             | Dit is de bron code voor het Runspace09-voor beeld dat wordt beschreven in [een console toepassing maken die een pijp lijn asynchroon aanroept](https://msdn.microsoft.com/198c1c94-2a06-457e-93ce-c0d910618e47).                                                                                        |
+| [Runspace05-codevoorbeeld](./runspace05-code-sample.md)                             |                                                                                                            |
+| [Runspace06-codevoorbeeld](./runspace06-code-sample.md)                             |                                                                                                     |
+| [Runspace07-codevoorbeeld](./runspace07-code-sample.md)                             |                                                                                               |
+| [Runspace08-codevoorbeeld](./runspace08-code-sample.md)                             |                                                                                              |
+| [Runspace09-codevoorbeeld](./runspace09-code-sample.md)                             |                                                                                       |
 | [Runspace10-codevoorbeeld](./runspace10-code-sample.md)                             | Dit is de bron code voor het Runspace10-voor beeld, waarmee een cmdlet wordt toegevoegd aan [System. Management. Automation. Runspaces. Runspaceconfiguration](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConfiguration) en vervolgens de gewijzigde configuratie-informatie gebruikt om de runs Pace te maken. |
 
 ## <a name="see-also"></a>Zie ook
