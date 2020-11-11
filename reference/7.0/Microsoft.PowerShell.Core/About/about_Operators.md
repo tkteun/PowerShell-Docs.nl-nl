@@ -2,16 +2,16 @@
 description: Hierin worden de Opera tors beschreven die worden ondersteund door Power shell.
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 10/28/2020
+ms.date: 11/09/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Operators
-ms.openlocfilehash: d442a64be77934cef4636e905c098d9630451b8f
-ms.sourcegitcommit: c1e4739f5d52282fb05a8cff92b0f5d10e2edac1
+ms.openlocfilehash: 736ca53ff4992ea430ec89ad1795dcf278b0da41
+ms.sourcegitcommit: 768816a5c05cc2d07ffd84bed95b0499f4b49f2d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "93253255"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94483125"
 ---
 # <a name="about-operators"></a>Opera tors
 
@@ -117,6 +117,11 @@ Retourneert het resultaat van een of meer instructies als een matrix. Als er sle
 ```powershell
 @(Get-CimInstance win32_logicalDisk)
 ```
+
+#### <a name="hash-table-literal-syntax-"></a>Hash-tabel letterlijke syntaxis `@{}`
+
+Net als bij de subexpressie van de matrix wordt deze syntaxis gebruikt voor het declareren van een hash-tabel.
+Zie [about_Hash_Tables](about_Hash_Tables.md)voor meer informatie.
 
 #### <a name="call-operator-"></a>Aanroep operator `&`
 
@@ -498,8 +503,6 @@ $todaysDate ??= (Get-Date).ToShortDateString()
 
 Een null-voorwaardelijke operator past een leden toegang, `?.` , of element toegang, `?[]` alleen aan de operand toe als die operand resulteert in niet-null; anders wordt Null geretourneerd.
 
-Aangezien Power shell `?` een deel van de naam van de variabele toestaat, is formele specificatie van de naam van de variabele vereist voor het gebruik van deze opera tors. Het is dus nood zakelijk om `{}` de namen van variabelen te gebruiken, zoals `${a}` of wanneer `?` het een deel van de naam van de variabele is `${a?}` .
-
 In het volgende voor beeld wordt de waarde van **propnaam** geretourneerd.
 
 ```powershell
@@ -535,6 +538,11 @@ En als de operand null is, wordt het element niet geopend en wordt Null geretour
 $a = $null
 ${a}?[0]
 ```
+
+> [!NOTE]
+> Aangezien Power shell `?` een deel van de naam van de variabele toestaat, is formele specificatie van de naam van de variabele vereist voor het gebruik van deze opera tors. Het is dus nood zakelijk om `{}` de namen van variabelen te gebruiken, zoals `${a}` of wanneer `?` het een deel van de naam van de variabele is `${a?}` .
+>
+> De variabele naam syntaxis van `${<name>}` mag niet worden verward met de `$()` operator voor subexpressie. Zie de sectie variabele name van [about_Variables](about_Variables.md#Variable-names-that-include-special-characters)voor meer informatie.
 
 ## <a name="see-also"></a>Zie ook
 

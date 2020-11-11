@@ -2,16 +2,16 @@
 description: Hierin worden de Opera tors beschreven die worden ondersteund door Power shell.
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 10/28/2020
+ms.date: 11/09/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Operators
-ms.openlocfilehash: a8c9c60c9c1513e1ee4ce71c8c880e20bf1df7b3
-ms.sourcegitcommit: c1e4739f5d52282fb05a8cff92b0f5d10e2edac1
+ms.openlocfilehash: b783d2cb76fe8a0a66ec77b67ef915f3b78def04
+ms.sourcegitcommit: 768816a5c05cc2d07ffd84bed95b0499f4b49f2d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "93253249"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94482993"
 ---
 # <a name="about-operators"></a>Opera tors
 
@@ -121,6 +121,11 @@ Retourneert het resultaat van een of meer instructies als een matrix. Als er sle
 ```powershell
 @(Get-CimInstance win32_logicalDisk)
 ```
+
+#### <a name="hash-table-literal-syntax-"></a>Hash-tabel letterlijke syntaxis `@{}`
+
+Net als bij de subexpressie van de matrix wordt deze syntaxis gebruikt voor het declareren van een hash-tabel.
+Zie [about_Hash_Tables](about_Hash_Tables.md)voor meer informatie.
 
 #### <a name="call-operator-"></a>Aanroep operator `&`
 
