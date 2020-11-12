@@ -2,12 +2,12 @@
 title: PowerShell installeren in Linux
 description: Informatie over het installeren van Power shell op diverse Linux-distributies
 ms.date: 11/11/2020
-ms.openlocfilehash: 28f388c63740cf74e56c707aef531a2a220a9468
-ms.sourcegitcommit: aac365f7813756e16b59322832a904e703e0465b
+ms.openlocfilehash: 226d9c33ccf9c805c2e36a96013385a4c75a97b3
+ms.sourcegitcommit: cbbb7a804155345ccac983ccc1009ccb5e223e25
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/12/2020
-ms.locfileid: "94524821"
+ms.locfileid: "94550227"
 ---
 # <a name="installing-powershell-on-linux"></a>PowerShell installeren in Linux
 
@@ -27,7 +27,16 @@ Voor Linux-distributies die niet officieel worden ondersteund, kunt u proberen P
 
 <!-- TODO: Update for supported releases v7.0 & v7.1 -->
 
-Officieel ondersteunde releases
+Officieel ondersteunde platform releases voor Power shell 7,1
+
+- Ubuntu 16.04/18.04/20.04 (inclusief ARM64)
+- Ubuntu 19,10 (via snap package)
+- Debian 9/10
+- CentOS en RHEL 7/8
+- Fedora 30
+- Alpiene 3.11 + (inclusief ARM64)
+
+Officieel ondersteunde platform releases voor Power shell 7,0
 
 - Ubuntu 16.04
 - Ubuntu 18,04 en 20,04

@@ -1,13 +1,13 @@
 ---
 title: Levenscyclus voor ondersteuning van PowerShell Core
 description: Details van de beleids regels die ondersteuning bieden voor Power shell
-ms.date: 03/09/2020
-ms.openlocfilehash: cefa7e1f45fc88bbbb8e18c969c4399bac2c9392
-ms.sourcegitcommit: aac365f7813756e16b59322832a904e703e0465b
+ms.date: 11/11/2020
+ms.openlocfilehash: 16b5480a0aecdd4b069d78372e09e04d1451eba6
+ms.sourcegitcommit: cbbb7a804155345ccac983ccc1009ccb5e223e25
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/12/2020
-ms.locfileid: "94524872"
+ms.locfileid: "94550278"
 ---
 # <a name="powershell-support-lifecycle"></a>Levens cyclus van Power Shell-ondersteuning
 
@@ -28,24 +28,6 @@ Een huidige release is een release die plaatsvindt tussen LTS-releases. Huidige 
 
 > [!IMPORTANT]
 > U moet de meest recente patch update installeren om in aanmerking te komen voor ondersteuning. Als u bijvoorbeeld Power shell 7,0 en 7.0.1 hebt uitgebracht, moet u bijwerken naar 7.0.1 om in aanmerking te komen voor ondersteuning.
-
-## <a name="lifecycle-of-powershell-core-6x"></a>Levens cyclus van Power shell Core 6. x
-
-Power shell Core heeft het [micro soft moderne levenscyclus beleid][modern]gebruikt. Deze ondersteunings levenscyclus is bedoeld om klanten up-to-date te houden met de meest recente versies.
-
-De vertakking versie 6. x van Power shell Core is ongeveer eenmaal per zes maanden bijgewerkt (bijvoorbeeld: 6,0, 6,1, 6,2, etc.). Met de release van Power shell 7 zijn er echter geen kleine versies van 6. x meer beschikbaar. Power shell 6.2. x blijft onderhouds updates ontvangen en wordt nog steeds ondersteund.
-
-> [!IMPORTANT]
-> U moet binnen zes maanden na de release van elke nieuwe secundaire versie een update voor het ontvangen van ondersteuning door lopen.
-
-Als Power shell Core 6,1 bijvoorbeeld is uitgebracht op 1 juli 2018, wordt u naar verwachting naar Power shell Core 6,1 bijgewerkt op 1 januari 2019 om ondersteuning te onderhouden.
-
-> [!IMPORTANT]
-> U moet binnen 30 dagen na elke nieuwe versie van de patch een update uitvoeren om ondersteuning te blijven ontvangen.
-
-Als u bijvoorbeeld Power shell Core 6,1 uitvoert en 6.1.3 is uitgebracht op 19 februari 2019, zou u op 21 maart 2019 naar verwachting moeten bijwerken naar Power shell Core 6.1.3. Dit is 30 dagen na de release voor het onderhouden van de ondersteuning. Als er oplossingen worden gevonden die vereist zijn, worden de oplossingen vrijgegeven in de volgende cumulatieve update.
-
-Voor het beleid voor moderne levens cyclus moet micro soft klanten 12 maanden vertellen voordat de ondersteuning voor een product (dat wil zeggen Power shell core) wordt beëindigd.
 
 ## <a name="supported-platforms"></a>Ondersteunde platforms
 

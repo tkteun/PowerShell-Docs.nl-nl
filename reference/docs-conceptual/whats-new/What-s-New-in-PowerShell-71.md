@@ -2,12 +2,12 @@
 title: Wat is er nieuw in Power shell 7,1
 description: Nieuwe functies en wijzigingen die zijn uitgebracht in Power shell 7,1
 ms.date: 11/11/2020
-ms.openlocfilehash: 720fd3eae3e79ee5ab82b7b35d83b6c9b054617b
-ms.sourcegitcommit: aac365f7813756e16b59322832a904e703e0465b
+ms.openlocfilehash: e4f6a97fd36368f9b8afcf995ec2d1d4f3fadca2
+ms.sourcegitcommit: cbbb7a804155345ccac983ccc1009ccb5e223e25
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/12/2020
-ms.locfileid: "94531805"
+ms.locfileid: "94550244"
 ---
 # <a name="whats-new-in-powershell-71"></a>Wat is er nieuw in Power shell 7,1
 
@@ -19,13 +19,21 @@ Voortbouwend op de basis die is vastgesteld in Power shell 7,0, onze inspanninge
 
 Power shell 7,1 ondersteunt momenteel de volgende besturings systemen op x64, waaronder:
 
-- Windows 8,1 en 10
-- Windows Server 2012 R2, 2016 en 2019
+- Windows 8.1/10 (inclusief ARM64)
+- Windows Server 2012 R2, 2016, 2019 en Semi-Annual kanaal (SAC)
+- Ubuntu 16.04/18.04/20.04 (inclusief ARM64)
+- Ubuntu 19,10 (via snap package)
+- Debian 9/10
+- CentOS en RHEL 7/8
+- Fedora 30
+- Alpiene 3.11 + (inclusief ARM64)
 - macOS 10.13 +
-- Red Hat Enterprise Linux (RHEL)/CentOS 7 en 8
-- Debian 9 en 10
-- Ubuntu 18,04 en 20,04
-- Alpine Linux 3,10 en 3.11 +
+
+We hebben ook Community-ondersteuning voor:
+
+- Arc Linux
+- Raspbian Linux
+- Kali Linux
 
 Zie de [Power shell-ondersteunings levenscyclus](/powershell/scripting/powershell-support-lifecycle) voor meer actuele informatie over de ondersteunde besturings systemen en de levens cyclus van de ondersteuning.
 

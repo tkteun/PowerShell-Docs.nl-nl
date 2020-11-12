@@ -1,13 +1,13 @@
 ---
-ms.date: 10/15/2020
+ms.date: 11/11/2020
 title: Experimentele functies gebruiken in Power shell
 description: Een lijst met de momenteel beschik bare experimentele functies en hoe u deze kunt gebruiken.
-ms.openlocfilehash: e98b1222755f3d4ffbd432af6b01d56f63307bb2
-ms.sourcegitcommit: 108686b166672cc08817c637dd93eb1ad830511d
+ms.openlocfilehash: fa7e72869e2c3b3b5920b556b8dacf5068bc00d5
+ms.sourcegitcommit: cbbb7a804155345ccac983ccc1009ccb5e223e25
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92156572"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94550210"
 ---
 # <a name="using-experimental-features-in-powershell"></a>Experimentele functies gebruiken in Power shell
 
@@ -24,7 +24,7 @@ Zie [about_Experimental_Features](/powershell/module/microsoft.powershell.core/a
 
 In dit artikel worden de experimentele functies beschreven die beschikbaar zijn en hoe u deze functie kunt gebruiken.
 
-|                            Naam                            |   6,2   |   7.0   |   7.1   |
+|                            Name                            |   6,2   |   7.0   |   7.1   |
 | ---------------------------------------------------------- | :-----: | :-----: | :-----: |
 | PSTempDrive (mainstream in PS 7.0 +)                        | &check; |         |         |
 | PSUseAbbreviationExpansion (mainstream in PS 7.0 +)         | &check; |         |         |
@@ -33,7 +33,7 @@ In dit artikel worden de experimentele functies beschreven die beschikbaar zijn 
 | Micro soft. Power shell. Utility. PSManageBreakpointsInRunspace |         | &check; | &check; |
 | PSDesiredStateConfiguration.InvokeDscResource              |         | &check; | &check; |
 | PSNullConditionalOperators (mainstream in PS 7.1 +)         |         | &check; |         |
-| PSUnixFileStat (niet-Windows)                          |         | &check; | &check; |
+| PSUnixFileStat (alleen niet-Windows-mainstream in PS 7.1 +)  |         | &check; |         |
 | PSNativePSPathResolution                                   |         |         | &check; |
 | PSCultureInvariantReplaceOperator                          |         |         | &check; |
 | PSNotApplyErrorActionToStderr                              |         |         | &check; |
@@ -213,6 +213,9 @@ drwxr-xr-x jimtru    staff         11/8/2019 10:37         896 tools
 -rw-r--r-- jimtru    staff         11/8/2019 10:37      201297 CHANGELOG.md
 ```
 
+> [!NOTE]
+> Deze functie is uit de experimentele fase verplaatst en is een mainstream functie in Power shell 7,1 en hoger.
+
 ## <a name="psuseabbreviationexpansion"></a>PSUseAbbreviationExpansion
 
 Met deze functie kunt u het tabblad volt ooien van verkorte cmdlets en functies:
@@ -231,6 +234,6 @@ Dit werkt alleen voor tabblad voltooiing (interactief gebruik), dus `i-psdf` is 
 
 Met deze functie wordt het subsysteem voor de invoeg toepassing in Power shell ingeschakeld. De functie maakt het mogelijk om onderdelen van te scheiden `System.Management.Automation.dll` in afzonderlijke subsystemen die zich in hun eigen assembly bevinden. Deze schei ding vermindert het schijf gebruik van de kern-Power shell-engine en maakt het mogelijk dat deze onderdelen optionele functies worden voor een minimale Power shell-installatie.
 
-Op dit moment wordt alleen het subsysteem **CommandPredictor** ondersteund. Dit subsysteem wordt samen met de PSReadLine-module gebruikt om aangepaste Voorspellings-invoeg toepassingen te bieden. In de toekomst kunnen **Job**, **CommandCompleter**, **Remoting** en andere onderdelen worden gescheiden in subsysteem-assembly's buiten `System.Management.Automation.dll` .
+Op dit moment wordt alleen het subsysteem **CommandPredictor** ondersteund. Dit subsysteem wordt samen met de PSReadLine-module gebruikt om aangepaste Voorspellings-invoeg toepassingen te bieden. In de toekomst kunnen **Job** , **CommandCompleter** , **Remoting** en andere onderdelen worden gescheiden in subsysteem-assembly's buiten `System.Management.Automation.dll` .
 
 Het experimentele onderdeel bevat een nieuwe cmdlet [Get-PSSubsystem](xref:Microsoft.PowerShell.Core.Get-PSSubsystem). Deze cmdlet is alleen beschikbaar wanneer de functie is ingeschakeld. Deze cmdlet retourneert informatie over de subsystemen die beschikbaar zijn op het systeem.
