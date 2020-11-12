@@ -2,12 +2,12 @@
 title: Wat is er nieuw in Power shell 7,1
 description: Nieuwe functies en wijzigingen die zijn uitgebracht in Power shell 7,1
 ms.date: 11/11/2020
-ms.openlocfilehash: e4f6a97fd36368f9b8afcf995ec2d1d4f3fadca2
-ms.sourcegitcommit: cbbb7a804155345ccac983ccc1009ccb5e223e25
+ms.openlocfilehash: 9ad552a8105b16d1f01ddacbdee1a43663ef3fd1
+ms.sourcegitcommit: 28831acbb09d3edbaa6bd9fc62491603d64d3849
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/12/2020
-ms.locfileid: "94550244"
+ms.locfileid: "94553264"
 ---
 # <a name="whats-new-in-powershell-71"></a>Wat is er nieuw in Power shell 7,1
 
@@ -31,7 +31,7 @@ Power shell 7,1 ondersteunt momenteel de volgende besturings systemen op x64, wa
 
 We hebben ook Community-ondersteuning voor:
 
-- Arc Linux
+- Arch Linux
 - Raspbian Linux
 - Kali Linux
 
@@ -124,7 +124,6 @@ Zie de [wijzigingen logboek](https://github.com/PowerShell/PowerShell/tree/maste
 - Fout bericht oplossen van nieuwe symbolische koppeling ontbrekend doel (#13085) (bedankt @yecril71pl !)
 - De para meter mag `args` niet null zijn in de open bare `ConsoleHost` api's (#13429)
 - Ontbrekende afstoten voor `CancellationTokenSource` (#13420) toevoegen (bedankt @Youssef1313 !)
-- Voeg de para meter toe `-Paged` aan `Get-Help` om paginering te ondersteunen (#13374)
 - De oplossing wordt `Get-Help` niet correct weer gegeven als de para meter joker tekens ondersteunt (#13353) (bedankt @ThomasNieto !)
 - `pwsh`Help-informatie bijwerken voor `-InputFormat` para meter (#13355) (bedankt @sethvs !)
 - De MIT-licentie voor bestanden die zijn gekopieerd van Roslyn (#13305) declareren (bedankt @xtqqczze !)
@@ -156,7 +155,7 @@ Zie de [wijzigingen logboek](https://github.com/PowerShell/PowerShell/tree/maste
 - Wijzigen `CimCmdlets` in gebruik `AliasAttribute` (#12617) (bedankt @thlac !)
 - Corrigeer de onjuiste index in een indelings teken reeks in ParameterBinderBase (#12630) (bedankt @powercode !)
 - De `CommandInfo` eigenschap in `Command.Clone()` (#12301) kopiëren (bedankt @TylerLeonhardt !)
-- Toep assen `-IncludeEqual` in `Compa-Object` When `-ExcludeDifferent` is opgegeven (#12317) (bedankt @davidseibel !)
+- Toep assen `-IncludeEqual` in `Compare-Object` When `-ExcludeDifferent` is opgegeven (#12317) (bedankt @davidseibel !)
 - Wijziging van `Get-FileHash` Bestands ingangen sluiten voordat uitvoer wordt geschreven (#12474) (bedankt @HumanEquivalentUnit !)
 - Inconsistent uitzonderings bericht oplossen in `-replace` operator (#12388) (bedankt @jackdcasey !)
 - `WinCompat`Module laden herstellen om Power shell 7-modules met een hogere prioriteit (#12269) te behandelen
