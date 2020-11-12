@@ -1,13 +1,13 @@
 ---
 title: PowerShell installeren in Windows
 description: Informatie over het installeren van Power shell in Windows
-ms.date: 10/30/2020
-ms.openlocfilehash: 825c9066d0a4e4734b9255514520b32f0876ecea
-ms.sourcegitcommit: 109ff625773389be56e98e994b7e56146f2b9d93
+ms.date: 11/11/2020
+ms.openlocfilehash: 8f8fe7f186488775ea9afa22a63fee95390e2545
+ms.sourcegitcommit: aac365f7813756e16b59322832a904e703e0465b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93296379"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94524459"
 ---
 # <a name="installing-powershell-on-windows"></a>PowerShell installeren in Windows
 
@@ -30,8 +30,8 @@ Als u Power shell in Windows wilt installeren, downloadt u het [meest recente][]
 
 Het MSI-bestand ziet er als volgt uit `PowerShell-<version>-win-<os-arch>.msi` . Bijvoorbeeld:
 
-- `PowerShell-7.0.3-win-x64.msi`
-- `PowerShell-7.0.3-win-x86.msi`
+- `PowerShell-7.1.0-win-x64.msi`
+- `PowerShell-7.1.0-win-x86.msi`
 
 Na het downloaden dubbelklikt u op het installatie programma en volgt u de aanwijzingen.
 
@@ -41,13 +41,14 @@ Het installatie programma maakt een snelkoppeling in het menu Start van Windows.
 - U kunt Power shell starten via het menu Start of `$env:ProgramFiles\PowerShell\<version>\pwsh.exe`
 
 > [!NOTE]
-> Power shell 7 wordt geïnstalleerd in een nieuwe map en wordt naast elkaar uitgevoerd met Windows Power shell 5,1. Voor Power shell Core 6. x is Power shell 7 een in-place upgrade waarmee Power shell Core 6. x wordt verwijderd.
+> Power shell 7,1 wordt geïnstalleerd in een nieuwe map en kan naast Windows Power shell 5,1 worden uitgevoerd.
+> Power shell 7,1 is een in-place upgrade waarmee Power shell 6. x wordt vervangen. of Power shell 7,0.
 >
-> - Power shell 7 is geïnstalleerd op `$env:ProgramFiles\PowerShell\7`
+> - Power shell 7,1 is geïnstalleerd voor `$env:ProgramFiles\PowerShell\7`
 > - De `$env:ProgramFiles\PowerShell\7` map wordt toegevoegd aan `$env:PATH`
 > - De `$env:ProgramFiles\PowerShell\6` map wordt verwijderd
 >
-> Als u Power shell 6 side-by-side wilt uitvoeren met Power shell 7, installeert u Power shell 6 opnieuw met de methode [zip-installatie](#zip) .
+> Als u Power shell 7,1 naast andere versies moet uitvoeren, gebruikt u de methode [zip-installatie](#zip) om de andere versie te installeren in een andere map.
 
 ### <a name="administrative-install-from-the-command-line"></a>Beheerders installatie vanaf de opdracht regel
 
@@ -60,7 +61,7 @@ MSI-pakketten kunnen worden geïnstalleerd vanaf de opdracht regel zodat beheerd
 In het volgende voor beeld ziet u hoe u Power shell op de achtergrond installeert met alle installatie opties ingeschakeld.
 
 ```powershell
-msiexec.exe /package PowerShell-7.0.3-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
+msiexec.exe /package PowerShell-7.1.0-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
 ```
 
 `Msiexec.exe`Zie [opdracht regel opties](/windows/desktop/Msi/command-line-options)voor een volledige lijst met opdracht regel opties voor.
@@ -78,10 +79,22 @@ Vanaf Power shell 7,1 maakt het MSI-pakket register sleutels waarin de installat
 
 Dit kan worden gebruikt door beheerders en ontwikkel aars om het pad naar Power shell te vinden. De `<GUID>` waarden zijn hetzelfde voor alle versies van de preview-versie en secundaire versies. De `<GUID>` waarden voor elke grote release worden gewijzigd.
 
-## <a name="installing-the-msix-package"></a><a id="msix" />Het MSIX-pakket installeren
+## <a name="installing-from-the-microsoft-store"></a><a id="msix" />Installeren vanuit de Microsoft Store
+
+Power shell 7,1 is gepubliceerd op de Microsoft Store. U kunt de Power shell-release vinden op de [Microsoft Store](https://www.microsoft.com/store/apps/9MZ1SNWT0N5D) website of in de Store-toepassing in Windows.
+
+Voor delen van het Microsoft Store-pakket:
+
+- Automatische updates zijn direct in Windows 10 ingebouwd
+- Kan worden geïntegreerd met andere software distributie mechanismen, zoals intune en SCCM
 
 > [!NOTE]
-> Het MSIX-pakket wordt op dit moment niet officieel ondersteund. We blijven het pakket alleen voor interne test doeleinden bouwen.
+> Alle configuratie-instellingen op systeem niveau die zijn opgeslagen in, `$PSHOME` kunnen niet worden gewijzigd. Dit omvat de WSMAN-configuratie. Hiermee voor komt u dat externe sessies verbinding maken met op opslag gebaseerde installaties van Power shell. Configuraties op gebruikers niveau en externe SSH-communicatie worden ondersteund.
+
+### <a name="using-the-msix-package"></a>Het MSIX-pakket gebruiken
+
+> [!NOTE]
+> De preview-builds van Power shell bevatten een MSIX-pakket. Het MSIX-pakket wordt niet officieel ondersteund. We blijven het pakket alleen voor interne test doeleinden bouwen.
 
 Als u het MSIX-pakket hand matig wilt installeren op een Windows 10-client, downloadt u het MSIX-pakket van[onze pagina] [met releases van github.] Schuif omlaag naar de sectie **assets** van de release die u wilt installeren. De sectie assets kan worden samengevouwen, dus u moet mogelijk op klikken om deze uit te vouwen.
 
@@ -97,10 +110,10 @@ Add-AppxPackage PowerShell-<version>-win-<os-arch>.msix
 
 Binaire ZIP-archieven van Power shell zijn beschikbaar om geavanceerde implementatie scenario's mogelijk te maken. Down load een van de volgende ZIP-archieven [op de pagina release releases][releases] .
 
-- PowerShell-7.0.3-win-x64.zip
-- PowerShell-7.0.3-win-x86.zip
-- PowerShell-7.0.3-win-arm64.zip
-- PowerShell-7.0.3-win-arm32.zip
+- PowerShell-7.1.0-win-x64.zip
+- PowerShell-7.1.0-win-x86.zip
+- PowerShell-7.1.0-win-arm64.zip
+- PowerShell-7.1.0-win-arm32.zip
 
 Afhankelijk van hoe u het bestand downloadt, moet u het bestand mogelijk deblokkeren met de `Unblock-File` cmdlet. Pak de inhoud uit naar de gewenste locatie en voer deze `pwsh.exe` uit. In tegens telling tot de installatie van de MSI-pakketten controleert de installatie van het ZIP-archief niet op vereisten. Zorg ervoor dat u aan de [vereisten](#prerequisites)voldoet om externe toegang tot WSMan goed te laten werken.
 
@@ -239,7 +252,7 @@ De volgende opdrachten kunnen worden gebruikt om Power shell te installeren met 
    ```Output
    Name               Id                           Version
    ---------------------------------------------------------------
-   PowerShell         Microsoft.PowerShell         7.0.3
+   PowerShell         Microsoft.PowerShell         7.1.0
    PowerShell-Preview Microsoft.PowerShell-Preview 7.1.0-preview.5
    ```
 

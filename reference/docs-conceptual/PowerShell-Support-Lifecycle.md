@@ -2,12 +2,12 @@
 title: Levenscyclus voor ondersteuning van PowerShell Core
 description: Details van de beleids regels die ondersteuning bieden voor Power shell
 ms.date: 03/09/2020
-ms.openlocfilehash: 1681df188d03a1115b13518fb88c21ebf79701d4
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
+ms.openlocfilehash: cefa7e1f45fc88bbbb8e18c969c4399bac2c9392
+ms.sourcegitcommit: aac365f7813756e16b59322832a904e703e0465b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92501742"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94524872"
 ---
 # <a name="powershell-support-lifecycle"></a>Levens cyclus van Power Shell-ondersteuning
 
@@ -55,29 +55,31 @@ Onze community heeft ook pakketten bijgedragen voor sommige platforms, maar ze w
 
 Platforms die worden vermeld als `Experimental` niet officieel worden ondersteund, maar zijn beschikbaar voor experimenten en feedback.
 
-| Platform                                          |      6,2      |    7.0    |
-| ------------------------------------------------- | :-----------: | :-------: |
-| Windows 8,1 en 10                               |   Ondersteund   | Ondersteund |
-| Windows Server 2012 R2, 2016                      |   Ondersteund   | Ondersteund |
-| [Windows Server-Semi-Annual kanaal][semi-annual] |   Ondersteund   | Ondersteund |
-| Ubuntu 16,04 en 18,04                            |   Ondersteund   | Ondersteund |
-| Ubuntu 19,10 (via snap package)                   |   Community   | Community |
-| Ubuntu 20,04 (via snap package)                   |   Community   | Community |
-| Debian 9                                          |   Ondersteund   | Ondersteund |
-| Debian 10                                         | Niet ondersteund | Ondersteund |
-| CentOS 7                                          |   Ondersteund   | Ondersteund |
-| CentOS 8                                          | Niet ondersteund | Ondersteund |
-| Red Hat Enterprise Linux 7                        |   Ondersteund   | Ondersteund |
-| Red Hat Enterprise Linux 8                        | Niet ondersteund | Ondersteund |
-| Fedora 30                                         | Niet ondersteund | Ondersteund |
-| Alpine 3,8                                        |   Zie opmerking    | Zie opmerking  |
-| Alpine 3,9 en 3,10                               | Niet ondersteund | Zie opmerking  |
-| macOS 10.12+                                      |   Ondersteund   | Ondersteund |
-| Arch                                              |   Community   | Community |
-| Raspbian                                          |   Community   | Community |
-| Kali                                              |   Community   | Community |
-| AppImage (werkt op meerdere Linux-platforms)      |   Community   | Community |
-| [Snap-pakket](https://snapcraft.io/powershell)   |   Zie opmerking    | Zie opmerking  |
+<!-- TODO: update OS list -->
+
+|                     Platform                      |      7.0      |      7.1      |
+| ------------------------------------------------- | :-----------: | :-----------: |
+| Windows 8,1 en 10                               |   Ondersteund   |   Ondersteund   |
+| Windows Server 2012 R2, 2016, 2019                |   Ondersteund   |   Ondersteund   |
+| [Windows Server-Semi-Annual kanaal][semi-annual] |   Ondersteund   |   Ondersteund   |
+| Ubuntu 16,04, 18,04                               |   Ondersteund   |   Ondersteund   |
+| Ubuntu 20.04                                      | Niet ondersteund |   Ondersteund   |
+| Ubuntu 19,10, 20,10 (via snap package)            |   Community   |   Ondersteund   |
+| Debian 9                                          |   Ondersteund   |   Ondersteund   |
+| Debian 10                                         |   Ondersteund   |   Ondersteund   |
+| CentOS 7                                          |   Ondersteund   |   Ondersteund   |
+| CentOS 8                                          |   Ondersteund   |   Ondersteund   |
+| Red Hat Enterprise Linux 7                        |   Ondersteund   |   Ondersteund   |
+| Red Hat Enterprise Linux 8                        |   Ondersteund   |   Ondersteund   |
+| Fedora 31 +                                        |   Ondersteund   | Niet ondersteund |
+| Alpine 3,10                                       |   Zie opmerking    | Niet ondersteund |
+| Alpiene 3.11 +                                      |   Zie opmerking    |   Zie opmerking    |
+| macOS 10.13 +                                      |   Ondersteund   |   Ondersteund   |
+| Arch                                              |   Community   |   Community   |
+| Raspbian                                          |   Community   |   Community   |
+| Kali                                              |   Community   |   Community   |
+| AppImage (werkt op meerdere Linux-platforms)      |   Community   |   Community   |
+| [Snap-pakket](https://snapcraft.io/powershell)   |   Zie opmerking    |   Zie opmerking    |
 
 > [!NOTE]
 > Snap-pakketten worden hetzelfde ondersteund als de distributie waarmee u het pakket uitvoert.
@@ -89,21 +91,24 @@ Platforms die worden vermeld als `Experimental` niet officieel worden ondersteun
 
 Op basis van de [levens cyclus van Power shell](#lifecycle-of-powershell-7), worden in de volgende tabel de datums weer gegeven wanneer verschillende releases niet meer worden ondersteund.
 
-| Versie |    Einde van de levens duur     |
-| :-----: | ------------------ |
-|   7.0   | 3 december 2022   |
-|   6,2   | 4 september 2020  |
-|   6.1   | 28 september 2019 |
-|   6.0   | 13 februari 2019  |
+| Versie |          Einde van de levens duur           |
+| :-----: | ------------------------------ |
+|   7.1   | medio februari 2022 (geprojecteerd) |
+|   7.0   | 3 december 2022               |
+|   6,2   | 4 september 2020              |
+|   6.1   | 28 september 2019             |
+|   6.0   | 13 februari 2019              |
 
 > [!NOTE]
-> Dit document bevat ondersteuning voor Power shell Core 6 en Power shell 7. Windows Power shell (1,0-5,1) is een onderdeel van het Windows-besturings systeem. Onderdelen ontvangen dezelfde ondersteuning als het bovenliggende product of platform. Zie [informatie over de levens cyclus van producten en services](/lifecycle/products/)voor meer informatie.
+> Dit document bevat ondersteuning voor Power shell core. Windows Power shell (1,0-5,1) is een onderdeel van het Windows-besturings systeem. Onderdelen ontvangen dezelfde ondersteuning als het bovenliggende product of platform. Zie [informatie over de levens cyclus van producten en services](/lifecycle/products/)voor meer informatie.
 
 ## <a name="unsupported-platforms"></a>Niet-ondersteunde platforms
 
 Wanneer een platform versie het einde van de levens duur bereikt zoals gedefinieerd door de platform eigenaar, zal Power shell core ook niet langer ondersteuning bieden voor die platform versie. Eerder vrijgegeven pakketten blijven beschikbaar voor klanten die toegang nodig hebben, maar formele ondersteuning en updates van welke aard dan ook niet meer.
 
 De distributie-eigen aren hebben daarom de volgende versies gestopt en worden niet ondersteund.
+
+<!-- TODO: Update this table Jason-->
 
 |    Platform    | Versie |                                                         Einde van de levens duur                                                          |
 | -------------- | :-----: | ---------------------------------------------------------------------------------------------------------------------------- |
@@ -156,16 +161,17 @@ De onderstaande tabel bevat een overzicht van de functies die voldoen aan de ond
 
 De volgende tabel bevat een tijd lijn van de belangrijkste releases van Power shell. Deze tabel wordt vermeld voor historische Naslag informatie. Het is niet bedoeld voor gebruik om de ondersteunings levenscyclus te bepalen.
 
-|       Versie        | Releasedatum |                                                                     Notitie                                                                      |
-| -------------------- | :----------: | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| Power shell 7,0 (LTS) |   Mrt-2020   | Gebouwd op .NET Core 3,1 (LTS)                                                                                                                  |
-| Power shell 6,0       |   Jan-2018   | First release, gebouwd op .NET Core 2,1. Installeerbaar op Windows, Linux en macOS.                                                              |
-| PowerShell 5.1       |   Aug-2016   | Uitgebracht in Windows 10 jubileum update en Windows Server 2016                                                                             |
-| PowerShell 5.0       |   Feb-2016   | Uitgebracht in Windows Management Framework (WMF) 5,0                                                                                            |
-| PowerShell 4.0       |   Okt-2013   | Geïntegreerd in Windows 8,1 en met Windows Server 2012 R2. Installeerbaar op Windows 7 SP1, Windows Server 2008 R2 SP1 en Windows Server 2012. |
-| PowerShell 3.0       |   Okt-2012   | Geïntegreerd in Windows 8 en Windows Server 2012. Installeerbaar op Windows 7 SP1, Windows Server 2008 SP1 en Windows Server 2008 R2 SP1.  |
-| Power Shell 2,0       |   Jul-2009   | Geïntegreerd in Windows 7 en Windows Server 2008 R2. Installeerbaar op Windows XP SP3, Windows Server 2003 SP2 en Windows Vista SP1.            |
-| Power shell 1,0       |   Nov-2006   | Installeerbaar op Windows XP SP2, Windows Server 2003 SP1 en Windows Vista. Optioneel onderdeel van Windows Server 2008.                          |
+|         Versie          | Releasedatum |                                                                     Notitie                                                                      |
+| ------------------------ | :----------: | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| Power shell 7,1 (actueel) |   Nov-2020   | Gebouwd op .NET Core 5,0 (actueel)                                                                                                              |
+| Power shell 7,0 (LTS)     |   Mrt-2020   | Gebouwd op .NET Core 3,1 (LTS)                                                                                                                  |
+| Power shell 6,0           |   Jan-2018   | First release, gebouwd op .NET Core 2,1. Installeerbaar op Windows, Linux en macOS.                                                              |
+| PowerShell 5.1           |   Aug-2016   | Uitgebracht in Windows 10 jubileum update en Windows Server 2016                                                                             |
+| PowerShell 5.0           |   Feb-2016   | Uitgebracht in Windows Management Framework (WMF) 5,0                                                                                            |
+| PowerShell 4.0           |   Okt-2013   | Geïntegreerd in Windows 8,1 en met Windows Server 2012 R2. Installeerbaar op Windows 7 SP1, Windows Server 2008 R2 SP1 en Windows Server 2012. |
+| PowerShell 3.0           |   Okt-2012   | Geïntegreerd in Windows 8 en Windows Server 2012. Installeerbaar op Windows 7 SP1, Windows Server 2008 SP1 en Windows Server 2008 R2 SP1.  |
+| Power Shell 2,0           |   Jul-2009   | Geïntegreerd in Windows 7 en Windows Server 2008 R2. Installeerbaar op Windows XP SP3, Windows Server 2003 SP2 en Windows Vista SP1.            |
+| Power shell 1,0           |   Nov-2006   | Installeerbaar op Windows XP SP2, Windows Server 2003 SP1 en Windows Vista. Optioneel onderdeel van Windows Server 2008.                          |
 
 <!-- hyperlink references -->
 [betaalde ondersteuning]: https://support.microsoft.com/hub/4343728/support-for-business

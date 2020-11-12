@@ -3,16 +3,16 @@ external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 08/03/2020
+ms.date: 11/11/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/start-process?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Process
-ms.openlocfilehash: 713a25bd09b7abc63a0f4974eb905a88c1d4c0e1
-ms.sourcegitcommit: 4fc8cf397cb725ae973751d1d5d542f34f0db2d7
+ms.openlocfilehash: 8967f68e23a7b5447ce32f698bfe0cf1c44b9c9e
+ms.sourcegitcommit: aac365f7813756e16b59322832a904e703e0465b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "93251699"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94524702"
 ---
 # Start-Process
 
@@ -117,6 +117,19 @@ Houd er rekening mee dat met de eerste opdracht een teken reeks wordt opgegeven 
 Start-Process -FilePath "$env:comspec" -ArgumentList "/c dir `"%systemdrive%\program files`""
 Start-Process -FilePath "$env:comspec" -ArgumentList "/c","dir","`"%systemdrive%\program files`""
 ```
+
+### Voor beeld 8: een losgekoppeld proces maken in Linux
+
+In Windows `Start-Process` maakt een onafhankelijk proces dat onafhankelijk van de startende shell blijft actief. Op niet-Windows-platforms wordt het zojuist gestarte proces gekoppeld aan de shell die is gestart. Als de startende shell is gesloten, wordt het onderliggende proces beëindigd.
+
+U kunt combi neren met om te voor komen dat het onderliggende proces wordt beëindigd op UNIX-achtige platformen `Start-Process` `nohup` . In het volgende voor beeld wordt een achtergrond exemplaar gestart van Power shell op Linux dat actief blijft, zelfs nadat u de start sessie sluit. De `nohup` opdracht verzamelt uitvoer in `nohup.out` het bestand in de huidige map.
+
+```powershell
+# Runs for 2 minutes and appends output to ./nohup.out
+Start-Process nohup 'pwsh -noprofile -c "1..120 | % { Write-Host . -NoNewline; sleep 1 }"'
+```
+
+In dit voor beeld `Start-Process` wordt de Linux `nohup` -opdracht uitgevoerd, die wordt gestart `pwsh` als een ontkoppeld proces. Zie de pagina man voor [nohup](https://linux.die.net/man/1/nohup)voor meer informatie.
 
 ## PARAMETERS
 
@@ -367,7 +380,7 @@ Accept wildcard characters: False
 
 ### -Variabele workingdirectory
 
-Hiermee geeft u de locatie op waar het nieuwe proces moet worden gestart. De standaard waarde is de locatie van het uitvoer bare bestand of het document dat wordt gestart. Het pad dat wordt gegeven, wordt beschouwd als een letterlijk pad. Jokertekens worden niet ondersteund. U moet het pad tussen enkele aanhalings tekens plaatsen ( `'` ) als de padnaam letters bevat die als Joker teken worden geïnterpreteerd.
+Hiermee geeft u de locatie op waar het nieuwe proces moet worden gestart. De standaard waarde is de locatie van het uitvoer bare bestand of het document dat wordt gestart. Jokertekens worden niet ondersteund. De naam van het pad mag geen tekens bevatten die als Joker teken worden geïnterpreteerd.
 
 ```yaml
 Type: System.String

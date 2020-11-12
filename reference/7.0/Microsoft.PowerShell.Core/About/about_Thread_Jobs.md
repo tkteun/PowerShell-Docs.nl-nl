@@ -2,16 +2,16 @@
 description: Bevat informatie over Power shell-thread taken. Een thread-taak is een type achtergrond taak waarmee een opdracht of expressie wordt uitgevoerd in een afzonderlijke thread binnen het huidige sessie proces.
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 10/16/2020
+ms.date: 11/11/2020
 online version: 1.0.0
 schema: 2.0.0
 title: about_Thread_Jobs
-ms.openlocfilehash: 973d0ddf18b63cd7462817cf68f7c5d7466f4724
-ms.sourcegitcommit: 108686b166672cc08817c637dd93eb1ad830511d
+ms.openlocfilehash: ba6251a195d3efdebd427b3f705386336b069211
+ms.sourcegitcommit: aac365f7813756e16b59322832a904e703e0465b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "93253090"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94524634"
 ---
 # <a name="about-thread-jobs"></a>Over thread-taken
 
@@ -21,31 +21,40 @@ Bevat informatie over Power shell-thread taken. Een thread-taak is een type acht
 
 ## <a name="long-description"></a>Lange beschrijving
 
-In dit artikel wordt uitgelegd hoe u thread taken uitvoert in Power shell op een lokale computer.
-Zie [about_Jobs](about_Jobs.md)voor meer informatie over het uitvoeren van achtergrond taken op een lokale computer.
+Met Power shell worden opdrachten en scripts gelijktijdig uitgevoerd via taken. Er zijn drie typen taken die door Power shell worden geboden ter ondersteuning van gelijktijdigheid.
 
-Start een thread-taak met behulp van de- `Start-ThreadJob` cmdlet. Deze cmdlet is beschikbaar in de **ThreadJob** -module die wordt geleverd met Power shell.
-`Start-ThreadJob` retourneert een enkel taak object waarmee de uitgevoerde opdracht of het script wordt ingekapseld en kan worden gebruikt met alle Power shell-taken voor het bewerken van cmdlets.
+- `RemoteJob` -Opdrachten en scripts worden uitgevoerd in een externe sessie. Zie [about_Remote_Jobs](about_Remote_Jobs.md)voor meer informatie.
+- `BackgroundJob` -Opdrachten en scripts worden in een afzonderlijk proces op de lokale computer uitgevoerd. Zie [About Jobs](about_Jobs.md) (Taken) voor meer informatie.
+- `PSTaskJob` of `ThreadJob` -opdrachten en scripts worden uitgevoerd in een afzonderlijke thread binnen hetzelfde proces op de lokale computer.
 
-## <a name="the-job-cmdlets"></a>De taak-cmdlets
+Thread-gebaseerde taken zijn niet zo krachtig als externe en achtergrond taken, omdat ze in hetzelfde proces op verschillende threads worden uitgevoerd. Als één taak een kritieke fout heeft die het proces vastloopt, worden alle andere taken in het proces beëindigd.
 
-|Cmdlet           |Beschrijving                                            |
-|-----------------|-------------------------------------------------------|
-|`Start-ThreadJob`|Hiermee wordt een thread taak op een lokale computer gestart.               |
-|`Get-Job`        |Hiermee worden de taken opgehaald die in de huidige sessie zijn gestart.|
-|`Receive-Job`    |Hiermee worden de resultaten van taken opgehaald.                              |
-|`Stop-Job`       |Hiermee stopt u een actieve taak.                                   |
-|`Wait-Job`       |Onderdrukt de opdracht prompt totdat een of alle taken zijn|
-|                 |aangevuld.                                              |
-|`Remove-Job`     |Hiermee verwijdert u een taak.                                         |
+Thread-gebaseerde taken vereisen echter minder overhead. Ze gebruiken geen externe laag of serialisatie. De resultaat objecten worden geretourneerd als verwijzingen naar live-objecten in de huidige sessie. Zonder deze overhead worden thread-gebaseerde taken sneller uitgevoerd en worden minder resources gebruikt dan de andere taak typen.
 
-## <a name="how-to-start-a-thread-job-on-the-local-computer"></a>Een thread-taak op de lokale computer starten
+> [!IMPORTANT]
+> Met de bovenliggende sessie die de taak heeft gemaakt, wordt ook de taak status bewaakt en worden de pijplijn gegevens verzameld. Het onderliggende proces van de taak wordt beëindigd door de bovenliggende bewerking zodra de taak de status voltooid heeft bereikt. Als de bovenliggende sessie wordt beëindigd, worden alle actieve onderliggende taken beëindigd samen met de onderliggende processen.
 
-Als u een thread-taak op de lokale computer wilt starten, gebruikt u de `Start-ThreadJob` cmdlet.
+Er zijn twee manieren om deze situatie te omzeilen:
 
-Als u een `Start-ThreadJob` opdracht wilt schrijven, plaatst u de opdracht of het script waarmee de taak wordt uitgevoerd in accolades ( `{ }` ).
+1. Gebruiken `Invoke-Command` om taken te maken die worden uitgevoerd in sessies zonder verbinding. Zie [about_Remote_Jobs](about_Remote_Jobs.md)voor meer informatie.
+1. Gebruiken `Start-Process` om een nieuw proces te maken in plaats van een taak. Zie [start-process](xref:Microsoft.PowerShell.Management.Start-Process)(Engelstalig) voor meer informatie.
 
-Met de volgende opdracht wordt een thread taak gestart waarmee een opdracht wordt uitgevoerd `Get-Process` op de lokale computer.
+## <a name="how-to-start-and-manage-thread-based-jobs"></a>Thread-gebaseerde taken starten en beheren
+
+Er zijn twee manieren om thread-gebaseerde taken te starten:
+
+- `Start-ThreadJob` -uit de **ThreadJob** -module
+- `ForEach-Object -Parallel -AsJob` -de parallelle functie is toegevoegd in Power shell 7,0
+
+Gebruik dezelfde **taak** -cmdlets die worden beschreven in [about_Jobs](about_Jobs.md) om thread-gebaseerde taken te beheren.
+
+### <a name="using-start-threadjob"></a>`Start-ThreadJob` gebruiken
+
+De **ThreadJob** -module wordt eerst geleverd met Power shell 6. Het kan ook worden geïnstalleerd via de PowerShell Gallery voor Windows Power shell 5,1.
+
+Als u een thread-taak op de lokale computer wilt starten, gebruikt u de `Start-ThreadJob` cmdlet met een opdracht of een script dat is inge sloten in accolades ( `{ }` ).
+
+In het volgende voor beeld wordt een thread taak gestart waarmee een opdracht wordt uitgevoerd `Get-Process` op de lokale computer.
 
 ```powershell
 Start-ThreadJob -ScriptBlock { Get-Process }
@@ -53,7 +62,11 @@ Start-ThreadJob -ScriptBlock { Get-Process }
 
 `Start-ThreadJob`Met de opdracht wordt een `ThreadJob` object geretourneerd dat de actieve taak vertegenwoordigt. Het taak object bevat nuttige informatie over de taak, inclusief de huidige uitvoerings status. De resultaten van de taak worden verzameld wanneer de resultaten worden gegenereerd.
 
-Als u een `ForEach-Object -Parallel` opdracht wilt schrijven, pipet u gegevens naar de opdracht en plaatst u de opdracht of het script waarmee de taak wordt uitgevoerd in accolades ( `{}` ). Gebruik de `-AsJob` para meter-switch zodat een taak object wordt geretourneerd.
+### <a name="using-foreach-object--parallel--asjob"></a>`ForEach-Object -Parallel -AsJob` gebruiken
+
+Power shell 7,0 een nieuwe para meter is toegevoegd aan de `ForEach-Object` cmdlet. Met de nieuwe para meters kunt u script blokken uitvoeren in parallelle threads als Power shell-taken.
+
+U kunt gegevens door sluizen naar `ForEach-Object -Parallel` . De gegevens worden door gegeven aan het script blok dat parallel wordt uitgevoerd. De `-AsJob` para meter maakt taken objecten voor elk van de parallelle threads.
 
 Met de volgende opdracht wordt een taak gestart die onderliggende taken bevat voor elke invoer waarde die is opgenomen in de opdracht. Elke onderliggende taak voert de `Write-Output` opdracht uit met een gesluisde invoer waarde als het argument.
 
@@ -91,26 +104,6 @@ Met de volgende opdracht wordt een taak gestart die een `Write-Output` opdracht 
 
 Omdat elke onderliggende taak parallel wordt uitgevoerd, wordt de volg orde van de gegenereerde resultaten niet gegarandeerd.
 
-## <a name="powershell-concurrency-and-jobs"></a>Gelijktijdigheid en taken voor Power shell
-
-Met Power shell worden opdrachten en scripts gelijktijdig uitgevoerd via taken. Power shell biedt drie oplossingen op basis van taken voor ondersteuning van gelijktijdigheid.
-
-|Taak            |Beschrijving                                                  |
-|---------------|-------------------------------------------------------------|
-|`RemoteJob`    |Opdracht en script worden uitgevoerd op een externe computer.                 |
-|`BackgroundJob`|Opdracht en script worden uitgevoerd in een afzonderlijk proces op de lokale    |
-|               |machine.                                                     |
-|`ThreadJob`    |Opdracht en script worden uitgevoerd in een afzonderlijke thread binnen hetzelfde  |
-|               |verwerken op de lokale computer.                                |
-
-Elk type taak heeft voor delen en nadelen. Het uitvoeren van een script op afstand op een afzonderlijke machine of in een afzonderlijk proces heeft een goede isolatie. Fouten zijn niet van invloed op andere actieve taken of de client die de taak heeft gestart. Maar de externe laag voegt overhead toe, inclusief object serialisatie. Alle objecten die zijn door gegeven aan en van de externe sessie, moeten worden geserialiseerd en vervolgens worden gedeserialiseerd wanneer deze tussen de client en de doel sessie worden door gegeven. De serialisatie-bewerking kan veel reken-en geheugen bronnen gebruiken voor grote complexe gegevens objecten.
-
-## <a name="powershell-thread-based-jobs"></a>Taken op basis van Power shell-thread
-
-Thread-gebaseerde taken zijn niet zo krachtig als externe en achtergrond taken, omdat ze in hetzelfde proces worden uitgevoerd op verschillende threads. Als één taak een kritieke fout heeft waardoor het proces wordt afgebroken, mislukken alle andere taken in het proces ook.
-
-Thread-gebaseerde taken hebben echter veel minder overhead. Ze hoeven geen externe laag of serialisatie te gebruiken. Het resultaat is dat thread-gebaseerde taken veel sneller worden uitgevoerd en veel minder resources gebruiken dan de andere taak typen.
-
 ## <a name="thread-job-performance"></a>Thread-taak prestaties
 
 Thread taken zijn sneller en lichter gewicht dan andere typen taken. Maar ze hebben nog steeds overhead die erg groot kan zijn in vergelijking met werk dat door de taak wordt uitgevoerd.
@@ -127,23 +120,39 @@ Thread taken bieden de beste prestaties wanneer het werk dat ze uitvoeren, grote
 (Measure-Command {
     1..1000 | ForEach { Start-ThreadJob { Write-Output "Hello $using:_" } } | Receive-Job -Wait
 }).TotalMilliseconds
-10457.962
-
+36860.8226
 
 (Measure-Command {
     1..1000 | ForEach-Object { "Hello: $_" }
 }).TotalMilliseconds
-24.9277
+7.1975
 ```
 
-In het eerste voor beeld ziet u een foreach-lus waarmee 1000-thread taken worden gemaakt voor het schrijven van eenvoudige teken reeksen. Als gevolg van de taak overhead duurt het meer dan 33 seconden om te volt ooien.
+In het eerste voor beeld ziet u een foreach-lus waarmee 1000-thread taken worden gemaakt voor het schrijven van eenvoudige teken reeksen. Als gevolg van de taak overhead duurt het meer dan 36 seconden om te volt ooien.
 
-In het tweede voor beeld wordt de `ForEach` cmdlet uitgevoerd om dezelfde 1000 bewerkingen uit te voeren en elke teken reeks schrijven wordt sequentieel uitgevoerd zonder taak overhead. Deze is in een paar 25 milliseconden voltooid.
+In het tweede voor beeld wordt de `ForEach` cmdlet uitgevoerd om dezelfde 1000 bewerkingen uit te voeren.
+Deze tijd `ForEach-Object` wordt opeenvolgend uitgevoerd op één thread, zonder dat er taak overhead nodig is. Deze is in een paar 7 milliseconden voltooid.
+
+In het volgende voor beeld worden Maxi maal 5000 vermeldingen verzameld voor 10 afzonderlijke systeem Logboeken. Omdat het script een aantal logboeken moet lezen, is het zinvol om de bewerkingen parallel uit te voeren.
 
 ```powershell
 $logNames.count
 10
 
+Measure-Command {
+    $logs = $logNames | ForEach-Object {
+        Get-WinEvent -LogName $_ -MaxEvents 5000 2>$null
+    }
+}
+
+TotalMilliseconds : 252398.4321 (4 minutes 12 seconds)
+$logs.Count
+50000
+```
+
+Het script wordt voltooid in de helft van het tijdstip waarop de taken parallel worden uitgevoerd.
+
+```powershell
 Measure-Command {
     $logs = $logNames | ForEach {
         Start-ThreadJob {
@@ -157,23 +166,9 @@ $logs.Count
 50000
 ```
 
-In het bovenstaande voor beeld worden Maxi maal 5000 vermeldingen verzameld voor 10 afzonderlijke systeem Logboeken. Omdat het script een aantal logboeken moet lezen, is het zinvol om de bewerkingen parallel uit te voeren. En de taak wordt twee keer zo snel voltooid als wanneer het script op de juiste wijze wordt uitgevoerd.
-
-```powershell
-Measure-Command {
-    $logs = $logNames | ForEach-Object {
-        Get-WinEvent -LogName $_ -MaxEvents 5000 2>$null
-    }
-}
-
-TotalMilliseconds : 252398.4321 (4 minutes 12 seconds)
-$logs.Count
-50000
-```
-
 ## <a name="thread-jobs-and-variables"></a>Thread-taken en-variabelen
 
-Variabelen worden op verschillende manieren door gegeven aan thread taken.
+Er zijn meerdere manieren om waarden door te geven aan de thread-gebaseerde taken.
 
 `Start-ThreadJob` kan variabelen accepteren die worden verzonden naar de cmdlet, door gegeven aan het script blok via het `$using` sleutel woord of door gegeven via de para meter **argument List** .
 
@@ -186,9 +181,9 @@ Start-ThreadJob { Write-Output $using:msg } | Wait-Job | Receive-Job
 
 Start-ThreadJob { param ([string] $message) Write-Output $message } -ArgumentList @($msg) |
   Wait-Job | Receive-Job
+```
 
-`ForEach-Object -Parallel` accepts piped in variables, and variables passed
-directly to the script block via the `$using` keyword.
+`ForEach-Object -Parallel` accepteert pipes in variabelen en variabelen die rechtstreeks aan het script blok worden door gegeven via het `$using` sleutel woord.
 
 ```powershell
 $msg = "Hello"
@@ -199,6 +194,8 @@ $msg | ForEach-Object -Parallel { Write-Output $_ } -AsJob | Wait-Job | Receive-
 ```
 
 Omdat thread-taken in hetzelfde proces worden uitgevoerd, moet elk referentie type dat naar de taak wordt door gegeven, zorgvuldig worden behandeld. Als het geen thread-safe object is, mag het nooit worden toegewezen aan en moet de methode en eigenschappen nooit worden aangeroepen.
+
+In het volgende voor beeld wordt een thread-safe .NET-object door gegeven `ConcurrentDictionary` aan alle onderliggende taken om unieke benoemde proces objecten te verzamelen. Omdat het een thread-safe object is, kan het veilig worden gebruikt terwijl de taken gelijktijdig in het proces worden uitgevoerd.
 
 ```powershell
 $threadSafeDictionary = [System.Collections.Concurrent.ConcurrentDictionary[string,object]]::new()
@@ -221,9 +218,7 @@ NPM(K)  PM(M)   WS(M) CPU(s)    Id SI ProcessName
   112  108.25  124.43  69.75 16272  1 pwsh
 ```
 
-In het bovenstaande voor beeld wordt een thread safe dotNet-object door gegeven `ConcurrentDictionary` aan alle onderliggende taken om proces objecten met unieke namen te verzamelen. Omdat het een thread-safe object is, kan het veilig worden gebruikt terwijl de taken gelijktijdig in het proces worden uitgevoerd.
-
-## <a name="see-also"></a>Zie ook
+## <a name="see-also"></a>Zie tevens
 
 - [about_Remote_Jobs](about_Remote_Jobs.md)
 - [about_Thread_Jobs](about_Thread_Jobs.md)

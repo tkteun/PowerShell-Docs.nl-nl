@@ -2,20 +2,20 @@
 description: De omgevings variabele PSModulePath bevat een lijst met maplocaties die worden doorzocht om modules en resources te zoeken.
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 04/13/2020
+ms.date: 11/11/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_PSModulePath?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_PSModulePath
-ms.openlocfilehash: 60373e534fb319195c187b8cb26c6aabc0f3b8b7
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 6e0307996bf619bc887b076a1f8c0faa619964fe
+ms.sourcegitcommit: aac365f7813756e16b59322832a904e703e0465b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93252596"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94524460"
 ---
 # <a name="about-psmodulepath"></a>Over PSModulePath
 
-De `$env:PSModulePath` omgevings variabele bevat een lijst met maplocaties die worden doorzocht om modules en resources te zoeken.
+De `$env:PSModulePath` omgevings variabele bevat een lijst met maplocaties die worden doorzocht om modules en resources te zoeken. Power shell zoekt recursief naar elke map voor module `.psd1` bestanden (of `.psm1` ).
 
 De doel locaties die worden toegewezen aan, `$env:PSModulePath` zijn standaard:
 
@@ -131,7 +131,22 @@ Power shell Core 6 overschrijft `$env:PSModulePath` . Er zijn geen wijzigingen a
 
 Het opstarten van Power shell 7 wordt voortgezet als-is met het toevoegen van paden die zijn toegevoegd aan Power shell Core 6. Omdat de PS7-specifieke paden worden voorafgegaan, is er geen functioneel probleem.
 
-## <a name="see-also"></a>Zie ook
+## <a name="module-search-behavior"></a>Module Zoek gedrag
+
+Power shell doorzoekt elke map in de **PSModulePath** voor module ( `.psd1` of `.psm1` ) bestanden recursief. Met dit zoek patroon kunnen meerdere versies van dezelfde module in verschillende mappen worden geïnstalleerd. Bijvoorbeeld:
+
+```Output
+    Directory: C:\Program Files\WindowsPowerShell\Modules\PowerShellGet
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----           8/14/2020  5:56 PM                1.0.0.1
+d----           9/13/2019  3:53 PM                2.1.2
+```
+
+Power shell laadt standaard het hoogste versie nummer van een module wanneer er meerdere versies worden gevonden. Gebruik `Import-Module` met de para meter **FullyQualifiedName** om een specifieke versie te laden. Zie [import-module](xref:Microsoft.PowerShell.Core.Import-Module)voor meer informatie.
+
+## <a name="see-also"></a>Zie tevens
 
 - [about_Modules](about_Modules.md)
 - [Omgevings methoden](/dotnet/api/system.environment)

@@ -3,16 +3,16 @@ external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 08/03/2020
+ms.date: 11/11/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/start-process?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Process
-ms.openlocfilehash: a221c6126bbbf22dffb493828f759bcbd4cfe759
-ms.sourcegitcommit: 4fc8cf397cb725ae973751d1d5d542f34f0db2d7
+ms.openlocfilehash: 53c06982abcf980897c049b6f6bd0c159f2eb4b5
+ms.sourcegitcommit: aac365f7813756e16b59322832a904e703e0465b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "93251698"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94524685"
 ---
 # Start-Process
 
@@ -117,6 +117,19 @@ Houd er rekening mee dat met de eerste opdracht een teken reeks wordt opgegeven 
 Start-Process -FilePath "$env:comspec" -ArgumentList "/c dir `"%systemdrive%\program files`""
 Start-Process -FilePath "$env:comspec" -ArgumentList "/c","dir","`"%systemdrive%\program files`""
 ```
+
+### Voor beeld 8: een losgekoppeld proces maken in Linux
+
+In Windows `Start-Process` maakt een onafhankelijk proces dat onafhankelijk van de startende shell blijft actief. Op niet-Windows-platforms wordt het zojuist gestarte proces gekoppeld aan de shell die is gestart. Als de startende shell is gesloten, wordt het onderliggende proces beëindigd.
+
+U kunt combi neren met om te voor komen dat het onderliggende proces wordt beëindigd op UNIX-achtige platformen `Start-Process` `nohup` . In het volgende voor beeld wordt een achtergrond exemplaar gestart van Power shell op Linux dat actief blijft, zelfs nadat u de start sessie sluit. De `nohup` opdracht verzamelt uitvoer in `nohup.out` het bestand in de huidige map.
+
+```powershell
+# Runs for 2 minutes and appends output to ./nohup.out
+Start-Process nohup 'pwsh -noprofile -c "1..120 | % { Write-Host . -NoNewline; sleep 1 }"'
+```
+
+In dit voor beeld `Start-Process` wordt de Linux `nohup` -opdracht uitgevoerd, die wordt gestart `pwsh` als een ontkoppeld proces. Zie de pagina man voor [nohup](https://linux.die.net/man/1/nohup)voor meer informatie.
 
 ## PARAMETERS
 
