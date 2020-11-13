@@ -2,12 +2,12 @@
 title: PowerShell installeren in Linux
 description: Informatie over het installeren van Power shell op diverse Linux-distributies
 ms.date: 11/11/2020
-ms.openlocfilehash: 226d9c33ccf9c805c2e36a96013385a4c75a97b3
-ms.sourcegitcommit: cbbb7a804155345ccac983ccc1009ccb5e223e25
+ms.openlocfilehash: 8bb9591b2cb3b6c46afbe544aae30fa5b10effcb
+ms.sourcegitcommit: 0577ce140ecbe9ab309da84c39217d15cdf6f7a6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94550227"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94574615"
 ---
 # <a name="installing-powershell-on-linux"></a>PowerShell installeren in Linux
 
@@ -198,7 +198,7 @@ Down load het Debian-pakket `powershell-lts_7.1.0-1.ubuntu.20.04_amd64.deb` van 
 Voer vervolgens de volgende opdrachten uit in de terminal:
 
 ```sh
-sudo dpkg -i powershell-lts_7.1.0-1.ubuntu.18.04_amd64.deb
+sudo dpkg -i powershell-lts_7.1.0-1.ubuntu.20.04_amd64.deb
 sudo apt-get install -f
 ```
 
