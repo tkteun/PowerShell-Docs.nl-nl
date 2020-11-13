@@ -2,12 +2,12 @@
 title: PowerShell installeren in Linux
 description: Informatie over het installeren van Power shell op diverse Linux-distributies
 ms.date: 11/11/2020
-ms.openlocfilehash: 8bb9591b2cb3b6c46afbe544aae30fa5b10effcb
-ms.sourcegitcommit: 0577ce140ecbe9ab309da84c39217d15cdf6f7a6
+ms.openlocfilehash: c56708ab930a7285de92d657ed12182fc298fb73
+ms.sourcegitcommit: e85e56d6614cbd30e01965a5cf03fb3f5ca78103
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/13/2020
-ms.locfileid: "94574615"
+ms.locfileid: "94589105"
 ---
 # <a name="installing-powershell-on-linux"></a>PowerShell installeren in Linux
 
@@ -95,12 +95,12 @@ Als super gebruiker registreert u de micro soft-opslag plaats eenmaal. Na de reg
 
 ### <a name="installation-via-direct-download---ubuntu-1604"></a>Installatie via direct downloaden-Ubuntu 16,04
 
-Down load het Debian-pakket `powershell-lts_7.1.0-1.ubuntu.16.04_amd64.deb` van de pagina [releases][] op de Ubuntu-computer.
+Down load het Debian-pakket `powershell_7.1.0-1.ubuntu.16.04_amd64.deb` van de pagina [releases][] op de Ubuntu-computer.
 
 Voer vervolgens de volgende opdrachten uit in de terminal:
 
 ```sh
-sudo dpkg -i powershell-lts_7.1.0-1.ubuntu.16.04_amd64.deb
+sudo dpkg -i powershell_7.1.0-1.ubuntu.16.04_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -144,12 +144,12 @@ Als super gebruiker registreert u de micro soft-opslag plaats eenmaal. Na de reg
 
 ### <a name="installation-via-direct-download---ubuntu-1804"></a>Installatie via direct downloaden-Ubuntu 18,04
 
-Down load het Debian-pakket `powershell-lts_7.1.0-1.ubuntu.18.04_amd64.deb` van de pagina [releases][] op de Ubuntu-computer.
+Down load het Debian-pakket `powershell_7.1.0-1.ubuntu.18.04_amd64.deb` van de pagina [releases][] op de Ubuntu-computer.
 
 Voer vervolgens de volgende opdrachten uit in de terminal:
 
 ```sh
-sudo dpkg -i powershell-lts_7.1.0-1.ubuntu.18.04_amd64.deb
+sudo dpkg -i powershell_7.1.0-1.ubuntu.18.04_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -193,12 +193,12 @@ Als super gebruiker registreert u de micro soft-opslag plaats eenmaal. Na de reg
 
 ### <a name="installation-via-direct-download---ubuntu-2004"></a>Installatie via direct downloaden-Ubuntu 20,04
 
-Down load het Debian-pakket `powershell-lts_7.1.0-1.ubuntu.20.04_amd64.deb` van de pagina [releases][] op de Ubuntu-computer.
+Down load het Debian-pakket `powershell_7.1.0-1.ubuntu.20.04_amd64.deb` van de pagina [releases][] op de Ubuntu-computer.
 
 Voer vervolgens de volgende opdrachten uit in de terminal:
 
 ```sh
-sudo dpkg -i powershell-lts_7.1.0-1.ubuntu.20.04_amd64.deb
+sudo dpkg -i powershell_7.1.0-1.ubuntu.20.04_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -289,12 +289,12 @@ Als super gebruiker registreert u de micro soft-opslag plaats eenmaal. Na de reg
 
 ### <a name="installation-via-direct-download---debian-9"></a>Installatie via direct downloaden-Debian 9
 
-Down load het Debian-pakket `powershell-lts_7.1.0-1.debian.9_amd64.deb` van de pagina [releases][] op de Debian-computer.
+Down load het Debian-pakket `powershell_7.1.0-1.debian.9_amd64.deb` van de pagina [releases][] op de Debian-computer.
 
 Voer vervolgens de volgende opdrachten uit in de terminal:
 
 ```sh
-sudo dpkg -i powershell-lts_7.1.0-1.debian.9_amd64.deb
+sudo dpkg -i powershell_7.1.0-1.debian.9_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -448,18 +448,18 @@ Als super gebruiker registreert u de micro soft-opslag plaats eenmaal. Na de reg
 
 ### <a name="installation-via-direct-download---centos-7"></a>Installatie via direct downloaden-CentOS 7
 
-Gebruik [CentOS 7][]om het rpm-pakket te downloaden `powershell-lts-7.1.0-1.rhel.7.x86_64.rpm` van de pagina [releases][] op de CentOS-computer.
+Gebruik [CentOS 7][]om het rpm-pakket te downloaden `powershell-7.1.0-1.rhel.7.x86_64.rpm` van de pagina [releases][] op de CentOS-computer.
 
 Voer vervolgens de volgende opdrachten uit in de terminal:
 
 ```sh
-sudo yum install powershell-lts-7.1.0-1.rhel.7.x86_64.rpm
+sudo yum install powershell-7.1.0-1.rhel.7.x86_64.rpm
 ```
 
 U kunt de RPM installeren zonder de tussenliggende stap van het downloaden:
 
 ```sh
-sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v7.1.0/powershell-lts-7.1.0-1.rhel.7.x86_64.rpm
+sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v7.1.0/powershell-7.1.0-1.rhel.7.x86_64.rpm
 ```
 
 ### <a name="uninstallation---centos-7"></a>Installatie ongedaan maken-CentOS 7
@@ -491,18 +491,18 @@ Als super gebruiker registreert u de micro soft-opslag plaats eenmaal. Na de reg
 
 ### <a name="installation-via-direct-download---red-hat-enterprise-linux-rhel-7"></a>Installatie via direct downloaden-Red Hat Enterprise Linux (RHEL) 7
 
-Down load het RPM-pakket `powershell-lts-7.1.0-1.rhel.7.x86_64.rpm` van de pagina [releases][] op de Red Hat Enterprise Linux machine.
+Down load het RPM-pakket `powershell-7.1.0-1.rhel.7.x86_64.rpm` van de pagina [releases][] op de Red Hat Enterprise Linux machine.
 
 Voer vervolgens de volgende opdrachten uit in de terminal:
 
 ```sh
-sudo yum install powershell-lts-7.1.0-1.rhel.7.x86_64.rpm
+sudo yum install powershell-7.1.0-1.rhel.7.x86_64.rpm
 ```
 
 U kunt de RPM installeren zonder de tussenliggende stap van het downloaden:
 
 ```sh
-sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v7.1.0/powershell-lts-7.1.0-1.rhel.7.x86_64.rpm
+sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v7.1.0/powershell-7.1.0-1.rhel.7.x86_64.rpm
 ```
 
 ### <a name="uninstallation---red-hat-enterprise-linux-rhel-7"></a>Ongedaan maken-Red Hat Enterprise Linux (RHEL) 7

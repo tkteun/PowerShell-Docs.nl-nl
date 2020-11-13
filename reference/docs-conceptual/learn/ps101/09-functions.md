@@ -5,12 +5,12 @@ ms.date: 06/02/2020
 ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
-ms.openlocfilehash: ca48f3020fa306f8a24328bd18648d5954c48a94
-ms.sourcegitcommit: 0d958eac5bde5ccf5ee2c1bac4f009a63bf71368
+ms.openlocfilehash: 9554c0b4d3932b7371201f7b08c8b9d26a567f5e
+ms.sourcegitcommit: e85e56d6614cbd30e01965a5cf03fb3f5ca78103
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84436454"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94589124"
 ---
 # <a name="chapter-9---functions"></a>Hoofd stuk 9-functies
 
@@ -22,7 +22,7 @@ U hoeft zich niet meer te bemoeilijken. Bewaar het eenvoudig en gebruik de meest
 
 ## <a name="naming"></a>Naamgeving
 
-Gebruik bij het benoemen van uw functies in Power shell een [Pascal Case] [] naam met een goedgekeurd werk woord en een enkelvoud. U kunt ook het voor voegsel van het zelfstandig naam woord aanraden. Bijvoorbeeld: `<ApprovedVerb>-<Prefix><SingularNoun>`.
+Gebruik bij het benoemen van uw functies in Power shell een [Pascal-Case][] naam met een goedgekeurd werk woord en een enkelvoudige zelfstandignaam. U kunt ook het voor voegsel van het zelfstandig naam woord aanraden. Bijvoorbeeld: `<ApprovedVerb>-<Prefix><SingularNoun>`.
 
 In Power shell is er een specifieke lijst met goedgekeurde woorden die kunnen worden verkregen door uit te voeren `Get-Verb` .
 
@@ -247,7 +247,7 @@ function Test-MrParameter {
 }
 ```
 
-Waarom heb ik **ComputerName** en niet **computer**, **servername**of **host** gebruikt voor mijn parameter naam? De reden hiervoor is dat ik mijn functie wil gebruiken zoals de standaard-cmdlets.
+Waarom heb ik **ComputerName** en niet **computer** , **servername** of **host** gebruikt voor mijn parameter naam? De reden hiervoor is dat ik mijn functie wil gebruiken zoals de standaard-cmdlets.
 
 Ik maak een functie om alle opdrachten op een systeem te doorzoeken en het aantal te retour neren met specifieke parameter namen.
 
@@ -268,7 +268,7 @@ function Get-MrParameterCount {
 }
 ```
 
-Zoals u kunt zien in de onderstaande resultaten, 39 opdrachten met de para meter **ComputerName** . Er zijn geen cmdlets met para meters zoals **computer**, **servername**, **host**of **machine**.
+Zoals u kunt zien in de onderstaande resultaten, 39 opdrachten met de para meter **ComputerName** . Er zijn geen cmdlets met para meters zoals **computer** , **servername** , **host** of **machine**.
 
 ```powershell
 Get-MrParameterCount -ParameterName ComputerName, Computer, ServerName, Host, Machine
@@ -339,7 +339,7 @@ function Test-MrCmdletBinding {
 }
 ```
 
-`CmdletBinding`De algemene para meters worden automatisch toegevoegd. `CmdletBinding`vereist een `param` blok, maar het `param` blok kan leeg zijn.
+`CmdletBinding`De algemene para meters worden automatisch toegevoegd. `CmdletBinding` vereist een `param` blok, maar het `param` blok kan leeg zijn.
 
 ```powershell
 Get-Command -Name Test-MrCmdletBinding -Syntax
@@ -372,7 +372,7 @@ PipelineVariable
 
 ## <a name="supportsshouldprocess"></a>SupportsShouldProcess
 
-`SupportsShouldProcess`Hiermee worden **WhatIf** -en **confirm** -para meters toegevoegd. Deze zijn alleen nodig voor opdrachten die wijzigingen aanbrengen.
+`SupportsShouldProcess` Hiermee worden **WhatIf** -en **confirm** -para meters toegevoegd. Deze zijn alleen nodig voor opdrachten die wijzigingen aanbrengen.
 
 ```powershell
 function Test-MrSupportsShouldProcess {
@@ -473,7 +473,7 @@ function Test-MrParameterValidation {
 ```
 
 De syntaxis die in het vorige voor beeld wordt gebruikt, is Power shell versie 3,0 en hoger compatibel.
-`[Parameter(Mandatory=$true)]`kan in plaats daarvan worden opgegeven om de functie compatibel te maken met Power shell versie 2,0 en hoger. Nu de **computer naam** is vereist, als deze nog niet is opgegeven, wordt er een prompt weer gegeven.
+`[Parameter(Mandatory=$true)]` kan in plaats daarvan worden opgegeven om de functie compatibel te maken met Power shell versie 2,0 en hoger. Nu de **computer naam** is vereist, als deze nog niet is opgegeven, wordt er een prompt weer gegeven.
 
 ```powershell
 Test-MrParameterValidation
@@ -577,9 +577,9 @@ Test-MrVerboseOutput -ComputerName Server01, Server02 -Verbose
 
 ## <a name="pipeline-input"></a>Pijplijn invoer
 
-Wanneer u de invoer van de pijp lijn wilt accepteren, is een extra code ring nodig. Zoals eerder in dit boek wordt vermeld, kunnen opdrachten de invoer van de pijp lijn **op basis van waarde** (per type) of **eigenschaps naam**accepteren. U kunt uw functies schrijven op dezelfde manier als de systeem eigen opdrachten, zodat ze een of beide typen invoer accepteren.
+Wanneer u de invoer van de pijp lijn wilt accepteren, is een extra code ring nodig. Zoals eerder in dit boek wordt vermeld, kunnen opdrachten de invoer van de pijp lijn **op basis van waarde** (per type) of **eigenschaps naam** accepteren. U kunt uw functies schrijven op dezelfde manier als de systeem eigen opdrachten, zodat ze een of beide typen invoer accepteren.
 
-Als u de pijp lijn invoer **per waarde**wilt accepteren, moet u het `ValueFromPipeline` parameter kenmerk voor die specifieke para meter opgeven. Denk eraan dat u alleen pijplijn invoer kunt accepteren **op waarde** uit een van beide gegevens typen. Als u bijvoorbeeld twee para meters hebt die teken reeks invoer accepteren, kan slechts één van deze de pijplijn invoer **door de waarde** accepteren. Als u deze voor beide teken reeks parameters hebt opgegeven, zou de pijplijn invoer niet weten welk item moet worden gekoppeld. Dit is een andere reden dat ik dit type pijplijn invoer aanroept _per type_ in plaats van **met een waarde**.
+Als u de pijp lijn invoer **per waarde** wilt accepteren, moet u het `ValueFromPipeline` parameter kenmerk voor die specifieke para meter opgeven. Denk eraan dat u alleen pijplijn invoer kunt accepteren **op waarde** uit een van beide gegevens typen. Als u bijvoorbeeld twee para meters hebt die teken reeks invoer accepteren, kan slechts één van deze de pijplijn invoer **door de waarde** accepteren. Als u deze voor beide teken reeks parameters hebt opgegeven, zou de pijplijn invoer niet weten welk item moet worden gekoppeld. Dit is een andere reden dat ik dit type pijplijn invoer aanroept _per type_ in plaats van **met een waarde**.
 
 De invoer van de pijp lijn bevindt zich in één item op hetzelfde tijdstip als de manier waarop items in een lus worden verwerkt `foreach` .
 Een blok is mini maal `process` vereist voor het verwerken van elk van deze items als u een matrix als invoer accepteert. Als u slechts één waarde als invoer accepteert, `process` is een blok is niet nodig, maar het wordt nog wel aanbevolen om het op consistentie te geven.
@@ -620,7 +620,7 @@ function Test-MrPipelineInput {
 }
 ```
 
-`BEGIN`en `END` blokken zijn optioneel. `BEGIN`moet vóór het blok worden opgegeven `PROCESS` en wordt gebruikt voor het uitvoeren van de eerste werkzaamheden vóór de items die vanuit de pijp lijn worden ontvangen. Dit is belang rijk om te begrijpen. Waarden die worden bepiped in, zijn niet toegankelijk in het `BEGIN` blok. Het `END` blok wordt na het blok opgegeven `PROCESS` en wordt gebruikt voor het opschonen van alle items die in de pipes zijn verwerkt.
+`BEGIN` en `END` blokken zijn optioneel. `BEGIN` moet vóór het blok worden opgegeven `PROCESS` en wordt gebruikt voor het uitvoeren van de eerste werkzaamheden vóór de items die vanuit de pijp lijn worden ontvangen. Dit is belang rijk om te begrijpen. Waarden die worden bepiped in, zijn niet toegankelijk in het `BEGIN` blok. Het `END` blok wordt na het blok opgegeven `PROCESS` en wordt gebruikt voor het opschonen van alle items die in de pipes zijn verwerkt.
 
 ## <a name="error-handling"></a>Foutafhandeling
 
@@ -646,7 +646,7 @@ function Test-MrErrorHandling {
 }
 ```
 
-Er zijn verschillende manieren om fouten in Power shell af te handelen. `Try/Catch`is de meer moderne manier om fouten af te handelen.
+Er zijn verschillende manieren om fouten in Power shell af te handelen. `Try/Catch` is de meer moderne manier om fouten af te handelen.
 
 ```powershell
 function Test-MrErrorHandling {
@@ -702,7 +702,7 @@ function Test-MrErrorHandling {
 
 Wijzig de globale `$ErrorActionPreference` variabele alleen als dat absoluut nood zakelijk is. Als u iets zoals .NET rechtstreeks vanuit uw Power shell-functie gebruikt, kunt u de **Error Action** niet opgeven in de opdracht zelf. In dat geval moet u mogelijk de globale `$ErrorActionPreference` variabele wijzigen, maar als u deze wijzigt, wijzigt u deze direct na het uitvoeren van de opdracht.
 
-## <a name="comment-based-help"></a>Help op basis van opmerkingen
+## <a name="comment-based-help"></a>Help bij Comment-Based
 
 Het wordt beschouwd als een best practice om Help op basis van opmerkingen toe te voegen aan uw functies, zodat de personen met wie u ze deelt, weten hoe ze kunnen worden gebruikt.
 
@@ -783,7 +783,7 @@ In dit hoofd stuk hebt u de basis beginselen geleerd van het schrijven van funct
 - [about_Functions_Advanced][]
 - [about_Try_Catch_Finally][]
 - [about_Comment_Based_Help][]
-- [Video: Power shell-Toolmaking met geavanceerde functies en script modules] []
+- [Video: Power shell-Toolmaking met geavanceerde functies en script modules][]
 
 <!-- link references -->
 [about_Functions]: /powershell/module/microsoft.powershell.core/about/about_functions
@@ -793,4 +793,5 @@ In dit hoofd stuk hebt u de basis beginselen geleerd van het schrijven van funct
 [about_Functions_Advanced]: /powershell/module/microsoft.powershell.core/about/about_functions_advanced
 [about_Try_Catch_Finally]: /powershell/module/microsoft.powershell.core/about/about_try_catch_finally
 [about_Comment_Based_Help]: /powershell/module/microsoft.powershell.core/about/about_comment_based_help
-[Video: Power shell-Toolmaking met geavanceerde functies en script modules]: https://mikefrobbins.com/2016/05/26/video-powershell-toolmaking-with-advanced-functions-and-script-modules/) [Pascal Case]:/dotnet/Standard/Design-Guidelines/Capitalization-Conventionss
+[Video: Power shell-Toolmaking met geavanceerde functies en script modules]: https://mikefrobbins.com/2016/05/26/video-powershell-toolmaking-with-advanced-functions-and-script-modules/
+[Pascal-Case]: /dotnet/standard/design-guidelines/capitalization-conventions

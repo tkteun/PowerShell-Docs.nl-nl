@@ -2,23 +2,23 @@
 title: PowerShell installeren in macOS
 description: Informatie over het installeren van Power shell in macOS
 ms.date: 11/11/2020
-ms.openlocfilehash: c64edd202de90cb4e7a335376c60a0bba0633baa
-ms.sourcegitcommit: aac365f7813756e16b59322832a904e703e0465b
+ms.openlocfilehash: c530d5c984d7629d95e8e727a08b53d6db39f6aa
+ms.sourcegitcommit: e85e56d6614cbd30e01965a5cf03fb3f5ca78103
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94524371"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94589128"
 ---
 # <a name="installing-powershell-on-macos"></a>PowerShell installeren in macOS
 
 Voor Power shell 7,0 of hoger is macOS 10,13 en hoger vereist. Alle pakketten zijn beschikbaar op onze pagina met GitHub- [releases][] . Nadat het pakket is geïnstalleerd, voert u `pwsh` uit vanaf een Terminal.
 
 > [!NOTE]
-> Power shell 7 is een in-place upgrade waarmee Power shell Core 6. x wordt verwijderd.
+> Power shell 7,1 is een in-place upgrade waarmee Power shell Core 6. x en 7,0 worden verwijderd.
 >
 > De `/usr/local/microsoft/powershell/6` map wordt vervangen door `/usr/local/microsoft/powershell/7` .
 >
-> Als u Power shell 6 side-by-side wilt uitvoeren met Power shell 7, installeert u Power shell 6 opnieuw met behulp van de [binaire archief](#binary-archives) methode.
+> Als u een oudere versie van Power shell core naast Power shell 7,1 wilt uitvoeren, installeert u de gewenste versie met behulp van de [binaire archief](#binary-archives) methode.
 
 Er zijn verschillende manieren om Power shell op macOS te installeren. Kies één van de volgende methoden:
 
@@ -112,12 +112,12 @@ brew upgrade powershell
 
 ## <a name="installation-via-direct-download"></a>Installatie via direct downloaden
 
-Down load het pakket Package `powershell-lts-7.1.0-osx-x64.pkg` van de pagina [releases][] op uw macOS-computer.
+Down load het pakket Package `powershell-7.1.0-osx-x64.pkg` van de pagina [releases][] op uw macOS-computer.
 
 U kunt dubbel klikken op het bestand en de prompts volgen of installeren vanaf de terminal:
 
 ```sh
-sudo installer -pkg powershell-lts-7.1.0-osx-x64.pkg -target /
+sudo installer -pkg powershell-7.1.0-osx-x64.pkg -target /
 ```
 
 Installeer [openssl](#installing-dependencies). OpenSSL is vereist voor externe communicatie met Power shell en CIM-bewerkingen.

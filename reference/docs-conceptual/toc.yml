@@ -55,24 +55,26 @@
       items:
         - name: Overzicht
           href: learn/deep-dives/overview.md
-        - name: Alles wat u wilt weten over matrices
-          href: learn/deep-dives/everything-about-arrays.md
-        - name: Alles wat u wilt weten over hashtables
-          href: learn/deep-dives/everything-about-hashtable.md
-        - name: Alles wat u wilt weten over PSCustomObject
-          href: learn/deep-dives/everything-about-pscustomobject.md
-        - name: Alles wat u wilt weten over tekenreeksvervanging
-          href: learn/deep-dives/everything-about-string-substitutions.md
-        - name: Alles wat u wilt weten over if/then/else
-          href: learn/deep-dives/everything-about-if.md
-        - name: Alles wat u wilt weten over switch
-          href: learn/deep-dives/everything-about-switch.md
-        - name: Alles wat u wilt weten over uitzonderingen
-          href: learn/deep-dives/everything-about-exceptions.md
-        - name: Alles wat u wilt weten over $null
-          href: learn/deep-dives/everything-about-null.md
-        - name: Alles wat u wilt weten over ShouldProcess
-          href: learn/deep-dives/everything-about-shouldprocess.md
+        - name: Alles wat u wilt weten over...
+          items:
+            - name: Alles wat u wilt weten over matrices
+              href: learn/deep-dives/everything-about-arrays.md
+            - name: Alles wat u wilt weten over hashtables
+              href: learn/deep-dives/everything-about-hashtable.md
+            - name: Alles wat u wilt weten over PSCustomObject
+              href: learn/deep-dives/everything-about-pscustomobject.md
+            - name: Alles wat u wilt weten over tekenreeksvervanging
+              href: learn/deep-dives/everything-about-string-substitutions.md
+            - name: Alles wat u wilt weten over if/then/else
+              href: learn/deep-dives/everything-about-if.md
+            - name: Alles wat u wilt weten over switch
+              href: learn/deep-dives/everything-about-switch.md
+            - name: Alles wat u wilt weten over uitzonderingen
+              href: learn/deep-dives/everything-about-exceptions.md
+            - name: Alles wat u wilt weten over $null
+              href: learn/deep-dives/everything-about-null.md
+            - name: Alles wat u wilt weten over ShouldProcess
+              href: learn/deep-dives/everything-about-shouldprocess.md
         - name: Schrijfvoortgang tijdens multithreading
           href: learn/deep-dives/write-progress-across-multiple-threads.md
         - name: Referentieondersteuning toevoegen aan PowerShell-functies
@@ -120,6 +122,8 @@
   items:
     - name: Wat is er nieuw in PowerShell 7.x?
       items:
+        - name: Wat is er nieuw in PowerShell 7.1?
+          href: whats-new/what-s-new-in-powershell-71.md
         - name: Wat is er nieuw in PowerShell 7.0?
           href: whats-new/what-s-new-in-powershell-70.md
     - name: Wat is er nieuw in PowerShell Core 6.x?
