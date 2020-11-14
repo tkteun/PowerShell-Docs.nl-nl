@@ -6,12 +6,12 @@ ms.date: 09/09/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_language_modes?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Language_Modes
-ms.openlocfilehash: 8254760e49d5d9b2d1b035038b14414b0074435c
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 24921f7f75dc483bad1b7b515071262e458d8c3e
+ms.sourcegitcommit: fb1a4bc4b249afd3513663de2e1ba3025d63467e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93252311"
+ms.lasthandoff: 11/14/2020
+ms.locfileid: "94625683"
 ---
 # <a name="about-language-modes"></a>Over taal modi
 
@@ -199,13 +199,6 @@ Wanneer u de `$ExecutionContext.SessionState.LanguageMode` opdracht uitvoert in 
 Wanneer u de `$ExecutionContext.SessionState.LanguageMode` opdracht in een niet-taal sessie uitvoert, retourneert Power shell het ScriptsNotAllowed-fout bericht.
 
 - ScriptsNotAllowed: de syntaxis wordt niet ondersteund door deze runs Pace. Dit kan zijn omdat deze zich in een niet-taal modus bevindt.
-
-## <a name="keywords"></a>WOORD
-
-- about_ConstrainedLanguage
-- about_FullLanguage
-- about_NoLanguage
-- about_RestrictedLanguage
 
 ## <a name="see-also"></a>ZIE OOK
 

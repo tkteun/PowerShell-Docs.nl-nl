@@ -2,12 +2,12 @@
 ms.date: 11/11/2020
 title: Experimentele functies gebruiken in Power shell
 description: Een lijst met de momenteel beschik bare experimentele functies en hoe u deze kunt gebruiken.
-ms.openlocfilehash: fa7e72869e2c3b3b5920b556b8dacf5068bc00d5
-ms.sourcegitcommit: cbbb7a804155345ccac983ccc1009ccb5e223e25
+ms.openlocfilehash: 4df3601cd38120fedecbbad8a3c63a95240c5f15
+ms.sourcegitcommit: fb1a4bc4b249afd3513663de2e1ba3025d63467e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94550210"
+ms.lasthandoff: 11/14/2020
+ms.locfileid: "94625700"
 ---
 # <a name="using-experimental-features-in-powershell"></a>Experimentele functies gebruiken in Power shell
 
@@ -28,12 +28,12 @@ In dit artikel worden de experimentele functies beschreven die beschikbaar zijn 
 | ---------------------------------------------------------- | :-----: | :-----: | :-----: |
 | PSTempDrive (mainstream in PS 7.0 +)                        | &check; |         |         |
 | PSUseAbbreviationExpansion (mainstream in PS 7.0 +)         | &check; |         |         |
+| PSNullConditionalOperators (mainstream in PS 7.1 +)         |         | &check; |         |
+| PSUnixFileStat (alleen niet-Windows-mainstream in PS 7.1 +)  |         | &check; |         |
 | PSCommandNotFoundSuggestion                                | &check; | &check; | &check; |
 | PSImplicitRemotingBatching                                 | &check; | &check; | &check; |
 | Micro soft. Power shell. Utility. PSManageBreakpointsInRunspace |         | &check; | &check; |
 | PSDesiredStateConfiguration.InvokeDscResource              |         | &check; | &check; |
-| PSNullConditionalOperators (mainstream in PS 7.1 +)         |         | &check; |         |
-| PSUnixFileStat (alleen niet-Windows-mainstream in PS 7.1 +)  |         | &check; |         |
 | PSNativePSPathResolution                                   |         |         | &check; |
 | PSCultureInvariantReplaceOperator                          |         |         | &check; |
 | PSNotApplyErrorActionToStderr                              |         |         | &check; |

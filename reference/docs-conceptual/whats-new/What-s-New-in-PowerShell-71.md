@@ -2,12 +2,12 @@
 title: Wat is er nieuw in Power shell 7,1
 description: Nieuwe functies en wijzigingen die zijn uitgebracht in Power shell 7,1
 ms.date: 11/11/2020
-ms.openlocfilehash: 9ad552a8105b16d1f01ddacbdee1a43663ef3fd1
-ms.sourcegitcommit: 28831acbb09d3edbaa6bd9fc62491603d64d3849
+ms.openlocfilehash: 5596d3ca69f5d8ea47f01ff0915e6fa33c1c463f
+ms.sourcegitcommit: fb1a4bc4b249afd3513663de2e1ba3025d63467e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94553264"
+ms.lasthandoff: 11/14/2020
+ms.locfileid: "94625717"
 ---
 # <a name="whats-new-in-powershell-71"></a>Wat is er nieuw in Power shell 7,1
 
@@ -15,7 +15,11 @@ Power shell 7,1 is een open-source, platformoverschrijdende versie van het platf
 
 Voortbouwend op de basis die is vastgesteld in Power shell 7,0, onze inspanningen gericht op problemen van de community en bevatten een aantal verbeteringen en oplossingen. We streven ernaar om ervoor te zorgen dat Power shell een stabiel en het beste platform blijft.
 
+Power shell 7,1 bevat ook PSReadLine 2.1.0. Deze versie bevat voorspellende IntelliSense. Zie de [aankondiging](https://devblogs.microsoft.com/powershell/announcing-psreadline-2-1-with-predictive-intellisense/) in het Power shell-blog voor meer informatie over de functie voor voorspellende IntelliSense.
+
 ## <a name="where-can-i-install-powershell"></a>Waar kan ik Power Shell installeren?
+
+<!-- TODO: Update list of OS below - make sure this is consistent across all docs -->
 
 Power shell 7,1 ondersteunt momenteel de volgende besturings systemen op x64, waaronder:
 
@@ -25,7 +29,7 @@ Power shell 7,1 ondersteunt momenteel de volgende besturings systemen op x64, wa
 - Ubuntu 19,10 (via snap package)
 - Debian 9/10
 - CentOS en RHEL 7/8
-- Fedora 30
+- Fedora 32
 - Alpiene 3.11 + (inclusief ARM64)
 - macOS 10.13 +
 
@@ -83,7 +87,7 @@ Zie de [wijzigingen logboek](https://github.com/PowerShell/PowerShell/tree/maste
 
 ### <a name="breaking-changes"></a>Wijzigingen die fouten veroorzaken
 
-<!-- TODO: Add descriptions for each breaking change  -->
+<!-- TODO: Add descriptions for each breaking change - this might need to be a separate article that we link to -->
 
 - Oplossing `$?` niet wanneer een `$false` systeem eigen opdracht schrijft naar `stderr` (#13395)
 - Wijzig de naam in `-FromUnixTime` `-UnixTimeSeconds` `Get-Date` om Unix-tijd invoer (#13084) toe te staan (bedankt @aetos382 !)
@@ -99,11 +103,14 @@ Zie de [wijzigingen logboek](https://github.com/PowerShell/PowerShell/tree/maste
 
 ### <a name="experimental-features"></a>Experimentele functies
 
-<!-- TODO: note which features are now mainstream  -->
+Zie [experimentele functies gebruiken](../learn/experimental-features.md)voor meer informatie over de experimentele functies.
 
+- De `PSNullConditionalOperators` functie van experimentele (#13529) verplaatsen
+- De `PSUnixFileStat` functie van experimentele verplaatsen
 - `-Runspace`Para meter toevoegen aan alle `*-PSBreakpoint` cmdlets (#10492) (bedankt @KirkMunro !)
-- Ondersteuning bij het door geven van `PSPath` systeem eigen opdrachten (#12386)
+- Toevoegen `PSNativePSPathResolution` aan ondersteuning voor het door geven van `PSPath` systeem eigen opdrachten (#12386)
 - Gebruik de conversie van de invariante cultuur-teken reeks voor `-replace` operator (#10954) (bedankt @iSazonov !)
+- Toevoegen `PSSubsystemPluginModel` ter ondersteuning van toekomstige voorspellende IntelliSense-invoeg toepassingen
 
 ### <a name="general-cmdlet-updates-and-fixes"></a>Algemene cmdlet-updates en-oplossingen
 
@@ -114,8 +121,6 @@ Zie de [wijzigingen logboek](https://github.com/PowerShell/PowerShell/tree/maste
 - Voeg ondersteuning toe voor `TLS` 1,3 in Web-cmdlets (#13409) (bedankt @iSazonov !)
 - Voeg een null-controle toe voor `args` in `CommandLineParser` (#13451) (bedankt @iSazonov !)
 - Reparsepunten voor Microsoft Store toepassingen (#13481) verwerken (bedankt @iSazonov !)
-- De `PSNullConditionalOperators` functie van experimentele (#13529) verplaatsen
-- De `PSNativePSPathResolution` functie van experimentele (#13522) verplaatsen
 - Gebruik Field als er geen eigenschap bestaat voor `ObRoot` het gebruik van Power shell direct naar container (#13375) (bedankt @hemisphera !)
 - `UTF-7`Verouderde waarschuwingen onderdrukken (#13484)
 - Vermijd meerdere inventarisaties van een `IEnumerable<Expression>` instantie in `Compiler.cs` (#13491)
