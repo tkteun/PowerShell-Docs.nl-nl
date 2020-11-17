@@ -79,7 +79,7 @@ U kunt opdrachten binnen een teken reeks uitvoeren. Hoewel ik deze optie heb, vi
 $message = "Date: $(Get-Date)"
 ```
 
-## <a name="format-string"></a>Teken reeks voor opmaak
+## <a name="format-string"></a>Notatietekenreeks
 
 .NET heeft een manier om teken reeksen te Format teren die ik redelijk eenvoudig kan gebruiken. Eerst laten we u de statische methode voor deze weer geven voordat u de Power shell-snelkoppeling weergeeft om hetzelfde te doen.
 
@@ -144,7 +144,7 @@ Maar als dat niet het geval is, is er een snellere optie.
 
 Het is ook een goed idee dat u ook `-split` teken reeksen kunt.
 
-## <a name="join-path"></a>Pad voor samen voegen
+## <a name="join-path"></a>Join-Path
 
 Dit wordt vaak gezien als een fantastische cmdlet voor het maken van een bestandspad.
 
