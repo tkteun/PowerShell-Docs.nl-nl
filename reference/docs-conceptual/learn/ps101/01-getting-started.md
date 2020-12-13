@@ -6,10 +6,10 @@ ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
 ms.openlocfilehash: e8938a5d36cd1c9c5a74eed1c22cd5d0e1a91966
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "87786744"
 ---
 # <a name="chapter-1---getting-started-with-powershell"></a>Hoofd stuk 1: aan de slag met Power shell

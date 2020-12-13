@@ -4,10 +4,10 @@ ms.topic: reference
 title: Een eenvoudige Windows PowerShell-provider ontwerpen
 description: Een eenvoudige Windows PowerShell-provider ontwerpen
 ms.openlocfilehash: 03b5784fd063b5457fc64d92a32e286e3bf9cce4
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92647514"
 ---
 # <a name="creating-a-basic-windows-powershell-provider"></a>Een eenvoudige Windows PowerShell-provider ontwerpen

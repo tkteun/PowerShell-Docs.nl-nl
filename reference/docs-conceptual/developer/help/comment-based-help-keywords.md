@@ -4,10 +4,10 @@ ms.topic: reference
 title: Trefwoorden voor Help op basis van opmerkingen
 description: Trefwoorden voor Help op basis van opmerkingen
 ms.openlocfilehash: d87dde8700813767f6c09cfce70ed06c7964ebc7
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92645466"
 ---
 # <a name="comment-based-help-keywords"></a>Trefwoorden voor Help op basis van opmerkingen
@@ -92,7 +92,7 @@ Geldige waarden zijn:
 - Woordenlijst
 - ScriptCommand
 - ExternalScript
-- Filteren
+- Filter
 - Alles
 
 ## <a name="remotehelprunspace-pssession-variable"></a>. REMOTEHELPRUNSPACE \<PSSession-variable>

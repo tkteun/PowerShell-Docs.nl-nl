@@ -4,10 +4,10 @@ ms.topic: reference
 title: Het element Label voor GroupBy (opmaak)
 description: Het element Label voor GroupBy (opmaak)
 ms.openlocfilehash: ff4b0dec01bb5b472b1813540661791b91568eed
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92649789"
 ---
 # <a name="label-element-for-groupby-format"></a>Het element Label voor GroupBy (opmaak)

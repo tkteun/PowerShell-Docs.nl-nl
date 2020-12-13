@@ -4,10 +4,10 @@ ms.topic: reference
 title: Het element AutoSize voor WideControl (opmaak)
 description: Het element AutoSize voor WideControl (opmaak)
 ms.openlocfilehash: 42dfae337ba8805e1ddcff4269401afdb3e281f6
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92650019"
 ---
 # <a name="autosize-element-for-widecontrol-format"></a>Het element AutoSize voor WideControl (opmaak)

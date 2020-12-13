@@ -4,10 +4,10 @@ ms.topic: reference
 title: Het element SelectionCondition voor EntrySelectedBy voor Besturingselementen voor Configuratie (opmaak)
 description: Het element SelectionCondition voor EntrySelectedBy voor Besturingselementen voor Configuratie (opmaak)
 ms.openlocfilehash: ce00cdf868a3075875043aeb59f2cb8a17d049a9
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92645784"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-controls-for-configuration-format"></a>Het element SelectionCondition voor EntrySelectedBy voor Besturingselementen voor Configuratie (opmaak)

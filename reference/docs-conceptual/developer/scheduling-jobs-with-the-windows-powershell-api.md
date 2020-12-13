@@ -4,10 +4,10 @@ ms.topic: reference
 title: Taken plannen met de Windows PowerShell-API
 description: Taken plannen met de Windows PowerShell-API
 ms.openlocfilehash: c42b3ea311a5db4dcb6e11bb587f01f3deefe49b
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92647144"
 ---
 # <a name="scheduling-jobs-with-the-windows-powershell-api"></a>Taken plannen met de Windows PowerShell-API
@@ -34,7 +34,7 @@ U definieert een Windows Power shell-taak door een parameter woordenlijst te mak
 
 |Parameternaam|Beschrijving|
 |---|---|
-|Naam|De naam van de taak.|
+|Name|De naam van de taak.|
 |ScriptBock|Een Windows Power shell-script blok dat aangeeft wat de taak doet.|
 |Bestandspad|Een pad naar een bestand dat een Windows Power shell-script blok bevat dat aangeeft wat de taak doet.|
 |InitializationScript|Een Windows Power shell-script blok dat de taak initialiseert.|

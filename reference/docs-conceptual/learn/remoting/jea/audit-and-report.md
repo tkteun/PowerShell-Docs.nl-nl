@@ -4,10 +4,10 @@ keywords: JEA, Power shell, beveiliging
 title: Controleren en rapporteren op JEA
 description: Met controle kunt u beoordelen of de juiste personen toegang hebben tot het JEA-eind punt en hun toegewezen rollen nog steeds geschikt zijn.
 ms.openlocfilehash: 2140d6b756ae38d82e4943c373e8a75beea30e28
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92500008"
 ---
 # <a name="auditing-and-reporting-on-jea"></a>Controleren en rapporteren op JEA
@@ -134,7 +134,7 @@ Running  Dns                DNS Server
 
 Er wordt een **CommandInvocation** -regel geschreven voor elke opdracht die door een gebruiker wordt uitgevoerd. **ParameterBindings** registreert elke para meter en waarde die is opgegeven met de opdracht. In het vorige voor beeld ziet u dat de parameter **naam** is opgegeven met de waarde **DNS** voor de `Get-Service` cmdlet.
 
-Met de uitvoer van elke opdracht wordt ook een **CommandInvocation**geactiveerd, meestal naar `Out-Default` . De **input object** van `Out-Default` is het Power shell-object dat wordt geretourneerd door de opdracht. De details van dat object worden hieronder weer gegeven, met een nauw keurig mimicking wat de gebruiker zou hebben gezien.
+Met de uitvoer van elke opdracht wordt ook een **CommandInvocation** geactiveerd, meestal naar `Out-Default` . De **input object** van `Out-Default` is het Power shell-object dat wordt geretourneerd door de opdracht. De details van dat object worden hieronder weer gegeven, met een nauw keurig mimicking wat de gebruiker zou hebben gezien.
 
 ## <a name="see-also"></a>Zie ook
 

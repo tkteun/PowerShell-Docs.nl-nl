@@ -4,10 +4,10 @@ keywords: JEA, Power shell, beveiliging
 title: JEA
 description: Een functie mogelijkheid is een Power shell-gegevens bestand met de extensie. psrc die alle cmdlets, functies, providers en externe Program ma's bevat die beschikbaar worden gesteld voor het verbinden van gebruikers.
 ms.openlocfilehash: 233d9081f4a8f977f0959addb5573c4566f885d0
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92499991"
 ---
 # <a name="jea-role-capabilities"></a>JEA

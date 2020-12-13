@@ -4,10 +4,10 @@ keywords: powershell,cmdlet
 title: Beveiligings overwegingen voor externe communicatie met Power shell met WinRM
 description: Dit document bevat beveiligings problemen, aanbevelingen en aanbevolen procedures voor het gebruik van externe communicatie met Power shell.
 ms.openlocfilehash: 48167bd297905883b3d75caf9a07d06e6a9fc467
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92501470"
 ---
 # <a name="security-considerations-for-powershell-remoting-using-winrm"></a>Beveiligings overwegingen voor externe communicatie met Power shell met WinRM

@@ -6,10 +6,10 @@ ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
 ms.openlocfilehash: 243685efa1f976ddb46a0d0efc4ed0635844606d
-ms.sourcegitcommit: 0d958eac5bde5ccf5ee2c1bac4f009a63bf71368
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/05/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "84436517"
 ---
 # <a name="chapter-7---working-with-wmi"></a>Hoofd stuk 7: werken met WMI
@@ -18,7 +18,7 @@ ms.locfileid: "84436517"
 
 Power shell wordt standaard geleverd met-cmdlets voor het werken met andere technologieën zoals Windows Management Instrumentation (WMI). Er zijn verschillende systeem eigen WMI-cmdlets die beschikbaar zijn in Power shell zonder dat u extra software of modules hoeft te installeren.
 
-Power Shell heeft cmdlets voor het werken met WMI sinds het begin. `Get-Command`kan worden gebruikt om te bepalen welke WMI-cmdlets bestaan in Power shell. De volgende resultaten zijn afkomstig van mijn Windows 10 Lab-computer waarop Power shell versie 5,1 wordt uitgevoerd. De resultaten kunnen variëren, afhankelijk van de Power shell-versie die u gebruikt.
+Power Shell heeft cmdlets voor het werken met WMI sinds het begin. `Get-Command` kan worden gebruikt om te bepalen welke WMI-cmdlets bestaan in Power shell. De volgende resultaten zijn afkomstig van mijn Windows 10 Lab-computer waarop Power shell versie 5,1 wordt uitgevoerd. De resultaten kunnen variëren, afhankelijk van de Power shell-versie die u gebruikt.
 
 ```powershell
 Get-Command -Noun WMI*
@@ -123,7 +123,7 @@ SerialNumber
 ```
 
 Standaard zijn er verschillende eigenschappen die worden opgehaald achter de scènes die nooit worden gebruikt.
-Het is mogelijk niet erg belang rijk bij het uitvoeren van query's op de lokale computer. Maar zodra u het uitvoeren van een query op externe computers hebt gestart, is het niet alleen extra verwerkings tijd om die informatie te retour neren, maar ook aanvullende informatie die nodig is om over het netwerk te halen. `Get-CimInstance`heeft een **eigenschaps** parameter die de opgehaalde informatie beperkt. Hierdoor wordt de query op WMI efficiënter.
+Het is mogelijk niet erg belang rijk bij het uitvoeren van query's op de lokale computer. Maar zodra u het uitvoeren van een query op externe computers hebt gestart, is het niet alleen extra verwerkings tijd om die informatie te retour neren, maar ook aanvullende informatie die nodig is om over het netwerk te halen. `Get-CimInstance` heeft een **eigenschaps** parameter die de opgehaalde informatie beperkt. Hierdoor wordt de query op WMI efficiënter.
 
 ```powershell
 Get-CimInstance -ClassName Win32_BIOS -Property SerialNumber |
@@ -179,7 +179,7 @@ At line:1 char:1
 
 Veel mensen hebben problemen met de beveiliging van Power shell, maar de waarheid is dat u precies dezelfde machtigingen hebt in Power shell als in de gebruikers interface. Niet meer en niet minder. Het probleem in het vorige voor beeld is dat de gebruiker die Power shell uitvoert, geen rechten heeft om de WMI-gegevens van de DC01-server op te vragen. Ik kan Power shell opnieuw starten als een domein beheerder omdat deze geen `Get-CimInstance` para meter **Credential** heeft. Maar u kunt het beste een vertrouwens relatie geven, omdat vervolgens alles wat ik uit Power shell uitvoer, wordt uitgevoerd als een domein beheerder. Dit kan gevaarlijk zijn uit veiligheids oogpunt, afhankelijk van de situatie.
 
-Met behulp van het principe van minimale bevoegdheden moet ik via de para meter Credential naar mijn domein beheerders account met behulp van de **referentie** parameter, als er een opdracht is. `Get-CimInstance`heeft geen **referentie** parameter, zodat de oplossing in dit scenario eerst een **CimSession** maakt. Vervolgens gebruikt u de **CimSession** in plaats van een computer naam voor het OPVRAGEN van WMI op de externe computer.
+Met behulp van het principe van minimale bevoegdheden moet ik via de para meter Credential naar mijn domein beheerders account met behulp van de **referentie** parameter, als er een opdracht is. `Get-CimInstance` heeft geen **referentie** parameter, zodat de oplossing in dit scenario eerst een **CimSession** maakt. Vervolgens gebruikt u de **CimSession** in plaats van een computer naam voor het OPVRAGEN van WMI op de externe computer.
 
 ```powershell
 $CimSession = New-CimSession -ComputerName dc01 -Credential (Get-Credential)

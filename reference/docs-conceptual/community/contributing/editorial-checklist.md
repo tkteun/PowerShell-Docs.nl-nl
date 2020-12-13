@@ -4,10 +4,10 @@ description: Dit is een overzicht van de regels voor het bewerken van Power shel
 ms.date: 03/05/2020
 ms.topic: conceptual
 ms.openlocfilehash: b5baf7366239084779d34e23f218e5e6222ed1a3
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "81624734"
 ---
 # <a name="editors-checklist"></a>Controle lijst van de editor
@@ -31,22 +31,22 @@ Dit is een samen vatting van regels die moeten worden toegepast bij het schrijve
 ## <a name="formatting"></a>Opmaak
 
 - Apostroffen-syntaxis elementen die worden weer gegeven, inline in een alinea
-  - Namen van cmdlets`Verb-Noun`
-  - Variabeletype`$counter`
-  - Syntaxis voorbeelden`Verb-Noun -Parameter`
-  - Bestands paden `C:\Program Files\PowerShell`,`/usr/bin/pwsh`
+  - Namen van cmdlets `Verb-Noun`
+  - Variabeletype `$counter`
+  - Syntaxis voorbeelden `Verb-Noun -Parameter`
+  - Bestands paden `C:\Program Files\PowerShell` , `/usr/bin/pwsh`
   - Url's die niet in het document kunnen worden geklikt
   - Eigenschaps-of parameter waarden
 - Vetgedrukt gebruiken voor eigenschapnamen van eigenschappen, parameter namen, klassenamen, module namen, entiteits namen, object-of type namen
   - Vet wordt gebruikt voor semantische opmaak, niet nadruk
-  - Vet: sterretjes gebruiken`**`
-- Cursief: onderstrepings tekens gebruiken`_`
+  - Vet: sterretjes gebruiken `**`
+- Cursief: onderstrepings tekens gebruiken `_`
   - Alleen gebruikt voor nadruk, niet voor semantische opmaak
 - Regel einden in 100 kolommen (of op 80 voor **about_Topics**)
 - Geen harde tabbladen: alleen spaties gebruiken
 - Geen Volg spaties op regels
 
-### <a name="headers"></a>Headers
+### <a name="headers"></a>Kopteksten
 
 - H1 is in eerste instantie slechts één H1 per artikel
 - Alleen [ATX-kopteksten](https://github.github.com/gfm/#atx-headings) gebruiken
@@ -59,7 +59,7 @@ Dit is een samen vatting van regels die moeten worden toegepast bij het schrijve
 ### <a name="code-blocks"></a>Codeblokken
 
 - Lege regel voor en na
-- Gelabelde code Fences gebruiken- **Power shell**, **output**of een andere geschikte taal-id
+- Gelabelde code Fences gebruiken- **Power shell**, **output** of een andere geschikte taal-id
 - Niet-gecodeerde blokken met omheinings syntaxis of andere shells
 - Plaats de uitvoer in een afzonderlijk code blok, met uitzonde ring van eenvoudige voor beelden waarin u niet van plan bent om de knop **kopiëren** te gebruiken voor de lezer
 - Lijst met [ondersteunde talen](/contribute/code-in-docs#supported-languages) weer geven
@@ -68,7 +68,7 @@ Dit is een samen vatting van regels die moeten worden toegepast bij het schrijve
 
 - Correct Inge sprongen
 - Lege regel voor het eerste item en na het laatste item
-- Bullet: use afbreek`-`streepje () geen`*`asterisk ()-te eenvoudig te verwarren met nadruk
+- Bullet: use afbreek streepje ( `-` ) geen asterisk ( `*` )-te eenvoudig te verwarren met nadruk
 - Voor genummerde lijsten zijn alle cijfers ' 1 '.
 
 ## <a name="terminology"></a>Terminologie
@@ -84,7 +84,7 @@ Dit is een samen vatting van regels die moeten worden toegepast bij het schrijve
   - Volledige namen van cmdlets en para meters gebruiken-geen aliassen
   - Splatting gebruiken voor para meters wanneer de opdracht regel te lang wordt
   - Vermijd het gebruik van regel voortzettings accents graves indien nodig
-- Verwijder of Vereenvoudig de Power shell-`PS>`prompt (), met uitzonde ring van waar nodig voor het voor beeld
+- Verwijder of Vereenvoudig de Power shell-prompt ( `PS>` ), met uitzonde ring van waar nodig voor het voor beeld
 - Voor de cmdlet-referentie moet het volgende PlatyPS-schema worden gevolgd
 
   ~~~Markdown
@@ -109,10 +109,10 @@ Dit is een samen vatting van regels die moeten worden toegepast bij het schrijve
 ## <a name="linking-to-other-documents"></a>Koppelen aan andere documenten
 
 - Koppelen buiten de docset of tussen de cmdlet-verwijzing en de conceptuele
-  - Relatieve Url's gebruiken wanneer u een koppeling maakt naar `https://docs.microsoft.com/en-us`docs.Microsoft.com (verwijderen)
+  - Relatieve Url's gebruiken wanneer u een koppeling maakt naar docs.microsoft.com (verwijderen `https://docs.microsoft.com/en-us` )
   - Land instellingen niet opnemen in Url's op Eigenschappen van micro soft (bijv. verwijderen `/en-us` uit URL)
   - Alle Url's naar externe websites moeten HTTPS gebruiken, tenzij dat niet geldig is voor de doel site
 - Binnen docset
-  - Koppeling naar bestandspad (bijvoorbeeld `../folder/file.md`)
-  - Alle bestands paden gebruiken tekens voor voorwaartse`/`slash ()
+  - Koppeling naar bestandspad (bijvoorbeeld `../folder/file.md` )
+  - Alle bestands paden gebruiken tekens voor voorwaartse slash ( `/` )
 - Afbeeldings koppelingen moeten unieke alternatieve tekst bevatten

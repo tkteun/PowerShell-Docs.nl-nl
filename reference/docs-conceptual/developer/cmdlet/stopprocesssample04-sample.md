@@ -4,10 +4,10 @@ ms.topic: reference
 title: Voorbeeld StopProcessSample04
 description: Voorbeeld StopProcessSample04
 ms.openlocfilehash: 65588b4d60034d1e6a1e17441a4a640caaacdce8
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92650131"
 ---
 # <a name="stopprocesssample04-sample"></a>Voorbeeld StopProcessSample04
@@ -20,7 +20,7 @@ In dit voor beeld ziet u hoe u een cmdlet schrijft die parameter sets declareert
 
 2. Dubbel klik op het pictogram van het oplossings bestand (. SLN). Hiermee opent u het voorbeeld project in micro soft Visual Studio.
 
-3. Selecteer in het menu **Build** de optie **Build Solution** .
+3. Selecteer in het menu **Build** de optie **Build Solution**.
 
     De bibliotheek voor het voor beeld wordt opgebouwd in de standaard mappen \Bin of \bin\debug.
 

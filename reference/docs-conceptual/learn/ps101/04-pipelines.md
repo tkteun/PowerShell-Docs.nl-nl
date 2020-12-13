@@ -6,10 +6,10 @@ ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
 ms.openlocfilehash: b8fd45e5e5dc408754ebac015757ef4241428978
-ms.sourcegitcommit: 109f132360e8adbbdaf5dbc42a270be73d9dfa9b
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/09/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "84633342"
 ---
 # <a name="chapter-4---one-liners-and-the-pipeline"></a>Hoofd stuk 4: One-Lines en de pijp lijn
@@ -21,7 +21,7 @@ U kunt u helpen bij het voorbereiden van het extern beheren van servers met Powe
 
 Net als bij vorige hoofd stukken moet u de computer van uw Windows 10-test omgeving volgen.
 
-## <a name="one-liners"></a>One-Lines
+## <a name="one-liners"></a>One-Liners
 
 Een Power shell One-line is een doorlopende pijp lijn en niet noodzakelijkerwijs een opdracht die zich op één fysieke lijn bevindt. Niet alle opdrachten op één fysieke regel zijn One-Lines.
 
@@ -238,7 +238,7 @@ Veel programmeer-en script talen vereisen een punt komma aan het einde van elke 
 De resultaten van de opdrachten die in dit hoofd stuk worden weer gegeven, zijn gefilterd op een subset. `Get-Service`Is bijvoorbeeld gebruikt met de para meter **name** voor het filteren van de lijst met services die zijn geretourneerd door alleen de Windows Time-service.
 
 In de pijp lijn wilt u de resultaten altijd filteren op wat u zo snel mogelijk op zoek bent. U kunt dit doen met behulp van para meters op de eerste opdracht of, de één helemaal links.
-Dit wordt soms _filters links_genoemd.
+Dit wordt soms _filters links_ genoemd.
 
 In het volgende voor beeld wordt de para meter **name** van gebruikt `Get-Service` om de resultaten direct te filteren op de Windows Time-service.
 
@@ -365,7 +365,7 @@ help Stop-Service -Full
 
 Daarna hebt u alleen het relevante gedeelte van de Help weer gegeven in de vorige set resultaten. U ziet dat de para meter **DisplayName** geen pijplijn invoer accepteert, de para meter **input object** accepteert invoer **van** de pijp lijn met de waarde voor **ServiceController** -objecten en de para meter **name** accepteert invoer van de pijp lijn **met waarde** voor **teken reeks** objecten. Het accepteert ook pijplijn invoer **per eigenschaps naam**.
 
-Wanneer een para meter invoer van de pijp lijn accepteert door de naam van de eigenschap en op waarde, wordt altijd eerst de **waarde** geprobeerd. Als de **waarde** mislukt, wordt geprobeerd de **naam van de eigenschap**. **Op waarde** is een beetje misleidende. Ik wil het nummer aanroepen **op type**. Dit betekent dat als u de resultaten van een opdracht die een **ServiceController** -object type produceert `Stop-Service` , de-invoer verbindt met de para meter **input object** . Maar als u de resultaten van een opdracht die **teken reeks** uitvoer produceert, in de pipet `Stop-Service` , wordt deze aan de para meter **name** gebonden. Als u de resultaten van een opdracht pipet die geen **ServiceController** of **teken reeks** object produceert `Stop-Service` , maar deze uitvoer een eigenschap met de naam **name**produceert, wordt de eigenschap **name** van de uitvoer met de para meter **name** van weer gegeven `Stop-Service` .
+Wanneer een para meter invoer van de pijp lijn accepteert door de naam van de eigenschap en op waarde, wordt altijd eerst de **waarde** geprobeerd. Als de **waarde** mislukt, wordt geprobeerd de **naam van de eigenschap**. **Op waarde** is een beetje misleidende. Ik wil het nummer aanroepen **op type**. Dit betekent dat als u de resultaten van een opdracht die een **ServiceController** -object type produceert `Stop-Service` , de-invoer verbindt met de para meter **input object** . Maar als u de resultaten van een opdracht die **teken reeks** uitvoer produceert, in de pipet `Stop-Service` , wordt deze aan de para meter **name** gebonden. Als u de resultaten van een opdracht pipet die geen **ServiceController** of **teken reeks** object produceert `Stop-Service` , maar deze uitvoer een eigenschap met de naam **name** produceert, wordt de eigenschap **name** van de uitvoer met de para meter **name** van weer gegeven `Stop-Service` .
 
 Bepaal welk type uitvoer de `Get-Service` opdracht produceert.
 
@@ -377,7 +377,7 @@ Get-Service -Name w32time | Get-Member
    TypeName: System.ServiceProcess.ServiceController
 ```
 
-`Get-Service`Hiermee wordt een ServiceController-object type gegenereerd.
+`Get-Service` Hiermee wordt een ServiceController-object type gegenereerd.
 
 Zoals u eerder in de Help hebt gezien, accepteert de para meter **input object** van `Stop-Service` **ServiceController** -objecten via de pijp lijn **op waarde** (per type). Dit betekent dat wanneer de resultaten van de `Get-Service` cmdlet worden gepiped naar `Stop-Service` , ze zijn verbonden met de para meter **input object** van `Stop-Service` .
 
@@ -432,7 +432,7 @@ Name        NoteProperty string Name=w32time
 Als u de variabele wilt omgeven `$CustomObject` door aanhalings tekens, wilt u dubbele aanhalings tekens gebruiken.
 Anders wordt met enkele aanhalings tekens de letterlijke teken reeks in `$CustomObject` `Get-Member` plaats van de waarde die is opgenomen door de variabele.
 
-Hoewel de inhoud van de `$CustomObject` `Stop-Service` cmdlet wordt gekoppeld aan de para meter **name** , wordt deze keer door de **naam** van de eigenschap gebonden, in plaats van **met waarde** , omdat de inhoud van `$CustomObject` een object is dat een eigenschap met de naam **name**heeft.
+Hoewel de inhoud van de `$CustomObject` `Stop-Service` cmdlet wordt gekoppeld aan de para meter **name** , wordt deze keer door de **naam** van de eigenschap gebonden, in plaats van **met waarde** , omdat de inhoud van `$CustomObject` een object is dat een eigenschap met de naam **name** heeft.
 
 In dit voor beeld maakt u een ander aangepast object met behulp van een andere eigenschaps naam, zoals de **service**.
 
@@ -442,7 +442,7 @@ $CustomObject = [pscustomobject]@{
 }
 ```
 
-Er wordt een fout gegenereerd bij het `$CustomObject` maken van een pipe naar `Stop-Service` , omdat deze geen **ServiceController** of **teken reeks** object produceert en geen eigenschap met de naam **name**heeft.
+Er wordt een fout gegenereerd bij het `$CustomObject` maken van een pipe naar `Stop-Service` , omdat deze geen **ServiceController** of **teken reeks** object produceert en geen eigenschap met de naam **name** heeft.
 
 ```powershell
 $CustomObject | Stop-Service
@@ -537,7 +537,7 @@ Omdat de PowerShell Gallery een niet-vertrouwde opslag plaats is, wordt u gevraa
 
 ## <a name="finding-pipeline-input-the-easy-way"></a>Pijp lijn invoer op eenvoudige wijze zoeken
 
-De MrToolkit-module bevat een functie met de naam `Get-MrPipelineInput` . Met deze cmdlet kunt u eenvoudig bepalen welke para meters van een opdracht pijplijn invoer accepteren, welk type object ze accepteren en of ze de invoer van de pijp lijn **op waarde** of **eigenschaps naam**accepteren.
+De MrToolkit-module bevat een functie met de naam `Get-MrPipelineInput` . Met deze cmdlet kunt u eenvoudig bepalen welke para meters van een opdracht pijplijn invoer accepteren, welk type object ze accepteren en of ze de invoer van de pijp lijn **op waarde** of **eigenschaps naam** accepteren.
 
 ```powershell
 Get-MrPipelineInput -Name Stop-Service

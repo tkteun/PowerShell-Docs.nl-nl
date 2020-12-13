@@ -1,15 +1,15 @@
 ---
-title: Objecten, eigenschappen en methoden detecteren
+title: Objecten, eigenschappen en methoden ontdekken
 description: U hoeft geen ontwikkelaar te zijn om objecten, eigenschappen en methoden te begrijpen en te gebruiken.
 ms.date: 06/02/2020
 ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
 ms.openlocfilehash: 5ab972755afeba0d94bf6c2debaf84ec84cd9244
-ms.sourcegitcommit: 0d958eac5bde5ccf5ee2c1bac4f009a63bf71368
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/05/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "84436363"
 ---
 # <a name="chapter-3---discovering-objects-properties-and-methods"></a>Hoofd stuk 3: objecten, eigenschappen en methoden detecteren
@@ -28,9 +28,9 @@ De module maakt deel uit van de Remote Server Administration Tools (RSAT) voor W
 - Zie [Windows Management modules][](Engelstalig) voor meer informatie over het installeren van de RSAT-hulpprogram ma's.
 - Zie [RSAT voor Windows][]voor oudere versies van Windows.
 
-## <a name="get-member"></a>Get-member
+## <a name="get-member"></a>Get-Member
 
-`Get-Member`helpt u te ontdekken welke objecten, eigenschappen en methoden beschikbaar zijn voor-opdrachten.
+`Get-Member` helpt u te ontdekken welke objecten, eigenschappen en methoden beschikbaar zijn voor-opdrachten.
 Elke opdracht die een op een object gebaseerde uitvoer produceert kan worden gepiped naar `Get-Member` . Een eigenschap is een kenmerk van een item. De licentie van uw stuur Programma's heeft een eigenschap met de naam oogpictogram en de meest voorkomende waarden voor die eigenschap zijn blauw en bruin. Een methode is een actie die op een item kan worden uitgevoerd. In het geval van een voor beeld van de stuur programma-licentie is een van de methoden ' REVOKE ', omdat het departement motor voertuigen uw stuur programma-licentie kan intrekken.
 
 ### <a name="properties"></a>Eigenschappen
@@ -47,7 +47,7 @@ Status   Name               DisplayName
 Running  w32time            Windows Time
 ```
 
-**Status**, **naam**en **DisplayName** zijn voor beelden van eigenschappen, zoals wordt weer gegeven in de vorige set resultaten. De waarde voor de eigenschap **status** is `Running` , de waarde voor de eigenschap **name** `w32time` en de waarde voor **DisplayName** is `Windows Time` .
+**Status**, **naam** en **DisplayName** zijn voor beelden van eigenschappen, zoals wordt weer gegeven in de vorige set resultaten. De waarde voor de eigenschap **status** is `Running` , de waarde voor de eigenschap **name** `w32time` en de waarde voor **DisplayName** is `Windows Time` .
 
 Nu pipet u dezelfde opdracht voor het `Get-Member` volgende:
 
@@ -171,7 +171,7 @@ CanShutdown         : True
 CanStop             : True
 ```
 
-In het vorige voor beeld `Can*` is gebruikt als een van de waarden voor de para meter **Property** om alle eigenschappen te retour neren die beginnen met `Can` . Dit zijn onder andere **CanPauseAndContinue**, **CanShutdown**en **CanStop**.
+In het vorige voor beeld `Can*` is gebruikt als een van de waarden voor de para meter **Property** om alle eigenschappen te retour neren die beginnen met `Can` . Dit zijn onder andere **CanPauseAndContinue**, **CanShutdown** en **CanStop**.
 
 ### <a name="methods"></a>Methoden
 
@@ -442,7 +442,7 @@ At line:1 char:40
     + FullyQualifiedErrorId : NoObjectInGetMember,Microsoft.PowerShell.Commands.GetMemberCommand
 ```
 
-`Out-Host`schrijft rechtstreeks naar de Power shell-host, maar produceert geen op objecten gebaseerde uitvoer voor de pijp lijn. Zodat deze niet kan worden gepiped `Get-Member` .
+`Out-Host` schrijft rechtstreeks naar de Power shell-host, maar produceert geen op objecten gebaseerde uitvoer voor de pijp lijn. Zodat deze niet kan worden gepiped `Get-Member` .
 
 ## <a name="active-directory"></a>Active Directory
 

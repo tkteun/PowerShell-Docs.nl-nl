@@ -4,10 +4,10 @@ ms.topic: reference
 title: Ondersteuning voor jokertekens in de cmdlet-parameters
 description: Ondersteuning voor jokertekens in de cmdlet-parameters
 ms.openlocfilehash: 06693c62cd2613050bdeb9d6b12ad6e9597a9894
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92646387"
 ---
 # <a name="supporting-wildcard-characters-in-cmdlet-parameters"></a>Ondersteuning voor jokertekens in de cmdlet-parameters

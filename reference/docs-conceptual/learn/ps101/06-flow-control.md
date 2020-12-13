@@ -6,15 +6,15 @@ ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
 ms.openlocfilehash: 4f0d7b7f5f3c12bb9475af5aed42b2d32cfbc14d
-ms.sourcegitcommit: 0d958eac5bde5ccf5ee2c1bac4f009a63bf71368
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/05/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "84436307"
 ---
 # <a name="chapter-6---flow-control"></a>Hoofd stuk 6-Datatransport besturing
 
-## <a name="scripting"></a>Script uitvoeren
+## <a name="scripting"></a>Uitvoeren van scripts
 
 Wanneer u de Power shell-One-Lines schrijft voor het schrijven van scripts, klinkt het veel ingewik kelder dan echt. Een script is niets meer dan dezelfde of vergelijk bare opdrachten die u interactief zou uitvoeren in de Power shell-console, behalve dat ze worden opgeslagen als een `.PS1` bestand. Er zijn een aantal script constructies die u kunt gebruiken, zoals een `foreach` lus in plaats van de `ForEach-Object` cmdlet. Voor beginners kunnen de verschillen verwarrend zijn, vooral als u rekening `foreach` houdt met een script constructie en een alias voor de `ForEach-Object` cmdlet.
 
@@ -22,9 +22,9 @@ Wanneer u de Power shell-One-Lines schrijft voor het schrijven van scripts, klin
 
 Een van de fantastische dingen over Power shell is, wanneer u hebt nagegaan hoe u een item kunt uitvoeren, is het bijna net zo eenvoudig om dezelfde taak uit te voeren voor honderden items. Door loop de items met een van de vele verschillende typen lussen in Power shell.
 
-### <a name="foreach-object"></a>ForEach-object
+### <a name="foreach-object"></a>ForEach-Object
 
-`ForEach-Object`is een cmdlet voor het door lopen van items in een pijp lijn, zoals met One-line Power shell. `ForEach-Object`streamt de objecten via de pijp lijn.
+`ForEach-Object` is een cmdlet voor het door lopen van items in een pijp lijn, zoals met One-line Power shell. `ForEach-Object` streamt de objecten via de pijp lijn.
 
 Hoewel de **module** parameter van `Get-Command` meerdere waarden accepteert die teken reeksen zijn, worden deze alleen geaccepteerd via pijplijn invoer door de naam van de eigenschap of via de invoer van para meters. Als ik in het volgende scenario twee teken reeksen wil pipeen op waarde `Get-Command` voor gebruik met de **module** parameter, moet ik de `ForEach-Object` cmdlet gebruiken.
 
@@ -146,7 +146,7 @@ In het vorige voor beeld wordt de lus vier keer herhaald door te beginnen met he
 
 ### <a name="do"></a>Wel doen
 
-Er zijn twee verschillende `do` lussen in Power shell. `Do Until`wordt uitgevoerd terwijl de opgegeven voor waarde False is.
+Er zijn twee verschillende `do` lussen in Power shell. `Do Until` wordt uitgevoerd terwijl de opgegeven voor waarde False is.
 
 ```powershell
 $number = Get-Random -Minimum 1 -Maximum 10
@@ -172,7 +172,7 @@ What's your guess?: 3
 
 Het vorige voor beeld is een nummer dat wordt voortgezet totdat de waarde die u hebt geschat gelijk is aan het nummer dat de `Get-Random` cmdlet heeft gegenereerd.
 
-`Do While`is precies het tegenovergestelde. Het wordt uitgevoerd zolang de opgegeven voor waarde resulteert in waar.
+`Do While` is precies het tegenovergestelde. Het wordt uitgevoerd zolang de opgegeven voor waarde resulteert in waar.
 
 ```powershell
 $number = Get-Random -Minimum 1 -Maximum 10
@@ -199,7 +199,7 @@ What's your guess?: 4
 
 Dezelfde resultaten worden met een lus behaald `Do While` door de test voorwaarde om te keren naar niet gelijk aan.
 
-`Do`lussen worden altijd ten minste één keer uitgevoerd, omdat de voor waarde aan het einde van de lus wordt geëvalueerd.
+`Do` lussen worden altijd ten minste één keer uitgevoerd, omdat de voor waarde aan het einde van de lus wordt geëvalueerd.
 
 ### <a name="while"></a>Het
 
@@ -221,7 +221,7 @@ In het vorige voor beeld wordt berekend op welke dag Thanksgiving Day is in de V
 
 ## <a name="break-continue-and-return"></a>Onderbreken, door gaan en retour neren
 
-`Break`is ontworpen om een lus te verstoren. Het wordt ook vaak gebruikt met de `switch` instructie.
+`Break` is ontworpen om een lus te verstoren. Het wordt ook vaak gebruikt met de `switch` instructie.
 
 ```powershell
 for ($i = 1; $i -lt 5; $i++) {

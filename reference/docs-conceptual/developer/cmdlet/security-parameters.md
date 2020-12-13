@@ -4,10 +4,10 @@ ms.topic: reference
 title: Beveiligingsparameters
 description: Beveiligingsparameters
 ms.openlocfilehash: 2c73a3372fa719ea436d4a3ae1223d4cbaaf9108
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92650242"
 ---
 # <a name="security-parameters"></a>Beveiligingsparameters
@@ -32,7 +32,7 @@ De volgende tabel bevat de aanbevolen namen en functionaliteit voor para meters 
 |**Paar**<br>Gegevens type: teken reeks|Implementeer deze para meter zodat de gebruiker de naam van de sleutel container kan opgeven.|
 |**Sleutellengte**<br>Gegevenstype: Geheel getal|Implementeer deze para meter zodat de gebruiker de lengte van de sleutel in bits kan opgeven.|
 |**Bewerking**<br>Gegevens type: teken reeks|Implementeer deze para meter zodat de gebruiker een actie kan opgeven die op een beveiligd object kan worden uitgevoerd.|
-|**Principaal**<br>Gegevens type: teken reeks|Implementeer deze para meter zodat de gebruiker een unieke Identificeer bare entiteit kan opgeven voor toegang.|
+|**Principal**<br>Gegevens type: teken reeks|Implementeer deze para meter zodat de gebruiker een unieke Identificeer bare entiteit kan opgeven voor toegang.|
 |**Bevoegdheid**<br>Gegevens type: teken reeks|Implementeer deze para meter zodat de gebruiker het recht kan opgeven dat een cmdlet een bewerking voor een bepaalde entiteit moet uitvoeren.|
 |**Bevoegdheden**<br>Gegevens type: matrix van bevoegdheden|Implementeer deze para meter zodat de gebruiker de rechten kan opgeven die een cmdlet nodig heeft om de bewerking voor een bepaalde vermelding uit te voeren.|
 |**Role**<br>Gegevens type: teken reeks|Implementeer deze para meter zodat de gebruiker een set bewerkingen kan opgeven die door een entiteit kan worden uitgevoerd.|

@@ -4,10 +4,10 @@ ms.topic: reference
 title: Het element ExpressionBinding voor CustomItem voor Besturingselementen voor Weergave (opmaak)
 description: Het element ExpressionBinding voor CustomItem voor Besturingselementen voor Weergave (opmaak)
 ms.openlocfilehash: da87bb26d21dcb051871e67997cc3fba7ce73c74
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92649886"
 ---
 # <a name="expressionbinding-element-for-customitem-for-controls-for-view-format"></a>Het element ExpressionBinding voor CustomItem voor Besturingselementen voor Weergave (opmaak)

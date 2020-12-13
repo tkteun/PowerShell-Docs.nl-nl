@@ -4,10 +4,10 @@ ms.topic: reference
 title: Het element CustomEntry voor CustomControl voor Besturingselementen voor Configuratie (opmaak)
 description: Het element CustomEntry voor CustomControl voor Besturingselementen voor Configuratie (opmaak)
 ms.openlocfilehash: 3967be86a1d6c12c7215ef19d50bac9fafd5ad6d
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92648284"
 ---
 # <a name="customentry-element-for-customcontrol-for-controls-for-configuration-format"></a>Het element CustomEntry voor CustomControl voor Besturingselementen voor Configuratie (opmaak)

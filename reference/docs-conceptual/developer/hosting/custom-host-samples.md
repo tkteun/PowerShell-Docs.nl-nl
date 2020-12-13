@@ -4,10 +4,10 @@ ms.topic: reference
 title: Voorbeelden van aangepaste hosts
 description: Voorbeelden van aangepaste hosts
 ms.openlocfilehash: 939b9f5d6bbc3ccf1ac95343e897ecffef0a2f42
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92649307"
 ---
 # <a name="custom-host-samples"></a>Voorbeelden van aangepaste hosts

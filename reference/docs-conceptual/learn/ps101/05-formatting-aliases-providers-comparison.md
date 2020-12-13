@@ -6,10 +6,10 @@ ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
 description: Dit hoofd stuk bevat een inleiding tot de concepten van uitvoer opmaak, opdracht aliassen, providers en vergelijkings bewerkingen.
 ms.openlocfilehash: efe70d2d220f8451e781603b6000c3553dda910c
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92501606"
 ---
 # <a name="chapter-5---formatting-aliases-providers-comparison"></a>Hoofd stuk 5: opmaak, aliassen, providers, vergelijking

@@ -6,13 +6,13 @@ ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
 description: Dit is de introductie van het boek Power shell 101 van Mike F. Robbins.
 ms.openlocfilehash: d85590c2ef34c4e8b5cb7f2707bd9d6dd9b84b89
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92501504"
 ---
-# <a name="introduction"></a>Inleiding
+# <a name="introduction"></a>Introductie
 
 <table>
   <tr><td>
@@ -39,7 +39,7 @@ In plaats van een enorme hoeveelheid informatie te bieden, probeert dit boek een
 
 ## <a name="about-the-author"></a>Over de auteur
 
-Mike F Robbins is een voormalige micro soft MVP, coauthor van _Windows Power shell tfm 4e Edition_en een bijdragende auteur in het _Power shell-diep gaande Dives_ Book. Mike is een krachtige ondersteunings functie van de Power shell-Community en is nu de lead schrijver voor [Azure PowerShell][] bij micro soft. De blogs op [mikefrobbins.com][] en zijn te vinden op Twitter [@mikefrobbins][] .
+Mike F Robbins is een voormalige micro soft MVP, coauthor van _Windows Power shell tfm 4e Edition_ en een bijdragende auteur in het _Power shell-diep gaande Dives_ Book. Mike is een krachtige ondersteunings functie van de Power shell-Community en is nu de lead schrijver voor [Azure PowerShell][] bij micro soft. De blogs op [mikefrobbins.com][] en zijn te vinden op Twitter [@mikefrobbins][] .
 
 ## <a name="lab-environment"></a>Test omgeving
 

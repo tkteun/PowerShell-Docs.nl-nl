@@ -4,10 +4,10 @@ keywords: powershell,cmdlet
 title: De tweede hop maken voor externe communicatie met PowerShell
 description: In dit artikel worden de verschillende methoden beschreven voor het configureren van de tweede hop-verificatie voor externe communicatie met Power shell, met inbegrip van de beveiligings implicaties en aanbevelingen.
 ms.openlocfilehash: 905b27b4e6c612249c945a741bbe0d2ba9ae28aa
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92501368"
 ---
 # <a name="making-the-second-hop-in-powershell-remoting"></a>De tweede hop maken voor externe communicatie met PowerShell
@@ -15,7 +15,7 @@ ms.locfileid: "92501368"
 Het ' tweede hop-probleem ' verwijst naar een situatie zoals de volgende:
 
 1. U bent aangemeld bij _Servera_.
-2. Vanuit _Servera_start u een externe Power shell-sessie om verbinding te maken met _ServerB_.
+2. Vanuit _Servera_ start u een externe Power shell-sessie om verbinding te maken met _ServerB_.
 3. Een opdracht die u uitvoert op _ServerB_ via uw externe Power shell-sessie probeert toegang te krijgen tot een resource op _ServerC_.
 4. De toegang tot de resource op _ServerC_ is geweigerd, omdat de referenties die u hebt gebruikt voor het maken van de externe Power shell-sessie niet zijn door gegeven van _ServerB_ naar _ServerC_.
 
@@ -95,7 +95,7 @@ Met behulp van beperkte Kerberos-delegering (geïntroduceerd in Windows Server 2
 
 ### <a name="example"></a>Voorbeeld
 
-Laten we eens kijken naar een Power shell-voor beeld voor het configureren van beperkte delegering op basis van resources op _ServerC_ om gedelegeerde referenties van een _ServerB_toe te staan. In dit voor beeld wordt ervan uitgegaan dat op alle servers Windows Server 2012 of hoger wordt uitgevoerd en dat er ten minste één domein controller met Windows Server 2012 elk domein is waarvan de servers deel uitmaken.
+Laten we eens kijken naar een Power shell-voor beeld voor het configureren van beperkte delegering op basis van resources op _ServerC_ om gedelegeerde referenties van een _ServerB_ toe te staan. In dit voor beeld wordt ervan uitgegaan dat op alle servers Windows Server 2012 of hoger wordt uitgevoerd en dat er ten minste één domein controller met Windows Server 2012 elk domein is waarvan de servers deel uitmaken.
 
 Voordat u beperkte delegering kunt configureren, moet u de `RSAT-AD-PowerShell` functie toevoegen om de Active Directory Power shell-module te installeren en deze module vervolgens in uw sessie te importeren:
 
@@ -118,7 +118,7 @@ Cmdlet      Set-ADServiceAccount ActiveDirectory
 Cmdlet      Set-ADUser           ActiveDirectory
 ```
 
-De para meter **PrincipalsAllowedToDelegateToAccount** stelt het Active Directory object kenmerk **msDS-AllowedToActOnBehalfOfOtherIdentity**in dat een toegangs beheer lijst (ACL) bevat die aangeeft welke accounts machtigingen hebben voor het delegeren van referenties aan het gekoppelde account (in dit voor beeld is dit het computer account voor _Servera_).
+De para meter **PrincipalsAllowedToDelegateToAccount** stelt het Active Directory object kenmerk **msDS-AllowedToActOnBehalfOfOtherIdentity** in dat een toegangs beheer lijst (ACL) bevat die aangeeft welke accounts machtigingen hebben voor het delegeren van referenties aan het gekoppelde account (in dit voor beeld is dit het computer account voor _Servera_).
 
 We gaan nu de variabelen instellen die we gebruiken om de servers aan te duiden:
 
@@ -180,7 +180,7 @@ Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {
 ```
 
 In dit voor beeld `$using` wordt de variabele gebruikt om de `$ServerC` variabele zichtbaar te maken voor _ServerB_.
-Zie about_Remote_Variables voor meer informatie over de `$using` variabele [about_Remote_Variables](/powershell/module/Microsoft.PowerShell.Core/About/about_Remote_Variables).
+Zie about_Remote_Variables voor meer informatie over de `$using` variabele [](/powershell/module/Microsoft.PowerShell.Core/About/about_Remote_Variables).
 
 Als u wilt toestaan dat meerdere servers referenties delegeren naar _ServerC_, stelt u de waarde van de para meter **PrincipalsAllowedToDelegateToAccount** op _ServerC_ in op een matrix:
 

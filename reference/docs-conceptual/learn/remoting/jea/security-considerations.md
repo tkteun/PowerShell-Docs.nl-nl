@@ -4,10 +4,10 @@ keywords: JEA, Power shell, beveiliging
 title: Beveiligings overwegingen voor JEA
 description: Omdat JEA deze gebruikers in staat stelt om beheer opdrachten uit te voeren zonder volledige beheerders toegang, kunt u deze gebruikers vervolgens verwijderen uit beveiligings groepen met hoge bevoegdheden.
 ms.openlocfilehash: f65f9d6c6620261de0a9c8de7812637565ca1806
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92501572"
 ---
 # <a name="jea-security-considerations"></a>Beveiligings overwegingen voor JEA
@@ -32,10 +32,10 @@ De volgende tabel bevat een overzicht van de mogelijke configuratie opties en de
 
 |        Type computer         | Configuratie van de virtuele-account groep |                   Lokale gebruikers context                    | Context netwerk gebruikers |
 | ---------------------------- | ----------------------------------- | ------------------------------------------------------- | -------------------- |
-| Domeincontroller            | Standaard                             | Domein gebruiker, lid van*domein*\Domain Administrators         | Computer account     |
-| Domeincontroller            | Domein groepen A en B               | Domein gebruiker, lid van*domein*\a,*domein*\b       | Computer account     |
-| Lidserver of werk station | Standaard                             | Lokale gebruiker, lid van*ingebouwd*\Administrators        | Computer account     |
-| Lidserver of werk station | Lokale groepen C en D                | Lokale gebruiker, lid van*computer*\c en*computer*\d | Computer account     |
+| Domeincontroller            | Standaard                             | Domein gebruiker, lid van *domein*\Domain Administrators         | Computer account     |
+| Domeincontroller            | Domein groepen A en B               | Domein gebruiker, lid van *domein*\a,*domein*\b       | Computer account     |
+| Lidserver of werk station | Standaard                             | Lokale gebruiker, lid van *ingebouwd*\Administrators        | Computer account     |
+| Lidserver of werk station | Lokale groepen C en D                | Lokale gebruiker, lid van *computer*\c en *computer*\d | Computer account     |
 
 Wanneer u gebeurtenissen voor beveiligings controle en logboeken van toepassingen bekijkt, ziet u dat elke JEA-gebruikers sessie een uniek virtueel account heeft. Dit unieke account helpt u bij het volgen van gebruikers acties in een JEA-eind punt naar de oorspronkelijke gebruiker die de opdracht uitvoert. Namen van virtuele accounts de notatie volgen `WinRM Virtual Users\WinRM_VA_<ACCOUNTNUMBER>_<DOMAIN>_<sAMAccountName>` als gebruiker **Lisa** in domein **Contoso** een service opnieuw start in een JEA-eind punt, zou de gebruikers naam die aan de service besturings beheer-gebeurtenissen is gekoppeld `WinRM Virtual Users\WinRM_VA_1_contoso_alice` .
 
@@ -105,6 +105,6 @@ Vermijd het gebruik van joker tekens in functie mogelijkheden. Zorg ervoor dat u
 
 ## <a name="jea-doesnt-protect-against-admins"></a>JEA beschermt niet tegen beheerders
 
-Een van de kern principes van JEA is dat niet-beheerders een aantal beheer taken kunnen uitvoeren. JEA biedt geen bescherming tegen gebruikers die al beheerders bevoegdheden hebben. Gebruikers die lid zijn van **domein Administrators**, lokale **beheerders**of andere groepen met hoge bevoegdheden, kunnen de beveiliging van JEA via een andere manier omzeilen. Ze kunnen zich bijvoorbeeld aanmelden met RDP, externe MMC-consoles gebruiken of verbinding maken met een niet-beperkt Power shell-eind punt. Lokale beheerders op een systeem kunnen ook JEA-configuraties wijzigen om extra gebruikers toe te staan of een functie mogelijkheid te wijzigen om het bereik van wat een gebruiker in hun JEA-sessie kan doen, uit te breiden. Het is belang rijk om de uitgebreide machtigingen van uw JEA-gebruikers te evalueren om te controleren of er andere manieren zijn om bevoegde toegang tot het systeem te verkrijgen.
+Een van de kern principes van JEA is dat niet-beheerders een aantal beheer taken kunnen uitvoeren. JEA biedt geen bescherming tegen gebruikers die al beheerders bevoegdheden hebben. Gebruikers die lid zijn van **domein Administrators**, lokale **beheerders** of andere groepen met hoge bevoegdheden, kunnen de beveiliging van JEA via een andere manier omzeilen. Ze kunnen zich bijvoorbeeld aanmelden met RDP, externe MMC-consoles gebruiken of verbinding maken met een niet-beperkt Power shell-eind punt. Lokale beheerders op een systeem kunnen ook JEA-configuraties wijzigen om extra gebruikers toe te staan of een functie mogelijkheid te wijzigen om het bereik van wat een gebruiker in hun JEA-sessie kan doen, uit te breiden. Het is belang rijk om de uitgebreide machtigingen van uw JEA-gebruikers te evalueren om te controleren of er andere manieren zijn om bevoegde toegang tot het systeem te verkrijgen.
 
 Een veelvoorkomende procedure is het gebruik van JEA voor regel matige dagelijkse onderhoud en een just-in-time, Privileged Access Management-oplossing waarmee gebruikers tijdelijk lokale beheerders kunnen worden in nood situaties. Dit helpt ervoor te zorgen dat gebruikers geen permanente beheerders zijn op het systeem, maar deze rechten wel kunnen verkrijgen als en alleen wanneer ze een werk stroom volt ooien waarmee hun gebruik van deze machtigingen wordt gedocumenteerd.

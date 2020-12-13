@@ -4,10 +4,10 @@ ms.topic: reference
 title: Het element CustomControl voor Besturingselement voor Besturingselementen voor Configuratie (opmaak)
 description: Het element CustomControl voor Besturingselement voor Besturingselementen voor Configuratie (opmaak)
 ms.openlocfilehash: 631995c6a50c0f020cb2e991cfbf58a09a75cc72
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92649996"
 ---
 # <a name="customcontrol-element-for-control-for-controls-for-configuration-format"></a>Het element CustomControl voor Besturingselement voor Besturingselementen voor Configuratie (opmaak)

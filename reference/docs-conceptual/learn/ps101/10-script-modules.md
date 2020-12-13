@@ -1,22 +1,22 @@
 ---
-title: Script modules
+title: Scriptmodules
 description: Script modules zijn een eenvoudige manier om scripts en functies te verpakken in een herbruikbaar hulp programma.
 ms.date: 06/02/2020
 ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
 ms.openlocfilehash: 661ba725764e1f31df628f6c5f2d58d760656e37
-ms.sourcegitcommit: 0d958eac5bde5ccf5ee2c1bac4f009a63bf71368
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/05/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "84436510"
 ---
 # <a name="chapter-10---script-modules"></a>Hoofd stuk 10: script modules
 
 Het is nog belang rijker om uw one-Lines en scripts in Power shell in te scha kelen in herbruikbare Program ma's. Als u uw functies in een script module verdeelt, zien ze er professioneel uit en zijn ze gemakkelijker te delen.
 
-## <a name="dot-sourcing-functions"></a>Functies van punt en sourcing
+## <a name="dot-sourcing-functions"></a>Dot-Sourcing functies
 
 Iets wat we in het vorige hoofd stuk niet hebben gecommuniceerd, is de functie dot. Wanneer een functie in een script geen deel uitmaakt van een module, is de enige manier om deze in het geheugen te laden, het `.PS1` bestand dat wordt opgeslagen in te delen met een punt.
 
@@ -259,7 +259,7 @@ Zodra het `.PSM1` bestand zich in het juiste pad bevindt, wordt de module automa
 ## <a name="module-manifests"></a>Module manifesten
 
 Alle modules moeten een module manifest hebben. Een module manifest bevat meta gegevens over uw module.
-De bestands extensie voor een manifest bestand van de module is `.PSD1` . Niet alle bestanden met een `.PSD1` extensie zijn module manifesten. Ze kunnen ook worden gebruikt voor zaken zoals het opslaan van het onderdeel van een DSC-configuratie. `New-ModuleManifest`wordt gebruikt om een module manifest te maken. Het **pad** is de enige vereiste waarde. De module werkt echter niet als **RootModule** niet is opgegeven. Het is een goed idee om de **Auteur** en **Beschrijving** op te geven voor het geval u besluit uw module te uploaden naar een NuGet-opslag plaats met PowerShellGet, omdat deze waarden in dat scenario zijn vereist.
+De bestands extensie voor een manifest bestand van de module is `.PSD1` . Niet alle bestanden met een `.PSD1` extensie zijn module manifesten. Ze kunnen ook worden gebruikt voor zaken zoals het opslaan van het onderdeel van een DSC-configuratie. `New-ModuleManifest` wordt gebruikt om een module manifest te maken. Het **pad** is de enige vereiste waarde. De module werkt echter niet als **RootModule** niet is opgegeven. Het is een goed idee om de **Auteur** en **Beschrijving** op te geven voor het geval u besluit uw module te uploaden naar een NuGet-opslag plaats met PowerShellGet, omdat deze waarden in dat scenario zijn vereist.
 
 De versie van een module zonder manifest is 0,0. Dit is een Dead-Giveaway dat de module geen manifest heeft.
 

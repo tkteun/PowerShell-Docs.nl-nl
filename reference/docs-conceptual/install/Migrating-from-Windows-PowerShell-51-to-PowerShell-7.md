@@ -3,10 +3,10 @@ title: Migreren van Windows PowerShell 5.1 naar PowerShell 7
 description: Update van Power shell 5,1 naar Power shell 7 voor uw Windows-platforms.
 ms.date: 03/25/2020
 ms.openlocfilehash: cb14a4f159b6dc33f31386da4264c0ebb640aef8
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.sourcegitcommit: 077488408c820c860131382324bdd576d0edf52a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/23/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "83810573"
 ---
 # <a name="migrating-from-windows-powershell-51-to-powershell-7"></a>Migreren van Windows PowerShell 5.1 naar PowerShell 7
@@ -15,7 +15,7 @@ Power shell 7 is ontworpen voor Cloud-, on-premises en hybride omgevingen en is 
 
 - Installeert en voert side-by-side uit met Windows Power shell
 - Verbeterde compatibiliteit met bestaande Windows Power shell-modules
-- Nieuwe taal functies, zoals ternaire Opera tors en`ForEach-Object -Parallel`
+- Nieuwe taal functies, zoals ternaire Opera tors en `ForEach-Object -Parallel`
 - Verbeterde prestaties
 - Externe toegang op basis van SSH
 - Interoperabiliteit tussen verschillende platforms
@@ -60,9 +60,9 @@ Power shell 7 wordt geïnstalleerd in een nieuwe map, waardoor gelijktijdige uit
 
 Locaties installeren op versie:
 
-- Windows Power shell 5,1:`$env:WINDIR\System32\WindowsPowerShell\v1.0`
-- Power shell Core 6. x:`$env:ProgramFiles\PowerShell\6`
-- Power shell 7:`$env:ProgramFiles\PowerShell\7`
+- Windows Power shell 5,1: `$env:WINDIR\System32\WindowsPowerShell\v1.0`
+- Power shell Core 6. x: `$env:ProgramFiles\PowerShell\6`
+- Power shell 7: `$env:ProgramFiles\PowerShell\7`
 
 De nieuwe locatie wordt toegevoegd aan het pad, zodat u Windows Power shell 5,1 en Power shell 7 kunt uitvoeren. Als u migreert van Power shell Core 6. x naar Power shell 7, wordt Power shell 6 verwijderd en wordt het pad vervangen.
 
@@ -72,7 +72,7 @@ Het uitvoer bare Power shell-bestand van Windows Power shell heet `powershell.ex
 
 Standaard worden modules voor Windows Power shell en Power shell 7 opgeslagen op verschillende locaties. Power shell 7 combineert die locaties in de `$Env:PSModulePath` omgevings variabele. Wanneer u een module op naam importeert, controleert Power shell de locatie die is opgegeven door `$Env:PSModulePath` . Hierdoor kan Power shell 7 zowel de kern-als bureaublad modules laden.
 
-|            Installatie bereik            |                Windows Power shell 5,1                 |             Power shell 7,0             |
+|            Installatie bereik            |                Windows PowerShell 5.1                 |             Power shell 7,0             |
 | ----------------------------------- | ----------------------------------------------------- | -------------------------------------- |
 | PowerShell-modules                  | `$env:WINDIR\system32\WindowsPowerShell\v1.0\Modules` | `$PSHOME\Modules`                      |
 | Gebruiker geïnstalleerd<br>AllUsers-bereik    | `$env:ProgramFiles\WindowsPowerShell\Modules`         | `$env:ProgramFiles\PowerShell\Modules` |
@@ -148,9 +148,9 @@ De meeste modules die u in Windows Power shell 5,1 gebruikt, werken al met Power
 
 Met externe communicatie van Power shell kunt u elke Power shell-opdracht op een of meer externe computers uitvoeren. U kunt permanente verbindingen tot stand brengen, interactieve sessies starten en scripts uitvoeren op externe computers.
 
-#### <a name="ws-management-remoting"></a>Externe communicatie van WS-Management
+#### <a name="ws-management-remoting"></a>WS-Management externe toegang
 
-Windows Power shell 5,1 en lager gebruiken het WS-Management-Protocol (WSMAN) voor verbindings onderhandeling en gegevens overdracht. Windows Remote Management (WinRM) maakt gebruik van het WSMAN-protocol. Als WinRM is ingeschakeld, gebruikt Power shell 7 het bestaande Windows Power shell 5,1-eind punt met de naam `Microsoft.PowerShell` voor externe verbindingen. Als u Power shell 7 wilt bijwerken om een eigen eind punt op te halen, voert u de `Enable-PSRemoting` cmdlet uit. Zie voor meer informatie over het maken van verbinding met specifieke eind punten [WS-Management Remoting in Power shell core](/powershell/scripting/learn/remoting/wsman-remoting-in-powershell-core)
+Windows Power shell 5,1 en lager gebruiken het WS-Management Protocol (WSMAN) voor verbindings onderhandelingen en gegevens overdracht. Windows Remote Management (WinRM) maakt gebruik van het WSMAN-protocol. Als WinRM is ingeschakeld, gebruikt Power shell 7 het bestaande Windows Power shell 5,1-eind punt met de naam `Microsoft.PowerShell` voor externe verbindingen. Als u Power shell 7 wilt bijwerken om een eigen eind punt op te halen, voert u de `Enable-PSRemoting` cmdlet uit. Zie voor meer informatie over het maken van verbinding met specifieke eind punten [WS-Management Remoting in Power shell core](/powershell/scripting/learn/remoting/wsman-remoting-in-powershell-core)
 
 Als u externe toegang tot Windows Power shell wilt gebruiken, moet u de computer configureren voor extern beheer.
 Zie [over externe vereisten](/powershell/module/microsoft.powershell.core/about/about_remote_requirements)voor meer informatie, waaronder instructies.
@@ -159,7 +159,7 @@ Zie voor meer informatie over het werken met externe communicatie [over externe]
 
 #### <a name="ssh-based-remoting"></a>Externe toegang op basis van SSH
 
-Op SSH gebaseerde externe toegang is toegevoegd aan Power shell Core 6. x ter ondersteuning van andere besturings systemen die geen Windows systeem eigen onderdelen zoals **WinRM**kunnen gebruiken. Externe SSH-processen maken een Power shell-hostproces op de doel computer als een SSH-subsysteem. Zie voor meer informatie en voor beelden over het instellen van op SSH gebaseerde externe toegang op Windows of Linux: [Power shell Remoting via SSH](/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core).
+Op SSH gebaseerde externe toegang is toegevoegd aan Power shell Core 6. x ter ondersteuning van andere besturings systemen die geen Windows systeem eigen onderdelen zoals **WinRM** kunnen gebruiken. Externe SSH-processen maken een Power shell-hostproces op de doel computer als een SSH-subsysteem. Zie voor meer informatie en voor beelden over het instellen van op SSH gebaseerde externe toegang op Windows of Linux: [Power shell Remoting via SSH](/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core).
 
 > [!NOTE]
 > De PowerShell Gallery (PSGallery) bevat een module en cmdlet waarmee op SSH gebaseerde externe toegang automatisch wordt geconfigureerd. Installeer de `Microsoft.PowerShell.RemotingTools` module vanuit de [PSGallery](https://www.powershellgallery.com/packages/Microsoft.PowerShell.RemotingTools/0.1.0) en voer de `Enable-SSH` cmdlet uit.
@@ -170,7 +170,7 @@ De `New-PSSession` `Enter-PSSession` `Invoke-Command` cmdlets, en hebben nieuwe 
 [-HostName <string>]  [-UserName <string>]  [-KeyFilePath <string>]
 ```
 
-Als u een externe sessie wilt maken, geeft u de doel computer op met de para meter **hostname** en geeft u de gebruikers naam met de **naam**van de gebruiker. Wanneer de cmdlets interactief worden uitgevoerd, wordt u gevraagd een wacht woord op te vragen.
+Als u een externe sessie wilt maken, geeft u de doel computer op met de para meter **hostname** en geeft u de gebruikers naam met de **naam** van de gebruiker. Wanneer de cmdlets interactief worden uitgevoerd, wordt u gevraagd een wacht woord op te vragen.
 
 ```powershell
 Enter-PSSession -HostName <Computer> -UserName <Username>
@@ -187,7 +187,7 @@ Zie [OpenSSH key management](/windows-server/administration/openssh/openssh_keym
 
 ### <a name="group-policy-supported"></a>groepsbeleid ondersteund
 
-Power shell bevat groepsbeleid instellingen die u helpen bij het definiëren van consistente optie waarden voor servers in een bedrijfs omgeving. Deze instellingen omvatten:
+Power shell bevat groepsbeleid instellingen die u helpen bij het definiëren van consistente optie waarden voor servers in een bedrijfs omgeving. Deze instellingen zijn onder meer:
 
 - Console sessie configuratie: Hiermee stelt u een configuratie-eind punt in waarin Power shell wordt uitgevoerd.
 - Module logboek registratie inschakelen: Hiermee wordt de eigenschap LogPipelineExecutionDetails van modules ingesteld.
@@ -240,9 +240,9 @@ De bijgewerkte Power shell-extensie bevat:
 
 Als u de overgang naar Visual Studio code eenvoudiger wilt maken, gebruikt u de functie **ISE-modus inschakelen** die beschikbaar is in het **opdracht palet**. Deze functie schakelt VSCode in een ISE-opmaak. De ISE-indeling biedt u alle nieuwe functies en mogelijkheden van Power shell in een vertrouwde gebruikers ervaring.
 
-Als u wilt overschakelen naar de nieuwe ISE-indeling, drukt u op <kbd>CTRL</kbd> + <kbd>SHIFT</kbd> + <kbd>P</kbd> om het **opdracht palet**te openen, typt `PowerShell` en selecteert u **Power shell: modus ISE inschakelen**.
+Als u wilt overschakelen naar de nieuwe ISE-indeling, drukt u op <kbd>CTRL</kbd> + <kbd>SHIFT</kbd> + <kbd>P</kbd> om het **opdracht palet** te openen, typt `PowerShell` en selecteert u **Power shell: modus ISE inschakelen**.
 
-Als u de indeling wilt instellen op de oorspronkelijke indeling, opent u het **opdracht palet**en selecteert u **Power shell: de modus ISE uitschakelen (standaard instellingen herstellen)**.
+Als u de indeling wilt instellen op de oorspronkelijke indeling, opent u het **opdracht palet** en selecteert u **Power shell: de modus ISE uitschakelen (standaard instellingen herstellen)**.
 
 Zie [de ISE-ervaring repliceren in Visual Studio code](/powershell/scripting/components/vscode/how-to-replicate-the-ise-experience-in-vscode) voor meer informatie over het aanpassen van de VSCode-indeling naar ISE.
 

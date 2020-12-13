@@ -6,10 +6,10 @@ ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
 ms.openlocfilehash: ee83af41b53b254dd3dd993931333edac2f44f5a
-ms.sourcegitcommit: 0d958eac5bde5ccf5ee2c1bac4f009a63bf71368
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/05/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "84436461"
 ---
 # <a name="chapter-8---powershell-remoting"></a>Hoofd stuk 8-externe communicatie met Power shell
@@ -232,7 +232,7 @@ Start... W32time     Windows Time      dc01
 Running  W32time     Windows Time      sql02
 ```
 
-In het vorige voor beeld hebben drie servers een query uitgevoerd voor de status van de Windows Time-service. De `Get-Service` cmdlet is in het script blok van opgenomen `Invoke-Command` . `Get-Service`wordt daad werkelijk uitgevoerd op de externe computer en de resultaten worden teruggestuurd naar de lokale computer als gedeserialiseerd objecten.
+In het vorige voor beeld hebben drie servers een query uitgevoerd voor de status van de Windows Time-service. De `Get-Service` cmdlet is in het script blok van opgenomen `Invoke-Command` . `Get-Service` wordt daad werkelijk uitgevoerd op de externe computer en de resultaten worden teruggestuurd naar de lokale computer als gedeserialiseerd objecten.
 
 Sluizen de vorige opdracht om te laten `Get-Member` zien dat de resultaten inderdaad gedeserialiseerd objecten zijn.
 

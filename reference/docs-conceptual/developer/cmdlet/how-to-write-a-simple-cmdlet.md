@@ -4,10 +4,10 @@ ms.topic: reference
 title: Een eenvoudige cmdlet schrijven
 description: Een eenvoudige cmdlet schrijven
 ms.openlocfilehash: 59dce5d797f80647e0b70a1f80faf67198652082
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92646497"
 ---
 # <a name="how-to-write-a-cmdlet"></a>Een cmdlet schrijven

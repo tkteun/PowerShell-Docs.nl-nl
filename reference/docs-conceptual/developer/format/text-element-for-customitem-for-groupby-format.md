@@ -4,10 +4,10 @@ ms.topic: reference
 title: Het element Tekst voor CustomItem voor GroupBy (opmaak)
 description: Het element Tekst voor CustomItem voor GroupBy (opmaak)
 ms.openlocfilehash: 4c8158c9c8e77044732e473f57291194280f4e79
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92649750"
 ---
 # <a name="text-element-for-customitem-for-groupby-format"></a>Het element Tekst voor CustomItem voor GroupBy (opmaak)
