@@ -4,63 +4,63 @@ ms.topic: reference
 title: Voorbeeld StopProcessSample01
 description: Voorbeeld StopProcessSample01
 ms.openlocfilehash: 9024f5c66330f3a1748c28b82e91b3915e956207
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92660538"
 ---
-# <a name="stopprocesssample01-sample"></a><span data-ttu-id="4fb3a-103">Voorbeeld StopProcessSample01</span><span class="sxs-lookup"><span data-stu-id="4fb3a-103">StopProcessSample01 Sample</span></span>
+# <a name="stopprocesssample01-sample"></a><span data-ttu-id="789da-103">Voorbeeld StopProcessSample01</span><span class="sxs-lookup"><span data-stu-id="789da-103">StopProcessSample01 Sample</span></span>
 
-<span data-ttu-id="4fb3a-104">Dit voor beeld laat zien hoe u een cmdlet schrijft die feedback van de gebruiker vraagt voordat deze probeert een proces te stoppen, en hoe u een para meter implementeert die `PassThru` aangeeft dat de gebruiker de cmdlet een object wil laten retour neren.</span><span class="sxs-lookup"><span data-stu-id="4fb3a-104">This sample shows how to write a cmdlet that requests feedback from the user before it attempts to stop a process, and how to implement a `PassThru` parameter indicating that the user wants the cmdlet to return an object.</span></span> <span data-ttu-id="4fb3a-105">Deze cmdlet is vergelijkbaar met de `Stop-Process` cmdlet van Windows Power shell 2,0.</span><span class="sxs-lookup"><span data-stu-id="4fb3a-105">This cmdlet is similar to the `Stop-Process` cmdlet provided by Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="789da-104">Dit voor beeld laat zien hoe u een cmdlet schrijft die feedback van de gebruiker vraagt voordat deze probeert een proces te stoppen, en hoe u een para meter implementeert die `PassThru` aangeeft dat de gebruiker de cmdlet een object wil laten retour neren.</span><span class="sxs-lookup"><span data-stu-id="789da-104">This sample shows how to write a cmdlet that requests feedback from the user before it attempts to stop a process, and how to implement a `PassThru` parameter indicating that the user wants the cmdlet to return an object.</span></span> <span data-ttu-id="789da-105">Deze cmdlet is vergelijkbaar met de `Stop-Process` cmdlet van Windows Power shell 2,0.</span><span class="sxs-lookup"><span data-stu-id="789da-105">This cmdlet is similar to the `Stop-Process` cmdlet provided by Windows PowerShell 2.0.</span></span>
 
-### <a name="how-to-build-the-sample-by-using-visual-studio"></a><span data-ttu-id="4fb3a-106">Het voor beeld maken met behulp van Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="4fb3a-106">How to build the sample by using Visual Studio.</span></span>
+### <a name="how-to-build-the-sample-by-using-visual-studio"></a><span data-ttu-id="789da-106">Het voor beeld maken met behulp van Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="789da-106">How to build the sample by using Visual Studio.</span></span>
 
-1. <span data-ttu-id="4fb3a-107">Terwijl de Windows Power Shell 2,0 SDK is geïnstalleerd, gaat u naar de map StopProcessSample01.</span><span class="sxs-lookup"><span data-stu-id="4fb3a-107">With the Windows PowerShell 2.0 SDK installed, navigate to the StopProcessSample01 folder.</span></span> <span data-ttu-id="4fb3a-108">De standaard locatie is C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample01.</span><span class="sxs-lookup"><span data-stu-id="4fb3a-108">The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample01.</span></span>
+1. <span data-ttu-id="789da-107">Terwijl de Windows Power Shell 2,0 SDK is geïnstalleerd, gaat u naar de map StopProcessSample01.</span><span class="sxs-lookup"><span data-stu-id="789da-107">With the Windows PowerShell 2.0 SDK installed, navigate to the StopProcessSample01 folder.</span></span> <span data-ttu-id="789da-108">De standaard locatie is C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample01.</span><span class="sxs-lookup"><span data-stu-id="789da-108">The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample01.</span></span>
 
-2. <span data-ttu-id="4fb3a-109">Dubbel klik op het pictogram van het oplossings bestand (. SLN).</span><span class="sxs-lookup"><span data-stu-id="4fb3a-109">Double-click the icon for the solution (.sln) file.</span></span> <span data-ttu-id="4fb3a-110">Hiermee opent u het voorbeeld project in micro soft Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="4fb3a-110">This opens the sample project in Microsoft Visual Studio.</span></span>
+2. <span data-ttu-id="789da-109">Dubbel klik op het pictogram van het oplossings bestand (. SLN).</span><span class="sxs-lookup"><span data-stu-id="789da-109">Double-click the icon for the solution (.sln) file.</span></span> <span data-ttu-id="789da-110">Hiermee opent u het voorbeeld project in micro soft Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="789da-110">This opens the sample project in Microsoft Visual Studio.</span></span>
 
-3. <span data-ttu-id="4fb3a-111">Selecteer in het menu **Build** de optie **Build Solution** .</span><span class="sxs-lookup"><span data-stu-id="4fb3a-111">In the **Build** menu, select **Build Solution** .</span></span>
+3. <span data-ttu-id="789da-111">Selecteer in het menu **Build** de optie **Build Solution**.</span><span class="sxs-lookup"><span data-stu-id="789da-111">In the **Build** menu, select **Build Solution**.</span></span>
 
-    <span data-ttu-id="4fb3a-112">De bibliotheek voor het voor beeld wordt opgebouwd in de standaard mappen \Bin of \bin\debug.</span><span class="sxs-lookup"><span data-stu-id="4fb3a-112">The library for the sample will be built in the default \bin or \bin\debug folders.</span></span>
+    <span data-ttu-id="789da-112">De bibliotheek voor het voor beeld wordt opgebouwd in de standaard mappen \Bin of \bin\debug.</span><span class="sxs-lookup"><span data-stu-id="789da-112">The library for the sample will be built in the default \bin or \bin\debug folders.</span></span>
 
-### <a name="how-to-run-the-sample"></a><span data-ttu-id="4fb3a-113">Het voorbeeld uitvoeren</span><span class="sxs-lookup"><span data-stu-id="4fb3a-113">How to run the sample</span></span>
+### <a name="how-to-run-the-sample"></a><span data-ttu-id="789da-113">Het voorbeeld uitvoeren</span><span class="sxs-lookup"><span data-stu-id="789da-113">How to run the sample</span></span>
 
-1. <span data-ttu-id="4fb3a-114">Maak de volgende module map:</span><span class="sxs-lookup"><span data-stu-id="4fb3a-114">Create the following module folder:</span></span>
+1. <span data-ttu-id="789da-114">Maak de volgende module map:</span><span class="sxs-lookup"><span data-stu-id="789da-114">Create the following module folder:</span></span>
 
     `[user]/documents/windowspowershell/modules/StopProcessSample01`
 
-2. <span data-ttu-id="4fb3a-115">Kopieer de voor beeld-assembly naar de module map.</span><span class="sxs-lookup"><span data-stu-id="4fb3a-115">Copy the sample assembly to the module folder.</span></span>
+2. <span data-ttu-id="789da-115">Kopieer de voor beeld-assembly naar de module map.</span><span class="sxs-lookup"><span data-stu-id="789da-115">Copy the sample assembly to the module folder.</span></span>
 
-3. <span data-ttu-id="4fb3a-116">Start Windows PowerShell.</span><span class="sxs-lookup"><span data-stu-id="4fb3a-116">Start Windows PowerShell.</span></span>
+3. <span data-ttu-id="789da-116">Start Windows PowerShell.</span><span class="sxs-lookup"><span data-stu-id="789da-116">Start Windows PowerShell.</span></span>
 
-4. <span data-ttu-id="4fb3a-117">Voer de volgende opdracht uit om de assembly in Windows Power shell te laden:</span><span class="sxs-lookup"><span data-stu-id="4fb3a-117">Run the following command to load the assembly into Windows PowerShell:</span></span>
+4. <span data-ttu-id="789da-117">Voer de volgende opdracht uit om de assembly in Windows Power shell te laden:</span><span class="sxs-lookup"><span data-stu-id="789da-117">Run the following command to load the assembly into Windows PowerShell:</span></span>
 
     `import-module stopprossessample01`
 
-5. <span data-ttu-id="4fb3a-118">Voer de volgende opdracht uit om de cmdlet uit te voeren:</span><span class="sxs-lookup"><span data-stu-id="4fb3a-118">Run the following command to run the cmdlet:</span></span>
+5. <span data-ttu-id="789da-118">Voer de volgende opdracht uit om de cmdlet uit te voeren:</span><span class="sxs-lookup"><span data-stu-id="789da-118">Run the following command to run the cmdlet:</span></span>
 
     `stop-proc`
 
-## <a name="requirements"></a><span data-ttu-id="4fb3a-119">Vereisten</span><span class="sxs-lookup"><span data-stu-id="4fb3a-119">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="789da-119">Vereisten</span><span class="sxs-lookup"><span data-stu-id="789da-119">Requirements</span></span>
 
-<span data-ttu-id="4fb3a-120">Voor dit voor beeld is Windows Power Shell 2,0 vereist.</span><span class="sxs-lookup"><span data-stu-id="4fb3a-120">This sample requires Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="789da-120">Voor dit voor beeld is Windows Power Shell 2,0 vereist.</span><span class="sxs-lookup"><span data-stu-id="789da-120">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="4fb3a-121">Demonstreert</span><span class="sxs-lookup"><span data-stu-id="4fb3a-121">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="789da-121">Demonstreert</span><span class="sxs-lookup"><span data-stu-id="789da-121">Demonstrates</span></span>
 
-<span data-ttu-id="4fb3a-122">In dit voor beeld ziet u het volgende.</span><span class="sxs-lookup"><span data-stu-id="4fb3a-122">This sample demonstrates the following.</span></span>
+<span data-ttu-id="789da-122">In dit voor beeld ziet u het volgende.</span><span class="sxs-lookup"><span data-stu-id="789da-122">This sample demonstrates the following.</span></span>
 
-- <span data-ttu-id="4fb3a-123">Declareer een cmdlet-klasse met behulp van het cmdlet-kenmerk.</span><span class="sxs-lookup"><span data-stu-id="4fb3a-123">Declaring a cmdlet class by using the Cmdlet attribute.</span></span>
+- <span data-ttu-id="789da-123">Declareer een cmdlet-klasse met behulp van het cmdlet-kenmerk.</span><span class="sxs-lookup"><span data-stu-id="789da-123">Declaring a cmdlet class by using the Cmdlet attribute.</span></span>
 
-- <span data-ttu-id="4fb3a-124">Het declareren van een cmdlet-para meter met behulp van het parameter kenmerk.</span><span class="sxs-lookup"><span data-stu-id="4fb3a-124">Declaring a cmdlet parameters by using the Parameter attribute.</span></span>
+- <span data-ttu-id="789da-124">Het declareren van een cmdlet-para meter met behulp van het parameter kenmerk.</span><span class="sxs-lookup"><span data-stu-id="789da-124">Declaring a cmdlet parameters by using the Parameter attribute.</span></span>
 
-- <span data-ttu-id="4fb3a-125">De methode ShouldProcess wordt aangeroepen om een bevestiging aan te vragen.</span><span class="sxs-lookup"><span data-stu-id="4fb3a-125">Calling the ShouldProcess method to request confirmation.</span></span>
+- <span data-ttu-id="789da-125">De methode ShouldProcess wordt aangeroepen om een bevestiging aan te vragen.</span><span class="sxs-lookup"><span data-stu-id="789da-125">Calling the ShouldProcess method to request confirmation.</span></span>
 
-- <span data-ttu-id="4fb3a-126">Implementatie van een `PassThru` para meter die aangeeft of de gebruiker wil dat de cmdlet een object retourneert.</span><span class="sxs-lookup"><span data-stu-id="4fb3a-126">Implementing a `PassThru` parameter that indicates if the user wants the cmdlet to return an object.</span></span> <span data-ttu-id="4fb3a-127">Deze cmdlet retourneert standaard geen object naar de pijp lijn.</span><span class="sxs-lookup"><span data-stu-id="4fb3a-127">By default, this cmdlet does not return an object to the pipeline.</span></span>
+- <span data-ttu-id="789da-126">Implementatie van een `PassThru` para meter die aangeeft of de gebruiker wil dat de cmdlet een object retourneert.</span><span class="sxs-lookup"><span data-stu-id="789da-126">Implementing a `PassThru` parameter that indicates if the user wants the cmdlet to return an object.</span></span> <span data-ttu-id="789da-127">Deze cmdlet retourneert standaard geen object naar de pijp lijn.</span><span class="sxs-lookup"><span data-stu-id="789da-127">By default, this cmdlet does not return an object to the pipeline.</span></span>
 
-## <a name="example"></a><span data-ttu-id="4fb3a-128">Voorbeeld</span><span class="sxs-lookup"><span data-stu-id="4fb3a-128">Example</span></span>
+## <a name="example"></a><span data-ttu-id="789da-128">Voorbeeld</span><span class="sxs-lookup"><span data-stu-id="789da-128">Example</span></span>
 
-<span data-ttu-id="4fb3a-129">Dit voor beeld laat zien hoe u een `PassThru` para meter implementeert die aangeeft dat de gebruiker wil dat de cmdlet een object retourneert en hoe gebruikers feedback kan aanvragen door aanroepen naar de `ShouldProcess` `ShouldContinue` methoden en.</span><span class="sxs-lookup"><span data-stu-id="4fb3a-129">This sample shows how to implement a `PassThru` parameter that indicates that the user wants the cmdlet to return an object, and how to request user feedback by calls to the `ShouldProcess` and `ShouldContinue` methods.</span></span>
+<span data-ttu-id="789da-129">Dit voor beeld laat zien hoe u een `PassThru` para meter implementeert die aangeeft dat de gebruiker wil dat de cmdlet een object retourneert en hoe gebruikers feedback kan aanvragen door aanroepen naar de `ShouldProcess` `ShouldContinue` methoden en.</span><span class="sxs-lookup"><span data-stu-id="789da-129">This sample shows how to implement a `PassThru` parameter that indicates that the user wants the cmdlet to return an object, and how to request user feedback by calls to the `ShouldProcess` and `ShouldContinue` methods.</span></span>
 
 ```csharp
 using System;
@@ -258,6 +258,6 @@ namespace Microsoft.Samples.PowerShell.Commands
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="4fb3a-130">Zie ook</span><span class="sxs-lookup"><span data-stu-id="4fb3a-130">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="789da-130">Zie ook</span><span class="sxs-lookup"><span data-stu-id="789da-130">See Also</span></span>
 
-[<span data-ttu-id="4fb3a-131">Een Windows PowerShell-cmdlet schrijven</span><span class="sxs-lookup"><span data-stu-id="4fb3a-131">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
+[<span data-ttu-id="789da-131">Een Windows PowerShell-cmdlet schrijven</span><span class="sxs-lookup"><span data-stu-id="789da-131">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
