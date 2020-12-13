@@ -4,10 +4,10 @@ ms.topic: reference
 title: Een gedeelte Zie ook toevoegen aan een Help-onderwerp over providers
 description: Een gedeelte Zie ook toevoegen aan een Help-onderwerp over providers
 ms.openlocfilehash: df0b14ba84e04baf404081944ef62ef6745d74b2
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92667654"
 ---
 # <a name="how-to-add-a-see-also-section-to-a-provider-help-topic"></a>Een gedeelte Zie ook toevoegen aan een Help-onderwerp over providers

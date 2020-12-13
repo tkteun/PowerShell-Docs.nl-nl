@@ -4,10 +4,10 @@ ms.topic: reference
 title: Het element ItemSelectionCondition voor ListItem voor ListControl (opmaak)
 description: Het element ItemSelectionCondition voor ListItem voor ListControl (opmaak)
 ms.openlocfilehash: 13d925da10c2386123983d52b109c03a0c3c63ab
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92667807"
 ---
 # <a name="itemselectioncondition-element-for-listitem-for-listcontrol-format"></a>Het element ItemSelectionCondition voor ListItem voor ListControl (opmaak)

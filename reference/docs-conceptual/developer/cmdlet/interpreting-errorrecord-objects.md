@@ -4,10 +4,10 @@ ms.topic: reference
 title: ErrorRecord-objecten interpreteren
 description: ErrorRecord-objecten interpreteren
 ms.openlocfilehash: 5a8556e0ba83e54dd197ed03665a119f0b565f2b
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92666872"
 ---
 # <a name="interpreting-errorrecord-objects"></a>ErrorRecord-objecten interpreteren
@@ -55,7 +55,7 @@ Op deze manier worden de afgeleide klassen onderschept. Er zijn echter problemen
 
 ### <a name="the-fqid"></a>De FQID
 
-De FQID is de meest specifieke informatie die u kunt gebruiken om de fout te identificeren. Het is een teken reeks die een door een cmdlet gedefinieerde id, de naam van de cmdlet-klasse en de bron die de fout heeft gerapporteerd bevat. In het algemeen is een fout record gelijk aan een gebeurtenis record van een Windows-gebeurtenis logboek. De FQID is vergelijkbaar met de volgende tuple, waarmee de klasse van de gebeurtenis record wordt geïdentificeerd: ( *logboek naam* , *bron* , *gebeurtenis-id* ).
+De FQID is de meest specifieke informatie die u kunt gebruiken om de fout te identificeren. Het is een teken reeks die een door een cmdlet gedefinieerde id, de naam van de cmdlet-klasse en de bron die de fout heeft gerapporteerd bevat. In het algemeen is een fout record gelijk aan een gebeurtenis record van een Windows-gebeurtenis logboek. De FQID is vergelijkbaar met de volgende tuple, waarmee de klasse van de gebeurtenis record wordt geïdentificeerd: (*logboek naam*, *bron*, *gebeurtenis-id*).
 
 De FQID is ontworpen om te worden geïnspecteerd als één teken reeks. Er zijn echter gevallen waarin de fout-id is ontworpen om te worden geparseerd door de hosttoepassing. Het volgende voor beeld is een goed gevormde, volledig gekwalificeerde fout-id.
 

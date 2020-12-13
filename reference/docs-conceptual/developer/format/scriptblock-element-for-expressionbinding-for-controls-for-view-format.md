@@ -4,10 +4,10 @@ ms.topic: reference
 title: Het element ScriptBlock voor ExpressionBinding voor Besturingselementen voor Weergave (opmaak)
 description: Het element ScriptBlock voor ExpressionBinding voor Besturingselementen voor Weergave (opmaak)
 ms.openlocfilehash: a68d6ecd4a9e1ff1d614d32325e99831be88e516
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92665293"
 ---
 # <a name="scriptblock-element-for-expressionbinding-for-controls-for-view-format"></a>Het element ScriptBlock voor ExpressionBinding voor Besturingselementen voor Weergave (opmaak)

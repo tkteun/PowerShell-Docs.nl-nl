@@ -4,10 +4,10 @@ ms.topic: reference
 title: Het element EnumerableExpansion (opmaak)
 description: Het element EnumerableExpansion (opmaak)
 ms.openlocfilehash: 207ad99d5335e99701660159ab77279b55b0b6b5
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92668011"
 ---
 # <a name="enumerableexpansion-element-format"></a>Het element EnumerableExpansion (opmaak)

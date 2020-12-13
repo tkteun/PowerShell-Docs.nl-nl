@@ -4,10 +4,10 @@ ms.topic: reference
 title: Concepten voor opmaakbestanden
 description: Concepten voor opmaakbestanden
 ms.openlocfilehash: b88dc177f227b3e5ce8043b46996c002ce879fa9
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92667841"
 ---
 # <a name="formatting-file-concepts"></a>Concepten voor opmaakbestanden

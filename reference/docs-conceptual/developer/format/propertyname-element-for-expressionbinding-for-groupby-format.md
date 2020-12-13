@@ -4,10 +4,10 @@ ms.topic: reference
 title: Het element PropertyName voor ExpressionBinding voor GroupBy (opmaak)
 description: Het element PropertyName voor ExpressionBinding voor GroupBy (opmaak)
 ms.openlocfilehash: af617b146574ffa051eb1592413b12a268009763
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92666175"
 ---
 # <a name="propertyname-element-for-expressionbinding-for-groupby-format"></a>Het element PropertyName voor ExpressionBinding voor GroupBy (opmaak)

@@ -4,10 +4,10 @@ ms.topic: reference
 title: Het element NewLine voor CustomItem voor Besturingselementen voor Weergave (opmaak)
 description: Het element NewLine voor CustomItem voor Besturingselementen voor Weergave (opmaak)
 ms.openlocfilehash: 3b368f021fcbd2ecabf2032b951afe2979a3d027
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92666430"
 ---
 # <a name="newline-element-for-customitem-for-controls-for-view-format"></a>Het element NewLine voor CustomItem voor Besturingselementen voor Weergave (opmaak)

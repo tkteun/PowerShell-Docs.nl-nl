@@ -4,10 +4,10 @@ ms.topic: reference
 title: Parameterinvoer valideren
 description: Parameterinvoer valideren
 ms.openlocfilehash: d39f3f61513cbcf2358446c57f403dc7cce4e0c9
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92668164"
 ---
 # <a name="how-to-validate-parameter-input"></a>Parameterinvoer valideren

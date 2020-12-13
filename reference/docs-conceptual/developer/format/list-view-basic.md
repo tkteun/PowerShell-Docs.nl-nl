@@ -4,10 +4,10 @@ ms.topic: reference
 title: Lijstweergave (Basis)
 description: Lijstweergave (Basis)
 ms.openlocfilehash: d80ac9c6143b976d8bc13e2b184e4f5a2f8a37ab
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92666634"
 ---
 # <a name="list-view-basic"></a>Lijstweergave (Basis)

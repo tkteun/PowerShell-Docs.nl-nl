@@ -4,10 +4,10 @@ ms.topic: reference
 title: AccessDBProviderSample05-codevoorbeeld
 description: AccessDBProviderSample05-codevoorbeeld
 ms.openlocfilehash: d20e097541a799952e43c31391bb2a192049196e
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92667518"
 ---
 # <a name="accessdbprovidersample05-code-sample"></a>AccessDBProviderSample05-codevoorbeeld

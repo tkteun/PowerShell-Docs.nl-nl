@@ -4,10 +4,10 @@ ms.topic: reference
 title: Namen van veelvoorkomende parameters
 description: Namen van veelvoorkomende parameters
 ms.openlocfilehash: cf39dd3b04660076718336857d79d55c3784ccd1
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92668215"
 ---
 # <a name="common-parameter-names"></a>Namen van veelvoorkomende parameters
@@ -37,13 +37,13 @@ Deze para meter geeft aan welke actie moet worden uitgevoerd als er een fout opt
 
 Gegevens type: teken reeks
 
-Met deze para meter wordt de variabele opgegeven waarin objecten worden geplaatst wanneer er een fout optreedt. Als u wilt toevoegen aan deze variabele, gebruikt u + *varnaam* in plaats van de variabele uit te scha kelen en in te stellen.
+Met deze para meter wordt de variabele opgegeven waarin objecten worden geplaatst wanneer er een fout optreedt. Als u wilt toevoegen aan deze variabele, gebruikt u +*varnaam* in plaats van de variabele uit te scha kelen en in te stellen.
 
 ### <a name="outvariable-alias-ov"></a>Outvariable (alias: OV)
 
 Gegevens type: teken reeks
 
-Met deze para meter geeft u de variabele op waarin alle uitvoer objecten worden geplaatst die door de cmdlet worden gegenereerd. Als u wilt toevoegen aan deze variabele, gebruikt u + *varnaam* in plaats van de variabele uit te scha kelen en in te stellen.
+Met deze para meter geeft u de variabele op waarin alle uitvoer objecten worden geplaatst die door de cmdlet worden gegenereerd. Als u wilt toevoegen aan deze variabele, gebruikt u +*varnaam* in plaats van de variabele uit te scha kelen en in te stellen.
 
 ### <a name="outbuffer-alias-ob"></a>Outbuffer (alias: OB)
 
@@ -67,7 +67,7 @@ Deze para meter geeft aan welke actie moet worden uitgevoerd wanneer de cmdlet e
 
 Gegevens type: teken reeks
 
-Met deze para meter geeft u de variabele op waarin waarschuwings berichten kunnen worden opgeslagen. Als u wilt toevoegen aan deze variabele, gebruikt u + *varnaam* in plaats van de variabele uit te scha kelen en in te stellen.
+Met deze para meter geeft u de variabele op waarin waarschuwings berichten kunnen worden opgeslagen. Als u wilt toevoegen aan deze variabele, gebruikt u +*varnaam* in plaats van de variabele uit te scha kelen en in te stellen.
 
 ## <a name="risk-mitigation-parameters"></a>Risk-Mitigation para meters
 

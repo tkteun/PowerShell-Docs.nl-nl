@@ -4,10 +4,10 @@ ms.topic: reference
 title: Het element CustomControlName voor ExpressionBinding voor CustomControl voor Weergave (opmaak)
 description: Het element CustomControlName voor ExpressionBinding voor CustomControl voor Weergave (opmaak)
 ms.openlocfilehash: 24b27428c07d7178f0069f6d0e5b7ffc555efe34
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92666804"
 ---
 # <a name="customcontrolname-element-for-expressionbinding-for-customcontrol-for-view-format"></a>Het element CustomControlName voor ExpressionBinding voor CustomControl voor Weergave (opmaak)

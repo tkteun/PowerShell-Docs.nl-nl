@@ -4,10 +4,10 @@ ms.topic: reference
 title: Het element ListItem voor ListItems voor ListControl (opmaak)
 description: Het element ListItem voor ListItems voor ListControl (opmaak)
 ms.openlocfilehash: 999491b7851aa4fa21667ad376d7e9853500ca08
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92666549"
 ---
 # <a name="listitem-element-for-listitems-for-listcontrol-format"></a>Het element ListItem voor ListItems voor ListControl (opmaak)

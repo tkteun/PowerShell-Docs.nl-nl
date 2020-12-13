@@ -4,10 +4,10 @@ ms.topic: reference
 title: Transacties ondersteunen
 description: Transacties ondersteunen
 ms.openlocfilehash: 5691c246830dab9f4808801c04353ebfb2c3e981
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92666957"
 ---
 # <a name="how-to-support-transactions"></a>Transacties ondersteunen

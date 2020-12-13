@@ -4,10 +4,10 @@ ms.topic: reference
 title: Uitgebreide type systeem klasse leden
 description: Uitgebreide type systeem klasse leden
 ms.openlocfilehash: 06488ce423f363a285ab53b21ab45989654346dc
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92666838"
 ---
 # <a name="extended-type-system-class-members"></a>Uitgebreide type systeem klasse leden
@@ -24,7 +24,7 @@ De klasse **PSMemberInfo** fungeert als basis klasse voor alle ETS-leden typen. 
 
 ## <a name="accessing-members"></a>Toegang tot leden
 
-U kunt toegang krijgen tot verzamelingen van leden via de eigenschappen van de **leden** , **methoden** en **Eigenschappen** van het object **PSObject** .
+U kunt toegang krijgen tot verzamelingen van leden via de eigenschappen van de **leden**, **methoden** en **Eigenschappen** van het object **PSObject** .
 
 ## <a name="ets-properties"></a>ETS-eigenschappen
 

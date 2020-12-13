@@ -4,10 +4,10 @@ ms.topic: reference
 title: Het element EntrySelectedBy voor CustomEntry voor Besturingselementen voor Configuratie (opmaak)
 description: Het element EntrySelectedBy voor CustomEntry voor Besturingselementen voor Configuratie (opmaak)
 ms.openlocfilehash: fadcdb69ac71269ba2f2f80baf139bb363d4acba
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92666668"
 ---
 # <a name="entryselectedby-element-for-customentry-for-controls-for-configuration-format"></a>Het element EntrySelectedBy voor CustomEntry voor Besturingselementen voor Configuratie (opmaak)

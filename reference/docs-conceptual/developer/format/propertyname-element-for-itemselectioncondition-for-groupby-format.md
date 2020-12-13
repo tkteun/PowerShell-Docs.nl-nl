@@ -4,10 +4,10 @@ ms.topic: reference
 title: Het element PropertyName voor ItemSelectionCondition voor GroupBy (opmaak)
 description: Het element PropertyName voor ItemSelectionCondition voor GroupBy (opmaak)
 ms.openlocfilehash: 9667a389ded33d0744f0f7f8d739635a8b21d98b
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92666107"
 ---
 # <a name="propertyname-element-for-itemselectioncondition-for-groupby-format"></a>Het element PropertyName voor ItemSelectionCondition voor GroupBy (opmaak)

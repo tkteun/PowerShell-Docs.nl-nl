@@ -4,10 +4,10 @@ ms.topic: reference
 title: Het element Label voor TableColumnHeader voor TableControl (opmaak)
 description: Het element Label voor TableColumnHeader voor TableControl (opmaak)
 ms.openlocfilehash: fe4c209903c04e683b44e2bdcbf381adb6874ace
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92667790"
 ---
 # <a name="label-element-for-tablecolumnheader-for-tablecontrol-format"></a>Het element Label voor TableColumnHeader voor TableControl (opmaak)

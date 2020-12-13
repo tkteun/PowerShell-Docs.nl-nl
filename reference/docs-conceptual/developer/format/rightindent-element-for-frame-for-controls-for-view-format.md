@@ -4,10 +4,10 @@ ms.topic: reference
 title: Het element RightIndent voor Frame voor Besturingselementen voor Weergave (opmaak)
 description: Het element RightIndent voor Frame voor Besturingselementen voor Weergave (opmaak)
 ms.openlocfilehash: 6bd7e0239777e1015f34827e3bad75e5fd560fc0
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92665492"
 ---
 # <a name="rightindent-element-for-frame-for-controls-for-view-format"></a>Het element RightIndent voor Frame voor Besturingselementen voor Weergave (opmaak)

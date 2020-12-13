@@ -4,10 +4,10 @@ ms.topic: reference
 title: Het element FormatString voor WideItem voor WideControl (opmaak)
 description: Het element FormatString voor WideItem voor WideControl (opmaak)
 ms.openlocfilehash: f67a18e3ec4f1323e7f9be8904db518c679d53e5
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92667875"
 ---
 # <a name="formatstring-element-for-wideitem-for-widecontrol-format"></a>Het element FormatString voor WideItem voor WideControl (opmaak)

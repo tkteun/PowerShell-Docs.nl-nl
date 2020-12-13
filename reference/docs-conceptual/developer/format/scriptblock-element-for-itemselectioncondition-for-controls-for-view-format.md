@@ -4,10 +4,10 @@ ms.topic: reference
 title: Het element ScriptBlock voor ItemSelectionCondition voor Besturingselementen voor Weergave (opmaak)
 description: Het element ScriptBlock voor ItemSelectionCondition voor Besturingselementen voor Weergave (opmaak)
 ms.openlocfilehash: c005215f7b7984541806d2f5de47372d536787ff
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92665195"
 ---
 # <a name="scriptblock-element-for-itemselectioncondition-for-controls-for-view-format"></a>Het element ScriptBlock voor ItemSelectionCondition voor Besturingselementen voor Weergave (opmaak)

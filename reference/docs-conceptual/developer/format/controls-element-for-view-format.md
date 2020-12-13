@@ -4,10 +4,10 @@ ms.topic: reference
 title: Het element Besturingselementen voor Weergave (opmaak)
 description: Het element Besturingselementen voor Weergave (opmaak)
 ms.openlocfilehash: 0e41f9ad35a0c45b615251417198a47bc7feb760
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92668062"
 ---
 # <a name="controls-element-for-view-format"></a>Het element Besturingselementen voor Weergave (opmaak)

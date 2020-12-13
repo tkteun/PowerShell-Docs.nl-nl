@@ -4,10 +4,10 @@ ms.topic: reference
 title: Resourceparameters
 description: Resourceparameters
 ms.openlocfilehash: 7533f91b6d5858bcefca289eabc7854d6d5d1f2b
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92668147"
 ---
 # <a name="resource-parameters"></a>Resourceparameters
@@ -16,10 +16,10 @@ De volgende tabel bevat de aanbevolen namen en functies voor resource parameters
 
 |Parameter|Functionaliteit|
 |---|---|
-|**App**<br>Gegevens type: teken reeks|Implementeer deze para meter zodat de gebruiker een toepassing kan opgeven.|
+|**Toepassing**<br>Gegevens type: teken reeks|Implementeer deze para meter zodat de gebruiker een toepassing kan opgeven.|
 |**Assembly**<br>Gegevens type: teken reeks|Implementeer deze para meter zodat de gebruiker een assembly kan opgeven.|
 |**Kenmerk**<br>Gegevens type: teken reeks|Implementeer deze para meter zodat de gebruiker een kenmerk kan opgeven.|
-|**Klasse**<br>Gegevens type: teken reeks|Implementeer deze para meter zodat de gebruiker een Microsoft .NET Framework-klasse kan opgeven.|
+|**Klas**<br>Gegevens type: teken reeks|Implementeer deze para meter zodat de gebruiker een Microsoft .NET Framework-klasse kan opgeven.|
 |**Cluster**<br>Gegevens type: teken reeks|Implementeer deze para meter zodat de gebruiker een cluster kan opgeven.|
 |**Cultuur**<br>Gegevens type: teken reeks|Implementeer deze para meter zodat de gebruiker de cultuur kan opgeven waarin de cmdlet moet worden uitgevoerd.|
 |**Domein**<br>Gegevens type: teken reeks|Implementeer deze para meter zodat de gebruiker de domein naam kan opgeven.|

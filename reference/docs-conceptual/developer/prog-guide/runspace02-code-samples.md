@@ -4,10 +4,10 @@ ms.topic: reference
 title: Runspace02-codevoorbeelden
 description: Runspace02-codevoorbeelden
 ms.openlocfilehash: d12c162b9cfabf0fba0f3128af2ee3100db3b300
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92667472"
 ---
 # <a name="runspace02-code-samples"></a>Runspace02-codevoorbeelden
