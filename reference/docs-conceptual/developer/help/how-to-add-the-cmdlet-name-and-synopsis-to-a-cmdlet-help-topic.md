@@ -4,10 +4,10 @@ ms.topic: reference
 title: De cmdlet-naam en het cmdlet-overzicht toevoegen aan een Help-onderwerp voor cmdlets
 description: De cmdlet-naam en het cmdlet-overzicht toevoegen aan een Help-onderwerp voor cmdlets
 ms.openlocfilehash: aeeb0cdd1d6d17b88067928ff952dc57a9441917
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92659054"
 ---
 # <a name="how-to-add-the-cmdlet-name-and-synopsis-to-a-cmdlet-help-topic"></a>De cmdlet-naam en het cmdlet-overzicht toevoegen aan een Help-onderwerp voor cmdlets

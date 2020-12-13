@@ -4,10 +4,10 @@ ms.topic: reference
 title: Snelstartgids voor Windows PowerShell-hosts
 description: Snelstartgids voor Windows PowerShell-hosts
 ms.openlocfilehash: 4cb7dae60342abb40bd7a989a27a692826b360e5
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92657431"
 ---
 # <a name="windows-powershell-host-quickstart"></a>Snelstartgids voor Windows PowerShell-hosts

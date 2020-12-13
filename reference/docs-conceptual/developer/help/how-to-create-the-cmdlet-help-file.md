@@ -4,10 +4,10 @@ ms.topic: reference
 title: Het Help-bestand voor cmdlets maken
 description: Het Help-bestand voor cmdlets maken
 ms.openlocfilehash: 40259c8f9496b10380805a78f3711aed6f1bf2e5
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92659090"
 ---
 # <a name="how-to-create-the-cmdlet-help-file"></a>Het Help-bestand voor cmdlets maken
@@ -31,7 +31,7 @@ In deze sectie wordt beschreven hoe u een geldig XML-bestand maakt dat inhoud be
 
    De volgende tabel bevat het XML-element voor elk knoop punt, gevolgd door een beschrijving van elk knoop punt.
 
-   |           Knooppunt           |                                                                                                     Beschrijving                                                                                                     |
+   |           Knooppunt           |                                                                                                     Description                                                                                                     |
    | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
    | `<details>`              | Hiermee voegt u inhoud toe voor de secties naam en samen VATTING van het Help-onderwerp van de cmdlet. Zie [de naam en samen vatting van de cmdlet toevoegen](./how-to-add-the-cmdlet-name-and-synopsis-to-a-cmdlet-help-topic.md)voor meer informatie. |
    | `<maml:description>`     | Hiermee voegt u inhoud toe voor de sectie Beschrijving van het Help-onderwerp van de cmdlet. Zie [de gedetailleerde beschrijving toevoegen aan een Help-onderwerp over cmdlets](./how-to-add-a-cmdlet-description.md)voor meer informatie.                    |

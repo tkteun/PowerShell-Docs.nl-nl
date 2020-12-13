@@ -4,10 +4,10 @@ ms.topic: reference
 title: Een PowerShell-module importeren
 description: Een PowerShell-module importeren
 ms.openlocfilehash: 688509c0943a9a0289e75b80543f278e16cfedfe
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92658788"
 ---
 # <a name="importing-a-powershell-module"></a>Een PowerShell-module importeren
@@ -34,7 +34,7 @@ Ervan uitgaande dat myModule zich in Power Shell bevindt `PSModulePath` , wordt 
 Import-Module -Name C:\myRandomDirectory\myModule -Verbose
 ```
 
-U kunt ook de `-Verbose` para meter gebruiken om te bepalen wat wordt geëxporteerd uit de module en wat wordt geïmporteerd in actief geheugen. Zowel de export als de invoer beperken wat er aan de gebruiker wordt blootgesteld: het verschil is wie de zicht baarheid beheert. In wezen worden exports beheerd door code binnen de module. De invoer wordt daarentegen bepaald door de `Import-Module` aanroep. Zie voor meer informatie **het beperken van leden die hieronder worden geïmporteerd** .
+U kunt ook de `-Verbose` para meter gebruiken om te bepalen wat wordt geëxporteerd uit de module en wat wordt geïmporteerd in actief geheugen. Zowel de export als de invoer beperken wat er aan de gebruiker wordt blootgesteld: het verschil is wie de zicht baarheid beheert. In wezen worden exports beheerd door code binnen de module. De invoer wordt daarentegen bepaald door de `Import-Module` aanroep. Zie voor meer informatie **het beperken van leden die hieronder worden geïmporteerd**.
 
 ## <a name="implicitly-importing-a-module-powershell-30"></a>Een module impliciet importeren (Power Shell 3,0)
 
@@ -66,13 +66,13 @@ De cmdlet [import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Mo
 Wanneer een module wordt geïmporteerd met behulp van de cmdlet [import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) , worden alle geëxporteerde module leden standaard in de sessie geïmporteerd, met inbegrip van opdrachten die naar de module worden geëxporteerd door een geneste module. Variabelen en aliassen worden standaard niet geëxporteerd. Als u de geëxporteerde leden wilt beperken, gebruikt u een [module manifest](./how-to-write-a-powershell-module-manifest.md).
 Gebruik de volgende para meters van de cmdlet om de leden te beperken die worden geïmporteerd `Import-Module` .
 
-- **Functie** : deze para meter beperkt de functies die worden geëxporteerd. (Als u een module manifest gebruikt, raadpleegt u de sleutel FunctionsToExport.)
+- **Functie**: deze para meter beperkt de functies die worden geëxporteerd. (Als u een module manifest gebruikt, raadpleegt u de sleutel FunctionsToExport.)
 
-- `**Cmdlet** : deze para meter beperkt de cmdlets die worden geëxporteerd (als u een module manifest gebruikt, raadpleegt u de sleutel CmdletsToExport.)
+- `**Cmdlet**: deze para meter beperkt de cmdlets die worden geëxporteerd (als u een module manifest gebruikt, raadpleegt u de sleutel CmdletsToExport.)
 
-- **Variabele** : met deze para meter worden de variabelen beperkt die worden geëxporteerd (als u een module manifest gebruikt, raadpleegt u de sleutel VariablesToExport.)
+- **Variabele**: met deze para meter worden de variabelen beperkt die worden geëxporteerd (als u een module manifest gebruikt, raadpleegt u de sleutel VariablesToExport.)
 
-- **Alias** : met deze para meter worden de aliassen beperkt die worden geëxporteerd (als u een module manifest gebruikt, raadpleegt u de sleutel AliasesToExport.)
+- **Alias**: met deze para meter worden de aliassen beperkt die worden geëxporteerd (als u een module manifest gebruikt, raadpleegt u de sleutel AliasesToExport.)
 
 ## <a name="see-also"></a>Zie ook
 

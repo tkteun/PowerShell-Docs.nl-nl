@@ -4,10 +4,10 @@ ms.topic: reference
 title: Het element TableColumnItem voor TableColumnItems voor TableControl (opmaak)
 description: Het element TableColumnItem voor TableColumnItems voor TableControl (opmaak)
 ms.openlocfilehash: 8ef5158c9bb9f074d5c58190d4d3b20c10c83744
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92659853"
 ---
 # <a name="tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format"></a>Het element TableColumnItem voor TableColumnItems voor TableControl (opmaak)

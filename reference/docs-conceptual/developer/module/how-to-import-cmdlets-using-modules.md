@@ -4,10 +4,10 @@ ms.topic: reference
 title: Cmdlets importeren met modules
 description: Cmdlets importeren met modules
 ms.openlocfilehash: 485a4be4d2accaf050a6536e7f92a0673f62a30b
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92657290"
 ---
 # <a name="how-to-import-cmdlets-using-modules"></a>Cmdlets importeren met modules

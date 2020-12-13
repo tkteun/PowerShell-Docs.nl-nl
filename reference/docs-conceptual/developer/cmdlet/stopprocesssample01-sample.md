@@ -4,10 +4,10 @@ ms.topic: reference
 title: Voorbeeld StopProcessSample01
 description: Voorbeeld StopProcessSample01
 ms.openlocfilehash: 9024f5c66330f3a1748c28b82e91b3915e956207
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92660538"
 ---
 # <a name="stopprocesssample01-sample"></a>Voorbeeld StopProcessSample01
@@ -20,7 +20,7 @@ Dit voor beeld laat zien hoe u een cmdlet schrijft die feedback van de gebruiker
 
 2. Dubbel klik op het pictogram van het oplossings bestand (. SLN). Hiermee opent u het voorbeeld project in micro soft Visual Studio.
 
-3. Selecteer in het menu **Build** de optie **Build Solution** .
+3. Selecteer in het menu **Build** de optie **Build Solution**.
 
     De bibliotheek voor het voor beeld wordt opgebouwd in de standaard mappen \Bin of \bin\debug.
 

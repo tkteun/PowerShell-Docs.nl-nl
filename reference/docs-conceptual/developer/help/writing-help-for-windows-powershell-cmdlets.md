@@ -4,10 +4,10 @@ ms.topic: reference
 title: Help voor PowerShell-cmdlets schrijven
 description: Help voor PowerShell-cmdlets schrijven
 ms.openlocfilehash: b1deaa5998dbc54add93764db785d57afcc0a779
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92658098"
 ---
 # <a name="writing-help-for-powershell-cmdlets"></a>Help voor PowerShell-cmdlets schrijven
@@ -28,7 +28,7 @@ Gebruik eenvoudige woorden en zinsdelen. Vermijd jargon. Houd er rekening mee da
 
 ### <a name="write-consistently"></a>Consistent schrijven
 
-Help voor gerelateerde cmdlets moet vergelijkbaar zijn (bijvoorbeeld Get-x en set-x). Gebruik de standaard beschrijvingen voor standaard parameters, zoals **Force** en **input object** . (Kopieer ze in de Help voor de kern-cmdlets.) Gebruik standaard termen. Gebruik bijvoorbeeld "para meter", niet "argument" en gebruik "cmdlet" niet "opdracht" of "opdracht-Let".
+Help voor gerelateerde cmdlets moet vergelijkbaar zijn (bijvoorbeeld Get-x en set-x). Gebruik de standaard beschrijvingen voor standaard parameters, zoals **Force** en **input object**. (Kopieer ze in de Help voor de kern-cmdlets.) Gebruik standaard termen. Gebruik bijvoorbeeld "para meter", niet "argument" en gebruik "cmdlet" niet "opdracht" of "opdracht-Let".
 
 ### <a name="start-the-synopsis-with-a-verb"></a>De samen vatting starten met een werk woord
 

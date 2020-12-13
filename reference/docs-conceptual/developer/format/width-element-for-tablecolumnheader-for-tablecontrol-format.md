@@ -4,10 +4,10 @@ ms.topic: reference
 title: Het element Breedte voor TableColumnHeader voor TableControl (opmaak)
 description: Het element Breedte voor TableColumnHeader voor TableControl (opmaak)
 ms.openlocfilehash: bde84f1d33b3d6b3b8c4462f870f978611cb434b
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92658259"
 ---
 # <a name="width-element-for-tablecolumnheader-for-tablecontrol-format"></a>Het element Breedte voor TableColumnHeader voor TableControl (opmaak)

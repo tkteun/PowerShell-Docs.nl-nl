@@ -4,10 +4,10 @@ ms.topic: reference
 title: Aliassen, jokertekenuitbreiding en Help toevoegen aan cmdlet-parameters
 description: Aliassen, jokertekenuitbreiding en Help toevoegen aan cmdlet-parameters
 ms.openlocfilehash: f0f07796370b4613b1ca0ad17b16c6598bfa438d
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92660638"
 ---
 # <a name="adding-aliases-wildcard-expansion-and-help-to-cmdlet-parameters"></a>Aliassen, jokertekenuitbreiding en Help toevoegen aan cmdlet-parameters

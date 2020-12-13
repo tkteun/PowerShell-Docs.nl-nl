@@ -4,10 +4,10 @@ ms.topic: reference
 title: GetProc03-codevoorbeelden
 description: GetProc03-codevoorbeelden
 ms.openlocfilehash: 2866f3652072e1d89780c818543dbfc72a0606f0
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92659278"
 ---
 # <a name="getproc03-code-samples"></a>GetProc03-codevoorbeelden

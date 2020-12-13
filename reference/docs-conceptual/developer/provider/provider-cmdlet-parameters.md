@@ -4,10 +4,10 @@ ms.topic: reference
 title: Parameters voor provider-cmdlets
 description: Parameters voor provider-cmdlets
 ms.openlocfilehash: 6fd340f22202d984b7111c34806e3461a356c670
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92662783"
 ---
 # <a name="provider-cmdlet-parameters"></a>Parameters voor provider-cmdlets

@@ -4,10 +4,10 @@ ms.topic: reference
 title: Snelstartgids voor Windows PowerShell-providers
 description: Snelstartgids voor Windows PowerShell-providers
 ms.openlocfilehash: f0fe0ad60e9d10efd505cda60af995c597226b92
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92664348"
 ---
 # <a name="windows-powershell-provider-quickstart"></a>Snelstartgids voor Windows PowerShell-providers
@@ -30,7 +30,7 @@ Maak in Visual Studio een Class Library-project met de naam AccessDBProviderSamp
 
 1. Voeg de assembly System. Management. Automation toe als referentie voor uw project.
 
-2. Klik op **Project > eigenschappen AccessDBProviderSample > fout opsporing** . Klik in **Start project** op **extern programma starten** en navigeer naar het uitvoer bare Windows Power shell-bestand (meestal c:\Windows\System32\WindowsPowerShell\v1.0 \\.powershell.exe).
+2. Klik op **Project > eigenschappen AccessDBProviderSample > fout opsporing**. Klik in **Start project** op **extern programma starten** en navigeer naar het uitvoer bare Windows Power shell-bestand (meestal c:\Windows\System32\WindowsPowerShell\v1.0 \\.powershell.exe).
 
 3. Onder **Start opties** typt u het volgende in het vak **opdracht regel argumenten** : `-noexit -command "[reflection.assembly]::loadFrom(AccessDBProviderSample.dll' ) | import-module"`
 

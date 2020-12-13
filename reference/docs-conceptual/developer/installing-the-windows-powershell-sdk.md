@@ -4,10 +4,10 @@ ms.topic: reference
 title: De Windows PowerShell SDK installeren
 description: De Windows PowerShell SDK installeren
 ms.openlocfilehash: 07108ede640b8c6c02bea6d9e2b63116b5b8f969
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92657298"
 ---
 # <a name="installing-the-windows-powershell-sdk"></a>De Windows PowerShell SDK installeren

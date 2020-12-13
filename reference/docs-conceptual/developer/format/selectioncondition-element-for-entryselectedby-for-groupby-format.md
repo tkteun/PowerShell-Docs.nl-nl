@@ -4,10 +4,10 @@ ms.topic: reference
 title: Het element SelectionCondition voor EntrySelectedBy voor GroupBy (opmaak)
 description: Het element SelectionCondition voor EntrySelectedBy voor GroupBy (opmaak)
 ms.openlocfilehash: 14c293b6bc6d6accc201de35be9219349079801d
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92664754"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-groupby-format"></a>Het element SelectionCondition voor EntrySelectedBy voor GroupBy (opmaak)

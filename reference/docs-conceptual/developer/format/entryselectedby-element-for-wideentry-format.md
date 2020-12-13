@@ -4,10 +4,10 @@ ms.topic: reference
 title: Het element EntrySelectedBy voor WideEntry (opmaak)
 description: Het element EntrySelectedBy voor WideEntry (opmaak)
 ms.openlocfilehash: 246a1967300ab0551f376c4799deac275068308c
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92660248"
 ---
 # <a name="entryselectedby-element-for-wideentry-format"></a>Het element EntrySelectedBy voor WideEntry (opmaak)

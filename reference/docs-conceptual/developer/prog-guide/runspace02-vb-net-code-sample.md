@@ -4,10 +4,10 @@ ms.topic: reference
 title: Runspace02-codevoorbeeld (VB.NET)
 description: Runspace02-codevoorbeeld (VB.NET)
 ms.openlocfilehash: 07197886a062881128655379e4a4b28aaec17163
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92657042"
 ---
 # <a name="runspace02-vbnet-code-sample"></a>Runspace02-codevoorbeeld (VB.NET)
