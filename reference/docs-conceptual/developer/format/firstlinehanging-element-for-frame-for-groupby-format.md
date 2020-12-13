@@ -4,10 +4,10 @@ ms.topic: reference
 title: Het element FirstLineHanging voor Frame voor GroupBy (opmaak)
 description: Het element FirstLineHanging voor Frame voor GroupBy (opmaak)
 ms.openlocfilehash: 6a4ded9cced484440636aee694cd8381b2889ba8
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92652281"
 ---
 # <a name="firstlinehanging-element-for-frame-for-groupby-format"></a>Het element FirstLineHanging voor Frame voor GroupBy (opmaak)

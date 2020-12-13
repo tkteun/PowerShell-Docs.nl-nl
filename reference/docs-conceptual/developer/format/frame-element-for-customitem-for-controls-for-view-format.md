@@ -4,10 +4,10 @@ ms.topic: reference
 title: Het element Frame voor CustomItem voor Besturingselementen voor Weergave (opmaak)
 description: Het element Frame voor CustomItem voor Besturingselementen voor Weergave (opmaak)
 ms.openlocfilehash: 6f26e19a6894ac213b924108a56cb80f9ffd1143
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92652200"
 ---
 # <a name="frame-element-for-customitem-for-controls-for-view-format"></a>Het element Frame voor CustomItem voor Besturingselementen voor Weergave (opmaak)

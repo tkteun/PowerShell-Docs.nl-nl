@@ -4,10 +4,10 @@ ms.topic: reference
 title: Het element SelectionCondition voor EntrySelectedBy voor WideControl (opmaak)
 description: Het element SelectionCondition voor EntrySelectedBy voor WideControl (opmaak)
 ms.openlocfilehash: 8c51ca72edc6ad174dc289c61a8987e8f9495d19
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92655109"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-widecontrol-format"></a>Het element SelectionCondition voor EntrySelectedBy voor WideControl (opmaak)

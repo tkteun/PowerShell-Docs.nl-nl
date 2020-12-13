@@ -4,10 +4,10 @@ ms.topic: reference
 title: Concepten voor Windows PowerShell-cmdlets
 description: Concepten voor Windows PowerShell-cmdlets
 ms.openlocfilehash: da34d3d229f6d57ee22d84fc024b31eb2ee27ba3
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92652523"
 ---
 # <a name="windows-powershell-cmdlet-concepts"></a>Concepten voor Windows PowerShell-cmdlets

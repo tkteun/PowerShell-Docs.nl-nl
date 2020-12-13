@@ -4,15 +4,15 @@ ms.topic: reference
 title: Concepten voor foutrapportage
 description: Concepten voor foutrapportage
 ms.openlocfilehash: 353e628c63667a2db010556b2ed9169809b742f4
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92653045"
 ---
 # <a name="error-reporting-concepts"></a>Concepten voor foutrapportage
 
-Windows Power shell biedt twee mechanismen voor het rapporteren van fouten: één mechanisme voor het *beëindigen van fouten* en een ander mechanisme voor *niet-afsluit fouten* . Het is belang rijk om ervoor te zorgen dat uw cmdlet fouten correct rapporteert, zodat de hosttoepassing waarop uw cmdlets worden uitgevoerd, op de juiste manier kan reageren.
+Windows Power shell biedt twee mechanismen voor het rapporteren van fouten: één mechanisme voor het *beëindigen van fouten* en een ander mechanisme voor *niet-afsluit fouten*. Het is belang rijk om ervoor te zorgen dat uw cmdlet fouten correct rapporteert, zodat de hosttoepassing waarop uw cmdlets worden uitgevoerd, op de juiste manier kan reageren.
 
 De cmdlet moet de methode [System. Management. Automation. cmdlet. Throwterminatingerror *](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) aanroepen als er een fout optreedt waarbij de cmdlet de invoer objecten niet kan blijven verwerken. De cmdlet moet de methode [System. Management. Automation. cmdlet. WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) aanroepen om niet-afsluit fouten te rapporteren wanneer de cmdlet de verwerking van de invoer objecten kan voortzetten. Beide methoden bieden een fout record die de hosttoepassing kan gebruiken om de oorzaak van de fout te onderzoeken.
 

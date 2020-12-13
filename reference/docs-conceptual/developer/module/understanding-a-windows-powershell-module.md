@@ -4,10 +4,10 @@ ms.topic: reference
 title: Inzicht in een Windows PowerShell-module
 description: Inzicht in een Windows PowerShell-module
 ms.openlocfilehash: 882e9db59dc1bc8570676d1da7ce84c808d076e8
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92651151"
 ---
 # <a name="understanding-a-windows-powershell-module"></a>Inzicht in een Windows PowerShell-module

@@ -4,10 +4,10 @@ ms.topic: reference
 title: Runspace03-codevoorbeeld (C#)
 description: Runspace03-codevoorbeeld (C#)
 ms.openlocfilehash: cdb08811de13f8bbf5cd91fcbef552c78594b788
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92653841"
 ---
 # <a name="runspace03-c-code-sample"></a>Runspace03-codevoorbeeld (C#)

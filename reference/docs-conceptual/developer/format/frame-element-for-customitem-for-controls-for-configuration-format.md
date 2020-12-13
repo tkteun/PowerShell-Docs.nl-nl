@@ -4,10 +4,10 @@ ms.topic: reference
 title: Het element Frame voor CustomItem voor Besturingselementen voor Configuratie (opmaak)
 description: Het element Frame voor CustomItem voor Besturingselementen voor Configuratie (opmaak)
 ms.openlocfilehash: 85d095b9b0c25b68b2353bce56b85333aff91b98
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92652246"
 ---
 # <a name="frame-element-for-customitem-for-controls-for-configuration-format"></a>Het element Frame voor CustomItem voor Besturingselementen voor Configuratie (opmaak)

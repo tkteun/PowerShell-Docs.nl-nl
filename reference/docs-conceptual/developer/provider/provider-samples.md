@@ -4,10 +4,10 @@ ms.topic: reference
 title: Voorbeelden van providers
 description: Voorbeelden van providers
 ms.openlocfilehash: e6b1e8ce603092a3fd9dd44d7be428587544466b
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92651135"
 ---
 # <a name="provider-samples"></a>Voorbeelden van providers

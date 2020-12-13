@@ -4,10 +4,10 @@ ms.topic: reference
 title: Bestandstypen die zijn toegestaan in een CAB-bestand voor een Help die kan worden bijgewerkt
 description: Bestandstypen die zijn toegestaan in een CAB-bestand voor een Help die kan worden bijgewerkt
 ms.openlocfilehash: bb69b8b89a9a3a5c8c00059ec404a4d41a5db9a5
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92654730"
 ---
 # <a name="file-types-permitted-in-an-updatable-help-cab-file"></a>Bestandstypen die zijn toegestaan in een CAB-bestand voor een Help die kan worden bijgewerkt

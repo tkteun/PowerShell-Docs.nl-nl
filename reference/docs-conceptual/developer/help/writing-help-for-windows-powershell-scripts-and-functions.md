@@ -4,10 +4,10 @@ ms.topic: reference
 title: Hulp voor het schrijven van Power shell-scripts en-functies
 description: Hulp voor het schrijven van Power shell-scripts en-functies
 ms.openlocfilehash: f72742e2a131f41ba8ffdcec4901c7c3ea1da1ad
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92654644"
 ---
 # <a name="writing-help-for-powershell-scripts-and-functions"></a>Hulp voor het schrijven van Power shell-scripts en-functies

@@ -4,10 +4,10 @@ ms.topic: reference
 title: Het element SelectionSetName voor SelectionCondition voor EntrySelectedBy voor TableControl (opmaak)
 description: Het element SelectionSetName voor SelectionCondition voor EntrySelectedBy voor TableControl (opmaak)
 ms.openlocfilehash: 2fb09e27eef1ce5d6e864c72edb595817d91f729
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92655046"
 ---
 # <a name="selectionsetname-element-for-selectioncondition-for-entryselectedby-for-tablecontrol-format"></a>Het element SelectionSetName voor SelectionCondition voor EntrySelectedBy voor TableControl (opmaak)

@@ -4,10 +4,10 @@ ms.topic: reference
 title: Eigenschappen voor objecten uitbreiden
 description: Eigenschappen voor objecten uitbreiden
 ms.openlocfilehash: 37803d9fd87319204565c2abde62f269744481b9
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92652885"
 ---
 # <a name="extending-properties-for-objects"></a>Eigenschappen voor objecten uitbreiden
@@ -60,7 +60,7 @@ In het volgende voor beeld wordt de eigenschap **mode** toegevoegd aan het type 
 
 Een eigenschap Note definieert een eigenschap die een statische waarde heeft.
 
-In het volgende voor beeld wordt de eigenschap **status** , waarvan de waarde altijd is **geslaagd** , toegevoegd aan het type [System. io. DirectoryInfo](/dotnet/api/System.IO.DirectoryInfo) . Het [NoteProperty](/dotnet/api/system.management.automation.psnoteproperty) -element definieert de eigenschap Extended als een notitie-eigenschap. Met het element [name](/dotnet/api/system.management.automation.psmemberinfo.name) geeft u de naam van de uitgebreide eigenschap op. Met het element [Value](/dotnet/api/system.management.automation.psnoteproperty.value) wordt de statische waarde van de uitgebreide eigenschap opgegeven. Het `NoteProperty` element kan ook worden toegevoegd aan de leden van het element [MemberSets](/dotnet/api/system.management.automation.psmemberset) .
+In het volgende voor beeld wordt de eigenschap **status** , waarvan de waarde altijd is **geslaagd**, toegevoegd aan het type [System. io. DirectoryInfo](/dotnet/api/System.IO.DirectoryInfo) . Het [NoteProperty](/dotnet/api/system.management.automation.psnoteproperty) -element definieert de eigenschap Extended als een notitie-eigenschap. Met het element [name](/dotnet/api/system.management.automation.psmemberinfo.name) geeft u de naam van de uitgebreide eigenschap op. Met het element [Value](/dotnet/api/system.management.automation.psnoteproperty.value) wordt de statische waarde van de uitgebreide eigenschap opgegeven. Het `NoteProperty` element kan ook worden toegevoegd aan de leden van het element [MemberSets](/dotnet/api/system.management.automation.psmemberset) .
 
 ```xml
 <Type>
@@ -98,9 +98,9 @@ In het volgende voor beeld wordt de eigenschap **VersionInfo** toegevoegd aan he
 
 Een verzameling eigenschappen definieert een groep uitgebreide eigenschappen waarnaar kan worden verwezen door de naam van de set.
 De eigenschap para meter [Format-Table](/powershell/module/Microsoft.PowerShell.Utility/Format-Table) 
- **Property** kan bijvoorbeeld een specifieke eigenschappenset opgeven die moet worden weer gegeven. Wanneer een eigenschappenset is opgegeven, worden alleen de eigenschappen die deel uitmaken van de set weer gegeven.
+  kan bijvoorbeeld een specifieke eigenschappenset opgeven die moet worden weer gegeven. Wanneer een eigenschappenset is opgegeven, worden alleen de eigenschappen die deel uitmaken van de set weer gegeven.
 
-Er is geen beperking voor het aantal eigenschappen sets dat kan worden gedefinieerd voor een object. De eigenschappen sets die worden gebruikt om de standaard eigenschappen voor de weer gave van een object te definiëren, moeten echter worden opgegeven in de ledenset **PSStandardMembers** . In het `Types.ps1xml` type bestand zijn de standaard namen van eigenschappen sets **DefaultDisplayProperty** , **DefaultDisplayPropertySet** en **DefaultKeyPropertySet** . Eventuele extra eigenschappen sets die u aan de ledenset **PSStandardMembers** toevoegt, worden genegeerd.
+Er is geen beperking voor het aantal eigenschappen sets dat kan worden gedefinieerd voor een object. De eigenschappen sets die worden gebruikt om de standaard eigenschappen voor de weer gave van een object te definiëren, moeten echter worden opgegeven in de ledenset **PSStandardMembers** . In het `Types.ps1xml` type bestand zijn de standaard namen van eigenschappen sets **DefaultDisplayProperty**, **DefaultDisplayPropertySet** en **DefaultKeyPropertySet**. Eventuele extra eigenschappen sets die u aan de ledenset **PSStandardMembers** toevoegt, worden genegeerd.
 
 In het volgende voor beeld wordt de eigenschap **DefaultDisplayPropertySet** toegevoegd aan de ledenset **PSStandardMembers** van het type [System. ServiceProcess. servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController) . Het [eigenschappenset](/dotnet/api/system.management.automation.pspropertyset) -element definieert de groep eigenschappen. Het element [name](/dotnet/api/system.management.automation.psmemberinfo.name) specificeert de naam van de eigenschappenset. En de eigenschappen van de set worden opgegeven met het element [ReferencedProperties](/dotnet/api/system.management.automation.pspropertyset.referencedpropertynames) . U kunt het element ook toevoegen `PropertySet` aan de leden van het element [type](/dotnet/api/system.management.automation.pstypename) .
 

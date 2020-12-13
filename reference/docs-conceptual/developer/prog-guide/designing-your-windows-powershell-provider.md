@@ -4,10 +4,10 @@ ms.topic: reference
 title: Uw Windows PowerShell-provider ontwerpen
 description: Uw Windows PowerShell-provider ontwerpen
 ms.openlocfilehash: 89e1fa9cfc0a2e5928a358aad4244c8e9152fe1a
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92654527"
 ---
 # <a name="designing-your-windows-powershell-provider"></a>Uw Windows PowerShell-provider ontwerpen

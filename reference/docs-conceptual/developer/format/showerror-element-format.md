@@ -4,10 +4,10 @@ ms.topic: reference
 title: Het element ShowError (opmaak)
 description: Het element ShowError (opmaak)
 ms.openlocfilehash: 278d379c55dc768b703bed3938bf556cbfceabb5
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92654852"
 ---
 # <a name="showerror-element-format"></a>Het element ShowError (opmaak)

@@ -4,10 +4,10 @@ ms.topic: reference
 title: Eigenschappen declareren als parameters
 description: Eigenschappen declareren als parameters
 ms.openlocfilehash: ade7928e2ca277da8bbd1a5e04997bd1d05f1e5d
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92653155"
 ---
 # <a name="declaring-properties-as-parameters"></a>Eigenschappen declareren als parameters

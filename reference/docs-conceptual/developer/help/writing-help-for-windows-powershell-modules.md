@@ -4,10 +4,10 @@ ms.topic: reference
 title: Help voor PowerShell-modules schrijven
 description: Help voor PowerShell-modules schrijven
 ms.openlocfilehash: 3bef45c0dd8a7e63bc419bb3e5a7a1783810105b
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92654649"
 ---
 # <a name="writing-help-for-powershell-modules"></a>Help voor PowerShell-modules schrijven
@@ -20,15 +20,15 @@ In dit document vindt u informatie over de indeling en de juiste plaatsing van d
 
 Een module kan de volgende soorten Help bevatten.
 
-- **Help voor cmdlets** . De Help-onderwerpen waarin cmdlets in een module worden beschreven, zijn XML-bestanden die gebruikmaken van het opdracht Help-schema
+- **Help voor cmdlets**. De Help-onderwerpen waarin cmdlets in een module worden beschreven, zijn XML-bestanden die gebruikmaken van het opdracht Help-schema
 
 - **Help** voor de provider. De Help-onderwerpen waarin providers in een module worden beschreven, zijn XML-bestanden die gebruikmaken van het Help-schema van de provider.
 
-- **Functie Help** . De Help-onderwerpen die functies in een module beschrijven, kunnen XML-bestanden zijn die gebruikmaken van de opdracht Help-schema of de Help-onderwerpen op basis van opmerkingen in de functie, of het script of de script module
+- **Functie Help**. De Help-onderwerpen die functies in een module beschrijven, kunnen XML-bestanden zijn die gebruikmaken van de opdracht Help-schema of de Help-onderwerpen op basis van opmerkingen in de functie, of het script of de script module
 
-- **Help voor scripts** . De Help-onderwerpen waarin scripts in een module worden beschreven, kunnen XML-bestanden zijn die gebruikmaken van de opdracht Help-schema of de Help-onderwerpen op basis van opmerkingen in de script-of script module.
+- **Help voor scripts**. De Help-onderwerpen waarin scripts in een module worden beschreven, kunnen XML-bestanden zijn die gebruikmaken van de opdracht Help-schema of de Help-onderwerpen op basis van opmerkingen in de script-of script module.
 
-- **Conceptuele informatie ("about")** . U kunt een conceptueel ("about") Help-onderwerp gebruiken om de module en de bijbehorende leden te beschrijven en te uitleggen hoe de leden kunnen worden gebruikt om taken uit te voeren.
+- **Conceptuele informatie ("about")**. U kunt een conceptueel ("about") Help-onderwerp gebruiken om de module en de bijbehorende leden te beschrijven en te uitleggen hoe de leden kunnen worden gebruikt om taken uit te voeren.
   Conceptuele Help-onderwerpen zijn tekst bestanden met Unicode-code ring (UTF-8). De bestands naam moet de `about_<name>.help.txt` indeling gebruiken, bijvoorbeeld `about_MyModule.help.txt` . Power shell bevat standaard meer dan 100 van de volgende conceptuele informatie over Help-onderwerpen en ze zijn ingedeeld zoals in het volgende voor beeld.
 
   ```Output

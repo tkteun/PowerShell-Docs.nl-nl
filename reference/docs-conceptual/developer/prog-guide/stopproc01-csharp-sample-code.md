@@ -4,10 +4,10 @@ ms.topic: reference
 title: StopProc01-codevoorbeeld (C#)
 description: StopProc01-codevoorbeeld (C#)
 ms.openlocfilehash: fb5d051bfd8ef85380aeee13a3cb8e4fff73e29b
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92654175"
 ---
 # <a name="stopproc01-c-sample-code"></a>StopProc01-codevoorbeeld (C#)

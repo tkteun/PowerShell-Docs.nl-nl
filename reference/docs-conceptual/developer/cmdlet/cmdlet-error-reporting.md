@@ -4,10 +4,10 @@ ms.topic: reference
 title: Foutrapportage voor cmdlets
 description: Foutrapportage voor cmdlets
 ms.openlocfilehash: f06cf98183d56249080623895bd1f5a3e070cefd
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92653405"
 ---
 # <a name="cmdlet-error-reporting"></a>Fout rapportage voor cmdlets
@@ -36,7 +36,7 @@ De rapportage van een niet-afsluitende fout moet altijd worden uitgevoerd binnen
 
 ## <a name="reporting-terminating-errors"></a>Fout bij het rapporteren van het rapport
 
-Afsluit fouten worden gerapporteerd door uitzonde ringen te genereren of door het aanroepen van de methode [System. Management. Automation. cmdlet. ThrowTerminatingError](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) . Houd er rekening mee dat cmdlets ook uitzonde ringen kunnen ondervangen en genereren, zoals **OutOfMemory** , maar ze zijn niet vereist voor het opnieuw genereren van uitzonde ringen omdat de Power shell-runtime deze ook kan onderscheppen.
+Afsluit fouten worden gerapporteerd door uitzonde ringen te genereren of door het aanroepen van de methode [System. Management. Automation. cmdlet. ThrowTerminatingError](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) . Houd er rekening mee dat cmdlets ook uitzonde ringen kunnen ondervangen en genereren, zoals **OutOfMemory**, maar ze zijn niet vereist voor het opnieuw genereren van uitzonde ringen omdat de Power shell-runtime deze ook kan onderscheppen.
 
 U kunt ook uw eigen uitzonde ringen definiëren voor problemen die specifiek zijn voor uw situatie, of extra informatie toevoegen aan een bestaande uitzonde ring met behulp van de fout record.
 
@@ -71,7 +71,7 @@ Fout categorieën worden gebruikt om fouten te groeperen voor de gebruiker. In P
 
 Zie [System. Management. Automation. ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory) -inventarisatie voor een beschrijving van de fout categorieën die beschikbaar zijn. Over het algemeen moet u voor komen dat u, indien mogelijk, **UndefinedError** en **algemene fout** **gebruiken.**
 
-Gebruikers kunnen fouten weer geven op basis van categorie wanneer ze zijn ingesteld `$ErrorView` op **CategoryView** .
+Gebruikers kunnen fouten weer geven op basis van categorie wanneer ze zijn ingesteld `$ErrorView` op **CategoryView**.
 
 ## <a name="see-also"></a>Zie ook
 

@@ -4,10 +4,10 @@ ms.topic: reference
 title: Het element SelectionSetName voor EntrySelectedBy voor CustomControl voor Weergave (opmaak)
 description: Het element SelectionSetName voor EntrySelectedBy voor CustomControl voor Weergave (opmaak)
 ms.openlocfilehash: a158c5476fb3a168a146ce67565c0ed6f7859519
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92651914"
 ---
 # <a name="selectionsetname-element-for-entryselectedby-for-customcontrol-for-view-format"></a>Het element SelectionSetName voor EntrySelectedBy voor CustomControl voor Weergave (opmaak)

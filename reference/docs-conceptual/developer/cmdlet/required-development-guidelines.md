@@ -4,10 +4,10 @@ ms.topic: reference
 title: Vereiste richtlijnen voor de ontwikkeling
 description: Vereiste richtlijnen voor de ontwikkeling
 ms.openlocfilehash: 98db075b314eb7f54f2deb56022799d9f830f9ef
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92655750"
 ---
 # <a name="required-development-guidelines"></a>Vereiste richtlijnen voor de ontwikkeling
@@ -76,7 +76,7 @@ Gebruikers moeten een set Detecteer bare en verwachte cmdlet-namen hebben. Gebru
 
 Wanneer u een naam voor cmdlets gebruikt, mag u de volgende speciale tekens niet gebruiken.
 
-|Teken|Naam|
+|Teken|Name|
 |---------------|----------|
 |#|nummer teken|
 |,|Geplaatst|

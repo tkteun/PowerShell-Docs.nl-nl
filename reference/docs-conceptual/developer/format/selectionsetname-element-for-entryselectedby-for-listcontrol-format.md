@@ -4,10 +4,10 @@ ms.topic: reference
 title: Het element SelectionSetName voor EntrySelectedBy voor ListControl (opmaak)
 description: Het element SelectionSetName voor EntrySelectedBy voor ListControl (opmaak)
 ms.openlocfilehash: 413a77f7ba06fe952e574061e58d0b5d80c5b3c4
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92651836"
 ---
 # <a name="selectionsetname-element-for-entryselectedby-for-listcontrol-format"></a>Het element SelectionSetName voor EntrySelectedBy voor ListControl (opmaak)

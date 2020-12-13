@@ -4,10 +4,10 @@ ms.topic: reference
 title: Fouten waarbij de functie of bewerking wordt beëindigd
 description: Fouten waarbij de functie of bewerking wordt beëindigd
 ms.openlocfilehash: b7c9b949a654f10a0421ea69dfe955c8dfb5627e
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92652549"
 ---
 # <a name="terminating-errors"></a>Fouten waarbij de functie of bewerking wordt beëindigd
