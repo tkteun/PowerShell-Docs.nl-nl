@@ -1,53 +1,52 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 1/7/2019
+ms.date: 12/08/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convertto-csv?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertTo-Csv
-ms.openlocfilehash: e4cc40e7a9a5fdcd12b6a787607e4979ddbb3273
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 7ad8dc837bd843c2df48587ad809d9f65a4cf8a7
+ms.sourcegitcommit: 560a9f3c3148acab4655e91e8b07745ab74d5d26
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93250917"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96913216"
 ---
-# <span data-ttu-id="01643-103">ConvertTo-Csv</span><span class="sxs-lookup"><span data-stu-id="01643-103">ConvertTo-Csv</span></span>
+# <span data-ttu-id="0da77-102">ConvertTo-Csv</span><span class="sxs-lookup"><span data-stu-id="0da77-102">ConvertTo-Csv</span></span>
 
-## <span data-ttu-id="01643-104">SAMENVATTING</span><span class="sxs-lookup"><span data-stu-id="01643-104">SYNOPSIS</span></span>
-<span data-ttu-id="01643-105">Hiermee converteert u .NET-objecten naar een reeks teken reeksen met tekens gescheiden waarden (CSV).</span><span class="sxs-lookup"><span data-stu-id="01643-105">Converts .NET objects into a series of character-separated value (CSV) strings.</span></span>
+## <span data-ttu-id="0da77-103">SAMENVATTING</span><span class="sxs-lookup"><span data-stu-id="0da77-103">SYNOPSIS</span></span>
+<span data-ttu-id="0da77-104">Hiermee converteert u .NET-objecten naar een reeks teken reeksen met tekens gescheiden waarden (CSV).</span><span class="sxs-lookup"><span data-stu-id="0da77-104">Converts .NET objects into a series of character-separated value (CSV) strings.</span></span>
 
-## <span data-ttu-id="01643-106">SYNTAXIS</span><span class="sxs-lookup"><span data-stu-id="01643-106">SYNTAX</span></span>
+## <span data-ttu-id="0da77-105">SYNTAXIS</span><span class="sxs-lookup"><span data-stu-id="0da77-105">SYNTAX</span></span>
 
-### <span data-ttu-id="01643-107">Scheidingsteken</span><span class="sxs-lookup"><span data-stu-id="01643-107">Delimiter</span></span>
+### <span data-ttu-id="0da77-106">Scheidings teken (standaard)</span><span class="sxs-lookup"><span data-stu-id="0da77-106">Delimiter (Default)</span></span>
 
 ```
 ConvertTo-Csv [-InputObject] <PSObject> [[-Delimiter] <Char>] [-IncludeTypeInformation]
  [-NoTypeInformation] [-QuoteFields <String[]>] [-UseQuotes <QuoteKind>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="01643-108">UseCulture</span><span class="sxs-lookup"><span data-stu-id="01643-108">UseCulture</span></span>
+### <span data-ttu-id="0da77-107">UseCulture</span><span class="sxs-lookup"><span data-stu-id="0da77-107">UseCulture</span></span>
 
 ```
 ConvertTo-Csv [-InputObject] <PSObject> [-UseCulture] [-IncludeTypeInformation] [-NoTypeInformation]
  [-QuoteFields <String[]>] [-UseQuotes <QuoteKind>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="01643-109">BESCHRIJVING</span><span class="sxs-lookup"><span data-stu-id="01643-109">DESCRIPTION</span></span>
+## <span data-ttu-id="0da77-108">BESCHRIJVING</span><span class="sxs-lookup"><span data-stu-id="0da77-108">DESCRIPTION</span></span>
 
-<span data-ttu-id="01643-110">De `ConvertTo-CSV` cmdlet retourneert een reeks teken reeksen met door komma's gescheiden waarden (CSV) die de objecten vertegenwoordigen die u verzendt.</span><span class="sxs-lookup"><span data-stu-id="01643-110">The `ConvertTo-CSV` cmdlet returns a series of comma-separated value (CSV) strings that represent the objects that you submit.</span></span> <span data-ttu-id="01643-111">U kunt de cmdlet vervolgens gebruiken `ConvertFrom-Csv` om objecten opnieuw te maken op basis van de CSV-teken reeksen.</span><span class="sxs-lookup"><span data-stu-id="01643-111">You can then use the `ConvertFrom-Csv` cmdlet to recreate objects from the CSV strings.</span></span> <span data-ttu-id="01643-112">De objecten die zijn geconverteerd van CSV zijn teken reeks waarden van de oorspronkelijke objecten die eigenschaps waarden en geen methoden bevatten.</span><span class="sxs-lookup"><span data-stu-id="01643-112">The objects converted from CSV are string values of the original objects that contain property values and no methods.</span></span>
+<span data-ttu-id="0da77-109">De `ConvertTo-CSV` cmdlet retourneert een reeks teken reeksen met door komma's gescheiden waarden (CSV) die de objecten vertegenwoordigen die u verzendt.</span><span class="sxs-lookup"><span data-stu-id="0da77-109">The `ConvertTo-CSV` cmdlet returns a series of comma-separated value (CSV) strings that represent the objects that you submit.</span></span> <span data-ttu-id="0da77-110">U kunt de cmdlet vervolgens gebruiken `ConvertFrom-Csv` om objecten opnieuw te maken op basis van de CSV-teken reeksen.</span><span class="sxs-lookup"><span data-stu-id="0da77-110">You can then use the `ConvertFrom-Csv` cmdlet to recreate objects from the CSV strings.</span></span> <span data-ttu-id="0da77-111">De objecten die zijn geconverteerd van CSV zijn teken reeks waarden van de oorspronkelijke objecten die eigenschaps waarden en geen methoden bevatten.</span><span class="sxs-lookup"><span data-stu-id="0da77-111">The objects converted from CSV are string values of the original objects that contain property values and no methods.</span></span>
 
-<span data-ttu-id="01643-113">U kunt de `Export-Csv` cmdlet gebruiken om objecten te converteren naar CSV-teken reeksen.</span><span class="sxs-lookup"><span data-stu-id="01643-113">You can use the `Export-Csv` cmdlet to convert objects to CSV strings.</span></span> <span data-ttu-id="01643-114">`Export-CSV` is vergelijkbaar met `ConvertTo-CSV` , behalve dat de CSV-teken reeksen worden opgeslagen in een bestand.</span><span class="sxs-lookup"><span data-stu-id="01643-114">`Export-CSV` is similar to `ConvertTo-CSV`, except that it saves the CSV strings to a file.</span></span>
+<span data-ttu-id="0da77-112">U kunt de `Export-Csv` cmdlet gebruiken om objecten te converteren naar CSV-teken reeksen.</span><span class="sxs-lookup"><span data-stu-id="0da77-112">You can use the `Export-Csv` cmdlet to convert objects to CSV strings.</span></span> <span data-ttu-id="0da77-113">`Export-CSV` is vergelijkbaar met `ConvertTo-CSV` , behalve dat de CSV-teken reeksen worden opgeslagen in een bestand.</span><span class="sxs-lookup"><span data-stu-id="0da77-113">`Export-CSV` is similar to `ConvertTo-CSV`, except that it saves the CSV strings to a file.</span></span>
 
-<span data-ttu-id="01643-115">De `ConvertTo-CSV` cmdlet bevat para meters om een ander scheidings teken dan een komma op te geven of gebruik de huidige cultuur als scheidings teken.</span><span class="sxs-lookup"><span data-stu-id="01643-115">The `ConvertTo-CSV` cmdlet has parameters to specify a delimiter other than a comma or use the current culture as the delimiter.</span></span>
+<span data-ttu-id="0da77-114">De `ConvertTo-CSV` cmdlet bevat para meters om een ander scheidings teken dan een komma op te geven of gebruik de huidige cultuur als scheidings teken.</span><span class="sxs-lookup"><span data-stu-id="0da77-114">The `ConvertTo-CSV` cmdlet has parameters to specify a delimiter other than a comma or use the current culture as the delimiter.</span></span>
 
-## <span data-ttu-id="01643-116">VOORBEELDEN</span><span class="sxs-lookup"><span data-stu-id="01643-116">EXAMPLES</span></span>
+## <span data-ttu-id="0da77-115">VOORBEELDEN</span><span class="sxs-lookup"><span data-stu-id="0da77-115">EXAMPLES</span></span>
 
-### <span data-ttu-id="01643-117">Voor beeld 1: een object converteren naar CSV</span><span class="sxs-lookup"><span data-stu-id="01643-117">Example 1: Convert an object to CSV</span></span>
+### <span data-ttu-id="0da77-116">Voor beeld 1: een object converteren naar CSV</span><span class="sxs-lookup"><span data-stu-id="0da77-116">Example 1: Convert an object to CSV</span></span>
 
-<span data-ttu-id="01643-118">In dit voor beeld wordt een **proces** object geconverteerd naar een CSV-teken reeks.</span><span class="sxs-lookup"><span data-stu-id="01643-118">This example converts a **Process** object to a CSV string.</span></span>
+<span data-ttu-id="0da77-117">In dit voor beeld wordt een **proces** object geconverteerd naar een CSV-teken reeks.</span><span class="sxs-lookup"><span data-stu-id="0da77-117">This example converts a **Process** object to a CSV string.</span></span>
 
 ```powershell
 Get-Process -Name pwsh | ConvertTo-Csv -NoTypeInformation
@@ -58,11 +57,11 @@ Get-Process -Name pwsh | ConvertTo-Csv -NoTypeInformation
 "pwsh","8","950","2204001161216","100925440","59686912","67104", ...
 ```
 
-<span data-ttu-id="01643-119">De `Get-Process` cmdlet haalt het **proces** object op en gebruikt de para meter **name** om het Power Shell-proces op te geven.</span><span class="sxs-lookup"><span data-stu-id="01643-119">The `Get-Process` cmdlet gets the **Process** object and uses the **Name** parameter to specify the PowerShell process.</span></span> <span data-ttu-id="01643-120">Het proces object wordt via de pijp lijn naar de `ConvertTo-CSV` cmdlet verzonden.</span><span class="sxs-lookup"><span data-stu-id="01643-120">The process object is sent down the pipeline to the `ConvertTo-CSV` cmdlet.</span></span> <span data-ttu-id="01643-121">De `ConvertTo-CSV` cmdlet converteert het object naar CSV-teken reeksen.</span><span class="sxs-lookup"><span data-stu-id="01643-121">The `ConvertTo-CSV` cmdlet converts the object to CSV strings.</span></span> <span data-ttu-id="01643-122">De para meter **NoTypeInformation** verwijdert de **#TYPE** informatie uit de CSV-uitvoer en is niet vereist in Power shell 6.</span><span class="sxs-lookup"><span data-stu-id="01643-122">The **NoTypeInformation** parameter removes the **#TYPE** information header from the CSV output and is not required in PowerShell 6.</span></span>
+<span data-ttu-id="0da77-118">De `Get-Process` cmdlet haalt het **proces** object op en gebruikt de para meter **name** om het Power Shell-proces op te geven.</span><span class="sxs-lookup"><span data-stu-id="0da77-118">The `Get-Process` cmdlet gets the **Process** object and uses the **Name** parameter to specify the PowerShell process.</span></span> <span data-ttu-id="0da77-119">Het proces object wordt via de pijp lijn naar de `ConvertTo-CSV` cmdlet verzonden.</span><span class="sxs-lookup"><span data-stu-id="0da77-119">The process object is sent down the pipeline to the `ConvertTo-CSV` cmdlet.</span></span> <span data-ttu-id="0da77-120">De `ConvertTo-CSV` cmdlet converteert het object naar CSV-teken reeksen.</span><span class="sxs-lookup"><span data-stu-id="0da77-120">The `ConvertTo-CSV` cmdlet converts the object to CSV strings.</span></span> <span data-ttu-id="0da77-121">De para meter **NoTypeInformation** verwijdert de **#TYPE** informatie uit de CSV-uitvoer en is niet vereist in Power shell 6.</span><span class="sxs-lookup"><span data-stu-id="0da77-121">The **NoTypeInformation** parameter removes the **#TYPE** information header from the CSV output and is not required in PowerShell 6.</span></span>
 
-### <span data-ttu-id="01643-123">Voor beeld 2: een DateTime-object converteren naar CSV</span><span class="sxs-lookup"><span data-stu-id="01643-123">Example 2: Convert a DateTime object to CSV</span></span>
+### <span data-ttu-id="0da77-122">Voor beeld 2: een DateTime-object converteren naar CSV</span><span class="sxs-lookup"><span data-stu-id="0da77-122">Example 2: Convert a DateTime object to CSV</span></span>
 
-<span data-ttu-id="01643-124">In dit voor beeld wordt een **DateTime** -object geconverteerd naar een CSV-teken reeks.</span><span class="sxs-lookup"><span data-stu-id="01643-124">This example converts a **DateTime** object to a CSV string.</span></span>
+<span data-ttu-id="0da77-123">In dit voor beeld wordt een **DateTime** -object geconverteerd naar een CSV-teken reeks.</span><span class="sxs-lookup"><span data-stu-id="0da77-123">This example converts a **DateTime** object to a CSV string.</span></span>
 
 ```powershell
 $Date = Get-Date
@@ -74,11 +73,11 @@ ConvertTo-Csv -InputObject $Date -Delimiter ';' -NoTypeInformation
 "DateTime";"Friday, January 4, 2019 14:40:51";"1/4/2019 00:00:00";"4";"Friday";"4";"14";"Local";"711";"40";"1";"51";"636822096517114991";"14:40:51.7114991";"2019"
 ```
 
-<span data-ttu-id="01643-125">De `Get-Date` cmdlet haalt het **DateTime** -object op en slaat het op in de `$Date` variabele.</span><span class="sxs-lookup"><span data-stu-id="01643-125">The `Get-Date` cmdlet gets the **DateTime** object and saves it in the `$Date` variable.</span></span> <span data-ttu-id="01643-126">`ConvertTo-Csv`Met de cmdlet wordt het **DateTime** -object geconverteerd naar teken reeksen.</span><span class="sxs-lookup"><span data-stu-id="01643-126">The `ConvertTo-Csv` cmdlet converts the **DateTime** object to strings.</span></span> <span data-ttu-id="01643-127">De para meter **input object** maakt gebruik van het **DateTime** -object dat is opgeslagen in de `$Date` variabele.</span><span class="sxs-lookup"><span data-stu-id="01643-127">The **InputObject** parameter uses the **DateTime** object stored in the `$Date` variable.</span></span> <span data-ttu-id="01643-128">De **scheidings** parameter geeft een punt komma om de teken reeks waarden te scheiden.</span><span class="sxs-lookup"><span data-stu-id="01643-128">The **Delimiter** parameter specifies a semicolon to separate the string values.</span></span> <span data-ttu-id="01643-129">De para meter **NoTypeInformation** verwijdert de **#TYPE** informatie uit de CSV-uitvoer en is niet vereist in Power shell 6.</span><span class="sxs-lookup"><span data-stu-id="01643-129">The **NoTypeInformation** parameter removes the **#TYPE** information header from the CSV output and is not required in PowerShell 6.</span></span>
+<span data-ttu-id="0da77-124">De `Get-Date` cmdlet haalt het **DateTime** -object op en slaat het op in de `$Date` variabele.</span><span class="sxs-lookup"><span data-stu-id="0da77-124">The `Get-Date` cmdlet gets the **DateTime** object and saves it in the `$Date` variable.</span></span> <span data-ttu-id="0da77-125">`ConvertTo-Csv`Met de cmdlet wordt het **DateTime** -object geconverteerd naar teken reeksen.</span><span class="sxs-lookup"><span data-stu-id="0da77-125">The `ConvertTo-Csv` cmdlet converts the **DateTime** object to strings.</span></span> <span data-ttu-id="0da77-126">De para meter **input object** maakt gebruik van het **DateTime** -object dat is opgeslagen in de `$Date` variabele.</span><span class="sxs-lookup"><span data-stu-id="0da77-126">The **InputObject** parameter uses the **DateTime** object stored in the `$Date` variable.</span></span> <span data-ttu-id="0da77-127">De **scheidings** parameter geeft een punt komma om de teken reeks waarden te scheiden.</span><span class="sxs-lookup"><span data-stu-id="0da77-127">The **Delimiter** parameter specifies a semicolon to separate the string values.</span></span> <span data-ttu-id="0da77-128">De para meter **NoTypeInformation** verwijdert de **#TYPE** informatie uit de CSV-uitvoer en is niet vereist in Power shell 6.</span><span class="sxs-lookup"><span data-stu-id="0da77-128">The **NoTypeInformation** parameter removes the **#TYPE** information header from the CSV output and is not required in PowerShell 6.</span></span>
 
-### <span data-ttu-id="01643-130">Voor beeld 3: het Power shell-gebeurtenis logboek converteren naar CSV</span><span class="sxs-lookup"><span data-stu-id="01643-130">Example 3: Convert the PowerShell event log to CSV</span></span>
+### <span data-ttu-id="0da77-129">Voor beeld 3: het Power shell-gebeurtenis logboek converteren naar CSV</span><span class="sxs-lookup"><span data-stu-id="0da77-129">Example 3: Convert the PowerShell event log to CSV</span></span>
 
-<span data-ttu-id="01643-131">In dit voor beeld wordt het Windows-gebeurtenis logboek voor Power shell geconverteerd naar een reeks CSV-teken reeksen.</span><span class="sxs-lookup"><span data-stu-id="01643-131">This example converts the Windows event log for PowerShell to a series of CSV strings.</span></span>
+<span data-ttu-id="0da77-130">In dit voor beeld wordt het Windows-gebeurtenis logboek voor Power shell geconverteerd naar een reeks CSV-teken reeksen.</span><span class="sxs-lookup"><span data-stu-id="0da77-130">This example converts the Windows event log for PowerShell to a series of CSV strings.</span></span>
 
 ```powershell
 (Get-Culture).TextInfo.ListSeparator
@@ -91,11 +90,11 @@ Get-WinEvent -LogName 'PowerShellCore/Operational' | ConvertTo-Csv -UseCulture -
 "Error Message = System error""4100","1",,"3","106","19","0","31716","PowerShellCore", ...
 ```
 
-<span data-ttu-id="01643-132">De `Get-Culture` cmdlet maakt gebruik van de geneste eigenschappen **Eigenschappen** en **ListSeparator** en geeft het standaard lijst scheidings teken van de huidige cultuur weer.</span><span class="sxs-lookup"><span data-stu-id="01643-132">The `Get-Culture` cmdlet uses the nested properties **TextInfo** and **ListSeparator** and displays the current culture's default list separator.</span></span> <span data-ttu-id="01643-133">De `Get-WinEvent` cmdlet haalt de gebeurtenis logboek objecten op en gebruikt de para meter **LogName** om de naam van het logboek bestand op te geven.</span><span class="sxs-lookup"><span data-stu-id="01643-133">The `Get-WinEvent` cmdlet gets the event log objects and uses the **LogName** parameter to specify the log file name.</span></span> <span data-ttu-id="01643-134">De gebeurtenis logboek objecten worden naar de-cmdlet verzonden via de pijp lijn `ConvertTo-Csv` .</span><span class="sxs-lookup"><span data-stu-id="01643-134">The event log objects are sent down the pipeline to the `ConvertTo-Csv` cmdlet.</span></span> <span data-ttu-id="01643-135">`ConvertTo-Csv`Met de cmdlet worden gebeurtenis logboek objecten geconverteerd naar een reeks CSV-teken reeksen.</span><span class="sxs-lookup"><span data-stu-id="01643-135">The `ConvertTo-Csv` cmdlet converts the event log objects to a series of CSV strings.</span></span> <span data-ttu-id="01643-136">De para meter **UseCulture** gebruikt het standaard lijst scheidings teken van de huidige cultuur als scheidings teken.</span><span class="sxs-lookup"><span data-stu-id="01643-136">The **UseCulture** parameter uses the current culture's default list separator as the delimiter.</span></span> <span data-ttu-id="01643-137">De para meter **NoTypeInformation** verwijdert de **#TYPE** informatie uit de CSV-uitvoer en is niet vereist in Power shell 6.</span><span class="sxs-lookup"><span data-stu-id="01643-137">The **NoTypeInformation** parameter removes the **#TYPE** information header from the CSV output and is not required in PowerShell 6.</span></span>
+<span data-ttu-id="0da77-131">De `Get-Culture` cmdlet maakt gebruik van de geneste eigenschappen **Eigenschappen** en **ListSeparator** en geeft het standaard lijst scheidings teken van de huidige cultuur weer.</span><span class="sxs-lookup"><span data-stu-id="0da77-131">The `Get-Culture` cmdlet uses the nested properties **TextInfo** and **ListSeparator** and displays the current culture's default list separator.</span></span> <span data-ttu-id="0da77-132">De `Get-WinEvent` cmdlet haalt de gebeurtenis logboek objecten op en gebruikt de para meter **LogName** om de naam van het logboek bestand op te geven.</span><span class="sxs-lookup"><span data-stu-id="0da77-132">The `Get-WinEvent` cmdlet gets the event log objects and uses the **LogName** parameter to specify the log file name.</span></span> <span data-ttu-id="0da77-133">De gebeurtenis logboek objecten worden naar de-cmdlet verzonden via de pijp lijn `ConvertTo-Csv` .</span><span class="sxs-lookup"><span data-stu-id="0da77-133">The event log objects are sent down the pipeline to the `ConvertTo-Csv` cmdlet.</span></span> <span data-ttu-id="0da77-134">`ConvertTo-Csv`Met de cmdlet worden gebeurtenis logboek objecten geconverteerd naar een reeks CSV-teken reeksen.</span><span class="sxs-lookup"><span data-stu-id="0da77-134">The `ConvertTo-Csv` cmdlet converts the event log objects to a series of CSV strings.</span></span> <span data-ttu-id="0da77-135">De para meter **UseCulture** gebruikt het standaard lijst scheidings teken van de huidige cultuur als scheidings teken.</span><span class="sxs-lookup"><span data-stu-id="0da77-135">The **UseCulture** parameter uses the current culture's default list separator as the delimiter.</span></span> <span data-ttu-id="0da77-136">De para meter **NoTypeInformation** verwijdert de **#TYPE** informatie uit de CSV-uitvoer en is niet vereist in Power shell 6.</span><span class="sxs-lookup"><span data-stu-id="0da77-136">The **NoTypeInformation** parameter removes the **#TYPE** information header from the CSV output and is not required in PowerShell 6.</span></span>
 
-### <span data-ttu-id="01643-138">Voor beeld 4: converteren naar CSV met aanhalings tekens rond twee kolommen</span><span class="sxs-lookup"><span data-stu-id="01643-138">Example 4: Convert to CSV with quotes around two columns</span></span>
+### <span data-ttu-id="0da77-137">Voor beeld 4: converteren naar CSV met aanhalings tekens rond twee kolommen</span><span class="sxs-lookup"><span data-stu-id="0da77-137">Example 4: Convert to CSV with quotes around two columns</span></span>
 
-<span data-ttu-id="01643-139">In dit voor beeld wordt een **DateTime** -object geconverteerd naar een CSV-teken reeks.</span><span class="sxs-lookup"><span data-stu-id="01643-139">This example converts a **DateTime** object to a CSV string.</span></span>
+<span data-ttu-id="0da77-138">In dit voor beeld wordt een **DateTime** -object geconverteerd naar een CSV-teken reeks.</span><span class="sxs-lookup"><span data-stu-id="0da77-138">This example converts a **DateTime** object to a CSV string.</span></span>
 
 ```powershell
 Get-Date | ConvertTo-Csv -QuoteFields "DateTime","Date"
@@ -106,9 +105,9 @@ DisplayHint,"DateTime","Date",Day,DayOfWeek,DayOfYear,Hour,Kind,Millisecond,Minu
 DateTime,"Thursday, August 22, 2019 11:27:34 AM","8/22/2019 12:00:00 AM",22,Thursday,234,11,Local,569,27,8,34,637020700545699784,11:27:34.5699784,2019
 ```
 
-### <span data-ttu-id="01643-140">Voor beeld 4: Converteer naar CSV met alleen aanhalings tekens als dat nodig is</span><span class="sxs-lookup"><span data-stu-id="01643-140">Example 4: Convert to CSV with quotes only when needed</span></span>
+### <span data-ttu-id="0da77-139">Voor beeld 4: Converteer naar CSV met alleen aanhalings tekens als dat nodig is</span><span class="sxs-lookup"><span data-stu-id="0da77-139">Example 4: Convert to CSV with quotes only when needed</span></span>
 
-<span data-ttu-id="01643-141">In dit voor beeld wordt een **DateTime** -object geconverteerd naar een CSV-teken reeks.</span><span class="sxs-lookup"><span data-stu-id="01643-141">This example converts a **DateTime** object to a CSV string.</span></span>
+<span data-ttu-id="0da77-140">In dit voor beeld wordt een **DateTime** -object geconverteerd naar een CSV-teken reeks.</span><span class="sxs-lookup"><span data-stu-id="0da77-140">This example converts a **DateTime** object to a CSV string.</span></span>
 
 ```powershell
 Get-Date | ConvertTo-Csv -UseQuotes AsNeeded
@@ -119,11 +118,11 @@ DisplayHint,DateTime,Date,Day,DayOfWeek,DayOfYear,Hour,Kind,Millisecond,Minute,M
 DateTime,"Thursday, August 22, 2019 11:31:00 AM",8/22/2019 12:00:00 AM,22,Thursday,234,11,Local,713,31,8,0,637020702607132640,11:31:00.7132640,2019
 ```
 
-## <span data-ttu-id="01643-142">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="01643-142">PARAMETERS</span></span>
+## <span data-ttu-id="0da77-141">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="0da77-141">PARAMETERS</span></span>
 
-### <span data-ttu-id="01643-143">-Scheidings teken</span><span class="sxs-lookup"><span data-stu-id="01643-143">-Delimiter</span></span>
+### <span data-ttu-id="0da77-142">-Scheidings teken</span><span class="sxs-lookup"><span data-stu-id="0da77-142">-Delimiter</span></span>
 
-<span data-ttu-id="01643-144">Hiermee geeft u het scheidings teken voor het scheiden van de eigenschaps waarden in CSV-teken reeksen.</span><span class="sxs-lookup"><span data-stu-id="01643-144">Specifies the delimiter to separate the property values in CSV strings.</span></span> <span data-ttu-id="01643-145">De standaard waarde is een komma ( `,` ).</span><span class="sxs-lookup"><span data-stu-id="01643-145">The default is a comma (`,`).</span></span> <span data-ttu-id="01643-146">Voer een teken in, bijvoorbeeld een dubbele punt ( `:` ).</span><span class="sxs-lookup"><span data-stu-id="01643-146">Enter a character, such as a colon (`:`).</span></span> <span data-ttu-id="01643-147">Als u een punt komma () wilt opgeven, `;` plaatst u deze tussen enkele aanhalings tekens.</span><span class="sxs-lookup"><span data-stu-id="01643-147">To specify a semicolon (`;`) enclose it in single quotation marks.</span></span>
+<span data-ttu-id="0da77-143">Hiermee geeft u het scheidings teken voor het scheiden van de eigenschaps waarden in CSV-teken reeksen.</span><span class="sxs-lookup"><span data-stu-id="0da77-143">Specifies the delimiter to separate the property values in CSV strings.</span></span> <span data-ttu-id="0da77-144">De standaard waarde is een komma ( `,` ).</span><span class="sxs-lookup"><span data-stu-id="0da77-144">The default is a comma (`,`).</span></span> <span data-ttu-id="0da77-145">Voer een teken in, bijvoorbeeld een dubbele punt ( `:` ).</span><span class="sxs-lookup"><span data-stu-id="0da77-145">Enter a character, such as a colon (`:`).</span></span> <span data-ttu-id="0da77-146">Als u een punt komma () wilt opgeven, `;` plaatst u deze tussen enkele aanhalings tekens.</span><span class="sxs-lookup"><span data-stu-id="0da77-146">To specify a semicolon (`;`) enclose it in single quotation marks.</span></span>
 
 ```yaml
 Type: System.Char
@@ -137,11 +136,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="01643-148">-IncludeTypeInformation</span><span class="sxs-lookup"><span data-stu-id="01643-148">-IncludeTypeInformation</span></span>
+### <span data-ttu-id="0da77-147">-IncludeTypeInformation</span><span class="sxs-lookup"><span data-stu-id="0da77-147">-IncludeTypeInformation</span></span>
 
-<span data-ttu-id="01643-149">Als deze para meter wordt gebruikt, bevat de eerste regel van de uitvoer **#TYPE** gevolgd door de volledig gekwalificeerde naam van het object type.</span><span class="sxs-lookup"><span data-stu-id="01643-149">When this parameter is used the first line of the output contains **#TYPE** followed by the fully qualified name of the object type.</span></span> <span data-ttu-id="01643-150">Bijvoorbeeld **#TYPE System. Diagnostics. process**.</span><span class="sxs-lookup"><span data-stu-id="01643-150">For example, **#TYPE System.Diagnostics.Process**.</span></span>
+<span data-ttu-id="0da77-148">Als deze para meter wordt gebruikt, bevat de eerste regel van de uitvoer **#TYPE** gevolgd door de volledig gekwalificeerde naam van het object type.</span><span class="sxs-lookup"><span data-stu-id="0da77-148">When this parameter is used the first line of the output contains **#TYPE** followed by the fully qualified name of the object type.</span></span> <span data-ttu-id="0da77-149">Bijvoorbeeld **#TYPE System. Diagnostics. process**.</span><span class="sxs-lookup"><span data-stu-id="0da77-149">For example, **#TYPE System.Diagnostics.Process**.</span></span>
 
-<span data-ttu-id="01643-151">Deze para meter is geïntroduceerd in Power shell 6,0.</span><span class="sxs-lookup"><span data-stu-id="01643-151">This parameter was introduced in PowerShell 6.0.</span></span>
+<span data-ttu-id="0da77-150">Deze para meter is geïntroduceerd in Power shell 6,0.</span><span class="sxs-lookup"><span data-stu-id="0da77-150">This parameter was introduced in PowerShell 6.0.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -155,9 +154,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="01643-152">-Input object</span><span class="sxs-lookup"><span data-stu-id="01643-152">-InputObject</span></span>
+### <span data-ttu-id="0da77-151">-Input object</span><span class="sxs-lookup"><span data-stu-id="0da77-151">-InputObject</span></span>
 
-<span data-ttu-id="01643-153">Hiermee geeft u de objecten die worden geconverteerd naar CSV-teken reeksen.</span><span class="sxs-lookup"><span data-stu-id="01643-153">Specifies the objects that are converted to CSV strings.</span></span> <span data-ttu-id="01643-154">Voer een variabele in die de objecten bevat of typ een opdracht of expressie waarmee de objecten worden opgehaald.</span><span class="sxs-lookup"><span data-stu-id="01643-154">Enter a variable that contains the objects or type a command or expression that gets the objects.</span></span> <span data-ttu-id="01643-155">U kunt ook objecten pipeen naar `ConvertTo-CSV` .</span><span class="sxs-lookup"><span data-stu-id="01643-155">You can also pipe objects to `ConvertTo-CSV`.</span></span>
+<span data-ttu-id="0da77-152">Hiermee geeft u de objecten die worden geconverteerd naar CSV-teken reeksen.</span><span class="sxs-lookup"><span data-stu-id="0da77-152">Specifies the objects that are converted to CSV strings.</span></span> <span data-ttu-id="0da77-153">Voer een variabele in die de objecten bevat of typ een opdracht of expressie waarmee de objecten worden opgehaald.</span><span class="sxs-lookup"><span data-stu-id="0da77-153">Enter a variable that contains the objects or type a command or expression that gets the objects.</span></span> <span data-ttu-id="0da77-154">U kunt ook objecten pipeen naar `ConvertTo-CSV` .</span><span class="sxs-lookup"><span data-stu-id="0da77-154">You can also pipe objects to `ConvertTo-CSV`.</span></span>
 
 ```yaml
 Type: System.Management.Automation.PSObject
@@ -171,9 +170,9 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="01643-156">-NoTypeInformation</span><span class="sxs-lookup"><span data-stu-id="01643-156">-NoTypeInformation</span></span>
+### <span data-ttu-id="0da77-155">-NoTypeInformation</span><span class="sxs-lookup"><span data-stu-id="0da77-155">-NoTypeInformation</span></span>
 
-<span data-ttu-id="01643-157">Hiermee verwijdert u de **#TYPE** informatie uit de uitvoer.</span><span class="sxs-lookup"><span data-stu-id="01643-157">Removes the **#TYPE** information header from the output.</span></span> <span data-ttu-id="01643-158">Deze para meter werd de standaard waarde in Power shell 6,0 en is opgenomen voor achterwaartse compatibiliteit.</span><span class="sxs-lookup"><span data-stu-id="01643-158">This parameter became the default in PowerShell 6.0 and is included for backwards compatibility.</span></span>
+<span data-ttu-id="0da77-156">Hiermee verwijdert u de **#TYPE** informatie uit de uitvoer.</span><span class="sxs-lookup"><span data-stu-id="0da77-156">Removes the **#TYPE** information header from the output.</span></span> <span data-ttu-id="0da77-157">Deze para meter werd de standaard waarde in Power shell 6,0 en is opgenomen voor achterwaartse compatibiliteit.</span><span class="sxs-lookup"><span data-stu-id="0da77-157">This parameter became the default in PowerShell 6.0 and is included for backwards compatibility.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -187,9 +186,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="01643-159">-UseCulture</span><span class="sxs-lookup"><span data-stu-id="01643-159">-UseCulture</span></span>
+### <span data-ttu-id="0da77-158">-UseCulture</span><span class="sxs-lookup"><span data-stu-id="0da77-158">-UseCulture</span></span>
 
-<span data-ttu-id="01643-160">Maakt gebruik van het lijst scheidings teken voor de huidige cultuur als item scheidings teken.</span><span class="sxs-lookup"><span data-stu-id="01643-160">Uses the list separator for the current culture as the item delimiter.</span></span> <span data-ttu-id="01643-161">Als u het lijst scheidings teken voor een cultuur wilt zoeken, gebruikt u de volgende opdracht: `(Get-Culture).TextInfo.ListSeparator` .</span><span class="sxs-lookup"><span data-stu-id="01643-161">To find the list separator for a culture, use the following command: `(Get-Culture).TextInfo.ListSeparator`.</span></span>
+<span data-ttu-id="0da77-159">Maakt gebruik van het lijst scheidings teken voor de huidige cultuur als item scheidings teken.</span><span class="sxs-lookup"><span data-stu-id="0da77-159">Uses the list separator for the current culture as the item delimiter.</span></span> <span data-ttu-id="0da77-160">Als u het lijst scheidings teken voor een cultuur wilt zoeken, gebruikt u de volgende opdracht: `(Get-Culture).TextInfo.ListSeparator` .</span><span class="sxs-lookup"><span data-stu-id="0da77-160">To find the list separator for a culture, use the following command: `(Get-Culture).TextInfo.ListSeparator`.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -203,9 +202,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="01643-162">-QuoteFields</span><span class="sxs-lookup"><span data-stu-id="01643-162">-QuoteFields</span></span>
+### <span data-ttu-id="0da77-161">-QuoteFields</span><span class="sxs-lookup"><span data-stu-id="0da77-161">-QuoteFields</span></span>
 
-<span data-ttu-id="01643-163">Hiermee geeft u de namen van de kolommen die moeten worden genoteerd.</span><span class="sxs-lookup"><span data-stu-id="01643-163">Specifies the names of the columns that should be quoted.</span></span> <span data-ttu-id="01643-164">Als deze para meter wordt gebruikt, worden alleen de opgegeven kolommen genoteerd.</span><span class="sxs-lookup"><span data-stu-id="01643-164">When this parameter is used only the specified columns are quoted.</span></span>
+<span data-ttu-id="0da77-162">Hiermee geeft u de namen van de kolommen die moeten worden genoteerd.</span><span class="sxs-lookup"><span data-stu-id="0da77-162">Specifies the names of the columns that should be quoted.</span></span> <span data-ttu-id="0da77-163">Als deze para meter wordt gebruikt, worden alleen de opgegeven kolommen genoteerd.</span><span class="sxs-lookup"><span data-stu-id="0da77-163">When this parameter is used only the specified columns are quoted.</span></span> <span data-ttu-id="0da77-164">Deze para meter is toegevoegd in Power shell 7,0.</span><span class="sxs-lookup"><span data-stu-id="0da77-164">This parameter was added in PowerShell 7.0.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -219,13 +218,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="01643-165">-UseQuotes</span><span class="sxs-lookup"><span data-stu-id="01643-165">-UseQuotes</span></span>
+### <span data-ttu-id="0da77-165">-UseQuotes</span><span class="sxs-lookup"><span data-stu-id="0da77-165">-UseQuotes</span></span>
 
-<span data-ttu-id="01643-166">Hiermee geeft u op wanneer aanhalings tekens worden gebruikt in de CSV-bestanden.</span><span class="sxs-lookup"><span data-stu-id="01643-166">Specifies when quotes are used in the CSV files.</span></span> <span data-ttu-id="01643-167">Mogelijke waarden zijn:</span><span class="sxs-lookup"><span data-stu-id="01643-167">Possible values are:</span></span>
+<span data-ttu-id="0da77-166">Hiermee geeft u op wanneer aanhalings tekens worden gebruikt in de CSV-bestanden.</span><span class="sxs-lookup"><span data-stu-id="0da77-166">Specifies when quotes are used in the CSV files.</span></span> <span data-ttu-id="0da77-167">Mogelijke waarden zijn:</span><span class="sxs-lookup"><span data-stu-id="0da77-167">Possible values are:</span></span>
 
-- <span data-ttu-id="01643-168">Nooit: niets citeren</span><span class="sxs-lookup"><span data-stu-id="01643-168">Never - don't quote anything</span></span>
-- <span data-ttu-id="01643-169">Altijd: alle citaten (standaard gedrag)</span><span class="sxs-lookup"><span data-stu-id="01643-169">Always - quote everything (default behavior)</span></span>
-- <span data-ttu-id="01643-170">Alleen-AsNeeded die een scheidings teken bevatten</span><span class="sxs-lookup"><span data-stu-id="01643-170">AsNeeded - only quote fields that contain a delimiter character</span></span>
+- <span data-ttu-id="0da77-168">Nooit: niets citeren</span><span class="sxs-lookup"><span data-stu-id="0da77-168">Never - don't quote anything</span></span>
+- <span data-ttu-id="0da77-169">Altijd: alle citaten (standaard gedrag)</span><span class="sxs-lookup"><span data-stu-id="0da77-169">Always - quote everything (default behavior)</span></span>
+- <span data-ttu-id="0da77-170">Alleen-AsNeeded die een scheidings teken bevatten</span><span class="sxs-lookup"><span data-stu-id="0da77-170">AsNeeded - only quote fields that contain a delimiter character</span></span>
+
+<span data-ttu-id="0da77-171">Deze para meter is toegevoegd in Power shell 7,0.</span><span class="sxs-lookup"><span data-stu-id="0da77-171">This parameter was added in PowerShell 7.0.</span></span>
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.BaseCsvWritingCommand+QuoteKind
@@ -239,41 +240,40 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="01643-171">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="01643-171">CommonParameters</span></span>
+### <span data-ttu-id="0da77-172">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="0da77-172">CommonParameters</span></span>
 
-<span data-ttu-id="01643-172">Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="01643-172">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="01643-173">Zie [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)voor meer informatie.</span><span class="sxs-lookup"><span data-stu-id="01643-173">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+<span data-ttu-id="0da77-173">Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="0da77-173">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="0da77-174">Zie [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)voor meer informatie.</span><span class="sxs-lookup"><span data-stu-id="0da77-174">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="01643-174">INVOER</span><span class="sxs-lookup"><span data-stu-id="01643-174">INPUTS</span></span>
+## <span data-ttu-id="0da77-175">INVOER</span><span class="sxs-lookup"><span data-stu-id="0da77-175">INPUTS</span></span>
 
-### <span data-ttu-id="01643-175">System. Management. Automation. PSObject</span><span class="sxs-lookup"><span data-stu-id="01643-175">System.Management.Automation.PSObject</span></span>
+### <span data-ttu-id="0da77-176">System. Management. Automation. PSObject</span><span class="sxs-lookup"><span data-stu-id="0da77-176">System.Management.Automation.PSObject</span></span>
 
-<span data-ttu-id="01643-176">U kunt elk object dat een adapter met een Extended type systeem (ETS) bevat, aan `ConvertTo-CSV` .</span><span class="sxs-lookup"><span data-stu-id="01643-176">You can pipe any object that has an Extended Type System (ETS) adapter to `ConvertTo-CSV`.</span></span>
+<span data-ttu-id="0da77-177">U kunt elk object dat een adapter met een Extended type systeem (ETS) bevat, aan `ConvertTo-CSV` .</span><span class="sxs-lookup"><span data-stu-id="0da77-177">You can pipe any object that has an Extended Type System (ETS) adapter to `ConvertTo-CSV`.</span></span>
 
-## <span data-ttu-id="01643-177">UITVOER</span><span class="sxs-lookup"><span data-stu-id="01643-177">OUTPUTS</span></span>
+## <span data-ttu-id="0da77-178">UITVOER</span><span class="sxs-lookup"><span data-stu-id="0da77-178">OUTPUTS</span></span>
 
-### <span data-ttu-id="01643-178">System. String</span><span class="sxs-lookup"><span data-stu-id="01643-178">System.String</span></span>
+### <span data-ttu-id="0da77-179">System. String</span><span class="sxs-lookup"><span data-stu-id="0da77-179">System.String</span></span>
 
-<span data-ttu-id="01643-179">De CSV-uitvoer wordt geretourneerd als een verzameling teken reeksen.</span><span class="sxs-lookup"><span data-stu-id="01643-179">The CSV output is returned as a collection of strings.</span></span>
+<span data-ttu-id="0da77-180">De CSV-uitvoer wordt geretourneerd als een verzameling teken reeksen.</span><span class="sxs-lookup"><span data-stu-id="0da77-180">The CSV output is returned as a collection of strings.</span></span>
 
-## <span data-ttu-id="01643-180">OPMERKINGEN</span><span class="sxs-lookup"><span data-stu-id="01643-180">NOTES</span></span>
+## <span data-ttu-id="0da77-181">OPMERKINGEN</span><span class="sxs-lookup"><span data-stu-id="0da77-181">NOTES</span></span>
 
-<span data-ttu-id="01643-181">In CSV-indeling wordt elk object vertegenwoordigd door een door komma's gescheiden lijst van de eigenschaps waarde.</span><span class="sxs-lookup"><span data-stu-id="01643-181">In CSV format, each object is represented by a comma-separated list of its property value.</span></span> <span data-ttu-id="01643-182">De eigenschaps waarden worden geconverteerd naar teken reeksen met de methode **toString ()** van het object.</span><span class="sxs-lookup"><span data-stu-id="01643-182">The property values are converted to strings using the object's **ToString()** method.</span></span> <span data-ttu-id="01643-183">De teken reeksen worden vertegenwoordigd door de naam van de eigenschaps waarde.</span><span class="sxs-lookup"><span data-stu-id="01643-183">The strings are represented by the property value name.</span></span> <span data-ttu-id="01643-184">`ConvertTo-CSV` exporteert de methoden van het object niet.</span><span class="sxs-lookup"><span data-stu-id="01643-184">`ConvertTo-CSV` does not export the object's methods.</span></span>
+<span data-ttu-id="0da77-182">In CSV-indeling wordt elk object vertegenwoordigd door een door komma's gescheiden lijst van de eigenschaps waarde.</span><span class="sxs-lookup"><span data-stu-id="0da77-182">In CSV format, each object is represented by a comma-separated list of its property value.</span></span> <span data-ttu-id="0da77-183">De eigenschaps waarden worden geconverteerd naar teken reeksen met de methode **toString ()** van het object.</span><span class="sxs-lookup"><span data-stu-id="0da77-183">The property values are converted to strings using the object's **ToString()** method.</span></span> <span data-ttu-id="0da77-184">De teken reeksen worden vertegenwoordigd door de naam van de eigenschaps waarde.</span><span class="sxs-lookup"><span data-stu-id="0da77-184">The strings are represented by the property value name.</span></span> <span data-ttu-id="0da77-185">`ConvertTo-CSV` exporteert de methoden van het object niet.</span><span class="sxs-lookup"><span data-stu-id="0da77-185">`ConvertTo-CSV` does not export the object's methods.</span></span>
 
-<span data-ttu-id="01643-185">De CSV-teken reeksen worden als volgt uitgevoerd:</span><span class="sxs-lookup"><span data-stu-id="01643-185">The CSV strings are output as follows:</span></span>
+<span data-ttu-id="0da77-186">De CSV-teken reeksen worden als volgt uitgevoerd:</span><span class="sxs-lookup"><span data-stu-id="0da77-186">The CSV strings are output as follows:</span></span>
 
-- <span data-ttu-id="01643-186">Als **IncludeTypeInformation** wordt gebruikt, bestaat de eerste teken reeks uit **#TYPE** gevolgd door de volledig gekwalificeerde naam van het object type.</span><span class="sxs-lookup"><span data-stu-id="01643-186">If **IncludeTypeInformation** is used, the first string consists of **#TYPE** followed by the object type's fully qualified name.</span></span> <span data-ttu-id="01643-187">Bijvoorbeeld **#TYPE System. Diagnostics. process**.</span><span class="sxs-lookup"><span data-stu-id="01643-187">For example, **#TYPE System.Diagnostics.Process**.</span></span>
-- <span data-ttu-id="01643-188">Als **IncludeTypeInformation** niet wordt gebruikt, bevat de eerste teken reeks de kolom koppen.</span><span class="sxs-lookup"><span data-stu-id="01643-188">If **IncludeTypeInformation** is not used the first string includes the column headers.</span></span> <span data-ttu-id="01643-189">De headers bevatten de eigenschaps namen van het eerste object als een door komma's gescheiden lijst.</span><span class="sxs-lookup"><span data-stu-id="01643-189">The headers contain the first object's property names as a comma-separated list.</span></span>
-- <span data-ttu-id="01643-190">De resterende teken reeksen bevatten door komma's gescheiden lijsten van de eigenschaps waarden van elk object.</span><span class="sxs-lookup"><span data-stu-id="01643-190">The remaining strings contain comma-separated lists of each object's property values.</span></span>
+- <span data-ttu-id="0da77-187">Als **IncludeTypeInformation** wordt gebruikt, bestaat de eerste teken reeks uit **#TYPE** gevolgd door de volledig gekwalificeerde naam van het object type.</span><span class="sxs-lookup"><span data-stu-id="0da77-187">If **IncludeTypeInformation** is used, the first string consists of **#TYPE** followed by the object type's fully qualified name.</span></span> <span data-ttu-id="0da77-188">Bijvoorbeeld **#TYPE System. Diagnostics. process**.</span><span class="sxs-lookup"><span data-stu-id="0da77-188">For example, **#TYPE System.Diagnostics.Process**.</span></span>
+- <span data-ttu-id="0da77-189">Als **IncludeTypeInformation** niet wordt gebruikt, bevat de eerste teken reeks de kolom koppen.</span><span class="sxs-lookup"><span data-stu-id="0da77-189">If **IncludeTypeInformation** is not used the first string includes the column headers.</span></span> <span data-ttu-id="0da77-190">De headers bevatten de eigenschaps namen van het eerste object als een door komma's gescheiden lijst.</span><span class="sxs-lookup"><span data-stu-id="0da77-190">The headers contain the first object's property names as a comma-separated list.</span></span>
+- <span data-ttu-id="0da77-191">De resterende teken reeksen bevatten door komma's gescheiden lijsten van de eigenschaps waarden van elk object.</span><span class="sxs-lookup"><span data-stu-id="0da77-191">The remaining strings contain comma-separated lists of each object's property values.</span></span>
 
-<span data-ttu-id="01643-191">Vanaf Power shell 6,0 is het standaard gedrag van de `ConvertTo-CSV` **#TYPE** informatie in het CSV-bestand en **NoTypeInformation** wordt geïmpliceerd.</span><span class="sxs-lookup"><span data-stu-id="01643-191">Beginning with PowerShell 6.0 the default behavior of `ConvertTo-CSV` is to not include the **#TYPE** information in the CSV and **NoTypeInformation** is implied.</span></span> <span data-ttu-id="01643-192">**IncludeTypeInformation** kan worden gebruikt om de **#TYPE** informatie op te neemt en het standaard gedrag van `ConvertTo-CSV` vóór Power shell 6,0 te emuleren.</span><span class="sxs-lookup"><span data-stu-id="01643-192">**IncludeTypeInformation** can be used to include the **#TYPE** information and emulate the default behavior of `ConvertTo-CSV` prior to PowerShell 6.0.</span></span>
+<span data-ttu-id="0da77-192">Vanaf Power shell 6,0 is het standaard gedrag van de `ConvertTo-CSV` **#TYPE** informatie in het CSV-bestand en **NoTypeInformation** wordt geïmpliceerd.</span><span class="sxs-lookup"><span data-stu-id="0da77-192">Beginning with PowerShell 6.0 the default behavior of `ConvertTo-CSV` is to not include the **#TYPE** information in the CSV and **NoTypeInformation** is implied.</span></span> <span data-ttu-id="0da77-193">**IncludeTypeInformation** kan worden gebruikt om de **#TYPE** informatie op te neemt en het standaard gedrag van `ConvertTo-CSV` vóór Power shell 6,0 te emuleren.</span><span class="sxs-lookup"><span data-stu-id="0da77-193">**IncludeTypeInformation** can be used to include the **#TYPE** information and emulate the default behavior of `ConvertTo-CSV` prior to PowerShell 6.0.</span></span>
 
-<span data-ttu-id="01643-193">Wanneer u meerdere objecten verzendt naar `ConvertTo-CSV` , worden `ConvertTo-CSV` de teken reeksen door gesorteerd op basis van de eigenschappen van het eerste object dat u verzendt.</span><span class="sxs-lookup"><span data-stu-id="01643-193">When you submit multiple objects to `ConvertTo-CSV`, `ConvertTo-CSV` orders the strings based on the properties of the first object that you submit.</span></span> <span data-ttu-id="01643-194">Als de resterende objecten niet beschikken over een van de opgegeven eigenschappen, is de eigenschaps waarde van dat object null, zoals wordt weer gegeven in twee opeenvolgende komma's.</span><span class="sxs-lookup"><span data-stu-id="01643-194">If the remaining objects do not have one of the specified properties, the property value of that object is Null, as represented by two consecutive commas.</span></span> <span data-ttu-id="01643-195">Als de resterende objecten extra eigenschappen hebben, worden die eigenschaps waarden genegeerd.</span><span class="sxs-lookup"><span data-stu-id="01643-195">If the remaining objects have additional properties, those property values are ignored.</span></span>
+<span data-ttu-id="0da77-194">Wanneer u meerdere objecten verzendt naar `ConvertTo-CSV` , worden `ConvertTo-CSV` de teken reeksen door gesorteerd op basis van de eigenschappen van het eerste object dat u verzendt.</span><span class="sxs-lookup"><span data-stu-id="0da77-194">When you submit multiple objects to `ConvertTo-CSV`, `ConvertTo-CSV` orders the strings based on the properties of the first object that you submit.</span></span> <span data-ttu-id="0da77-195">Als de resterende objecten niet beschikken over een van de opgegeven eigenschappen, is de eigenschaps waarde van dat object null, zoals wordt weer gegeven in twee opeenvolgende komma's.</span><span class="sxs-lookup"><span data-stu-id="0da77-195">If the remaining objects do not have one of the specified properties, the property value of that object is Null, as represented by two consecutive commas.</span></span> <span data-ttu-id="0da77-196">Als de resterende objecten extra eigenschappen hebben, worden die eigenschaps waarden genegeerd.</span><span class="sxs-lookup"><span data-stu-id="0da77-196">If the remaining objects have additional properties, those property values are ignored.</span></span>
 
-## <span data-ttu-id="01643-196">GERELATEERDE KOPPELINGEN</span><span class="sxs-lookup"><span data-stu-id="01643-196">RELATED LINKS</span></span>
+## <span data-ttu-id="0da77-197">GERELATEERDE KOPPELINGEN</span><span class="sxs-lookup"><span data-stu-id="0da77-197">RELATED LINKS</span></span>
 
-[<span data-ttu-id="01643-197">ConvertFrom-CSV</span><span class="sxs-lookup"><span data-stu-id="01643-197">ConvertFrom-Csv</span></span>](ConvertFrom-Csv.md)
+[<span data-ttu-id="0da77-198">ConvertFrom-CSV</span><span class="sxs-lookup"><span data-stu-id="0da77-198">ConvertFrom-Csv</span></span>](ConvertFrom-Csv.md)
 
-[<span data-ttu-id="01643-198">Exporteren-CSV</span><span class="sxs-lookup"><span data-stu-id="01643-198">Export-Csv</span></span>](Export-Csv.md)
+[<span data-ttu-id="0da77-199">Exporteren-CSV</span><span class="sxs-lookup"><span data-stu-id="0da77-199">Export-Csv</span></span>](Export-Csv.md)
 
-[<span data-ttu-id="01643-199">Import-Csv</span><span class="sxs-lookup"><span data-stu-id="01643-199">Import-Csv</span></span>](Import-Csv.md)
-
+[<span data-ttu-id="0da77-200">Import-Csv</span><span class="sxs-lookup"><span data-stu-id="0da77-200">Import-Csv</span></span>](Import-Csv.md)
