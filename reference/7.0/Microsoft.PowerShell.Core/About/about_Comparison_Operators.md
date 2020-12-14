@@ -1,17 +1,16 @@
 ---
 description: Hierin worden de Opera tors beschreven waarmee waarden in Power shell worden vergeleken.
-keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 01/16/2020
+ms.date: 12/10/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Comparison_Operators
-ms.openlocfilehash: d6096de14d0bb8c7ba86c0585806b86cf3bb921a
-ms.sourcegitcommit: c9e56ec489522c706b8d6b8733f3f015d6d7e893
+ms.openlocfilehash: dbda5371224345a2e22dd281c17ae0d7c928aad6
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "93253064"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97090223"
 ---
 # <a name="about-comparison-operators"></a>Over vergelijkings operatoren
 
@@ -24,7 +23,7 @@ Met vergelijkings operatoren kunt u voor waarden opgeven voor het vergelijken va
 
 Power shell bevat de volgende vergelijkings operatoren:
 
-| Type        | Operators    | Beschrijving                                 |
+| Type        | Operators    | Description                                 |
 | ----------- | ------------ | --------------------------------------------|
 | Gelijkheid    | -eq          | is gelijk aan                                      |
 |             | -ne          | niet gelijk aan                                  |
@@ -80,13 +79,13 @@ De uitzonde ringen zijn de containment-Opera Tors, de Opera tors in en de type o
 > hello
 > ```
 
-### <a name="equality-operators"></a>Gelijkheids operatoren
+## <a name="equality-operators"></a>Gelijkheidsoperatoren
 
 De gelijkheids operatoren ( `-eq` , `-ne` ) retour neren de waarde True of de overeenkomsten wanneer een of meer invoer waarden identiek zijn aan het opgegeven patroon. Het hele patroon moet overeenkomen met een volledige waarde.
 
 Voorbeeld:
 
-#### <a name="-eq"></a>-eq
+### <a name="-eq"></a>-eq
 
 Beschrijving: gelijk aan. Bevat een identieke waarde.
 
@@ -111,7 +110,7 @@ PS> "abc", "def" -eq "abc"
 abc
 ```
 
-#### <a name="-ne"></a>-ne
+### <a name="-ne"></a>-ne
 
 Beschrijving: niet gelijk aan. Bevat een andere waarde.
 
@@ -131,7 +130,7 @@ PS> "abc", "def" -ne "abc"
 def
 ```
 
-#### <a name="-gt"></a>-gt
+### <a name="-gt"></a>-gt
 
 Beschrijving: groter dan.
 
@@ -148,7 +147,7 @@ PS> 7, 8, 9 -gt 8
 > [!NOTE]
 > Dit mag niet worden verward met `>` , de operator groter dan in veel andere programmeer talen. In Power shell `>` wordt gebruikt voor omleiding. Zie [About_redirection](about_Redirection.md#potential-confusion-with-comparison-operators)voor meer informatie.
 
-#### <a name="-ge"></a>-ge
+### <a name="-ge"></a>-ge
 
 Beschrijving: groter dan of gelijk aan.
 
@@ -163,7 +162,7 @@ PS> 7, 8, 9 -ge 8
 9
 ```
 
-#### <a name="-lt"></a>-lt
+### <a name="-lt"></a>-lt
 
 Beschrijving: kleiner dan.
 
@@ -178,7 +177,7 @@ PS> 7, 8, 9 -lt 8
 7
 ```
 
-#### <a name="-le"></a>-Le
+### <a name="-le"></a>-Le
 
 Beschrijving: kleiner dan of gelijk aan.
 
@@ -193,7 +192,7 @@ PS> 7, 8, 9 -le 8
 8
 ```
 
-### <a name="matching-operators"></a>Overeenkomende Opera tors
+## <a name="matching-operators"></a>Overeenkomende Opera tors
 
 De like-Opera tors ( `-like` en `-notlike` ) vinden elementen die overeenkomen met of die niet overeenkomen met een opgegeven patroon met Joker teken expressies.
 
@@ -215,7 +214,7 @@ De syntaxis is:
 <string[]> -notmatch <regular-expression>
 ```
 
-#### <a name="-like"></a>-like
+### <a name="-like"></a>-like
 
 Beschrijving: komt overeen met het Joker teken ( \* ).
 
@@ -229,7 +228,7 @@ PS> "PowerShell", "Server" -like "*shell"
 PowerShell
 ```
 
-#### <a name="-notlike"></a>-notlike
+### <a name="-notlike"></a>-notlike
 
 Beschrijving: komt niet overeen met het Joker teken ( \* ).
 
@@ -322,7 +321,7 @@ Name                           Value
 0                              day
 ```
 
-#### <a name="-notmatch"></a>-notmatch
+### <a name="-notmatch"></a>-notmatch
 
 Beschrijving: komt niet overeen met een teken reeks. Maakt gebruik van reguliere expressies. Wanneer de invoer scalair is, wordt de `$Matches` Automatische variabele gevuld.
 
@@ -341,13 +340,13 @@ PS> "Sunday", "Monday" -notmatch "sun"
 Monday
 ```
 
-### <a name="containment-operators"></a>Containment-Opera tors
+## <a name="containment-operators"></a>Containment-Opera tors
 
 De containment-Opera tors ( `-contains` en `-notcontains` ) zijn vergelijkbaar met de gelijkheids operatoren. De containment-Opera tors retour neren echter altijd een Booleaanse waarde, zelfs wanneer de invoer een verzameling is.
 
 Ook, in tegens telling tot de gelijkheids operatoren, retour neren de container-Opera tors een waarde zodra ze de eerste overeenkomst detecteren. De gelijkheids operatoren evalueren alle invoer en retour neren vervolgens alle overeenkomende items in de verzameling.
 
-#### <a name="-contains"></a>-contains
+### <a name="-contains"></a>-contains
 
 Beschrijving: containment-operator. Hiermee wordt aangegeven of een verzameling verwijzings waarden één test waarde bevat. Retourneert altijd een Boole-waarde. Retourneert alleen waar als de test waarde exact overeenkomt met ten minste een van de referentie waarden.
 
@@ -382,7 +381,7 @@ PS> $a, "ghi" -contains $a
 True
 ```
 
-#### <a name="-notcontains"></a>-notcontains
+### <a name="-notcontains"></a>-notcontains
 
 Beschrijving: containment-operator. Hiermee wordt aangegeven of een verzameling verwijzings waarden één test waarde bevat. Retourneert altijd een Boole-waarde. Retourneert waar als de test waarde geen exacte overeenkomsten voor ten minste een van de verwijzings waarden is.
 
@@ -421,7 +420,7 @@ Tee
 Where
 ```
 
-#### <a name="-in"></a>-in
+### <a name="-in"></a>-in
 
 Beschrijving: in operator. Hiermee wordt aangegeven of een test waarde wordt weer gegeven in een verzameling referentie waarden. Altijd retour neren als Booleaanse waarde. Retourneert alleen waar als de test waarde exact overeenkomt met ten minste een van de referentie waarden.
 
@@ -458,7 +457,7 @@ PS> $thisComputer -in  $domainServers
 True
 ```
 
-#### <a name="-notin"></a>-notin
+### <a name="-notin"></a>-notin
 
 Beschrijving: Hiermee wordt aangegeven of een test waarde wordt weer gegeven in een verzameling referentie waarden. Retourneert altijd een Boole-waarde. Retourneert waar als de test waarde niet exact overeenkomt voor ten minste een van de referentie waarden.
 
@@ -497,17 +496,21 @@ Tee
 Where
 ```
 
-### <a name="replacement-operator"></a>Vervangings operator
+## <a name="replacement-operator"></a>Vervangings operator
 
-De `-replace` operator vervangt alle of een deel van een waarde met de opgegeven waarde met reguliere expressies. U kunt de `-replace` operator gebruiken voor veel beheer taken, zoals het wijzigen van de naam van bestanden. Met de volgende opdracht wordt bijvoorbeeld de bestandsnaam extensies van alle txt-bestanden gewijzigd in. log:
+De `-replace` operator heeft de volgende syntaxis:
+
+`<input> -replace <original>, <substitute>`
+
+De `<original>` tijdelijke aanduiding is een reguliere expressie die overeenkomt met de tekens die moeten worden vervangen. De `<substitute>` tijdelijke aanduiding is een letterlijke teken reeks waarmee ze worden vervangen.
+
+De operator vervangt alle of een deel van een waarde met de opgegeven waarde met reguliere expressies. U kunt de operator gebruiken voor veel beheer taken, zoals het wijzigen van de naam van bestanden. Met de volgende opdracht worden bijvoorbeeld de bestandsnaam extensies van alle bestanden gewijzigd `.txt` in `.log` :
 
 ```powershell
 Get-ChildItem *.txt | Rename-Item -NewName { $_.name -replace '\.txt$','.log' }
 ```
 
-De syntaxis van de `-replace` operator is als volgt, waarbij de `<original>` tijdelijke aanduiding staat voor de tekens die moeten worden vervangen en de `<substitute>` tijdelijke aanduiding staat voor de tekens die ze vervangen:
-
-`<input> <operator> <original>, <substitute>`
+### <a name="case-sensitive-matches"></a>Hoofdletter gevoelige overeenkomsten
 
 Standaard `-replace` is de operator niet hoofdletter gevoelig. Gebruik om het hoofdletter gevoelig te maken `-creplace` . Gebruik om het expliciet niet hoofdletter gevoelig te maken `-ireplace` .
 
@@ -515,33 +518,72 @@ Bekijk de volgende voorbeelden:
 
 ```powershell
 PS> "book" -replace "B", "C"
-```
-
-```Output
 Cook
 ```
 
 ```powershell
-"book" -ireplace "B", "C"
-```
-
-```Output
+PS> "book" -ireplace "B", "C"
 Cook
 ```
 
 ```powershell
-"book" -creplace "B", "C"
-```
-
-```Output
+PS> "book" -creplace "B", "C"
 book
 ```
 
-Het is ook mogelijk om reguliere expressies te gebruiken om tekst dynamisch te vervangen met opname groepen en vervangingen. Zie [about_Regular_Expressions](about_Regular_Expressions.md)voor meer informatie.
+### <a name="substitutions-in-regular-expressions"></a>Vervangingen in reguliere expressies
+
+Het is ook mogelijk om reguliere expressies te gebruiken om tekst dynamisch te vervangen met opname groepen en vervangingen. Er kan in de teken reeks naar vastleg groepen worden verwezen `<substitute>` met het `$` teken voor het dollar teken () voor de groeps-id.
+
+Naar vastleg groepen kan worden verwezen met een **getal** of **naam**
+
+- Op **nummer** : het vastleggen van groepen wordt van links naar rechts genummerd.
+
+  ```powershell
+  PS> "John D. Smith" -replace "(\w+) (\w+)\. (\w+)", '$1.$2.$3@contoso.com'
+  John.D.Smith@contoso.com
+  ```
+
+- Op **naam** : voor het vastleggen van groepen kan ook naar een naam worden verwezen.
+
+  ```powershell
+  PS> "CONTOSO\Administrator" -replace '\w+\\(?<user>\w+)', 'FABRIKAM\${user}'
+  FABRIKAM\Administrator
+  ```
+
+> [!WARNING]
+> Omdat het `$` teken wordt gebruikt in teken reeks uitbreiding, moet u letterlijke teken reeksen gebruiken of het teken escapeen `$` .
+>
+> ```powershell
+> PS> 'Hello World' -replace '(\w+) \w+', "`$1 Universe"
+> Hello Universe
+> ```
+>
+> Omdat het `$` teken in substitutie wordt gebruikt, moet u ook alle exemplaren in de teken reeks verescapenen.
+>
+> ```powershell
+> PS> '5.72' -replace '(.+)', '$$$1'
+> $5.72
+> ```
+
+Zie [about_Regular_Expressions](about_Regular_Expressions.md) en [vervangingen in reguliere expressies](/dotnet/standard/base-types/substitutions-in-regular-expressions) voor meer informatie.
+
+### <a name="substituting-in-a-collection"></a>Vervangen in een verzameling
+
+Wanneer de `<input>` naar de `-replace` operator een verzameling is, past Power shell de vervanging toe op elke waarde in de verzameling. Bijvoorbeeld:
+
+```powershell
+"B1","B2","B3","B4","B5" -replace "B", 'a'
+a1
+a2
+a3
+a4
+a5
+```
 
 ### <a name="scriptblock-substitutions"></a>Script Block vervangingen
 
-Vanaf Power shell 6 kunt u een **script Block** -argument gebruiken voor de *vervangings* tekst. De **script Block** wordt uitgevoerd voor elke overeenkomst die in de *invoer* teken reeks is gevonden.
+Vanaf Power shell 6 kunt u een **script Block** -argument gebruiken voor de _vervangings_ tekst. De **script Block** wordt uitgevoerd voor elke overeenkomst die in de _invoer_ teken reeks is gevonden.
 
 Gebruik in de **script Block** de `$_` Automatische variabele om te verwijzen naar het huidige **System. Text. RegularExpressions. match** -object. Met het object **match** krijgt u toegang tot de huidige invoer tekst die wordt vervangen, evenals andere nuttige informatie.
 
@@ -552,11 +594,11 @@ PS> "072101108108111" -replace "\d{3}", {[char][int]$_.Value}
 Hello
 ```
 
-### <a name="type-comparison"></a>Type vergelijking
+## <a name="type-comparison"></a>Type vergelijking
 
 De type vergelijkings operators ( `-is` en `-isnot` ) worden gebruikt om te bepalen of een object een specifiek type is.
 
-#### <a name="-is"></a>-is
+### <a name="-is"></a>-is
 
 Syntaxis:
 
@@ -573,7 +615,7 @@ PS> $a -is $b.GetType()
 False
 ```
 
-#### <a name="-isnot"></a>-isnot
+### <a name="-isnot"></a>-isnot
 
 Syntaxis:
 
@@ -590,7 +632,7 @@ PS> $b -isnot [int]
 True
 ```
 
-## <a name="see-also"></a>ZIE OOK
+## <a name="see-also"></a>Zie ook
 
 - [about_Operators](about_Operators.md)
 - [about_Regular_Expressions](about_Regular_Expressions.md)

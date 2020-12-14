@@ -3,12 +3,12 @@ title: Alles wat u wilt weten over ShouldProcess
 description: ShouldProcess is een belang rijke functie die vaak wordt weer geven. Met de para meters WhatIf en confirm kunt u eenvoudig toevoegen aan uw functies.
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: 6bd4dbd5255203f2daf804163aa2a84d992d6697
-ms.sourcegitcommit: 0afff6edbe560e88372dd5f1cdf51d77f9349972
+ms.openlocfilehash: 4f11ad84f5c89423fe56cfe438ed3cb1587ce59e
+ms.sourcegitcommit: be1df0bf757d734975a9aa021727608a396059ee
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86469732"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96616043"
 ---
 # <a name="everything-you-wanted-to-know-about-shouldprocess"></a>Alles wat u wilt weten over ShouldProcess
 
@@ -128,7 +128,7 @@ Er is een risico dat hier wordt vertrouwd dat alles dat u aanroept waarden overn
 function Test-ShouldProcess {
     [CmdletBinding(SupportsShouldProcess)]
     param()
-    Remove-Item .\myfile1.txt -WhatIf:$WhatIf
+    Remove-Item .\myfile1.txt -WhatIf:$WhatIfPreference
 }
 ```
 
@@ -228,7 +228,7 @@ Ik gebruik een van de twee para meters.
 
 ### <a name="shouldprocessreason"></a>ShouldProcessReason
 
-We hebben een vierde overbelasting die geavanceerder is dan de andere. U kunt de reden hiervoor `ShouldProcess` uitvoeren. Ik voeg dit hier alleen toe voor de volledige taak omdat we `$WhatIf` `$true` in plaats daarvan alleen kunnen controleren.
+We hebben een vierde overbelasting die geavanceerder is dan de andere. U kunt de reden hiervoor `ShouldProcess` uitvoeren. Ik voeg dit hier alleen toe voor de volledige taak omdat we `$WhatIfPreference` `$true` in plaats daarvan alleen kunnen controleren.
 
 ```powershell
 $reason = ''
@@ -428,7 +428,7 @@ Als u de sectie intrekt, moeten deze als volgt `ConfirmImpact` worden opgeroepen
 Test-ShouldProcess -Confirm:$false
 ```
 
-Niet iedereen realiseert dat ze dit moeten doen en `-Confirm:$false` niet worden onderdrukt `ShouldContinue` .
+Niet iedereen realiseert dat ze dit moeten doen en `-Force` niet worden onderdrukt `ShouldContinue` .
 Daarom moeten we `-Force` de Sanity van onze gebruikers implementeren. Bekijk hier dit volledige voor beeld:
 
 ```powershell
@@ -441,7 +441,7 @@ function Test-ShouldProcess {
         [Switch]$Force
     )
 
-    if ($Force -and -not $Confirm){
+    if ($Force){
         $ConfirmPreference = 'None'
     }
 
@@ -451,7 +451,7 @@ function Test-ShouldProcess {
 }
 ```
 
-We voegen onze eigen `-Force` switch toe als een para meter en gebruiken de `$Confirm` automatische para meter die beschikbaar is bij `SupportsShouldProcess` het toevoegen in `CmdletBinding` .
+We voegen onze eigen `-Force` switch toe als een para meter. De `-Confirm` para meter wordt automatisch toegevoegd wanneer u `SupportsShouldProcess` in de gebruikt `CmdletBinding` .
 
 ```powershell
 [CmdletBinding(
@@ -466,15 +466,15 @@ param(
 Hier kunt u zich richten op de `-Force` logica:
 
 ```powershell
-if ($Force -and -not $Confirm){
+if ($Force){
     $ConfirmPreference = 'None'
 }
 ```
 
-Als de gebruiker opgeeft `-Force` , willen we de bevestigings prompt onderdrukken, tenzij ze ook opgeven `-Confirm` . Hiermee kan een gebruiker een wijziging afdwingen, maar wordt de wijziging toch bevestigd. Vervolgens stellen we `$ConfirmPreference` in het lokale bereik op de aanroep naar `ShouldProcess` detecties.
+Als de gebruiker opgeeft `-Force` , willen we de bevestigings prompt onderdrukken, tenzij ze ook opgeven `-Confirm` . Hiermee kan een gebruiker een wijziging afdwingen, maar wordt de wijziging toch bevestigd. Vervolgens wordt `$ConfirmPreference` de lokale scope ingesteld. Als u de `-Force` para meter gebruikt, stelt `$ConfirmPreference` u de regel in op geen, waarbij u wordt gevraagd om te bevestigen.
 
 ```powershell
-if ($PSCmdlet.ShouldProcess('TARGET')){
+if ($Force -or $PSCmdlet.ShouldProcess('TARGET')){
         Write-Output "Some Action"
     }
 ```

@@ -1,18 +1,17 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/18/2020
+ms.date: 12/08/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/export-csv?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Export-Csv
-ms.openlocfilehash: ad2b2a2b32fa1dfbf722ff0af25bfafaf57de84a
-ms.sourcegitcommit: 9a8bb1b459b5939c95e1f6d9499fcb13d01a58c4
+ms.openlocfilehash: f920130ec8354b61b0bb3617e061520271df0eed
+ms.sourcegitcommit: 560a9f3c3148acab4655e91e8b07745ab74d5d26
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "93251853"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96913233"
 ---
 # Export-Csv
 
@@ -360,7 +359,7 @@ De acceptabele waarden voor deze para meter zijn als volgt:
 Vanaf Power shell 6,2 kunnen met de para meter **Encoding** ook numerieke id's van geregistreerde code pagina's (zoals `-Encoding 1251` ) of teken reeks namen van geregistreerde code pagina's (zoals) worden toegestaan `-Encoding "windows-1251"` . Zie de .NET-documentatie voor [code ring. code tabel](/dotnet/api/system.text.encoding.codepage?view=netcore-2.2)voor meer informatie.
 
 > [!NOTE]
-> **UTF-7** * wordt niet meer aanbevolen voor gebruik. In Power shell 7,1 wordt een waarschuwing geschreven als u `utf7` voor de para meter **Encoding** opgeeft.
+> **UTF-7** _ wordt niet meer aanbevolen om te gebruiken. In Power shell 7,1 wordt een waarschuwing geschreven als u `utf7` de para meter _ *Encoding** opgeeft.
 
 ```yaml
 Type: System.Text.Encoding
@@ -541,7 +540,7 @@ Accept wildcard characters: False
 
 ### -QuoteFields
 
-Hiermee geeft u de namen van de kolommen die moeten worden genoteerd. Als deze para meter wordt gebruikt, worden alleen de opgegeven kolommen genoteerd.
+Hiermee geeft u de namen van de kolommen die moeten worden genoteerd. Als deze para meter wordt gebruikt, worden alleen de opgegeven kolommen genoteerd. Deze para meter is toegevoegd in Power shell 7,0.
 
 ```yaml
 Type: System.String[]
@@ -562,6 +561,8 @@ Hiermee geeft u op wanneer aanhalings tekens worden gebruikt in de CSV-bestanden
 - Nooit: niets citeren
 - Altijd: alle citaten (standaard gedrag)
 - Alleen-AsNeeded die een scheidings teken bevatten
+
+Deze para meter is toegevoegd in Power shell 7,0.
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.BaseCsvWritingCommand+QuoteKind
@@ -623,4 +624,3 @@ Met `ConvertTo-Csv` de `ConvertFrom-Csv` cmdlets en worden objecten GECONVERTEER
 [Import-Csv](Import-Csv.md)
 
 [Select-Object](Select-Object.md)
-

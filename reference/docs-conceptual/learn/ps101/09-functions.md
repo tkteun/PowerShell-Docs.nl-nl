@@ -5,12 +5,12 @@ ms.date: 06/02/2020
 ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
-ms.openlocfilehash: 9554c0b4d3932b7371201f7b08c8b9d26a567f5e
-ms.sourcegitcommit: e85e56d6614cbd30e01965a5cf03fb3f5ca78103
+ms.openlocfilehash: 18566263f29b97834d78cb5572fa73b58c3a26bb
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94589124"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "96616009"
 ---
 # <a name="chapter-9---functions"></a>Hoofd stuk 9-functies
 
@@ -247,7 +247,7 @@ function Test-MrParameter {
 }
 ```
 
-Waarom heb ik **ComputerName** en niet **computer** , **servername** of **host** gebruikt voor mijn parameter naam? De reden hiervoor is dat ik mijn functie wil gebruiken zoals de standaard-cmdlets.
+Waarom heb ik **ComputerName** en niet **computer**, **servername** of **host** gebruikt voor mijn parameter naam? De reden hiervoor is dat ik mijn functie wil gebruiken zoals de standaard-cmdlets.
 
 Ik maak een functie om alle opdrachten op een systeem te doorzoeken en het aantal te retour neren met specifieke parameter namen.
 
@@ -268,7 +268,7 @@ function Get-MrParameterCount {
 }
 ```
 
-Zoals u kunt zien in de onderstaande resultaten, 39 opdrachten met de para meter **ComputerName** . Er zijn geen cmdlets met para meters zoals **computer** , **servername** , **host** of **machine**.
+Zoals u kunt zien in de onderstaande resultaten, 39 opdrachten met de para meter **ComputerName** . Er zijn geen cmdlets met para meters zoals **computer**, **servername**, **host** of **machine**.
 
 ```powershell
 Get-MrParameterCount -ParameterName ComputerName, Computer, ServerName, Host, Machine
@@ -285,6 +285,8 @@ Machine                     0
 ```
 
 Het is ook raadzaam om hetzelfde hoofdletter gebruik te gebruiken voor uw parameter namen als de standaard-cmdlets. Gebruiken `ComputerName` , niet `computername` . Dit zorgt ervoor dat uw functies eruitzien zoals de standaard-cmdlets. Mensen die al bekend zijn met Power shell, kunnen thuis.
+
+Met de- `param` instructie kunt u een of meer para meters definiëren. De parameter definities worden gescheiden door een komma ( `,` ). Zie [about_Functions_Advanced_Parameters][]voor meer informatie.
 
 ## <a name="advanced-functions"></a>Geavanceerde functies
 

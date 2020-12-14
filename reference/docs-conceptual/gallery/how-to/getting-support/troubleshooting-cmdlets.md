@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 12/01/2020
 title: Problemen met cmdlets oplossen
 description: In dit artikel vindt u informatie en stappen voor het oplossen van problemen met behulp van de PowerShell Gallery
-ms.openlocfilehash: db9e58c185c6f3bca26ff3639af85fa2dba48909
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 980da8ea7b8a09513f33a9939d512c437b755d8d
+ms.sourcegitcommit: 560a9f3c3148acab4655e91e8b07745ab74d5d26
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92661066"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96913315"
 ---
 # <a name="troubleshooting-cmdlets"></a>Problemen met cmdlets oplossen
 
@@ -21,12 +21,15 @@ Launch new PowerShell Console
 Update-Module Azure -Verbose
 ```
 
-### <a name="required-network-endpoints"></a>Vereiste netwerk eindpunten
+## <a name="required-network-endpoints"></a>Vereiste netwerk eindpunten
 
 Voor de cmdlets install en update is Internet toegang vereist om verbinding te maken met de netwerk eindpunten die door de PowerShell Gallery worden gebruikt. Zorg ervoor dat u met uw netwerk toegangs beleid verbinding kunt maken met de volgende eind punten.
 
-- oneget.org
-- go.microsoft.com
-- az818661.vo.msecnd.net
-- www.powershellgallery.com
-- devopsgallerystorage.blob.core.windows.net
+- `psg-prod-eastus.azureedge.net` -CDN-hostnaam
+- `az818661.vo.msecnd.net` -CDN-hostnaam
+- `devopsgallerystorage.blob.core.windows.net` -hostnaam van opslag account
+- `*.powershellgallery.com` -website
+- `go.microsoft.com` -omleidings service
+
+> [!NOTE]
+> Cmdlets die communiceren met de PowerShell Gallery, kunnen mislukken met onverwachte fouten als er een storing optreedt in de PowerShell Gallery Services. Als u de huidige status van de PowerShell Gallery wilt zien, gaat u naar de pagina [PowerShell Gallery status](https://github.com/PowerShell/PowerShellGallery/blob/master/psgallery_status.md) op github.

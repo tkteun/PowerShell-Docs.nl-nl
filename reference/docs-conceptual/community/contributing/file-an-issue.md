@@ -1,16 +1,16 @@
 ---
-title: Een Power shell-docs-probleem opslaan
+title: Een PowerShell-Docs probleem oplossen
 description: In dit artikel wordt uitgelegd hoe u feedback kunt geven over de Power shell-documentatie.
-ms.date: 03/05/2020
+ms.date: 12/09/2020
 ms.topic: conceptual
-ms.openlocfilehash: fa2c74d55cdcd779646c50d58f7705f7a4c33542
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: a044f77d3529817ec063d4a26fc9d10cdfe873aa
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "79078547"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97090498"
 ---
-# <a name="how-to-file-a-powershell-docs-issue"></a>Een Power shell-docs-probleem opslaan
+# <a name="how-to-file-a-powershell-docs-issue"></a>Een PowerShell-Docs probleem oplossen
 
 Er zijn twee manieren om een probleem te maken:
 
@@ -21,10 +21,11 @@ Er zijn twee manieren om een probleem te maken:
 
 Zie het docs-team blog waarin deze [functie][feedback]wordt aangekondigd voor een volledige beschrijving van de feedback besturings elementen.
 
-Onder aan de meeste pagina's `docs.microsoft.com`ziet u twee feedback knoppen. Een is een koppeling voor product feedback en één is voor documentatie feedback. Voor de documentatie feedback is een GitHub-account vereist. Als u op de knop klikt, wordt u in GitHub geauthenticeerd. vervolgens geeft u een eenvoudig formulier om uw feedback in te voeren. Wanneer u het formulier verzendt, maakt het besturings element feedback een nieuw GitHub-probleem en koppelt het aan het huidige artikel.
+Onder aan de meeste pagina's `docs.microsoft.com` ziet u twee feedback knoppen. Een is een koppeling voor product feedback en één is voor documentatie feedback. Voor de documentatie feedback is een GitHub-account vereist. Als u op de knop klikt, gaat u naar GitHub en geeft u een vooraf gevulde uitgifte sjabloon weer.
+Voer uw feedback in en verzend het formulier.
 
 > [!NOTE]
-> Dit is geen ondersteunings kanaal. Dit is een manier om vragen te stellen over documentatie of fouten en omissies te rapporteren. Als u technische ondersteuning nodig hebt, raadpleegt u de resources van de [Community](../community-support.md).
+> Dit is geen ondersteunings kanaal. Dit is een manier om vragen te stellen over documentatie of om fouten en omissies te melden. Als u technische ondersteuning nodig hebt, raadpleegt u de resources van de [Community](../community-support.md).
 
 ## <a name="filing-issues-on-github"></a>Problemen met archiveren op GitHub
 
@@ -36,7 +37,7 @@ Lees de bestaande problemen voordat u een nieuw probleem hebt gemaakt om te zien
 
 Zie [aan de slag schrijven](get-started-writing.md).
 
-## <a name="additional-resources"></a>Aanvullende bronnen
+## <a name="additional-resources"></a>Aanvullende resources
 
 [De manier waarop we problemen beheren](managing-issues.md)
 

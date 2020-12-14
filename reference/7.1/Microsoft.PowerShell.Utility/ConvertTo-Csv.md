@@ -1,18 +1,17 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 1/7/2019
+ms.date: 12/08/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convertto-csv?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertTo-Csv
-ms.openlocfilehash: e4cc40e7a9a5fdcd12b6a787607e4979ddbb3273
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 7ad8dc837bd843c2df48587ad809d9f65a4cf8a7
+ms.sourcegitcommit: 560a9f3c3148acab4655e91e8b07745ab74d5d26
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93250917"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96913216"
 ---
 # ConvertTo-Csv
 
@@ -21,7 +20,7 @@ Hiermee converteert u .NET-objecten naar een reeks teken reeksen met tekens gesc
 
 ## SYNTAXIS
 
-### Scheidingsteken
+### Scheidings teken (standaard)
 
 ```
 ConvertTo-Csv [-InputObject] <PSObject> [[-Delimiter] <Char>] [-IncludeTypeInformation]
@@ -205,7 +204,7 @@ Accept wildcard characters: False
 
 ### -QuoteFields
 
-Hiermee geeft u de namen van de kolommen die moeten worden genoteerd. Als deze para meter wordt gebruikt, worden alleen de opgegeven kolommen genoteerd.
+Hiermee geeft u de namen van de kolommen die moeten worden genoteerd. Als deze para meter wordt gebruikt, worden alleen de opgegeven kolommen genoteerd. Deze para meter is toegevoegd in Power shell 7,0.
 
 ```yaml
 Type: System.String[]
@@ -226,6 +225,8 @@ Hiermee geeft u op wanneer aanhalings tekens worden gebruikt in de CSV-bestanden
 - Nooit: niets citeren
 - Altijd: alle citaten (standaard gedrag)
 - Alleen-AsNeeded die een scheidings teken bevatten
+
+Deze para meter is toegevoegd in Power shell 7,0.
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.BaseCsvWritingCommand+QuoteKind
@@ -276,4 +277,3 @@ Wanneer u meerdere objecten verzendt naar `ConvertTo-CSV` , worden `ConvertTo-CS
 [Exporteren-CSV](Export-Csv.md)
 
 [Import-Csv](Import-Csv.md)
-

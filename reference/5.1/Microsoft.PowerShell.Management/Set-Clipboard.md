@@ -1,18 +1,17 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 06/09/2017
+ms.date: 12/03/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/set-clipboard?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Clipboard
-ms.openlocfilehash: f3230c247296d5fd907d580e719cbbbc560183a9
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: c1cf126e41a5e918afffbc41d30f957e650efdf5
+ms.sourcegitcommit: 7b376314e7640c39a53aac9f0db8bb935514a960
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93250560"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96564499"
 ---
 # Set-Clipboard
 
@@ -59,10 +58,18 @@ Set-Clipboard -Value "This is a test string"
 
 ### Voor beeld 2: de inhoud van een map naar het klem bord kopiëren
 
-Met deze opdracht wordt de inhoud van de opgegeven map naar het klem bord gekopieerd.
+In dit voor beeld wordt de inhoud van de opgegeven map naar het klem bord gekopieerd.
 
 ```powershell
 Set-Clipboard -Path "C:\Staging\"
+```
+
+### Voor beeld 3: de inhoud van een bestand naar het klem bord kopiëren
+
+In dit voor beeld wordt de inhoud van een bestand naar het klem bord gesluizen. In dit voor beeld krijgen we een open bare SSH-sleutel, zodat deze kan worden geplakt in een andere toepassing, zoals GitHub.
+
+```powershell
+Get-Content C:\Users\user1\.ssh\id_ed25519.pub | Set-Clipboard
 ```
 
 ## PARAMETERS

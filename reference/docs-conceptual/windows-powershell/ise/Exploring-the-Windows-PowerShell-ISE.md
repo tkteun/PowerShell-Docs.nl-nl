@@ -2,14 +2,14 @@
 ms.date: 01/02/2020
 title: Kennismaking met Windows PowerShell ISE
 description: Dit artikel bevat een overzicht van de functies van de Windows PowerShell ISE
-ms.topic: landing-page
+ms.topic: conceptual
 ms.custom: ISE-F1-page
-ms.openlocfilehash: 91faedfcda70228807cdab6690912e7ad0944303
-ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
+ms.openlocfilehash: 91161763c817972a62b4da1558a7ca119d8c8616
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94391252"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97090443"
 ---
 # <a name="exploring-the-windows-powershell-ise"></a>Kennismaking met Windows PowerShell ISE
 
@@ -17,7 +17,7 @@ U kunt de Windows Power shell Integrated Scripting Environment (ISE) gebruiken o
 
 ## <a name="menu-bar"></a>Menu balk
 
-De menu balk bevat de **menu's bestand** , **bewerken** , **weer gave** , **extra** , **fout opsporing** , **invoeg toepassingen** en **Help** . Met de knoppen in de menu's kunt u taken uitvoeren die betrekking hebben op het schrijven en uitvoeren van scripts en het uitvoeren van opdrachten in de Windows PowerShell ISE. Daarnaast kan een [invoeg programma](object-model/The-ISEAddOnTool-Object.md) worden geplaatst op de menu balk door scripts uit te voeren die gebruikmaken van de [ISE object model hiërarchie](object-model/The-ISE-Object-Model-Hierarchy.md).
+De menu balk bevat de **menu's bestand**, **bewerken**, **weer gave**, **extra**, **fout opsporing**, **invoeg toepassingen** en **Help** . Met de knoppen in de menu's kunt u taken uitvoeren die betrekking hebben op het schrijven en uitvoeren van scripts en het uitvoeren van opdrachten in de Windows PowerShell ISE. Daarnaast kan een [invoeg programma](object-model/The-ISEAddOnTool-Object.md) worden geplaatst op de menu balk door scripts uit te voeren die gebruikmaken van de [ISE object model hiërarchie](object-model/The-ISE-Object-Model-Hierarchy.md).
 
 ## <a name="windows-powershell-tabs"></a>Windows Power shell-tabbladen
 

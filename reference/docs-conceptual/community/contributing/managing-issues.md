@@ -1,18 +1,18 @@
 ---
 title: De manier waarop we problemen beheren
 description: In dit artikel wordt uitgelegd hoe het PowerShell-Docs-team problemen beheert.
-ms.date: 03/05/2020
+ms.date: 12/09/2020
 ms.topic: conceptual
-ms.openlocfilehash: 56f0ea5b4c5c700db8fdd0b16e3ce1c4040a43dc
-ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
+ms.openlocfilehash: 72267137a2657f51e5f616113adf92d80647acad
+ms.sourcegitcommit: 61765d08321623743dc5db5367160f6982fe7857
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93354589"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97352706"
 ---
 # <a name="how-we-manage-issues"></a>De manier waarop we problemen beheren
 
-In dit artikel wordt beschreven hoe we problemen beheren in de PowerShell-Docs opslag plaats. Dit artikel is bedoeld als taak hulp voor leden van het PowerShell-Docs team. Dit wordt hier gepubliceerd om proces transparantie te bieden voor de open bare mede werkers.
+In dit artikel wordt beschreven hoe we problemen beheren in de PowerShell-Docs opslag plaats. Dit artikel is bedoeld als taak hulp voor leden van het PowerShell-Docs team. Het wordt hier gepubliceerd om proces transparantie te bieden voor de open bare mede werkers.
 
 ## <a name="sources-of-issues"></a>Bronnen van problemen
 
@@ -23,51 +23,54 @@ In dit artikel wordt beschreven hoe we problemen beheren in de PowerShell-Docs o
 
 ## <a name="response-time-targets"></a>Doelen voor reactie tijd
 
-- Ingedeeld-5 werk dagen
-- Repareren of wijzigen-geen specifieke doel stelling alleen beste
+80% van de nieuwe problemen zijn binnen drie werk dagen gesloten.
+
+- Ingedeeld-1 werk dagen
+- Herstellen of wijzigen-10 werk dagen
 
 ### <a name="labeling--milestones"></a>Labels & mijl palen
 
 #### <a name="label-types"></a>Label typen
 
-|Voorvoegsel  | Beschrijving                                                         |
-|------- | --------------------------------------------------------------------|
-|Gebied    | Wordt gebruikt om aan te geven welk gedeelte van Power shell of welke docs het probleem ondervindt.<br>Deze optie is handig voor eigen aars om problemen voor hun functie te vinden.|
-|Pri     | Wordt gebruikt om de prioriteit van het probleem aan te geven. Waarde bereik 0-4.        |
-|Probleem   | Hiermee wordt het type feedback voor het probleem geclassificeerd                     |
-|Beoordelen  | Gebruikt voor een probleem waarvoor verdere beoordeling door het team is vereist              |
-|Status  | Wordt gebruikt om de status van het werk item aan te geven                        |
-|Wachten | Wordt gebruikt om aan te geven dat wij wachten op iets                   |
+|   Type   | Description                                                         |
+| -------- | ------------------------------------------------------------------- |
+| Gebied     | Wordt gebruikt om aan te geven welk gedeelte van Power shell of welke docs het probleem ondervindt.<br>Deze optie is handig voor eigen aars om problemen voor hun functie te vinden. |
+| Probleem    | Hiermee wordt het type probleem aangegeven                                         |
+| Prioriteit | Hiermee wordt de prioriteit van het probleem aangegeven. Waardebereik 0 (hoog)-4 (laag)  |
+| Status   | Hiermee wordt de status van het werk item aangegeven of de reden waarom deze is gesloten          |
+| Label      | Labels die worden gebruikt voor extra classificatie                        |
+| Wachten  | Hiermee wordt aangegeven dat er wordt gewacht op iemand of een andere gebeurtenis         |
 
 #### <a name="milestones"></a>Mijlpalen
 
-Problemen en pull moeten worden gelabeld met de juiste mijl paal. Als het probleem niet is gericht op een specifieke versie, wordt er geen mijl paal gebruikt. Problemen voor docs pull die nog moeten worden samengevoegd met de Power shell-code basis, moeten worden toegewezen aan de **toekomstige** mijl paal. Nadat de code wijziging is samengevoegd, wijzigt u de mijl paal naar de juiste versie.
+Problemen en pull moeten worden gelabeld met de juiste mijl paal. Als het probleem niet van toepassing is op een specifieke versie, wordt er geen mijl paal gebruikt. Pull en gerelateerde problemen voor wijzigingen die nog moeten worden samengevoegd met de Power shell-code basis, moeten worden toegewezen aan de **toekomstige** mijl paal. Nadat de code wijziging is samengevoegd, wijzigt u de mijl paal naar de juiste versie.
 
-|    Mijlpalen     |                    Beschrijving                     |
+|    Mijlpalen     |                    Description                     |
 | ---------------- | -------------------------------------------------- |
-| 6.x              | Werk items met betrekking tot Power shell 6,0 t/m 6.2. x |
 | 7.0.0            | Werk items met betrekking tot Power shell 7,0               |
 | 7.1.0            | Werk items met betrekking tot Power shell 7,1               |
+| 7.2.0            | Werk items met betrekking tot Power shell 7,2               |
 | Toekomstig           | Werk items een toekomstige versie van Power shell          |
-| PSReadline-vNext | Werk items een toekomstige versie van PSReadline          |
 
 ## <a name="triage-process"></a>Sorteren-proces
 
-Het Power shell docs-team voldoet slechts één keer per week voor het bespreken van problemen die zijn toegevoegd sinds de laatste vergadering. Een probleem wordt beschouwd als ingedeeld wanneer er labels zijn toegewezen of als er een eigenaar is toegewezen. Team leden van Power shell-documenten worden aangemoedigd de problemen dagelijks te bekijken en nieuwe problemen op te lossen wanneer ze binnenkomen. De wekelijkse sorteren-vergadering kan vervolgens worden gebruikt om de nieuwe problemen zo nodig te bespreken.
+Team leden van Power shell-docs bekijken de problemen dagelijks en sorteren nieuwe problemen wanneer ze binnenkomen. Het team voldoet aan de wekelijkse voor het bespreken van problemen die sorteren of onopgelost moeten blijven.
 
 ### <a name="misplaced-product-feedback"></a>Verkeerd geplaatste product feedback
 
-- Voer een opmerking in voor de klant die aangeeft dat het product feedback is en geef een koppeling naar het juiste feedback kanaal op.
+- Voer een opmerking in die de klant omleidt naar het juiste feedback kanaal.
 - Optioneel: Kopieer het probleem naar de juiste locatie van de product feedback, voeg een koppeling naar het gekopieerde item toe en sluit het probleem. GEEN problemen naar UserVoice kopiëren.
 
-  | DocSet    | URL van product feedback                                           |
-  | --------- | -------------------------------------------------------------- |
-  | ontwikkelaar | `https://github.com/PowerShell/PowerShell/issues/new/choose`   |
-  | dsc       | `https://windowsserver.uservoice.com/forums/301869-powershell` |
-  | galerie   | `https://github.com/powershell/powershellgallery/issues/new`   |
-  | JEA       | `https://github.com/powershell/jea/issues/new`                 |
-  | referentielaag | `https://github.com/PowerShell/PowerShell/issues/new/choose`   |
-  | WMF       | `https://windowsserver.uservoice.com/forums/301869-powershell` |
+  De standaard locatie voor Power Shell-problemen is [https://github.com/PowerShell/PowerShell/issues/new/choose](https://github.com/PowerShell/PowerShell/issues/new/choose) .
+
+  De volgende onderwerpgebieden hebben verschillende locaties voor problemen:
+
+  | Onderwerpen |                                                     URL van product feedback                                                     |
+  | -------- | ---------------------------------------------------------------------------------------------------------------------------- |
+  | dsc      | [https://windowsserver.uservoice.com/forums/301869-powershell](https://windowsserver.uservoice.com/forums/301869-powershell) |
+  | galerie  | [https://github.com/powershell/powershellgallery/issues/new](https://github.com/powershell/powershellgallery/issues/new)     |
+  | JEA      | [https://github.com/powershell/jea/issues/new](https://github.com/powershell/jea/issues/new)                                 |
+  | WMF      | [https://windowsserver.uservoice.com/forums/301869-powershell](https://windowsserver.uservoice.com/forums/301869-powershell) |
 
 ### <a name="support-requests"></a>Ondersteuningsaanvragen
 
@@ -84,4 +87,4 @@ Het Power shell docs-team voldoet slechts één keer per week voor het bespreken
 
 - Bewerk het probleem zo nodig om eventuele aanstootgevende inhoud te verwijderen.
 - Voer een opmerking in om aan te geven dat het probleem spam is, sluit het probleem en vergrendel het vervolgens om verdere opmerkingen te voor komen.
-- Elk exemplaar van dit moet worden besproken in de wekelijkse sorteren om te bepalen of verdere actie moet worden ondernomen (rapporteren aan GitHub of micro soft juridisch).
+- Elke schending moet worden besproken in de wekelijkse sorteren om te bepalen of verdere actie moet worden ondernomen (rapporteren aan GitHub of micro soft juridisch).

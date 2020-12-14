@@ -2,15 +2,15 @@
 description: Hierin worden de Opera tors beschreven waarmee waarden in Power shell worden vergeleken.
 Locale: en-US
 ms.date: 12/10/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Comparison_Operators
-ms.openlocfilehash: ba671ae51d458a2e0074a85d4de859795c20a3d5
+ms.openlocfilehash: 29c2e246efcfa4bfccd9c09bba51baa1d5269d10
 ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/10/2020
-ms.locfileid: "97069900"
+ms.locfileid: "97090334"
 ---
 # <a name="about-comparison-operators"></a>Over vergelijkings operatoren
 
@@ -579,6 +579,19 @@ a2
 a3
 a4
 a5
+```
+
+### <a name="scriptblock-substitutions"></a>Script Block vervangingen
+
+Vanaf Power shell 6 kunt u een **script Block** -argument gebruiken voor de _vervangings_ tekst. De **script Block** wordt uitgevoerd voor elke overeenkomst die in de _invoer_ teken reeks is gevonden.
+
+Gebruik in de **script Block** de `$_` Automatische variabele om te verwijzen naar het huidige **System. Text. RegularExpressions. match** -object. Met het object **match** krijgt u toegang tot de huidige invoer tekst die wordt vervangen, evenals andere nuttige informatie.
+
+In dit voor beeld wordt elke reeks van drie decimalen vervangen door het teken equivalent. De **script Block** wordt uitgevoerd voor elke set van drie decimalen die moeten worden vervangen.
+
+```powershell
+PS> "072101108108111" -replace "\d{3}", {[char][int]$_.Value}
+Hello
 ```
 
 ## <a name="type-comparison"></a>Type vergelijking

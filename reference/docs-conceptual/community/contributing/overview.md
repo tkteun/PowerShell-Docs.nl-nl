@@ -1,20 +1,20 @@
 ---
 title: Bijdragen aan Power shell-documentatie
 description: In dit artikel vindt u een overzicht van de stappen die nodig zijn om aan de Power shell-documentatie te bijdragen.
-ms.date: 03/05/2020
+ms.date: 12/09/2020
 ms.topic: conceptual
-ms.openlocfilehash: 255b74a75b8412ed509f6da930eb722d54233711
-ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
+ms.openlocfilehash: 9fbdafa023eac80340437f30d2d6925a1a4ed3cb
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93354399"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97076453"
 ---
 # <a name="contributing-to-powershell-documentation"></a>Bijdragen aan Power shell-documentatie
 
 Hartelijk dank voor uw ondersteuning van Power shell.
 
-De gids voor inzenders is een verzameling artikelen waarin de hulpprogramma's en processen worden uitgelegd die we gebruiken om documentatie bij Microsoft te maken. Sommige van deze hand leidingen beslaan informatie die gemeen schappelijk is voor elke documentatieset die wordt gepubliceerd op [docs.Microsoft.com][docs]. Sommige gidsen zijn specifiek voor het schrijven van documentatie voor PowerShell.
+De hand leiding voor inzenders is een verzameling artikelen waarin de hulpprogram ma's en processen worden beschreven die we gebruiken om documentatie bij micro soft te maken. Sommige van deze hand leidingen beslaan informatie die gemeen schappelijk is voor elke documentatieset die wordt gepubliceerd op [docs.Microsoft.com][docs]. Sommige gidsen zijn specifiek voor het schrijven van documentatie voor PowerShell.
 
 De gemeen schappelijke artikelen zijn beschikbaar in onze gecentraliseerde [hand leiding voor mede][contribute]werkers. De Power shell-specifieke hand leidingen zijn hier beschikbaar.
 
@@ -24,11 +24,12 @@ Er zijn twee manieren om bij te dragen. Beide bijdragen zijn waardevol voor ons.
 
 - Bij het [archiveren van problemen][file-an-issue] kunnen we problemen en hiaten in onze documentatie identificeren. Soms zijn problemen moeilijk op te lossen, waardoor meer onderzoek en onderzoek is vereist. Met het probleem proces kan ons een gesprek over het probleem hebben en een bevredigende oplossing ontwikkelen.
 
-- Het verzenden van nieuwe inhoud of wijzigingen in bestaande artikelen is een meer betrokken proces. De volgende informatie bevat een overzicht van de hulpprogram ma's, processen en standaarden voor het verzenden van inhoud aan de documentatie.
+- [Het verzenden van een pull-aanvraag](pull-requests.md) om inhoud toe te voegen of te wijzigen, is een meer betrokken proces.
+  De volgende informatie bevat een overzicht van de hulpprogram ma's, processen en standaarden voor het verzenden van inhoud aan de documentatie.
 
 ## <a name="prepare-to-make-a-contribution"></a>Voor bereidingen treffen om een bijdrage te leveren
 
-U hebt allereerst een GitHub-account nodig om bij te dragen aan de documentatie. Gebruik de volgende controle lijst om de hulpprogram ma's op te halen en inzicht te krijgen in de processen die we gebruiken om bijdragen te leveren.
+U hebt allereerst een GitHub-account nodig om bij te dragen aan de documentatie. Gebruik de volgende controle lijst voor het installeren en configureren van de hulpprogram ma's die u nodig hebt om bijdragen te maken.
 
 1. [Registreren voor GitHub](/contribute/get-started-setup-github)
 1. [Hulpprogramma's voor Git/Markdown installeren](/contribute/get-started-setup-tools)
@@ -66,7 +67,6 @@ Bekijk de volgende documenten:
 - [Aan de slag met het schrijven van documentatie](get-started-writing.md)
 - [Een pull-aanvraag verzenden](pull-requests.md)
 - [Stijlgids voor PowerShell-documentatie](powershell-style-guide.md)
-- [Naslaginformatie voor cmdlets bewerken](editing-cmdlet-ref.md)
 
 Aanvullende resources
 

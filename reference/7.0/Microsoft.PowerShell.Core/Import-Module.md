@@ -1,18 +1,17 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 04/08/2020
+ms.date: 12/03/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/import-module?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Import-Module
-ms.openlocfilehash: efb82cb938f7b044b863a8192f4c66673d47a4e0
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 218a4cb447c85a7362efebe9b50a917703cccc35
+ms.sourcegitcommit: 7b376314e7640c39a53aac9f0db8bb935514a960
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93249777"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96564442"
 ---
 # Import-Module
 
@@ -110,17 +109,17 @@ Import-Module [-Global] [-Prefix <String>] [-Function <String[]>] [-Cmdlet <Stri
 ## BESCHRIJVING
 
 De `Import-Module` cmdlet voegt een of meer modules toe aan de huidige sessie. Vanaf Power Shell 3,0 worden geïnstalleerde modules automatisch geïmporteerd in de sessie wanneer u opdrachten of providers in de module gebruikt. U kunt echter nog steeds de `Import-Module` opdracht gebruiken om een module te importeren.
-U kunt het automatisch importeren van modules uitschakelen met behulp van de `$PSModuleAutoloadingPreference` Voorkeurs variabele. Zie about_Preference_Variables voor meer informatie over de `$PSModuleAutoloadingPreference` variabele [about_Preference_Variables](About/about_Preference_Variables.md).
+U kunt het automatisch importeren van modules uitschakelen met behulp van de `$PSModuleAutoloadingPreference` Voorkeurs variabele. Zie about_Preference_Variables voor meer informatie over de `$PSModuleAutoloadingPreference` variabele [](About/about_Preference_Variables.md).
 
 Een module is een pakket dat leden bevat die kunnen worden gebruikt in Power shell. Leden zijn onder andere cmdlets, providers, scripts, functies, variabelen en andere hulpprogram ma's en bestanden. Nadat een module is geïmporteerd, kunt u de module leden in uw sessie gebruiken. Zie [about_Modules](About/about_Modules.md)voor meer informatie over modules.
 
-Standaard worden `Import-Module` alle leden geïmporteerd die de module exporteert, maar u kunt de para meters **alias** , **Function** , **cmdlet** en **Variable** gebruiken om te beperken welke leden worden geïmporteerd. Met de para meter **NoClobber** wordt voor komen dat `Import-Module` leden met dezelfde namen als leden in de huidige sessie worden geïmporteerd.
+Standaard worden `Import-Module` alle leden geïmporteerd die de module exporteert, maar u kunt de para meters **alias**, **Function**, **cmdlet** en **Variable** gebruiken om te beperken welke leden worden geïmporteerd. Met de para meter **NoClobber** wordt voor komen dat `Import-Module` leden met dezelfde namen als leden in de huidige sessie worden geïmporteerd.
 
 `Import-Module` Hiermee wordt een module alleen in de huidige sessie geïmporteerd. Als u de module wilt importeren in elke nieuwe sessie, voegt `Import-Module` u een opdracht toe aan uw Power shell-profiel. Zie [about_Profiles](About/about_Profiles.md)voor meer informatie over profielen.
 
-U kunt externe Windows-computers waarvoor Power shell Remoting is ingeschakeld, beheren door een **PSSession** te maken op de externe computer. Gebruik vervolgens de para meter **PSSession** van `Import-Module` om de modules te importeren die zijn geïnstalleerd op de externe computer. U kunt nu de geïmporteerde opdrachten in de huidige sessie gebruiken. De opdrachten worden impliciet uitgevoerd op de externe computer.
+U kunt externe Windows-computers waarvoor Power shell Remoting is ingeschakeld, beheren door een **PSSession** te maken op de externe computer. Gebruik vervolgens de para meter **PSSession** van `Import-Module` om de modules te importeren die zijn geïnstalleerd op de externe computer. Wanneer u de geïmporteerde opdrachten in de huidige sessie gebruikt, worden de opdrachten impliciet uitgevoerd op de externe computer.
 
-Vanaf Windows Power Shell 3,0 kunt u gebruiken `Import-Module` om Common Information Model-modules (CIM) te importeren waarin de cmdlets worden gedefinieerd in de cmdlet definition XML-bestanden (CDXML). Met deze functie kunt u cmdlets gebruiken die zijn geïmplementeerd in niet-beheerde code-assembly's, zoals die zijn geschreven in C++.
+Vanuit Windows Power Shell 3,0 kunt u gebruiken `Import-Module` om Common Information Model-modules (CIM) te importeren. Met CIM-modules worden cmdlets in CDXML-bestanden (cmdlet definition XML) gedefinieerd. Met deze functie kunt u cmdlets gebruiken die zijn geïmplementeerd in niet-beheerde code-assembly's, zoals die zijn geschreven in C++.
 
 Voor externe computers waarvoor geen externe communicatie van Power shell is ingeschakeld, met inbegrip van computers waarop het Windows-besturings systeem niet wordt uitgevoerd, kunt u de para meter **CIMSession** van gebruiken `Import-Module` voor het importeren van CIM-modules van de externe computer. De geïmporteerde opdrachten worden impliciet uitgevoerd op de externe computer. Een **CIMSession** is een verbinding met Windows Management INSTRUMENTATION (WMI) op de externe computer.
 
@@ -172,11 +171,11 @@ VERBOSE: Exporting function 'Get-SpecDetails'.
 ```
 
 Het gebruik van de **uitgebreide** para meter zorgt ervoor dat `Import-Module` de voortgang wordt gerapporteerd bij het laden van de module.
-Zonder de para meter **uitgebreid** , **PassThru** of **AsCustomObject** wordt geen `Import-Module` uitvoer gegenereerd wanneer een module wordt geïmporteerd.
+Zonder de para meter **uitgebreid**, **PassThru** of **AsCustomObject** wordt geen `Import-Module` uitvoer gegenereerd wanneer een module wordt geïmporteerd.
 
 ### Voor beeld 5: module leden beperken die in een sessie zijn geïmporteerd
 
-In dit voor beeld ziet u hoe u kunt beperken welke module leden in de sessie worden geïmporteerd en wat het effect van deze opdracht voor de sessie is. De **functie** parameter beperkt de leden die worden geïmporteerd uit de module. U kunt ook de para meters **alias** , **variabele** en **cmdlet** gebruiken om andere leden te beperken die door de module worden geïmporteerd.
+In dit voor beeld ziet u hoe u kunt beperken welke module leden in de sessie worden geïmporteerd en wat het effect van deze opdracht voor de sessie is. De **functie** parameter beperkt de leden die worden geïmporteerd uit de module. U kunt ook de para meters **alias**, **variabele** en **cmdlet** gebruiken om andere leden te beperken die door de module worden geïmporteerd.
 
 De `Get-Module` cmdlet haalt het object op dat de module **PSDiagnostics** vertegenwoordigt. De eigenschap **ExportedCmdlets** geeft een lijst van alle cmdlets die de module exporteert, ook al zijn ze niet allemaal geïmporteerd.
 
@@ -250,7 +249,7 @@ Function        Stop-xTrace                            6.1.0.0    PSDiagnostics
 
 ### Voor beeld 7: een aangepast object ophalen en gebruiken
 
-In dit voor beeld ziet u hoe u het aangepaste object dat wordt geretourneerd door **import-module** kunt ophalen en gebruiken.
+In dit voor beeld ziet u hoe u het aangepaste object dat wordt geretourneerd door kunt ophalen en gebruiken `Import-Module` .
 
 Aangepaste objecten bevatten synthetische leden die elk van de geïmporteerde module leden vertegenwoordigen. De cmdlets en functies in een module worden bijvoorbeeld geconverteerd naar script methoden van het aangepaste object.
 
@@ -292,11 +291,11 @@ Show-Calendar ScriptMethod System.Object Show-Calendar();
 $a."Show-Calendar"()
 ```
 
-De script module **show-calendar** wordt geïmporteerd met de para meter **AsCustomObject** voor het aanvragen van een aangepast object en de para meter **PassThru** om het object te retour neren. Het resulterende aangepaste object wordt opgeslagen in de `$a` variabele.
+De `Show-Calendar` script module wordt geïmporteerd met de para meter **AsCustomObject** voor het aanvragen van een aangepast object en de para meter **PassThru** om het object te retour neren. Het resulterende aangepaste object wordt opgeslagen in de `$a` variabele.
 
-De `$a` variabele wordt naar de cmdlet gepiped `Get-Member` om de eigenschappen en methoden van het opgeslagen object weer te geven. In de uitvoer ziet u een script methode voor het **weer geven** van een agenda.
+De `$a` variabele wordt naar de cmdlet gepiped `Get-Member` om de eigenschappen en methoden van het opgeslagen object weer te geven. In de uitvoer ziet u een `Show-Calendar` script methode.
 
-Als u de script methode voor het **weer geven** van de agenda wilt aanroepen, moet de naam van de methode tussen aanhalings tekens worden geplaatst, omdat de naam een koppel teken bevat.
+De `Show-Calendar` methode naam moet tussen aanhalings tekens worden geplaatst, omdat de naam een afbreek streepje bevat om de script methode aan te roepen.
 
 ### Voor beeld 8: een module opnieuw importeren in dezelfde sessie
 
@@ -455,7 +454,7 @@ Windows Remote Management (HTTP-In)                      WINRM-HTTP-In-TCP-PUBLI
 Windows Remote Management - Compatibility Mode (HTTP-In) WINRM-HTTP-Compat-In-TCP
 ```
 
-`New-PSSession` Hiermee maakt u een externe sessie ( **PSSession** ) op de Server01-computer. De **PSSession** wordt opgeslagen in de `$s` variabele.
+`New-PSSession` Hiermee maakt u een externe sessie (**PSSession**) op de Server01-computer. De **PSSession** wordt opgeslagen in de `$s` variabele.
 
 Met `Get-Module` de para meter **PSSession** wordt aangegeven dat de module **netsecurity** is geïnstalleerd en beschikbaar is op de externe computer. Deze opdracht is gelijk aan het gebruik `Invoke-Command` van de cmdlet om de `Get-Module` opdracht uit te voeren in de externe sessie. Bijvoorbeeld: (`Invoke-Command $s {Get-Module -ListAvailable -Name NetSecurity`
 
@@ -821,6 +820,9 @@ Als u een pad weglaat, `Import-Module` zoekt naar de module in de paden die zijn
 
 Geef waar mogelijk alleen de module naam op. Wanneer u een bestands naam opgeeft, worden alleen de leden geïmporteerd die in dat bestand zijn geïmplementeerd. Als de module andere bestanden bevat, worden deze niet geïmporteerd en ontbreken er mogelijk belang rijke leden van de module.
 
+> [!NOTE]
+> Hoewel het mogelijk is om een script bestand ( `.ps1` ) te importeren als een module, zijn script bestanden meestal niet gestructureerd als script modules file ( `.psm1` )-bestand. Het importeren van een script bestand garandeert niet dat het kan worden gebruikt als een module. Zie [about_Modules](about/about_Modules.md)voor meer informatie.
+
 ```yaml
 Type: System.String[]
 Parameter Sets: Name, PSSession, CimSession, WinCompat
@@ -893,7 +895,7 @@ Accept wildcard characters: False
 
 ### -PSSession
 
-Hiermee geeft u een door Power shell door de gebruiker beheerde sessie ( **PSSession** ) op waarvan de cmdlet modules in de huidige sessie importeert. Voer een variabele in die een **PSSession** of een opdracht bevat waarmee een **PSSession** wordt opgehaald, zoals een `Get-PSSession` opdracht.
+Hiermee geeft u een door Power shell door de gebruiker beheerde sessie (**PSSession**) op waarvan de cmdlet modules in de huidige sessie importeert. Voer een variabele in die een **PSSession** of een opdracht bevat waarmee een **PSSession** wordt opgehaald, zoals een `Get-PSSession` opdracht.
 
 Wanneer u een module vanuit een andere sessie in de huidige sessie importeert, kunt u de cmdlets uit de module in de huidige sessie gebruiken, net zoals u cmdlets van een lokale module zou gebruiken. Opdrachten die gebruikmaken van de externe cmdlets worden uitgevoerd in de externe sessie, maar de externe gegevens worden op de achtergrond beheerd door Power shell.
 
@@ -948,11 +950,11 @@ De aanvaardbare waarden voor deze parameter zijn:
 - **Global**. Beschikbaar voor alle opdrachten in de sessie. Komt overeen met de **algemene** para meter.
 - **Lokaal**. Alleen beschikbaar in het huidige bereik.
 
-Wanneer `Import-Module` cmdlet wordt aangeroepen vanuit de opdracht prompt, script bestand of script Block, worden standaard alle opdrachten geïmporteerd in de status van de globale sessie. U kunt de para meter **-Scope** gebruiken met de waarde **lokaal** om module-inhoud te importeren in het script-of script Block-bereik.
+Wanneer `Import-Module` cmdlet wordt aangeroepen vanuit de opdracht prompt, script bestand of script Block, worden standaard alle opdrachten geïmporteerd in de status van de globale sessie. U kunt de `-Scope Local` para meter gebruiken voor het importeren van module-inhoud in het script-of script Block-bereik.
 
 Wanneer de cmdlet vanuit een andere module wordt aangeroepen, worden `Import-Module` de opdrachten in een module, inclusief opdrachten van geneste modules, in de sessie status van de oproepende functie geïmporteerd. Opgeven `-Scope Global` of `-Global` aangeven dat met deze cmdlet modules worden geïmporteerd in de algemene sessie status, zodat deze beschikbaar zijn voor alle opdrachten in de sessie.
 
-De **algemene** para meter is gelijk aan de **bereik** parameter met de waarde Global.
+De **algemene** para meter is gelijk aan de **bereik** parameter met de waarde **Global**.
 
 Deze para meter is geïntroduceerd in Windows Power Shell 3,0.
 
@@ -1056,19 +1058,17 @@ U kunt een module naam, module object of Assembly-object door sluizen naar deze 
 
 - Als u de opmaak gegevens wilt bijwerken voor opdrachten die zijn geïmporteerd uit een module, gebruikt u de `Update-FormatData` cmdlet. `Update-FormatData` werkt ook de opmaak gegevens bij voor opdrachten in de sessie die uit modules zijn geïmporteerd. Als het opmaak bestand voor een module wordt gewijzigd, kunt u een `Update-FormatData` opdracht uitvoeren om de opmaak gegevens voor geïmporteerde opdrachten bij te werken. U hoeft de module niet opnieuw te importeren.
 
-- Vanaf Windows Power Shell 3,0 worden de kern opdrachten die zijn geïnstalleerd met Power shell, verpakt in modules. In Windows Power Shell 2,0, en in hostgroepen die oudere sessies maken in latere versies van Power shell, worden de kern opdrachten verpakt in modules ( **PSSnapins** ). De uitzonde ring is **micro soft. Power shell. core**. Dit is altijd een module. Externe sessies, zoals computers die zijn gestart door de `New-PSSession` cmdlet, zijn ook oudere sessies met kern modules.
+- Vanaf Windows Power Shell 3,0 worden de kern opdrachten die zijn geïnstalleerd met Power shell, verpakt in modules. In Windows Power Shell 2,0, en in hostgroepen die oudere sessies maken in latere versies van Power shell, worden de kern opdrachten verpakt in modules (**PSSnapins**). De uitzonde ring is **micro soft. Power shell. core**. Dit is altijd een module. Externe sessies, zoals computers die zijn gestart door de `New-PSSession` cmdlet, zijn ook oudere sessies met kern modules.
 
   Zie de [methode CreateDefault2](/dotnet/api/system.management.automation.runspaces.initialsessionstate.createdefault2)voor informatie over de **CreateDefault2** -methode waarmee nieuwe-stijl sessies met kern modules worden gemaakt.
 
-- `Import-Module` kan geen Power shell core-modules importeren uit een andere sessie. De Power shell-kern modules hebben namen die beginnen met `Microsoft.PowerShell` .
+- In Windows Power Shell 2,0 zijn sommige eigenschaps waarden van het module object, zoals de waarden van de eigenschappen **ExportedCmdlets** en **NestedModules** , niet ingevuld tot de module werd geïmporteerd.
 
-- In Windows Power Shell 2,0 zijn sommige eigenschaps waarden van het module-object, zoals de waarden van de eigenschappen **ExportedCmdlets** en **NestedModules** , pas ingevuld wanneer de module werd geïmporteerd en niet beschikbaar was op het module object dat de para meter **PassThru** retourneert. In Windows Power Shell 3,0 worden alle waarden van de module-eigenschap ingevuld.
-
-- Als u probeert een module te importeren die gemengde assembly's bevat die niet compatibel zijn met Windows Power Shell 3,0, `Import-Module` wordt een fout bericht als het volgende weer gegeven.
+- Als u probeert een module te importeren die gemengde assembly's bevat die niet compatibel zijn met Windows Power Shell 3.0 +, `Import-Module` wordt een fout bericht van de volgende strekking weer gegeven.
 
   > Import-Module: de assembly met gemengde modus is gebouwd op basis van versie ' v 2.0.50727 ' van de runtime en kan niet worden geladen in de 4,0-runtime zonder aanvullende configuratie-informatie.
 
-  Deze fout treedt op wanneer een module die is ontworpen voor Windows Power Shell 2,0 ten minste één assembly met een gemengde module bevat, dat wil zeggen een assembly die zowel beheerde als niet-beheerde code bevat, zoals C++ en C#.
+  Deze fout treedt op wanneer een module die is ontworpen voor Windows Power Shell 2,0 ten minste één assembly met gemengde modules bevat. Een assembly met gemengde modules die zowel beheerde als niet-beheerde code bevat, zoals C++ en C#.
 
   Als u een module wilt importeren die gebruikmaakt van assembly's met gemengde modus, start u Windows Power Shell 2,0 met de volgende opdracht en probeert u het `Import-Module` opnieuw.
 
@@ -1087,9 +1087,11 @@ U kunt een module naam, module object of Assembly-object door sluizen naar deze 
   > [!NOTE]
   > `Get-Module` geeft alle modules weer die in de huidige sessie zijn geladen. Dit omvat modules die lokaal zijn geladen in een onderliggend bereik. Gebruiken `Get-Command -Module modulename` om te zien welke leden in het huidige bereik zijn geladen.
 
-  Als de module klassen-en inventaris definities bevat, gebruikt u `using module` aan het begin van het script. De scripts worden geïmporteerd, met inbegrip van de klassen-en inventaris definities. Zie [about_Using](About/about_Using.md)voor meer informatie.
+  `Import-Module` laadt geen klassen-en inventaris definities in de module. Gebruik de `using module` instructie aan het begin van uw script. Hiermee wordt de module geïmporteerd, met inbegrip van de klassen-en inventaris definities. Zie [about_Using](About/about_Using.md)voor meer informatie.
 
 ## GERELATEERDE KOPPELINGEN
+
+[about_Modules](about/about_Modules.md)
 
 [Exporteren-ModuleMember](Export-ModuleMember.md)
 

@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 title: Aan de slag met de PowerShell Gallery
 description: In dit artikel wordt uitgelegd hoe u aan de slag gaat met de PowerShell Gallery-en de PowerShellGet-cmdlets
-ms.openlocfilehash: 02d84c64e39245b2a16c03029982796a74301bd6
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: a5045e4ecee2eb8bc9aa373a6b8ec3a940b4de33
+ms.sourcegitcommit: 560a9f3c3148acab4655e91e8b07745ab74d5d26
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92661414"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96913272"
 ---
 # <a name="getting-started-with-the-powershell-gallery"></a>Aan de slag met de PowerShell Gallery
 
@@ -22,7 +22,7 @@ U kunt pakketten vinden in de PowerShell Gallery met behulp van het besturings e
 
 U kunt de resultaten van de galerie filteren met behulp van de volgende para meters:
 
-- Naam
+- Name
 - AllVersions
 - MinimumVersion
 - RequiredVersion
@@ -31,7 +31,7 @@ U kunt de resultaten van de galerie filteren met behulp van de volgende para met
 - Dscresource bieden
 - RoleCapability
 - Opdracht
-- Filteren
+- Filter
 
 Als u alleen geïnteresseerd bent in het detecteren van specifieke DSC-resources in de galerie, kunt u de cmdlet [Find-dscresource bieden][] uitvoeren. Find-DscResource retourneert gegevens over DSC-resources die zijn opgenomen in de galerie. Omdat DSC-resources altijd worden geleverd als onderdeel van een module, moet u nog steeds [install-module][] uitvoeren om die DSC-resources te installeren.
 
@@ -89,11 +89,15 @@ Voer de cmdlet [Get-InstalledScript][] uit om erachter te komen welke scripts zi
 
 De PowerShell Gallery gebruikt de volgende hostnamen.
 
-- `psg-prod-eastus.azureedge.net` -de CDN-hostnaam
-- `devopsgallerystorage.blob.core.windows.net` -de hostnaam van het opslag account
-- `*.powershellgallery.com` -de website
+- `psg-prod-eastus.azureedge.net` -CDN-hostnaam
+- `az818661.vo.msecnd.net` -CDN-hostnaam
+- `devopsgallerystorage.blob.core.windows.net` -hostnaam van opslag account
+- `*.powershellgallery.com` -website
+- `go.microsoft.com` -omleidings service
 
 Deze hostnamen moeten worden toegevoegd aan de lijst toestaan waarmee de toegang vanuit uw netwerk wordt beheerd.
+
+[!INCLUDE [TLS 1.2 Requirement](../../includes/tls-gallery.md)]
 
 [Zoeken-Dscresource bieden]: /powershell/module/powershellget/Find-DscResource
 [Find-Module]: /powershell/module/powershellget/Find-Module

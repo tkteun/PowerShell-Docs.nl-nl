@@ -3,12 +3,12 @@ ms.date: 07/06/2020
 keywords: DSC, Power shell, configuratie, installatie
 title: Het MOF-bestand beveiligen
 description: In dit artikel wordt beschreven hoe u ervoor zorgt dat het MOF-bestand is versleuteld met het doel knooppunt.
-ms.openlocfilehash: b8958c8cc9e2035aede87a855905b1a34707117d
-ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
+ms.openlocfilehash: ca94a901468626e5644880574457d899a012d311
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94390866"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97090344"
 ---
 # <a name="securing-the-mof-file"></a>Het MOF-bestand beveiligen
 
@@ -46,10 +46,10 @@ Zorg ervoor dat u over het volgende beschikt om de referenties te versleutelen d
 
 Als u referentie versleuteling wilt instellen, moet er een certificaat met een open bare sleutel beschikbaar zijn op het _doel knooppunt_ dat wordt **vertrouwd** door de computer die wordt gebruikt voor het ontwerpen van de DSC-configuratie. Aan deze open bare-sleutel certificaat kunnen specifieke vereisten worden gebruikt voor het versleutelen van DSC-referenties:
 
-1. **Sleutel gebruik** :
+1. **Sleutel gebruik**:
    - Moet het volgende bevatten: ' KeyEncipherment ' en ' DataEncipherment '.
    - Mag _niet_ bevatten: ' digitale hand tekening '.
-1. **Uitgebreid sleutel gebruik** :
+1. **Uitgebreid sleutel gebruik**:
    - Moet het volgende bevatten: document Encryption (1.3.6.1.4.1.311.80.1).
    - Mag _niet_ bevatten: Client verificatie (1.3.6.1.5.5.7.3.2) en Server verificatie (1.3.6.1.5.5.7.3.1).
 1. De persoonlijke sleutel voor het certificaat is beschikbaar op de * doel-Node_.
@@ -93,7 +93,7 @@ Na het exporteren `DscPublicKey.cer` moet de worden gekopieerd naar het **ontwer
 > Doel knooppunt: Windows Server 2012 R2/Windows 8,1 en eerder
 
 > [!WARNING]
-> Omdat de `New-SelfSignedCertificate` cmdlet op Windows-besturings systemen vóór Windows 10 en Windows Server 2016 niet de **type** parameter ondersteunt, is een alternatieve methode voor het maken van dit certificaat vereist op deze besturings systemen. In dit geval kunt u `makecert.exe` of gebruiken `certutil.exe` om het certificaat te maken. Een alternatieve methode is het downloaden van het [New-SelfSignedCertificateEx.ps1](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6) script uit het micro soft Script Center en het gebruiken om in plaats daarvan het certificaat te maken:
+> Omdat de `New-SelfSignedCertificate` cmdlet op Windows-besturings systemen vóór Windows 10 en Windows Server 2016 niet de **type** parameter ondersteunt, is een alternatieve methode voor het maken van dit certificaat vereist op deze besturings systemen. In dit geval kunt u `makecert.exe` of gebruiken `certutil.exe` om het certificaat te maken. In dit voor beeld wordt het [New-SelfSignedCertificateEx.ps1](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6) script van micro soft Script Center gebruikt als een alternatieve manier om het certificaat te maken. Een bijgewerkte versie van dit script is beschikbaar in de [PSPKI](https://www.powershellgallery.com/packages/PSPKI/) -module in de PowerShell Gallery.
 
 ```powershell
 # note: These steps need to be performed in an Administrator PowerShell session
@@ -130,11 +130,11 @@ Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cer
 
 ### <a name="creating-the-certificate-on-the-authoring-node"></a>Het certificaat maken op het ontwerp knooppunt
 
-Het versleutelings certificaat kan ook worden gemaakt op het **ontwerp knooppunt** , met de **persoonlijke sleutel** geëxporteerd als een pfx-bestand en vervolgens worden geïmporteerd op het **doel knooppunt**. Dit is de huidige methode voor het implementeren van DSC-referentie versleuteling op _nano server_. Hoewel de PFX met een wacht woord is beveiligd, moet deze tijdens de overdracht veilig worden bewaard. Het volgende voor beeld:
+Het versleutelings certificaat kan ook worden gemaakt op het **ontwerp knooppunt**, met de **persoonlijke sleutel** geëxporteerd als een pfx-bestand en vervolgens worden geïmporteerd op het **doel knooppunt**. Dit is de huidige methode voor het implementeren van DSC-referentie versleuteling op _nano server_. Hoewel de PFX met een wacht woord is beveiligd, moet deze tijdens de overdracht veilig worden bewaard. Het volgende voor beeld:
 
 1. Hiermee maakt u een certificaat op het **ontwerp knooppunt**.
 1. exporteert het certificaat inclusief de persoonlijke sleutel op het **ontwerp knooppunt**.
-1. Hiermee verwijdert u de persoonlijke sleutel van het **ontwerp knooppunt** , maar behoudt u het certificaat voor de open bare sleutel in de **mijn** Store.
+1. Hiermee verwijdert u de persoonlijke sleutel van het **ontwerp knooppunt**, maar behoudt u het certificaat voor de open bare sleutel in de **mijn** Store.
 1. importeert het certificaat van de persoonlijke sleutel in het certificaat archief mijn (persoonlijk) op het **doel knooppunt**.
    - het moet worden toegevoegd aan het hoofd archief zodat het wordt vertrouwd door het **doel knooppunt**.
 

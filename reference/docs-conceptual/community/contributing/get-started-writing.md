@@ -1,30 +1,27 @@
 ---
 title: Aan de slag met bijdragen aan Power shell-documentatie
-description: Dit artikel bevat een overzicht van hoe u aan de slag kunt gaan als bijdrager aan de Power shell-documentatie.
-ms.date: 03/05/2020
+description: Dit artikel bevat een overzicht van hoe u als inzender aan de slag kunt gaan met PowerShell-documentatie.
+ms.date: 12/09/2020
 ms.topic: conceptual
-ms.openlocfilehash: 989605f21685decda5f916298a05ec7f5600e575
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: ddcbf79de1ab05b901ce1abd67f65b2524ed164d
+ms.sourcegitcommit: 61765d08321623743dc5db5367160f6982fe7857
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560675"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97352699"
 ---
 # <a name="get-started-contributing-to-powershell-documentation"></a>Aan de slag met bijdragen aan Power shell-documentatie
 
-Dit artikel bevat een overzicht van hoe u aan de slag kunt gaan als bijdrager aan de Power shell-documentatie.
+Dit artikel bevat een overzicht van hoe u als inzender aan de slag kunt gaan met PowerShell-documentatie.
 
-## <a name="powershell-docs-structure"></a>Power shell-docs-structuur
+## <a name="powershell-docs-structure"></a>PowerShell-Docs structuur
 
-De [Power shell-docs-opslag plaats][psdocs] is onderverdeeld in twee inhouds groepen. Git-vertakkingen worden gebruikt om te beheren hoe en wanneer documentatie wordt gepubliceerd.
+De [Power shell-docs-opslag plaats][psdocs] is onderverdeeld in twee groepen inhoud: Naslag informatie en conceptueel.
 
 ### <a name="reference-content"></a>Referentie-inhoud
 
 De referentie-inhoud is de Power shell-cmdlet-verwijzing voor de cmdlets die in Power shell worden geleverd.
-De [verwijzing][ref] wordt verzameld in versie mappen (5,1, 6, 7,0 en 7,1). Deze inhoud bevat alleen cmdlet-verwijzingen voor de modules die worden geleverd met Power shell. Deze inhoud wordt ook gebruikt voor het maken van de Help-informatie die door de cmdlet wordt weer gegeven `Get-Help` .
-
-> [!NOTE]
-> De inhouds opgave (TOC) voor referentie-inhoud wordt automatisch gegenereerd door het publicatie systeem. U hoeft de inhouds opgave niet bij te werken.
+De [verwijzing][ref] wordt verzameld in versie mappen (5,1, 7,0, 7,1 en 7,2). Deze inhoud bevat alleen cmdlet-verwijzingen voor de modules die worden geleverd met Power shell. Deze inhoud wordt ook gebruikt voor het maken van de Help-informatie die door de cmdlet wordt weer gegeven `Get-Help` .
 
 ### <a name="conceptual-content"></a>Conceptuele inhoud
 
@@ -36,34 +33,49 @@ De conceptuele documentatie bevat de volgende inhoud:
 - DSC-documentatie
 - SDK-documentatie
 
-De [conceptuele documentatie][conceptual] is niet ingedeeld op versie. Alle artikelen worden weer gegeven voor elke versie van Power shell. We werken eraan om versie-specifieke artikelen te maken. Wanneer deze functie beschikbaar is in onze documentatie, wordt deze hand leiding bijgewerkt met de juiste informatie.
+De [conceptuele documentatie][conceptual] is niet ingedeeld op versie. Alle artikelen worden weer gegeven voor elke versie van Power shell. We werken aan het maken van versie-specifieke artikelen. Wanneer deze functie beschikbaar is in onze documentatie, wordt deze hand leiding bijgewerkt met de juiste informatie.
 
 > [!NOTE]
 > Telkens wanneer een conceptueel artikel wordt toegevoegd, verwijderd of de naam ervan wordt gewijzigd, moet de inhouds opgave worden bijgewerkt en opgenomen in de pull-aanvraag.
 
-## <a name="using-git-branches"></a>Git-vertakkingen gebruiken
+## <a name="creating-new-articles"></a>Nieuwe artikelen maken
 
-De standaard vertakking voor Power shell-docs is de `staging` vertakking. Wijzigingen die zijn aangebracht in werk vertakkingen worden samengevoegd in de `staging` vertakking voordat ze worden gepubliceerd. Ongeveer eenmaal per week wordt de `staging` vertakking in de vertakking samengevoegd `live` . De `live` vertakking bevat de inhoud die wordt gepubliceerd op docs.Microsoft.com. Wijzigingen mogen nooit rechtstreeks in de vertakking worden aangebracht `live` .
+Er moet een GitHub-probleem worden gemaakt voor elk nieuw document dat u wilt bijdragen. Controleer of er bestaande problemen zijn om er zeker van te zijn dat u geen dubbele taken uitvoert. Toegewezen problemen worden beschouwd als `in progress` . Als u wilt samen werken aan een probleem, neemt u contact op met de persoon die aan het probleem is toegewezen.
 
-Als u een wijziging indient voor documentatie die alleen op een niet-uitgebrachte versie van PowerShell van toepassing is, moet u controleren of er een releasevertakking is voor die versie. Alle wijzigingen die op een specifieke, toekomstige versie van toepassing zijn, moeten worden gericht op de releasevertakking. Releasevertakkingen hebben het volgende naamgevingspatroon: `release-<version>`.
+Net als bij het Power shell [RFC-proces][rfc]maakt u een probleem voordat u de inhoud schrijft. Het probleem zorgt ervoor dat u geen tijd en inspanningen op het werk verspilt dat door het PowerShell-Docs team wordt afgewezen. Met het probleem kunnen we met u overleg plegen over het bereik van de inhoud en waar deze in de Power shell-documentatie passen. Alle artikelen moeten worden opgenomen in de inhouds opgave (TOC). De voorgestelde locatie van de inhouds opgave moet worden opgenomen in de Issue-discussie.
 
-Voordat u wijzigingen start, maakt u een werk vertakking in uw lokale kopie van de Power shell-docs-opslag plaats. Dit moet een [kloon van uw Fork][fork]zijn. Zorg ervoor dat u uw lokale opslag plaats synchroniseert voordat u uw werk vertakking maakt. De werk vertakking moet worden gemaakt op basis van een update-to-date kopie van de `staging` of `release` vertakking.
+> [!NOTE]
+> De inhouds opgave voor referentie-inhoud wordt automatisch gegenereerd door het publicatie systeem. U hoeft de inhouds opgave niet bij te werken.
 
-Breng de wijzigingen aan die u wilt verzenden na het proces in het gedeelte [uw wijziging door voeren][making-changes] in de hand leiding voor centrale mede werkers.
+## <a name="updating-existing-articles"></a>Bestaande artikelen bijwerken
 
-### <a name="creating-new-articles"></a>Nieuwe artikelen maken
+Waar van toepassing worden de cmdlet-referentie artikelen gedupliceerd in alle versies van Power shell die in deze opslag plaats worden onderhouden. Wanneer u een probleem met een cmdlet-verwijzing of een artikel rapporteert `About_` , moet u opgeven welke versies worden beïnvloed door het probleem. De uitgifte sjabloon in GitHub bevat een controle lijst met versies. Gebruik de selectie vakjes om op te geven welke versies van de inhoud worden beïnvloed.
 
-Er moet een GitHub-probleem worden gemaakt voor elk nieuw document dat u wilt bijdragen. Controleer of er bestaande problemen zijn om er zeker van te zijn dat u geen dubbele taken uitvoert. Problemen die aan iemand worden toegewezen, worden beschouwd als in uitvoering. Als u wilt samen werken aan een probleem, neemt u contact op met de persoon die aan het probleem is toegewezen.
+Controleer alle versie van het artikel om te zien of dezelfde wijziging in de andere versies nodig is. Pas de relevante wijziging toe op elke versie van het bestand.
 
-Net als bij het Power shell [RFC-proces][rfc], het maken van een probleem voordat de inhoud wordt geschreven, zorgt u ervoor dat u niet veel tijd en moeite besteedt aan iets dat wordt afgewezen door het Power shell-docs-team. Zo kunnen we met u instemmen op het bereik van de inhoud en waar deze in de Power shell-documentatie moeten passen.
+## <a name="localized-content"></a>Gelokaliseerde inhoud
 
-### <a name="updating-existing-articles"></a>Bestaande artikelen bijwerken
+De Power shell-documentatie is geschreven in het Engels en vertaald in 17 andere talen. De Engelse inhoud wordt opgeslagen in de GitHub-opslag plaats met de naam `MicrosoftDocs/PowerShell-Docs` . De gelokaliseerde inhoud wordt opgeslagen in een afzonderlijke opslag plaats voor elke taal. De opslag plaatsen gebruiken dezelfde basispad, maar voegen de naam van de land instelling toe aan het einde. `MicrosoftDocs/PowerShell-Docs.de-de`Bevat bijvoorbeeld de inhoud die naar Duits is vertaald.
 
-Waar van toepassing, worden het cmdlet-referentie artikel gedupliceerd in alle versies van Power shell. Wanneer u een probleem met een cmdlet-verwijzing of een artikel rapporteert `About_` , moet u opgeven welke versies worden beïnvloed door het probleem. De uitgifte sjabloon in GitHub bevat een controle lijst met versies. Gebruik de selectie vakjes om op te geven welke versies van de inhoud worden beïnvloed. Wanneer u een wijziging in een artikel indient voor een probleem dat van invloed is op meerdere versies van de inhoud, moet u de juiste wijziging Toep assen op elke versie van het bestand.
+Over het algemeen moeten problemen en wijzigingen worden verzonden naar de Engelse opslag plaats. Alle vertalingen beginnen eerst met de Engelse inhoud. We gebruiken zowel Human als machine vertalingen.
+
+| Vertaal methode  |                              Talen                               |
+| ------------------- | -------------------------------------------------------------------- |
+| Menselijke vertaling   | de-DE, es-ES, fr-FR, it-IT, ja-JP, ko-KR, pt-BR, ru-RU, zh-CN, zh-TW |
+| Automatische vertaling | CS-CZ, hu-HU, nl-NL, pl-PL, pt-PT, sv-SE, tr-TR                      |
+
+De inhoud die wordt vertaald door automatische vertaling resulteert niet altijd in de juiste woord opties en grammatica. Als u een fout in de vertaling voor een wille keurige taal vindt, kunt u in plaats van de technische details van het artikel een probleem openen in de gelokaliseerde opslag plaats. Leg uit waarom u denkt dat de vertaling onjuist is. Onze lokalisatie team beoordelingen en reageert op deze problemen.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie [een pull-aanvraag verzenden](pull-requests.md)
+Er zijn twee algemene manieren om wijzigingen in GitHub te verzenden. Beide methoden worden beschreven in de hand leiding van de centrale bijdrager:
+
+1. U kunt [bestaande documenten snel bewerken](/contribute/#quick-edits-to-existing-documents) in de GitHub-webinterface.
+1. Gebruik de [volledige github-werk stroom][making-changes] voor het toevoegen van nieuwe artikelen, het bijwerken van meerdere bestanden of andere grote wijzigingen.
+
+Voordat u wijzigingen begint, moet u een Fork van de PowerShell-Docs-opslag plaats maken. De wijzigingen moeten worden aangebracht in een werk vertakking in het kopiëren van de Power shell-docs. Als u de methode voor **snel bewerken** gebruikt in github, worden deze stappen voor u afgehandeld. Als u de **volledige github-werk stroom** gebruikt, moet u worden ingesteld om [lokaal te werken][fork].
+
+Beide methoden eindigen met het maken van een pull-aanvraag (PR). Zie [een pull-aanvraag indienen](pull-requests.md) voor meer informatie en aanbevolen procedures.
 
 <!--link refs-->
 [conceptual]: https://github.com/MicrosoftDocs/PowerShell-Docs/tree/staging/reference/docs-conceptual

@@ -1,30 +1,33 @@
 ---
 title: Pull-aanvragen verzenden
-description: In dit artikel wordt uitgelegd hoe u pull-aanvragen verzendt naar de Power shell-docs-opslag plaats.
-ms.date: 03/05/2020
+description: In dit artikel wordt uitgelegd hoe u pull-aanvragen verzendt naar de PowerShell-Docs opslag plaats.
+ms.date: 12/09/2020
 ms.topic: conceptual
-ms.openlocfilehash: 8b392a36c9469b83cf4f088c1799720a091434b4
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.openlocfilehash: 1a21c25e19189aec4f48ad034147b02f4f804f9d
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87782647"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97090213"
 ---
 # <a name="how-to-submit-pull-requests"></a>Pull-aanvragen verzenden
 
 Als u inhoud wilt wijzigen, moet u een pull-aanvraag (PR) bij uw Fork indienen. Een pull-aanvraag moet worden gecontroleerd voordat deze kan worden samengevoegd. Voor de beste resultaten raadpleegt u de [controle lijst voor redactionele](editorial-checklist.md) voordat u uw pull-aanvraag indient.
 
-## <a name="target-the-correct-branch"></a>De juiste vertakking kiezen
+## <a name="using-git-branches"></a>Git-vertakkingen gebruiken
 
-Alle pull-aanvragen moeten gericht zijn op de `staging` vertakking. Wijzigingen mogen nooit naar de vertakking worden verzonden `live` . Wijzigingen die in de `staging` vertakking zijn aangebracht, worden samengevoegd in `live` , waarbij wijzigingen in worden overschreven `live` .
+De standaard vertakking voor PowerShell-Docs is de `staging` vertakking. Wijzigingen die zijn aangebracht in werk vertakkingen worden samengevoegd in de `staging` vertakking voordat ze worden gepubliceerd. De `staging` vertakking wordt `live` elke weekdag in de vertakking samengevoegd om 3:00 uur (Pacific Time). De `live` vertakking bevat de inhoud die wordt gepubliceerd op docs.Microsoft.com.
 
-Als u een wijziging indient die alleen van toepassing is op een niet-uitgebrachte versie van Power shell, controleert u op een release vertakking voor die versie. Uw PR moet zijn gericht op de release vertakking. Releasevertakkingen hebben het volgende naamgevingspatroon: `release-<version>`.
+Voordat u wijzigingen start, maakt u een werk vertakking in uw lokale kopie van de PowerShell-Docs-opslag plaats. Als u lokaal werkt, moet u uw lokale opslag plaats synchroniseren voordat u uw werk vertakking maakt. De werk vertakking moet worden gemaakt op basis van een update-to-date kopie van de `staging` vertakking.
+
+Alle pull-aanvragen moeten gericht zijn op de `staging` vertakking. Verzend de wijziging niet naar de `live` vertakking.
+Wijzigingen die in de `staging` vertakking zijn aangebracht, worden samengevoegd in `live` , waarbij wijzigingen in worden overschreven `live` .
 
 ## <a name="make-the-pull-request-process-work-better-for-everyone"></a>Het proces voor pull-aanvragen voor iedereen beter laten werken
 
 Het eenvoudiger en gerichter u kunt uw PR maken, des te sneller kan deze worden gecontroleerd en samengevoegd.
 
-### <a name="avoid-branches-that-update-large-numbers-of-files-or-contain-unrelated-changes"></a>Vermijd vertakkingen die een groot aantal bestanden bijwerken of niet-gerelateerde wijzigingen bevatten
+### <a name="avoid-pull-requests-that-update-large-numbers-of-files-or-contain-unrelated-changes"></a>Pull-aanvragen voor komen die een groot aantal bestanden bijwerken of niet-gerelateerde wijzigingen bevatten
 
 Vermijd het maken van pull die niet-gerelateerde wijzigingen bevatten. Scheid kleine updates aan bestaande artikelen van nieuwe artikelen of artikelen die grotendeels zijn herschreven. Behandel deze wijzigingen in aparte werkstromen.
 
@@ -32,31 +35,18 @@ Bulk wijzigingen maken pull met een groot aantal gewijzigde bestanden. Beperk uw
 
 ### <a name="renaming-or-deleting-files"></a>Bestanden een andere naam geven of verwijderen
 
-Als u een nieuwe naam wilt geven of bestanden wilt verwijderen, moet er een probleem zijn dat is gekoppeld aan de PR. Dit probleem moet betrekking hebben op de nood zaak om de bestanden een andere naam te geven of te verwijderen.
+Bij het wijzigen van de naam of het verwijderen van bestanden moet er een probleem zijn dat is gekoppeld aan de PR. Dit probleem moet betrekking hebben op de nood zaak om de bestanden een andere naam te geven of te verwijderen.
 
-Vermijd het combi neren van inhouds toevoegingen of wijziging van het wijzigen van de naam en het verwijderen van bestanden. Elk bestand waarvan de naam wordt gewijzigd of verwijderd, moet worden toegevoegd aan het Master-omleidings bestand. Indien mogelijk moet u ook alle bestanden bijwerken die zijn gekoppeld aan de hernoemde of verwijderde inhoud. Dit omvat ook alle inhoudsopgavebestanden.
+Vermijd het combi neren van inhouds toevoegingen of wijziging van het wijzigen van de naam en het verwijderen van bestanden. Elk bestand waarvan de naam wordt gewijzigd of verwijderd, moet worden toegevoegd aan het globale omleidings bestand. Als dat mogelijk is, werkt u de bestanden bij die zijn gekoppeld aan de hernoemde of verwijderde inhoud, inclusief eventuele inhoudsopgave bestanden.
 
 ## <a name="docs-pr-validation-service"></a>Docs PR-validatieservice
 
-De Docs PR-validatieservice is een GitHub-app die validatieregels uitvoert op de bestanden in een PR. U moet eventuele fouten of waarschuwingen oplossen (Zie uitzonde ringen) die door de validatie service zijn gerapporteerd.
-
-De volgende waarschuwingen kunnen niet worden genegeerd:
-
-```
-Can't find service name for `<version>/<modulepath>/About/About.md`
-```
-
-```
-Metadata with following name(s) are not allowed to be set in Yaml header, or as file level
-metadata in docfx.json, or as global metadata in docfx.json: `locale`. They are generated by
-Docs platform, so the values set in these 3 places will be ignored. Please remove them from all
-3 places to resolve the warning.
-```
+De docs PR-validatie service is een GitHub-app waarmee validatie regels worden uitgevoerd op uw wijzigingen. U moet eventuele fouten of waarschuwingen die zijn gerapporteerd door de validatie service corrigeren.
 
 U ziet het volgende gedrag:
 
 1. U dient een PR in.
-1. In de GitHub-opmerking die de status van uw PR aangeeft, ziet u de status ' controles ' die zijn ingeschakeld voor de opslag plaats. In dit voorbeeld zijn er twee controles ingeschakeld, namelijk "Commit Validation" en "OpenPublishing.Build":
+1. In de GitHub-opmerking die de status van uw PR aangeeft, ziet u de status ' controles ' die zijn ingeschakeld voor de opslag plaats. In dit voor beeld zijn er twee controles ingeschakeld, ' commit-validatie ' en ' openpublishing. build ':
 
    ![validatie status-sommige controles zijn mislukt](media/pull-requests/validation-failed.png)
 
@@ -71,12 +61,15 @@ U ziet het volgende gedrag:
 > [!NOTE]
 > Als u een externe mede werker (niet een micro soft-mede werker) bent, hebt u geen toegang tot de gedetailleerde rapporten van de build of de preview-koppelingen.
 
-Wanneer de PR wordt gecontroleerd door een lid van het Power shell-docs-team, wordt u mogelijk gevraagd om wijzigingen aan te brengen of problemen op te lossen die door het validatie rapport zijn gemarkeerd. Het Power shell-docs-team kan u helpen inzicht te krijgen in het oplossen en voor komen van deze problemen voor toekomstige inzendingen.
+Wanneer de PR wordt gecontroleerd, wordt u mogelijk gevraagd om wijzigingen aan te brengen of validatie waarschuwings berichten op te lossen. Het PowerShell-Docs-team kan u helpen bij het begrijpen van validatie fouten en redactionele vereisten.
 
 ## <a name="next-steps"></a>Volgende stappen
 
 [Stijlgids voor PowerShell-documentatie](powershell-style-guide.md)
 
-## <a name="additional-resources"></a>Aanvullende bronnen
+## <a name="additional-resources"></a>Aanvullende resources
 
 [De manier waarop we pull-aanvragen beheren](managing-pull-requests.md)
+
+<!--link refs-->
+[fork]: /contribute/get-started-setup-local#fork-the-repository

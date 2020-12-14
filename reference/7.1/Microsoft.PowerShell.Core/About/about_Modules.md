@@ -1,17 +1,16 @@
 ---
 description: Hierin wordt uitgelegd hoe u Power shell-modules installeert, importeert en gebruikt.
-keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 09/15/2020
+ms.date: 12/03/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_modules?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Modules
-ms.openlocfilehash: 8e7f91ca54c0d464e50432a958f006943f4c6caa
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: aebebc3f41a091151fbbecd9925a4ebc063e678e
+ms.sourcegitcommit: 7b376314e7640c39a53aac9f0db8bb935514a960
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93252958"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96564599"
 ---
 # <a name="about-modules"></a>Over modules
 
@@ -20,7 +19,7 @@ Hierin wordt uitgelegd hoe u Power shell-modules installeert, importeert en gebr
 
 ## <a name="long-description"></a>Lange beschrijving
 
-Een module is een pakket met Power shell-opdrachten, zoals cmdlets, providers, functies, werk stromen, variabelen en aliassen.
+Een module is een pakket met Power shell-leden, zoals cmdlets, providers, functies, werk stromen, variabelen en aliassen.
 
 Personen die opdrachten schrijven, kunnen modules gebruiken om hun opdrachten te organiseren en ze te delen met anderen. Personen die een module ontvangen, kunnen de opdrachten in de modules toevoegen aan hun Power shell-sessies en deze gebruiken zoals de ingebouwde opdrachten.
 
@@ -28,13 +27,13 @@ In dit onderwerp wordt uitgelegd hoe u Power shell-modules gebruikt. Zie [een Po
 
 ## <a name="what-is-a-module"></a>Wat is een module?
 
-Een module is een pakket met opdrachten. Alle cmdlets en providers in uw sessie worden toegevoegd door een module of module.
+Een module is een pakket met Power shell-leden, zoals cmdlets, providers, functies, werk stromen, variabelen en aliassen. De leden van dit pakket kunnen worden geïmplementeerd in een Power shell-script, een gecompileerde DLL of een combi natie van beide. Deze bestanden worden meestal samen in één map gegroepeerd. Zie [informatie over een Windows Power shell-module](/powershell/scripting/developer/module/understanding-a-windows-powershell-module) in de SDK-documentatie voor meer informatie.
 
 ## <a name="module-auto-loading"></a>Module automatisch laden
 
 Vanaf Power Shell 3,0 worden modules in Power shell automatisch geïmporteerd in de eerste keer dat u een opdracht in een geïnstalleerde module uitvoert. U kunt nu de opdrachten in een module zonder set-up-of profiel configuratie gebruiken. u hoeft geen modules te beheren nadat u ze op uw computer hebt geïnstalleerd.
 
-De opdrachten in een module zijn ook gemakkelijker te vinden. De `Get-Command` cmdlet haalt nu alle opdrachten op in alle geïnstalleerde modules, zelfs als ze nog niet in de sessie aanwezig zijn, zodat u een opdracht kunt vinden en gebruiken zonder te importeren.
+De opdrachten in een module zijn ook gemakkelijker te vinden. De `Get-Command` cmdlet haalt nu alle opdrachten op in alle geïnstalleerde modules, zelfs als ze nog niet in de sessie zijn. U kunt een opdracht vinden en deze gebruiken zonder dat u hoeft te importeren om eerst de module te importeren.
 
 In elk van de volgende voor beelden wordt de CimCmdlets-module, die bevat `Get-CimInstance` , in uw sessie geïmporteerd.
 
@@ -233,7 +232,7 @@ De doel locaties die worden toegewezen aan, `$env:PSModulePath` zijn standaard:
 
   De gebruikerspecifieke locatie van **CurrentUser** op Windows is de `PowerShell\Modules` map die zich bevindt op de locatie van **documenten** in uw gebruikers profiel. Het specifieke pad van die locatie is afhankelijk van de versie van Windows en of u nu Mapomleiding gebruikt. Micro soft OneDrive kan ook de locatie van de map **documenten** wijzigen.
 
-  Deze locatie is standaard op Windows 10 `$HOME\Documents\PowerShell\Modules` . Op Linux of Mac is de **CurrentUser** locatie van CurrentUser `$HOME/.local/share/powershell/Modules` .
+  Deze locatie is standaard op Windows 10 `$HOME\Documents\PowerShell\Modules` . Op Linux of Mac is de  locatie van CurrentUser `$HOME/.local/share/powershell/Modules` .
 
   > [!NOTE]
   > U kunt de locatie van uw **Documentenmap** controleren met behulp van de volgende opdracht: `[Environment]::GetFolderPath('MyDocuments')` .
@@ -307,7 +306,7 @@ Als u naam conflicten wilt detecteren, gebruikt u de para meter **all** van de `
 
 Als u naam conflicten wilt voor komen, gebruikt u de para meters **NoClobber** of **voor voegsel** van de `Import-Module` cmdlet. De para meter **prefix** voegt een voor voegsel toe aan de namen van geïmporteerde opdrachten, zodat deze uniek zijn in de sessie. Met de para meter **NoClobber** worden geen opdrachten geïmporteerd waarmee bestaande opdrachten in de sessie worden verborgen of vervangen.
 
-U kunt ook de para meters **alias** , **cmdlet** , **Function** en **Variable** van gebruiken `Import-Module` om alleen de opdrachten te selecteren die u wilt importeren, en u kunt opdrachten uitsluiten die naam conflicten veroorzaken in uw sessie.
+U kunt ook de para meters **alias**, **cmdlet**, **Function** en **Variable** van gebruiken `Import-Module` om alleen de opdrachten te selecteren die u wilt importeren, en u kunt opdrachten uitsluiten die naam conflicten veroorzaken in uw sessie.
 
 Module auteurs kunnen naam conflicten voor komen door gebruik te maken van de eigenschap **DefaultCommandPrefix** van het module manifest om een standaard voorvoegsel toe te voegen aan alle opdracht namen.
 De waarde van de para meter **prefix** krijgt voor rang op de waarde van **DefaultCommandPrefix**.

@@ -3,15 +3,15 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 12/08/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/export-csv?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/export-csv?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Export-Csv
-ms.openlocfilehash: bb2d077b3584d4501db00a927b83034d37dceaec
+ms.openlocfilehash: b0e889b95d2724dfa395b1b4a00b5c9ea878cc82
 ms.sourcegitcommit: 560a9f3c3148acab4655e91e8b07745ab74d5d26
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/09/2020
-ms.locfileid: "96913356"
+ms.locfileid: "96913189"
 ---
 # Export-Csv
 
@@ -34,7 +34,7 @@ Export-Csv -InputObject <PSObject> [[-Path] <String>] [-LiteralPath <String>] [-
 ```
 Export-Csv -InputObject <PSObject> [[-Path] <String>] [-LiteralPath <String>] [-Force] [-NoClobber]
  [-Encoding <Encoding>] [-Append] [-UseCulture] [-IncludeTypeInformation] [-NoTypeInformation]
- [-QuoteFields <String[]>] [-UseQuotes <QuoteKind>] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-QuoteFields <String[]>] [-UseQuotes <QuoteKind>] [-WhatIf] [-Confirm]  [<CommonParameters>]
 ```
 
 ## BESCHRIJVING
@@ -347,6 +347,7 @@ De acceptabele waarden voor deze para meter zijn als volgt:
 
 - `ascii`: Gebruikt de code ring voor de ASCII-tekenset (7-bits).
 - `bigendianunicode`: Wordt gecodeerd in UTF-16-indeling met behulp van de byte volgorde big endian.
+- `bigendianutf32`: Codeert in UTF-32-indeling met behulp van de byte volgorde big endian.
 - `oem`: Maakt gebruik van de standaard codering voor MS-DOS-en console Programma's.
 - `unicode`: Wordt gecodeerd in UTF-16-indeling met behulp van de byte volgorde little endian.
 - `utf7`: Wordt gecodeerd in de indeling UTF-7.
@@ -357,11 +358,14 @@ De acceptabele waarden voor deze para meter zijn als volgt:
 
 Vanaf Power shell 6,2 kunnen met de para meter **Encoding** ook numerieke id's van geregistreerde code pagina's (zoals `-Encoding 1251` ) of teken reeks namen van geregistreerde code pagina's (zoals) worden toegestaan `-Encoding "windows-1251"` . Zie de .NET-documentatie voor [code ring. code tabel](/dotnet/api/system.text.encoding.codepage?view=netcore-2.2)voor meer informatie.
 
+> [!NOTE]
+> **UTF-7** _ wordt niet meer aanbevolen om te gebruiken. In Power shell 7,1 wordt een waarschuwing geschreven als u `utf7` de para meter _ *Encoding** opgeeft.
+
 ```yaml
 Type: System.Text.Encoding
 Parameter Sets: (All)
 Aliases:
-Accepted values: ASCII, BigEndianUnicode, OEM, Unicode, UTF7, UTF8, UTF8BOM, UTF8NoBOM, UTF32
+Accepted values: ASCII, BigEndianUnicode, BigEndianUTF32, OEM, Unicode, UTF7, UTF8, UTF8BOM, UTF8NoBOM, UTF32
 
 Required: False
 Position: Named

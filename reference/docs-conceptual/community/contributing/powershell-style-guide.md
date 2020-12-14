@@ -1,34 +1,34 @@
 ---
 title: Stijlgids voor PowerShell-documentatie
 description: Dit artikel bevat de regels van de stijl voor het schrijven van Power shell-documentatie.
-ms.date: 03/05/2020
+ms.date: 12/09/2020
 ms.topic: conceptual
-ms.openlocfilehash: 32df641f7cafa2a5bfcf1bcbf94be594aa77c7d0
-ms.sourcegitcommit: 105c69ecedfe5180d8c12e8015d667c5f1a71579
+ms.openlocfilehash: 6f23f63cffc9fed9cbbcf84539875bfaf4247732
+ms.sourcegitcommit: 61765d08321623743dc5db5367160f6982fe7857
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85837440"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97352675"
 ---
 # <a name="powershell-docs-style-guide"></a>Stijlgids voor PowerShell-documentatie
 
-Dit artikel bevat richt lijnen die specifiek zijn voor de Power shell-docs-inhoud. Dit is gebaseerd op de informatie die wordt beschreven in het [overzicht](overview.md#get-started-writing-docs).
+Dit artikel bevat richt lijnen die specifiek zijn voor de PowerShell-Docs-inhoud. Het is gebaseerd op de informatie die wordt beschreven in het [overzicht](overview.md#get-started-writing-docs).
 
 ## <a name="product-terminology"></a>Productterminologie
 
 Er zijn verschillende varianten van PowerShell.
 
-- **PowerShell**: Dit is de standaard. We overwegen Power shell 7 en nog eens te zijn. de echte Power shell gaat verder.
+- **PowerShell**: Dit is de standaard. We overwegen Power shell 7 te bekijken en de andere, waar Power shell.
 - **Power shell core** -Power shell gebouwd op .net core. Het gebruik van de term **core** moet worden beperkt tot gevallen waarin het nodig is om het te onderscheiden van Windows Power shell.
 - **Windows Power shell** -Power shell is gebouwd op .NET Framework. Windows Power shell wordt alleen in Windows geleverd en vereist het volledige Framework.
 
-  Over het algemeen kunnen verwijzingen naar ‘Windows PowerShell’ in documentatie worden vervangen door ‘PowerShell’.
-  ' Windows Power shell ' moet worden gebruikt wanneer ' Windows Power Shell-specifiek gedrag wordt besproken.
+  In het algemeen kunnen verwijzingen naar ' Windows Power shell ' in de documentatie worden gewijzigd in _Power shell_.
+  ' Windows Power shell ' moet worden gebruikt als _Windows Power shell_-specifiek gedrag wordt besproken.
 
 Gerelateerde producten
 
-- **Visual Studio code (VS code)** : dit is de gratis open source editor van micro soft. Bij de eerste vermelding moet de volledige naam worden gebruikt. Daarna kunt u **VS code**gebruiken. Gebruik niet ' VSCode '.
-- **Power shell-extensie voor Visual Studio code** : de uitbrei ding schakelt versus code in voor de voor Keurs-IDE voor Power shell. Bij de eerste vermelding moet de volledige naam worden gebruikt. Daarna kunt u de **Power shell-extensie**gebruiken.
+- **Visual Studio code (VS code)** : dit is de gratis open source editor van micro soft. Bij de eerste vermelding moet de volledige naam worden gebruikt. Daarna kunt u **VS code** gebruiken. Gebruik niet ' VSCode '.
+- **Power shell-extensie voor Visual Studio code** : de uitbrei ding schakelt versus code in voor de voor Keurs-IDE voor Power shell. Bij de eerste vermelding moet de volledige naam worden gebruikt. Daarna kunt u de **Power shell-extensie** gebruiken.
 - **Azure PowerShell** : dit is de verzameling Power shell-modules die worden gebruikt voor het beheren van Azure-Services.
 - **Azure stack Power shell** : dit is de verzameling Power shell-modules die worden gebruikt voor het beheren van de hybride Cloud oplossing van micro soft.
 
@@ -42,7 +42,8 @@ De nieuwe CommonMark-specificatie is veel strikter dan de constructie van sommig
 
 Witregels geven ook het einde van een blok aan in Markdown. Er moet één witregel tussen verschillende typen Markdown-blokken zijn (zoals tussen een alinea en een lijst of koptekst).
 
-Verwijder dubbele witregels. Meerdere lege regels worden weer gegeven als één lege regel in HTML, zodat er geen doel is voor meerdere lege regels. Er zijn meerdere lege regels in een code blok die het code blok opsplitsen.
+Meerdere opeenvolgende lege regels worden weer gegeven als één lege regel in HTML. Ze dienen geen doel te zijn.
+Binnen een code blok verbreekt opeenvolgende lege regels het code blok.
 
 Verwijder extra spaties aan het einde van regels.
 
@@ -66,44 +67,44 @@ Dit geldt voor conceptuele artikelen en cmdlet-verwijzingen. Als u de lijn lengt
 
 Gebruik de [uitprijs][reflow] uitbreiding opnieuw plaatsen in Visual Studio code om alinea's eenvoudig opnieuw te plaatsen zodat deze overeenkomen met de voorgeschreven regel lengte.
 
-About_topics is beperkt tot 80 tekens. Zie [verwijzings artikelen bewerken](./editing-cmdlet-ref.md#formatting-about_-files)voor meer informatie.
+About_topics is beperkt tot 80 tekens. Zie [About_ bestanden Format teren](#formatting-about_-files)voor meer informatie.
 
 ### <a name="lists"></a>Lijsten
 
-Als uw lijst meerdere zinnen of alinea’s bevat, kunt u overwegen een koptekst op subniveau te gebruiken in plaats van een lijst.
+Als uw lijst meerdere zinnen of alinea's bevat, kunt u overwegen om een koptekst op subniveau te gebruiken in plaats van een lijst.
 
 Lijsten moeten worden omgeven door één lege regel.
 
 #### <a name="unordered-lists"></a>Niet-geordende lijsten
 
-Beëindig lijstitems niet met een punt, tenzij ze meerdere zinnen bevatten. Gebruik het afbreekstreepje (`-`) als opsommingsteken voor een lijstitem. Dit voorkomt verwarring met vette of cursieve markeringen, waarbij het sterretje [`*`] wordt gebruikt. Voeg een regel toe en lijn de inspringing uit met het eerste teken achter het opsommingsteken om een alinea of andere elementen onder een opsomming op te nemen.
+Beëindig geen lijst items met een punt, tenzij deze meerdere zinnen bevatten. Gebruik het afbreekstreepje (`-`) als opsommingsteken voor een lijstitem. Dit voorkomt verwarring met vette of cursieve markeringen, waarbij het sterretje [`*`] wordt gebruikt. Voeg een regel toe en lijn de inspringing uit met het eerste teken achter het opsommingsteken om een alinea of andere elementen onder een opsomming op te nemen.
 
 Bijvoorbeeld:
 
 ```markdown
-This is a list that contain sub-elements under a bullet item.
+This is a list that contain child elements under a bullet item.
 
 - First bullet item
 
   Sentence explaining the first bullet.
 
-  - Sub-bullet item
+  - Child bullet item
 
-    Sentence explaining the sub-bullet.
+    Sentence explaining the child bullet.
 
 - Second bullet item
 - Third bullet item
 ```
 
-Dit is een lijst met subelementen onder een opsommingsteken.
+Dit is een lijst met onderliggende elementen onder een item met opsommings tekens.
 
 - Item van eerste opsomming
 
   Zin met uitleg voor de eerste opsomming.
 
-  - Item van subopsommingsteken
+  - Onderliggend item voor opsommings teken
 
-    Zin met uitleg voor de subopsomming.
+    Zin waarin het onderliggende opsommings teken wordt uitgelegd.
 
 - Item van tweede opsomming
 - Item van derde opsomming
@@ -147,10 +148,10 @@ Example:
 ![Introduction](./media/overview/Introduction.png)
 ```
 
-Hierbij is `alt text` een korte beschrijving van de afbeelding en `<folder path>` een relatief pad naar de afbeelding. Voor schermlezers voor visueel gehandicapten is alternatieve tekst nodig. Dit is ook handig wanneer de afbeelding niet kan worden weergegeven door een sitebug.
+Hierbij is `alt text` een korte beschrijving van de afbeelding en `<folder path>` een relatief pad naar de afbeelding. Voor schermlezers voor visueel gehandicapten is alternatieve tekst nodig.
 
 Afbeeldingen moeten worden opgeslagen in een `media/<article-name>` map in de map waarin het artikel zich bevindt.
-Afbeeldingen moeten niet worden gedeeld tussen artikelen. Maak onder de map `media` een map die overeenkomt met de bestandsnaam van uw artikel. Kopieer de afbeeldingen voor dat artikel naar de nieuwe map. Als een afbeelding door meerdere artikelen wordt gebruikt, moet elke afbeeldingsmap een kopie van het afbeeldingsbestand bevatten. Dit voorkomt dat een wijziging voor een afbeelding in het ene artikel gevolgen heeft voor het andere artikelen.
+Deel geen afbeeldingen tussen artikelen. Maak onder de map `media` een map die overeenkomt met de bestandsnaam van uw artikel. Kopieer de afbeeldingen voor dat artikel naar de nieuwe map. Als een afbeelding door meerdere artikelen wordt gebruikt, moet elke afbeeldingsmap een kopie van het afbeeldingsbestand bevatten. Dit voorkomt dat een wijziging voor een afbeelding in het ene artikel gevolgen heeft voor het andere artikelen.
 
 De volgende afbeeldings bestands typen worden ondersteund: `*.png` , `*.gif` , `*.jpeg` , `*.jpg` , `*.svg`
 
@@ -204,35 +205,44 @@ Waarschuwings blok
 
 ### <a name="hyperlinks"></a>Hyperlinks
 
-- Hyper links moeten de syntaxis van de korting gebruiken `[friendlyname](url-or-path)`
-- Koppelingen moeten indien mogelijk HTTPS zijn.
-- Koppelingen moeten een beschrijvende naam hebben, meestal de titel van het onderwerp waarnaar wordt verwezen
-- Met alle items in de sectie ' Verwante koppelingen ' aan de onderkant moet een Hyper link worden
-- Gebruik geen accents graves, vetgedrukte tekst of andere opmaak binnen de haakjes van een hyperlink.
-- Bare Url's kunnen worden gebruikt wanneer u aan het praten bent over een specifieke URI. De URI moet worden inge sloten in accents graves. Bijvoorbeeld:
+- Hyper links moeten gebruikmaken van de syntaxis voor afkortingen `[friendlyname](url-or-path)` . [Koppelings verwijzingen][linkref] worden ondersteund.
+- Het publicatie systeem ondersteunt drie typen koppelingen:
+  - URL-koppelingen
+  - Bestands koppelingen
+  - Kruis verwijzings koppelingen
+- Koppelingen naar andere artikelen op docs.microsoft.com moeten site-relatieve paden zijn
+- Alle Url's naar externe websites moeten HTTPS gebruiken, tenzij dat niet geldig is voor de doel site.
+- Koppelingen moeten een beschrijvende naam hebben, meestal de titel van het gekoppelde artikel
+- Voor alle items in de sectie _Verwante koppelingen_ onderaan moet een Hyper link worden
+- Gebruik geen accents graves, vet of andere opmaak binnen de haakjes van een Hyper link.
+- Bare Url's kunnen worden gebruikt wanneer u een specifieke URI documenteert. De URI moet worden inge sloten in accents graves. Bijvoorbeeld:
 
   ```markdown
-  By default, if you do not specify this parameter, the DMTF standard resource URI
+  By default, if you don't specify this parameter, the DMTF standard resource URI
   `http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/` is used and the class name is appended to it.
   ```
 
-#### <a name="linking-to-other-content"></a>Koppeling naar andere inhoud
+#### <a name="linking-to-other-content-on-docsmicrosoftcom"></a>Koppeling naar andere inhoud op docs.microsoft.com
 
-Er zijn twee typen hyper links die worden ondersteund door het publicatie systeem:
+- **URL-koppelingen** naar andere artikelen op docs.Microsoft.com moeten site-relatieve paden zijn. De eenvoudigste manier om een relatieve koppeling te maken, is door de URL te kopiëren uit uw browser en vervolgens te verwijderen `https://docs.microsoft.com/en-us` van de waarde die u in de prijs opsplitsen hebt geplakt. Land instellingen niet opnemen in Url's op Eigenschappen van micro soft (verwijderen `/en-us` van URL). Verwijder overbodige query parameters uit de URL. Voor beelden die moeten worden verwijderd:
 
-Een **URL-koppeling** kan een URL-pad zijn dat relatief is ten opzichte van de hoofdmap van docs.Microsoft.com. Of een absolute URL die de syntaxis van de volledige URL bevat. Bijvoorbeeld: `https:/github.com/MicrosoftDocs/PowerShell-Docs`
+  - `?view=powershell-5.1` -wordt gebruikt om een koppeling te maken naar een specifieke versie van Power shell
+  - `?redirectedfrom=MSDN` -wordt toegevoegd aan de URL wanneer u wordt omgeleid van een oud artikel naar de nieuwe locatie
 
-- Gebruik URL-koppelingen wanneer u een koppeling maakt naar inhoud buiten Power shell-docs of tussen Naslag informatie over de cmdlet en conceptuele artikelen in Power shell-docs. De eenvoudigste manier om een relatieve koppeling te maken, is door de URL te kopiëren uit uw browser en vervolgens te verwijderen `https://docs.microsoft.com/en-us` van de waarde die u in de prijs opsplitsen hebt geplakt.
-- Land instellingen niet opnemen in Url's op Eigenschappen van micro soft (bijv. verwijderen `/en-us` van URL).
-- Verwijder overbodige query parameters uit de URL, tenzij u een koppeling moet maken naar een specifieke versie van een artikel. Voorbeelden:
-  - `?view=powershell-5.1` : dit wordt gebruikt om een koppeling te maken naar een specifieke versie van Power shell
-  - `?redirectedfrom=MSDN` : deze wordt toegevoegd aan de URL wanneer u wordt omgeleid van een oud artikel naar de nieuwe locatie
-- Alle Url's naar externe websites moeten HTTPS gebruiken, tenzij dat niet geldig is voor de doel site.
+  Als u een koppeling naar een specifieke versie van een document wilt maken, moet u de `&preserve_view=true` para meter toevoegen aan de query reeks. Bijvoorbeeld: `?view=powershell-5.1&preserve_view=true`
 
-Een **koppeling** naar een bestand wordt gebruikt om te koppelen van het ene referentie artikel naar het andere of van het ene conceptuele artikel naar het andere. Als u een verwijzing naar een referentie artikel moet koppelen voor een specifieke versie van Power shell, moet u een URL-koppeling gebruiken.
+- Een **koppeling** naar een bestand wordt gebruikt om te koppelen van het ene referentie artikel naar het andere of van het ene conceptuele artikel naar het andere. Als u een verwijzing naar een referentie artikel moet koppelen voor een specifieke versie van Power shell, moet u een URL-koppeling gebruiken.
 
-- Bestands koppelingen bevatten een relatief bestandspad (bijvoorbeeld: `../folder/file.md` )
-- Alle bestands paden gebruiken tekens voor voorwaartse slash ( `/` )
+  - Bestands koppelingen bevatten een relatief bestandspad (bijvoorbeeld: `../folder/file.md` )
+  - Alle bestands paden gebruiken tekens voor voorwaartse slash ( `/` )
+
+- **Kruis verwijzings koppelingen** zijn een speciale functie die door het publicatie systeem wordt ondersteund. U kunt Kruis verwijzings koppelingen in conceptuele artikelen gebruiken om een koppeling te maken naar .NET API of cmdlet Reference.
+
+  Zie [koppelingen gebruiken in documentatie](/contribute/how-to-write-links#xref-cross-reference-links) in de hand leiding voor centraal-inzenders voor koppelingen naar .net API-verwijzingen.
+
+  Koppelingen naar cmdlet-verwijzingen hebben de volgende indeling: `xref:<module-name>.<cmdlet-name>` . Als u bijvoorbeeld een koppeling wilt maken naar de `Get-Content` cmdlet in de module **micro soft. Power shell. Management** .
+
+  `[Get-Content](xref:Microsoft.PowerShell.Management.Get-Content)`
 
 Uitgebreide koppeling is toegestaan voor URL-en bestands koppelingen. Voeg het anker toe aan het einde van het doelpad.
 Bijvoorbeeld:
@@ -244,9 +254,9 @@ Zie [koppelingen in documentatie gebruiken](/contribute/how-to-write-links)voor 
 
 ## <a name="formatting-command-syntax-elements"></a>Syntaxiselementen van opdrachten opmaken
 
-- Gebruik altijd de volledige naam voor cmdlets en para meters. Vermijd het gebruik van aliassen tenzij u de alias expliciet demonstreert.
+- Gebruik altijd de volledige naam voor cmdlets en para meters. Vermijd het gebruik van aliassen tenzij u zeker weet dat de alias.
 
-- Eigenschap, para meter, object, type namen, klassen namen en klassen methoden moeten **vet**zijn.
+- Eigenschap, para meter, object, type namen, klassen namen en klassen methoden moeten **vet** zijn.
   - Eigenschaps-en parameter waarden moeten worden verpakt in accents graves ( `` ` `` ).
   - Wanneer u verwijst naar typen met behulp van de stijl met tussen haakjes, gebruikt u accents graves. Bijvoorbeeld: `[System.Io.FileInfo]`
 
@@ -266,7 +276,7 @@ Zie [koppelingen in documentatie gebruiken](/contribute/how-to-write-links)voor 
   - Wanneer naar een parameter wordt verwezen aan de hand van de naam, moet de naam **vet** zijn. Wanneer het gebruik van een parameter met een afbreekstreepje als voorvoegsel wordt gedemonstreerd, moet de parameter tussen accents graves worden geplaatst. Bijvoorbeeld:
 
     ```markdown
-    The parameter's name is **Name**, but it is typed as `-Name` when used on the command
+    The parameter's name is **Name**, but it's typed as `-Name` when used on the command
     line as a parameter.
     ```
 
@@ -279,7 +289,7 @@ Zie [koppelingen in documentatie gebruiken](/contribute/how-to-write-links)voor 
 
     Met inbegrip van de bestands extensie zorgt ervoor dat de juiste opdracht wordt uitgevoerd volgens de opdracht prioriteit van Power shell.
 
-- Als u een conceptueel artikel (in tegenstelling tot referentie-inhoud) schrijft, moet de eerste instantie van een cmdlet-naam een hyperlink naar de cmdlet-documentatie bevatten. Gebruik geen accents graves, vetgedrukte tekst of andere opmaak binnen de haakjes van een hyperlink.
+- Als u een conceptueel artikel (in tegenstelling tot referentie-inhoud) schrijft, moet de eerste instantie van een cmdlet-naam een hyperlink naar de cmdlet-documentatie bevatten. Gebruik geen accents graves, vet of andere opmaak binnen de haakjes van een Hyper link.
 
   Bijvoorbeeld:
 
@@ -336,7 +346,7 @@ for (<init>; <condition>; <repeat>)
 
 ### <a name="illustrative-examples"></a>Illustratieve voorbeelden
 
-Illustratieve voorbeelden worden gebruikt om een PowerShell-concept uit te leggen. Ze zijn niet bedoeld om naar het klembord te worden gekopieerd en te worden uitgevoerd. Deze worden meestal gebruikt voor eenvoudige voor beelden die eenvoudig te typen zijn en eenvoudig te begrijpen zijn. Het code blok kan de Power shell-prompt en voorbeeld uitvoer bevatten.
+Illustratieve voorbeelden worden gebruikt om een PowerShell-concept uit te leggen. Ze zijn niet bedoeld om te worden gekopieerd naar het klem bord voor uitvoering. Deze worden meestal gebruikt voor eenvoudige voor beelden die eenvoudig te typen zijn en eenvoudig te begrijpen zijn. Het code blok kan de Power shell-prompt en voorbeeld uitvoer bevatten.
 
 Hier volgt een eenvoudig voor beeld van de Power shell-vergelijkings operatoren. In dit geval is het niet de bedoeling dat de lezer dit voorbeeld kopieert en uitvoert.
 
@@ -348,7 +358,7 @@ True
 PS> 2 -eq 3
 False
 
-PS>  1,2,3 -eq 2
+PS> 1,2,3 -eq 2
 2
 
 PS> "abc" -eq "abc"
@@ -400,7 +410,7 @@ Cmdlet       Unprotect-CmsMessage        3.0.0.0    Microsoft.PowerShell.Securit
 ```
 ~~~
 
-Het codelabel **Uitvoer** is geen officiële ‘taal’ die door het systeem voor het markeren van syntaxis wordt ondersteund.
+Het code label van de **uitvoer** is geen officiële taal die wordt ondersteund door het markerings systeem van de syntaxis.
 Dit label is echter nuttig omdat OPS het label "uitvoer" toevoegt aan het frame van de code op de webpagina. Het vak uitvoer code heeft geen syntaxis markering.
 
 ## <a name="coding-style-rules"></a>Stijlregels voor code
@@ -409,14 +419,14 @@ Dit label is echter nuttig omdat OPS het label "uitvoer" toevoegt aan het frame 
 
 Vermijd tekens voor voortzetting van de regel (`` ` ``) in PowerShell-codevoorbeelden. Deze zijn moeilijk te zien en kunnen problemen veroorzaken als er extra spaties aan het einde van de regel staan.
 
-- Gebruik PowerShell-splatting om de regellengte in te korten voor cmdlets die veel parameters bevatten.
-- Profiteer van de mogelijkheden voor natuurlijke regeleinden in PowerShell, zoals na het pijpteken (`|`), accolades en haakjes.
+- Gebruik Power shell splatting om de regel lengte voor cmdlets met verschillende para meters te reduceren.
+- Profiteer van de natuurlijke lijn grens mogelijkheden van Power shell, zoals na sluis `|` tekens (), accolades openen ( `{` ), haakjes ( `(` ) en haakjes ( `[` ).
 
 ### <a name="avoid-using-powershell-prompts-in-examples"></a>PowerShell-prompts vermijden in voorbeelden
 
-Het gebruik van de prompt-tekenreeks wordt afgeraden en moet worden beperkt tot scenario’s die zijn bedoeld om het gebruik van de opdrachtregel te illustreren. Voor de meeste van deze voor beelden moet de prompt teken reeks zijn `PS>` . Deze prompt is onafhankelijk van indicatoren voor specifieke besturingssystemen.
+Het gebruik van de prompt teken reeks wordt afgeraden en moet worden beperkt tot scenario's die bedoeld zijn voor het illustreren van het gebruik van de opdracht regel. Voor de meeste van deze voor beelden moet de prompt teken reeks zijn `PS>` . Deze prompt is onafhankelijk van indicatoren voor specifieke besturingssystemen.
 
-Prompts zijn vereist voor voorbeelden waarin opdrachten worden weergegeven waarmee de prompt wordt aangepast of als het getoonde pad van belang is voor het scenario dat wordt geïllustreerd. In het volgende voorbeeld wordt getoond hoe de prompt verandert als de registerprovider wordt gebruikt.
+Prompts zijn in voor beelden vereist voor het illustreren van opdrachten die de prompt wijzigen of wanneer het weer gegeven pad belang rijk is voor het scenario. In het volgende voorbeeld wordt getoond hoe de prompt verandert als de registerprovider wordt gebruikt.
 
 ```powershell
 PS C:\> cd HKCU:\System\
@@ -435,22 +445,111 @@ GameConfigStore        GameDVR_Enabled                       : 1
                        GameDVR_DXGIHonorFSEWindowsCompatible : 0
 ```
 
-### <a name="do-not-use-aliases-in-examples"></a>Geen aliassen gebruiken in voorbeelden
+### <a name="dont-use-aliases-in-examples"></a>Geen aliassen gebruiken in voor beelden
 
-Gebruik altijd de volledige naam van cmdlets en parameters, tenzij u het specifiek over de alias hebt. De namen van cmdlets en para meters moeten gebruikmaken van de juiste namen van Pascal-cases.
+Gebruik de volledige naam van alle-cmdlets en-para meters, tenzij u de alias expliciet wilt documenteren.
+De namen van cmdlets en para meters moeten gebruikmaken van de juiste namen van [Pascal-cases][] .
 
 ### <a name="using-parameters-in-examples"></a>Parameters gebruiken in voorbeelden
 
 Vermijd het gebruik van positionele parameters. Over het algemeen moet u altijd de parameter naam in een voor beeld meenemen, zelfs als de para meter positioneel is. Dit verkleint de kans op verwarring in uw voorbeelden.
 
+## <a name="formatting-cmdlet-reference-articles"></a>Naslag informatie over het format teren van cmdlets
+
+Artikelen met naslaginformatie voor cmdlets hebben een specifieke structuur. Deze structuur wordt gedefinieerd door [PlatyPS][].
+PlatyPS genereert de cmdlet-Help voor Power shell-modules in korting. Nadat de Markdown-bestanden zijn bewerkt, wordt PlatyPS gebruikt om de MAML-helpbestanden te maken die door de `Get-Help`-cmdlet worden gebruikt.
+
+In PlatyPS is een in code vastgelegd schema voor cmdlet-naslaginformatie. Dit schema is in de code geschreven. In het document [platyPS. schema.md][] is deze structuur beschreven. Schendingen van het schema veroorzaken compilatiefouten die moeten worden opgelost voordat we uw bijdrage kunnen accepteren.
+
+- Verwijder geen van de ATX-header structuren. PlatyPS verwacht een specifieke reeks kopteksten.
+- De kopteksten **Inputtype** en **Outputtype** moeten een type hebben. Als de cmdlet geen invoer heeft of een waarde retourneert, gebruikt u de waarde `None` .
+- In elke alinea kunnen inline codereeksen worden gebruikt.
+- Geomheiningde code blokken zijn alleen toegestaan in de sectie **voor beelden** .
+
+In het PlatyPS-schema is **voor beelden** een kop van H2. Elk voor beeld is een H3-header. Binnen een voor beeld staat het schema niet toe dat code blokken worden gescheiden door alinea's. In het schema is de volgende structuur toegestaan:
+
+```
+### Example X - Title sentence
+
+0 or more paragraphs
+1 or more code blocks
+0 or more paragraphs.
+```
+
+Geef elk voorbeeld een nummer en voeg een korte titel toe.
+
+Bijvoorbeeld:
+
+~~~markdown
+### Example 1: Get cmdlets, functions, and aliases
+
+This command gets the PowerShell cmdlets, functions, and aliases that are installed on the
+computer.
+
+```powershell
+Get-Command
+```
+
+### Example 2: Get commands in the current session
+
+```powershell
+Get-Command -ListImported
+```
+~~~
+
+## <a name="formatting-about_-files"></a>About_-bestanden opmaken
+
+`About_*` bestanden worden in korting geschreven, maar worden als tekst bestanden verzonden. We gebruiken [pandoc][] om de prijs verlaging te converteren naar platte tekst. `About_*` bestanden zijn ingedeeld voor de beste compatibiliteit tussen alle versies van Power shell en met de hulpprogram ma's voor publiceren.
+
+Algemene richtlijnen voor het opmaken:
+
+- Normale regels beperken tot 80 tekens
+- Code blokken zijn beperkt tot 76 tekens
+- Block Quotes (en waarschuwingen) zijn beperkt tot 78 tekens
+- Wanneer u deze speciale meta tekens gebruikt `\` , `$` en `<` :
+  - Binnen een kop moeten deze tekens worden voorafgegaan door een voorloop `\` teken of worden inge sloten in code reeksen met behulp van accents graves ( `` ` `` )
+  - In een alinea moeten deze tekens in code reeksen worden geplaatst. Bijvoorbeeld:
+
+    ~~~markdown
+    ### The purpose of the \$foo variable
+
+    The `$foo` variable is used to store ...
+    ~~~
+
+- Tabellen moeten binnen 76 tekens passen
+  - Laat inhoud van cellen die over meerdere regels valt handmatig teruglopen
+  - Gebruik op elke regel `|`-tekens voor openen en sluiten
+  - In het volgende voor beeld ziet u hoe u een tabel op een juiste manier kunt samen stellen die informatie bevat die op meerdere regels in een cel inloopt.
+
+    ~~~markdown
+    ```
+    |Operator|Description                |Example                          |
+    |--------|---------------------------|---------------------------------|
+    |`-is`   |Returns TRUE when the input|`(get-date) -is [DateTime]`      |
+    |        |is an instance of the      |`True`                           |
+    |        |specified .NET type.       |                                 |
+    |`-isNot`|Returns TRUE when the input|`(get-date) -isNot [DateTime]`   |
+    |        |not an instance of the     |`False`                          |
+    |        |specified.NET type.        |                                 |
+    |`-as`   |Converts the input to the  |`"5/7/07" -as [DateTime]`        |
+    |        |specified .NET type.       |`Monday, May 7, 2007 12:00:00 AM`|
+    ```
+    ~~~
+
+    > [!NOTE]
+    > De limiet van 76 kolommen geldt alleen voor `About_*` onderwerpen. U kunt brede kolommen gebruiken in conceptuele of cmdlet-referentie artikelen.
+
 ## <a name="next-steps"></a>Volgende stappen
 
-[Naslaginformatie voor cmdlets bewerken](editing-cmdlet-ref.md)
+[Redactionele controlelijst](editorial-checklist.md)
 
-<!-- External URLs -->
-[platyPS]: https://github.com/PowerShell/platyPS
-[markdig]: https://github.com/lunet-io/markdig
-[CommonMark]: https://spec.commonmark.org/
+<!-- link references -->
 [atx]: https://github.github.com/gfm/#atx-headings
-[pascal-case]: https://en.wikipedia.org/wiki/PascalCase
+[CommonMark]: https://spec.commonmark.org/
+[markdig]: https://github.com/lunet-io/markdig
+[Pandoc]: https://pandoc.org
+[Pascal-cases]: https://en.wikipedia.org/wiki/PascalCase
+[platyPS.schema.md]: https://github.com/PowerShell/platyPS/blob/master/platyPS.schema.md
+[PlatyPS]: https://github.com/powershell/platyps
 [reflow]: https://marketplace.visualstudio.com/items?itemName=marvhen.reflow-markdown
+[linkref]: https://spec.commonmark.org/0.29/#link-reference-definitions

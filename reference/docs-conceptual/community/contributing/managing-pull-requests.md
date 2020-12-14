@@ -1,22 +1,22 @@
 ---
 title: De manier waarop we pull-aanvragen beheren
-description: In dit artikel wordt uitgelegd hoe het Power shell-docs-team pull-aanvragen beheert.
-ms.date: 03/05/2020
+description: In dit artikel wordt uitgelegd hoe het PowerShell-Docs-team pull-aanvragen beheert.
+ms.date: 12/09/2020
 ms.topic: conceptual
-ms.openlocfilehash: af5280e91aa3744b6172dc3555df6989cb0ce1a2
-ms.sourcegitcommit: b0488ca6557501184f20c8343b0ed5147b09e3fe
+ms.openlocfilehash: 7050db6ad30963d0a75b2a083daace494d703027
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86158170"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97090529"
 ---
 # <a name="managing-pull-requests"></a>Pull-aanvragen beheren
 
-In dit artikel wordt beschreven hoe we pull-aanvragen beheren in de Power shell-docs-opslag plaats. Dit artikel is bedoeld als taak hulp voor leden van het Power shell-docs-team. Dit wordt hier gepubliceerd om proces transparantie te bieden voor de open bare mede werkers.
+In dit artikel wordt beschreven hoe u pull-aanvragen beheert in de PowerShell-Docs opslag plaats. Dit artikel is bedoeld als taak hulp voor leden van het PowerShell-Docs team. Het wordt hier gepubliceerd om proces transparantie te bieden voor de open bare mede werkers.
 
 ## <a name="best-practices"></a>Aanbevolen procedures
 
-- De persoon die de PR verzendt, mag de PR niet samen voegen zonder een peer beoordeling.
+- De persoon die de PR verzendt, mag de PR niet zonder een beoordeling van een peer samen voegen.
 - Wijs de persoons revisor toe wanneer de PR wordt verzonden. Met een vroege toewijzing kan de revisor snel met redactionele opmerkingen reageren.
 - Gebruik opmerkingen om de aard van de wijziging of het type revisie dat wordt aangevraagd te beschrijven. Zorg ervoor dat u @mention de revisor bekijkt. Als de wijziging bijvoorbeeld klein is en u geen volledige technische controle nodig hebt, wordt dit in een opmerking beschreven.
 
@@ -43,7 +43,7 @@ Raadpleeg de [controle lijst voor redactionele](editorial-checklist.md) voor een
 - Preview-rendering controleren
 - Meta gegevens controleren-MS. date, MS. AssetID verwijderen, verplichte velden controleren
 - De juistheid van de prijs verlaging valideren
-  - Zie stijl gids voor het opmaken van specifieke inhoud
+  - Zie stijl gids voor taalspecifieke opmaak regels
 - Voor beelden opnieuw ordenen:
   - Inleiding zin (s)
   - Code en uitvoer
@@ -60,7 +60,7 @@ Raadpleeg de [controle lijst voor redactionele](editorial-checklist.md) voor een
 
 ## <a name="branch-merge-process"></a>Vertakkings samenvoegings proces
 
-De staging-vertakking is de enige vertakking die ooit in Live moet worden samengevoegd. Het samen voegen van branches met een korte levens duur (werk) moet squashed zijn.
+De `staging` vertakking is de enige vertakking die wordt samengevoegd in `live` . Het samen voegen van branches met een korte levens duur (werk) moet squashed zijn.
 
 | *Samen voegen van/naar*  | *release-vertakking* | *Stell*        | *Galerie*      |
 | ---------------- |:----------------:|:----------------:|:-----------:|
@@ -78,7 +78,7 @@ De staging-vertakking is de enige vertakking die ooit in Live moet worden sameng
   - Geen verbroken koppelingen
 - Samen voegen volgens tabel
 
-### <a name="notes"></a>Opmerkingen
+### <a name="notes"></a>Notities
 
 De volgende waarschuwingen kunnen niet worden genegeerd:
 
@@ -97,9 +97,9 @@ Wanneer een PR wordt samengevoegd, wordt de kop van de doel vertakking gewijzigd
 
 ## <a name="publishing-to-live"></a>Publiceren naar Live
 
-De wijzigingen die in de vertakking zijn verzameld, moeten regel matig `staging` worden gepubliceerd op de Live-website. Hiervoor moet de `staging` vertakking in de vertakking worden samengevoegd `live` .
+De wijzigingen die in de vertakking zijn verzameld, moeten regel matig `staging` worden gepubliceerd op de Live-website.
 
-- De `staging` vertakking moet `live` ten minste eenmaal per week worden samengevoegd.
+- De `staging` vertakking wordt samengevoegd met `live` elke weekdag op 3pm PST.
 - De `staging` vertakking moet worden samengevoegd tot `live` na een belang rijke wijziging.
   - Wijzigingen in 50 of meer bestanden
   - Na het samen voegen van een release vertakking

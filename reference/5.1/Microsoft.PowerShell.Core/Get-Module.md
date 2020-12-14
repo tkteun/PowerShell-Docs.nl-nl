@@ -1,23 +1,22 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 5/15/2019
+ms.date: 12/03/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/get-module?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Module
-ms.openlocfilehash: d3a2aae9318da7235070b68dd379081467fa611a
-ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
+ms.openlocfilehash: 15a7d7e6488e4b3d11375649fdbc810e1aeb2b2f
+ms.sourcegitcommit: 7b376314e7640c39a53aac9f0db8bb935514a960
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94388702"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96564353"
 ---
 # Get-Module
 
 ## SAMENVATTING
-Hiermee worden de modules opgehaald die zijn geïmporteerd of die in de huidige sessie kunnen worden geïmporteerd.
+De modules weer geven die zijn geïmporteerd in de huidige sessie of die kunnen worden geïmporteerd uit de PSModulePath.
 
 ## SYNTAXIS
 
@@ -50,19 +49,18 @@ Get-Module [[-Name] <String[]>] [-FullyQualifiedName <ModuleSpecification[]>] [-
 
 ## BESCHRIJVING
 
-De `Get-Module` cmdlet haalt de Power shell-modules die zijn geïmporteerd of die kunnen worden geïmporteerd, op in een Power shell-sessie. Het module-object dat `Get-Module` retourneert, bevat waardevolle informatie over de module. U kunt de module-objecten ook door sluizen naar andere cmdlets, zoals de- `Import-Module` en- `Remove-Module` cmdlets.
+De `Get-Module` cmdlet geeft een lijst van de Power shell-modules die zijn geïmporteerd of die kunnen worden geïmporteerd in een Power shell-sessie. Zonder para meters worden `Get-Module` modules opgehaald die in de huidige sessie zijn geïmporteerd. De para meter **ListAvailable** wordt gebruikt om een lijst weer te geven met de modules die kunnen worden geïmporteerd uit de paden die zijn opgegeven in de PSModulePath-omgevings variabele ( `$env:PSModulePath` ).
 
-Zonder para meters worden `Get-Module` modules opgehaald die in de huidige sessie zijn geïmporteerd. Geef de para meter **ListAvailable** op om alle geïnstalleerde modules op te halen.
+Het module-object dat `Get-Module` retourneert, bevat waardevolle informatie over de module. U kunt de module-objecten ook door sluizen naar andere cmdlets, zoals de- `Import-Module` en- `Remove-Module` cmdlets.
 
-`Get-Module` Hiermee worden modules opgehaald, maar niet geïmporteerd. Vanaf Windows Power Shell 3,0 worden modules automatisch geïmporteerd wanneer u een opdracht in de module gebruikt, maar met een `Get-Module` opdracht wordt een automatische import bewerking niet geactiveerd. U kunt de modules ook importeren in uw-sessie met behulp van de- `Import-Module` cmdlet.
+`Get-Module` Hiermee worden modules weer gegeven, maar niet geïmporteerd. Vanaf Windows Power Shell 3,0 worden modules automatisch geïmporteerd wanneer u een opdracht in de module gebruikt, maar met een `Get-Module` opdracht wordt een automatische import bewerking niet geactiveerd. U kunt de modules ook importeren in uw-sessie met behulp van de- `Import-Module` cmdlet.
 
 Vanaf Windows Power Shell 3,0 kunt u modules ophalen en vervolgens importeren van externe sessies in de lokale sessie. Deze strategie maakt gebruik van de impliciete externe functie van Power shell en komt overeen met het gebruik van de `Import-PSSession` cmdlet. Wanneer u opdrachten gebruikt in modules die vanuit een andere sessie worden geïmporteerd, worden de opdrachten impliciet uitgevoerd in de externe sessie. Met deze functie kunt u de externe computer vanuit de lokale sessie beheren.
 
-Met ingang van Windows Power Shell 3,0 kunt u ook `Get-Module` `Import-Module` de modules van Common Information Model (CIM) gebruiken en weer geven, waarin de cmdlets worden gedefinieerd in de CMDLET definition XML-bestanden (CDXML). Met deze functie kunt u cmdlets gebruiken die zijn geïmplementeerd in niet-beheerde code-assembly's, zoals die zijn geschreven in C++.
+Vanuit Windows Power Shell 3,0 kunt u ook de modules van `Get-Module` `Import-Module` Common Information Model (CIM) gebruiken en importeren. Met CIM-modules worden cmdlets in CDXML-bestanden (cmdlet definition XML) gedefinieerd. Met deze functie kunt u cmdlets gebruiken die zijn geïmplementeerd in niet-beheerde code-assembly's, zoals die zijn geschreven in C++.
 
-Met deze nieuwe functies worden de- `Get-Module` en- `Import-Module` cmdlets primaire hulp middelen voor het beheren van heterogene ondernemingen die computers bevatten waarop het Windows-besturings systeem wordt uitgevoerd en computers met andere besturings systemen.
-
-Als u externe computers wilt beheren waarop het Windows-besturings systeem wordt uitgevoerd en externe communicatie van Power shell is ingeschakeld, maakt u een **PSSession** op de externe computer en gebruikt u vervolgens de para meter **PSSession** van `Get-Module` om de Power shell-modules op te halen in de **PSSession**. Wanneer u de modules importeert en vervolgens de geïmporteerde opdrachten in de huidige sessie gebruikt, worden de opdrachten impliciet uitgevoerd in de **PSSession** op de externe computer. U kunt deze strategie gebruiken om de externe computer te beheren.
+Impliciete externe toegang kan worden gebruikt voor het beheren van externe computers waarvoor Power shell Remoting is ingeschakeld.
+Maak een **PSSession** op de externe computer en gebruik vervolgens de para meter **PSSession** van `Get-Module` om de Power shell-modules in de externe sessie op te halen. Wanneer u een module uit de externe sessie importeert, worden de geïmporteerde opdrachten uitgevoerd in de sessie op de externe computer.
 
 U kunt een vergelijk bare strategie gebruiken voor het beheren van computers waarop geen externe communicatie van Power shell is ingeschakeld.
 Dit zijn onder andere computers waarop het Windows-besturings systeem niet wordt uitgevoerd en computers met Power shell, maar waarvoor geen externe communicatie van Power shell is ingeschakeld.
@@ -165,7 +163,7 @@ Met deze opdracht worden de eigenschappen opgehaald van het **PSModuleInfo** -ob
 
 U kunt de eigenschappen gebruiken om de module-objecten te Format teren en te filteren. Zie [PSModuleInfo Properties](/dotnet/api/system.management.automation.psmoduleinfo)(Engelstalig) voor meer informatie over de eigenschappen.
 
-De uitvoer bevat de nieuwe eigenschappen, zoals **Auteur** en **CompanyName** , die zijn geïntroduceerd in Windows Power Shell 3,0.
+De uitvoer bevat de nieuwe eigenschappen, zoals **Auteur** en **CompanyName**, die zijn geïntroduceerd in Windows Power Shell 3,0.
 
 ### Voor beeld 6: alle modules op naam groeperen
 
@@ -478,7 +476,7 @@ Accept wildcard characters: False
 
 ### -PSSession
 
-Hiermee worden de modules in de opgegeven door de gebruiker beheerde Power shell-sessie ( **PSSession** ) opgehaald. Voer een variabele in die de sessie bevat, een opdracht waarmee de sessie wordt opgehaald, zoals een `Get-PSSession` opdracht of een opdracht waarmee de sessie wordt gemaakt, zoals een `New-PSSession` opdracht.
+Hiermee worden de modules in de opgegeven door de gebruiker beheerde Power shell-sessie (**PSSession**) opgehaald. Voer een variabele in die de sessie bevat, een opdracht waarmee de sessie wordt opgehaald, zoals een `Get-PSSession` opdracht of een opdracht waarmee de sessie wordt gemaakt, zoals een `New-PSSession` opdracht.
 
 Wanneer de sessie is verbonden met een externe computer, moet u de para meter **ListAvailable** opgeven.
 
@@ -510,7 +508,7 @@ Deze para meter is geïntroduceerd in Windows Power Shell 3,0.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: PsSession, Available, CimSession
+Parameter Sets: Available, PsSession, CimSession
 Aliases:
 
 Required: False
@@ -539,24 +537,25 @@ Wanneer u de para meter **ListAvailable** opgeeft, wordt `Get-Module` een **Modu
 
 ## OPMERKINGEN
 
-- Vanaf Windows Power Shell 3,0 worden de kern opdrachten die zijn opgenomen in Power shell, verpakt in modules. De uitzonde ring is **micro soft. Power shell. core** , een module ( **PSSnapin** ). Standaard wordt alleen de module **micro soft. Power shell. core** toegevoegd aan de sessie.
-Modules worden automatisch geïmporteerd bij het eerste gebruik en u kunt de `Import-Module` cmdlet gebruiken om ze te importeren.
-- Vanaf Windows Power Shell 3,0 worden de kern opdrachten die zijn geïnstalleerd met Power shell, verpakt in modules. In Windows Power Shell 2,0, en in hostgroepen die oudere sessies maken in latere versies van Power shell, worden de kern opdrachten verpakt in modules ( **PSSnapins** ). De uitzonde ring is **micro soft. Power shell. core**. Dit is altijd een module. Externe sessies, zoals computers die zijn gestart door de `New-PSSession` cmdlet, zijn ook oudere sessies met kern modules.
+- Vanaf Windows Power Shell 3,0 worden de kern opdrachten die zijn opgenomen in Power shell, verpakt in modules. De uitzonde ring is **micro soft. Power shell. core**, een module (**PSSnapin**). Standaard wordt alleen de module **micro soft. Power shell. core** toegevoegd aan de sessie. Modules worden automatisch geïmporteerd bij het eerste gebruik en u kunt de `Import-Module` cmdlet gebruiken om ze te importeren.
+
+- In Windows Power Shell 2,0, en in hostgroepen die oudere sessies maken in latere versies van Power shell, worden de kern opdrachten verpakt in modules (**PSSnapins**). De uitzonde ring is **micro soft. Power shell. core**. Dit is altijd een module. Externe sessies, zoals computers die zijn gestart door de `New-PSSession` cmdlet, zijn ook oudere sessies met kern modules.
 
   Zie de [methode CreateDefault2](/dotnet/api/system.management.automation.runspaces.initialsessionstate.createdefault2)voor informatie over de **CreateDefault2** -methode waarmee nieuwe-stijl sessies met kern modules worden gemaakt.
 
-- `Get-Module` haalt alleen modules op in locaties die zijn opgeslagen in de waarde van de **PSModulePath** -omgevings variabele ($env:P smodulepath). U kunt de para meter **Path** van de `Import-Module` cmdlet gebruiken voor het importeren van modules op andere locaties, maar u kunt de cmdlet niet gebruiken `Get-Module` om deze te downloaden.
-- Vanuit Power Shell 3,0 zijn er ook nieuwe eigenschappen toegevoegd aan het object, waardoor `Get-Module` het eenvoudiger wordt om te leren over modules, zelfs voordat ze worden geïmporteerd. Alle eigenschappen worden ingevuld voordat ze worden geïmporteerd. Dit zijn onder andere de eigenschappen **ExportedCommands** , **ExportedCmdlets** en **ExportedFunctions** die de opdrachten vermeld die de module exporteert.
+- `Get-Module` haalt alleen modules op in locaties die zijn opgeslagen in de waarde van de **PSModulePath** -omgevings variabele ($env:P smodulepath). Met de `Import-Module` cmdlet kunnen modules op andere locaties worden geïmporteerd, maar u kunt de cmdlet niet gebruiken `Get-Module` om deze te downloaden.
+
+- Vanuit Power Shell 3,0 zijn er ook nieuwe eigenschappen toegevoegd aan het object, waardoor `Get-Module` het eenvoudiger wordt om te leren over modules, zelfs voordat ze worden geïmporteerd. Alle eigenschappen worden ingevuld voordat ze worden geïmporteerd. Dit zijn onder andere de eigenschappen **ExportedCommands**, **ExportedCmdlets** en **ExportedFunctions** die de opdrachten vermeld die de module exporteert.
+
 - De para meter **ListAvailable** haalt alleen goed opgemaakte modules op, dat wil zeggen mappen die ten minste één bestand bevatten waarvan de basis naam hetzelfde is als de naam van de module map. De basis naam is de naam zonder de bestandsnaam extensie. Mappen met bestanden die verschillende namen hebben, worden beschouwd als containers, maar niet in modules.
 
-  Als u modules wilt ophalen die als dll-bestanden zijn geïmplementeerd, maar die niet zijn opgenomen in een module-map, geeft u zowel de **ListAvailable** als **alle** para meters op.
+  Als u modules wilt ophalen die als DLL-bestanden zijn geïmplementeerd, maar die niet zijn opgenomen in een module-map, geeft u zowel de **ListAvailable** als **alle** para meters op.
 
 - Als u de functie CIM-sessie wilt gebruiken, moet de externe computer beschikken over WS-Management remoting en Windows Management Instrumentation (WMI), de micro soft-implementatie van de Common Information Model (CIM)-standaard. De computer moet ook de WMI-provider voor module detectie hebben of een alternatieve WMI-provider die dezelfde basis functies heeft.
 
   U kunt de functie CIM-sessie gebruiken op computers waarop het Windows-besturings systeem niet wordt uitgevoerd en op Windows-computers met Power shell, maar externe communicatie van Power shell niet is ingeschakeld.
 
-  U kunt ook de CIM-para meters gebruiken om CIM-modules op te halen van computers waarop externe communicatie van Power shell is ingeschakeld. Dit omvat de lokale computer.
-Wanneer u een CIM-sessie op de lokale computer maakt, gebruikt Power shell DCOM in plaats van WMI om de sessie te maken.
+  U kunt ook de CIM-para meters gebruiken om CIM-modules op te halen van computers waarop externe communicatie van Power shell is ingeschakeld. Dit omvat de lokale computer. Wanneer u een CIM-sessie op de lokale computer maakt, gebruikt Power shell DCOM in plaats van WMI om de sessie te maken.
 
 ## GERELATEERDE KOPPELINGEN
 

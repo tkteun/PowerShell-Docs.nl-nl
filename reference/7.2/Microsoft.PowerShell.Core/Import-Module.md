@@ -3,15 +3,15 @@ external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
 ms.date: 12/03/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/import-module?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/import-module?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Import-Module
-ms.openlocfilehash: 6b87074f6053189b20b5cc0983f978324420c99b
+ms.openlocfilehash: 1b8164be05f011e13945323a6288426bd2d41183
 ms.sourcegitcommit: 7b376314e7640c39a53aac9f0db8bb935514a960
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/03/2020
-ms.locfileid: "96564387"
+ms.locfileid: "96564490"
 ---
 # Import-Module
 
@@ -24,31 +24,41 @@ Hiermee voegt u modules toe aan de huidige sessie.
 
 ```
 Import-Module [-Global] [-Prefix <String>] [-Name] <String[]> [-Function <String[]>]
- [-Cmdlet <String[]>] [-Variable <String[]>] [-Alias <String[]>] [-Force] [-PassThru]
- [-AsCustomObject] [-MinimumVersion <Version>] [-MaximumVersion <String>]
+ [-Cmdlet <String[]>] [-Variable <String[]>] [-Alias <String[]>] [-Force] [-SkipEditionCheck]
+ [-PassThru] [-AsCustomObject] [-MinimumVersion <Version>] [-MaximumVersion <String>]
  [-RequiredVersion <Version>] [-ArgumentList <Object[]>] [-DisableNameChecking] [-NoClobber]
- [-Scope <String>] [<CommonParameters>]
+ [-Scope <String>]  [<CommonParameters>]
 ```
 
 ### PSSession
 
 ```
 Import-Module [-Global] [-Prefix <String>] [-Name] <String[]> [-Function <String[]>]
- [-Cmdlet <String[]>] [-Variable <String[]>] [-Alias <String[]>] [-Force] [-PassThru]
- [-AsCustomObject] [-MinimumVersion <Version>] [-MaximumVersion <String>]
+ [-Cmdlet <String[]>] [-Variable <String[]>] [-Alias <String[]>] [-Force] [-SkipEditionCheck]
+ [-PassThru] [-AsCustomObject] [-MinimumVersion <Version>] [-MaximumVersion <String>]
  [-RequiredVersion <Version>] [-ArgumentList <Object[]>] [-DisableNameChecking] [-NoClobber]
- [-Scope <String>] -PSSession <PSSession> [<CommonParameters>]
+ [-Scope <String>] -PSSession <PSSession>  [<CommonParameters>]
 ```
 
 ### CimSession
 
 ```
 Import-Module [-Global] [-Prefix <String>] [-Name] <String[]> [-Function <String[]>]
- [-Cmdlet <String[]>] [-Variable <String[]>] [-Alias <String[]>] [-Force] [-PassThru]
- [-AsCustomObject] [-MinimumVersion <Version>] [-MaximumVersion <String>]
+ [-Cmdlet <String[]>] [-Variable <String[]>] [-Alias <String[]>] [-Force] [-SkipEditionCheck]
+ [-PassThru] [-AsCustomObject] [-MinimumVersion <Version>] [-MaximumVersion <String>]
  [-RequiredVersion <Version>] [-ArgumentList <Object[]>] [-DisableNameChecking] [-NoClobber]
  [-Scope <String>] -CimSession <CimSession> [-CimResourceUri <Uri>] [-CimNamespace <String>]
  [<CommonParameters>]
+```
+
+### UseWindowsPowerShell
+
+```
+Import-Module [-Name] <string[]> -UseWindowsPowerShell [-Global] [-Prefix <string>]
+ [-Function <string[]>] [-Cmdlet <string[]>] [-Variable <string[]>] [-Alias <string[]>]
+ [-Force] [-PassThru] [-AsCustomObject] [-MinimumVersion <version>] [-MaximumVersion <string>]
+ [-RequiredVersion <version>] [-ArgumentList <Object[]>] [-DisableNameChecking] [-NoClobber]
+ [-Scope <string>] [<CommonParameters>]
 ```
 
 ### FullyQualifiedName
@@ -56,8 +66,8 @@ Import-Module [-Global] [-Prefix <String>] [-Name] <String[]> [-Function <String
 ```
 Import-Module [-Global] [-Prefix <String>] [-FullyQualifiedName] <ModuleSpecification[]>
  [-Function <String[]>] [-Cmdlet <String[]>] [-Variable <String[]>] [-Alias <String[]>] [-Force]
- [-PassThru] [-AsCustomObject] [-ArgumentList <Object[]>] [-DisableNameChecking] [-NoClobber]
- [-Scope <String>] [<CommonParameters>]
+ [-SkipEditionCheck] [-PassThru] [-AsCustomObject] [-ArgumentList <Object[]>] [-DisableNameChecking]
+ [-NoClobber] [-Scope <String>]  [<CommonParameters>]
 ```
 
 ### FullyQualifiedNameAndPSSession
@@ -65,26 +75,35 @@ Import-Module [-Global] [-Prefix <String>] [-FullyQualifiedName] <ModuleSpecific
 ```
 Import-Module [-Global] [-Prefix <String>] [-FullyQualifiedName] <ModuleSpecification[]>
  [-Function <String[]>] [-Cmdlet <String[]>] [-Variable <String[]>] [-Alias <String[]>] [-Force]
- [-PassThru] [-AsCustomObject] [-ArgumentList <Object[]>] [-DisableNameChecking] [-NoClobber]
- [-Scope <String>] -PSSession <PSSession> [<CommonParameters>]
+ [-SkipEditionCheck] [-PassThru] [-AsCustomObject] [-ArgumentList <Object[]>] [-DisableNameChecking]
+ [-NoClobber] [-Scope <String>] -PSSession <PSSession>  [<CommonParameters>]
+```
+
+### FullyQualifiedNameAndUseWindowsPowerShell
+
+```
+Import-Module [-FullyQualifiedName] <ModuleSpecification[]> -UseWindowsPowerShell [-Global]
+ [-Prefix <string>] [-Function <string[]>] [-Cmdlet <string[]>] [-Variable <string[]>]
+ [-Alias <string[]>] [-Force] [-PassThru] [-AsCustomObject] [-ArgumentList <Object[]>]
+ [-DisableNameChecking] [-NoClobber] [-Scope <string>] [<CommonParameters>]
 ```
 
 ### Assembly
 
 ```
 Import-Module [-Global] [-Prefix <String>] [-Assembly] <Assembly[]> [-Function <String[]>]
- [-Cmdlet <String[]>] [-Variable <String[]>] [-Alias <String[]>] [-Force] [-PassThru]
- [-AsCustomObject] [-ArgumentList <Object[]>] [-DisableNameChecking] [-NoClobber] [-Scope <String>]
- [<CommonParameters>]
+ [-Cmdlet <String[]>] [-Variable <String[]>] [-Alias <String[]>] [-Force] [-SkipEditionCheck]
+ [-PassThru] [-AsCustomObject] [-ArgumentList <Object[]>] [-DisableNameChecking] [-NoClobber]
+ [-Scope <String>]  [<CommonParameters>]
 ```
 
 ### ModuleInfo
 
 ```
 Import-Module [-Global] [-Prefix <String>] [-Function <String[]>] [-Cmdlet <String[]>]
- [-Variable <String[]>] [-Alias <String[]>] [-Force] [-PassThru] [-AsCustomObject]
- [-ModuleInfo] <PSModuleInfo[]> [-ArgumentList <Object[]>] [-DisableNameChecking] [-NoClobber]
- [-Scope <String>] [<CommonParameters>]
+ [-Variable <String[]>] [-Alias <String[]>] [-Force] [-SkipEditionCheck] [-PassThru]
+ [-AsCustomObject] [-ModuleInfo] <PSModuleInfo[]> [-ArgumentList <Object[]>] [-DisableNameChecking]
+ [-NoClobber] [-Scope <String>]  [<CommonParameters>]
 ```
 
 ## BESCHRIJVING
@@ -687,7 +706,7 @@ Hiermee geeft u de volledig gekwalificeerde naam van de module op als een hash-t
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.ModuleSpecification[]
-Parameter Sets: FullyQualifiedName, FullyQualifiedNameAndPSSession
+Parameter Sets: FullyQualifiedName, FullyQualifiedNameAndPSSession, FullyQualifiedNameAndWinCompat
 Aliases:
 
 Required: True
@@ -747,7 +766,7 @@ Hiermee geeft u een maximum versie op. Met deze cmdlet wordt alleen een versie v
 
 ```yaml
 Type: System.String
-Parameter Sets: Name, PSSession, CimSession
+Parameter Sets: Name, PSSession, CimSession, WinCompat
 Aliases:
 
 Required: False
@@ -767,7 +786,7 @@ Deze para meter is geïntroduceerd in Windows Power Shell 3,0.
 
 ```yaml
 Type: System.Version
-Parameter Sets: Name, PSSession, CimSession
+Parameter Sets: Name, PSSession, CimSession, WinCompat
 Aliases: Version
 
 Required: False
@@ -806,7 +825,7 @@ Geef waar mogelijk alleen de module naam op. Wanneer u een bestands naam opgeeft
 
 ```yaml
 Type: System.String[]
-Parameter Sets: Name, PSSession, CimSession
+Parameter Sets: Name, PSSession, CimSession, WinCompat
 Aliases:
 
 Required: True
@@ -912,7 +931,7 @@ Scripts die gebruikmaken van **RequiredVersion** om modules te importeren die zi
 
 ```yaml
 Type: System.Version
-Parameter Sets: Name, PSSession, CimSession
+Parameter Sets: Name, PSSession, CimSession, WinCompat
 Aliases:
 
 Required: False
@@ -972,7 +991,49 @@ Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
+### -SkipEditionCheck
+
+Hiermee wordt de selectie van het `CompatiblePSEditions` veld overgeslagen.
+
+Hiermee kunt u een module laden vanuit de `"$($env:windir)\System32\WindowsPowerShell\v1.0\Modules"` module directory in Power shell Core wanneer die module niet `Core` in het `CompatiblePSEditions` manifest veld is opgegeven.
+
+Bij het importeren van een module vanuit een ander pad heeft deze switch niets omdat de controle niet wordt uitgevoerd. In Linux en macOS heeft deze switch niets.
+
+Zie [about_PowerShell_Editions](About/about_PowerShell_Editions.md)voor meer informatie.
+
+> [!WARNING]
+> `Import-Module -SkipEditionCheck` is het waarschijnlijk dat een module niet kan worden geïmporteerd. Zelfs als de functie slaagt, kan het aanroepen van een opdracht uit de module later mislukken wanneer er een incompatibele API wordt gebruikt.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: Name, PSSession, CimSession, FullyQualifiedName, FullyQualifiedNameAndPSSession, Assembly, ModuleInfo
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UseWindowsPowerShell
+
+Laadt een module met Windows Power shell-compatibiliteits functionaliteit. Zie [about_Windows_PowerShell_Compatibility](About/about_Windows_PowerShell_Compatibility.md) voor meer informatie.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: WinCompat, FullyQualifiedNameAndWinCompat
+Aliases: UseWinPS
+
+Required: True
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### CommonParameters
+
 Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable. Zie [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)voor meer informatie.
 
 ## INVOER
@@ -1039,3 +1100,5 @@ U kunt een module naam, module object of Assembly-object door sluizen naar deze 
 [New-module](New-Module.md)
 
 [Remove-module](Remove-Module.md)
+
+[about_PowerShell_Editions](About/about_PowerShell_Editions.md)
