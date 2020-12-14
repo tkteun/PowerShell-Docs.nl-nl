@@ -126,7 +126,7 @@
           href: whats-new/what-s-new-in-powershell-71.md
         - name: Wat is er nieuw in PowerShell 7.0?
           href: whats-new/what-s-new-in-powershell-70.md
-    - name: Wat is er nieuw in PowerShell Core 6.x?
+    - name: Opmerkingen bij de release van PowerShell Core 6.x
       items:
         - name: Wat is er nieuw in PowerShell Core 6.2?
           href: whats-new/what-s-new-in-powershell-core-62.md
@@ -590,8 +590,6 @@
           href: community/contributing/pull-requests.md
         - name: Stijlgids voor PowerShell-documentatie
           href: community/contributing/powershell-style-guide.md
-        - name: Naslaginformatie voor cmdlets bewerken
-          href: community/contributing/editing-cmdlet-ref.md
         - name: Aanvullende bronnen
           items:
             - name: Redactionele controlelijst
