@@ -2,28 +2,28 @@
 description: PSReadLine biedt een verbeterde opdracht regel bewerkings ervaring in de Power shell-console.
 keywords: powershell
 Locale: en-US
-ms.date: 02/10/2020
+ms.date: 11/16/2020
 online version: https://docs.microsoft.com/powershell/module/psreadline/about/about_psreadline?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Over PSReadLine
-ms.openlocfilehash: 1188b8dc0b4099a7c1dcc472e3b02c2d4fa908bc
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 6d52bb04118914a9ccca5d3442a9d1915c1c2818
+ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93252131"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94692272"
 ---
 # <a name="psreadline"></a>PSReadLine
 
 ## <a name="about_psreadline"></a>about_PSReadLine
 
-## <a name="short-description"></a>KORTE BESCHRIJVING
+## <a name="short-description"></a>Korte beschrijving
 
 PSReadLine biedt een verbeterde opdracht regel bewerkings ervaring in de Power shell-console.
 
-## <a name="long-description"></a>LANGE BESCHRIJVING
+## <a name="long-description"></a>Lange beschrijving
 
-PSReadLine 2,0 biedt een krachtige opdracht regel voor het bewerken van de Power shell-console. De oplossing biedt het volgende:
+PSReadLine 2,1 biedt een krachtige opdracht regel voor het bewerken van de Power shell-console. De oplossing biedt het volgende:
 
 - Syntaxis kleur van de opdracht regel
 - Een visuele indicatie van syntaxis fouten
@@ -34,11 +34,41 @@ PSReadLine 2,0 biedt een krachtige opdracht regel voor het bewerken van de Power
 - Bash-stijl voltooiing (optioneel in CMD-modus, standaard in Emacs-modus)
 - Emacs Yank/Kill-ring
 - "Woord" verplaatsing en afsluiten op basis van Power shell-tokens
+- Voorspellende IntelliSense
 
-De volgende functies zijn beschikbaar in de klasse **[micro soft. Power shell. PSConsoleReadLine]**.
+PSReadLine vereist Power Shell 3,0, of nieuwer, en de console-host. Het werkt niet in Power shell ISE. Het werkt in de console van Visual Studio code.
+
+PSReadLine 2.1.0 wordt geleverd met Power shell 7,1 en wordt ondersteund in alle ondersteunde versies van Power shell. Het is beschikbaar om te installeren via de PowerShell Gallery.
+Voer de volgende opdracht uit om PSReadLine 2.1.0 in een ondersteunde versie van Power shell te installeren.
+
+```powershell
+Install-Module -Name PSReadLine -RequiredVersion 2.1.0
+```
 
 > [!NOTE]
 > Vanaf Power shell 7,0 wordt het automatisch laden van PSReadLine in Windows overs Laan als er een scherm lezer wordt gedetecteerd. Op dit moment werkt PSReadLine niet goed met scherm lezers. De standaard weergave en opmaak van Power shell 7,0 in Windows werkt op de juiste manier. U kunt de module hand matig laden, indien nodig.
+
+## <a name="predictive-intellisense"></a>Voorspellende IntelliSense
+
+Voorspellende IntelliSense is een aanvulling op het concept van tabblad voltooiing waarmee de gebruiker wordt geholpen bij het volt ooien van opdrachten. Hiermee kunnen gebruikers volledige opdrachten detecteren, bewerken en uitvoeren op basis van overeenkomende voor spellingen van de geschiedenis van de gebruiker en aanvullende toepassingsspecifieke invoeg toepassingen.
+
+### <a name="enable-predictive-intellisense"></a>Voorspellende IntelliSense inschakelen
+
+Voorspellende IntelliSense is standaard uitgeschakeld. Als u voor spellingen wilt inschakelen, voert u gewoon de volgende opdracht uit:
+
+```powershell
+Set-PSReadLineOption -PredictionSource History
+```
+
+De para meter **PredictionSource** kan ook invoeg toepassingen accepteren voor specifieke en aangepaste vereisten voor het domein.
+
+Als u voorspellende IntelliSense wilt uitschakelen, voert u de volgende handelingen uit:
+
+```powershell
+Set-PSReadLineOption -PredictionSource None
+```
+
+De volgende functies zijn beschikbaar in de klasse **[micro soft. Power shell. PSConsoleReadLine]**.
 
 ## <a name="basic-editing-functions"></a>Basis bewerkings functies
 
@@ -1104,6 +1134,24 @@ De huidige locatie van de cursor markeren voor gebruik in een volgende bewerking
 
 - Emacs: `<Ctrl+@>`
 
+## <a name="predictive-intellisense-functions"></a>Voorspellende IntelliSense-functies
+
+> [!NOTE]
+> Voorspellende IntelliSense moet zijn ingeschakeld om deze functies te kunnen gebruiken.
+
+### <a name="acceptnextwordsuggestion"></a>AcceptNextWordSuggestion
+
+Hiermee wordt het volgende woord van de inline suggestie geaccepteerd van voorspellende IntelliSense.
+Deze functie kan worden gebonden met <kbd>CTRL</kbd> + <kbd>F</kbd> door de volgende opdracht uit te voeren.
+
+```powershell
+Set-PSReadLineKeyHandler -Chord "Ctrl+f" -Function ForwardWord
+```
+
+### <a name="acceptsuggestion"></a>AcceptSuggestion
+
+Hiermee wordt de huidige inline suggestie van voorspellende IntelliSense geaccepteerd door op <kbd>RightArrow</kbd> te drukken wanneer de cursor zich aan het einde van de huidige regel bevindt.
+
 ## <a name="search-functions"></a>Zoek functies
 
 ### <a name="charactersearch"></a>CharacterSearch
@@ -1340,23 +1388,18 @@ Deze Help methode wordt gebruikt voor aangepaste bindingen die voldoen aan Digit
   [ref]$numericArg, 1)
 ```
 
-## <a name="note"></a>OPMERKING
+## <a name="note"></a>Notitie
 
-### <a name="powershell-compatibility"></a>COMPATIBILITEIT MET POWER SHELL
-
-PSReadLine vereist Power Shell 3,0, of nieuwer, en de console-host. Het werkt niet in Power shell ISE. Het werkt in de console van Visual Studio code.
-
-### <a name="command-history"></a>OPDRACHT GESCHIEDENIS
+### <a name="command-history"></a>Opdracht geschiedenis
 
 PSReadLine onderhoudt een geschiedenis bestand met alle opdrachten en gegevens die u hebt ingevoerd op de opdracht regel. Dit kan gevoelige gegevens bevatten, inclusief wacht woorden. Als u bijvoorbeeld de cmdlet gebruikt, `ConvertTo-SecureString` wordt het wacht woord in het geschiedenis bestand vastgelegd als tekst zonder opmaak. De geschiedenis bestanden zijn een bestand met de naam `$($host.Name)_history.txt` . Op Windows-systemen wordt het geschiedenis bestand opgeslagen op `$env:APPDATA\Microsoft\Windows\PowerShell\PSReadLine` . Op niet-Windows-systemen worden de geschiedenis bestanden opgeslagen in `$env:XDG_DATA_HOME/powershell/PSReadLine` of `$env:HOME/.local/share/powershell/PSReadLine` .
 
-### <a name="feedback--contributing-to-psreadline"></a>FEEDBACK & bijdragen aan PSReadLine
+### <a name="feedback--contributing-to-psreadline"></a>Feedback & bijdragen aan PSReadLine
 
 [PSReadLine op GitHub](https://github.com/PowerShell/PSReadLine)
 
 U kunt een pull-aanvraag verzenden of feedback verzenden op de pagina GitHub.
 
-## <a name="see-also"></a>ZIE OOK
+## <a name="see-also"></a>Zie ook
 
 PSReadLine wordt sterk beïnvloed door de GNU [readline](https://tiswww.case.edu/php/chet/readline/rltop.html) -bibliotheek.
-

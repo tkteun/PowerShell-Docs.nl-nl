@@ -2,26 +2,26 @@
 description: PSReadLine biedt een verbeterde opdracht regel bewerkings ervaring in de Power shell-console.
 keywords: powershell
 Locale: en-US
-ms.date: 02/10/2020
+ms.date: 11/16/2020
 online version: https://docs.microsoft.com/powershell/module/psreadline/about/about_psreadline?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Over PSReadLine
-ms.openlocfilehash: ad6e85a30f866cb332c89a4c36f42231f511f5ae
-ms.sourcegitcommit: ae8b89e12c6fa2108075888dd6da92788d6c2888
+ms.openlocfilehash: 25fc3a9a814728057b1ebc7e721d3fba84ae72c2
+ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "93253159"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94692306"
 ---
 # <a name="psreadline"></a>PSReadLine
 
 ## <a name="about_psreadline"></a>about_PSReadLine
 
-## <a name="short-description"></a>KORTE BESCHRIJVING
+## <a name="short-description"></a>Korte beschrijving
 
 PSReadLine biedt een verbeterde opdracht regel bewerkings ervaring in de Power shell-console.
 
-## <a name="long-description"></a>LANGE BESCHRIJVING
+## <a name="long-description"></a>Lange beschrijving
 
 PSReadLine 2,0 biedt een krachtige opdracht regel voor het bewerken van de Power shell-console. De oplossing biedt het volgende:
 
@@ -34,6 +34,8 @@ PSReadLine 2,0 biedt een krachtige opdracht regel voor het bewerken van de Power
 - Bash-stijl voltooiing (optioneel in CMD-modus, standaard in Emacs-modus)
 - Emacs Yank/Kill-ring
 - "Woord" verplaatsing en afsluiten op basis van Power shell-tokens
+
+PSReadLine vereist Power Shell 3,0, of nieuwer, en de console-host. Het werkt niet in Power shell ISE. Het werkt in de console van Visual Studio code.
 
 De volgende functies zijn beschikbaar in de klasse **[micro soft. Power shell. PSConsoleReadLine]**.
 
@@ -1284,22 +1286,18 @@ Deze Help methode wordt gebruikt voor aangepaste bindingen die voldoen aan Digit
   [ref]$numericArg, 1)
 ```
 
-## <a name="note"></a>OPMERKING
+## <a name="note"></a>Notitie
 
-### <a name="powershell-compatibility"></a>COMPATIBILITEIT MET POWER SHELL
-
-PSReadLine vereist Power Shell 3,0, of nieuwer, en de console-host. Het werkt niet in Power shell ISE. Het werkt in de console van Visual Studio code.
-
-### <a name="command-history"></a>OPDRACHT GESCHIEDENIS
+### <a name="command-history"></a>Opdracht geschiedenis
 
 PSReadLine onderhoudt een geschiedenis bestand met alle opdrachten en gegevens die u hebt ingevoerd op de opdracht regel. Dit kan gevoelige gegevens bevatten, inclusief wacht woorden. Als u bijvoorbeeld de cmdlet gebruikt, `ConvertTo-SecureString` wordt het wacht woord in het geschiedenis bestand vastgelegd als tekst zonder opmaak. De geschiedenis bestanden zijn een bestand met de naam `$($host.Name)_history.txt` . Op Windows-systemen wordt het geschiedenis bestand opgeslagen op `$env:APPDATA\Microsoft\Windows\PowerShell\PSReadLine` .
 
-### <a name="feedback--contributing-to-psreadline"></a>FEEDBACK & bijdragen aan PSReadLine
+### <a name="feedback--contributing-to-psreadline"></a>Feedback & bijdragen aan PSReadLine
 
 [PSReadLine op GitHub](https://github.com/PowerShell/PSReadLine)
 
 U kunt een pull-aanvraag verzenden of feedback verzenden op de pagina GitHub.
 
-## <a name="see-also"></a>ZIE OOK
+## <a name="see-also"></a>Zie ook
 
 PSReadLine wordt sterk beïnvloed door de GNU [readline](https://tiswww.case.edu/php/chet/readline/rltop.html) -bibliotheek.
