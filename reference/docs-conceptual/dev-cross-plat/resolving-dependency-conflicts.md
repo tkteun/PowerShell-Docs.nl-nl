@@ -3,12 +3,12 @@ title: Conflicten met de assembly-afhankelijkheden van Power shell-modules oplos
 description: Bij het schrijven van een binaire Power shell-module in C# is het natuurlijk om afhankelijkheden te maken met andere pakketten of bibliotheken om functionaliteit te bieden.
 ms.date: 06/25/2020
 ms.custom: rjmholt
-ms.openlocfilehash: 536bcfd1ced536faccde0d6c5bc483cdaf31ce68
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.openlocfilehash: 93bb39bdd440c7f97c27aa81e68f68331569b69e
+ms.sourcegitcommit: 2fc6ee49a70bda4c59135136bd5cc7782836a124
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87775166"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94810399"
 ---
 # <a name="resolving-powershell-module-assembly-dependency-conflicts"></a>Conflicten met de assembly-afhankelijkheden van Power shell-modules oplossen
 
@@ -500,7 +500,7 @@ namespace AlcModule.Cmdlets
 
         public AlcModuleAssemblyLoadContext(string dependencyDirPath)
         {
-            _depdendencyDirPath = dependencyDirPath;
+            _dependencyDirPath = dependencyDirPath;
         }
 
         protected override Assembly Load(AssemblyName assemblyName)
@@ -509,7 +509,7 @@ namespace AlcModule.Cmdlets
             // looking for an assembly of the given name
             // in the configured dependency directory
             string assemblyPath = Path.Combine(
-                s_dependencyDirPath,
+                _dependencyDirPath,
                 $"{assemblyName.Name}.dll");
 
             // The ALC must use inherited methods to load assemblies
@@ -872,7 +872,7 @@ Opnieuw, voor Power shell-modules, zijn dit de belangrijkste problemen:
 - De GAC is alleen van toepassing op .NET Framework, dus u kunt dit niet doen in Power shell 6 en hoger.
 - Het installeren van assembly's in de GAC is een wijziging van de status van de globale machine en kan neven effecten in andere toepassingen of andere modules veroorzaken. Het kan ook lastig zijn om goed te kunnen werken, zelfs als uw module de vereiste toegangs rechten heeft. Het verkrijgen van een probleem kan ernstige problemen met de hele machine veroorzaken in andere .NET-toepassingen.
 
-## <a name="further-reading"></a>Meer lezen
+## <a name="further-reading"></a>Meer informatie
 
 Er is nog veel meer informatie over de afhankelijkheids conflicten voor .NET-assembly-versies. Hier vindt u een aantal leuke plaatsen in de weg:
 

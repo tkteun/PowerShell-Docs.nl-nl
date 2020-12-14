@@ -3,19 +3,20 @@ ms.date: 07/29/2020
 keywords: powershell,cmdlet
 title: De Power shell-documentatie gebruiken
 description: In deze artikelen wordt uitgelegd hoe u de functies van deze site gebruikt, inclusief het filteren van zoeken en de versie selectie.
-ms.openlocfilehash: 32f0c613e10329cc4830386b744e766eeeab0187
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
+ms.openlocfilehash: b7e036fce0abb12f6c1ab4c0092784321a41a916
+ms.sourcegitcommit: 2fc6ee49a70bda4c59135136bd5cc7782836a124
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92501113"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94810297"
 ---
 # <a name="how-to-use-the-powershell-documentation"></a>De Power shell-documentatie gebruiken
 
 Welkom bij de online documentatie voor Power shell. Deze site bevat een cmdlet-verwijzing voor de volgende versies van Power shell:
 
-- PowerShell 7
-- Power shell 6
+- Power shell 7,2 (Prerelease)
+- Power shell 7,1 (actueel)
+- Power shell 7,0 (LTS)
 - PowerShell 5.1
 
 ## <a name="finding-articles-and-selecting-a-version"></a>Artikelen zoeken en een versie selecteren
@@ -51,5 +52,6 @@ Deze site bevat documentatie voor de volgende onderwerpen:
 - PowerShell 3.0
 - PowerShell 4.0
 - PowerShell 5.0
+- Power shell 6
 - Power shell-werk stromen
 - Power shell-webtoegang

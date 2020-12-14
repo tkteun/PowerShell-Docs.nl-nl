@@ -2,12 +2,12 @@
 title: Levenscyclus voor ondersteuning van PowerShell Core
 description: Details van de beleids regels die ondersteuning bieden voor Power shell
 ms.date: 11/11/2020
-ms.openlocfilehash: 16b5480a0aecdd4b069d78372e09e04d1451eba6
-ms.sourcegitcommit: cbbb7a804155345ccac983ccc1009ccb5e223e25
+ms.openlocfilehash: f2a1df0fabdfb624db666d240172930dc60f1bfe
+ms.sourcegitcommit: 2fc6ee49a70bda4c59135136bd5cc7782836a124
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94550278"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94810382"
 ---
 # <a name="powershell-support-lifecycle"></a>Levens cyclus van Power Shell-ondersteuning
 
@@ -54,20 +54,18 @@ Platforms die worden vermeld als `Experimental` niet officieel worden ondersteun
 | Red Hat Enterprise Linux 7                        |   Ondersteund   |   Ondersteund   |
 | Red Hat Enterprise Linux 8                        |   Ondersteund   |   Ondersteund   |
 | Fedora 31 +                                        |   Ondersteund   | Niet ondersteund |
-| Alpine 3,10                                       |   Zie opmerking    | Niet ondersteund |
-| Alpiene 3.11 +                                      |   Zie opmerking    |   Zie opmerking    |
+| Alpine 3,10                                       |   Zie opmerking 1  | Niet ondersteund |
+| Alpiene 3.11 +                                      |   Zie opmerking 1  |   Zie opmerking 1  |
 | macOS 10.13 +                                      |   Ondersteund   |   Ondersteund   |
 | Arch                                              |   Community   |   Community   |
 | Raspbian                                          |   Community   |   Community   |
 | Kali                                              |   Community   |   Community   |
 | AppImage (werkt op meerdere Linux-platforms)      |   Community   |   Community   |
-| [Snap-pakket](https://snapcraft.io/powershell)   |   Zie opmerking    |   Zie opmerking    |
+| [Snap-pakket](https://snapcraft.io/powershell)   |   Zie opmerking 2  |   Zie opmerking    |
 
 > [!NOTE]
-> Snap-pakketten worden hetzelfde ondersteund als de distributie waarmee u het pakket uitvoert.
-
-> [!NOTE]
-> CIM, externe communicatie van Power shell en DSC worden niet ondersteund in Alpine.
+> - 1-CIM, externe communicatie van Power shell en DSC worden niet ondersteund in Alpine.
+> - 2-snap-pakketten worden hetzelfde ondersteund als de distributie waarmee u het pakket uitvoert.
 
 ## <a name="powershell-releases-end-of-life"></a>Release van Power shell is geëindigd
 
@@ -96,7 +94,7 @@ De distributie-eigen aren hebben daarom de volgende versies gestopt en worden ni
 | -------------- | :-----: | ---------------------------------------------------------------------------------------------------------------------------- |
 | Debian         |    8    | [Juni 2018](https://lists.debian.org/debian-security-announce/2018/msg00132.html)                                            |
 | Fedora         |   24    | [Augustus 2017](https://fedoramagazine.org/fedora-24-eol/)                                                                     |
-| Fedora         |   25    | [december 2017](https://fedoramagazine.org/fedora-25-end-life/)                                                              |
+| Fedora         |   25    | [December 2017](https://fedoramagazine.org/fedora-25-end-life/)                                                              |
 | Fedora         |   26    | [Mei 2018](https://fedoramagazine.org/fedora-26-end-life/)                                                                   |
 | Fedora         |   27    | [November 2018](https://fedoramagazine.org/fedora-27-end-of-life/)                                                           |
 | Fedora         |   28    | [Mei 2019](https://fedoramagazine.org/fedora-28-end-of-life/)                                                                |
