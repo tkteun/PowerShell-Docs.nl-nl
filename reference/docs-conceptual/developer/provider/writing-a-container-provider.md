@@ -4,10 +4,10 @@ ms.topic: reference
 title: Een containerprovider schrijven
 description: Een containerprovider schrijven
 ms.openlocfilehash: 17ec3e11258ee77a8e569df1af3a0e9bcd9798b6
-ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "93354929"
 ---
 # <a name="writing-a-container-provider"></a>Een containerprovider schrijven

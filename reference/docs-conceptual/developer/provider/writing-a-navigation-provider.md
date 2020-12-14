@@ -4,10 +4,10 @@ ms.topic: reference
 title: Een navigatieprovider schrijven
 description: Een navigatieprovider schrijven
 ms.openlocfilehash: 3123672d3365c97714557bd0e72a6e444ac228a0
-ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "93355218"
 ---
 # <a name="writing-a-navigation-provider"></a>Een navigatieprovider schrijven

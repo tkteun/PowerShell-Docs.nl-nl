@@ -4,10 +4,10 @@ ms.topic: reference
 title: Invoertypen toevoegen aan een Help-onderwerp voor cmdlets
 description: Invoertypen toevoegen aan een Help-onderwerp voor cmdlets
 ms.openlocfilehash: f2ad87c54230bcdd7e0ea708e9a1869daef7495f
-ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "94391099"
 ---
 # <a name="how-to-add-input-types-to-a-cmdlet-help-topic"></a>Invoertypen toevoegen aan een Help-onderwerp voor cmdlets

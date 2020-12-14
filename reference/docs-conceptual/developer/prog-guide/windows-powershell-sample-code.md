@@ -4,10 +4,10 @@ ms.topic: reference
 title: Windows PowerShell-voorbeeldcode
 description: Windows PowerShell-voorbeeldcode
 ms.openlocfilehash: da916fa3557f44ecc9126ecef38235109aa391ec
-ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "94390130"
 ---
 # <a name="windows-powershell-sample-code"></a>Windows PowerShell-voorbeeldcode
@@ -19,7 +19,7 @@ Windows Power shell-voor &reg; beelden zijn beschikbaar via de Windows SDK. Deze
 
 ## <a name="sample-code-listing"></a>Voorbeeld code weer geven
 
-|                                    Voorbeeldcode                                    |                                                                                                                                           Beschrijving                                                                                                                                           |
+|                                    Voorbeeldcode                                    |                                                                                                                                           Description                                                                                                                                           |
 | --------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [AccessDbProviderSample01-codevoorbeeld](./accessdbprovidersample01-code-sample.md) | Dit is de provider die wordt beschreven in [een eenvoudige Windows Power shell-provider maken](./creating-a-basic-windows-powershell-provider.md).                                                                                                                                                            |
 | [AccessDBProviderSample02-codevoorbeeld](./accessdbprovidersample02-code-sample.md) | Dit is de provider die wordt beschreven in [een Windows Power shell-schijf provider maken](./creating-a-windows-powershell-drive-provider.md).                                                                                                                                                            |

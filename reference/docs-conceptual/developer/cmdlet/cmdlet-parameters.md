@@ -4,15 +4,15 @@ ms.topic: reference
 title: Cmdlet-parameters
 description: Cmdlet-parameters
 ms.openlocfilehash: 1ab495cb674f6b2cd769c3f64d899aec67704216
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92668266"
 ---
 # <a name="cmdlet-parameters"></a>Cmdlet-parameters
 
-Cmdlet-para meters bieden het mechanisme waarmee een cmdlet invoer kan accepteren. Para meters kunnen rechtstreeks invoer accepteren vanaf de opdracht regel of vanuit objecten die zijn door gegeven aan de cmdlet via de pijp lijn. de argumenten (ook wel aangeduid als *waarden* ) van deze para meters kunnen de invoer opgeven die de cmdlet accepteert, hoe de cmdlet de acties moet uitvoeren en de gegevens die de cmdlet retourneert naar de pijp lijn.
+Cmdlet-para meters bieden het mechanisme waarmee een cmdlet invoer kan accepteren. Para meters kunnen rechtstreeks invoer accepteren vanaf de opdracht regel of vanuit objecten die zijn door gegeven aan de cmdlet via de pijp lijn. de argumenten (ook wel aangeduid als *waarden*) van deze para meters kunnen de invoer opgeven die de cmdlet accepteert, hoe de cmdlet de acties moet uitvoeren en de gegevens die de cmdlet retourneert naar de pijp lijn.
 
 ## <a name="in-this-section"></a>In deze sectie
 

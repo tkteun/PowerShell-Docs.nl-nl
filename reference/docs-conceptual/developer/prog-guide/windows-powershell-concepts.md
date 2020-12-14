@@ -4,17 +4,17 @@ ms.topic: reference
 title: Windows PowerShell-concepten
 description: Windows PowerShell-concepten
 ms.openlocfilehash: a9b88a2e575b7ff7c036ce0fcbc035f0b55d0f5f
-ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "93355355"
 ---
 # <a name="windows-powershell-concepts"></a>Windows PowerShell-concepten
 
 Deze sectie bevat conceptuele informatie die u helpt bij het begrijpen van Power shell vanuit het gezichts punt van een ontwikkelaar.
 
-|Onderwerpnaam|Beschrijving|
+|Onderwerpnaam|Description|
 |----------------|-----------------|
 |[about_Objects](/powershell/module/microsoft.powershell.core/about/about_objects)|Beschrijving van Power shell-objecten. Zie [informatie over het maken van objecten](/powershell/module/microsoft.powershell.core/about/about_object_creation) voor meer informatie.|
 |[Runspaces maken](../hosting/creating-runspaces.md)|De besturings omgevingen waarin opdrachten worden verwerkt. Zie de [klasse runs Pace](/dotnet/api/system.management.automation.runspaces.runspace)voor meer informatie.|

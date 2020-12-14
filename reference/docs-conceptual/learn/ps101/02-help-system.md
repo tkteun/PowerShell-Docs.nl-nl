@@ -6,10 +6,10 @@ ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
 ms.openlocfilehash: dcaa6c990e2fdf5e6cca69ca596680310940817f
-ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "94391422"
 ---
 # <a name="chapter-2---the-help-system"></a>Hoofd stuk 2: het Help-systeem
@@ -434,7 +434,7 @@ Cmdlet          Wait-Process                                       3.1.0.0    Mi
 
 In het vorige voor beeld waar `Get-Command` is uitgevoerd, wordt de para meter **zelfstandig** gebruikt en `Process` wordt deze opgegeven als de waarde voor de para meter **zelfstandig** . Wat als u niet weet hoe u de cmdlet moet gebruiken `Get-Command` ? U kunt gebruiken `Get-Help` om het Help-onderwerp voor weer te geven `Get-Command` .
 
-De para meters **name** , zelfstandig naam **woord** en **Verb** accepteren joker tekens. In het volgende voor beeld ziet u Joker tekens die worden gebruikt met de para meter **name** :
+De para meters **name**, zelfstandig naam **woord** en **Verb** accepteren joker tekens. In het volgende voor beeld ziet u Joker tekens die worden gebruikt met de para meter **name** :
 
 ```Output
 Get-Command -Name *service*

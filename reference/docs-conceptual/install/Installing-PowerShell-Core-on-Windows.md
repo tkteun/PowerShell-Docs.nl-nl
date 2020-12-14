@@ -2,12 +2,12 @@
 title: PowerShell installeren in Windows
 description: Informatie over het installeren van Power shell in Windows
 ms.date: 11/11/2020
-ms.openlocfilehash: 8f8fe7f186488775ea9afa22a63fee95390e2545
-ms.sourcegitcommit: aac365f7813756e16b59322832a904e703e0465b
+ms.openlocfilehash: 039db904a315bd3ad3f4e1358d414c98c3a84be5
+ms.sourcegitcommit: 7f712e12ec5b3f3f3e695da804b050ea0ce58b3a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94524459"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94661423"
 ---
 # <a name="installing-powershell-on-windows"></a>PowerShell installeren in Windows
 
@@ -79,36 +79,9 @@ Vanaf Power shell 7,1 maakt het MSI-pakket register sleutels waarin de installat
 
 Dit kan worden gebruikt door beheerders en ontwikkel aars om het pad naar Power shell te vinden. De `<GUID>` waarden zijn hetzelfde voor alle versies van de preview-versie en secundaire versies. De `<GUID>` waarden voor elke grote release worden gewijzigd.
 
-## <a name="installing-from-the-microsoft-store"></a><a id="msix" />Installeren vanuit de Microsoft Store
-
-Power shell 7,1 is gepubliceerd op de Microsoft Store. U kunt de Power shell-release vinden op de [Microsoft Store](https://www.microsoft.com/store/apps/9MZ1SNWT0N5D) website of in de Store-toepassing in Windows.
-
-Voor delen van het Microsoft Store-pakket:
-
-- Automatische updates zijn direct in Windows 10 ingebouwd
-- Kan worden geïntegreerd met andere software distributie mechanismen, zoals intune en SCCM
-
-> [!NOTE]
-> Alle configuratie-instellingen op systeem niveau die zijn opgeslagen in, `$PSHOME` kunnen niet worden gewijzigd. Dit omvat de WSMAN-configuratie. Hiermee voor komt u dat externe sessies verbinding maken met op opslag gebaseerde installaties van Power shell. Configuraties op gebruikers niveau en externe SSH-communicatie worden ondersteund.
-
-### <a name="using-the-msix-package"></a>Het MSIX-pakket gebruiken
-
-> [!NOTE]
-> De preview-builds van Power shell bevatten een MSIX-pakket. Het MSIX-pakket wordt niet officieel ondersteund. We blijven het pakket alleen voor interne test doeleinden bouwen.
-
-Als u het MSIX-pakket hand matig wilt installeren op een Windows 10-client, downloadt u het MSIX-pakket van[onze pagina] [met releases van github.] Schuif omlaag naar de sectie **assets** van de release die u wilt installeren. De sectie assets kan worden samengevouwen, dus u moet mogelijk op klikken om deze uit te vouwen.
-
-Het MSIX-bestand ziet er als volgt uit: `PowerShell-<version>-win-<os-arch>.msix`
-
-Als u het pakket wilt installeren, moet u de `Add-AppxPackage` cmdlet gebruiken.
-
-```powershell
-Add-AppxPackage PowerShell-<version>-win-<os-arch>.msix
-```
-
 ## <a name="installing-the-zip-package"></a><a id="zip" />Het ZIP-pakket installeren
 
-Binaire ZIP-archieven van Power shell zijn beschikbaar om geavanceerde implementatie scenario's mogelijk te maken. Down load een van de volgende ZIP-archieven [op de pagina release releases][releases] .
+Binaire ZIP-archieven van Power shell zijn beschikbaar om geavanceerde implementatie scenario's mogelijk te maken. Down load een van de volgende ZIP-archieven [op de pagina release releases][] .
 
 - PowerShell-7.1.0-win-x64.zip
 - PowerShell-7.1.0-win-x86.zip
@@ -262,6 +235,39 @@ De volgende opdrachten kunnen worden gebruikt om Power shell te installeren met 
    winget install --name PowerShell --exact
    winget install --name PowerShell-Preview --exact
    ```
+
+## <a name="installing-from-the-microsoft-store"></a><a id="msix" />Installeren vanuit de Microsoft Store
+
+Power shell 7,1 is gepubliceerd op de Microsoft Store. U kunt de Power shell-release vinden op de [Microsoft Store](https://www.microsoft.com/store/apps/9MZ1SNWT0N5D) website of in de Store-toepassing in Windows.
+
+Voor delen van het Microsoft Store-pakket:
+
+- Automatische updates zijn direct in Windows 10 ingebouwd
+- Kan worden geïntegreerd met andere software distributie mechanismen, zoals intune en SCCM
+
+Beperkingen:
+
+MSIX-pakketten worden uitgevoerd in een sandbox voor toepassingen waarmee de toegang tot bepaalde bestands systeem-en register locaties wordt gevirtualeerd.
+
+- Alle register wijzigingen onder HKEY_CURRENT_USER worden bij het schrijven naar een persoonlijke, per gebruiker per app-locatie gekopieerd. Daarom zijn deze waarden niet beschikbaar voor andere toepassingen.
+- Alle configuratie-instellingen op systeem niveau die zijn opgeslagen in, `$PSHOME` kunnen niet worden gewijzigd. Dit omvat de WSMAN-configuratie. Hiermee voor komt u dat externe sessies verbinding maken met op opslag gebaseerde installaties van Power shell. Configuraties op gebruikers niveau en externe SSH-communicatie worden ondersteund.
+
+Zie [hoe verpakte bureau blad-apps worden uitgevoerd in Windows](/windows/msix/desktop/desktop-to-uwp-behind-the-scenes)voor meer informatie.
+
+### <a name="using-the-msix-package"></a>Het MSIX-pakket gebruiken
+
+> [!NOTE]
+> De preview-builds van Power shell bevatten een MSIX-pakket. Het MSIX-pakket wordt niet officieel ondersteund. Het pakket is gebouwd voor test doeleinden tijdens de preview-periode.
+
+Als u het MSIX-pakket hand matig wilt installeren op een Windows 10-client, downloadt u het MSIX-pakket van[onze pagina] [met releases van github.] Schuif omlaag naar de sectie **assets** van de release die u wilt installeren. De sectie assets kan worden samengevouwen, dus u moet mogelijk op klikken om deze uit te vouwen.
+
+Het MSIX-bestand ziet er als volgt uit: `PowerShell-<version>-win-<os-arch>.msix`
+
+Als u het pakket wilt installeren, moet u de `Add-AppxPackage` cmdlet gebruiken.
+
+```powershell
+Add-AppxPackage PowerShell-<version>-win-<os-arch>.msix
+```
 
 ## <a name="how-to-create-a-remoting-endpoint"></a>Een extern eind punt maken
 

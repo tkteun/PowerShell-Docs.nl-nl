@@ -4,10 +4,10 @@ ms.topic: reference
 title: Voorbeeld Events01
 description: Voorbeeld Events01
 ms.openlocfilehash: ed8b7903537504609602e27693351847d322f904
-ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "94390402"
 ---
 # <a name="events01-sample"></a>Voorbeeld Events01

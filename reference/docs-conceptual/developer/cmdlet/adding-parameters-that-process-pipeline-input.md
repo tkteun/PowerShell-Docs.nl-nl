@@ -4,10 +4,10 @@ ms.topic: reference
 title: Parameters toevoegen die pijplijninvoer verwerken
 description: Parameters toevoegen die pijplijninvoer verwerken
 ms.openlocfilehash: b150d5be93207d9c010a6d2d4de901b4526f1d79
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92668351"
 ---
 # <a name="adding-parameters-that-process-pipeline-input"></a>Parameters toevoegen die pijplijninvoer verwerken

@@ -4,10 +4,10 @@ keywords: powershell,cmdlet
 title: Externe opdrachten uitvoeren
 description: Hierin worden de methoden beschreven voor het uitvoeren van opdrachten op externe systemen met behulp van Power shell.
 ms.openlocfilehash: cff18a4f51c3ed8e3ed2c1f35862a88911e7ceb5
-ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "94391405"
 ---
 # <a name="running-remote-commands"></a>Externe opdrachten uitvoeren

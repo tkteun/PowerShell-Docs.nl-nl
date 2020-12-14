@@ -4,10 +4,10 @@ ms.topic: reference
 title: Naslaginformatie over Windows PowerShell
 description: Naslaginformatie over Windows PowerShell
 ms.openlocfilehash: 9c1547ac5ec5134c99aa9213e6aaca1af8d5b3e9
-ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "94390232"
 ---
 # <a name="windows-powershell-reference"></a>Naslaginformatie over Windows PowerShell

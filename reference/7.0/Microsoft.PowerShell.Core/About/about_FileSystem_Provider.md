@@ -2,16 +2,16 @@
 description: Bestandssysteem
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 06/18/2019
+ms.date: 11/13/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_filesystem_provider?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Bestandssysteem provider
-ms.openlocfilehash: fad55a7fb7651dbb006e1765c513bf2546a73891
-ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
+ms.openlocfilehash: 085d714fce8475dd3eeee656d1cd17db02e772a6
+ms.sourcegitcommit: 7f712e12ec5b3f3f3e695da804b050ea0ce58b3a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94390827"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94661389"
 ---
 # <a name="filesystem-provider"></a>Bestandssysteem provider
 
@@ -25,7 +25,7 @@ Bestandssysteem
 
 ## <a name="capabilities"></a>Functies
 
-**Filteren** , **ShouldProcess**
+**Filteren**, **ShouldProcess**
 
 ## <a name="short-description"></a>Korte beschrijving
 
@@ -35,12 +35,12 @@ Biedt toegang tot bestanden en mappen.
 
 Met de Power shell- **bestandssysteem** provider kunt u bestanden en mappen in Power shell ophalen, toevoegen, wijzigen, wissen en verwijderen.
 
-De **bestandssysteem** stations zijn een hiërarchische naam ruimte die de mappen en bestanden op uw computer bevat. Een **bestandssysteem** station kan een logisch of phsyical station, een directory of een toegewezen netwerk share zijn.
+De **bestandssysteem** stations zijn een hiërarchische naam ruimte die de mappen en bestanden op uw computer bevat. Een **bestandssysteem** station kan een logisch of fysiek station, een map of een toegewezen netwerk share zijn.
 
 Een station `TEMP:` met de naam wordt toegewezen aan het tijdelijke mappad van de gebruiker.
 
 >[!NOTE]
-> Inhoud in het station TEMP: wordt niet automatisch verwijderd door Power shell en is de gebruiker of het besturings systeem dat u wilt beheren.
+> Inhoud in het station TEMP: wordt niet automatisch verwijderd door Power shell en is de gebruiker of het besturings systeem dat u wilt beheren. Deze functie is verplaatst uit experimentele functies in Power shell versie 7,0
 
 De **bestandssysteem** provider ondersteunt de volgende cmdlets, die in dit artikel worden besproken.
 
@@ -65,11 +65,11 @@ De **bestandssysteem** provider ondersteunt de volgende cmdlets, die in dit arti
 
 ## <a name="types-exposed-by-this-provider"></a>Typen die door deze provider worden weer gegeven
 
-De bestanden zijn exemplaren van de klasse [System. io. file info](/dotnet/api/system.io.fileinfo) .  Directory's zijn exemplaren van de klasse [System. io. DirectoryInfo](/dotnet/api/system.io.directoryinfo) .
+De bestanden zijn exemplaren van de klasse [System. io. file info](/dotnet/api/system.io.fileinfo) . Directory's zijn exemplaren van de klasse [System. io. DirectoryInfo](/dotnet/api/system.io.directoryinfo) .
 
 ## <a name="navigating-the-filesystem-drives"></a>Navigeren door de bestandssysteem stations
 
-De gegevens archieven van het **Bestands systeem** worden weer gegeven door logische stations op de computer toe te wijzen als Power Shell-stations. Als u wilt werken met een **bestandssysteem** station, kunt u uw locatie wijzigen in een station gifte de naam van het station gevolgd door een dubbele punt ( `:` ).
+De gegevens archieven van het **Bestands systeem** worden weer gegeven door logische stations op de computer toe te wijzen als Power Shell-stations. Als u wilt werken met een **bestandssysteem** station, kunt u uw locatie wijzigen in een station met behulp van de stationsnaam gevolgd door een dubbele punt ( `:` ).
 
 ```powershell
 Set-Location C:
@@ -340,18 +340,18 @@ Dynamische para meters zijn cmdlet-para meters die worden toegevoegd door een Po
 
 Hiermee geeft u de bestands codering. De standaard waarde is ASCII.
 
-- **ASCII** : gebruikt de code ring voor de ASCII-tekenset (7-bits).
-- **BigEndianUnicode** : codeert in UTF-16-indeling met behulp van de byte volgorde big endian.
-- **Teken reeks** : maakt gebruik van het coderings type voor een teken reeks.
-- **Unicode** : wordt gecodeerd in UTF-16-indeling met behulp van de byte volgorde little endian.
-- **UTF7** : wordt gecodeerd in de indeling UTF-7.
-- **Utf8** : gecodeerd in UTF-8-indeling.
-- **UTF8BOM** : coderen in UTF-8-indeling met byte order Mark (bom)
-- **UF8NOBOM** : code ring in UTF-8-indeling zonder byte order Mark (bom)
-- **UTF32** : code ring in UTF-32-indeling.
-- **Standaard** : Codeer in de standaard pagina met geïnstalleerde codes.
-- **OEM** : gebruikt de standaard codering voor MS-DOS-en console-Program ma's.
-- **Onbekend** : het coderings type is onbekend of ongeldig. De gegevens kunnen worden behandeld als binair.
+- **ASCII**: gebruikt de code ring voor de ASCII-tekenset (7-bits).
+- **BigEndianUnicode**: codeert in UTF-16-indeling met behulp van de byte volgorde big endian.
+- **Teken reeks**: maakt gebruik van het coderings type voor een teken reeks.
+- **Unicode**: wordt gecodeerd in UTF-16-indeling met behulp van de byte volgorde little endian.
+- **UTF7**: wordt gecodeerd in de indeling UTF-7.
+- **Utf8**: gecodeerd in UTF-8-indeling.
+- **UTF8BOM**: coderen in UTF-8-indeling met byte order Mark (bom)
+- **UF8NOBOM**: code ring in UTF-8-indeling zonder byte order Mark (bom)
+- **UTF32**: code ring in UTF-32-indeling.
+- **Standaard**: Codeer in de standaard pagina met geïnstalleerde codes.
+- **OEM**: gebruikt de standaard codering voor MS-DOS-en console-Program ma's.
+- **Onbekend**: het coderings type is onbekend of ongeldig. De gegevens kunnen worden behandeld als binair.
 
 #### <a name="cmdlets-supported"></a>Ondersteunde cmdlets
 
@@ -564,6 +564,6 @@ Get-Help Get-ChildItem
 Get-Help Get-ChildItem -Path c:
 ```
 
-## <a name="see-also"></a>Zie tevens
+## <a name="see-also"></a>Zie ook
 
 [about_Providers](../About/about_Providers.md)

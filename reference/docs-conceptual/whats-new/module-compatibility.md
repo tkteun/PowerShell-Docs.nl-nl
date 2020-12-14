@@ -2,12 +2,12 @@
 title: Compatibiliteit met Power shell 7-module
 ms.date: 02/03/2020
 description: Dit artikel geeft een overzicht van de status van Power shell 7 met Power shell-modules die zijn gepubliceerd voor andere micro soft-producten.
-ms.openlocfilehash: f845b33881c93fa076d97adf101f4f3e006df73b
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
+ms.openlocfilehash: 718ba0f502a23bc2c2a9268d65d3b8129de0af49
+ms.sourcegitcommit: 7f712e12ec5b3f3f3e695da804b050ea0ce58b3a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92501623"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94661372"
 ---
 # <a name="powershell-7-module-compatibility"></a>Compatibiliteit met Power shell 7-module
 
@@ -67,7 +67,7 @@ In Windows 10 worden de Windows-beheer modules beschikbaar gesteld als **optione
 
 ### <a name="module-list"></a>Module lijst
 
-| Module naam                        | Status                               | Ondersteund besturings systeem                       |
+| Modulenaam                        | Status                               | Ondersteund besturings systeem                       |
 | ---------------------------------- | ------------------------------------ | ---------------------------------- |
 | Active Directory                    | Systeem eigen compatibel                  | Windows Server 1809 + met RSAT-AD-Power shell<br>Windows 10 1809 + met RSAT. ActiveDirectory. DS-LDS. tools |
 | ADDSDeployment                     | Werkt met compatibiliteit slaag       |  Windows Server 2019 1809 +         |
@@ -75,7 +75,7 @@ In Windows 10 worden de Windows-beheer modules beschikbaar gesteld als **optione
 | AppBackgroundTask                  | Systeem eigen compatibel                  | Windows 10 1903 +                   |
 | AppLocker                          | Niet getest met compatibiliteit slaag    |                                    |
 | AppvClient                         | Niet getest met compatibiliteit slaag    |                                    |
-| Appx                               | Systeem eigen compatibel                  | Windows Server 1809 +<br>Windows 10 1809 + |
+| Appx                               | Systeem eigen compatibel * *                | Windows Server 1809 +<br>Windows 10 1809 +<br>* * Compatibiliteit slaag gebruiken met Power shell 7,1 |
 | AssignedAccess                     | Systeem eigen compatibel                  | Windows 10 1809 +                   |
 | BestPractices                      | Niet ondersteund door compatibiliteit slaag |                                    |
 | BitLocker                          | Systeem eigen compatibel                  | Windows Server 1809 + met BitLocker<br>Windows 10 1809 + |

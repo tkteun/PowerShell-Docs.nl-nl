@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Met behulp van de tabbladuitbreiding
 description: Hierin wordt uitgelegd hoe u de functie voor tabblad uitbreiding gebruikt in Power shell.
-ms.openlocfilehash: d3408aac8cc9325666082577a7b00bc3362bfca3
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
+ms.openlocfilehash: 658cdf5ddf78bbd6dd431c2170cd5ff643e6bf95
+ms.sourcegitcommit: 7f712e12ec5b3f3f3e695da804b050ea0ce58b3a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92500042"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94661338"
 ---
 # <a name="using-tab-expansion"></a>Met behulp van de tabbladuitbreiding
 
@@ -20,6 +20,9 @@ Opdracht regel shells bieden vaak een manier om de namen van lange bestanden of 
 Als u automatisch een bestands naam of pad van de beschik bare opties wilt invullen, typt u een deel van de naam en drukt u op de <kbd>Tab</kbd> -toets. Power shell breidt de naam automatisch uit naar het eerste overeenkomende item dat wordt gevonden. Door herhaaldelijk op de <kbd>Tab</kbd> -toets te drukken, worden alle beschik bare opties door lopen.
 
 De tabblad-uitbrei ding van de namen van cmdlets is iets anders. Als u tabblad uitbrei ding wilt gebruiken voor de naam van een cmdlet, typt u het volledige eerste deel van de naam (de opdracht) en het afbreek streepje dat deze volgt. U kunt de naam van een gedeeltelijke overeenkomst invullen. Als u bijvoorbeeld typt `get-co` en vervolgens op de <kbd>Tab</kbd> -toets drukt, wordt dit door Power shell automatisch uitgebreid naar de `Get-Command` cmdlet (u ziet dat het hoofdletter gebruik ook wordt gewijzigd in het standaard formulier). Als u opnieuw op <kbd>Tab</kbd> drukt, wordt dit door Power shell vervangen door de enige andere overeenkomende naam van de cmdlet `Get-Content` .
+
+> [!NOTE]
+> Vanaf Power shell 7,0 worden met <kbd>Tab</kbd> ook verkorte cmdlets en functies uitgevouwen. `i-psdf<tab>`Retourneert bijvoorbeeld `Import-PowerShellDataFile` .
 
 U kunt de tab-uitbrei ding herhaaldelijk op dezelfde regel gebruiken. U kunt bijvoorbeeld tabblad uitbrei ding op de naam van de `Get-Content` cmdlet gebruiken door het volgende in te voeren:
 

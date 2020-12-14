@@ -6,22 +6,22 @@ ms.date: 02/10/2020
 online version: https://docs.microsoft.com/powershell/module/psreadline/about/about_psreadline?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Over PSReadLine
-ms.openlocfilehash: 890f8e92172f2d492b6b817b558d4f25c70e8949
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: f5ae99a7c8bdae82372423a3e4d8261d95ab83d5
+ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93252066"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94692204"
 ---
 # <a name="psreadline"></a>PSReadLine
 
 ## <a name="about_psreadline"></a>about_PSReadLine
 
-## <a name="short-description"></a>KORTE BESCHRIJVING
+## <a name="short-description"></a>Korte beschrijving
 
 PSReadLine biedt een verbeterde opdracht regel bewerkings ervaring in de Power shell-console.
 
-## <a name="long-description"></a>LANGE BESCHRIJVING
+## <a name="long-description"></a>Lange beschrijving
 
 PSReadLine 2,0 biedt een krachtige opdracht regel voor het bewerken van de Power shell-console. De oplossing biedt het volgende:
 
@@ -35,10 +35,10 @@ PSReadLine 2,0 biedt een krachtige opdracht regel voor het bewerken van de Power
 - Emacs Yank/Kill-ring
 - "Woord" verplaatsing en afsluiten op basis van Power shell-tokens
 
-De volgende functies zijn beschikbaar in de klasse **[micro soft. Power shell. PSConsoleReadLine]**.
-
 > [!NOTE]
 > Vanaf Power shell 7,0 wordt het automatisch laden van PSReadLine in Windows overs Laan als er een scherm lezer wordt gedetecteerd. Op dit moment werkt PSReadLine niet goed met scherm lezers. De standaard weergave en opmaak van Power shell 7,0 in Windows werkt op de juiste manier. U kunt de module hand matig laden, indien nodig.
+
+De volgende functies zijn beschikbaar in de klasse **[micro soft. Power shell. PSConsoleReadLine]**.
 
 ## <a name="basic-editing-functions"></a>Basis bewerkings functies
 
@@ -1287,22 +1287,18 @@ Deze Help methode wordt gebruikt voor aangepaste bindingen die voldoen aan Digit
   [ref]$numericArg, 1)
 ```
 
-## <a name="note"></a>OPMERKING
+## <a name="note"></a>Notitie
 
-### <a name="powershell-compatibility"></a>COMPATIBILITEIT MET POWER SHELL
-
-PSReadLine vereist Power Shell 3,0, of nieuwer, en de console-host. Het werkt niet in Power shell ISE. Het werkt in de console van Visual Studio code.
-
-### <a name="command-history"></a>OPDRACHT GESCHIEDENIS
+### <a name="command-history"></a>Opdracht geschiedenis
 
 PSReadLine onderhoudt een geschiedenis bestand met alle opdrachten en gegevens die u hebt ingevoerd op de opdracht regel. Dit kan gevoelige gegevens bevatten, inclusief wacht woorden. Als u bijvoorbeeld de cmdlet gebruikt, `ConvertTo-SecureString` wordt het wacht woord in het geschiedenis bestand vastgelegd als tekst zonder opmaak. De geschiedenis bestanden zijn een bestand met de naam `$($host.Name)_history.txt` . Op Windows-systemen wordt het geschiedenis bestand opgeslagen op `$env:APPDATA\Microsoft\Windows\PowerShell\PSReadLine` . Op niet-Windows-systemen worden de geschiedenis bestanden opgeslagen in `$env:XDG_DATA_HOME/powershell/PSReadLine` of `$env:HOME/.local/share/powershell/PSReadLine` .
 
-### <a name="feedback--contributing-to-psreadline"></a>FEEDBACK & bijdragen aan PSReadLine
+### <a name="feedback--contributing-to-psreadline"></a>Feedback & bijdragen aan PSReadLine
 
 [PSReadLine op GitHub](https://github.com/PowerShell/PSReadLine)
 
 U kunt een pull-aanvraag verzenden of feedback verzenden op de pagina GitHub.
 
-## <a name="see-also"></a>ZIE OOK
+## <a name="see-also"></a>Zie ook
 
 PSReadLine wordt sterk beïnvloed door de GNU [readline](https://tiswww.case.edu/php/chet/readline/rltop.html) -bibliotheek.

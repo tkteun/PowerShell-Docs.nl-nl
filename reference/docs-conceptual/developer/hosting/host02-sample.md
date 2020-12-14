@@ -4,10 +4,10 @@ ms.topic: reference
 title: Voorbeeld Host02
 description: Voorbeeld Host02
 ms.openlocfilehash: 7bb07dec3fd6b7ac5844d247a7a06cbda67c619e
-ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "93355456"
 ---
 # <a name="host02-sample"></a>Voorbeeld Host02

@@ -4,10 +4,10 @@ ms.topic: reference
 title: Overzicht van Windows PowerShell-providers
 description: Overzicht van Windows PowerShell-providers
 ms.openlocfilehash: 2f1c5f5991a64fb2b85ece7feba915164ebd34ee
-ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "93355507"
 ---
 # <a name="windows-powershell-provider-overview"></a>Overzicht van Windows PowerShell-providers
