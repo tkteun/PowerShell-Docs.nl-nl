@@ -7,12 +7,12 @@ ms.date: 03/27/2020
 online version: https://docs.microsoft.com/powershell/module/powershellget/publish-script?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Publish-Script
-ms.openlocfilehash: 2b9bfccddcd44cb0a87a7d93ae014fda5770d8d4
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 6593148b493f15feb47af886681032aaf5d009e7
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93250749"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94891087"
 ---
 # Publish-Script
 
@@ -266,6 +266,13 @@ Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - Er
 ### System. object
 
 ## OPMERKINGEN
+
+> [!IMPORTANT]
+> Vanaf april 2020 biedt de PowerShell Gallery niet langer ondersteuning voor Transport Layer Security (TLS) versie 1,0 en 1,1. Als u geen TLS 1,2 of hoger gebruikt, wordt er een fout bericht weer gegeven wanneer u probeert toegang te krijgen tot de PowerShell Gallery. Gebruik de volgende opdracht om ervoor te zorgen dat u TLS 1,2 gebruikt:
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> Zie de [aankondiging](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in het Power shell-blog voor meer informatie.
 
 ## GERELATEERDE KOPPELINGEN
 

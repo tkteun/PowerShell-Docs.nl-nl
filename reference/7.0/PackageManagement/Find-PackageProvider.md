@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/packagemanagement/find-packageprovider?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Find-PackageProvider
-ms.openlocfilehash: 96e8829b6939c40c85fb924ae65d73f48d2e475b
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: ac6acb8017ca992f10f377cf921f59c7b99bea4a
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93249578"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94890607"
 ---
 # Find-PackageProvider
 
@@ -278,6 +278,13 @@ Met deze cmdlet wordt een **SoftwareIdentity** -object geretourneerd.
 Een **SoftwareIdentity** -object kan worden gepiped in **install-package provider** om de resultaten van **zoeken-package provider** te installeren.
 
 ## OPMERKINGEN
+
+> [!IMPORTANT]
+> Vanaf april 2020 biedt de PowerShell Gallery niet langer ondersteuning voor Transport Layer Security (TLS) versie 1,0 en 1,1. Als u geen TLS 1,2 of hoger gebruikt, wordt er een fout bericht weer gegeven wanneer u probeert toegang te krijgen tot de PowerShell Gallery. Gebruik de volgende opdracht om ervoor te zorgen dat u TLS 1,2 gebruikt:
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> Zie de [aankondiging](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in het Power shell-blog voor meer informatie.
 
 ## GERELATEERDE KOPPELINGEN
 

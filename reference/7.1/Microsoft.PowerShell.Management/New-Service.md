@@ -3,16 +3,16 @@ external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 10/25/2019
+ms.date: 11/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/new-service?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-Service
-ms.openlocfilehash: 81920303d130a306674033b2b1ba57a3e71c949c
-ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
+ms.openlocfilehash: 39c03ec53056c5ec8e2d68f9b71a17a6f4a8ea8a
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94347428"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94890413"
 ---
 # New-Service
 
@@ -38,7 +38,7 @@ Met de para meters van deze cmdlet kunt u de weergave naam, de beschrijving, het
 ### Voor beeld 1: een service maken
 
 ```powershell
-New-Service -Name "TestService" -BinaryPathName "C:\WINDOWS\System32\svchost.exe -k netsvcs"
+New-Service -Name "TestService" -BinaryPathName '"C:\WINDOWS\System32\svchost.exe -k netsvcs"'
 ```
 
 Met deze opdracht maakt u een service met de naam TestService.
@@ -48,7 +48,7 @@ Met deze opdracht maakt u een service met de naam TestService.
 ```powershell
 $params = @{
   Name = "TestService"
-  BinaryPathName = "C:\WINDOWS\System32\svchost.exe -k netsvcs"
+  BinaryPathName = '"C:\WINDOWS\System32\svchost.exe -k netsvcs"'
   DependsOn = "NetLogon"
   DisplayName = "Test Service"
   StartupType = "Manual"
@@ -83,7 +83,7 @@ In dit voor beeld wordt de **security descriptor** toegevoegd van de service die
 ```powershell
 $SDDL = "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;SU)"
 $params = @{
-  BinaryPathName = "C:\WINDOWS\System32\svchost.exe -k netsvcs"
+  BinaryPathName = '"C:\WINDOWS\System32\svchost.exe -k netsvcs"'
   DependsOn = "NetLogon"
   DisplayName "Test Service"
   StartupType = "Manual"
@@ -101,6 +101,12 @@ De **security descriptor** wordt opgeslagen in de `$SDDLToSet` variabele. De par
 
 Hiermee geeft u het pad van het uitvoer bare bestand voor de service. Deze parameter is vereist.
 
+Het volledig gekwalificeerde pad naar het binaire bestand van de service. Als het pad een spatie bevat, moet het een aanhalings teken bevatten zodat het op de juiste wijze wordt geïnterpreteerd. Bijvoorbeeld `d:\my share\myservice.exe` moet worden opgegeven als `'"d:\my share\myservice.exe"'` .
+
+Het pad kan ook argumenten bevatten voor een service die automatisch wordt gestart. Bijvoorbeeld `'"d:\myshare\myservice.exe arg1 arg2"'`. Deze argumenten worden door gegeven aan het service toegangs punt.
+
+Zie de para meter **lpBinaryPathName** van [CreateServiceW](/windows/win32/api/winsvc/nf-winsvc-createservicew) API voor meer informatie.
+
 ```yaml
 Type: System.String
 Parameter Sets: (All)
@@ -117,7 +123,7 @@ Accept wildcard characters: False
 
 Hiermee geeft u het account op dat door de service wordt gebruikt als [account voor aanmelding](/windows/desktop/ad/about-service-logon-accounts)bij de service.
 
-Typ een gebruikers naam, zoals **gebruiker01** of **Domain01\User01** , of voer een **PSCredential** -object in, zoals het account dat is gegenereerd door de `Get-Credential` cmdlet. Als u een gebruikers naam typt, vraagt deze cmdlet u om een wacht woord.
+Typ een gebruikers naam, zoals **gebruiker01** of **Domain01\User01**, of voer een **PSCredential** -object in, zoals het account dat is gegenereerd door de `Get-Credential` cmdlet. Als u een gebruikers naam typt, vraagt deze cmdlet u om een wacht woord.
 
 Referenties worden opgeslagen in een [PSCredential](/dotnet/api/system.management.automation.pscredential) -object en het wacht woord wordt opgeslagen als [SecureString](/dotnet/api/system.security.securestring).
 

@@ -7,12 +7,12 @@ ms.date: 04/01/2019
 online version: https://docs.microsoft.com/powershell/module/packagemanagement/register-packagesource?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Register-PackageSource
-ms.openlocfilehash: ee51729726c9f10dc7842130b65e671f909ac234
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 7c56f2e42e45c5a4613f6d386975edac2359e54e
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93249567"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94890818"
 ---
 # Register-PackageSource
 
@@ -350,6 +350,13 @@ Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - Er
 ## UITVOER
 
 ## OPMERKINGEN
+
+> [!IMPORTANT]
+> Vanaf april 2020 biedt de PowerShell Gallery niet langer ondersteuning voor Transport Layer Security (TLS) versie 1,0 en 1,1. Als u geen TLS 1,2 of hoger gebruikt, wordt er een fout bericht weer gegeven wanneer u probeert toegang te krijgen tot de PowerShell Gallery. Gebruik de volgende opdracht om ervoor te zorgen dat u TLS 1,2 gebruikt:
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> Zie de [aankondiging](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in het Power shell-blog voor meer informatie.
 
 ## GERELATEERDE KOPPELINGEN
 

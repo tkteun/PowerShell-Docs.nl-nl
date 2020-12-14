@@ -7,12 +7,12 @@ ms.date: 11/11/2019
 online version: https://docs.microsoft.com/powershell/module/powershellget/save-module?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Save-Module
-ms.openlocfilehash: 1a41cc743bfb2572e1ab99bf161c2f13174bd163
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: fe737a8e248c95a39a430f59ae76d7981aa9c33a
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93249727"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94890430"
 ---
 # Save-Module
 
@@ -404,5 +404,12 @@ Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - Er
 ### System. object
 
 ## OPMERKINGEN
+
+> [!IMPORTANT]
+> Vanaf april 2020 biedt de PowerShell Gallery niet langer ondersteuning voor Transport Layer Security (TLS) versie 1,0 en 1,1. Als u geen TLS 1,2 of hoger gebruikt, wordt er een fout bericht weer gegeven wanneer u probeert toegang te krijgen tot de PowerShell Gallery. Gebruik de volgende opdracht om ervoor te zorgen dat u TLS 1,2 gebruikt:
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> Zie de [aankondiging](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in het Power shell-blog voor meer informatie.
 
 ## GERELATEERDE KOPPELINGEN

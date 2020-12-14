@@ -7,12 +7,12 @@ ms.date: 07/16/2019
 online version: https://docs.microsoft.com/powershell/module/powershellget/update-module?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Update-Module
-ms.openlocfilehash: 29ba3907a349257f63e127739786ab6e210c0f82
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: dee60b0beae3f39642cbc1c388ffb79e687626b8
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93249513"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94891121"
 ---
 # Update-Module
 
@@ -290,8 +290,8 @@ Voor de **CurrentUser** zijn geen verhoogde machtigingen vereist en modules geï
 
 Als er geen **bereik** is gedefinieerd, wordt de standaard waarde ingesteld op basis van de PowerShellGet-versie.
 
-- In PowerShellGet-versies 2.1.0 en hoger is de standaard versie **CurrentUser** , waarvoor geen uitbrei ding van bevoegdheden voor installatie vereist is.
-- In PowerShellGet 1. x-2.0. x versies is de **bereik** parameter niet beschikbaar en de standaard waarde is **ALLUSERS** , waarvoor uitbrei ding van bevoegdheden is vereist voor installatie.
+- In PowerShellGet-versies 2.1.0 en hoger is de standaard versie **CurrentUser**, waarvoor geen uitbrei ding van bevoegdheden voor installatie vereist is.
+- In PowerShellGet 1. x-2.0. x versies is de **bereik** parameter niet beschikbaar en de standaard waarde is **ALLUSERS**, waarvoor uitbrei ding van bevoegdheden is vereist voor installatie.
 
 ```yaml
 Type: System.String
@@ -343,7 +343,14 @@ Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - Er
 ## OPMERKINGEN
 
 Voor de Power shell-versie 6,0 en hoger is het standaard installatie bereik altijd **CurrentUser**.
-Module-updates voor **CurrentUser** , `$home\Documents\PowerShell\Modules` , hebben geen verhoogde machtigingen nodig. Module-updates voor **ALLUSERS** , `$env:ProgramFiles\PowerShell\Modules` , vereist verhoogde machtigingen.
+Module-updates voor **CurrentUser**, `$home\Documents\PowerShell\Modules` , hebben geen verhoogde machtigingen nodig. Module-updates voor **ALLUSERS**, `$env:ProgramFiles\PowerShell\Modules` , vereist verhoogde machtigingen.
+
+> [!IMPORTANT]
+> Vanaf april 2020 biedt de PowerShell Gallery niet langer ondersteuning voor Transport Layer Security (TLS) versie 1,0 en 1,1. Als u geen TLS 1,2 of hoger gebruikt, wordt er een fout bericht weer gegeven wanneer u probeert toegang te krijgen tot de PowerShell Gallery. Gebruik de volgende opdracht om ervoor te zorgen dat u TLS 1,2 gebruikt:
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> Zie de [aankondiging](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in het Power shell-blog voor meer informatie.
 
 `Update-Module` wordt uitgevoerd op Power Shell 3,0 of latere versies van Power shell, op Windows 7 of Windows 2008 R2 en latere versies van Windows.
 

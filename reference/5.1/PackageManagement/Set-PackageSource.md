@@ -7,12 +7,12 @@ ms.date: 04/03/2019
 online version: https://docs.microsoft.com/powershell/module/packagemanagement/set-packagesource?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-PackageSource
-ms.openlocfilehash: a8dc659d3ffdfcd296660f64f7b7cbd0bb132217
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 4d534ebf97f7d7f37115e23f12cbd4d725e2212b
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93250265"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94889950"
 ---
 # Set-PackageSource
 
@@ -79,7 +79,7 @@ De `Set-PackageSource` vervangt een pakket bron voor een opgegeven pakket provid
 
 ### Voor beeld 1: een pakket bron wijzigen
 
-Met deze opdracht wordt de bestaande naam van een pakket bron gewijzigd. De bron is ingesteld op **vertrouwd** , waardoor prompts worden voor komen om de bron te controleren wanneer pakketten zijn geïnstalleerd.
+Met deze opdracht wordt de bestaande naam van een pakket bron gewijzigd. De bron is ingesteld op **vertrouwd**, waardoor prompts worden voor komen om de bron te controleren wanneer pakketten zijn geïnstalleerd.
 
 ```
 PS C:\> Set-PackageSource -Name MyNuget -NewName NewNuGet -Trusted -ProviderName NuGet
@@ -421,6 +421,13 @@ Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - Er
 ### Met deze cmdlet wordt geen uitvoer gegenereerd.
 
 ## OPMERKINGEN
+
+> [!IMPORTANT]
+> Vanaf april 2020 biedt de PowerShell Gallery niet langer ondersteuning voor Transport Layer Security (TLS) versie 1,0 en 1,1. Als u geen TLS 1,2 of hoger gebruikt, wordt er een fout bericht weer gegeven wanneer u probeert toegang te krijgen tot de PowerShell Gallery. Gebruik de volgende opdracht om ervoor te zorgen dat u TLS 1,2 gebruikt:
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> Zie de [aankondiging](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in het Power shell-blog voor meer informatie.
 
 ## GERELATEERDE KOPPELINGEN
 

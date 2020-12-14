@@ -1,18 +1,17 @@
 ---
 external help file: PSModule-help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: PowerShellGet
 ms.date: 06/05/2019
-online version: https://docs.microsoft.com/powershell/module/powershellget/find-rolecapability?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/powershellget/find-rolecapability?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Find-RoleCapability
-ms.openlocfilehash: 1cee4ac54bf83d387f61a4842104a80512a8b223
+ms.openlocfilehash: a84dee14872ad5a7d0f7bac8e0057dc527855074
 ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/19/2020
-ms.locfileid: "94891521"
+ms.locfileid: "94890396"
 ---
 # Find-RoleCapability
 

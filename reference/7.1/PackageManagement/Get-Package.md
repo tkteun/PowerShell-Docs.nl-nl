@@ -7,12 +7,12 @@ ms.date: 05/22/2019
 online version: https://docs.microsoft.com/powershell/module/packagemanagement/get-package?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Package
-ms.openlocfilehash: 89525867f9c3377cc0129daefd3f54f2a10d5d82
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: d635a1f037194380c143190e48d654e828f88bc8
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93250171"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94890161"
 ---
 # Get-Package
 
@@ -440,6 +440,13 @@ Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - Er
 
 Het opnemen van een pakket provider in een opdracht kan dynamische para meters beschikbaar maken voor een cmdlet. Dynamische para meters zijn specifiek voor een pakket provider. De `Get-Help` cmdlet geeft een lijst van de parameter sets van de cmdlet en bevat de parameterset van de provider. `Get-Package`Heeft bijvoorbeeld de para meter **PowerShellGet** met de waarde `-NoPathUpdate` , `AllowClobber` en `SkipPublisherCheck` .
 
+> [!IMPORTANT]
+> Vanaf april 2020 biedt de PowerShell Gallery niet langer ondersteuning voor Transport Layer Security (TLS) versie 1,0 en 1,1. Als u geen TLS 1,2 of hoger gebruikt, wordt er een fout bericht weer gegeven wanneer u probeert toegang te krijgen tot de PowerShell Gallery. Gebruik de volgende opdracht om ervoor te zorgen dat u TLS 1,2 gebruikt:
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> Zie de [aankondiging](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in het Power shell-blog voor meer informatie.
+
 ## GERELATEERDE KOPPELINGEN
 
 [about_PackageManagement](../Microsoft.PowerShell.Core/About/about_PackageManagement.md)
@@ -461,4 +468,3 @@ Het opnemen van een pakket provider in een opdracht kan dynamische para meters b
 [Opslaan-pakket](Save-Package.md)
 
 [Uninstall-pakket](Uninstall-Package.md)
-

@@ -7,12 +7,12 @@ ms.date: 04/01/2019
 online version: https://docs.microsoft.com/powershell/module/packagemanagement/register-packagesource?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Register-PackageSource
-ms.openlocfilehash: 8b57540658a88fa56533c3f5c360273913c3543b
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: dfaccf285b8a53c1701919016509fd49eeee5da7
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93250886"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94891046"
 ---
 # Register-PackageSource
 
@@ -351,6 +351,13 @@ Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - Er
 
 ## OPMERKINGEN
 
+> [!IMPORTANT]
+> Vanaf april 2020 biedt de PowerShell Gallery niet langer ondersteuning voor Transport Layer Security (TLS) versie 1,0 en 1,1. Als u geen TLS 1,2 of hoger gebruikt, wordt er een fout bericht weer gegeven wanneer u probeert toegang te krijgen tot de PowerShell Gallery. Gebruik de volgende opdracht om ervoor te zorgen dat u TLS 1,2 gebruikt:
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> Zie de [aankondiging](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in het Power shell-blog voor meer informatie.
+
 ## GERELATEERDE KOPPELINGEN
 
 [about_PackageManagement](../Microsoft.PowerShell.Core/About/about_PackageManagement.md)
@@ -360,4 +367,3 @@ Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - Er
 [Set-PackageSource](Set-PackageSource.md)
 
 [Registratie ongedaan maken-PackageSource](Unregister-PackageSource.md)
-

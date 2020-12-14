@@ -1,17 +1,16 @@
 ---
 description: Hiermee kunt u aangeven welke naam ruimten in de sessie worden gebruikt.
-keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 01/29/2020
+ms.date: 11/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_using?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Using
-ms.openlocfilehash: eaf983ad03676b4ac57a3b35bc44f72036da55b4
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: bbea815f93ba503fcce550dec28736630fec5a51
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93252511"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94890760"
 ---
 # <a name="about-using"></a>Over het gebruik van
 
@@ -26,7 +25,7 @@ De `using` instructies moeten vóór eventuele andere instructies in een script 
 
 De `using` instructie mag niet worden verward met de `using:` aanpassings functie voor het bereik voor variabelen. Zie [about_Remote_Variables](about_Remote_Variables.md)voor meer informatie.
 
-## <a name="syntax"></a>Syntax
+## <a name="namespace-syntax"></a>Naam ruimte syntaxis
 
 .NET-naam ruimten opgeven waarvan u de typen wilt omzetten:
 
@@ -34,19 +33,38 @@ De `using` instructie mag niet worden verward met de `using:` aanpassings functi
 using namespace <.NET-namespace>
 ```
 
+Het opgeven van een naam ruimte maakt het gemakkelijker om te verwijzen naar typen met hun korte namen.
+
+## <a name="module-syntax"></a>Module syntaxis
+
 Klassen laden vanuit een Power shell-module:
 
 ```
 using module <module-name>
 ```
 
+De waarde van `<module-name>` kan een module naam, een volledige module specificatie of een pad naar een module bestand zijn.
+
+Wanneer `<module-name>` een pad is, kan het pad volledig gekwalificeerd of relatief zijn. Een relatief pad wordt opgelost ten opzichte van het script dat de instructie using bevat.
+
+Wanneer `<module-name>` is een naam of module specificatie, zoekt Power shell de **PSModulePath** voor de opgegeven module.
+
+Een module specificatie is een hash-tabel met de volgende sleutels.
+
+- `ModuleName` - **Vereist** Hiermee geeft u de module naam op.
+- `GUID` - **Optioneel** Hiermee geeft u de GUID van de module.
+- Het is ook **vereist** om een van de drie onderstaande sleutels op te geven. Deze sleutels kunnen niet tegelijk worden gebruikt.
+  - `ModuleVersion` -Hiermee geeft u een mini maal toegestane versie van de module op.
+  - `RequiredVersion` -Hiermee geeft u een exacte, vereiste versie van de module op.
+  - `MaximumVersion` -Hiermee geeft u de Maxi maal toegestane versie van de module op.
+
+## <a name="assembly-syntax"></a>Assembly-syntaxis
+
 Typen vooraf laden vanuit een .NET-assembly:
 
 ```
 using assembly <.NET-assembly-path>
 ```
-
-Het opgeven van een naam ruimte maakt het gemakkelijker om te verwijzen naar typen met hun korte namen.
 
 Bij het laden van een assembly worden .NET-typen van de assembly geladen in een script tijdens het parseren. Hierdoor kunt u nieuwe Power shell-klassen maken die gebruikmaken van typen van de vooraf geladen assembly.
 
@@ -125,4 +143,3 @@ domain                                                    Name UserName ContextT
 ------                                                    ---- -------- -----------
 System.DirectoryServices.ActiveDirectory.DirectoryContext                    Domain
 ```
-

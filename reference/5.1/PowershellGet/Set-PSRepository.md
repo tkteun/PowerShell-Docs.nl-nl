@@ -7,12 +7,12 @@ ms.date: 04/22/2020
 online version: https://docs.microsoft.com/powershell/module/powershellget/set-psrepository?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-PSRepository
-ms.openlocfilehash: 0734bda0a3462e39f799570c853cffa3e267c5db
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 2b23a121249c5cc9037e0440dfaed17a1a9f76e9
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93250745"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94891554"
 ---
 # Set-PSRepository
 
@@ -40,7 +40,7 @@ De `Set-PSRepository` cmdlet stelt waarden in voor een geregistreerde module ops
 Set-PSRepository -Name "myInternalSource" -InstallationPolicy Trusted
 ```
 
-Met deze opdracht wordt het installatie beleid voor de **myInternalSource** -opslag plaats ingesteld op **vertrouwd** , zodat u niet wordt gevraagd om de modules van die bron te installeren.
+Met deze opdracht wordt het installatie beleid voor de **myInternalSource** -opslag plaats ingesteld op **vertrouwd**, zodat u niet wordt gevraagd om de modules van die bron te installeren.
 
 ### Voor beeld 2: de bron-en publicatie locaties voor een opslag plaats instellen
 
@@ -68,7 +68,7 @@ Accept wildcard characters: False
 
 ### -InstallationPolicy
 
-Hiermee geeft u het installatie beleid op. Geldige waarden zijn: **vertrouwd** , **niet vertrouwd**.
+Hiermee geeft u het installatie beleid op. Geldige waarden zijn: **vertrouwd**, **niet vertrouwd**.
 
 ```yaml
 Type: System.String
@@ -228,6 +228,13 @@ Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - Er
 ### System. object
 
 ## OPMERKINGEN
+
+> [!IMPORTANT]
+> Vanaf april 2020 biedt de PowerShell Gallery niet langer ondersteuning voor Transport Layer Security (TLS) versie 1,0 en 1,1. Als u geen TLS 1,2 of hoger gebruikt, wordt er een fout bericht weer gegeven wanneer u probeert toegang te krijgen tot de PowerShell Gallery. Gebruik de volgende opdracht om ervoor te zorgen dat u TLS 1,2 gebruikt:
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> Zie de [aankondiging](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in het Power shell-blog voor meer informatie.
 
 ## GERELATEERDE KOPPELINGEN
 
