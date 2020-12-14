@@ -7,12 +7,12 @@ ms.date: 06/05/2019
 online version: https://docs.microsoft.com/powershell/module/powershellget/find-rolecapability?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Find-RoleCapability
-ms.openlocfilehash: ca6a3845920793e7825727bef455c1001c13f0f0
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: ad3262cbe6e77ffbd638fd8ef77efeece63c3295
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93250869"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94892433"
 ---
 # Find-RoleCapability
 
@@ -156,7 +156,7 @@ Accept wildcard characters: False
 
 ### -Filter
 
-Zoekt bronnen op basis van de zoek syntaxis van de **Package Management** -provider. Geef bijvoorbeeld woorden op waarnaar u wilt zoeken in de **ModuleName** eigenschappen van module **naam en beschrijving** .
+Zoekt bronnen op basis van de zoek syntaxis van de **Package Management** -provider. Geef bijvoorbeeld woorden op waarnaar u wilt zoeken in de  eigenschappen van module **naam en beschrijving** .
 
 ```yaml
 Type: System.String
@@ -332,6 +332,13 @@ De `Find-RoleCapability` cmdlet retourneert een **PSGetRoleCapabilityInfo** -obj
 
 ## OPMERKINGEN
 
+> [!IMPORTANT]
+> Vanaf april 2020 biedt de PowerShell Gallery niet langer ondersteuning voor Transport Layer Security (TLS) versie 1,0 en 1,1. Als u geen TLS 1,2 of hoger gebruikt, wordt er een fout bericht weer gegeven wanneer u probeert toegang te krijgen tot de PowerShell Gallery. Gebruik de volgende opdracht om ervoor te zorgen dat u TLS 1,2 gebruikt:
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> Zie de [aankondiging](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in het Power shell-blog voor meer informatie.
+
 ## GERELATEERDE KOPPELINGEN
 
 [Get-Child item](../Microsoft.PowerShell.Management/Get-ChildItem.md)
@@ -343,4 +350,3 @@ De `Find-RoleCapability` cmdlet retourneert een **PSGetRoleCapabilityInfo** -obj
 [New-PSRoleCapabilityFile](../Microsoft.PowerShell.Core/New-PSRoleCapabilityFile.md)
 
 [Save-Module](Save-Module.md)
-

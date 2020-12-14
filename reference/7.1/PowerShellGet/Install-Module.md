@@ -7,12 +7,12 @@ ms.date: 08/03/2020
 online version: https://docs.microsoft.com/powershell/module/powershellget/install-module?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Install-Module
-ms.openlocfilehash: e2e4dc34fb84a54fb92cc4c809c84d67beafe576
-ms.sourcegitcommit: 4fc8cf397cb725ae973751d1d5d542f34f0db2d7
+ms.openlocfilehash: 463853778b6f2892ae36d55dcd4d886727b1dd51
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "93251706"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94892484"
 ---
 # Install-Module
 
@@ -358,8 +358,8 @@ De map **CurrentUser** installeert modules op een locatie die alleen toegankelij
 
 Als er geen **bereik** is gedefinieerd, wordt de standaard waarde ingesteld op basis van de PowerShellGet-versie.
 
-- In PowerShellGet-versies 2.0.0 en hoger is de standaard versie **CurrentUser** , waarvoor geen uitbrei ding van bevoegdheden voor installatie vereist is.
-- In PowerShellGet 1. x versies is de standaard waarde **ALLUSERS** , waarvoor uitbrei ding van bevoegdheden vereist is voor installatie.
+- In PowerShellGet-versies 2.0.0 en hoger is de standaard versie **CurrentUser**, waarvoor geen uitbrei ding van bevoegdheden voor installatie vereist is.
+- In PowerShellGet 1. x versies is de standaard waarde **ALLUSERS**, waarvoor uitbrei ding van bevoegdheden vereist is voor installatie.
 
 ```yaml
 Type: System.String
@@ -436,11 +436,18 @@ Wanneer u de para meter **PassThru** gebruikt, wordt `Install-Module` een **PSRe
 
 `Install-Module` wordt uitgevoerd op Power shell 5,0 of hoger, op Windows 7 of Windows 2008 R2 en latere versies van Windows.
 
+> [!IMPORTANT]
+> Vanaf april 2020 biedt de PowerShell Gallery niet langer ondersteuning voor Transport Layer Security (TLS) versie 1,0 en 1,1. Als u geen TLS 1,2 of hoger gebruikt, wordt er een fout bericht weer gegeven wanneer u probeert toegang te krijgen tot de PowerShell Gallery. Gebruik de volgende opdracht om ervoor te zorgen dat u TLS 1,2 gebruikt:
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> Zie de [aankondiging](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in het Power shell-blog voor meer informatie.
+
 Als beveiligings best practice kunt u de code van een module evalueren voordat u cmdlets of functions voor de eerste keer uitvoert. Om te voor komen dat modules worden uitgevoerd die schadelijke code bevatten, worden geïnstalleerde modules na de installatie niet automatisch geïmporteerd.
 
 Als de module naam die is opgegeven door de para meter **name** niet voor komt in de opslag plaats, `Install-Module` wordt een fout geretourneerd.
 
-Als u meerdere modules wilt installeren, gebruikt u de para meter **name** en geeft u een door komma's gescheiden matrix van module namen op. Als u meerdere module namen opgeeft, kunt u **MinimumVersion** , **MaximumVersion** of **RequiredVersion** niet gebruiken. `Find-Module` Hiermee maakt u **PSRepositoryItemInfo** -objecten waarnaar de pijp lijn kan worden verzonden `Install-Module` . De pijp lijn is een andere manier om meerdere modules op te geven die u wilt installeren in één opdracht.
+Als u meerdere modules wilt installeren, gebruikt u de para meter **name** en geeft u een door komma's gescheiden matrix van module namen op. Als u meerdere module namen opgeeft, kunt u **MinimumVersion**, **MaximumVersion** of **RequiredVersion** niet gebruiken. `Find-Module` Hiermee maakt u **PSRepositoryItemInfo** -objecten waarnaar de pijp lijn kan worden verzonden `Install-Module` . De pijp lijn is een andere manier om meerdere modules op te geven die u wilt installeren in één opdracht.
 
 Standaard worden modules voor het bereik van **ALLUSERS** geïnstalleerd in `$env:ProgramFiles\PowerShell\Modules` . De standaard instelling voor komt Verwar ring bij de installatie van Power shell desired state Configuration (DSC)-resources.
 

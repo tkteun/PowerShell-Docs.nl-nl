@@ -1,16 +1,16 @@
 ---
-title: about_Character_Encoding
 description: Hierin wordt beschreven hoe teken codering in Power shell wordt gebruikt voor invoer en uitvoer van teken reeks gegevens.
-ms.date: 10/21/2020
 Locale: en-US
+ms.date: 10/21/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_character_encoding?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
-ms.openlocfilehash: 0dff2a2cd3915a84c80627abdd0388e9722df806
-ms.sourcegitcommit: df80c558e9a4b89c9798f084bd04012ece15155c
+title: about_Character_Encoding
+ms.openlocfilehash: f383b985baeae059565f61c700df7a76346497d8
+ms.sourcegitcommit: cc72c40315fd2981d3009b335accbfa52d57640c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "93253218"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96349844"
 ---
 # <a name="about_character_encoding"></a>about_Character_Encoding
 
@@ -43,7 +43,7 @@ De volgende cmdlets hebben de para meter **Encoding** :
 
 ## <a name="the-byte-order-mark"></a>De byte volgorde markering
 
-De byte-order-Mark (BOM) is een _Unicode-hand tekening_ in de eerste paar bytes van een bestand of tekst stroom die aangeeft welke Unicode-code ring voor de gegevens wordt gebruikt. Zie het artikel [Byte Order Mark](https://wikipedia.org/wiki/Byte_order_mark) in Wikipedia voor meer informatie.
+De byte-order-Mark (BOM) is een _Unicode-hand tekening_ in de eerste paar bytes van een bestand of tekst stroom die aangeeft welke Unicode-code ring voor de gegevens wordt gebruikt. Zie de documentatie over de [Byte Order Mark](/globalization/encoding/byte-order-mark) voor meer informatie.
 
 In Windows Power Shell maakt Unicode-code ring, behalve `UTF7` , altijd een stuk lijst. Power shell core wordt standaard ingesteld op `utf8NoBOM` alle tekst uitvoer.
 

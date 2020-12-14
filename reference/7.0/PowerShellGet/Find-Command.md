@@ -7,12 +7,12 @@ ms.date: 06/03/2019
 online version: https://docs.microsoft.com/powershell/module/powershellget/find-command?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Find-Command
-ms.openlocfilehash: d872f53c504874f69f1e39c506a72bfefa072aa6
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 824e5b0012f8cf8394252704d0e16e49b3f7fa39
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93249495"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94892685"
 ---
 # Find-Command
 
@@ -149,7 +149,7 @@ Accept wildcard characters: False
 
 ### -Filter
 
-Hiermee zoekt u naar modules op basis van de zoek syntaxis van de **Package Management** -provider. Geef bijvoorbeeld woorden op waarnaar u wilt zoeken in de **ModuleName** eigenschappen van module **naam en beschrijving** .
+Hiermee zoekt u naar modules op basis van de zoek syntaxis van de **Package Management** -provider. Geef bijvoorbeeld woorden op waarnaar u wilt zoeken in de  eigenschappen van module **naam en beschrijving** .
 
 ```yaml
 Type: System.String
@@ -320,6 +320,13 @@ Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - Er
 `Find-Command` Hiermee wordt een **PSGetCommandInfo** -object uitgevoerd.
 
 ## OPMERKINGEN
+
+> [!IMPORTANT]
+> Vanaf april 2020 biedt de PowerShell Gallery niet langer ondersteuning voor Transport Layer Security (TLS) versie 1,0 en 1,1. Als u geen TLS 1,2 of hoger gebruikt, wordt er een fout bericht weer gegeven wanneer u probeert toegang te krijgen tot de PowerShell Gallery. Gebruik de volgende opdracht om ervoor te zorgen dat u TLS 1,2 gebruikt:
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> Zie de [aankondiging](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in het Power shell-blog voor meer informatie.
 
 ## GERELATEERDE KOPPELINGEN
 

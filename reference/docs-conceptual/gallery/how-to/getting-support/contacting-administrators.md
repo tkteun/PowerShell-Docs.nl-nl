@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 12/01/2020
 title: Contact Galerie-beheerders
 description: In dit artikel wordt beschreven hoe en wanneer contact moet worden opgenomen met een beheerder van de PowerShell Gallery
-ms.openlocfilehash: 500fff8ccc8f595d92b66e79c64ebf5e66185313
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 6e3dccc44242e451fc6062aad6b8ae5a0ca54a9d
+ms.sourcegitcommit: 62282bb9c36fea3b4290b9263c1cd8e9ac216e29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92661184"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96470363"
 ---
 # <a name="contact-gallery-administrators"></a>Contact Galerie-beheerders
 
@@ -25,4 +25,4 @@ Neem contact op met de beheerder van de galerie als:
 
 1. Stuur ons een e-mail: cgadmin@microsoft.com .
 1. Als u misbruik van een pakket rapporteert, kunt u de koppeling misbruik van het rapport vinden onder de pakket informatie in het linkerdeel venster.
-1. Voor andere algemene vragen over de galerie stuurt u uw vraag naar [UserVoice](http://windowsserver.uservoice.com/forums/301869-powershell)
+1. Voor andere algemene vragen over de galerie stuurt u uw vraag naar de pagina met [PowerShell Gallery kwesties](https://github.com/PowerShell/PowerShellGallery/issues) op github.

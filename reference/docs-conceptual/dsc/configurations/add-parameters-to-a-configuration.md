@@ -3,12 +3,12 @@ ms.date: 12/12/2018
 keywords: DSC, Power shell, resource, Galerie, Setup
 title: Parameters toevoegen aan een configuratie
 description: DSC-configuraties kunnen worden para meters voor het toestaan van meer dynamische configuraties op basis van gebruikers invoer.
-ms.openlocfilehash: aea230d34994a7b20076559c44990abe554d5395
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 72f3cf9efb5d99170e71992bed86a20a57132250
+ms.sourcegitcommit: 62282bb9c36fea3b4290b9263c1cd8e9ac216e29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92656815"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96470329"
 ---
 # <a name="add-parameters-to-a-configuration"></a>Parameters toevoegen aan een configuratie
 
@@ -210,7 +210,7 @@ Configuration TestConfig
         $State="Running",
 
         [String]
-        $ComputerName="localhost",
+        $ComputerName="localhost"
     )
 
     # It is best practice to explicitly import any required resources or modules.

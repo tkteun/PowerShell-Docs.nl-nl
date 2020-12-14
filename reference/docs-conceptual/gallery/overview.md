@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 12/01/2020
 title: De PowerShell Gallery
 description: De PowerShell Gallery is de centrale opslag plaats voor Power shell-modules, scripts en DSC-resources.
-ms.openlocfilehash: 4fff1f9476c919e95c25ae7729aaa7573be53f07
-ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
+ms.openlocfilehash: f1ce6a8e2d5d72ac14cf3e4854626ef612d27891
+ms.sourcegitcommit: 62282bb9c36fea3b4290b9263c1cd8e9ac216e29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94390810"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96470312"
 ---
 # <a name="the-powershell-gallery"></a>De PowerShell Gallery
 
@@ -26,7 +26,7 @@ Raadpleeg de pagina [Aan de slag](getting-started.md) voor meer informatie over 
 
 ## <a name="supported-operating-systems"></a>Ondersteunde besturingssystemen
 
-Voor de **PowerShellGet** -module is **PowerShell 3.0 of hoger** vereist.
+Voor de **PowerShellGet**-module is **PowerShell 3.0 of hoger** vereist.
 
 **PowerShellGet** vereist .NET Framework 4,5 of hoger. Zie [de .NET Framework voor ontwikkel aars installeren](/dotnet/framework/install/guide-for-developers)voor meer informatie.
 
@@ -37,4 +37,8 @@ Raadpleeg de documentatie voor de modules voor meer informatie.
 
 ## <a name="got-a-question-have-feedback"></a>Hebt u een vraag? Wilt u feedback geven?
 
-Meer informatie over de PowerShell Gallery en PowerShellGet vindt u op de pagina [aan](getting-started.md) de slag. Geef feedback en Meld problemen met [UserVoice](http://windowsserver.uservoice.com/forums/301869-powershell).
+Meer informatie over de PowerShell Gallery en PowerShellGet vindt u op de pagina [aan](getting-started.md) de slag.
+
+Zie de pagina [PowerShell Gallery status](https://github.com/PowerShell/PowerShellGallery/blob/master/psgallery_status.md) op github voor een overzicht van de huidige status van de PowerShell Gallery Services.
+
+Geef feedback en Meld problemen met de [github-opslag plaats](https://github.com/PowerShell/PowerShellGallery/issues).

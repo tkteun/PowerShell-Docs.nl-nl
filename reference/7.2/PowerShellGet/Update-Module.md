@@ -1,18 +1,17 @@
 ---
 external help file: PSModule-help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: PowerShellGet
 ms.date: 07/16/2019
-online version: https://docs.microsoft.com/powershell/module/powershellget/update-module?view=powershell-7.1&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/powershellget/update-module?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Update-Module
-ms.openlocfilehash: d903cf195bf618b461a5424cdbe06633046c5ae5
+ms.openlocfilehash: f29c208805894634960085cd3816ce7780b7602f
 ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/19/2020
-ms.locfileid: "94892549"
+ms.locfileid: "94891844"
 ---
 # Update-Module
 
@@ -371,4 +370,3 @@ Als er `Update-Module` wordt geprobeerd binaire bestanden bij te werken, `Update
 [Publish-Module](Publish-Module.md)
 
 [Uninstall-module](Uninstall-Module.md)
-

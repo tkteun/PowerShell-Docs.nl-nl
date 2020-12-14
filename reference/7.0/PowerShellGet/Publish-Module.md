@@ -7,12 +7,12 @@ ms.date: 10/03/2019
 online version: https://docs.microsoft.com/powershell/module/powershellget/publish-module?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Publish-Module
-ms.openlocfilehash: 169a286fba9f8ce266294d611437247acc71cff8
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: f167990361a332f3b6f696d934e5d2835de849ed
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93249733"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94892617"
 ---
 # Publish-Module
 
@@ -46,7 +46,7 @@ De `Publish-Module` cmdlet publiceert een module naar een online NuGet-galerie m
 
 Wanneer u een module op naam opgeeft, wordt `Publish-Module` de eerste module gepubliceerd die zou worden gevonden door uit te voeren `Get-Module -ListAvailable <Name>` . Als u een minimum versie van een module opgeeft om te publiceren, `Publish-Module` publiceert de eerste module met een versie die groter is dan of gelijk is aan de minimum versie die u hebt opgegeven.
 
-Voor het publiceren van een module zijn meta gegevens vereist die worden weer gegeven op de galerie pagina voor de module. De vereiste meta gegevens bevatten de module naam, versie, beschrijving en auteur. Hoewel de meeste meta gegevens worden opgehaald uit het module manifest, moeten sommige meta gegevens worden opgegeven in `Publish-Module` para meters, zoals **tag** , **ReleaseNote** , **IconUri** , **ProjectUri** en **LicenseUri** , omdat deze para meters overeenkomen met velden in een op NuGet gebaseerde galerie.
+Voor het publiceren van een module zijn meta gegevens vereist die worden weer gegeven op de galerie pagina voor de module. De vereiste meta gegevens bevatten de module naam, versie, beschrijving en auteur. Hoewel de meeste meta gegevens worden opgehaald uit het module manifest, moeten sommige meta gegevens worden opgegeven in `Publish-Module` para meters, zoals **tag**, **ReleaseNote**, **IconUri**, **ProjectUri** en **LicenseUri**, omdat deze para meters overeenkomen met velden in een op NuGet gebaseerde galerie.
 
 ## VOORBEELDEN
 
@@ -378,7 +378,14 @@ Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - Er
 
 `Publish-Module` wordt uitgevoerd op Power Shell 3,0 of latere versies van Power shell, op Windows 7 of Windows 2008 R2 en latere versies van Windows.
 
-Voor het publiceren van een module zijn meta gegevens vereist die worden weer gegeven op de galerie pagina voor de module. De vereiste meta gegevens bevatten de module naam, versie, beschrijving en auteur. De meeste meta gegevens worden opgehaald uit het module manifest, maar sommige meta gegevens kunnen worden opgegeven in `Publish-Module` para meters, zoals **tag** , **ReleaseNote** , **IconUri** , **ProjectUri** en **LicenseUri**. Zie [pakket manifest waarden die van invloed zijn op de PowerShell Gallery-gebruikers interface](/powershell/scripting/gallery/concepts/package-manifest-affecting-ui)voor meer informatie.
+> [!IMPORTANT]
+> Vanaf april 2020 biedt de PowerShell Gallery niet langer ondersteuning voor Transport Layer Security (TLS) versie 1,0 en 1,1. Als u geen TLS 1,2 of hoger gebruikt, wordt er een fout bericht weer gegeven wanneer u probeert toegang te krijgen tot de PowerShell Gallery. Gebruik de volgende opdracht om ervoor te zorgen dat u TLS 1,2 gebruikt:
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> Zie de [aankondiging](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in het Power shell-blog voor meer informatie.
+
+Voor het publiceren van een module zijn meta gegevens vereist die worden weer gegeven op de galerie pagina voor de module. De vereiste meta gegevens bevatten de module naam, versie, beschrijving en auteur. De meeste meta gegevens worden opgehaald uit het module manifest, maar sommige meta gegevens kunnen worden opgegeven in `Publish-Module` para meters, zoals **tag**, **ReleaseNote**, **IconUri**, **ProjectUri** en **LicenseUri**. Zie [pakket manifest waarden die van invloed zijn op de PowerShell Gallery-gebruikers interface](/powershell/scripting/gallery/concepts/package-manifest-affecting-ui)voor meer informatie.
 
 ## GERELATEERDE KOPPELINGEN
 

@@ -1,18 +1,17 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 08/25/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.1&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Date
-ms.openlocfilehash: 34b0d7833d858a8b71c28d0f872ddb9e4948b76d
+ms.openlocfilehash: 8c0a1b7a14f5dfa071a85808f5d7dfba4d06048e
 ms.sourcegitcommit: 077488408c820c860131382324bdd576d0edf52a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/24/2020
-ms.locfileid: "95514980"
+ms.locfileid: "95514970"
 ---
 # Get-Date
 

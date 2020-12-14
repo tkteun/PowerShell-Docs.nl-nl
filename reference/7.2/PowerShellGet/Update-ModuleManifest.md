@@ -1,18 +1,17 @@
 ---
 external help file: PSModule-help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: PowerShellGet
 ms.date: 07/08/2019
-online version: https://docs.microsoft.com/powershell/module/powershellget/update-modulemanifest?view=powershell-7.1&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/powershellget/update-modulemanifest?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Update-ModuleManifest
-ms.openlocfilehash: f5dc6d086f609b5a3f82a035c3ac5c7433e8d236
+ms.openlocfilehash: 4f00450257178cac72d03303358150fd9f5cd26b
 ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/19/2020
-ms.locfileid: "94891697"
+ms.locfileid: "94891820"
 ---
 # Update-ModuleManifest
 

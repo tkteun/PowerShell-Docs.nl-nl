@@ -1,17 +1,16 @@
 ---
 description: Hierin wordt beschreven hoe u klassen kunt gebruiken om te ontwikkelen in Power shell met desired state Configuration (DSC).
-keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 1/11/2019
-online version: https://docs.microsoft.com/powershell/module/psdesiredstateconfiguration/about/about_classes_and_dsc?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 01/11/2019
+online version: https://docs.microsoft.com/powershell/module/psdesiredstateconfiguration/about/about_classes_and_dsc?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Classes_and_DSC
-ms.openlocfilehash: 21a013bb817367dd2a11cc0826263d0f3203796b
+ms.openlocfilehash: a5819ac54f34393e0fbbf3b8933e840730c5d827
 ms.sourcegitcommit: cc72c40315fd2981d3009b335accbfa52d57640c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/30/2020
-ms.locfileid: "96349825"
+ms.locfileid: "96349875"
 ---
 # <a name="about-classes-and-desired-state-configuration"></a>Informatie over klassen en desired state Configuration
 
@@ -21,7 +20,7 @@ Hierin wordt beschreven hoe u klassen kunt gebruiken om te ontwikkelen in Power 
 
 ## <a name="long-description"></a>Lange beschrijving
 
-Met ingang van Windows Power shell 5,0 is de taal toegevoegd om klassen en andere door de gebruiker gedefinieerde typen te definiëren, door gebruik te maken van formele syntaxis en semantiek die vergelijkbaar zijn met andere object georiënteerde programmeer talen. Het doel is om ontwikkel aars en IT-professionals in staat te stellen Windows Power shell te gebruiken voor een breder scala aan gebruiks voorbeelden, de ontwikkeling van Power shell-artefacten, zoals DSC-resources, te vereenvoudigen en de dekking van beheer oppervlakken te versnellen.
+Met ingang van Windows Power shell 5,0 is de taal toegevoegd om klassen en andere door de gebruiker gedefinieerde typen te definiëren, door gebruik te maken van formele syntaxis en semantiek die vergelijkbaar zijn met andere object georiënteerde programmeer talen. Het doel is om ontwikkel aars en IT-professionals in staat te stellen Power shell te gebruiken voor een breder scala aan gebruiks voorbeelden, de ontwikkeling van Power shell-artefacten, zoals DSC-resources, te vereenvoudigen en de dekking van management-Opper vlakken te versnellen.
 
 ## <a name="supported-scenarios"></a>Ondersteunde scenario's
 
@@ -753,8 +752,6 @@ function Html ([HTML] $doc) { return $doc }
 
 ## <a name="see-also"></a>Zie ook
 
-[about_DesiredStateConfiguration](../../Microsoft.PowerShell.Core/About/about_desiredstateconfiguration.md)
-
 [about_Enum](../../Microsoft.PowerShell.Core/About/about_Enum.md)
 
 [about_Hidden](../../Microsoft.PowerShell.Core/About/about_hidden.md)
@@ -763,4 +760,5 @@ function Html ([HTML] $doc) { return $doc }
 
 [about_Methods](../../Microsoft.PowerShell.Core/About/about_Methods.md)
 
-[Aangepaste Windows Power shell-configuratie bronnen voor desired state bouwen](/powershell/scripting/dsc/resources/authoringResource)
+[Aangepaste Power shell-configuratie bronnen voor desired state bouwen](/powershell/scripting/dsc/resources/authoringResource)
+

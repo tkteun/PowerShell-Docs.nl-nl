@@ -7,12 +7,12 @@ ms.date: 08/25/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-date?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Date
-ms.openlocfilehash: f550d352ca6e400307feba9ec16cea4632603b62
-ms.sourcegitcommit: ea9270bacee7dd1b9df2519384de277576357ce2
+ms.openlocfilehash: cbf87c2a2d6ab0f08e514ba971a622ea9f1904aa
+ms.sourcegitcommit: 077488408c820c860131382324bdd576d0edf52a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "93251863"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95514932"
 ---
 # Get-Date
 
@@ -59,7 +59,7 @@ Tuesday, June 25, 2019 14:53:32
 
 ### Voor beeld 2: elementen van de huidige datum en tijd ophalen
 
-In dit voor beeld ziet u hoe u kunt gebruiken `Get-Date` om het datum-of tijd-element op te halen. De para meter gebruikt de argumenten **datum** , **tijd** of **datum/** tijd.
+In dit voor beeld ziet u hoe u kunt gebruiken `Get-Date` om het datum-of tijd-element op te halen. De para meter gebruikt de argumenten **datum**, **tijd** of **datum/** tijd.
 
 ```powershell
 Get-Date -DisplayHint Date
@@ -140,7 +140,7 @@ De Gregoriaanse kalender heeft 365 dagen, met uitzonde ring van schrikkel jaren 
 366
 ```
 
-`Get-Date` gebruikt drie para meters om de datum op te geven: **jaar** , **maand** en **dag**. De opdracht wordt verpakt met haakjes zodat het resultaat door de eigenschap **DAYOFYEAR** wordt geëvalueerd.
+`Get-Date` gebruikt drie para meters om de datum op te geven: **jaar**, **maand** en **dag**. De opdracht wordt verpakt met haakjes zodat het resultaat door de eigenschap **DAYOFYEAR** wordt geëvalueerd.
 
 ### Voor beeld 6: controleren of een datum is aangepast aan zomer tijd
 
@@ -226,7 +226,7 @@ Accept wildcard characters: False
 
 Hiermee geeft u de dag van de maand op die wordt weer gegeven. Voer een waarde in van 1 tot 31.
 
-Als de opgegeven waarde groter is dan het aantal dagen in een maand, voegt Power shell het aantal dagen toe aan de maand. Zo wordt bijvoorbeeld `Get-Date -Month 2 -Day 31` **3 maart** , niet **31 februari** , weer gegeven.
+Als de opgegeven waarde groter is dan het aantal dagen in een maand, voegt Power shell het aantal dagen toe aan de maand. Zo wordt bijvoorbeeld `Get-Date -Month 2 -Day 31` **3 maart**, niet **31 februari**, weer gegeven.
 
 ```yaml
 Type: System.Int32
@@ -246,9 +246,9 @@ Hiermee wordt bepaald welke elementen van de datum en tijd worden weer gegeven.
 
 De geaccepteerde waarden zijn als volgt:
 
-- **Datum** : alleen de datum wordt weer gegeven
-- **Tijd** : alleen de tijd weer geven
-- Datum **tijd** : hier worden de datums en tijden weer gegeven
+- **Datum**: alleen de datum wordt weer gegeven
+- **Tijd**: alleen de tijd weer geven
+- Datum **tijd**: hier worden de datums en tijden weer gegeven
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.DisplayHintType
@@ -442,6 +442,9 @@ Bijvoorbeeld `Get-Date | Get-Member`.
 
 De geldige **UFormat-specificaties** worden weer gegeven in de volgende tabel:
 
+> [!IMPORTANT]
+> Aanvullende **UFormat** -aanduidingen worden toegevoegd in nieuwere versies van Power shell. `%F`Is bijvoorbeeld toegevoegd in Power shell 6,2, dus het is niet beschikbaar in Windows Power shell 5,1 of ouder. Houd rekening met het volgende wanneer u **UFormat** -specificaties gebruikt in scripts die zijn ontworpen om te worden uitgevoerd op meerdere versies van Power shell.
+
 | Indelings aanduiding |                                 Betekenis                     |         Voorbeeld          |
 | ---- | ----------------------------------------------------------------------- | ------------------------ |
 | `%A` | Dag van de week-volledige naam                                             | Maandag                   |
@@ -452,7 +455,7 @@ De geldige **UFormat-specificaties** worden weer gegeven in de volgende tabel:
 | `%c` | Datum en tijd-afgekort                                             | Do jun 27 08:44:18 2019 |
 | `%D` | Datum in de notatie mm/dd/jj                                                 | 06/27/19                 |
 | `%d` | Dag van de maand: 2 cijfers                                             | 05                       |
-| `%e` | Dag van de maand cijfer voorafgegaan door een spatie                            | \<space\>5,0               |
+| `%e` | Dag van de maand, voorafgegaan door een spatie als er slechts één cijfer           | \<space\>5,0               |
 | `%G` | Hetzelfde als ' Y '                                                             |                          |
 | `%g` | Hetzelfde als ' y '                                                             |                          |
 | `%H` | Uur in 24-uurs notatie                                                  | 17                       |

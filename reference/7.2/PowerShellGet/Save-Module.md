@@ -1,30 +1,29 @@
 ---
 external help file: PSModule-help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: PowerShellGet
-ms.date: 07/02/2019
-online version: https://docs.microsoft.com/powershell/module/powershellget/save-script?view=powershell-7.1&WT.mc_id=ps-gethelp
+ms.date: 11/11/2019
+online version: https://docs.microsoft.com/powershell/module/powershellget/save-module?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: Save-Script
-ms.openlocfilehash: 3d5b661f333d03b71f90098d29cf806825ed9324
+title: Save-Module
+ms.openlocfilehash: df5056b4402664602409388825c8b2b8acd4e02f
 ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/19/2020
-ms.locfileid: "94892137"
+ms.locfileid: "94891889"
 ---
-# Save-Script
+# Save-Module
 
 ## SAMENVATTING
-Slaat een script op.
+Slaat een module en de bijbehorende afhankelijkheden op de lokale computer op, maar installeert de module niet.
 
 ## SYNTAXIS
 
 ### NameAndPathParameterSet (standaard)
 
 ```
-Save-Script [-Name] <String[]> [-MinimumVersion <String>] [-MaximumVersion <String>]
+Save-Module [-Name] <String[]> [-MinimumVersion <String>] [-MaximumVersion <String>]
  [-RequiredVersion <String>] [-Repository <String[]>] [-Path] <String> [-Proxy <Uri>]
  [-ProxyCredential <PSCredential>] [-Credential <PSCredential>] [-Force] [-AllowPrerelease]
  [-AcceptLicense] [-WhatIf] [-Confirm] [<CommonParameters>]
@@ -33,7 +32,7 @@ Save-Script [-Name] <String[]> [-MinimumVersion <String>] [-MaximumVersion <Stri
 ### NameAndLiteralPathParameterSet
 
 ```
-Save-Script [-Name] <String[]> [-MinimumVersion <String>] [-MaximumVersion <String>]
+Save-Module [-Name] <String[]> [-MinimumVersion <String>] [-MaximumVersion <String>]
  [-RequiredVersion <String>] [-Repository <String[]>] -LiteralPath <String> [-Proxy <Uri>]
  [-ProxyCredential <PSCredential>] [-Credential <PSCredential>] [-Force] [-AllowPrerelease]
  [-AcceptLicense] [-WhatIf] [-Confirm] [<CommonParameters>]
@@ -42,7 +41,7 @@ Save-Script [-Name] <String[]> [-MinimumVersion <String>] [-MaximumVersion <Stri
 ### InputObjectAndLiteralPathParameterSet
 
 ```
-Save-Script [-InputObject] <PSObject[]> -LiteralPath <String> [-Proxy <Uri>]
+Save-Module [-InputObject] <PSObject[]> -LiteralPath <String> [-Proxy <Uri>]
  [-ProxyCredential <PSCredential>] [-Credential <PSCredential>] [-Force] [-AcceptLicense] [-WhatIf]
  [-Confirm] [<CommonParameters>]
 ```
@@ -50,39 +49,86 @@ Save-Script [-InputObject] <PSObject[]> -LiteralPath <String> [-Proxy <Uri>]
 ### InputObjectAndPathParameterSet
 
 ```
-Save-Script [-InputObject] <PSObject[]> [-Path] <String> [-Proxy <Uri>]
+Save-Module [-InputObject] <PSObject[]> [-Path] <String> [-Proxy <Uri>]
  [-ProxyCredential <PSCredential>] [-Credential <PSCredential>] [-Force] [-AcceptLicense] [-WhatIf]
  [-Confirm] [<CommonParameters>]
 ```
 
 ## BESCHRIJVING
 
-Met de `Save-Script` cmdlet wordt het opgegeven script opgeslagen.
+De `Save-Module` cmdlet downloadt een module en eventuele afhankelijkheden van een geregistreerde opslag plaats.
+`Save-Module` Hiermee wordt de meest recente versie van een module gedownload en opgeslagen. De bestanden worden opgeslagen in een opgegeven pad op de lokale computer. De module is niet geïnstalleerd, maar de inhoud is beschikbaar voor inspectie door een beheerder. De opgeslagen module kan vervolgens worden gekopieerd naar de juiste `$env:PSModulePath` locatie van de offline machine.
+
+`Get-PSRepository` Hiermee worden de geregistreerde opslag plaatsen van de lokale computer weer gegeven. U kunt de `Find-Module` cmdlet gebruiken om te zoeken in geregistreerde opslag plaatsen.
 
 ## VOORBEELDEN
 
-### Voor beeld 1: een script opslaan en de meta gegevens van het script valideren
+### Voor beeld 1: een module opslaan
 
-In dit voor beeld wordt een script uit een opslag plaats opgeslagen op de lokale computer en worden de meta gegevens van het script gevalideerd.
+In dit voor beeld worden een module en de bijbehorende afhankelijkheden opgeslagen op de lokale computer.
 
 ```powershell
-Save-Script -Name Install-VSCode -Repository PSGallery -Path C:\Test\Scripts
-Test-ScriptFileInfo -Path C:\Test\Scripts\Install-VSCode.ps1
+Save-Module -Name PowerShellGet -Path C:\Test\Modules -Repository PSGallery
+Get-ChildItem -Path C:\Test\Modules
 ```
 
 ```Output
-Version   Name              Author      Description
--------   ----              ------      -----------
-1.3       Install-VSCode    Microsoft   This script can be used to easily install Visual Studio Code
+    Directory: C:\Test\Modules
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----         7/1/2019     13:31                PackageManagement
+d-----         7/1/2019     13:31                PowerShellGet
 ```
 
-`Save-Script` maakt gebruik van de para meter **name** om de naam van het script op te geven. De **opslagplaats** parameter geeft aan waar het script moet worden gevonden. Het script wordt opgeslagen op de locatie die is opgegeven door de para meter **Path** . `Test-ScriptFileInfo` Hiermee geeft u het **pad** en valideert u de meta gegevens van het script.
+`Save-Module` maakt gebruik van de para meter **name** om de module **PowerShellGet** op te geven. De para meter **Path** geeft aan waar de gedownloade module moet worden opgeslagen. De **opslagplaats** parameter geeft een geregistreerde opslag plaats, **PSGallery**. Wanneer het downloaden is voltooid, `Get-ChildItem` wordt de inhoud weer gegeven van het **pad** waar de bestanden zijn opgeslagen.
+
+### Voor beeld 2: een specifieke versie van een module opslaan
+
+In dit voor beeld ziet u hoe u een para meter zoals **MaximumVersion** of **RequiredVersion** gebruikt om een module versie op te geven.
+
+```powershell
+Save-Module -Name PowerShellGet -Path C:\Test\Modules -Repository PSGallery -MaximumVersion 2.1.0
+Get-ChildItem -Path C:\Test\Modules\PowerShellGet\
+```
+
+```Output
+    Directory: C:\Test\Modules\PowerShellGet
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----         7/1/2019     13:40                2.1.0
+```
+
+`Save-Module` maakt gebruik van de para meter **name** om de module **PowerShellGet** op te geven. De para meter **Path** geeft aan waar de gedownloade module moet worden opgeslagen. De **opslagplaats** parameter geeft een geregistreerde opslag plaats, **PSGallery**. **MaximumVersion** geeft aan dat versie **2.1.0** wordt gedownload en opgeslagen. Wanneer het downloaden is voltooid, `Get-ChildItem` wordt de inhoud weer gegeven van het **pad** waar de bestanden zijn opgeslagen.
+
+### Voor beeld 3: een specifieke versie van een module zoeken en opslaan
+
+In dit voor beeld wordt een vereiste module versie gevonden in de opslag plaats en opgeslagen op de lokale computer.
+
+```powershell
+Find-Module -Name PowerShellGet -Repository PSGallery -RequiredVersion 1.6.5 |
+  Save-Module -Path C:\Test\Modules
+Get-ChildItem -Path C:\Test\Modules\PowerShellGet
+```
+
+```Output
+    Directory: C:\Test\Modules\PowerShellGet
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----         7/1/2019     14:04                1.6.5
+```
+
+`Find-Module` maakt gebruik van de para meter **name** om de module **PowerShellGet** op te geven. De **opslagplaats** parameter geeft een geregistreerde opslag plaats, **PSGallery**. **RequiredVersion** geeft versie **1.6.5**.
+
+Het object wordt naar de pijp lijn verzonden `Save-Module` . De para meter **Path** geeft aan waar de gedownloade module moet worden opgeslagen. Wanneer het downloaden is voltooid, `Get-ChildItem` wordt de inhoud weer gegeven van het **pad** waar de bestanden zijn opgeslagen.
 
 ## PARAMETERS
 
 ### -AcceptLicense
 
-Accepteer de gebruiksrecht overeenkomst automatisch als deze vereist is voor het script.
+Accepteer de gebruiksrecht overeenkomst automatisch als het pakket deze vereist.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -98,7 +144,7 @@ Accept wildcard characters: False
 
 ### -AllowPrerelease
 
-Hiermee kunt u een script opslaan dat is gemarkeerd als Prerelease.
+Hiermee kunt u een module opslaan die is gemarkeerd als een voorlopige versie.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -114,7 +160,7 @@ Accept wildcard characters: False
 
 ### -Confirm
 
-Vraagt u om bevestiging voordat deze wordt uitgevoerd `Save-Script` .
+Vraagt u om bevestiging voordat de wordt uitgevoerd `Save-Module` .
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -130,7 +176,7 @@ Accept wildcard characters: False
 
 ### -Credential
 
-Hiermee geeft u een gebruikers account op dat gemachtigd is om een script op te slaan.
+Hiermee geeft u een gebruikers account op dat rechten heeft om een module op te slaan.
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -146,7 +192,7 @@ Accept wildcard characters: False
 
 ### -Force
 
-Er wordt geforceerd `Save-Script` dat de uitvoering wordt uitgevoerd zonder dat de gebruiker om bevestiging wordt gevraagd.
+Er wordt geforceerd `Save-Module` dat de uitvoering wordt uitgevoerd zonder dat de gebruiker om bevestiging wordt gevraagd.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -162,7 +208,7 @@ Accept wildcard characters: False
 
 ### -Input object
 
-Hiermee wordt een **PSRepositoryItemInfo** -object geaccepteerd. Bijvoorbeeld: uitvoer `Find-Script` naar een variabele en de variabele gebruiken als het argument **input object** .
+Hiermee wordt een **PSRepositoryItemInfo** -object geaccepteerd. Bijvoorbeeld: uitvoer `Find-Module` naar een variabele en de variabele gebruiken als het argument **input object** .
 
 ```yaml
 Type: System.Management.Automation.PSObject[]
@@ -178,7 +224,7 @@ Accept wildcard characters: False
 
 ### -LiteralPath
 
-Hiermee geeft u een pad naar een of meer locaties. De waarde van de para meter **LiteralPath** wordt exact als opgegeven gebruikt. Geen tekens worden geïnterpreteerd als joker tekens. Als het pad escape tekens bevat, plaatst u het pad tussen enkele aanhalings tekens. Power shell interpreteert niet alle tekens tussen enkele aanhalings tekens als escape-reeksen.
+Hiermee geeft u een pad naar een of meer locaties. De waarde van de para meter **LiteralPath** wordt exact als opgegeven gebruikt. Geen tekens worden geïnterpreteerd als joker tekens. Als het pad escape tekens bevat, plaatst u deze tussen enkele aanhalings tekens. Power shell interpreteert geen tekens tussen enkele aanhalings teken als escape-reeksen.
 
 ```yaml
 Type: System.String
@@ -194,7 +240,7 @@ Accept wildcard characters: False
 
 ### -MaximumVersion
 
-Hiermee geeft u het maximum of de nieuwste versie van het script op dat moet worden opgeslagen. De para meters **MaximumVersion** en **RequiredVersion** kunnen niet worden gebruikt in dezelfde opdracht.
+Hiermee geeft u het maximum of nieuwste versie van de module op die moet worden opgeslagen. De para meters **MaximumVersion** en **RequiredVersion** kunnen niet worden gebruikt in dezelfde opdracht.
 
 ```yaml
 Type: System.String
@@ -210,7 +256,7 @@ Accept wildcard characters: False
 
 ### -MinimumVersion
 
-Hiermee geeft u de minimale versie van een script op dat moet worden opgeslagen. De para meters **MinimumVersion** en **RequiredVersion** kunnen niet worden gebruikt in dezelfde opdracht.
+Hiermee geeft u de minimum versie van één module op die moet worden opgeslagen. U kunt deze para meter niet toevoegen als u probeert meerdere modules te installeren. De para meters **MinimumVersion** en **RequiredVersion** kunnen niet worden gebruikt in dezelfde opdracht.
 
 ```yaml
 Type: System.String
@@ -226,7 +272,7 @@ Accept wildcard characters: False
 
 ### -Name
 
-Hiermee geeft u een matrix met script namen op die moet worden opgeslagen.
+Hiermee geeft u een matrix met namen van modules op die moeten worden opgeslagen.
 
 ```yaml
 Type: System.String[]
@@ -258,7 +304,7 @@ Accept wildcard characters: True
 
 ### -Proxy
 
-Hiermee geeft u een proxy server voor de aanvraag op in plaats van rechtstreeks verbinding te maken met een Internet bron.
+Hiermee geeft u een proxy server voor de aanvraag op in plaats van rechtstreeks verbinding te maken met de Internet resource.
 
 ```yaml
 Type: System.Uri
@@ -274,7 +320,7 @@ Accept wildcard characters: False
 
 ### -ProxyCredential
 
-Hiermee geeft u een gebruikers account op dat gemachtigd is om de proxy server te gebruiken die is opgegeven met de **proxy** para meter.
+Hiermee geeft u een gebruikers account op dat is gemachtigd voor het gebruik van de proxy server die is opgegeven door de para meter **proxy** .
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -306,7 +352,7 @@ Accept wildcard characters: False
 
 ### -RequiredVersion
 
-Hiermee geeft u het exacte versie nummer van het script op dat moet worden opgeslagen.
+Hiermee geeft u het exacte versie nummer van de module op die moet worden opgeslagen.
 
 ```yaml
 Type: System.String
@@ -322,7 +368,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-Hier wordt weer gegeven wat er gebeurt als er `Save-Script` wordt uitgevoerd. De cmdlet wordt niet uitgevoerd.
+Laat zien wat er zou gebeuren als de `Save-Module` uitvoeringen wordt uitgevoerd. De cmdlet wordt niet uitgevoerd.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -366,15 +412,3 @@ Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - Er
 > Zie de [aankondiging](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in het Power shell-blog voor meer informatie.
 
 ## GERELATEERDE KOPPELINGEN
-
-[Zoeken-script](Find-Script.md)
-
-[Install-script](Install-Script.md)
-
-[Publish-Script](Publish-Script.md)
-
-[Test-ScriptFileInfo](Test-ScriptFileInfo.md)
-
-[Uninstall-script](Uninstall-Script.md)
-
-[Update-script](Update-Script.md)

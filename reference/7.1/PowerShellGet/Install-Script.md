@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/powershellget/install-script?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Install-Script
-ms.openlocfilehash: 2be7545829ddbbb7ddad798acb82f83c0feb3db1
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: a5fa4388f149c2c1017454a6384d63807fccfc8a
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93250864"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94892399"
 ---
 # Install-Script
 
@@ -42,7 +42,7 @@ Install-Script [-InputObject] <PSObject[]> [-Scope <String>] [-NoPathUpdate] [-P
 
 Met de `Install-Script` cmdlet wordt een script lading opgehaald uit een opslag plaats, wordt gecontroleerd of de payload een geldig Power shell-script is en wordt het script bestand gekopieerd naar een opgegeven installatie locatie.
 
-De standaard opslagplaatsen `Install-Script` kunnen worden geconfigureerd met behulp van `Register-PSRepository` de `Set-PSRepository` `Unregister-PSRepository` cmdlets,, en `Get-PSRepository` . Bij het werken met meerdere opslag plaatsen `Install-Script` installeert het eerste script dat overeenkomt met de opgegeven zoek criteria ( **name** , **MinimumVersion** of **MaximumVersion** ) van de eerste opslag plaats zonder enige fout.
+De standaard opslagplaatsen `Install-Script` kunnen worden geconfigureerd met behulp van `Register-PSRepository` de `Set-PSRepository` `Unregister-PSRepository` cmdlets,, en `Get-PSRepository` . Bij het werken met meerdere opslag plaatsen `Install-Script` installeert het eerste script dat overeenkomt met de opgegeven zoek criteria (**name**, **MinimumVersion** of **MaximumVersion**) van de eerste opslag plaats zonder enige fout.
 
 ## VOORBEELDEN
 
@@ -500,6 +500,13 @@ Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - Er
 
 ## OPMERKINGEN
 
+> [!IMPORTANT]
+> Vanaf april 2020 biedt de PowerShell Gallery niet langer ondersteuning voor Transport Layer Security (TLS) versie 1,0 en 1,1. Als u geen TLS 1,2 of hoger gebruikt, wordt er een fout bericht weer gegeven wanneer u probeert toegang te krijgen tot de PowerShell Gallery. Gebruik de volgende opdracht om ervoor te zorgen dat u TLS 1,2 gebruikt:
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> Zie de [aankondiging](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in het Power shell-blog voor meer informatie.
+
 ## GERELATEERDE KOPPELINGEN
 
 [Zoeken-script](Find-Script.md)
@@ -511,4 +518,3 @@ Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - Er
 [Uninstall-script](Uninstall-Script.md)
 
 [Update-script](Update-Script.md)
-

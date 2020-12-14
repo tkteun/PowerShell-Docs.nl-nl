@@ -7,12 +7,12 @@ ms.date: 06/04/2019
 online version: https://docs.microsoft.com/powershell/module/powershellget/find-dscresource?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Find-DscResource
-ms.openlocfilehash: 170be8eb8e5f9f158b69c5505505e587e10c7e78
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 4312ac522bf0b04a9a95414774bad9624737ce45
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93249493"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94892668"
 ---
 # Find-DscResource
 
@@ -117,7 +117,7 @@ xIisLogging                         2.6.0.0    xWebAdministration      PSGallery
 ### Voor beeld 5: een DSC-resource zoeken op label en vereiste versie
 
 DSC-resources kunnen worden gevonden met behulp van de para meters **tag** en **RequiredVersion**. **Tag** geeft de huidige versie weer van elke resource die het opgegeven label bevat in de opslag plaats.
-**RequiredVersion** moet de **ModuleName** para meter voor de module **naam** hebben en de para meter name is optioneel. De para meters **name en naam** **module** beperken de uitvoer. Gebruik de para meter **AllVersions** om de beschik bare versies van een DSC-resource weer te geven.
+**RequiredVersion** moet de  para meter voor de module **naam** hebben en de para meter name is optioneel. De para meters **name en naam** **module** beperken de uitvoer. Gebruik de para meter **AllVersions** om de beschik bare versies van een DSC-resource weer te geven.
 
 ```powershell
 Find-DscResource -ModuleName xWebAdministration -Tag DSC -RequiredVersion 1.20
@@ -158,7 +158,7 @@ dmAwsTagInstance        1.0.1      domainAwsDSCResources      PSGallery
 Bevat resources die zijn gemarkeerd als een prerelease in de resultaten.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -171,7 +171,7 @@ Accept wildcard characters: False
 
 ### -AllVersions
 
-Met de para meter **AllVersions** worden alle beschik bare versies van een DSC-resource weer gegeven. U kunt de para meter **AllVersions** niet gebruiken met de para meters **MinimumVersion** , **MaximumVersion** of **RequiredVersion** .
+Met de para meter **AllVersions** worden alle beschik bare versies van een DSC-resource weer gegeven. U kunt de para meter **AllVersions** niet gebruiken met de para meters **MinimumVersion**, **MaximumVersion** of **RequiredVersion** .
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -187,7 +187,7 @@ Accept wildcard characters: False
 
 ### -Filter
 
-Zoekt bronnen op basis van de zoek syntaxis van de **Package Management** -provider. Geef bijvoorbeeld woorden op waarnaar u wilt zoeken in de **ModuleName** eigenschappen van module **naam en beschrijving** .
+Zoekt bronnen op basis van de zoek syntaxis van de **Package Management** -provider. Geef bijvoorbeeld woorden op waarnaar u wilt zoeken in de  eigenschappen van module **naam en beschrijving** .
 
 ```yaml
 Type: System.String
@@ -358,6 +358,13 @@ Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - Er
 `Find-DscResource` retourneert een **PSGetDscResourceInfo** -object.
 
 ## OPMERKINGEN
+
+> [!IMPORTANT]
+> Vanaf april 2020 biedt de PowerShell Gallery niet langer ondersteuning voor Transport Layer Security (TLS) versie 1,0 en 1,1. Als u geen TLS 1,2 of hoger gebruikt, wordt er een fout bericht weer gegeven wanneer u probeert toegang te krijgen tot de PowerShell Gallery. Gebruik de volgende opdracht om ervoor te zorgen dat u TLS 1,2 gebruikt:
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> Zie de [aankondiging](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in het Power shell-blog voor meer informatie.
 
 ## GERELATEERDE KOPPELINGEN
 

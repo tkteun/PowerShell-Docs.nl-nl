@@ -1,14 +1,14 @@
 ---
-ms.date: 06/12/2017
+ms.date: 11/20/2020
 keywords: DSC, Power shell, configuratie, installatie
 title: Aan de slag met de desired state Configuration (DSC) voor Linux
 description: In dit onderwerp wordt uitgelegd hoe u aan de slag kunt gaan met behulp van Power shell desired state Configuration (DSC) voor Linux.
-ms.openlocfilehash: 826707654a297306c39d4dfcfd3941f56b7cf91d
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: df9cab07284a7d6fa199f5524a8719ea490192d0
+ms.sourcegitcommit: 077488408c820c860131382324bdd576d0edf52a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92651120"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95514997"
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>Aan de slag met de desired state Configuration (DSC) voor Linux
 
@@ -24,7 +24,7 @@ De volgende versies van Linux-besturings systemen worden ondersteund door DSC vo
 - Oracle Linux 5, 6 en 7 (x86/x64)
 - Red Hat Enterprise Linux Server 5, 6 en 7 (x86/x64)
 - SUSE Linux Enterprise Server 10, 11 en 12 (x86/x64)
-- Ubuntu Server 12,04 LTS, 14,04 LTS, 16,04 LTS (x86/x64)
+- Ubuntu Server 12,04 LTS, 14,04 LTS, 16,04 LTS, 18,04 (x86/x64)
 
 ## <a name="installing-dsc-for-linux"></a>DSC voor Linux installeren
 
@@ -45,7 +45,7 @@ Voer de volgende opdracht uit om OMI te installeren op een CentOS 7 x64-systeem.
 
 ### <a name="installing-dsc"></a>DSC installeren
 
-DSC voor Linux kan worden gedownload via de [Power shell-DSC-for-Linux](https://github.com/Microsoft/PowerShell-DSC-for-Linux/releases/tag/v1.1.1-294) -opslag plaats in de opslag plaats.
+DSC voor Linux kan worden gedownload via de [Power shell-DSC-for-Linux](https://github.com/Microsoft/PowerShell-DSC-for-Linux/releases/tag/v1.1.1-926) -opslag plaats in de opslag plaats.
 
 Als u DSC wilt installeren, installeert u het pakket dat geschikt is voor uw Linux-systeem (. rpm of. deb) en OpenSSL-versie (ssl_098 of ssl_100) en architectuur (x64/x86). RPM-pakketten zijn geschikt voor CentOS, Red Hat Enterprise Linux, SUSE Linux Enterprise Server en Oracle Linux. DEB-pakketten zijn geschikt voor Debian GNU/Linux en Ubuntu Server. De ssl_098-pakketten zijn geschikt voor computers waarop OpenSSL 0.9.8 is geïnstalleerd terwijl de ssl_100 pakketten geschikt zijn voor computers waarop OpenSSL 1,0 is geïnstalleerd.
 
@@ -171,7 +171,7 @@ DSC voor Linux bevat scripts voor het werken met de configuratie van de lokale L
 
 De volgende logboek bestanden worden gegenereerd voor DSC voor Linux-berichten.
 
-|     Logboekbestand      |     Directory      |                                               Beschrijving                                                |
+|     Logboekbestand      |     Directory      |                                               Description                                                |
 | ----------------- | ------------------ | -------------------------------------------------------------------------------------------------------- |
 | **omiserver. log** | `/var/opt/omi/log` | Berichten met betrekking tot de werking van de OMI CIM-server.                                                |
 | **DSC. log**       | `/var/opt/omi/log` | Berichten met betrekking tot de werking van de lokale Configuration Manager (LCM) en DSC-bron bewerkingen. |

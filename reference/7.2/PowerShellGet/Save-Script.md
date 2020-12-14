@@ -1,18 +1,17 @@
 ---
 external help file: PSModule-help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: PowerShellGet
 ms.date: 07/02/2019
-online version: https://docs.microsoft.com/powershell/module/powershellget/save-script?view=powershell-7.1&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/powershellget/save-script?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Save-Script
-ms.openlocfilehash: 3d5b661f333d03b71f90098d29cf806825ed9324
+ms.openlocfilehash: 2f672cbb814b0641411bb11ffb17bd1ecef96dda
 ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/19/2020
-ms.locfileid: "94892137"
+ms.locfileid: "94891858"
 ---
 # Save-Script
 

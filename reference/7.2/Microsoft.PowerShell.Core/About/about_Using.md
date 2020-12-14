@@ -2,15 +2,15 @@
 description: Hiermee kunt u aangeven welke naam ruimten in de sessie worden gebruikt.
 Locale: en-US
 ms.date: 11/18/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_using?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_using?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Using
-ms.openlocfilehash: 798b7bc9759c7c88eb612d0eb47bdb92c015cc18
+ms.openlocfilehash: d08ada489ebe04ae51e3927486f354a8371de03f
 ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/19/2020
-ms.locfileid: "94892018"
+ms.locfileid: "94892539"
 ---
 # <a name="about-using"></a>Over het gebruik van
 
@@ -46,9 +46,6 @@ using module <module-name>
 De waarde van `<module-name>` kan een module naam, een volledige module specificatie of een pad naar een module bestand zijn.
 
 Wanneer `<module-name>` een pad is, kan het pad volledig gekwalificeerd of relatief zijn. Een relatief pad wordt opgelost ten opzichte van het script dat de instructie using bevat.
-
-> [!NOTE]
-> Wanneer het relatieve pad een slash () bevat `/` , wordt het pad door Power shell behandeld ten opzichte van de huidige locatie en niet ten opzichte van de locatie van het script. Deze fout is opgelost in Power shell 7,1.
 
 Wanneer `<module-name>` is een naam of module specificatie, zoekt Power shell de **PSModulePath** voor de opgegeven module.
 
