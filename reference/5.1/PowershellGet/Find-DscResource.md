@@ -7,21 +7,21 @@ ms.date: 06/04/2019
 online version: https://docs.microsoft.com/powershell/module/powershellget/find-dscresource?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Find-DscResource
-ms.openlocfilehash: 9d62706d5788f1ae2c97da4bf1f6143eed2ad8f9
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 39896c4f48d6cd8809d4a680e776d36deb65b0d8
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93250251"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94889858"
 ---
-# <span data-ttu-id="de778-103">Find-DscResource</span><span class="sxs-lookup"><span data-stu-id="de778-103">Find-DscResource</span></span>
+# <span data-ttu-id="7c87c-103">Find-DscResource</span><span class="sxs-lookup"><span data-stu-id="7c87c-103">Find-DscResource</span></span>
 
-## <span data-ttu-id="de778-104">SAMENVATTING</span><span class="sxs-lookup"><span data-stu-id="de778-104">SYNOPSIS</span></span>
-<span data-ttu-id="de778-105">Zoekt naar desired state Configuration (DSC)-resources.</span><span class="sxs-lookup"><span data-stu-id="de778-105">Finds Desired State Configuration (DSC) resources.</span></span>
+## <span data-ttu-id="7c87c-104">SAMENVATTING</span><span class="sxs-lookup"><span data-stu-id="7c87c-104">SYNOPSIS</span></span>
+<span data-ttu-id="7c87c-105">Zoekt naar desired state Configuration (DSC)-resources.</span><span class="sxs-lookup"><span data-stu-id="7c87c-105">Finds Desired State Configuration (DSC) resources.</span></span>
 
-## <span data-ttu-id="de778-106">SYNTAXIS</span><span class="sxs-lookup"><span data-stu-id="de778-106">SYNTAX</span></span>
+## <span data-ttu-id="7c87c-106">SYNTAXIS</span><span class="sxs-lookup"><span data-stu-id="7c87c-106">SYNTAX</span></span>
 
-### <span data-ttu-id="de778-107">Alles</span><span class="sxs-lookup"><span data-stu-id="de778-107">All</span></span>
+### <span data-ttu-id="7c87c-107">Alles</span><span class="sxs-lookup"><span data-stu-id="7c87c-107">All</span></span>
 
 ```
 Find-DscResource [[-Name] <String[]>] [-ModuleName <String>] [-MinimumVersion <String>]
@@ -30,19 +30,19 @@ Find-DscResource [[-Name] <String[]>] [-ModuleName <String>] [-MinimumVersion <S
  [-Repository <String[]>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="de778-108">BESCHRIJVING</span><span class="sxs-lookup"><span data-stu-id="de778-108">DESCRIPTION</span></span>
+## <span data-ttu-id="7c87c-108">BESCHRIJVING</span><span class="sxs-lookup"><span data-stu-id="7c87c-108">DESCRIPTION</span></span>
 
-<span data-ttu-id="de778-109">De `Find-DscResource` cmdlet zoekt geregistreerde opslag plaatsen om DSC-resources in modules te vinden.</span><span class="sxs-lookup"><span data-stu-id="de778-109">The `Find-DscResource` cmdlet searches registered repositories to find DSC resources contained in modules.</span></span> <span data-ttu-id="de778-110">Standaard `Find-DscResource` doorzoekt alle geregistreerde opslag plaatsen.</span><span class="sxs-lookup"><span data-stu-id="de778-110">By default `Find-DscResource` searches all registered repositories.</span></span>
+<span data-ttu-id="7c87c-109">De `Find-DscResource` cmdlet zoekt geregistreerde opslag plaatsen om DSC-resources in modules te vinden.</span><span class="sxs-lookup"><span data-stu-id="7c87c-109">The `Find-DscResource` cmdlet searches registered repositories to find DSC resources contained in modules.</span></span> <span data-ttu-id="7c87c-110">Standaard `Find-DscResource` doorzoekt alle geregistreerde opslag plaatsen.</span><span class="sxs-lookup"><span data-stu-id="7c87c-110">By default `Find-DscResource` searches all registered repositories.</span></span>
 
-<span data-ttu-id="de778-111">Voor elke module die door wordt gevonden `Find-DscResource` , wordt een **PSGetDscResourceInfo** -object geretourneerd.</span><span class="sxs-lookup"><span data-stu-id="de778-111">For each module found by `Find-DscResource`, a **PSGetDscResourceInfo** object is returned.</span></span>
-<span data-ttu-id="de778-112">**PSGetDscResourceInfo** -objecten kunnen naar de-cmdlet worden verzonden door de pijp lijn `Install-Module` .</span><span class="sxs-lookup"><span data-stu-id="de778-112">**PSGetDscResourceInfo** objects can be sent down the pipeline to the `Install-Module` cmdlet.</span></span>
-<span data-ttu-id="de778-113">`Install-Module` installeert de module.</span><span class="sxs-lookup"><span data-stu-id="de778-113">`Install-Module` installs the module.</span></span>
+<span data-ttu-id="7c87c-111">Voor elke module die door wordt gevonden `Find-DscResource` , wordt een **PSGetDscResourceInfo** -object geretourneerd.</span><span class="sxs-lookup"><span data-stu-id="7c87c-111">For each module found by `Find-DscResource`, a **PSGetDscResourceInfo** object is returned.</span></span>
+<span data-ttu-id="7c87c-112">**PSGetDscResourceInfo** -objecten kunnen naar de-cmdlet worden verzonden door de pijp lijn `Install-Module` .</span><span class="sxs-lookup"><span data-stu-id="7c87c-112">**PSGetDscResourceInfo** objects can be sent down the pipeline to the `Install-Module` cmdlet.</span></span>
+<span data-ttu-id="7c87c-113">`Install-Module` installeert de module.</span><span class="sxs-lookup"><span data-stu-id="7c87c-113">`Install-Module` installs the module.</span></span>
 
-## <span data-ttu-id="de778-114">VOORBEELDEN</span><span class="sxs-lookup"><span data-stu-id="de778-114">EXAMPLES</span></span>
+## <span data-ttu-id="7c87c-114">VOORBEELDEN</span><span class="sxs-lookup"><span data-stu-id="7c87c-114">EXAMPLES</span></span>
 
-### <span data-ttu-id="de778-115">Voor beeld 1: alle DSC-resources zoeken</span><span class="sxs-lookup"><span data-stu-id="de778-115">Example 1: Find all DSC resources</span></span>
+### <span data-ttu-id="7c87c-115">Voor beeld 1: alle DSC-resources zoeken</span><span class="sxs-lookup"><span data-stu-id="7c87c-115">Example 1: Find all DSC resources</span></span>
 
-<span data-ttu-id="de778-116">`Find-DscResource` Hiermee worden DSC-resources uit de geregistreerde opslag plaatsen geretourneerd.</span><span class="sxs-lookup"><span data-stu-id="de778-116">`Find-DscResource` returns DSC resources from registered repositories.</span></span> <span data-ttu-id="de778-117">Als u een specifieke opslag plaats wilt doorzoeken, gebruikt u de para meter **opslagplaats** .</span><span class="sxs-lookup"><span data-stu-id="de778-117">To search a specific repository, use the **Repository** parameter.</span></span>
+<span data-ttu-id="7c87c-116">`Find-DscResource` Hiermee worden DSC-resources uit de geregistreerde opslag plaatsen geretourneerd.</span><span class="sxs-lookup"><span data-stu-id="7c87c-116">`Find-DscResource` returns DSC resources from registered repositories.</span></span> <span data-ttu-id="7c87c-117">Als u een specifieke opslag plaats wilt doorzoeken, gebruikt u de para meter **opslagplaats** .</span><span class="sxs-lookup"><span data-stu-id="7c87c-117">To search a specific repository, use the **Repository** parameter.</span></span>
 
 ```powershell
 Find-DscResource
@@ -63,9 +63,9 @@ xDSCWebService                 8.7.0.0    xPSDesiredStateConfiguration   PSGalle
 xEnvironment                   8.7.0.0    xPSDesiredStateConfiguration   PSGallery
 ```
 
-### <span data-ttu-id="de778-118">Voor beeld 2: een DSC-resource op naam zoeken</span><span class="sxs-lookup"><span data-stu-id="de778-118">Example 2: Find a DSC resource by name</span></span>
+### <span data-ttu-id="7c87c-118">Voor beeld 2: een DSC-resource op naam zoeken</span><span class="sxs-lookup"><span data-stu-id="7c87c-118">Example 2: Find a DSC resource by name</span></span>
 
-<span data-ttu-id="de778-119">`Find-DscResource` DSC-resources zoeken op naam.</span><span class="sxs-lookup"><span data-stu-id="de778-119">`Find-DscResource` locates DSC resources by name.</span></span> <span data-ttu-id="de778-120">Gebruik komma's om een matrix met resource namen te scheiden.</span><span class="sxs-lookup"><span data-stu-id="de778-120">Use commas to separate an array of resource names.</span></span>
+<span data-ttu-id="7c87c-119">`Find-DscResource` DSC-resources zoeken op naam.</span><span class="sxs-lookup"><span data-stu-id="7c87c-119">`Find-DscResource` locates DSC resources by name.</span></span> <span data-ttu-id="7c87c-120">Gebruik komma's om een matrix met resource namen te scheiden.</span><span class="sxs-lookup"><span data-stu-id="7c87c-120">Use commas to separate an array of resource names.</span></span>
 
 ```powershell
 Find-DscResource -Name xWebsite, xWebApplication, xWebSiteDefaults
@@ -79,25 +79,25 @@ xWebsite           2.6.0.0    xWebAdministration    PSGallery
 xWebSiteDefaults   2.6.0.0    xWebAdministration    PSGallery
 ```
 
-<span data-ttu-id="de778-121">`Find-DscResource` maakt gebruik van de para meter **name** om de opgegeven matrix van DSC-resources te zoeken.</span><span class="sxs-lookup"><span data-stu-id="de778-121">`Find-DscResource` uses the **Name** parameter to find the specified array of DSC resources.</span></span>
+<span data-ttu-id="7c87c-121">`Find-DscResource` maakt gebruik van de para meter **name** om de opgegeven matrix van DSC-resources te zoeken.</span><span class="sxs-lookup"><span data-stu-id="7c87c-121">`Find-DscResource` uses the **Name** parameter to find the specified array of DSC resources.</span></span>
 
-### <span data-ttu-id="de778-122">Voor beeld 3: een DSC-resource zoeken en installeren</span><span class="sxs-lookup"><span data-stu-id="de778-122">Example 3: Find a DSC resource and install it</span></span>
+### <span data-ttu-id="7c87c-122">Voor beeld 3: een DSC-resource zoeken en installeren</span><span class="sxs-lookup"><span data-stu-id="7c87c-122">Example 3: Find a DSC resource and install it</span></span>
 
-<span data-ttu-id="de778-123">`Find-DscResource` zoekt een DSC-resource en stuurt het object omlaag in de pijp lijn die moet worden geïnstalleerd.</span><span class="sxs-lookup"><span data-stu-id="de778-123">`Find-DscResource` locates a DSC resource and sends the object down the pipeline to be installed.</span></span>
-<span data-ttu-id="de778-124">Na de installatie gebruikt `Get-InstalledModule` u om de resultaten weer te geven.</span><span class="sxs-lookup"><span data-stu-id="de778-124">After the installation, use `Get-InstalledModule` to view the results.</span></span>
+<span data-ttu-id="7c87c-123">`Find-DscResource` zoekt een DSC-resource en stuurt het object omlaag in de pijp lijn die moet worden geïnstalleerd.</span><span class="sxs-lookup"><span data-stu-id="7c87c-123">`Find-DscResource` locates a DSC resource and sends the object down the pipeline to be installed.</span></span>
+<span data-ttu-id="7c87c-124">Na de installatie gebruikt `Get-InstalledModule` u om de resultaten weer te geven.</span><span class="sxs-lookup"><span data-stu-id="7c87c-124">After the installation, use `Get-InstalledModule` to view the results.</span></span>
 
-<span data-ttu-id="de778-125">Er kunnen meerdere resources van dezelfde module naar de pijp lijn worden verzonden `Install-Module` .</span><span class="sxs-lookup"><span data-stu-id="de778-125">Multiple resources from the same module can be sent down the pipeline to the `Install-Module`.</span></span>
-<span data-ttu-id="de778-126">`Install-Module` probeert de module alleen eenmaal te installeren.</span><span class="sxs-lookup"><span data-stu-id="de778-126">`Install-Module` attempts to only install the module once.</span></span>
+<span data-ttu-id="7c87c-125">Er kunnen meerdere resources van dezelfde module naar de pijp lijn worden verzonden `Install-Module` .</span><span class="sxs-lookup"><span data-stu-id="7c87c-125">Multiple resources from the same module can be sent down the pipeline to the `Install-Module`.</span></span>
+<span data-ttu-id="7c87c-126">`Install-Module` probeert de module alleen eenmaal te installeren.</span><span class="sxs-lookup"><span data-stu-id="7c87c-126">`Install-Module` attempts to only install the module once.</span></span>
 
 ```powershell
 Find-DscResource -Name xWebsite | Install-Module
 ```
 
-<span data-ttu-id="de778-127">`Find-DscResource` maakt gebruik van de para meter **name** om de resource met de naam **xWebsite** te zoeken.</span><span class="sxs-lookup"><span data-stu-id="de778-127">`Find-DscResource` uses the **Name** parameter to find the resource named **xWebsite**.</span></span> <span data-ttu-id="de778-128">Het object wordt vanuit de pijp lijn naar de `Install-Module` cmdlet verzonden.</span><span class="sxs-lookup"><span data-stu-id="de778-128">The object is sent down the pipeline to the `Install-Module` cmdlet.</span></span> <span data-ttu-id="de778-129">`Install-Module` Hiermee installeert u de **xWebAdministration** -module voor de resource.</span><span class="sxs-lookup"><span data-stu-id="de778-129">`Install-Module` installs the **xWebAdministration** module for the resource.</span></span>
+<span data-ttu-id="7c87c-127">`Find-DscResource` maakt gebruik van de para meter **name** om de resource met de naam **xWebsite** te zoeken.</span><span class="sxs-lookup"><span data-stu-id="7c87c-127">`Find-DscResource` uses the **Name** parameter to find the resource named **xWebsite**.</span></span> <span data-ttu-id="7c87c-128">Het object wordt vanuit de pijp lijn naar de `Install-Module` cmdlet verzonden.</span><span class="sxs-lookup"><span data-stu-id="7c87c-128">The object is sent down the pipeline to the `Install-Module` cmdlet.</span></span> <span data-ttu-id="7c87c-129">`Install-Module` Hiermee installeert u de **xWebAdministration** -module voor de resource.</span><span class="sxs-lookup"><span data-stu-id="7c87c-129">`Install-Module` installs the **xWebAdministration** module for the resource.</span></span>
 
-### <span data-ttu-id="de778-130">Voor beeld 4: alle DSC-resources in een module zoeken</span><span class="sxs-lookup"><span data-stu-id="de778-130">Example 4: Find all DSC resources in a module</span></span>
+### <span data-ttu-id="7c87c-130">Voor beeld 4: alle DSC-resources in een module zoeken</span><span class="sxs-lookup"><span data-stu-id="7c87c-130">Example 4: Find all DSC resources in a module</span></span>
 
-<span data-ttu-id="de778-131">`Find-DscResource` Hiermee worden alle DSC-resources in een opgegeven module gevonden.</span><span class="sxs-lookup"><span data-stu-id="de778-131">`Find-DscResource` finds all the DSC resources contained in a specified module.</span></span> <span data-ttu-id="de778-132">Standaard wordt de huidige versie weer gegeven.</span><span class="sxs-lookup"><span data-stu-id="de778-132">By default, the current version is displayed.</span></span> <span data-ttu-id="de778-133">Als u andere versies wilt weer geven, gebruikt u de para meters **AllVersions** of **RequiredVersions** .</span><span class="sxs-lookup"><span data-stu-id="de778-133">To display other versions, use the **AllVersions** or **RequiredVersions** parameters.</span></span>
+<span data-ttu-id="7c87c-131">`Find-DscResource` Hiermee worden alle DSC-resources in een opgegeven module gevonden.</span><span class="sxs-lookup"><span data-stu-id="7c87c-131">`Find-DscResource` finds all the DSC resources contained in a specified module.</span></span> <span data-ttu-id="7c87c-132">Standaard wordt de huidige versie weer gegeven.</span><span class="sxs-lookup"><span data-stu-id="7c87c-132">By default, the current version is displayed.</span></span> <span data-ttu-id="7c87c-133">Als u andere versies wilt weer geven, gebruikt u de para meters **AllVersions** of **RequiredVersions** .</span><span class="sxs-lookup"><span data-stu-id="7c87c-133">To display other versions, use the **AllVersions** or **RequiredVersions** parameters.</span></span>
 
 ```powershell
 Find-DscResource -ModuleName xWebAdministration
@@ -112,12 +112,12 @@ xIisHandler                         2.6.0.0    xWebAdministration      PSGallery
 xIisLogging                         2.6.0.0    xWebAdministration      PSGallery
 ```
 
-<span data-ttu-id="de778-134">`Find-DscResource` maakt gebruik van de para meter **module** om de **xWebAdministration** op te geven en de DSC-resources in de module te vinden.</span><span class="sxs-lookup"><span data-stu-id="de778-134">`Find-DscResource` uses the **ModuleName** parameter to specify the **xWebAdministration** and find the DSC resources contained in the module.</span></span> <span data-ttu-id="de778-135">De huidige versie van elke resource wordt weer gegeven.</span><span class="sxs-lookup"><span data-stu-id="de778-135">The current version of each resource is displayed.</span></span>
+<span data-ttu-id="7c87c-134">`Find-DscResource` maakt gebruik van de para meter **module** om de **xWebAdministration** op te geven en de DSC-resources in de module te vinden.</span><span class="sxs-lookup"><span data-stu-id="7c87c-134">`Find-DscResource` uses the **ModuleName** parameter to specify the **xWebAdministration** and find the DSC resources contained in the module.</span></span> <span data-ttu-id="7c87c-135">De huidige versie van elke resource wordt weer gegeven.</span><span class="sxs-lookup"><span data-stu-id="7c87c-135">The current version of each resource is displayed.</span></span>
 
-### <span data-ttu-id="de778-136">Voor beeld 5: een DSC-resource zoeken op label en vereiste versie</span><span class="sxs-lookup"><span data-stu-id="de778-136">Example 5: Find a DSC resource by tag and required version</span></span>
+### <span data-ttu-id="7c87c-136">Voor beeld 5: een DSC-resource zoeken op label en vereiste versie</span><span class="sxs-lookup"><span data-stu-id="7c87c-136">Example 5: Find a DSC resource by tag and required version</span></span>
 
-<span data-ttu-id="de778-137">DSC-resources kunnen worden gevonden met behulp van de para meters **tag** en **RequiredVersion**.</span><span class="sxs-lookup"><span data-stu-id="de778-137">DSC resources can be located using the parameters **Tag** and **RequiredVersion**.</span></span> <span data-ttu-id="de778-138">**Tag** geeft de huidige versie weer van elke resource die het opgegeven label bevat in de opslag plaats.</span><span class="sxs-lookup"><span data-stu-id="de778-138">**Tag** displays the current version of every resource that contains the specified tag in the repository.</span></span>
-<span data-ttu-id="de778-139">**RequiredVersion** moet de **ModuleName** para meter voor de module **naam** hebben en de para meter name is optioneel.</span><span class="sxs-lookup"><span data-stu-id="de778-139">**RequiredVersion** needs the **ModuleName** parameter and the **Name** parameter is optional.</span></span> <span data-ttu-id="de778-140">De para meters **name en naam** **module** beperken de uitvoer.</span><span class="sxs-lookup"><span data-stu-id="de778-140">The **Name** and **ModuleName** parameters limit the output.</span></span> <span data-ttu-id="de778-141">Gebruik de para meter **AllVersions** om de beschik bare versies van een DSC-resource weer te geven.</span><span class="sxs-lookup"><span data-stu-id="de778-141">Use the **AllVersions** parameter to display a DSC resource's available versions.</span></span>
+<span data-ttu-id="7c87c-137">DSC-resources kunnen worden gevonden met behulp van de para meters **tag** en **RequiredVersion**.</span><span class="sxs-lookup"><span data-stu-id="7c87c-137">DSC resources can be located using the parameters **Tag** and **RequiredVersion**.</span></span> <span data-ttu-id="7c87c-138">**Tag** geeft de huidige versie weer van elke resource die het opgegeven label bevat in de opslag plaats.</span><span class="sxs-lookup"><span data-stu-id="7c87c-138">**Tag** displays the current version of every resource that contains the specified tag in the repository.</span></span>
+<span data-ttu-id="7c87c-139">**RequiredVersion** moet de  para meter voor de module **naam** hebben en de para meter name is optioneel.</span><span class="sxs-lookup"><span data-stu-id="7c87c-139">**RequiredVersion** needs the **ModuleName** parameter and the **Name** parameter is optional.</span></span> <span data-ttu-id="7c87c-140">De para meters **name en naam** **module** beperken de uitvoer.</span><span class="sxs-lookup"><span data-stu-id="7c87c-140">The **Name** and **ModuleName** parameters limit the output.</span></span> <span data-ttu-id="7c87c-141">Gebruik de para meter **AllVersions** om de beschik bare versies van een DSC-resource weer te geven.</span><span class="sxs-lookup"><span data-stu-id="7c87c-141">Use the **AllVersions** parameter to display a DSC resource's available versions.</span></span>
 
 ```powershell
 Find-DscResource -ModuleName xWebAdministration -Tag DSC -RequiredVersion 1.20
@@ -132,9 +132,9 @@ xIisLogging             1.20.0.0   xWebAdministration     PSGallery
 xIisMimeTypeMapping     1.20.0.0   xWebAdministration     PSGallery
 ```
 
-### <span data-ttu-id="de778-142">Voor beeld 6: een resource zoeken met behulp van een filter</span><span class="sxs-lookup"><span data-stu-id="de778-142">Example 6: Find a resource by using a filter</span></span>
+### <span data-ttu-id="7c87c-142">Voor beeld 6: een resource zoeken met behulp van een filter</span><span class="sxs-lookup"><span data-stu-id="7c87c-142">Example 6: Find a resource by using a filter</span></span>
 
-<span data-ttu-id="de778-143">`Find-DscResource` Hiermee worden alle resources gevonden en de **filter** parameter gebruikt om de resultaten op basis van het **domein** op te geven.</span><span class="sxs-lookup"><span data-stu-id="de778-143">`Find-DscResource` finds all resources and uses the **Filter** parameter to specify the results by **Domain**.</span></span> <span data-ttu-id="de778-144">De **filter** parameter zoekt de filter waarde in de beschrijving of module naam van het object.</span><span class="sxs-lookup"><span data-stu-id="de778-144">The **Filter** parameter finds the filter value in the object's description or module name.</span></span> <span data-ttu-id="de778-145">Gebruik de `Select-Object` cmdlet om de eigenschappen van een object weer te geven.</span><span class="sxs-lookup"><span data-stu-id="de778-145">Use the `Select-Object` cmdlet to view an object's properties.</span></span>
+<span data-ttu-id="7c87c-143">`Find-DscResource` Hiermee worden alle resources gevonden en de **filter** parameter gebruikt om de resultaten op basis van het **domein** op te geven.</span><span class="sxs-lookup"><span data-stu-id="7c87c-143">`Find-DscResource` finds all resources and uses the **Filter** parameter to specify the results by **Domain**.</span></span> <span data-ttu-id="7c87c-144">De **filter** parameter zoekt de filter waarde in de beschrijving of module naam van het object.</span><span class="sxs-lookup"><span data-stu-id="7c87c-144">The **Filter** parameter finds the filter value in the object's description or module name.</span></span> <span data-ttu-id="7c87c-145">Gebruik de `Select-Object` cmdlet om de eigenschappen van een object weer te geven.</span><span class="sxs-lookup"><span data-stu-id="7c87c-145">Use the `Select-Object` cmdlet to view an object's properties.</span></span>
 
 ```powershell
 Find-DscResource -Filter Domain
@@ -151,27 +151,11 @@ xDSCFirewall            1.6.21     xDSCFirewall               PSGallery
 dmAwsTagInstance        1.0.1      domainAwsDSCResources      PSGallery
 ```
 
-## <span data-ttu-id="de778-146">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="de778-146">PARAMETERS</span></span>
+## <span data-ttu-id="7c87c-146">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="7c87c-146">PARAMETERS</span></span>
 
-### <span data-ttu-id="de778-147">-AllowPrerelease</span><span class="sxs-lookup"><span data-stu-id="de778-147">-AllowPrerelease</span></span>
+### <span data-ttu-id="7c87c-147">-AllowPrerelease</span><span class="sxs-lookup"><span data-stu-id="7c87c-147">-AllowPrerelease</span></span>
 
-<span data-ttu-id="de778-148">Bevat resources die zijn gemarkeerd als een prerelease in de resultaten.</span><span class="sxs-lookup"><span data-stu-id="de778-148">Includes resources marked as a prerelease in the results.</span></span>
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### <span data-ttu-id="de778-149">-AllVersions</span><span class="sxs-lookup"><span data-stu-id="de778-149">-AllVersions</span></span>
-
-<span data-ttu-id="de778-150">Met de para meter **AllVersions** worden alle beschik bare versies van een DSC-resource weer gegeven.</span><span class="sxs-lookup"><span data-stu-id="de778-150">The **AllVersions** parameter displays each of a DSC resource's available versions.</span></span> <span data-ttu-id="de778-151">U kunt de para meter **AllVersions** niet gebruiken met de para meters **MinimumVersion** , **MaximumVersion** of **RequiredVersion** .</span><span class="sxs-lookup"><span data-stu-id="de778-151">You can't use the **AllVersions** parameter with the **MinimumVersion** , **MaximumVersion** , or **RequiredVersion** parameters.</span></span>
+<span data-ttu-id="7c87c-148">Bevat resources die zijn gemarkeerd als een prerelease in de resultaten.</span><span class="sxs-lookup"><span data-stu-id="7c87c-148">Includes resources marked as a prerelease in the results.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -185,9 +169,25 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="de778-152">-Filter</span><span class="sxs-lookup"><span data-stu-id="de778-152">-Filter</span></span>
+### <span data-ttu-id="7c87c-149">-AllVersions</span><span class="sxs-lookup"><span data-stu-id="7c87c-149">-AllVersions</span></span>
 
-<span data-ttu-id="de778-153">Zoekt bronnen op basis van de zoek syntaxis van de **Package Management** -provider.</span><span class="sxs-lookup"><span data-stu-id="de778-153">Finds resources based on the **PackageManagement** provider's search syntax.</span></span> <span data-ttu-id="de778-154">Geef bijvoorbeeld woorden op waarnaar u wilt zoeken in de **ModuleName** eigenschappen van module **naam en beschrijving** .</span><span class="sxs-lookup"><span data-stu-id="de778-154">For example, specify words to search for within the **ModuleName** and **Description** properties.</span></span>
+<span data-ttu-id="7c87c-150">Met de para meter **AllVersions** worden alle beschik bare versies van een DSC-resource weer gegeven.</span><span class="sxs-lookup"><span data-stu-id="7c87c-150">The **AllVersions** parameter displays each of a DSC resource's available versions.</span></span> <span data-ttu-id="7c87c-151">U kunt de para meter **AllVersions** niet gebruiken met de para meters **MinimumVersion**, **MaximumVersion** of **RequiredVersion** .</span><span class="sxs-lookup"><span data-stu-id="7c87c-151">You can't use the **AllVersions** parameter with the **MinimumVersion**, **MaximumVersion**, or **RequiredVersion** parameters.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="7c87c-152">-Filter</span><span class="sxs-lookup"><span data-stu-id="7c87c-152">-Filter</span></span>
+
+<span data-ttu-id="7c87c-153">Zoekt bronnen op basis van de zoek syntaxis van de **Package Management** -provider.</span><span class="sxs-lookup"><span data-stu-id="7c87c-153">Finds resources based on the **PackageManagement** provider's search syntax.</span></span> <span data-ttu-id="7c87c-154">Geef bijvoorbeeld woorden op waarnaar u wilt zoeken in de  eigenschappen van module **naam en beschrijving** .</span><span class="sxs-lookup"><span data-stu-id="7c87c-154">For example, specify words to search for within the **ModuleName** and **Description** properties.</span></span>
 
 ```yaml
 Type: System.String
@@ -201,25 +201,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="de778-155">-MaximumVersion</span><span class="sxs-lookup"><span data-stu-id="de778-155">-MaximumVersion</span></span>
+### <span data-ttu-id="7c87c-155">-MaximumVersion</span><span class="sxs-lookup"><span data-stu-id="7c87c-155">-MaximumVersion</span></span>
 
-<span data-ttu-id="de778-156">Hiermee geeft u de maximum versie van de resource op die in de resultaten moet worden meegenomen.</span><span class="sxs-lookup"><span data-stu-id="de778-156">Specifies the maximum version of the resource to include in results.</span></span> <span data-ttu-id="de778-157">De **MaximumVersion** -en **RequiredVersion** -para meters kunnen niet worden gebruikt in dezelfde opdracht.</span><span class="sxs-lookup"><span data-stu-id="de778-157">The **MaximumVersion** and the **RequiredVersion** parameters can't be used in the same command.</span></span>
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### <span data-ttu-id="de778-158">-MinimumVersion</span><span class="sxs-lookup"><span data-stu-id="de778-158">-MinimumVersion</span></span>
-
-<span data-ttu-id="de778-159">Hiermee geeft u de minimale versie van de resource op die moet worden meegenomen in de resultaten.</span><span class="sxs-lookup"><span data-stu-id="de778-159">Specifies the minimum version of the resource to include in results.</span></span> <span data-ttu-id="de778-160">De **MinimumVersion** -en **RequiredVersion** -para meters kunnen niet worden gebruikt in dezelfde opdracht.</span><span class="sxs-lookup"><span data-stu-id="de778-160">The **MinimumVersion** and the **RequiredVersion** parameters can't be used in the same command.</span></span>
+<span data-ttu-id="7c87c-156">Hiermee geeft u de maximum versie van de resource op die in de resultaten moet worden meegenomen.</span><span class="sxs-lookup"><span data-stu-id="7c87c-156">Specifies the maximum version of the resource to include in results.</span></span> <span data-ttu-id="7c87c-157">De **MaximumVersion** -en **RequiredVersion** -para meters kunnen niet worden gebruikt in dezelfde opdracht.</span><span class="sxs-lookup"><span data-stu-id="7c87c-157">The **MaximumVersion** and the **RequiredVersion** parameters can't be used in the same command.</span></span>
 
 ```yaml
 Type: System.String
@@ -233,9 +217,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="de778-161">-Module naam</span><span class="sxs-lookup"><span data-stu-id="de778-161">-ModuleName</span></span>
+### <span data-ttu-id="7c87c-158">-MinimumVersion</span><span class="sxs-lookup"><span data-stu-id="7c87c-158">-MinimumVersion</span></span>
 
-<span data-ttu-id="de778-162">Hiermee geeft u een module die de DSC-resource bevat.</span><span class="sxs-lookup"><span data-stu-id="de778-162">Specifies a module that contains the DSC resource.</span></span>
+<span data-ttu-id="7c87c-159">Hiermee geeft u de minimale versie van de resource op die moet worden meegenomen in de resultaten.</span><span class="sxs-lookup"><span data-stu-id="7c87c-159">Specifies the minimum version of the resource to include in results.</span></span> <span data-ttu-id="7c87c-160">De **MinimumVersion** -en **RequiredVersion** -para meters kunnen niet worden gebruikt in dezelfde opdracht.</span><span class="sxs-lookup"><span data-stu-id="7c87c-160">The **MinimumVersion** and the **RequiredVersion** parameters can't be used in the same command.</span></span>
 
 ```yaml
 Type: System.String
@@ -249,9 +233,25 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="de778-163">-Name</span><span class="sxs-lookup"><span data-stu-id="de778-163">-Name</span></span>
+### <span data-ttu-id="7c87c-161">-Module naam</span><span class="sxs-lookup"><span data-stu-id="7c87c-161">-ModuleName</span></span>
 
-<span data-ttu-id="de778-164">Hiermee geeft u de naam van een resource.</span><span class="sxs-lookup"><span data-stu-id="de778-164">Specifies the name of a resource.</span></span> <span data-ttu-id="de778-165">De standaard waarde is alle resources.</span><span class="sxs-lookup"><span data-stu-id="de778-165">The default is all resources.</span></span> <span data-ttu-id="de778-166">Gebruik komma's om een matrix met resource namen te scheiden.</span><span class="sxs-lookup"><span data-stu-id="de778-166">Use commas to separate an array of resource names.</span></span>
+<span data-ttu-id="7c87c-162">Hiermee geeft u een module die de DSC-resource bevat.</span><span class="sxs-lookup"><span data-stu-id="7c87c-162">Specifies a module that contains the DSC resource.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="7c87c-163">-Name</span><span class="sxs-lookup"><span data-stu-id="7c87c-163">-Name</span></span>
+
+<span data-ttu-id="7c87c-164">Hiermee geeft u de naam van een resource.</span><span class="sxs-lookup"><span data-stu-id="7c87c-164">Specifies the name of a resource.</span></span> <span data-ttu-id="7c87c-165">De standaard waarde is alle resources.</span><span class="sxs-lookup"><span data-stu-id="7c87c-165">The default is all resources.</span></span> <span data-ttu-id="7c87c-166">Gebruik komma's om een matrix met resource namen te scheiden.</span><span class="sxs-lookup"><span data-stu-id="7c87c-166">Use commas to separate an array of resource names.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -265,9 +265,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="de778-167">-Proxy</span><span class="sxs-lookup"><span data-stu-id="de778-167">-Proxy</span></span>
+### <span data-ttu-id="7c87c-167">-Proxy</span><span class="sxs-lookup"><span data-stu-id="7c87c-167">-Proxy</span></span>
 
-<span data-ttu-id="de778-168">Hiermee geeft u een proxy server voor de aanvraag op, in plaats van een rechtstreekse verbinding met de Internet resource.</span><span class="sxs-lookup"><span data-stu-id="de778-168">Specifies a proxy server for the request, rather than a direct connection to the internet resource.</span></span>
+<span data-ttu-id="7c87c-168">Hiermee geeft u een proxy server voor de aanvraag op, in plaats van een rechtstreekse verbinding met de Internet resource.</span><span class="sxs-lookup"><span data-stu-id="7c87c-168">Specifies a proxy server for the request, rather than a direct connection to the internet resource.</span></span>
 
 ```yaml
 Type: System.Uri
@@ -281,9 +281,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="de778-169">-ProxyCredential</span><span class="sxs-lookup"><span data-stu-id="de778-169">-ProxyCredential</span></span>
+### <span data-ttu-id="7c87c-169">-ProxyCredential</span><span class="sxs-lookup"><span data-stu-id="7c87c-169">-ProxyCredential</span></span>
 
-<span data-ttu-id="de778-170">Hiermee geeft u een gebruikers account op dat is gemachtigd voor het gebruik van de proxy server die is opgegeven in de **proxy** para meter.</span><span class="sxs-lookup"><span data-stu-id="de778-170">Specifies a user account with permission to use the proxy server specified in the **Proxy** parameter.</span></span>
+<span data-ttu-id="7c87c-170">Hiermee geeft u een gebruikers account op dat is gemachtigd voor het gebruik van de proxy server die is opgegeven in de **proxy** para meter.</span><span class="sxs-lookup"><span data-stu-id="7c87c-170">Specifies a user account with permission to use the proxy server specified in the **Proxy** parameter.</span></span>
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -297,9 +297,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="de778-171">-Opslag plaats</span><span class="sxs-lookup"><span data-stu-id="de778-171">-Repository</span></span>
+### <span data-ttu-id="7c87c-171">-Opslag plaats</span><span class="sxs-lookup"><span data-stu-id="7c87c-171">-Repository</span></span>
 
-<span data-ttu-id="de778-172">Hiermee geeft u een opslag plaats voor het zoeken naar resources op.</span><span class="sxs-lookup"><span data-stu-id="de778-172">Specifies a repository to search for resources.</span></span> <span data-ttu-id="de778-173">Gebruik komma's om een matrix van de namen van opslag plaatsen te scheiden.</span><span class="sxs-lookup"><span data-stu-id="de778-173">Use commas to separate an array of repository names.</span></span>
+<span data-ttu-id="7c87c-172">Hiermee geeft u een opslag plaats voor het zoeken naar resources op.</span><span class="sxs-lookup"><span data-stu-id="7c87c-172">Specifies a repository to search for resources.</span></span> <span data-ttu-id="7c87c-173">Gebruik komma's om een matrix van de namen van opslag plaatsen te scheiden.</span><span class="sxs-lookup"><span data-stu-id="7c87c-173">Use commas to separate an array of repository names.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -313,9 +313,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="de778-174">-RequiredVersion</span><span class="sxs-lookup"><span data-stu-id="de778-174">-RequiredVersion</span></span>
+### <span data-ttu-id="7c87c-174">-RequiredVersion</span><span class="sxs-lookup"><span data-stu-id="7c87c-174">-RequiredVersion</span></span>
 
-<span data-ttu-id="de778-175">Hiermee geeft u het exacte versie nummer van de module op die in de resultaten moet worden meegenomen.</span><span class="sxs-lookup"><span data-stu-id="de778-175">Specifies the module's exact version number to include in the results.</span></span> <span data-ttu-id="de778-176">De **RequiredVersion** -en **MinimumVersion** -para meters kunnen niet worden gebruikt in dezelfde opdracht.</span><span class="sxs-lookup"><span data-stu-id="de778-176">The **RequiredVersion** and the **MinimumVersion** parameters can't be used in the same command.</span></span>
+<span data-ttu-id="7c87c-175">Hiermee geeft u het exacte versie nummer van de module op die in de resultaten moet worden meegenomen.</span><span class="sxs-lookup"><span data-stu-id="7c87c-175">Specifies the module's exact version number to include in the results.</span></span> <span data-ttu-id="7c87c-176">De **RequiredVersion** -en **MinimumVersion** -para meters kunnen niet worden gebruikt in dezelfde opdracht.</span><span class="sxs-lookup"><span data-stu-id="7c87c-176">The **RequiredVersion** and the **MinimumVersion** parameters can't be used in the same command.</span></span>
 
 ```yaml
 Type: System.String
@@ -329,9 +329,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="de778-177">-Tag</span><span class="sxs-lookup"><span data-stu-id="de778-177">-Tag</span></span>
+### <span data-ttu-id="7c87c-177">-Tag</span><span class="sxs-lookup"><span data-stu-id="7c87c-177">-Tag</span></span>
 
-<span data-ttu-id="de778-178">Hiermee geeft u labels op waarmee modules in een opslag plaats worden gecategoriseerd.</span><span class="sxs-lookup"><span data-stu-id="de778-178">Specifies tags that categorize modules in a repository.</span></span> <span data-ttu-id="de778-179">Gebruik komma's om een matrix met tags te scheiden.</span><span class="sxs-lookup"><span data-stu-id="de778-179">Use commas to separate an array of tags.</span></span>
+<span data-ttu-id="7c87c-178">Hiermee geeft u labels op waarmee modules in een opslag plaats worden gecategoriseerd.</span><span class="sxs-lookup"><span data-stu-id="7c87c-178">Specifies tags that categorize modules in a repository.</span></span> <span data-ttu-id="7c87c-179">Gebruik komma's om een matrix met tags te scheiden.</span><span class="sxs-lookup"><span data-stu-id="7c87c-179">Use commas to separate an array of tags.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -345,28 +345,35 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="de778-180">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="de778-180">CommonParameters</span></span>
+### <span data-ttu-id="7c87c-180">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="7c87c-180">CommonParameters</span></span>
 
-<span data-ttu-id="de778-181">Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="de778-181">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="de778-182">Zie [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)voor meer informatie.</span><span class="sxs-lookup"><span data-stu-id="de778-182">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+<span data-ttu-id="7c87c-181">Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="7c87c-181">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="7c87c-182">Zie [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)voor meer informatie.</span><span class="sxs-lookup"><span data-stu-id="7c87c-182">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="de778-183">INVOER</span><span class="sxs-lookup"><span data-stu-id="de778-183">INPUTS</span></span>
+## <span data-ttu-id="7c87c-183">INVOER</span><span class="sxs-lookup"><span data-stu-id="7c87c-183">INPUTS</span></span>
 
-## <span data-ttu-id="de778-184">UITVOER</span><span class="sxs-lookup"><span data-stu-id="de778-184">OUTPUTS</span></span>
+## <span data-ttu-id="7c87c-184">UITVOER</span><span class="sxs-lookup"><span data-stu-id="7c87c-184">OUTPUTS</span></span>
 
-### <span data-ttu-id="de778-185">PSGetDscResourceInfo</span><span class="sxs-lookup"><span data-stu-id="de778-185">PSGetDscResourceInfo</span></span>
+### <span data-ttu-id="7c87c-185">PSGetDscResourceInfo</span><span class="sxs-lookup"><span data-stu-id="7c87c-185">PSGetDscResourceInfo</span></span>
 
-<span data-ttu-id="de778-186">`Find-DscResource` retourneert een **PSGetDscResourceInfo** -object.</span><span class="sxs-lookup"><span data-stu-id="de778-186">`Find-DscResource` returns a **PSGetDscResourceInfo** object.</span></span>
+<span data-ttu-id="7c87c-186">`Find-DscResource` retourneert een **PSGetDscResourceInfo** -object.</span><span class="sxs-lookup"><span data-stu-id="7c87c-186">`Find-DscResource` returns a **PSGetDscResourceInfo** object.</span></span>
 
-## <span data-ttu-id="de778-187">OPMERKINGEN</span><span class="sxs-lookup"><span data-stu-id="de778-187">NOTES</span></span>
+## <span data-ttu-id="7c87c-187">OPMERKINGEN</span><span class="sxs-lookup"><span data-stu-id="7c87c-187">NOTES</span></span>
 
-## <span data-ttu-id="de778-188">GERELATEERDE KOPPELINGEN</span><span class="sxs-lookup"><span data-stu-id="de778-188">RELATED LINKS</span></span>
+> [!IMPORTANT]
+> <span data-ttu-id="7c87c-188">Vanaf april 2020 biedt de PowerShell Gallery niet langer ondersteuning voor Transport Layer Security (TLS) versie 1,0 en 1,1.</span><span class="sxs-lookup"><span data-stu-id="7c87c-188">As of April 2020, the PowerShell Gallery no longer supports Transport Layer Security (TLS) versions 1.0 and 1.1.</span></span> <span data-ttu-id="7c87c-189">Als u geen TLS 1,2 of hoger gebruikt, wordt er een fout bericht weer gegeven wanneer u probeert toegang te krijgen tot de PowerShell Gallery.</span><span class="sxs-lookup"><span data-stu-id="7c87c-189">If you are not using TLS 1.2 or higher, you will receive an error when trying to access the PowerShell Gallery.</span></span> <span data-ttu-id="7c87c-190">Gebruik de volgende opdracht om ervoor te zorgen dat u TLS 1,2 gebruikt:</span><span class="sxs-lookup"><span data-stu-id="7c87c-190">Use the following command to ensure you are using TLS 1.2:</span></span>
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> <span data-ttu-id="7c87c-191">Zie de [aankondiging](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in het Power shell-blog voor meer informatie.</span><span class="sxs-lookup"><span data-stu-id="7c87c-191">For more information, see the [announcement](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in the PowerShell blog.</span></span>
 
-[<span data-ttu-id="de778-189">Get-InstalledModule</span><span class="sxs-lookup"><span data-stu-id="de778-189">Get-InstalledModule</span></span>](Get-InstalledModule.md)
+## <span data-ttu-id="7c87c-192">GERELATEERDE KOPPELINGEN</span><span class="sxs-lookup"><span data-stu-id="7c87c-192">RELATED LINKS</span></span>
 
-[<span data-ttu-id="de778-190">Installatie-module</span><span class="sxs-lookup"><span data-stu-id="de778-190">Install-Module</span></span>](Install-Module.md)
+[<span data-ttu-id="7c87c-193">Get-InstalledModule</span><span class="sxs-lookup"><span data-stu-id="7c87c-193">Get-InstalledModule</span></span>](Get-InstalledModule.md)
 
-[<span data-ttu-id="de778-191">REGI ster-PSRepository</span><span class="sxs-lookup"><span data-stu-id="de778-191">Register-PSRepository</span></span>](Register-PSRepository.md)
+[<span data-ttu-id="7c87c-194">Installatie-module</span><span class="sxs-lookup"><span data-stu-id="7c87c-194">Install-Module</span></span>](Install-Module.md)
 
-[<span data-ttu-id="de778-192">Select-Object</span><span class="sxs-lookup"><span data-stu-id="de778-192">Select-Object</span></span>](../Microsoft.PowerShell.Utility/Select-Object.md)
+[<span data-ttu-id="7c87c-195">REGI ster-PSRepository</span><span class="sxs-lookup"><span data-stu-id="7c87c-195">Register-PSRepository</span></span>](Register-PSRepository.md)
 
-[<span data-ttu-id="de778-193">Uninstall-module</span><span class="sxs-lookup"><span data-stu-id="de778-193">Uninstall-Module</span></span>](Uninstall-Module.md)
+[<span data-ttu-id="7c87c-196">Select-Object</span><span class="sxs-lookup"><span data-stu-id="7c87c-196">Select-Object</span></span>](../Microsoft.PowerShell.Utility/Select-Object.md)
+
+[<span data-ttu-id="7c87c-197">Uninstall-module</span><span class="sxs-lookup"><span data-stu-id="7c87c-197">Uninstall-Module</span></span>](Uninstall-Module.md)

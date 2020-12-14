@@ -1,67 +1,85 @@
 ---
 description: Hiermee kunt u aangeven welke naam ruimten in de sessie worden gebruikt.
-keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 01/29/2020
+ms.date: 11/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_using?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Using
-ms.openlocfilehash: ff6b43c3af1deddb5cb1b4c2e2c86a2cc2cac5d4
-ms.sourcegitcommit: ae8b89e12c6fa2108075888dd6da92788d6c2888
+ms.openlocfilehash: b48cd85e200f44cdf9fdf278de78e07a918386c8
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "93253165"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94891343"
 ---
-# <a name="about-using"></a><span data-ttu-id="9ec96-104">Over het gebruik van</span><span class="sxs-lookup"><span data-stu-id="9ec96-104">About Using</span></span>
+# <a name="about-using"></a><span data-ttu-id="a4723-103">Over het gebruik van</span><span class="sxs-lookup"><span data-stu-id="a4723-103">About Using</span></span>
 
-## <a name="short-description"></a><span data-ttu-id="9ec96-105">KORTE BESCHRIJVING</span><span class="sxs-lookup"><span data-stu-id="9ec96-105">SHORT DESCRIPTION</span></span>
-<span data-ttu-id="9ec96-106">Hiermee kunt u aangeven welke naam ruimten in de sessie worden gebruikt.</span><span class="sxs-lookup"><span data-stu-id="9ec96-106">Allows you to indicate which namespaces are used in the session.</span></span>
+## <a name="short-description"></a><span data-ttu-id="a4723-104">KORTE BESCHRIJVING</span><span class="sxs-lookup"><span data-stu-id="a4723-104">SHORT DESCRIPTION</span></span>
+<span data-ttu-id="a4723-105">Hiermee kunt u aangeven welke naam ruimten in de sessie worden gebruikt.</span><span class="sxs-lookup"><span data-stu-id="a4723-105">Allows you to indicate which namespaces are used in the session.</span></span>
 
-## <a name="long-description"></a><span data-ttu-id="9ec96-107">LANGE BESCHRIJVING</span><span class="sxs-lookup"><span data-stu-id="9ec96-107">LONG DESCRIPTION</span></span>
+## <a name="long-description"></a><span data-ttu-id="a4723-106">LANGE BESCHRIJVING</span><span class="sxs-lookup"><span data-stu-id="a4723-106">LONG DESCRIPTION</span></span>
 
-<span data-ttu-id="9ec96-108">Met de- `using` instructie kunt u opgeven welke naam ruimten in de sessie worden gebruikt.</span><span class="sxs-lookup"><span data-stu-id="9ec96-108">The `using` statement allows you to specify which namespaces are used in the session.</span></span> <span data-ttu-id="9ec96-109">Het toevoegen van naam ruimten vereenvoudigt het gebruik van .NET-klassen en-leden en biedt u de mogelijkheid om klassen uit script modules en assembly's te importeren.</span><span class="sxs-lookup"><span data-stu-id="9ec96-109">Adding namespaces simplifies usage of .NET classes and member and allows you to import classes from script modules and assemblies.</span></span>
+<span data-ttu-id="a4723-107">Met de- `using` instructie kunt u opgeven welke naam ruimten in de sessie worden gebruikt.</span><span class="sxs-lookup"><span data-stu-id="a4723-107">The `using` statement allows you to specify which namespaces are used in the session.</span></span> <span data-ttu-id="a4723-108">Het toevoegen van naam ruimten vereenvoudigt het gebruik van .NET-klassen en-leden en biedt u de mogelijkheid om klassen uit script modules en assembly's te importeren.</span><span class="sxs-lookup"><span data-stu-id="a4723-108">Adding namespaces simplifies usage of .NET classes and member and allows you to import classes from script modules and assemblies.</span></span>
 
-<span data-ttu-id="9ec96-110">De `using` instructies moeten vóór eventuele andere instructies in een script komen.</span><span class="sxs-lookup"><span data-stu-id="9ec96-110">The `using` statements must come before any other statements in a script.</span></span>
+<span data-ttu-id="a4723-109">De `using` instructies moeten vóór eventuele andere instructies in een script komen.</span><span class="sxs-lookup"><span data-stu-id="a4723-109">The `using` statements must come before any other statements in a script.</span></span>
 
-<span data-ttu-id="9ec96-111">De `using` instructie mag niet worden verward met de `using:` aanpassings functie voor het bereik voor variabelen.</span><span class="sxs-lookup"><span data-stu-id="9ec96-111">The `using` statement should not be confused with the `using:` scope modifier for variables.</span></span> <span data-ttu-id="9ec96-112">Zie [about_Remote_Variables](about_Remote_Variables.md)voor meer informatie.</span><span class="sxs-lookup"><span data-stu-id="9ec96-112">For more information, see [about_Remote_Variables](about_Remote_Variables.md).</span></span>
+<span data-ttu-id="a4723-110">De `using` instructie mag niet worden verward met de `using:` aanpassings functie voor het bereik voor variabelen.</span><span class="sxs-lookup"><span data-stu-id="a4723-110">The `using` statement should not be confused with the `using:` scope modifier for variables.</span></span> <span data-ttu-id="a4723-111">Zie [about_Remote_Variables](about_Remote_Variables.md)voor meer informatie.</span><span class="sxs-lookup"><span data-stu-id="a4723-111">For more information, see [about_Remote_Variables](about_Remote_Variables.md).</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="9ec96-113">Syntax</span><span class="sxs-lookup"><span data-stu-id="9ec96-113">Syntax</span></span>
+## <a name="namespace-syntax"></a><span data-ttu-id="a4723-112">Naam ruimte syntaxis</span><span class="sxs-lookup"><span data-stu-id="a4723-112">Namespace syntax</span></span>
 
-<span data-ttu-id="9ec96-114">.NET-naam ruimten opgeven waarvan u de typen wilt omzetten:</span><span class="sxs-lookup"><span data-stu-id="9ec96-114">To specify .NET namespaces from which to resolve types:</span></span>
+<span data-ttu-id="a4723-113">.NET-naam ruimten opgeven waarvan u de typen wilt omzetten:</span><span class="sxs-lookup"><span data-stu-id="a4723-113">To specify .NET namespaces from which to resolve types:</span></span>
 
 ```
 using namespace <.NET-namespace>
 ```
 
-<span data-ttu-id="9ec96-115">Klassen laden vanuit een Power shell-module:</span><span class="sxs-lookup"><span data-stu-id="9ec96-115">To load classes from a PowerShell module:</span></span>
+<span data-ttu-id="a4723-114">Het opgeven van een naam ruimte maakt het gemakkelijker om te verwijzen naar typen met hun korte namen.</span><span class="sxs-lookup"><span data-stu-id="a4723-114">Specifying a namespace makes it easier to reference types by their short names.</span></span>
+
+## <a name="module-syntax"></a><span data-ttu-id="a4723-115">Module syntaxis</span><span class="sxs-lookup"><span data-stu-id="a4723-115">Module syntax</span></span>
+
+<span data-ttu-id="a4723-116">Klassen laden vanuit een Power shell-module:</span><span class="sxs-lookup"><span data-stu-id="a4723-116">To load classes from a PowerShell module:</span></span>
 
 ```
 using module <module-name>
 ```
 
-<span data-ttu-id="9ec96-116">Typen vooraf laden vanuit een .NET-assembly:</span><span class="sxs-lookup"><span data-stu-id="9ec96-116">To preload types from a .NET assembly:</span></span>
+<span data-ttu-id="a4723-117">De waarde van `<module-name>` kan een module naam, een volledige module specificatie of een pad naar een module bestand zijn.</span><span class="sxs-lookup"><span data-stu-id="a4723-117">The value of `<module-name>` can be a module name, a full module specification, or a path to a module file.</span></span>
+
+<span data-ttu-id="a4723-118">Wanneer `<module-name>` een pad is, kan het pad volledig gekwalificeerd of relatief zijn.</span><span class="sxs-lookup"><span data-stu-id="a4723-118">When `<module-name>` is a path, the path can be fully qualified or relative.</span></span> <span data-ttu-id="a4723-119">Een relatief pad wordt opgelost ten opzichte van het script dat de instructie using bevat.</span><span class="sxs-lookup"><span data-stu-id="a4723-119">A relative path is resolved relative to the script that contains the using statement.</span></span>
+
+<span data-ttu-id="a4723-120">Wanneer `<module-name>` is een naam of module specificatie, zoekt Power shell de **PSModulePath** voor de opgegeven module.</span><span class="sxs-lookup"><span data-stu-id="a4723-120">When `<module-name>` is a name or module specification, PowerShell searches the **PSModulePath** for the specified module.</span></span>
+
+<span data-ttu-id="a4723-121">Een module specificatie is een hash-tabel met de volgende sleutels.</span><span class="sxs-lookup"><span data-stu-id="a4723-121">A module specification is a hash table that has the following keys.</span></span>
+
+- <span data-ttu-id="a4723-122">`ModuleName` - **Vereist** Hiermee geeft u de module naam op.</span><span class="sxs-lookup"><span data-stu-id="a4723-122">`ModuleName` - **Required** Specifies the module name.</span></span>
+- <span data-ttu-id="a4723-123">`GUID` - **Optioneel** Hiermee geeft u de GUID van de module.</span><span class="sxs-lookup"><span data-stu-id="a4723-123">`GUID` - **Optional** Specifies the GUID of the module.</span></span>
+- <span data-ttu-id="a4723-124">Het is ook **vereist** om een van de drie onderstaande sleutels op te geven.</span><span class="sxs-lookup"><span data-stu-id="a4723-124">It's also **Required** to specify one of the three below keys.</span></span> <span data-ttu-id="a4723-125">Deze sleutels kunnen niet tegelijk worden gebruikt.</span><span class="sxs-lookup"><span data-stu-id="a4723-125">These keys can't be used together.</span></span>
+  - <span data-ttu-id="a4723-126">`ModuleVersion` -Hiermee geeft u een mini maal toegestane versie van de module op.</span><span class="sxs-lookup"><span data-stu-id="a4723-126">`ModuleVersion` - Specifies a minimum acceptable version of the module.</span></span>
+  - <span data-ttu-id="a4723-127">`RequiredVersion` -Hiermee geeft u een exacte, vereiste versie van de module op.</span><span class="sxs-lookup"><span data-stu-id="a4723-127">`RequiredVersion` - Specifies an exact, required version of the module.</span></span>
+  - <span data-ttu-id="a4723-128">`MaximumVersion` -Hiermee geeft u de Maxi maal toegestane versie van de module op.</span><span class="sxs-lookup"><span data-stu-id="a4723-128">`MaximumVersion` - Specifies the maximum acceptable version of the module.</span></span>
+
+## <a name="assembly-syntax"></a><span data-ttu-id="a4723-129">Assembly-syntaxis</span><span class="sxs-lookup"><span data-stu-id="a4723-129">Assembly syntax</span></span>
+
+<span data-ttu-id="a4723-130">Typen vooraf laden vanuit een .NET-assembly:</span><span class="sxs-lookup"><span data-stu-id="a4723-130">To preload types from a .NET assembly:</span></span>
 
 ```
 using assembly <.NET-assembly-path>
 using assembly <.NET-namespace>
 ```
 
-<span data-ttu-id="9ec96-117">Het opgeven van een naam ruimte maakt het gemakkelijker om te verwijzen naar typen met hun korte namen.</span><span class="sxs-lookup"><span data-stu-id="9ec96-117">Specifying a namespace makes it easier to reference types by their short names.</span></span>
+<span data-ttu-id="a4723-131">Bij het laden van een assembly worden .NET-typen van de assembly geladen in een script tijdens het parseren.</span><span class="sxs-lookup"><span data-stu-id="a4723-131">Loading an assembly preloads .NET types from that assembly into a script at parse time.</span></span> <span data-ttu-id="a4723-132">Hierdoor kunt u nieuwe Power shell-klassen maken die gebruikmaken van typen van de vooraf geladen assembly.</span><span class="sxs-lookup"><span data-stu-id="a4723-132">This allows you to create new PowerShell classes that use types from the preloaded assembly.</span></span>
 
-<span data-ttu-id="9ec96-118">Bij het laden van een assembly worden .NET-typen van de assembly geladen in een script tijdens het parseren.</span><span class="sxs-lookup"><span data-stu-id="9ec96-118">Loading an assembly preloads .NET types from that assembly into a script at parse time.</span></span> <span data-ttu-id="9ec96-119">Hierdoor kunt u nieuwe Power shell-klassen maken die gebruikmaken van typen van de vooraf geladen assembly.</span><span class="sxs-lookup"><span data-stu-id="9ec96-119">This allows you to create new PowerShell classes that use types from the preloaded assembly.</span></span>
+<span data-ttu-id="a4723-133">In Windows Power shell 5,1 kunt u de assembly laden door de naam van het pad of de naam.</span><span class="sxs-lookup"><span data-stu-id="a4723-133">In Windows PowerShell 5.1 you can load the assembly by path name or by name.</span></span> <span data-ttu-id="a4723-134">Wanneer u de naam gebruikt, zoekt Power shell in de globale assembly-cache van .NET (GAC) voor de bijbehorende assembly.</span><span class="sxs-lookup"><span data-stu-id="a4723-134">When you use the name, PowerShell searches the .NET Global Assembly Cache (GAC) for the associated assembly.</span></span>
 
-<span data-ttu-id="9ec96-120">In Windows Power shell 5,1 kunt u de assembly laden door de naam van het pad of de naam.</span><span class="sxs-lookup"><span data-stu-id="9ec96-120">In Windows PowerShell 5.1 you can load the assembly by path name or by name.</span></span> <span data-ttu-id="9ec96-121">Wanneer u de naam gebruikt, zoekt Power shell in de globale assembly-cache van .NET (GAC) voor de bijbehorende assembly.</span><span class="sxs-lookup"><span data-stu-id="9ec96-121">When you use the name, PowerShell searches the .NET Global Assembly Cache (GAC) for the associated assembly.</span></span>
+<span data-ttu-id="a4723-135">Als u geen nieuwe Power shell-klassen maakt, gebruikt u `Add-Type` in plaats daarvan de-cmdlet.</span><span class="sxs-lookup"><span data-stu-id="a4723-135">If you are not creating new PowerShell classes, use the `Add-Type` cmdlet instead.</span></span> <span data-ttu-id="a4723-136">Zie [add-type](xref:Microsoft.PowerShell.Utility.Add-Type)voor meer informatie.</span><span class="sxs-lookup"><span data-stu-id="a4723-136">For more information, see [Add-Type](xref:Microsoft.PowerShell.Utility.Add-Type).</span></span>
 
-<span data-ttu-id="9ec96-122">Als u geen nieuwe Power shell-klassen maakt, gebruikt u `Add-Type` in plaats daarvan de-cmdlet.</span><span class="sxs-lookup"><span data-stu-id="9ec96-122">If you are not creating new PowerShell classes, use the `Add-Type` cmdlet instead.</span></span> <span data-ttu-id="9ec96-123">Zie [add-type](xref:Microsoft.PowerShell.Utility.Add-Type)voor meer informatie.</span><span class="sxs-lookup"><span data-stu-id="9ec96-123">For more information, see [Add-Type](xref:Microsoft.PowerShell.Utility.Add-Type).</span></span>
+## <a name="examples"></a><span data-ttu-id="a4723-137">Voorbeelden</span><span class="sxs-lookup"><span data-stu-id="a4723-137">Examples</span></span>
 
-## <a name="examples"></a><span data-ttu-id="9ec96-124">Voorbeelden</span><span class="sxs-lookup"><span data-stu-id="9ec96-124">Examples</span></span>
+### <a name="example-1---add-namespaces-for-typename-resolution"></a><span data-ttu-id="a4723-138">Voor beeld 1: naam ruimten voor de TypeName-omzetting toevoegen</span><span class="sxs-lookup"><span data-stu-id="a4723-138">Example 1 - Add namespaces for typename resolution</span></span>
 
-### <a name="example-1---add-namespaces-for-typename-resolution"></a><span data-ttu-id="9ec96-125">Voor beeld 1: naam ruimten voor de TypeName-omzetting toevoegen</span><span class="sxs-lookup"><span data-stu-id="9ec96-125">Example 1 - Add namespaces for typename resolution</span></span>
+<span data-ttu-id="a4723-139">Met het volgende script wordt de cryptografische hash voor de teken reeks ' Hallo wereld ' opgehaald.</span><span class="sxs-lookup"><span data-stu-id="a4723-139">The following script gets the cryptographic hash for the "Hello World" string.</span></span>
 
-<span data-ttu-id="9ec96-126">Met het volgende script wordt de cryptografische hash voor de teken reeks ' Hallo wereld ' opgehaald.</span><span class="sxs-lookup"><span data-stu-id="9ec96-126">The following script gets the cryptographic hash for the "Hello World" string.</span></span>
-
-<span data-ttu-id="9ec96-127">U ziet hoe `using namespace System.Text` en de `using namespace System.IO` verwijzingen naar `[UnicodeEncoding]` in `System.Text` en `[Stream]` en naar in worden vereenvoudigd `[MemoryStream]` `System.IO` .</span><span class="sxs-lookup"><span data-stu-id="9ec96-127">Note how the `using namespace System.Text` and `using namespace System.IO` simplify the references to `[UnicodeEncoding]` in `System.Text` and `[Stream]` and to `[MemoryStream]` in `System.IO`.</span></span>
+<span data-ttu-id="a4723-140">U ziet hoe `using namespace System.Text` en de `using namespace System.IO` verwijzingen naar `[UnicodeEncoding]` in `System.Text` en `[Stream]` en naar in worden vereenvoudigd `[MemoryStream]` `System.IO` .</span><span class="sxs-lookup"><span data-stu-id="a4723-140">Note how the `using namespace System.Text` and `using namespace System.IO` simplify the references to `[UnicodeEncoding]` in `System.Text` and `[Stream]` and to `[MemoryStream]` in `System.IO`.</span></span>
 
 ```powershell
 using namespace System.Text
@@ -79,14 +97,14 @@ $hashfromstream = Get-FileHash -InputStream $memorystream `
 $hashfromstream.Hash.ToString()
 ```
 
-### <a name="example-2---load-classes-from-a-script-module"></a><span data-ttu-id="9ec96-128">Voor beeld 2: klassen laden vanuit een script module</span><span class="sxs-lookup"><span data-stu-id="9ec96-128">Example 2 - Load classes from a script module</span></span>
+### <a name="example-2---load-classes-from-a-script-module"></a><span data-ttu-id="a4723-141">Voor beeld 2: klassen laden vanuit een script module</span><span class="sxs-lookup"><span data-stu-id="a4723-141">Example 2 - Load classes from a script module</span></span>
 
-<span data-ttu-id="9ec96-129">In dit voor beeld hebben we een Power shell-script module met de naam **CardGames** die de volgende klassen definieert:</span><span class="sxs-lookup"><span data-stu-id="9ec96-129">In this example, we have a PowerShell script module named **CardGames** that defines the following classes:</span></span>
+<span data-ttu-id="a4723-142">In dit voor beeld hebben we een Power shell-script module met de naam **CardGames** die de volgende klassen definieert:</span><span class="sxs-lookup"><span data-stu-id="a4723-142">In this example, we have a PowerShell script module named **CardGames** that defines the following classes:</span></span>
 
-- <span data-ttu-id="9ec96-130">**CardGames. Deck**</span><span class="sxs-lookup"><span data-stu-id="9ec96-130">**CardGames.Deck**</span></span>
-- <span data-ttu-id="9ec96-131">**CardGames.-kaart**</span><span class="sxs-lookup"><span data-stu-id="9ec96-131">**CardGames.Card**</span></span>
+- <span data-ttu-id="a4723-143">**CardGames. Deck**</span><span class="sxs-lookup"><span data-stu-id="a4723-143">**CardGames.Deck**</span></span>
+- <span data-ttu-id="a4723-144">**CardGames.-kaart**</span><span class="sxs-lookup"><span data-stu-id="a4723-144">**CardGames.Card**</span></span>
 
-<span data-ttu-id="9ec96-132">`Import-Module` en de `#requires` instructie importeren alleen de module functies, aliassen en variabelen, zoals gedefinieerd door de module.</span><span class="sxs-lookup"><span data-stu-id="9ec96-132">`Import-Module` and the `#requires` statement only import the module functions, aliases, and variables, as defined by the module.</span></span> <span data-ttu-id="9ec96-133">Klassen zijn niet geïmporteerd.</span><span class="sxs-lookup"><span data-stu-id="9ec96-133">Classes are not imported.</span></span> <span data-ttu-id="9ec96-134">`using module`Met de opdracht wordt de module geïmporteerd en worden ook de klassedefinities geladen.</span><span class="sxs-lookup"><span data-stu-id="9ec96-134">The `using module` command imports the module and also loads the class definitions.</span></span>
+<span data-ttu-id="a4723-145">`Import-Module` en de `#requires` instructie importeren alleen de module functies, aliassen en variabelen, zoals gedefinieerd door de module.</span><span class="sxs-lookup"><span data-stu-id="a4723-145">`Import-Module` and the `#requires` statement only import the module functions, aliases, and variables, as defined by the module.</span></span> <span data-ttu-id="a4723-146">Klassen zijn niet geïmporteerd.</span><span class="sxs-lookup"><span data-stu-id="a4723-146">Classes are not imported.</span></span> <span data-ttu-id="a4723-147">`using module`Met de opdracht wordt de module geïmporteerd en worden ook de klassedefinities geladen.</span><span class="sxs-lookup"><span data-stu-id="a4723-147">The `using module` command imports the module and also loads the class definitions.</span></span>
 
 ```powershell
 using module CardGames
@@ -99,9 +117,9 @@ $deck.Shuffle()
 [Card[]]$hand3 = $deck.Deal(5)
 ```
 
-### <a name="example-3---load-classes-from-an-assembly"></a><span data-ttu-id="9ec96-135">Voor beeld 3: klassen laden vanuit een assembly</span><span class="sxs-lookup"><span data-stu-id="9ec96-135">Example 3 - Load classes from an assembly</span></span>
+### <a name="example-3---load-classes-from-an-assembly"></a><span data-ttu-id="a4723-148">Voor beeld 3: klassen laden vanuit een assembly</span><span class="sxs-lookup"><span data-stu-id="a4723-148">Example 3 - Load classes from an assembly</span></span>
 
-<span data-ttu-id="9ec96-136">In dit voor beeld wordt een assembly geladen zodat de klassen kunnen worden gebruikt voor het maken van nieuwe Power shell-klassen.</span><span class="sxs-lookup"><span data-stu-id="9ec96-136">This example loads an assembly so that its classes can be used to create new PowerShell classes.</span></span> <span data-ttu-id="9ec96-137">Met het volgende script maakt u een nieuwe Power shell-klasse die is afgeleid van de klasse **DirectoryContext** .</span><span class="sxs-lookup"><span data-stu-id="9ec96-137">The following script creates a new PowerShell class that is derived from **DirectoryContext** class.</span></span>
+<span data-ttu-id="a4723-149">In dit voor beeld wordt een assembly geladen zodat de klassen kunnen worden gebruikt voor het maken van nieuwe Power shell-klassen.</span><span class="sxs-lookup"><span data-stu-id="a4723-149">This example loads an assembly so that its classes can be used to create new PowerShell classes.</span></span> <span data-ttu-id="a4723-150">Met het volgende script maakt u een nieuwe Power shell-klasse die is afgeleid van de klasse **DirectoryContext** .</span><span class="sxs-lookup"><span data-stu-id="a4723-150">The following script creates a new PowerShell class that is derived from **DirectoryContext** class.</span></span>
 
 ```powershell
 using assembly 'C:\Program Files\PowerShell\7\System.DirectoryServices.dll'

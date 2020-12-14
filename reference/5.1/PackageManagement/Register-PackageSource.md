@@ -7,21 +7,21 @@ ms.date: 04/01/2019
 online version: https://docs.microsoft.com/powershell/module/packagemanagement/register-packagesource?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Register-PackageSource
-ms.openlocfilehash: 01c5130091b0028fb3cd4cc40a1e838156168ae5
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 323d59724507cfec5cde086e3b8e2a2c2f34b96e
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93250267"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94891309"
 ---
-# <span data-ttu-id="00fec-103">Register-PackageSource</span><span class="sxs-lookup"><span data-stu-id="00fec-103">Register-PackageSource</span></span>
+# <span data-ttu-id="ede5c-103">Register-PackageSource</span><span class="sxs-lookup"><span data-stu-id="ede5c-103">Register-PackageSource</span></span>
 
-## <span data-ttu-id="00fec-104">SAMENVATTING</span><span class="sxs-lookup"><span data-stu-id="00fec-104">SYNOPSIS</span></span>
-<span data-ttu-id="00fec-105">Hiermee voegt u een pakket bron voor een opgegeven pakket provider toe.</span><span class="sxs-lookup"><span data-stu-id="00fec-105">Adds a package source for a specified package provider.</span></span>
+## <span data-ttu-id="ede5c-104">SAMENVATTING</span><span class="sxs-lookup"><span data-stu-id="ede5c-104">SYNOPSIS</span></span>
+<span data-ttu-id="ede5c-105">Hiermee voegt u een pakket bron voor een opgegeven pakket provider toe.</span><span class="sxs-lookup"><span data-stu-id="ede5c-105">Adds a package source for a specified package provider.</span></span>
 
-## <span data-ttu-id="00fec-106">SYNTAXIS</span><span class="sxs-lookup"><span data-stu-id="00fec-106">SYNTAX</span></span>
+## <span data-ttu-id="ede5c-106">SYNTAXIS</span><span class="sxs-lookup"><span data-stu-id="ede5c-106">SYNTAX</span></span>
 
-### <span data-ttu-id="00fec-107">SourceBySearch</span><span class="sxs-lookup"><span data-stu-id="00fec-107">SourceBySearch</span></span>
+### <span data-ttu-id="ede5c-107">SourceBySearch</span><span class="sxs-lookup"><span data-stu-id="ede5c-107">SourceBySearch</span></span>
 
 ```
 Register-PackageSource [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [[-Name] <String>]
@@ -29,7 +29,7 @@ Register-PackageSource [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [[-Name]
  [-WhatIf] [-Confirm] [-ProviderName <String>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="00fec-108">NuGet</span><span class="sxs-lookup"><span data-stu-id="00fec-108">NuGet</span></span>
+### <span data-ttu-id="ede5c-108">NuGet</span><span class="sxs-lookup"><span data-stu-id="ede5c-108">NuGet</span></span>
 
 ```
 Register-PackageSource [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [[-Name] <String>]
@@ -37,7 +37,7 @@ Register-PackageSource [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [[-Name]
  [-Confirm] [-ConfigFile <String>] [-SkipValidate] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="00fec-109">PowerShellGet</span><span class="sxs-lookup"><span data-stu-id="00fec-109">PowerShellGet</span></span>
+### <span data-ttu-id="ede5c-109">PowerShellGet</span><span class="sxs-lookup"><span data-stu-id="ede5c-109">PowerShellGet</span></span>
 
 ```
 Register-PackageSource [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [[-Name] <String>]
@@ -46,15 +46,15 @@ Register-PackageSource [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [[-Name]
  [-ScriptSourceLocation <String>] [-ScriptPublishLocation <String>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="00fec-110">BESCHRIJVING</span><span class="sxs-lookup"><span data-stu-id="00fec-110">DESCRIPTION</span></span>
+## <span data-ttu-id="ede5c-110">BESCHRIJVING</span><span class="sxs-lookup"><span data-stu-id="ede5c-110">DESCRIPTION</span></span>
 
-<span data-ttu-id="00fec-111">De `Register-PackageSource` cmdlet voegt een pakket bron voor een opgegeven pakket provider toe.</span><span class="sxs-lookup"><span data-stu-id="00fec-111">The `Register-PackageSource` cmdlet adds a package source for a specified package provider.</span></span> <span data-ttu-id="00fec-112">Pakket bronnen worden altijd beheerd door een pakket provider.</span><span class="sxs-lookup"><span data-stu-id="00fec-112">Package sources are always managed by a package provider.</span></span> <span data-ttu-id="00fec-113">Als de pakket provider een pakket bron niet kan toevoegen of vervangen, genereert de provider een fout bericht.</span><span class="sxs-lookup"><span data-stu-id="00fec-113">If the package provider cannot add or replace a package source, the provider generates an error message.</span></span>
+<span data-ttu-id="ede5c-111">De `Register-PackageSource` cmdlet voegt een pakket bron voor een opgegeven pakket provider toe.</span><span class="sxs-lookup"><span data-stu-id="ede5c-111">The `Register-PackageSource` cmdlet adds a package source for a specified package provider.</span></span> <span data-ttu-id="ede5c-112">Pakket bronnen worden altijd beheerd door een pakket provider.</span><span class="sxs-lookup"><span data-stu-id="ede5c-112">Package sources are always managed by a package provider.</span></span> <span data-ttu-id="ede5c-113">Als de pakket provider een pakket bron niet kan toevoegen of vervangen, genereert de provider een fout bericht.</span><span class="sxs-lookup"><span data-stu-id="ede5c-113">If the package provider cannot add or replace a package source, the provider generates an error message.</span></span>
 
-## <span data-ttu-id="00fec-114">VOORBEELDEN</span><span class="sxs-lookup"><span data-stu-id="00fec-114">EXAMPLES</span></span>
+## <span data-ttu-id="ede5c-114">VOORBEELDEN</span><span class="sxs-lookup"><span data-stu-id="ede5c-114">EXAMPLES</span></span>
 
-### <span data-ttu-id="00fec-115">Voor beeld 1: een pakket bron registreren voor de NuGet-provider</span><span class="sxs-lookup"><span data-stu-id="00fec-115">Example 1: Register a package source for the NuGet provider</span></span>
+### <span data-ttu-id="ede5c-115">Voor beeld 1: een pakket bron registreren voor de NuGet-provider</span><span class="sxs-lookup"><span data-stu-id="ede5c-115">Example 1: Register a package source for the NuGet provider</span></span>
 
-<span data-ttu-id="00fec-116">Met deze opdracht wordt een pakket bron, een weblocatie voor de **NuGet** -provider geregistreerd.</span><span class="sxs-lookup"><span data-stu-id="00fec-116">This command registers a package source, a web-based location for the **NuGet** provider.</span></span> <span data-ttu-id="00fec-117">Standaard worden bronnen niet vertrouwd.</span><span class="sxs-lookup"><span data-stu-id="00fec-117">By default, sources aren't trusted.</span></span> <span data-ttu-id="00fec-118">U wordt gevraagd om te bevestigen dat de bron wordt vertrouwd voordat pakketten zijn geïnstalleerd.</span><span class="sxs-lookup"><span data-stu-id="00fec-118">You are prompted to confirm the source is trusted before packages are installed.</span></span> <span data-ttu-id="00fec-119">Als u de standaard waarde wilt overschrijven, gebruikt u de `-Trusted` para meter.</span><span class="sxs-lookup"><span data-stu-id="00fec-119">To override the default, use the `-Trusted` parameter.</span></span>
+<span data-ttu-id="ede5c-116">Met deze opdracht wordt een pakket bron, een weblocatie voor de **NuGet** -provider geregistreerd.</span><span class="sxs-lookup"><span data-stu-id="ede5c-116">This command registers a package source, a web-based location for the **NuGet** provider.</span></span> <span data-ttu-id="ede5c-117">Standaard worden bronnen niet vertrouwd.</span><span class="sxs-lookup"><span data-stu-id="ede5c-117">By default, sources aren't trusted.</span></span> <span data-ttu-id="ede5c-118">U wordt gevraagd om te bevestigen dat de bron wordt vertrouwd voordat pakketten zijn geïnstalleerd.</span><span class="sxs-lookup"><span data-stu-id="ede5c-118">You are prompted to confirm the source is trusted before packages are installed.</span></span> <span data-ttu-id="ede5c-119">Als u de standaard waarde wilt overschrijven, gebruikt u de `-Trusted` para meter.</span><span class="sxs-lookup"><span data-stu-id="ede5c-119">To override the default, use the `-Trusted` parameter.</span></span>
 
 ```powershell
 Register-PackageSource -Name MyNuGet -Location https://www.nuget.org/api/v2 -ProviderName NuGet
@@ -66,11 +66,11 @@ Name          ProviderName     IsTrusted  Location
 MyNuGet       NuGet            False      https://www.nuget.org/api/v2
 ```
 
-## <span data-ttu-id="00fec-120">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="00fec-120">PARAMETERS</span></span>
+## <span data-ttu-id="ede5c-120">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="ede5c-120">PARAMETERS</span></span>
 
-### <span data-ttu-id="00fec-121">-ConfigFile</span><span class="sxs-lookup"><span data-stu-id="00fec-121">-ConfigFile</span></span>
+### <span data-ttu-id="ede5c-121">-ConfigFile</span><span class="sxs-lookup"><span data-stu-id="ede5c-121">-ConfigFile</span></span>
 
-<span data-ttu-id="00fec-122">Hiermee geeft u een configuratie bestand op.</span><span class="sxs-lookup"><span data-stu-id="00fec-122">Specifies a configuration file.</span></span>
+<span data-ttu-id="ede5c-122">Hiermee geeft u een configuratie bestand op.</span><span class="sxs-lookup"><span data-stu-id="ede5c-122">Specifies a configuration file.</span></span>
 
 ```yaml
 Type: System.String
@@ -84,9 +84,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="00fec-123">-Credential</span><span class="sxs-lookup"><span data-stu-id="00fec-123">-Credential</span></span>
+### <span data-ttu-id="ede5c-123">-Credential</span><span class="sxs-lookup"><span data-stu-id="ede5c-123">-Credential</span></span>
 
-<span data-ttu-id="00fec-124">Hiermee geeft u een gebruikers account op dat gemachtigd is om toegang te krijgen tot de geauthenticeerde locatie.</span><span class="sxs-lookup"><span data-stu-id="00fec-124">Specifies a user account that has permission to access the authenticated location.</span></span>
+<span data-ttu-id="ede5c-124">Hiermee geeft u een gebruikers account op dat gemachtigd is om toegang te krijgen tot de geauthenticeerde locatie.</span><span class="sxs-lookup"><span data-stu-id="ede5c-124">Specifies a user account that has permission to access the authenticated location.</span></span>
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -100,25 +100,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="00fec-125">-Force</span><span class="sxs-lookup"><span data-stu-id="00fec-125">-Force</span></span>
+### <span data-ttu-id="ede5c-125">-Force</span><span class="sxs-lookup"><span data-stu-id="ede5c-125">-Force</span></span>
 
-<span data-ttu-id="00fec-126">Hiermee wordt de opdracht uitgevoerd zonder dat de gebruiker om bevestiging wordt gevraagd.</span><span class="sxs-lookup"><span data-stu-id="00fec-126">Forces the command to run without asking for user confirmation.</span></span>
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### <span data-ttu-id="00fec-127">-ForceBootstrap</span><span class="sxs-lookup"><span data-stu-id="00fec-127">-ForceBootstrap</span></span>
-
-<span data-ttu-id="00fec-128">Geeft aan dat met deze cmdlet automatisch de pakket provider wordt geïnstalleerd.</span><span class="sxs-lookup"><span data-stu-id="00fec-128">Indicates that this cmdlet automatically installs the package provider.</span></span>
+<span data-ttu-id="ede5c-126">Hiermee wordt de opdracht uitgevoerd zonder dat de gebruiker om bevestiging wordt gevraagd.</span><span class="sxs-lookup"><span data-stu-id="ede5c-126">Forces the command to run without asking for user confirmation.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -132,9 +116,25 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="00fec-129">-Locatie</span><span class="sxs-lookup"><span data-stu-id="00fec-129">-Location</span></span>
+### <span data-ttu-id="ede5c-127">-ForceBootstrap</span><span class="sxs-lookup"><span data-stu-id="ede5c-127">-ForceBootstrap</span></span>
 
-<span data-ttu-id="00fec-130">Hiermee geeft u de bron locatie van het pakket op.</span><span class="sxs-lookup"><span data-stu-id="00fec-130">Specifies the package source location.</span></span>
+<span data-ttu-id="ede5c-128">Geeft aan dat met deze cmdlet automatisch de pakket provider wordt geïnstalleerd.</span><span class="sxs-lookup"><span data-stu-id="ede5c-128">Indicates that this cmdlet automatically installs the package provider.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ede5c-129">-Locatie</span><span class="sxs-lookup"><span data-stu-id="ede5c-129">-Location</span></span>
+
+<span data-ttu-id="ede5c-130">Hiermee geeft u de bron locatie van het pakket op.</span><span class="sxs-lookup"><span data-stu-id="ede5c-130">Specifies the package source location.</span></span>
 
 ```yaml
 Type: System.String
@@ -148,9 +148,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="00fec-131">-Name</span><span class="sxs-lookup"><span data-stu-id="00fec-131">-Name</span></span>
+### <span data-ttu-id="ede5c-131">-Name</span><span class="sxs-lookup"><span data-stu-id="ede5c-131">-Name</span></span>
 
-<span data-ttu-id="00fec-132">Hiermee geeft u de naam op van de pakket bron die u wilt registreren.</span><span class="sxs-lookup"><span data-stu-id="00fec-132">Specifies the name of the package source to register.</span></span>
+<span data-ttu-id="ede5c-132">Hiermee geeft u de naam op van de pakket bron die u wilt registreren.</span><span class="sxs-lookup"><span data-stu-id="ede5c-132">Specifies the name of the package source to register.</span></span>
 
 ```yaml
 Type: System.String
@@ -164,9 +164,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="00fec-133">-PackageManagementProvider</span><span class="sxs-lookup"><span data-stu-id="00fec-133">-PackageManagementProvider</span></span>
+### <span data-ttu-id="ede5c-133">-PackageManagementProvider</span><span class="sxs-lookup"><span data-stu-id="ede5c-133">-PackageManagementProvider</span></span>
 
-<span data-ttu-id="00fec-134">Hiermee geeft u de pakket beheer provider op.</span><span class="sxs-lookup"><span data-stu-id="00fec-134">Specifies the Package Management provider.</span></span>
+<span data-ttu-id="ede5c-134">Hiermee geeft u de pakket beheer provider op.</span><span class="sxs-lookup"><span data-stu-id="ede5c-134">Specifies the Package Management provider.</span></span>
 
 ```yaml
 Type: System.String
@@ -180,9 +180,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="00fec-135">-ProviderName</span><span class="sxs-lookup"><span data-stu-id="00fec-135">-ProviderName</span></span>
+### <span data-ttu-id="ede5c-135">-ProviderName</span><span class="sxs-lookup"><span data-stu-id="ede5c-135">-ProviderName</span></span>
 
-<span data-ttu-id="00fec-136">Hiermee geeft u de naam van de pakket provider op.</span><span class="sxs-lookup"><span data-stu-id="00fec-136">Specifies the package provider's name.</span></span>
+<span data-ttu-id="ede5c-136">Hiermee geeft u de naam van de pakket provider op.</span><span class="sxs-lookup"><span data-stu-id="ede5c-136">Specifies the package provider's name.</span></span>
 
 ```yaml
 Type: System.String
@@ -197,9 +197,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="00fec-137">-Proxy</span><span class="sxs-lookup"><span data-stu-id="00fec-137">-Proxy</span></span>
+### <span data-ttu-id="ede5c-137">-Proxy</span><span class="sxs-lookup"><span data-stu-id="ede5c-137">-Proxy</span></span>
 
-<span data-ttu-id="00fec-138">Hiermee geeft u een proxy server voor de aanvraag op, in plaats van een rechtstreekse verbinding met de Internet resource.</span><span class="sxs-lookup"><span data-stu-id="00fec-138">Specifies a proxy server for the request, rather than a direct connection to the internet resource.</span></span>
+<span data-ttu-id="ede5c-138">Hiermee geeft u een proxy server voor de aanvraag op, in plaats van een rechtstreekse verbinding met de Internet resource.</span><span class="sxs-lookup"><span data-stu-id="ede5c-138">Specifies a proxy server for the request, rather than a direct connection to the internet resource.</span></span>
 
 ```yaml
 Type: System.Uri
@@ -213,9 +213,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="00fec-139">-ProxyCredential</span><span class="sxs-lookup"><span data-stu-id="00fec-139">-ProxyCredential</span></span>
+### <span data-ttu-id="ede5c-139">-ProxyCredential</span><span class="sxs-lookup"><span data-stu-id="ede5c-139">-ProxyCredential</span></span>
 
-<span data-ttu-id="00fec-140">Hiermee geeft u een gebruikers account op dat is gemachtigd voor het gebruik van de proxy server die is opgegeven door de para meter **proxy** .</span><span class="sxs-lookup"><span data-stu-id="00fec-140">Specifies a user account that has permission to use the proxy server that is specified by the **Proxy** parameter.</span></span>
+<span data-ttu-id="ede5c-140">Hiermee geeft u een gebruikers account op dat is gemachtigd voor het gebruik van de proxy server die is opgegeven door de para meter **proxy** .</span><span class="sxs-lookup"><span data-stu-id="ede5c-140">Specifies a user account that has permission to use the proxy server that is specified by the **Proxy** parameter.</span></span>
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -229,25 +229,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="00fec-141">-PublishLocation</span><span class="sxs-lookup"><span data-stu-id="00fec-141">-PublishLocation</span></span>
+### <span data-ttu-id="ede5c-141">-PublishLocation</span><span class="sxs-lookup"><span data-stu-id="ede5c-141">-PublishLocation</span></span>
 
-<span data-ttu-id="00fec-142">Hiermee geeft u de publicatie locatie op.</span><span class="sxs-lookup"><span data-stu-id="00fec-142">Specifies the publish location.</span></span>
-
-```yaml
-Type: System.String
-Parameter Sets: PowerShellGet
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### <span data-ttu-id="00fec-143">-ScriptPublishLocation</span><span class="sxs-lookup"><span data-stu-id="00fec-143">-ScriptPublishLocation</span></span>
-
-<span data-ttu-id="00fec-144">Hiermee geeft u de publicatie locatie van het script op.</span><span class="sxs-lookup"><span data-stu-id="00fec-144">Specifies the script publish location.</span></span>
+<span data-ttu-id="ede5c-142">Hiermee geeft u de publicatie locatie op.</span><span class="sxs-lookup"><span data-stu-id="ede5c-142">Specifies the publish location.</span></span>
 
 ```yaml
 Type: System.String
@@ -261,9 +245,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="00fec-145">-ScriptSourceLocation</span><span class="sxs-lookup"><span data-stu-id="00fec-145">-ScriptSourceLocation</span></span>
+### <span data-ttu-id="ede5c-143">-ScriptPublishLocation</span><span class="sxs-lookup"><span data-stu-id="ede5c-143">-ScriptPublishLocation</span></span>
 
-<span data-ttu-id="00fec-146">Hiermee geeft u de bron locatie van het script op.</span><span class="sxs-lookup"><span data-stu-id="00fec-146">Specifies the script source location.</span></span>
+<span data-ttu-id="ede5c-144">Hiermee geeft u de publicatie locatie van het script op.</span><span class="sxs-lookup"><span data-stu-id="ede5c-144">Specifies the script publish location.</span></span>
 
 ```yaml
 Type: System.String
@@ -277,9 +261,25 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="00fec-147">-SkipValidate</span><span class="sxs-lookup"><span data-stu-id="00fec-147">-SkipValidate</span></span>
+### <span data-ttu-id="ede5c-145">-ScriptSourceLocation</span><span class="sxs-lookup"><span data-stu-id="ede5c-145">-ScriptSourceLocation</span></span>
 
-<span data-ttu-id="00fec-148">Switch waarmee de validatie van de referenties van een pakket bron wordt overgeslagen.</span><span class="sxs-lookup"><span data-stu-id="00fec-148">Switch that skips validating the credentials of a package source.</span></span>
+<span data-ttu-id="ede5c-146">Hiermee geeft u de bron locatie van het script op.</span><span class="sxs-lookup"><span data-stu-id="ede5c-146">Specifies the script source location.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: PowerShellGet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ede5c-147">-SkipValidate</span><span class="sxs-lookup"><span data-stu-id="ede5c-147">-SkipValidate</span></span>
+
+<span data-ttu-id="ede5c-148">Switch waarmee de validatie van de referenties van een pakket bron wordt overgeslagen.</span><span class="sxs-lookup"><span data-stu-id="ede5c-148">Switch that skips validating the credentials of a package source.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -293,9 +293,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="00fec-149">-Vertrouwd</span><span class="sxs-lookup"><span data-stu-id="00fec-149">-Trusted</span></span>
+### <span data-ttu-id="ede5c-149">-Vertrouwd</span><span class="sxs-lookup"><span data-stu-id="ede5c-149">-Trusted</span></span>
 
-<span data-ttu-id="00fec-150">Geeft aan dat de pakket bron wordt vertrouwd.</span><span class="sxs-lookup"><span data-stu-id="00fec-150">Indicates that the package source is trusted.</span></span>
+<span data-ttu-id="ede5c-150">Geeft aan dat de pakket bron wordt vertrouwd.</span><span class="sxs-lookup"><span data-stu-id="ede5c-150">Indicates that the package source is trusted.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -309,9 +309,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="00fec-151">-Confirm</span><span class="sxs-lookup"><span data-stu-id="00fec-151">-Confirm</span></span>
+### <span data-ttu-id="ede5c-151">-Confirm</span><span class="sxs-lookup"><span data-stu-id="ede5c-151">-Confirm</span></span>
 
-<span data-ttu-id="00fec-152">Hiermee wordt u gevraagd om bevestiging voordat u de cmdlet uitvoert.</span><span class="sxs-lookup"><span data-stu-id="00fec-152">Prompts you for confirmation before running the cmdlet.</span></span>
+<span data-ttu-id="ede5c-152">Hiermee wordt u gevraagd om bevestiging voordat u de cmdlet uitvoert.</span><span class="sxs-lookup"><span data-stu-id="ede5c-152">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -325,9 +325,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="00fec-153">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="00fec-153">-WhatIf</span></span>
+### <span data-ttu-id="ede5c-153">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="ede5c-153">-WhatIf</span></span>
 
-<span data-ttu-id="00fec-154">Hiermee wordt weergegeven wat er zou gebeuren als u de cmdlet uitvoert.</span><span class="sxs-lookup"><span data-stu-id="00fec-154">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="00fec-155">De cmdlet wordt niet uitgevoerd.</span><span class="sxs-lookup"><span data-stu-id="00fec-155">The cmdlet is not run.</span></span>
+<span data-ttu-id="ede5c-154">Hiermee wordt weergegeven wat er zou gebeuren als u de cmdlet uitvoert.</span><span class="sxs-lookup"><span data-stu-id="ede5c-154">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="ede5c-155">De cmdlet wordt niet uitgevoerd.</span><span class="sxs-lookup"><span data-stu-id="ede5c-155">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -341,22 +341,29 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="00fec-156">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="00fec-156">CommonParameters</span></span>
+### <span data-ttu-id="ede5c-156">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="ede5c-156">CommonParameters</span></span>
 
-<span data-ttu-id="00fec-157">Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="00fec-157">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="00fec-158">Zie [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)voor meer informatie.</span><span class="sxs-lookup"><span data-stu-id="00fec-158">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+<span data-ttu-id="ede5c-157">Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="ede5c-157">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="ede5c-158">Zie [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)voor meer informatie.</span><span class="sxs-lookup"><span data-stu-id="ede5c-158">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="00fec-159">INVOER</span><span class="sxs-lookup"><span data-stu-id="00fec-159">INPUTS</span></span>
+## <span data-ttu-id="ede5c-159">INVOER</span><span class="sxs-lookup"><span data-stu-id="ede5c-159">INPUTS</span></span>
 
-## <span data-ttu-id="00fec-160">UITVOER</span><span class="sxs-lookup"><span data-stu-id="00fec-160">OUTPUTS</span></span>
+## <span data-ttu-id="ede5c-160">UITVOER</span><span class="sxs-lookup"><span data-stu-id="ede5c-160">OUTPUTS</span></span>
 
-## <span data-ttu-id="00fec-161">OPMERKINGEN</span><span class="sxs-lookup"><span data-stu-id="00fec-161">NOTES</span></span>
+## <span data-ttu-id="ede5c-161">OPMERKINGEN</span><span class="sxs-lookup"><span data-stu-id="ede5c-161">NOTES</span></span>
 
-## <span data-ttu-id="00fec-162">GERELATEERDE KOPPELINGEN</span><span class="sxs-lookup"><span data-stu-id="00fec-162">RELATED LINKS</span></span>
+> [!IMPORTANT]
+> <span data-ttu-id="ede5c-162">Vanaf april 2020 biedt de PowerShell Gallery niet langer ondersteuning voor Transport Layer Security (TLS) versie 1,0 en 1,1.</span><span class="sxs-lookup"><span data-stu-id="ede5c-162">As of April 2020, the PowerShell Gallery no longer supports Transport Layer Security (TLS) versions 1.0 and 1.1.</span></span> <span data-ttu-id="ede5c-163">Als u geen TLS 1,2 of hoger gebruikt, wordt er een fout bericht weer gegeven wanneer u probeert toegang te krijgen tot de PowerShell Gallery.</span><span class="sxs-lookup"><span data-stu-id="ede5c-163">If you are not using TLS 1.2 or higher, you will receive an error when trying to access the PowerShell Gallery.</span></span> <span data-ttu-id="ede5c-164">Gebruik de volgende opdracht om ervoor te zorgen dat u TLS 1,2 gebruikt:</span><span class="sxs-lookup"><span data-stu-id="ede5c-164">Use the following command to ensure you are using TLS 1.2:</span></span>
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> <span data-ttu-id="ede5c-165">Zie de [aankondiging](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in het Power shell-blog voor meer informatie.</span><span class="sxs-lookup"><span data-stu-id="ede5c-165">For more information, see the [announcement](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in the PowerShell blog.</span></span>
 
-[<span data-ttu-id="00fec-163">about_PackageManagement</span><span class="sxs-lookup"><span data-stu-id="00fec-163">about_PackageManagement</span></span>](../Microsoft.PowerShell.Core/About/about_PackageManagement.md)
+## <span data-ttu-id="ede5c-166">GERELATEERDE KOPPELINGEN</span><span class="sxs-lookup"><span data-stu-id="ede5c-166">RELATED LINKS</span></span>
 
-[<span data-ttu-id="00fec-164">Get-PackageSource</span><span class="sxs-lookup"><span data-stu-id="00fec-164">Get-PackageSource</span></span>](Get-PackageSource.md)
+[<span data-ttu-id="ede5c-167">about_PackageManagement</span><span class="sxs-lookup"><span data-stu-id="ede5c-167">about_PackageManagement</span></span>](../Microsoft.PowerShell.Core/About/about_PackageManagement.md)
 
-[<span data-ttu-id="00fec-165">Set-PackageSource</span><span class="sxs-lookup"><span data-stu-id="00fec-165">Set-PackageSource</span></span>](Set-PackageSource.md)
+[<span data-ttu-id="ede5c-168">Get-PackageSource</span><span class="sxs-lookup"><span data-stu-id="ede5c-168">Get-PackageSource</span></span>](Get-PackageSource.md)
 
-[<span data-ttu-id="00fec-166">Registratie ongedaan maken-PackageSource</span><span class="sxs-lookup"><span data-stu-id="00fec-166">Unregister-PackageSource</span></span>](Unregister-PackageSource.md)
+[<span data-ttu-id="ede5c-169">Set-PackageSource</span><span class="sxs-lookup"><span data-stu-id="ede5c-169">Set-PackageSource</span></span>](Set-PackageSource.md)
+
+[<span data-ttu-id="ede5c-170">Registratie ongedaan maken-PackageSource</span><span class="sxs-lookup"><span data-stu-id="ede5c-170">Unregister-PackageSource</span></span>](Unregister-PackageSource.md)
