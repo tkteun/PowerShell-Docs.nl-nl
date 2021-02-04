@@ -2,16 +2,16 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 08/19/2020
+ms.date: 12/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-content?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Content
-ms.openlocfilehash: 8ad7df860533b9f394fd81199dd7213175cce213
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 078b7c8561bf5821e9cf2791caceaad8152c926a
+ms.sourcegitcommit: bf07cffb2a66dec94bf3576e197090f958701f18
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94706177"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97693054"
 ---
 # Get-Content
 
@@ -132,12 +132,30 @@ Length        : 44
 ```
 
 ```powershell
-# Retrieve the content of the primary, or $DATA stream.
-Get-Content -Path .\Stream.txt -Stream $DATA
+# Retrieve the content of the primary, or $DATA stream.    # Retrieve the content of the primary stream. Note the singlequotes to prevent variable substitution.
+Get-Content -Path .\Stream.txt -Stream $DATA    Get-Content -Path .\Stream.txt -Stream ':$DATA'
 ```
 
 ```Output
 This is the content of the Stream.txt file
+```
+
+```powershell
+# Alternative way to get the same content.
+Get-Content -Path .\Stream.txt -Stream ""
+# The primary stream doesn't need to be specified to get the primary stream of the file.
+# This gets the same data as the prior two examples.
+Get-Content -Path .\Stream.txt
+```
+
+```Output
+This is the content of the Stream.txt file
+```
+
+```powershell
+# The primary stream doesn't need to be specified to get the primary stream of the file.
+# This gets the same data as the prior two examples.
+Get-Content -Path .\Stream.txt
 ```
 
 ```powershell
@@ -179,7 +197,7 @@ Added a stream named NewStream to Stream.txt
 ```
 
 De **Stream** -para meter is een dynamische para meter van de [File System Provider](../microsoft.powershell.core/about/about_filesystem_provider.md#stream-systemstring).
-Standaard worden `Get-Content` alleen gegevens opgehaald uit de primaire of `$DATA` Stream. **Stromen** kunnen worden gebruikt voor het opslaan van verborgen gegevens zoals kenmerken, beveiligings instellingen of andere gegevens.
+Standaard `Get-Content` worden alleen gegevens opgehaald uit de standaard-of `:$DATA` Stream. **Stromen** kunnen worden gebruikt voor het opslaan van verborgen gegevens zoals kenmerken, beveiligings instellingen of andere gegevens. Ze kunnen ook worden opgeslagen in directory's zonder onderliggende items.
 
 ### Voor beeld 6: onbewerkte inhoud ophalen
 
@@ -508,11 +526,16 @@ Accept wildcard characters: False
 
 ### -Stream
 
+> [!NOTE]
+> Deze para meter is alleen beschikbaar in Windows.
+
 Hiermee wordt de inhoud van de opgegeven alternatieve NTFS-bestands stroom opgehaald uit het bestand. Voer de naam van de stream in.
 Jokertekens worden niet ondersteund.
 
 **Stream** is een dynamische para meter die de **File System** provider toevoegt aan de `Get-Content` cmdlet.
-Deze para meter werkt alleen in bestandssysteem stations op Windows-systemen. Deze para meter is geïntroduceerd in Windows Power Shell 3,0.
+Deze para meter werkt alleen in bestandssysteem stations op Windows-systemen.
+
+Deze para meter is geïntroduceerd in Windows Power Shell 3,0. In Power shell 7,2 kan Get-Content de inhoud van alternatieve gegevens stromen van mappen en bestanden ophalen.
 
 ```yaml
 Type: System.String
@@ -546,7 +569,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-Deze cmdlet biedt ondersteuning voor de algemene para meters: `-Debug` , `-ErrorAction` , `-ErrorVariable` , `-InformationAction` , `-InformationVariable` , `-OutVariable` , `-OutBuffer` , `-PipelineVariable` , `-Verbose` , `-WarningAction` en `-WarningVariable` . Zie [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md)voor meer informatie.
+Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable. Zie [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)voor meer informatie.
 
 ## INVOER
 
@@ -579,4 +602,3 @@ De `Get-Content` cmdlet is ontworpen om te werken met de gegevens die door elke 
 [Get-PSProvider](Get-PSProvider.md)
 
 [Set-Content](Set-Content.md)
-

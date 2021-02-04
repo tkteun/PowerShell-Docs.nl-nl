@@ -1,18 +1,17 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 5/14/2019
+ms.date: 12/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/add-content?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-Content
-ms.openlocfilehash: 86702f16683c6710b498a23c072ea9d862868694
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: e31e792a60cd09d35ecc67263f107584857efe7d
+ms.sourcegitcommit: bf07cffb2a66dec94bf3576e197090f958701f18
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93249748"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97693030"
 ---
 # Add-Content
 
@@ -362,11 +361,14 @@ Accept wildcard characters: True
 
 ### -Stream
 
+> [!NOTE]
+> Deze para meter is alleen beschikbaar in Windows.
+
 Hiermee geeft u een alternatieve gegevens stroom voor inhoud. Als de stroom niet bestaat, wordt deze gemaakt met deze cmdlet. Joker tekens worden niet ondersteund.
 
 **Stream** is een dynamische para meter waaraan de File System Provider toevoegt `Add-Content` . Deze para meter werkt alleen op stations met een bestands systeem.
 
-U kunt de- `Add-Content` cmdlet gebruiken om de inhoud van de **zone te wijzigen. id** alternatieve gegevens stroom. Dit wordt echter niet aangeraden als een manier om beveiligings controles te elimineren waarmee bestanden die worden gedownload van Internet, worden geblokkeerd. Als u controleert of een gedownload bestand veilig is, gebruikt u de `Unblock-File` cmdlet.
+U kunt de `Add-Content` cmdlet gebruiken om de inhoud van een andere gegevens stroom te wijzigen, zoals `Zone.Identifier` . Dit wordt echter niet aangeraden als een manier om beveiligings controles te elimineren waarmee bestanden die worden gedownload van Internet, worden geblokkeerd. Als u controleert of een gedownload bestand veilig is, gebruikt u de `Unblock-File` cmdlet.
 
 Deze para meter is geïntroduceerd in Power Shell 3,0.
 
@@ -384,7 +386,7 @@ Accept wildcard characters: False
 
 ### -Waarde
 
-Hiermee geeft u de inhoud moet worden toegevoegd. Typ een teken reeks tussen aanhalings tekens, zoals **deze gegevens zijn alleen voor intern gebruik** , of geef een object op dat inhoud bevat, zoals het **DateTime** -object dat `Get-Date` genereert.
+Hiermee geeft u de inhoud moet worden toegevoegd. Typ een teken reeks tussen aanhalings tekens, zoals **deze gegevens zijn alleen voor intern gebruik**, of geef een object op dat inhoud bevat, zoals het **DateTime** -object dat `Get-Date` genereert.
 
 U kunt de inhoud van een bestand niet opgeven door het bijbehorende pad te typen, omdat het pad alleen een teken reeks is.
 U kunt een `Get-Content` opdracht gebruiken om de inhoud op te halen en door te geven aan de **waarde** -para meter.
@@ -435,7 +437,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-Deze cmdlet biedt ondersteuning voor de algemene para meters: `-Debug` , `-ErrorAction` , `-ErrorVariable` , `-InformationAction` , `-InformationVariable` , `-OutVariable` , `-OutBuffer` , `-PipelineVariable` , `-Verbose` , `-WarningAction` en `-WarningVariable` . Zie [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md)voor meer informatie.
+Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable. Zie [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)voor meer informatie.
 
 ## INVOER
 

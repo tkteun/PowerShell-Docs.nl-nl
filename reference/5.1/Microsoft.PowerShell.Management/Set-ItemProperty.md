@@ -7,12 +7,12 @@ ms.date: 10/18/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/set-itemproperty?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-ItemProperty
-ms.openlocfilehash: 969cb181758dc1ac40b9d8fca2c22fa97f87c693
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: cbd1229721650823d9780517934c40a2287f4227
+ms.sourcegitcommit: bf07cffb2a66dec94bf3576e197090f958701f18
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93250557"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97692672"
 ---
 # Set-ItemProperty
 
@@ -64,7 +64,7 @@ U kunt bijvoorbeeld een nieuwe register vermelding toevoegen aan een sleutel en 
 
 ### Voor beeld 1: een eigenschap van een bestand instellen
 
-Met deze opdracht wordt de waarde van de eigenschap **IsReadOnly** van het bestand ' final.doc ' ingesteld op ' True '. Het **pad** wordt gebruikt om het bestand op te geven, de **naam** op te geven van de naam van de eigenschap en de **waarde** pazrameter om de nieuwe waarde op te geven.
+Met deze opdracht wordt de waarde van de eigenschap **IsReadOnly** van het bestand ' final.doc ' ingesteld op ' True '. Het **pad** wordt gebruikt om het bestand op te geven, de **naam** op te geven van de naam van de eigenschap en de **waarde** para meter om de nieuwe waarde op te geven.
 
 Het bestand is een **System. io. file info** -object en **IsReadOnly** is slechts een van de eigenschappen ervan.
 Als u alle eigenschappen wilt weer geven, typt u `Get-Item C:\GroupFiles\final.doc | Get-Member -MemberType Property` .
@@ -336,14 +336,14 @@ Deze para meter werkt alleen in de register stations.
 Hiermee geeft u het type eigenschap op dat met deze cmdlet wordt toegevoegd.
 De aanvaardbare waarden voor deze parameter zijn:
 
-- **Teken reeks** : Hiermee geeft u een teken reeks met een null-waarde op. Gelijk aan **REG_SZ**.
-- **ExpandString** : Hiermee geeft u een teken reeks met een null-waarde eindigen die niet-uitgevouwen verwijzingen bevat naar omgevings variabelen die worden uitgebreid wanneer de waarde wordt opgehaald. Gelijk aan **REG_EXPAND_SZ**.
-- **Binary** : Hiermee worden binaire gegevens in een wille keurig formulier opgegeven. Gelijk aan **REG_BINARY**.
-- **DWORD** : Hiermee geeft u een 32-bits binair getal op. Gelijk aan **REG_DWORD**.
-- Meerdere **teken reeksen** : Hiermee geeft u een matrix van teken reeksen met een null-waarde die is beëindigd door twee null-tekens.
+- **Teken reeks**: Hiermee geeft u een teken reeks met een null-waarde op. Gelijk aan **REG_SZ**.
+- **ExpandString**: Hiermee geeft u een teken reeks met een null-waarde eindigen die niet-uitgevouwen verwijzingen bevat naar omgevings variabelen die worden uitgebreid wanneer de waarde wordt opgehaald. Gelijk aan **REG_EXPAND_SZ**.
+- **Binary**: Hiermee worden binaire gegevens in een wille keurig formulier opgegeven. Gelijk aan **REG_BINARY**.
+- **DWORD**: Hiermee geeft u een 32-bits binair getal op. Gelijk aan **REG_DWORD**.
+- Meerdere **teken reeksen**: Hiermee geeft u een matrix van teken reeksen met een null-waarde die is beëindigd door twee null-tekens.
   Gelijk aan **REG_MULTI_SZ**.
-- **Qword** : Hiermee geeft u een 64-bits binair getal op. Gelijk aan **REG_QWORD**.
-- **Onbekend** : Hiermee wordt een niet-ondersteund gegevens type van het REGI ster aangegeven, zoals **REG_RESOURCE_LIST**.
+- **Qword**: Hiermee geeft u een 64-bits binair getal op. Gelijk aan **REG_QWORD**.
+- **Onbekend**: Hiermee wordt een niet-ondersteund gegevens type van het REGI ster aangegeven, zoals **REG_RESOURCE_LIST**.
 
 ```yaml
 Type: RegistryValueKind

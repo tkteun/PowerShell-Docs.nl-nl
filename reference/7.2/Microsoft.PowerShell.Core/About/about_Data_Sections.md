@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_data_sections?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Data_Sections
-ms.openlocfilehash: dbc92015a4d48d74dd3f6c642dafbe06f4cb342c
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 1f2a0bae0721bc9adf5b3ba92d5be32d21306a46
+ms.sourcegitcommit: 04faa7dc1122bce839295d4891bd8b2f0ecb06ef
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94706112"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879147"
 ---
 # <a name="about-data-sections"></a>Gegevens secties
 
@@ -71,7 +71,7 @@ Wanneer u de `ConvertFrom-StringData` cmdlet gebruikt in een gegevens gedeelte, 
 
 De waarde van `-SupportedCommand` is een door komma's gescheiden lijst met een of meer cmdlets of functie namen.
 
-De volgende gegevens sectie bevat bijvoorbeeld een door de gebruiker geschreven cmdlet, `Format-XML` waarmee gegevens in een XML-bestand worden opgemaakt:
+De volgende gegevens sectie bevat bijvoorbeeld een door de gebruiker geschreven cmdlet, `Format-Xml` waarmee gegevens in een XML-bestand worden opgemaakt:
 
 ```powershell
 DATA -supportedCommand Format-Xml

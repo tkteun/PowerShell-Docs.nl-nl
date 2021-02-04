@@ -2,16 +2,16 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 03/27/2020
+ms.date: 12/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-item?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Item
-ms.openlocfilehash: 9607a8fc9528322eca52be1c5367078aff286382
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 67d9f351b8ef4936dcb4e9cff6583da0f464bc12
+ms.sourcegitcommit: bf07cffb2a66dec94bf3576e197090f958701f18
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94705740"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97693048"
 ---
 # Get-Item
 
@@ -159,10 +159,12 @@ De nieuwe eigenschappen die nu deel uitmaken van de uitvoer zijn:
 
 ### -Stream
 
-Hiermee wordt de opgegeven alternatieve NTFS-bestands stroom opgehaald uit het bestand. Voer de naam van de stream in. Joker tekens worden ondersteund. Als u alle streams wilt ophalen, gebruikt u een asterisk ( `*` ). Deze para meter is niet geldig voor mappen.
+> [!NOTE]
+> Deze para meter is alleen beschikbaar in Windows.
 
-**Stream** is een dynamische para meter die de **File System** provider toevoegt aan de `Get-Item` cmdlet.
-Deze para meter werkt alleen op stations met een bestands systeem.
+Hiermee wordt de opgegeven alternatieve gegevens stroom opgehaald uit het bestand. Voer de naam van de stream in. Joker tekens worden ondersteund. Als u alle streams wilt ophalen, gebruikt u een asterisk ( `*` ). Deze para meter is geldig voor directory's, maar houd er rekening mee dat directory's niet standaard gegevens stromen hebben.
+
+Deze para meter is geïntroduceerd in Power Shell 3,0.  Vanaf Power shell 7,2 `Get-Item` kunnen alternatieve gegevens stromen van mappen en bestanden worden ontvangen.
 
 ```yaml
 Type: System.String[]
@@ -297,7 +299,7 @@ Accept wildcard characters: True
 
 ### CommonParameters
 
-Deze cmdlet biedt ondersteuning voor de algemene para meters: `-Debug` , `-ErrorAction` , `-ErrorVariable` , `-InformationAction` , `-InformationVariable` , `-OutVariable` , `-OutBuffer` , `-PipelineVariable` , `-Verbose` , `-WarningAction` en `-WarningVariable` . Zie [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md)voor meer informatie.
+Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable. Zie [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)voor meer informatie.
 
 ## INVOER
 

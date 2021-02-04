@@ -2,16 +2,16 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 08/19/2020
+ms.date: 12/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/add-content?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-Content
-ms.openlocfilehash: e8db2deb302ad256464ae193ac38070525f1b2c6
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 70ef5033c3c5d37ed00a88abfb0d1353f5d10854
+ms.sourcegitcommit: bf07cffb2a66dec94bf3576e197090f958701f18
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94705748"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97693064"
 ---
 # Add-Content
 
@@ -365,13 +365,17 @@ Accept wildcard characters: True
 
 ### -Stream
 
+> [!NOTE]
+> Deze para meter is alleen beschikbaar in Windows.
+
 Hiermee geeft u een alternatieve gegevens stroom voor inhoud. Als de stroom niet bestaat, wordt deze gemaakt met deze cmdlet. Joker tekens worden niet ondersteund.
 
 **Stream** is een dynamische para meter waaraan de File System Provider toevoegt `Add-Content` . Deze para meter werkt alleen op stations met een bestands systeem.
 
-U kunt de- `Add-Content` cmdlet gebruiken om de inhoud van de **zone te wijzigen. id** alternatieve gegevens stroom. Dit wordt echter niet aangeraden als een manier om beveiligings controles te elimineren waarmee bestanden die worden gedownload van Internet, worden geblokkeerd. Als u controleert of een gedownload bestand veilig is, gebruikt u de `Unblock-File` cmdlet.
+U kunt de `Add-Content` cmdlet gebruiken om de inhoud van een andere gegevens stroom te wijzigen, zoals `Zone.Identifier` . Dit wordt echter niet aangeraden als een manier om beveiligings controles te elimineren waarmee bestanden die worden gedownload van Internet, worden geblokkeerd. Als u controleert of een gedownload bestand veilig is, gebruikt u de `Unblock-File` cmdlet.
 
-Deze para meter is geïntroduceerd in Power Shell 3,0.
+Deze para meter is geïntroduceerd in Power Shell 3,0.  Vanaf Power shell 7,2 `Add-Content` kunnen alternatieve gegevens stromen op zowel bestanden als directory's richten.
+
 
 ```yaml
 Type: System.String
@@ -437,6 +441,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable. Zie [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)voor meer informatie.
 
 ## INVOER
@@ -472,4 +477,3 @@ Wanneer u de para meter **PassThru** gebruikt, `Add-Content` genereert een **Sys
 [Nieuw-item](New-Item.md)
 
 [Set-Content](Set-Content.md)
-

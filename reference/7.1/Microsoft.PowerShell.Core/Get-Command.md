@@ -7,12 +7,12 @@ ms.date: 05/20/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/get-command?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Command
-ms.openlocfilehash: 60b6d2e380685650a86f74056a992afb4051ddc1
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 5f2752f53fb5f74b6436548c3bd4fa731d2b02d5
+ms.sourcegitcommit: 04faa7dc1122bce839295d4891bd8b2f0ecb06ef
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93251365"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879232"
 ---
 # Get-Command
 
@@ -105,7 +105,7 @@ Deze opdracht maakt gebruik van de para meters **argument List** en **syntax** o
 Get-Command  -Name Get-Childitem -Args Cert: -Syntax
 ```
 
-Wanneer u de syntaxis die wordt weer gegeven in de uitvoer vergelijkt met de syntaxis die wordt weer gegeven wanneer u de para meter **args** ( **argument List** ) weglaat, ziet u dat de **certificaat provider** een dynamische para meter, **CodeSigningCert** , toevoegt aan de `Get-ChildItem` cmdlet.
+Wanneer u de syntaxis die wordt weer gegeven in de uitvoer vergelijkt met de syntaxis die wordt weer gegeven wanneer u de para meter **args** (**argument List**) weglaat, ziet u dat de **certificaat provider** een dynamische para meter, **CodeSigningCert**, toevoegt aan de `Get-ChildItem` cmdlet.
 
 Zie [about_Certificate_Provider](../Microsoft.PowerShell.Security/About/about_Certificate_Provider.md)voor meer informatie over de certificaat provider.
 
@@ -157,7 +157,7 @@ De para meter **parameter type** onderscheidt para meters die een **Authenticati
 In dit voor beeld ziet u hoe u de `Get-Command` cmdlet gebruikt met een alias.
 
 ```powershell
-Get-Command Name dir
+Get-Command -Name dir
 ```
 
 ```Output

@@ -2,16 +2,16 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 10/18/2018
+ms.date: 12/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/clear-content?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Clear-Content
-ms.openlocfilehash: 308aee6f58443bb4e1e3d9751e7bd421b8072d8d
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 8024dc8a4a041fad783f1234477ee4b5920e7b00
+ms.sourcegitcommit: bf07cffb2a66dec94bf3576e197090f958701f18
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94705745"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97693062"
 ---
 # Clear-Content
 
@@ -57,16 +57,13 @@ De bestanden worden niet verwijderd, maar ze zijn leeg.
 Clear-Content -Path "*" -Filter "*.log" -Force
 ```
 
-Met deze opdracht wordt de inhoud van alle bestanden in de huidige map verwijderd met de bestandsnaam extensie. log, inclusief bestanden met het kenmerk alleen-lezen.
-Het sterretje ( \* ) in het pad staat voor alle items in de huidige map.
-Met de para meter **Force** is de opdracht geldig voor alleen-lezen bestanden.
-Het gebruik van een filter om de opdracht te beperken tot bestanden met de bestandsnaam extensie. log in plaats van op te geven \* . in het pad wordt de bewerking sneller uitgevoerd.
+Met deze opdracht wordt de inhoud van alle bestanden in de huidige map verwijderd met de bestandsnaam extensie. log, inclusief bestanden met het kenmerk alleen-lezen. Het sterretje ( \* ) in het pad staat voor alle items in de huidige map. Met de para meter **Force** is de opdracht geldig voor alleen-lezen bestanden. Het gebruik van een filter om de opdracht te beperken tot bestanden met de bestandsnaam extensie. log in plaats van op te geven \* . in het pad wordt de bewerking sneller uitgevoerd.
 
 ### Voor beeld 3: alle gegevens uit een stroom wissen
 
 In dit voor beeld ziet u hoe de `Clear-Content` cmdlet de inhoud uit een alternatieve gegevens stroom wist terwijl de stroom intact blijft.
 
-De eerste opdracht gebruikt de `Get-Content` cmdlet om de inhoud van de zone. id-stroom op te halen in het Copy-Script.ps1 bestand, dat is gedownload van het internet.
+Met de eerste opdracht wordt de- `Get-Content` cmdlet gebruikt om de inhoud van de `Zone.Identifier` stroom op te halen in het Copy-Script.ps1-bestand, dat is gedownload van het internet.
 
 Met de tweede opdracht wordt de- `Clear-Content` cmdlet gebruikt om de inhoud te wissen.
 
@@ -90,16 +87,16 @@ PS C:\>
 
 ### -Stream
 
-Hiermee geeft u een alternatieve gegevens stroom voor inhoud.
-Als de stroom niet bestaat, wordt deze gemaakt met deze cmdlet.
-Joker tekens worden niet ondersteund.
+> [!NOTE]
+> Deze para meter is alleen beschikbaar in Windows.
 
-Stream is een dynamische para meter waaraan de File System Provider toevoegt `Clear-Content` .
-Deze para meter werkt alleen op stations met een bestands systeem.
+Hiermee geeft u een alternatieve gegevens stroom voor inhoud. Als de stroom niet bestaat, wordt deze gemaakt met deze cmdlet. Joker tekens worden niet ondersteund.
 
-U kunt de- `Clear-Content` cmdlet gebruiken om de inhoud van de zone te wijzigen. id alternatieve gegevens stroom.
-Dit wordt echter niet aangeraden als een manier om beveiligings controles te elimineren waarmee bestanden die worden gedownload van Internet, worden geblokkeerd.
-Als u controleert of een gedownload bestand veilig is, gebruikt u de `Unblock-File` cmdlet.
+**Stream** is een dynamische para meter waaraan de File System Provider toevoegt `Clear-Content` . Deze para meter werkt alleen in bestandssysteem stations en verwijdert de inhoud van alternatieve gegevens stromen voor bestanden en mappen.
+
+U kunt de `Clear-Content` cmdlet gebruiken om de inhoud van een alternatieve gegevens stroom van Amy te wijzigen, zoals `Zone.Identifier` . Dit wordt echter niet aangeraden als een manier om beveiligings controles te elimineren waarmee bestanden die worden gedownload van Internet, worden geblokkeerd. Als u controleert of een gedownload bestand veilig is, gebruikt u de `Unblock-File` cmdlet.
+
+Deze para meter is geïntroduceerd in Power Shell 3,0. Vanaf Power shell 7,2 `Clear-Content` kan de inhoud van alternatieve gegevens stromen van mappen en bestanden worden gewist.
 
 ```yaml
 Type: System.String
@@ -132,10 +129,7 @@ Accept wildcard characters: False
 
 ### -Uitsluiten
 
-Hiermee geeft u als teken reeks matrix teken reeksen op die met deze cmdlet worden wegge laten van het pad naar de inhoud.
-De waarde van deze para meter komt in aanmerking voor de para meter **Path** .
-Voer een element of patroon van een pad in, zoals *. txt.
-Joker tekens zijn toegestaan.
+Hiermee geeft u als teken reeks matrix teken reeksen op die met deze cmdlet worden wegge laten van het pad naar de inhoud. De waarde van deze para meter komt in aanmerking voor de para meter **Path** . Voer een element of patroon van een pad in, zoals *. txt. Joker tekens zijn toegestaan.
 
 ```yaml
 Type: System.String[]
@@ -151,10 +145,7 @@ Accept wildcard characters: True
 
 ### -Filter
 
-Hiermee geeft u een filter op in de indeling of taal van de provider.
-De waarde van deze para meter komt in aanmerking voor de para meter **Path** .
-De syntaxis van het filter, inclusief het gebruik van joker tekens, is afhankelijk van de provider.
-Filters zijn efficiënter dan andere para meters, omdat de provider deze toepast tijdens het ophalen van de objecten, in plaats van dat Power shell de objecten heeft gefilterd nadat ze zijn opgehaald.
+Hiermee geeft u een filter op in de indeling of taal van de provider. De waarde van deze para meter komt in aanmerking voor de para meter **Path** . De syntaxis van het filter, inclusief het gebruik van joker tekens, is afhankelijk van de provider. Filters zijn efficiënter dan andere para meters, omdat de provider deze toepast tijdens het ophalen van de objecten, in plaats van dat Power shell de objecten heeft gefilterd nadat ze zijn opgehaald.
 
 ```yaml
 Type: System.String
@@ -186,10 +177,7 @@ Accept wildcard characters: False
 
 ### -Include
 
-Hiermee geeft u als een teken reeks matrix inhoud op die door deze cmdlet wordt gewist.
-De waarde van deze para meter komt in aanmerking voor de para meter **Path** .
-Voer een element of patroon van een pad in, zoals *. txt.
-Joker tekens zijn toegestaan.
+Hiermee geeft u als een teken reeks matrix inhoud op die door deze cmdlet wordt gewist. De waarde van deze para meter komt in aanmerking voor de para meter **Path** . Voer een element of patroon van een pad in, zoals *. txt. Joker tekens zijn toegestaan.
 
 ```yaml
 Type: System.String[]
@@ -205,11 +193,8 @@ Accept wildcard characters: True
 
 ### -LiteralPath
 
-Hiermee geeft u de paden op naar de items waarvan de inhoud wordt verwijderd.
-In tegens telling tot de para meter **Path** wordt de waarde van **LiteralPath** precies zo gebruikt als deze wordt getypt.
-Geen tekens worden geïnterpreteerd als joker tekens.
-Als het pad escape tekens bevat, plaatst u het tussen enkele aanhalings tekens.
-Enkele aanhalings tekens geven aan dat Power shell geen karakters kan interpreteren als escape reeksen.
+Hiermee geeft u de paden op naar de items waarvan de inhoud wordt verwijderd. In tegens telling tot de para meter **Path** wordt de waarde van **LiteralPath** precies zo gebruikt als deze wordt getypt. Geen tekens worden geïnterpreteerd als joker tekens.
+Als het pad escape tekens bevat, plaatst u het tussen enkele aanhalings tekens. Enkele aanhalings tekens geven aan dat Power shell geen karakters kan interpreteren als escape reeksen.
 
 ```yaml
 Type: System.String[]
@@ -225,12 +210,7 @@ Accept wildcard characters: False
 
 ### -Path
 
-Hiermee geeft u de paden op naar de items waarvan de inhoud wordt verwijderd.
-Joker tekens zijn toegestaan.
-De paden moeten paden naar items zijn en niet naar containers.
-U moet bijvoorbeeld een pad naar een of meer bestanden opgeven, niet een pad naar een map.
-Joker tekens zijn toegestaan.
-Deze para meter is vereist, maar de parameter naam ("pad") is optioneel.
+Hiermee geeft u de paden op naar de items waarvan de inhoud wordt verwijderd. Joker tekens zijn toegestaan. De paden moeten paden naar items zijn en niet naar containers. U moet bijvoorbeeld een pad naar een of meer bestanden opgeven, niet een pad naar een map. Joker tekens zijn toegestaan. Deze para meter is vereist, maar de parameter naam ("pad") is optioneel.
 
 ```yaml
 Type: System.String[]
@@ -262,8 +242,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-Hiermee wordt weergegeven wat er zou gebeuren als u de cmdlet uitvoert.
-De cmdlet wordt niet uitgevoerd.
+Hiermee wordt weergegeven wat er zou gebeuren als u de cmdlet uitvoert. De cmdlet wordt niet uitgevoerd.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -279,7 +258,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-Deze cmdlet biedt ondersteuning voor de algemene para meters: `-Debug` , `-ErrorAction` , `-ErrorVariable` , `-InformationAction` , `-InformationVariable` , `-OutVariable` , `-OutBuffer` , `-PipelineVariable` , `-Verbose` , `-WarningAction` en `-WarningVariable` . Zie [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md)voor meer informatie.
+Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable. Zie [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)voor meer informatie.
 
 ## INVOER
 
@@ -295,8 +274,7 @@ Met deze cmdlet worden geen objecten geretourneerd.
 
 ## OPMERKINGEN
 
-U kunt gebruiken `Clear-Content` met de Power shell-bestandssysteem provider en met andere providers die inhoud bewerken.
-Als u items wilt wissen die niet worden beschouwd als inhoud, zoals items die worden beheerd door het Power shell-certificaat of register providers, gebruikt u `Clear-Item` .
+U kunt gebruiken `Clear-Content` met de Power shell-bestandssysteem provider en met andere providers die inhoud bewerken. Als u items wilt wissen die niet worden beschouwd als inhoud, zoals items die worden beheerd door het Power shell-certificaat of register providers, gebruikt u `Clear-Item` .
 
 De `Clear-Content` cmdlet is ontworpen om te werken met de gegevens die door elke provider worden weer gegeven.
 Als u een lijst wilt weer geven van de providers die beschikbaar zijn in uw sessie, typt u `Get-PsProvider` .
@@ -313,4 +291,3 @@ Zie [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)voor
 [Set-Content](Set-Content.md)
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
-

@@ -6,12 +6,12 @@ ms.date: 07/31/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_signing?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Signing
-ms.openlocfilehash: 060a53d4d08700e541fb6bcd388ffb4167a271a3
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 147f591f48a63b538bb43f8cc05995240042a6af
+ms.sourcegitcommit: 021ea294327dec542ec040619dac0d2171397a90
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93252515"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97804167"
 ---
 # <a name="about-signing"></a>Over ondertekening
 
@@ -38,7 +38,7 @@ Als u wilt zoeken naar het effectief uitvoerings beleid op uw computer, typt u:
 Get-ExecutionPolicy
 ```
 
-Als u niet-ondertekende scripts wilt uitvoeren die u op uw lokale computer en ondertekende scripts van andere gebruikers schrijft, start u Power shell met de optie als administrator uitvoeren en gebruikt u de volgende opdracht om het uitvoerings beleid op de computer te wijzigen in **RemoteSigned** :
+Als u niet-ondertekende scripts wilt uitvoeren die u op uw lokale computer en ondertekende scripts van andere gebruikers schrijft, start u Power shell met de optie als administrator uitvoeren en gebruikt u de volgende opdracht om het uitvoerings beleid op de computer te wijzigen in **RemoteSigned**:
 
 ```powershell
 Set-ExecutionPolicy RemoteSigned
@@ -104,7 +104,7 @@ Als u een zelfondertekend certificaat maakt, zorg er dan voor dat u sterke bevei
 
 ## <a name="create-a-self-signed-certificate"></a>Een zelfondertekend certificaat maken
 
-Als u een zelfondertekend certificaat wilt maken in, gebruikt u de `New-SelfSignedCertificate` cmdlet in de PKI-module. Deze module is geïntroduceerd in Power Shell 3,0 en is opgenomen in Windows 8 en Windows Server 2012. Zie het Help-onderwerp voor de cmdlet voor meer informatie `New-SelfSignedCertificate` .
+Als u een zelfondertekend certificaat wilt maken, gebruikt u de `New-SelfSignedCertificate` cmdlet in de PKI-module. Deze module is geïntroduceerd in Power Shell 3,0 en is opgenomen in Windows 8 en Windows Server 2012. Zie het Help-onderwerp voor de cmdlet voor meer informatie `New-SelfSignedCertificate` .
 
 Gebruik het hulp programma voor het maken van certificaten om een zelfondertekend certificaat te maken in eerdere versies van Windows `MakeCert.exe` . Dit hulp programma is opgenomen in de Microsoft .NET SDK (versie 1,1 en hoger) en in de Microsoft Windows SDK.
 

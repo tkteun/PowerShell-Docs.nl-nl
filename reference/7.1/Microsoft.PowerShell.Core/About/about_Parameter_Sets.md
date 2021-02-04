@@ -1,13 +1,13 @@
 ---
 description: Hierin wordt beschreven hoe u in geavanceerde functies parameter sets definieert en gebruikt.
 title: about_Parameter_Sets
-ms.date: 02/11/2020
-ms.openlocfilehash: e6f7d006551bdeee11b68951f96f3fa2251e73e3
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.date: 01/05/2021
+ms.openlocfilehash: 876f6336dd344412b514ea22d413a97a98c9cd02
+ms.sourcegitcommit: eb7ad1850550032880f5529b4e4281514cba1673
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93252923"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97917820"
 ---
 # <a name="about-parameter-sets"></a>Over parameter sets
 
@@ -22,7 +22,7 @@ Power shell gebruikt parameter sets waarmee u één functie kunt schrijven die v
 
 De volgende vereisten zijn van toepassing op alle parameter sets.
 
-- Elke parameterset moet ten minste één unieke para meter hebben. Indien mogelijk moet u voor deze para meter een verplichte para meter opgeven.
+- Elke parameterset moet een unieke combi natie van para meters hebben. Indien mogelijk moet ten minste één van de unieke para meters een verplichte para meter zijn.
 
 - Een parameterset met meerdere positionele para meters moet unieke posities definiëren voor elke para meter. Er kunnen niet twee positionele para meters dezelfde positie opgeven.
 

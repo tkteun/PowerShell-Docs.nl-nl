@@ -4,12 +4,12 @@ ms.date: 10/05/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pwsh?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Pwsh
-ms.openlocfilehash: 1bd0a92513ee38c901a1f3e535ce4d5d187357e1
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: b31563dd7058d85eb76f34c61d9bff5558a786b0
+ms.sourcegitcommit: bf07cffb2a66dec94bf3576e197090f958701f18
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94705516"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97693105"
 ---
 # <a name="about-pwsh"></a>Over pwsh
 
@@ -146,7 +146,7 @@ Enter-PSHostProcess -CustomPipeName mydebugpipe
 
 ### <a name="-encodedcommand---e---ec"></a>-EncodedCommand | -e | -EG
 
-Hiermee wordt een met base64 gecodeerde teken reeks versie van een opdracht geaccepteerd. Gebruik deze para meter voor het verzenden van opdrachten naar Power shell waarvoor complexe, geneste aanhalings tekens zijn vereist. De base64-weer gave moet een UTF-16-gecodeerde teken reeks zijn.
+Hiermee wordt een met base64 gecodeerde teken reeks versie van een opdracht geaccepteerd. Gebruik deze para meter voor het verzenden van opdrachten naar Power shell waarvoor complexe, geneste aanhalings tekens zijn vereist. De base64-weer gave moet een gecodeerde teken reeks met UTF-16LE zijn.
 
 Bijvoorbeeld:
 

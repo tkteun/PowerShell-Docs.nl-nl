@@ -1,18 +1,17 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 04/07/2020
+ms.date: 12/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/remove-item?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Remove-Item
-ms.openlocfilehash: 3d33f0e3ab859d839b22a49a88860624ae06ddf2
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: c4a0243c528cbe1a28cad99cf6fa8d91018d9b3c
+ms.sourcegitcommit: bf07cffb2a66dec94bf3576e197090f958701f18
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93249843"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97692686"
 ---
 # Remove-Item
 
@@ -81,11 +80,11 @@ Omdat de **recursieve** para meter in `Remove-Item` een bekend probleem heeft, g
 Get-ChildItem * -Include *.csv -Recurse | Remove-Item
 ```
 
-In de `Get-ChildItem` opdracht heeft **Path** de waarde ( `*` ), die de inhoud van de huidige map vertegenwoordigt. Het maakt **gebruik van** het BESTANDS type CSV en maakt gebruik van **recursie** om het ophalen te recursief maken. Als u het bestands type opgeeft, zoals, wordt door `-Path *.csv` de cmdlet het onderwerp van de zoek opdracht geïnterpreteerd als een bestand zonder onderliggende items en mislukt het opnieuw. **Recurse**
+In de `Get-ChildItem` opdracht heeft **Path** de waarde ( `*` ), die de inhoud van de huidige map vertegenwoordigt. Het maakt **gebruik van** het BESTANDS type CSV en maakt gebruik van **recursie** om het ophalen te recursief maken. Als u het bestands type opgeeft, zoals, wordt door `-Path *.csv` de cmdlet het onderwerp van de zoek opdracht geïnterpreteerd als een bestand zonder onderliggende items en mislukt het opnieuw. 
 
 ### Voor beeld 5: subsleutels recursief verwijderen
 
-Met deze opdracht worden de register sleutel ' OldApp ' en alle bijbehorende subsleutels en waarden verwijderd. `Remove-Item`De code wordt gebruikt om de sleutel te verwijderen. Het pad is opgegeven, maar de optionele parameter naam ( **pad** ) wordt wegge laten.
+Met deze opdracht worden de register sleutel ' OldApp ' en alle bijbehorende subsleutels en waarden verwijderd. `Remove-Item`De code wordt gebruikt om de sleutel te verwijderen. Het pad is opgegeven, maar de optionele parameter naam (**pad**) wordt wegge laten.
 
 Met de **recursieve** para meter wordt alle inhoud van de sleutel ' OldApp ' recursief verwijderd. Als de sleutel subsleutels bevat en u de para meter **recursief** weglaat, wordt u gevraagd om te bevestigen dat u de inhoud van de sleutel wilt verwijderen.
 
@@ -174,7 +173,7 @@ At line:1 char:1
 
 ```
 
-De **Stream** -para meter `Get-Item` haalt de **zone. id** -stroom van het `Copy-Script.ps1` bestand op. `Remove-Item` maakt gebruik van de para meter **Stream** om de **zone. id** -stroom van het bestand te verwijderen. Ten slotte `Get-Item` ziet de cmdlet dat de **zone. id** -stroom is verwijderd.
+De **Stream** -para meter `Get-Item` haalt de `Zone.Identifier` Stream van het `Copy-Script.ps1` bestand op. `Remove-Item` gebruikt de **Stream** -para meter om de `Zone.Identifier` Stream van het bestand te verwijderen. Ten slotte `Get-Item` ziet de cmdlet dat de `Zone.Identifier` stroom is verwijderd.
 
 ## PARAMETERS
 
@@ -214,8 +213,7 @@ Accept wildcard characters: True
 
 ### -Filter
 
-Hiermee geeft u een filter op om de para meter **Path** te kwalificeren. De [File System](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md) -provider is de enige geïnstalleerde Power shell-provider die het gebruik van filters ondersteunt. U kunt de syntaxis voor de filter taal van het **Bestands systeem** in [about_Wildcards](../Microsoft.PowerShell.Core/About/about_Wildcards.md)vinden.
-Filters zijn efficiënter dan andere para meters, omdat deze door de provider worden toegepast wanneer de cmdlet de objecten ophaalt in plaats van dat Power shell de objecten heeft gefilterd nadat ze zijn opgehaald.
+Hiermee geeft u een filter op om de para meter **Path** te kwalificeren. De [File System](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md) -provider is de enige geïnstalleerde Power shell-provider die het gebruik van filters ondersteunt. U kunt de syntaxis voor de filter taal van het **Bestands systeem** in [about_Wildcards](../Microsoft.PowerShell.Core/About/about_Wildcards.md)vinden. Filters zijn efficiënter dan andere para meters, omdat deze door de provider worden toegepast wanneer de cmdlet de objecten ophaalt in plaats van dat Power shell de objecten heeft gefilterd nadat ze zijn opgehaald.
 
 ```yaml
 Type: System.String
@@ -317,10 +315,14 @@ Accept wildcard characters: False
 
 ### -Stream
 
+> [!NOTE]
+> Deze para meter is alleen beschikbaar in Windows.
+
 De **Stream** -para meter is een dynamische para meter waaraan de File System Provider toevoegt `Remove-Item` .
 Deze para meter werkt alleen op stations met een bestands systeem.
 
-U kunt gebruiken `Remove-Item` om een alternatieve gegevens stroom te verwijderen. Het is echter niet de aanbevolen manier om beveiligings controles te elimineren waarmee bestanden die worden gedownload van Internet, worden geblokkeerd. Als u controleert of een gedownload bestand veilig is, gebruikt u de `Unblock-File` cmdlet.
+U kunt gebruiken `Remove-Item` om een alternatieve gegevens stroom te verwijderen, zoals `Zone.Identifier` .
+Het is echter niet de aanbevolen manier om beveiligings controles te elimineren waarmee bestanden die worden gedownload van Internet, worden geblokkeerd. Als u controleert of een gedownload bestand veilig is, gebruikt u de `Unblock-File` cmdlet.
 
 Deze para meter is geïntroduceerd in Windows Power Shell 3,0.
 
@@ -373,7 +375,8 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-Deze cmdlet biedt ondersteuning voor de algemene para meters: `-Debug` , `-ErrorAction` , `-ErrorVariable` , `-InformationAction` , `-InformationVariable` , `-OutVariable` , `-OutBuffer` , `-PipelineVariable` , `-Verbose` , `-WarningAction` en `-WarningVariable` . Zie [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md)voor meer informatie.
+Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable. Zie [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)voor meer informatie.
+
 
 ## INVOER
 
@@ -418,4 +421,3 @@ Wanneer u probeert een map te verwijderen die items bevat zonder de para meter *
 [about_Preference_Variables](../microsoft.powershell.core/about/about_preference_variables.md#confirmpreference)
 
 [about_Functions_CmdletBindingAttribute](../microsoft.powershell.core/about/about_functions_cmdletbindingattribute.md?#confirmimpact)
-

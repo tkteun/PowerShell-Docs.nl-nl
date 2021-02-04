@@ -1,13 +1,13 @@
 ---
-ms.date: 11/11/2020
+ms.date: 12/14/2020
 title: Experimentele functies gebruiken in Power shell
 description: Een lijst met de momenteel beschik bare experimentele functies en hoe u deze kunt gebruiken.
-ms.openlocfilehash: 4df3601cd38120fedecbbad8a3c63a95240c5f15
-ms.sourcegitcommit: fb1a4bc4b249afd3513663de2e1ba3025d63467e
+ms.openlocfilehash: be02829c27ff5d8babaf173d2ee7ebbfc7614773
+ms.sourcegitcommit: 04faa7dc1122bce839295d4891bd8b2f0ecb06ef
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94625700"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879351"
 ---
 # <a name="using-experimental-features-in-powershell"></a>Experimentele functies gebruiken in Power shell
 
@@ -24,20 +24,21 @@ Zie [about_Experimental_Features](/powershell/module/microsoft.powershell.core/a
 
 In dit artikel worden de experimentele functies beschreven die beschikbaar zijn en hoe u deze functie kunt gebruiken.
 
-|                            Name                            |   6,2   |   7.0   |   7.1   |
-| ---------------------------------------------------------- | :-----: | :-----: | :-----: |
-| PSTempDrive (mainstream in PS 7.0 +)                        | &check; |         |         |
-| PSUseAbbreviationExpansion (mainstream in PS 7.0 +)         | &check; |         |         |
-| PSNullConditionalOperators (mainstream in PS 7.1 +)         |         | &check; |         |
-| PSUnixFileStat (alleen niet-Windows-mainstream in PS 7.1 +)  |         | &check; |         |
-| PSCommandNotFoundSuggestion                                | &check; | &check; | &check; |
-| PSImplicitRemotingBatching                                 | &check; | &check; | &check; |
-| Micro soft. Power shell. Utility. PSManageBreakpointsInRunspace |         | &check; | &check; |
-| PSDesiredStateConfiguration.InvokeDscResource              |         | &check; | &check; |
-| PSNativePSPathResolution                                   |         |         | &check; |
-| PSCultureInvariantReplaceOperator                          |         |         | &check; |
-| PSNotApplyErrorActionToStderr                              |         |         | &check; |
-| PSSubsystemPluginModel                                     |         |         | &check; |
+|                            Name                            |   6,2   |   7.0   |   7.1   |   7.2   |
+| ---------------------------------------------------------- | :-----: | :-----: | :-----: | :-----: |
+| PSTempDrive (mainstream in PS 7.0 +)                        | &check; |         |         |         |
+| PSUseAbbreviationExpansion (mainstream in PS 7.0 +)         | &check; |         |         |         |
+| PSNullConditionalOperators (mainstream in PS 7.1 +)         |         | &check; |         |         |
+| PSUnixFileStat (alleen niet-Windows-mainstream in PS 7.1 +)  |         | &check; |         |         |
+| PSCommandNotFoundSuggestion                                | &check; | &check; | &check; | &check; |
+| PSImplicitRemotingBatching                                 | &check; | &check; | &check; | &check; |
+| Micro soft. Power shell. Utility. PSManageBreakpointsInRunspace |         | &check; | &check; | &check; |
+| PSDesiredStateConfiguration.InvokeDscResource              |         | &check; | &check; | &check; |
+| PSNativePSPathResolution                                   |         |         | &check; | &check; |
+| PSCultureInvariantReplaceOperator                          |         |         | &check; | &check; |
+| PSNotApplyErrorActionToStderr                              |         |         | &check; | &check; |
+| PSSubsystemPluginModel                                     |         |         | &check; | &check; |
+| PSAnsiRendering                                            |         |         |         | &check; |
 
 ## <a name="microsoftpowershellutilitypsmanagebreakpointsinrunspace"></a>Micro soft. Power shell. Utility. PSManageBreakpointsInRunspace
 
@@ -65,6 +66,56 @@ $breakpoint = Get-PSBreakPoint -Runspace $runspace
 ```
 
 In dit voor beeld wordt een taak gestart en wordt een onderbrekings punt ingesteld op break wanneer de `Set-PSBreakPoint` wordt uitgevoerd. De runs Pace wordt opgeslagen in een variabele en door gegeven aan de `Get-PSBreakPoint` opdracht met de para meter **runs Pace** . U kunt vervolgens het onderbrekings punt in de variabele inspecteren `$breakpoint` .
+
+## <a name="psansirendering"></a>PSAnsiRendering
+
+Dit experiment is toegevoegd aan Power shell 7,2. Met de functie kunt u wijzigingen aanbrengen in de manier waarop de Power shell-engine tekst uitvoer en de `$PSStyle` Automatische variabele toevoegen om de ANSI-rendering van teken reeks uitvoer te beheren.
+
+```powershell
+PS> $PSStyle
+
+Name            MemberType Definition
+----            ---------- ----------
+Reset           Property   string AttributesOff {get;set;}
+Background      Property   System.Management.Automation.PSStyle+BackgroundColor Background {get;set;}
+Blink           Property   string Blink {get;set;}
+BlinkOff        Property   string BlinkOff {get;set;}
+Bold            Property   string Bold {get;set;}
+BoldOff         Property   string BoldOff {get;set;}
+Foreground      Property   System.Management.Automation.PSStyle+ForegroundColor Foreground {get;set;}
+Formatting      Property   System.Management.Automation.PSStyle+FormattingData Formatting {get;set;}
+Hidden          Property   string Hidden {get;set;}
+HiddenOff       Property   string HiddenOff {get;set;}
+OutputRendering Property   System.Management.Automation.OutputRendering OutputRendering {get;set;}
+Reverse         Property   string Reverse {get;set;}
+ReverseOff      Property   string ReverseOff {get;set;}
+Italic          Property   string Standout {get;set;}
+ItalicOff       Property   string StandoutOff {get;set;}
+Underline       Property   string Underlined {get;set;}
+Underline Off   Property   string UnderlinedOff {get;set;}
+```
+
+De basis leden retour neren teken reeksen van ANSI-escape reeksen die zijn toegewezen aan hun namen. De waarden kunnen worden ingesteld om aanpassing mogelijk te maken.
+
+Zie [about_Automatic_Variables](/reference/7.2/Microsoft.PowerShell.Core/About/about_Automatic_Variables.md) voor meer informatie.
+
+> [!NOTE]
+> Voor C#-ontwikkel aars kunt u `PSStyle` als Singleton toegang krijgen. Gebruik ziet er als volgt uit:
+>
+> ```csharp
+> string output = $"{PSStyle.Instance.Foreground.Red}{PSStyle.Instance.Bold}Hello{PSStyle.Instance.Reset}";
+> ```
+>
+> `PSStyle` bestaat in de naam ruimte System. Management. Automation.
+
+Naast de toegang tot `$PSStyle` , worden er wijzigingen aangebracht in de Power shell-engine. Het Power shell-opmaak systeem is bijgewerkt met betrekking tot `$PSStyle.OutputRendering` .
+
+- `StringDecorated` type wordt toegevoegd voor het verwerken van teken reeksen met ANSI-Escapes.
+- `string IsDecorated` Er wordt een Boole-eigenschap toegevoegd om te retour neren als de teken reeks ANSI-escape reeksen bevat op basis van als de teken reeks ESC of C1 CSI bevat.
+- De `Length` eigenschap retourneert _alleen_ de lengte van de tekst zonder de ANSI-escape reeksen.
+- `StringDecorated Substring(int contentLength)` methode retourneert een subtekenreeks die begint bij index 0 tot aan de lengte van de inhoud die geen deel uitmaakt van ANSI-escape reeksen. Dit is nodig voor het afkappen van teken reeksen en het behouden van ANSI-escape reeksen die geen afdruk bare teken ruimte innemen.
+- `string ToString()` de methode blijft hetzelfde en retourneert de ongecodeerde versie van de teken reeks.
+- `string ToString(bool Ansi)` methode retourneert de onbewerkte ANSI-teken reeks als de `Ansi` para meter waar is. Anders wordt een niet-gecodeerde versie met ANSI-escape reeksen verwijderd.
 
 ## <a name="pscommandnotfoundsuggestion"></a>PSCommandNotFoundSuggestion
 
@@ -234,6 +285,6 @@ Dit werkt alleen voor tabblad voltooiing (interactief gebruik), dus `i-psdf` is 
 
 Met deze functie wordt het subsysteem voor de invoeg toepassing in Power shell ingeschakeld. De functie maakt het mogelijk om onderdelen van te scheiden `System.Management.Automation.dll` in afzonderlijke subsystemen die zich in hun eigen assembly bevinden. Deze schei ding vermindert het schijf gebruik van de kern-Power shell-engine en maakt het mogelijk dat deze onderdelen optionele functies worden voor een minimale Power shell-installatie.
 
-Op dit moment wordt alleen het subsysteem **CommandPredictor** ondersteund. Dit subsysteem wordt samen met de PSReadLine-module gebruikt om aangepaste Voorspellings-invoeg toepassingen te bieden. In de toekomst kunnen **Job** , **CommandCompleter** , **Remoting** en andere onderdelen worden gescheiden in subsysteem-assembly's buiten `System.Management.Automation.dll` .
+Op dit moment wordt alleen het subsysteem **CommandPredictor** ondersteund. Dit subsysteem wordt samen met de PSReadLine-module gebruikt om aangepaste Voorspellings-invoeg toepassingen te bieden. In de toekomst kunnen **Job**, **CommandCompleter**, **Remoting** en andere onderdelen worden gescheiden in subsysteem-assembly's buiten `System.Management.Automation.dll` .
 
 Het experimentele onderdeel bevat een nieuwe cmdlet [Get-PSSubsystem](xref:Microsoft.PowerShell.Core.Get-PSSubsystem). Deze cmdlet is alleen beschikbaar wanneer de functie is ingeschakeld. Deze cmdlet retourneert informatie over de subsystemen die beschikbaar zijn op het systeem.

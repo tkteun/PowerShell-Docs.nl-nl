@@ -2,16 +2,16 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 08/19/2020
+ms.date: 12/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/set-content?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Content
-ms.openlocfilehash: 43784f68ea70f8d5e67fb1bf109d353112770fcf
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: d85e0219c325de998c5874224a33ac4263b787a3
+ms.sourcegitcommit: bf07cffb2a66dec94bf3576e197090f958701f18
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94705869"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97692963"
 ---
 # Set-Content
 
@@ -343,13 +343,16 @@ Accept wildcard characters: True
 
 ### -Stream
 
+> [!NOTE]
+> Deze para meter is alleen beschikbaar in Windows.
+
 Hiermee geeft u een alternatieve gegevens stroom voor inhoud. Als de stroom niet bestaat, wordt deze gemaakt met deze cmdlet. Joker tekens worden niet ondersteund.
 
 **Stream** is een dynamische para meter waaraan de **File System** provider toevoegt `Set-Content` . Deze para meter werkt alleen op stations met een bestands systeem.
 
-U kunt de- `Set-Content` cmdlet gebruiken om de inhoud van de **zone te wijzigen. id** alternatieve gegevens stroom. Dit wordt echter niet aangeraden als een manier om beveiligings controles te elimineren waarmee bestanden die worden gedownload van Internet, worden geblokkeerd. Als u controleert of een gedownload bestand veilig is, gebruikt u de `Unblock-File` cmdlet.
+U kunt de `Set-Content` cmdlet gebruiken om de inhoud van een alternatieve gegevens stroom te maken of bij te werken, zoals `Zone.Identifier` . Dit wordt echter niet aangeraden als een manier om beveiligings controles te elimineren waarmee bestanden die worden gedownload van Internet, worden geblokkeerd. Als u controleert of een gedownload bestand veilig is, gebruikt u de `Unblock-File` cmdlet.
 
-Deze para meter is geïntroduceerd in Power Shell 3,0.
+Deze para meter is geïntroduceerd in Power Shell 3,0. Vanaf Power shell 7,2 `Set-Content` kan de inhoud van alternatieve gegevens stromen van mappen en bestanden instellen.
 
 ```yaml
 Type: System.String
@@ -413,8 +416,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-Deze cmdlet biedt ondersteuning voor de algemene para meters: `-Debug` , `-ErrorAction` , `-ErrorVariable` , `-InformationAction` , `-InformationVariable` , `-OutVariable` , `-OutBuffer` , `-PipelineVariable` , `-Verbose` , `-WarningAction` en `-WarningVariable` .
-Zie [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md)voor meer informatie.
+Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable. Zie [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)voor meer informatie.
 
 ## INVOER
 
@@ -454,4 +456,3 @@ Wanneer u de para meter **PassThru** gebruikt, `Set-Content` genereert een **Sys
 [ForEach-object](../Microsoft.PowerShell.Core/ForEach-Object.md)
 
 [Nieuw-item](New-Item.md)
-

@@ -1,16 +1,15 @@
 ---
 description: Hierin wordt uitgelegd hoe u de `pwsh` opdracht regel interface gebruikt. Hiermee worden de opdracht regel parameters weer gegeven en wordt de syntaxis beschreven.
-keywords: powershell,cmdlet
 ms.date: 10/05/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pwsh?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Pwsh
-ms.openlocfilehash: c71848e327822f7cbc659310d3fa47a5a46a37a2
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 6f6e7ea66aa04eaeea2b9da7c07864180210131c
+ms.sourcegitcommit: bf07cffb2a66dec94bf3576e197090f958701f18
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93252660"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97692995"
 ---
 # <a name="about-pwsh"></a>Over pwsh
 
@@ -147,7 +146,7 @@ Enter-PSHostProcess -CustomPipeName mydebugpipe
 
 ### <a name="-encodedcommand---e---ec"></a>-EncodedCommand | -e | -EG
 
-Hiermee wordt een met base64 gecodeerde teken reeks versie van een opdracht geaccepteerd. Gebruik deze para meter voor het verzenden van opdrachten naar Power shell waarvoor complexe, geneste aanhalings tekens zijn vereist. De base64-weer gave moet een UTF-16-gecodeerde teken reeks zijn.
+Hiermee wordt een met base64 gecodeerde teken reeks versie van een opdracht geaccepteerd. Gebruik deze para meter voor het verzenden van opdrachten naar Power shell waarvoor complexe, geneste aanhalings tekens zijn vereist. De base64-weer gave moet een gecodeerde teken reeks met UTF-16LE zijn.
 
 Bijvoorbeeld:
 

@@ -7,12 +7,12 @@ ms.date: 09/08/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ForEach-Object
-ms.openlocfilehash: e05c9b5e44d26b1e16c82f734ec60ca4cc73ab4d
-ms.sourcegitcommit: e0f9fe6335be1e0f94bedaa0e8baec2acaeaa076
+ms.openlocfilehash: 1b1824db5c5c20698d551a6277890ce6c82c4e11
+ms.sourcegitcommit: fb9bafd041e3615b9dc9fb77c9245581b705cd02
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "93251908"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97725184"
 ---
 # ForEach-Object
 
@@ -42,7 +42,7 @@ ForEach-Object -Parallel <scriptblock> [-InputObject <PSObject>] [-ThrottleLimit
 [-UseNewRunspace] [-TimeoutSeconds <int>] [-AsJob] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Beschrijving
+## Description
 
 `ForEach-Object`Met de cmdlet wordt een bewerking uitgevoerd op elk item in een verzameling invoer objecten. De invoer objecten kunnen worden gesluizen naar de cmdlet of worden opgegeven met behulp van de para meter **input object** .
 
@@ -206,7 +206,7 @@ process
 
 ### Voor beeld 9: ForEach-Object gebruiken met meer dan twee script blokken
 
-In dit voor beeld worden twee script blokken positioneel door gegeven. Alle script blokken binden aan de **proces** parameter. Ze worden echter behandeld alsof ze zijn door gegeven aan de **begin** -, **proces** -en **End** -para meters.
+In dit voor beeld worden twee script blokken positioneel door gegeven. Alle script blokken binden aan de **proces** parameter. Ze worden echter behandeld alsof ze zijn door gegeven aan de **begin**-, **proces**-en **End** -para meters.
 
 ```powershell
 1..2 | ForEach-Object { 'begin' } { 'process A' }  { 'process B' }  { 'end' }
@@ -337,7 +337,7 @@ $threadSafeDictionary["pwsh"]
      82    82.87     130.85      15.55    2808   2 pwsh
 ```
 
-Er wordt één exemplaar van een **ConcurrentDictionary** -object door gegeven aan elk script blok om de objecten te verzamelen. Omdat de **ConcurrentDictionary** thread-safe is, is het veilig om door elk parallel schrift te worden gewijzigd. Een niet-thread-veilig object, zoals **System. Collections. generic. Dictionary** , is hier niet veilig te gebruiken.
+Er wordt één exemplaar van een **ConcurrentDictionary** -object door gegeven aan elk script blok om de objecten te verzamelen. Omdat de **ConcurrentDictionary** thread-safe is, is het veilig om door elk parallel schrift te worden gewijzigd. Een niet-thread-veilig object, zoals **System. Collections. generic. Dictionary**, is hier niet veilig te gebruiken.
 
 > [!NOTE]
 > Dit voor beeld is een zeer inefficiënt gebruik van een **parallelle** para meter. Het script voegt eenvoudigweg het invoer object toe aan een object met een gelijktijdig woorden lijst. Het is lastig en niet de overhead van het aanroepen van elk script in een afzonderlijke thread. `ForEach-Object`Normaal gesp roken werkt **zonder parallelle** switch veel efficiënter en sneller. Dit voor beeld is alleen bedoeld om te laten zien hoe u thread-safe variabelen kunt gebruiken.
@@ -405,7 +405,7 @@ Accept wildcard characters: False
 
 ### -Begin
 
-Hiermee geeft u een script blok op dat wordt uitgevoerd voordat deze cmdlet invoer objecten verwerkt. Dit script blok wordt slechts één keer uitgevoerd voor de volledige pijp lijn. Zie about_Functions voor meer informatie over het `begin` blok [about_Functions](about/about_functions.md#piping-objects-to-functions).
+Hiermee geeft u een script blok op dat wordt uitgevoerd voordat deze cmdlet invoer objecten verwerkt. Dit script blok wordt slechts één keer uitgevoerd voor de volledige pijp lijn. Zie about_Functions voor meer informatie over het `begin` blok [](about/about_functions.md#piping-objects-to-functions).
 
 ```yaml
 Type: System.Management.Automation.ScriptBlock
@@ -421,7 +421,7 @@ Accept wildcard characters: False
 
 ### -End
 
-Hiermee geeft u een script blok op dat wordt uitgevoerd nadat deze cmdlet alle invoer objecten heeft verwerkt. Dit script blok wordt slechts één keer uitgevoerd voor de volledige pijp lijn. Zie about_Functions voor meer informatie over het `end` blok [about_Functions](about/about_functions.md#piping-objects-to-functions).
+Hiermee geeft u een script blok op dat wordt uitgevoerd nadat deze cmdlet alle invoer objecten heeft verwerkt. Dit script blok wordt slechts één keer uitgevoerd voor de volledige pijp lijn. Zie about_Functions voor meer informatie over het `end` blok [](about/about_functions.md#piping-objects-to-functions).
 
 ```yaml
 Type: System.Management.Automation.ScriptBlock
@@ -477,7 +477,7 @@ Accept wildcard characters: True
 
 ### -Proces
 
-Hiermee geeft u de bewerking op die op elk invoer object wordt uitgevoerd. Dit script blok wordt uitgevoerd voor elk object in de pijp lijn. Zie about_Functions voor meer informatie over het `process` blok [about_Functions](about/about_functions.md#piping-objects-to-functions).
+Hiermee geeft u de bewerking op die op elk invoer object wordt uitgevoerd. Dit script blok wordt uitgevoerd voor elk object in de pijp lijn. Zie about_Functions voor meer informatie over het `process` blok [](about/about_functions.md#piping-objects-to-functions).
 
 Wanneer u meerdere script blokken voor de para meter **process** opgeeft, wordt het eerste script blok altijd toegewezen aan het `begin` blok. Als er slechts twee script blokken zijn, wordt het tweede blok toegewezen aan het `process` blok. Als er drie of meer script blokken zijn, wordt het eerste script blok altijd toegewezen aan het `begin` blok, wordt het laatste blok toegewezen aan het `end` blok en worden de blokken tussen beide toegewezen aan het `process` blok.
 
@@ -542,7 +542,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: 5
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -643,13 +643,13 @@ Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - Er
 
 U kunt elk object door sluizen naar deze cmdlet.
 
-## Uitvoer
+## Uitvoerwaarden
 
 ### System. Management. Automation. PSObject
 
 Deze cmdlet retourneert objecten die worden bepaald door de invoer.
 
-## Opmerkingen
+## Notities
 
 - De `ForEach-Object` cmdlet werkt op dezelfde manier als de **foreach** -instructie, behalve dat u invoer niet kunt door sluizen naar een **foreach** -instructie. Zie [about_Foreach](./About/about_Foreach.md)voor meer informatie over de instructie **foreach** .
 

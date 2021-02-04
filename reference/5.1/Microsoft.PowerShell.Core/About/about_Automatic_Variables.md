@@ -1,17 +1,16 @@
 ---
 description: Beschrijft variabelen waarin status informatie voor Power shell wordt opgeslagen. Deze variabelen worden gemaakt en onderhouden door Power shell.
-keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 08/14/2020
+ms.date: 12/14/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Automatic_Variables
-ms.openlocfilehash: d56e844bd10dfffabb1d2cfd75bcfe113724a334
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 82fc08a49b58b9518cfa50be916cf2889b5007d2
+ms.sourcegitcommit: 1628fd2a1f50aec2f31ffb1c451a3ce77c08983c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93252634"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97577221"
 ---
 # <a name="about-automatic-variables"></a>Over automatische variabelen
 
@@ -33,7 +32,7 @@ Bevat het laatste token in de laatste door de sessie ontvangen regel.
 
 Bevat de uitvoerings status van de laatste opdracht. Het bevat **waar** als de laatste opdracht is geslaagd en **Onwaar** als deze is mislukt.
 
-Voor cmdlets en geavanceerde functies die in meerdere fasen in een pijp lijn worden uitgevoerd, bijvoorbeeld in zowel `process` -als `end` -blokken, `this.WriteError()` wordt het aanroepen van of `$PSCmdlet.WriteError()` respectievelijk op elk punt ingesteld `$?` op **False** , zoals `this.ThrowTerminatingError()` en `$PSCmdlet.ThrowTerminatingError()` .
+Voor cmdlets en geavanceerde functies die in meerdere fasen in een pijp lijn worden uitgevoerd, bijvoorbeeld in zowel `process` -als `end` -blokken, `this.WriteError()` wordt het aanroepen van of `$PSCmdlet.WriteError()` respectievelijk op elk punt ingesteld `$?` op **False**, zoals `this.ThrowTerminatingError()` en `$PSCmdlet.ThrowTerminatingError()` .
 
 De `Write-Error` cmdlet wordt altijd ingesteld `$?` op **False** direct nadat deze is uitgevoerd, maar is niet ingesteld `$?` op **False** voor een functie die deze aanroept:
 
@@ -53,7 +52,7 @@ Voor dit laatste doel `$PSCmdlet.WriteError()` moet in plaats daarvan worden geb
 Voor systeem eigen opdrachten (uitvoer bare bestanden) `$?` is ingesteld op **True** wanneer `$LASTEXITCODE` 0 is en is ingesteld op **False** wanneer `$LASTEXITCODE` een andere waarde is.
 
 > [!NOTE]
-> Tot Power shell 7, met een instructie tussen haakjes, wordt de syntaxis van de `(...)` subexpressie `$(...)` of matrix expressie `@(...)` altijd opnieuw ingesteld `$?` op **True** , zodat deze `(Write-Error)` wordt weer gegeven `$?` als **waar**.
+> Tot Power shell 7, met een instructie tussen haakjes, wordt de syntaxis van de `(...)` subexpressie `$(...)` of matrix expressie `@(...)` altijd opnieuw ingesteld `$?` op **True**, zodat deze `(Write-Error)` wordt weer gegeven `$?` als **waar**.
 > Dit is gewijzigd in Power shell 7, zodat `$?` altijd het werkelijke succes van de laatste opdracht wordt uitgevoerd in deze expressies.
 
 ### <a name=""></a>$^
@@ -138,6 +137,11 @@ Omdat `$input` een enumerator is, heeft toegang tot de eigenschappen van het bes
 
 Opsommingen bevatten eigenschappen en methoden die u kunt gebruiken om loop waarden op te halen en de huidige loop-iteratie te wijzigen. Zie [using enumeraties](#using-enumerators)voor meer informatie.
 
+De `$input` variabele is ook beschikbaar voor de opdracht die is opgegeven door de `-Command` para meter van `pwsh` wanneer deze wordt aangeroepen vanaf de opdracht regel. Het volgende voor beeld wordt uitgevoerd vanuit de Windows-opdracht shell.
+
+```CMD
+echo Hello | powershell -Command """$input World!"""
+```
 
 ### <a name="lastexitcode"></a>$LastExitCode
 
@@ -148,7 +152,7 @@ Bevat de afsluit code van het laatste op Windows gebaseerde programma dat is uit
 De `Matches` variabele werkt met de `-match` `-notmatch` Opera tors en.
 Wanneer u scalaire invoer verzendt naar `-match` de `-notmatch` operator OR en één overeenkomst detecteert, wordt een Booleaanse waarde geretourneerd en wordt de `$Matches` Automatische variabele gevuld met een hash-tabel van de teken reeks waarden die overeenkomen. De `$Matches` hash-tabel kan ook worden gevuld met opnamen wanneer u reguliere expressies met de operator gebruikt `-match` .
 
-Zie about_Comparison_Operators voor meer informatie over de `-match` - [about_Comparison_Operators](about_comparison_operators.md)operator. Zie [about_Regular_Expressions](about_Regular_Expressions.md)voor meer informatie over reguliere expressies.
+Zie about_Comparison_Operators voor meer informatie over de `-match` - [](about_comparison_operators.md)operator. Zie [about_Regular_Expressions](about_Regular_Expressions.md)voor meer informatie over reguliere expressies.
 
 ### <a name="myinvocation"></a>$MyInvocation
 
@@ -334,7 +338,7 @@ Vanaf Power Shell 3,0 is het in alle scripts geldig.
 
 Bevat informatie over de gebruiker die de PSSession heeft gestart, met inbegrip van de gebruikers-id en de tijd zone van de oorspronkelijke computer. Deze variabele is alleen beschikbaar in PSSessions.
 
-De `$PSSenderInfo` variabele bevat een door de gebruiker Configureer bare eigenschap, **ApplicationArguments** , die standaard alleen de `$PSVersionTable` van de oorspronkelijke sessie bevat. Als u gegevens wilt toevoegen aan de eigenschap **ApplicationArguments** , gebruikt u de para meter **ApplicationArguments** van de `New-PSSessionOption` cmdlet.
+De `$PSSenderInfo` variabele bevat een door de gebruiker Configureer bare eigenschap, **ApplicationArguments**, die standaard alleen de `$PSVersionTable` van de oorspronkelijke sessie bevat. Als u gegevens wilt toevoegen aan de eigenschap **ApplicationArguments** , gebruikt u de para meter **ApplicationArguments** van de `New-PSSessionOption` cmdlet.
 
 ### <a name="psuiculture"></a>$PSUICulture
 

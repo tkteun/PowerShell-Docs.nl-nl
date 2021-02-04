@@ -3,16 +3,16 @@ external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 03/27/2020
+ms.date: 12/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-item?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Item
-ms.openlocfilehash: d9c8d13f992e6631ff5982b4a33542c661991562
-ms.sourcegitcommit: 7f712e12ec5b3f3f3e695da804b050ea0ce58b3a
+ms.openlocfilehash: d034baf42f064149696f54a198dc97d7ee4e8fe7
+ms.sourcegitcommit: bf07cffb2a66dec94bf3576e197090f958701f18
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94661355"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97693084"
 ---
 # Get-Item
 
@@ -159,6 +159,9 @@ De nieuwe eigenschappen die nu deel uitmaken van de uitvoer zijn:
 ## PARAMETERS
 
 ### -Stream
+
+> [!NOTE]
+> Deze para meter is alleen beschikbaar in Windows.
 
 Hiermee wordt de opgegeven alternatieve NTFS-bestands stroom opgehaald uit het bestand. Voer de naam van de stream in. Joker tekens worden ondersteund. Als u alle streams wilt ophalen, gebruikt u een asterisk ( `*` ). Deze para meter is niet geldig voor mappen.
 

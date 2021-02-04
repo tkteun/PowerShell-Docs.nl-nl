@@ -6,12 +6,12 @@ ms.date: 05/20/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/register-argumentcompleter?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Register-ArgumentCompleter
-ms.openlocfilehash: 6044b27c0d339d62bd6e75fd2fee27eb65a89b79
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: e98de608630a59ff77ca701876986ffb29780a4a
+ms.sourcegitcommit: 9a86cac80402d8193147058d4ba50e07b26059dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94705893"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97490961"
 ---
 # Register-ArgumentCompleter
 
@@ -60,7 +60,7 @@ Register-ArgumentCompleter -CommandName Set-TimeZone -ParameterName Id -ScriptBl
 
 Met de eerste opdracht maakt u een script blok waarbij de vereiste para meters worden gebruikt die worden door gegeven wanneer de gebruiker op het <kbd>tabblad</kbd>klikt. Zie de beschrijving van de para meter **script Block** voor meer informatie.
 
-Binnen het script blok worden de beschik bare waarden voor **id** opgehaald met behulp van de `Get-TimeZone` cmdlet. De eigenschap **id** voor elke tijd zone wordt door gegeven aan de `Where-Object` cmdlet. De `Where-Object` cmdlet filtert alle id's die niet beginnen met de waarde die is opgegeven door `$wordToComplete` , die de tekst bevat die de gebruiker heeft getypt voordat ze op <kbd>Tab</kbd>werden gedrukt. De gefilterde id's worden door gegeven aan de `For-EachObject` cmdlet die elke waarde in de aanhalings tekens omsluit, wanneer de waarde spaties bevat.
+Binnen het script blok worden de beschik bare waarden voor **id** opgehaald met behulp van de `Get-TimeZone` cmdlet. De eigenschap **id** voor elke tijd zone wordt door gegeven aan de `Where-Object` cmdlet. De `Where-Object` cmdlet filtert alle id's die niet beginnen met de waarde die is opgegeven door `$wordToComplete` , die de tekst bevat die de gebruiker heeft getypt voordat ze op <kbd>Tab</kbd>werden gedrukt. De gefilterde id's worden door gegeven aan de `ForEach-Object` cmdlet die elke waarde in de aanhalings tekens omsluit, wanneer de waarde spaties bevat.
 
 Met de tweede opdracht wordt het argument completer geregistreerd door de script Block, de **para meter** **-id** en de **opdracht** naam door te geven `Set-TimeZone` .
 

@@ -1,17 +1,16 @@
 ---
 description: Hierin wordt uitgelegd hoe u de uitvoer omleidt van Power shell naar tekst bestanden.
-keywords: Power shell, cmdlet
 Locale: en-US
 ms.date: 10/14/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_redirection?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Redirection
-ms.openlocfilehash: 59151c31857f12e3a78fd6d292a6a952c312c850
-ms.sourcegitcommit: 16883bb67e34b3915798070f60f974bf85160bd3
+ms.openlocfilehash: 2f2081bbfcc2cfc97eaa5a3c2c527cdd9cd61d2c
+ms.sourcegitcommit: b9826dcf402db8a2b6d3eab37edb82c6af113343
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "93253008"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040876"
 ---
 # <a name="about-redirection"></a>Over omleiding
 
@@ -37,7 +36,7 @@ Zie [about_Output_Streams](about_Output_Streams.md)voor meer informatie over str
 
 Power shell ondersteunt omleiding van de volgende uitvoer stromen.
 
-| Bitsnelheid # |      Beschrijving       | Geïntroduceerd in  |    Cmdlet schrijven     |
+| Bitsnelheid # |      Description       | Geïntroduceerd in  |    Cmdlet schrijven     |
 | -------- | ---------------------- | -------------- | ------------------- |
 | 1        | **Geslaagd** Bitsnelheid     | Power Shell 2,0 | `Write-Output`      |
 | 2        | **Fout** Bitsnelheid       | Power Shell 2,0 | `Write-Error`       |
@@ -92,7 +91,7 @@ Dit voor beeld laat zien hoe u omleidings operatoren kunt combi neren om een gew
    Write-Warning "hello"
    Write-Error "hello"
    Write-Output "hi"
-} 3>&1 2>&1 > P:\Temp\redirection.log
+} 3>&1 2>&1 > C:\Temp\redirection.log
 ```
 
 - `3>&1` leidt de **waarschuwing** over naar de stroom voor **geslaagde** gegevens.
@@ -184,7 +183,7 @@ Ignore
 Inquire
 ```
 
-## <a name="notes"></a>Opmerkingen
+## <a name="notes"></a>Notities
 
 De omleidings operatoren die geen gegevens toevoegen ( `>` en `n>` ) overschrijven de huidige inhoud van het opgegeven bestand zonder waarschuwing.
 
@@ -196,7 +195,7 @@ Wanneer u naar bestanden schrijft, gebruiken de omleidings operatoren `UTF8NoBOM
 
 ### <a name="potential-confusion-with-comparison-operators"></a>Mogelijke Verwar ring met vergelijkings operatoren
 
-De `>` operator kan niet worden verward met de vergelijkings operator [groter dan](about_Comparison_Operators.md#-gt) (vaak aangeduid als `>` in andere programmeer talen).
+De `>` operator kan niet worden verward met de vergelijkings operator [groter dan](about_Comparison_Operators.md#-gt--ge--lt-and--le) (vaak aangeduid als `>` in andere programmeer talen).
 
 Afhankelijk van de objecten die worden vergeleken, is het mogelijk dat de uitvoer met de juiste indeling wordt `>` weer gegeven (omdat 36 niet groter is dan 42).
 
@@ -226,11 +225,11 @@ At line:1 char:8
 + if (36 < 42) { "true" } else { "false" }
 +        ~
 The '<' operator is reserved for future use.
-+ CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
-+ FullyQualifiedErrorId : RedirectionNotSupported
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : RedirectionNotSupported
 ```
 
-Als numerieke vergelijking de vereiste bewerking is, `-lt` en deze `-gt` moet worden gebruikt. Zie: [ `-gt` vergelijkings operator](about_Comparison_Operators.md#-gt)
+Als numerieke vergelijking de vereiste bewerking is, `-lt` en deze `-gt` moet worden gebruikt. Zie de `-gt` operator in [about_Comparison_Operators](about_Comparison_Operators.md#-gt--ge--lt-and--le)voor meer informatie.
 
 ## <a name="see-also"></a>Zie ook
 

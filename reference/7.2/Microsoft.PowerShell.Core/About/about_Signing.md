@@ -5,12 +5,12 @@ ms.date: 07/31/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_signing?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Signing
-ms.openlocfilehash: cc38d7421bb5523a93d4c07d0f0106658184cfc5
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 560ecc385e970224a23af7a1195c99d8423f503f
+ms.sourcegitcommit: 021ea294327dec542ec040619dac0d2171397a90
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94706206"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97804157"
 ---
 # <a name="about-signing"></a>Over ondertekening
 
@@ -103,7 +103,7 @@ Als u een zelfondertekend certificaat maakt, zorg er dan voor dat u sterke bevei
 
 ## <a name="create-a-self-signed-certificate"></a>Een zelfondertekend certificaat maken
 
-Als u een zelfondertekend certificaat wilt maken in, gebruikt u de `New-SelfSignedCertificate` cmdlet in de PKI-module. Deze module is geïntroduceerd in Power Shell 3,0 en is opgenomen in Windows 8 en Windows Server 2012. Zie het Help-onderwerp voor de cmdlet voor meer informatie `New-SelfSignedCertificate` .
+Als u een zelfondertekend certificaat wilt maken, gebruikt u de `New-SelfSignedCertificate` cmdlet in de PKI-module. Deze module is geïntroduceerd in Power Shell 3,0 en is opgenomen in Windows 8 en Windows Server 2012. Zie het Help-onderwerp voor de cmdlet voor meer informatie `New-SelfSignedCertificate` .
 
 Gebruik het hulp programma voor het maken van certificaten om een zelfondertekend certificaat te maken in eerdere versies van Windows `MakeCert.exe` . Dit hulp programma is opgenomen in de Microsoft .NET SDK (versie 1,1 en hoger) en in de Microsoft Windows SDK.
 

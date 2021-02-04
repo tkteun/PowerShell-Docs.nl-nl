@@ -1,16 +1,16 @@
 ---
 description: Beschrijft variabelen waarin status informatie voor Power shell wordt opgeslagen. Deze variabelen worden gemaakt en onderhouden door Power shell.
 Locale: en-US
-ms.date: 08/14/2020
+ms.date: 12/14/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Automatic_Variables
-ms.openlocfilehash: 134649405c05e527039694d7c4fdf38d3c64b79e
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: a8959129cc72968ed6e7fcde3587de0d57dbc0e9
+ms.sourcegitcommit: 1628fd2a1f50aec2f31ffb1c451a3ce77c08983c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94706130"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97577194"
 ---
 # <a name="about-automatic-variables"></a>Over automatische variabelen
 
@@ -137,6 +137,12 @@ Omdat `$input` een enumerator is, heeft toegang tot de eigenschappen van het bes
 
 Opsommingen bevatten eigenschappen en methoden die u kunt gebruiken om loop waarden op te halen en de huidige loop-iteratie te wijzigen. Zie [using enumeraties](#using-enumerators)voor meer informatie.
 
+De `$input` variabele is ook beschikbaar voor de opdracht die is opgegeven door de `-Command` para meter van `pwsh` wanneer deze wordt aangeroepen vanaf de opdracht regel. Het volgende voor beeld wordt uitgevoerd vanuit de Windows-opdracht shell.
+
+```CMD
+echo Hello | pwsh -Command """$input World!"""
+```
+
 ### <a name="iscoreclr"></a>$IsCoreCLR
 
 Bevat `$True` als de huidige sessie wordt uitgevoerd op .net core runtime (CoreCLR). Anders bevat `$False` .
@@ -174,15 +180,8 @@ Bevat informatie over de huidige opdracht, zoals de naam, para meters, parameter
 
 Vanaf Power Shell 3,0 `MyInvocation` heeft de volgende nieuwe eigenschappen.
 
-| Eigenschap      | Beschrijving                                         |
-| ------------- | --------------------------------------------------- |
-| **PSScriptRoot**  | Bevat het volledige pad naar het script dat is aangeroepen   |
-|               | de huidige opdracht. De waarde van deze eigenschap is  |
-|               | wordt alleen ingevuld wanneer de aanroeper een script is.         |
-| **PSCommandPath** | Bevat het volledige pad en de bestands naam van het script  |
-|               | die de huidige opdracht heeft aangeroepen. De waarde van deze |
-|               | de eigenschap wordt alleen ingevuld wanneer de aanroeper een     |
-|               | uitvoeren.                                             |
+- **PSScriptRoot** : bevat het volledige pad naar het script dat de huidige opdracht heeft aangeroepen. De waarde van deze eigenschap wordt alleen ingevuld wanneer de aanroeper een script is.
+- **PSCommandPath** : bevat het volledige pad en de bestands naam van het script dat de huidige opdracht heeft aangeroepen. De waarde van deze eigenschap wordt alleen ingevuld wanneer de aanroeper een script is.
 
 In tegens telling tot de `$PSScriptRoot` en `$PSCommandPath` automatische variabelen bevatten de eigenschappen **PSScriptRoot** en **PSCommandPath** van de `$MyInvocation` Automatische variabele informatie over de aanroeper of aanroepende script, niet het huidige script.
 
@@ -354,6 +353,49 @@ Bevat informatie over de gebruiker die de PSSession heeft gestart, met inbegrip 
 
 De `$PSSenderInfo` variabele bevat een door de gebruiker Configureer bare eigenschap, **ApplicationArguments**, die standaard alleen de `$PSVersionTable` van de oorspronkelijke sessie bevat. Als u gegevens wilt toevoegen aan de eigenschap **ApplicationArguments** , gebruikt u de para meter **ApplicationArguments** van de `New-PSSessionOption` cmdlet.
 
+### <a name="psstyle"></a>$PSStyle
+
+> [!NOTE]
+> Deze variabele is alleen beschikbaar wanneer de `PSAnsiRendering` experimentele functie IA is ingeschakeld. Zie [about_Experimental_Features](about_Experimental_Features.md) en het [gebruik van experimentele functies](/powershell/scripting/learn/experimental-features)voor meer informatie.
+
+Vanaf Power shell 7,2 hebt u nu toegang tot de `$PSStyle` Automatische variabele om de weer gave van ANSI-teken reeks uitvoer weer te geven en te wijzigen. De variabele bevat de volgende eigenschappen:
+
+- **Opnieuw instellen** : Hiermee worden alle decoratie uitgeschakeld
+- **Achtergrond** : genest object voor achtergrond kleur beheer
+- **Blinken** : knippert
+- **BlinkOff** : Hiermee schakelt u het Knip peren uit
+- **Vet** : wordt vet ingeschakeld
+- **BoldOff** : Hiermee schakelt u vet uit
+- Voor **grond** genest object om de voorgrond kleur te bepalen
+- **Opmaak** : Hiermee bepaalt u de standaard opmaak voor uitvoer stromen
+- **Verborgen** : wordt verborgen ingeschakeld
+- **HiddenOff** -uitgeschakeld verbergen
+- **OutputRendering** : bepalen wanneer de weer gave van uitvoer wordt gebruikt
+- **Omgekeerde** : omkeren inschakelen
+- **ReverseOff** -uitschakelen
+- **Cursief** -wordt cursief ingeschakeld
+- **ItalicOff** : Hiermee schakelt u cursief in
+- **Onderstrepen** : Hiermee wordt de onderstreping op
+- **UnderlineOff** -schakelt onderstrepen uit
+
+De basis leden retour neren teken reeksen van ANSI-escape reeksen die zijn toegewezen aan hun namen.
+De waarden kunnen worden ingesteld om aanpassing mogelijk te maken. U kunt bijvoorbeeld vet op onderstreept wijzigen. Met de namen van eigenschappen kunt u gemakkelijker gedecoreerde teken reeksen maken met behulp van het volt ooien van het tabblad:
+
+```powershell
+"$($PSStyle.Background.LightCyan)Power$($PSStyle.Underline)$($PSStyle.Bold)Shell$($PSStyle.Reset)"
+```
+
+De `$PSStyle.Background` `$PSStyle.Foreground` leden en zijn teken reeksen die de ANSI-escape reeksen voor de 16 standaard console kleuren bevatten en een `Rgb()` methode om 24-bits kleuren op te geven. De waarden zijn instelbaar en kunnen een wille keurig aantal ANSI-escape reeksen bevatten.
+
+`$PSStyle.Formatting` is een genest object voor het beheren van de standaard opmaak van debug-, fout-, uitgebreide en waarschuwings berichten. U kunt ook kenmerken, zoals vet en onderstrepen, beheren. Het wordt vervangen `$Host.PrivateData` als de manier om kleuren voor het weer geven van opmaak te beheren. `$Host.PrivateData` blijft bestaan voor achterwaartse compatibiliteit, maar is niet verbonden met `$PSStyle.Formatting` .
+
+`$PSStyle.OutputRendering` is een `System.Management.Automation.OutputRendering` Enum met de waarden:
+
+- **Automatisch**: dit is de standaard instelling. Als de host VirtualTerminal ondersteunt, wordt ANSI altijd als-is door gegeven, anders wordt de Lees bare tekst
+- **ANSI**: ANSI wordt altijd door gegeven als-is
+- **Tekst** zonder opmaak: ANSI-escape reeksen worden altijd verwijderd, zodat deze alleen uit tekst bestaan
+- **HostOnly**: dit is het macOS-gedrag waarbij de ANSI-escape reeksen worden verwijderd in omgeleide of gesluisde uitvoer.
+
 ### <a name="psuiculture"></a>$PSUICulture
 
 Bevat de naam van de cultuur van de gebruikers interface die momenteel wordt gebruikt in het besturings systeem. De GEBRUIKERSINTERFACE cultuur bepaalt welke teken reeksen worden gebruikt voor elementen van de gebruikers interface, zoals menu's en berichten. Dit is de waarde van de eigenschap **System.Globalization.CultureInfo.CurrentUICulture.name** van het systeem. Gebruik de cmdlet om het object **System. Globalization. Culture info** voor het systeem op te halen `Get-UICulture` .
@@ -362,28 +404,15 @@ Bevat de naam van de cultuur van de gebruikers interface die momenteel wordt geb
 
 Bevat een alleen-lezen hash-tabel waarin details worden weer gegeven over de versie van Power shell die in de huidige sessie wordt uitgevoerd. De tabel bevat de volgende items:
 
-| Eigenschap                  | Beschrijving                                   |
-| ------------------------- | --------------------------------------------- |
-| **PSVersion**             | Het Power shell-versie nummer                 |
-| **PSEdition**             | Deze eigenschap heeft de waarde ' Desktop ' voor  |
-|                           | Power Shell 4 en lager, evenals Power shell  |
-|                           | 5,1 op volledig uitgeruste Windows-edities.        |
-|                           | Deze eigenschap heeft de waarde ' core ' voor     |
-|                           | Power shell 6 en hoger, evenals Power shell  |
-|                           | Power shell 5,1 voor edities met verminderde footprint  |
-|                           | net als Windows nano server of Windows IoT.      |
-| **GitCommitId**           | De door Voer-id van de bron bestanden, in GitHub, |
-| **Besturingssysteem**                    | Beschrijving van het besturings systeem dat      |
-|                           | Power shell wordt uitgevoerd op.                     |
-| **Platform**              | Platform waarop het besturings systeem wordt uitgevoerd |
-|                           | waarop. De waarde op Linux en macOS is **UNIX**. |
-|                           | Zie `$IsMacOs` en `$IsLinux` .                |
-| **PSCompatibleVersions**  | Versies van Power shell die compatibel zijn    |
-|                           | met de huidige versie                      |
-| **PSRemotingProtocolVersion** | De versie van de Power shell Remote      |
-|                           | beheer protocol.                          |
-| **SerializationVersion**  | De versie van de serialisatie-methode       |
-| **WSManStackVersion**     | Het versie nummer van de WS-Management stack |
+- **PSVersion** -het Power shell-versie nummer
+- **PSEdition** : deze eigenschap heeft de waarde ' Desktop ' voor Power Shell 4 en lager, en power shell 5,1 op volledige Windows-edities. Deze eigenschap heeft de waarde ' core ' voor Power shell 6 en hoger, maar ook Power shell 5,1 voor de gereduceerde footprint, zoals Windows nano server of Windows IoT.
+- **GitCommitId** : de door Voer-id van de bron bestanden in github,
+- **OS** -beschrijving van het besturings systeem waarop Power shell wordt uitgevoerd.
+- **Platform** platform waarop het besturings systeem wordt uitgevoerd. De waarde op Linux en macOS is **UNIX**. Zie `$IsMacOs` en `$IsLinux` .
+- **PSCompatibleVersions** -versies van Power shell die compatibel zijn met de huidige versie
+- **PSRemotingProtocolVersion** : de versie van het Power shell Remote Management-Protocol.
+- **SerializationVersion** -de versie van de serialisatie-methode
+- **WSManStackVersion** : het versie nummer van de WS-Management stack
 
 ### <a name="pwd"></a>$PWD
 

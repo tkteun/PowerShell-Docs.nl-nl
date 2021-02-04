@@ -7,12 +7,12 @@ ms.date: 5/20/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/register-argumentcompleter?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Register-ArgumentCompleter
-ms.openlocfilehash: 1cc6f9f62efc92005c02865ac91cad04164f7655
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 963f99f69ff4406f94445841ad020555617dac42
+ms.sourcegitcommit: 9a86cac80402d8193147058d4ba50e07b26059dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93250151"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97490861"
 ---
 # Register-ArgumentCompleter
 
@@ -61,7 +61,7 @@ Register-ArgumentCompleter -CommandName Set-TimeZone -ParameterName Id -ScriptBl
 
 Met de eerste opdracht maakt u een script blok waarbij de vereiste para meters worden gebruikt die worden door gegeven wanneer de gebruiker op het <kbd>tabblad</kbd>klikt. Zie de beschrijving van de para meter **script Block** voor meer informatie.
 
-Binnen het script blok worden de beschik bare waarden voor **id** opgehaald met behulp van de `Get-TimeZone` cmdlet. De eigenschap **id** voor elke tijd zone wordt door gegeven aan de `Where-Object` cmdlet. De `Where-Object` cmdlet filtert alle id's die niet beginnen met de waarde die is opgegeven door `$wordToComplete` , die de tekst bevat die de gebruiker heeft getypt voordat ze op <kbd>Tab</kbd>werden gedrukt. De gefilterde id's worden door gegeven aan de `For-EachObject` cmdlet die elke waarde in de aanhalings tekens omsluit, wanneer de waarde spaties bevat.
+Binnen het script blok worden de beschik bare waarden voor **id** opgehaald met behulp van de `Get-TimeZone` cmdlet. De eigenschap **id** voor elke tijd zone wordt door gegeven aan de `Where-Object` cmdlet. De `Where-Object` cmdlet filtert alle id's die niet beginnen met de waarde die is opgegeven door `$wordToComplete` , die de tekst bevat die de gebruiker heeft getypt voordat ze op <kbd>Tab</kbd>werden gedrukt. De gefilterde id's worden door gegeven aan de `ForEach-Object` cmdlet die elke waarde in de aanhalings tekens omsluit, wanneer de waarde spaties bevat.
 
 Met de tweede opdracht wordt het argument completer geregistreerd door de script Block, de **para meter** **-id** en de **opdracht** naam door te geven `Set-TimeZone` .
 
@@ -91,9 +91,9 @@ Met het **CompletionResult** -object kunt u aanvullende Details voor elke gereto
 
 - **completionText** (teken reeks): de tekst die moet worden gebruikt als resultaat van automatisch volt ooien. Dit is de waarde die wordt verzonden naar de opdracht.
 - **listItemText** (teken reeks): de tekst die moet worden weer gegeven in een lijst, bijvoorbeeld wanneer de gebruiker op de <kbd>CTRL</kbd>- + <kbd>spatie</kbd>klikt. Dit wordt alleen gebruikt voor weer gave en wordt niet door gegeven aan de opdracht wanneer deze is geselecteerd.
-- **resultType** ( [CompletionResultType](/dotnet/api/system.management.automation.completionresulttype)): het type voltooiings resultaat.
+- **resultType** ([CompletionResultType](/dotnet/api/system.management.automation.completionresulttype)): het type voltooiings resultaat.
 - **knop info** (teken reeks): de tekst voor de knop info met details die moeten worden weer gegeven over het object.
-  Dit is zichtbaar wanneer de gebruiker een item selecteert nadat u op <kbd>CTRL</kbd>-spatie hebt gedrukt + <kbd>Space</kbd>.
+  Dit is zichtbaar wanneer de gebruiker een item selecteert nadat u op <kbd>CTRL</kbd>-spatie hebt gedrukt + <kbd></kbd>.
 
 Met de laatste opdracht wordt gedemonstreerd dat gestopte services nog steeds hand matig kunnen worden door gegeven aan de `Stop-Service` cmdlet. Het vullen van het tabblad is alleen van invloed op het onderhouds aspect.
 

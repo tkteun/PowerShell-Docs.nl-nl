@@ -3,16 +3,16 @@ external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 03/27/2020
+ms.date: 12/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-item?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Item
-ms.openlocfilehash: 07f8da5e6101b1d9bb1971b3c77b9747c0080a23
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: e848cc8c77e1d0dff6eb1f98d56c8ed37e44a653
+ms.sourcegitcommit: bf07cffb2a66dec94bf3576e197090f958701f18
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93249579"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97692815"
 ---
 # Get-Item
 
@@ -156,6 +156,9 @@ De nieuwe eigenschappen die nu deel uitmaken van de uitvoer zijn:
 ## PARAMETERS
 
 ### -Stream
+
+> [!NOTE]
+> Deze para meter is alleen beschikbaar in Windows.
 
 Hiermee wordt de opgegeven alternatieve NTFS-bestands stroom opgehaald uit het bestand. Voer de naam van de stream in. Joker tekens worden ondersteund. Als u alle streams wilt ophalen, gebruikt u een asterisk ( `*` ). Deze para meter is niet geldig voor mappen.
 
@@ -315,7 +318,7 @@ Deze cmdlet heeft geen **recursieve** para meter, omdat alleen een item wordt op
 Als u de inhoud van een item recursief wilt ophalen, gebruikt u `Get-ChildItem` .
 
 Als u door het REGI ster wilt navigeren, gebruikt u deze cmdlet voor het ophalen van register sleutels en de `Get-ItemProperty` om register waarden en-gegevens op te halen. De register waarden worden beschouwd als eigenschappen van de register sleutel.
-  
+
 Deze cmdlet is ontworpen om te werken met de gegevens die door elke provider worden weer gegeven. Als u een lijst wilt weer geven van de providers die beschikbaar zijn in uw sessie, typt u `Get-PsProvider` . Zie [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)voor meer informatie.
 
 ## GERELATEERDE KOPPELINGEN

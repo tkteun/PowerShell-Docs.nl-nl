@@ -6,12 +6,12 @@ ms.date: 11/02/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/new-modulemanifest?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-ModuleManifest
-ms.openlocfilehash: 6705cc5a7fdd2e2db87d35d262b04d088237ff7d
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 713c35b2f9f651d455ac08401aa1f7eb48676174
+ms.sourcegitcommit: 04faa7dc1122bce839295d4891bd8b2f0ecb06ef
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94706192"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879154"
 ---
 # New-ModuleManifest
 
@@ -763,7 +763,7 @@ Accept wildcard characters: False
 
 ### -PowerShellVersion
 
-Hiermee geeft u de minimale versie van Power shell op die met deze module werkt. U kunt bijvoorbeeld 1,0, 2,0 of 3,0 invoeren als waarde voor de para meter.
+Hiermee geeft u de minimale versie van Power shell op die met deze module werkt. U kunt bijvoorbeeld 1,0, 2,0 of 3,0 invoeren als waarde voor de para meter. Deze moet een X. X-indeling hebben. Als u bijvoorbeeld verzendt `5` , treedt er een fout op in Power shell.
 
 ```yaml
 Type: System.Version

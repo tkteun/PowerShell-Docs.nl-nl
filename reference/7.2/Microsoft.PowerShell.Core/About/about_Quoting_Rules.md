@@ -1,33 +1,33 @@
 ---
 description: Hierin worden de regels voor het gebruik van enkele en dubbele aanhalings tekens in Power shell beschreven.
 Locale: en-US
-ms.date: 10/05/2020
+ms.date: 12/14/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_quoting_rules?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Quoting_Rules
-ms.openlocfilehash: fcb4bff0ca27ad0bc4e3b4c74e58e9fefa8cac7b
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: ba4111937245939961689935181be5d547c8e112
+ms.sourcegitcommit: 9a86cac80402d8193147058d4ba50e07b26059dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94705794"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97490896"
 ---
 # <a name="about-quoting-rules"></a>Over quot-regels
 
-## <a name="short-description"></a>KORTE BESCHRIJVING
+## <a name="short-description"></a>Korte beschrijving
 Hierin worden de regels voor het gebruik van enkele en dubbele aanhalings tekens in Power shell beschreven.
 
-## <a name="long-description"></a>LANGE BESCHRIJVING
+## <a name="long-description"></a>Lange beschrijving
 
 Aanhalings tekens worden gebruikt om een letterlijke teken reeks op te geven. U kunt een teken reeks tussen enkele aanhalings tekens ( `'` ) of tussen dubbele aanhalings tekens plaatsen ( `"` ).
 
-Aanhalings tekens worden ook gebruikt voor het maken van een hier-teken reeks. Een hier-teken reeks is een teken reeks met enkele aanhalings tekens of dubbele aanhalings tekens waarin de aanhaling markeringen letterlijk worden geïnterpreteerd. Een hier-teken reeks kan meerdere regels omvatten. Alle regels in een hier-teken reeks worden geïnterpreteerd als teken reeksen, zelfs als ze niet tussen aanhalings tekens staan.
+Aanhalings tekens worden ook gebruikt voor het maken van een _hier-teken reeks_. Een hier-teken reeks is een teken reeks met enkele aanhalings tekens of dubbele aanhalings tekens waarin de aanhaling markeringen letterlijk worden geïnterpreteerd. Een hier-teken reeks kan meerdere regels omvatten. Alle regels in een hier-teken reeks worden geïnterpreteerd als teken reeksen, zelfs als ze niet tussen aanhalings tekens staan.
 
 In opdrachten voor externe computers definiëren de aanhalings tekens de onderdelen van de opdracht die worden uitgevoerd op de externe computer. In een externe sessie bepaalt u met aanhalings tekens ook of de variabelen in een opdracht eerst worden geïnterpreteerd op de lokale computer of op de externe computer.
 
-### <a name="single-and-double-quoted-strings"></a>TEKEN REEKSEN MET ENKELE EN DUBBELE AANHALINGS TEKENS
+## <a name="single-and-double-quoted-strings"></a>Teken reeksen met enkele en dubbele aanhalings tekens
 
-Wanneer u een teken reeks tussen dubbele aanhalings tekens (een teken reeks met dubbele aanhalings tekens) plaatst, worden namen van variabelen die worden voorafgegaan door een dollar teken ( `$` ) vervangen door de waarde van de variabele voordat de teken reeks wordt door gegeven aan de opdracht voor verwerking.
+Een teken reeks tussen dubbele aanhalings tekens is een _uitbreid bare_ teken reeks. Namen van variabelen die worden voorafgegaan door een dollar teken ( `$` ) worden vervangen door de waarde van de variabele voordat de teken reeks wordt door gegeven aan de opdracht voor verwerking.
 
 Bijvoorbeeld:
 
@@ -54,7 +54,8 @@ De uitvoer van deze opdracht is:
 The value of 5 is 5.
 ```
 
-Wanneer u een teken reeks tussen enkele aanhalings tekens plaatst (een teken reeks met één aanhalings tekens), wordt de teken reeks door gegeven aan de opdracht exact zoals u deze typt. Er wordt geen vervanging uitgevoerd. Bijvoorbeeld:
+Een teken reeks tussen enkele aanhalings tekens is een _Verbatim_ teken reeks. De teken reeks wordt door gegeven aan de opdracht exact zoals u deze typt. Er wordt geen vervanging uitgevoerd.
+Bijvoorbeeld:
 
 ```powershell
 $i = 5
@@ -81,7 +82,7 @@ The value of $(2+3) is 5.
 
 Als u wilt voor komen dat een variabele waarde in een teken reeks met dubbele aanhalings tekens wordt vervangen, gebruikt u het teken () apostroffen ( `` ` `` ) (ASCII 96). Dit is het Power shell-escape-teken.
 
-In het volgende voor beeld wordt het apostroffen-teken dat voorafgaat aan de eerste $i variabele, voor komt dat Power shell de naam van de variabele vervangt door de waarde ervan.
+In het volgende voor beeld wordt het apostroffen-teken dat voorafgaat `$i` aan de eerste variabele, voor komt dat Power shell de naam van de variabele vervangt door de waarde ervan.
 Bijvoorbeeld:
 
 ```powershell
@@ -154,7 +155,7 @@ Use a quotation mark (`") to begin a string.
 
 Omdat de inhoud van teken reeksen met enkele aanhalings tekens letterlijk wordt geïnterpreteerd, wordt het apostroffen-teken beschouwd als een letterlijke teken en weer gegeven in de uitvoer.
 
-### <a name="here-strings"></a>HIER-TEKEN REEKSEN
+## <a name="here-strings"></a>Hier-teken reeksen
 
 De offerte regels voor hier-teken reeksen zijn iets anders.
 
@@ -276,7 +277,7 @@ xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
 Hier zijn teken reeksen ook een handige indeling voor de invoer van de `ConvertFrom-StringData` cmdlet, die hier teken reeksen converteert naar hash-tabellen.
 Voor meer informatie raadpleegt u `ConvertFrom-StringData`.
 
-## <a name="see-also"></a>ZIE OOK
+## <a name="see-also"></a>Zie ook
 
 [about_Special_Characters](about_Special_Characters.md)
 

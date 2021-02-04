@@ -7,12 +7,12 @@ ms.date: 11/02/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/new-modulemanifest?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-ModuleManifest
-ms.openlocfilehash: 8177b1ed45f6d6cdabf13670e36be4fcbb55a77b
-ms.sourcegitcommit: fcf7bd222f5ee3fdbe21ffddcae47050cffe7e42
+ms.openlocfilehash: 9bb687aa7f497dbf2c07633abddf4e1a17a9622e
+ms.sourcegitcommit: 04faa7dc1122bce839295d4891bd8b2f0ecb06ef
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93253291"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879198"
 ---
 # New-ModuleManifest
 
@@ -47,7 +47,7 @@ Module auteurs kunnen deze cmdlet gebruiken om een manifest te maken voor de mod
 
 `New-ModuleManifest` Hiermee maakt u een manifest dat alle veelgebruikte manifest sleutels bevat, zodat u de standaard uitvoer als een manifest sjabloon kunt gebruiken. Om waarden toe te voegen of te wijzigen of om module sleutels toe te voegen die met deze cmdlet niet worden toegevoegd, opent u het resulterende bestand in een tekst editor.
 
-Elke para meter, met uitzonde ring van **pad** en **PassThru** , maakt een module manifest sleutel en de bijbehorende waarde.
+Elke para meter, met uitzonde ring van **pad** en **PassThru**, maakt een module manifest sleutel en de bijbehorende waarde.
 In een module manifest is alleen de sleutel **ModuleVersion** vereist. Tenzij u de para meter in de parameter beschrijving opgeeft, `New-ModuleManifest` maakt een teken reeks voor de bijbehorende waarde die geen effect heeft.
 
 In Power Shell 2,0 `New-ModuleManifest` vraagt u om de waarden van vaak gebruikte para meters die niet zijn opgegeven in de opdracht, naast de vereiste parameter waarden. Vanaf Power Shell 3,0 `New-ModuleManifest` worden alleen vragen wanneer de vereiste parameter waarden niet zijn opgegeven.
@@ -225,7 +225,7 @@ $moduleSettings = @{
 New-ModuleManifest @moduleSettings
 ```
 
-In dit voor beeld ziet u hoe u de notatie teken reeks en hash-tabel gebruikt van de para meter **ModuleList** , **RequiredModules** en **NestedModules** . U kunt teken reeksen en hash-tabellen combi neren in dezelfde parameter waarde.
+In dit voor beeld ziet u hoe u de notatie teken reeks en hash-tabel gebruikt van de para meter **ModuleList**, **RequiredModules** en **NestedModules** . U kunt teken reeksen en hash-tabellen combi neren in dezelfde parameter waarde.
 
 ### Voor beeld 4: een manifest maken dat kan worden bijgewerkt met ondersteuning
 
@@ -780,7 +780,7 @@ Accept wildcard characters: False
 
 ### -PowerShellVersion
 
-Hiermee geeft u de minimale versie van Power shell op die met deze module werkt. U kunt bijvoorbeeld 1,0, 2,0 of 3,0 invoeren als waarde voor de para meter.
+Hiermee geeft u de minimale versie van Power shell op die met deze module werkt. U kunt bijvoorbeeld 1,0, 2,0 of 3,0 invoeren als waarde voor de para meter. Deze moet een X. X-indeling hebben. Als u bijvoorbeeld verzendt `5` , treedt er een fout op in Power shell.
 
 ```yaml
 Type: System.Version

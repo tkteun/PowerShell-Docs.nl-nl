@@ -3,12 +3,12 @@ title: Alles wat u wilt weten over hashtabellen
 description: Hashtabellen zijn heel belang rijk in Power shell, zodat het goed is om een duidelijker beeld te krijgen.
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: 1539cf6444cab718c1108384c640193d66c85daf
-ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
+ms.openlocfilehash: e386e2aa2f7b85bee4bf622fd9251ef7642cf16a
+ms.sourcegitcommit: 57e577097085dc621bd797ef4a7e2854ea7d4e29
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93354419"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "97980498"
 ---
 # <a name="everything-you-wanted-to-know-about-hashtables"></a>Alles wat u wilt weten over hashtabellen
 
@@ -925,8 +925,7 @@ Zo kunt u zien dat hoewel de hashtabel is gekloond, de verwijzing naar niet is `
 
 ### <a name="deep-copies"></a>Uitgebreide kopieën
 
-Op het moment van schrijven, weet ik niet of er slimme manieren zijn om alleen een diepe kopie van een hashtabel te maken (en deze als een hashtabel te behouden). Dat is slechts een van de dingen die iemand nodig heeft om te schrijven.
-Hier volgt een snelle methode om dit te doen.
+Er zijn een aantal manieren om een diepe kopie van een hashtabel te maken (en deze als hash-tabel te gebruiken). Hier volgt een functie voor het recursief maken van een diepe kopie met behulp van Power shell:
 
 ```powershell
 function Get-DeepClone
@@ -952,6 +951,21 @@ function Get-DeepClone
 ```
 
 Er worden geen andere verwijzings typen of-matrices verwerkt, maar dit is een goed uitgangs punt.
+
+Een andere manier is om .net te gebruiken om deze te deserialiseren met **CliXml** zoals in deze functie:
+
+```powershell
+function Get-DeepClone
+{
+    param(
+        $InputObject
+    )
+    $TempCliXmlString = [System.Management.Automation.PSSerializer]::Serialize($obj, [int32]::MaxValue)
+    return [System.Management.Automation.PSSerializer]::Deserialize($TempCliXmlString)
+}
+```
+
+Voor extreem grote hashtabellen is de deserialisatie functie sneller wanneer deze wordt geschaald. Er zijn echter enkele zaken waarmee u rekening moet houden wanneer u deze methode gebruikt. Aangezien **CliXml** wordt gebruikt, is het geheugen intensief en als u grote hashtabellen klont, kan dit een probleem zijn. Een andere beperking van de **CliXml** is een diepte limiet van 48. Als u een hashtabel met 48 lagen van geneste hashtabellen hebt, mislukt het klonen en wordt er helemaal geen hash-uitvoer uitgevoerd.
 
 ## <a name="anything-else"></a>Nog iets?
 

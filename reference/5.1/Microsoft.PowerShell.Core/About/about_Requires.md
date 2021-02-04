@@ -1,17 +1,16 @@
 ---
 description: Hiermee voor komt u dat een script wordt uitgevoerd zonder de vereiste elementen.
-keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 07/01/2019
+ms.date: 12/14/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_requires?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Requires
-ms.openlocfilehash: d499499c58f22bff10d712d33fc3a021e4fa6bbb
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: f8ff922fcf8deb710008bbd9bab619f137d6c831
+ms.sourcegitcommit: 9a86cac80402d8193147058d4ba50e07b26059dd
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93252574"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97490700"
 ---
 # <a name="about-requires"></a>Over vereist
 
@@ -25,7 +24,6 @@ Hiermee voor komt u dat een script wordt uitgevoerd zonder de vereiste elementen
 ### <a name="syntax"></a>Syntax
 
 ```
-#Requires -Assembly { <Path to .dll> | <.NET assembly specification> }
 #Requires -Version <N>[.<n>]
 #Requires -PSSnapin <PSSnapin-Name> [-Version <N>[.<n>]]
 #Requires -Modules { <Module-Name> | <Hashtable> }
@@ -57,6 +55,9 @@ U kunt denken dat de bovenstaande code niet moet worden uitgevoerd omdat de vere
 ### <a name="parameters"></a>Parameters
 
 #### <a name="-assembly-assembly-path--net-assembly-specification"></a>-Assembly \<Assembly path> |\<.NET assembly specification>
+
+> [!IMPORTANT]
+> De `-Assembly` syntaxis is afgeschaft. Deze functie is niet van toepassing. De syntaxis is toegevoegd aan Power shell 5,1, maar de ondersteunende code werd nooit geïmplementeerd. De syntaxis wordt nog steeds geaccepteerd voor achterwaartse compatibiliteit.
 
 Hiermee geeft u het pad naar het DLL-bestand van de assembly of een .NET-assembly-naam op. De **Assembly** -para meter is geïntroduceerd in power shell 5,0. Voor meer informatie over .NET-assembly's raadpleegt u [Assembly namen](/dotnet/standard/assembly/names).
 
@@ -119,7 +120,7 @@ Vereisen dat `Hyper-V` (versie `1.1` of hoger) is geïnstalleerd.
 #Requires -Modules @{ ModuleName="Hyper-V"; ModuleVersion="1.1" }
 ```
 
-Vereist dat `Hyper-V` ( **alleen** versie `1.1` ) is geïnstalleerd.
+Vereist dat `Hyper-V` (**alleen** versie `1.1` ) is geïnstalleerd.
 
 ```powershell
 #Requires -Modules @{ ModuleName="Hyper-V"; RequiredVersion="1.1" }

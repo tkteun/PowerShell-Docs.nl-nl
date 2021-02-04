@@ -6,12 +6,12 @@ ms.date: 04/23/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_data_sections?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Data_Sections
-ms.openlocfilehash: d45339bae42b1131e1dfb9618413a34e250a578e
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 5f70f2cdcc96090317a604f82788d1095e0b3c4d
+ms.sourcegitcommit: 04faa7dc1122bce839295d4891bd8b2f0ecb06ef
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93252821"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879300"
 ---
 # <a name="about-data-sections"></a>Gegevens secties
 
@@ -45,7 +45,7 @@ Het sleutel woord data is vereist. Het is niet hoofdletter gevoelig. De toegesta
 - `If`, `Else` en- `ElseIf` instructies
 - De volgende automatische variabelen: `$PsCulture` , `$PsUICulture` , `$True` , `$False` en `$Null`
 - Opmerkingen
-- Pijplijnen
+- Pipelines
 - Instructies gescheiden door punt komma's ( `;` )
 - Letterlijke waarden, zoals de volgende:
 
@@ -72,7 +72,7 @@ Wanneer u de `ConvertFrom-StringData` cmdlet gebruikt in een gegevens gedeelte, 
 
 De waarde van `-SupportedCommand` is een door komma's gescheiden lijst met een of meer cmdlets of functie namen.
 
-De volgende gegevens sectie bevat bijvoorbeeld een door de gebruiker geschreven cmdlet, `Format-XML` waarmee gegevens in een XML-bestand worden opgemaakt:
+De volgende gegevens sectie bevat bijvoorbeeld een door de gebruiker geschreven cmdlet, `Format-Xml` waarmee gegevens in een XML-bestand worden opgemaakt:
 
 ```powershell
 DATA -supportedCommand Format-Xml

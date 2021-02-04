@@ -1,14 +1,14 @@
 ---
-ms.date: 10/16/2019
+ms.date: 01/04/2021
 ms.topic: reference
 title: Een manifest voor een PowerShell-module schrijven
 description: Een manifest voor een PowerShell-module schrijven
-ms.openlocfilehash: 42db71968ccac1cc3c1c05c5be2e72327e5e28d9
-ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.openlocfilehash: 8c644391008cb97c1206f985f0f5eca9d7dfcc9e
+ms.sourcegitcommit: 04faa7dc1122bce839295d4891bd8b2f0ecb06ef
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "92647699"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879368"
 ---
 # <a name="how-to-write-a-powershell-module-manifest"></a>Een Power shell-module manifest schrijven
 
@@ -63,7 +63,7 @@ In de volgende tabel worden de elementen beschreven die u kunt toevoegen in een 
 |**CompanyName**<br /> Voert `String`|`'Unknown'`|Bedrijf of leverancier van deze module. Als er geen waarde is opgegeven, `New-ModuleManifest` gebruikt de standaard.<br /> Voorbeeld: `CompanyName = 'Fabrikam'`|
 |**Gegevens**<br /> Voert `String`|`'(c) <Author>. All rights reserved.'`| Copyright verklaring voor deze module. Als er geen waarde is opgegeven, `New-ModuleManifest` wordt de standaard instelling gebruikt voor de huidige gebruiker als `<Author>` . Als u een auteur wilt opgeven, gebruikt u de para meter **Auteur** . <br /> Voorbeeld: `Copyright = '2019 AuthorName. All rights reserved.'`|
 |**Beschrijving**<br /> Voert `String`|`<empty string>`|Beschrijving van de functionaliteit van deze module.<br /> Voorbeeld: `Description = 'This is the module's description.'`|
-|**PowerShellVersion**<br /> Voert `Version`|`<empty string>`|Minimale versie van de Power shell-engine die vereist is voor deze module. Geldige waarden zijn 1,0, 2,0, 3,0, 4,0, 5,0, 5,1, 6 en 7.<br /> Voorbeeld: `PowerShellVersion = '5.0'`|
+|**PowerShellVersion**<br /> Voert `Version`|`<empty string>`|Minimale versie van de Power shell-engine die vereist is voor deze module. Geldige waarden zijn 1,0, 2,0, 3,0, 4,0, 5,0, 5,1, 6,0, 6,1, 6,2, 7,0 en 7,1.<br /> Voorbeeld: `PowerShellVersion = '5.0'`|
 |**PowerShellHostName**<br /> Voert `String`|`<empty string>`|De naam van de Power shell-host die is vereist voor deze module. Deze naam wordt verschaft door Power shell. Als u de naam van een hostprogramma wilt zoeken, typt u het volgende in het programma: `$host.name` .<br /> Voorbeeld: `PowerShellHostName = 'ConsoleHost'`|
 |**PowerShellHostVersion**<br /> Voert `Version`|`<empty string>`|De minimale versie van de Power shell-host die is vereist voor deze module.<br /> Voorbeeld: `PowerShellHostVersion = '2.0'`|
 |**DotNetFrameworkVersion**<br /> Voert `Version`|`<empty string>`|Mini maal vereiste versie van Microsoft .NET Framework dat is vereist voor deze module. Deze vereiste is alleen geldig voor de Power shell Desktop Edition, zoals Power shell 5,1.<br /> Voorbeeld: `DotNetFrameworkVersion = '3.5'`|
