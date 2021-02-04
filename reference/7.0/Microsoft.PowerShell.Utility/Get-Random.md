@@ -1,18 +1,17 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 04/08/2020
+ms.date: 02/02/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-random?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Random
-ms.openlocfilehash: c45b234445a7bc2b54aefb080d2d3da65433d412
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 007f8f2e377af0620d439f5a35be51aace032dc1
+ms.sourcegitcommit: fa1a84c81e15f1ffac962110b0b4c850c1b173a0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93249649"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99496033"
 ---
 # Get-Random
 
@@ -39,7 +38,14 @@ De `Get-Random` cmdlet haalt een wille keurig geselecteerd getal op. Als u een v
 
 Zonder para meters of invoer `Get-Random` retourneert een opdracht een wille keurig geselecteerd 32-bits geheel getal van 0 (nul) en **Int32. MaxValue** ( `0x7FFFFFFF` , `2,147,483,647` ).
 
-U kunt de para meters van gebruiken `Get-Random` om een Seed-nummer, minimum-en maximum waarde op te geven en het aantal objecten dat door een ingediende verzameling wordt geretourneerd.
+Standaard wordt `Get-Random` cryptografische, veilige wille keurigheid gegenereerd met behulp van de [RandomNumberGenerator](/dotnet/api/system.security.cryptography.randomnumbergenerator) -klasse.
+
+U kunt de para meters van gebruiken `Get-Random` om de minimum-en maximum waarden op te geven, het aantal objecten dat wordt geretourneerd door een verzameling of een Seed-nummer.
+
+> [!CAUTION]
+> Als u de Seed opzettelijk instelt, wordt het niet-wille keurig Herhaal bare gedrag veroorzaakt. Het mag alleen worden gebruikt bij het reproduceren van gedrag, zoals bij het opsporen van fouten of het analyseren van een script dat `Get-Random` opdrachten bevat.
+>
+> Deze Seed-waarde wordt gebruikt voor de huidige opdracht en voor alle volgende `Get-Random` opdrachten in de huidige sessie totdat u **SetSeed** opnieuw gebruikt of de sessie sluit. U kunt de Seed niet opnieuw instellen op de standaard waarde.
 
 ## VOORBEELDEN
 
@@ -206,7 +212,7 @@ $Sample = $Files | Get-Random -Count 50
 
 ### Voor beeld 11: roll-Fair-dobbel stenen
 
-In dit voor beeld wordt een billijke dobbel steen van 1200 keer Gerolt en worden de resultaten geteld. Met de eerste opdracht wordt `For-EachObject` de aanroep herhaald `Get-Random` van de sluis in getallen (1-6). De resultaten worden gegroepeerd op basis van de waarde `Group-Object` en opgemaakt als een tabel met `Select-Object` .
+In dit voor beeld wordt een billijke dobbel steen van 1200 keer Gerolt en worden de resultaten geteld. Met de eerste opdracht wordt `ForEach-Object` de aanroep herhaald `Get-Random` van de sluis in getallen (1-6). De resultaten worden gegroepeerd op basis van de waarde `Group-Object` en opgemaakt als een tabel met `Select-Object` .
 
 ```powershell
 1..1200 | ForEach-Object {
@@ -330,9 +336,12 @@ Accept wildcard characters: False
 
 ### -SetSeed
 
-Hiermee geeft u een Seed-waarde op voor de generator voor wille keurige getallen. Deze Seed-waarde wordt gebruikt voor de huidige opdracht en voor alle volgende `Get-Random` opdrachten in de huidige sessie totdat u **SetSeed** opnieuw gebruikt of de sessie sluit. U kunt de Seed niet opnieuw instellen op de standaard waarde.
+Hiermee geeft u een Seed-waarde op voor de generator voor wille keurige getallen. Wanneer u **SetSeed** gebruikt, gebruikt de cmdlet de methode [System. Random](/dotnet/api/system.random) om Pseudorandom-nummers te genereren, die niet cryptografisch veilig zijn.
 
-De para meter **SetSeed** is niet vereist. `Get-Random`Maakt standaard gebruik van de methode [RandomNumberGenerator ()](/dotnet/api/system.security.cryptography.randomnumbergenerator) voor het genereren van een Seed-waarde. Omdat **SetSeed** resulteert in niet-wille keurig gedrag, wordt het normaal gesp roken alleen gebruikt bij het reproduceren van het gedrag, bijvoorbeeld bij het opsporen van fouten of het analyseren van een script dat `Get-Random` opdrachten bevat.
+> [!CAUTION]
+> De Seed-resultaten worden ingesteld op niet-wille keurig gedrag. Het mag alleen worden gebruikt bij het reproduceren van gedrag, zoals bij het opsporen van fouten of het analyseren van een script dat `Get-Random` opdrachten bevat.
+>
+> Deze Seed-waarde wordt gebruikt voor de huidige opdracht en voor alle volgende `Get-Random` opdrachten in de huidige sessie totdat u **SetSeed** opnieuw gebruikt of de sessie sluit. U kunt de Seed niet opnieuw instellen op de standaard waarde.
 
 ```yaml
 Type: System.Nullable`1[System.Int32]
@@ -364,7 +373,7 @@ U kunt een of meer objecten door sluizen. `Get-Random` selecteert waarden wille 
 
 ## OPMERKINGEN
 
-`Get-Random` Hiermee stelt u een standaard zaad voor elke sessie in op basis van de systeem tijd klok wanneer de sessie wordt gestart.
+Standaard wordt `Get-Random` cryptografische, veilige wille keurigheid gegenereerd met behulp van de [RandomNumberGenerator](/dotnet/api/system.security.cryptography.randomnumbergenerator) -klasse.
 
 `Get-Random` retourneert niet altijd hetzelfde gegevens type als de invoer waarde. In de volgende tabel ziet u het uitvoer type voor elk van de numerieke invoer typen.
 
@@ -379,10 +388,14 @@ U kunt een of meer objecten door sluizen. `Get-Random` selecteert waarden wille 
 |   Int64    |    Int64    |
 |   UInt64   |   Dubbel    |
 |   Dubbel   |   Dubbel    |
-|   Enkel   |   Dubbel    |
+|   Enkelvoudig   |   Dubbel    |
 
 Vanaf Windows Power Shell 3,0 `Get-Random` ondersteunt 64-bits geheel getal. In Windows Power Shell 2,0 worden alle waarden geconverteerd naar **System. Int32**.
 
 Vanaf Power shell 7 accepteert de para meter **input object** in de para meter set **RandomListItemParameterSet** matrices die een lege teken reeks of bevatten `$null` . In eerdere Power shell-versies heeft alleen de **maximum** para meter in de **RandomNumberParameterSet** -parameterset een lege teken reeks geaccepteerd of `$null` .
 
 ## GERELATEERDE KOPPELINGEN
+
+[System. Security. Cryptography. RandomNumberGenerator ()](/dotnet/api/system.security.cryptography.randomnumbergenerator)
+
+[Systeem. wille keurig](/dotnet/api/system.random)

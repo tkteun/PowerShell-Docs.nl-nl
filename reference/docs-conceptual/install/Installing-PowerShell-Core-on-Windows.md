@@ -1,13 +1,13 @@
 ---
 title: PowerShell installeren in Windows
 description: Informatie over het installeren van Power shell in Windows
-ms.date: 11/11/2020
-ms.openlocfilehash: 039db904a315bd3ad3f4e1358d414c98c3a84be5
-ms.sourcegitcommit: 7f712e12ec5b3f3f3e695da804b050ea0ce58b3a
+ms.date: 02/02/2021
+ms.openlocfilehash: befc5ff156cb7c3843d89e394e903778682ba28e
+ms.sourcegitcommit: 40b6d8e9b6d791ac69e2ff85224e900b21552bc1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94661423"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99536488"
 ---
 # <a name="installing-powershell-on-windows"></a>PowerShell installeren in Windows
 
@@ -24,14 +24,14 @@ Als u externe communicatie van Power shell wilt inschakelen via WSMan, moeten aa
 
 ## <a name="download-the-installer-package"></a>Het installatie pakket downloaden
 
-Als u Power shell in Windows wilt installeren, downloadt u het [meest recente][] installatie pakket van github. U kunt ook de nieuwste preview-versie vinden op de pagina [releases][] . Schuif omlaag naar de sectie **assets** van de pagina release. De sectie **assets** kan worden samengevouwen, dus u moet mogelijk op klikken om deze uit te vouwen.
+Als u Power shell in Windows wilt installeren, downloadt u het [meest recente][] installatie pakket van github. U kunt ook de nieuwste [Preview][] -versie vinden. Schuif omlaag naar de sectie **assets** van de pagina release. De sectie **assets** kan worden samengevouwen, dus u moet mogelijk op klikken om deze uit te vouwen.
 
 ## <a name="installing-the-msi-package"></a><a id="msi" />Het MSI-pakket installeren
 
 Het MSI-bestand ziet er als volgt uit `PowerShell-<version>-win-<os-arch>.msi` . Bijvoorbeeld:
 
-- `PowerShell-7.1.0-win-x64.msi`
-- `PowerShell-7.1.0-win-x86.msi`
+- `PowerShell-7.1.1-win-x64.msi`
+- `PowerShell-7.1.1-win-x86.msi`
 
 Na het downloaden dubbelklikt u op het installatie programma en volgt u de aanwijzingen.
 
@@ -55,13 +55,14 @@ Het installatie programma maakt een snelkoppeling in het menu Start van Windows.
 MSI-pakketten kunnen worden geïnstalleerd vanaf de opdracht regel zodat beheerders pakketten kunnen implementeren zonder tussen komst van de gebruiker. Het MSI-pakket bevat de volgende eigenschappen om de installatie opties te beheren:
 
 - **ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL** : met deze eigenschap bepaalt u de optie voor het toevoegen van het **geopende Power shell** -item aan het context menu in Windows Verkenner.
+- **ADD_FILE_CONTEXT_MENU_RUNPOWERSHELL** : deze eigenschap bepaalt de optie voor het toevoegen van het item **uitvoeren met Power shell** in het context menu in Windows Verkenner.
 - **ENABLE_PSREMOTING** : deze eigenschap bepaalt de optie voor het inschakelen van externe communicatie van Power shell tijdens de installatie.
 - **REGISTER_MANIFEST** -met deze eigenschap bepaalt u de optie voor het registreren van het Windows-logboek voor gebeurtenis logboek registratie.
 
 In het volgende voor beeld ziet u hoe u Power shell op de achtergrond installeert met alle installatie opties ingeschakeld.
 
 ```powershell
-msiexec.exe /package PowerShell-7.1.0-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
+msiexec.exe /package PowerShell-7.1.1-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
 ```
 
 `Msiexec.exe`Zie [opdracht regel opties](/windows/desktop/Msi/command-line-options)voor een volledige lijst met opdracht regel opties voor.
@@ -81,12 +82,12 @@ Dit kan worden gebruikt door beheerders en ontwikkel aars om het pad naar Power 
 
 ## <a name="installing-the-zip-package"></a><a id="zip" />Het ZIP-pakket installeren
 
-Binaire ZIP-archieven van Power shell zijn beschikbaar om geavanceerde implementatie scenario's mogelijk te maken. Down load een van de volgende ZIP-archieven [op de pagina release releases][] .
+Binaire ZIP-archieven van Power shell zijn beschikbaar om geavanceerde implementatie scenario's mogelijk te maken. Down load een van de volgende ZIP-archieven van de pagina [releases] [releases].
 
-- PowerShell-7.1.0-win-x64.zip
-- PowerShell-7.1.0-win-x86.zip
-- PowerShell-7.1.0-win-arm64.zip
-- PowerShell-7.1.0-win-arm32.zip
+- PowerShell-7.1.1-win-x64.zip
+- PowerShell-7.1.1-win-x86.zip
+- PowerShell-7.1.1-win-arm64.zip
+- PowerShell-7.1.1-win-arm32.zip
 
 Afhankelijk van hoe u het bestand downloadt, moet u het bestand mogelijk deblokkeren met de `Unblock-File` cmdlet. Pak de inhoud uit naar de gewenste locatie en voer deze `pwsh.exe` uit. In tegens telling tot de installatie van de MSI-pakketten controleert de installatie van het ZIP-archief niet op vereisten. Zorg ervoor dat u aan de [vereisten](#prerequisites)voldoet om externe toegang tot WSMan goed te laten werken.
 
@@ -225,8 +226,8 @@ De volgende opdrachten kunnen worden gebruikt om Power shell te installeren met 
    ```Output
    Name               Id                           Version
    ---------------------------------------------------------------
-   PowerShell         Microsoft.PowerShell         7.1.0
-   PowerShell-Preview Microsoft.PowerShell-Preview 7.1.0-preview.5
+   PowerShell         Microsoft.PowerShell         7.1.1
+   PowerShell-Preview Microsoft.PowerShell-Preview 7.1.1-preview.5
    ```
 
 1. Een versie van Power Shell installeren met behulp van de `--exact` para meter
@@ -259,7 +260,7 @@ Zie [hoe verpakte bureau blad-apps worden uitgevoerd in Windows](/windows/msix/d
 > [!NOTE]
 > De preview-builds van Power shell bevatten een MSIX-pakket. Het MSIX-pakket wordt niet officieel ondersteund. Het pakket is gebouwd voor test doeleinden tijdens de preview-periode.
 
-Als u het MSIX-pakket hand matig wilt installeren op een Windows 10-client, downloadt u het MSIX-pakket van[onze pagina] [met releases van github.] Schuif omlaag naar de sectie **assets** van de release die u wilt installeren. De sectie assets kan worden samengevouwen, dus u moet mogelijk op klikken om deze uit te vouwen.
+Als u het MSIX-pakket hand matig wilt installeren op een Windows 10-client, downloadt u het MSIX-pakket van de pagina GitHub [releases] [releases]. Schuif omlaag naar de sectie **assets** van de release die u wilt installeren. De sectie assets kan worden samengevouwen, dus u moet mogelijk op klikken om deze uit te vouwen.
 
 Het MSIX-bestand ziet er als volgt uit: `PowerShell-<version>-win-<os-arch>.msix`
 
@@ -286,8 +287,8 @@ Micro soft ondersteunt de installatie methoden in dit document. Er zijn mogelijk
 
 <!-- link references -->
 
-[shell]: https://github.com/PowerShell/PowerShell/releases
-[meest recente]: https://github.com/PowerShell/PowerShell/releases/latest
+[Voorbeeld]: https://aka.ms/powershell-release?tag=preview
+[meest recente]: https://aka.ms/powershell-release?tag=stable
 [ssh-remoting]: ../learn/remoting/SSH-Remoting-in-PowerShell-Core.md
 [wsman-remoting]: ../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md
 [AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
