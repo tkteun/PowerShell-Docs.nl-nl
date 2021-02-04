@@ -2,29 +2,28 @@
 title: Functions
 description: Met Power shell-functies kunt u hulpprogram ma's maken die opnieuw kunnen worden gebruikt in scripts.
 ms.date: 06/02/2020
-ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
-ms.openlocfilehash: 18566263f29b97834d78cb5572fa73b58c3a26bb
-ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.openlocfilehash: e4734b556a78f67c54152dad93eada536dd1c928
+ms.sourcegitcommit: df5e6f032ee2d4b556d50406832732d2f7dc2502
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "96616009"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98216149"
 ---
-# <a name="chapter-9---functions"></a><span data-ttu-id="79a0f-103">Hoofd stuk 9-functies</span><span class="sxs-lookup"><span data-stu-id="79a0f-103">Chapter 9 - Functions</span></span>
+# <a name="chapter-9---functions"></a><span data-ttu-id="d6975-103">Hoofd stuk 9-functies</span><span class="sxs-lookup"><span data-stu-id="d6975-103">Chapter 9 - Functions</span></span>
 
-<span data-ttu-id="79a0f-104">Als u de Power shell-One-lines of-scripts schrijft en u deze vaak moet wijzigen voor verschillende scenario's, is het een goed idee om een goede kandidaat in te scha kelen die opnieuw kan worden gebruikt.</span><span class="sxs-lookup"><span data-stu-id="79a0f-104">If you're writing PowerShell one-liners or scripts and find yourself often having to modify them for different scenarios, there's a good chance that it's a good candidate to be turned into a function that can be reused.</span></span>
+<span data-ttu-id="d6975-104">Als u de Power shell-One-lines of-scripts schrijft en u deze vaak moet wijzigen voor verschillende scenario's, is het een goed idee om een goede kandidaat in te scha kelen die opnieuw kan worden gebruikt.</span><span class="sxs-lookup"><span data-stu-id="d6975-104">If you're writing PowerShell one-liners or scripts and find yourself often having to modify them for different scenarios, there's a good chance that it's a good candidate to be turned into a function that can be reused.</span></span>
 
-<span data-ttu-id="79a0f-105">Als dat mogelijk is, is het handig om functies te schrijven, omdat deze meer hulp middelen zijn.</span><span class="sxs-lookup"><span data-stu-id="79a0f-105">Whenever possible, I prefer to write functions because they are more tool oriented.</span></span> <span data-ttu-id="79a0f-106">Ik kan de functies in een script module plaatsen, die module in de toevoegen `$env:PSModulePath` en de functies aanroepen zonder dat ze fysiek moeten zoeken waar ze worden opgeslagen.</span><span class="sxs-lookup"><span data-stu-id="79a0f-106">I can put the functions in a script module, put that module in the `$env:PSModulePath`, and call the functions without needing to physically locate where they're saved.</span></span> <span data-ttu-id="79a0f-107">Met behulp van de PowerShellGet-module kunt u deze modules eenvoudig delen in een NuGet-opslag plaats.</span><span class="sxs-lookup"><span data-stu-id="79a0f-107">Using the PowerShellGet module, it's easy to share those modules in a NuGet repository.</span></span> <span data-ttu-id="79a0f-108">PowerShellGet wordt geleverd met Power shell versie 5,0 en hoger.</span><span class="sxs-lookup"><span data-stu-id="79a0f-108">PowerShellGet ships with PowerShell version 5.0 and higher.</span></span> <span data-ttu-id="79a0f-109">Het is beschikbaar als afzonderlijke down load voor Power shell versie 3,0 en hoger.</span><span class="sxs-lookup"><span data-stu-id="79a0f-109">It is available as a separate download for PowerShell version 3.0 and higher.</span></span>
+<span data-ttu-id="d6975-105">Als dat mogelijk is, is het handig om functies te schrijven, omdat deze meer hulp middelen zijn.</span><span class="sxs-lookup"><span data-stu-id="d6975-105">Whenever possible, I prefer to write functions because they are more tool oriented.</span></span> <span data-ttu-id="d6975-106">Ik kan de functies in een script module plaatsen, die module in de toevoegen `$env:PSModulePath` en de functies aanroepen zonder dat ze fysiek moeten zoeken waar ze worden opgeslagen.</span><span class="sxs-lookup"><span data-stu-id="d6975-106">I can put the functions in a script module, put that module in the `$env:PSModulePath`, and call the functions without needing to physically locate where they're saved.</span></span> <span data-ttu-id="d6975-107">Met behulp van de PowerShellGet-module kunt u deze modules eenvoudig delen in een NuGet-opslag plaats.</span><span class="sxs-lookup"><span data-stu-id="d6975-107">Using the PowerShellGet module, it's easy to share those modules in a NuGet repository.</span></span> <span data-ttu-id="d6975-108">PowerShellGet wordt geleverd met Power shell versie 5,0 en hoger.</span><span class="sxs-lookup"><span data-stu-id="d6975-108">PowerShellGet ships with PowerShell version 5.0 and higher.</span></span> <span data-ttu-id="d6975-109">Het is beschikbaar als afzonderlijke down load voor Power shell versie 3,0 en hoger.</span><span class="sxs-lookup"><span data-stu-id="d6975-109">It is available as a separate download for PowerShell version 3.0 and higher.</span></span>
 
-<span data-ttu-id="79a0f-110">U hoeft zich niet meer te bemoeilijken.</span><span class="sxs-lookup"><span data-stu-id="79a0f-110">Don't over complicate things.</span></span> <span data-ttu-id="79a0f-111">Bewaar het eenvoudig en gebruik de meest directe voorwaartse manier om een taak uit te voeren.</span><span class="sxs-lookup"><span data-stu-id="79a0f-111">Keep it simple and use the most straight forward way to accomplish a task.</span></span> <span data-ttu-id="79a0f-112">Vermijd aliassen en positionele para meters in code die u opnieuw gebruikt.</span><span class="sxs-lookup"><span data-stu-id="79a0f-112">Avoid aliases and positional parameters in any code that you reuse.</span></span> <span data-ttu-id="79a0f-113">Maak uw code op voor de Lees baarheid.</span><span class="sxs-lookup"><span data-stu-id="79a0f-113">Format your code for readability.</span></span> <span data-ttu-id="79a0f-114">Geen voorlopig hardcoderen we-waarden; gebruik para meters en variabelen.</span><span class="sxs-lookup"><span data-stu-id="79a0f-114">Don't hardcode values; use parameters and variables.</span></span> <span data-ttu-id="79a0f-115">Schrijf geen overbodige code, zelfs niet als dat niet zo is.</span><span class="sxs-lookup"><span data-stu-id="79a0f-115">Don't write unnecessary code even if it doesn't hurt anything.</span></span> <span data-ttu-id="79a0f-116">Het voegt overbodige complexiteit toe.</span><span class="sxs-lookup"><span data-stu-id="79a0f-116">It adds unnecessary complexity.</span></span> <span data-ttu-id="79a0f-117">Het is belang rijk om de details van een Power shell-code te schrijven.</span><span class="sxs-lookup"><span data-stu-id="79a0f-117">Attention to detail goes a long way when writing any PowerShell code.</span></span>
+<span data-ttu-id="d6975-110">U hoeft zich niet meer te bemoeilijken.</span><span class="sxs-lookup"><span data-stu-id="d6975-110">Don't over complicate things.</span></span> <span data-ttu-id="d6975-111">Bewaar het eenvoudig en gebruik de meest directe voorwaartse manier om een taak uit te voeren.</span><span class="sxs-lookup"><span data-stu-id="d6975-111">Keep it simple and use the most straight forward way to accomplish a task.</span></span> <span data-ttu-id="d6975-112">Vermijd aliassen en positionele para meters in code die u opnieuw gebruikt.</span><span class="sxs-lookup"><span data-stu-id="d6975-112">Avoid aliases and positional parameters in any code that you reuse.</span></span> <span data-ttu-id="d6975-113">Maak uw code op voor de Lees baarheid.</span><span class="sxs-lookup"><span data-stu-id="d6975-113">Format your code for readability.</span></span> <span data-ttu-id="d6975-114">Geen voorlopig hardcoderen we-waarden; gebruik para meters en variabelen.</span><span class="sxs-lookup"><span data-stu-id="d6975-114">Don't hardcode values; use parameters and variables.</span></span> <span data-ttu-id="d6975-115">Schrijf geen overbodige code, zelfs niet als dat niet zo is.</span><span class="sxs-lookup"><span data-stu-id="d6975-115">Don't write unnecessary code even if it doesn't hurt anything.</span></span> <span data-ttu-id="d6975-116">Het voegt overbodige complexiteit toe.</span><span class="sxs-lookup"><span data-stu-id="d6975-116">It adds unnecessary complexity.</span></span> <span data-ttu-id="d6975-117">Het is belang rijk om de details van een Power shell-code te schrijven.</span><span class="sxs-lookup"><span data-stu-id="d6975-117">Attention to detail goes a long way when writing any PowerShell code.</span></span>
 
-## <a name="naming"></a><span data-ttu-id="79a0f-118">Naamgeving</span><span class="sxs-lookup"><span data-stu-id="79a0f-118">Naming</span></span>
+## <a name="naming"></a><span data-ttu-id="d6975-118">Naamgeving</span><span class="sxs-lookup"><span data-stu-id="d6975-118">Naming</span></span>
 
-<span data-ttu-id="79a0f-119">Gebruik bij het benoemen van uw functies in Power shell een [Pascal-Case][] naam met een goedgekeurd werk woord en een enkelvoudige zelfstandignaam.</span><span class="sxs-lookup"><span data-stu-id="79a0f-119">When naming your functions in PowerShell, use a [Pascal case][] name with an approved verb and a singular noun.</span></span> <span data-ttu-id="79a0f-120">U kunt ook het voor voegsel van het zelfstandig naam woord aanraden.</span><span class="sxs-lookup"><span data-stu-id="79a0f-120">I also recommend prefixing the noun.</span></span> <span data-ttu-id="79a0f-121">Bijvoorbeeld: `<ApprovedVerb>-<Prefix><SingularNoun>`.</span><span class="sxs-lookup"><span data-stu-id="79a0f-121">For example: `<ApprovedVerb>-<Prefix><SingularNoun>`.</span></span>
+<span data-ttu-id="d6975-119">Gebruik bij het benoemen van uw functies in Power shell een [Pascal-Case][] naam met een goedgekeurd werk woord en een enkelvoudige zelfstandignaam.</span><span class="sxs-lookup"><span data-stu-id="d6975-119">When naming your functions in PowerShell, use a [Pascal case][] name with an approved verb and a singular noun.</span></span> <span data-ttu-id="d6975-120">U kunt ook het voor voegsel van het zelfstandig naam woord aanraden.</span><span class="sxs-lookup"><span data-stu-id="d6975-120">I also recommend prefixing the noun.</span></span> <span data-ttu-id="d6975-121">Bijvoorbeeld: `<ApprovedVerb>-<Prefix><SingularNoun>`.</span><span class="sxs-lookup"><span data-stu-id="d6975-121">For example: `<ApprovedVerb>-<Prefix><SingularNoun>`.</span></span>
 
-<span data-ttu-id="79a0f-122">In Power shell is er een specifieke lijst met goedgekeurde woorden die kunnen worden verkregen door uit te voeren `Get-Verb` .</span><span class="sxs-lookup"><span data-stu-id="79a0f-122">In PowerShell, there's a specific list of approved verbs that can be obtained by running `Get-Verb`.</span></span>
+<span data-ttu-id="d6975-122">In Power shell is er een specifieke lijst met goedgekeurde woorden die kunnen worden verkregen door uit te voeren `Get-Verb` .</span><span class="sxs-lookup"><span data-stu-id="d6975-122">In PowerShell, there's a specific list of approved verbs that can be obtained by running `Get-Verb`.</span></span>
 
 ```powershell
 Get-Verb | Sort-Object -Property Verb
@@ -133,11 +132,11 @@ Watch       Common
 Write       Communications
 ```
 
-<span data-ttu-id="79a0f-123">In het vorige voor beeld heb ik de resultaten gesorteerd op de kolom **term** .</span><span class="sxs-lookup"><span data-stu-id="79a0f-123">In the previous example, I've sorted the results by the **Verb** column.</span></span> <span data-ttu-id="79a0f-124">In de kolom **groep** vindt u een idee van de manier waarop deze woorden worden gebruikt.</span><span class="sxs-lookup"><span data-stu-id="79a0f-124">The **Group** column gives you an idea of how these verbs are used.</span></span> <span data-ttu-id="79a0f-125">Het is belang rijk dat u een goedgekeurde werk woord in Power shell kiest wanneer er functies aan een module worden toegevoegd.</span><span class="sxs-lookup"><span data-stu-id="79a0f-125">It's important to choose an approved verb in PowerShell when functions are added to a module.</span></span> <span data-ttu-id="79a0f-126">De module genereert een waarschuwings bericht bij de laad tijd als u een niet-goedgekeurde term kiest.</span><span class="sxs-lookup"><span data-stu-id="79a0f-126">The module generates a warning message at load time if you choose an unapproved verb.</span></span> <span data-ttu-id="79a0f-127">Dit waarschuwings bericht zorgt ervoor dat uw functies worden weer gegeven als unprofessional.</span><span class="sxs-lookup"><span data-stu-id="79a0f-127">That warning message makes your functions look unprofessional.</span></span> <span data-ttu-id="79a0f-128">Niet-goedgekeurde werk woorden beperken ook de vind baarheid van uw functies.</span><span class="sxs-lookup"><span data-stu-id="79a0f-128">Unapproved verbs also limit the discoverability of your functions.</span></span>
+<span data-ttu-id="d6975-123">In het vorige voor beeld heb ik de resultaten gesorteerd op de kolom **term** .</span><span class="sxs-lookup"><span data-stu-id="d6975-123">In the previous example, I've sorted the results by the **Verb** column.</span></span> <span data-ttu-id="d6975-124">In de kolom **groep** vindt u een idee van de manier waarop deze woorden worden gebruikt.</span><span class="sxs-lookup"><span data-stu-id="d6975-124">The **Group** column gives you an idea of how these verbs are used.</span></span> <span data-ttu-id="d6975-125">Het is belang rijk dat u een goedgekeurde werk woord in Power shell kiest wanneer er functies aan een module worden toegevoegd.</span><span class="sxs-lookup"><span data-stu-id="d6975-125">It's important to choose an approved verb in PowerShell when functions are added to a module.</span></span> <span data-ttu-id="d6975-126">De module genereert een waarschuwings bericht bij de laad tijd als u een niet-goedgekeurde term kiest.</span><span class="sxs-lookup"><span data-stu-id="d6975-126">The module generates a warning message at load time if you choose an unapproved verb.</span></span> <span data-ttu-id="d6975-127">Dit waarschuwings bericht zorgt ervoor dat uw functies worden weer gegeven als unprofessional.</span><span class="sxs-lookup"><span data-stu-id="d6975-127">That warning message makes your functions look unprofessional.</span></span> <span data-ttu-id="d6975-128">Niet-goedgekeurde werk woorden beperken ook de vind baarheid van uw functies.</span><span class="sxs-lookup"><span data-stu-id="d6975-128">Unapproved verbs also limit the discoverability of your functions.</span></span>
 
-## <a name="a-simple-function"></a><span data-ttu-id="79a0f-129">Een eenvoudige functie</span><span class="sxs-lookup"><span data-stu-id="79a0f-129">A simple function</span></span>
+## <a name="a-simple-function"></a><span data-ttu-id="d6975-129">Een eenvoudige functie</span><span class="sxs-lookup"><span data-stu-id="d6975-129">A simple function</span></span>
 
-<span data-ttu-id="79a0f-130">Een functie in Power shell is gedeclareerd met het gereserveerde woord function gevolgd door de functie naam en vervolgens een accolade openen en sluiten.</span><span class="sxs-lookup"><span data-stu-id="79a0f-130">A function in PowerShell is declared with the function keyword followed by the function name and then an open and closing curly brace.</span></span> <span data-ttu-id="79a0f-131">De code die de functie uitvoert, bevindt zich in deze accolades.</span><span class="sxs-lookup"><span data-stu-id="79a0f-131">The code that the function will execute is contained within those curly braces.</span></span>
+<span data-ttu-id="d6975-130">Een functie in Power shell is gedeclareerd met het gereserveerde woord function gevolgd door de functie naam en vervolgens een accolade openen en sluiten.</span><span class="sxs-lookup"><span data-stu-id="d6975-130">A function in PowerShell is declared with the function keyword followed by the function name and then an open and closing curly brace.</span></span> <span data-ttu-id="d6975-131">De code die de functie uitvoert, bevindt zich in deze accolades.</span><span class="sxs-lookup"><span data-stu-id="d6975-131">The code that the function will execute is contained within those curly braces.</span></span>
 
 ```powershell
 function Get-Version {
@@ -145,7 +144,7 @@ function Get-Version {
 }
 ```
 
-<span data-ttu-id="79a0f-132">De functie die wordt weer gegeven, is een eenvoudig voor beeld van het retour neren van de versie van Power shell.</span><span class="sxs-lookup"><span data-stu-id="79a0f-132">The function shown is a simple example that returns the version of PowerShell.</span></span>
+<span data-ttu-id="d6975-132">De functie die wordt weer gegeven, is een eenvoudig voor beeld van het retour neren van de versie van Power shell.</span><span class="sxs-lookup"><span data-stu-id="d6975-132">The function shown is a simple example that returns the version of PowerShell.</span></span>
 
 ```powershell
 Get-Version
@@ -157,7 +156,7 @@ Major  Minor  Build  Revision
 5      1      14393  693
 ```
 
-<span data-ttu-id="79a0f-133">Er is een goede kans op een naam conflict met functies met de naam iets zoals `Get-Version` en standaard opdrachten in Power shell of opdrachten die anderen kunnen schrijven.</span><span class="sxs-lookup"><span data-stu-id="79a0f-133">There's a good chance of name conflict with functions named something like `Get-Version` and default commands in PowerShell or commands that others may write.</span></span> <span data-ttu-id="79a0f-134">Daarom raden we u aan om het onderdeel van de zelfstandig naam woord van uw functies voor te stellen om conflicten met namen te voor komen.</span><span class="sxs-lookup"><span data-stu-id="79a0f-134">This is why I recommend prefixing the noun portion of your functions to help prevent naming conflicts.</span></span> <span data-ttu-id="79a0f-135">In het volgende voor beeld gebruiken we het voor voegsel "PS".</span><span class="sxs-lookup"><span data-stu-id="79a0f-135">In the following example, I'll use the prefix "PS".</span></span>
+<span data-ttu-id="d6975-133">Er is een goede kans op een naam conflict met functies met de naam iets zoals `Get-Version` en standaard opdrachten in Power shell of opdrachten die anderen kunnen schrijven.</span><span class="sxs-lookup"><span data-stu-id="d6975-133">There's a good chance of name conflict with functions named something like `Get-Version` and default commands in PowerShell or commands that others may write.</span></span> <span data-ttu-id="d6975-134">Daarom raden we u aan om het onderdeel van de zelfstandig naam woord van uw functies voor te stellen om conflicten met namen te voor komen.</span><span class="sxs-lookup"><span data-stu-id="d6975-134">This is why I recommend prefixing the noun portion of your functions to help prevent naming conflicts.</span></span> <span data-ttu-id="d6975-135">In het volgende voor beeld gebruiken we het voor voegsel "PS".</span><span class="sxs-lookup"><span data-stu-id="d6975-135">In the following example, I'll use the prefix "PS".</span></span>
 
 ```powershell
 function Get-PSVersion {
@@ -165,7 +164,7 @@ function Get-PSVersion {
 }
 ```
 
-<span data-ttu-id="79a0f-136">Met uitzonde ring van de naam is deze functie gelijk aan die van de voor gaande.</span><span class="sxs-lookup"><span data-stu-id="79a0f-136">Other than the name, this function is identical to the previous one.</span></span>
+<span data-ttu-id="d6975-136">Met uitzonde ring van de naam is deze functie gelijk aan die van de voor gaande.</span><span class="sxs-lookup"><span data-stu-id="d6975-136">Other than the name, this function is identical to the previous one.</span></span>
 
 ```powershell
 Get-PSVersion
@@ -177,7 +176,7 @@ Major  Minor  Build  Revision
 5      1      14393  693
 ```
 
-<span data-ttu-id="79a0f-137">Zelfs bij het voor voegsel van het zelfstandige naam woord, zoals PS, is er nog steeds een goede kans op conflicten.</span><span class="sxs-lookup"><span data-stu-id="79a0f-137">Even when prefixing the noun with something like PS, there's still a good chance of having a name conflict.</span></span> <span data-ttu-id="79a0f-138">Ik maak normaal gesp roken voor voegsel mijn eigen naam woorden met mijn initialen.</span><span class="sxs-lookup"><span data-stu-id="79a0f-138">I typically prefix my function nouns with my initials.</span></span> <span data-ttu-id="79a0f-139">Ontwikkel een Standard-en-stick.</span><span class="sxs-lookup"><span data-stu-id="79a0f-139">Develop a standard and stick to it.</span></span>
+<span data-ttu-id="d6975-137">Zelfs bij het voor voegsel van het zelfstandige naam woord, zoals PS, is er nog steeds een goede kans op conflicten.</span><span class="sxs-lookup"><span data-stu-id="d6975-137">Even when prefixing the noun with something like PS, there's still a good chance of having a name conflict.</span></span> <span data-ttu-id="d6975-138">Ik maak normaal gesp roken voor voegsel mijn eigen naam woorden met mijn initialen.</span><span class="sxs-lookup"><span data-stu-id="d6975-138">I typically prefix my function nouns with my initials.</span></span> <span data-ttu-id="d6975-139">Ontwikkel een Standard-en-stick.</span><span class="sxs-lookup"><span data-stu-id="d6975-139">Develop a standard and stick to it.</span></span>
 
 ```powershell
 function Get-MrPSVersion {
@@ -185,7 +184,7 @@ function Get-MrPSVersion {
 }
 ```
 
-<span data-ttu-id="79a0f-140">Deze functie wijkt af van de vorige twee andere dan het gebruik van een meer herkenbaar naam om conflicten met andere Power shell-opdrachten te voor komen.</span><span class="sxs-lookup"><span data-stu-id="79a0f-140">This function is no different than the previous two other than using a more sensible name to try to prevent naming conflicts with other PowerShell commands.</span></span>
+<span data-ttu-id="d6975-140">Deze functie wijkt af van de vorige twee andere dan het gebruik van een meer herkenbaar naam om conflicten met andere Power shell-opdrachten te voor komen.</span><span class="sxs-lookup"><span data-stu-id="d6975-140">This function is no different than the previous two other than using a more sensible name to try to prevent naming conflicts with other PowerShell commands.</span></span>
 
 ```powershell
 Get-MrPSVersion
@@ -197,7 +196,7 @@ Major  Minor  Build  Revision
 5      1      14393  693
 ```
 
-<span data-ttu-id="79a0f-141">Wanneer u in het geheugen hebt geladen, kunt u functies zien op de **functie** PSDrive.</span><span class="sxs-lookup"><span data-stu-id="79a0f-141">Once loaded into memory, you can see functions on the **Function** PSDrive.</span></span>
+<span data-ttu-id="d6975-141">Wanneer u in het geheugen hebt geladen, kunt u functies zien op de **functie** PSDrive.</span><span class="sxs-lookup"><span data-stu-id="d6975-141">Once loaded into memory, you can see functions on the **Function** PSDrive.</span></span>
 
 ```powershell
 Get-ChildItem -Path Function:\Get-*Version
@@ -211,29 +210,29 @@ Function        Get-PSVersion
 Function        Get-MrPSVersion
 ```
 
-<span data-ttu-id="79a0f-142">Als u deze functies uit uw huidige sessie wilt verwijderen, moet u deze verwijderen uit de **functie** PSDrive of de Power shell sluiten en opnieuw openen.</span><span class="sxs-lookup"><span data-stu-id="79a0f-142">If you want to remove these functions from your current session, you'll have to remove them from the **Function** PSDrive or close and reopen PowerShell.</span></span>
+<span data-ttu-id="d6975-142">Als u deze functies uit uw huidige sessie wilt verwijderen, moet u deze verwijderen uit de **functie** PSDrive of de Power shell sluiten en opnieuw openen.</span><span class="sxs-lookup"><span data-stu-id="d6975-142">If you want to remove these functions from your current session, you'll have to remove them from the **Function** PSDrive or close and reopen PowerShell.</span></span>
 
 ```powershell
 Get-ChildItem -Path Function:\Get-*Version | Remove-Item
 ```
 
-<span data-ttu-id="79a0f-143">Controleer of de functies inderdaad zijn verwijderd.</span><span class="sxs-lookup"><span data-stu-id="79a0f-143">Verify that the functions were indeed removed.</span></span>
+<span data-ttu-id="d6975-143">Controleer of de functies inderdaad zijn verwijderd.</span><span class="sxs-lookup"><span data-stu-id="d6975-143">Verify that the functions were indeed removed.</span></span>
 
 ```powershell
 Get-ChildItem -Path Function:\Get-*Version
 ```
 
-<span data-ttu-id="79a0f-144">Als de functies zijn geladen als onderdeel van een module, kan de module worden verwijderd om ze te verwijderen.</span><span class="sxs-lookup"><span data-stu-id="79a0f-144">If the functions were loaded as part of a module, the module can be unloaded to remove them.</span></span>
+<span data-ttu-id="d6975-144">Als de functies zijn geladen als onderdeel van een module, kan de module worden verwijderd om ze te verwijderen.</span><span class="sxs-lookup"><span data-stu-id="d6975-144">If the functions were loaded as part of a module, the module can be unloaded to remove them.</span></span>
 
 ```powershell
 Remove-Module -Name <ModuleName>
 ```
 
-<span data-ttu-id="79a0f-145">Met de `Remove-Module` cmdlet worden modules uit het geheugen verwijderd uit de huidige Power shell-sessie, worden deze niet verwijderd van uw systeem of van schijf.</span><span class="sxs-lookup"><span data-stu-id="79a0f-145">The `Remove-Module` cmdlet removes modules from memory in your current PowerShell session, it doesn't remove them from your system or from disk.</span></span>
+<span data-ttu-id="d6975-145">Met de `Remove-Module` cmdlet worden modules uit het geheugen verwijderd uit de huidige Power shell-sessie, worden deze niet verwijderd van uw systeem of van schijf.</span><span class="sxs-lookup"><span data-stu-id="d6975-145">The `Remove-Module` cmdlet removes modules from memory in your current PowerShell session, it doesn't remove them from your system or from disk.</span></span>
 
-## <a name="parameters"></a><span data-ttu-id="79a0f-146">Parameters</span><span class="sxs-lookup"><span data-stu-id="79a0f-146">Parameters</span></span>
+## <a name="parameters"></a><span data-ttu-id="d6975-146">Parameters</span><span class="sxs-lookup"><span data-stu-id="d6975-146">Parameters</span></span>
 
-<span data-ttu-id="79a0f-147">Geen statische waarden toewijzen.</span><span class="sxs-lookup"><span data-stu-id="79a0f-147">Don't statically assign values!</span></span> <span data-ttu-id="79a0f-148">Gebruik para meters en variabelen.</span><span class="sxs-lookup"><span data-stu-id="79a0f-148">Use parameters and variables.</span></span> <span data-ttu-id="79a0f-149">Wanneer het gaat om de naam van uw para meters, moet u, indien mogelijk, dezelfde naam gebruiken als de standaard-cmdlets voor uw parameter namen.</span><span class="sxs-lookup"><span data-stu-id="79a0f-149">When it comes to naming your parameters, use the same name as the default cmdlets for your parameter names whenever possible.</span></span>
+<span data-ttu-id="d6975-147">Geen statische waarden toewijzen.</span><span class="sxs-lookup"><span data-stu-id="d6975-147">Don't statically assign values!</span></span> <span data-ttu-id="d6975-148">Gebruik para meters en variabelen.</span><span class="sxs-lookup"><span data-stu-id="d6975-148">Use parameters and variables.</span></span> <span data-ttu-id="d6975-149">Wanneer het gaat om de naam van uw para meters, moet u, indien mogelijk, dezelfde naam gebruiken als de standaard-cmdlets voor uw parameter namen.</span><span class="sxs-lookup"><span data-stu-id="d6975-149">When it comes to naming your parameters, use the same name as the default cmdlets for your parameter names whenever possible.</span></span>
 
 ```powershell
 function Test-MrParameter {
@@ -247,9 +246,9 @@ function Test-MrParameter {
 }
 ```
 
-<span data-ttu-id="79a0f-150">Waarom heb ik **ComputerName** en niet **computer**, **servername** of **host** gebruikt voor mijn parameter naam?</span><span class="sxs-lookup"><span data-stu-id="79a0f-150">Why did I use **ComputerName** and not **Computer**, **ServerName**, or **Host** for my parameter name?</span></span> <span data-ttu-id="79a0f-151">De reden hiervoor is dat ik mijn functie wil gebruiken zoals de standaard-cmdlets.</span><span class="sxs-lookup"><span data-stu-id="79a0f-151">It's because I wanted my function standardized like the default cmdlets.</span></span>
+<span data-ttu-id="d6975-150">Waarom heb ik **ComputerName** en niet **computer**, **servername** of **host** gebruikt voor mijn parameter naam?</span><span class="sxs-lookup"><span data-stu-id="d6975-150">Why did I use **ComputerName** and not **Computer**, **ServerName**, or **Host** for my parameter name?</span></span> <span data-ttu-id="d6975-151">De reden hiervoor is dat ik mijn functie wil gebruiken zoals de standaard-cmdlets.</span><span class="sxs-lookup"><span data-stu-id="d6975-151">It's because I wanted my function standardized like the default cmdlets.</span></span>
 
-<span data-ttu-id="79a0f-152">Ik maak een functie om alle opdrachten op een systeem te doorzoeken en het aantal te retour neren met specifieke parameter namen.</span><span class="sxs-lookup"><span data-stu-id="79a0f-152">I'll create a function to query all of the commands on a system and return the number of them that have specific parameter names.</span></span>
+<span data-ttu-id="d6975-152">Ik maak een functie om alle opdrachten op een systeem te doorzoeken en het aantal te retour neren met specifieke parameter namen.</span><span class="sxs-lookup"><span data-stu-id="d6975-152">I'll create a function to query all of the commands on a system and return the number of them that have specific parameter names.</span></span>
 
 ```powershell
 function Get-MrParameterCount {
@@ -268,7 +267,7 @@ function Get-MrParameterCount {
 }
 ```
 
-<span data-ttu-id="79a0f-153">Zoals u kunt zien in de onderstaande resultaten, 39 opdrachten met de para meter **ComputerName** .</span><span class="sxs-lookup"><span data-stu-id="79a0f-153">As you can see in the results shown below, 39 commands that have a **ComputerName** parameter.</span></span> <span data-ttu-id="79a0f-154">Er zijn geen cmdlets met para meters zoals **computer**, **servername**, **host** of **machine**.</span><span class="sxs-lookup"><span data-stu-id="79a0f-154">There aren't any cmdlets that have parameters such as **Computer**, **ServerName**, **Host**, or **Machine**.</span></span>
+<span data-ttu-id="d6975-153">Zoals u kunt zien in de onderstaande resultaten, 39 opdrachten met de para meter **ComputerName** .</span><span class="sxs-lookup"><span data-stu-id="d6975-153">As you can see in the results shown below, 39 commands that have a **ComputerName** parameter.</span></span> <span data-ttu-id="d6975-154">Er zijn geen cmdlets met para meters zoals **computer**, **servername**, **host** of **machine**.</span><span class="sxs-lookup"><span data-stu-id="d6975-154">There aren't any cmdlets that have parameters such as **Computer**, **ServerName**, **Host**, or **Machine**.</span></span>
 
 ```powershell
 Get-MrParameterCount -ParameterName ComputerName, Computer, ServerName, Host, Machine
@@ -284,15 +283,15 @@ Host                        0
 Machine                     0
 ```
 
-<span data-ttu-id="79a0f-155">Het is ook raadzaam om hetzelfde hoofdletter gebruik te gebruiken voor uw parameter namen als de standaard-cmdlets.</span><span class="sxs-lookup"><span data-stu-id="79a0f-155">I also recommend using the same case for your parameter names as the default cmdlets.</span></span> <span data-ttu-id="79a0f-156">Gebruiken `ComputerName` , niet `computername` .</span><span class="sxs-lookup"><span data-stu-id="79a0f-156">Use `ComputerName`, not `computername`.</span></span> <span data-ttu-id="79a0f-157">Dit zorgt ervoor dat uw functies eruitzien zoals de standaard-cmdlets.</span><span class="sxs-lookup"><span data-stu-id="79a0f-157">This makes your functions look and feel like the default cmdlets.</span></span> <span data-ttu-id="79a0f-158">Mensen die al bekend zijn met Power shell, kunnen thuis.</span><span class="sxs-lookup"><span data-stu-id="79a0f-158">People who are already familiar with PowerShell will feel right at home.</span></span>
+<span data-ttu-id="d6975-155">Het is ook raadzaam om hetzelfde hoofdletter gebruik te gebruiken voor uw parameter namen als de standaard-cmdlets.</span><span class="sxs-lookup"><span data-stu-id="d6975-155">I also recommend using the same case for your parameter names as the default cmdlets.</span></span> <span data-ttu-id="d6975-156">Gebruiken `ComputerName` , niet `computername` .</span><span class="sxs-lookup"><span data-stu-id="d6975-156">Use `ComputerName`, not `computername`.</span></span> <span data-ttu-id="d6975-157">Dit zorgt ervoor dat uw functies eruitzien zoals de standaard-cmdlets.</span><span class="sxs-lookup"><span data-stu-id="d6975-157">This makes your functions look and feel like the default cmdlets.</span></span> <span data-ttu-id="d6975-158">Mensen die al bekend zijn met Power shell, kunnen thuis.</span><span class="sxs-lookup"><span data-stu-id="d6975-158">People who are already familiar with PowerShell will feel right at home.</span></span>
 
-<span data-ttu-id="79a0f-159">Met de- `param` instructie kunt u een of meer para meters definiëren.</span><span class="sxs-lookup"><span data-stu-id="79a0f-159">The `param` statement allows you to define one or more parameters.</span></span> <span data-ttu-id="79a0f-160">De parameter definities worden gescheiden door een komma ( `,` ).</span><span class="sxs-lookup"><span data-stu-id="79a0f-160">The parameter definitions are separated by a comma (`,`).</span></span> <span data-ttu-id="79a0f-161">Zie [about_Functions_Advanced_Parameters][]voor meer informatie.</span><span class="sxs-lookup"><span data-stu-id="79a0f-161">For more information, see [about_Functions_Advanced_Parameters][].</span></span>
+<span data-ttu-id="d6975-159">Met de- `param` instructie kunt u een of meer para meters definiëren.</span><span class="sxs-lookup"><span data-stu-id="d6975-159">The `param` statement allows you to define one or more parameters.</span></span> <span data-ttu-id="d6975-160">De parameter definities worden gescheiden door een komma ( `,` ).</span><span class="sxs-lookup"><span data-stu-id="d6975-160">The parameter definitions are separated by a comma (`,`).</span></span> <span data-ttu-id="d6975-161">Zie [about_Functions_Advanced_Parameters][]voor meer informatie.</span><span class="sxs-lookup"><span data-stu-id="d6975-161">For more information, see [about_Functions_Advanced_Parameters][].</span></span>
 
-## <a name="advanced-functions"></a><span data-ttu-id="79a0f-162">Geavanceerde functies</span><span class="sxs-lookup"><span data-stu-id="79a0f-162">Advanced Functions</span></span>
+## <a name="advanced-functions"></a><span data-ttu-id="d6975-162">Geavanceerde functies</span><span class="sxs-lookup"><span data-stu-id="d6975-162">Advanced Functions</span></span>
 
-<span data-ttu-id="79a0f-163">Het is heel eenvoudig om een functie in Power shell in te scha kelen in een geavanceerde functie.</span><span class="sxs-lookup"><span data-stu-id="79a0f-163">Turning a function in PowerShell into an advanced function is really simple.</span></span> <span data-ttu-id="79a0f-164">Een van de verschillen tussen een functie en een geavanceerde functie is dat geavanceerde functies beschikken over een aantal algemene para meters die automatisch aan de functie worden toegevoegd.</span><span class="sxs-lookup"><span data-stu-id="79a0f-164">One of the differences between a function and an advanced function is that advanced functions have a number of common parameters that are added to the function automatically.</span></span> <span data-ttu-id="79a0f-165">Deze algemene para meters zijn para meters zoals **uitgebreid** en **fout opsporing**.</span><span class="sxs-lookup"><span data-stu-id="79a0f-165">These common parameters include parameters such as **Verbose** and **Debug**.</span></span>
+<span data-ttu-id="d6975-163">Het is heel eenvoudig om een functie in Power shell in te scha kelen in een geavanceerde functie.</span><span class="sxs-lookup"><span data-stu-id="d6975-163">Turning a function in PowerShell into an advanced function is really simple.</span></span> <span data-ttu-id="d6975-164">Een van de verschillen tussen een functie en een geavanceerde functie is dat geavanceerde functies beschikken over een aantal algemene para meters die automatisch aan de functie worden toegevoegd.</span><span class="sxs-lookup"><span data-stu-id="d6975-164">One of the differences between a function and an advanced function is that advanced functions have a number of common parameters that are added to the function automatically.</span></span> <span data-ttu-id="d6975-165">Deze algemene para meters zijn para meters zoals **uitgebreid** en **fout opsporing**.</span><span class="sxs-lookup"><span data-stu-id="d6975-165">These common parameters include parameters such as **Verbose** and **Debug**.</span></span>
 
-<span data-ttu-id="79a0f-166">Ik begin met de `Test-MrParameter` functie die is gebruikt in de vorige sectie.</span><span class="sxs-lookup"><span data-stu-id="79a0f-166">I'll start out with the `Test-MrParameter` function that was used in the previous section.</span></span>
+<span data-ttu-id="d6975-166">Ik begin met de `Test-MrParameter` functie die is gebruikt in de vorige sectie.</span><span class="sxs-lookup"><span data-stu-id="d6975-166">I'll start out with the `Test-MrParameter` function that was used in the previous section.</span></span>
 
 ```powershell
 function Test-MrParameter {
@@ -306,7 +305,7 @@ function Test-MrParameter {
 }
 ```
 
-<span data-ttu-id="79a0f-167">Wat ik wil dat de `Test-MrParameter` functie geen algemene para meters bevat.</span><span class="sxs-lookup"><span data-stu-id="79a0f-167">What I want you to notice is that the `Test-MrParameter` function doesn't have any common parameters.</span></span> <span data-ttu-id="79a0f-168">Er zijn verschillende manieren om de algemene para meters weer te geven.</span><span class="sxs-lookup"><span data-stu-id="79a0f-168">There are a couple of different ways to see the common parameters.</span></span> <span data-ttu-id="79a0f-169">Een voor beeld is de syntaxis met behulp van `Get-Command` .</span><span class="sxs-lookup"><span data-stu-id="79a0f-169">One is by viewing the syntax using `Get-Command`.</span></span>
+<span data-ttu-id="d6975-167">Wat ik wil dat de `Test-MrParameter` functie geen algemene para meters bevat.</span><span class="sxs-lookup"><span data-stu-id="d6975-167">What I want you to notice is that the `Test-MrParameter` function doesn't have any common parameters.</span></span> <span data-ttu-id="d6975-168">Er zijn verschillende manieren om de algemene para meters weer te geven.</span><span class="sxs-lookup"><span data-stu-id="d6975-168">There are a couple of different ways to see the common parameters.</span></span> <span data-ttu-id="d6975-169">Een voor beeld is de syntaxis met behulp van `Get-Command` .</span><span class="sxs-lookup"><span data-stu-id="d6975-169">One is by viewing the syntax using `Get-Command`.</span></span>
 
 ```powershell
 Get-Command -Name Test-MrParameter -Syntax
@@ -316,7 +315,7 @@ Get-Command -Name Test-MrParameter -Syntax
 Test-MrParameter [[-ComputerName] <Object>]
 ```
 
-<span data-ttu-id="79a0f-170">Een andere is om in te zoomen op de para meters met `Get-Command` .</span><span class="sxs-lookup"><span data-stu-id="79a0f-170">Another is to drill down into the parameters with `Get-Command`.</span></span>
+<span data-ttu-id="d6975-170">Een andere is om in te zoomen op de para meters met `Get-Command` .</span><span class="sxs-lookup"><span data-stu-id="d6975-170">Another is to drill down into the parameters with `Get-Command`.</span></span>
 
 ```powershell
 (Get-Command -Name Test-MrParameter).Parameters.Keys
@@ -326,7 +325,7 @@ Test-MrParameter [[-ComputerName] <Object>]
 ComputerName
 ```
 
-<span data-ttu-id="79a0f-171">Toevoegen `CmdletBinding` om de functie in te scha kelen in een geavanceerde functie.</span><span class="sxs-lookup"><span data-stu-id="79a0f-171">Add `CmdletBinding` to turn the function into an advanced function.</span></span>
+<span data-ttu-id="d6975-171">Toevoegen `CmdletBinding` om de functie in te scha kelen in een geavanceerde functie.</span><span class="sxs-lookup"><span data-stu-id="d6975-171">Add `CmdletBinding` to turn the function into an advanced function.</span></span>
 
 ```powershell
 function Test-MrCmdletBinding {
@@ -341,7 +340,7 @@ function Test-MrCmdletBinding {
 }
 ```
 
-<span data-ttu-id="79a0f-172">`CmdletBinding`De algemene para meters worden automatisch toegevoegd.</span><span class="sxs-lookup"><span data-stu-id="79a0f-172">Adding `CmdletBinding` adds the common parameters automatically.</span></span> <span data-ttu-id="79a0f-173">`CmdletBinding` vereist een `param` blok, maar het `param` blok kan leeg zijn.</span><span class="sxs-lookup"><span data-stu-id="79a0f-173">`CmdletBinding` requires a `param` block, but the `param` block can be empty.</span></span>
+<span data-ttu-id="d6975-172">`CmdletBinding`De algemene para meters worden automatisch toegevoegd.</span><span class="sxs-lookup"><span data-stu-id="d6975-172">Adding `CmdletBinding` adds the common parameters automatically.</span></span> <span data-ttu-id="d6975-173">`CmdletBinding` vereist een `param` blok, maar het `param` blok kan leeg zijn.</span><span class="sxs-lookup"><span data-stu-id="d6975-173">`CmdletBinding` requires a `param` block, but the `param` block can be empty.</span></span>
 
 ```powershell
 Get-Command -Name Test-MrCmdletBinding -Syntax
@@ -351,7 +350,7 @@ Get-Command -Name Test-MrCmdletBinding -Syntax
 Test-MrCmdletBinding [[-ComputerName] <Object>] [<CommonParameters>]
 ```
 
-<span data-ttu-id="79a0f-174">Inzoomen op de para meters met `Get-Command` toont de werkelijke parameter namen met inbegrip van de gemeen schappelijke para meters.</span><span class="sxs-lookup"><span data-stu-id="79a0f-174">Drilling down into the parameters with `Get-Command` shows the actual parameter names including the common ones.</span></span>
+<span data-ttu-id="d6975-174">Inzoomen op de para meters met `Get-Command` toont de werkelijke parameter namen met inbegrip van de gemeen schappelijke para meters.</span><span class="sxs-lookup"><span data-stu-id="d6975-174">Drilling down into the parameters with `Get-Command` shows the actual parameter names including the common ones.</span></span>
 
 ```powershell
 (Get-Command -Name Test-MrCmdletBinding).Parameters.Keys
@@ -372,9 +371,9 @@ OutBuffer
 PipelineVariable
 ```
 
-## <a name="supportsshouldprocess"></a><span data-ttu-id="79a0f-175">SupportsShouldProcess</span><span class="sxs-lookup"><span data-stu-id="79a0f-175">SupportsShouldProcess</span></span>
+## <a name="supportsshouldprocess"></a><span data-ttu-id="d6975-175">SupportsShouldProcess</span><span class="sxs-lookup"><span data-stu-id="d6975-175">SupportsShouldProcess</span></span>
 
-<span data-ttu-id="79a0f-176">`SupportsShouldProcess` Hiermee worden **WhatIf** -en **confirm** -para meters toegevoegd.</span><span class="sxs-lookup"><span data-stu-id="79a0f-176">`SupportsShouldProcess` adds **WhatIf** and **Confirm** parameters.</span></span> <span data-ttu-id="79a0f-177">Deze zijn alleen nodig voor opdrachten die wijzigingen aanbrengen.</span><span class="sxs-lookup"><span data-stu-id="79a0f-177">These are only needed for commands that make changes.</span></span>
+<span data-ttu-id="d6975-176">`SupportsShouldProcess` Hiermee worden **WhatIf** -en **confirm** -para meters toegevoegd.</span><span class="sxs-lookup"><span data-stu-id="d6975-176">`SupportsShouldProcess` adds **WhatIf** and **Confirm** parameters.</span></span> <span data-ttu-id="d6975-177">Deze zijn alleen nodig voor opdrachten die wijzigingen aanbrengen.</span><span class="sxs-lookup"><span data-stu-id="d6975-177">These are only needed for commands that make changes.</span></span>
 
 ```powershell
 function Test-MrSupportsShouldProcess {
@@ -389,7 +388,7 @@ function Test-MrSupportsShouldProcess {
 }
 ```
 
-<span data-ttu-id="79a0f-178">U ziet dat er nu **WhatIf** en-para meters worden **bevestigd** .</span><span class="sxs-lookup"><span data-stu-id="79a0f-178">Notice that there are now **WhatIf** and **Confirm** parameters.</span></span>
+<span data-ttu-id="d6975-178">U ziet dat er nu **WhatIf** en-para meters worden **bevestigd** .</span><span class="sxs-lookup"><span data-stu-id="d6975-178">Notice that there are now **WhatIf** and **Confirm** parameters.</span></span>
 
 ```powershell
 Get-Command -Name Test-MrSupportsShouldProcess -Syntax
@@ -399,7 +398,7 @@ Get-Command -Name Test-MrSupportsShouldProcess -Syntax
 Test-MrSupportsShouldProcess [[-ComputerName] <Object>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-<span data-ttu-id="79a0f-179">Opnieuw kunt u ook gebruiken `Get-Command` om een lijst met de werkelijke parameter namen te retour neren, met inbegrip van de gemeen schappelijke para meters, samen met WhatIf en bevestigen.</span><span class="sxs-lookup"><span data-stu-id="79a0f-179">Once again, you can also use `Get-Command` to return a list of the actual parameter names including the common ones along with WhatIf and Confirm.</span></span>
+<span data-ttu-id="d6975-179">Opnieuw kunt u ook gebruiken `Get-Command` om een lijst met de werkelijke parameter namen te retour neren, met inbegrip van de gemeen schappelijke para meters, samen met WhatIf en bevestigen.</span><span class="sxs-lookup"><span data-stu-id="d6975-179">Once again, you can also use `Get-Command` to return a list of the actual parameter names including the common ones along with WhatIf and Confirm.</span></span>
 
 ```powershell
 (Get-Command -Name Test-MrSupportsShouldProcess).Parameters.Keys
@@ -422,11 +421,11 @@ WhatIf
 Confirm
 ```
 
-## <a name="parameter-validation"></a><span data-ttu-id="79a0f-180">Validatie van de para meter</span><span class="sxs-lookup"><span data-stu-id="79a0f-180">Parameter Validation</span></span>
+## <a name="parameter-validation"></a><span data-ttu-id="d6975-180">Validatie van de para meter</span><span class="sxs-lookup"><span data-stu-id="d6975-180">Parameter Validation</span></span>
 
-<span data-ttu-id="79a0f-181">Valideer invoer vroegtijdig op.</span><span class="sxs-lookup"><span data-stu-id="79a0f-181">Validate input early on.</span></span> <span data-ttu-id="79a0f-182">Waarom staat uw code toe om door te gaan op een pad wanneer het niet mogelijk is om zonder geldige invoer uit te voeren?</span><span class="sxs-lookup"><span data-stu-id="79a0f-182">Why allow your code to continue on a path when it's not possible to run without valid input?</span></span>
+<span data-ttu-id="d6975-181">Valideer invoer vroegtijdig op.</span><span class="sxs-lookup"><span data-stu-id="d6975-181">Validate input early on.</span></span> <span data-ttu-id="d6975-182">Waarom staat uw code toe om door te gaan op een pad wanneer het niet mogelijk is om zonder geldige invoer uit te voeren?</span><span class="sxs-lookup"><span data-stu-id="d6975-182">Why allow your code to continue on a path when it's not possible to run without valid input?</span></span>
 
-<span data-ttu-id="79a0f-183">Typ altijd de variabelen die voor de para meters worden gebruikt (Geef een gegevens type op).</span><span class="sxs-lookup"><span data-stu-id="79a0f-183">Always type the variables that are being used for your parameters (specify a datatype).</span></span>
+<span data-ttu-id="d6975-183">Typ altijd de variabelen die voor de para meters worden gebruikt (Geef een gegevens type op).</span><span class="sxs-lookup"><span data-stu-id="d6975-183">Always type the variables that are being used for your parameters (specify a datatype).</span></span>
 
 ```powershell
 function Test-MrParameterValidation {
@@ -441,7 +440,7 @@ function Test-MrParameterValidation {
 }
 ```
 
-<span data-ttu-id="79a0f-184">In het vorige voor beeld is de **teken reeks** opgegeven als het gegevens type voor de para meter **ComputerName** .</span><span class="sxs-lookup"><span data-stu-id="79a0f-184">In the previous example, I've specified **String** as the datatype for the **ComputerName** parameter.</span></span> <span data-ttu-id="79a0f-185">Hierdoor kan er slechts één computer naam worden opgegeven.</span><span class="sxs-lookup"><span data-stu-id="79a0f-185">This causes it to allow only a single computer name to be specified.</span></span> <span data-ttu-id="79a0f-186">Als meer dan een computer naam is opgegeven via een lijst met door komma's gescheiden waarden, wordt er een fout gegenereerd.</span><span class="sxs-lookup"><span data-stu-id="79a0f-186">If more than one computer name is specified via a comma-separated list, an error is generated.</span></span>
+<span data-ttu-id="d6975-184">In het vorige voor beeld is de **teken reeks** opgegeven als het gegevens type voor de para meter **ComputerName** .</span><span class="sxs-lookup"><span data-stu-id="d6975-184">In the previous example, I've specified **String** as the datatype for the **ComputerName** parameter.</span></span> <span data-ttu-id="d6975-185">Hierdoor kan er slechts één computer naam worden opgegeven.</span><span class="sxs-lookup"><span data-stu-id="d6975-185">This causes it to allow only a single computer name to be specified.</span></span> <span data-ttu-id="d6975-186">Als meer dan een computer naam is opgegeven via een lijst met door komma's gescheiden waarden, wordt er een fout gegenereerd.</span><span class="sxs-lookup"><span data-stu-id="d6975-186">If more than one computer name is specified via a comma-separated list, an error is generated.</span></span>
 
 ```powershell
 Test-MrParameterValidation -ComputerName Server01, Server02
@@ -458,7 +457,7 @@ At line:1 char:42
     + FullyQualifiedErrorId : ParameterArgumentTransformationError,Test-MrParameterValidation
 ```
 
-<span data-ttu-id="79a0f-187">Het probleem met de huidige definitie is dat de waarde van de para meter **ComputerName** weglaat, maar een waarde is vereist voor het volt ooien van de functie.</span><span class="sxs-lookup"><span data-stu-id="79a0f-187">The problem with the current definition is that it's valid to omit the value of the **ComputerName** parameter, but a value is required for the function to complete successfully.</span></span> <span data-ttu-id="79a0f-188">Hier `Mandatory` komt het parameter kenmerk op de handige manier.</span><span class="sxs-lookup"><span data-stu-id="79a0f-188">This is where the `Mandatory` parameter attribute comes in handy.</span></span>
+<span data-ttu-id="d6975-187">Het probleem met de huidige definitie is dat de waarde van de para meter **ComputerName** weglaat, maar een waarde is vereist voor het volt ooien van de functie.</span><span class="sxs-lookup"><span data-stu-id="d6975-187">The problem with the current definition is that it's valid to omit the value of the **ComputerName** parameter, but a value is required for the function to complete successfully.</span></span> <span data-ttu-id="d6975-188">Hier `Mandatory` komt het parameter kenmerk op de handige manier.</span><span class="sxs-lookup"><span data-stu-id="d6975-188">This is where the `Mandatory` parameter attribute comes in handy.</span></span>
 
 ```powershell
 function Test-MrParameterValidation {
@@ -474,8 +473,8 @@ function Test-MrParameterValidation {
 }
 ```
 
-<span data-ttu-id="79a0f-189">De syntaxis die in het vorige voor beeld wordt gebruikt, is Power shell versie 3,0 en hoger compatibel.</span><span class="sxs-lookup"><span data-stu-id="79a0f-189">The syntax used in the previous example is PowerShell version 3.0 and higher compatible.</span></span>
-<span data-ttu-id="79a0f-190">`[Parameter(Mandatory=$true)]` kan in plaats daarvan worden opgegeven om de functie compatibel te maken met Power shell versie 2,0 en hoger.</span><span class="sxs-lookup"><span data-stu-id="79a0f-190">`[Parameter(Mandatory=$true)]` could be specified instead to make the function compatible with PowerShell version 2.0 and higher.</span></span> <span data-ttu-id="79a0f-191">Nu de **computer naam** is vereist, als deze nog niet is opgegeven, wordt er een prompt weer gegeven.</span><span class="sxs-lookup"><span data-stu-id="79a0f-191">Now that the **ComputerName** is required, if one isn't specified, the function will prompt for one.</span></span>
+<span data-ttu-id="d6975-189">De syntaxis die in het vorige voor beeld wordt gebruikt, is Power shell versie 3,0 en hoger compatibel.</span><span class="sxs-lookup"><span data-stu-id="d6975-189">The syntax used in the previous example is PowerShell version 3.0 and higher compatible.</span></span>
+<span data-ttu-id="d6975-190">`[Parameter(Mandatory=$true)]` kan in plaats daarvan worden opgegeven om de functie compatibel te maken met Power shell versie 2,0 en hoger.</span><span class="sxs-lookup"><span data-stu-id="d6975-190">`[Parameter(Mandatory=$true)]` could be specified instead to make the function compatible with PowerShell version 2.0 and higher.</span></span> <span data-ttu-id="d6975-191">Nu de **computer naam** is vereist, als deze nog niet is opgegeven, wordt er een prompt weer gegeven.</span><span class="sxs-lookup"><span data-stu-id="d6975-191">Now that the **ComputerName** is required, if one isn't specified, the function will prompt for one.</span></span>
 
 ```powershell
 Test-MrParameterValidation
@@ -487,7 +486,7 @@ Supply values for the following parameters:
 ComputerName:
 ```
 
-<span data-ttu-id="79a0f-192">Als u meer dan één waarde wilt toestaan voor de para meter **ComputerName** , gebruikt u het **teken reeks** gegevens type, maar voegt u open en gesloten vier Kante haken toe aan het gegevens type om een matrix van teken reeksen toe te staan.</span><span class="sxs-lookup"><span data-stu-id="79a0f-192">If you want to allow for more than one value for the **ComputerName** parameter, use the **String** datatype but add open and closed square brackets to the datatype to allow for an array of strings.</span></span>
+<span data-ttu-id="d6975-192">Als u meer dan één waarde wilt toestaan voor de para meter **ComputerName** , gebruikt u het **teken reeks** gegevens type, maar voegt u open en gesloten vier Kante haken toe aan het gegevens type om een matrix van teken reeksen toe te staan.</span><span class="sxs-lookup"><span data-stu-id="d6975-192">If you want to allow for more than one value for the **ComputerName** parameter, use the **String** datatype but add open and closed square brackets to the datatype to allow for an array of strings.</span></span>
 
 ```powershell
 function Test-MrParameterValidation {
@@ -503,8 +502,8 @@ function Test-MrParameterValidation {
 }
 ```
 
-<span data-ttu-id="79a0f-193">Misschien wilt u een standaard waarde opgeven voor de para meter **ComputerName** als er geen is opgegeven.</span><span class="sxs-lookup"><span data-stu-id="79a0f-193">Maybe you want to specify a default value for the **ComputerName** parameter if one isn't specified.</span></span>
-<span data-ttu-id="79a0f-194">Het probleem is dat de standaard waarden niet met verplichte para meters kunnen worden gebruikt.</span><span class="sxs-lookup"><span data-stu-id="79a0f-194">The problem is that default values can't be used with mandatory parameters.</span></span> <span data-ttu-id="79a0f-195">In plaats daarvan moet u het `ValidateNotNullOrEmpty` parameter validatie kenmerk gebruiken met een standaard waarde.</span><span class="sxs-lookup"><span data-stu-id="79a0f-195">Instead, you'll need to use the `ValidateNotNullOrEmpty` parameter validation attribute with a default value.</span></span>
+<span data-ttu-id="d6975-193">Misschien wilt u een standaard waarde opgeven voor de para meter **ComputerName** als er geen is opgegeven.</span><span class="sxs-lookup"><span data-stu-id="d6975-193">Maybe you want to specify a default value for the **ComputerName** parameter if one isn't specified.</span></span>
+<span data-ttu-id="d6975-194">Het probleem is dat de standaard waarden niet met verplichte para meters kunnen worden gebruikt.</span><span class="sxs-lookup"><span data-stu-id="d6975-194">The problem is that default values can't be used with mandatory parameters.</span></span> <span data-ttu-id="d6975-195">In plaats daarvan moet u het `ValidateNotNullOrEmpty` parameter validatie kenmerk gebruiken met een standaard waarde.</span><span class="sxs-lookup"><span data-stu-id="d6975-195">Instead, you'll need to use the `ValidateNotNullOrEmpty` parameter validation attribute with a default value.</span></span>
 
 ```powershell
 function Test-MrParameterValidation {
@@ -520,13 +519,13 @@ function Test-MrParameterValidation {
 }
 ```
 
-<span data-ttu-id="79a0f-196">Zelfs wanneer u een standaard waarde instelt, kunt u geen statische waarden gebruiken.</span><span class="sxs-lookup"><span data-stu-id="79a0f-196">Even when setting a default value, try not to use static values.</span></span> <span data-ttu-id="79a0f-197">In het vorige voor beeld `$env:COMPUTERNAME` wordt gebruikt als de standaard waarde, die automatisch wordt omgezet in de naam van de lokale computer als er geen waarde wordt gegeven.</span><span class="sxs-lookup"><span data-stu-id="79a0f-197">In the previous example, `$env:COMPUTERNAME` is used as the default value, which is automatically translated into the local computer name if a value is not provided.</span></span>
+<span data-ttu-id="d6975-196">Zelfs wanneer u een standaard waarde instelt, kunt u geen statische waarden gebruiken.</span><span class="sxs-lookup"><span data-stu-id="d6975-196">Even when setting a default value, try not to use static values.</span></span> <span data-ttu-id="d6975-197">In het vorige voor beeld `$env:COMPUTERNAME` wordt gebruikt als de standaard waarde, die automatisch wordt omgezet in de naam van de lokale computer als er geen waarde wordt gegeven.</span><span class="sxs-lookup"><span data-stu-id="d6975-197">In the previous example, `$env:COMPUTERNAME` is used as the default value, which is automatically translated into the local computer name if a value is not provided.</span></span>
 
-## <a name="verbose-output"></a><span data-ttu-id="79a0f-198">Uitgebreide uitvoer</span><span class="sxs-lookup"><span data-stu-id="79a0f-198">Verbose Output</span></span>
+## <a name="verbose-output"></a><span data-ttu-id="d6975-198">Uitgebreide uitvoer</span><span class="sxs-lookup"><span data-stu-id="d6975-198">Verbose Output</span></span>
 
-<span data-ttu-id="79a0f-199">Inline opmerkingen zijn handig, met name als u complexe code schrijft, ze worden nooit door gebruikers gezien, tenzij ze in de code zelf kijken.</span><span class="sxs-lookup"><span data-stu-id="79a0f-199">While inline comments are useful, especially if you're writing some complex code, they never get seen by users unless they look into the code itself.</span></span>
+<span data-ttu-id="d6975-199">Inline opmerkingen zijn handig, met name als u complexe code schrijft, ze worden nooit door gebruikers gezien, tenzij ze in de code zelf kijken.</span><span class="sxs-lookup"><span data-stu-id="d6975-199">While inline comments are useful, especially if you're writing some complex code, they never get seen by users unless they look into the code itself.</span></span>
 
-<span data-ttu-id="79a0f-200">In het volgende voor beeld wordt in de lus een in line opmerking weer gegeven `foreach` .</span><span class="sxs-lookup"><span data-stu-id="79a0f-200">The function shown in the following example has an inline comment in the `foreach` loop.</span></span> <span data-ttu-id="79a0f-201">Hoewel deze specifieke opmerking mogelijk niet moeilijk te vinden is, stel dan dat de functie honderden regels code bevat.</span><span class="sxs-lookup"><span data-stu-id="79a0f-201">While this particular comment may not be that difficult to locate, imagine if the function included hundreds of lines of code.</span></span>
+<span data-ttu-id="d6975-200">In het volgende voor beeld wordt in de lus een in line opmerking weer gegeven `foreach` .</span><span class="sxs-lookup"><span data-stu-id="d6975-200">The function shown in the following example has an inline comment in the `foreach` loop.</span></span> <span data-ttu-id="d6975-201">Hoewel deze specifieke opmerking mogelijk niet moeilijk te vinden is, stel dan dat de functie honderden regels code bevat.</span><span class="sxs-lookup"><span data-stu-id="d6975-201">While this particular comment may not be that difficult to locate, imagine if the function included hundreds of lines of code.</span></span>
 
 ```powershell
 function Test-MrVerboseOutput {
@@ -546,7 +545,7 @@ function Test-MrVerboseOutput {
 }
 ```
 
-<span data-ttu-id="79a0f-202">Een betere optie is om `Write-Verbose` in plaats van inline opmerkingen te gebruiken.</span><span class="sxs-lookup"><span data-stu-id="79a0f-202">A better option is to use `Write-Verbose` instead of inline comments.</span></span>
+<span data-ttu-id="d6975-202">Een betere optie is om `Write-Verbose` in plaats van inline opmerkingen te gebruiken.</span><span class="sxs-lookup"><span data-stu-id="d6975-202">A better option is to use `Write-Verbose` instead of inline comments.</span></span>
 
 ```powershell
 function Test-MrVerboseOutput {
@@ -565,26 +564,26 @@ function Test-MrVerboseOutput {
 }
 ```
 
-<span data-ttu-id="79a0f-203">Wanneer de functie wordt aangeroepen zonder de para meter **uitgebreid** , wordt de uitgebreide uitvoer niet weer gegeven.</span><span class="sxs-lookup"><span data-stu-id="79a0f-203">When the function is called without the **Verbose** parameter, the verbose output won't be displayed.</span></span>
+<span data-ttu-id="d6975-203">Wanneer de functie wordt aangeroepen zonder de para meter **uitgebreid** , wordt de uitgebreide uitvoer niet weer gegeven.</span><span class="sxs-lookup"><span data-stu-id="d6975-203">When the function is called without the **Verbose** parameter, the verbose output won't be displayed.</span></span>
 
 ```powershell
 Test-MrVerboseOutput -ComputerName Server01, Server02
 ```
 
-<span data-ttu-id="79a0f-204">Als deze wordt aangeroepen met de para meter **uitgebreid** , wordt de uitgebreide uitvoer weer gegeven.</span><span class="sxs-lookup"><span data-stu-id="79a0f-204">When it's called with the **Verbose** parameter, the verbose output will be displayed.</span></span>
+<span data-ttu-id="d6975-204">Als deze wordt aangeroepen met de para meter **uitgebreid** , wordt de uitgebreide uitvoer weer gegeven.</span><span class="sxs-lookup"><span data-stu-id="d6975-204">When it's called with the **Verbose** parameter, the verbose output will be displayed.</span></span>
 
 ```powershell
 Test-MrVerboseOutput -ComputerName Server01, Server02 -Verbose
 ```
 
-## <a name="pipeline-input"></a><span data-ttu-id="79a0f-205">Pijplijn invoer</span><span class="sxs-lookup"><span data-stu-id="79a0f-205">Pipeline Input</span></span>
+## <a name="pipeline-input"></a><span data-ttu-id="d6975-205">Pijplijn invoer</span><span class="sxs-lookup"><span data-stu-id="d6975-205">Pipeline Input</span></span>
 
-<span data-ttu-id="79a0f-206">Wanneer u de invoer van de pijp lijn wilt accepteren, is een extra code ring nodig.</span><span class="sxs-lookup"><span data-stu-id="79a0f-206">When you want your function to accept pipeline input, some additional coding is necessary.</span></span> <span data-ttu-id="79a0f-207">Zoals eerder in dit boek wordt vermeld, kunnen opdrachten de invoer van de pijp lijn **op basis van waarde** (per type) of **eigenschaps naam** accepteren.</span><span class="sxs-lookup"><span data-stu-id="79a0f-207">As mentioned earlier in this book, commands can accept pipeline input **by value** (by type) or **by property name**.</span></span> <span data-ttu-id="79a0f-208">U kunt uw functies schrijven op dezelfde manier als de systeem eigen opdrachten, zodat ze een of beide typen invoer accepteren.</span><span class="sxs-lookup"><span data-stu-id="79a0f-208">You can write your functions just like the native commands so that they accept either one or both of these types of input.</span></span>
+<span data-ttu-id="d6975-206">Wanneer u de invoer van de pijp lijn wilt accepteren, is een extra code ring nodig.</span><span class="sxs-lookup"><span data-stu-id="d6975-206">When you want your function to accept pipeline input, some additional coding is necessary.</span></span> <span data-ttu-id="d6975-207">Zoals eerder in dit boek wordt vermeld, kunnen opdrachten de invoer van de pijp lijn **op basis van waarde** (per type) of **eigenschaps naam** accepteren.</span><span class="sxs-lookup"><span data-stu-id="d6975-207">As mentioned earlier in this book, commands can accept pipeline input **by value** (by type) or **by property name**.</span></span> <span data-ttu-id="d6975-208">U kunt uw functies schrijven op dezelfde manier als de systeem eigen opdrachten, zodat ze een of beide typen invoer accepteren.</span><span class="sxs-lookup"><span data-stu-id="d6975-208">You can write your functions just like the native commands so that they accept either one or both of these types of input.</span></span>
 
-<span data-ttu-id="79a0f-209">Als u de pijp lijn invoer **per waarde** wilt accepteren, moet u het `ValueFromPipeline` parameter kenmerk voor die specifieke para meter opgeven.</span><span class="sxs-lookup"><span data-stu-id="79a0f-209">To accept pipeline input **by value**, specified the `ValueFromPipeline` parameter attribute for that particular parameter.</span></span> <span data-ttu-id="79a0f-210">Denk eraan dat u alleen pijplijn invoer kunt accepteren **op waarde** uit een van beide gegevens typen.</span><span class="sxs-lookup"><span data-stu-id="79a0f-210">Keep in mind that you can only accept pipeline input **by value** from one of each datatype.</span></span> <span data-ttu-id="79a0f-211">Als u bijvoorbeeld twee para meters hebt die teken reeks invoer accepteren, kan slechts één van deze de pijplijn invoer **door de waarde** accepteren. Als u deze voor beide teken reeks parameters hebt opgegeven, zou de pijplijn invoer niet weten welk item moet worden gekoppeld.</span><span class="sxs-lookup"><span data-stu-id="79a0f-211">For example, if you have two parameters that accept string input, only one of those can accept pipeline input **by value** because if you specified it for both of the string parameters, the pipeline input wouldn't know which one to bind to.</span></span> <span data-ttu-id="79a0f-212">Dit is een andere reden dat ik dit type pijplijn invoer aanroept _per type_ in plaats van **met een waarde**.</span><span class="sxs-lookup"><span data-stu-id="79a0f-212">This is another reason I call this type of pipeline input _by type_ instead of **by value**.</span></span>
+<span data-ttu-id="d6975-209">Als u de pijp lijn invoer **per waarde** wilt accepteren, moet u het `ValueFromPipeline` parameter kenmerk voor die specifieke para meter opgeven.</span><span class="sxs-lookup"><span data-stu-id="d6975-209">To accept pipeline input **by value**, specified the `ValueFromPipeline` parameter attribute for that particular parameter.</span></span> <span data-ttu-id="d6975-210">Denk eraan dat u alleen pijplijn invoer kunt accepteren **op waarde** uit een van beide gegevens typen.</span><span class="sxs-lookup"><span data-stu-id="d6975-210">Keep in mind that you can only accept pipeline input **by value** from one of each datatype.</span></span> <span data-ttu-id="d6975-211">Als u bijvoorbeeld twee para meters hebt die teken reeks invoer accepteren, kan slechts één van deze de pijplijn invoer **door de waarde** accepteren. Als u deze voor beide teken reeks parameters hebt opgegeven, zou de pijplijn invoer niet weten welk item moet worden gekoppeld.</span><span class="sxs-lookup"><span data-stu-id="d6975-211">For example, if you have two parameters that accept string input, only one of those can accept pipeline input **by value** because if you specified it for both of the string parameters, the pipeline input wouldn't know which one to bind to.</span></span> <span data-ttu-id="d6975-212">Dit is een andere reden dat ik dit type pijplijn invoer aanroept _per type_ in plaats van **met een waarde**.</span><span class="sxs-lookup"><span data-stu-id="d6975-212">This is another reason I call this type of pipeline input _by type_ instead of **by value**.</span></span>
 
-<span data-ttu-id="79a0f-213">De invoer van de pijp lijn bevindt zich in één item op hetzelfde tijdstip als de manier waarop items in een lus worden verwerkt `foreach` .</span><span class="sxs-lookup"><span data-stu-id="79a0f-213">Pipeline input comes in one item at a time similar to the way items are handled in a `foreach` loop.</span></span>
-<span data-ttu-id="79a0f-214">Een blok is mini maal `process` vereist voor het verwerken van elk van deze items als u een matrix als invoer accepteert.</span><span class="sxs-lookup"><span data-stu-id="79a0f-214">At a minimum, a `process` block is required to process each of these items if you're accepting an array as input.</span></span> <span data-ttu-id="79a0f-215">Als u slechts één waarde als invoer accepteert, `process` is een blok is niet nodig, maar het wordt nog wel aanbevolen om het op consistentie te geven.</span><span class="sxs-lookup"><span data-stu-id="79a0f-215">If you're only accepting a single value as input, a `process` block isn't necessary, but I still recommend specifying it for consistency.</span></span>
+<span data-ttu-id="d6975-213">De invoer van de pijp lijn bevindt zich in één item op hetzelfde tijdstip als de manier waarop items in een lus worden verwerkt `foreach` .</span><span class="sxs-lookup"><span data-stu-id="d6975-213">Pipeline input comes in one item at a time similar to the way items are handled in a `foreach` loop.</span></span>
+<span data-ttu-id="d6975-214">Een blok is mini maal `process` vereist voor het verwerken van elk van deze items als u een matrix als invoer accepteert.</span><span class="sxs-lookup"><span data-stu-id="d6975-214">At a minimum, a `process` block is required to process each of these items if you're accepting an array as input.</span></span> <span data-ttu-id="d6975-215">Als u slechts één waarde als invoer accepteert, `process` is een blok is niet nodig, maar het wordt nog wel aanbevolen om het op consistentie te geven.</span><span class="sxs-lookup"><span data-stu-id="d6975-215">If you're only accepting a single value as input, a `process` block isn't necessary, but I still recommend specifying it for consistency.</span></span>
 
 ```powershell
 function Test-MrPipelineInput {
@@ -603,7 +602,7 @@ function Test-MrPipelineInput {
 }
 ```
 
-<span data-ttu-id="79a0f-216">De invoer van de pijp lijn wordt geaccepteerd **door de naam** van de eigenschap, behalve dat deze is opgegeven met het `ValueFromPipelineByPropertyName` parameter kenmerk en kan worden opgegeven voor een wille keurig aantal para meters ongeacht het gegevens type.</span><span class="sxs-lookup"><span data-stu-id="79a0f-216">Accepting pipeline input **by property name** is similar except it's specified with the `ValueFromPipelineByPropertyName` parameter attribute and it can be specified for any number of parameters regardless of datatype.</span></span> <span data-ttu-id="79a0f-217">De sleutel is de uitvoer van de opdracht die wordt gesluizen in, moet een eigenschaps naam hebben die overeenkomt met de naam van de para meter of een parameter alias van uw functie.</span><span class="sxs-lookup"><span data-stu-id="79a0f-217">The key is that the output of the command that's being piped in has to have a property name that matches the name of the parameter or a parameter alias of your function.</span></span>
+<span data-ttu-id="d6975-216">De invoer van de pijp lijn wordt geaccepteerd **door de naam** van de eigenschap, behalve dat deze is opgegeven met het `ValueFromPipelineByPropertyName` parameter kenmerk en kan worden opgegeven voor een wille keurig aantal para meters ongeacht het gegevens type.</span><span class="sxs-lookup"><span data-stu-id="d6975-216">Accepting pipeline input **by property name** is similar except it's specified with the `ValueFromPipelineByPropertyName` parameter attribute and it can be specified for any number of parameters regardless of datatype.</span></span> <span data-ttu-id="d6975-217">De sleutel is de uitvoer van de opdracht die wordt gesluizen in, moet een eigenschaps naam hebben die overeenkomt met de naam van de para meter of een parameter alias van uw functie.</span><span class="sxs-lookup"><span data-stu-id="d6975-217">The key is that the output of the command that's being piped in has to have a property name that matches the name of the parameter or a parameter alias of your function.</span></span>
 
 ```powershell
 function Test-MrPipelineInput {
@@ -622,11 +621,11 @@ function Test-MrPipelineInput {
 }
 ```
 
-<span data-ttu-id="79a0f-218">`BEGIN` en `END` blokken zijn optioneel.</span><span class="sxs-lookup"><span data-stu-id="79a0f-218">`BEGIN` and `END` blocks are optional.</span></span> <span data-ttu-id="79a0f-219">`BEGIN` moet vóór het blok worden opgegeven `PROCESS` en wordt gebruikt voor het uitvoeren van de eerste werkzaamheden vóór de items die vanuit de pijp lijn worden ontvangen.</span><span class="sxs-lookup"><span data-stu-id="79a0f-219">`BEGIN` would be specified before the `PROCESS` block and is used to perform any initial work prior to the items being received from the pipeline.</span></span> <span data-ttu-id="79a0f-220">Dit is belang rijk om te begrijpen.</span><span class="sxs-lookup"><span data-stu-id="79a0f-220">This is important to understand.</span></span> <span data-ttu-id="79a0f-221">Waarden die worden bepiped in, zijn niet toegankelijk in het `BEGIN` blok.</span><span class="sxs-lookup"><span data-stu-id="79a0f-221">Values that are piped in are not accessible in the `BEGIN` block.</span></span> <span data-ttu-id="79a0f-222">Het `END` blok wordt na het blok opgegeven `PROCESS` en wordt gebruikt voor het opschonen van alle items die in de pipes zijn verwerkt.</span><span class="sxs-lookup"><span data-stu-id="79a0f-222">The `END` block would be specified after the `PROCESS` block and is used for cleanup once all of the items that are piped in have been processed.</span></span>
+<span data-ttu-id="d6975-218">`BEGIN` en `END` blokken zijn optioneel.</span><span class="sxs-lookup"><span data-stu-id="d6975-218">`BEGIN` and `END` blocks are optional.</span></span> <span data-ttu-id="d6975-219">`BEGIN` moet vóór het blok worden opgegeven `PROCESS` en wordt gebruikt voor het uitvoeren van de eerste werkzaamheden vóór de items die vanuit de pijp lijn worden ontvangen.</span><span class="sxs-lookup"><span data-stu-id="d6975-219">`BEGIN` would be specified before the `PROCESS` block and is used to perform any initial work prior to the items being received from the pipeline.</span></span> <span data-ttu-id="d6975-220">Dit is belang rijk om te begrijpen.</span><span class="sxs-lookup"><span data-stu-id="d6975-220">This is important to understand.</span></span> <span data-ttu-id="d6975-221">Waarden die worden bepiped in, zijn niet toegankelijk in het `BEGIN` blok.</span><span class="sxs-lookup"><span data-stu-id="d6975-221">Values that are piped in are not accessible in the `BEGIN` block.</span></span> <span data-ttu-id="d6975-222">Het `END` blok wordt na het blok opgegeven `PROCESS` en wordt gebruikt voor het opschonen van alle items die in de pipes zijn verwerkt.</span><span class="sxs-lookup"><span data-stu-id="d6975-222">The `END` block would be specified after the `PROCESS` block and is used for cleanup once all of the items that are piped in have been processed.</span></span>
 
-## <a name="error-handling"></a><span data-ttu-id="79a0f-223">Foutafhandeling</span><span class="sxs-lookup"><span data-stu-id="79a0f-223">Error Handling</span></span>
+## <a name="error-handling"></a><span data-ttu-id="d6975-223">Foutafhandeling</span><span class="sxs-lookup"><span data-stu-id="d6975-223">Error Handling</span></span>
 
-<span data-ttu-id="79a0f-224">De functie die in het volgende voor beeld wordt weer gegeven, genereert een onverwerkte uitzonde ring wanneer er geen verbinding kan worden gemaakt met een computer.</span><span class="sxs-lookup"><span data-stu-id="79a0f-224">The function shown in the following example generates an unhandled exception when a computer can't be contacted.</span></span>
+<span data-ttu-id="d6975-224">De functie die in het volgende voor beeld wordt weer gegeven, genereert een onverwerkte uitzonde ring wanneer er geen verbinding kan worden gemaakt met een computer.</span><span class="sxs-lookup"><span data-stu-id="d6975-224">The function shown in the following example generates an unhandled exception when a computer can't be contacted.</span></span>
 
 ```powershell
 function Test-MrErrorHandling {
@@ -648,7 +647,7 @@ function Test-MrErrorHandling {
 }
 ```
 
-<span data-ttu-id="79a0f-225">Er zijn verschillende manieren om fouten in Power shell af te handelen.</span><span class="sxs-lookup"><span data-stu-id="79a0f-225">There are a couple of different ways to handle errors in PowerShell.</span></span> <span data-ttu-id="79a0f-226">`Try/Catch` is de meer moderne manier om fouten af te handelen.</span><span class="sxs-lookup"><span data-stu-id="79a0f-226">`Try/Catch` is the more modern way to handle errors.</span></span>
+<span data-ttu-id="d6975-225">Er zijn verschillende manieren om fouten in Power shell af te handelen.</span><span class="sxs-lookup"><span data-stu-id="d6975-225">There are a couple of different ways to handle errors in PowerShell.</span></span> <span data-ttu-id="d6975-226">`Try/Catch` is de meer moderne manier om fouten af te handelen.</span><span class="sxs-lookup"><span data-stu-id="d6975-226">`Try/Catch` is the more modern way to handle errors.</span></span>
 
 ```powershell
 function Test-MrErrorHandling {
@@ -675,7 +674,7 @@ function Test-MrErrorHandling {
 }
 ```
 
-<span data-ttu-id="79a0f-227">Hoewel de functie die in het vorige voor beeld wordt weer gegeven, gebruikmaakt van fout afhandeling, wordt er ook een onverwerkte uitzonde ring gegenereerd omdat de opdracht geen afsluit fout genereert.</span><span class="sxs-lookup"><span data-stu-id="79a0f-227">Although the function shown in the previous example uses error handling, it also generates an unhandled exception because the command doesn't generate a terminating error.</span></span> <span data-ttu-id="79a0f-228">Dit is ook belang rijk om te begrijpen.</span><span class="sxs-lookup"><span data-stu-id="79a0f-228">This is also important to understand.</span></span> <span data-ttu-id="79a0f-229">Alleen afsluit fouten worden geblokkeerd.</span><span class="sxs-lookup"><span data-stu-id="79a0f-229">Only terminating errors are caught.</span></span> <span data-ttu-id="79a0f-230">Geef de para meter **Error Action** op met **stoppen** als de waarde om een niet-afsluit fout te maken naar een beëindiging.</span><span class="sxs-lookup"><span data-stu-id="79a0f-230">Specify the **ErrorAction** parameter with **Stop** as the value to turn a non-terminating error into a terminating one.</span></span>
+<span data-ttu-id="d6975-227">Hoewel de functie die in het vorige voor beeld wordt weer gegeven, gebruikmaakt van fout afhandeling, wordt er ook een onverwerkte uitzonde ring gegenereerd omdat de opdracht geen afsluit fout genereert.</span><span class="sxs-lookup"><span data-stu-id="d6975-227">Although the function shown in the previous example uses error handling, it also generates an unhandled exception because the command doesn't generate a terminating error.</span></span> <span data-ttu-id="d6975-228">Dit is ook belang rijk om te begrijpen.</span><span class="sxs-lookup"><span data-stu-id="d6975-228">This is also important to understand.</span></span> <span data-ttu-id="d6975-229">Alleen afsluit fouten worden geblokkeerd.</span><span class="sxs-lookup"><span data-stu-id="d6975-229">Only terminating errors are caught.</span></span> <span data-ttu-id="d6975-230">Geef de para meter **Error Action** op met **stoppen** als de waarde om een niet-afsluit fout te maken naar een beëindiging.</span><span class="sxs-lookup"><span data-stu-id="d6975-230">Specify the **ErrorAction** parameter with **Stop** as the value to turn a non-terminating error into a terminating one.</span></span>
 
 ```powershell
 function Test-MrErrorHandling {
@@ -702,11 +701,11 @@ function Test-MrErrorHandling {
 }
 ```
 
-<span data-ttu-id="79a0f-231">Wijzig de globale `$ErrorActionPreference` variabele alleen als dat absoluut nood zakelijk is.</span><span class="sxs-lookup"><span data-stu-id="79a0f-231">Don't modify the global `$ErrorActionPreference` variable unless absolutely necessary.</span></span> <span data-ttu-id="79a0f-232">Als u iets zoals .NET rechtstreeks vanuit uw Power shell-functie gebruikt, kunt u de **Error Action** niet opgeven in de opdracht zelf.</span><span class="sxs-lookup"><span data-stu-id="79a0f-232">If you're using something like .NET directly from within your PowerShell function, you can't specify the **ErrorAction** on the command itself.</span></span> <span data-ttu-id="79a0f-233">In dat geval moet u mogelijk de globale `$ErrorActionPreference` variabele wijzigen, maar als u deze wijzigt, wijzigt u deze direct na het uitvoeren van de opdracht.</span><span class="sxs-lookup"><span data-stu-id="79a0f-233">In that scenario, you might need to change the global `$ErrorActionPreference` variable, but if you do change it, change it back immediately after trying the command.</span></span>
+<span data-ttu-id="d6975-231">Wijzig de globale `$ErrorActionPreference` variabele alleen als dat absoluut nood zakelijk is.</span><span class="sxs-lookup"><span data-stu-id="d6975-231">Don't modify the global `$ErrorActionPreference` variable unless absolutely necessary.</span></span> <span data-ttu-id="d6975-232">Als u iets zoals .NET rechtstreeks vanuit uw Power shell-functie gebruikt, kunt u de **Error Action** niet opgeven in de opdracht zelf.</span><span class="sxs-lookup"><span data-stu-id="d6975-232">If you're using something like .NET directly from within your PowerShell function, you can't specify the **ErrorAction** on the command itself.</span></span> <span data-ttu-id="d6975-233">In dat geval moet u mogelijk de globale `$ErrorActionPreference` variabele wijzigen, maar als u deze wijzigt, wijzigt u deze direct na het uitvoeren van de opdracht.</span><span class="sxs-lookup"><span data-stu-id="d6975-233">In that scenario, you might need to change the global `$ErrorActionPreference` variable, but if you do change it, change it back immediately after trying the command.</span></span>
 
-## <a name="comment-based-help"></a><span data-ttu-id="79a0f-234">Help bij Comment-Based</span><span class="sxs-lookup"><span data-stu-id="79a0f-234">Comment-Based Help</span></span>
+## <a name="comment-based-help"></a><span data-ttu-id="d6975-234">Help bij Comment-Based</span><span class="sxs-lookup"><span data-stu-id="d6975-234">Comment-Based Help</span></span>
 
-<span data-ttu-id="79a0f-235">Het wordt beschouwd als een best practice om Help op basis van opmerkingen toe te voegen aan uw functies, zodat de personen met wie u ze deelt, weten hoe ze kunnen worden gebruikt.</span><span class="sxs-lookup"><span data-stu-id="79a0f-235">It's considered to be a best practice to add comment based help to your functions so the people you're sharing them with will know how to use them.</span></span>
+<span data-ttu-id="d6975-235">Het wordt beschouwd als een best practice om Help op basis van opmerkingen toe te voegen aan uw functies, zodat de personen met wie u ze deelt, weten hoe ze kunnen worden gebruikt.</span><span class="sxs-lookup"><span data-stu-id="d6975-235">It's considered to be a best practice to add comment based help to your functions so the people you're sharing them with will know how to use them.</span></span>
 
 ```powershell
 function Get-MrAutoStoppedService {
@@ -760,32 +759,32 @@ function Get-MrAutoStoppedService {
 }
 ```
 
-<span data-ttu-id="79a0f-236">Wanneer u op opmerkingen gebaseerde hulp toevoegt aan uw functies, kan Help worden opgehaald, net als de standaard ingebouwde opdrachten.</span><span class="sxs-lookup"><span data-stu-id="79a0f-236">When you add comment based help to your functions, help can be retrieved for them just like the default built-in commands.</span></span>
+<span data-ttu-id="d6975-236">Wanneer u op opmerkingen gebaseerde hulp toevoegt aan uw functies, kan Help worden opgehaald, net als de standaard ingebouwde opdrachten.</span><span class="sxs-lookup"><span data-stu-id="d6975-236">When you add comment based help to your functions, help can be retrieved for them just like the default built-in commands.</span></span>
 
-<span data-ttu-id="79a0f-237">Alle syntaxis voor het schrijven van een functie in Power shell lijkt bijzonder goed te zijn voor iemand die net aan de slag gaat.</span><span class="sxs-lookup"><span data-stu-id="79a0f-237">All of the syntax for writing a function in PowerShell can seem overwhelming especially for someone who is just getting started.</span></span> <span data-ttu-id="79a0f-238">Vaak als ik de syntaxis voor iets niet weet, open ik een tweede kopie van de ISE op een afzonderlijke monitor en bekijk ik het ' cmdlet (geavanceerde functie)-volledig ' tijdens het typen van de code voor mijn functie.</span><span class="sxs-lookup"><span data-stu-id="79a0f-238">Often times if I can't remember the syntax for something, I'll open a second copy of the ISE on a separate monitor and view the "Cmdlet (advanced function) - Complete" snippet while typing in the code for my function.</span></span> <span data-ttu-id="79a0f-239">Fragmenten kunnen worden geopend in de Power shell-ISE met behulp van de toetscombinatie <kbd>CTRL</kbd> + <kbd>J</kbd> .</span><span class="sxs-lookup"><span data-stu-id="79a0f-239">Snippets can be accessed in the PowerShell ISE using the <kbd>Ctrl</kbd>+<kbd>J</kbd> key combination.</span></span>
+<span data-ttu-id="d6975-237">Alle syntaxis voor het schrijven van een functie in Power shell lijkt bijzonder goed te zijn voor iemand die net aan de slag gaat.</span><span class="sxs-lookup"><span data-stu-id="d6975-237">All of the syntax for writing a function in PowerShell can seem overwhelming especially for someone who is just getting started.</span></span> <span data-ttu-id="d6975-238">Vaak als ik de syntaxis voor iets niet weet, open ik een tweede kopie van de ISE op een afzonderlijke monitor en bekijk ik het ' cmdlet (geavanceerde functie)-volledig ' tijdens het typen van de code voor mijn functie.</span><span class="sxs-lookup"><span data-stu-id="d6975-238">Often times if I can't remember the syntax for something, I'll open a second copy of the ISE on a separate monitor and view the "Cmdlet (advanced function) - Complete" snippet while typing in the code for my function.</span></span> <span data-ttu-id="d6975-239">Fragmenten kunnen worden geopend in de Power shell-ISE met behulp van de toetscombinatie <kbd>CTRL</kbd> + <kbd>J</kbd> .</span><span class="sxs-lookup"><span data-stu-id="d6975-239">Snippets can be accessed in the PowerShell ISE using the <kbd>Ctrl</kbd>+<kbd>J</kbd> key combination.</span></span>
 
-## <a name="summary"></a><span data-ttu-id="79a0f-240">Samenvatting</span><span class="sxs-lookup"><span data-stu-id="79a0f-240">Summary</span></span>
+## <a name="summary"></a><span data-ttu-id="d6975-240">Samenvatting</span><span class="sxs-lookup"><span data-stu-id="d6975-240">Summary</span></span>
 
-<span data-ttu-id="79a0f-241">In dit hoofd stuk hebt u de basis beginselen geleerd van het schrijven van functies in Power shell om te laten zien hoe u een functie kunt omzetten in een geavanceerde functie en een aantal van de belangrijkste elementen waarmee u rekening moet houden wanneer u Power shell-functies schrijft, zoals validatie van de para meters, uitgebreide uitvoer, invoer van de pijp lijn, fout afhandeling en op opmerkingen gebaseerde Help.</span><span class="sxs-lookup"><span data-stu-id="79a0f-241">In this chapter you've learned the basics of writing functions in PowerShell to include how to turn a function into an advanced function and some of the more important elements that you should consider when writing PowerShell functions such as parameter validation, verbose output, pipeline input, error handling, and comment based help.</span></span>
+<span data-ttu-id="d6975-241">In dit hoofd stuk hebt u de basis beginselen geleerd van het schrijven van functies in Power shell om te laten zien hoe u een functie kunt omzetten in een geavanceerde functie en een aantal van de belangrijkste elementen waarmee u rekening moet houden wanneer u Power shell-functies schrijft, zoals validatie van de para meters, uitgebreide uitvoer, invoer van de pijp lijn, fout afhandeling en op opmerkingen gebaseerde Help.</span><span class="sxs-lookup"><span data-stu-id="d6975-241">In this chapter you've learned the basics of writing functions in PowerShell to include how to turn a function into an advanced function and some of the more important elements that you should consider when writing PowerShell functions such as parameter validation, verbose output, pipeline input, error handling, and comment based help.</span></span>
 
-## <a name="review"></a><span data-ttu-id="79a0f-242">Beoordelen</span><span class="sxs-lookup"><span data-stu-id="79a0f-242">Review</span></span>
+## <a name="review"></a><span data-ttu-id="d6975-242">Beoordelen</span><span class="sxs-lookup"><span data-stu-id="d6975-242">Review</span></span>
 
-1. <span data-ttu-id="79a0f-243">Hoe krijg ik een lijst met goedgekeurde werk woorden in Power shell?</span><span class="sxs-lookup"><span data-stu-id="79a0f-243">How do you obtain a list of approved verbs in PowerShell?</span></span>
-1. <span data-ttu-id="79a0f-244">Hoe zet u een Power shell-functie om in een geavanceerde functie?</span><span class="sxs-lookup"><span data-stu-id="79a0f-244">How do you turn a PowerShell function into an advanced function?</span></span>
-1. <span data-ttu-id="79a0f-245">Wanneer moet **WhatIf** en **Bevestig** de para meters worden toegevoegd aan uw Power shell-functies?</span><span class="sxs-lookup"><span data-stu-id="79a0f-245">When should **WhatIf** and **Confirm** parameters be added to your PowerShell functions?</span></span>
-1. <span data-ttu-id="79a0f-246">Hoe kan ik een niet-afsluit fout omzetten in een afsluitende?</span><span class="sxs-lookup"><span data-stu-id="79a0f-246">How do you turn a non-terminating error into a terminating one?</span></span>
-1. <span data-ttu-id="79a0f-247">Waarom moet u op opmerkingen gebaseerde hulp toevoegen aan uw functies?</span><span class="sxs-lookup"><span data-stu-id="79a0f-247">Why should you add comment based help to your functions?</span></span>
+1. <span data-ttu-id="d6975-243">Hoe krijg ik een lijst met goedgekeurde werk woorden in Power shell?</span><span class="sxs-lookup"><span data-stu-id="d6975-243">How do you obtain a list of approved verbs in PowerShell?</span></span>
+1. <span data-ttu-id="d6975-244">Hoe zet u een Power shell-functie om in een geavanceerde functie?</span><span class="sxs-lookup"><span data-stu-id="d6975-244">How do you turn a PowerShell function into an advanced function?</span></span>
+1. <span data-ttu-id="d6975-245">Wanneer moet **WhatIf** en **Bevestig** de para meters worden toegevoegd aan uw Power shell-functies?</span><span class="sxs-lookup"><span data-stu-id="d6975-245">When should **WhatIf** and **Confirm** parameters be added to your PowerShell functions?</span></span>
+1. <span data-ttu-id="d6975-246">Hoe kan ik een niet-afsluit fout omzetten in een afsluitende?</span><span class="sxs-lookup"><span data-stu-id="d6975-246">How do you turn a non-terminating error into a terminating one?</span></span>
+1. <span data-ttu-id="d6975-247">Waarom moet u op opmerkingen gebaseerde hulp toevoegen aan uw functies?</span><span class="sxs-lookup"><span data-stu-id="d6975-247">Why should you add comment based help to your functions?</span></span>
 
-## <a name="recommended-reading"></a><span data-ttu-id="79a0f-248">Aanbevolen Lees bewerkingen</span><span class="sxs-lookup"><span data-stu-id="79a0f-248">Recommended Reading</span></span>
+## <a name="recommended-reading"></a><span data-ttu-id="d6975-248">Aanbevolen documentatie</span><span class="sxs-lookup"><span data-stu-id="d6975-248">Recommended Reading</span></span>
 
-- <span data-ttu-id="79a0f-249">[about_Functions][]</span><span class="sxs-lookup"><span data-stu-id="79a0f-249">[about_Functions][]</span></span>
-- <span data-ttu-id="79a0f-250">[about_Functions_Advanced_Parameters][]</span><span class="sxs-lookup"><span data-stu-id="79a0f-250">[about_Functions_Advanced_Parameters][]</span></span>
-- <span data-ttu-id="79a0f-251">[about_CommonParameters][]</span><span class="sxs-lookup"><span data-stu-id="79a0f-251">[about_CommonParameters][]</span></span>
-- <span data-ttu-id="79a0f-252">[about_Functions_CmdletBindingAttribute][]</span><span class="sxs-lookup"><span data-stu-id="79a0f-252">[about_Functions_CmdletBindingAttribute][]</span></span>
-- <span data-ttu-id="79a0f-253">[about_Functions_Advanced][]</span><span class="sxs-lookup"><span data-stu-id="79a0f-253">[about_Functions_Advanced][]</span></span>
-- <span data-ttu-id="79a0f-254">[about_Try_Catch_Finally][]</span><span class="sxs-lookup"><span data-stu-id="79a0f-254">[about_Try_Catch_Finally][]</span></span>
-- <span data-ttu-id="79a0f-255">[about_Comment_Based_Help][]</span><span class="sxs-lookup"><span data-stu-id="79a0f-255">[about_Comment_Based_Help][]</span></span>
-- <span data-ttu-id="79a0f-256">[Video: Power shell-Toolmaking met geavanceerde functies en script modules][]</span><span class="sxs-lookup"><span data-stu-id="79a0f-256">[Video: PowerShell Toolmaking with Advanced Functions and Script Modules][]</span></span>
+- <span data-ttu-id="d6975-249">[about_Functions][]</span><span class="sxs-lookup"><span data-stu-id="d6975-249">[about_Functions][]</span></span>
+- <span data-ttu-id="d6975-250">[about_Functions_Advanced_Parameters][]</span><span class="sxs-lookup"><span data-stu-id="d6975-250">[about_Functions_Advanced_Parameters][]</span></span>
+- <span data-ttu-id="d6975-251">[about_CommonParameters][]</span><span class="sxs-lookup"><span data-stu-id="d6975-251">[about_CommonParameters][]</span></span>
+- <span data-ttu-id="d6975-252">[about_Functions_CmdletBindingAttribute][]</span><span class="sxs-lookup"><span data-stu-id="d6975-252">[about_Functions_CmdletBindingAttribute][]</span></span>
+- <span data-ttu-id="d6975-253">[about_Functions_Advanced][]</span><span class="sxs-lookup"><span data-stu-id="d6975-253">[about_Functions_Advanced][]</span></span>
+- <span data-ttu-id="d6975-254">[about_Try_Catch_Finally][]</span><span class="sxs-lookup"><span data-stu-id="d6975-254">[about_Try_Catch_Finally][]</span></span>
+- <span data-ttu-id="d6975-255">[about_Comment_Based_Help][]</span><span class="sxs-lookup"><span data-stu-id="d6975-255">[about_Comment_Based_Help][]</span></span>
+- <span data-ttu-id="d6975-256">[Video: Power shell-Toolmaking met geavanceerde functies en script modules][]</span><span class="sxs-lookup"><span data-stu-id="d6975-256">[Video: PowerShell Toolmaking with Advanced Functions and Script Modules][]</span></span>
 
 <!-- link references -->
 [about_Functions]: /powershell/module/microsoft.powershell.core/about/about_functions

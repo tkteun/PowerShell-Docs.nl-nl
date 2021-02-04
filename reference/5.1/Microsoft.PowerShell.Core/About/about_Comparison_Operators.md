@@ -1,576 +1,461 @@
 ---
 description: Hierin worden de Opera tors beschreven waarmee waarden in Power shell worden vergeleken.
 Locale: en-US
-ms.date: 12/10/2020
+ms.date: 01/20/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Comparison_Operators
-ms.openlocfilehash: ba671ae51d458a2e0074a85d4de859795c20a3d5
-ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.openlocfilehash: 9c868b376bdd2e4fda3950f68a09e6569d44853d
+ms.sourcegitcommit: 94d597c4fb38793bc49ca7610e2c9973b1e577c2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97069900"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98619921"
 ---
-# <a name="about-comparison-operators"></a><span data-ttu-id="936ce-103">Over vergelijkings operatoren</span><span class="sxs-lookup"><span data-stu-id="936ce-103">About Comparison Operators</span></span>
+# <a name="about-comparison-operators"></a><span data-ttu-id="6bda1-103">Over vergelijkings operatoren</span><span class="sxs-lookup"><span data-stu-id="6bda1-103">About Comparison Operators</span></span>
 
-## <a name="short-description"></a><span data-ttu-id="936ce-104">Korte beschrijving</span><span class="sxs-lookup"><span data-stu-id="936ce-104">Short description</span></span>
-<span data-ttu-id="936ce-105">Hierin worden de Opera tors beschreven waarmee waarden in Power shell worden vergeleken.</span><span class="sxs-lookup"><span data-stu-id="936ce-105">Describes the operators that compare values in PowerShell.</span></span>
+## <a name="short-description"></a><span data-ttu-id="6bda1-104">Korte beschrijving</span><span class="sxs-lookup"><span data-stu-id="6bda1-104">Short description</span></span>
 
-## <a name="long-description"></a><span data-ttu-id="936ce-106">Lange beschrijving</span><span class="sxs-lookup"><span data-stu-id="936ce-106">Long description</span></span>
+<span data-ttu-id="6bda1-105">Met de vergelijkings operatoren in Power shell kunt u twee waarden vergelijken of elementen van een verzameling filteren op basis van een invoer waarde.</span><span class="sxs-lookup"><span data-stu-id="6bda1-105">The comparison operators in PowerShell can either compare two values or filter elements of a collection against an input value.</span></span>
 
-<span data-ttu-id="936ce-107">Met vergelijkings operatoren kunt u voor waarden opgeven voor het vergelijken van waarden en waarden zoeken die overeenkomen met opgegeven patronen.</span><span class="sxs-lookup"><span data-stu-id="936ce-107">Comparison operators let you specify conditions for comparing values and finding values that match specified patterns.</span></span> <span data-ttu-id="936ce-108">Als u een vergelijkings operator wilt gebruiken, geeft u de waarden op die u wilt vergelijken samen met een operator die deze waarden scheidt.</span><span class="sxs-lookup"><span data-stu-id="936ce-108">To use a comparison operator, specify the values that you want to compare together with an operator that separates these values.</span></span>
+## <a name="long-description"></a><span data-ttu-id="6bda1-106">Lange beschrijving</span><span class="sxs-lookup"><span data-stu-id="6bda1-106">Long description</span></span>
 
-<span data-ttu-id="936ce-109">Power shell bevat de volgende vergelijkings operatoren:</span><span class="sxs-lookup"><span data-stu-id="936ce-109">PowerShell includes the following comparison operators:</span></span>
+<span data-ttu-id="6bda1-107">Vergelijkings operatoren bieden u de mogelijkheid waarden te vergelijken of waarden te vinden die overeenkomen met opgegeven patronen.</span><span class="sxs-lookup"><span data-stu-id="6bda1-107">Comparison operators let you compare values or finding values that match specified patterns.</span></span> <span data-ttu-id="6bda1-108">Power shell bevat de volgende vergelijkings operatoren:</span><span class="sxs-lookup"><span data-stu-id="6bda1-108">PowerShell includes the following comparison operators:</span></span>
 
-| <span data-ttu-id="936ce-110">Type</span><span class="sxs-lookup"><span data-stu-id="936ce-110">Type</span></span>        | <span data-ttu-id="936ce-111">Operators</span><span class="sxs-lookup"><span data-stu-id="936ce-111">Operators</span></span>    | <span data-ttu-id="936ce-112">Description</span><span class="sxs-lookup"><span data-stu-id="936ce-112">Description</span></span>                                 |
-| ----------- | ------------ | --------------------------------------------|
-| <span data-ttu-id="936ce-113">Gelijkheid</span><span class="sxs-lookup"><span data-stu-id="936ce-113">Equality</span></span>    | <span data-ttu-id="936ce-114">-eq</span><span class="sxs-lookup"><span data-stu-id="936ce-114">-eq</span></span>          | <span data-ttu-id="936ce-115">is gelijk aan</span><span class="sxs-lookup"><span data-stu-id="936ce-115">equals</span></span>                                      |
-|             | <span data-ttu-id="936ce-116">-ne</span><span class="sxs-lookup"><span data-stu-id="936ce-116">-ne</span></span>          | <span data-ttu-id="936ce-117">niet gelijk aan</span><span class="sxs-lookup"><span data-stu-id="936ce-117">not equals</span></span>                                  |
-|             | <span data-ttu-id="936ce-118">-gt</span><span class="sxs-lookup"><span data-stu-id="936ce-118">-gt</span></span>          | <span data-ttu-id="936ce-119">groter dan</span><span class="sxs-lookup"><span data-stu-id="936ce-119">greater than</span></span>                                |
-|             | <span data-ttu-id="936ce-120">-ge</span><span class="sxs-lookup"><span data-stu-id="936ce-120">-ge</span></span>          | <span data-ttu-id="936ce-121">groter dan of gelijk aan</span><span class="sxs-lookup"><span data-stu-id="936ce-121">greater than or equal</span></span>                       |
-|             | <span data-ttu-id="936ce-122">-lt</span><span class="sxs-lookup"><span data-stu-id="936ce-122">-lt</span></span>          | <span data-ttu-id="936ce-123">kleiner dan</span><span class="sxs-lookup"><span data-stu-id="936ce-123">less than</span></span>                                   |
-|             | <span data-ttu-id="936ce-124">-Le</span><span class="sxs-lookup"><span data-stu-id="936ce-124">-le</span></span>          | <span data-ttu-id="936ce-125">kleiner dan of gelijk aan</span><span class="sxs-lookup"><span data-stu-id="936ce-125">less than or equal</span></span>                          |
-|             |              |                                             |
-| <span data-ttu-id="936ce-126">Matching</span><span class="sxs-lookup"><span data-stu-id="936ce-126">Matching</span></span>    | <span data-ttu-id="936ce-127">-like</span><span class="sxs-lookup"><span data-stu-id="936ce-127">-like</span></span>        | <span data-ttu-id="936ce-128">Retourneert waar als teken reeks overeenkomt met Joker teken</span><span class="sxs-lookup"><span data-stu-id="936ce-128">Returns true when string matches wildcard</span></span>   |
-|             |              | <span data-ttu-id="936ce-129">pattern</span><span class="sxs-lookup"><span data-stu-id="936ce-129">pattern</span></span>                                     |
-|             | <span data-ttu-id="936ce-130">-notlike</span><span class="sxs-lookup"><span data-stu-id="936ce-130">-notlike</span></span>     | <span data-ttu-id="936ce-131">Retourneert waar als de teken reeks niet overeenkomt</span><span class="sxs-lookup"><span data-stu-id="936ce-131">Returns true when string does not match</span></span>     |
-|             |              | <span data-ttu-id="936ce-132">Joker teken patroon</span><span class="sxs-lookup"><span data-stu-id="936ce-132">wildcard pattern</span></span>                            |
-|             | <span data-ttu-id="936ce-133">-match</span><span class="sxs-lookup"><span data-stu-id="936ce-133">-match</span></span>       | <span data-ttu-id="936ce-134">Retourneert True als teken reeks overeenkomt met regex</span><span class="sxs-lookup"><span data-stu-id="936ce-134">Returns true when string matches regex</span></span>      |
-|             |              | <span data-ttu-id="936ce-135">pattern $matches bevat overeenkomende teken reeksen</span><span class="sxs-lookup"><span data-stu-id="936ce-135">pattern; $matches contains matching strings</span></span> |
-|             | <span data-ttu-id="936ce-136">-notmatch</span><span class="sxs-lookup"><span data-stu-id="936ce-136">-notmatch</span></span>    | <span data-ttu-id="936ce-137">Retourneert waar als de teken reeks niet overeenkomt</span><span class="sxs-lookup"><span data-stu-id="936ce-137">Returns true when string does not match</span></span>     |
-|             |              | <span data-ttu-id="936ce-138">regex-patroon; $matches bevat overeenkomende</span><span class="sxs-lookup"><span data-stu-id="936ce-138">regex pattern; $matches contains matching</span></span>   |
-|             |              | <span data-ttu-id="936ce-139">tekenreeksen</span><span class="sxs-lookup"><span data-stu-id="936ce-139">strings</span></span>                                     |
-|             |              |                                             |
-| <span data-ttu-id="936ce-140">Containment</span><span class="sxs-lookup"><span data-stu-id="936ce-140">Containment</span></span> | <span data-ttu-id="936ce-141">-contains</span><span class="sxs-lookup"><span data-stu-id="936ce-141">-contains</span></span>    | <span data-ttu-id="936ce-142">Retourneert waar als de referentie waarde bevat</span><span class="sxs-lookup"><span data-stu-id="936ce-142">Returns true when reference value contained</span></span> |
-|             |              | <span data-ttu-id="936ce-143">in een verzameling</span><span class="sxs-lookup"><span data-stu-id="936ce-143">in a collection</span></span>                             |
-|             | <span data-ttu-id="936ce-144">-notcontains</span><span class="sxs-lookup"><span data-stu-id="936ce-144">-notcontains</span></span> | <span data-ttu-id="936ce-145">Retourneert waar als de referentie waarde niet</span><span class="sxs-lookup"><span data-stu-id="936ce-145">Returns true when reference value not</span></span>       |
-|             |              | <span data-ttu-id="936ce-146">opgenomen in een verzameling</span><span class="sxs-lookup"><span data-stu-id="936ce-146">contained in a collection</span></span>                   |
-|             | <span data-ttu-id="936ce-147">-in</span><span class="sxs-lookup"><span data-stu-id="936ce-147">-in</span></span>          | <span data-ttu-id="936ce-148">Retourneert waar als de test waarde in een</span><span class="sxs-lookup"><span data-stu-id="936ce-148">Returns true when test value contained in a</span></span> |
-|             |              | <span data-ttu-id="936ce-149">verzameling</span><span class="sxs-lookup"><span data-stu-id="936ce-149">collection</span></span>                                  |
-|             | <span data-ttu-id="936ce-150">-notin</span><span class="sxs-lookup"><span data-stu-id="936ce-150">-notin</span></span>       | <span data-ttu-id="936ce-151">Retourneert waar als de test waarde niet bevat</span><span class="sxs-lookup"><span data-stu-id="936ce-151">Returns true when test value not contained</span></span>  |
-|             |              | <span data-ttu-id="936ce-152">in een verzameling</span><span class="sxs-lookup"><span data-stu-id="936ce-152">in a collection</span></span>                             |
-|             |              |                                             |
-| <span data-ttu-id="936ce-153">Vervanging</span><span class="sxs-lookup"><span data-stu-id="936ce-153">Replacement</span></span> | <span data-ttu-id="936ce-154">-vervangen</span><span class="sxs-lookup"><span data-stu-id="936ce-154">-replace</span></span>     | <span data-ttu-id="936ce-155">Vervangt een teken reeks patroon</span><span class="sxs-lookup"><span data-stu-id="936ce-155">Replaces a string pattern</span></span>                   |
-|             |              |                                             |
-| <span data-ttu-id="936ce-156">Type</span><span class="sxs-lookup"><span data-stu-id="936ce-156">Type</span></span>        | <span data-ttu-id="936ce-157">-is</span><span class="sxs-lookup"><span data-stu-id="936ce-157">-is</span></span>          | <span data-ttu-id="936ce-158">Retourneert waar als beide objecten hetzelfde zijn</span><span class="sxs-lookup"><span data-stu-id="936ce-158">Returns true if both object are the same</span></span>    |
-|             |              | <span data-ttu-id="936ce-159">type</span><span class="sxs-lookup"><span data-stu-id="936ce-159">type</span></span>                                        |
-|             | <span data-ttu-id="936ce-160">-isnot</span><span class="sxs-lookup"><span data-stu-id="936ce-160">-isnot</span></span>       | <span data-ttu-id="936ce-161">Retourneert waar als de objecten niet hetzelfde zijn</span><span class="sxs-lookup"><span data-stu-id="936ce-161">Returns true if the objects are not the same</span></span>|
-|             |              | <span data-ttu-id="936ce-162">type</span><span class="sxs-lookup"><span data-stu-id="936ce-162">type</span></span>                                        |
+|    <span data-ttu-id="6bda1-109">Type</span><span class="sxs-lookup"><span data-stu-id="6bda1-109">Type</span></span>     |   <span data-ttu-id="6bda1-110">Operator</span><span class="sxs-lookup"><span data-stu-id="6bda1-110">Operator</span></span>   |              <span data-ttu-id="6bda1-111">Vergelijkings test</span><span class="sxs-lookup"><span data-stu-id="6bda1-111">Comparison test</span></span>              |
+| ----------- | ------------ | ----------------------------------------- |
+| <span data-ttu-id="6bda1-112">Gelijkheid</span><span class="sxs-lookup"><span data-stu-id="6bda1-112">Equality</span></span>    | <span data-ttu-id="6bda1-113">-eq</span><span class="sxs-lookup"><span data-stu-id="6bda1-113">-eq</span></span>          | <span data-ttu-id="6bda1-114">is gelijk aan</span><span class="sxs-lookup"><span data-stu-id="6bda1-114">equals</span></span>                                    |
+|             | <span data-ttu-id="6bda1-115">-ne</span><span class="sxs-lookup"><span data-stu-id="6bda1-115">-ne</span></span>          | <span data-ttu-id="6bda1-116">niet gelijk aan</span><span class="sxs-lookup"><span data-stu-id="6bda1-116">not equals</span></span>                                |
+|             | <span data-ttu-id="6bda1-117">-gt</span><span class="sxs-lookup"><span data-stu-id="6bda1-117">-gt</span></span>          | <span data-ttu-id="6bda1-118">groter dan</span><span class="sxs-lookup"><span data-stu-id="6bda1-118">greater than</span></span>                              |
+|             | <span data-ttu-id="6bda1-119">-ge</span><span class="sxs-lookup"><span data-stu-id="6bda1-119">-ge</span></span>          | <span data-ttu-id="6bda1-120">groter dan of gelijk aan</span><span class="sxs-lookup"><span data-stu-id="6bda1-120">greater than or equal</span></span>                     |
+|             | <span data-ttu-id="6bda1-121">-lt</span><span class="sxs-lookup"><span data-stu-id="6bda1-121">-lt</span></span>          | <span data-ttu-id="6bda1-122">kleiner dan</span><span class="sxs-lookup"><span data-stu-id="6bda1-122">less than</span></span>                                 |
+|             | <span data-ttu-id="6bda1-123">-Le</span><span class="sxs-lookup"><span data-stu-id="6bda1-123">-le</span></span>          | <span data-ttu-id="6bda1-124">kleiner dan of gelijk aan</span><span class="sxs-lookup"><span data-stu-id="6bda1-124">less than or equal</span></span>                        |
+| <span data-ttu-id="6bda1-125">Matching</span><span class="sxs-lookup"><span data-stu-id="6bda1-125">Matching</span></span>    | <span data-ttu-id="6bda1-126">-like</span><span class="sxs-lookup"><span data-stu-id="6bda1-126">-like</span></span>        | <span data-ttu-id="6bda1-127">teken reeks komt overeen met Joker patroon</span><span class="sxs-lookup"><span data-stu-id="6bda1-127">string matches wildcard pattern</span></span>           |
+|             | <span data-ttu-id="6bda1-128">-notlike</span><span class="sxs-lookup"><span data-stu-id="6bda1-128">-notlike</span></span>     | <span data-ttu-id="6bda1-129">teken reeks komt niet overeen met Joker patroon</span><span class="sxs-lookup"><span data-stu-id="6bda1-129">string does not match wildcard pattern</span></span>    |
+|             | <span data-ttu-id="6bda1-130">-match</span><span class="sxs-lookup"><span data-stu-id="6bda1-130">-match</span></span>       | <span data-ttu-id="6bda1-131">teken reeks komt overeen met regex-patroon</span><span class="sxs-lookup"><span data-stu-id="6bda1-131">string matches regex pattern</span></span>              |
+|             | <span data-ttu-id="6bda1-132">-notmatch</span><span class="sxs-lookup"><span data-stu-id="6bda1-132">-notmatch</span></span>    | <span data-ttu-id="6bda1-133">teken reeks komt niet overeen met regex-patroon</span><span class="sxs-lookup"><span data-stu-id="6bda1-133">string does not match regex pattern</span></span>       |
+| <span data-ttu-id="6bda1-134">Vervanging</span><span class="sxs-lookup"><span data-stu-id="6bda1-134">Replacement</span></span> | <span data-ttu-id="6bda1-135">-vervangen</span><span class="sxs-lookup"><span data-stu-id="6bda1-135">-replace</span></span>     | <span data-ttu-id="6bda1-136">vervangt teken reeksen die overeenkomen met een regex-patroon</span><span class="sxs-lookup"><span data-stu-id="6bda1-136">replaces strings matching a regex pattern</span></span> |
+| <span data-ttu-id="6bda1-137">Containment</span><span class="sxs-lookup"><span data-stu-id="6bda1-137">Containment</span></span> | <span data-ttu-id="6bda1-138">-contains</span><span class="sxs-lookup"><span data-stu-id="6bda1-138">-contains</span></span>    | <span data-ttu-id="6bda1-139">verzameling bevat een waarde</span><span class="sxs-lookup"><span data-stu-id="6bda1-139">collection contains a value</span></span>               |
+|             | <span data-ttu-id="6bda1-140">-notcontains</span><span class="sxs-lookup"><span data-stu-id="6bda1-140">-notcontains</span></span> | <span data-ttu-id="6bda1-141">verzameling bevat geen waarde</span><span class="sxs-lookup"><span data-stu-id="6bda1-141">collection does not contain a value</span></span>       |
+|             | <span data-ttu-id="6bda1-142">-in</span><span class="sxs-lookup"><span data-stu-id="6bda1-142">-in</span></span>          | <span data-ttu-id="6bda1-143">waarde bevindt zich in een verzameling</span><span class="sxs-lookup"><span data-stu-id="6bda1-143">value is in a collection</span></span>                  |
+|             | <span data-ttu-id="6bda1-144">-notin</span><span class="sxs-lookup"><span data-stu-id="6bda1-144">-notin</span></span>       | <span data-ttu-id="6bda1-145">waarde bevindt zich niet in een verzameling</span><span class="sxs-lookup"><span data-stu-id="6bda1-145">value is not in a collection</span></span>              |
+| <span data-ttu-id="6bda1-146">Type</span><span class="sxs-lookup"><span data-stu-id="6bda1-146">Type</span></span>        | <span data-ttu-id="6bda1-147">-is</span><span class="sxs-lookup"><span data-stu-id="6bda1-147">-is</span></span>          | <span data-ttu-id="6bda1-148">beide objecten zijn van hetzelfde type</span><span class="sxs-lookup"><span data-stu-id="6bda1-148">both objects are the same type</span></span>            |
+|             | <span data-ttu-id="6bda1-149">-isnot</span><span class="sxs-lookup"><span data-stu-id="6bda1-149">-isnot</span></span>       | <span data-ttu-id="6bda1-150">de objecten zijn niet van hetzelfde type</span><span class="sxs-lookup"><span data-stu-id="6bda1-150">the objects are not the same type</span></span>         |
 
-<span data-ttu-id="936ce-163">Standaard zijn alle vergelijkings operatoren niet hoofdletter gevoelig.</span><span class="sxs-lookup"><span data-stu-id="936ce-163">By default, all comparison operators are case-insensitive.</span></span> <span data-ttu-id="936ce-164">Als u een vergelijkings operator hoofdletter gevoelig wilt maken, moet u de naam van de operator vooraf vervangen door een `c` .</span><span class="sxs-lookup"><span data-stu-id="936ce-164">To make a comparison operator case-sensitive, precede the operator name with a `c`.</span></span> <span data-ttu-id="936ce-165">De hoofdletter gevoelige versie van `-eq` is bijvoorbeeld `-ceq` .</span><span class="sxs-lookup"><span data-stu-id="936ce-165">For example, the case-sensitive version of `-eq` is `-ceq`.</span></span> <span data-ttu-id="936ce-166">Als u de niet-hoofdletter gevoeligheid expliciet wilt maken, moet u voorafgaand aan de operator een `i` .</span><span class="sxs-lookup"><span data-stu-id="936ce-166">To make the case-insensitivity explicit, precede the operator with an `i`.</span></span> <span data-ttu-id="936ce-167">De versie van is bijvoorbeeld expliciet niet hoofdletter gevoelig `-eq` `-ieq` .</span><span class="sxs-lookup"><span data-stu-id="936ce-167">For example, the explicitly case-insensitive version of `-eq` is `-ieq`.</span></span>
+## <a name="common-features"></a><span data-ttu-id="6bda1-151">Algemene functies</span><span class="sxs-lookup"><span data-stu-id="6bda1-151">Common features</span></span>
 
-<span data-ttu-id="936ce-168">Wanneer de invoer voor een operator een scalaire waarde is, retour neren vergelijkings operatoren een Booleaanse waarde.</span><span class="sxs-lookup"><span data-stu-id="936ce-168">When the input to an operator is a scalar value, comparison operators return a Boolean value.</span></span> <span data-ttu-id="936ce-169">Wanneer de invoer een verzameling waarden is, retour neren de vergelijkings operatoren alle overeenkomende waarden.</span><span class="sxs-lookup"><span data-stu-id="936ce-169">When the input is a collection of values, the comparison operators return any matching values.</span></span> <span data-ttu-id="936ce-170">Als er geen overeenkomsten in een verzameling zijn, retour neren vergelijkings operatoren een lege matrix.</span><span class="sxs-lookup"><span data-stu-id="936ce-170">If there are no matches in a collection, comparison operators return an empty array.</span></span>
+<span data-ttu-id="6bda1-152">Standaard zijn alle vergelijkings operatoren niet hoofdletter gevoelig.</span><span class="sxs-lookup"><span data-stu-id="6bda1-152">By default, all comparison operators are case-insensitive.</span></span> <span data-ttu-id="6bda1-153">Als u een vergelijkings operator hoofdletter gevoelig wilt maken, moet u een `c` na de toevoegen `-` .</span><span class="sxs-lookup"><span data-stu-id="6bda1-153">To make a comparison operator case-sensitive, add a `c` after the `-`.</span></span> <span data-ttu-id="6bda1-154">`-ceq`Is bijvoorbeeld de hoofdletter gevoelige versie van `-eq` .</span><span class="sxs-lookup"><span data-stu-id="6bda1-154">For example, `-ceq` is the case-sensitive version of `-eq`.</span></span> <span data-ttu-id="6bda1-155">Voeg een before toe om de hoofdletter gevoeligheid expliciet te maken `i` `-` .</span><span class="sxs-lookup"><span data-stu-id="6bda1-155">To make the case-insensitivity explicit, add an `i` before `-`.</span></span> <span data-ttu-id="6bda1-156">`-ieq`Is bijvoorbeeld de expliciete niet-hoofdletter gevoelige versie van `-eq` .</span><span class="sxs-lookup"><span data-stu-id="6bda1-156">For example, `-ieq` is the explicitly case-insensitive version of `-eq`.</span></span>
+
+<span data-ttu-id="6bda1-157">Wanneer de invoer van een operator een scalaire waarde is, retourneert de operator een **Boole** -waarde.</span><span class="sxs-lookup"><span data-stu-id="6bda1-157">When the input of an operator is a scalar value, the operator returns a **Boolean** value.</span></span> <span data-ttu-id="6bda1-158">Wanneer de invoer een verzameling is, retourneert de operator de elementen van de verzameling die overeenkomen met de rechter waarde van de expressie.</span><span class="sxs-lookup"><span data-stu-id="6bda1-158">When the input is a collection, the operator returns the elements of the collection that match the right-hand value of the expression.</span></span>
+<span data-ttu-id="6bda1-159">Als er geen overeenkomsten in de verzameling zijn, retour neren vergelijkings operatoren een lege matrix.</span><span class="sxs-lookup"><span data-stu-id="6bda1-159">If there are no matches in the collection, comparison operators return an empty array.</span></span> <span data-ttu-id="6bda1-160">Bijvoorbeeld:</span><span class="sxs-lookup"><span data-stu-id="6bda1-160">For example:</span></span>
 
 ```powershell
-PS> (1, 2 -eq 3).GetType().FullName
-System.Object[]
+$a = (1, 2 -eq 3)
+$a.GetType().Name
+$a.Count
 ```
 
-<span data-ttu-id="936ce-171">De uitzonde ringen zijn de containment-Opera Tors, de Opera tors in en de type operator, die altijd een **Booleaanse** waarde Retour neren.</span><span class="sxs-lookup"><span data-stu-id="936ce-171">The exceptions are the containment operators, the In operators, and the type operators, which always return a **Boolean** value.</span></span>
+```output
+Object[]
+0
+```
 
-> [!NOTE]
-> <span data-ttu-id="936ce-172">Als u een waarde wilt vergelijken `$null` , moet u aan `$null` de linkerkant van de vergelijking zetten.</span><span class="sxs-lookup"><span data-stu-id="936ce-172">If you need to compare a value to `$null` you should put `$null` on the left-hand side of the comparison.</span></span> <span data-ttu-id="936ce-173">Wanneer u vergelijkt `$null` met een **object []** , is het resultaat **False** omdat het vergelijkings object een matrix is.</span><span class="sxs-lookup"><span data-stu-id="936ce-173">When you compare `$null` to an **Object[]** the result is **False** because the comparison object is an array.</span></span> <span data-ttu-id="936ce-174">Wanneer u een matrix vergelijkt met `$null` , worden de `$null` waarden die in de matrix zijn opgeslagen, door de vergelijking gefilterd.</span><span class="sxs-lookup"><span data-stu-id="936ce-174">When you compare an array to `$null`, the comparison filters out any `$null` values stored in the array.</span></span> <span data-ttu-id="936ce-175">Bijvoorbeeld:</span><span class="sxs-lookup"><span data-stu-id="936ce-175">For example:</span></span>
->
-> ```powershell
-> PS> $null -ne $null, "hello"
-> True
-> PS> $null, "hello" -ne $null
-> hello
-> ```
+<span data-ttu-id="6bda1-161">Er zijn enkele uitzonde ringen:</span><span class="sxs-lookup"><span data-stu-id="6bda1-161">There are a few exceptions:</span></span>
 
-## <a name="equality-operators"></a><span data-ttu-id="936ce-176">Gelijkheidsoperatoren</span><span class="sxs-lookup"><span data-stu-id="936ce-176">Equality operators</span></span>
+- <span data-ttu-id="6bda1-162">De containment-en type-Opera tors retour neren altijd een **Booleaanse** waarde</span><span class="sxs-lookup"><span data-stu-id="6bda1-162">The containment and type operators always return a **Boolean** value</span></span>
+- <span data-ttu-id="6bda1-163">De `-replace` operator retourneert het vervangings resultaat</span><span class="sxs-lookup"><span data-stu-id="6bda1-163">The `-replace` operator returns the replacement result</span></span>
+- <span data-ttu-id="6bda1-164">De `-match` `-notmatch` Opera tors en vullen ook de `$Matches` Automatische variabele</span><span class="sxs-lookup"><span data-stu-id="6bda1-164">The `-match` and `-notmatch` operators also populate the `$Matches` automatic variable</span></span>
 
-<span data-ttu-id="936ce-177">De gelijkheids operatoren ( `-eq` , `-ne` ) retour neren de waarde True of de overeenkomsten wanneer een of meer invoer waarden identiek zijn aan het opgegeven patroon.</span><span class="sxs-lookup"><span data-stu-id="936ce-177">The equality operators (`-eq`, `-ne`) return a value of TRUE or the matches when one or more of the input values is identical to the specified pattern.</span></span> <span data-ttu-id="936ce-178">Het hele patroon moet overeenkomen met een volledige waarde.</span><span class="sxs-lookup"><span data-stu-id="936ce-178">The entire pattern must match an entire value.</span></span>
+## <a name="equality-operators"></a><span data-ttu-id="6bda1-165">Gelijkheidsoperatoren</span><span class="sxs-lookup"><span data-stu-id="6bda1-165">Equality operators</span></span>
 
-<span data-ttu-id="936ce-179">Voorbeeld:</span><span class="sxs-lookup"><span data-stu-id="936ce-179">Example:</span></span>
+### <a name="-eq-and--ne"></a><span data-ttu-id="6bda1-166">-EQ en-ne</span><span class="sxs-lookup"><span data-stu-id="6bda1-166">-eq and -ne</span></span>
 
-### <a name="-eq"></a><span data-ttu-id="936ce-180">-eq</span><span class="sxs-lookup"><span data-stu-id="936ce-180">-eq</span></span>
+<span data-ttu-id="6bda1-167">Wanneer de linkerkant scalair is, `-eq` retourneert **waar** als de rechter kant een exacte overeenkomst heeft, anders `-eq` wordt **False** geretourneerd.</span><span class="sxs-lookup"><span data-stu-id="6bda1-167">When the left-hand side is scalar, `-eq` returns **True** if the right-hand side is an exact match, otherwise, `-eq` returns **False**.</span></span> <span data-ttu-id="6bda1-168">`-ne` doet het tegenovergestelde; Wanneer beide zijden overeenkomen, wordt **False** geretourneerd. anders `-ne` wordt waar geretourneerd.</span><span class="sxs-lookup"><span data-stu-id="6bda1-168">`-ne` does the opposite; it returns **False** when both sides match; otherwise, `-ne` returns True.</span></span>
 
-<span data-ttu-id="936ce-181">Beschrijving: gelijk aan.</span><span class="sxs-lookup"><span data-stu-id="936ce-181">Description: Equal to.</span></span> <span data-ttu-id="936ce-182">Bevat een identieke waarde.</span><span class="sxs-lookup"><span data-stu-id="936ce-182">Includes an identical value.</span></span>
-
-<span data-ttu-id="936ce-183">Voorbeeld:</span><span class="sxs-lookup"><span data-stu-id="936ce-183">Example:</span></span>
+<span data-ttu-id="6bda1-169">Voorbeeld:</span><span class="sxs-lookup"><span data-stu-id="6bda1-169">Example:</span></span>
 
 ```powershell
-PS> 2 -eq 2
-True
+2 -eq 2                 # Output: True
+2 -eq 3                 # Output: False
+"abc" -eq "abc"         # Output: True
+"abc" -eq "abc", "def"  # Output: False
+"abc" -ne "def"         # Output: True
+"abc" -ne "abc"         # Output: False
+"abc" -ne "abc", "def"  # Output: True
+```
 
-PS> 2 -eq 3
+<span data-ttu-id="6bda1-170">Wanneer de linkerkant een verzameling is, `-eq` retourneert de leden die aan de rechter kant overeenkomen, terwijl `-ne` deze worden gefilterd.</span><span class="sxs-lookup"><span data-stu-id="6bda1-170">When the left-hand side is a collection, `-eq` returns those members that match the right-hand side, while `-ne` filters them out.</span></span>
+
+<span data-ttu-id="6bda1-171">Voorbeeld:</span><span class="sxs-lookup"><span data-stu-id="6bda1-171">Example:</span></span>
+
+```powershell
+1,2,3 -eq 2             # Output: 2
+"abc", "def" -eq "abc"  # Output: abc
+"abc", "def" -ne "abc"  # Output: def
+```
+
+<span data-ttu-id="6bda1-172">Deze opera tors verwerken alle elementen van de verzameling.</span><span class="sxs-lookup"><span data-stu-id="6bda1-172">These operators process all elements of the collection.</span></span> <span data-ttu-id="6bda1-173">Voorbeeld:</span><span class="sxs-lookup"><span data-stu-id="6bda1-173">Example:</span></span>
+
+```powershell
+"zzz", "def", "zzz" -eq "zzz"
+```
+
+```output
+zzz
+zzz
+```
+
+<span data-ttu-id="6bda1-174">De gelijkheids operatoren accepteren twee objecten, niet alleen een scalair of verzameling.</span><span class="sxs-lookup"><span data-stu-id="6bda1-174">The equality operators accept any two objects, not just a scalar or collection.</span></span>
+<span data-ttu-id="6bda1-175">Maar het vergelijkings resultaat is niet gegarandeerd dat dit zinvol is voor de eind gebruiker.</span><span class="sxs-lookup"><span data-stu-id="6bda1-175">But the comparison result is not guaranteed to be meaningful for the end-user.</span></span>
+<span data-ttu-id="6bda1-176">In het volgende voor beeld wordt het probleem gedemonstreerd.</span><span class="sxs-lookup"><span data-stu-id="6bda1-176">The following example demonstrates the issue.</span></span>
+
+```powershell
+class MyFileInfoSet {
+    [String]$File
+    [Int64]$Size
+}
+$a = [MyFileInfoSet]@{File = "C:\Windows\explorer.exe"; Size = 4651032}
+$b = [MyFileInfoSet]@{File = "C:\Windows\explorer.exe"; Size = 4651032}
+$a -eq $b
+```
+
+```Output
 False
+```
 
-PS> 1,2,3 -eq 2
+<span data-ttu-id="6bda1-177">In dit voor beeld hebben we twee objecten met identieke eigenschappen gemaakt.</span><span class="sxs-lookup"><span data-stu-id="6bda1-177">In this example, we created two objects with identical properties.</span></span> <span data-ttu-id="6bda1-178">Het resultaat van de gelijkheids test is dan **Onwaar** , omdat deze verschillende objecten zijn.</span><span class="sxs-lookup"><span data-stu-id="6bda1-178">Yet, the equality test result is **False** because they are different objects.</span></span> <span data-ttu-id="6bda1-179">Als u vergelijk bare klassen wilt maken, moet u [System. \<T> IEquatable][2] in uw klasse implementeren.</span><span class="sxs-lookup"><span data-stu-id="6bda1-179">To create comparable classes, you need to implement [System.IEquatable\<T>][2] in your class.</span></span> <span data-ttu-id="6bda1-180">In het volgende voor beeld ziet u de gedeeltelijke implementatie van een **MyFileInfoSet** -klasse die [System. \<T> IEquatable][2] implementeert en twee eigenschappen, **bestand** en **grootte** heeft.</span><span class="sxs-lookup"><span data-stu-id="6bda1-180">The following example demonstrates the partial implementation of a **MyFileInfoSet** class that implements [System.IEquatable\<T>][2] and has two properties, **File** and **Size**.</span></span> <span data-ttu-id="6bda1-181">De `Equals()` methode retourneert True als de bestands-en grootte-eigenschappen van twee **MyFileInfoSet** -objecten hetzelfde zijn.</span><span class="sxs-lookup"><span data-stu-id="6bda1-181">The `Equals()` method returns True if the File and Size properties of two **MyFileInfoSet** objects are the same.</span></span>
+
+```powershell
+class MyFileInfoSet : System.IEquatable[Object] {
+    [String]$File
+    [Int64]$Size
+
+    [bool] Equals([Object] $obj) {
+        return ($this.File -eq $obj.File) -and ($this.Size -eq $obj.Size)
+    }
+}
+$a = [MyFileInfoSet]@{File = "C:\Windows\explorer.exe"; Size = 4651032}
+$b = [MyFileInfoSet]@{File = "C:\Windows\explorer.exe"; Size = 4651032}
+$a -eq $b
+```
+
+```Output
+True
+```
+
+<span data-ttu-id="6bda1-182">Een prominent voor beeld van het vergelijken van wille keurige objecten is om erachter te komen of ze null zijn.</span><span class="sxs-lookup"><span data-stu-id="6bda1-182">A prominent example of comparing arbitrary objects is to find out if they are null.</span></span> <span data-ttu-id="6bda1-183">Maar als u wilt bepalen of een variabele is `$null` , moet u `$null` aan de linkerkant van de gelijkheids operator.</span><span class="sxs-lookup"><span data-stu-id="6bda1-183">But if you need to determine whether a variable is `$null`, you must put `$null` on the left-hand side of the equality operator.</span></span> <span data-ttu-id="6bda1-184">Als u deze aan de rechter kant gebruikt, heeft dat niet de verwachte.</span><span class="sxs-lookup"><span data-stu-id="6bda1-184">Putting it on the right-hand side does not do what you expect.</span></span>
+
+<span data-ttu-id="6bda1-185">U kunt bijvoorbeeld `$a` een matrix met null-elementen maken:</span><span class="sxs-lookup"><span data-stu-id="6bda1-185">For example, let `$a` be an array containing null elements:</span></span>
+
+```powershell
+$a = 1, 2, $null, 4, $null, 6
+```
+
+<span data-ttu-id="6bda1-186">De volgende tests die `$a` niet null zijn.</span><span class="sxs-lookup"><span data-stu-id="6bda1-186">The following tests that `$a` is not null.</span></span>
+
+```powershell
+$null -ne $a
+```
+
+```output
+False
+```
+
+<span data-ttu-id="6bda1-187">De volgende bestanden zijn echter alle null-elementen van `$a` :</span><span class="sxs-lookup"><span data-stu-id="6bda1-187">The following, however, filers out all null elements from `$a`:</span></span>
+
+```powershell
+$a -ne $null # Output: 1, 2, 4, 6
+```
+
+```output
+1
 2
-PS> "abc" -eq "abc"
-True
-
-PS> "abc" -eq "abc", "def"
-False
-
-PS> "abc", "def" -eq "abc"
-abc
+4
+6
 ```
 
-### <a name="-ne"></a><span data-ttu-id="936ce-184">-ne</span><span class="sxs-lookup"><span data-stu-id="936ce-184">-ne</span></span>
+### <a name="-gt--ge--lt-and--le"></a><span data-ttu-id="6bda1-188">-gt,-ge,-lt en-Le</span><span class="sxs-lookup"><span data-stu-id="6bda1-188">-gt, -ge, -lt, and -le</span></span>
 
-<span data-ttu-id="936ce-185">Beschrijving: niet gelijk aan.</span><span class="sxs-lookup"><span data-stu-id="936ce-185">Description: Not equal to.</span></span> <span data-ttu-id="936ce-186">Bevat een andere waarde.</span><span class="sxs-lookup"><span data-stu-id="936ce-186">Includes a different value.</span></span>
+<span data-ttu-id="6bda1-189">`-gt`, `-ge` , `-lt` en `-le` gedragen zich op dezelfde manier.</span><span class="sxs-lookup"><span data-stu-id="6bda1-189">`-gt`, `-ge`, `-lt`, and `-le` behave very similarly.</span></span> <span data-ttu-id="6bda1-190">Wanneer beide zijden scalair zijn, retour neren ze **waar** of **Onwaar** , afhankelijk van de mate waarin de twee zijden elkaar vergelijken:</span><span class="sxs-lookup"><span data-stu-id="6bda1-190">When both sides are scalar they return **True** or **False** depending on how the two sides compare:</span></span>
 
-<span data-ttu-id="936ce-187">Voorbeeld:</span><span class="sxs-lookup"><span data-stu-id="936ce-187">Example:</span></span>
+| <span data-ttu-id="6bda1-191">Operator</span><span class="sxs-lookup"><span data-stu-id="6bda1-191">Operator</span></span> | <span data-ttu-id="6bda1-192">Retourneert waar als...</span><span class="sxs-lookup"><span data-stu-id="6bda1-192">Returns True when...</span></span>                   |
+| -------- | -------------------------------------- |
+| <span data-ttu-id="6bda1-193">-gt</span><span class="sxs-lookup"><span data-stu-id="6bda1-193">-gt</span></span>      | <span data-ttu-id="6bda1-194">De linkerkant is groter</span><span class="sxs-lookup"><span data-stu-id="6bda1-194">The left-hand side is greater</span></span>          |
+| <span data-ttu-id="6bda1-195">-ge</span><span class="sxs-lookup"><span data-stu-id="6bda1-195">-ge</span></span>      | <span data-ttu-id="6bda1-196">De linkerkant is groter of gelijk aan</span><span class="sxs-lookup"><span data-stu-id="6bda1-196">The left-hand side is greater or equal</span></span> |
+| <span data-ttu-id="6bda1-197">-lt</span><span class="sxs-lookup"><span data-stu-id="6bda1-197">-lt</span></span>      | <span data-ttu-id="6bda1-198">De linkerkant is kleiner</span><span class="sxs-lookup"><span data-stu-id="6bda1-198">The left-hand side is smaller</span></span>          |
+| <span data-ttu-id="6bda1-199">-Le</span><span class="sxs-lookup"><span data-stu-id="6bda1-199">-le</span></span>      | <span data-ttu-id="6bda1-200">De linkerkant is kleiner of gelijk aan</span><span class="sxs-lookup"><span data-stu-id="6bda1-200">The left-hand side is smaller or equal</span></span> |
 
-```powershell
-PS> "abc" -ne "def"
-True
-
-PS> "abc" -ne "abc"
-False
-
-PS> "abc" -ne "abc", "def"
-True
-
-PS> "abc", "def" -ne "abc"
-def
-```
-
-### <a name="-gt"></a><span data-ttu-id="936ce-188">-gt</span><span class="sxs-lookup"><span data-stu-id="936ce-188">-gt</span></span>
-
-<span data-ttu-id="936ce-189">Beschrijving: groter dan.</span><span class="sxs-lookup"><span data-stu-id="936ce-189">Description: Greater-than.</span></span>
-
-<span data-ttu-id="936ce-190">Voorbeeld:</span><span class="sxs-lookup"><span data-stu-id="936ce-190">Example:</span></span>
+<span data-ttu-id="6bda1-201">In de volgende voor beelden retour neren alle instructies waar.</span><span class="sxs-lookup"><span data-stu-id="6bda1-201">In the following examples, all statements return True.</span></span>
 
 ```powershell
-PS> 8 -gt 6
-True
-
-PS> 7, 8, 9 -gt 8
-9
+8 -gt 6  # Output: True
+8 -ge 8  # Output: True
+6 -lt 8  # Output: True
+8 -le 8  # Output: True
 ```
 
 > [!NOTE]
-> <span data-ttu-id="936ce-191">Dit mag niet worden verward met `>` , de operator groter dan in veel andere programmeer talen.</span><span class="sxs-lookup"><span data-stu-id="936ce-191">This should not to be confused with `>`, the greater-than operator in many other programming languages.</span></span> <span data-ttu-id="936ce-192">In Power shell `>` wordt gebruikt voor omleiding.</span><span class="sxs-lookup"><span data-stu-id="936ce-192">In PowerShell, `>` is used for redirection.</span></span> <span data-ttu-id="936ce-193">Zie [About_redirection](about_Redirection.md#potential-confusion-with-comparison-operators)voor meer informatie.</span><span class="sxs-lookup"><span data-stu-id="936ce-193">For more information, see [About_redirection](about_Redirection.md#potential-confusion-with-comparison-operators).</span></span>
+> <span data-ttu-id="6bda1-202">In de meeste programmeer talen is de operator groter dan `>` .</span><span class="sxs-lookup"><span data-stu-id="6bda1-202">In most programming languages the greater-than operator is `>`.</span></span> <span data-ttu-id="6bda1-203">In Power shell wordt dit teken gebruikt voor omleiding.</span><span class="sxs-lookup"><span data-stu-id="6bda1-203">In PowerShell, this character is used for redirection.</span></span> <span data-ttu-id="6bda1-204">Zie [about_Redirection][3]voor meer informatie.</span><span class="sxs-lookup"><span data-stu-id="6bda1-204">For details, see [about_Redirection][3].</span></span>
 
-### <a name="-ge"></a><span data-ttu-id="936ce-194">-ge</span><span class="sxs-lookup"><span data-stu-id="936ce-194">-ge</span></span>
+<span data-ttu-id="6bda1-205">Wanneer de linkerkant een verzameling is, vergelijken deze opera tors elk lid van de verzameling met de rechter kant.</span><span class="sxs-lookup"><span data-stu-id="6bda1-205">When the left-hand side is a collection, these operators compare each member of the collection with the right-hand side.</span></span> <span data-ttu-id="6bda1-206">Afhankelijk van hun logica, kunnen ze het lid blijven of negeren.</span><span class="sxs-lookup"><span data-stu-id="6bda1-206">Depending on their logic, they either keep or discard the member.</span></span>
 
-<span data-ttu-id="936ce-195">Beschrijving: groter dan of gelijk aan.</span><span class="sxs-lookup"><span data-stu-id="936ce-195">Description: Greater-than or equal to.</span></span>
-
-<span data-ttu-id="936ce-196">Voorbeeld:</span><span class="sxs-lookup"><span data-stu-id="936ce-196">Example:</span></span>
+<span data-ttu-id="6bda1-207">Voorbeeld:</span><span class="sxs-lookup"><span data-stu-id="6bda1-207">Example:</span></span>
 
 ```powershell
-PS> 8 -ge 8
-True
+$a=5, 6, 7, 8, 9
 
-PS> 7, 8, 9 -ge 8
+Write-Output "Test collection:"
+$a
+
+Write-Output "`nMembers greater than 7"
+$a -gt 7
+
+Write-Output "`nMembers greater than or equal to 7"
+$a -ge 7
+
+Write-Output "`nMembers smaller than 7"
+$a -lt 7
+
+Write-Output "`nMembers smaller than or equal to 7"
+$a -le 7
+```
+
+```output
+Test collection:
+5
+6
+7
 8
 9
-```
 
-### <a name="-lt"></a><span data-ttu-id="936ce-197">-lt</span><span class="sxs-lookup"><span data-stu-id="936ce-197">-lt</span></span>
+Members greater than 7
+8
+9
 
-<span data-ttu-id="936ce-198">Beschrijving: kleiner dan.</span><span class="sxs-lookup"><span data-stu-id="936ce-198">Description: Less-than.</span></span>
-
-<span data-ttu-id="936ce-199">Voorbeeld:</span><span class="sxs-lookup"><span data-stu-id="936ce-199">Example:</span></span>
-
-```powershell
-
-PS> 8 -lt 6
-False
-
-PS> 7, 8, 9 -lt 8
-7
-```
-
-### <a name="-le"></a><span data-ttu-id="936ce-200">-Le</span><span class="sxs-lookup"><span data-stu-id="936ce-200">-le</span></span>
-
-<span data-ttu-id="936ce-201">Beschrijving: kleiner dan of gelijk aan.</span><span class="sxs-lookup"><span data-stu-id="936ce-201">Description: Less-than or equal to.</span></span>
-
-<span data-ttu-id="936ce-202">Voorbeeld:</span><span class="sxs-lookup"><span data-stu-id="936ce-202">Example:</span></span>
-
-```powershell
-PS> 6 -le 8
-True
-
-PS> 7, 8, 9 -le 8
+Members greater than or equal to 7
 7
 8
+9
+
+Members smaller than 7
+5
+6
+
+Members smaller than or equal to 7
+5
+6
+7
 ```
 
-## <a name="matching-operators"></a><span data-ttu-id="936ce-203">Overeenkomende Opera tors</span><span class="sxs-lookup"><span data-stu-id="936ce-203">Matching operators</span></span>
+<span data-ttu-id="6bda1-208">Deze opera tors werken met elke klasse die [System. IComparable][1]implementeert.</span><span class="sxs-lookup"><span data-stu-id="6bda1-208">These operators work with any class that implements [System.IComparable][1].</span></span>
 
-<span data-ttu-id="936ce-204">De like-Opera tors ( `-like` en `-notlike` ) vinden elementen die overeenkomen met of die niet overeenkomen met een opgegeven patroon met Joker teken expressies.</span><span class="sxs-lookup"><span data-stu-id="936ce-204">The like operators (`-like` and `-notlike`) find elements that match or do not match a specified pattern using wildcard expressions.</span></span>
-
-<span data-ttu-id="936ce-205">De syntaxis is:</span><span class="sxs-lookup"><span data-stu-id="936ce-205">The syntax is:</span></span>
+<span data-ttu-id="6bda1-209">Voorbeelden:</span><span class="sxs-lookup"><span data-stu-id="6bda1-209">Examples:</span></span>
 
 ```powershell
-<string[]> -like <wildcard-expression>
+# Date comparison
+[DateTime]'2001-11-12' -lt [DateTime]'2020-08-01' # True
+
+# Sorting order comparison
+'a' -lt 'z'           # True; 'a' comes before 'z'
+'macOS' -ilt 'MacOS'  # False
+'MacOS' -ilt 'macOS'  # False
+'macOS' -clt 'MacOS'  # True; 'm' comes before 'M'
+```
+
+<span data-ttu-id="6bda1-210">In het volgende voor beeld ziet u dat er geen symbool is op een American QWERTY-toetsen bord dat na ' a ' wordt gesorteerd.</span><span class="sxs-lookup"><span data-stu-id="6bda1-210">The following example demonstrates that there is no symbol on an American QWERTY keyboard that gets sorted after 'a'.</span></span> <span data-ttu-id="6bda1-211">Er wordt een set met al deze symbolen aan de `-gt` operator gevoed om ze te vergelijken met ' a '.</span><span class="sxs-lookup"><span data-stu-id="6bda1-211">It feeds a set containing all such symbols to the `-gt` operator to compare them against 'a'.</span></span> <span data-ttu-id="6bda1-212">De uitvoer is een lege matrix.</span><span class="sxs-lookup"><span data-stu-id="6bda1-212">The output is an empty array.</span></span>
+
+```powershell
+$a=' ','`','~','!','@','#','$','%','^','&','*','(',')','_','+','-','=',
+   '{','}','[',']',':',';','"','''','\','|','/','?','.','>',',','<'
+$a -gt 'a'
+# Output: Nothing
+```
+
+<span data-ttu-id="6bda1-213">Als de twee zijden van de Opera tors niet redelijk vergelijkbaar zijn, verhogen deze opera tors een fout die niet wordt beëindigd.</span><span class="sxs-lookup"><span data-stu-id="6bda1-213">If the two sides of the operators are not reasonably comparable, these operators raise a non-terminating error.</span></span>
+
+## <a name="matching-operators"></a><span data-ttu-id="6bda1-214">Overeenkomende Opera tors</span><span class="sxs-lookup"><span data-stu-id="6bda1-214">Matching operators</span></span>
+
+<span data-ttu-id="6bda1-215">De overeenkomende Opera tors ( `-like` ,, `-notlike` `-match` en `-notmatch` ) vinden elementen die overeenkomen of niet overeenkomen met een opgegeven patroon.</span><span class="sxs-lookup"><span data-stu-id="6bda1-215">The matching operators (`-like`, `-notlike`, `-match`, and `-notmatch`) find elements that match or do not match a specified pattern.</span></span> <span data-ttu-id="6bda1-216">Het patroon voor `-like` en `-notlike` is een Joker teken expressie (die `*` , `?` en `[ ]` ) en `-match` `-notmatch` een reguliere expressie (regex) accepteert.</span><span class="sxs-lookup"><span data-stu-id="6bda1-216">The pattern for `-like` and `-notlike` is a wildcard expression (containing `*`, `?`, and `[ ]`), while `-match` and `-notmatch` accept a regular expression (Regex).</span></span>
+
+<span data-ttu-id="6bda1-217">De syntaxis is:</span><span class="sxs-lookup"><span data-stu-id="6bda1-217">The syntax is:</span></span>
+
+```
+<string[]> -like    <wildcard-expression>
 <string[]> -notlike <wildcard-expression>
-```
-
-<span data-ttu-id="936ce-206">De overeenkomende Opera tors ( `-match` en `-notmatch` ) vinden elementen die overeenkomen met of die niet overeenkomen met een opgegeven patroon met reguliere expressies.</span><span class="sxs-lookup"><span data-stu-id="936ce-206">The match operators (`-match` and `-notmatch`) find elements that match or do not match a specified pattern using regular expressions.</span></span>
-
-<span data-ttu-id="936ce-207">De operators matchen vullen de `$Matches` Automatische variabele in wanneer de invoer (het argument aan de linkerkant) naar de operator is één scalair object.</span><span class="sxs-lookup"><span data-stu-id="936ce-207">The match operators populate the `$Matches` automatic variable when the input (the left-side argument) to the operator is a single scalar object.</span></span> <span data-ttu-id="936ce-208">Wanneer de invoer scalair is, `-match` `-notmatch` retour neren de Opera tors en wordt de waarde van de `$Matches` Automatische variabele ingesteld op de overeenkomende onderdelen van het argument.</span><span class="sxs-lookup"><span data-stu-id="936ce-208">When the input is scalar, the `-match` and `-notmatch` operators return a Boolean value and set the value of the `$Matches` automatic variable to the matched components of the argument.</span></span>
-
-<span data-ttu-id="936ce-209">De syntaxis is:</span><span class="sxs-lookup"><span data-stu-id="936ce-209">The syntax is:</span></span>
-
-```powershell
-<string[]> -match <regular-expression>
+<string[]> -match    <regular-expression>
 <string[]> -notmatch <regular-expression>
 ```
 
-### <a name="-like"></a><span data-ttu-id="936ce-210">-like</span><span class="sxs-lookup"><span data-stu-id="936ce-210">-like</span></span>
+<span data-ttu-id="6bda1-218">Wanneer de invoer van deze opera tors een scalaire waarde is, retour neren ze een **Booleaanse** waarde.</span><span class="sxs-lookup"><span data-stu-id="6bda1-218">When the input of these operators is a scalar value, they return a **Boolean** value.</span></span> <span data-ttu-id="6bda1-219">Wanneer de invoer een verzameling waarden is, retour neren de Opera tors overeenkomende leden.</span><span class="sxs-lookup"><span data-stu-id="6bda1-219">When the input is a collection of values, the operators return any matching members.</span></span> <span data-ttu-id="6bda1-220">Als er geen overeenkomsten in een verzameling zijn, retour neren de Opera tors een lege matrix.</span><span class="sxs-lookup"><span data-stu-id="6bda1-220">If there are no matches in a collection, the operators return an empty array.</span></span>
 
-<span data-ttu-id="936ce-211">Beschrijving: komt overeen met het Joker teken ( \* ).</span><span class="sxs-lookup"><span data-stu-id="936ce-211">Description: Match using the wildcard character (\*).</span></span>
+### <a name="-like-and--notlike"></a><span data-ttu-id="6bda1-221">-like en-notlike</span><span class="sxs-lookup"><span data-stu-id="6bda1-221">-like and -notlike</span></span>
 
-<span data-ttu-id="936ce-212">Voorbeeld:</span><span class="sxs-lookup"><span data-stu-id="936ce-212">Example:</span></span>
+<span data-ttu-id="6bda1-222">`-like` en `-notlike` gedragen zich op dezelfde manier als `-eq` en `-ne` , maar de rechter kant kan een teken reeks met [joker tekens](about_Wildcards.md)zijn.</span><span class="sxs-lookup"><span data-stu-id="6bda1-222">`-like` and `-notlike` behave similarly to `-eq` and `-ne`, but the right-hand side could be a string containing [wildcards](about_Wildcards.md).</span></span>
+
+<span data-ttu-id="6bda1-223">Voorbeeld:</span><span class="sxs-lookup"><span data-stu-id="6bda1-223">Example:</span></span>
 
 ```powershell
-PS> "PowerShell" -like "*shell"
+"PowerShell" -like    "*shell"           # Output: True
+"PowerShell" -notlike "*shell"           # Output: False
+"PowerShell" -like    "Power?hell"       # Output: True
+"PowerShell" -notlike "Power?hell"       # Output: False
+"PowerShell" -like    "Power[p-w]hell"   # Output: True
+"PowerShell" -notlike "Power[p-w]hell"   # Output: False
+
+"PowerShell", "Server" -like "*shell"    # Output: PowerShell
+"PowerShell", "Server" -notlike "*shell" # Output: Server
+```
+
+### <a name="-match-and--notmatch"></a><span data-ttu-id="6bda1-224">-Match and-notmatch</span><span class="sxs-lookup"><span data-stu-id="6bda1-224">-match and -notmatch</span></span>
+
+<span data-ttu-id="6bda1-225">`-match` en `-notmatch` gebruik reguliere expressies om te zoeken naar een patroon in de waarden aan de linkerkant.</span><span class="sxs-lookup"><span data-stu-id="6bda1-225">`-match` and `-notmatch` use regular expressions to search for pattern in the left-hand side values.</span></span> <span data-ttu-id="6bda1-226">Reguliere expressies kunnen overeenkomen met complexe patronen zoals e-mail adressen, UNC-paden of geformatteerde telefoon nummers.</span><span class="sxs-lookup"><span data-stu-id="6bda1-226">Regular expressions can match complex patterns like email addresses, UNC paths, or formatted phone numbers.</span></span> <span data-ttu-id="6bda1-227">De teken reeks aan de rechter kant moet voldoen aan de regels voor [reguliere expressies](about_Regular_Expressions.md) .</span><span class="sxs-lookup"><span data-stu-id="6bda1-227">The right-hand side string must adhere to the [regular expressions](about_Regular_Expressions.md) rules.</span></span>
+
+<span data-ttu-id="6bda1-228">Scalaire voor beelden:</span><span class="sxs-lookup"><span data-stu-id="6bda1-228">Scalar examples:</span></span>
+
+```powershell
+# Partial match test, showing how differently -match and -like behave
+"PowerShell" -match 'shell'        # Output: True
+"PowerShell" -like  'shell'        # Output: False
+
+# Regex syntax test
+"PowerShell" -match    '^Power\w+' # Output: True
+'bag'        -notmatch 'b[iou]g'   # Output: True
+```
+
+<span data-ttu-id="6bda1-229">Als de invoer een verzameling is, retour neren de Opera tors de overeenkomende leden van die verzameling.</span><span class="sxs-lookup"><span data-stu-id="6bda1-229">If the input is a collection, the operators return the matching members of that collection.</span></span>
+
+<span data-ttu-id="6bda1-230">Voor beelden van verzamelingen:</span><span class="sxs-lookup"><span data-stu-id="6bda1-230">Collection examples:</span></span>
+
+```powershell
+"PowerShell", "Super PowerShell", "Power's hell" -match '^Power\w+'
+# Output: PowerShell
+
+"Rhell", "Chell", "Mel", "Smell", "Shell" -match "hell"
+# Output: Rhell, Chell, Shell
+
+"Bag", "Beg", "Big", "Bog", "Bug"  -match 'b[iou]g'
+#Output: Big, Bog, Bug
+
+"Bag", "Beg", "Big", "Bog", "Bug"  -notmatch 'b[iou]g'
+#Output: Bag, Beg
+```
+
+<span data-ttu-id="6bda1-231">`-match` en `-notmatch` ondersteunen regex Capture-groepen.</span><span class="sxs-lookup"><span data-stu-id="6bda1-231">`-match` and `-notmatch` support regex capture groups.</span></span> <span data-ttu-id="6bda1-232">Telkens wanneer ze worden uitgevoerd, wordt de `$Matches` Automatische variabele overschreven.</span><span class="sxs-lookup"><span data-stu-id="6bda1-232">Each time they run, they overwrite the `$Matches` automatic variable.</span></span> <span data-ttu-id="6bda1-233">Wanneer `<input>` is een verzameling de `$Matches` variabele `$null` .</span><span class="sxs-lookup"><span data-stu-id="6bda1-233">When `<input>` is a collection the `$Matches` variable is `$null`.</span></span> <span data-ttu-id="6bda1-234">`$Matches` is een **hashtabel** die altijd een sleutel met de naam ' 0 ' heeft, waarin de volledige overeenkomst wordt opgeslagen.</span><span class="sxs-lookup"><span data-stu-id="6bda1-234">`$Matches` is a **Hashtable** that always has a key named '0', which stores the entire match.</span></span> <span data-ttu-id="6bda1-235">Als de reguliere expressie opname groepen bevat, `$Matches` bevat de extra sleutels voor elke groep.</span><span class="sxs-lookup"><span data-stu-id="6bda1-235">If the regular expression contains capture groups, the `$Matches` contains additional keys for each group.</span></span>
+
+<span data-ttu-id="6bda1-236">Voorbeeld:</span><span class="sxs-lookup"><span data-stu-id="6bda1-236">Example:</span></span>
+
+```powershell
+$string = 'The last logged on user was CONTOSO\jsmith'
+$string -match 'was (?<domain>.+)\\(?<user>.+)'
+
+$Matches
+
+Write-Output "`nDomain name:"
+$Matches.domain
+
+Write-Output "`nUser name:"
+$Matches.user
+```
+
+```output
 True
-
-PS> "PowerShell", "Server" -like "*shell"
-PowerShell
-```
-
-### <a name="-notlike"></a><span data-ttu-id="936ce-213">-notlike</span><span class="sxs-lookup"><span data-stu-id="936ce-213">-notlike</span></span>
-
-<span data-ttu-id="936ce-214">Beschrijving: komt niet overeen met het Joker teken ( \* ).</span><span class="sxs-lookup"><span data-stu-id="936ce-214">Description: Does not match using the wildcard character (\*).</span></span>
-
-<span data-ttu-id="936ce-215">Voorbeeld:</span><span class="sxs-lookup"><span data-stu-id="936ce-215">Example:</span></span>
-
-```powershell
-PS> "PowerShell" -notlike "*shell"
-False
-
-PS> "PowerShell", "Server" -notlike "*shell"
-Server
-```
-
-### <a name="-match"></a><span data-ttu-id="936ce-216">-match</span><span class="sxs-lookup"><span data-stu-id="936ce-216">-match</span></span>
-
-<span data-ttu-id="936ce-217">Beschrijving: komt overeen met een teken reeks met reguliere expressies.</span><span class="sxs-lookup"><span data-stu-id="936ce-217">Description: Matches a string using regular expressions.</span></span> <span data-ttu-id="936ce-218">Wanneer de invoer scalair is, wordt de `$Matches` Automatische variabele gevuld.</span><span class="sxs-lookup"><span data-stu-id="936ce-218">When the input is scalar, it populates the `$Matches` automatic variable.</span></span>
-
-<span data-ttu-id="936ce-219">Als de invoer een verzameling is, `-match` `-notmatch` retour neren de Opera tors en de overeenkomende leden van die verzameling, maar de operator vult de `$Matches` variabele niet in.</span><span class="sxs-lookup"><span data-stu-id="936ce-219">If the input is a collection, the `-match` and `-notmatch` operators return the matching members of that collection, but the operator does not populate the `$Matches` variable.</span></span>
-
-<span data-ttu-id="936ce-220">Met de volgende opdracht wordt bijvoorbeeld een verzameling teken reeksen naar de operator verzonden `-match` .</span><span class="sxs-lookup"><span data-stu-id="936ce-220">For example, the following command submits a collection of strings to the `-match` operator.</span></span> <span data-ttu-id="936ce-221">De `-match` operator retourneert de items in de verzameling die overeenkomen.</span><span class="sxs-lookup"><span data-stu-id="936ce-221">The `-match` operator returns the items in the collection that match.</span></span> <span data-ttu-id="936ce-222">De automatische variabele wordt niet gevuld `$Matches` .</span><span class="sxs-lookup"><span data-stu-id="936ce-222">It does not populate the `$Matches` automatic variable.</span></span>
-
-```powershell
-PS> "Sunday", "Monday", "Tuesday" -match "sun"
-Sunday
-
-PS> $Matches
-PS>
-```
-
-<span data-ttu-id="936ce-223">Met de volgende opdracht wordt daarentegen één teken reeks naar de `-match` operator verzonden.</span><span class="sxs-lookup"><span data-stu-id="936ce-223">In contrast, the following command submits a single string to the `-match` operator.</span></span> <span data-ttu-id="936ce-224">De `-match` operator retourneert een Booleaanse waarde en vult de `$Matches` Automatische variabele.</span><span class="sxs-lookup"><span data-stu-id="936ce-224">The `-match` operator returns a Boolean value and populates the `$Matches` automatic variable.</span></span> <span data-ttu-id="936ce-225">De `$Matches` Automatische variabele is een **hashtabel**.</span><span class="sxs-lookup"><span data-stu-id="936ce-225">The `$Matches` automatic variable is a **Hashtable**.</span></span> <span data-ttu-id="936ce-226">Als er geen groepering of opname wordt gebruikt, wordt er slechts één sleutel ingevuld.</span><span class="sxs-lookup"><span data-stu-id="936ce-226">If no grouping or capturing is used, only one key is populated.</span></span>
-<span data-ttu-id="936ce-227">De `0` sleutel vertegenwoordigt alle tekst die overeenkomt.</span><span class="sxs-lookup"><span data-stu-id="936ce-227">The `0` key represents all text that was matched.</span></span> <span data-ttu-id="936ce-228">Zie [about_Regular_Expressions](about_Regular_Expressions.md)voor meer informatie over het groeperen en vastleggen met behulp van reguliere expressies.</span><span class="sxs-lookup"><span data-stu-id="936ce-228">For more information about grouping and capturing using regular expressions, see [about_Regular_Expressions](about_Regular_Expressions.md).</span></span>
-
-```powershell
-PS> "Sunday" -match "sun"
-True
-
-PS> $Matches
 
 Name                           Value
 ----                           -----
-0                              Sun
+domain                         CONTOSO
+user                           jsmith
+0                              was CONTOSO\jsmith
+
+Domain name:
+CONTOSO
+
+User name:
+jsmith
 ```
 
-<span data-ttu-id="936ce-229">Het is belang rijk te weten dat de `$Matches` hashtabel alleen het eerste exemplaar van een overeenkomend patroon moet bevatten.</span><span class="sxs-lookup"><span data-stu-id="936ce-229">It is important to note that the `$Matches` hashtable will only contain the first occurrence of any matching pattern.</span></span>
+<span data-ttu-id="6bda1-237">Zie [about_Regular_Expressions](about_Regular_Expressions.md)voor meer informatie.</span><span class="sxs-lookup"><span data-stu-id="6bda1-237">For details, see [about_Regular_Expressions](about_Regular_Expressions.md).</span></span>
 
-```powershell
-PS> "Banana" -match "na"
-True
+## <a name="replacement-operator"></a><span data-ttu-id="6bda1-238">Vervangings operator</span><span class="sxs-lookup"><span data-stu-id="6bda1-238">Replacement operator</span></span>
 
-PS> $Matches
+### <a name="replacement-with-regular-expressions"></a><span data-ttu-id="6bda1-239">Vervangen door reguliere expressies</span><span class="sxs-lookup"><span data-stu-id="6bda1-239">Replacement with regular expressions</span></span>
 
-Name                           Value
-----                           -----
-0                              na
+<span data-ttu-id="6bda1-240">Net als `-match` : de `-replace` operator gebruikt reguliere expressies om het opgegeven patroon te vinden.</span><span class="sxs-lookup"><span data-stu-id="6bda1-240">Like `-match`, the `-replace` operator uses regular expressions to find the specified pattern.</span></span> <span data-ttu-id="6bda1-241">Maar in tegens telling tot `-match` , worden de overeenkomsten vervangen door een andere opgegeven waarde.</span><span class="sxs-lookup"><span data-stu-id="6bda1-241">But unlike `-match`, it replaces the matches with another specified value.</span></span>
+
+<span data-ttu-id="6bda1-242">Syntaxis:</span><span class="sxs-lookup"><span data-stu-id="6bda1-242">Syntax:</span></span>
+
+```
+<input> -replace <regular-expression>, <substitute>
 ```
 
-> [!IMPORTANT]
-> <span data-ttu-id="936ce-230">De `0` sleutel is een **geheel getal**.</span><span class="sxs-lookup"><span data-stu-id="936ce-230">The `0` key is an **Integer**.</span></span> <span data-ttu-id="936ce-231">U kunt elke **hash** -methode gebruiken om toegang te krijgen tot de opgeslagen waarde.</span><span class="sxs-lookup"><span data-stu-id="936ce-231">You can use any **Hashtable** method to access the value stored.</span></span>
->
-> ```powershell
-> PS> "Good Dog" -match "Dog"
-> True
->
-> PS> $Matches[0]
-> Dog
->
-> PS> $Matches.Item(0)
-> Dog
->
-> PS> $Matches.0
-> Dog
-> ```
-
-<span data-ttu-id="936ce-232">De `-notmatch` operator vult de `$Matches` Automatische variabele in wanneer de invoer scalair is en het resultaat ONWAAR is, wanneer er een overeenkomst wordt gedetecteerd.</span><span class="sxs-lookup"><span data-stu-id="936ce-232">The `-notmatch` operator populates the `$Matches` automatic variable when the input is scalar and the result is False, that it, when it detects a match.</span></span>
-
-```powershell
-PS> "Sunday" -notmatch "rain"
-True
-
-PS> $matches
-PS>
-
-PS> "Sunday" -notmatch "day"
-False
-
-PS> $matches
-
-Name                           Value
-----                           -----
-0                              day
-```
-
-### <a name="-notmatch"></a><span data-ttu-id="936ce-233">-notmatch</span><span class="sxs-lookup"><span data-stu-id="936ce-233">-notmatch</span></span>
-
-<span data-ttu-id="936ce-234">Beschrijving: komt niet overeen met een teken reeks.</span><span class="sxs-lookup"><span data-stu-id="936ce-234">Description: Does not match a string.</span></span> <span data-ttu-id="936ce-235">Maakt gebruik van reguliere expressies.</span><span class="sxs-lookup"><span data-stu-id="936ce-235">Uses regular expressions.</span></span> <span data-ttu-id="936ce-236">Wanneer de invoer scalair is, wordt de `$Matches` Automatische variabele gevuld.</span><span class="sxs-lookup"><span data-stu-id="936ce-236">When the input is scalar, it populates the `$Matches` automatic variable.</span></span>
-
-<span data-ttu-id="936ce-237">Voorbeeld:</span><span class="sxs-lookup"><span data-stu-id="936ce-237">Example:</span></span>
-
-```powershell
-PS> "Sunday" -notmatch "sun"
-False
-
-PS> $matches
-Name Value
----- -----
-0    sun
-
-PS> "Sunday", "Monday" -notmatch "sun"
-Monday
-```
-
-## <a name="containment-operators"></a><span data-ttu-id="936ce-238">Containment-Opera tors</span><span class="sxs-lookup"><span data-stu-id="936ce-238">Containment operators</span></span>
-
-<span data-ttu-id="936ce-239">De containment-Opera tors ( `-contains` en `-notcontains` ) zijn vergelijkbaar met de gelijkheids operatoren.</span><span class="sxs-lookup"><span data-stu-id="936ce-239">The containment operators (`-contains` and `-notcontains`) are similar to the equality operators.</span></span> <span data-ttu-id="936ce-240">De containment-Opera tors retour neren echter altijd een Booleaanse waarde, zelfs wanneer de invoer een verzameling is.</span><span class="sxs-lookup"><span data-stu-id="936ce-240">However, the containment operators always return a Boolean value, even when the input is a collection.</span></span>
-
-<span data-ttu-id="936ce-241">Ook, in tegens telling tot de gelijkheids operatoren, retour neren de container-Opera tors een waarde zodra ze de eerste overeenkomst detecteren.</span><span class="sxs-lookup"><span data-stu-id="936ce-241">Also, unlike the equality operators, the containment operators return a value as soon as they detect the first match.</span></span> <span data-ttu-id="936ce-242">De gelijkheids operatoren evalueren alle invoer en retour neren vervolgens alle overeenkomende items in de verzameling.</span><span class="sxs-lookup"><span data-stu-id="936ce-242">The equality operators evaluate all input and then return all the matches in the collection.</span></span>
-
-### <a name="-contains"></a><span data-ttu-id="936ce-243">-contains</span><span class="sxs-lookup"><span data-stu-id="936ce-243">-contains</span></span>
-
-<span data-ttu-id="936ce-244">Beschrijving: containment-operator.</span><span class="sxs-lookup"><span data-stu-id="936ce-244">Description: Containment operator.</span></span> <span data-ttu-id="936ce-245">Hiermee wordt aangegeven of een verzameling verwijzings waarden één test waarde bevat.</span><span class="sxs-lookup"><span data-stu-id="936ce-245">Tells whether a collection of reference values includes a single test value.</span></span> <span data-ttu-id="936ce-246">Retourneert altijd een Boole-waarde.</span><span class="sxs-lookup"><span data-stu-id="936ce-246">Always returns a Boolean value.</span></span> <span data-ttu-id="936ce-247">Retourneert alleen waar als de test waarde exact overeenkomt met ten minste een van de referentie waarden.</span><span class="sxs-lookup"><span data-stu-id="936ce-247">Returns TRUE only when the test value exactly matches at least one of the reference values.</span></span>
-
-<span data-ttu-id="936ce-248">Wanneer de test waarde een verzameling is, gebruikt de contains-operator referentie gelijkheid.</span><span class="sxs-lookup"><span data-stu-id="936ce-248">When the test value is a collection, the Contains operator uses reference equality.</span></span> <span data-ttu-id="936ce-249">Het retourneert alleen waar als een van de referentie waarden hetzelfde exemplaar van het object test waarde is.</span><span class="sxs-lookup"><span data-stu-id="936ce-249">It returns TRUE only when one of the reference values is the same instance of the test value object.</span></span>
-
-<span data-ttu-id="936ce-250">In een zeer grote verzameling retourneert de `-contains` operator resultaten sneller dan de operator equal to.</span><span class="sxs-lookup"><span data-stu-id="936ce-250">In a very large collection, the `-contains` operator returns results quicker than the equal to operator.</span></span>
-
-<span data-ttu-id="936ce-251">Syntaxis:</span><span class="sxs-lookup"><span data-stu-id="936ce-251">Syntax:</span></span>
-
-`<Reference-values> -contains <Test-value>`
-
-<span data-ttu-id="936ce-252">Voorbeelden:</span><span class="sxs-lookup"><span data-stu-id="936ce-252">Examples:</span></span>
-
-```powershell
-PS> "abc", "def" -contains "def"
-True
-
-PS> "Windows", "PowerShell" -contains "Shell"
-False  #Not an exact match
-
-# Does the list of computers in $DomainServers include $ThisComputer?
-PS> $DomainServers -contains $thisComputer
-True
-
-PS> "abc", "def", "ghi" -contains "abc", "def"
-False
-
-PS> $a = "abc", "def"
-PS> "abc", "def", "ghi" -contains $a
-False
-PS> $a, "ghi" -contains $a
-True
-```
-
-### <a name="-notcontains"></a><span data-ttu-id="936ce-253">-notcontains</span><span class="sxs-lookup"><span data-stu-id="936ce-253">-notcontains</span></span>
-
-<span data-ttu-id="936ce-254">Beschrijving: containment-operator.</span><span class="sxs-lookup"><span data-stu-id="936ce-254">Description: Containment operator.</span></span> <span data-ttu-id="936ce-255">Hiermee wordt aangegeven of een verzameling verwijzings waarden één test waarde bevat.</span><span class="sxs-lookup"><span data-stu-id="936ce-255">Tells whether a collection of reference values includes a single test value.</span></span> <span data-ttu-id="936ce-256">Retourneert altijd een Boole-waarde.</span><span class="sxs-lookup"><span data-stu-id="936ce-256">Always returns a Boolean value.</span></span> <span data-ttu-id="936ce-257">Retourneert waar als de test waarde geen exacte overeenkomsten voor ten minste een van de verwijzings waarden is.</span><span class="sxs-lookup"><span data-stu-id="936ce-257">Returns TRUE when the test value is not an exact matches for at least one of the reference values.</span></span>
-
-<span data-ttu-id="936ce-258">Wanneer de test waarde een verzameling is, gebruikt de NotContains-operator referentie gelijkheid.</span><span class="sxs-lookup"><span data-stu-id="936ce-258">When the test value is a collection, the NotContains operator uses reference equality.</span></span>
-
-<span data-ttu-id="936ce-259">Syntaxis:</span><span class="sxs-lookup"><span data-stu-id="936ce-259">Syntax:</span></span>
-
-`<Reference-values> -notcontains <Test-value>`
-
-<span data-ttu-id="936ce-260">Voorbeelden:</span><span class="sxs-lookup"><span data-stu-id="936ce-260">Examples:</span></span>
-
-```powershell
-PS> "Windows", "PowerShell" -notcontains "Shell"
-True  #Not an exact match
-
-# Get cmdlet parameters, but exclude common parameters
-function get-parms ($cmdlet)
-{
-    $Common = "Verbose", "Debug", "WarningAction", "WarningVariable",
-      "ErrorAction", "ErrorVariable", "OutVariable", "OutBuffer"
-
-    $allparms = (Get-Command $Cmdlet).parametersets |
-      foreach {$_.Parameters} |
-        foreach {$_.Name} | Sort-Object | Get-Unique
-
-    $allparms | where {$Common -notcontains $_ }
-}
-
-# Find unapproved verbs in the functions in my module
-PS> $ApprovedVerbs = Get-Verb | foreach {$_.verb}
-PS> $myVerbs = Get-Command -Module MyModule | foreach {$_.verb}
-PS> $myVerbs | where {$ApprovedVerbs -notcontains $_}
-ForEach
-Sort
-Tee
-Where
-```
-
-### <a name="-in"></a><span data-ttu-id="936ce-261">-in</span><span class="sxs-lookup"><span data-stu-id="936ce-261">-in</span></span>
-
-<span data-ttu-id="936ce-262">Beschrijving: in operator.</span><span class="sxs-lookup"><span data-stu-id="936ce-262">Description: In operator.</span></span> <span data-ttu-id="936ce-263">Hiermee wordt aangegeven of een test waarde wordt weer gegeven in een verzameling referentie waarden.</span><span class="sxs-lookup"><span data-stu-id="936ce-263">Tells whether a test value appears in a collection of reference values.</span></span> <span data-ttu-id="936ce-264">Altijd retour neren als Booleaanse waarde.</span><span class="sxs-lookup"><span data-stu-id="936ce-264">Always return as Boolean value.</span></span> <span data-ttu-id="936ce-265">Retourneert alleen waar als de test waarde exact overeenkomt met ten minste een van de referentie waarden.</span><span class="sxs-lookup"><span data-stu-id="936ce-265">Returns TRUE only when the test value exactly matches at least one of the reference values.</span></span>
-
-<span data-ttu-id="936ce-266">Wanneer de test waarde een verzameling is, gebruikt de in-operator referentie gelijkheid.</span><span class="sxs-lookup"><span data-stu-id="936ce-266">When the test value is a collection, the In operator uses reference equality.</span></span>
-<span data-ttu-id="936ce-267">Het retourneert alleen waar als een van de referentie waarden hetzelfde exemplaar van het object test waarde is.</span><span class="sxs-lookup"><span data-stu-id="936ce-267">It returns TRUE only when one of the reference values is the same instance of the test value object.</span></span>
-
-<span data-ttu-id="936ce-268">De `-in` operator is geïntroduceerd in Power shell 3,0.</span><span class="sxs-lookup"><span data-stu-id="936ce-268">The `-in` operator was introduced in PowerShell 3.0.</span></span>
-
-<span data-ttu-id="936ce-269">Syntaxis:</span><span class="sxs-lookup"><span data-stu-id="936ce-269">Syntax:</span></span>
-
-`<Test-value> -in <Reference-values>`
-
-<span data-ttu-id="936ce-270">Voorbeelden:</span><span class="sxs-lookup"><span data-stu-id="936ce-270">Examples:</span></span>
-
-```powershell
-PS> "def" -in "abc", "def"
-True
-
-PS> "Shell" -in "Windows", "PowerShell"
-False  #Not an exact match
-
-PS> "Windows" -in "Windows", "PowerShell"
-True  #An exact match
-
-PS> "Windows", "PowerShell" -in "Windows", "PowerShell", "ServerManager"
-False  #Using reference equality
-
-PS> $a = "Windows", "PowerShell"
-PS> $a -in $a, "ServerManager"
-True  #Using reference equality
-
-# Does the list of computers in $DomainServers include $ThisComputer?
-PS> $thisComputer -in  $domainServers
-True
-```
-
-### <a name="-notin"></a><span data-ttu-id="936ce-271">-notin</span><span class="sxs-lookup"><span data-stu-id="936ce-271">-notin</span></span>
-
-<span data-ttu-id="936ce-272">Beschrijving: Hiermee wordt aangegeven of een test waarde wordt weer gegeven in een verzameling referentie waarden.</span><span class="sxs-lookup"><span data-stu-id="936ce-272">Description: Tells whether a test value appears in a collection of reference values.</span></span> <span data-ttu-id="936ce-273">Retourneert altijd een Boole-waarde.</span><span class="sxs-lookup"><span data-stu-id="936ce-273">Always returns a Boolean value.</span></span> <span data-ttu-id="936ce-274">Retourneert waar als de test waarde niet exact overeenkomt voor ten minste een van de referentie waarden.</span><span class="sxs-lookup"><span data-stu-id="936ce-274">Returns TRUE when the test value is not an exact match for at least one of the reference values.</span></span>
-
-<span data-ttu-id="936ce-275">Wanneer de test waarde een verzameling is, gebruikt de in-operator referentie gelijkheid.</span><span class="sxs-lookup"><span data-stu-id="936ce-275">When the test value is a collection, the In operator uses reference equality.</span></span>
-<span data-ttu-id="936ce-276">Het retourneert alleen waar als een van de referentie waarden hetzelfde exemplaar van het object test waarde is.</span><span class="sxs-lookup"><span data-stu-id="936ce-276">It returns TRUE only when one of the reference values is the same instance of the test value object.</span></span>
-
-<span data-ttu-id="936ce-277">De `-notin` operator is geïntroduceerd in Power shell 3,0.</span><span class="sxs-lookup"><span data-stu-id="936ce-277">The `-notin` operator was introduced in PowerShell 3.0.</span></span>
-
-<span data-ttu-id="936ce-278">Syntaxis:</span><span class="sxs-lookup"><span data-stu-id="936ce-278">Syntax:</span></span>
-
-`<Test-value> -notin <Reference-values>`
-
-<span data-ttu-id="936ce-279">Voorbeelden:</span><span class="sxs-lookup"><span data-stu-id="936ce-279">Examples:</span></span>
-
-```powershell
-PS> "def" -notin "abc", "def"
-False
-
-PS> "ghi" -notin "abc", "def"
-True
-
-PS> "Shell" -notin "Windows", "PowerShell"
-True  #Not an exact match
-
-PS> "Windows" -notin "Windows", "PowerShell"
-False  #An exact match
-
-# Find unapproved verbs in the functions in my module
-PS> $ApprovedVerbs = Get-Verb | foreach {$_.verb}
-PS> $MyVerbs = Get-Command -Module MyModule | foreach {$_.verb}
-
-PS> $MyVerbs | where {$_ -notin $ApprovedVerbs}
-ForEach
-Sort
-Tee
-Where
-```
-
-## <a name="replacement-operator"></a><span data-ttu-id="936ce-280">Vervangings operator</span><span class="sxs-lookup"><span data-stu-id="936ce-280">Replacement Operator</span></span>
-
-<span data-ttu-id="936ce-281">De `-replace` operator heeft de volgende syntaxis:</span><span class="sxs-lookup"><span data-stu-id="936ce-281">The `-replace` operator has the following syntax:</span></span>
-
-`<input> -replace <original>, <substitute>`
-
-<span data-ttu-id="936ce-282">De `<original>` tijdelijke aanduiding is een reguliere expressie die overeenkomt met de tekens die moeten worden vervangen.</span><span class="sxs-lookup"><span data-stu-id="936ce-282">The `<original>` placeholder is a regular expression matching the characters to be replaced.</span></span> <span data-ttu-id="936ce-283">De `<substitute>` tijdelijke aanduiding is een letterlijke teken reeks waarmee ze worden vervangen.</span><span class="sxs-lookup"><span data-stu-id="936ce-283">The `<substitute>` placeholder is a literal string that replaces them.</span></span>
-
-<span data-ttu-id="936ce-284">De operator vervangt alle of een deel van een waarde met de opgegeven waarde met reguliere expressies.</span><span class="sxs-lookup"><span data-stu-id="936ce-284">The operator replaces all or part of a value with the specified value using regular expressions.</span></span> <span data-ttu-id="936ce-285">U kunt de operator gebruiken voor veel beheer taken, zoals het wijzigen van de naam van bestanden.</span><span class="sxs-lookup"><span data-stu-id="936ce-285">You can use the operator for many administrative tasks, such as renaming files.</span></span> <span data-ttu-id="936ce-286">Met de volgende opdracht worden bijvoorbeeld de bestandsnaam extensies van alle bestanden gewijzigd `.txt` in `.log` :</span><span class="sxs-lookup"><span data-stu-id="936ce-286">For example, the following command changes the file name extensions of all `.txt` files to `.log`:</span></span>
+<span data-ttu-id="6bda1-243">De operator vervangt alle of een deel van een waarde met de opgegeven waarde met reguliere expressies.</span><span class="sxs-lookup"><span data-stu-id="6bda1-243">The operator replaces all or part of a value with the specified value using regular expressions.</span></span> <span data-ttu-id="6bda1-244">U kunt de operator gebruiken voor veel beheer taken, zoals het wijzigen van de naam van bestanden.</span><span class="sxs-lookup"><span data-stu-id="6bda1-244">You can use the operator for many administrative tasks, such as renaming files.</span></span> <span data-ttu-id="6bda1-245">Met de volgende opdracht worden bijvoorbeeld de bestandsnaam extensies van alle bestanden gewijzigd `.txt` in `.log` :</span><span class="sxs-lookup"><span data-stu-id="6bda1-245">For example, the following command changes the file name extensions of all `.txt` files to `.log`:</span></span>
 
 ```powershell
 Get-ChildItem *.txt | Rename-Item -NewName { $_.name -replace '\.txt$','.log' }
 ```
 
-### <a name="case-sensitive-matches"></a><span data-ttu-id="936ce-287">Hoofdletter gevoelige overeenkomsten</span><span class="sxs-lookup"><span data-stu-id="936ce-287">Case-sensitive matches</span></span>
+<span data-ttu-id="6bda1-246">Standaard `-replace` is de operator niet hoofdletter gevoelig.</span><span class="sxs-lookup"><span data-stu-id="6bda1-246">By default, the `-replace` operator is case-insensitive.</span></span> <span data-ttu-id="6bda1-247">Gebruik om het hoofdletter gevoelig te maken `-creplace` .</span><span class="sxs-lookup"><span data-stu-id="6bda1-247">To make it case sensitive, use `-creplace`.</span></span> <span data-ttu-id="6bda1-248">Gebruik om het expliciet niet hoofdletter gevoelig te maken `-ireplace` .</span><span class="sxs-lookup"><span data-stu-id="6bda1-248">To make it explicitly case-insensitive, use `-ireplace`.</span></span>
 
-<span data-ttu-id="936ce-288">Standaard `-replace` is de operator niet hoofdletter gevoelig.</span><span class="sxs-lookup"><span data-stu-id="936ce-288">By default, the `-replace` operator is case-insensitive.</span></span> <span data-ttu-id="936ce-289">Gebruik om het hoofdletter gevoelig te maken `-creplace` .</span><span class="sxs-lookup"><span data-stu-id="936ce-289">To make it case sensitive, use `-creplace`.</span></span> <span data-ttu-id="936ce-290">Gebruik om het expliciet niet hoofdletter gevoelig te maken `-ireplace` .</span><span class="sxs-lookup"><span data-stu-id="936ce-290">To make it explicitly case-insensitive, use `-ireplace`.</span></span>
-
-<span data-ttu-id="936ce-291">Bekijk de volgende voorbeelden:</span><span class="sxs-lookup"><span data-stu-id="936ce-291">Consider the following examples:</span></span>
+<span data-ttu-id="6bda1-249">Voorbeelden:</span><span class="sxs-lookup"><span data-stu-id="6bda1-249">Examples:</span></span>
 
 ```powershell
-PS> "book" -replace "B", "C"
-Cook
+"book" -ireplace "B", "C" # Case insensitive
+"book" -creplace "B", "C" # Case-sensitive; hence, nothing to replace
 ```
 
-```powershell
-PS> "book" -ireplace "B", "C"
+```Output
 Cook
-```
-
-```powershell
-PS> "book" -creplace "B", "C"
 book
 ```
 
-### <a name="substitutions-in-regular-expressions"></a><span data-ttu-id="936ce-292">Vervangingen in reguliere expressies</span><span class="sxs-lookup"><span data-stu-id="936ce-292">Substitutions in regular expressions</span></span>
+### <a name="regular-expressions-substitutions"></a><span data-ttu-id="6bda1-250">Vervangingen van reguliere expressies</span><span class="sxs-lookup"><span data-stu-id="6bda1-250">Regular expressions substitutions</span></span>
 
-<span data-ttu-id="936ce-293">Het is ook mogelijk om reguliere expressies te gebruiken om tekst dynamisch te vervangen met opname groepen en vervangingen.</span><span class="sxs-lookup"><span data-stu-id="936ce-293">It is also possible to use regular expressions to dynamically replace text using capturing groups, and substitutions.</span></span> <span data-ttu-id="936ce-294">Er kan in de teken reeks naar vastleg groepen worden verwezen `<substitute>` met het `$` teken voor het dollar teken () voor de groeps-id.</span><span class="sxs-lookup"><span data-stu-id="936ce-294">Capture groups can be referenced in the `<substitute>` string using the dollar sign (`$`) character before the group identifier.</span></span>
+<span data-ttu-id="6bda1-251">Het is ook mogelijk om reguliere expressies te gebruiken om tekst dynamisch te vervangen met opname groepen en vervangingen.</span><span class="sxs-lookup"><span data-stu-id="6bda1-251">It is also possible to use regular expressions to dynamically replace text using capturing groups, and substitutions.</span></span> <span data-ttu-id="6bda1-252">Er kan in de teken reeks naar vastleg groepen worden verwezen `<substitute>` met het `$` teken voor het dollar teken () voor de groeps-id.</span><span class="sxs-lookup"><span data-stu-id="6bda1-252">Capture groups can be referenced in the `<substitute>` string using the dollar sign (`$`) character before the group identifier.</span></span>
 
-<span data-ttu-id="936ce-295">Naar vastleg groepen kan worden verwezen met een **getal** of **naam**</span><span class="sxs-lookup"><span data-stu-id="936ce-295">Capture groups can be referenced by **Number** or **Name**</span></span>
+<span data-ttu-id="6bda1-253">In het volgende voor beeld `-replace` accepteert de operator een gebruikers naam in de vorm van `DomainName\Username` en wordt geconverteerd naar de `Username@DomainName` indeling:</span><span class="sxs-lookup"><span data-stu-id="6bda1-253">In the following example, the `-replace` operator accepts a username in the form of `DomainName\Username` and converts to the `Username@DomainName` format:</span></span>
 
-- <span data-ttu-id="936ce-296">Op **nummer** : het vastleggen van groepen wordt van links naar rechts genummerd.</span><span class="sxs-lookup"><span data-stu-id="936ce-296">By **Number** - Capturing Groups are numbered from left to right.</span></span>
+```powershell
+$SearchExp = '^(?<Username>[\w-.]+)\\(?<DomainName>[\w-.]+)$'
+$ReplaceExp = '${Username}@${DomainName}'
 
-  ```powershell
-  PS> "John D. Smith" -replace "(\w+) (\w+)\. (\w+)", '$1.$2.$3@contoso.com'
-  John.D.Smith@contoso.com
-  ```
+'Contoso.local\John.Doe' -replace $SearchExp,$ReplaceExp
+```
 
-- <span data-ttu-id="936ce-297">Op **naam** : voor het vastleggen van groepen kan ook naar een naam worden verwezen.</span><span class="sxs-lookup"><span data-stu-id="936ce-297">By **Name** - Capturing Groups can also be referenced by name.</span></span>
-
-  ```powershell
-  PS> "CONTOSO\Administrator" -replace '\w+\\(?<user>\w+)', 'FABRIKAM\${user}'
-  FABRIKAM\Administrator
-  ```
+```output
+John.Doe@Contoso.local
+```
 
 > [!WARNING]
-> <span data-ttu-id="936ce-298">Omdat het `$` teken wordt gebruikt in teken reeks uitbreiding, moet u letterlijke teken reeksen gebruiken of het teken escapeen `$` .</span><span class="sxs-lookup"><span data-stu-id="936ce-298">Since the `$` character is used in string expansion, you must use literal strings or escape the `$` character.</span></span>
+> <span data-ttu-id="6bda1-254">Het `$` teken heeft syntatic-rollen in Power shell en reguliere expressies:</span><span class="sxs-lookup"><span data-stu-id="6bda1-254">The `$` character has syntatic roles in both PowerShell and regular expressions:</span></span>
 >
-> ```powershell
-> PS> 'Hello World' -replace '(\w+) \w+', "`$1 Universe"
-> Hello Universe
-> ```
->
-> <span data-ttu-id="936ce-299">Omdat het `$` teken in substitutie wordt gebruikt, moet u ook alle exemplaren in de teken reeks verescapenen.</span><span class="sxs-lookup"><span data-stu-id="936ce-299">Additionally, since the `$` character is used in substitution, you must escape any instances in your string.</span></span>
->
-> ```powershell
-> PS> '5.72' -replace '(.+)', '$$$1'
-> $5.72
-> ```
+> - <span data-ttu-id="6bda1-255">Tussen dubbele aanhalings tekens in Power shell worden variabelen aangeduid en fungeert als een operator voor subexpressie.</span><span class="sxs-lookup"><span data-stu-id="6bda1-255">In PowerShell, between double quotation marks, it designates variables and acts as a subexpression operator.</span></span>
+> - <span data-ttu-id="6bda1-256">In regex-Zoek reeksen geeft het einde van de regel aan</span><span class="sxs-lookup"><span data-stu-id="6bda1-256">In Regex search strings, it denotes end of the line</span></span>
+> - <span data-ttu-id="6bda1-257">In regex-vervangings teken reeksen worden vastgelegde groepen als zodanig aangeduid, moet u ervoor zorgen dat u de reguliere expressies tussen enkele aanhalings tekens plaatst of een apostroffen- `` ` `` teken () voor de tekst plaatst.</span><span class="sxs-lookup"><span data-stu-id="6bda1-257">In Regex substitution strings, it denotes captured groups As such, be sure to to either put your regular expressions between single quotation marks or insert a backtick (`` ` ``) character before them.</span></span>
 
-<span data-ttu-id="936ce-300">Zie [about_Regular_Expressions](about_Regular_Expressions.md) en [vervangingen in reguliere expressies](/dotnet/standard/base-types/substitutions-in-regular-expressions) voor meer informatie.</span><span class="sxs-lookup"><span data-stu-id="936ce-300">To learn more see [about_Regular_Expressions](about_Regular_Expressions.md) and [Substitutions in Regular Expressions](/dotnet/standard/base-types/substitutions-in-regular-expressions)</span></span>
+<span data-ttu-id="6bda1-258">Bijvoorbeeld:</span><span class="sxs-lookup"><span data-stu-id="6bda1-258">For example:</span></span>
 
-### <a name="substituting-in-a-collection"></a><span data-ttu-id="936ce-301">Vervangen in een verzameling</span><span class="sxs-lookup"><span data-stu-id="936ce-301">Substituting in a collection</span></span>
+```powershell
+$1 = 'Goodbye'
 
-<span data-ttu-id="936ce-302">Wanneer de `<input>` naar de `-replace` operator een verzameling is, past Power shell de vervanging toe op elke waarde in de verzameling.</span><span class="sxs-lookup"><span data-stu-id="936ce-302">When the `<input>` to the `-replace` operator is a collection, PowerShell applies the replacement to every value in the collection.</span></span> <span data-ttu-id="936ce-303">Bijvoorbeeld:</span><span class="sxs-lookup"><span data-stu-id="936ce-303">For example:</span></span>
+'Hello World' -replace '(\w+) \w+', "$1 Universe"
+# Output: Goodbye Universe
+
+'Hello World' -replace '(\w+) \w+', '$1 Universe'
+# Output: Hello Universe
+```
+
+<span data-ttu-id="6bda1-259">`$$` in regex duidt een letterlijke teken reeks aan `$` .</span><span class="sxs-lookup"><span data-stu-id="6bda1-259">`$$` in Regex denotes a literal `$`.</span></span> <span data-ttu-id="6bda1-260">Dit wordt `$$` in de vervangings teken reeks toegevoegd aan een letterlijke waarde `$` in de resulterende vervanging.</span><span class="sxs-lookup"><span data-stu-id="6bda1-260">This `$$` in the substitution string to include a a literal `$` in the resulting replacement.</span></span> <span data-ttu-id="6bda1-261">Bijvoorbeeld:</span><span class="sxs-lookup"><span data-stu-id="6bda1-261">For example:</span></span>
+
+```powershell
+'5.72' -replace '(.+)', '$ $1' # Output: $ 5.72
+'5.72' -replace '(.+)', '$$$1' # Output: $5.72
+'5.72' -replace '(.+)', '$$1'  # Output: $1
+```
+
+<span data-ttu-id="6bda1-262">Zie [about_Regular_Expressions](about_Regular_Expressions.md) en [vervangingen in reguliere expressies][4]voor meer informatie.</span><span class="sxs-lookup"><span data-stu-id="6bda1-262">To learn more, see [about_Regular_Expressions](about_Regular_Expressions.md) and [Substitutions in Regular Expressions][4].</span></span>
+
+### <a name="substituting-in-a-collection"></a><span data-ttu-id="6bda1-263">Vervangen in een verzameling</span><span class="sxs-lookup"><span data-stu-id="6bda1-263">Substituting in a collection</span></span>
+
+<span data-ttu-id="6bda1-264">Wanneer de `<input>` naar de `-replace` operator een verzameling is, past Power shell de vervanging toe op elke waarde in de verzameling.</span><span class="sxs-lookup"><span data-stu-id="6bda1-264">When the `<input>` to the `-replace` operator is a collection, PowerShell applies the replacement to every value in the collection.</span></span> <span data-ttu-id="6bda1-265">Bijvoorbeeld:</span><span class="sxs-lookup"><span data-stu-id="6bda1-265">For example:</span></span>
 
 ```powershell
 "B1","B2","B3","B4","B5" -replace "B", 'a'
@@ -581,49 +466,112 @@ a4
 a5
 ```
 
-## <a name="type-comparison"></a><span data-ttu-id="936ce-304">Type vergelijking</span><span class="sxs-lookup"><span data-stu-id="936ce-304">Type comparison</span></span>
+## <a name="containment-operators"></a><span data-ttu-id="6bda1-266">Containment-Opera tors</span><span class="sxs-lookup"><span data-stu-id="6bda1-266">Containment operators</span></span>
 
-<span data-ttu-id="936ce-305">De type vergelijkings operators ( `-is` en `-isnot` ) worden gebruikt om te bepalen of een object een specifiek type is.</span><span class="sxs-lookup"><span data-stu-id="936ce-305">The type comparison operators (`-is` and `-isnot`) are used to determine if an object is a specific type.</span></span>
+<span data-ttu-id="6bda1-267">De containment-Opera tors ( `-contains` ,, `-notcontains` `-in` en `-notin` ) zijn vergelijkbaar met de gelijkheids operatoren, behalve dat ze altijd een **Booleaanse** waarde Retour neren, zelfs wanneer de invoer een verzameling is.</span><span class="sxs-lookup"><span data-stu-id="6bda1-267">The containment operators (`-contains`, `-notcontains`, `-in`, and `-notin`) are similar to the equality operators, except that they always return a **Boolean** value, even when the input is a collection.</span></span> <span data-ttu-id="6bda1-268">Deze opera tors worden niet meer vergeleken wanneer ze de eerste overeenkomst detecteren, terwijl de gelijkheids operatoren alle invoer leden evalueren.</span><span class="sxs-lookup"><span data-stu-id="6bda1-268">These operators stop comparing as soon as they detect the first match, whereas the equality operators evaluate all input members.</span></span> <span data-ttu-id="6bda1-269">In een zeer grote verzameling retour neren deze opera tors sneller dan de gelijkheids operators.</span><span class="sxs-lookup"><span data-stu-id="6bda1-269">In a very large collection, these operators return quicker than the equality operators.</span></span>
 
-### <a name="-is"></a><span data-ttu-id="936ce-306">-is</span><span class="sxs-lookup"><span data-stu-id="936ce-306">-is</span></span>
+<span data-ttu-id="6bda1-270">Syntaxis:</span><span class="sxs-lookup"><span data-stu-id="6bda1-270">Syntax:</span></span>
 
-<span data-ttu-id="936ce-307">Syntaxis:</span><span class="sxs-lookup"><span data-stu-id="936ce-307">Syntax:</span></span>
-
-`<object> -is <type reference>`
-
-<span data-ttu-id="936ce-308">Voorbeeld:</span><span class="sxs-lookup"><span data-stu-id="936ce-308">Example:</span></span>
-
-```powershell
-PS> $a = 1
-PS> $b = "1"
-PS> $a -is [int]
-True
-PS> $a -is $b.GetType()
-False
+```
+<Collection> -contains <Test-object>
+<Collection> -notcontains <Test-object>
+<Test-object> -in <Collection>
+<Test-object> -notin <Collection>
 ```
 
-### <a name="-isnot"></a><span data-ttu-id="936ce-309">-isnot</span><span class="sxs-lookup"><span data-stu-id="936ce-309">-isnot</span></span>
+### <a name="-contains-and--notcontains"></a><span data-ttu-id="6bda1-271">-bevat en-notcontains</span><span class="sxs-lookup"><span data-stu-id="6bda1-271">-contains and -notcontains</span></span>
 
-<span data-ttu-id="936ce-310">Syntaxis:</span><span class="sxs-lookup"><span data-stu-id="936ce-310">Syntax:</span></span>
+<span data-ttu-id="6bda1-272">Deze opera tors geven aan of een set een bepaald element bevat.</span><span class="sxs-lookup"><span data-stu-id="6bda1-272">These operators tell whether a set includes a certain element.</span></span> <span data-ttu-id="6bda1-273">`-contains` Retourneert waar wanneer de rechter kant (test object) overeenkomt met een van de elementen in de set.</span><span class="sxs-lookup"><span data-stu-id="6bda1-273">`-contains` returns True when the right-hand side (test object) matches one of the elements in the set.</span></span> <span data-ttu-id="6bda1-274">`-notcontains` in plaats daarvan wordt false geretourneerd.</span><span class="sxs-lookup"><span data-stu-id="6bda1-274">`-notcontains` returns False instead.</span></span> <span data-ttu-id="6bda1-275">Wanneer het test object een verzameling is, gebruiken deze opera tors referentie gelijkheid, dat wil zeggen dat ze controleren of een van de set-elementen hetzelfde exemplaar van het test object is.</span><span class="sxs-lookup"><span data-stu-id="6bda1-275">When the test object is a collection, these operators use reference equality, i.e. they check whether one of the set's elements is the same instance of the test object.</span></span>
 
-`<object> -isnot <type reference>`
-
-<span data-ttu-id="936ce-311">Voorbeeld:</span><span class="sxs-lookup"><span data-stu-id="936ce-311">Example:</span></span>
+<span data-ttu-id="6bda1-276">Voorbeelden:</span><span class="sxs-lookup"><span data-stu-id="6bda1-276">Examples:</span></span>
 
 ```powershell
-PS> $a = 1
-PS> $b = "1"
-PS> $a -isnot $b.GetType()
-True
-PS> $b -isnot [int]
-True
+"abc", "def" -contains "def"                  # Output: True
+"abc", "def" -notcontains "def"               # Output: False
+"Windows", "PowerShell" -contains "Shell"     # Output: False
+"Windows", "PowerShell" -notcontains "Shell"  # Output: True
+"abc", "def", "ghi" -contains "abc", "def"    # Output: False
+"abc", "def", "ghi" -notcontains "abc", "def" # Output: True
 ```
 
-## <a name="see-also"></a><span data-ttu-id="936ce-312">Zie ook</span><span class="sxs-lookup"><span data-stu-id="936ce-312">See also</span></span>
+<span data-ttu-id="6bda1-277">Complexere voor beelden:</span><span class="sxs-lookup"><span data-stu-id="6bda1-277">More complex examples:</span></span>
 
-- [<span data-ttu-id="936ce-313">about_Operators</span><span class="sxs-lookup"><span data-stu-id="936ce-313">about_Operators</span></span>](about_Operators.md)
-- [<span data-ttu-id="936ce-314">about_Regular_Expressions</span><span class="sxs-lookup"><span data-stu-id="936ce-314">about_Regular_Expressions</span></span>](about_Regular_Expressions.md)
-- [<span data-ttu-id="936ce-315">about_Wildcards</span><span class="sxs-lookup"><span data-stu-id="936ce-315">about_Wildcards</span></span>](about_Wildcards.md)
-- [<span data-ttu-id="936ce-316">Compare-object</span><span class="sxs-lookup"><span data-stu-id="936ce-316">Compare-Object</span></span>](xref:Microsoft.PowerShell.Utility.Compare-Object)
-- [<span data-ttu-id="936ce-317">Foreach-object</span><span class="sxs-lookup"><span data-stu-id="936ce-317">Foreach-Object</span></span>](xref:Microsoft.PowerShell.Core.ForEach-Object)
-- [<span data-ttu-id="936ce-318">Where-object</span><span class="sxs-lookup"><span data-stu-id="936ce-318">Where-Object</span></span>](xref:Microsoft.PowerShell.Core.Where-Object)
+```powershell
+$DomainServers = "ContosoDC1","ContosoDC2","ContosoFileServer","ContosoDNS",
+                 "ContosoDHCP","ContosoWSUS"
+$thisComputer  = "ContosoDC2"
+
+$DomainServers -contains $thisComputer
+# Output: True
+
+$a = "abc", "def"
+"abc", "def", "ghi" -contains $a # Output: False
+$a, "ghi" -contains $a           # Output: True
+```
+
+### <a name="-in-and--notin"></a><span data-ttu-id="6bda1-278">-in en-notin</span><span class="sxs-lookup"><span data-stu-id="6bda1-278">-in and -notin</span></span>
+
+<span data-ttu-id="6bda1-279">De `-in` `notin` Opera tors en zijn geïntroduceerd in Power Shell 3 als de syntaxis van de `contains` `-notcontain` Opera tors van en.</span><span class="sxs-lookup"><span data-stu-id="6bda1-279">The `-in` and -`notin` operators were introduced in PowerShell 3 as the syntactic reverse of the of `contains` and `-notcontain` operators.</span></span> <span data-ttu-id="6bda1-280">`-in` retourneert **waar** wanneer de linkerkant `<test-object>` overeenkomt met een van de elementen in de set.</span><span class="sxs-lookup"><span data-stu-id="6bda1-280">`-in` returns **True** when the left-hand side `<test-object>` matches one of the elements in the set.</span></span> <span data-ttu-id="6bda1-281">`-notin` in plaats daarvan wordt **False** geretourneerd.</span><span class="sxs-lookup"><span data-stu-id="6bda1-281">`-notin` returns **False** instead.</span></span> <span data-ttu-id="6bda1-282">Wanneer het test object een set is, gebruiken deze opera tors referentie gelijkheid om te controleren of een van de set-elementen hetzelfde exemplaar van het test object is.</span><span class="sxs-lookup"><span data-stu-id="6bda1-282">When the test object is a set, these operators use reference equality to check whether one of the set's elements is the same instance of the test object.</span></span>
+
+<span data-ttu-id="6bda1-283">De volgende voor beelden doen hetzelfde als de voor beelden voor `-contain` en `-notcontain` doen, maar ze zijn wel geschreven met `-in` en `-notin` in plaats daarvan.</span><span class="sxs-lookup"><span data-stu-id="6bda1-283">The following examples do the same thing that the examples for `-contain` and `-notcontain` do, but they are written with `-in` and `-notin` instead.</span></span>
+
+```powershell
+"def" -in "abc", "def"                  # Output: True
+"def" -notin "abc", "def"               # Output: False
+"Shell" -in "Windows", "PowerShell"     # Output: False
+"Shell" -notin "Windows", "PowerShell"  # Output: True
+"abc", "def" -in "abc", "def", "ghi"    # Output: False
+"abc", "def" -notin "abc", "def", "ghi" # Output: True
+```
+
+<span data-ttu-id="6bda1-284">Complexere voor beelden:</span><span class="sxs-lookup"><span data-stu-id="6bda1-284">More complex examples:</span></span>
+
+```powershell
+$DomainServers = "ContosoDC1","ContosoDC2","ContosoFileServer","ContosoDNS",
+                 "ContosoDHCP","ContosoWSUS"
+$thisComputer  = "ContosoDC2"
+
+$thisComputer -in $DomainServers
+# Output: True
+
+$a = "abc", "def"
+$a -in "abc", "def", "ghi" # Output: False
+$a -in $a, "ghi"           # Output: True
+```
+
+## <a name="type-comparison"></a><span data-ttu-id="6bda1-285">Type vergelijking</span><span class="sxs-lookup"><span data-stu-id="6bda1-285">Type comparison</span></span>
+
+<span data-ttu-id="6bda1-286">De type vergelijkings operators ( `-is` en `-isnot` ) worden gebruikt om te bepalen of een object een specifiek type is.</span><span class="sxs-lookup"><span data-stu-id="6bda1-286">The type comparison operators (`-is` and `-isnot`) are used to determine if an object is a specific type.</span></span>
+
+<span data-ttu-id="6bda1-287">Syntaxis:</span><span class="sxs-lookup"><span data-stu-id="6bda1-287">Syntax:</span></span>
+
+```powershell
+<object> -is <type-reference>
+<object> -isnot <type-reference>
+```
+
+<span data-ttu-id="6bda1-288">Voorbeeld:</span><span class="sxs-lookup"><span data-stu-id="6bda1-288">Example:</span></span>
+
+```powershell
+$a = 1
+$b = "1"
+$a -is [int]           # Output: True
+$a -is $b.GetType()    # Output: False
+$b -isnot [int]        # Output: True
+$a -isnot $b.GetType() # Output: True
+```
+
+## <a name="see-also"></a><span data-ttu-id="6bda1-289">ZIE OOK</span><span class="sxs-lookup"><span data-stu-id="6bda1-289">SEE ALSO</span></span>
+
+- [<span data-ttu-id="6bda1-290">about_Operators</span><span class="sxs-lookup"><span data-stu-id="6bda1-290">about_Operators</span></span>](about_Operators.md)
+- [<span data-ttu-id="6bda1-291">about_Regular_Expressions</span><span class="sxs-lookup"><span data-stu-id="6bda1-291">about_Regular_Expressions</span></span>](about_Regular_Expressions.md)
+- [<span data-ttu-id="6bda1-292">about_Wildcards</span><span class="sxs-lookup"><span data-stu-id="6bda1-292">about_Wildcards</span></span>](about_Wildcards.md)
+- [<span data-ttu-id="6bda1-293">Compare-object</span><span class="sxs-lookup"><span data-stu-id="6bda1-293">Compare-Object</span></span>](xref:Microsoft.PowerShell.Utility.Compare-Object)
+- [<span data-ttu-id="6bda1-294">Foreach-object</span><span class="sxs-lookup"><span data-stu-id="6bda1-294">Foreach-Object</span></span>](xref:Microsoft.PowerShell.Core.ForEach-Object)
+- [<span data-ttu-id="6bda1-295">Where-object</span><span class="sxs-lookup"><span data-stu-id="6bda1-295">Where-Object</span></span>](xref:Microsoft.PowerShell.Core.Where-Object)
+
+[1]: /dotnet/api/system.icomparable
+[2]: /dotnet/api/system.iequatable-1
+[3]: /dotnet/api/system.text.regularexpressions.match
+[4]: about_Redirection.md#potential-confusion-with-comparison-operators
+[5]: /dotnet/standard/base-types/substitutions-in-regular-expressions

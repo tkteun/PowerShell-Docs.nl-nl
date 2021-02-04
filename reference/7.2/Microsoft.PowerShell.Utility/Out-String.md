@@ -2,45 +2,45 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 09/29/2020
+ms.date: 01/20/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/out-string?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Out-String
-ms.openlocfilehash: c7710cb59785fbfd726ff0aabaf41c43a6966ee1
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 59e5b728604ce37f27b56ebe62e1a22d6af8a966
+ms.sourcegitcommit: 94d597c4fb38793bc49ca7610e2c9973b1e577c2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94705816"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98620126"
 ---
-# <span data-ttu-id="33fdb-102">Out-String</span><span class="sxs-lookup"><span data-stu-id="33fdb-102">Out-String</span></span>
+# <span data-ttu-id="d5627-102">Out-String</span><span class="sxs-lookup"><span data-stu-id="d5627-102">Out-String</span></span>
 
-## <span data-ttu-id="33fdb-103">SAMENVATTING</span><span class="sxs-lookup"><span data-stu-id="33fdb-103">SYNOPSIS</span></span>
-<span data-ttu-id="33fdb-104">Voert invoer objecten uit als teken reeksen.</span><span class="sxs-lookup"><span data-stu-id="33fdb-104">Outputs input objects as a strings.</span></span>
+## <span data-ttu-id="d5627-103">Samen vatting</span><span class="sxs-lookup"><span data-stu-id="d5627-103">Synopsis</span></span>
+<span data-ttu-id="d5627-104">Voert invoer objecten uit als teken reeksen.</span><span class="sxs-lookup"><span data-stu-id="d5627-104">Outputs input objects as a strings.</span></span>
 
-## <span data-ttu-id="33fdb-105">SYNTAXIS</span><span class="sxs-lookup"><span data-stu-id="33fdb-105">SYNTAX</span></span>
+## <span data-ttu-id="d5627-105">Syntax</span><span class="sxs-lookup"><span data-stu-id="d5627-105">Syntax</span></span>
 
-### <span data-ttu-id="33fdb-106">NoNewLineFormatting (standaard)</span><span class="sxs-lookup"><span data-stu-id="33fdb-106">NoNewLineFormatting (Default)</span></span>
+### <span data-ttu-id="d5627-106">NoNewLineFormatting (standaard)</span><span class="sxs-lookup"><span data-stu-id="d5627-106">NoNewLineFormatting (Default)</span></span>
 
 ```
 Out-String [-Width <Int32>] [-NoNewline] [-InputObject <PSObject>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="33fdb-107">StreamFormatting</span><span class="sxs-lookup"><span data-stu-id="33fdb-107">StreamFormatting</span></span>
+### <span data-ttu-id="d5627-107">StreamFormatting</span><span class="sxs-lookup"><span data-stu-id="d5627-107">StreamFormatting</span></span>
 
 ```
 Out-String [-Stream] [-Width <Int32>] [-InputObject <PSObject>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="33fdb-108">BESCHRIJVING</span><span class="sxs-lookup"><span data-stu-id="33fdb-108">DESCRIPTION</span></span>
+## <span data-ttu-id="d5627-108">Description</span><span class="sxs-lookup"><span data-stu-id="d5627-108">Description</span></span>
 
-<span data-ttu-id="33fdb-109">Met de `Out-String` cmdlet worden invoer objecten geconverteerd naar teken reeksen.</span><span class="sxs-lookup"><span data-stu-id="33fdb-109">The `Out-String` cmdlet converts input objects into strings.</span></span> <span data-ttu-id="33fdb-110">`Out-String`De teken reeksen worden standaard gecumuleerd en geretourneerd als een enkele teken reeks, maar u kunt de **Stream** -para meter gebruiken om direct `Out-String` één regel tegelijk te retour neren of om een matrix van teken reeksen te maken.</span><span class="sxs-lookup"><span data-stu-id="33fdb-110">By default, `Out-String` accumulates the strings and returns them as a single string, but you can use the **Stream** parameter to direct `Out-String` to return one line at a time or create and array of strings.</span></span> <span data-ttu-id="33fdb-111">Met deze cmdlet kunt u de teken reeks uitvoer zoeken en manipuleren, net zoals bij traditionele schalen, wanneer het bewerken van objecten minder handig is.</span><span class="sxs-lookup"><span data-stu-id="33fdb-111">This cmdlet lets you search and manipulate string output as you would in traditional shells when object manipulation is less convenient.</span></span>
+<span data-ttu-id="d5627-109">Met de `Out-String` cmdlet worden invoer objecten geconverteerd naar teken reeksen.</span><span class="sxs-lookup"><span data-stu-id="d5627-109">The `Out-String` cmdlet converts input objects into strings.</span></span> <span data-ttu-id="d5627-110">`Out-String`De teken reeksen worden standaard gecumuleerd en geretourneerd als een enkele teken reeks, maar u kunt de **Stream** -para meter gebruiken om direct `Out-String` één regel tegelijk te retour neren of om een matrix van teken reeksen te maken.</span><span class="sxs-lookup"><span data-stu-id="d5627-110">By default, `Out-String` accumulates the strings and returns them as a single string, but you can use the **Stream** parameter to direct `Out-String` to return one line at a time or create and array of strings.</span></span> <span data-ttu-id="d5627-111">Met deze cmdlet kunt u de teken reeks uitvoer zoeken en manipuleren, net zoals bij traditionele schalen, wanneer het bewerken van objecten minder handig is.</span><span class="sxs-lookup"><span data-stu-id="d5627-111">This cmdlet lets you search and manipulate string output as you would in traditional shells when object manipulation is less convenient.</span></span>
 
-## <span data-ttu-id="33fdb-112">VOORBEELDEN</span><span class="sxs-lookup"><span data-stu-id="33fdb-112">EXAMPLES</span></span>
+## <span data-ttu-id="d5627-112">Voorbeelden</span><span class="sxs-lookup"><span data-stu-id="d5627-112">Examples</span></span>
 
-### <span data-ttu-id="33fdb-113">Voor beeld 1: de huidige cultuur ophalen en de gegevens converteren naar teken reeksen</span><span class="sxs-lookup"><span data-stu-id="33fdb-113">Example 1: Get the current culture and convert the data to strings</span></span>
+### <span data-ttu-id="d5627-113">Voor beeld 1: de huidige cultuur ophalen en de gegevens converteren naar teken reeksen</span><span class="sxs-lookup"><span data-stu-id="d5627-113">Example 1: Get the current culture and convert the data to strings</span></span>
 
-<span data-ttu-id="33fdb-114">In dit voor beeld worden de regionale instellingen voor de huidige gebruiker opgehaald en worden de object gegevens geconverteerd naar teken reeksen.</span><span class="sxs-lookup"><span data-stu-id="33fdb-114">This example gets the regional settings for the current user and converts the object data to strings.</span></span>
+<span data-ttu-id="d5627-114">In dit voor beeld worden de regionale instellingen voor de huidige gebruiker opgehaald en worden de object gegevens geconverteerd naar teken reeksen.</span><span class="sxs-lookup"><span data-stu-id="d5627-114">This example gets the regional settings for the current user and converts the object data to strings.</span></span>
 
 ```powershell
 $C = Get-Culture | Select-Object -Property *
@@ -72,18 +72,18 @@ UseUserOverride                : True
 IsReadOnly                     : False
 ```
 
-<span data-ttu-id="33fdb-115">De `$C` variabele bevat een **Selected.System. Globalisatie. Culture info** -object.</span><span class="sxs-lookup"><span data-stu-id="33fdb-115">The `$C` variable stores a **Selected.System.Globalization.CultureInfo** object.</span></span> <span data-ttu-id="33fdb-116">Het object is het resultaat van het `Get-Culture` verzenden van de uitvoer van de pijp lijn naar `Select-Object` .</span><span class="sxs-lookup"><span data-stu-id="33fdb-116">The object is the result of `Get-Culture` sending output down the pipeline to `Select-Object`.</span></span> <span data-ttu-id="33fdb-117">De **eigenschaps** parameter maakt gebruik van een asterisk ( `*` )-Joker teken om alle eigenschappen op te geven die in het object zijn opgenomen.</span><span class="sxs-lookup"><span data-stu-id="33fdb-117">The **Property** parameter uses an asterisk (`*`) wildcard to specify all properties are contained in the object.</span></span>
+<span data-ttu-id="d5627-115">De `$C` variabele bevat een **Selected.System. Globalisatie. Culture info** -object.</span><span class="sxs-lookup"><span data-stu-id="d5627-115">The `$C` variable stores a **Selected.System.Globalization.CultureInfo** object.</span></span> <span data-ttu-id="d5627-116">Het object is het resultaat van het `Get-Culture` verzenden van de uitvoer van de pijp lijn naar `Select-Object` .</span><span class="sxs-lookup"><span data-stu-id="d5627-116">The object is the result of `Get-Culture` sending output down the pipeline to `Select-Object`.</span></span> <span data-ttu-id="d5627-117">De **eigenschaps** parameter maakt gebruik van een asterisk ( `*` )-Joker teken om alle eigenschappen op te geven die in het object zijn opgenomen.</span><span class="sxs-lookup"><span data-stu-id="d5627-117">The **Property** parameter uses an asterisk (`*`) wildcard to specify all properties are contained in the object.</span></span>
 
-<span data-ttu-id="33fdb-118">`Out-String` maakt gebruik van de para meter **input object** om het **Culture info** -object op te geven dat is opgeslagen in de `$C` variabele.</span><span class="sxs-lookup"><span data-stu-id="33fdb-118">`Out-String` uses the **InputObject** parameter to specify the **CultureInfo** object stored in the `$C` variable.</span></span> <span data-ttu-id="33fdb-119">De objecten in `$C` worden geconverteerd naar een teken reeks.</span><span class="sxs-lookup"><span data-stu-id="33fdb-119">The objects in `$C` are converted to a string.</span></span>
+<span data-ttu-id="d5627-118">`Out-String` maakt gebruik van de para meter **input object** om het **Culture info** -object op te geven dat is opgeslagen in de `$C` variabele.</span><span class="sxs-lookup"><span data-stu-id="d5627-118">`Out-String` uses the **InputObject** parameter to specify the **CultureInfo** object stored in the `$C` variable.</span></span> <span data-ttu-id="d5627-119">De objecten in `$C` worden geconverteerd naar een teken reeks.</span><span class="sxs-lookup"><span data-stu-id="d5627-119">The objects in `$C` are converted to a string.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="33fdb-120">Als u de matrix wilt weer geven `Out-String` , slaat u de uitvoer op in een variabele en gebruikt u een matrix index om de elementen weer te geven.</span><span class="sxs-lookup"><span data-stu-id="33fdb-120">To view the `Out-String` array, store the output to a variable and use an array index to view the elements.</span></span> <span data-ttu-id="33fdb-121">Zie [about_Arrays](../microsoft.powershell.core/about/about_arrays.md)voor meer informatie over de matrix index.</span><span class="sxs-lookup"><span data-stu-id="33fdb-121">For more information about the array index, see [about_Arrays](../microsoft.powershell.core/about/about_arrays.md).</span></span>
+> <span data-ttu-id="d5627-120">Als u de matrix wilt weer geven `Out-String` , slaat u de uitvoer op in een variabele en gebruikt u een matrix index om de elementen weer te geven.</span><span class="sxs-lookup"><span data-stu-id="d5627-120">To view the `Out-String` array, store the output to a variable and use an array index to view the elements.</span></span> <span data-ttu-id="d5627-121">Zie [about_Arrays](../microsoft.powershell.core/about/about_arrays.md)voor meer informatie over de matrix index.</span><span class="sxs-lookup"><span data-stu-id="d5627-121">For more information about the array index, see [about_Arrays](../microsoft.powershell.core/about/about_arrays.md).</span></span>
 >
 > `$str = Out-String -InputObject $C -Width 100`
 
-### <span data-ttu-id="33fdb-122">Voor beeld 2: werken met objecten</span><span class="sxs-lookup"><span data-stu-id="33fdb-122">Example 2: Working with objects</span></span>
+### <span data-ttu-id="d5627-122">Voor beeld 2: werken met objecten</span><span class="sxs-lookup"><span data-stu-id="d5627-122">Example 2: Working with objects</span></span>
 
-<span data-ttu-id="33fdb-123">In dit voor beeld wordt het verschil gedemonstreerd tussen het werken met objecten en het werken met teken reeksen.</span><span class="sxs-lookup"><span data-stu-id="33fdb-123">This example demonstrates the difference between working with objects and working with strings.</span></span> <span data-ttu-id="33fdb-124">Met de opdracht wordt een alias weer gegeven met de tekst **GCM**, de alias voor `Get-Command` .</span><span class="sxs-lookup"><span data-stu-id="33fdb-124">The command displays an alias that includes the text **gcm**, the alias for `Get-Command`.</span></span>
+<span data-ttu-id="d5627-123">In dit voor beeld wordt het verschil gedemonstreerd tussen het werken met objecten en het werken met teken reeksen.</span><span class="sxs-lookup"><span data-stu-id="d5627-123">This example demonstrates the difference between working with objects and working with strings.</span></span> <span data-ttu-id="d5627-124">Met de opdracht wordt een alias weer gegeven met de tekst **GCM**, de alias voor `Get-Command` .</span><span class="sxs-lookup"><span data-stu-id="d5627-124">The command displays an alias that includes the text **gcm**, the alias for `Get-Command`.</span></span>
 
 ```powershell
 Get-Alias | Out-String -Stream | Select-String -Pattern "gcm"
@@ -93,14 +93,14 @@ Get-Alias | Out-String -Stream | Select-String -Pattern "gcm"
 Alias           gcm -> Get-Command
 ```
 
-<span data-ttu-id="33fdb-125">`Get-Alias` Hiermee worden de objecten **System. Management. Automation. AliasInfo** , een voor elke alias, opgehaald en worden de objecten van de pijp lijn omlaag verzonden.</span><span class="sxs-lookup"><span data-stu-id="33fdb-125">`Get-Alias` gets the **System.Management.Automation.AliasInfo** objects, one for each alias, and sends the objects down the pipeline.</span></span> <span data-ttu-id="33fdb-126">`Out-String` gebruikt de **Stream** -para meter om elk object te converteren naar een teken reeks, in plaats van alle objecten te koppelen aan één teken reeks.</span><span class="sxs-lookup"><span data-stu-id="33fdb-126">`Out-String` uses the **Stream** parameter to convert each object to a string rather concatenating all the objects into a single string.</span></span> <span data-ttu-id="33fdb-127">De **System. String** -objecten worden via de pijp lijn verzonden en er `Select-String` wordt gebruikgemaakt van de **patroon** parameter om overeenkomsten te vinden voor de tekst **GCM**.</span><span class="sxs-lookup"><span data-stu-id="33fdb-127">The **System.String** objects are sent down the pipeline and `Select-String` uses the **Pattern** parameter to find matches for the text **gcm**.</span></span>
+<span data-ttu-id="d5627-125">`Get-Alias` Hiermee worden de objecten **System. Management. Automation. AliasInfo** , een voor elke alias, opgehaald en worden de objecten van de pijp lijn omlaag verzonden.</span><span class="sxs-lookup"><span data-stu-id="d5627-125">`Get-Alias` gets the **System.Management.Automation.AliasInfo** objects, one for each alias, and sends the objects down the pipeline.</span></span> <span data-ttu-id="d5627-126">`Out-String` gebruikt de **Stream** -para meter om elk object te converteren naar een teken reeks, in plaats van alle objecten te koppelen aan één teken reeks.</span><span class="sxs-lookup"><span data-stu-id="d5627-126">`Out-String` uses the **Stream** parameter to convert each object to a string rather concatenating all the objects into a single string.</span></span> <span data-ttu-id="d5627-127">De **System. String** -objecten worden via de pijp lijn verzonden en er `Select-String` wordt gebruikgemaakt van de **patroon** parameter om overeenkomsten te vinden voor de tekst **GCM**.</span><span class="sxs-lookup"><span data-stu-id="d5627-127">The **System.String** objects are sent down the pipeline and `Select-String` uses the **Pattern** parameter to find matches for the text **gcm**.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="33fdb-128">Als u de **Stream** -para meter weglaat, wordt met de opdracht alle aliassen weer gegeven, omdat `Select-String` de tekst **GCM** wordt gevonden in de teken reeks die `Out-String` als resultaat wordt gegeven.</span><span class="sxs-lookup"><span data-stu-id="33fdb-128">If you omit the **Stream** parameter, the command displays all the aliases because `Select-String` finds the text **gcm** in the single string that `Out-String` returns.</span></span>
+> <span data-ttu-id="d5627-128">Als u de **Stream** -para meter weglaat, wordt met de opdracht alle aliassen weer gegeven, omdat `Select-String` de tekst **GCM** wordt gevonden in de teken reeks die `Out-String` als resultaat wordt gegeven.</span><span class="sxs-lookup"><span data-stu-id="d5627-128">If you omit the **Stream** parameter, the command displays all the aliases because `Select-String` finds the text **gcm** in the single string that `Out-String` returns.</span></span>
 
-### <span data-ttu-id="33fdb-129">Voor beeld 3: gebruik de para meter breedte om afkap ping te voor komen.</span><span class="sxs-lookup"><span data-stu-id="33fdb-129">Example 3: Use the Width parameter to prevent truncation.</span></span>
+### <span data-ttu-id="d5627-129">Voor beeld 3: gebruik de para meter breedte om afkap ping te voor komen.</span><span class="sxs-lookup"><span data-stu-id="d5627-129">Example 3: Use the Width parameter to prevent truncation.</span></span>
 
-<span data-ttu-id="33fdb-130">Hoewel de meeste uitvoer van `Out-String` wordt ingepakt naar de volgende regel, zijn er scenario's waarin de uitvoer wordt afgekapt door het format teren systeem voordat deze wordt door gegeven aan `Out-String` .</span><span class="sxs-lookup"><span data-stu-id="33fdb-130">While most output from `Out-String` is wrapped to the next line, there are scenarios where the output is truncated by the formatting system before being passed to `Out-String`.</span></span> <span data-ttu-id="33fdb-131">U kunt afkap ping vermijden met de para meter **width** .</span><span class="sxs-lookup"><span data-stu-id="33fdb-131">You can avoid truncation using the **Width** parameter.</span></span>
+<span data-ttu-id="d5627-130">Hoewel de meeste uitvoer van `Out-String` wordt ingepakt naar de volgende regel, zijn er scenario's waarin de uitvoer wordt afgekapt door het format teren systeem voordat deze wordt door gegeven aan `Out-String` .</span><span class="sxs-lookup"><span data-stu-id="d5627-130">While most output from `Out-String` is wrapped to the next line, there are scenarios where the output is truncated by the formatting system before being passed to `Out-String`.</span></span> <span data-ttu-id="d5627-131">U kunt afkap ping vermijden met de para meter **width** .</span><span class="sxs-lookup"><span data-stu-id="d5627-131">You can avoid truncation using the **Width** parameter.</span></span>
 
 ```powershell
 PS> @{TestKey = ('x' * 200)} | Out-String
@@ -117,11 +117,11 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
-## <span data-ttu-id="33fdb-132">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="33fdb-132">PARAMETERS</span></span>
+## <span data-ttu-id="d5627-132">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="d5627-132">PARAMETERS</span></span>
 
-### <span data-ttu-id="33fdb-133">-Input object</span><span class="sxs-lookup"><span data-stu-id="33fdb-133">-InputObject</span></span>
+### <span data-ttu-id="d5627-133">-Input object</span><span class="sxs-lookup"><span data-stu-id="d5627-133">-InputObject</span></span>
 
-<span data-ttu-id="33fdb-134">Geeft aan welke objecten moeten worden geschreven naar een teken reeks.</span><span class="sxs-lookup"><span data-stu-id="33fdb-134">Specifies the objects to be written to a string.</span></span> <span data-ttu-id="33fdb-135">Voer een variabele in die de objecten bevat, of typ een opdracht of expressie waarmee de objecten worden opgehaald.</span><span class="sxs-lookup"><span data-stu-id="33fdb-135">Enter a variable that contains the objects, or type a command or expression that gets the objects.</span></span>
+<span data-ttu-id="d5627-134">Geeft aan welke objecten moeten worden geschreven naar een teken reeks.</span><span class="sxs-lookup"><span data-stu-id="d5627-134">Specifies the objects to be written to a string.</span></span> <span data-ttu-id="d5627-135">Voer een variabele in die de objecten bevat, of typ een opdracht of expressie waarmee de objecten worden opgehaald.</span><span class="sxs-lookup"><span data-stu-id="d5627-135">Enter a variable that contains the objects, or type a command or expression that gets the objects.</span></span>
 
 ```yaml
 Type: System.Management.Automation.PSObject
@@ -135,11 +135,11 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="33fdb-136">-Nieuwe regel</span><span class="sxs-lookup"><span data-stu-id="33fdb-136">-NoNewline</span></span>
+### <span data-ttu-id="d5627-136">-Nieuwe regel</span><span class="sxs-lookup"><span data-stu-id="d5627-136">-NoNewline</span></span>
 
-<span data-ttu-id="33fdb-137">Hiermee verwijdert u alle nieuwe voors van de uitvoer die wordt gegenereerd door de Power shell-indelings functie.</span><span class="sxs-lookup"><span data-stu-id="33fdb-137">Removes all newlines from output generated by the PowerShell formatter.</span></span> <span data-ttu-id="33fdb-138">Nieuwe regels die deel uitmaken van de teken reeks objecten blijven behouden.</span><span class="sxs-lookup"><span data-stu-id="33fdb-138">Newlines that are part of the string objects are preserved.</span></span>
+<span data-ttu-id="d5627-137">Hiermee verwijdert u alle nieuwe voors van de uitvoer die wordt gegenereerd door de Power shell-indelings functie.</span><span class="sxs-lookup"><span data-stu-id="d5627-137">Removes all newlines from output generated by the PowerShell formatter.</span></span> <span data-ttu-id="d5627-138">Nieuwe regels die deel uitmaken van de teken reeks objecten blijven behouden.</span><span class="sxs-lookup"><span data-stu-id="d5627-138">Newlines that are part of the string objects are preserved.</span></span>
 
-<span data-ttu-id="33fdb-139">Deze para meter is geïntroduceerd in Power shell 6,0.</span><span class="sxs-lookup"><span data-stu-id="33fdb-139">This parameter was introduced in PowerShell 6.0.</span></span>
+<span data-ttu-id="d5627-139">Deze para meter is geïntroduceerd in Power shell 6,0.</span><span class="sxs-lookup"><span data-stu-id="d5627-139">This parameter was introduced in PowerShell 6.0.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -153,9 +153,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="33fdb-140">-Stream</span><span class="sxs-lookup"><span data-stu-id="33fdb-140">-Stream</span></span>
+### <span data-ttu-id="d5627-140">-Stream</span><span class="sxs-lookup"><span data-stu-id="d5627-140">-Stream</span></span>
 
-<span data-ttu-id="33fdb-141">Geeft aan dat de cmdlet een afzonderlijke teken reeks voor elke regel van een invoer object verzendt.</span><span class="sxs-lookup"><span data-stu-id="33fdb-141">Indicates that the cmdlet sends a separate string for each line of an input object.</span></span> <span data-ttu-id="33fdb-142">Standaard worden de teken reeksen voor elk object verzameld en als één teken reeks verzonden.</span><span class="sxs-lookup"><span data-stu-id="33fdb-142">By default, the strings for each object are accumulated and sent as a single string.</span></span>
+<span data-ttu-id="d5627-141">Standaard wordt `Out-String` een enkele teken reeks opgemaakt zoals u deze in de-console zou zien, met inbegrip van lege kopteksten of achterstallige nieuwe regels.</span><span class="sxs-lookup"><span data-stu-id="d5627-141">By default, `Out-String` outputs a single string formatted as you would see it in the console including any blank headers or trailing newlines.</span></span> <span data-ttu-id="d5627-142">Met de para meter **Stream** kan `Out-String` elke regel één voor één worden uitgevoerd.</span><span class="sxs-lookup"><span data-stu-id="d5627-142">The **Stream** parameter enables `Out-String` to output each line one by one.</span></span> <span data-ttu-id="d5627-143">De enige uitzonde ring hierop zijn meerregelige teken reeksen.</span><span class="sxs-lookup"><span data-stu-id="d5627-143">The only exception to this are multiline strings.</span></span> <span data-ttu-id="d5627-144">In dat geval `Out-String` zal de teken reeks nog steeds worden uitgevoerd als één teken reeks met meerdere regels.</span><span class="sxs-lookup"><span data-stu-id="d5627-144">In that case, `Out-String` will still output the string as a single, multiline string.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -169,9 +169,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="33fdb-143">-Breedte</span><span class="sxs-lookup"><span data-stu-id="33fdb-143">-Width</span></span>
+### <span data-ttu-id="d5627-145">-Breedte</span><span class="sxs-lookup"><span data-stu-id="d5627-145">-Width</span></span>
 
-<span data-ttu-id="33fdb-144">Hiermee geeft u het aantal tekens in elke regel van uitvoer op.</span><span class="sxs-lookup"><span data-stu-id="33fdb-144">Specifies the number of characters in each line of output.</span></span> <span data-ttu-id="33fdb-145">Eventuele extra tekens worden ingepakt naar de volgende regel of worden afgekapt, afhankelijk van de gebruikte formatter-cmdlet.</span><span class="sxs-lookup"><span data-stu-id="33fdb-145">Any additional characters are wrapped to the next line or truncated depending on the formatter cmdlet used.</span></span> <span data-ttu-id="33fdb-146">De para meter **width** is alleen van toepassing op objecten die worden opgemaakt.</span><span class="sxs-lookup"><span data-stu-id="33fdb-146">The **Width** parameter applies only to objects that are being formatted.</span></span> <span data-ttu-id="33fdb-147">Als u deze para meter weglaat, wordt de breedte bepaald door de kenmerken van het hostprogramma.</span><span class="sxs-lookup"><span data-stu-id="33fdb-147">If you omit this parameter, the width is determined by the characteristics of the host program.</span></span> <span data-ttu-id="33fdb-148">In Terminal (console) Windows wordt de breedte van het huidige venster als de standaard waarde gebruikt.</span><span class="sxs-lookup"><span data-stu-id="33fdb-148">In terminal (console) windows, the current window width is used as the default value.</span></span> <span data-ttu-id="33fdb-149">Power shell-console Windows standaard ingesteld op een breedte van 80 tekens tijdens de installatie.</span><span class="sxs-lookup"><span data-stu-id="33fdb-149">PowerShell console windows default to a width of 80 characters on installation.</span></span>
+<span data-ttu-id="d5627-146">Hiermee geeft u het aantal tekens in elke regel van uitvoer op.</span><span class="sxs-lookup"><span data-stu-id="d5627-146">Specifies the number of characters in each line of output.</span></span> <span data-ttu-id="d5627-147">Eventuele extra tekens worden ingepakt naar de volgende regel of worden afgekapt, afhankelijk van de gebruikte formatter-cmdlet.</span><span class="sxs-lookup"><span data-stu-id="d5627-147">Any additional characters are wrapped to the next line or truncated depending on the formatter cmdlet used.</span></span> <span data-ttu-id="d5627-148">De para meter **width** is alleen van toepassing op objecten die worden opgemaakt.</span><span class="sxs-lookup"><span data-stu-id="d5627-148">The **Width** parameter applies only to objects that are being formatted.</span></span> <span data-ttu-id="d5627-149">Als u deze para meter weglaat, wordt de breedte bepaald door de kenmerken van het hostprogramma.</span><span class="sxs-lookup"><span data-stu-id="d5627-149">If you omit this parameter, the width is determined by the characteristics of the host program.</span></span> <span data-ttu-id="d5627-150">In Terminal (console) Windows wordt de breedte van het huidige venster als de standaard waarde gebruikt.</span><span class="sxs-lookup"><span data-stu-id="d5627-150">In terminal (console) windows, the current window width is used as the default value.</span></span> <span data-ttu-id="d5627-151">Power shell-console Windows standaard ingesteld op een breedte van 80 tekens tijdens de installatie.</span><span class="sxs-lookup"><span data-stu-id="d5627-151">PowerShell console windows default to a width of 80 characters on installation.</span></span>
 
 ```yaml
 Type: System.Int32
@@ -185,39 +185,38 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="33fdb-150">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="33fdb-150">CommonParameters</span></span>
+### <span data-ttu-id="d5627-152">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="d5627-152">CommonParameters</span></span>
 
-<span data-ttu-id="33fdb-151">Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="33fdb-151">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="33fdb-152">Zie [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)voor meer informatie.</span><span class="sxs-lookup"><span data-stu-id="33fdb-152">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+<span data-ttu-id="d5627-153">Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="d5627-153">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="d5627-154">Zie [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)voor meer informatie.</span><span class="sxs-lookup"><span data-stu-id="d5627-154">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="33fdb-153">INVOER</span><span class="sxs-lookup"><span data-stu-id="33fdb-153">INPUTS</span></span>
+## <span data-ttu-id="d5627-155">INVOER</span><span class="sxs-lookup"><span data-stu-id="d5627-155">INPUTS</span></span>
 
-### <span data-ttu-id="33fdb-154">System. Management. Automation. PSObject</span><span class="sxs-lookup"><span data-stu-id="33fdb-154">System.Management.Automation.PSObject</span></span>
+### <span data-ttu-id="d5627-156">System. Management. Automation. PSObject</span><span class="sxs-lookup"><span data-stu-id="d5627-156">System.Management.Automation.PSObject</span></span>
 
-<span data-ttu-id="33fdb-155">U kunt objecten naar beneden verplaatsen in de pijp lijn `Out-String` .</span><span class="sxs-lookup"><span data-stu-id="33fdb-155">You can send objects down the pipeline to `Out-String`.</span></span>
+<span data-ttu-id="d5627-157">U kunt objecten naar beneden verplaatsen in de pijp lijn `Out-String` .</span><span class="sxs-lookup"><span data-stu-id="d5627-157">You can send objects down the pipeline to `Out-String`.</span></span>
 
-## <span data-ttu-id="33fdb-156">UITVOER</span><span class="sxs-lookup"><span data-stu-id="33fdb-156">OUTPUTS</span></span>
+## <span data-ttu-id="d5627-158">UITVOER</span><span class="sxs-lookup"><span data-stu-id="d5627-158">OUTPUTS</span></span>
 
-### <span data-ttu-id="33fdb-157">System. String</span><span class="sxs-lookup"><span data-stu-id="33fdb-157">System.String</span></span>
+### <span data-ttu-id="d5627-159">System. String</span><span class="sxs-lookup"><span data-stu-id="d5627-159">System.String</span></span>
 
-<span data-ttu-id="33fdb-158">`Out-String` retourneert de teken reeks die wordt gemaakt op basis van het invoer object.</span><span class="sxs-lookup"><span data-stu-id="33fdb-158">`Out-String` returns the string that it creates from the input object.</span></span>
+<span data-ttu-id="d5627-160">`Out-String` retourneert de teken reeks die wordt gemaakt op basis van het invoer object.</span><span class="sxs-lookup"><span data-stu-id="d5627-160">`Out-String` returns the string that it creates from the input object.</span></span>
 
-## <span data-ttu-id="33fdb-159">OPMERKINGEN</span><span class="sxs-lookup"><span data-stu-id="33fdb-159">NOTES</span></span>
+## <span data-ttu-id="d5627-161">OPMERKINGEN</span><span class="sxs-lookup"><span data-stu-id="d5627-161">NOTES</span></span>
 
-<span data-ttu-id="33fdb-160">De cmdlets die de term bevatten, hebben `Out` geen objecten.</span><span class="sxs-lookup"><span data-stu-id="33fdb-160">The cmdlets that contain the `Out` verb don't format objects.</span></span> <span data-ttu-id="33fdb-161">`Out`Met de cmdlets worden objecten verzonden naar de formatter voor het opgegeven weergave doel.</span><span class="sxs-lookup"><span data-stu-id="33fdb-161">The `Out` cmdlets send objects to the formatter for the specified display destination.</span></span>
+<span data-ttu-id="d5627-162">De cmdlets die de term bevatten, hebben `Out` geen objecten.</span><span class="sxs-lookup"><span data-stu-id="d5627-162">The cmdlets that contain the `Out` verb don't format objects.</span></span> <span data-ttu-id="d5627-163">`Out`Met de cmdlets worden objecten verzonden naar de formatter voor het opgegeven weergave doel.</span><span class="sxs-lookup"><span data-stu-id="d5627-163">The `Out` cmdlets send objects to the formatter for the specified display destination.</span></span>
 
-## <span data-ttu-id="33fdb-162">GERELATEERDE KOPPELINGEN</span><span class="sxs-lookup"><span data-stu-id="33fdb-162">RELATED LINKS</span></span>
+## <span data-ttu-id="d5627-164">GERELATEERDE KOPPELINGEN</span><span class="sxs-lookup"><span data-stu-id="d5627-164">RELATED LINKS</span></span>
 
-[<span data-ttu-id="33fdb-163">about_Formatting</span><span class="sxs-lookup"><span data-stu-id="33fdb-163">about_Formatting</span></span>](../Microsoft.PowerShell.Core/About/about_Format.ps1xml.md)
+[<span data-ttu-id="d5627-165">about_Formatting</span><span class="sxs-lookup"><span data-stu-id="d5627-165">about_Formatting</span></span>](../Microsoft.PowerShell.Core/About/about_Format.ps1xml.md)
 
-[<span data-ttu-id="33fdb-164">Out-standaard</span><span class="sxs-lookup"><span data-stu-id="33fdb-164">Out-Default</span></span>](../Microsoft.PowerShell.Core/Out-Default.md)
+[<span data-ttu-id="d5627-166">Out-standaard</span><span class="sxs-lookup"><span data-stu-id="d5627-166">Out-Default</span></span>](../Microsoft.PowerShell.Core/Out-Default.md)
 
-[<span data-ttu-id="33fdb-165">Out-file</span><span class="sxs-lookup"><span data-stu-id="33fdb-165">Out-File</span></span>](Out-File.md)
+[<span data-ttu-id="d5627-167">Out-file</span><span class="sxs-lookup"><span data-stu-id="d5627-167">Out-File</span></span>](Out-File.md)
 
-[<span data-ttu-id="33fdb-166">Out-host</span><span class="sxs-lookup"><span data-stu-id="33fdb-166">Out-Host</span></span>](../Microsoft.PowerShell.Core/Out-Host.md)
+[<span data-ttu-id="d5627-168">Out-host</span><span class="sxs-lookup"><span data-stu-id="d5627-168">Out-Host</span></span>](../Microsoft.PowerShell.Core/Out-Host.md)
 
-[<span data-ttu-id="33fdb-167">Out-Null</span><span class="sxs-lookup"><span data-stu-id="33fdb-167">Out-Null</span></span>](../Microsoft.PowerShell.Core/Out-Null.md)
+[<span data-ttu-id="d5627-169">Out-Null</span><span class="sxs-lookup"><span data-stu-id="d5627-169">Out-Null</span></span>](../Microsoft.PowerShell.Core/Out-Null.md)
 
-[<span data-ttu-id="33fdb-168">Out-GridView</span><span class="sxs-lookup"><span data-stu-id="33fdb-168">Out-GridView</span></span>](Out-GridView.md)
+[<span data-ttu-id="d5627-170">Out-GridView</span><span class="sxs-lookup"><span data-stu-id="d5627-170">Out-GridView</span></span>](Out-GridView.md)
 
-[<span data-ttu-id="33fdb-169">Out-Printer</span><span class="sxs-lookup"><span data-stu-id="33fdb-169">Out-Printer</span></span>](Out-Printer.md)
-
+[<span data-ttu-id="d5627-171">Out-Printer</span><span class="sxs-lookup"><span data-stu-id="d5627-171">Out-Printer</span></span>](Out-Printer.md)
