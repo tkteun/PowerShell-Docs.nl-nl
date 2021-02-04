@@ -6,12 +6,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convertto-json?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertTo-Json
-ms.openlocfilehash: 83a8cb444c20db8f7dd2181cac13e56d54d5d986
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: d598fe2b1aefdae046b0f1a0893bf4fc407fa7a7
+ms.sourcegitcommit: 11880ca974fe2df308191c9f6dcdfe0b89c2dc67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94705837"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98860820"
 ---
 # ConvertTo-Json
 
@@ -33,6 +33,8 @@ ConvertTo-Json [-InputObject] <Object> [-Depth <Int32>] [-Compress]
 U kunt de cmdlet vervolgens gebruiken `ConvertFrom-Json` om een JSON-indelings teken reeks te converteren naar een JSON-object, dat eenvoudig kan worden beheerd in Power shell.
 
 Veel websites gebruiken JSON in plaats van XML om gegevens te serialiseren voor communicatie tussen servers en web-apps.
+
+Vanaf Power shell 7,2 wordt `ConvertTo-Json` een waarschuwing gegeven als de diepte van het invoer object de diepte overschrijdt die voor de opdracht is opgegeven. Dit voor komt ongewenste gegevens verlies bij het converteren van objecten.
 
 Deze cmdlet is geïntroduceerd in Windows Power Shell 3,0.
 
@@ -199,7 +201,7 @@ Accept wildcard characters: False
 
 ### -Diepte
 
-Hiermee geeft u op hoeveel niveaus van Inge sloten objecten worden opgenomen in de JSON-weer gave. De standaardwaarde is 2.
+Hiermee geeft u op hoeveel niveaus van Inge sloten objecten worden opgenomen in de JSON-weer gave. De standaardwaarde is 2. Vanaf Power shell 7,2 wordt `ConvertTo-Json` een waarschuwing gegeven als het aantal niveaus in een invoer object groter is dan dit aantal.
 
 ```yaml
 Type: System.Int32

@@ -1,13 +1,13 @@
 ---
-ms.date: 12/01/2020
+ms.date: 01/25/2021
 title: Problemen met cmdlets oplossen
 description: In dit artikel vindt u informatie en stappen voor het oplossen van problemen met behulp van de PowerShell Gallery
-ms.openlocfilehash: 980da8ea7b8a09513f33a9939d512c437b755d8d
-ms.sourcegitcommit: 560a9f3c3148acab4655e91e8b07745ab74d5d26
+ms.openlocfilehash: 8139147683b655b5f8532c3068387db6df12a98f
+ms.sourcegitcommit: 0f003644684422e425a59b7361121e05ac772e15
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96913315"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98771812"
 ---
 # <a name="troubleshooting-cmdlets"></a>Problemen met cmdlets oplossen
 
@@ -30,6 +30,7 @@ Voor de cmdlets install en update is Internet toegang vereist om verbinding te m
 - `devopsgallerystorage.blob.core.windows.net` -hostnaam van opslag account
 - `*.powershellgallery.com` -website
 - `go.microsoft.com` -omleidings service
+- `onegetcdn.azureedge.net` -Boots trap de NuGet-provider in `PowerShellGet/PackageManagement`
 
 > [!NOTE]
 > Cmdlets die communiceren met de PowerShell Gallery, kunnen mislukken met onverwachte fouten als er een storing optreedt in de PowerShell Gallery Services. Als u de huidige status van de PowerShell Gallery wilt zien, gaat u naar de pagina [PowerShell Gallery status](https://github.com/PowerShell/PowerShellGallery/blob/master/psgallery_status.md) op github.

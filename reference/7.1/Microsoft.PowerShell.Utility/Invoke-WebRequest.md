@@ -1,18 +1,17 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 09/03/2020
+ms.date: 01/26/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-WebRequest
-ms.openlocfilehash: bb23f2ed01573a3f67c19f45db495cd86ecefe0c
-ms.sourcegitcommit: 69b08b28ee2ef3168065672a23b9b6f0c578c95b
+ms.openlocfilehash: 036f5aef42b9413747f4e738bf748fda8bb2d2d2
+ms.sourcegitcommit: 11880ca974fe2df308191c9f6dcdfe0b89c2dc67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "93251900"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98860783"
 ---
 # Invoke-WebRequest
 
@@ -227,7 +226,7 @@ Wanneer er `Invoke-WebRequest` een niet-geslaagd http-bericht wordt aangetroffen
 ```powershell
 try
 {
-    $Response = Invoke-WebRequest -Uri "www.microsoft.com/unkownhost" -ErrorAction Stop
+    $Response = Invoke-WebRequest -Uri "www.microsoft.com/unkownhost"
     # This will only execute if the Invoke-WebRequest is successful.
     $StatusCode = $Response.StatusCode
 }
@@ -242,7 +241,7 @@ $StatusCode
 404
 ```
 
-De opdracht aanroepen `Invoke-WebRequest` met een **Error Action** van **Stop** , waarmee wordt afgedwongen dat er `Invoke-WebRequest` een afsluit fout optreedt bij mislukte aanvragen. De afsluit fout wordt onderschept door het `catch` blok dat de **status** code van het **uitzonderings** object ophaalt.
+De afsluit fout wordt geblokkeerd door het `catch` blok, waardoor de **status** code wordt opgehaald uit het **uitzonderings** object.
 
 ## PARAMETERS
 
@@ -274,10 +273,10 @@ Hiermee geeft u het expliciete verificatie type op dat moet worden gebruikt voor
 
 Beschik bare verificatie opties:
 
-- **Geen** : dit is de standaard optie wanneer er geen **verificatie** is opgegeven. Er wordt geen expliciete authenticatie gebruikt.
-- **Basic** : vereist **referentie**. De referenties worden verzonden in een RFC 7617-basis verificatie header in de indeling van `base64(user:password)` .
-- **Bearer** : **token** vereist. Verzendt een RFC 6750- `Authorization: Bearer` header met het opgegeven token. Dit is een alias voor **OAuth**
-- **OAuth** : **token** vereist. Verzendt een RFC 6750- `Authorization: Bearer` header met het opgegeven token. Dit is een alias voor **Bearer**
+- **Geen**: dit is de standaard optie wanneer er geen **verificatie** is opgegeven. Er wordt geen expliciete authenticatie gebruikt.
+- **Basic**: vereist **referentie**. De referenties worden verzonden in een RFC 7617-basis verificatie header in de indeling van `base64(user:password)` .
+- **Bearer**: **token** vereist. Verzendt een RFC 6750- `Authorization: Bearer` header met het opgegeven token. Dit is een alias voor **OAuth**
+- **OAuth**: **token** vereist. Verzendt een RFC 6750- `Authorization: Bearer` header met het opgegeven token. Dit is een alias voor **Bearer**
 
 Het opgeven van een **verificatie** heeft `Authorization` voor rang op alle headers die worden geleverd aan **headers** of die zijn opgenomen in **websessie**.
 
@@ -305,7 +304,7 @@ De para meter **Body** kan worden gebruikt om een lijst met query parameters op 
 
 Wanneer de invoer een GET-aanvraag is en de hoofd tekst een `IDictionary` (meestal een hash-tabel) is, wordt de hoofd tekst als query parameters aan de URI toegevoegd. Voor andere aanvraag typen (zoals POST) wordt de hoofd tekst ingesteld als de waarde van de hoofd tekst van de aanvraag in de standaard `name=value` indeling.
 
-De para meter **Body** kan ook een `System.Net.Http.MultipartFormDataContent` object accepteren. Dit vergemakkelijkt `multipart/form-data` aanvragen. Wanneer er een **MultipartFormDataContent** -object wordt opgegeven voor de **hoofd tekst** , worden alle inhoud die aan de para meter **Content type** , **headers** of **websession** is gekoppeld, overschreven door de inhouds headers van het **MultipartFormDataContent** -object. Deze functie is toegevoegd aan Power shell 6.0.0.
+De para meter **Body** kan ook een `System.Net.Http.MultipartFormDataContent` object accepteren. Dit vergemakkelijkt `multipart/form-data` aanvragen. Wanneer er een **MultipartFormDataContent** -object wordt opgegeven voor de **hoofd tekst**, worden alle inhoud die aan de para meter **Content type**, **headers** of **websession** is gekoppeld, overschreven door de inhouds headers van het **MultipartFormDataContent** -object. Deze functie is toegevoegd aan Power shell 6.0.0.
 
 ```yaml
 Type: System.Object
@@ -384,7 +383,7 @@ Accept wildcard characters: False
 
 Hiermee geeft u een gebruikers account op dat gemachtigd is om de aanvraag te verzenden. Standaard is dit de huidige gebruiker.
 
-Typ een gebruikers naam, zoals **gebruiker01** of **Domain01\User01** , of voer een **PSCredential** -object in dat door de cmdlet wordt gegenereerd `Get-Credential` .
+Typ een gebruikers naam, zoals **gebruiker01** of **Domain01\User01**, of voer een **PSCredential** -object in dat door de cmdlet wordt gegenereerd `Get-Credential` .
 
 **Referentie** kan alleen worden gebruikt of in combi natie met bepaalde opties voor **verificatie** parameters. Als u alleen gebruikt, worden er alleen referenties voor de externe server verstrekt als de externe server een aanvraag voor verificatie controle verzendt. Wanneer u gebruikt met **verificatie** opties, worden de referenties expliciet verzonden.
 
@@ -675,7 +674,7 @@ Accept wildcard characters: False
 
 Hiermee geeft u een gebruikers account op dat is gemachtigd voor het gebruik van de proxy server die is opgegeven door de para meter **proxy** . Standaard is dit de huidige gebruiker.
 
-Typ een gebruikers naam, zoals **gebruiker01** of **Domain01\User01** , **User@Domain.Com** of voer een `PSCredential` object in, bijvoorbeeld het type dat door de cmdlet wordt gegenereerd `Get-Credential` .
+Typ een gebruikers naam, zoals **gebruiker01** of **Domain01\User01**, **User@Domain.Com** of voer een `PSCredential` object in, bijvoorbeeld het type dat door de cmdlet wordt gegenereerd `Get-Credential` .
 
 Deze para meter is alleen geldig wanneer de **proxy** parameter ook in de opdracht wordt gebruikt. U kunt de para meters **ProxyCredential** en **ProxyUseDefaultCredentials** niet in dezelfde opdracht gebruiken.
 
@@ -808,7 +807,7 @@ Hiermee wordt aangegeven dat de cmdlet headers zonder validatie moet toevoegen a
 Deze schakel optie moet worden gebruikt voor sites waarvoor header waarden zijn vereist die niet voldoen aan de standaarden.
 Als u deze switch opgeeft, wordt de validatie uitgeschakeld zodat de waarde die wordt door gegeven, niet kan worden gecontroleerd. Als u deze opgeeft, worden alle headers zonder validatie toegevoegd.
 
-Met deze switch wordt de validatie uitgeschakeld voor waarden die zijn door gegeven aan de para meters **Content type** , **headers** en **User agent** .
+Met deze switch wordt de validatie uitgeschakeld voor waarden die zijn door gegeven aan de para meters **Content type**, **headers** en **User agent** .
 
 Deze functie is toegevoegd aan Power shell 6.0.0.
 
@@ -847,7 +846,7 @@ Accept wildcard characters: False
 
 Hiermee stelt u de SSL/TLS-protocollen die zijn toegestaan voor de webaanvraag. Standaard zijn alle SSL/TLS-protocollen die door het systeem worden ondersteund, toegestaan. Met **SslProtocol** wordt het beperken van specifieke protocollen voor nalevings doeleinden toegestaan.
 
-**SslProtocol** maakt gebruik van de **WebSslProtocol** -markerings opsomming. Het is mogelijk om meer dan één protocol aan te bieden met behulp van de vlag notatie of meerdere **WebSslProtocol** -opties te combi neren met **BOF** , maar het leveren van meerdere protocollen wordt niet op alle platforms ondersteund.
+**SslProtocol** maakt gebruik van de **WebSslProtocol** -markerings opsomming. Het is mogelijk om meer dan één protocol aan te bieden met behulp van de vlag notatie of meerdere **WebSslProtocol** -opties te combi neren met **BOF**, maar het leveren van meerdere protocollen wordt niet op alle platforms ondersteund.
 
 > [!NOTE]
 > Op niet-Windows-platforms is het niet mogelijk om te leveren `Tls` of `Tls12` als optie. Ondersteuning voor `Tls13` is niet beschikbaar op alle besturings systemen en moet worden geverifieerd op basis van elk besturings systeem.
@@ -1054,9 +1053,9 @@ Vanwege wijzigingen in .NET Core 3,1, Power shell 7,0 en hoger, gebruikt u de ei
 
 De waarde van deze eigenschap wordt bepaald door uw platform:
 
-- **Voor Windows** : Hiermee leest u de proxy configuratie van omgevings variabelen. Als deze variabelen niet worden gedefinieerd, wordt de eigenschap afgeleid van de proxy-instellingen van de gebruiker.
-- **Voor macOS** : leest de proxy configuratie van omgevings variabelen. Als deze variabelen niet worden gedefinieerd, wordt de eigenschap afgeleid van de proxy-instellingen van het systeem.
-- **Voor Linux** : Hiermee leest u de proxy configuratie van omgevings variabelen. Als deze variabelen niet zijn gedefinieerd, initialiseert de eigenschap een niet-geconfigureerd exemplaar dat alle adressen omzeilt.
+- **Voor Windows**: Hiermee leest u de proxy configuratie van omgevings variabelen. Als deze variabelen niet worden gedefinieerd, wordt de eigenschap afgeleid van de proxy-instellingen van de gebruiker.
+- **Voor macOS**: leest de proxy configuratie van omgevings variabelen. Als deze variabelen niet worden gedefinieerd, wordt de eigenschap afgeleid van de proxy-instellingen van het systeem.
+- **Voor Linux**: Hiermee leest u de proxy configuratie van omgevings variabelen. Als deze variabelen niet zijn gedefinieerd, initialiseert de eigenschap een niet-geconfigureerd exemplaar dat alle adressen omzeilt.
 
 De omgevings variabelen die worden gebruikt voor de `DefaultProxy` initialisatie op Windows-en UNIX-platforms zijn:
 

@@ -1,18 +1,17 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/10/2020
+ms.date: 01/26/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-WebRequest
-ms.openlocfilehash: 25da6262e93be3e3749aabaf4950e2fbcd91ff5c
-ms.sourcegitcommit: 9a6b6714ded4edb5119f1b82a253608018ea6b98
+ms.openlocfilehash: f3545065d4879830a5051ef687f210c7fbd1251e
+ms.sourcegitcommit: 11880ca974fe2df308191c9f6dcdfe0b89c2dc67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "93251740"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98860657"
 ---
 # Invoke-WebRequest
 
@@ -122,7 +121,7 @@ Wanneer er `Invoke-WebRequest` een niet-geslaagd http-bericht wordt aangetroffen
 ```powershell
 try
 {
-    $response = Invoke-WebRequest -Uri "www.microsoft.com/unkownhost" -ErrorAction Stop
+    $Response = Invoke-WebRequest -Uri "www.microsoft.com/unkownhost"
     # This will only execute if the Invoke-WebRequest is successful.
     $StatusCode = $Response.StatusCode
 }
@@ -137,7 +136,7 @@ $StatusCode
 404
 ```
 
-De eerste opdracht roept `Invoke-WebRequest` met een **Error Action** van **Stop** , waarmee wordt geforceerd dat er `Invoke-WebRequest` een afsluit fout optreedt bij mislukte aanvragen. De afsluit fout wordt onderschept door het `catch` blok dat de **status** code van het **uitzonderings** object ophaalt.
+De afsluit fout wordt geblokkeerd door het `catch` blok, waardoor de **status** code wordt opgehaald uit het **uitzonderings** object.
 
 ## PARAMETERS
 
@@ -233,7 +232,7 @@ Accept wildcard characters: False
 
 Hiermee geeft u een gebruikers account op dat gemachtigd is om de aanvraag te verzenden. Standaard is dit de huidige gebruiker.
 
-Typ een gebruikers naam, zoals **gebruiker01** of **Domain01\User01** , of voer een **PSCredential** -object in dat door de cmdlet wordt gegenereerd `Get-Credential` .
+Typ een gebruikers naam, zoals **gebruiker01** of **Domain01\User01**, of voer een **PSCredential** -object in dat door de cmdlet wordt gegenereerd `Get-Credential` .
 
 Referenties worden opgeslagen in een [PSCredential](/dotnet/api/system.management.automation.pscredential) -object en het wacht woord wordt opgeslagen als [SecureString](/dotnet/api/system.security.securestring).
 

@@ -3,23 +3,23 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 09/29/2020
+ms.date: 01/20/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/out-string?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Out-String
-ms.openlocfilehash: a64b11206a0755cedabad2894ecc330fac95a8d5
-ms.sourcegitcommit: c8d1ffeab215e74e87ea1b0af8cd606c1a6a80ab
+ms.openlocfilehash: 719c65903592d7cec94621bbb293f09b82a0d934
+ms.sourcegitcommit: 94d597c4fb38793bc49ca7610e2c9973b1e577c2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "93251963"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98620194"
 ---
 # Out-String
 
-## SAMENVATTING
+## Samen vatting
 Voert invoer objecten uit als teken reeksen.
 
-## SYNTAXIS
+## Syntax
 
 ### NoNewLineFormatting (standaard)
 
@@ -33,11 +33,11 @@ Out-String [-Width <Int32>] [-NoNewline] [-InputObject <PSObject>] [<CommonParam
 Out-String [-Stream] [-Width <Int32>] [-InputObject <PSObject>] [<CommonParameters>]
 ```
 
-## BESCHRIJVING
+## Description
 
 Met de `Out-String` cmdlet worden invoer objecten geconverteerd naar teken reeksen. `Out-String`De teken reeksen worden standaard gecumuleerd en geretourneerd als een enkele teken reeks, maar u kunt de **Stream** -para meter gebruiken om direct `Out-String` één regel tegelijk te retour neren of om een matrix van teken reeksen te maken. Met deze cmdlet kunt u de teken reeks uitvoer zoeken en manipuleren, net zoals bij traditionele schalen, wanneer het bewerken van objecten minder handig is.
 
-## VOORBEELDEN
+## Voorbeelden
 
 ### Voor beeld 1: de huidige cultuur ophalen en de gegevens converteren naar teken reeksen
 
@@ -84,7 +84,7 @@ De `$C` variabele bevat een **Selected.System. Globalisatie. Culture info** -obj
 
 ### Voor beeld 2: werken met objecten
 
-In dit voor beeld wordt het verschil gedemonstreerd tussen het werken met objecten en het werken met teken reeksen. Met de opdracht wordt een alias weer gegeven met de tekst **GCM** , de alias voor `Get-Command` .
+In dit voor beeld wordt het verschil gedemonstreerd tussen het werken met objecten en het werken met teken reeksen. Met de opdracht wordt een alias weer gegeven met de tekst **GCM**, de alias voor `Get-Command` .
 
 ```powershell
 Get-Alias | Out-String -Stream | Select-String -Pattern "gcm"
@@ -156,7 +156,7 @@ Accept wildcard characters: False
 
 ### -Stream
 
-Geeft aan dat de cmdlet een afzonderlijke teken reeks voor elke regel van een invoer object verzendt. Standaard worden de teken reeksen voor elk object verzameld en als één teken reeks verzonden.
+Standaard wordt `Out-String` een enkele teken reeks opgemaakt zoals u deze in de-console zou zien, met inbegrip van lege kopteksten of achterstallige nieuwe regels. Met de para meter **Stream** kan `Out-String` elke regel één voor één worden uitgevoerd. De enige uitzonde ring hierop zijn meerregelige teken reeksen. In dat geval `Out-String` zal de teken reeks nog steeds worden uitgevoerd als één teken reeks met meerdere regels.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter

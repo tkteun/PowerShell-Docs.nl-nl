@@ -2,16 +2,16 @@
 description: Hierin worden de para meters beschreven die kunnen worden gebruikt met een wille keurige cmdlet.
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 11/26/2019
+ms.date: 01/26/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_commonparameters?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_CommonParameters
-ms.openlocfilehash: 441154d60440024ebea9d5047430f6e9209d8f04
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 898f0897638523291751ce75db1c6a6b4628e778
+ms.sourcegitcommit: 11880ca974fe2df308191c9f6dcdfe0b89c2dc67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93252826"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98860684"
 ---
 # <a name="about-commonparameters"></a>Over CommonParameters
 
@@ -48,7 +48,7 @@ De volgende lijst geeft de algemene para meters weer. Hun aliassen worden tussen
 De **actie** parameters zijn waarden van het type **ActionPreference** .
 **ActionPreference** is een opsomming met de volgende waarden:
 
-| Naam             | Waarde |
+| Name             | Waarde |
 |------------------|-------|
 | Onderbreken          | 5     |
 | Negeren           | 4     |
@@ -108,7 +108,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-De para meter **Error Action** overschrijft de waarde van de `$ErrorActionPreference` variabele voor de huidige opdracht. Omdat de standaard waarde van de `$ErrorActionPreference` variabele wordt **voortgezet** , worden er fout berichten weer gegeven en wordt de uitvoering voortgezet, tenzij u de para meter **Error Action** gebruikt.
+De para meter **Error Action** overschrijft de waarde van de `$ErrorActionPreference` variabele voor de huidige opdracht. Omdat de standaard waarde van de `$ErrorActionPreference` variabele wordt **voortgezet**, worden er fout berichten weer gegeven en wordt de uitvoering voortgezet, tenzij u de para meter **Error Action** gebruikt.
 
 De para meter **Error Action** heeft geen invloed op de afsluit fouten (zoals ontbrekende gegevens, para meters die ongeldig zijn of onvoldoende machtigingen) waarmee wordt voor komen dat een opdracht kan worden voltooid.
 
@@ -169,7 +169,7 @@ U kunt deze para meter gebruiken om een variabele te maken die alleen fout beric
 
 #### <a name="informationaction"></a>Information Action
 
-Geïntroduceerd in Power shell 5,0. In de opdracht of het script waarin het wordt gebruikt, overschrijft de algemene para meter **Information Action** de waarde van de `$InformationPreference` Voorkeurs variabele, die standaard is ingesteld op **SilentlyContinue**. Wanneer u gebruikt `Write-Information` in een script met **Information Action** , `Write-Information` worden waarden weer gegeven, afhankelijk van de waarde van de para meter **Information Action** . Zie about_Preference_Variables voor meer informatie over `$InformationPreference` . [about_Preference_Variables](./about_Preference_Variables.md)
+Geïntroduceerd in Power shell 5,0. In de opdracht of het script waarin het wordt gebruikt, overschrijft de algemene para meter **Information Action** de waarde van de `$InformationPreference` Voorkeurs variabele, die standaard is ingesteld op **SilentlyContinue**. Wanneer u gebruikt `Write-Information` in een script met **Information Action**, `Write-Information` worden waarden weer gegeven, afhankelijk van de waarde van de para meter **Information Action** . Zie about_Preference_Variables voor meer informatie over `$InformationPreference` . [](./about_Preference_Variables.md)
 
 ```yaml
 Type: ActionPreference
@@ -185,7 +185,7 @@ Accept wildcard characters: False
 
 `-InformationAction:Stop` Hiermee stopt u een opdracht of script bij een exemplaar van de `Write-Information` opdracht.
 
-`-InformationAction:Ignore` onderdrukt het informatie bericht en gaat verder met het uitvoeren van de opdracht. In tegens telling tot **SilentlyContinue** , wordt met **negeren** het informatieve bericht volledig verg eten. het informatie bericht wordt niet toegevoegd aan de informatie stroom.
+`-InformationAction:Ignore` onderdrukt het informatie bericht en gaat verder met het uitvoeren van de opdracht. In tegens telling tot **SilentlyContinue**, wordt met **negeren** het informatieve bericht volledig verg eten. het informatie bericht wordt niet toegevoegd aan de informatie stroom.
 
 `-InformationAction:Inquire` Hiermee wordt het informatie bericht weer gegeven dat u in een `Write-Information` opdracht opgeeft. vervolgens wordt u gevraagd of u wilt door gaan.
 
@@ -200,7 +200,7 @@ Accept wildcard characters: False
 
 #### <a name="informationvariable"></a>InformationVariable
 
-Geïntroduceerd in Power shell 5,0. Binnen de opdracht of het script waarin het wordt gebruikt, wordt in de algemene para meter **InformationVariable** in een variabele een teken reeks opgeslagen die u opgeeft door de opdracht toe te voegen `Write-Information` . `Write-Information` de waarden worden weer gegeven, afhankelijk van de waarde van de algemene para meter **Information Action** . Als u de algemene para meter **Information Action** niet toevoegt, `Write-Information` worden teken reeksen weer gegeven, afhankelijk van de waarde van de `$InformationPreference` Voorkeurs variabele. Zie about_Preference_Variables voor meer informatie over `$InformationPreference` . [about_Preference_Variables](./about_Preference_Variables.md)
+Geïntroduceerd in Power shell 5,0. Binnen de opdracht of het script waarin het wordt gebruikt, wordt in de algemene para meter **InformationVariable** in een variabele een teken reeks opgeslagen die u opgeeft door de opdracht toe te voegen `Write-Information` . `Write-Information` de waarden worden weer gegeven, afhankelijk van de waarde van de algemene para meter **Information Action** . Als u de algemene para meter **Information Action** niet toevoegt, `Write-Information` worden teken reeksen weer gegeven, afhankelijk van de waarde van de `$InformationPreference` Voorkeurs variabele. Zie about_Preference_Variables voor meer informatie over `$InformationPreference` . [](./about_Preference_Variables.md)
 
 > [!NOTE]
 > De informatie variabele bevat alle informatie berichten die door de opdracht worden gegenereerd, inclusief informatie berichten van aanroepen naar geneste functies of scripts.
@@ -295,6 +295,10 @@ $out
 
 **PipelineVariable** slaat de waarde van het huidige pijplijn element op als een variabele voor elke benoemde opdracht terwijl het door de pijp lijn loopt.
 
+>[!NOTE]
+> Geavanceerde functies kunnen Maxi maal drie script blokken bevatten: `begin` , `process` en `end` . Wanneer u de para meter **PipelineVariable** gebruikt met geavanceerde functies, worden alleen waarden van het eerst gedefinieerde script blok toegewezen aan de variabele als de functie wordt uitgevoerd. Zie [geavanceerde functies](./about_functions_advanced.md)voor meer informatie.
+> Power shell 7,2 corrigeert dit gedrag.
+
 ```yaml
 Type: String
 Aliases: pv
@@ -312,7 +316,7 @@ Hier volgt een voor beeld van hoe **PipelineVariable** werkt. In dit voor beeld 
 
 De resultaten van de eerste `Foreach-Object` opdracht worden in een tweede opdracht gepiped `Foreach-Object` , waarmee de objecten worden gefilterd die door de eerste opdracht worden geretourneerd `Foreach-Object` . De resultaten van de tweede opdracht worden opgeslagen in een variabele met de naam **rechts**.
 
-In de derde `Foreach-Object` opdracht worden de resultaten van de eerste twee `Foreach-Object` gepipede opdrachten, vertegenwoordigd door de variabelen **links** en **rechts** , verwerkt met behulp van een vermenigvuldigings operator. De opdracht geeft objecten die zijn opgeslagen in de **linker** -en **rechter** variabelen die moeten worden vermenigvuldigd en geeft aan dat de resultaten moeten worden weer gegeven als ' lid van ' links bereik * rechter bereik lid = product '.
+In de derde `Foreach-Object` opdracht worden de resultaten van de eerste twee `Foreach-Object` gepipede opdrachten, vertegenwoordigd door de variabelen **links** en **rechts**, verwerkt met behulp van een vermenigvuldigings operator. De opdracht geeft objecten die zijn opgeslagen in de **linker** -en **rechter** variabelen die moeten worden vermenigvuldigd en geeft aan dat de resultaten moeten worden weer gegeven als ' lid van ' links bereik * rechter bereik lid = product '.
 
 ```powershell
 1..10 | Foreach-Object -PipelineVariable Left -Process { $_ } |
@@ -366,7 +370,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-De para meter **WarningAction** overschrijft de waarde van de `$WarningPreference` variabele voor de huidige opdracht. Omdat de standaard waarde van de `$WarningPreference` variabele wordt **voortgezet** , worden er waarschuwingen weer gegeven en wordt de uitvoering voortgezet, tenzij u de para meter **WarningAction** gebruikt.
+De para meter **WarningAction** overschrijft de waarde van de `$WarningPreference` variabele voor de huidige opdracht. Omdat de standaard waarde van de `$WarningPreference` variabele wordt **voortgezet**, worden er waarschuwingen weer gegeven en wordt de uitvoering voortgezet, tenzij u de para meter **WarningAction** gebruikt.
 
 `-WarningAction:Continue` geeft de waarschuwings berichten weer en gaat verder met het uitvoeren van de opdracht. `Continue` is de standaardwaarde.
 

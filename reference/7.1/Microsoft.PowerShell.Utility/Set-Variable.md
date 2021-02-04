@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/set-variable?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Variable
-ms.openlocfilehash: c175fce3df41a3860a54ccb13a280955dce4a55c
-ms.sourcegitcommit: fcf7bd222f5ee3fdbe21ffddcae47050cffe7e42
+ms.openlocfilehash: c90a2f49c95333e45893e186d6e1f1da4b3fe41a
+ms.sourcegitcommit: 0f003644684422e425a59b7361121e05ac772e15
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93253270"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98771828"
 ---
 # Set-Variable
 
@@ -53,7 +53,7 @@ desc                           A description
 In dit voor beeld wordt een globale, alleen-lezen variabele gemaakt die alle processen op het systeem bevat. vervolgens worden alle eigenschappen van de variabele weer gegeven.
 
 ```powershell
-Set-Variable -Name "processes" -Value (Get-Process) -Option constant -Scope global -Description "All processes" -PassThru |
+Set-Variable -Name "processes" -Value (Get-Process) -Option Constant -Scope global -Description "All processes" -PassThru |
     Format-List -Property *
 ```
 
@@ -232,7 +232,7 @@ Hiermee wordt het bereik van de variabele opgegeven. De acceptabele waarden voor
 - Globaal
 - Lokaal
 - Script
-- Privé
+- Persoonlijk
 - Een getal dat relatief is ten opzichte van het huidige bereik (0 tot en met het aantal bereiken, waarbij 0 het huidige bereik is en 1 de bovenliggende scope).
 
 Local is de standaard instelling.

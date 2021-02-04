@@ -3,12 +3,12 @@ ms.date: 07/23/2020
 keywords: DSC, Power shell, configuratie, installatie
 title: DSC-resources
 description: DSC-resources bieden de bouw stenen voor een DSC-configuratie. Een resource beschrijft eigenschappen die kunnen worden geconfigureerd (schema) en bevat de Power shell-script functies die door de LCM worden gebruikt om de configuratie toe te passen.
-ms.openlocfilehash: 1634db84deff8de3b33c941ad738dc21cf3017ac
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 33268c68638bb581e0b2235a53aee9d186dff6be
+ms.sourcegitcommit: 0f003644684422e425a59b7361121e05ac772e15
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92658443"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98771803"
 ---
 # <a name="dsc-resources"></a>DSC-resources
 
@@ -118,7 +118,7 @@ Configuration TestConfig
 
 ## <a name="types-of-resources"></a>Typen resources
 
-Windows wordt geleverd met ingebouwde resources en Linux heeft specifieke resources voor het besturings systeem. Er zijn resources voor [afhankelijkheden tussen knoop punten](../configurations/crossNodeDependencies.md), resources voor pakket beheer en[resources die eigendom](https://github.com/dsccommunity)zijn van de community. U kunt de bovenstaande stappen gebruiken om de syntaxis van deze resources te bepalen en hoe u deze gebruikt. De pagina's van deze resources zijn onder **verwijzing** gearchiveerd.
+Windows wordt geleverd met ingebouwde resources en Linux heeft specifieke resources voor het besturings systeem. Er zijn resources voor [afhankelijkheden tussen knoop punten](../configurations/crossNodeDependencies.md), resources voor pakket beheer en [resources die eigendom](https://github.com/dsccommunity)zijn van de community. U kunt de bovenstaande stappen gebruiken om de syntaxis van deze resources te bepalen en hoe u deze gebruikt. De pagina's van deze resources zijn onder **verwijzing** gearchiveerd.
 
 ### <a name="windows-built-in-resources"></a>Ingebouwde Windows-resources
 
