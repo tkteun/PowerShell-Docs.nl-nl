@@ -2,23 +2,23 @@
 external help file: Microsoft.PowerShell.ConsoleHost.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Host
-ms.date: 06/09/2017
+ms.date: 01/26/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.host/start-transcript?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Transcript
-ms.openlocfilehash: 24cd9bab242d0165f10721152544fea47b9557e3
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: d0987c77e3c2bb8cee08e67610cd6fe4fedc36e4
+ms.sourcegitcommit: 11880ca974fe2df308191c9f6dcdfe0b89c2dc67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94705756"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98860859"
 ---
 # Start-Transcript
 
-## SAMENVATTING
+## Samen vatting
 Hiermee maakt u een record van een Power shell-sessie of een deel ervan aan een tekst bestand.
 
-## SYNTAXIS
+## Syntax
 
 ### ByPath (standaard)
 
@@ -41,7 +41,7 @@ Start-Transcript [[-OutputDirectory] <String>] [-Append] [-Force] [-NoClobber]
  [-IncludeInvocationHeader] [-UseMinimalHeader] [-WhatIf] [-Confirm]  [<CommonParameters>]
 ```
 
-## BESCHRIJVING
+## Description
 
 `Start-Transcript`Met de cmdlet maakt u een record van een Power shell-sessie of een deel ervan aan een tekst bestand. De transcript bevat alle opdrachten die de gebruiker typt en alle uitvoer die wordt weer gegeven op de-console.
 
@@ -49,7 +49,9 @@ Vanaf Windows Power shell 5,0 `Start-Transcript` bevat de hostnaam in de gegener
 Bestanden die door de cmdlet worden gemaakt, `Start-Transcript` bevatten wille keurige tekens in namen om te voor komen dat er sprake is van mogelijke overschrijvingen of duplicatie wanneer twee of meer transcripten tegelijk worden gestart.
 Dit voor komt ook niet-geautoriseerde detectie van transcripten die zijn opgeslagen in een gecentraliseerde bestands share.
 
-## VOORBEELDEN
+Als het doel bestand geen byte order Mark (stuk lijst) heeft, wordt `Start-Transcript` standaard `Utf8NoBom` de code ring in het doel bestand gebruikt.
+
+## Voorbeelden
 
 ### Voor beeld 1: een transcript bestand met de standaard instellingen starten
 
@@ -67,7 +69,7 @@ Start-Transcript -Path "C:\transcripts\transcript0.txt" -NoClobber
 
 Met deze opdracht wordt een transcript in het `Transcript0.txt` bestand in geopend `C:\transcripts` . Omdat de para meter **NoClobber** wordt gebruikt, wordt voor komen dat bestaande bestanden worden overschreven. Als het `Transcript0.txt` bestand al bestaat, mislukt de opdracht.
 
-## PARAMETERS
+## Parameters
 
 ### -Toevoegen
 
@@ -238,25 +240,24 @@ Accept wildcard characters: False
 
 Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable. Zie [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)voor meer informatie.
 
-## INVOER
+## Invoerwaarden
 
 ### Geen
 
 U kunt geen objecten naar deze cmdlet pipeen.
 
-## UITVOER
+## Uitvoerwaarden
 
 ### System. String
 
 Deze cmdlet retourneert een teken reeks die een bevestigings bericht en het pad naar het uitvoer bestand bevat.
 
-## OPMERKINGEN
+## Notities
 
 Als u een transcript wilt stoppen, gebruikt u de `Stop-Transcript` cmdlet.
 
 Als u een volledige sessie wilt vastleggen, voegt `Start-Transcript` u de opdracht toe aan uw profiel. Zie [about_Profiles](../Microsoft.PowerShell.Core/About/about_Profiles.md)voor meer informatie.
 
-## GERELATEERDE KOPPELINGEN
+## Verwante koppelingen
 
 [Stoppen-transcriptie](Stop-Transcript.md)
-

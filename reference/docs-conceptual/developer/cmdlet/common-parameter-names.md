@@ -3,23 +3,30 @@ ms.date: 09/13/2016
 ms.topic: reference
 title: Namen van veelvoorkomende parameters
 description: Namen van veelvoorkomende parameters
-ms.openlocfilehash: cf39dd3b04660076718336857d79d55c3784ccd1
-ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.openlocfilehash: 506aab290abdb97a6e26c340ac4bd0051244f54b
+ms.sourcegitcommit: 11880ca974fe2df308191c9f6dcdfe0b89c2dc67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "92668215"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98860876"
 ---
 # <a name="common-parameter-names"></a>Namen van veelvoorkomende parameters
 
-De para meters die in dit onderwerp worden beschreven, worden *algemene para meters* genoemd. Ze worden toegevoegd aan cmdlets door de Windows Power shell-runtime en kunnen niet worden gedeclareerd door de cmdlet.
+De para meters die in dit onderwerp worden beschreven, worden **algemene para meters** genoemd. Ze worden toegevoegd aan cmdlets door de Windows Power shell-runtime en kunnen niet worden gedeclareerd door de cmdlet.
 
 > [!NOTE]
 > Deze para meters worden ook toegevoegd aan provider-cmdlets en aan functies die met het kenmerk zijn gedecoreerd `CmdletBinding` .
 
 ## <a name="general-common-parameters"></a>Algemene algemene para meters
 
-De volgende para meters worden toegevoegd aan alle cmdlets en kunnen worden geopend wanneer de cmdlet wordt uitgevoerd. Deze para meters worden gedefinieerd door de klasse [System. Management. Automation. internal. Commonparameters](/dotnet/api/System.Management.Automation.Internal.CommonParameters) .
+De volgende para meters worden toegevoegd aan alle cmdlets en kunnen worden geopend wanneer de cmdlet wordt uitgevoerd.
+Deze para meters worden gedefinieerd door de klasse [System. Management. Automation. internal. Commonparameters](/dotnet/api/System.Management.Automation.Internal.CommonParameters) .
+
+### <a name="confirm-alias-cf"></a>Bevestigen (alias: CF)
+
+Gegevens type: SwitchParameter
+
+Met deze para meter geeft u op of de cmdlet een prompt krijgt waarin wordt gevraagd of de gebruiker wilt door gaan.
 
 ### <a name="debug-alias-db"></a>Debug (alias: DB)
 
@@ -37,13 +44,7 @@ Deze para meter geeft aan welke actie moet worden uitgevoerd als er een fout opt
 
 Gegevens type: teken reeks
 
-Met deze para meter wordt de variabele opgegeven waarin objecten worden geplaatst wanneer er een fout optreedt. Als u wilt toevoegen aan deze variabele, gebruikt u +*varnaam* in plaats van de variabele uit te scha kelen en in te stellen.
-
-### <a name="outvariable-alias-ov"></a>Outvariable (alias: OV)
-
-Gegevens type: teken reeks
-
-Met deze para meter geeft u de variabele op waarin alle uitvoer objecten worden geplaatst die door de cmdlet worden gegenereerd. Als u wilt toevoegen aan deze variabele, gebruikt u +*varnaam* in plaats van de variabele uit te scha kelen en in te stellen.
+Met deze para meter wordt de variabele opgegeven waarin objecten worden geplaatst wanneer er een fout optreedt. Als u wilt toevoegen aan deze variabele, gebruikt u +_varnaam_ in plaats van de variabele uit te scha kelen en in te stellen.
 
 ### <a name="outbuffer-alias-ob"></a>Outbuffer (alias: OB)
 
@@ -51,7 +52,20 @@ Gegevens type: Int32
 
 Met deze para meter wordt het aantal objecten gedefinieerd dat moet worden opgeslagen in de uitvoer buffer voordat er objecten worden door gegeven aan de pijp lijn. Standaard worden objecten onmiddellijk door gegeven aan de pijp lijn.
 
-### <a name="verbose-alias-vb"></a>Uitgebreid (alias: VB)
+### <a name="outvariable-alias-ov"></a>Outvariable (alias: OV)
+
+Gegevens type: teken reeks
+
+Met deze para meter geeft u de variabele op waarin alle uitvoer objecten worden geplaatst die door de cmdlet worden gegenereerd.
+Als u wilt toevoegen aan deze variabele, gebruikt u +_varnaam_ in plaats van de variabele uit te scha kelen en in te stellen.
+
+### <a name="pipelinevariable-alias-pv"></a>PipelineVariable (alias: hw)
+
+Gegevens type: teken reeks
+
+Met deze para meter wordt de waarde van het huidige pijplijn element opgeslagen als een variabele voor een benoemde opdracht tijdens het door lopen van de pijp lijn.
+
+## <a name="verbose-alias-vb"></a>Uitgebreid (alias: VB)
 
 Gegevens type: SwitchParameter
 
@@ -67,17 +81,12 @@ Deze para meter geeft aan welke actie moet worden uitgevoerd wanneer de cmdlet e
 
 Gegevens type: teken reeks
 
-Met deze para meter geeft u de variabele op waarin waarschuwings berichten kunnen worden opgeslagen. Als u wilt toevoegen aan deze variabele, gebruikt u +*varnaam* in plaats van de variabele uit te scha kelen en in te stellen.
+Met deze para meter geeft u de variabele op waarin waarschuwings berichten kunnen worden opgeslagen. Als u wilt toevoegen aan deze variabele, gebruikt u +_varnaam_ in plaats van de variabele uit te scha kelen en in te stellen.
 
 ## <a name="risk-mitigation-parameters"></a>Risk-Mitigation para meters
 
-De volgende para meters worden toegevoegd aan cmdlets die bevestiging aanvragen voordat ze hun actie uitvoeren. Zie [bevestiging aanvragen](./requesting-confirmation-from-cmdlets.md)voor meer informatie over bevestigings aanvragen. Deze para meters worden gedefinieerd door de klasse [System. Management. Automation. internal. Shouldprocessparameters](/dotnet/api/System.Management.Automation.Internal.ShouldProcessParameters) .
-
-### <a name="confirm-alias-cf"></a>Bevestigen (alias: CF)
-
-Gegevens type: SwitchParameter
-
-Met deze para meter geeft u op of de cmdlet een prompt krijgt waarin wordt gevraagd of de gebruiker wilt door gaan.
+De volgende para meters worden toegevoegd aan cmdlets die bevestiging aanvragen voordat ze hun actie uitvoeren. Zie [bevestiging aanvragen](./requesting-confirmation-from-cmdlets.md)voor meer informatie over bevestigings aanvragen.
+Deze para meters worden gedefinieerd door de klasse [System. Management. Automation. internal. Shouldprocessparameters](/dotnet/api/System.Management.Automation.Internal.ShouldProcessParameters) .
 
 ### <a name="whatif-alias-wi"></a>WhatIf (alias: Wi)
 
@@ -87,7 +96,7 @@ Met deze para meter geeft u op of de cmdlet een bericht schrijft dat de gevolgen
 
 ## <a name="transaction-parameters"></a>Transactie parameters
 
-De volgende para meter wordt toegevoegd aan cmdlets die trans acties ondersteunen. Deze para meters worden gedefinieerd door de klasse [System. Management. Automation. internal. Transactionparameters](/dotnet/api/System.Management.Automation.Internal.TransactionParameters) .
+De volgende para meter wordt toegevoegd aan cmdlets die trans acties ondersteunen. Deze para meters worden gedefinieerd door de klasse [System. Management. Automation. internal. Transactionparameters](/dotnet/api/System.Management.Automation.Internal.TransactionParameters) . Trans actie-ondersteuning is geïntroduceerd in Power Shell 3,0 en stopgezet in Power shell 6,0.
 
 ### <a name="usetransaction-alias-usetx"></a>UseTransaction (alias: usetx)
 

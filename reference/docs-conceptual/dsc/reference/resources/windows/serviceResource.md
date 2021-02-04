@@ -1,14 +1,14 @@
 ---
-ms.date: 09/20/2019
+ms.date: 01/06/2021
 ms.topic: reference
 title: DSC-Service Resource
 description: DSC-Service Resource
-ms.openlocfilehash: 24121688bc46dcef70e3751d243d140fb7fcc7c9
-ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
+ms.openlocfilehash: bb151e11475c6e67f1fcb2d73336ff2e34b749b8
+ms.sourcegitcommit: afefb3636362857036648c2fe80215bc4e81f5ac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/31/2020
-ms.locfileid: "93142621"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97957033"
 ---
 # <a name="dsc-service-resource"></a>DSC-Service Resource
 
@@ -27,7 +27,7 @@ Service [string] #ResourceName
     [ BuiltInAccount = [string] { LocalService | LocalSystem | NetworkService }  ]
     [ Credential = [PSCredential] ]
     [ StartupType = [string] { Automatic | Disabled | Manual }  ]
-    [ State = [string] { Ignore | Running | Stopped }  ]
+    [ State = [string] { Running | Stopped }  ]
     [ Dependencies = [string[]] ]
     [ Description = [string] ]
     [ DisplayName = [string] ]
@@ -42,13 +42,13 @@ Service [string] #ResourceName
 
 |Eigenschap |Beschrijving |
 |---|---|
-|Naam |Hiermee wordt de service naam aangegeven. Houd er rekening mee dat dit verschilt van de weergave naam. U kunt een lijst met de services en de huidige status van de `Get-Service` cmdlet ophalen. |
-|BuiltInAccount |Hiermee wordt het aanmeldings account aangegeven dat moet worden gebruikt voor de service. De waarden die zijn toegestaan voor deze eigenschap zijn: **LocalService** , **LocalSystem** en **Network Service** . |
+|Name |Hiermee wordt de service naam aangegeven. Houd er rekening mee dat dit verschilt van de weergave naam. U kunt een lijst met de services en de huidige status van de `Get-Service` cmdlet ophalen. |
+|BuiltInAccount |Hiermee wordt het aanmeldings account aangegeven dat moet worden gebruikt voor de service. De waarden die zijn toegestaan voor deze eigenschap zijn: **LocalService**, **LocalSystem** en **Network Service**. |
 |Referentie |Hiermee geeft u de referenties op voor het account waaronder de service wordt uitgevoerd. Deze eigenschap en de eigenschap **BuiltinAccount** kunnen niet tegelijk worden gebruikt. |
-|Opstart type |Hiermee geeft u het opstart type voor de service. De waarden die zijn toegestaan voor deze eigenschap zijn: **automatisch** , **uitgeschakeld** en **hand matig** . |
-|Staat |Hiermee wordt de status aangegeven die u voor de service wilt controleren. De waarden zijn: **actief** of **gestopt** . |
+|Opstart type |Hiermee geeft u het opstart type voor de service. De waarden die zijn toegestaan voor deze eigenschap zijn: **automatisch**, **uitgeschakeld** en **hand matig**. |
+|Staat |Hiermee wordt de status aangegeven die u voor de service wilt controleren. De waarden zijn: **actief** of **gestopt**. |
 |Afhankelijkheden | Een matrix met de namen van de afhankelijkheden die de service moet hebben. |
-|Beschrijving |Hiermee wordt de beschrijving van de doel service aangegeven. |
+|Description |Hiermee wordt de beschrijving van de doel service aangegeven. |
 |DisplayName |Hiermee wordt de weergave naam van de doel service aangegeven. |
 |Pad |Hiermee wordt het pad naar het binaire bestand voor een nieuwe service aangegeven. |
 
@@ -57,7 +57,7 @@ Service [string] #ResourceName
 |Eigenschap |Beschrijving |
 |---|---|
 |DependsOn |Geeft aan dat de configuratie van een andere bron moet worden uitgevoerd voordat deze resource wordt geconfigureerd. De syntaxis voor het gebruik van deze eigenschap is bijvoorbeeld als de ID van het resource-script blok dat u als eerste wilt uitvoeren, de naam ResourceName is en het type van de bron resource is `DependsOn = "[ResourceType]ResourceName"` . |
-|Zo |Hiermee geeft u op of de doel service op het systeem bestaat. Stel deze eigenschap in op **afwezig** om ervoor te zorgen dat de doel service niet bestaat. **Als u** deze instelling inschakelt, zorgt u ervoor dat de doel service bestaat. De standaard waarde is **aanwezig** . |
+|Zo |Hiermee geeft u op of de doel service op het systeem bestaat. Stel deze eigenschap in op **afwezig** om ervoor te zorgen dat de doel service niet bestaat. **Als u** deze instelling inschakelt, zorgt u ervoor dat de doel service bestaat. De standaard waarde is **aanwezig**. |
 |PsDscRunAsCredential |Hiermee stelt u de referentie in voor het uitvoeren van de gehele resource als. |
 
 > [!NOTE]

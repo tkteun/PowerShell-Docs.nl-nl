@@ -4,12 +4,12 @@ ms.date: 06/04/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_continue?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Continue
-ms.openlocfilehash: 8ba19cca9a19f6854cb3edb5900facff1e7bcd5f
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 36c14dc0489345083e8938c066cefa77e3f5ef8d
+ms.sourcegitcommit: 0c31814bed14ff715dc7d4aace07cbdc6df2438e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94705796"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97614061"
 ---
 # <a name="about-continue"></a>Over gaan
 
@@ -106,7 +106,7 @@ Wanneer `continue` wordt gebruikt buiten een constructie die deze direct onderst
 
 Dit betekent dat functies en scripts die per ongeluk gebruikmaken `continue` van een insluitende constructie die het ondersteunt, de _aanroepers_ per ongeluk kunnen beëindigen.
 
-`continue`Als u in een pijp lijn, zoals een `ForEach-Object` script blok, niet alleen de pijp lijn afsluit, wordt de volledige runs Pace mogelijk beëindigd.
+`continue`Als u een pijp lijn gebruikt, zoals een- `ForEach-Object` script blok, wordt de pijp lijn niet alleen afgesloten, waardoor de volledige runs Pace wordt beëindigd.
 
 ## <a name="see-also"></a>Zie ook
 

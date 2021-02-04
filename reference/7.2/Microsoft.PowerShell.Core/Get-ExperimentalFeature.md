@@ -1,16 +1,16 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
 Module Name: Microsoft.PowerShell.Core
-ms.date: 03/01/2019
+ms.date: 01/26/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/get-experimentalfeature?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-ExperimentalFeature
-ms.openlocfilehash: 7c1f618fab392c11719da99da917d0cee57c13d1
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: aad634bb0a917d418aa9c7fa295a53fda280b8a3
+ms.sourcegitcommit: 11880ca974fe2df308191c9f6dcdfe0b89c2dc67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94705627"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98860866"
 ---
 # Get-ExperimentalFeature
 
@@ -74,7 +74,7 @@ Naam of namen van experimentele functies die moeten worden geretourneerd.
 
 ## UITVOER
 
-### ExperimentalFeature
+### System. Management. Automation. ExperimentalFeature
 
 Retourneert instanties die overeenkomen met de aangevraagde namen of alle experimentele functies als er geen naam is opgegeven.
 
@@ -83,4 +83,3 @@ Retourneert instanties die overeenkomen met de aangevraagde namen of alle experi
 [Disable-ExperimentalFeature](Disable-ExperimentalFeature.md)
 
 [Enable-ExperimentalFeature](Enable-ExperimentalFeature.md)
-

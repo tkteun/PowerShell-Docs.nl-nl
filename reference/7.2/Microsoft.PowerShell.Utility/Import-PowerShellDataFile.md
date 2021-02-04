@@ -6,12 +6,12 @@ ms.date: 10/25/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/import-powershelldatafile?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Import-PowerShellDataFile
-ms.openlocfilehash: 2853c5757b12e75e50948192e5a9e29889553b8e
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: d7942abff2974064c52a8a9ac086a280959b3a63
+ms.sourcegitcommit: 11880ca974fe2df308191c9f6dcdfe0b89c2dc67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94705428"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98860852"
 ---
 # Import-PowerShellDataFile
 
@@ -23,19 +23,19 @@ Hiermee worden waarden uit een `.PSD1` bestand geïmporteerd zonder dat de inhou
 ### ByPath (standaard)
 
 ```
-Import-PowerShellDataFile [-Path] <String[]> [<CommonParameters>]
+Import-PowerShellDataFile [-Path] <String[]> [-SkipLimitCheck] [<CommonParameters>]
 ```
 
 ### ByLiteralPath
 
 ```
-Import-PowerShellDataFile [-LiteralPath] <String[]> [<CommonParameters>]
+Import-PowerShellDataFile [-LiteralPath] <String[]> [-SkipLimitCheck] [<CommonParameters>]
 ```
 
 ## BESCHRIJVING
 
 Met de `Import-PowerShellDataFile` cmdlet worden sleutel-waardeparen van hashtabellen die in een bestand zijn gedefinieerd, veilig geïmporteerd `.PSD1` . De waarden kunnen worden geïmporteerd `Invoke-Expression` op basis van de inhoud van het bestand.
-Voert echter `Invoke-Expression` alle code in het bestand uit. Dit kan ongewenste resultaten opleveren of onveilige code uitvoeren. `Import-PowerShellDataFile` Hiermee importeert u de gegevens zonder de code aan te roepen.
+Voert echter `Invoke-Expression` alle code in het bestand uit. Dit kan ongewenste resultaten opleveren of onveilige code uitvoeren. `Import-PowerShellDataFile` Hiermee importeert u de gegevens zonder de code aan te roepen. Er is standaard een 500-sleutel limiet, maar deze kan worden overgeslagen met de schakel optie **SkipLimitCheck** .
 
 ## VOORBEELDEN
 
@@ -102,6 +102,22 @@ Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
+### -SkipLimitCheck
+
+Standaard `Import-PowerShellDataFile` worden slechts 500 sleutels uit een `.psd1` bestand geïmporteerd. Gebruik **SkipLimitCheck** om meer dan 500 sleutels te importeren.
+
+```yaml
+Type: Switch
+Parameter Sets: All
+Aliases:
+
+Required: False
+Position: 0
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### CommonParameters
 
 Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable. Zie [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md)voor meer informatie.
@@ -119,4 +135,3 @@ Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - Er
 [Invoke-expressie](Invoke-Expression.md)
 
 [Import-LocalizedData](Import-LocalizedData.md)
-
