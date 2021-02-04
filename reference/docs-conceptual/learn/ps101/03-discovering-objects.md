@@ -2,15 +2,14 @@
 title: Objecten, eigenschappen en methoden ontdekken
 description: U hoeft geen ontwikkelaar te zijn om objecten, eigenschappen en methoden te begrijpen en te gebruiken.
 ms.date: 06/02/2020
-ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
-ms.openlocfilehash: 5ab972755afeba0d94bf6c2debaf84ec84cd9244
-ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.openlocfilehash: f226221da7dd3b663f54cf23439dd7f945ed3a2a
+ms.sourcegitcommit: df5e6f032ee2d4b556d50406832732d2f7dc2502
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "84436363"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98216093"
 ---
 # <a name="chapter-3---discovering-objects-properties-and-methods"></a>Hoofd stuk 3: objecten, eigenschappen en methoden detecteren
 
@@ -691,7 +690,7 @@ In dit hoofd stuk hebt u geleerd hoe u kunt bepalen welk type object een opdrach
 1. Hoe kunnen bepaalde opdrachten die geen uitvoer produceren standaard worden gemaakt voor het produceren van uitvoer?
 1. Als u wilt werken met de resultaten van een opdracht die een enorme hoeveelheid uitvoer produceert, wat moet u overwegen?
 
-## <a name="recommended-reading"></a>Aanbevolen Lees bewerkingen
+## <a name="recommended-reading"></a>Aanbevolen documentatie
 
 - [Get-member][]
 - [Objectstructuur weergeven (Get-Member)][]

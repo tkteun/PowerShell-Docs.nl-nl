@@ -2,23 +2,23 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 09/29/2020
+ms.date: 01/20/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/out-string?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Out-String
-ms.openlocfilehash: c7710cb59785fbfd726ff0aabaf41c43a6966ee1
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 59e5b728604ce37f27b56ebe62e1a22d6af8a966
+ms.sourcegitcommit: 94d597c4fb38793bc49ca7610e2c9973b1e577c2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94705816"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98620126"
 ---
 # Out-String
 
-## SAMENVATTING
+## Samen vatting
 Voert invoer objecten uit als teken reeksen.
 
-## SYNTAXIS
+## Syntax
 
 ### NoNewLineFormatting (standaard)
 
@@ -32,11 +32,11 @@ Out-String [-Width <Int32>] [-NoNewline] [-InputObject <PSObject>] [<CommonParam
 Out-String [-Stream] [-Width <Int32>] [-InputObject <PSObject>] [<CommonParameters>]
 ```
 
-## BESCHRIJVING
+## Description
 
 Met de `Out-String` cmdlet worden invoer objecten geconverteerd naar teken reeksen. `Out-String`De teken reeksen worden standaard gecumuleerd en geretourneerd als een enkele teken reeks, maar u kunt de **Stream** -para meter gebruiken om direct `Out-String` één regel tegelijk te retour neren of om een matrix van teken reeksen te maken. Met deze cmdlet kunt u de teken reeks uitvoer zoeken en manipuleren, net zoals bij traditionele schalen, wanneer het bewerken van objecten minder handig is.
 
-## VOORBEELDEN
+## Voorbeelden
 
 ### Voor beeld 1: de huidige cultuur ophalen en de gegevens converteren naar teken reeksen
 
@@ -155,7 +155,7 @@ Accept wildcard characters: False
 
 ### -Stream
 
-Geeft aan dat de cmdlet een afzonderlijke teken reeks voor elke regel van een invoer object verzendt. Standaard worden de teken reeksen voor elk object verzameld en als één teken reeks verzonden.
+Standaard wordt `Out-String` een enkele teken reeks opgemaakt zoals u deze in de-console zou zien, met inbegrip van lege kopteksten of achterstallige nieuwe regels. Met de para meter **Stream** kan `Out-String` elke regel één voor één worden uitgevoerd. De enige uitzonde ring hierop zijn meerregelige teken reeksen. In dat geval `Out-String` zal de teken reeks nog steeds worden uitgevoerd als één teken reeks met meerdere regels.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -220,4 +220,3 @@ De cmdlets die de term bevatten, hebben `Out` geen objecten. `Out`Met de cmdlets
 [Out-GridView](Out-GridView.md)
 
 [Out-Printer](Out-Printer.md)
-

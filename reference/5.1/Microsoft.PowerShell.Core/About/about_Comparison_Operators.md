@@ -1,508 +1,391 @@
 ---
 description: Hierin worden de Opera tors beschreven waarmee waarden in Power shell worden vergeleken.
 Locale: en-US
-ms.date: 12/10/2020
+ms.date: 01/20/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Comparison_Operators
-ms.openlocfilehash: ba671ae51d458a2e0074a85d4de859795c20a3d5
-ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.openlocfilehash: 9c868b376bdd2e4fda3950f68a09e6569d44853d
+ms.sourcegitcommit: 94d597c4fb38793bc49ca7610e2c9973b1e577c2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97069900"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98619921"
 ---
 # <a name="about-comparison-operators"></a>Over vergelijkings operatoren
 
 ## <a name="short-description"></a>Korte beschrijving
-Hierin worden de Opera tors beschreven waarmee waarden in Power shell worden vergeleken.
+
+Met de vergelijkings operatoren in Power shell kunt u twee waarden vergelijken of elementen van een verzameling filteren op basis van een invoer waarde.
 
 ## <a name="long-description"></a>Lange beschrijving
 
-Met vergelijkings operatoren kunt u voor waarden opgeven voor het vergelijken van waarden en waarden zoeken die overeenkomen met opgegeven patronen. Als u een vergelijkings operator wilt gebruiken, geeft u de waarden op die u wilt vergelijken samen met een operator die deze waarden scheidt.
+Vergelijkings operatoren bieden u de mogelijkheid waarden te vergelijken of waarden te vinden die overeenkomen met opgegeven patronen. Power shell bevat de volgende vergelijkings operatoren:
 
-Power shell bevat de volgende vergelijkings operatoren:
+|    Type     |   Operator   |              Vergelijkings test              |
+| ----------- | ------------ | ----------------------------------------- |
+| Gelijkheid    | -eq          | is gelijk aan                                    |
+|             | -ne          | niet gelijk aan                                |
+|             | -gt          | groter dan                              |
+|             | -ge          | groter dan of gelijk aan                     |
+|             | -lt          | kleiner dan                                 |
+|             | -Le          | kleiner dan of gelijk aan                        |
+| Matching    | -like        | teken reeks komt overeen met Joker patroon           |
+|             | -notlike     | teken reeks komt niet overeen met Joker patroon    |
+|             | -match       | teken reeks komt overeen met regex-patroon              |
+|             | -notmatch    | teken reeks komt niet overeen met regex-patroon       |
+| Vervanging | -vervangen     | vervangt teken reeksen die overeenkomen met een regex-patroon |
+| Containment | -contains    | verzameling bevat een waarde               |
+|             | -notcontains | verzameling bevat geen waarde       |
+|             | -in          | waarde bevindt zich in een verzameling                  |
+|             | -notin       | waarde bevindt zich niet in een verzameling              |
+| Type        | -is          | beide objecten zijn van hetzelfde type            |
+|             | -isnot       | de objecten zijn niet van hetzelfde type         |
 
-| Type        | Operators    | Description                                 |
-| ----------- | ------------ | --------------------------------------------|
-| Gelijkheid    | -eq          | is gelijk aan                                      |
-|             | -ne          | niet gelijk aan                                  |
-|             | -gt          | groter dan                                |
-|             | -ge          | groter dan of gelijk aan                       |
-|             | -lt          | kleiner dan                                   |
-|             | -Le          | kleiner dan of gelijk aan                          |
-|             |              |                                             |
-| Matching    | -like        | Retourneert waar als teken reeks overeenkomt met Joker teken   |
-|             |              | pattern                                     |
-|             | -notlike     | Retourneert waar als de teken reeks niet overeenkomt     |
-|             |              | Joker teken patroon                            |
-|             | -match       | Retourneert True als teken reeks overeenkomt met regex      |
-|             |              | pattern $matches bevat overeenkomende teken reeksen |
-|             | -notmatch    | Retourneert waar als de teken reeks niet overeenkomt     |
-|             |              | regex-patroon; $matches bevat overeenkomende   |
-|             |              | tekenreeksen                                     |
-|             |              |                                             |
-| Containment | -contains    | Retourneert waar als de referentie waarde bevat |
-|             |              | in een verzameling                             |
-|             | -notcontains | Retourneert waar als de referentie waarde niet       |
-|             |              | opgenomen in een verzameling                   |
-|             | -in          | Retourneert waar als de test waarde in een |
-|             |              | verzameling                                  |
-|             | -notin       | Retourneert waar als de test waarde niet bevat  |
-|             |              | in een verzameling                             |
-|             |              |                                             |
-| Vervanging | -vervangen     | Vervangt een teken reeks patroon                   |
-|             |              |                                             |
-| Type        | -is          | Retourneert waar als beide objecten hetzelfde zijn    |
-|             |              | type                                        |
-|             | -isnot       | Retourneert waar als de objecten niet hetzelfde zijn|
-|             |              | type                                        |
+## <a name="common-features"></a>Algemene functies
 
-Standaard zijn alle vergelijkings operatoren niet hoofdletter gevoelig. Als u een vergelijkings operator hoofdletter gevoelig wilt maken, moet u de naam van de operator vooraf vervangen door een `c` . De hoofdletter gevoelige versie van `-eq` is bijvoorbeeld `-ceq` . Als u de niet-hoofdletter gevoeligheid expliciet wilt maken, moet u voorafgaand aan de operator een `i` . De versie van is bijvoorbeeld expliciet niet hoofdletter gevoelig `-eq` `-ieq` .
+Standaard zijn alle vergelijkings operatoren niet hoofdletter gevoelig. Als u een vergelijkings operator hoofdletter gevoelig wilt maken, moet u een `c` na de toevoegen `-` . `-ceq`Is bijvoorbeeld de hoofdletter gevoelige versie van `-eq` . Voeg een before toe om de hoofdletter gevoeligheid expliciet te maken `i` `-` . `-ieq`Is bijvoorbeeld de expliciete niet-hoofdletter gevoelige versie van `-eq` .
 
-Wanneer de invoer voor een operator een scalaire waarde is, retour neren vergelijkings operatoren een Booleaanse waarde. Wanneer de invoer een verzameling waarden is, retour neren de vergelijkings operatoren alle overeenkomende waarden. Als er geen overeenkomsten in een verzameling zijn, retour neren vergelijkings operatoren een lege matrix.
+Wanneer de invoer van een operator een scalaire waarde is, retourneert de operator een **Boole** -waarde. Wanneer de invoer een verzameling is, retourneert de operator de elementen van de verzameling die overeenkomen met de rechter waarde van de expressie.
+Als er geen overeenkomsten in de verzameling zijn, retour neren vergelijkings operatoren een lege matrix. Bijvoorbeeld:
 
 ```powershell
-PS> (1, 2 -eq 3).GetType().FullName
-System.Object[]
+$a = (1, 2 -eq 3)
+$a.GetType().Name
+$a.Count
 ```
 
-De uitzonde ringen zijn de containment-Opera Tors, de Opera tors in en de type operator, die altijd een **Booleaanse** waarde Retour neren.
+```output
+Object[]
+0
+```
 
-> [!NOTE]
-> Als u een waarde wilt vergelijken `$null` , moet u aan `$null` de linkerkant van de vergelijking zetten. Wanneer u vergelijkt `$null` met een **object []** , is het resultaat **False** omdat het vergelijkings object een matrix is. Wanneer u een matrix vergelijkt met `$null` , worden de `$null` waarden die in de matrix zijn opgeslagen, door de vergelijking gefilterd. Bijvoorbeeld:
->
-> ```powershell
-> PS> $null -ne $null, "hello"
-> True
-> PS> $null, "hello" -ne $null
-> hello
-> ```
+Er zijn enkele uitzonde ringen:
+
+- De containment-en type-Opera tors retour neren altijd een **Booleaanse** waarde
+- De `-replace` operator retourneert het vervangings resultaat
+- De `-match` `-notmatch` Opera tors en vullen ook de `$Matches` Automatische variabele
 
 ## <a name="equality-operators"></a>Gelijkheidsoperatoren
 
-De gelijkheids operatoren ( `-eq` , `-ne` ) retour neren de waarde True of de overeenkomsten wanneer een of meer invoer waarden identiek zijn aan het opgegeven patroon. Het hele patroon moet overeenkomen met een volledige waarde.
+### <a name="-eq-and--ne"></a>-EQ en-ne
 
-Voorbeeld:
-
-### <a name="-eq"></a>-eq
-
-Beschrijving: gelijk aan. Bevat een identieke waarde.
+Wanneer de linkerkant scalair is, `-eq` retourneert **waar** als de rechter kant een exacte overeenkomst heeft, anders `-eq` wordt **False** geretourneerd. `-ne` doet het tegenovergestelde; Wanneer beide zijden overeenkomen, wordt **False** geretourneerd. anders `-ne` wordt waar geretourneerd.
 
 Voorbeeld:
 
 ```powershell
-PS> 2 -eq 2
-True
+2 -eq 2                 # Output: True
+2 -eq 3                 # Output: False
+"abc" -eq "abc"         # Output: True
+"abc" -eq "abc", "def"  # Output: False
+"abc" -ne "def"         # Output: True
+"abc" -ne "abc"         # Output: False
+"abc" -ne "abc", "def"  # Output: True
+```
 
-PS> 2 -eq 3
+Wanneer de linkerkant een verzameling is, `-eq` retourneert de leden die aan de rechter kant overeenkomen, terwijl `-ne` deze worden gefilterd.
+
+Voorbeeld:
+
+```powershell
+1,2,3 -eq 2             # Output: 2
+"abc", "def" -eq "abc"  # Output: abc
+"abc", "def" -ne "abc"  # Output: def
+```
+
+Deze opera tors verwerken alle elementen van de verzameling. Voorbeeld:
+
+```powershell
+"zzz", "def", "zzz" -eq "zzz"
+```
+
+```output
+zzz
+zzz
+```
+
+De gelijkheids operatoren accepteren twee objecten, niet alleen een scalair of verzameling.
+Maar het vergelijkings resultaat is niet gegarandeerd dat dit zinvol is voor de eind gebruiker.
+In het volgende voor beeld wordt het probleem gedemonstreerd.
+
+```powershell
+class MyFileInfoSet {
+    [String]$File
+    [Int64]$Size
+}
+$a = [MyFileInfoSet]@{File = "C:\Windows\explorer.exe"; Size = 4651032}
+$b = [MyFileInfoSet]@{File = "C:\Windows\explorer.exe"; Size = 4651032}
+$a -eq $b
+```
+
+```Output
 False
+```
 
-PS> 1,2,3 -eq 2
+In dit voor beeld hebben we twee objecten met identieke eigenschappen gemaakt. Het resultaat van de gelijkheids test is dan **Onwaar** , omdat deze verschillende objecten zijn. Als u vergelijk bare klassen wilt maken, moet u [System. \<T> IEquatable][2] in uw klasse implementeren. In het volgende voor beeld ziet u de gedeeltelijke implementatie van een **MyFileInfoSet** -klasse die [System. \<T> IEquatable][2] implementeert en twee eigenschappen, **bestand** en **grootte** heeft. De `Equals()` methode retourneert True als de bestands-en grootte-eigenschappen van twee **MyFileInfoSet** -objecten hetzelfde zijn.
+
+```powershell
+class MyFileInfoSet : System.IEquatable[Object] {
+    [String]$File
+    [Int64]$Size
+
+    [bool] Equals([Object] $obj) {
+        return ($this.File -eq $obj.File) -and ($this.Size -eq $obj.Size)
+    }
+}
+$a = [MyFileInfoSet]@{File = "C:\Windows\explorer.exe"; Size = 4651032}
+$b = [MyFileInfoSet]@{File = "C:\Windows\explorer.exe"; Size = 4651032}
+$a -eq $b
+```
+
+```Output
+True
+```
+
+Een prominent voor beeld van het vergelijken van wille keurige objecten is om erachter te komen of ze null zijn. Maar als u wilt bepalen of een variabele is `$null` , moet u `$null` aan de linkerkant van de gelijkheids operator. Als u deze aan de rechter kant gebruikt, heeft dat niet de verwachte.
+
+U kunt bijvoorbeeld `$a` een matrix met null-elementen maken:
+
+```powershell
+$a = 1, 2, $null, 4, $null, 6
+```
+
+De volgende tests die `$a` niet null zijn.
+
+```powershell
+$null -ne $a
+```
+
+```output
+False
+```
+
+De volgende bestanden zijn echter alle null-elementen van `$a` :
+
+```powershell
+$a -ne $null # Output: 1, 2, 4, 6
+```
+
+```output
+1
 2
-PS> "abc" -eq "abc"
-True
-
-PS> "abc" -eq "abc", "def"
-False
-
-PS> "abc", "def" -eq "abc"
-abc
+4
+6
 ```
 
-### <a name="-ne"></a>-ne
+### <a name="-gt--ge--lt-and--le"></a>-gt,-ge,-lt en-Le
 
-Beschrijving: niet gelijk aan. Bevat een andere waarde.
+`-gt`, `-ge` , `-lt` en `-le` gedragen zich op dezelfde manier. Wanneer beide zijden scalair zijn, retour neren ze **waar** of **Onwaar** , afhankelijk van de mate waarin de twee zijden elkaar vergelijken:
 
-Voorbeeld:
+| Operator | Retourneert waar als...                   |
+| -------- | -------------------------------------- |
+| -gt      | De linkerkant is groter          |
+| -ge      | De linkerkant is groter of gelijk aan |
+| -lt      | De linkerkant is kleiner          |
+| -Le      | De linkerkant is kleiner of gelijk aan |
 
-```powershell
-PS> "abc" -ne "def"
-True
-
-PS> "abc" -ne "abc"
-False
-
-PS> "abc" -ne "abc", "def"
-True
-
-PS> "abc", "def" -ne "abc"
-def
-```
-
-### <a name="-gt"></a>-gt
-
-Beschrijving: groter dan.
-
-Voorbeeld:
+In de volgende voor beelden retour neren alle instructies waar.
 
 ```powershell
-PS> 8 -gt 6
-True
-
-PS> 7, 8, 9 -gt 8
-9
+8 -gt 6  # Output: True
+8 -ge 8  # Output: True
+6 -lt 8  # Output: True
+8 -le 8  # Output: True
 ```
 
 > [!NOTE]
-> Dit mag niet worden verward met `>` , de operator groter dan in veel andere programmeer talen. In Power shell `>` wordt gebruikt voor omleiding. Zie [About_redirection](about_Redirection.md#potential-confusion-with-comparison-operators)voor meer informatie.
+> In de meeste programmeer talen is de operator groter dan `>` . In Power shell wordt dit teken gebruikt voor omleiding. Zie [about_Redirection][3]voor meer informatie.
 
-### <a name="-ge"></a>-ge
-
-Beschrijving: groter dan of gelijk aan.
+Wanneer de linkerkant een verzameling is, vergelijken deze opera tors elk lid van de verzameling met de rechter kant. Afhankelijk van hun logica, kunnen ze het lid blijven of negeren.
 
 Voorbeeld:
 
 ```powershell
-PS> 8 -ge 8
-True
+$a=5, 6, 7, 8, 9
 
-PS> 7, 8, 9 -ge 8
+Write-Output "Test collection:"
+$a
+
+Write-Output "`nMembers greater than 7"
+$a -gt 7
+
+Write-Output "`nMembers greater than or equal to 7"
+$a -ge 7
+
+Write-Output "`nMembers smaller than 7"
+$a -lt 7
+
+Write-Output "`nMembers smaller than or equal to 7"
+$a -le 7
+```
+
+```output
+Test collection:
+5
+6
+7
 8
 9
-```
 
-### <a name="-lt"></a>-lt
+Members greater than 7
+8
+9
 
-Beschrijving: kleiner dan.
-
-Voorbeeld:
-
-```powershell
-
-PS> 8 -lt 6
-False
-
-PS> 7, 8, 9 -lt 8
-7
-```
-
-### <a name="-le"></a>-Le
-
-Beschrijving: kleiner dan of gelijk aan.
-
-Voorbeeld:
-
-```powershell
-PS> 6 -le 8
-True
-
-PS> 7, 8, 9 -le 8
+Members greater than or equal to 7
 7
 8
+9
+
+Members smaller than 7
+5
+6
+
+Members smaller than or equal to 7
+5
+6
+7
 ```
+
+Deze opera tors werken met elke klasse die [System. IComparable][1]implementeert.
+
+Voorbeelden:
+
+```powershell
+# Date comparison
+[DateTime]'2001-11-12' -lt [DateTime]'2020-08-01' # True
+
+# Sorting order comparison
+'a' -lt 'z'           # True; 'a' comes before 'z'
+'macOS' -ilt 'MacOS'  # False
+'MacOS' -ilt 'macOS'  # False
+'macOS' -clt 'MacOS'  # True; 'm' comes before 'M'
+```
+
+In het volgende voor beeld ziet u dat er geen symbool is op een American QWERTY-toetsen bord dat na ' a ' wordt gesorteerd. Er wordt een set met al deze symbolen aan de `-gt` operator gevoed om ze te vergelijken met ' a '. De uitvoer is een lege matrix.
+
+```powershell
+$a=' ','`','~','!','@','#','$','%','^','&','*','(',')','_','+','-','=',
+   '{','}','[',']',':',';','"','''','\','|','/','?','.','>',',','<'
+$a -gt 'a'
+# Output: Nothing
+```
+
+Als de twee zijden van de Opera tors niet redelijk vergelijkbaar zijn, verhogen deze opera tors een fout die niet wordt beëindigd.
 
 ## <a name="matching-operators"></a>Overeenkomende Opera tors
 
-De like-Opera tors ( `-like` en `-notlike` ) vinden elementen die overeenkomen met of die niet overeenkomen met een opgegeven patroon met Joker teken expressies.
+De overeenkomende Opera tors ( `-like` ,, `-notlike` `-match` en `-notmatch` ) vinden elementen die overeenkomen of niet overeenkomen met een opgegeven patroon. Het patroon voor `-like` en `-notlike` is een Joker teken expressie (die `*` , `?` en `[ ]` ) en `-match` `-notmatch` een reguliere expressie (regex) accepteert.
 
 De syntaxis is:
 
-```powershell
-<string[]> -like <wildcard-expression>
-<string[]> -notlike <wildcard-expression>
 ```
-
-De overeenkomende Opera tors ( `-match` en `-notmatch` ) vinden elementen die overeenkomen met of die niet overeenkomen met een opgegeven patroon met reguliere expressies.
-
-De operators matchen vullen de `$Matches` Automatische variabele in wanneer de invoer (het argument aan de linkerkant) naar de operator is één scalair object. Wanneer de invoer scalair is, `-match` `-notmatch` retour neren de Opera tors en wordt de waarde van de `$Matches` Automatische variabele ingesteld op de overeenkomende onderdelen van het argument.
-
-De syntaxis is:
-
-```powershell
-<string[]> -match <regular-expression>
+<string[]> -like    <wildcard-expression>
+<string[]> -notlike <wildcard-expression>
+<string[]> -match    <regular-expression>
 <string[]> -notmatch <regular-expression>
 ```
 
-### <a name="-like"></a>-like
+Wanneer de invoer van deze opera tors een scalaire waarde is, retour neren ze een **Booleaanse** waarde. Wanneer de invoer een verzameling waarden is, retour neren de Opera tors overeenkomende leden. Als er geen overeenkomsten in een verzameling zijn, retour neren de Opera tors een lege matrix.
 
-Beschrijving: komt overeen met het Joker teken ( \* ).
+### <a name="-like-and--notlike"></a>-like en-notlike
 
-Voorbeeld:
-
-```powershell
-PS> "PowerShell" -like "*shell"
-True
-
-PS> "PowerShell", "Server" -like "*shell"
-PowerShell
-```
-
-### <a name="-notlike"></a>-notlike
-
-Beschrijving: komt niet overeen met het Joker teken ( \* ).
+`-like` en `-notlike` gedragen zich op dezelfde manier als `-eq` en `-ne` , maar de rechter kant kan een teken reeks met [joker tekens](about_Wildcards.md)zijn.
 
 Voorbeeld:
 
 ```powershell
-PS> "PowerShell" -notlike "*shell"
-False
+"PowerShell" -like    "*shell"           # Output: True
+"PowerShell" -notlike "*shell"           # Output: False
+"PowerShell" -like    "Power?hell"       # Output: True
+"PowerShell" -notlike "Power?hell"       # Output: False
+"PowerShell" -like    "Power[p-w]hell"   # Output: True
+"PowerShell" -notlike "Power[p-w]hell"   # Output: False
 
-PS> "PowerShell", "Server" -notlike "*shell"
-Server
+"PowerShell", "Server" -like "*shell"    # Output: PowerShell
+"PowerShell", "Server" -notlike "*shell" # Output: Server
 ```
 
-### <a name="-match"></a>-match
+### <a name="-match-and--notmatch"></a>-Match and-notmatch
 
-Beschrijving: komt overeen met een teken reeks met reguliere expressies. Wanneer de invoer scalair is, wordt de `$Matches` Automatische variabele gevuld.
+`-match` en `-notmatch` gebruik reguliere expressies om te zoeken naar een patroon in de waarden aan de linkerkant. Reguliere expressies kunnen overeenkomen met complexe patronen zoals e-mail adressen, UNC-paden of geformatteerde telefoon nummers. De teken reeks aan de rechter kant moet voldoen aan de regels voor [reguliere expressies](about_Regular_Expressions.md) .
 
-Als de invoer een verzameling is, `-match` `-notmatch` retour neren de Opera tors en de overeenkomende leden van die verzameling, maar de operator vult de `$Matches` variabele niet in.
-
-Met de volgende opdracht wordt bijvoorbeeld een verzameling teken reeksen naar de operator verzonden `-match` . De `-match` operator retourneert de items in de verzameling die overeenkomen. De automatische variabele wordt niet gevuld `$Matches` .
+Scalaire voor beelden:
 
 ```powershell
-PS> "Sunday", "Monday", "Tuesday" -match "sun"
-Sunday
+# Partial match test, showing how differently -match and -like behave
+"PowerShell" -match 'shell'        # Output: True
+"PowerShell" -like  'shell'        # Output: False
 
-PS> $Matches
-PS>
+# Regex syntax test
+"PowerShell" -match    '^Power\w+' # Output: True
+'bag'        -notmatch 'b[iou]g'   # Output: True
 ```
 
-Met de volgende opdracht wordt daarentegen één teken reeks naar de `-match` operator verzonden. De `-match` operator retourneert een Booleaanse waarde en vult de `$Matches` Automatische variabele. De `$Matches` Automatische variabele is een **hashtabel**. Als er geen groepering of opname wordt gebruikt, wordt er slechts één sleutel ingevuld.
-De `0` sleutel vertegenwoordigt alle tekst die overeenkomt. Zie [about_Regular_Expressions](about_Regular_Expressions.md)voor meer informatie over het groeperen en vastleggen met behulp van reguliere expressies.
+Als de invoer een verzameling is, retour neren de Opera tors de overeenkomende leden van die verzameling.
+
+Voor beelden van verzamelingen:
 
 ```powershell
-PS> "Sunday" -match "sun"
-True
+"PowerShell", "Super PowerShell", "Power's hell" -match '^Power\w+'
+# Output: PowerShell
 
-PS> $Matches
+"Rhell", "Chell", "Mel", "Smell", "Shell" -match "hell"
+# Output: Rhell, Chell, Shell
 
-Name                           Value
-----                           -----
-0                              Sun
+"Bag", "Beg", "Big", "Bog", "Bug"  -match 'b[iou]g'
+#Output: Big, Bog, Bug
+
+"Bag", "Beg", "Big", "Bog", "Bug"  -notmatch 'b[iou]g'
+#Output: Bag, Beg
 ```
 
-Het is belang rijk te weten dat de `$Matches` hashtabel alleen het eerste exemplaar van een overeenkomend patroon moet bevatten.
-
-```powershell
-PS> "Banana" -match "na"
-True
-
-PS> $Matches
-
-Name                           Value
-----                           -----
-0                              na
-```
-
-> [!IMPORTANT]
-> De `0` sleutel is een **geheel getal**. U kunt elke **hash** -methode gebruiken om toegang te krijgen tot de opgeslagen waarde.
->
-> ```powershell
-> PS> "Good Dog" -match "Dog"
-> True
->
-> PS> $Matches[0]
-> Dog
->
-> PS> $Matches.Item(0)
-> Dog
->
-> PS> $Matches.0
-> Dog
-> ```
-
-De `-notmatch` operator vult de `$Matches` Automatische variabele in wanneer de invoer scalair is en het resultaat ONWAAR is, wanneer er een overeenkomst wordt gedetecteerd.
-
-```powershell
-PS> "Sunday" -notmatch "rain"
-True
-
-PS> $matches
-PS>
-
-PS> "Sunday" -notmatch "day"
-False
-
-PS> $matches
-
-Name                           Value
-----                           -----
-0                              day
-```
-
-### <a name="-notmatch"></a>-notmatch
-
-Beschrijving: komt niet overeen met een teken reeks. Maakt gebruik van reguliere expressies. Wanneer de invoer scalair is, wordt de `$Matches` Automatische variabele gevuld.
+`-match` en `-notmatch` ondersteunen regex Capture-groepen. Telkens wanneer ze worden uitgevoerd, wordt de `$Matches` Automatische variabele overschreven. Wanneer `<input>` is een verzameling de `$Matches` variabele `$null` . `$Matches` is een **hashtabel** die altijd een sleutel met de naam ' 0 ' heeft, waarin de volledige overeenkomst wordt opgeslagen. Als de reguliere expressie opname groepen bevat, `$Matches` bevat de extra sleutels voor elke groep.
 
 Voorbeeld:
 
 ```powershell
-PS> "Sunday" -notmatch "sun"
-False
+$string = 'The last logged on user was CONTOSO\jsmith'
+$string -match 'was (?<domain>.+)\\(?<user>.+)'
 
-PS> $matches
-Name Value
----- -----
-0    sun
+$Matches
 
-PS> "Sunday", "Monday" -notmatch "sun"
-Monday
+Write-Output "`nDomain name:"
+$Matches.domain
+
+Write-Output "`nUser name:"
+$Matches.user
 ```
 
-## <a name="containment-operators"></a>Containment-Opera tors
-
-De containment-Opera tors ( `-contains` en `-notcontains` ) zijn vergelijkbaar met de gelijkheids operatoren. De containment-Opera tors retour neren echter altijd een Booleaanse waarde, zelfs wanneer de invoer een verzameling is.
-
-Ook, in tegens telling tot de gelijkheids operatoren, retour neren de container-Opera tors een waarde zodra ze de eerste overeenkomst detecteren. De gelijkheids operatoren evalueren alle invoer en retour neren vervolgens alle overeenkomende items in de verzameling.
-
-### <a name="-contains"></a>-contains
-
-Beschrijving: containment-operator. Hiermee wordt aangegeven of een verzameling verwijzings waarden één test waarde bevat. Retourneert altijd een Boole-waarde. Retourneert alleen waar als de test waarde exact overeenkomt met ten minste een van de referentie waarden.
-
-Wanneer de test waarde een verzameling is, gebruikt de contains-operator referentie gelijkheid. Het retourneert alleen waar als een van de referentie waarden hetzelfde exemplaar van het object test waarde is.
-
-In een zeer grote verzameling retourneert de `-contains` operator resultaten sneller dan de operator equal to.
-
-Syntaxis:
-
-`<Reference-values> -contains <Test-value>`
-
-Voorbeelden:
-
-```powershell
-PS> "abc", "def" -contains "def"
+```output
 True
 
-PS> "Windows", "PowerShell" -contains "Shell"
-False  #Not an exact match
+Name                           Value
+----                           -----
+domain                         CONTOSO
+user                           jsmith
+0                              was CONTOSO\jsmith
 
-# Does the list of computers in $DomainServers include $ThisComputer?
-PS> $DomainServers -contains $thisComputer
-True
+Domain name:
+CONTOSO
 
-PS> "abc", "def", "ghi" -contains "abc", "def"
-False
-
-PS> $a = "abc", "def"
-PS> "abc", "def", "ghi" -contains $a
-False
-PS> $a, "ghi" -contains $a
-True
+User name:
+jsmith
 ```
 
-### <a name="-notcontains"></a>-notcontains
-
-Beschrijving: containment-operator. Hiermee wordt aangegeven of een verzameling verwijzings waarden één test waarde bevat. Retourneert altijd een Boole-waarde. Retourneert waar als de test waarde geen exacte overeenkomsten voor ten minste een van de verwijzings waarden is.
-
-Wanneer de test waarde een verzameling is, gebruikt de NotContains-operator referentie gelijkheid.
-
-Syntaxis:
-
-`<Reference-values> -notcontains <Test-value>`
-
-Voorbeelden:
-
-```powershell
-PS> "Windows", "PowerShell" -notcontains "Shell"
-True  #Not an exact match
-
-# Get cmdlet parameters, but exclude common parameters
-function get-parms ($cmdlet)
-{
-    $Common = "Verbose", "Debug", "WarningAction", "WarningVariable",
-      "ErrorAction", "ErrorVariable", "OutVariable", "OutBuffer"
-
-    $allparms = (Get-Command $Cmdlet).parametersets |
-      foreach {$_.Parameters} |
-        foreach {$_.Name} | Sort-Object | Get-Unique
-
-    $allparms | where {$Common -notcontains $_ }
-}
-
-# Find unapproved verbs in the functions in my module
-PS> $ApprovedVerbs = Get-Verb | foreach {$_.verb}
-PS> $myVerbs = Get-Command -Module MyModule | foreach {$_.verb}
-PS> $myVerbs | where {$ApprovedVerbs -notcontains $_}
-ForEach
-Sort
-Tee
-Where
-```
-
-### <a name="-in"></a>-in
-
-Beschrijving: in operator. Hiermee wordt aangegeven of een test waarde wordt weer gegeven in een verzameling referentie waarden. Altijd retour neren als Booleaanse waarde. Retourneert alleen waar als de test waarde exact overeenkomt met ten minste een van de referentie waarden.
-
-Wanneer de test waarde een verzameling is, gebruikt de in-operator referentie gelijkheid.
-Het retourneert alleen waar als een van de referentie waarden hetzelfde exemplaar van het object test waarde is.
-
-De `-in` operator is geïntroduceerd in Power shell 3,0.
-
-Syntaxis:
-
-`<Test-value> -in <Reference-values>`
-
-Voorbeelden:
-
-```powershell
-PS> "def" -in "abc", "def"
-True
-
-PS> "Shell" -in "Windows", "PowerShell"
-False  #Not an exact match
-
-PS> "Windows" -in "Windows", "PowerShell"
-True  #An exact match
-
-PS> "Windows", "PowerShell" -in "Windows", "PowerShell", "ServerManager"
-False  #Using reference equality
-
-PS> $a = "Windows", "PowerShell"
-PS> $a -in $a, "ServerManager"
-True  #Using reference equality
-
-# Does the list of computers in $DomainServers include $ThisComputer?
-PS> $thisComputer -in  $domainServers
-True
-```
-
-### <a name="-notin"></a>-notin
-
-Beschrijving: Hiermee wordt aangegeven of een test waarde wordt weer gegeven in een verzameling referentie waarden. Retourneert altijd een Boole-waarde. Retourneert waar als de test waarde niet exact overeenkomt voor ten minste een van de referentie waarden.
-
-Wanneer de test waarde een verzameling is, gebruikt de in-operator referentie gelijkheid.
-Het retourneert alleen waar als een van de referentie waarden hetzelfde exemplaar van het object test waarde is.
-
-De `-notin` operator is geïntroduceerd in Power shell 3,0.
-
-Syntaxis:
-
-`<Test-value> -notin <Reference-values>`
-
-Voorbeelden:
-
-```powershell
-PS> "def" -notin "abc", "def"
-False
-
-PS> "ghi" -notin "abc", "def"
-True
-
-PS> "Shell" -notin "Windows", "PowerShell"
-True  #Not an exact match
-
-PS> "Windows" -notin "Windows", "PowerShell"
-False  #An exact match
-
-# Find unapproved verbs in the functions in my module
-PS> $ApprovedVerbs = Get-Verb | foreach {$_.verb}
-PS> $MyVerbs = Get-Command -Module MyModule | foreach {$_.verb}
-
-PS> $MyVerbs | where {$_ -notin $ApprovedVerbs}
-ForEach
-Sort
-Tee
-Where
-```
+Zie [about_Regular_Expressions](about_Regular_Expressions.md)voor meer informatie.
 
 ## <a name="replacement-operator"></a>Vervangings operator
 
-De `-replace` operator heeft de volgende syntaxis:
+### <a name="replacement-with-regular-expressions"></a>Vervangen door reguliere expressies
 
-`<input> -replace <original>, <substitute>`
+Net als `-match` : de `-replace` operator gebruikt reguliere expressies om het opgegeven patroon te vinden. Maar in tegens telling tot `-match` , worden de overeenkomsten vervangen door een andere opgegeven waarde.
 
-De `<original>` tijdelijke aanduiding is een reguliere expressie die overeenkomt met de tekens die moeten worden vervangen. De `<substitute>` tijdelijke aanduiding is een letterlijke teken reeks waarmee ze worden vervangen.
+Syntaxis:
+
+```
+<input> -replace <regular-expression>, <substitute>
+```
 
 De operator vervangt alle of een deel van een waarde met de opgegeven waarde met reguliere expressies. U kunt de operator gebruiken voor veel beheer taken, zoals het wijzigen van de naam van bestanden. Met de volgende opdracht worden bijvoorbeeld de bestandsnaam extensies van alle bestanden gewijzigd `.txt` in `.log` :
 
@@ -510,63 +393,65 @@ De operator vervangt alle of een deel van een waarde met de opgegeven waarde met
 Get-ChildItem *.txt | Rename-Item -NewName { $_.name -replace '\.txt$','.log' }
 ```
 
-### <a name="case-sensitive-matches"></a>Hoofdletter gevoelige overeenkomsten
-
 Standaard `-replace` is de operator niet hoofdletter gevoelig. Gebruik om het hoofdletter gevoelig te maken `-creplace` . Gebruik om het expliciet niet hoofdletter gevoelig te maken `-ireplace` .
 
-Bekijk de volgende voorbeelden:
+Voorbeelden:
 
 ```powershell
-PS> "book" -replace "B", "C"
-Cook
+"book" -ireplace "B", "C" # Case insensitive
+"book" -creplace "B", "C" # Case-sensitive; hence, nothing to replace
 ```
 
-```powershell
-PS> "book" -ireplace "B", "C"
+```Output
 Cook
-```
-
-```powershell
-PS> "book" -creplace "B", "C"
 book
 ```
 
-### <a name="substitutions-in-regular-expressions"></a>Vervangingen in reguliere expressies
+### <a name="regular-expressions-substitutions"></a>Vervangingen van reguliere expressies
 
 Het is ook mogelijk om reguliere expressies te gebruiken om tekst dynamisch te vervangen met opname groepen en vervangingen. Er kan in de teken reeks naar vastleg groepen worden verwezen `<substitute>` met het `$` teken voor het dollar teken () voor de groeps-id.
 
-Naar vastleg groepen kan worden verwezen met een **getal** of **naam**
+In het volgende voor beeld `-replace` accepteert de operator een gebruikers naam in de vorm van `DomainName\Username` en wordt geconverteerd naar de `Username@DomainName` indeling:
 
-- Op **nummer** : het vastleggen van groepen wordt van links naar rechts genummerd.
+```powershell
+$SearchExp = '^(?<Username>[\w-.]+)\\(?<DomainName>[\w-.]+)$'
+$ReplaceExp = '${Username}@${DomainName}'
 
-  ```powershell
-  PS> "John D. Smith" -replace "(\w+) (\w+)\. (\w+)", '$1.$2.$3@contoso.com'
-  John.D.Smith@contoso.com
-  ```
+'Contoso.local\John.Doe' -replace $SearchExp,$ReplaceExp
+```
 
-- Op **naam** : voor het vastleggen van groepen kan ook naar een naam worden verwezen.
-
-  ```powershell
-  PS> "CONTOSO\Administrator" -replace '\w+\\(?<user>\w+)', 'FABRIKAM\${user}'
-  FABRIKAM\Administrator
-  ```
+```output
+John.Doe@Contoso.local
+```
 
 > [!WARNING]
-> Omdat het `$` teken wordt gebruikt in teken reeks uitbreiding, moet u letterlijke teken reeksen gebruiken of het teken escapeen `$` .
+> Het `$` teken heeft syntatic-rollen in Power shell en reguliere expressies:
 >
-> ```powershell
-> PS> 'Hello World' -replace '(\w+) \w+', "`$1 Universe"
-> Hello Universe
-> ```
->
-> Omdat het `$` teken in substitutie wordt gebruikt, moet u ook alle exemplaren in de teken reeks verescapenen.
->
-> ```powershell
-> PS> '5.72' -replace '(.+)', '$$$1'
-> $5.72
-> ```
+> - Tussen dubbele aanhalings tekens in Power shell worden variabelen aangeduid en fungeert als een operator voor subexpressie.
+> - In regex-Zoek reeksen geeft het einde van de regel aan
+> - In regex-vervangings teken reeksen worden vastgelegde groepen als zodanig aangeduid, moet u ervoor zorgen dat u de reguliere expressies tussen enkele aanhalings tekens plaatst of een apostroffen- `` ` `` teken () voor de tekst plaatst.
 
-Zie [about_Regular_Expressions](about_Regular_Expressions.md) en [vervangingen in reguliere expressies](/dotnet/standard/base-types/substitutions-in-regular-expressions) voor meer informatie.
+Bijvoorbeeld:
+
+```powershell
+$1 = 'Goodbye'
+
+'Hello World' -replace '(\w+) \w+', "$1 Universe"
+# Output: Goodbye Universe
+
+'Hello World' -replace '(\w+) \w+', '$1 Universe'
+# Output: Hello Universe
+```
+
+`$$` in regex duidt een letterlijke teken reeks aan `$` . Dit wordt `$$` in de vervangings teken reeks toegevoegd aan een letterlijke waarde `$` in de resulterende vervanging. Bijvoorbeeld:
+
+```powershell
+'5.72' -replace '(.+)', '$ $1' # Output: $ 5.72
+'5.72' -replace '(.+)', '$$$1' # Output: $5.72
+'5.72' -replace '(.+)', '$$1'  # Output: $1
+```
+
+Zie [about_Regular_Expressions](about_Regular_Expressions.md) en [vervangingen in reguliere expressies][4]voor meer informatie.
 
 ### <a name="substituting-in-a-collection"></a>Vervangen in een verzameling
 
@@ -581,45 +466,102 @@ a4
 a5
 ```
 
+## <a name="containment-operators"></a>Containment-Opera tors
+
+De containment-Opera tors ( `-contains` ,, `-notcontains` `-in` en `-notin` ) zijn vergelijkbaar met de gelijkheids operatoren, behalve dat ze altijd een **Booleaanse** waarde Retour neren, zelfs wanneer de invoer een verzameling is. Deze opera tors worden niet meer vergeleken wanneer ze de eerste overeenkomst detecteren, terwijl de gelijkheids operatoren alle invoer leden evalueren. In een zeer grote verzameling retour neren deze opera tors sneller dan de gelijkheids operators.
+
+Syntaxis:
+
+```
+<Collection> -contains <Test-object>
+<Collection> -notcontains <Test-object>
+<Test-object> -in <Collection>
+<Test-object> -notin <Collection>
+```
+
+### <a name="-contains-and--notcontains"></a>-bevat en-notcontains
+
+Deze opera tors geven aan of een set een bepaald element bevat. `-contains` Retourneert waar wanneer de rechter kant (test object) overeenkomt met een van de elementen in de set. `-notcontains` in plaats daarvan wordt false geretourneerd. Wanneer het test object een verzameling is, gebruiken deze opera tors referentie gelijkheid, dat wil zeggen dat ze controleren of een van de set-elementen hetzelfde exemplaar van het test object is.
+
+Voorbeelden:
+
+```powershell
+"abc", "def" -contains "def"                  # Output: True
+"abc", "def" -notcontains "def"               # Output: False
+"Windows", "PowerShell" -contains "Shell"     # Output: False
+"Windows", "PowerShell" -notcontains "Shell"  # Output: True
+"abc", "def", "ghi" -contains "abc", "def"    # Output: False
+"abc", "def", "ghi" -notcontains "abc", "def" # Output: True
+```
+
+Complexere voor beelden:
+
+```powershell
+$DomainServers = "ContosoDC1","ContosoDC2","ContosoFileServer","ContosoDNS",
+                 "ContosoDHCP","ContosoWSUS"
+$thisComputer  = "ContosoDC2"
+
+$DomainServers -contains $thisComputer
+# Output: True
+
+$a = "abc", "def"
+"abc", "def", "ghi" -contains $a # Output: False
+$a, "ghi" -contains $a           # Output: True
+```
+
+### <a name="-in-and--notin"></a>-in en-notin
+
+De `-in` `notin` Opera tors en zijn geïntroduceerd in Power Shell 3 als de syntaxis van de `contains` `-notcontain` Opera tors van en. `-in` retourneert **waar** wanneer de linkerkant `<test-object>` overeenkomt met een van de elementen in de set. `-notin` in plaats daarvan wordt **False** geretourneerd. Wanneer het test object een set is, gebruiken deze opera tors referentie gelijkheid om te controleren of een van de set-elementen hetzelfde exemplaar van het test object is.
+
+De volgende voor beelden doen hetzelfde als de voor beelden voor `-contain` en `-notcontain` doen, maar ze zijn wel geschreven met `-in` en `-notin` in plaats daarvan.
+
+```powershell
+"def" -in "abc", "def"                  # Output: True
+"def" -notin "abc", "def"               # Output: False
+"Shell" -in "Windows", "PowerShell"     # Output: False
+"Shell" -notin "Windows", "PowerShell"  # Output: True
+"abc", "def" -in "abc", "def", "ghi"    # Output: False
+"abc", "def" -notin "abc", "def", "ghi" # Output: True
+```
+
+Complexere voor beelden:
+
+```powershell
+$DomainServers = "ContosoDC1","ContosoDC2","ContosoFileServer","ContosoDNS",
+                 "ContosoDHCP","ContosoWSUS"
+$thisComputer  = "ContosoDC2"
+
+$thisComputer -in $DomainServers
+# Output: True
+
+$a = "abc", "def"
+$a -in "abc", "def", "ghi" # Output: False
+$a -in $a, "ghi"           # Output: True
+```
+
 ## <a name="type-comparison"></a>Type vergelijking
 
 De type vergelijkings operators ( `-is` en `-isnot` ) worden gebruikt om te bepalen of een object een specifiek type is.
 
-### <a name="-is"></a>-is
-
 Syntaxis:
 
-`<object> -is <type reference>`
+```powershell
+<object> -is <type-reference>
+<object> -isnot <type-reference>
+```
 
 Voorbeeld:
 
 ```powershell
-PS> $a = 1
-PS> $b = "1"
-PS> $a -is [int]
-True
-PS> $a -is $b.GetType()
-False
+$a = 1
+$b = "1"
+$a -is [int]           # Output: True
+$a -is $b.GetType()    # Output: False
+$b -isnot [int]        # Output: True
+$a -isnot $b.GetType() # Output: True
 ```
 
-### <a name="-isnot"></a>-isnot
-
-Syntaxis:
-
-`<object> -isnot <type reference>`
-
-Voorbeeld:
-
-```powershell
-PS> $a = 1
-PS> $b = "1"
-PS> $a -isnot $b.GetType()
-True
-PS> $b -isnot [int]
-True
-```
-
-## <a name="see-also"></a>Zie ook
+## <a name="see-also"></a>ZIE OOK
 
 - [about_Operators](about_Operators.md)
 - [about_Regular_Expressions](about_Regular_Expressions.md)
@@ -627,3 +569,9 @@ True
 - [Compare-object](xref:Microsoft.PowerShell.Utility.Compare-Object)
 - [Foreach-object](xref:Microsoft.PowerShell.Core.ForEach-Object)
 - [Where-object](xref:Microsoft.PowerShell.Core.Where-Object)
+
+[1]: /dotnet/api/system.icomparable
+[2]: /dotnet/api/system.iequatable-1
+[3]: /dotnet/api/system.text.regularexpressions.match
+[4]: about_Redirection.md#potential-confusion-with-comparison-operators
+[5]: /dotnet/standard/base-types/substitutions-in-regular-expressions

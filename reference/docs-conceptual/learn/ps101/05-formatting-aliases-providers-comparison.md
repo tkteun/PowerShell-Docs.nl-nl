@@ -1,16 +1,15 @@
 ---
 title: Opmaak, aliassen, providers, vergelijking
 ms.date: 06/02/2020
-ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
 description: Dit hoofd stuk bevat een inleiding tot de concepten van uitvoer opmaak, opdracht aliassen, providers en vergelijkings bewerkingen.
-ms.openlocfilehash: efe70d2d220f8451e781603b6000c3553dda910c
-ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.openlocfilehash: 5573ca58601af0c6af15736b772a9792d8d77a79
+ms.sourcegitcommit: df5e6f032ee2d4b556d50406832732d2f7dc2502
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "92501606"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98216163"
 ---
 # <a name="chapter-5---formatting-aliases-providers-comparison"></a>Hoofd stuk 5: opmaak, aliassen, providers, vergelijking
 
@@ -591,7 +590,7 @@ In dit hoofd stuk hebt u een aantal verschillende onderwerpen geleerd waarin opm
 1. Voer een adreslijst vermelding uit op de stations die zijn gekoppeld aan een van de register providers.
 1. Wat is een van de belangrijkste voor delen van het gebruik van de operator replace in plaats van de methode replace?
 
-## <a name="recommended-reading"></a>Aanbevolen Lees bewerkingen
+## <a name="recommended-reading"></a>Aanbevolen documentatie
 
 - [Format-Table][]
 - [Format-List][]

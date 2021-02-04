@@ -2,15 +2,14 @@
 title: Het Help-systeem
 description: Het model leren van het Help-systeem is de sleutel om met Power shell te kunnen slagen.
 ms.date: 06/02/2020
-ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
-ms.openlocfilehash: dcaa6c990e2fdf5e6cca69ca596680310940817f
-ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.openlocfilehash: cfb12f57b7bb6c514f4e19a93dfe9c77245bd977
+ms.sourcegitcommit: df5e6f032ee2d4b556d50406832732d2f7dc2502
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "94391422"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98216135"
 ---
 # <a name="chapter-2---the-help-system"></a>Hoofd stuk 2: het Help-systeem
 
@@ -528,7 +527,7 @@ Get-Command | Get-Random | Get-Help -Full
 1. Wat is de Power shell-opdracht voor het retour neren van een lijst met Power shell-processen die worden uitgevoerd op uw computer?
 1. Hoe werkt u de Help-inhoud van Power shell bij die op uw computer is opgeslagen?
 
-## <a name="recommended-reading"></a>Aanbevolen Lees bewerkingen
+## <a name="recommended-reading"></a>Aanbevolen documentatie
 
 Als u meer informatie wilt over de onderwerpen die in dit hoofd stuk worden behandeld, raden we u aan de volgende Help-onderwerpen voor Power shell te lezen.
 

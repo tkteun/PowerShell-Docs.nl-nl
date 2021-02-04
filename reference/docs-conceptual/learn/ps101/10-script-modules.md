@@ -2,15 +2,14 @@
 title: Scriptmodules
 description: Script modules zijn een eenvoudige manier om scripts en functies te verpakken in een herbruikbaar hulp programma.
 ms.date: 06/02/2020
-ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
-ms.openlocfilehash: 661ba725764e1f31df628f6c5f2d58d760656e37
-ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.openlocfilehash: c557c071bc202a4216a77e7e5ae0bd73b4bc014b
+ms.sourcegitcommit: df5e6f032ee2d4b556d50406832732d2f7dc2502
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "84436510"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98216100"
 ---
 # <a name="chapter-10---script-modules"></a>Hoofd stuk 10: script modules
 
@@ -329,7 +328,7 @@ In dit hoofd stuk hebt u geleerd hoe u uw functies kunt omzetten in een script m
 1. Wat zijn de twee opties voor het exporteren van alleen bepaalde functies uit uw module?
 1. Wat is er nodig om uw modules automatisch te laden wanneer een opdracht wordt aangeroepen?
 
-## <a name="recommended-reading"></a>Aanbevolen Lees bewerkingen
+## <a name="recommended-reading"></a>Aanbevolen documentatie
 
 - [Power shell-script modules en module manifesten maken][]
 - [about_Modules][]

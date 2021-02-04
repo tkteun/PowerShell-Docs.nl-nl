@@ -2,18 +2,18 @@
 title: Power shell Core installeren op arm
 description: Power shell Core installeren op arm-gebaseerde systemen
 ms.date: 11/11/2020
-ms.openlocfilehash: 85a2cccb18341ffee8c81430bc8490e5d3e97b41
-ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
+ms.openlocfilehash: 1477b99767c19d24f8540714942f63c8347550e9
+ms.sourcegitcommit: ef25c8bc95df12697725958c9814f0e187cfc683
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94892069"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98130136"
 ---
 # <a name="powershell-core-on-arm"></a>Power shell Core op arm
 
 Ondersteuning van Power shell op arm is gebaseerd op het door **.net core ondersteunde besturingssysteem levenscyclus beleid**.
 
-Power shell 7,1 is gebaseerd op het [.net Core 3,1 ondersteunde besturingssysteem levenscyclus beleid](https://github.com/dotnet/core/blob/master/release-notes/3.1/3.1-supported-os.md) en ondersteunt de volgende platforms:
+Power shell 7,0 is gebaseerd op het [.net Core 3,1 ondersteunde besturingssysteem levenscyclus beleid](https://github.com/dotnet/core/blob/master/release-notes/3.1/3.1-supported-os.md) en ondersteunt de volgende platforms:
 
 |         Besturingssysteem          |          Versie           | Architecturen |          Levenscyclus           |
 | ------------------- | -------------------------- | ------------- | ---------------------------- |
@@ -22,11 +22,11 @@ Power shell 7,1 is gebaseerd op het [.net Core 3,1 ondersteunde besturingssystee
 | Debian              | 9 +                         | Arm32, Arm64  | [Debian][Debian-lifecycle]   |
 | Ubuntu              | 20,10, 20,04, 18,04, 16,04 | Arm32, Arm64  | [Ubuntu][Ubuntu-lifecycle]   |
 
-Power shell 7,0 is gebaseerd op het [.net Core 5,0 ondersteunde besturingssysteem levenscyclus beleid](https://github.com/dotnet/core/blob/master/release-notes/5.0/5.0-supported-os.md) en ondersteunt de volgende platforms:
+Power shell 7,1 is gebaseerd op het door [.net 5,0 ondersteunde besturingssysteem levenscyclus beleid](https://github.com/dotnet/core/blob/master/release-notes/5.0/5.0-supported-os.md) en ondersteunt de volgende platforms:
 
 |        Besturingssysteem         |          Versie           | Architecturen |          Levenscyclus           |
 | ----------------- | -------------------------- | ------------- | ---------------------------- |
-| Windows 10-client | Versie 1607 +              | Arm64         | [Windows][Windows-lifecycle] |
+| Windows 10-client | Versie 1709 +              | Arm64         | [Windows][Windows-lifecycle] |
 | Alpine Linux      | 3.11 +                      | Arm64         | [Alpine][Alpine-lifecycle]   |
 | Debian            | 9 +                         | Arm32, Arm64  | [Debian][Debian-lifecycle]   |
 | Ubuntu            | 20,10, 20,04, 18,04, 16,04 | Arm32, Arm64  | [Ubuntu][Ubuntu-lifecycle]   |

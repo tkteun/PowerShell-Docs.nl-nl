@@ -2,15 +2,14 @@
 title: Functions
 description: Met Power shell-functies kunt u hulpprogram ma's maken die opnieuw kunnen worden gebruikt in scripts.
 ms.date: 06/02/2020
-ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
-ms.openlocfilehash: 18566263f29b97834d78cb5572fa73b58c3a26bb
-ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.openlocfilehash: e4734b556a78f67c54152dad93eada536dd1c928
+ms.sourcegitcommit: df5e6f032ee2d4b556d50406832732d2f7dc2502
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "96616009"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98216149"
 ---
 # <a name="chapter-9---functions"></a>Hoofd stuk 9-functies
 
@@ -776,7 +775,7 @@ In dit hoofd stuk hebt u de basis beginselen geleerd van het schrijven van funct
 1. Hoe kan ik een niet-afsluit fout omzetten in een afsluitende?
 1. Waarom moet u op opmerkingen gebaseerde hulp toevoegen aan uw functies?
 
-## <a name="recommended-reading"></a>Aanbevolen Lees bewerkingen
+## <a name="recommended-reading"></a>Aanbevolen documentatie
 
 - [about_Functions][]
 - [about_Functions_Advanced_Parameters][]

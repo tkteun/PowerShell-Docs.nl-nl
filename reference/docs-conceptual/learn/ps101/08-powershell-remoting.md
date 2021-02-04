@@ -2,15 +2,14 @@
 title: Externe communicatie van powershell
 description: Er zijn veel verschillende manieren om opdrachten uit te voeren op externe computers in Power shell.
 ms.date: 06/02/2020
-ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
-ms.openlocfilehash: ee83af41b53b254dd3dd993931333edac2f44f5a
-ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.openlocfilehash: 0e467a41282b261c56a89578dbc841725f59a6e0
+ms.sourcegitcommit: df5e6f032ee2d4b556d50406832732d2f7dc2502
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "84436461"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98216055"
 ---
 # <a name="chapter-8---powershell-remoting"></a>Hoofd stuk 8-externe communicatie met Power shell
 
@@ -337,7 +336,7 @@ In dit hoofd stuk hebt u geleerd over externe communicatie met Power shell, het 
 1. Kan een externe sessie van Power shell worden gebruikt met een een-op-een externe sessie?
 1. Wat is het verschil in het type objecten dat wordt geretourneerd door cmdlets en die worden geretourneerd wanneer dezelfde cmdlets worden uitgevoerd op externe computers met `Invoke-Command` ?
 
-## <a name="recommended-reading"></a>Aanbevolen Lees bewerkingen
+## <a name="recommended-reading"></a>Aanbevolen documentatie
 
 - [about_Remote][]
 - [about_Remote_FAQ][]

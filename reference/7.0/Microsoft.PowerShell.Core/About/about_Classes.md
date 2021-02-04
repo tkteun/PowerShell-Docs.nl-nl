@@ -1,17 +1,16 @@
 ---
 description: Hierin wordt beschreven hoe u klassen kunt gebruiken om uw eigen aangepaste typen te maken.
-keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 09/16/2020
+ms.date: 01/19/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_classes?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Classes
-ms.openlocfilehash: 27950034806caf53b2cdbe50329709a8ab177aee
-ms.sourcegitcommit: 16d62a98449e3ddaf8d7c65bc1848ede1fd8a3e7
+ms.openlocfilehash: 7974ec49ebf27338da461cd57fb43cc0229b7323
+ms.sourcegitcommit: 94d597c4fb38793bc49ca7610e2c9973b1e577c2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "93251928"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98620044"
 ---
 # <a name="about-classes"></a>Over klassen
 
@@ -22,7 +21,7 @@ Hierin wordt beschreven hoe u klassen kunt gebruiken om uw eigen aangepaste type
 
 Power shell 5,0 voegt een formele syntaxis toe om klassen en andere door de gebruiker gedefinieerde typen te definiëren. Dankzij de toevoeging van klassen kunnen ontwikkel aars en IT-professionals Power shell gebruiken voor een groter aantal use cases. Het vereenvoudigt de ontwikkeling van Power shell-artefacten en versnelt de dekking van beheer oppervlakken.
 
-Een klassen declaratie is een blauw druk die wordt gebruikt om exemplaren van objecten te maken tijdens de uitvoering. Wanneer u een klasse definieert, is de naam van de klasse de naam van het type. Als u bijvoorbeeld een klasse met de naam **apparaat** declareert en een variabele initialiseert `$dev` naar een nieuw exemplaar van **apparaat** , `$dev` is een object of een exemplaar van het type **apparaat**. Elk exemplaar van het **apparaat** kan verschillende waarden in de eigenschappen hebben.
+Een klassen declaratie is een blauw druk die wordt gebruikt om exemplaren van objecten te maken tijdens de uitvoering. Wanneer u een klasse definieert, is de naam van de klasse de naam van het type. Als u bijvoorbeeld een klasse met de naam **apparaat** declareert en een variabele initialiseert `$dev` naar een nieuw exemplaar van **apparaat**, `$dev` is een object of een exemplaar van het type **apparaat**. Elk exemplaar van het **apparaat** kan verschillende waarden in de eigenschappen hebben.
 
 ## <a name="supported-scenarios"></a>Ondersteunde scenario's
 
@@ -766,11 +765,21 @@ class MyComparableBar : bar, System.IComparable
 
 ## <a name="importing-classes-from-a-powershell-module"></a>Klassen importeren uit een Power shell-module
 
-`Import-Module` en de `#requires` instructie importeren alleen de module functies, aliassen en variabelen, zoals gedefinieerd door de module. Klassen zijn niet geïmporteerd. `using module`Met de instructie worden de klassen geïmporteerd die in de module zijn gedefinieerd. Als de module niet in de huidige sessie is geladen, `using` mislukt de instructie. Zie about_Using voor meer informatie over de `using` - [about_Using](about_Using.md)instructie.
+`Import-Module` en de `#requires` instructie importeren alleen de module functies, aliassen en variabelen, zoals gedefinieerd door de module. Klassen zijn niet geïmporteerd. `using module`Met de instructie worden de klassen geïmporteerd die in de module zijn gedefinieerd. Als de module niet in de huidige sessie is geladen, `using` mislukt de instructie. Zie about_Using voor meer informatie over de `using` - [](about_Using.md)instructie.
+
+`using module`Met de instructie worden klassen uit de hoofd module ( `ModuleToProcess` ) van een script module of binaire module geïmporteerd. Er worden niet consistent klassen geïmporteerd die zijn gedefinieerd in geneste modules of klassen die zijn gedefinieerd in scripts die met een punt zijn gebrond in de module. Klassen die u beschikbaar wilt maken voor gebruikers buiten de module, moeten worden gedefinieerd in de hoofd module.
+
+## <a name="loading-newly-changed-code-during-development"></a>Nieuwe code laden tijdens de ontwikkeling
+
+Tijdens de ontwikkeling van een script module is het gebruikelijk om wijzigingen aan te brengen in de code en vervolgens de nieuwe versie van de module te laden met behulp van `Import-Module` de para meter **Force** . Dit werkt alleen voor wijzigingen in functies in de hoofd module. `Import-Module` herlaadt geen geneste modules. Het is ook niet mogelijk om bijgewerkte klassen te laden.
+
+Om ervoor te zorgen dat u de meest recente versie gebruikt, moet u de module uit het geheugen verwijderen met de `Remove-Module` cmdlet. `Remove-Module` Hiermee verwijdert u de hoofd module, alle geneste modules en klassen die in de modules zijn gedefinieerd. Daarna kunt u de module en de klassen opnieuw laden met behulp van `Import-Module` en de- `using module` instructie.
+
+Een andere algemene ontwikkelings praktijk is het scheiden van uw code in verschillende bestanden. Als u werkt met een bestand dat gebruikmaakt van klassen die in een andere module zijn gedefinieerd, moet u de- `using module` instructie gebruiken om ervoor te zorgen dat de functies de klassen definities hebben die nodig zijn.
 
 ## <a name="the-psreference-type-is-not-supported-with-class-members"></a>Het PSReference-type wordt niet ondersteund voor klasse-leden
 
-Het gebruik `[ref]` van het type cast met een klassetype is op de achtergrond mislukt. Api's die gebruikmaken `[ref]` van para meters kunnen niet worden gebruikt met klassen leden. De **PSReference** is ontworpen voor de ondersteuning van COM-objecten. COM-objecten bevatten gevallen waarin u een waarde in moet door geven.
+Het gebruik `[ref]` van het type cast met een klassetype is op de achtergrond mislukt. Api's die gebruikmaken `[ref]` van para meters kunnen niet worden gebruikt met klassen leden. De **PSReference** -klasse is ontworpen ter ondersteuning van COM-objecten. COM-objecten bevatten gevallen waarin u een waarde in moet door geven.
 
 `[ref]`Zie [PSReference-klasse](/dotnet/api/system.management.automation.psreference)voor meer informatie over het type.
 

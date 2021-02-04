@@ -2,15 +2,14 @@
 title: Stoombeheer
 description: Power shell biedt methoden om lussen te maken, beslissingen te nemen en de stroom van code in scripts logisch te beheren.
 ms.date: 06/02/2020
-ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
-ms.openlocfilehash: 4f0d7b7f5f3c12bb9475af5aed42b2d32cfbc14d
-ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.openlocfilehash: 74595f8c6a5d4a49b05e72dd6bde1441fd2b464e
+ms.sourcegitcommit: df5e6f032ee2d4b556d50406832732d2f7dc2502
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "84436307"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98216142"
 ---
 # <a name="chapter-6---flow-control"></a>Hoofd stuk 6-Datatransport besturing
 
@@ -285,7 +284,7 @@ In dit hoofd stuk hebt u geleerd over de verschillende typen lussen die voor kom
 1. Wat is het belangrijkste voor deel van het gebruik van een while-lus in plaats van een do while-of do until-lus.
 1. Wat is het verschil tussen de instructies voor onderbreken en hervatten?
 
-## <a name="recommended-reading"></a>Aanbevolen Lees bewerkingen
+## <a name="recommended-reading"></a>Aanbevolen documentatie
 
 - [ForEach-object][]
 - [about_ForEach][]

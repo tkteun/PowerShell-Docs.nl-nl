@@ -1,16 +1,16 @@
 ---
 description: Hiermee kunt u aangeven welke naam ruimten in de sessie worden gebruikt.
 Locale: en-US
-ms.date: 11/18/2020
+ms.date: 01/19/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_using?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Using
-ms.openlocfilehash: d08ada489ebe04ae51e3927486f354a8371de03f
-ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
+ms.openlocfilehash: ba3833f522265ad240d376b07c5add393c4b2721
+ms.sourcegitcommit: 94d597c4fb38793bc49ca7610e2c9973b1e577c2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94892539"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98619860"
 ---
 # <a name="about-using"></a>Over het gebruik van
 
@@ -21,7 +21,9 @@ Hiermee kunt u aangeven welke naam ruimten in de sessie worden gebruikt.
 
 Met de- `using` instructie kunt u opgeven welke naam ruimten in de sessie worden gebruikt. Het toevoegen van naam ruimten vereenvoudigt het gebruik van .NET-klassen en-leden en biedt u de mogelijkheid om klassen uit script modules en assembly's te importeren.
 
-De `using` instructies moeten vóór eventuele andere instructies in een script komen.
+De `using` instructies moeten vóór eventuele andere instructies in een script of module komen. Er mag geen niet-opmerkingen worden voorafgegaan door een instructie, inclusief para meters.
+
+De `using` instructie mag geen variabelen bevatten.
 
 De `using` instructie mag niet worden verward met de `using:` aanpassings functie voor het bereik voor variabelen. Zie [about_Remote_Variables](about_Remote_Variables.md)voor meer informatie.
 
@@ -57,6 +59,12 @@ Een module specificatie is een hash-tabel met de volgende sleutels.
   - `ModuleVersion` -Hiermee geeft u een mini maal toegestane versie van de module op.
   - `RequiredVersion` -Hiermee geeft u een exacte, vereiste versie van de module op.
   - `MaximumVersion` -Hiermee geeft u de Maxi maal toegestane versie van de module op.
+
+`using module`Met de instructie worden klassen uit de hoofd module ( `ModuleToProcess` ) van een script module of binaire module geïmporteerd. Er worden niet consistent klassen geïmporteerd die zijn gedefinieerd in geneste modules of klassen die zijn gedefinieerd in scripts die met een punt zijn gebrond in de module. Klassen die u beschikbaar wilt maken voor gebruikers buiten de module, moeten worden gedefinieerd in de hoofd module.
+
+Tijdens de ontwikkeling van een script module is het gebruikelijk om wijzigingen aan te brengen in de code en vervolgens de nieuwe versie van de module te laden met behulp van `Import-Module` de para meter **Force** . Dit werkt alleen voor wijzigingen in functies in de hoofd module. `Import-Module` herlaadt geen geneste modules. Het is ook niet mogelijk om bijgewerkte klassen te laden.
+
+Om ervoor te zorgen dat u de meest recente versie gebruikt, moet u de module uit het geheugen verwijderen met de `Remove-Module` cmdlet. `Remove-Module` Hiermee verwijdert u de hoofd module, alle geneste modules en klassen die in de modules zijn gedefinieerd. Daarna kunt u de module en de klassen opnieuw laden met behulp van `Import-Module` en de- `using module` instructie.
 
 ## <a name="assembly-syntax"></a>Assembly-syntaxis
 

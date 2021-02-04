@@ -1,16 +1,16 @@
 ---
 description: Hierin wordt beschreven hoe u klassen kunt gebruiken om uw eigen aangepaste typen te maken.
 Locale: en-US
-ms.date: 09/16/2020
+ms.date: 01/19/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_classes?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Classes
-ms.openlocfilehash: 15e56d00d607f7129be4ffd0a515bd237951f512
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 306bd973b5600707b28428dcaa29c17ee965fd76
+ms.sourcegitcommit: 94d597c4fb38793bc49ca7610e2c9973b1e577c2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94706121"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98620184"
 ---
 # <a name="about-classes"></a>Over klassen
 
@@ -767,9 +767,19 @@ class MyComparableBar : bar, System.IComparable
 
 `Import-Module` en de `#requires` instructie importeren alleen de module functies, aliassen en variabelen, zoals gedefinieerd door de module. Klassen zijn niet geïmporteerd. `using module`Met de instructie worden de klassen geïmporteerd die in de module zijn gedefinieerd. Als de module niet in de huidige sessie is geladen, `using` mislukt de instructie. Zie about_Using voor meer informatie over de `using` - [](about_Using.md)instructie.
 
+`using module`Met de instructie worden klassen uit de hoofd module ( `ModuleToProcess` ) van een script module of binaire module geïmporteerd. Er worden niet consistent klassen geïmporteerd die zijn gedefinieerd in geneste modules of klassen die zijn gedefinieerd in scripts die met een punt zijn gebrond in de module. Klassen die u beschikbaar wilt maken voor gebruikers buiten de module, moeten worden gedefinieerd in de hoofd module.
+
+## <a name="loading-newly-changed-code-during-development"></a>Nieuwe code laden tijdens de ontwikkeling
+
+Tijdens de ontwikkeling van een script module is het gebruikelijk om wijzigingen aan te brengen in de code en vervolgens de nieuwe versie van de module te laden met behulp van `Import-Module` de para meter **Force** . Dit werkt alleen voor wijzigingen in functies in de hoofd module. `Import-Module` herlaadt geen geneste modules. Het is ook niet mogelijk om bijgewerkte klassen te laden.
+
+Om ervoor te zorgen dat u de meest recente versie gebruikt, moet u de module uit het geheugen verwijderen met de `Remove-Module` cmdlet. `Remove-Module` Hiermee verwijdert u de hoofd module, alle geneste modules en klassen die in de modules zijn gedefinieerd. Daarna kunt u de module en de klassen opnieuw laden met behulp van `Import-Module` en de- `using module` instructie.
+
+Een andere algemene ontwikkelings praktijk is het scheiden van uw code in verschillende bestanden. Als u werkt met een bestand dat gebruikmaakt van klassen die in een andere module zijn gedefinieerd, moet u de- `using module` instructie gebruiken om ervoor te zorgen dat de functies de klassen definities hebben die nodig zijn.
+
 ## <a name="the-psreference-type-is-not-supported-with-class-members"></a>Het PSReference-type wordt niet ondersteund voor klasse-leden
 
-Het gebruik `[ref]` van het type cast met een klassetype is op de achtergrond mislukt. Api's die gebruikmaken `[ref]` van para meters kunnen niet worden gebruikt met klassen leden. De **PSReference** is ontworpen voor de ondersteuning van COM-objecten. COM-objecten bevatten gevallen waarin u een waarde in moet door geven.
+Het gebruik `[ref]` van het type cast met een klassetype is op de achtergrond mislukt. Api's die gebruikmaken `[ref]` van para meters kunnen niet worden gebruikt met klassen leden. De **PSReference** -klasse is ontworpen ter ondersteuning van COM-objecten. COM-objecten bevatten gevallen waarin u een waarde in moet door geven.
 
 `[ref]`Zie [PSReference-klasse](/dotnet/api/system.management.automation.psreference)voor meer informatie over het type.
 

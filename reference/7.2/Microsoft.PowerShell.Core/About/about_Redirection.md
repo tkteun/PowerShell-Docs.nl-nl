@@ -5,12 +5,12 @@ ms.date: 10/14/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_redirection?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Redirection
-ms.openlocfilehash: fe8da80c6aa0aae3d8d175920283bc31de0c3386
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 91eb3f524ddeeb729ce53749c9b0ae922ce21f18
+ms.sourcegitcommit: b9826dcf402db8a2b6d3eab37edb82c6af113343
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94706083"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040909"
 ---
 # <a name="about-redirection"></a>Over omleiding
 
@@ -91,7 +91,7 @@ Dit voor beeld laat zien hoe u omleidings operatoren kunt combi neren om een gew
    Write-Warning "hello"
    Write-Error "hello"
    Write-Output "hi"
-} 3>&1 2>&1 > P:\Temp\redirection.log
+} 3>&1 2>&1 > C:\Temp\redirection.log
 ```
 
 - `3>&1` leidt de **waarschuwing** over naar de stroom voor **geslaagde** gegevens.
@@ -195,7 +195,7 @@ Wanneer u naar bestanden schrijft, gebruiken de omleidings operatoren `UTF8NoBOM
 
 ### <a name="potential-confusion-with-comparison-operators"></a>Mogelijke Verwar ring met vergelijkings operatoren
 
-De `>` operator kan niet worden verward met de vergelijkings operator [groter dan](about_Comparison_Operators.md#-gt) (vaak aangeduid als `>` in andere programmeer talen).
+De `>` operator kan niet worden verward met de vergelijkings operator [groter dan](about_Comparison_Operators.md#-gt--ge--lt-and--le) (vaak aangeduid als `>` in andere programmeer talen).
 
 Afhankelijk van de objecten die worden vergeleken, is het mogelijk dat de uitvoer met de juiste indeling wordt `>` weer gegeven (omdat 36 niet groter is dan 42).
 
@@ -225,11 +225,11 @@ At line:1 char:8
 + if (36 < 42) { "true" } else { "false" }
 +        ~
 The '<' operator is reserved for future use.
-+ CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
-+ FullyQualifiedErrorId : RedirectionNotSupported
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : RedirectionNotSupported
 ```
 
-Als numerieke vergelijking de vereiste bewerking is, `-lt` en deze `-gt` moet worden gebruikt. Zie: [ `-gt` vergelijkings operator](about_Comparison_Operators.md#-gt)
+Als numerieke vergelijking de vereiste bewerking is, `-lt` en deze `-gt` moet worden gebruikt. Zie de `-gt` operator in [about_Comparison_Operators](about_Comparison_Operators.md#-gt--ge--lt-and--le)voor meer informatie.
 
 ## <a name="see-also"></a>Zie ook
 

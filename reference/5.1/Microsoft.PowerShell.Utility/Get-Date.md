@@ -7,12 +7,12 @@ ms.date: 08/25/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-date?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Date
-ms.openlocfilehash: cbf87c2a2d6ab0f08e514ba971a622ea9f1904aa
-ms.sourcegitcommit: 077488408c820c860131382324bdd576d0edf52a
+ms.openlocfilehash: bb7f169e0c01c73bb4e834375f341bf795e37ce7
+ms.sourcegitcommit: f5986121386c81acddcf324eb0526d7d092bcc8f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95514932"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98584659"
 ---
 # Get-Date
 
@@ -461,7 +461,7 @@ De geldige **UFormat-specificaties** worden weer gegeven in de volgende tabel:
 | `%H` | Uur in 24-uurs notatie                                                  | 17                       |
 | `%h` | Hetzelfde als ' b '                                                             |                          |
 | `%I` | Uur in 12-uurs notatie                                                  | 05                       |
-| `%j` | Dag van het jaar                                                         | 1-366                    |
+| `%j` | Dag van het jaar (bevat geen voor loop `0` -vast in Power shell 6 +) | 1-366                    |
 | `%k` | Hetzelfde als ' H '                                                             |                          |
 | `%l` | Hetzelfde als ' I ' (hoofd letters I)                                              | 05                       |
 | `%M` | Minuten                                                                 | 35                       |

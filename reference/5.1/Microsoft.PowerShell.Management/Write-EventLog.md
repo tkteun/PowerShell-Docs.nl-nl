@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/write-eventlog?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Write-EventLog
-ms.openlocfilehash: 4044453cb46b407344619f1edd3227213bf67250
-ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
+ms.openlocfilehash: 051f02b00144805569d5130686a51a0f42b64b00
+ms.sourcegitcommit: f5986121386c81acddcf324eb0526d7d092bcc8f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94388243"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98584634"
 ---
 # Write-EventLog
 
@@ -27,6 +27,7 @@ Write-EventLog [-LogName] <String> [-Source] <String> [[-EntryType] <EventLogEnt
 ```
 
 ## BESCHRIJVING
+
 De `Write-EventLog` cmdlet schrijft een gebeurtenis naar een gebeurtenis logboek.
 
 Als u een gebeurtenis naar een gebeurtenis logboek wilt schrijven, moet het gebeurtenis logboek op de computer bestaan en moet de bron zijn geregistreerd voor het gebeurtenis logboek.
@@ -196,16 +197,18 @@ Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - Er
 ## INVOER
 
 ### Geen
+
 U kunt geen invoer van een pipe naar deze cmdlet.
 
 ## UITVOER
 
 ### System. Diagnostics. EventLogEntry
+
 Deze cmdlet retourneert objecten die de gebeurtenissen in de logboeken vertegenwoordigen.
 
 ## OPMERKINGEN
 
-Als u wilt gebruiken `Write-EventLog` , start u Windows Power shell met de optie als administrator uitvoeren.
+Voor sommige Windows-gebeurtenis logboeken moet voor het schrijven van gebeurtenissen beheerders rechten zijn vereist. U moet Power shell starten met de optie **als administrator uitvoeren** .
 
 ## GERELATEERDE KOPPELINGEN
 

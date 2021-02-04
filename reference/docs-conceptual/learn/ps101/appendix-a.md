@@ -2,15 +2,14 @@
 title: Bijlage A-Help-syntaxis
 description: In dit artikel wordt uitgelegd hoe u de syntaxis van een cmdlet die wordt weer gegeven door Get-Help, kunt lezen en begrijpen.
 ms.date: 06/02/2020
-ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
-ms.openlocfilehash: e8e28f66c02370b098f63a0396ef8a724cf3a1bd
-ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.openlocfilehash: b8fe218f2a9af1ad1ee6b88740414ecede0194bd
+ms.sourcegitcommit: df5e6f032ee2d4b556d50406832732d2f7dc2502
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "84436300"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98216107"
 ---
 # <a name="appendix-a---help-syntax"></a>Bijlage A-Help-syntaxis
 
