@@ -1,27 +1,26 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 08/19/2020
+ms.date: 12/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/add-content?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-Content
-ms.openlocfilehash: 3ae91d03e6882eeaf6743d11cfeed5d0ed1aae0c
-ms.sourcegitcommit: 9a8bb1b459b5939c95e1f6d9499fcb13d01a58c4
+ms.openlocfilehash: ef44fefe68ef9674eb14ce494341bf04f477d55a
+ms.sourcegitcommit: bf07cffb2a66dec94bf3576e197090f958701f18
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "93251850"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97693002"
 ---
-# <span data-ttu-id="a0319-103">Add-Content</span><span class="sxs-lookup"><span data-stu-id="a0319-103">Add-Content</span></span>
+# <span data-ttu-id="dc2d1-102">Add-Content</span><span class="sxs-lookup"><span data-stu-id="dc2d1-102">Add-Content</span></span>
 
-## <span data-ttu-id="a0319-104">SAMENVATTING</span><span class="sxs-lookup"><span data-stu-id="a0319-104">SYNOPSIS</span></span>
-<span data-ttu-id="a0319-105">Voegt inhoud toe aan de opgegeven items, zoals het toevoegen van woorden aan een bestand.</span><span class="sxs-lookup"><span data-stu-id="a0319-105">Adds content to the specified items, such as adding words to a file.</span></span>
+## <span data-ttu-id="dc2d1-103">SAMENVATTING</span><span class="sxs-lookup"><span data-stu-id="dc2d1-103">SYNOPSIS</span></span>
+<span data-ttu-id="dc2d1-104">Voegt inhoud toe aan de opgegeven items, zoals het toevoegen van woorden aan een bestand.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-104">Adds content to the specified items, such as adding words to a file.</span></span>
 
-## <span data-ttu-id="a0319-106">SYNTAXIS</span><span class="sxs-lookup"><span data-stu-id="a0319-106">SYNTAX</span></span>
+## <span data-ttu-id="dc2d1-105">SYNTAXIS</span><span class="sxs-lookup"><span data-stu-id="dc2d1-105">SYNTAX</span></span>
 
-### <span data-ttu-id="a0319-107">Pad (standaard)</span><span class="sxs-lookup"><span data-stu-id="a0319-107">Path (Default)</span></span>
+### <span data-ttu-id="dc2d1-106">Pad (standaard)</span><span class="sxs-lookup"><span data-stu-id="dc2d1-106">Path (Default)</span></span>
 
 ```
 Add-Content [-Path] <string[]> [-Value] <Object[]> [-PassThru] [-Filter <string>]
@@ -30,7 +29,7 @@ Add-Content [-Path] <string[]> [-Value] <Object[]> [-PassThru] [-Filter <string>
  [<CommonParameters>]
 ```
 
-### <span data-ttu-id="a0319-108">LiteralPath</span><span class="sxs-lookup"><span data-stu-id="a0319-108">LiteralPath</span></span>
+### <span data-ttu-id="dc2d1-107">LiteralPath</span><span class="sxs-lookup"><span data-stu-id="dc2d1-107">LiteralPath</span></span>
 
 ```
 Add-Content [-Value] <Object[]> -LiteralPath <string[]> [-PassThru] [-Filter <string>]
@@ -39,27 +38,27 @@ Add-Content [-Value] <Object[]> -LiteralPath <string[]> [-PassThru] [-Filter <st
  [<CommonParameters>]
 ```
 
-## <span data-ttu-id="a0319-109">BESCHRIJVING</span><span class="sxs-lookup"><span data-stu-id="a0319-109">DESCRIPTION</span></span>
+## <span data-ttu-id="dc2d1-108">BESCHRIJVING</span><span class="sxs-lookup"><span data-stu-id="dc2d1-108">DESCRIPTION</span></span>
 
-<span data-ttu-id="a0319-110">De `Add-Content` cmdlet voegt inhoud toe aan een opgegeven item of bestand.</span><span class="sxs-lookup"><span data-stu-id="a0319-110">The `Add-Content` cmdlet appends content to a specified item or file.</span></span> <span data-ttu-id="a0319-111">U kunt de inhoud opgeven door de inhoud in de opdracht te typen of door een object op te geven dat de inhoud bevat.</span><span class="sxs-lookup"><span data-stu-id="a0319-111">You can specify the content by typing the content in the command or by specifying an object that contains the content.</span></span>
+<span data-ttu-id="dc2d1-109">De `Add-Content` cmdlet voegt inhoud toe aan een opgegeven item of bestand.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-109">The `Add-Content` cmdlet appends content to a specified item or file.</span></span> <span data-ttu-id="dc2d1-110">U kunt de inhoud opgeven door de inhoud in de opdracht te typen of door een object op te geven dat de inhoud bevat.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-110">You can specify the content by typing the content in the command or by specifying an object that contains the content.</span></span>
 
-<span data-ttu-id="a0319-112">Zie [Nieuw-item](New-Item.md)als u bestanden of mappen wilt maken voor de volgende voor beelden.</span><span class="sxs-lookup"><span data-stu-id="a0319-112">If you need to create files or directories for the following examples, see [New-Item](New-Item.md).</span></span>
+<span data-ttu-id="dc2d1-111">Zie [Nieuw-item](New-Item.md)als u bestanden of mappen wilt maken voor de volgende voor beelden.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-111">If you need to create files or directories for the following examples, see [New-Item](New-Item.md).</span></span>
 
-## <span data-ttu-id="a0319-113">VOORBEELDEN</span><span class="sxs-lookup"><span data-stu-id="a0319-113">EXAMPLES</span></span>
+## <span data-ttu-id="dc2d1-112">VOORBEELDEN</span><span class="sxs-lookup"><span data-stu-id="dc2d1-112">EXAMPLES</span></span>
 
-### <span data-ttu-id="a0319-114">Voor beeld 1: een teken reeks toevoegen aan alle tekst bestanden met een uitzonde ring</span><span class="sxs-lookup"><span data-stu-id="a0319-114">Example 1: Add a string to all text files with an exception</span></span>
+### <span data-ttu-id="dc2d1-113">Voor beeld 1: een teken reeks toevoegen aan alle tekst bestanden met een uitzonde ring</span><span class="sxs-lookup"><span data-stu-id="dc2d1-113">Example 1: Add a string to all text files with an exception</span></span>
 
-<span data-ttu-id="a0319-115">In dit voor beeld wordt een waarde aan tekst bestanden in de huidige map toegevoegd, maar worden bestanden uitgesloten op basis van de bestands naam.</span><span class="sxs-lookup"><span data-stu-id="a0319-115">This example appends a value to text files in the current directory but excludes files based on their file name.</span></span>
+<span data-ttu-id="dc2d1-114">In dit voor beeld wordt een waarde aan tekst bestanden in de huidige map toegevoegd, maar worden bestanden uitgesloten op basis van de bestands naam.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-114">This example appends a value to text files in the current directory but excludes files based on their file name.</span></span>
 
 ```powershell
 Add-Content -Path .\*.txt -Exclude help* -Value 'End of file'
 ```
 
-<span data-ttu-id="a0319-116">De para meter **Path** geeft alle `.txt` bestanden in de huidige map op, maar de **exclude** -para meter negeert bestands namen die overeenkomen met het opgegeven patroon.</span><span class="sxs-lookup"><span data-stu-id="a0319-116">The **Path** parameter specifies all `.txt` files in the current directory, but the **Exclude** parameter ignores file names that match the specified pattern.</span></span> <span data-ttu-id="a0319-117">De **waarde** para meter geeft u de teken reeks op die naar de bestanden wordt geschreven.</span><span class="sxs-lookup"><span data-stu-id="a0319-117">The **Value** parameter specifies the text string that is written to the files.</span></span>
+<span data-ttu-id="dc2d1-115">De para meter **Path** geeft alle `.txt` bestanden in de huidige map op, maar de **exclude** -para meter negeert bestands namen die overeenkomen met het opgegeven patroon.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-115">The **Path** parameter specifies all `.txt` files in the current directory, but the **Exclude** parameter ignores file names that match the specified pattern.</span></span> <span data-ttu-id="dc2d1-116">De **waarde** para meter geeft u de teken reeks op die naar de bestanden wordt geschreven.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-116">The **Value** parameter specifies the text string that is written to the files.</span></span>
 
-### <span data-ttu-id="a0319-118">Voor beeld 2: een datum toevoegen aan het einde van de opgegeven bestanden</span><span class="sxs-lookup"><span data-stu-id="a0319-118">Example 2: Add a date to the end of the specified files</span></span>
+### <span data-ttu-id="dc2d1-117">Voor beeld 2: een datum toevoegen aan het einde van de opgegeven bestanden</span><span class="sxs-lookup"><span data-stu-id="dc2d1-117">Example 2: Add a date to the end of the specified files</span></span>
 
-<span data-ttu-id="a0319-119">In dit voor beeld wordt de datum toegevoegd aan bestanden in de huidige map en wordt de datum weer gegeven in de Power shell-console.</span><span class="sxs-lookup"><span data-stu-id="a0319-119">This example appends the date to files in the current directory and displays the date in the PowerShell console.</span></span>
+<span data-ttu-id="dc2d1-118">In dit voor beeld wordt de datum toegevoegd aan bestanden in de huidige map en wordt de datum weer gegeven in de Power shell-console.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-118">This example appends the date to files in the current directory and displays the date in the PowerShell console.</span></span>
 
 ```powershell
 Add-Content -Path .\DateTimeFile1.log, .\DateTimeFile2.log -Value (Get-Date) -PassThru
@@ -72,13 +71,13 @@ Tuesday, May 14, 2019 8:24:27 AM
 5/14/2019 8:24:27 AM
 ```
 
-<span data-ttu-id="a0319-120">De `Add-Content` cmdlet maakt twee nieuwe bestanden in de huidige map.</span><span class="sxs-lookup"><span data-stu-id="a0319-120">The `Add-Content` cmdlet creates two new files in the current directory.</span></span> <span data-ttu-id="a0319-121">De **waarde** -para meter bevat de uitvoer van de `Get-Date` cmdlet.</span><span class="sxs-lookup"><span data-stu-id="a0319-121">The **Value** parameter contains the output of the `Get-Date` cmdlet.</span></span> <span data-ttu-id="a0319-122">De para meter **PassThru** voert de toegevoegde inhoud uit naar de pijp lijn.</span><span class="sxs-lookup"><span data-stu-id="a0319-122">The **PassThru** parameter outputs the added contents to the pipeline.</span></span>
-<span data-ttu-id="a0319-123">Omdat er geen andere cmdlet is om de uitvoer te ontvangen, wordt deze weer gegeven in de Power shell-console.</span><span class="sxs-lookup"><span data-stu-id="a0319-123">Because there is no other cmdlet to receive the output, it is displayed in the PowerShell console.</span></span>
-<span data-ttu-id="a0319-124">Met de `Get-Content` cmdlet wordt het bijgewerkte bestand weer gegeven, `DateTimeFile1.log` .</span><span class="sxs-lookup"><span data-stu-id="a0319-124">The `Get-Content` cmdlet displays the updated file, `DateTimeFile1.log`.</span></span>
+<span data-ttu-id="dc2d1-119">De `Add-Content` cmdlet maakt twee nieuwe bestanden in de huidige map.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-119">The `Add-Content` cmdlet creates two new files in the current directory.</span></span> <span data-ttu-id="dc2d1-120">De **waarde** -para meter bevat de uitvoer van de `Get-Date` cmdlet.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-120">The **Value** parameter contains the output of the `Get-Date` cmdlet.</span></span> <span data-ttu-id="dc2d1-121">De para meter **PassThru** voert de toegevoegde inhoud uit naar de pijp lijn.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-121">The **PassThru** parameter outputs the added contents to the pipeline.</span></span>
+<span data-ttu-id="dc2d1-122">Omdat er geen andere cmdlet is om de uitvoer te ontvangen, wordt deze weer gegeven in de Power shell-console.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-122">Because there is no other cmdlet to receive the output, it is displayed in the PowerShell console.</span></span>
+<span data-ttu-id="dc2d1-123">Met de `Get-Content` cmdlet wordt het bijgewerkte bestand weer gegeven, `DateTimeFile1.log` .</span><span class="sxs-lookup"><span data-stu-id="dc2d1-123">The `Get-Content` cmdlet displays the updated file, `DateTimeFile1.log`.</span></span>
 
-### <span data-ttu-id="a0319-125">Voor beeld 3: de inhoud van een opgegeven bestand toevoegen aan een ander bestand</span><span class="sxs-lookup"><span data-stu-id="a0319-125">Example 3: Add the contents of a specified file to another file</span></span>
+### <span data-ttu-id="dc2d1-124">Voor beeld 3: de inhoud van een opgegeven bestand toevoegen aan een ander bestand</span><span class="sxs-lookup"><span data-stu-id="dc2d1-124">Example 3: Add the contents of a specified file to another file</span></span>
 
-<span data-ttu-id="a0319-126">In dit voor beeld wordt de inhoud van een bestand opgehaald en wordt de inhoud in een variabele opgeslagen.</span><span class="sxs-lookup"><span data-stu-id="a0319-126">This example gets the content from a file and stores the content in a variable.</span></span> <span data-ttu-id="a0319-127">De variabele wordt gebruikt om de inhoud toe te voegen aan een ander bestand.</span><span class="sxs-lookup"><span data-stu-id="a0319-127">The variable is used to append the content into another file.</span></span>
+<span data-ttu-id="dc2d1-125">In dit voor beeld wordt de inhoud van een bestand opgehaald en wordt de inhoud in een variabele opgeslagen.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-125">This example gets the content from a file and stores the content in a variable.</span></span> <span data-ttu-id="dc2d1-126">De variabele wordt gebruikt om de inhoud toe te voegen aan een ander bestand.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-126">The variable is used to append the content into another file.</span></span>
 
 ```powershell
 $From = Get-Content -Path .\CopyFromFile.txt
@@ -86,39 +85,39 @@ Add-Content -Path .\CopyToFile.txt -Value $From
 Get-Content -Path .\CopyToFile.txt
 ```
 
-- <span data-ttu-id="a0319-128">`Get-Content`Met de cmdlet wordt de inhoud van opgehaald `CopyFromFile.txt` en wordt de inhoud in de `$From` variabele opgeslagen.</span><span class="sxs-lookup"><span data-stu-id="a0319-128">The `Get-Content` cmdlet gets the contents of `CopyFromFile.txt` and stores the contents in the `$From` variable.</span></span>
-- <span data-ttu-id="a0319-129">De `Add-Content` cmdlet werkt het `CopyToFile.txt` bestand bij met de inhoud van de `$From` variabele.</span><span class="sxs-lookup"><span data-stu-id="a0319-129">The `Add-Content` cmdlet updates the `CopyToFile.txt` file using the contents of the `$From` variable.</span></span>
-- <span data-ttu-id="a0319-130">De `Get-Content` cmdlet geeft CopyToFile.txt weer.</span><span class="sxs-lookup"><span data-stu-id="a0319-130">The `Get-Content` cmdlet displays CopyToFile.txt.</span></span>
+- <span data-ttu-id="dc2d1-127">`Get-Content`Met de cmdlet wordt de inhoud van opgehaald `CopyFromFile.txt` en wordt de inhoud in de `$From` variabele opgeslagen.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-127">The `Get-Content` cmdlet gets the contents of `CopyFromFile.txt` and stores the contents in the `$From` variable.</span></span>
+- <span data-ttu-id="dc2d1-128">De `Add-Content` cmdlet werkt het `CopyToFile.txt` bestand bij met de inhoud van de `$From` variabele.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-128">The `Add-Content` cmdlet updates the `CopyToFile.txt` file using the contents of the `$From` variable.</span></span>
+- <span data-ttu-id="dc2d1-129">De `Get-Content` cmdlet geeft CopyToFile.txt weer.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-129">The `Get-Content` cmdlet displays CopyToFile.txt.</span></span>
 
-### <span data-ttu-id="a0319-131">Voor beeld 4: de inhoud van een opgegeven bestand toevoegen aan een ander bestand met behulp van de pijp lijn</span><span class="sxs-lookup"><span data-stu-id="a0319-131">Example 4: Add the contents of a specified file to another file using the pipeline</span></span>
+### <span data-ttu-id="dc2d1-130">Voor beeld 4: de inhoud van een opgegeven bestand toevoegen aan een ander bestand met behulp van de pijp lijn</span><span class="sxs-lookup"><span data-stu-id="dc2d1-130">Example 4: Add the contents of a specified file to another file using the pipeline</span></span>
 
-<span data-ttu-id="a0319-132">In dit voor beeld wordt de inhoud van een bestand opgehaald en wordt deze naar de cmdlet gesluizen `Add-Content` .</span><span class="sxs-lookup"><span data-stu-id="a0319-132">This example gets the content from a file and pipes it to the `Add-Content` cmdlet.</span></span>
+<span data-ttu-id="dc2d1-131">In dit voor beeld wordt de inhoud van een bestand opgehaald en wordt deze naar de cmdlet gesluizen `Add-Content` .</span><span class="sxs-lookup"><span data-stu-id="dc2d1-131">This example gets the content from a file and pipes it to the `Add-Content` cmdlet.</span></span>
 
 ```powershell
 Get-Content -Path .\CopyFromFile.txt | Add-Content -Path .\CopyToFile.txt
 Get-Content -Path .\CopyToFile.txt
 ```
 
-<span data-ttu-id="a0319-133">`Get-Content`Met de cmdlet wordt de inhoud van opgehaald `CopyFromFile.txt` .</span><span class="sxs-lookup"><span data-stu-id="a0319-133">The `Get-Content` cmdlet gets the contents of `CopyFromFile.txt`.</span></span> <span data-ttu-id="a0319-134">De resultaten worden door gegeven aan de `Add-Content` cmdlet, waarmee de wordt bijgewerkt `CopyToFile.txt` .</span><span class="sxs-lookup"><span data-stu-id="a0319-134">The results are piped to the `Add-Content` cmdlet, which updates the `CopyToFile.txt`.</span></span>
-<span data-ttu-id="a0319-135">De laatste `Get-Content` cmdlet wordt weer gegeven `CopyToFile.txt` .</span><span class="sxs-lookup"><span data-stu-id="a0319-135">The last `Get-Content` cmdlet displays `CopyToFile.txt`.</span></span>
+<span data-ttu-id="dc2d1-132">`Get-Content`Met de cmdlet wordt de inhoud van opgehaald `CopyFromFile.txt` .</span><span class="sxs-lookup"><span data-stu-id="dc2d1-132">The `Get-Content` cmdlet gets the contents of `CopyFromFile.txt`.</span></span> <span data-ttu-id="dc2d1-133">De resultaten worden door gegeven aan de `Add-Content` cmdlet, waarmee de wordt bijgewerkt `CopyToFile.txt` .</span><span class="sxs-lookup"><span data-stu-id="dc2d1-133">The results are piped to the `Add-Content` cmdlet, which updates the `CopyToFile.txt`.</span></span>
+<span data-ttu-id="dc2d1-134">De laatste `Get-Content` cmdlet wordt weer gegeven `CopyToFile.txt` .</span><span class="sxs-lookup"><span data-stu-id="dc2d1-134">The last `Get-Content` cmdlet displays `CopyToFile.txt`.</span></span>
 
-### <span data-ttu-id="a0319-136">Voor beeld 5: een nieuw bestand maken en inhoud kopiëren</span><span class="sxs-lookup"><span data-stu-id="a0319-136">Example 5: Create a new file and copy content</span></span>
+### <span data-ttu-id="dc2d1-135">Voor beeld 5: een nieuw bestand maken en inhoud kopiëren</span><span class="sxs-lookup"><span data-stu-id="dc2d1-135">Example 5: Create a new file and copy content</span></span>
 
-<span data-ttu-id="a0319-137">In dit voor beeld wordt een nieuw bestand gemaakt en wordt de inhoud van een bestaand bestand gekopieerd naar het nieuwe bestand.</span><span class="sxs-lookup"><span data-stu-id="a0319-137">This example creates a new file and copies an existing file's content into the new file.</span></span>
+<span data-ttu-id="dc2d1-136">In dit voor beeld wordt een nieuw bestand gemaakt en wordt de inhoud van een bestaand bestand gekopieerd naar het nieuwe bestand.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-136">This example creates a new file and copies an existing file's content into the new file.</span></span>
 
 ```powershell
 Add-Content -Path .\NewFile.txt -Value (Get-Content -Path .\CopyFromFile.txt)
 Get-Content -Path .\NewFile.txt
 ```
 
-- <span data-ttu-id="a0319-138">De `Add-Content` cmdlet maakt gebruik van de para meters **pad** en **waarde** voor het maken van een nieuw bestand in de huidige map.</span><span class="sxs-lookup"><span data-stu-id="a0319-138">The `Add-Content` cmdlet uses the **Path** and **Value** parameters to create a new file in the current directory.</span></span>
-- <span data-ttu-id="a0319-139">Met de `Get-Content` cmdlet wordt de inhoud van een bestaand bestand opgehaald `CopyFromFile.txt` en door gegeven aan de **waarde** -para meter.</span><span class="sxs-lookup"><span data-stu-id="a0319-139">The `Get-Content` cmdlet gets the contents of an existing file, `CopyFromFile.txt` and passes it to the **Value** parameter.</span></span> <span data-ttu-id="a0319-140">De haakjes rond de `Get-Content` cmdlet zorgen ervoor dat de opdracht is voltooid voordat de `Add-Content` opdracht wordt gestart.</span><span class="sxs-lookup"><span data-stu-id="a0319-140">The parentheses around the `Get-Content` cmdlet ensure that the command finishes before the `Add-Content` command begins.</span></span>
-- <span data-ttu-id="a0319-141">`Get-Content`Met de cmdlet wordt de inhoud van het nieuwe bestand weer gegeven `NewFile.txt` .</span><span class="sxs-lookup"><span data-stu-id="a0319-141">The `Get-Content` cmdlet displays the contents of the new file, `NewFile.txt`.</span></span>
+- <span data-ttu-id="dc2d1-137">De `Add-Content` cmdlet maakt gebruik van de para meters **pad** en **waarde** voor het maken van een nieuw bestand in de huidige map.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-137">The `Add-Content` cmdlet uses the **Path** and **Value** parameters to create a new file in the current directory.</span></span>
+- <span data-ttu-id="dc2d1-138">Met de `Get-Content` cmdlet wordt de inhoud van een bestaand bestand opgehaald `CopyFromFile.txt` en door gegeven aan de **waarde** -para meter.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-138">The `Get-Content` cmdlet gets the contents of an existing file, `CopyFromFile.txt` and passes it to the **Value** parameter.</span></span> <span data-ttu-id="dc2d1-139">De haakjes rond de `Get-Content` cmdlet zorgen ervoor dat de opdracht is voltooid voordat de `Add-Content` opdracht wordt gestart.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-139">The parentheses around the `Get-Content` cmdlet ensure that the command finishes before the `Add-Content` command begins.</span></span>
+- <span data-ttu-id="dc2d1-140">`Get-Content`Met de cmdlet wordt de inhoud van het nieuwe bestand weer gegeven `NewFile.txt` .</span><span class="sxs-lookup"><span data-stu-id="dc2d1-140">The `Get-Content` cmdlet displays the contents of the new file, `NewFile.txt`.</span></span>
 
-### <span data-ttu-id="a0319-142">Voor beeld 6: inhoud toevoegen aan een alleen-lezen bestand</span><span class="sxs-lookup"><span data-stu-id="a0319-142">Example 6: Add content to a read-only file</span></span>
+### <span data-ttu-id="dc2d1-141">Voor beeld 6: inhoud toevoegen aan een alleen-lezen bestand</span><span class="sxs-lookup"><span data-stu-id="dc2d1-141">Example 6: Add content to a read-only file</span></span>
 
-<span data-ttu-id="a0319-143">Met deze opdracht wordt een waarde aan het bestand toegevoegd, zelfs als het kenmerk bestand **IsReadOnly** is ingesteld op **True**.</span><span class="sxs-lookup"><span data-stu-id="a0319-143">This command adds a value to the file even if the **IsReadOnly** file attribute is set to **True**.</span></span>
-<span data-ttu-id="a0319-144">De stappen voor het maken van een alleen-lezen bestand zijn opgenomen in het voor beeld.</span><span class="sxs-lookup"><span data-stu-id="a0319-144">The steps to create a read-only file are included in the example.</span></span>
+<span data-ttu-id="dc2d1-142">Met deze opdracht wordt een waarde aan het bestand toegevoegd, zelfs als het kenmerk bestand **IsReadOnly** is ingesteld op **True**.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-142">This command adds a value to the file even if the **IsReadOnly** file attribute is set to **True**.</span></span>
+<span data-ttu-id="dc2d1-143">De stappen voor het maken van een alleen-lezen bestand zijn opgenomen in het voor beeld.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-143">The steps to create a read-only file are included in the example.</span></span>
 
 ```powershell
 New-Item -Path .\IsReadOnlyTextFile.txt -ItemType File
@@ -134,31 +133,31 @@ Mode                LastWriteTime         Length Name
 -ar--         1/28/2019     13:35              0 IsReadOnlyTextFile.txt
 ```
 
-- <span data-ttu-id="a0319-145">De `New-Item` cmdlet gebruikt de para meter **Path** en **item** type om het bestand `IsReadOnlyTextFile.txt` in de huidige map te maken.</span><span class="sxs-lookup"><span data-stu-id="a0319-145">The `New-Item` cmdlet uses the **Path** and **ItemType** parameters to create the file `IsReadOnlyTextFile.txt` in the current directory.</span></span>
-- <span data-ttu-id="a0319-146">De `Set-ItemProperty` cmdlet gebruikt de para meters **name** en **Value** om de eigenschap **IsReadOnly** van het bestand te wijzigen in True.</span><span class="sxs-lookup"><span data-stu-id="a0319-146">The `Set-ItemProperty` cmdlet uses the **Name** and **Value** parameters to change the file's **IsReadOnly** property to True.</span></span>
-- <span data-ttu-id="a0319-147">De `Get-ChildItem` cmdlet geeft aan dat het bestand leeg is (0) en het kenmerk alleen-lezen ( `r` ) heeft.</span><span class="sxs-lookup"><span data-stu-id="a0319-147">The `Get-ChildItem` cmdlet shows the file is empty (0) and has the read-only attribute (`r`).</span></span>
-- <span data-ttu-id="a0319-148">De `Add-Content` cmdlet gebruikt de para meter **Path** om het bestand op te geven.</span><span class="sxs-lookup"><span data-stu-id="a0319-148">The `Add-Content` cmdlet uses the **Path** parameter to specify the file.</span></span> <span data-ttu-id="a0319-149">De **waarde** para meter bevat de teken reeks die moet worden toegevoegd aan het bestand.</span><span class="sxs-lookup"><span data-stu-id="a0319-149">The **Value** parameter includes the text string to append to the file.</span></span> <span data-ttu-id="a0319-150">De para meter **Force** schrijft de tekst naar het bestand met het kenmerk alleen-lezen.</span><span class="sxs-lookup"><span data-stu-id="a0319-150">The **Force** parameter writes the text to the read-only file.</span></span>
-- <span data-ttu-id="a0319-151">De `Get-Content` cmdlet gebruikt de para meter **Path** om de inhoud van het bestand weer te geven.</span><span class="sxs-lookup"><span data-stu-id="a0319-151">The `Get-Content` cmdlet uses the **Path** parameter to display the file's contents.</span></span>
+- <span data-ttu-id="dc2d1-144">De `New-Item` cmdlet gebruikt de para meter **Path** en **item** type om het bestand `IsReadOnlyTextFile.txt` in de huidige map te maken.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-144">The `New-Item` cmdlet uses the **Path** and **ItemType** parameters to create the file `IsReadOnlyTextFile.txt` in the current directory.</span></span>
+- <span data-ttu-id="dc2d1-145">De `Set-ItemProperty` cmdlet gebruikt de para meters **name** en **Value** om de eigenschap **IsReadOnly** van het bestand te wijzigen in True.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-145">The `Set-ItemProperty` cmdlet uses the **Name** and **Value** parameters to change the file's **IsReadOnly** property to True.</span></span>
+- <span data-ttu-id="dc2d1-146">De `Get-ChildItem` cmdlet geeft aan dat het bestand leeg is (0) en het kenmerk alleen-lezen ( `r` ) heeft.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-146">The `Get-ChildItem` cmdlet shows the file is empty (0) and has the read-only attribute (`r`).</span></span>
+- <span data-ttu-id="dc2d1-147">De `Add-Content` cmdlet gebruikt de para meter **Path** om het bestand op te geven.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-147">The `Add-Content` cmdlet uses the **Path** parameter to specify the file.</span></span> <span data-ttu-id="dc2d1-148">De **waarde** para meter bevat de teken reeks die moet worden toegevoegd aan het bestand.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-148">The **Value** parameter includes the text string to append to the file.</span></span> <span data-ttu-id="dc2d1-149">De para meter **Force** schrijft de tekst naar het bestand met het kenmerk alleen-lezen.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-149">The **Force** parameter writes the text to the read-only file.</span></span>
+- <span data-ttu-id="dc2d1-150">De `Get-Content` cmdlet gebruikt de para meter **Path** om de inhoud van het bestand weer te geven.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-150">The `Get-Content` cmdlet uses the **Path** parameter to display the file's contents.</span></span>
 
-<span data-ttu-id="a0319-152">Als u het kenmerk alleen-lezen wilt verwijderen, gebruikt u de `Set-ItemProperty` opdracht met de para meter **Value** ingesteld op `False` .</span><span class="sxs-lookup"><span data-stu-id="a0319-152">To remove the read-only attribute, use the `Set-ItemProperty` command with the **Value** parameter set to `False`.</span></span>
+<span data-ttu-id="dc2d1-151">Als u het kenmerk alleen-lezen wilt verwijderen, gebruikt u de `Set-ItemProperty` opdracht met de para meter **Value** ingesteld op `False` .</span><span class="sxs-lookup"><span data-stu-id="dc2d1-151">To remove the read-only attribute, use the `Set-ItemProperty` command with the **Value** parameter set to `False`.</span></span>
 
-### <span data-ttu-id="a0319-153">Voor beeld 7: filters gebruiken met Add-Content</span><span class="sxs-lookup"><span data-stu-id="a0319-153">Example 7: Use Filters with Add-Content</span></span>
+### <span data-ttu-id="dc2d1-152">Voor beeld 7: filters gebruiken met Add-Content</span><span class="sxs-lookup"><span data-stu-id="dc2d1-152">Example 7: Use Filters with Add-Content</span></span>
 
-<span data-ttu-id="a0319-154">U kunt een filter opgeven voor de `Add-Content` cmdlet.</span><span class="sxs-lookup"><span data-stu-id="a0319-154">You can specify a filter to the `Add-Content` cmdlet.</span></span> <span data-ttu-id="a0319-155">Wanneer u filters gebruikt om de para meter **Path** te kwalificeren, moet u een asterisk ( `*` ) toevoegen om de inhoud van het pad aan te geven.</span><span class="sxs-lookup"><span data-stu-id="a0319-155">When using filters to qualify the **Path** parameter, you need to include a trailing asterisk (`*`) to indicate the contents of the path.</span></span>
+<span data-ttu-id="dc2d1-153">U kunt een filter opgeven voor de `Add-Content` cmdlet.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-153">You can specify a filter to the `Add-Content` cmdlet.</span></span> <span data-ttu-id="dc2d1-154">Wanneer u filters gebruikt om de para meter **Path** te kwalificeren, moet u een asterisk ( `*` ) toevoegen om de inhoud van het pad aan te geven.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-154">When using filters to qualify the **Path** parameter, you need to include a trailing asterisk (`*`) to indicate the contents of the path.</span></span>
 
-<span data-ttu-id="a0319-156">Met de volgende opdracht wordt het woord ' gereed ' toegevoegd aan de inhoud van alle `*.txt` bestanden in de `C:\Temp` map.</span><span class="sxs-lookup"><span data-stu-id="a0319-156">The following command adds the word "Done" the content of all `*.txt` files in the `C:\Temp` directory.</span></span>
+<span data-ttu-id="dc2d1-155">Met de volgende opdracht wordt het woord ' gereed ' toegevoegd aan de inhoud van alle `*.txt` bestanden in de `C:\Temp` map.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-155">The following command adds the word "Done" the content of all `*.txt` files in the `C:\Temp` directory.</span></span>
 
 ```powershell
 Add-Content -Path C:\Temp\* -Filter *.txt -Value "Done"
 ```
 
-## <span data-ttu-id="a0319-157">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="a0319-157">PARAMETERS</span></span>
+## <span data-ttu-id="dc2d1-156">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="dc2d1-156">PARAMETERS</span></span>
 
-### <span data-ttu-id="a0319-158">-AsByteStream</span><span class="sxs-lookup"><span data-stu-id="a0319-158">-AsByteStream</span></span>
+### <span data-ttu-id="dc2d1-157">-AsByteStream</span><span class="sxs-lookup"><span data-stu-id="dc2d1-157">-AsByteStream</span></span>
 
-<span data-ttu-id="a0319-159">Hiermee geeft u op dat de inhoud moet worden gelezen als een byte stroom.</span><span class="sxs-lookup"><span data-stu-id="a0319-159">Specifies that the content should be read as a stream of bytes.</span></span> <span data-ttu-id="a0319-160">Deze para meter is geïntroduceerd in Power shell 6,0.</span><span class="sxs-lookup"><span data-stu-id="a0319-160">This parameter was introduced in PowerShell 6.0.</span></span>
+<span data-ttu-id="dc2d1-158">Hiermee geeft u op dat de inhoud moet worden gelezen als een byte stroom.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-158">Specifies that the content should be read as a stream of bytes.</span></span> <span data-ttu-id="dc2d1-159">Deze para meter is geïntroduceerd in Power shell 6,0.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-159">This parameter was introduced in PowerShell 6.0.</span></span>
 
-<span data-ttu-id="a0319-161">Er treedt een waarschuwing op wanneer u de para meter **AsByteStream** gebruikt met de para meter **Encoding** .</span><span class="sxs-lookup"><span data-stu-id="a0319-161">A warning occurs when you use the **AsByteStream** parameter with the **Encoding** parameter.</span></span> <span data-ttu-id="a0319-162">De para meter **AsByteStream** negeert elke code ring en de uitvoer wordt geretourneerd als een byte stroom.</span><span class="sxs-lookup"><span data-stu-id="a0319-162">The **AsByteStream** parameter ignores any encoding and the output is returned as a stream of bytes.</span></span>
+<span data-ttu-id="dc2d1-160">Er treedt een waarschuwing op wanneer u de para meter **AsByteStream** gebruikt met de para meter **Encoding** .</span><span class="sxs-lookup"><span data-stu-id="dc2d1-160">A warning occurs when you use the **AsByteStream** parameter with the **Encoding** parameter.</span></span> <span data-ttu-id="dc2d1-161">De para meter **AsByteStream** negeert elke code ring en de uitvoer wordt geretourneerd als een byte stroom.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-161">The **AsByteStream** parameter ignores any encoding and the output is returned as a stream of bytes.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -172,11 +171,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a0319-163">-Credential</span><span class="sxs-lookup"><span data-stu-id="a0319-163">-Credential</span></span>
+### <span data-ttu-id="dc2d1-162">-Credential</span><span class="sxs-lookup"><span data-stu-id="dc2d1-162">-Credential</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="a0319-164">Deze para meter wordt niet ondersteund door providers die zijn geïnstalleerd met Power shell.</span><span class="sxs-lookup"><span data-stu-id="a0319-164">This parameter is not supported by any providers installed with PowerShell.</span></span>
-> <span data-ttu-id="a0319-165">Gebruik [invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md)om een andere gebruiker te imiteren of uw referenties te verhogen wanneer u deze cmdlet uitvoert.</span><span class="sxs-lookup"><span data-stu-id="a0319-165">To impersonate another user, or elevate your credentials when running this cmdlet, use [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md).</span></span>
+> <span data-ttu-id="dc2d1-163">Deze para meter wordt niet ondersteund door providers die zijn geïnstalleerd met Power shell.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-163">This parameter is not supported by any providers installed with PowerShell.</span></span>
+> <span data-ttu-id="dc2d1-164">Gebruik [invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md)om een andere gebruiker te imiteren of uw referenties te verhogen wanneer u deze cmdlet uitvoert.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-164">To impersonate another user, or elevate your credentials when running this cmdlet, use [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md).</span></span>
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -190,29 +189,29 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a0319-166">-Encoding</span><span class="sxs-lookup"><span data-stu-id="a0319-166">-Encoding</span></span>
+### <span data-ttu-id="dc2d1-165">-Encoding</span><span class="sxs-lookup"><span data-stu-id="dc2d1-165">-Encoding</span></span>
 
-<span data-ttu-id="a0319-167">Hiermee geeft u het type code ring voor het doel bestand op.</span><span class="sxs-lookup"><span data-stu-id="a0319-167">Specifies the type of encoding for the target file.</span></span> <span data-ttu-id="a0319-168">De standaardwaarde is `utf8NoBOM`.</span><span class="sxs-lookup"><span data-stu-id="a0319-168">The default value is `utf8NoBOM`.</span></span>
+<span data-ttu-id="dc2d1-166">Hiermee geeft u het type code ring voor het doel bestand op.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-166">Specifies the type of encoding for the target file.</span></span> <span data-ttu-id="dc2d1-167">De standaardwaarde is `utf8NoBOM`.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-167">The default value is `utf8NoBOM`.</span></span>
 
-<span data-ttu-id="a0319-169">Encoding is een dynamische para meter die de File System Provider toevoegt aan de `Add-Content` cmdlet.</span><span class="sxs-lookup"><span data-stu-id="a0319-169">Encoding is a dynamic parameter that the FileSystem provider adds to the `Add-Content` cmdlet.</span></span> <span data-ttu-id="a0319-170">Deze para meter werkt alleen op stations met een bestands systeem.</span><span class="sxs-lookup"><span data-stu-id="a0319-170">This parameter works only in file system drives.</span></span>
+<span data-ttu-id="dc2d1-168">Encoding is een dynamische para meter die de File System Provider toevoegt aan de `Add-Content` cmdlet.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-168">Encoding is a dynamic parameter that the FileSystem provider adds to the `Add-Content` cmdlet.</span></span> <span data-ttu-id="dc2d1-169">Deze para meter werkt alleen op stations met een bestands systeem.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-169">This parameter works only in file system drives.</span></span>
 
-<span data-ttu-id="a0319-171">De acceptabele waarden voor deze para meter zijn als volgt:</span><span class="sxs-lookup"><span data-stu-id="a0319-171">The acceptable values for this parameter are as follows:</span></span>
+<span data-ttu-id="dc2d1-170">De acceptabele waarden voor deze para meter zijn als volgt:</span><span class="sxs-lookup"><span data-stu-id="dc2d1-170">The acceptable values for this parameter are as follows:</span></span>
 
-- <span data-ttu-id="a0319-172">`ascii`: Gebruikt de code ring voor de ASCII-tekenset (7-bits).</span><span class="sxs-lookup"><span data-stu-id="a0319-172">`ascii`: Uses the encoding for the ASCII (7-bit) character set.</span></span>
-- <span data-ttu-id="a0319-173">`bigendianunicode`: Wordt gecodeerd in UTF-16-indeling met behulp van de byte volgorde big endian.</span><span class="sxs-lookup"><span data-stu-id="a0319-173">`bigendianunicode`: Encodes in UTF-16 format using the big-endian byte order.</span></span>
-- <span data-ttu-id="a0319-174">`bigendianutf32`: Codeert in UTF-32-indeling met behulp van de byte volgorde big endian.</span><span class="sxs-lookup"><span data-stu-id="a0319-174">`bigendianutf32`: Encodes in UTF-32 format using the big-endian byte order.</span></span>
-- <span data-ttu-id="a0319-175">`oem`: Maakt gebruik van de standaard codering voor MS-DOS-en console Programma's.</span><span class="sxs-lookup"><span data-stu-id="a0319-175">`oem`: Uses the default encoding for MS-DOS and console programs.</span></span>
-- <span data-ttu-id="a0319-176">`unicode`: Wordt gecodeerd in UTF-16-indeling met behulp van de byte volgorde little endian.</span><span class="sxs-lookup"><span data-stu-id="a0319-176">`unicode`: Encodes in UTF-16 format using the little-endian byte order.</span></span>
-- <span data-ttu-id="a0319-177">`utf7`: Wordt gecodeerd in de indeling UTF-7.</span><span class="sxs-lookup"><span data-stu-id="a0319-177">`utf7`: Encodes in UTF-7 format.</span></span>
-- <span data-ttu-id="a0319-178">`utf8`: Wordt gecodeerd in UTF-8-indeling.</span><span class="sxs-lookup"><span data-stu-id="a0319-178">`utf8`: Encodes in UTF-8 format.</span></span>
-- <span data-ttu-id="a0319-179">`utf8BOM`: Code ring in UTF-8-indeling met byte order Mark (BOM)</span><span class="sxs-lookup"><span data-stu-id="a0319-179">`utf8BOM`: Encodes in UTF-8 format with Byte Order Mark (BOM)</span></span>
-- <span data-ttu-id="a0319-180">`utf8NoBOM`: Code ring in UTF-8-indeling zonder byte order Mark (BOM)</span><span class="sxs-lookup"><span data-stu-id="a0319-180">`utf8NoBOM`: Encodes in UTF-8 format without Byte Order Mark (BOM)</span></span>
-- <span data-ttu-id="a0319-181">`utf32`: Gecodeerd in UTF-32-indeling.</span><span class="sxs-lookup"><span data-stu-id="a0319-181">`utf32`: Encodes in UTF-32 format.</span></span>
+- <span data-ttu-id="dc2d1-171">`ascii`: Gebruikt de code ring voor de ASCII-tekenset (7-bits).</span><span class="sxs-lookup"><span data-stu-id="dc2d1-171">`ascii`: Uses the encoding for the ASCII (7-bit) character set.</span></span>
+- <span data-ttu-id="dc2d1-172">`bigendianunicode`: Wordt gecodeerd in UTF-16-indeling met behulp van de byte volgorde big endian.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-172">`bigendianunicode`: Encodes in UTF-16 format using the big-endian byte order.</span></span>
+- <span data-ttu-id="dc2d1-173">`bigendianutf32`: Codeert in UTF-32-indeling met behulp van de byte volgorde big endian.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-173">`bigendianutf32`: Encodes in UTF-32 format using the big-endian byte order.</span></span>
+- <span data-ttu-id="dc2d1-174">`oem`: Maakt gebruik van de standaard codering voor MS-DOS-en console Programma's.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-174">`oem`: Uses the default encoding for MS-DOS and console programs.</span></span>
+- <span data-ttu-id="dc2d1-175">`unicode`: Wordt gecodeerd in UTF-16-indeling met behulp van de byte volgorde little endian.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-175">`unicode`: Encodes in UTF-16 format using the little-endian byte order.</span></span>
+- <span data-ttu-id="dc2d1-176">`utf7`: Wordt gecodeerd in de indeling UTF-7.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-176">`utf7`: Encodes in UTF-7 format.</span></span>
+- <span data-ttu-id="dc2d1-177">`utf8`: Wordt gecodeerd in UTF-8-indeling.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-177">`utf8`: Encodes in UTF-8 format.</span></span>
+- <span data-ttu-id="dc2d1-178">`utf8BOM`: Code ring in UTF-8-indeling met byte order Mark (BOM)</span><span class="sxs-lookup"><span data-stu-id="dc2d1-178">`utf8BOM`: Encodes in UTF-8 format with Byte Order Mark (BOM)</span></span>
+- <span data-ttu-id="dc2d1-179">`utf8NoBOM`: Code ring in UTF-8-indeling zonder byte order Mark (BOM)</span><span class="sxs-lookup"><span data-stu-id="dc2d1-179">`utf8NoBOM`: Encodes in UTF-8 format without Byte Order Mark (BOM)</span></span>
+- <span data-ttu-id="dc2d1-180">`utf32`: Gecodeerd in UTF-32-indeling.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-180">`utf32`: Encodes in UTF-32 format.</span></span>
 
-<span data-ttu-id="a0319-182">Vanaf Power shell 6,2 kunnen met de para meter **Encoding** ook numerieke id's van geregistreerde code pagina's (zoals `-Encoding 1251` ) of teken reeks namen van geregistreerde code pagina's (zoals) worden toegestaan `-Encoding "windows-1251"` .</span><span class="sxs-lookup"><span data-stu-id="a0319-182">Beginning with PowerShell 6.2, the **Encoding** parameter also allows numeric IDs of registered code pages (like `-Encoding 1251`) or string names of registered code pages (like `-Encoding "windows-1251"`).</span></span> <span data-ttu-id="a0319-183">Zie de .NET-documentatie voor [code ring. code tabel](/dotnet/api/system.text.encoding.codepage?view=netcore-2.2)voor meer informatie.</span><span class="sxs-lookup"><span data-stu-id="a0319-183">For more information, see the .NET documentation for [Encoding.CodePage](/dotnet/api/system.text.encoding.codepage?view=netcore-2.2).</span></span>
+<span data-ttu-id="dc2d1-181">Vanaf Power shell 6,2 kunnen met de para meter **Encoding** ook numerieke id's van geregistreerde code pagina's (zoals `-Encoding 1251` ) of teken reeks namen van geregistreerde code pagina's (zoals) worden toegestaan `-Encoding "windows-1251"` .</span><span class="sxs-lookup"><span data-stu-id="dc2d1-181">Beginning with PowerShell 6.2, the **Encoding** parameter also allows numeric IDs of registered code pages (like `-Encoding 1251`) or string names of registered code pages (like `-Encoding "windows-1251"`).</span></span> <span data-ttu-id="dc2d1-182">Zie de .NET-documentatie voor [code ring. code tabel](/dotnet/api/system.text.encoding.codepage?view=netcore-2.2)voor meer informatie.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-182">For more information, see the .NET documentation for [Encoding.CodePage](/dotnet/api/system.text.encoding.codepage?view=netcore-2.2).</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="a0319-184">**UTF-7** \* wordt niet meer aanbevolen voor gebruik.</span><span class="sxs-lookup"><span data-stu-id="a0319-184">**UTF-7** \* is no longer recommended to use.</span></span> <span data-ttu-id="a0319-185">In Power shell 7,1 wordt een waarschuwing geschreven als u `utf7` voor de para meter **Encoding** opgeeft.</span><span class="sxs-lookup"><span data-stu-id="a0319-185">In PowerShell 7.1, a warning is written if you specify `utf7` for the **Encoding** parameter.</span></span>
+> <span data-ttu-id="dc2d1-183">**UTF-7** _ wordt niet meer aanbevolen om te gebruiken.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-183">**UTF-7** _ is no longer recommended to use.</span></span> <span data-ttu-id="dc2d1-184">In Power shell 7,1 wordt een waarschuwing geschreven als u `utf7` de para meter _ *Encoding*\* opgeeft.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-184">In PowerShell 7.1, a warning is written if you specify `utf7` for the _ *Encoding*\* parameter.</span></span>
 
 ```yaml
 Type: System.Text.Encoding
@@ -227,9 +226,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a0319-186">-Uitsluiten</span><span class="sxs-lookup"><span data-stu-id="a0319-186">-Exclude</span></span>
+### <span data-ttu-id="dc2d1-185">-Uitsluiten</span><span class="sxs-lookup"><span data-stu-id="dc2d1-185">-Exclude</span></span>
 
-<span data-ttu-id="a0319-187">Hiermee geeft u als een teken reeks matrix een item of items die met deze cmdlet worden uitgesloten in de bewerking.</span><span class="sxs-lookup"><span data-stu-id="a0319-187">Specifies, as a string array, an item or items that this cmdlet excludes in the operation.</span></span> <span data-ttu-id="a0319-188">De waarde van deze para meter komt in aanmerking voor de para meter **Path** .</span><span class="sxs-lookup"><span data-stu-id="a0319-188">The value of this parameter qualifies the **Path** parameter.</span></span> <span data-ttu-id="a0319-189">Voer een element of patroon van een pad in, zoals `*.txt` .</span><span class="sxs-lookup"><span data-stu-id="a0319-189">Enter a path element or pattern, such as `*.txt`.</span></span> <span data-ttu-id="a0319-190">Joker tekens zijn toegestaan.</span><span class="sxs-lookup"><span data-stu-id="a0319-190">Wildcard characters are permitted.</span></span> <span data-ttu-id="a0319-191">De **exclude** -para meter is alleen effectief wanneer de inhoud van een item wordt opgenomen, zoals `C:\Windows\*` , waarbij het Joker teken de inhoud van de `C:\Windows` map bevat.</span><span class="sxs-lookup"><span data-stu-id="a0319-191">The **Exclude** parameter is effective only when the command includes the contents of an item, such as `C:\Windows\*`, where the wildcard character specifies the contents of the `C:\Windows` directory.</span></span>
+<span data-ttu-id="dc2d1-186">Hiermee geeft u als een teken reeks matrix een item of items die met deze cmdlet worden uitgesloten in de bewerking.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-186">Specifies, as a string array, an item or items that this cmdlet excludes in the operation.</span></span> <span data-ttu-id="dc2d1-187">De waarde van deze para meter komt in aanmerking voor de para meter **Path** .</span><span class="sxs-lookup"><span data-stu-id="dc2d1-187">The value of this parameter qualifies the **Path** parameter.</span></span> <span data-ttu-id="dc2d1-188">Voer een element of patroon van een pad in, zoals `*.txt` .</span><span class="sxs-lookup"><span data-stu-id="dc2d1-188">Enter a path element or pattern, such as `*.txt`.</span></span> <span data-ttu-id="dc2d1-189">Joker tekens zijn toegestaan.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-189">Wildcard characters are permitted.</span></span> <span data-ttu-id="dc2d1-190">De **exclude** -para meter is alleen effectief wanneer de inhoud van een item wordt opgenomen, zoals `C:\Windows\*` , waarbij het Joker teken de inhoud van de `C:\Windows` map bevat.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-190">The **Exclude** parameter is effective only when the command includes the contents of an item, such as `C:\Windows\*`, where the wildcard character specifies the contents of the `C:\Windows` directory.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -243,10 +242,10 @@ Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
-### <span data-ttu-id="a0319-192">-Filter</span><span class="sxs-lookup"><span data-stu-id="a0319-192">-Filter</span></span>
+### <span data-ttu-id="dc2d1-191">-Filter</span><span class="sxs-lookup"><span data-stu-id="dc2d1-191">-Filter</span></span>
 
-<span data-ttu-id="a0319-193">Hiermee geeft u een filter op om de para meter **Path** te kwalificeren.</span><span class="sxs-lookup"><span data-stu-id="a0319-193">Specifies a filter to qualify the **Path** parameter.</span></span> <span data-ttu-id="a0319-194">De [File System](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md) -provider is de enige geïnstalleerde Power shell-provider die het gebruik van filters ondersteunt.</span><span class="sxs-lookup"><span data-stu-id="a0319-194">The [FileSystem](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md) provider is the only installed PowerShell provider that supports the use of filters.</span></span> <span data-ttu-id="a0319-195">U kunt de syntaxis voor de filter taal van het **Bestands systeem** in [about_Wildcards](../Microsoft.PowerShell.Core/About/about_Wildcards.md)vinden.</span><span class="sxs-lookup"><span data-stu-id="a0319-195">You can find the syntax for the **FileSystem** filter language in [about_Wildcards](../Microsoft.PowerShell.Core/About/about_Wildcards.md).</span></span>
-<span data-ttu-id="a0319-196">Filters zijn efficiënter dan andere para meters, omdat deze door de provider worden toegepast wanneer de cmdlet de objecten ophaalt in plaats van dat Power shell de objecten heeft gefilterd nadat ze zijn opgehaald.</span><span class="sxs-lookup"><span data-stu-id="a0319-196">Filters are more efficient than other parameters, because the provider applies them when the cmdlet gets the objects rather than having PowerShell filter the objects after they are retrieved.</span></span>
+<span data-ttu-id="dc2d1-192">Hiermee geeft u een filter op om de para meter **Path** te kwalificeren.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-192">Specifies a filter to qualify the **Path** parameter.</span></span> <span data-ttu-id="dc2d1-193">De [File System](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md) -provider is de enige geïnstalleerde Power shell-provider die het gebruik van filters ondersteunt.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-193">The [FileSystem](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md) provider is the only installed PowerShell provider that supports the use of filters.</span></span> <span data-ttu-id="dc2d1-194">U kunt de syntaxis voor de filter taal van het **Bestands systeem** in [about_Wildcards](../Microsoft.PowerShell.Core/About/about_Wildcards.md)vinden.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-194">You can find the syntax for the **FileSystem** filter language in [about_Wildcards](../Microsoft.PowerShell.Core/About/about_Wildcards.md).</span></span>
+<span data-ttu-id="dc2d1-195">Filters zijn efficiënter dan andere para meters, omdat deze door de provider worden toegepast wanneer de cmdlet de objecten ophaalt in plaats van dat Power shell de objecten heeft gefilterd nadat ze zijn opgehaald.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-195">Filters are more efficient than other parameters, because the provider applies them when the cmdlet gets the objects rather than having PowerShell filter the objects after they are retrieved.</span></span>
 
 ```yaml
 Type: System.String
@@ -260,9 +259,9 @@ Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
-### <span data-ttu-id="a0319-197">-Force</span><span class="sxs-lookup"><span data-stu-id="a0319-197">-Force</span></span>
+### <span data-ttu-id="dc2d1-196">-Force</span><span class="sxs-lookup"><span data-stu-id="dc2d1-196">-Force</span></span>
 
-<span data-ttu-id="a0319-198">Onderdrukt het kenmerk alleen-lezen, zodat u inhoud kunt toevoegen aan een alleen-lezen bestand.</span><span class="sxs-lookup"><span data-stu-id="a0319-198">Overrides the read-only attribute, allowing you to add content to a read-only file.</span></span> <span data-ttu-id="a0319-199">**Forceert** bijvoorbeeld het kenmerk alleen-lezen of maakt mappen om een bestandspad te volt ooien, maar er wordt geen poging gedaan om bestands machtigingen te wijzigen.</span><span class="sxs-lookup"><span data-stu-id="a0319-199">For example, **Force** will override the read-only attribute or create directories to complete a file path, but it will not attempt to change file permissions.</span></span>
+<span data-ttu-id="dc2d1-197">Onderdrukt het kenmerk alleen-lezen, zodat u inhoud kunt toevoegen aan een alleen-lezen bestand.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-197">Overrides the read-only attribute, allowing you to add content to a read-only file.</span></span> <span data-ttu-id="dc2d1-198">**Forceert** bijvoorbeeld het kenmerk alleen-lezen of maakt mappen om een bestandspad te volt ooien, maar er wordt geen poging gedaan om bestands machtigingen te wijzigen.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-198">For example, **Force** will override the read-only attribute or create directories to complete a file path, but it will not attempt to change file permissions.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -276,9 +275,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a0319-200">-Include</span><span class="sxs-lookup"><span data-stu-id="a0319-200">-Include</span></span>
+### <span data-ttu-id="dc2d1-199">-Include</span><span class="sxs-lookup"><span data-stu-id="dc2d1-199">-Include</span></span>
 
-<span data-ttu-id="a0319-201">Hiermee wordt een teken reeks matrix opgegeven, een item of items die met deze cmdlet in de bewerking zijn opgenomen.</span><span class="sxs-lookup"><span data-stu-id="a0319-201">Specifies, as a string array, an item or items that this cmdlet includes in the operation.</span></span> <span data-ttu-id="a0319-202">De waarde van deze para meter komt in aanmerking voor de para meter **Path** .</span><span class="sxs-lookup"><span data-stu-id="a0319-202">The value of this parameter qualifies the **Path** parameter.</span></span> <span data-ttu-id="a0319-203">Voer een element of patroon van een pad in, zoals `"*.txt"` .</span><span class="sxs-lookup"><span data-stu-id="a0319-203">Enter a path element or pattern, such as `"*.txt"`.</span></span> <span data-ttu-id="a0319-204">Joker tekens zijn toegestaan.</span><span class="sxs-lookup"><span data-stu-id="a0319-204">Wildcard characters are permitted.</span></span> <span data-ttu-id="a0319-205">De para meter **include** is alleen effectief wanneer de inhoud van een item wordt opgenomen, zoals `C:\Windows\*` , waarbij het Joker teken de inhoud van de `C:\Windows` map bevat.</span><span class="sxs-lookup"><span data-stu-id="a0319-205">The **Include** parameter is effective only when the command includes the contents of an item, such as `C:\Windows\*`, where the wildcard character specifies the contents of the `C:\Windows` directory.</span></span>
+<span data-ttu-id="dc2d1-200">Hiermee wordt een teken reeks matrix opgegeven, een item of items die met deze cmdlet in de bewerking zijn opgenomen.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-200">Specifies, as a string array, an item or items that this cmdlet includes in the operation.</span></span> <span data-ttu-id="dc2d1-201">De waarde van deze para meter komt in aanmerking voor de para meter **Path** .</span><span class="sxs-lookup"><span data-stu-id="dc2d1-201">The value of this parameter qualifies the **Path** parameter.</span></span> <span data-ttu-id="dc2d1-202">Voer een element of patroon van een pad in, zoals `"*.txt"` .</span><span class="sxs-lookup"><span data-stu-id="dc2d1-202">Enter a path element or pattern, such as `"*.txt"`.</span></span> <span data-ttu-id="dc2d1-203">Joker tekens zijn toegestaan.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-203">Wildcard characters are permitted.</span></span> <span data-ttu-id="dc2d1-204">De para meter **include** is alleen effectief wanneer de inhoud van een item wordt opgenomen, zoals `C:\Windows\*` , waarbij het Joker teken de inhoud van de `C:\Windows` map bevat.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-204">The **Include** parameter is effective only when the command includes the contents of an item, such as `C:\Windows\*`, where the wildcard character specifies the contents of the `C:\Windows` directory.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -292,11 +291,11 @@ Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
-### <span data-ttu-id="a0319-206">-LiteralPath</span><span class="sxs-lookup"><span data-stu-id="a0319-206">-LiteralPath</span></span>
+### <span data-ttu-id="dc2d1-205">-LiteralPath</span><span class="sxs-lookup"><span data-stu-id="dc2d1-205">-LiteralPath</span></span>
 
-<span data-ttu-id="a0319-207">Hiermee geeft u een pad naar een of meer locaties.</span><span class="sxs-lookup"><span data-stu-id="a0319-207">Specifies a path to one or more locations.</span></span> <span data-ttu-id="a0319-208">De waarde van **LiteralPath** wordt precies zo gebruikt als deze wordt getypt.</span><span class="sxs-lookup"><span data-stu-id="a0319-208">The value of **LiteralPath** is used exactly as it is typed.</span></span> <span data-ttu-id="a0319-209">Geen tekens worden geïnterpreteerd als joker tekens.</span><span class="sxs-lookup"><span data-stu-id="a0319-209">No characters are interpreted as wildcards.</span></span> <span data-ttu-id="a0319-210">Als het pad escape tekens bevat, plaatst u het tussen enkele aanhalings tekens.</span><span class="sxs-lookup"><span data-stu-id="a0319-210">If the path includes escape characters, enclose it in single quotation marks.</span></span> <span data-ttu-id="a0319-211">Enkele aanhalings tekens geven aan dat Power shell geen karakters interpreteert als escape reeksen.</span><span class="sxs-lookup"><span data-stu-id="a0319-211">Single quotation marks tell PowerShell not to interpret any characters as escape sequences.</span></span>
+<span data-ttu-id="dc2d1-206">Hiermee geeft u een pad naar een of meer locaties.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-206">Specifies a path to one or more locations.</span></span> <span data-ttu-id="dc2d1-207">De waarde van **LiteralPath** wordt precies zo gebruikt als deze wordt getypt.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-207">The value of **LiteralPath** is used exactly as it is typed.</span></span> <span data-ttu-id="dc2d1-208">Geen tekens worden geïnterpreteerd als joker tekens.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-208">No characters are interpreted as wildcards.</span></span> <span data-ttu-id="dc2d1-209">Als het pad escape tekens bevat, plaatst u het tussen enkele aanhalings tekens.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-209">If the path includes escape characters, enclose it in single quotation marks.</span></span> <span data-ttu-id="dc2d1-210">Enkele aanhalings tekens geven aan dat Power shell geen karakters interpreteert als escape reeksen.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-210">Single quotation marks tell PowerShell not to interpret any characters as escape sequences.</span></span>
 
-<span data-ttu-id="a0319-212">Zie [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md)voor meer informatie.</span><span class="sxs-lookup"><span data-stu-id="a0319-212">For more information, see [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).</span></span>
+<span data-ttu-id="dc2d1-211">Zie [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md)voor meer informatie.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-211">For more information, see [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).</span></span>
 
 ```yaml
 Type: System.String[]
@@ -310,27 +309,11 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a0319-213">-Nieuwe regel</span><span class="sxs-lookup"><span data-stu-id="a0319-213">-NoNewline</span></span>
+### <span data-ttu-id="dc2d1-212">-Nieuwe regel</span><span class="sxs-lookup"><span data-stu-id="dc2d1-212">-NoNewline</span></span>
 
-<span data-ttu-id="a0319-214">Geeft aan dat met deze cmdlet geen nieuwe regel wordt toegevoegd of het retour neren naar de inhoud.</span><span class="sxs-lookup"><span data-stu-id="a0319-214">Indicates that this cmdlet does not add a new line or carriage return to the content.</span></span>
+<span data-ttu-id="dc2d1-213">Geeft aan dat met deze cmdlet geen nieuwe regel wordt toegevoegd of het retour neren naar de inhoud.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-213">Indicates that this cmdlet does not add a new line or carriage return to the content.</span></span>
 
-<span data-ttu-id="a0319-215">De teken reeks representaties van de invoer objecten worden samengevoegd om de uitvoer te vormen.</span><span class="sxs-lookup"><span data-stu-id="a0319-215">The string representations of the input objects are concatenated to form the output.</span></span> <span data-ttu-id="a0319-216">Er worden geen spaties of nieuwe regels tussen de uitvoer teken reeksen ingevoegd.</span><span class="sxs-lookup"><span data-stu-id="a0319-216">No spaces or newlines are inserted between the output strings.</span></span> <span data-ttu-id="a0319-217">Er wordt geen nieuwe regel toegevoegd na de laatste uitvoer teken reeks.</span><span class="sxs-lookup"><span data-stu-id="a0319-217">No newline is added after the last output string.</span></span>
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### <span data-ttu-id="a0319-218">-PassThru</span><span class="sxs-lookup"><span data-stu-id="a0319-218">-PassThru</span></span>
-
-<span data-ttu-id="a0319-219">Retourneert een object dat de toegevoegde inhoud vertegenwoordigt.</span><span class="sxs-lookup"><span data-stu-id="a0319-219">Returns an object representing the added content.</span></span> <span data-ttu-id="a0319-220">Deze cmdlet genereert standaard geen uitvoer.</span><span class="sxs-lookup"><span data-stu-id="a0319-220">By default, this cmdlet does not generate any output.</span></span>
+<span data-ttu-id="dc2d1-214">De teken reeks representaties van de invoer objecten worden samengevoegd om de uitvoer te vormen.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-214">The string representations of the input objects are concatenated to form the output.</span></span> <span data-ttu-id="dc2d1-215">Er worden geen spaties of nieuwe regels tussen de uitvoer teken reeksen ingevoegd.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-215">No spaces or newlines are inserted between the output strings.</span></span> <span data-ttu-id="dc2d1-216">Er wordt geen nieuwe regel toegevoegd na de laatste uitvoer teken reeks.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-216">No newline is added after the last output string.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -344,13 +327,29 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a0319-221">-Path</span><span class="sxs-lookup"><span data-stu-id="a0319-221">-Path</span></span>
+### <span data-ttu-id="dc2d1-217">-PassThru</span><span class="sxs-lookup"><span data-stu-id="dc2d1-217">-PassThru</span></span>
 
-<span data-ttu-id="a0319-222">Hiermee geeft u het pad op naar de items die de extra inhoud ontvangen.</span><span class="sxs-lookup"><span data-stu-id="a0319-222">Specifies the path to the items that receive the additional content.</span></span>
-<span data-ttu-id="a0319-223">Joker tekens zijn toegestaan.</span><span class="sxs-lookup"><span data-stu-id="a0319-223">Wildcard characters are permitted.</span></span>
-<span data-ttu-id="a0319-224">De paden moeten paden naar items zijn en niet naar containers.</span><span class="sxs-lookup"><span data-stu-id="a0319-224">The paths must be paths to items, not to containers.</span></span>
-<span data-ttu-id="a0319-225">U moet bijvoorbeeld een pad naar een of meer bestanden opgeven, niet een pad naar een map.</span><span class="sxs-lookup"><span data-stu-id="a0319-225">For example, you must specify a path to one or more files, not a path to a directory.</span></span>
-<span data-ttu-id="a0319-226">Als u meerdere paden opgeeft, gebruikt u komma's om de paden van elkaar te scheiden.</span><span class="sxs-lookup"><span data-stu-id="a0319-226">If you specify multiple paths, use commas to separate the paths.</span></span>
+<span data-ttu-id="dc2d1-218">Retourneert een object dat de toegevoegde inhoud vertegenwoordigt.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-218">Returns an object representing the added content.</span></span> <span data-ttu-id="dc2d1-219">Deze cmdlet genereert standaard geen uitvoer.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-219">By default, this cmdlet does not generate any output.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="dc2d1-220">-Path</span><span class="sxs-lookup"><span data-stu-id="dc2d1-220">-Path</span></span>
+
+<span data-ttu-id="dc2d1-221">Hiermee geeft u het pad op naar de items die de extra inhoud ontvangen.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-221">Specifies the path to the items that receive the additional content.</span></span>
+<span data-ttu-id="dc2d1-222">Joker tekens zijn toegestaan.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-222">Wildcard characters are permitted.</span></span>
+<span data-ttu-id="dc2d1-223">De paden moeten paden naar items zijn en niet naar containers.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-223">The paths must be paths to items, not to containers.</span></span>
+<span data-ttu-id="dc2d1-224">U moet bijvoorbeeld een pad naar een of meer bestanden opgeven, niet een pad naar een map.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-224">For example, you must specify a path to one or more files, not a path to a directory.</span></span>
+<span data-ttu-id="dc2d1-225">Als u meerdere paden opgeeft, gebruikt u komma's om de paden van elkaar te scheiden.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-225">If you specify multiple paths, use commas to separate the paths.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -364,15 +363,18 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: True
 ```
 
-### <span data-ttu-id="a0319-227">-Stream</span><span class="sxs-lookup"><span data-stu-id="a0319-227">-Stream</span></span>
+### <span data-ttu-id="dc2d1-226">-Stream</span><span class="sxs-lookup"><span data-stu-id="dc2d1-226">-Stream</span></span>
 
-<span data-ttu-id="a0319-228">Hiermee geeft u een alternatieve gegevens stroom voor inhoud.</span><span class="sxs-lookup"><span data-stu-id="a0319-228">Specifies an alternative data stream for content.</span></span> <span data-ttu-id="a0319-229">Als de stroom niet bestaat, wordt deze gemaakt met deze cmdlet.</span><span class="sxs-lookup"><span data-stu-id="a0319-229">If the stream does not exist, this cmdlet creates it.</span></span> <span data-ttu-id="a0319-230">Joker tekens worden niet ondersteund.</span><span class="sxs-lookup"><span data-stu-id="a0319-230">Wildcard characters are not supported.</span></span>
+> [!NOTE]
+> <span data-ttu-id="dc2d1-227">Deze para meter is alleen beschikbaar in Windows.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-227">This Parameter is only available on Windows.</span></span>
 
-<span data-ttu-id="a0319-231">**Stream** is een dynamische para meter waaraan de File System Provider toevoegt `Add-Content` .</span><span class="sxs-lookup"><span data-stu-id="a0319-231">**Stream** is a dynamic parameter that the FileSystem provider adds to `Add-Content`.</span></span> <span data-ttu-id="a0319-232">Deze para meter werkt alleen op stations met een bestands systeem.</span><span class="sxs-lookup"><span data-stu-id="a0319-232">This parameter works only in file system drives.</span></span>
+<span data-ttu-id="dc2d1-228">Hiermee geeft u een alternatieve gegevens stroom voor inhoud.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-228">Specifies an alternative data stream for content.</span></span> <span data-ttu-id="dc2d1-229">Als de stroom niet bestaat, wordt deze gemaakt met deze cmdlet.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-229">If the stream does not exist, this cmdlet creates it.</span></span> <span data-ttu-id="dc2d1-230">Joker tekens worden niet ondersteund.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-230">Wildcard characters are not supported.</span></span>
 
-<span data-ttu-id="a0319-233">U kunt de- `Add-Content` cmdlet gebruiken om de inhoud van de **zone te wijzigen. id** alternatieve gegevens stroom.</span><span class="sxs-lookup"><span data-stu-id="a0319-233">You can use the `Add-Content` cmdlet to change the content of the **Zone.Identifier** alternate data stream.</span></span> <span data-ttu-id="a0319-234">Dit wordt echter niet aangeraden als een manier om beveiligings controles te elimineren waarmee bestanden die worden gedownload van Internet, worden geblokkeerd.</span><span class="sxs-lookup"><span data-stu-id="a0319-234">However, we do not recommend this as a way to eliminate security checks that block files that are downloaded from the Internet.</span></span> <span data-ttu-id="a0319-235">Als u controleert of een gedownload bestand veilig is, gebruikt u de `Unblock-File` cmdlet.</span><span class="sxs-lookup"><span data-stu-id="a0319-235">If you verify that a downloaded file is safe, use the `Unblock-File` cmdlet.</span></span>
+<span data-ttu-id="dc2d1-231">**Stream** is een dynamische para meter waaraan de File System Provider toevoegt `Add-Content` .</span><span class="sxs-lookup"><span data-stu-id="dc2d1-231">**Stream** is a dynamic parameter that the FileSystem provider adds to `Add-Content`.</span></span> <span data-ttu-id="dc2d1-232">Deze para meter werkt alleen op stations met een bestands systeem.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-232">This parameter works only in file system drives.</span></span>
 
-<span data-ttu-id="a0319-236">Deze para meter is geïntroduceerd in Power Shell 3,0.</span><span class="sxs-lookup"><span data-stu-id="a0319-236">This parameter was introduced in PowerShell 3.0.</span></span>
+<span data-ttu-id="dc2d1-233">U kunt de `Add-Content` cmdlet gebruiken om de inhoud van een andere gegevens stroom te wijzigen, zoals `Zone.Identifier` .</span><span class="sxs-lookup"><span data-stu-id="dc2d1-233">You can use the `Add-Content` cmdlet to change the content of any alternate data stream, such as `Zone.Identifier`.</span></span> <span data-ttu-id="dc2d1-234">Dit wordt echter niet aangeraden als een manier om beveiligings controles te elimineren waarmee bestanden die worden gedownload van Internet, worden geblokkeerd.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-234">However, we do not recommend this as a way to eliminate security checks that block files that are downloaded from the Internet.</span></span> <span data-ttu-id="dc2d1-235">Als u controleert of een gedownload bestand veilig is, gebruikt u de `Unblock-File` cmdlet.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-235">If you verify that a downloaded file is safe, use the `Unblock-File` cmdlet.</span></span>
+
+<span data-ttu-id="dc2d1-236">Deze para meter is geïntroduceerd in Power Shell 3,0.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-236">This parameter was introduced in PowerShell 3.0.</span></span>
 
 ```yaml
 Type: System.String
@@ -386,12 +388,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a0319-237">-Waarde</span><span class="sxs-lookup"><span data-stu-id="a0319-237">-Value</span></span>
+### <span data-ttu-id="dc2d1-237">-Waarde</span><span class="sxs-lookup"><span data-stu-id="dc2d1-237">-Value</span></span>
 
-<span data-ttu-id="a0319-238">Hiermee geeft u de inhoud moet worden toegevoegd.</span><span class="sxs-lookup"><span data-stu-id="a0319-238">Specifies the content to be added.</span></span> <span data-ttu-id="a0319-239">Typ een teken reeks tussen aanhalings tekens, zoals **deze gegevens zijn alleen voor intern gebruik** , of geef een object op dat inhoud bevat, zoals het **DateTime** -object dat `Get-Date` genereert.</span><span class="sxs-lookup"><span data-stu-id="a0319-239">Type a quoted string, such as **This data is for internal use only** , or specify an object that contains content, such as the **DateTime** object that `Get-Date` generates.</span></span>
+<span data-ttu-id="dc2d1-238">Hiermee geeft u de inhoud moet worden toegevoegd.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-238">Specifies the content to be added.</span></span> <span data-ttu-id="dc2d1-239">Typ een teken reeks tussen aanhalings tekens, zoals **deze gegevens zijn alleen voor intern gebruik**, of geef een object op dat inhoud bevat, zoals het **DateTime** -object dat `Get-Date` genereert.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-239">Type a quoted string, such as **This data is for internal use only**, or specify an object that contains content, such as the **DateTime** object that `Get-Date` generates.</span></span>
 
-<span data-ttu-id="a0319-240">U kunt de inhoud van een bestand niet opgeven door het bijbehorende pad te typen, omdat het pad alleen een teken reeks is.</span><span class="sxs-lookup"><span data-stu-id="a0319-240">You cannot specify the contents of a file by typing its path, because the path is just a string.</span></span>
-<span data-ttu-id="a0319-241">U kunt een `Get-Content` opdracht gebruiken om de inhoud op te halen en door te geven aan de **waarde** -para meter.</span><span class="sxs-lookup"><span data-stu-id="a0319-241">You can use a `Get-Content` command to get the content and pass it to the **Value** parameter.</span></span>
+<span data-ttu-id="dc2d1-240">U kunt de inhoud van een bestand niet opgeven door het bijbehorende pad te typen, omdat het pad alleen een teken reeks is.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-240">You cannot specify the contents of a file by typing its path, because the path is just a string.</span></span>
+<span data-ttu-id="dc2d1-241">U kunt een `Get-Content` opdracht gebruiken om de inhoud op te halen en door te geven aan de **waarde** -para meter.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-241">You can use a `Get-Content` command to get the content and pass it to the **Value** parameter.</span></span>
 
 ```yaml
 Type: System.Object[]
@@ -405,9 +407,9 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a0319-242">-Confirm</span><span class="sxs-lookup"><span data-stu-id="a0319-242">-Confirm</span></span>
+### <span data-ttu-id="dc2d1-242">-Confirm</span><span class="sxs-lookup"><span data-stu-id="dc2d1-242">-Confirm</span></span>
 
-<span data-ttu-id="a0319-243">Hiermee wordt u gevraagd om bevestiging voordat u de cmdlet uitvoert.</span><span class="sxs-lookup"><span data-stu-id="a0319-243">Prompts you for confirmation before running the cmdlet.</span></span>
+<span data-ttu-id="dc2d1-243">Hiermee wordt u gevraagd om bevestiging voordat u de cmdlet uitvoert.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-243">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -421,9 +423,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a0319-244">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="a0319-244">-WhatIf</span></span>
+### <span data-ttu-id="dc2d1-244">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="dc2d1-244">-WhatIf</span></span>
 
-<span data-ttu-id="a0319-245">Hiermee wordt weergegeven wat er zou gebeuren als u de cmdlet uitvoert.</span><span class="sxs-lookup"><span data-stu-id="a0319-245">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="a0319-246">De cmdlet wordt niet uitgevoerd.</span><span class="sxs-lookup"><span data-stu-id="a0319-246">The cmdlet is not run.</span></span>
+<span data-ttu-id="dc2d1-245">Hiermee wordt weergegeven wat er zou gebeuren als u de cmdlet uitvoert.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-245">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="dc2d1-246">De cmdlet wordt niet uitgevoerd.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-246">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -437,40 +439,40 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a0319-247">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="a0319-247">CommonParameters</span></span>
-<span data-ttu-id="a0319-248">Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="a0319-248">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="a0319-249">Zie [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)voor meer informatie.</span><span class="sxs-lookup"><span data-stu-id="a0319-249">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="dc2d1-247">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="dc2d1-247">CommonParameters</span></span>
 
-## <span data-ttu-id="a0319-250">INVOER</span><span class="sxs-lookup"><span data-stu-id="a0319-250">INPUTS</span></span>
+<span data-ttu-id="dc2d1-248">Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-248">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="dc2d1-249">Zie [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)voor meer informatie.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-249">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-### <span data-ttu-id="a0319-251">System. object, System. Management. Automation. PSCredential</span><span class="sxs-lookup"><span data-stu-id="a0319-251">System.Object, System.Management.Automation.PSCredential</span></span>
+## <span data-ttu-id="dc2d1-250">INVOER</span><span class="sxs-lookup"><span data-stu-id="dc2d1-250">INPUTS</span></span>
 
-<span data-ttu-id="a0319-252">U kunt waarden, paden of referenties door sluizen naar `Set-Content` .</span><span class="sxs-lookup"><span data-stu-id="a0319-252">You can pipe values, paths, or credentials to `Set-Content`.</span></span>
+### <span data-ttu-id="dc2d1-251">System. object, System. Management. Automation. PSCredential</span><span class="sxs-lookup"><span data-stu-id="dc2d1-251">System.Object, System.Management.Automation.PSCredential</span></span>
 
-## <span data-ttu-id="a0319-253">UITVOER</span><span class="sxs-lookup"><span data-stu-id="a0319-253">OUTPUTS</span></span>
+<span data-ttu-id="dc2d1-252">U kunt waarden, paden of referenties door sluizen naar `Set-Content` .</span><span class="sxs-lookup"><span data-stu-id="dc2d1-252">You can pipe values, paths, or credentials to `Set-Content`.</span></span>
 
-### <span data-ttu-id="a0319-254">Geen of System. String</span><span class="sxs-lookup"><span data-stu-id="a0319-254">None or System.String</span></span>
+## <span data-ttu-id="dc2d1-253">UITVOER</span><span class="sxs-lookup"><span data-stu-id="dc2d1-253">OUTPUTS</span></span>
 
-<span data-ttu-id="a0319-255">Wanneer u de para meter **PassThru** gebruikt, `Add-Content` genereert een **System. String** -object dat de inhoud vertegenwoordigt.</span><span class="sxs-lookup"><span data-stu-id="a0319-255">When you use the **PassThru** parameter, `Add-Content` generates a **System.String** object that represents the content.</span></span> <span data-ttu-id="a0319-256">Anders wordt met deze cmdlet geen uitvoer gegenereerd.</span><span class="sxs-lookup"><span data-stu-id="a0319-256">Otherwise, this cmdlet does not generate any output.</span></span>
+### <span data-ttu-id="dc2d1-254">Geen of System. String</span><span class="sxs-lookup"><span data-stu-id="dc2d1-254">None or System.String</span></span>
 
-## <span data-ttu-id="a0319-257">OPMERKINGEN</span><span class="sxs-lookup"><span data-stu-id="a0319-257">NOTES</span></span>
+<span data-ttu-id="dc2d1-255">Wanneer u de para meter **PassThru** gebruikt, `Add-Content` genereert een **System. String** -object dat de inhoud vertegenwoordigt.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-255">When you use the **PassThru** parameter, `Add-Content` generates a **System.String** object that represents the content.</span></span> <span data-ttu-id="dc2d1-256">Anders wordt met deze cmdlet geen uitvoer gegenereerd.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-256">Otherwise, this cmdlet does not generate any output.</span></span>
 
-- <span data-ttu-id="a0319-258">Wanneer u een object pipet naar `Add-Content` , wordt het object geconverteerd naar een teken reeks voordat het aan het item wordt toegevoegd.</span><span class="sxs-lookup"><span data-stu-id="a0319-258">When you pipe an object to `Add-Content`, the object is converted to a string before it is added to the item.</span></span> <span data-ttu-id="a0319-259">Het object type bepaalt de teken reeks notatie, maar de notatie kan afwijken van de standaard weergave van het object.</span><span class="sxs-lookup"><span data-stu-id="a0319-259">The object type determines the string format, but the format might be different than the default display of the object.</span></span> <span data-ttu-id="a0319-260">Als u de teken reeks indeling wilt beheren, gebruikt u de opmaak parameters van de verzenden-cmdlet.</span><span class="sxs-lookup"><span data-stu-id="a0319-260">To control the string format, use the formatting parameters of the sending cmdlet.</span></span>
-- <span data-ttu-id="a0319-261">U kunt ook verwijzen naar `Add-Content` de ingebouwde alias `ac` .</span><span class="sxs-lookup"><span data-stu-id="a0319-261">You can also refer to `Add-Content` by its built-in alias, `ac`.</span></span> <span data-ttu-id="a0319-262">Zie [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md)voor meer informatie.</span><span class="sxs-lookup"><span data-stu-id="a0319-262">For more information, see [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).</span></span>
-- <span data-ttu-id="a0319-263">De `Add-Content` cmdlet is ontworpen om te werken met de gegevens die door elke provider worden weer gegeven.</span><span class="sxs-lookup"><span data-stu-id="a0319-263">The `Add-Content` cmdlet is designed to work with the data exposed by any provider.</span></span> <span data-ttu-id="a0319-264">Als u een lijst wilt weer geven van de providers die beschikbaar zijn in uw sessie, typt u `Get-PSProvider` .</span><span class="sxs-lookup"><span data-stu-id="a0319-264">To list the providers available in your session, type `Get-PSProvider`.</span></span> <span data-ttu-id="a0319-265">Zie [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)voor meer informatie.</span><span class="sxs-lookup"><span data-stu-id="a0319-265">For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).</span></span>
+## <span data-ttu-id="dc2d1-257">OPMERKINGEN</span><span class="sxs-lookup"><span data-stu-id="dc2d1-257">NOTES</span></span>
 
-## <span data-ttu-id="a0319-266">GERELATEERDE KOPPELINGEN</span><span class="sxs-lookup"><span data-stu-id="a0319-266">RELATED LINKS</span></span>
+- <span data-ttu-id="dc2d1-258">Wanneer u een object pipet naar `Add-Content` , wordt het object geconverteerd naar een teken reeks voordat het aan het item wordt toegevoegd.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-258">When you pipe an object to `Add-Content`, the object is converted to a string before it is added to the item.</span></span> <span data-ttu-id="dc2d1-259">Het object type bepaalt de teken reeks notatie, maar de notatie kan afwijken van de standaard weergave van het object.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-259">The object type determines the string format, but the format might be different than the default display of the object.</span></span> <span data-ttu-id="dc2d1-260">Als u de teken reeks indeling wilt beheren, gebruikt u de opmaak parameters van de verzenden-cmdlet.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-260">To control the string format, use the formatting parameters of the sending cmdlet.</span></span>
+- <span data-ttu-id="dc2d1-261">U kunt ook verwijzen naar `Add-Content` de ingebouwde alias `ac` .</span><span class="sxs-lookup"><span data-stu-id="dc2d1-261">You can also refer to `Add-Content` by its built-in alias, `ac`.</span></span> <span data-ttu-id="dc2d1-262">Zie [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md)voor meer informatie.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-262">For more information, see [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).</span></span>
+- <span data-ttu-id="dc2d1-263">De `Add-Content` cmdlet is ontworpen om te werken met de gegevens die door elke provider worden weer gegeven.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-263">The `Add-Content` cmdlet is designed to work with the data exposed by any provider.</span></span> <span data-ttu-id="dc2d1-264">Als u een lijst wilt weer geven van de providers die beschikbaar zijn in uw sessie, typt u `Get-PSProvider` .</span><span class="sxs-lookup"><span data-stu-id="dc2d1-264">To list the providers available in your session, type `Get-PSProvider`.</span></span> <span data-ttu-id="dc2d1-265">Zie [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)voor meer informatie.</span><span class="sxs-lookup"><span data-stu-id="dc2d1-265">For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).</span></span>
 
-[<span data-ttu-id="a0319-267">about_Aliases</span><span class="sxs-lookup"><span data-stu-id="a0319-267">about_Aliases</span></span>](../Microsoft.PowerShell.Core/About/about_Aliases.md)
+## <span data-ttu-id="dc2d1-266">GERELATEERDE KOPPELINGEN</span><span class="sxs-lookup"><span data-stu-id="dc2d1-266">RELATED LINKS</span></span>
 
-[<span data-ttu-id="a0319-268">about_Providers</span><span class="sxs-lookup"><span data-stu-id="a0319-268">about_Providers</span></span>](../Microsoft.PowerShell.Core/About/about_Providers.md)
+[<span data-ttu-id="dc2d1-267">about_Aliases</span><span class="sxs-lookup"><span data-stu-id="dc2d1-267">about_Aliases</span></span>](../Microsoft.PowerShell.Core/About/about_Aliases.md)
 
-[<span data-ttu-id="a0319-269">Wissen-inhoud</span><span class="sxs-lookup"><span data-stu-id="a0319-269">Clear-Content</span></span>](Clear-Content.md)
+[<span data-ttu-id="dc2d1-268">about_Providers</span><span class="sxs-lookup"><span data-stu-id="dc2d1-268">about_Providers</span></span>](../Microsoft.PowerShell.Core/About/about_Providers.md)
 
-[<span data-ttu-id="a0319-270">Get-Content</span><span class="sxs-lookup"><span data-stu-id="a0319-270">Get-Content</span></span>](Get-Content.md)
+[<span data-ttu-id="dc2d1-269">Wissen-inhoud</span><span class="sxs-lookup"><span data-stu-id="dc2d1-269">Clear-Content</span></span>](Clear-Content.md)
 
-[<span data-ttu-id="a0319-271">Get-item</span><span class="sxs-lookup"><span data-stu-id="a0319-271">Get-Item</span></span>](Get-Item.md)
+[<span data-ttu-id="dc2d1-270">Get-Content</span><span class="sxs-lookup"><span data-stu-id="dc2d1-270">Get-Content</span></span>](Get-Content.md)
 
-[<span data-ttu-id="a0319-272">Nieuw-item</span><span class="sxs-lookup"><span data-stu-id="a0319-272">New-Item</span></span>](New-Item.md)
+[<span data-ttu-id="dc2d1-271">Get-item</span><span class="sxs-lookup"><span data-stu-id="dc2d1-271">Get-Item</span></span>](Get-Item.md)
 
-[<span data-ttu-id="a0319-273">Set-Content</span><span class="sxs-lookup"><span data-stu-id="a0319-273">Set-Content</span></span>](Set-Content.md)
+[<span data-ttu-id="dc2d1-272">Nieuw-item</span><span class="sxs-lookup"><span data-stu-id="dc2d1-272">New-Item</span></span>](New-Item.md)
 
+[<span data-ttu-id="dc2d1-273">Set-Content</span><span class="sxs-lookup"><span data-stu-id="dc2d1-273">Set-Content</span></span>](Set-Content.md)
