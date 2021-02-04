@@ -570,14 +570,10 @@
       href: community/hall-of-fame.md
     - name: Wat is er nieuw voor Docs
       items:
-        - name: 2020-K4
-          href: community/2020-Q4.md
-        - name: 2020-K3
-          href: community/2020-Q3.md
-        - name: 2020-K2
-          href: community/2020-Q2.md
-        - name: 2020-K1
-          href: community/2020-Q1.md
+        - name: 2021 updates
+          href: community/2021-updates.md
+        - name: 2020 updates
+          href: community/2020-updates.md
     - name: Handleiding voor inzenders
       items:
         - name: Overzicht
@@ -775,7 +771,7 @@
         - name: AVG-naleving
           href: gallery/how-to/getting-support/gdpr-dsr-policy.md
     - name: Galerie Veelgestelde vragen
-      href: gallery/faqs.md
+      href: gallery/faqs.yml
 - name: Ontwikkelen en scripts schrijven
   items:
     - name: Visual Studio Code
