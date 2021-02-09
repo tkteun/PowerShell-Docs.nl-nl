@@ -5,12 +5,12 @@ ms.date: 12/14/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Automatic_Variables
-ms.openlocfilehash: 60ad0e40f7e392bf240ee76a5902123c45a282fd
-ms.sourcegitcommit: 1628fd2a1f50aec2f31ffb1c451a3ce77c08983c
+ms.openlocfilehash: 8a2410dd2adcc1679ab203293b4c4e712b960278
+ms.sourcegitcommit: 3a1d80e27438976101f216b8c3d623c61b868db8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97577238"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99975138"
 ---
 # <a name="about-automatic-variables"></a>Over automatische variabelen
 
@@ -67,7 +67,7 @@ Hetzelfde als `$PSItem` . Bevat het huidige object in het pijplijn object. U kun
 
 Bevat een matrix met waarden voor niet-gedeclareerde para meters die worden door gegeven aan een functie, script of script blok. Wanneer u een functie maakt, kunt u de para meters declareren met behulp van het `param` sleutel woord of door een door komma's gescheiden lijst met para meters toe te voegen tussen haakjes achter de functie naam.
 
-In een gebeurtenis actie bevat de `$Args` variabele objecten die de gebeurtenis argumenten vertegenwoordigen van de gebeurtenis die wordt verwerkt. Deze variabele wordt alleen ingevuld in de `Action` blok kering van een gebeurtenis registratie opdracht.
+In een gebeurtenis actie bevat de `$args` variabele objecten die de gebeurtenis argumenten vertegenwoordigen van de gebeurtenis die wordt verwerkt. Deze variabele wordt alleen ingevuld in de `Action` blok kering van een gebeurtenis registratie opdracht.
 De waarde van deze variabele kan ook worden gevonden in de eigenschap **SourceArgs** van het **PSEventArgs** -object dat `Get-Event` retourneert.
 
 ### <a name="consolefilename"></a>$ConsoleFileName

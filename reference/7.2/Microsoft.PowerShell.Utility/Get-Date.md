@@ -6,12 +6,12 @@ ms.date: 08/25/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Date
-ms.openlocfilehash: 8c0a1b7a14f5dfa071a85808f5d7dfba4d06048e
-ms.sourcegitcommit: 077488408c820c860131382324bdd576d0edf52a
+ms.openlocfilehash: 6f5c76faafa2c68a6d9dfc604238c514489aa717
+ms.sourcegitcommit: 3a1d80e27438976101f216b8c3d623c61b868db8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95514970"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99975053"
 ---
 # Get-Date
 
@@ -565,9 +565,9 @@ De geldige **UFormat-specificaties** worden weer gegeven in de volgende tabel:
 | `%t` | Teken voor horizontale tab                                                |                          |
 | `%T` | Tijd in 24-uurs notatie                                                  | 17:45:52                 |
 | `%U` | Hetzelfde als ' W '                                                             |                          |
-| `%u` | Dag van het week nummer                                                | Zondag = 0               |
+| `%u` | Numerieke dag van de week (1-7)                                           | Maandag = 1, zondag = 7   |
 | `%V` | Week van het jaar                                                        | 01-53                    |
-| `%w` | Hetzelfde als ' u '                                                             |                          |
+| `%w` | Numerieke dag van de week (0-6)                                           | Zondag = 0, zaterdag = 6 |
 | `%W` | Week van het jaar                                                        | 00-52                    |
 | `%X` | Hetzelfde als 'T '                                                             |                          |
 | `%x` | Datum in de standaard notatie voor de land instelling                                      | 06/27/19 voor Engels-US  |
