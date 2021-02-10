@@ -2,16 +2,16 @@
 description: Hierin worden de speciale teken reeksen beschreven die bepalen hoe Power shell de volgende tekens in de reeks interpreteert.
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 04/04/2020
+ms.date: 02/08/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_special_characters?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Special_Characters
-ms.openlocfilehash: 5da2cf411519f2bd51296cd4311a607198a5ca6d
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 291bdead4a2fffab5c76b87ceab0e09dd0527cb3
+ms.sourcegitcommit: 364c3fe46b2069b810107d840be59fe519ea7b4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93252074"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100100764"
 ---
 # <a name="about-special-characters"></a>Speciale tekens
 
@@ -29,7 +29,7 @@ Escape-reeksen worden alleen geïnterpreteerd als ze zijn opgenomen in teken ree
 
 Power shell herkent deze escape reeksen:
 
-|  Reeks   |       Beschrijving       |
+|  Reeks   |       Description       |
 | ----------- | ----------------------- |
 | `` `0 ``    | Null                    |
 | `` `a ``    | Waarschuwing                   |
@@ -46,7 +46,7 @@ Power Shell heeft ook een speciaal token om te markeren waar u wilt parseren om 
 
 Speciaal parserings token:
 
-| Reeks |            Beschrijving             |
+| Reeks |            Description             |
 | -------- | ---------------------------------- |
 | `--%`    | Stoppen met het parseren van alles dat volgt |
 
@@ -158,13 +158,28 @@ In dit voor beeld wordt het symbool **pijl-omhoog** (&#x2195;) uitgevoerd.
 
 ## <a name="vertical-tab-v"></a>Verticaal tabblad (' v)
 
-Het horizontale tabblad ( `` `v `` ) teken gaat naar het volgende verticale tabblad en schrijft de resterende uitvoer op dat punt. Dit heeft geen invloed op de standaard Windows-console.
+Het verticale tabblad ( `` `v `` ) teken gaat naar het volgende verticale tabblad en schrijft de resterende uitvoer op dat punt. De weer gave van het verticale tabblad is afhankelijk van het apparaat en de Terminal.
 
 ```powershell
 Write-Host "There is a vertical tab`vbetween the words."
 ```
 
-In het volgende voor beeld ziet u de uitvoer die u op een printer of op een andere console host zou krijgen.
+In de volgende voor beelden ziet u de gerenderde uitvoer van het verticale tabblad in enkele algemene omgevingen.
+
+De Windows-console Host-toepassing interpreteert ( `` `v `` ) als een speciaal teken zonder extra ruimte toe te voegen.
+
+```Output
+There is a vertical tab♂between the words.
+```
+
+In de [Windows-Terminal](https://www.microsoft.com/p/windows-terminal/9n0dx20hk701) wordt het verticale tabteken weer gegeven als een regel terugloop en een regelinvoerteken. De rest van de uitvoer wordt afgedrukt aan het begin van de volgende regel.
+
+```Output
+There is a vertical tab
+between the words.
+```
+
+Op printers of in een UNIX-console kunt u met het verticale tabteken naar de volgende regel gaan en de resterende uitvoer op dat punt schrijven.
 
 ```Output
 There is a vertical tab
