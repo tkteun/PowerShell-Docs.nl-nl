@@ -5,12 +5,12 @@ ms.date: 01/20/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Comparison_Operators
-ms.openlocfilehash: a89ab612a7f0fe518f97a4d037956df14546740d
-ms.sourcegitcommit: 94d597c4fb38793bc49ca7610e2c9973b1e577c2
+ms.openlocfilehash: 179798b490855cd463e2348acaf1292f042ba173
+ms.sourcegitcommit: 77f6225ab0c8ea9faa1fe46b2ea15c178ec170e3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98620112"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100500156"
 ---
 # <a name="about-comparison-operators"></a>Over vergelijkings operatoren
 
@@ -414,7 +414,7 @@ Het is ook mogelijk om reguliere expressies te gebruiken om tekst dynamisch te v
 In het volgende voor beeld `-replace` accepteert de operator een gebruikers naam in de vorm van `DomainName\Username` en wordt geconverteerd naar de `Username@DomainName` indeling:
 
 ```powershell
-$SearchExp = '^(?<Username>[\w-.]+)\\(?<DomainName>[\w-.]+)$'
+$SearchExp = '^(?<DomainName>[\w-.]+)\\(?<Username>[\w-.]+)$'
 $ReplaceExp = '${Username}@${DomainName}'
 
 'Contoso.local\John.Doe' -replace $SearchExp,$ReplaceExp
@@ -429,7 +429,7 @@ John.Doe@Contoso.local
 >
 > - Tussen dubbele aanhalings tekens in Power shell worden variabelen aangeduid en fungeert als een operator voor subexpressie.
 > - In regex-Zoek reeksen geeft het einde van de regel aan
-> - In regex-vervangings teken reeksen worden vastgelegde groepen als zodanig aangeduid, moet u ervoor zorgen dat u de reguliere expressies tussen enkele aanhalings tekens plaatst of een apostroffen- `` ` `` teken () voor de tekst plaatst.
+> - In regex-vervangings teken reeksen worden vastgelegde groepen aangeduid. Zorg ervoor dat u de reguliere expressies tussen enkele aanhalings tekens plaatst of een apostroffen-teken () voor de hand hebt ingevoegd `` ` `` .
 
 Bijvoorbeeld:
 
@@ -443,7 +443,7 @@ $1 = 'Goodbye'
 # Output: Hello Universe
 ```
 
-`$$` in regex duidt een letterlijke teken reeks aan `$` . Dit wordt `$$` in de vervangings teken reeks toegevoegd aan een letterlijke waarde `$` in de resulterende vervanging. Bijvoorbeeld:
+`$$` in regex duidt een letterlijke teken reeks aan `$` . Hiermee wordt `$$` in de vervangings teken reeks een letterlijke waarde `$` in de resulterende vervanging ingevoegd. Bijvoorbeeld:
 
 ```powershell
 '5.72' -replace '(.+)', '$ $1' # Output: $ 5.72

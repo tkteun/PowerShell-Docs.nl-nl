@@ -2,12 +2,12 @@
 ms.date: 01/02/2020
 title: Sneltoetsen voor Windows PowerShell ISE
 description: Dit artikel bevat een lijst met de sneltoetsen die worden gebruikt in de Power shell ISE.
-ms.openlocfilehash: d4e78c5e8e8e172ef3cdd30b0099d56ce6b6b01e
-ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
+ms.openlocfilehash: 690997524ab90d7581bb03c802f189d1a4b79d3f
+ms.sourcegitcommit: 77f6225ab0c8ea9faa1fe46b2ea15c178ec170e3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94391201"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100500190"
 ---
 # <a name="keyboard-shortcuts-for-the-windows-powershell-ise"></a>Sneltoetsen voor Windows PowerShell ISE
 
@@ -17,29 +17,31 @@ Gebruik de volgende sneltoetsen om acties uit te voeren in Windows Power shell &
 
 U kunt de volgende sneltoetsen gebruiken bij het bewerken van tekst.
 
-|              Actie              |       Sneltoetsen       |                                                                                                                                                 Gebruiken in                                                                                                                                                 |
-| -------------------------------- | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Help**                         | <kbd>Step</kbd>                  | Script venster **belang rijk:** u kunt opgeven dat <kbd>F1</kbd> help afkomstig is van docs.Microsoft.com of gedownloade Help (Zie `Update-Help` ). Als u wilt selecteren, klikt u op **extra** , **Opties** en vervolgens op het tabblad **algemene instellingen** , stelt **u lokale Help-inhoud gebruiken in plaats van online inhoud** in of uit. |
-| **Kopiëren**                         | <kbd>CTRL</kbd> + <kbd>C</kbd>   | Script deel venster, opdracht deel venster, uitvoer venster                                                                                                                                                                                                                                                                 |
-| **Knippen**                          | <kbd>CTRL</kbd> + <kbd>X</kbd>   | Script deel venster, opdracht venster                                                                                                                                                                                                                                                                              |
-| **Overzicht uitvouwen of samen vouwen** | <kbd>CTRL</kbd> + <kbd>M</kbd>   | Script venster                                                                                                                                                                                                                                                                                            |
-| **Zoeken in script**               | <kbd>CTRL</kbd> + <kbd>F</kbd>   | Script venster                                                                                                                                                                                                                                                                                            |
-| **Volgende zoeken in script**          | <kbd>F3</kbd>                  | Script venster                                                                                                                                                                                                                                                                                            |
-| **Vorige zoeken in script**      | <kbd>SHIFT</kbd> + <kbd>F3</kbd> | Script venster                                                                                                                                                                                                                                                                                            |
-| **Overeenkomende accolade zoeken**          | <kbd>CTRL</kbd> + <kbd>]</kbd>   | Script venster                                                                                                                                                                                                                                                                                            |
-| **Plakken**                        | <kbd>CTRL</kbd> + <kbd>V</kbd>   | Script deel venster, opdracht venster                                                                                                                                                                                                                                                                              |
-| **Redo**                         | <kbd>CTRL</kbd> + <kbd>Y</kbd>   | Script deel venster, opdracht venster                                                                                                                                                                                                                                                                              |
-| **Vervangen in script**            | <kbd>CTRL</kbd> + <kbd>H</kbd>   | Script venster                                                                                                                                                                                                                                                                                            |
-| **Opslaan**                         | <kbd>CTRL</kbd> + <kbd>S</kbd>   | Script venster                                                                                                                                                                                                                                                                                            |
-| **Alles selecteren**                   | <kbd>CTRL</kbd> + <kbd>Een</kbd>   | Script deel venster, opdracht deel venster, uitvoer venster                                                                                                                                                                                                                                                                 |
-| **Fragmenten weer geven**                | <kbd>CTRL</kbd> + <kbd>J</kbd>   | Script deel venster, opdracht venster                                                                                                                                                                                                                                                                              |
-| **Ongedaan maken**                         | <kbd>CTRL</kbd> + <kbd>Z</kbd>   | Script deel venster, opdracht venster                                                                                                                                                                                                                                                                              |
+|              Bewerking              |              Sneltoetsen               |                                                                                                                                           Gebruiken in                                                                                                                                           |
+| -------------------------------- | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Help**                         | <kbd>F1</kbd>                                 | Script venster **belang rijk:** u kunt opgeven dat <kbd>F1</kbd> help afkomstig is van docs.Microsoft.com of gedownloade Help (Zie `Update-Help` ). Als u wilt selecteren, klikt u op **extra**, **Opties** en vervolgens op het tabblad **algemene instellingen** , stelt **u lokale Help-inhoud gebruiken in plaats van online inhoud** in of uit. |
+| **Kopiëren**                         | <kbd>CTRL</kbd> + <kbd>C</kbd>                  | Script deel venster, opdracht deel venster, uitvoer venster                                                                                                                                                                                                                                                     |
+| **Knippen**                          | <kbd>CTRL</kbd> + <kbd>X</kbd>                  | Script deel venster, opdracht venster                                                                                                                                                                                                                                                                  |
+| **Overzicht uitvouwen of samen vouwen** | <kbd>CTRL</kbd> + <kbd>M</kbd>                  | Script venster                                                                                                                                                                                                                                                                                |
+| **Zoeken in script**               | <kbd>CTRL</kbd> + <kbd>F</kbd>                  | Script venster                                                                                                                                                                                                                                                                                |
+| **Volgende zoeken in script**          | <kbd>F3</kbd>                                 | Script venster                                                                                                                                                                                                                                                                                |
+| **Vorige zoeken in script**      | <kbd>SHIFT</kbd> + <kbd>F3</kbd>                | Script venster                                                                                                                                                                                                                                                                                |
+| **Overeenkomende accolade zoeken**          | <kbd>CTRL</kbd> + <kbd>]</kbd>                  | Script venster                                                                                                                                                                                                                                                                                |
+| **Plakken**                        | <kbd>CTRL</kbd> + <kbd>V</kbd>                  | Script deel venster, opdracht venster                                                                                                                                                                                                                                                                  |
+| **Kleine letters**               | <kbd>CTRL</kbd> + <kbd>U</kbd>                  | Script deel venster, opdracht venster                                                                                                                                                                                                                                                                  |
+| **Hoofd letters**               | <kbd>CTRL</kbd> + <kbd>SHIFT</kbd> + <kbd>U</kbd> | Script deel venster, opdracht venster                                                                                                                                                                                                                                                                  |
+| **Redo**                         | <kbd>CTRL</kbd> + <kbd>Y</kbd>                  | Script deel venster, opdracht venster                                                                                                                                                                                                                                                                  |
+| **Vervangen in script**            | <kbd>CTRL</kbd> + <kbd>H</kbd>                  | Script venster                                                                                                                                                                                                                                                                                |
+| **Opslaan**                         | <kbd>CTRL</kbd> + <kbd>S</kbd>                  | Script venster                                                                                                                                                                                                                                                                                |
+| **Alles selecteren**                   | <kbd>CTRL</kbd> + <kbd>Een</kbd>                  | Script deel venster, opdracht deel venster, uitvoer venster                                                                                                                                                                                                                                                     |
+| **Fragmenten weer geven**                | <kbd>CTRL</kbd> + <kbd>J</kbd>                  | Script deel venster, opdracht venster                                                                                                                                                                                                                                                                  |
+| **Ongedaan maken**                         | <kbd>CTRL</kbd> + <kbd>Z</kbd>                  | Script deel venster, opdracht venster                                                                                                                                                                                                                                                                  |
 
 ## <a name="keyboard-shortcuts-for-running-scripts"></a>Sneltoetsen voor het uitvoeren van scripts
 
 U kunt de volgende sneltoetsen gebruiken voor het uitvoeren van scripts in het Script-venster.
 
-|            Actie            |                                                                                                             Sneltoets                                                                                                             |
+|            Bewerking            |                                                                                                             Sneltoets                                                                                                             |
 | ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Nieuw**                      | <kbd>CTRL</kbd> + <kbd>N</kbd>                                                                                                                                                                                                              |
 | **Openen**                     | <kbd>CTRL</kbd> + <kbd>O</kbd>                                                                                                                                                                                                              |
@@ -53,7 +55,7 @@ U kunt de volgende sneltoetsen gebruiken voor het uitvoeren van scripts in het S
 
 U kunt de volgende sneltoetsen gebruiken om de weer gave in Windows PowerShell ISE aan te passen. Ze zijn toegankelijk vanuit alle deel Vensters in de toepassing.
 
-|                        Actie                         |               Sneltoets               |
+|                        Bewerking                         |               Sneltoets               |
 | ----------------------------------------------------- | --------------------------------------------- |
 | **Ga naar de opdracht (v2) of het console venster (v3 en hoger)** | <kbd>CTRL</kbd> + <kbd>D</kbd>                  |
 | **Naar het deel venster uitvoer (alleen v2)**                       | <kbd>CTRL</kbd> + <kbd>SHIFT</kbd> + <kbd>O</kbd> |
@@ -70,7 +72,7 @@ U kunt de volgende sneltoetsen gebruiken om de weer gave in Windows PowerShell I
 
 U kunt de volgende sneltoetsen gebruiken bij het opsporen van fouten in scripts.
 
-|           Actie           |               Sneltoets                |                Gebruiken in                |
+|           Bewerking           |               Sneltoets                |                Gebruiken in                |
 | -------------------------- | ---------------------------------------------- | ------------------------------------ |
 | **Uitvoeren/door gaan**           | <kbd>F5</kbd>                                  | Script-deel venster bij fout opsporing van een script |
 | **Stap in**              | <kbd>F11</kbd>                                 | Script-deel venster bij fout opsporing van een script |
@@ -85,7 +87,7 @@ U kunt de volgende sneltoetsen gebruiken bij het opsporen van fouten in scripts.
 > [!NOTE]
 > U kunt ook de sneltoetsen gebruiken die zijn ontworpen voor de Windows Power shell-console wanneer u fouten opspoort in scripts in Windows PowerShell ISE. Als u deze sneltoetsen wilt gebruiken, moet u de snelkoppeling in het opdracht venster typen en op <kbd>Enter</kbd>drukken.
 
-|                        Actie                        | Sneltoets |                Gebruiken in                 |
+|                        Bewerking                        | Sneltoets |                Gebruiken in                 |
 | ---------------------------------------------------- | ----------------- | ------------------------------------- |
 | **Doorgaan**                                         | `C`               | Console venster, bij fout opsporing van een script |
 | **Stap in**                                        | `S`               | Console venster, bij fout opsporing van een script |
@@ -101,7 +103,7 @@ U kunt de volgende sneltoetsen gebruiken bij het opsporen van fouten in scripts.
 
 U kunt de volgende sneltoetsen gebruiken wanneer u Windows Power shell-tabbladen gebruikt.
 
-|             Actie              |                                                        Sneltoets                                                        |
+|             Bewerking              |                                                        Sneltoets                                                        |
 | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
 | **Tabblad Power shell sluiten**        | <kbd>CTRL</kbd> + <kbd>W</kbd>                                                                                                    |
 | **Nieuw Power shell-tabblad**          | <kbd>CTRL</kbd> + <kbd>T</kbd>                                                                                                    |
@@ -112,10 +114,10 @@ U kunt de volgende sneltoetsen gebruiken wanneer u Windows Power shell-tabbladen
 
 U kunt de volgende sneltoetsen gebruiken om de Windows Power shell-console (PowerShell.exe) te starten of Windows PowerShell ISE af te sluiten.
 
-|                        Actie                        |               Sneltoets               |
+|                        Bewerking                        |               Sneltoets               |
 | ---------------------------------------------------- | --------------------------------------------- |
 | **Afsluiten**                                             | <kbd>Alt</kbd> + <kbd>F4</kbd>                  |
-| **PowerShell.exestarten** (Windows Power shell-console) | <kbd>CTRL</kbd> + <kbd>SHIFT</kbd> + <kbd>P</kbd> |
+| **PowerShell.exestarten**(Windows Power shell-console) | <kbd>CTRL</kbd> + <kbd>SHIFT</kbd> + <kbd>P</kbd> |
 
 ## <a name="see-also"></a>Zie ook
 

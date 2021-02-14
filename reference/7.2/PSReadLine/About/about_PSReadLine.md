@@ -5,12 +5,12 @@ ms.date: 11/23/2020
 online version: https://docs.microsoft.com/powershell/module/psreadline/about/about_psreadline?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Over PSReadLine
-ms.openlocfilehash: 4836abfec465ba7cdfb6800c1e60104fba19ce08
-ms.sourcegitcommit: 560a9f3c3148acab4655e91e8b07745ab74d5d26
+ms.openlocfilehash: b0c5950b2af6a866d0ffcfdd6ce7ad92a1763778
+ms.sourcegitcommit: 77f6225ab0c8ea9faa1fe46b2ea15c178ec170e3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96913305"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100500209"
 ---
 # <a name="psreadline"></a>PSReadLine
 
@@ -918,19 +918,39 @@ Beëindigt de huidige bewerkings groep, indien nodig, en roept TabCompletePrevio
 
 - VI Invoeg modus: `<Shift+Tab>`
 
-## <a name="miscellaneous-functions"></a>Diverse functies
+## <a name="prediction-functions"></a>Voorspellings functies
 
 ### <a name="acceptnextsuggestionword"></a>AcceptNextSuggestionWord
 
-Het volgende woord van de inline of geselecteerde suggestie accepteren.
+Wanneer u `InlineView` als weergave stijl voor voor spellingen gebruikt, moet u het volgende woord van de inline suggestie accepteren.
 
 - De functie is niet-afhankelijk.
 
 ### <a name="acceptsuggestion"></a>AcceptSuggestion
 
-De huidige inline of geselecteerde suggestie accepteren.
+Wanneer u `InlineView` als weergave stijl voor voor spellingen gebruikt, moet u de huidige inline suggestie accepteren.
 
 - De functie is niet-afhankelijk.
+
+### <a name="nextsuggestion"></a>NextSuggestion
+
+Wanneer u `ListView` als weergave stijl voor voor spellingen gebruikt, gaat u naar de volgende suggestie in de lijst.
+
+- De functie is niet-afhankelijk.
+
+### <a name="previoussuggestion"></a>PreviousSuggestion
+
+Wanneer u `ListView` als weergave stijl voor voor spellingen gebruikt, gaat u naar de vorige suggestie in de lijst.
+
+- De functie is niet-afhankelijk.
+
+### <a name="switchpredictionview"></a>SwitchPredictionView
+
+Scha kelen tussen de weergave stijl voor de voor spelling tussen `InlineView` en `ListView` .
+
+- Cmd `<F2>`
+
+## <a name="miscellaneous-functions"></a>Diverse functies
 
 ### <a name="capturescreen"></a>CaptureScreen
 
@@ -1007,6 +1027,15 @@ Voeg de sleutel in.
 
 - De functie is niet-afhankelijk.
 
+### <a name="showcommandhelp"></a>ShowCommandHelp
+
+Biedt een weer gave van de volledige Help-informatie over een andere scherm buffer met behulp van een paginerings functie van **micro soft. Power shell. pager**.
+
+- Cmd `<F1>`
+- Emacs: `<F1>`
+- VI Invoeg modus: `<F1>`
+- VI-opdracht modus: `<F1>`
+
 ### <a name="showkeybindings"></a>ShowKeyBindings
 
 Alle gebonden sleutels weer geven.
@@ -1014,6 +1043,15 @@ Alle gebonden sleutels weer geven.
 - Cmd `<Ctrl+Alt+?>`
 - Emacs: `<Ctrl+Alt+?>`
 - VI Invoeg modus: `<Ctrl+Alt+?>`
+
+### <a name="showparameterhelp"></a>ShowParameterHelp
+
+Biedt dynamische Help voor para meters door deze onder de huidige opdracht regel te laten zien `MenuComplete` .
+
+- Cmd `<Alt+h>`
+- Emacs: `<Alt+h>`
+- VI Invoeg modus: `<Alt+h>`
+- VI-opdracht modus: `<Alt+h>`
 
 ### <a name="vicommandmode"></a>ViCommandMode
 

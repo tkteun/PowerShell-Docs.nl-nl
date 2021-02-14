@@ -3,12 +3,12 @@ ms.date: 09/13/2016
 ms.topic: reference
 title: Declaratie van het kenmerk Parameter
 description: Declaratie van het kenmerk Parameter
-ms.openlocfilehash: bab48a94cb4b1e8501fb79c2f3ef71393fa2ee68
-ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.openlocfilehash: 24a49406b1493a7f8c23bca798ddb3e73a901111
+ms.sourcegitcommit: 77f6225ab0c8ea9faa1fe46b2ea15c178ec170e3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "92650350"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100500226"
 ---
 # <a name="parameter-attribute-declaration"></a>Declaratie van het kenmerk Parameter
 
@@ -59,7 +59,7 @@ Het parameter kenmerk identificeert een open bare eigenschap van de cmdlet-klass
 
   - Geen enkele parameterset mag meer dan één positionele para meter met dezelfde positie bevatten.
 
-  - Er mag slechts één para meter in een parameterset worden gedeclareerd `ValueFromPipeline = true` . Meerdere para meters kunnen worden gedefinieerd `ValueFromPipelineByPropertyName = true` .
+  - Er mag slechts één para meter in een parameterset worden gedeclareerd `ValueFromPipeline = true` .
 
   - Meerdere para meters kunnen worden gedefinieerd `ValueFromPipelineByPropertyName = true` .
 

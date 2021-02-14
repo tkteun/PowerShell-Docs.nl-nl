@@ -2,12 +2,12 @@
 ms.date: 12/14/2020
 title: Experimentele functies gebruiken in Power shell
 description: Een lijst met de momenteel beschik bare experimentele functies en hoe u deze kunt gebruiken.
-ms.openlocfilehash: be02829c27ff5d8babaf173d2ee7ebbfc7614773
-ms.sourcegitcommit: 04faa7dc1122bce839295d4891bd8b2f0ecb06ef
+ms.openlocfilehash: 556ae8d877b670b119b7b5b958a52488aad16241
+ms.sourcegitcommit: 77f6225ab0c8ea9faa1fe46b2ea15c178ec170e3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97879351"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100500120"
 ---
 # <a name="using-experimental-features-in-powershell"></a>Experimentele functies gebruiken in Power shell
 
@@ -38,6 +38,7 @@ In dit artikel worden de experimentele functies beschreven die beschikbaar zijn 
 | PSCultureInvariantReplaceOperator                          |         |         | &check; | &check; |
 | PSNotApplyErrorActionToStderr                              |         |         | &check; | &check; |
 | PSSubsystemPluginModel                                     |         |         | &check; | &check; |
+| PSAnsiProgress                                             |         |         |         | &check; |
 | PSAnsiRendering                                            |         |         |         | &check; |
 
 ## <a name="microsoftpowershellutilitypsmanagebreakpointsinrunspace"></a>Micro soft. Power shell. Utility. PSManageBreakpointsInRunspace
@@ -116,6 +117,24 @@ Naast de toegang tot `$PSStyle` , worden er wijzigingen aangebracht in de Power 
 - `StringDecorated Substring(int contentLength)` methode retourneert een subtekenreeks die begint bij index 0 tot aan de lengte van de inhoud die geen deel uitmaakt van ANSI-escape reeksen. Dit is nodig voor het afkappen van teken reeksen en het behouden van ANSI-escape reeksen die geen afdruk bare teken ruimte innemen.
 - `string ToString()` de methode blijft hetzelfde en retourneert de ongecodeerde versie van de teken reeks.
 - `string ToString(bool Ansi)` methode retourneert de onbewerkte ANSI-teken reeks als de `Ansi` para meter waar is. Anders wordt een niet-gecodeerde versie met ANSI-escape reeksen verwijderd.
+
+## <a name="psansiprogress"></a>PSAnsiProgress
+
+Dit experiment is toegevoegd aan Power shell 7,2. De functie voegt het `$PSStyle.Progress` lid toe en stelt u in staat om de weer gave van de voortgangs weergave te beheren.
+
+- `$PSStyle.Progress.Style` -Een ANSI-teken reeks die de weergave stijl instelt.
+- `$PSStyle.Progress.MaxWidth` : Hiermee stelt u de maximale breedte van de weer gave. Stel in `0` voor de breedte van de console.
+  Wordt standaard ingesteld op `120`
+- `$PSStyle.Progress.View` -Een enum met waarden `Minimal` en `Classic` . `Classic` is de bestaande rendering zonder wijzigingen. `Minimal` is een minimale rendering van één regel. `Minimal` is de standaardwaarde.
+
+In het volgende voor beeld wordt de stijl rendering bijgewerkt naar een minimale voortgangs balk.
+
+```powershell
+$PSStyle.Progress.View.Minimal
+```
+
+> [!NOTE]
+> U kunt deze functie alleen gebruiken als u de experimentele functie **PSAnsiRendering** hebt ingeschakeld.
 
 ## <a name="pscommandnotfoundsuggestion"></a>PSCommandNotFoundSuggestion
 
