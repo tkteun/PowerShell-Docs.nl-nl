@@ -1,17 +1,16 @@
 ---
 description: Hierin wordt beschreven hoe u Joker tekens gebruikt in Power shell.
-keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 3/28/2019
+ms.date: 02/13/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_wildcards?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Wildcards
-ms.openlocfilehash: 3a3146210a7d133190631f177d3a69ca120d1432
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 54108eaafa645452f58b1962c3f103bcdd5c9e4a
+ms.sourcegitcommit: 9777152e026c47ba8d319593051416054cb62246
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93252169"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100529988"
 ---
 # <a name="about-wildcards"></a>Over joker tekens
 
@@ -21,13 +20,17 @@ Hierin wordt beschreven hoe u Joker tekens gebruikt in Power shell.
 
 ## <a name="long-description"></a>LANGE BESCHRIJVING
 
-Joker tekens vertegenwoordigen een of meer tekens. U kunt ze gebruiken om woord patronen te maken in opdrachten. Als u bijvoorbeeld alle bestanden in de `C:\Techdocs` map met een `.ppt` bestands extensie wilt ophalen, typt u:
+Joker tekens vertegenwoordigen een of meer tekens. U kunt ze gebruiken om woord patronen te maken in opdrachten. Joker teken expressies worden gebruikt met de `-like` operator of met een para meter die joker tekens accepteert.
+
+Als u bijvoorbeeld alle bestanden in de `C:\Techdocs` map met een `.ppt` bestands extensie wilt vergelijken, typt u:
 
 ```powershell
 Get-ChildItem C:\Techdocs\*.ppt
 ```
 
 In dit geval `*` vertegenwoordigt het Joker teken sterretje () alle tekens die voor de bestandsnaam extensie worden weer gegeven `.ppt` .
+
+Joker teken expressies zijn eenvoudiger dan reguliere expressies. Zie [about_Regular_Expressions](./about_Regular_Expressions.md)voor meer informatie.
 
 Power shell ondersteunt de volgende joker tekens:
 
@@ -38,7 +41,7 @@ Power shell ondersteunt de volgende joker tekens:
 |\[ \]   |Komt overeen met een reeks tekens | \[a-l \] ook | Book, Cook, zoeken | spoed |
 |\[ \]   |Overeenkomen met specifieke tekens | \[BC \] ook | Book, Cook | accolade |
 
-U kunt meerdere joker tekens in hetzelfde woord patroon toevoegen. Als u bijvoorbeeld tekst bestanden zoekt met namen die beginnen met de letters **a** t/m **l** , typt u:
+U kunt meerdere joker tekens in hetzelfde woord patroon toevoegen. Als u bijvoorbeeld tekst bestanden zoekt met namen die beginnen met de letters **a** t/m **l**, typt u:
 
 ```powershell
 Get-ChildItem C:\Techdocs\[a-l]*.txt

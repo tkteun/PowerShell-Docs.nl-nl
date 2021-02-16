@@ -7,12 +7,12 @@ ms.date: 08/10/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convertto-html?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertTo-Html
-ms.openlocfilehash: 27a1d2994dee46b9e5bfd54132ff4a665330c2b4
-ms.sourcegitcommit: 9a6b6714ded4edb5119f1b82a253608018ea6b98
+ms.openlocfilehash: 1eade078765f93713da1f665e3ad6f062a1826d9
+ms.sourcegitcommit: 9777152e026c47ba8d319593051416054cb62246
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "93251787"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100529937"
 ---
 # ConvertTo-Html
 
@@ -69,7 +69,7 @@ De opdracht gebruikt de `Get-Alias` cmdlet om de aliassen op te halen. Er wordt 
 ### Voor beeld 3: een webpagina maken om Power shell-gebeurtenissen weer te geven
 
 ```powershell
-`Get-EventLog` -LogName "Windows PowerShell" | ConvertTo-Html | Out-File pslog.htm
+Get-EventLog -LogName "Windows PowerShell" | ConvertTo-Html | Out-File pslog.htm
 ```
 
 Met deze opdracht maakt u een HTML-pagina `pslog.htm` met de naam waarmee de gebeurtenissen in het Windows Power shell-gebeurtenis logboek op de lokale computer worden weer gegeven.
@@ -153,7 +153,7 @@ Met deze opdracht wordt de `Get-EventLog` cmdlet gebruikt om gebeurtenissen van 
 
 Er wordt een pijplijn operator ( `|` ) gebruikt om de gebeurtenissen te verzenden naar de `ConvertTo-Html` cmdlet, waarmee de gebeurtenissen worden geconverteerd naar een HTML-indeling.
 
-De `ConvertTo-Html` opdracht gebruikt de para meter **Property** om alleen de eigenschappen **id** , **niveau** en **Task** van de gebeurtenis te selecteren.
+De `ConvertTo-Html` opdracht gebruikt de para meter **Property** om alleen de eigenschappen **id**, **niveau** en **Task** van de gebeurtenis te selecteren.
 
 ### Voor beeld 9: een webpagina maken om opgegeven services weer te geven
 
@@ -170,7 +170,7 @@ Get-Service A* |
 Invoke-Item Services.htm
 ```
 
-Met deze opdracht wordt een webpagina gemaakt en geopend waarop de services op de computer worden weer gegeven die beginnen met een. Het maakt gebruik van de para meters **titel** , **hoofd tekst** **, voor-en** **PostContent** van `ConvertTo-Html` om de uitvoer aan te passen.
+Met deze opdracht wordt een webpagina gemaakt en geopend waarop de services op de computer worden weer gegeven die beginnen met een. Het maakt gebruik van de para meters **titel**, **hoofd tekst** **, voor-en** **PostContent** van `ConvertTo-Html` om de uitvoer aan te passen.
 
 Het eerste deel van de opdracht gebruikt de `Get-Service` cmdlet om de services op de computer te verkrijgen die met een beginnen. De opdracht maakt gebruik van een pijplijn operator ( `|` ) om de resultaten naar de `ConvertTo-Html` cmdlet te verzenden. De opdracht gebruikt ook de `Out-File` cmdlet om de uitvoer naar het Services.htm-bestand te verzenden.
 
@@ -412,7 +412,7 @@ Accept wildcard characters: False
 
 ### -Overgang
 
-Wijzigt het **DOCTYPE** - **overgangs DTD** , het standaard **DOCTYPE** is **XHTML Strict DTD**.
+Wijzigt het **DOCTYPE** - **overgangs DTD**, het standaard **DOCTYPE** is **XHTML Strict DTD**.
 
 Deze para meter is geïntroduceerd in Power shell 6,0.
 

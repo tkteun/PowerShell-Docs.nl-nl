@@ -1,16 +1,16 @@
 ---
 description: Hierin wordt beschreven hoe u Joker tekens gebruikt in Power shell.
 Locale: en-US
-ms.date: 03/28/2019
+ms.date: 02/13/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_wildcards?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Wildcards
-ms.openlocfilehash: b5f13fdbfbc24e19e5ad0b1cd6ecc1b99f68914f
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 40620e54bb889d683192b346f3ba1c139895e4d0
+ms.sourcegitcommit: 9777152e026c47ba8d319593051416054cb62246
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94705781"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100529971"
 ---
 # <a name="about-wildcards"></a>Over joker tekens
 
@@ -20,13 +20,17 @@ Hierin wordt beschreven hoe u Joker tekens gebruikt in Power shell.
 
 ## <a name="long-description"></a>LANGE BESCHRIJVING
 
-Joker tekens vertegenwoordigen een of meer tekens. U kunt ze gebruiken om woord patronen te maken in opdrachten. Als u bijvoorbeeld alle bestanden in de `C:\Techdocs` map met een `.ppt` bestands extensie wilt ophalen, typt u:
+Joker tekens vertegenwoordigen een of meer tekens. U kunt ze gebruiken om woord patronen te maken in opdrachten. Joker teken expressies worden gebruikt met de `-like` operator of met een para meter die joker tekens accepteert.
+
+Als u bijvoorbeeld alle bestanden in de `C:\Techdocs` map met een `.ppt` bestands extensie wilt vergelijken, typt u:
 
 ```powershell
 Get-ChildItem C:\Techdocs\*.ppt
 ```
 
 In dit geval `*` vertegenwoordigt het Joker teken sterretje () alle tekens die voor de bestandsnaam extensie worden weer gegeven `.ppt` .
+
+Joker teken expressies zijn eenvoudiger dan reguliere expressies. Zie [about_Regular_Expressions](./about_Regular_Expressions.md)voor meer informatie.
 
 Power shell ondersteunt de volgende joker tekens:
 
