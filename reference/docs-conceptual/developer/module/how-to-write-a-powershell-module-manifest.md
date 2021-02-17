@@ -3,12 +3,12 @@ ms.date: 01/04/2021
 ms.topic: reference
 title: Een manifest voor een PowerShell-module schrijven
 description: Een manifest voor een PowerShell-module schrijven
-ms.openlocfilehash: 8c644391008cb97c1206f985f0f5eca9d7dfcc9e
-ms.sourcegitcommit: 04faa7dc1122bce839295d4891bd8b2f0ecb06ef
+ms.openlocfilehash: 0270b9b3745b7ffd187f2089414ea7759515d96b
+ms.sourcegitcommit: 4f1c2fe700b8a0544c59e371eb7cfbc6d852b185
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97879368"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100563320"
 ---
 # <a name="how-to-write-a-powershell-module-manifest"></a>Een Power shell-module manifest schrijven
 
@@ -57,7 +57,7 @@ In de volgende tabel worden de elementen beschreven die u kunt toevoegen in een 
 |Element|Standaard|Beschrijving|
 |-------------|-------------|-----------------|
 |**RootModule**<br /> Voert `String`|`<empty string>`|Script module of binair module bestand dat is gekoppeld aan dit manifest. In eerdere versies van Power shell heet dit element de **ModuleToProcess**.<br /> Mogelijke typen voor de hoofd module kunnen leeg zijn, waardoor er een **manifest** module, de naam van een script module ( `.psm1` ) of de naam van een binaire module ( `.exe` of) wordt gemaakt `.dll` . Als u de naam van een module manifest ( `.psd1` ) of een script bestand ( `.ps1` ) in dit element plaatst, treedt er een fout op. <br /> Voorbeeld: `RootModule = 'ScriptModule.psm1'`|
-|**ModuleVersion**<br /> Voert `Version`|`'0.0.1'`|Het versie nummer van deze module. Als er geen waarde is opgegeven, `New-ModuleManifest`   gebruikt de standaard. De teken reeks moet zo kunnen worden geconverteerd naar het type `Version` `#.#.#.#.#` . `Import-Module` laadt de eerste module die wordt gevonden op de **$PSModulePath** die overeenkomt met de naam en heeft ten minste als hoge a **ModuleVersion**, als de para meter **MinimumVersion** . Als u een specifieke versie wilt importeren, gebruikt u de `Import-Module` para meter **RequiredVersion** van de cmdlet.<br /> Voorbeeld: `ModuleVersion = '1.0'`|
+|**ModuleVersion**<br /> Voert `Version`|`'0.0.1'`|Het versie nummer van deze module. Als er geen waarde is opgegeven, `New-ModuleManifest`   gebruikt de standaard. De teken reeks moet zo kunnen worden geconverteerd naar het type `Version` `#.#.#.#` . `Import-Module` laadt de eerste module die wordt gevonden op de **$PSModulePath** die overeenkomt met de naam en heeft ten minste als hoge a **ModuleVersion**, als de para meter **MinimumVersion** . Als u een specifieke versie wilt importeren, gebruikt u de `Import-Module` para meter **RequiredVersion** van de cmdlet.<br /> Voorbeeld: `ModuleVersion = '1.0'`|
 |**GPT**<br /> Voert `GUID`|`'<GUID>'`|ID die wordt gebruikt om deze module uniek te identificeren. Als er geen waarde is opgegeven, `New-ModuleManifest` genereert automatisch de waarde. U kunt op dit moment geen module importeren op **GUID**. <br /> Voorbeeld: `GUID = 'cfc45206-1e49-459d-a8ad-5b571ef94857'`|
 |**Auteur**<br /> Voert `String`|`'<Current user>'`|Auteur van deze module. Als er geen waarde is opgegeven, `New-ModuleManifest` wordt de huidige gebruiker gebruikt. <br /> Voorbeeld: `Author = 'AuthorNameHere'`|
 |**CompanyName**<br /> Voert `String`|`'Unknown'`|Bedrijf of leverancier van deze module. Als er geen waarde is opgegeven, `New-ModuleManifest` gebruikt de standaard.<br /> Voorbeeld: `CompanyName = 'Fabrikam'`|

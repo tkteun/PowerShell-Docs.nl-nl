@@ -3,16 +3,16 @@ external help file: Microsoft.PowerShell.PSReadLine2.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: PSReadline
-ms.date: 12/07/2018
+ms.date: 02/16/2021
 online version: https://docs.microsoft.com/powershell/module/psreadline/set-psreadlinekeyhandler?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-PSReadLineKeyHandler
-ms.openlocfilehash: 8eefd819b59cf8d0050484c6aad3058bc6e7753a
-ms.sourcegitcommit: ae8b89e12c6fa2108075888dd6da92788d6c2888
+ms.openlocfilehash: 220b38f51afab619a57473be27b1139b878eb7e9
+ms.sourcegitcommit: 4f1c2fe700b8a0544c59e371eb7cfbc6d852b185
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "93253154"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100563221"
 ---
 # Set-PSReadLineKeyHandler
 
@@ -84,6 +84,9 @@ Accept wildcard characters: False
 De sleutel of reeks sleutels die moeten worden gebonden aan een functie of script blok. Gebruik één teken reeks om één binding op te geven. Als de binding een reeks sleutels is, scheidt u de sleutels met een komma, zoals in het volgende voor beeld:
 
 `Ctrl+X,Ctrl+L`
+
+> [!NOTE]
+> De para meter **koorde** vanaf PSReadLine 2.0.0 is **hoofdletter gevoelig**. Dat wil zeggen dat `Ctrl+X` `Ctrl+x` er verschillende bindingen worden gemaakt.
 
 Deze para meter accepteert een matrix met teken reeksen. Elke teken reeks is een afzonderlijke binding, geen reeks sleutels voor één binding.
 
