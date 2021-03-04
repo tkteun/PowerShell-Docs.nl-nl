@@ -3,12 +3,12 @@ title: Alles wat u wilt weten over hashtabellen
 description: Hashtabellen zijn heel belang rijk in Power shell, zodat het goed is om een duidelijker beeld te krijgen.
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: e386e2aa2f7b85bee4bf622fd9251ef7642cf16a
-ms.sourcegitcommit: 57e577097085dc621bd797ef4a7e2854ea7d4e29
+ms.openlocfilehash: a471c0fe2c48820d6c1d152e2850b1e431d28f23
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "97980498"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101686063"
 ---
 # <a name="everything-you-wanted-to-know-about-hashtables"></a>Alles wat u wilt weten over hashtabellen
 
@@ -360,7 +360,7 @@ De `name` is wat de cmdlet zou labelen. Het `expression` is een script blok dat 
 
 ```powershell
 $drives = Get-PSDrive | Where Used
-$drives | Select-Object -Properties name, $property
+$drives | Select-Object -Property name, $property
 
 Name     totalSpaceGB
 ----     ------------
@@ -370,7 +370,7 @@ C    238.472652435303
 Ik heb dat in een variabele geplaatst, maar dit kan gemakkelijk inline worden gedefinieerd, en u kunt de kortings functie voor u verkorten `name` `n` `expression` `e` .
 
 ```powershell
-$drives | Select-Object -properties name, @{n='totalSpaceGB';e={($_.used + $_.free) / 1GB}}
+$drives | Select-Object -property name, @{n='totalSpaceGB';e={($_.used + $_.free) / 1GB}}
 ```
 
 Ik weet niet hoe lang het duurt om opdrachten uit te geven. het bevordert vaak een slecht gedrag dat daar niet aan is. Ik wil waarschijnlijk een nieuwe hashtabel maken of `pscustomobject` met alle velden en eigenschappen die ik wil gebruiken in plaats van deze benadering in scripts. Maar er is wel een groot aantal Program meren waarmee u op de hoogte zou zijn. Ik vind iets over het maken `pscustomobject` van een latere versie.

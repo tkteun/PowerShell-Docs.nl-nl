@@ -5,12 +5,12 @@ ms.date: 11/23/2020
 online version: https://docs.microsoft.com/powershell/module/psreadline/about/about_psreadline?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Over PSReadLine
-ms.openlocfilehash: b0c5950b2af6a866d0ffcfdd6ce7ad92a1763778
-ms.sourcegitcommit: 77f6225ab0c8ea9faa1fe46b2ea15c178ec170e3
+ms.openlocfilehash: ddc88dda3514e4279b6d91b023e26da88f645af7
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100500209"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685215"
 ---
 # <a name="psreadline"></a>PSReadLine
 
@@ -114,13 +114,19 @@ Verwijder het teken voor de cursor.
 - VI Invoeg modus: `<Backspace>`
 - VI-opdracht modus: `<X>` , `<d,h>`
 
+### <a name="backwarddeleteinput"></a>BackwardDeleteInput
+
+Net als BackwardKillInput: verwijdert tekst van het punt naar het begin van de invoer, maar plaatst de verwijderde tekst niet in de Kill-ring.
+
+- Cmd `<Ctrl+Home>`
+- VI Invoeg modus: `<Ctrl+u>` , `<Ctrl+Home>`
+- VI-opdracht modus: `<Ctrl+u>` , `<Ctrl+Home>`
+
 ### <a name="backwarddeleteline"></a>BackwardDeleteLine
 
 Net als BackwardKillLine: verwijdert tekst van het punt naar het begin van de regel, maar plaatst de verwijderde tekst niet in de Kill-ring.
 
-- Cmd `<Ctrl+Home>`
-- VI Invoeg modus: `<Ctrl+u>` , `<Ctrl+Home>`
-- VI-opdracht modus: `<Ctrl+u>` , `<Ctrl+Home>` , `<d,0>`
+- VI-opdracht modus: `<d,0>`
 
 ### <a name="backwarddeleteword"></a>BackwardDeleteWord
 
@@ -128,11 +134,17 @@ Hiermee verwijdert u het vorige woord.
 
 - VI-opdracht modus: `<Ctrl+w>` , `<d,b>`
 
-### <a name="backwardkillline"></a>BackwardKillLine
+### <a name="backwardkillinput"></a>BackwardKillInput
 
-De invoer van het begin van de invoer wissen tot de cursor. De gewiste tekst wordt in de Kill-ring geplaatst.
+Hiermee wordt de tekst van het begin van de invoer naar de cursor gewist. De gewiste tekst wordt in de Kill-ring geplaatst.
 
 - Emacs: `<Ctrl+u>` , `<Ctrl+x,Backspace>`
+
+### <a name="backwardkillline"></a>BackwardKillLine
+
+Hiermee wordt de tekst van het begin van de huidige logische lijn naar de cursor gewist. De gewiste tekst wordt in de Kill-ring geplaatst.
+
+- De functie is niet-afhankelijk.
 
 ### <a name="backwardkillword"></a>BackwardKillWord
 
@@ -243,13 +255,19 @@ Verwijder het volgende woord.
 
 - VI-opdracht modus: `<d,w>`
 
-### <a name="forwarddeleteline"></a>ForwardDeleteLine
+### <a name="forwarddeleteinput"></a>ForwardDeleteInput
 
-Net als ForwardKillLine: verwijdert tekst van het punt naar het einde van de regel, maar plaatst de verwijderde tekst niet in de Kill-ring.
+Net als KillLine: verwijdert tekst van het punt naar het einde van de invoer, maar plaatst de verwijderde tekst niet in de Kill-ring.
 
 - Cmd `<Ctrl+End>`
 - VI Invoeg modus: `<Ctrl+End>`
 - VI-opdracht modus: `<Ctrl+End>`
+
+### <a name="forwarddeleteline"></a>ForwardDeleteLine
+
+Hiermee wordt tekst van het punt naar het einde van de huidige logische lijn verwijderd, maar wordt de verwijderde tekst niet in de Kill-ring geplaatst.
+
+- Functie is niet-afhankelijk
 
 ### <a name="insertlineabove"></a>InsertLineAbove
 
@@ -1029,7 +1047,9 @@ Voeg de sleutel in.
 
 ### <a name="showcommandhelp"></a>ShowCommandHelp
 
-Biedt een weer gave van de volledige Help-informatie over een andere scherm buffer met behulp van een paginerings functie van **micro soft. Power shell. pager**.
+Biedt een weer gave van de volledige Help-informatie over cmdlets. Wanneer de cursor zich aan het einde van een volledig uitgebreide para meter bevindt, wordt de `<F1>` weer gave van de Help op de locatie van de para meter gepositioneerd.
+
+De Help wordt weer gegeven op een andere scherm buffer met behulp van een paginerings functie van **micro soft. Power shell. pager**. Wanneer u de paginerings functie verlaat, keert u terug naar de oorspronkelijke cursor positie op het oorspronkelijke scherm. Deze paginering werkt alleen in moderne terminal toepassingen zoals [Windows Terminal](https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701).
 
 - Cmd `<F1>`
 - Emacs: `<F1>`
@@ -1046,7 +1066,7 @@ Alle gebonden sleutels weer geven.
 
 ### <a name="showparameterhelp"></a>ShowParameterHelp
 
-Biedt dynamische Help voor para meters door deze onder de huidige opdracht regel te laten zien `MenuComplete` .
+Biedt dynamische Help voor para meters door deze onder de huidige opdracht regel te laten zien `MenuComplete` . Wanneer u op de toets drukt, moet de cursor zich aan het einde van de naam van de volledig uitgebreide para meter bevinden `<Alt+h>` .
 
 - Cmd `<Alt+h>`
 - Emacs: `<Alt+h>`
@@ -1125,6 +1145,15 @@ Pas de huidige selectie aan om het vorige woord op te laten staan.
 
 - Cmd `<Shift+Ctrl+LeftArrow>`
 - Emacs: `<Alt+B>`
+
+### <a name="selectcommandargument"></a>SelectCommandArgument
+
+Maak een visuele selectie van de opdracht argumenten. De selectie van argumenten ligt binnen het bereik van een script blok. Op basis van de positie van de cursor zoekt het naar het binnenste script blok naar het hoogste script blok en stopt wanneer er argumenten worden gevonden in een script blok bereik.
+
+Deze functie voldoet aan DigitArgument. De waarden voor het positieve of negatieve argument worden beschouwd als de begin-of achterwaartse verschuivingen van het momenteel geselecteerde argument of vanaf de huidige cursor positie wanneer er geen argument is geselecteerd.
+
+- Cmd `<Alt+a>`
+- Emacs: `<Alt+a>`
 
 ### <a name="selectforwardchar"></a>SelectForwardChar
 

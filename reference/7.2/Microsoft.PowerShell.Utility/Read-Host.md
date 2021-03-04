@@ -2,16 +2,16 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/04/2020
+ms.date: 03/02/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/read-host?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Read-Host
-ms.openlocfilehash: 2efe75730ef7d35618dc0d1fbf7a8d6f8a5db5ae
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 5563413400abd28ce376265970631ad1206ca518
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94705814"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685259"
 ---
 # Read-Host
 
@@ -35,6 +35,9 @@ Read-Host [[-Prompt] <Object>] [-AsSecureString] [<CommonParameters>]
 ## BESCHRIJVING
 
 De `Read-Host` cmdlet leest een regel invoer van de-console. U kunt deze gebruiken om een gebruiker te vragen om invoer. Omdat u de invoer kunt opslaan als een beveiligde teken reeks, kunt u deze cmdlet gebruiken om gebruikers te vragen voor beveiligde gegevens, zoals wacht woorden, en gedeelde gegevens.
+
+> [!NOTE]
+> `Read-Host` heeft een limiet van 1022 tekens die kan worden geaccepteerd als invoer van een gebruiker.
 
 ## VOORBEELDEN
 
@@ -99,10 +102,7 @@ Accept wildcard characters: False
 
 ### -Prompt
 
-Hiermee geeft u de tekst van de prompt.
-Typ een teken reeks.
-Als de teken reeks spaties bevat, plaatst u deze tussen aanhalings tekens.
-Power shell voegt een dubbele punt ( `:` ) toe aan de tekst die u invoert.
+Hiermee geeft u de tekst van de prompt. Typ een teken reeks. Als de teken reeks spaties bevat, plaatst u deze tussen aanhalings tekens. Power shell voegt een dubbele punt ( `:` ) toe aan de tekst die u invoert.
 
 ```yaml
 Type: System.Object

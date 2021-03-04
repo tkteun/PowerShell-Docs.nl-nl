@@ -2,12 +2,12 @@
 ms.date: 01/02/2020
 title: Sneltoetsen voor Windows PowerShell ISE
 description: Dit artikel bevat een lijst met de sneltoetsen die worden gebruikt in de Power shell ISE.
-ms.openlocfilehash: 690997524ab90d7581bb03c802f189d1a4b79d3f
-ms.sourcegitcommit: 77f6225ab0c8ea9faa1fe46b2ea15c178ec170e3
+ms.openlocfilehash: 6a55bb2e6046fbda1c8b7b83345138f294009ac8
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100500190"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685967"
 ---
 # <a name="keyboard-shortcuts-for-the-windows-powershell-ise"></a>Sneltoetsen voor Windows PowerShell ISE
 
@@ -20,7 +20,8 @@ U kunt de volgende sneltoetsen gebruiken bij het bewerken van tekst.
 |              Bewerking              |              Sneltoetsen               |                                                                                                                                           Gebruiken in                                                                                                                                           |
 | -------------------------------- | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Help**                         | <kbd>F1</kbd>                                 | Script venster **belang rijk:** u kunt opgeven dat <kbd>F1</kbd> help afkomstig is van docs.Microsoft.com of gedownloade Help (Zie `Update-Help` ). Als u wilt selecteren, klikt u op **extra**, **Opties** en vervolgens op het tabblad **algemene instellingen** , stelt **u lokale Help-inhoud gebruiken in plaats van online inhoud** in of uit. |
-| **Kopiëren**                         | <kbd>CTRL</kbd> + <kbd>C</kbd>                  | Script deel venster, opdracht deel venster, uitvoer venster                                                                                                                                                                                                                                                     |
+| **Alles selecteren**                   | <kbd>CTRL</kbd> + <kbd>Een</kbd>                  | Script venster                                                                                                                                                                                                                                                                                |
+| **Kopieer**                         | <kbd>CTRL</kbd> + <kbd>C</kbd>                  | Script deel venster, opdracht deel venster, uitvoer venster                                                                                                                                                                                                                                                     |
 | **Knippen**                          | <kbd>CTRL</kbd> + <kbd>X</kbd>                  | Script deel venster, opdracht venster                                                                                                                                                                                                                                                                  |
 | **Overzicht uitvouwen of samen vouwen** | <kbd>CTRL</kbd> + <kbd>M</kbd>                  | Script venster                                                                                                                                                                                                                                                                                |
 | **Zoeken in script**               | <kbd>CTRL</kbd> + <kbd>F</kbd>                  | Script venster                                                                                                                                                                                                                                                                                |
@@ -36,6 +37,9 @@ U kunt de volgende sneltoetsen gebruiken bij het bewerken van tekst.
 | **Alles selecteren**                   | <kbd>CTRL</kbd> + <kbd>Een</kbd>                  | Script deel venster, opdracht deel venster, uitvoer venster                                                                                                                                                                                                                                                     |
 | **Fragmenten weer geven**                | <kbd>CTRL</kbd> + <kbd>J</kbd>                  | Script deel venster, opdracht venster                                                                                                                                                                                                                                                                  |
 | **Ongedaan maken**                         | <kbd>CTRL</kbd> + <kbd>Z</kbd>                  | Script deel venster, opdracht venster                                                                                                                                                                                                                                                                  |
+| **IntelliSense Help weer geven**       | <kbd>CTRL</kbd> + <kbd>Ruimte</kbd>              | Script venster                                                                                                                                                                                                                                                                                |
+| **Woord naar links verwijderen**          | <kbd>CTRL</kbd> + <kbd>BACKSPACE</kbd>          | Script venster                                                                                                                                                                                                                                                                                |
+| **Woord naar rechts verwijderen**         | <kbd>CTRL</kbd> + <kbd>Verwijderen</kbd>             | Script venster                                                                                                                                                                                                                                                                                |
 
 ## <a name="keyboard-shortcuts-for-running-scripts"></a>Sneltoetsen voor het uitvoeren van scripts
 

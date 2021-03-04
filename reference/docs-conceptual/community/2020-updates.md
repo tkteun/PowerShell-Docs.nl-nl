@@ -2,14 +2,14 @@
 title: Wat is er nieuw in Power shell docs voor 2020-Q4
 description: Lijst met wijzigingen in de Power shell-documentatie voor Q4 van 2020
 ms.date: 01/05/2021
-ms.openlocfilehash: 823338560adbfecd6e17ad6b2e82681f5db35405
-ms.sourcegitcommit: fa1a84c81e15f1ffac962110b0b4c850c1b173a0
+ms.openlocfilehash: 2ac4a2e23ebed7cf1d371c29ceada661bc9a9bc3
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99499944"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685535"
 ---
-# <a name="whats-new-in-powershell-docs-for-2020-q4"></a>Wat is er nieuw in Power shell docs voor 2020-Q4
+# <a name="whats-new-in-powershell-docs-for-2020"></a>Wat is er nieuw in Power shell-documenten voor 2020
 
 In dit artikel vindt u een overzicht van enkele belang rijke wijzigingen in documenten tijdens deze vorige maand en de bijdragen van de community.
 
@@ -19,7 +19,7 @@ Help ons de documentatie beter voor u te maken. Lees de [hand leiding van de med
 [contrib]: contributing/overview.md
 <!-- --------------- -->
 
-## <a name="2020-december-highlights"></a>2020-december hooglichten
+## <a name="2020-december"></a>2020-december
 
 - Gids voor inzenders bijgewerkt
   - de `&preserve_view=true` query parameter voor Hyper links is gedocumenteerd
@@ -49,7 +49,7 @@ De volgende personen hebben bijgedragen aan Power shell-documenten door pull-aan
 | Cwilson-dataselfcom |            |       5       |
 | bobbybatatina       |            |       2       |
 
-## <a name="2020-november-highlights"></a>2020-november Highlights
+## <a name="2020-november"></a>2020-november
 
 - Power shell 7,1 GA release
   - Wat is er nieuw in Power shell 7,1
@@ -96,7 +96,7 @@ De volgende personen hebben bijgedragen aan Power shell-documenten door pull-aan
 | stephenrgentry  |            |       2       |
 | Vixb1122        |            |       2       |
 
-## <a name="2020-october-highlights"></a>2020-oktober hooglichten
+## <a name="2020-october"></a>2020-oktober
 
 - Nieuwe artikelen
   - [about_Character_Encoding](/powershell/module/microsoft.powershell.core/about/about_character_encoding)
@@ -129,7 +129,7 @@ De volgende personen hebben bijgedragen aan Power shell-documenten door pull-aan
 | mklement0    |            |       3       |
 | Abdullah0820 |            |       2       |
 
-## <a name="2020-september-highlights"></a>2020-september-hooglichten
+## <a name="2020-september"></a>2020-september
 
 - Documentatie onderhoud
   - Updates voor 7,1-Preview-inhoud
@@ -160,7 +160,7 @@ De volgende personen hebben bijgedragen aan Power shell-documenten door pull-aan
 | mklement0        |            |      13       |
 | setpeetrike      |            |       2       |
 
-## <a name="2020-august-highlights"></a>2020-augustus hooglichten
+## <a name="2020-august"></a>2020-augustus
 
 - Nieuwe Power shell-documentatie
   - [About_Calculated_Properties](/powershell/module/microsoft.powershell.core/about/about_calculated_properties)
@@ -190,7 +190,7 @@ De volgende personen hebben bijgedragen aan Power shell-documenten door pull-aan
 | joshSi           |     1      |               |
 | kmoad            |     1      |               |
 
-## <a name="2020-july-highlights"></a>2020-juli hooglichten
+## <a name="2020-july"></a>2020-juli
 
 - Nieuwe Power shell-documentatie
   - Hersteld Old [ETS docs](/powershell/scripting/developer/ets/overview) -7 artikelen toegevoegd
@@ -227,7 +227,7 @@ De volgende personen hebben bijgedragen aan Power shell-documenten door pull-aan
 | sharpninja     |            |       2       |
 | XuHeng1021     |            |       2       |
 
-## <a name="2020-june-highlights"></a>2020-juni hooglichten
+## <a name="2020-june"></a>2020-juni
 
 - Nieuwe Power shell-documentatie
   - Gepubliceerde nieuwe [Power shell 101](../learn/ps101/00-introduction.md) -inhoud die is bijgedragen door Mike F. Robbins
@@ -269,7 +269,7 @@ De volgende personen hebben bijgedragen aan Power shell-documenten door pull-aan
 | mklement0     |            |       2       |
 | Sagatboy33    |            |       4       |
 
-## <a name="2020-may-highlights"></a>2020-kan hooglichten
+## <a name="2020-may"></a>2020-mei
 
 - Nieuwe Power shell-documentatie
   - Er is een nieuwe sectie met [diepe Dives](../learn/deep-dives/overview.md) gemaakt met inhoud uit Kevin Marquette van Community
@@ -322,7 +322,7 @@ De volgende personen hebben bijgedragen aan Power shell-documenten door pull-aan
 | JustinGrote    |            |       2       |
 | peetrike       |            |       2       |
 
-## <a name="2020-april-highlights"></a>2020-april Highlights
+## <a name="2020-april"></a>2020-april
 
 - Nieuwe documenten
   - Power shell-documentatie
@@ -370,7 +370,7 @@ De volgende personen hebben bijgedragen aan Power shell-documenten door pull-aan
 
 ## <a name="2020-march"></a>2020-maart
 
-### <a name="highlights"></a>Hoogtepunten
+###
 
 - Nieuwe documenten
   - De Power shell-documenten Community-pagina's
@@ -409,7 +409,7 @@ De volgende personen hebben bijgedragen aan Power shell-documenten door pull-aan
 
 ## <a name="2020-february"></a>2020-februari
 
-### <a name="highlights"></a>Hoogtepunten
+###
 
 - Nieuwe documenten
   - [about_Parameter_Sets](/powershell/module/microsoft.powershell.core/about/about_parameter_sets)
@@ -435,7 +435,7 @@ De volgende personen hebben bijgedragen aan Power shell-documenten door pull-aan
 
 ## <a name="2020-january"></a>2020-januari
 
-### <a name="highlights"></a>Hoogtepunten
+###
 
 - Nieuwe documenten
   - [about_Windows_PowerShell_Compatibility](/powershell/module/microsoft.powershell.core/about/about_Windows_PowerShell_Compatibility)

@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/clear-eventlog?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Clear-EventLog
-ms.openlocfilehash: 695a13d4fbbf60caadeed994c1aa9c36432be917
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: af1c808b22a812700857e756136fd570fa0acc35
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93250832"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685904"
 ---
 # Clear-EventLog
 
@@ -27,11 +27,9 @@ Clear-EventLog [-LogName] <String[]> [[-ComputerName] <String[]>] [-WhatIf] [-Co
 
 ## BESCHRIJVING
 
-Met de `Clear-EventLog` cmdlet worden alle vermeldingen uit de opgegeven gebeurtenis logboeken op de lokale computer of op externe computers verwijderd.
-Als u wilt gebruiken `Clear-EventLog` , moet u lid zijn van de groep Administrators op de desbetreffende computer.
+Met de `Clear-EventLog` cmdlet worden alle vermeldingen uit de opgegeven gebeurtenis logboeken op de lokale computer of op externe computers verwijderd. Als u wilt gebruiken `Clear-EventLog` , moet u lid zijn van de groep Administrators op de desbetreffende computer.
 
-De cmdlets die het zelfstandig naam woord van het **gebeurtenissen logboek** bevatten (de Eventlog-cmdlets) werken alleen in klassieke gebeurtenis Logboeken.
-Als u gebeurtenissen wilt ophalen uit logboeken die gebruikmaken van de Windows-gebeurtenis logboek technologie in Windows Vista en latere versies van Windows, gebruikt u de cmdlet Get-WinEvent.
+De cmdlets die het zelfstandig naam woord van het **gebeurtenissen logboek** bevatten (de Eventlog-cmdlets) werken alleen in klassieke gebeurtenis Logboeken. Als u gebeurtenissen wilt ophalen uit logboeken die gebruikmaken van de Windows-gebeurtenis logboek technologie in Windows Vista en latere versies van Windows, gebruikt u de cmdlet Get-WinEvent.
 
 ## VOORBEELDEN
 
@@ -96,14 +94,11 @@ U ziet dat er een paar vermeldingen zijn toegevoegd aan de systeem-en beveiligin
 
 ### -ComputerName
 
-Hiermee geeft u een externe computer.
-Standaard is dit de lokale computer.
+Hiermee geeft u een externe computer. Standaard is dit de lokale computer.
 
-Typ de NetBIOS-naam, een Internet Protocol (IP)-adres of een Fully Qualified Domain Name van een externe computer.
-Typ de computer naam, een punt (.) of ' localhost ' om de lokale computer op te geven.
+Typ de NetBIOS-naam, een Internet Protocol (IP)-adres of een Fully Qualified Domain Name van een externe computer. Typ de computer naam, een punt (.) of ' localhost ' om de lokale computer op te geven.
 
-Deze para meter is niet gebaseerd op externe communicatie met Windows Power shell.
-U kunt de para meter **ComputerName** gebruiken `Get-EventLog` , zelfs als uw computer niet is geconfigureerd om externe opdrachten uit te voeren.
+Deze para meter is niet gebaseerd op externe communicatie met Windows Power shell. U kunt de para meter **ComputerName** gebruiken `Get-EventLog` , zelfs als uw computer niet is geconfigureerd om externe opdrachten uit te voeren.
 
 ```yaml
 Type: System.String[]
@@ -119,10 +114,10 @@ Accept wildcard characters: False
 
 ### -LogName
 
-Hiermee geeft u de gebeurtenis Logboeken.
-Voer de naam van het logboek in (de waarde van de eigenschap log, niet de LogDisplayName) van een of meer gebeurtenis logboeken, gescheiden door komma's.
-Joker tekens zijn niet toegestaan.
-Deze parameter is vereist.
+Hiermee geeft u de gebeurtenis Logboeken. Voer de naam van het logboek in (de waarde van de **logboek** eigenschap niet de **LogDisplayName**) van een of meer gebeurtenis logboeken, gescheiden door komma's. Joker tekens zijn niet toegestaan. Deze parameter is vereist.
+
+> [!IMPORTANT]
+> Deze para meter moet waarden van de pijp lijn accepteren op basis van de eigenschaps naam. Er is echter een bug waarmee wordt voor komen dat dit werkt. U moet een waarde door geven met de para meter direct.
 
 ```yaml
 Type: System.String[]

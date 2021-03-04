@@ -2,12 +2,12 @@
 ms.date: 12/14/2020
 title: Experimentele functies gebruiken in Power shell
 description: Een lijst met de momenteel beschik bare experimentele functies en hoe u deze kunt gebruiken.
-ms.openlocfilehash: 556ae8d877b670b119b7b5b958a52488aad16241
-ms.sourcegitcommit: 77f6225ab0c8ea9faa1fe46b2ea15c178ec170e3
+ms.openlocfilehash: f97cea1dff4030da22be1efbe3cd5cbb7a9f3527
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100500120"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685271"
 ---
 # <a name="using-experimental-features-in-powershell"></a>Experimentele functies gebruiken in Power shell
 
@@ -73,27 +73,37 @@ In dit voor beeld wordt een taak gestart en wordt een onderbrekings punt ingeste
 Dit experiment is toegevoegd aan Power shell 7,2. Met de functie kunt u wijzigingen aanbrengen in de manier waarop de Power shell-engine tekst uitvoer en de `$PSStyle` Automatische variabele toevoegen om de ANSI-rendering van teken reeks uitvoer te beheren.
 
 ```powershell
-PS> $PSStyle
+PS> $PSStyle | Get-Member
 
-Name            MemberType Definition
-----            ---------- ----------
-Reset           Property   string AttributesOff {get;set;}
-Background      Property   System.Management.Automation.PSStyle+BackgroundColor Background {get;set;}
-Blink           Property   string Blink {get;set;}
-BlinkOff        Property   string BlinkOff {get;set;}
-Bold            Property   string Bold {get;set;}
-BoldOff         Property   string BoldOff {get;set;}
-Foreground      Property   System.Management.Automation.PSStyle+ForegroundColor Foreground {get;set;}
-Formatting      Property   System.Management.Automation.PSStyle+FormattingData Formatting {get;set;}
-Hidden          Property   string Hidden {get;set;}
-HiddenOff       Property   string HiddenOff {get;set;}
-OutputRendering Property   System.Management.Automation.OutputRendering OutputRendering {get;set;}
-Reverse         Property   string Reverse {get;set;}
-ReverseOff      Property   string ReverseOff {get;set;}
-Italic          Property   string Standout {get;set;}
-ItalicOff       Property   string StandoutOff {get;set;}
-Underline       Property   string Underlined {get;set;}
-Underline Off   Property   string UnderlinedOff {get;set;}
+   TypeName: System.Management.Automation.PSStyle
+
+Name             MemberType Definition
+----             ---------- ----------
+Equals           Method     bool Equals(System.Object obj)
+FormatHyperlink  Method     string FormatHyperlink(string text, uri link)
+GetHashCode      Method     int GetHashCode()
+GetType          Method     type GetType()
+ToString         Method     string ToString()
+Background       Property   System.Management.Automation.PSStyle+BackgroundColor Background {get;}
+Blink            Property   string Blink {get;}
+BlinkOff         Property   string BlinkOff {get;}
+Bold             Property   string Bold {get;}
+BoldOff          Property   string BoldOff {get;}
+Foreground       Property   System.Management.Automation.PSStyle+ForegroundColor Foreground {get;}
+Formatting       Property   System.Management.Automation.PSStyle+FormattingData Formatting {get;}
+Hidden           Property   string Hidden {get;}
+HiddenOff        Property   string HiddenOff {get;}
+Italic           Property   string Italic {get;}
+ItalicOff        Property   string ItalicOff {get;}
+OutputRendering  Property   System.Management.Automation.OutputRendering OutputRendering {get;set;}
+Progress         Property   System.Management.Automation.PSStyle+ProgressConfiguration Progress {get;}
+Reset            Property   string Reset {get;}
+Reverse          Property   string Reverse {get;}
+ReverseOff       Property   string ReverseOff {get;}
+Strikethrough    Property   string Strikethrough {get;}
+StrikethroughOff Property   string StrikethroughOff {get;}
+Underline        Property   string Underline {get;}
+UnderlineOff     Property   string UnderlineOff {get;}
 ```
 
 De basis leden retour neren teken reeksen van ANSI-escape reeksen die zijn toegewezen aan hun namen. De waarden kunnen worden ingesteld om aanpassing mogelijk te maken.
@@ -117,6 +127,8 @@ Naast de toegang tot `$PSStyle` , worden er wijzigingen aangebracht in de Power 
 - `StringDecorated Substring(int contentLength)` methode retourneert een subtekenreeks die begint bij index 0 tot aan de lengte van de inhoud die geen deel uitmaakt van ANSI-escape reeksen. Dit is nodig voor het afkappen van teken reeksen en het behouden van ANSI-escape reeksen die geen afdruk bare teken ruimte innemen.
 - `string ToString()` de methode blijft hetzelfde en retourneert de ongecodeerde versie van de teken reeks.
 - `string ToString(bool Ansi)` methode retourneert de onbewerkte ANSI-teken reeks als de `Ansi` para meter waar is. Anders wordt een niet-gecodeerde versie met ANSI-escape reeksen verwijderd.
+
+Het `FormatHyperlink(string text, uri link)` retourneert een teken reeks met een ANSI-escape reeks waarmee hyper links worden verdecoreerd. Sommige Terminal-hosts, zoals de [Windows-Terminal](https://www.microsoft.com/p/windows-terminal/9n0dx20hk701), ondersteunen deze markering, waardoor de gerenderde tekst in de terminal kan worden geklikt.
 
 ## <a name="psansiprogress"></a>PSAnsiProgress
 

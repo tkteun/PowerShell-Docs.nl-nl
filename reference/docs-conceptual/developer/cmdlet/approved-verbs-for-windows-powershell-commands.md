@@ -1,14 +1,14 @@
 ---
-ms.date: 09/07/2018
+ms.date: 03/01/2021
 ms.topic: reference
 title: Goedgekeurde werkwoorden voor PowerShell-opdrachten
 description: Goedgekeurde werkwoorden voor PowerShell-opdrachten
-ms.openlocfilehash: fc1ff989ae86862e0f9cc24d8bcba2ff02ef68cc
-ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.openlocfilehash: 277472f141eb1ef2b7b0f19801c622a899e93665
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "93355099"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101686085"
 ---
 # <a name="approved-verbs-for-powershell-commands"></a>Goedgekeurde werkwoorden voor PowerShell-opdrachten
 
@@ -57,7 +57,7 @@ Gebruik de `Get` opdracht voor het verkrijgen van informatie over een resource (
 
 ### <a name="invoke-vs-start"></a>Aanroepen versus starten
 
-Gebruik de opdracht `Invoke` om synchrone bewerkingen uit te voeren, zoals het uitvoeren van een opdracht en wacht totdat de bewerking is beëindigd. De `Start` term gebruiken wordt gebruikt voor het starten van asynchrone bewerkingen, zoals het starten van een autonoom proces.
+Gebruik de opdracht `Invoke` om synchrone bewerkingen uit te voeren, zoals het uitvoeren van een opdracht en wacht totdat de bewerking is beëindigd. Gebruik de `Start` opdracht voor het starten van asynchrone bewerkingen, zoals het starten van een autonoom proces.
 
 ### <a name="ping-vs-test"></a>Ping versus testen
 
@@ -67,7 +67,7 @@ Gebruik de `Test` term.
 
 Power shell gebruikt de opsommings klasse [System. Management. Automation. VerbsCommon](/dotnet/api/System.Management.Automation.VerbsCommon) om algemene acties te definiëren die van toepassing kunnen zijn op bijna elke cmdlet. De volgende tabel bevat de meeste gedefinieerde termen.
 
-|Verb (alias)|Actie|Synoniemen om te voor komen|
+|Verb (alias)|Bewerking|Synoniemen om te voor komen|
 |--------------------|------------|--------------|
 |[Toevoegen](/dotnet/api/System.Management.Automation.VerbsCommon.Add) (a)|Hiermee voegt u een resource toe aan een container of koppelt u een item aan een ander item. De `Add-Content` cmdlet voegt bijvoorbeeld inhoud toe aan een bestand. Deze term is gekoppeld aan `Remove` .|Toevoegen, koppelen, samen voegen, invoegen|
 |[Wissen](/dotnet/api/System.Management.Automation.VerbsCommon.Clear) (CL)|Hiermee worden alle resources uit een container verwijderd, maar wordt de container niet verwijderd. `Clear-Content`Met de cmdlet wordt bijvoorbeeld de inhoud van een bestand verwijderd, maar wordt het bestand niet verwijderd.|Leegmaken, wissen, vrijgeven, uitschakeling, uitschakelen, verwijderen|
@@ -107,7 +107,7 @@ Power shell gebruikt de opsommings klasse [System. Management. Automation. Verbs
 
 Power Shell maakt gebruik van de klasse [System. Management. Automation. VerbsCommunications](/dotnet/api/System.Management.Automation.VerbsCommunications) om acties te definiëren die van toepassing zijn op communicatie. De volgende tabel bevat de meeste gedefinieerde termen.
 
-|Verb (alias)|Actie|Synoniemen om te voor komen|
+|Verb (alias)|Bewerking|Synoniemen om te voor komen|
 |--------------------|------------|--------------|
 |[Verbinding maken](/dotnet/api/System.Management.Automation.VerbsCommunications.Connect) (CC)|Hiermee maakt u een koppeling tussen een bron en een bestemming. Deze term is gekoppeld aan `Disconnect` .|Toevoegen aan Telnet|
 |[Verbinding verbreken](/dotnet/api/System.Management.Automation.VerbsCommunications.Disconnect) (DC)|De koppeling tussen een bron en een bestemming wordt verbroken. Deze term is gekoppeld aan `Connect` .|Onderbreken, afmelden|
@@ -120,7 +120,7 @@ Power Shell maakt gebruik van de klasse [System. Management. Automation. VerbsCo
 
 Power shell gebruikt de klasse [System. Management. Automation. VerbsData](/dotnet/api/System.Management.Automation.VerbsData) om acties te definiëren die van toepassing zijn op de verwerking van gegevens. De volgende tabel bevat de meeste gedefinieerde termen.
 
-|Werkwoord naam (alias)|Actie|Synoniemen om te voor komen|
+|Werkwoord naam (alias)|Bewerking|Synoniemen om te voor komen|
 |-------------------------|------------|--------------|
 |[Back-up](/dotnet/api/System.Management.Automation.VerbsData.Backup) (BA)|Hiermee worden gegevens opgeslagen door deze te repliceren.|Opslaan, branden, repliceren, synchroniseren|
 |[Controle punt](/dotnet/api/System.Management.Automation.VerbsData.Checkpoint) (CH)|Hiermee maakt u een moment opname van de huidige status van de gegevens of van de configuratie ervan.|Versch|
@@ -150,7 +150,7 @@ Power shell gebruikt de klasse [System. Management. Automation. VerbsData](/dotn
 
 Power Shell maakt gebruik van de klasse [System. Management. Automation. VerbsDiagnostic](/dotnet/api/System.Management.Automation.VerbsDiagnostic) om acties te definiëren die van toepassing zijn op diagnostische gegevens. De volgende tabel bevat de meeste gedefinieerde termen.
 
-|Verb (alias)|Actie|Synoniemen om te voor komen|
+|Verb (alias)|Bewerking|Synoniemen om te voor komen|
 |--------------------|------------|--------------|
 |[Debug](/dotnet/api/System.Management.Automation.VerbsDiagnostic.Debug) (DB)|Onderzoekt een resource om operationele problemen vast te stellen.|Vaststellen|
 |[Meting](/dotnet/api/System.Management.Automation.VerbsDiagnostic.Measure) (MS)|Identificeert bronnen die worden gebruikt door een opgegeven bewerking of waarmee statistieken over een resource worden opgehaald.|Berekenen, vaststellen, analyseren|
@@ -163,7 +163,7 @@ Power Shell maakt gebruik van de klasse [System. Management. Automation. VerbsDi
 
 Power shell gebruikt de klasse [System. Management. Automation. VerbsLifeCycle](/dotnet/api/System.Management.Automation.VerbsLifeCycle) om acties te definiëren die van toepassing zijn op de levens cyclus van een resource. De volgende tabel bevat de meeste gedefinieerde termen.
 
-|Verb (alias)|Actie|Synoniemen om te voor komen|
+|Verb (alias)|Bewerking|Synoniemen om te voor komen|
 |--------------------|------------|--------------|
 |[Goed keuren](/dotnet/api/System.Management.Automation.VerbsLifecycle.Approve) (AP)|Bevestigt of gaat akkoord met de status van een resource of proces.||
 |[Bevestiging](/dotnet/api/System.Management.Automation.VerbsLifecycle.Assert) (as)|Bevestigt de status van een resource.|Certify|
@@ -192,7 +192,7 @@ Power shell gebruikt de klasse [System. Management. Automation. VerbsLifeCycle](
 
 Power shell gebruikt de klasse [System. Management. Automation. VerbsSecurity](/dotnet/api/System.Management.Automation.VerbsSecurity) om acties te definiëren die van toepassing zijn op de beveiliging. De volgende tabel bevat de meeste gedefinieerde termen.
 
-|Verb (alias)|Actie|Synoniemen om te voor komen|
+|Verb (alias)|Bewerking|Synoniemen om te voor komen|
 |--------------------|------------|--------------|
 |[Blok keren](/dotnet/api/System.Management.Automation.VerbsSecurity.Block) (BL)|Hiermee beperkt u de toegang tot een resource. Deze term is gekoppeld aan `Unblock` .|Voor komen, beperken, weigeren|
 |[Verlenen](/dotnet/api/System.Management.Automation.VerbsSecurity.Grant) (GR)|Hiermee krijgt u toegang tot een resource. Deze term is gekoppeld aan `Revoke` .|Toestaan, inschakelen|
@@ -205,7 +205,7 @@ Power shell gebruikt de klasse [System. Management. Automation. VerbsSecurity](/
 
 Power Shell maakt gebruik van de klasse [System. Management. Automation. VerbsOther](/dotnet/api/System.Management.Automation.VerbsOther) om canonieke namen van woorden te definiëren die niet in een specifieke termen categorie staan, zoals de termen common, Communications, Data, Lifecycle of Security term names.
 
-|Verb (alias)|Actie|Synoniemen om te voor komen|
+|Verb (alias)|Bewerking|Synoniemen om te voor komen|
 |--------------------|------------|--------------|
 |[Gebruik](/dotnet/api/System.Management.Automation.VerbsOther.Use) (u)|Maakt gebruik van of bevat een resource om iets te doen.||
 

@@ -6,12 +6,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/psscheduledjob/about/about_scheduled_jobs_troubleshooting?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Scheduled_Jobs_Troubleshooting
-ms.openlocfilehash: 924205edb9d44724cfef201d84baa304ecde67ad
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: aac2133cee4abdd7e50e7b433104b9578d74b0a8
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93252409"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685854"
 ---
 # <a name="about-scheduled-jobs-troubleshooting"></a>Over het oplossen van problemen met geplande taken
 
@@ -56,7 +56,7 @@ Id     Name         PSJobTypeName   State         HasMoreData     Location
 50     ProcessJob   PSScheduledJob  Completed     False           localhost
 ```
 
-De `Get-Job` cmdlet verzendt **ProcessJob** -objecten omlaag in de pijp lijn. `Format-Table`Met de cmdlet worden de eigenschappen **name** , **id** en **PSBeginTime** van een geplande taak instantie in een tabel weer gegeven.
+De `Get-Job` cmdlet verzendt **ProcessJob** -objecten omlaag in de pijp lijn. `Format-Table`Met de cmdlet worden de eigenschappen **name**, **id** en **PSBeginTime** van een geplande taak instantie in een tabel weer gegeven.
 
 ```powershell
 Get-Job ProcessJob | Format-Table -Property Name, ID, PSBeginTime -Auto
@@ -332,7 +332,7 @@ Bijvoorbeeld een geplande taak waarvoor de computer inactief moet zijn of een ne
 Gebruik de `Get-ScheduledJobOption` cmdlet om de taak opties en de bijbehorende waarden te controleren.
 
 ```powershell
-Get-ScheduledJob -Name ProcessJob
+Get-ScheduledJobOption -Name ProcessJob
 ```
 
 ```Output

@@ -1,16 +1,16 @@
 ---
 description: Hierin worden de Opera tors beschreven waarmee waarden in Power shell worden vergeleken.
 Locale: en-US
-ms.date: 01/20/2021
+ms.date: 02/19/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Comparison_Operators
-ms.openlocfilehash: aa2d2d09fe0eb35c42c5ee84083c8ee29354cf8f
-ms.sourcegitcommit: 77f6225ab0c8ea9faa1fe46b2ea15c178ec170e3
+ms.openlocfilehash: bab5ec020a51584572d1a3e4e3731bcf9bee6732
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100500173"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685998"
 ---
 # <a name="about-comparison-operators"></a>Over vergelijkings operatoren
 
@@ -158,7 +158,7 @@ $null -ne $a
 ```
 
 ```output
-False
+True
 ```
 
 De volgende bestanden zijn echter alle null-elementen van `$a` :

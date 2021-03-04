@@ -7,12 +7,12 @@ ms.date: 04/10/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/get-authenticodesignature?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-AuthenticodeSignature
-ms.openlocfilehash: 44608ba9fa2324f9d6d381801876c831ed8b3db8
-ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
+ms.openlocfilehash: b1b470fb1dd23cd404b7f5fea4981b39f206ae87
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94347292"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685330"
 ---
 # Get-AuthenticodeSignature
 
@@ -41,7 +41,9 @@ Get-AuthenticodeSignature -SourcePathOrExtension <String[]> -Content <Byte[]> [<
 
 ## BESCHRIJVING
 
-De `Get-AuthenticodeSignature` cmdlet haalt informatie op over de Authenticode-hand tekening voor een bestand of bestands inhoud als een byte matrix. Als het bestand niet is ondertekend, wordt de informatie opgehaald, maar zijn de velden leeg.
+De `Get-AuthenticodeSignature` cmdlet haalt informatie op over de Authenticode-hand tekening voor een bestand of bestands inhoud als een byte matrix.
+Als het bestand zowel Inge sloten ondertekende als Windows-catalogus is ondertekend, wordt de hand tekening van de Windows-catalogus gebruikt.
+Als het bestand niet is ondertekend, wordt de informatie opgehaald, maar zijn de velden leeg.
 
 ## VOORBEELDEN
 

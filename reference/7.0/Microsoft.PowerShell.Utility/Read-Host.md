@@ -3,16 +3,16 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
+ms.date: 03/02/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/read-host?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Read-Host
-ms.openlocfilehash: aacc89001373ecc8ef75e630f965a8d807bd4ac3
-ms.sourcegitcommit: 57df49488015e7ac17ff1df402a94441aa6d6064
+ms.openlocfilehash: 4f5a5705c726aef7150b734a6265308a5915decb
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "93251413"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685593"
 ---
 # Read-Host
 
@@ -28,6 +28,9 @@ Read-Host [[-Prompt] <Object>] [-AsSecureString] [<CommonParameters>]
 ## BESCHRIJVING
 
 De `Read-Host` cmdlet leest een regel invoer van de-console. U kunt deze gebruiken om een gebruiker te vragen om invoer. Omdat u de invoer kunt opslaan als een beveiligde teken reeks, kunt u deze cmdlet gebruiken om gebruikers te vragen voor beveiligde gegevens, zoals wacht woorden, en gedeelde gegevens.
+
+> [!NOTE]
+> `Read-Host` heeft een limiet van 1022 tekens die kan worden geaccepteerd als invoer van een gebruiker.
 
 ## VOORBEELDEN
 
@@ -51,7 +54,7 @@ $pwd_secure_string = Read-Host "Enter a Password" -AsSecureString
 
 ### -AsSecureString
 
-Geeft aan dat de cmdlet sterretjes ( `*` ) weergeeft in plaats van de tekens die de gebruiker typt als invoer. Wanneer u deze para meter gebruikt, is de uitvoer van de `Read-Host` cmdlet een **SecureString** -object ( **System. Security. SecureString** ).
+Geeft aan dat de cmdlet sterretjes ( `*` ) weergeeft in plaats van de tekens die de gebruiker typt als invoer. Wanneer u deze para meter gebruikt, is de uitvoer van de `Read-Host` cmdlet een **SecureString** -object (**System. Security. SecureString**).
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -67,10 +70,7 @@ Accept wildcard characters: False
 
 ### -Prompt
 
-Hiermee geeft u de tekst van de prompt.
-Typ een teken reeks.
-Als de teken reeks spaties bevat, plaatst u deze tussen aanhalings tekens.
-Power shell voegt een dubbele punt ( `:` ) toe aan de tekst die u invoert.
+Hiermee geeft u de tekst van de prompt. Typ een teken reeks. Als de teken reeks spaties bevat, plaatst u deze tussen aanhalings tekens. Power shell voegt een dubbele punt ( `:` ) toe aan de tekst die u invoert.
 
 ```yaml
 Type: System.Object

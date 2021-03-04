@@ -1,14 +1,14 @@
 ---
 title: Alles wat u moet weten over de instructie switch
 description: De instructie switch in Power shell biedt functies die niet in andere talen zijn gevonden.
-ms.date: 05/23/2020
+ms.date: 03/01/2021
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: c2e77aa5fb36d04fec1bc86f751291205120c729
-ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
+ms.openlocfilehash: f6baa624285557452a2b95150b2c4de1ab274f27
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93355116"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101686004"
 ---
 # <a name="everything-you-ever-wanted-to-know-about-the-switch-statement"></a>Alles wat u moet weten over de instructie switch
 
@@ -169,7 +169,7 @@ U kunt de `$PSItem` of gebruiken `$_` om te verwijzen naar het huidige item dat 
 
 ## <a name="parameters"></a>Parameters
 
-Een unieke functie van de Power shell `switch` is dat deze een aantal [para meters][] heeft die wijzigen hoe deze wordt uitgevoerd.
+Een unieke functie van de Power shell `switch` is dat deze een aantal para meters heeft die wijzigen hoe deze wordt uitgevoerd.
 
 ### <a name="-casesensitive"></a>-CaseSensitive
 
@@ -738,6 +738,5 @@ De instructie switch is eenvoudig op het Opper vlak, maar biedt een aantal geava
 [powershellexplained.com]: https://powershellexplained.com/
 [@KevinMarquette]: https://twitter.com/KevinMarquette
 [/tijdnotatie]: /powershell/module/microsoft.powershell.core/about/about_switch
-[switch parameters]: https://www.powershellmagazine.com/2013/12/20/using-powershell-switch-vs-boolean-parameters-in-sma-runbooks/
 [De vele manieren om regex te gebruiken]: https://powershellexplained.com/2017-07-31-Powershell-regex-regular-expression
 [hashtabellen]: everything-about-hashtable.md
