@@ -1,14 +1,14 @@
 ---
-ms.date: 09/13/2016
+ms.date: 03/09/2021
 ms.topic: reference
 title: Taken ondersteunen
 description: Taken ondersteunen
-ms.openlocfilehash: d755093e941aa660032f8d283cb43ba5eeec8c4b
-ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.openlocfilehash: 1528f5d934605caa4009688845a6caa7b95b86a3
+ms.sourcegitcommit: e679533f966f4e97cddae24531a22436da13610c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "92666974"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102532115"
 ---
 # <a name="how-to-support-jobs"></a>Taken ondersteunen
 
@@ -32,7 +32,7 @@ In dit voor beeld ziet u hoe u taken kunt ondersteunen wanneer u cmdlets schrijf
 
     <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06AsJobParam](msh_samplesGetProc06#GetProc06AsJobParam)]  -->
 
-2. Maak een-object dat is afgeleid van de klasse [System. Management. Automation. Job](/dotnet/api/System.Management.Automation.Job) . Dit object kan een aangepast taak object zijn of een van de taak objecten van Windows Power shell, zoals een [System. Management. Automation. Pseventjob](/dotnet/api/System.Management.Automation.PSEventJob) -object.
+1. Maak een-object dat is afgeleid van de klasse [System. Management. Automation. Job](/dotnet/api/System.Management.Automation.Job) . Dit object kan een aangepast taak object zijn of een van de taak objecten van Windows Power shell, zoals een [System. Management. Automation. Pseventjob](/dotnet/api/System.Management.Automation.PSEventJob) -object.
 
     In het volgende voor beeld ziet u een aangepast taak object.
 
@@ -42,7 +42,7 @@ In dit voor beeld ziet u hoe u taken kunt ondersteunen wanneer u cmdlets schrijf
 
     <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06JobObject](msh_samplesGetProc06#GetProc06JobObject)]  -->
 
-3. Voeg in een methode voor het verwerken van records een `if` instructie toe om te detecteren of de cmdlet moet worden uitgevoerd als een taak. De volgende code maakt gebruik van de methode [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) .
+1. Voeg in een methode voor het verwerken van records een `if` instructie toe om te detecteren of de cmdlet moet worden uitgevoerd als een taak. De volgende code maakt gebruik van de methode [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) .
 
     ```csharp
     protected override void ProcessRecord()
@@ -69,7 +69,7 @@ In dit voor beeld ziet u hoe u taken kunt ondersteunen wanneer u cmdlets schrijf
 
     <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06ProcessRecord](msh_samplesGetProc06#GetProc06ProcessRecord)]  -->
 
-4. Implementeer voor aangepaste taak objecten de taak klasse.
+1. Implementeer voor aangepaste taak objecten de taak klasse.
 
     ```csharp
     private class SampleJob : Job
@@ -126,7 +126,7 @@ In dit voor beeld ziet u hoe u taken kunt ondersteunen wanneer u cmdlets schrijf
 
     <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06JobClass](msh_samplesGetProc06#GetProc06JobClass)]  -->
 
-5. Als de cmdlet het werk uitvoert, roept u de methode [System. Management. Automation. cmdlet. WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) aan om een proces object naar de pijp lijn te retour neren. Als het werk wordt uitgevoerd als een taak, voegt u een onderliggende taak toe aan de taak.
+1. Als de cmdlet het werk uitvoert, roept u de methode [System. Management. Automation. cmdlet. WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) aan om een proces object naar de pijp lijn te retour neren. Als het werk wordt uitgevoerd als een taak, voegt u een onderliggende taak toe aan de taak.
 
     ```csharp
     void DoProcessLogic(bool asJob)
@@ -209,6 +209,7 @@ namespace Microsoft.Samples.PowerShell.Commands
     /// Specify the AsJob parameter. This parameter indicates
     /// whether the cmdlet should retrieve the processes internally
     /// or return a Job object that retrieves the processes.
+    /// </summary>
     [Parameter()]
     public SwitchParameter AsJob
     {
