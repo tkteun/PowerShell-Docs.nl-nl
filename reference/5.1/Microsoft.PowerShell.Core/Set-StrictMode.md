@@ -3,16 +3,16 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 04/09/2020
+ms.date: 03/10/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/set-strictmode?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-StrictMode
-ms.openlocfilehash: e44cad2bab6c81de67cdd0902af5172438efa19e
-ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
+ms.openlocfilehash: 32fd07174bacb7d0b99361916574f6b672052d1b
+ms.sourcegitcommit: 925819a5ad5799650c14944bd3e50fb309a7e6c4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94388498"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102771423"
 ---
 # Set-StrictMode
 
@@ -153,7 +153,7 @@ Zonder versie 2,0 wordt de verwijzing naar de niet-bestaande eigenschap **Month*
 
 ### Voor beeld 3: de strikte modus inschakelen als versie 3,0
 
-Als de strikte modus is ingesteld op **uit** , is het resultaat van een ongeldige of buiten grenzende indexen Null-waarden.
+Als de strikte modus is ingesteld op **uit**, is het resultaat van een ongeldige of buiten grenzende indexen Null-waarden.
 
 ```powershell
 # Strict mode is off by default.
@@ -262,6 +262,8 @@ U kunt geen invoer van een pipe naar deze cmdlet.
 Met deze cmdlet wordt geen uitvoer geretourneerd.
 
 ## OPMERKINGEN
+
+De `Set-StrictMode` para meter van de **versie** accepteert waarden die groter zijn dan `3.0` , momenteel zijn er geen aanvullende regels gedefinieerd voor iets hoger dan `3.0` .
 
 `Set-StrictMode` is alleen effectief in het bereik waarin het is ingesteld en in het onderliggende bereik. Zie [about_Scopes](about/about_Scopes.md)voor meer informatie over bereiken in Power shell.
 

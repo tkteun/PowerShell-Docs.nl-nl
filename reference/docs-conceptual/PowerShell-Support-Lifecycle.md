@@ -2,12 +2,12 @@
 title: Levenscyclus voor ondersteuning van PowerShell Core
 description: Details van de beleids regels die ondersteuning bieden voor Power shell
 ms.date: 11/11/2020
-ms.openlocfilehash: 0803dda070c66b4c1d803171ecdb7029a096517b
-ms.sourcegitcommit: 4879b9cdfa3f03b04a07b84442dc1ca9ae0f6b46
+ms.openlocfilehash: a11c4df1f105364307b8a99ffe9b0cc7e9c29122
+ms.sourcegitcommit: 925819a5ad5799650c14944bd3e50fb309a7e6c4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98105176"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102771474"
 ---
 # <a name="powershell-support-lifecycle"></a>Levens cyclus van Power Shell-ondersteuning
 
@@ -131,11 +131,15 @@ Zie het [about_Windows_Compatibility][] -artikel en de [lijst met compatibilitei
 Power shell volgt de [micro soft security Servicing criteria voor Windows][].
 De onderstaande tabel bevat een overzicht van de functies die voldoen aan de onderhouds criteria en die niet.
 
-| Functie                          | Type             |
-|----------------------------------|------------------|
-| Uitvoerings beleid                 | Diep ingrijpende verdediging |
-| Systeem vergrendeling-met AppLocker | Diep ingrijpende verdediging |
-| Systeem Lockdown-met WDAC      | Beveiligings functie |
+|                  Functie                   |       Type       |
+| ------------------------------------------ | ---------------- |
+| Uitvoerings beleid                           | Diep ingrijpende verdediging |
+| Systeem vergrendeling-met AppLocker           | Diep ingrijpende verdediging |
+| Beperkte taal modus-met AppLocker | Diep ingrijpende verdediging |
+| Systeem Lockdown-met WDAC                | Beveiligings functie |
+| Beperkte taal modus-met WDAC      | Beveiligings functie |
+
+Zie [toepassings besturings elementen voor Windows](/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control)voor meer informatie over AppLocker en Windows Defender Application Control (WDAC).
 
 ## <a name="release-history"></a>Release geschiedenis
 
