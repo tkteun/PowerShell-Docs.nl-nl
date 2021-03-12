@@ -1,45 +1,46 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 06/27/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-uptime?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Uptime
-ms.openlocfilehash: d06dbc66d9674b59df4d75f8ae333d4fe24aa7eb
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 225172868e0a011d89974a399e372515f531ac3d
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93250203"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103196280"
 ---
-# <span data-ttu-id="8f2d2-102">Get-Uptime</span><span class="sxs-lookup"><span data-stu-id="8f2d2-102">Get-Uptime</span></span>
+# <span data-ttu-id="19729-102">Get-Uptime</span><span class="sxs-lookup"><span data-stu-id="19729-102">Get-Uptime</span></span>
 
-## <span data-ttu-id="8f2d2-103">SAMENVATTING</span><span class="sxs-lookup"><span data-stu-id="8f2d2-103">SYNOPSIS</span></span>
-<span data-ttu-id="8f2d2-104">Haal de **tijds duur** op sinds de laatste keer dat deze is opgestart.</span><span class="sxs-lookup"><span data-stu-id="8f2d2-104">Get the **TimeSpan** since last boot.</span></span>
+## <span data-ttu-id="19729-103">SAMENVATTING</span><span class="sxs-lookup"><span data-stu-id="19729-103">SYNOPSIS</span></span>
+<span data-ttu-id="19729-104">Haal de **tijds duur** op sinds de laatste keer dat deze is opgestart.</span><span class="sxs-lookup"><span data-stu-id="19729-104">Get the **TimeSpan** since last boot.</span></span>
 
-## <span data-ttu-id="8f2d2-105">SYNTAXIS</span><span class="sxs-lookup"><span data-stu-id="8f2d2-105">SYNTAX</span></span>
+## <span data-ttu-id="19729-105">SYNTAXIS</span><span class="sxs-lookup"><span data-stu-id="19729-105">SYNTAX</span></span>
 
-### <span data-ttu-id="8f2d2-106">Time span (standaard)</span><span class="sxs-lookup"><span data-stu-id="8f2d2-106">Timespan (Default)</span></span>
+### <span data-ttu-id="19729-106">Time span (standaard)</span><span class="sxs-lookup"><span data-stu-id="19729-106">Timespan (Default)</span></span>
 
 ```
 Get-Uptime [<CommonParameters>]
 ```
 
-### <span data-ttu-id="8f2d2-107">Moment</span><span class="sxs-lookup"><span data-stu-id="8f2d2-107">Since</span></span>
+### <span data-ttu-id="19729-107">Moment</span><span class="sxs-lookup"><span data-stu-id="19729-107">Since</span></span>
 
 ```
 Get-Uptime [-Since] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="8f2d2-108">BESCHRIJVING</span><span class="sxs-lookup"><span data-stu-id="8f2d2-108">DESCRIPTION</span></span>
+## <span data-ttu-id="19729-108">BESCHRIJVING</span><span class="sxs-lookup"><span data-stu-id="19729-108">DESCRIPTION</span></span>
 
-<span data-ttu-id="8f2d2-109">Deze cmdlet retourneert de tijd die is verstreken sinds de laatste keer dat het besturings systeem is opgestart.</span><span class="sxs-lookup"><span data-stu-id="8f2d2-109">This cmdlet returns the time elapsed since the last boot of the operating system.</span></span>
+<span data-ttu-id="19729-109">Deze cmdlet retourneert de tijd die is verstreken sinds de laatste keer dat het besturings systeem is opgestart.</span><span class="sxs-lookup"><span data-stu-id="19729-109">This cmdlet returns the time elapsed since the last boot of the operating system.</span></span>
 
-<span data-ttu-id="8f2d2-110">De `Get-Uptime` cmdlet is geïntroduceerd in Power shell 6,0.</span><span class="sxs-lookup"><span data-stu-id="8f2d2-110">The `Get-Uptime` cmdlet was introduced in PowerShell 6.0.</span></span>
+<span data-ttu-id="19729-110">De `Get-Uptime` cmdlet is geïntroduceerd in Power shell 6,0.</span><span class="sxs-lookup"><span data-stu-id="19729-110">The `Get-Uptime` cmdlet was introduced in PowerShell 6.0.</span></span>
 
-## <span data-ttu-id="8f2d2-111">VOORBEELDEN</span><span class="sxs-lookup"><span data-stu-id="8f2d2-111">EXAMPLES</span></span>
+## <span data-ttu-id="19729-111">VOORBEELDEN</span><span class="sxs-lookup"><span data-stu-id="19729-111">EXAMPLES</span></span>
 
-### <span data-ttu-id="8f2d2-112">Voor beeld 1: tijd weer geven sinds laatste keer opstarten</span><span class="sxs-lookup"><span data-stu-id="8f2d2-112">Example 1 - Show time since last boot</span></span>
+### <span data-ttu-id="19729-112">Voor beeld 1: tijd weer geven sinds laatste keer opstarten</span><span class="sxs-lookup"><span data-stu-id="19729-112">Example 1 - Show time since last boot</span></span>
 
 ```powershell
 Get-Uptime
@@ -59,7 +60,7 @@ TotalSeconds      : 778185
 TotalMilliseconds : 778185000
 ```
 
-### <span data-ttu-id="8f2d2-113">Voor beeld 2: de tijd van de laatste keer opstarten weer geven</span><span class="sxs-lookup"><span data-stu-id="8f2d2-113">Example 2 - Show the time of the last boot</span></span>
+### <span data-ttu-id="19729-113">Voor beeld 2: de tijd van de laatste keer opstarten weer geven</span><span class="sxs-lookup"><span data-stu-id="19729-113">Example 2 - Show the time of the last boot</span></span>
 
 ```powershell
 Get-Uptime -Since
@@ -69,11 +70,11 @@ Get-Uptime -Since
 Tuesday, June 18, 2019 2:34:56 PM
 ```
 
-## <span data-ttu-id="8f2d2-114">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="8f2d2-114">PARAMETERS</span></span>
+## <span data-ttu-id="19729-114">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="19729-114">PARAMETERS</span></span>
 
-### <span data-ttu-id="8f2d2-115">-Sinds</span><span class="sxs-lookup"><span data-stu-id="8f2d2-115">-Since</span></span>
+### <span data-ttu-id="19729-115">-Sinds</span><span class="sxs-lookup"><span data-stu-id="19729-115">-Since</span></span>
 
-<span data-ttu-id="8f2d2-116">Zorgt ervoor dat de cmdlet een **DateTime** -object retourneert dat de laatste keer dat het besturings systeem is opgestart.</span><span class="sxs-lookup"><span data-stu-id="8f2d2-116">Cause the cmdlet to return a **DateTime** object representing the last time that the operating system was booted.</span></span>
+<span data-ttu-id="19729-116">Zorgt ervoor dat de cmdlet een **DateTime** -object retourneert dat de laatste keer dat het besturings systeem is opgestart.</span><span class="sxs-lookup"><span data-stu-id="19729-116">Cause the cmdlet to return a **DateTime** object representing the last time that the operating system was booted.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -87,34 +88,34 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="8f2d2-117">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="8f2d2-117">CommonParameters</span></span>
+### <span data-ttu-id="19729-117">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="19729-117">CommonParameters</span></span>
 
-<span data-ttu-id="8f2d2-118">Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="8f2d2-118">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="8f2d2-119">Zie [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)voor meer informatie.</span><span class="sxs-lookup"><span data-stu-id="8f2d2-119">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+<span data-ttu-id="19729-118">Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="19729-118">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="19729-119">Zie [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)voor meer informatie.</span><span class="sxs-lookup"><span data-stu-id="19729-119">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="8f2d2-120">INVOER</span><span class="sxs-lookup"><span data-stu-id="8f2d2-120">INPUTS</span></span>
+## <span data-ttu-id="19729-120">INVOER</span><span class="sxs-lookup"><span data-stu-id="19729-120">INPUTS</span></span>
 
-### <span data-ttu-id="8f2d2-121">Geen</span><span class="sxs-lookup"><span data-stu-id="8f2d2-121">None</span></span>
+### <span data-ttu-id="19729-121">Geen</span><span class="sxs-lookup"><span data-stu-id="19729-121">None</span></span>
 
-## <span data-ttu-id="8f2d2-122">UITVOER</span><span class="sxs-lookup"><span data-stu-id="8f2d2-122">OUTPUTS</span></span>
+## <span data-ttu-id="19729-122">UITVOER</span><span class="sxs-lookup"><span data-stu-id="19729-122">OUTPUTS</span></span>
 
-### <span data-ttu-id="8f2d2-123">System. time span</span><span class="sxs-lookup"><span data-stu-id="8f2d2-123">System.TimeSpan</span></span>
+### <span data-ttu-id="19729-123">System. time span</span><span class="sxs-lookup"><span data-stu-id="19729-123">System.TimeSpan</span></span>
 
-<span data-ttu-id="8f2d2-124">Dit is het standaard retour type wanneer er geen para meters worden gebruikt.</span><span class="sxs-lookup"><span data-stu-id="8f2d2-124">This is the default return type when no parameters are used.</span></span>
+<span data-ttu-id="19729-124">Dit is het standaard retour type wanneer er geen para meters worden gebruikt.</span><span class="sxs-lookup"><span data-stu-id="19729-124">This is the default return type when no parameters are used.</span></span>
 
-### <span data-ttu-id="8f2d2-125">System. DateTime</span><span class="sxs-lookup"><span data-stu-id="8f2d2-125">System.DateTime</span></span>
+### <span data-ttu-id="19729-125">System. DateTime</span><span class="sxs-lookup"><span data-stu-id="19729-125">System.DateTime</span></span>
 
-<span data-ttu-id="8f2d2-126">Dit type wordt geretourneerd wanneer de **sinds** -para meter wordt gebruikt.</span><span class="sxs-lookup"><span data-stu-id="8f2d2-126">This type is returned when using the **Since** parameter.</span></span>
+<span data-ttu-id="19729-126">Dit type wordt geretourneerd wanneer de **sinds** -para meter wordt gebruikt.</span><span class="sxs-lookup"><span data-stu-id="19729-126">This type is returned when using the **Since** parameter.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="8f2d2-127">Als Windows snel opstarten is ingeschakeld, wordt de waarde die is opgeslagen in **LastBootUpTime** niet door Windows bijgewerkt.</span><span class="sxs-lookup"><span data-stu-id="8f2d2-127">If Windows fast startup is enabled, Windows does not update the value stored in **LastBootUpTime**.</span></span> <span data-ttu-id="8f2d2-128">Als u snel opstarten wilt uitschakelen, voert u de volgende opdracht uit: `Powercfg -h off` .</span><span class="sxs-lookup"><span data-stu-id="8f2d2-128">To disable fast startup, run the following command: `Powercfg -h off`.</span></span>
+> <span data-ttu-id="19729-127">Als Windows snel opstarten is ingeschakeld, wordt de waarde die is opgeslagen in **LastBootUpTime** niet door Windows bijgewerkt.</span><span class="sxs-lookup"><span data-stu-id="19729-127">If Windows fast startup is enabled, Windows does not update the value stored in **LastBootUpTime**.</span></span> <span data-ttu-id="19729-128">Als u snel opstarten wilt uitschakelen, voert u de volgende opdracht uit: `Powercfg -h off` .</span><span class="sxs-lookup"><span data-stu-id="19729-128">To disable fast startup, run the following command: `Powercfg -h off`.</span></span>
 >
-> <span data-ttu-id="8f2d2-129">Zie voor meer informatie over het snel opstarten van Windows een [onderscheid maken tussen snel opstarten vanuit](/windows-hardware/drivers/kernel/distinguishing-fast-startup-from-wake-from-hibernation)de slaap stand.</span><span class="sxs-lookup"><span data-stu-id="8f2d2-129">For more information about Windows fast startup, see [Distinguishing Fast Startup from Wake-from-Hibernation](/windows-hardware/drivers/kernel/distinguishing-fast-startup-from-wake-from-hibernation).</span></span>
+> <span data-ttu-id="19729-129">Zie voor meer informatie over het snel opstarten van Windows een [onderscheid maken tussen snel opstarten vanuit](/windows-hardware/drivers/kernel/distinguishing-fast-startup-from-wake-from-hibernation)de slaap stand.</span><span class="sxs-lookup"><span data-stu-id="19729-129">For more information about Windows fast startup, see [Distinguishing Fast Startup from Wake-from-Hibernation](/windows-hardware/drivers/kernel/distinguishing-fast-startup-from-wake-from-hibernation).</span></span>
 
-## <span data-ttu-id="8f2d2-130">OPMERKINGEN</span><span class="sxs-lookup"><span data-stu-id="8f2d2-130">NOTES</span></span>
+## <span data-ttu-id="19729-130">OPMERKINGEN</span><span class="sxs-lookup"><span data-stu-id="19729-130">NOTES</span></span>
 
-<span data-ttu-id="8f2d2-131">In Windows is de geretourneerde waarde hetzelfde als de eigenschap **LastBootUpTime** van de klasse **Win32_OperatingSystem** in WMI.</span><span class="sxs-lookup"><span data-stu-id="8f2d2-131">On Windows, the value returned is the same as the **LastBootUpTime** property of the **Win32_OperatingSystem** class in WMI.</span></span>
+<span data-ttu-id="19729-131">In Windows is de geretourneerde waarde hetzelfde als de eigenschap **LastBootUpTime** van de klasse **Win32_OperatingSystem** in WMI.</span><span class="sxs-lookup"><span data-stu-id="19729-131">On Windows, the value returned is the same as the **LastBootUpTime** property of the **Win32_OperatingSystem** class in WMI.</span></span>
 
-## <span data-ttu-id="8f2d2-132">GERELATEERDE KOPPELINGEN</span><span class="sxs-lookup"><span data-stu-id="8f2d2-132">RELATED LINKS</span></span>
+## <span data-ttu-id="19729-132">GERELATEERDE KOPPELINGEN</span><span class="sxs-lookup"><span data-stu-id="19729-132">RELATED LINKS</span></span>
 
-[<span data-ttu-id="8f2d2-133">Win32_OperatingSystem</span><span class="sxs-lookup"><span data-stu-id="8f2d2-133">Win32_OperatingSystem</span></span>](/windows/win32/cimwin32prov/win32-operatingsystem#properties)
+[<span data-ttu-id="19729-133">Win32_OperatingSystem</span><span class="sxs-lookup"><span data-stu-id="19729-133">Win32_OperatingSystem</span></span>](/windows/win32/cimwin32prov/win32-operatingsystem#properties)
 

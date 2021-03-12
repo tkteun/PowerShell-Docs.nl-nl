@@ -1,36 +1,38 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 01/30/2020
-online version: https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Utility/Get-MarkdownOption?view=powershell-7.x.0&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Utility/Get-MarkdownOption?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
-ms.openlocfilehash: 775b11db79b9ca8290864b757e5cd1a0615f89e4
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+title: Get-MarkdownOption
+ms.openlocfilehash: 0da0c869216fd2a044fe03faad25e3de6f3fb8fd
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94705447"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103195689"
 ---
-# <span data-ttu-id="ebad2-101">Get-MarkdownOption</span><span class="sxs-lookup"><span data-stu-id="ebad2-101">Get-MarkdownOption</span></span>
+# <span data-ttu-id="d68d0-102">Get-MarkdownOption</span><span class="sxs-lookup"><span data-stu-id="d68d0-102">Get-MarkdownOption</span></span>
 
-## <span data-ttu-id="ebad2-102">SAMENVATTING</span><span class="sxs-lookup"><span data-stu-id="ebad2-102">SYNOPSIS</span></span>
-<span data-ttu-id="ebad2-103">Retourneert de huidige kleuren en stijlen die worden gebruikt voor het weer geven van de inhoud van de korting op de-console.</span><span class="sxs-lookup"><span data-stu-id="ebad2-103">Returns the current colors and styles used for rendering Markdown content in the console.</span></span>
+## <span data-ttu-id="d68d0-103">SAMENVATTING</span><span class="sxs-lookup"><span data-stu-id="d68d0-103">SYNOPSIS</span></span>
+<span data-ttu-id="d68d0-104">Retourneert de huidige kleuren en stijlen die worden gebruikt voor het weer geven van de inhoud van de korting op de-console.</span><span class="sxs-lookup"><span data-stu-id="d68d0-104">Returns the current colors and styles used for rendering Markdown content in the console.</span></span>
 
-## <span data-ttu-id="ebad2-104">SYNTAXIS</span><span class="sxs-lookup"><span data-stu-id="ebad2-104">SYNTAX</span></span>
+## <span data-ttu-id="d68d0-105">SYNTAXIS</span><span class="sxs-lookup"><span data-stu-id="d68d0-105">SYNTAX</span></span>
 
 ```
 Get-MarkdownOption [<CommonParameters>]
 ```
 
-## <span data-ttu-id="ebad2-105">BESCHRIJVING</span><span class="sxs-lookup"><span data-stu-id="ebad2-105">DESCRIPTION</span></span>
+## <span data-ttu-id="d68d0-106">BESCHRIJVING</span><span class="sxs-lookup"><span data-stu-id="d68d0-106">DESCRIPTION</span></span>
 
-<span data-ttu-id="ebad2-106">Retourneert de huidige kleuren en stijlen die worden gebruikt voor het weer geven van de inhoud van de korting op de-console.</span><span class="sxs-lookup"><span data-stu-id="ebad2-106">Returns the current colors and styles used for rendering Markdown content in the console.</span></span> <span data-ttu-id="ebad2-107">De teken reeksen die worden weer gegeven in de uitvoer van deze cmdlet, bevatten de ANSI-escape codes die worden gebruikt om de kleur en stijl van de gerenderde tekst van de prijs opgave te wijzigen.</span><span class="sxs-lookup"><span data-stu-id="ebad2-107">The strings displayed in the output of this cmdlet contain the ANSI escape codes used to change the color and style of the Markdown text being rendered.</span></span>
+<span data-ttu-id="d68d0-107">Retourneert de huidige kleuren en stijlen die worden gebruikt voor het weer geven van de inhoud van de korting op de-console.</span><span class="sxs-lookup"><span data-stu-id="d68d0-107">Returns the current colors and styles used for rendering Markdown content in the console.</span></span> <span data-ttu-id="d68d0-108">De teken reeksen die worden weer gegeven in de uitvoer van deze cmdlet, bevatten de ANSI-escape codes die worden gebruikt om de kleur en stijl van de gerenderde tekst van de prijs opgave te wijzigen.</span><span class="sxs-lookup"><span data-stu-id="d68d0-108">The strings displayed in the output of this cmdlet contain the ANSI escape codes used to change the color and style of the Markdown text being rendered.</span></span>
 
-<span data-ttu-id="ebad2-108">Zie de [CommonMark](https://commonmark.org/) -website voor meer informatie over de prijs verlaging.</span><span class="sxs-lookup"><span data-stu-id="ebad2-108">For more information about Markdown, see the [CommonMark](https://commonmark.org/) website.</span></span>
+<span data-ttu-id="d68d0-109">Zie de [CommonMark](https://commonmark.org/) -website voor meer informatie over de prijs verlaging.</span><span class="sxs-lookup"><span data-stu-id="d68d0-109">For more information about Markdown, see the [CommonMark](https://commonmark.org/) website.</span></span>
 
-## <span data-ttu-id="ebad2-109">VOORBEELDEN</span><span class="sxs-lookup"><span data-stu-id="ebad2-109">EXAMPLES</span></span>
+## <span data-ttu-id="d68d0-110">VOORBEELDEN</span><span class="sxs-lookup"><span data-stu-id="d68d0-110">EXAMPLES</span></span>
 
-### <span data-ttu-id="ebad2-110">Voor beeld 1: de huidige kleuren en stijl ophalen</span><span class="sxs-lookup"><span data-stu-id="ebad2-110">Example 1 - Get the current colors and style</span></span>
+### <span data-ttu-id="d68d0-111">Voor beeld 1: de huidige kleuren en stijl ophalen</span><span class="sxs-lookup"><span data-stu-id="d68d0-111">Example 1 - Get the current colors and style</span></span>
 
 ```powershell
 Get-MarkdownOption
@@ -51,33 +53,33 @@ EmphasisItalics : [36m
 ```
 
 > [!NOTE]
-> <span data-ttu-id="ebad2-111">De teken reeks waarden die in de uitvoer worden weer gegeven, zijn de tekens die volgen op het **Escape** teken ( `[char]0x1B` ) voor de ANSI-escape reeks.</span><span class="sxs-lookup"><span data-stu-id="ebad2-111">The string values shown in the output are the characters that follow the **Escape** character (`[char]0x1B`) for the ANSI escape sequence.</span></span> <span data-ttu-id="ebad2-112">Zie [ANSI_escape_code](https://en.wikipedia.org/wiki/ANSI_escape_code)voor meer informatie over ANSI escape-codes.</span><span class="sxs-lookup"><span data-stu-id="ebad2-112">For more information about ANSI escape codes work, see [ANSI_escape_code](https://en.wikipedia.org/wiki/ANSI_escape_code).</span></span>
+> <span data-ttu-id="d68d0-112">De teken reeks waarden die in de uitvoer worden weer gegeven, zijn de tekens die volgen op het **Escape** teken ( `[char]0x1B` ) voor de ANSI-escape reeks.</span><span class="sxs-lookup"><span data-stu-id="d68d0-112">The string values shown in the output are the characters that follow the **Escape** character (`[char]0x1B`) for the ANSI escape sequence.</span></span> <span data-ttu-id="d68d0-113">Zie [ANSI_escape_code](https://en.wikipedia.org/wiki/ANSI_escape_code)voor meer informatie over ANSI escape-codes.</span><span class="sxs-lookup"><span data-stu-id="d68d0-113">For more information about ANSI escape codes work, see [ANSI_escape_code](https://en.wikipedia.org/wiki/ANSI_escape_code).</span></span>
 
-## <span data-ttu-id="ebad2-113">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="ebad2-113">PARAMETERS</span></span>
+## <span data-ttu-id="d68d0-114">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="d68d0-114">PARAMETERS</span></span>
 
-### <span data-ttu-id="ebad2-114">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="ebad2-114">CommonParameters</span></span>
+### <span data-ttu-id="d68d0-115">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="d68d0-115">CommonParameters</span></span>
 
-<span data-ttu-id="ebad2-115">Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="ebad2-115">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="ebad2-116">Zie [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)voor meer informatie.</span><span class="sxs-lookup"><span data-stu-id="ebad2-116">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+<span data-ttu-id="d68d0-116">Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="d68d0-116">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="d68d0-117">Zie [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)voor meer informatie.</span><span class="sxs-lookup"><span data-stu-id="d68d0-117">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="ebad2-117">INVOER</span><span class="sxs-lookup"><span data-stu-id="ebad2-117">INPUTS</span></span>
+## <span data-ttu-id="d68d0-118">INVOER</span><span class="sxs-lookup"><span data-stu-id="d68d0-118">INPUTS</span></span>
 
-### <span data-ttu-id="ebad2-118">Geen</span><span class="sxs-lookup"><span data-stu-id="ebad2-118">None</span></span>
+### <span data-ttu-id="d68d0-119">Geen</span><span class="sxs-lookup"><span data-stu-id="d68d0-119">None</span></span>
 
-## <span data-ttu-id="ebad2-119">UITVOER</span><span class="sxs-lookup"><span data-stu-id="ebad2-119">OUTPUTS</span></span>
+## <span data-ttu-id="d68d0-120">UITVOER</span><span class="sxs-lookup"><span data-stu-id="d68d0-120">OUTPUTS</span></span>
 
-### <span data-ttu-id="ebad2-120">Micro soft. Power shell. MarkdownRender. PSMarkdownOptionInfo</span><span class="sxs-lookup"><span data-stu-id="ebad2-120">Microsoft.PowerShell.MarkdownRender.PSMarkdownOptionInfo</span></span>
+### <span data-ttu-id="d68d0-121">Micro soft. Power shell. MarkdownRender. PSMarkdownOptionInfo</span><span class="sxs-lookup"><span data-stu-id="d68d0-121">Microsoft.PowerShell.MarkdownRender.PSMarkdownOptionInfo</span></span>
 
-## <span data-ttu-id="ebad2-121">OPMERKINGEN</span><span class="sxs-lookup"><span data-stu-id="ebad2-121">NOTES</span></span>
+## <span data-ttu-id="d68d0-122">OPMERKINGEN</span><span class="sxs-lookup"><span data-stu-id="d68d0-122">NOTES</span></span>
 
-## <span data-ttu-id="ebad2-122">GERELATEERDE KOPPELINGEN</span><span class="sxs-lookup"><span data-stu-id="ebad2-122">RELATED LINKS</span></span>
+## <span data-ttu-id="d68d0-123">GERELATEERDE KOPPELINGEN</span><span class="sxs-lookup"><span data-stu-id="d68d0-123">RELATED LINKS</span></span>
 
-[<span data-ttu-id="ebad2-123">Set-MarkdownOption</span><span class="sxs-lookup"><span data-stu-id="ebad2-123">Set-MarkdownOption</span></span>](Set-MarkdownOption.md)
+[<span data-ttu-id="d68d0-124">Set-MarkdownOption</span><span class="sxs-lookup"><span data-stu-id="d68d0-124">Set-MarkdownOption</span></span>](Set-MarkdownOption.md)
 
-[<span data-ttu-id="ebad2-124">ConvertFrom-prijs verlaging</span><span class="sxs-lookup"><span data-stu-id="ebad2-124">ConvertFrom-Markdown</span></span>](ConvertFrom-Markdown.md)
+[<span data-ttu-id="d68d0-125">ConvertFrom-prijs verlaging</span><span class="sxs-lookup"><span data-stu-id="d68d0-125">ConvertFrom-Markdown</span></span>](ConvertFrom-Markdown.md)
 
-[<span data-ttu-id="ebad2-125">Weer geven-prijs verlaging</span><span class="sxs-lookup"><span data-stu-id="ebad2-125">Show-Markdown</span></span>](Show-Markdown.md)
+[<span data-ttu-id="d68d0-126">Weer geven-prijs verlaging</span><span class="sxs-lookup"><span data-stu-id="d68d0-126">Show-Markdown</span></span>](Show-Markdown.md)
 
-[<span data-ttu-id="ebad2-126">ANSI_escape_code</span><span class="sxs-lookup"><span data-stu-id="ebad2-126">ANSI_escape_code</span></span>](https://en.wikipedia.org/wiki/ANSI_escape_code)
+[<span data-ttu-id="d68d0-127">ANSI_escape_code</span><span class="sxs-lookup"><span data-stu-id="d68d0-127">ANSI_escape_code</span></span>](https://en.wikipedia.org/wiki/ANSI_escape_code)
 
-[<span data-ttu-id="ebad2-127">CommonMark</span><span class="sxs-lookup"><span data-stu-id="ebad2-127">CommonMark</span></span>](https://commonmark.org/)
+[<span data-ttu-id="d68d0-128">CommonMark</span><span class="sxs-lookup"><span data-stu-id="d68d0-128">CommonMark</span></span>](https://commonmark.org/)
 
