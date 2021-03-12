@@ -1,43 +1,44 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
+Locale: en-US
 Module Name: Microsoft.PowerShell.Core
 ms.date: 03/06/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/disable-experimentalfeature?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Disable-ExperimentalFeature
-ms.openlocfilehash: 3260b3d8333e8a79fdf603c372d1e3e50aa0dabc
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 2e20db5d35c2bee98ba4ded0bd13aa672d79ea70
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93251377"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103195510"
 ---
-# <span data-ttu-id="daedd-102">Disable-ExperimentalFeature</span><span class="sxs-lookup"><span data-stu-id="daedd-102">Disable-ExperimentalFeature</span></span>
+# <span data-ttu-id="7c29a-102">Disable-ExperimentalFeature</span><span class="sxs-lookup"><span data-stu-id="7c29a-102">Disable-ExperimentalFeature</span></span>
 
-## <span data-ttu-id="daedd-103">SAMENVATTING</span><span class="sxs-lookup"><span data-stu-id="daedd-103">SYNOPSIS</span></span>
-<span data-ttu-id="daedd-104">Een experimentele functie uitschakelen bij het opstarten van een nieuw exemplaar van Power shell.</span><span class="sxs-lookup"><span data-stu-id="daedd-104">Disable an experimental feature on startup of new instance of PowerShell.</span></span>
+## <span data-ttu-id="7c29a-103">SAMENVATTING</span><span class="sxs-lookup"><span data-stu-id="7c29a-103">SYNOPSIS</span></span>
+<span data-ttu-id="7c29a-104">Een experimentele functie uitschakelen bij het opstarten van een nieuw exemplaar van Power shell.</span><span class="sxs-lookup"><span data-stu-id="7c29a-104">Disable an experimental feature on startup of new instance of PowerShell.</span></span>
 
-## <span data-ttu-id="daedd-105">SYNTAXIS</span><span class="sxs-lookup"><span data-stu-id="daedd-105">SYNTAX</span></span>
+## <span data-ttu-id="7c29a-105">SYNTAXIS</span><span class="sxs-lookup"><span data-stu-id="7c29a-105">SYNTAX</span></span>
 
 ```
 Disable-ExperimentalFeature [-Name] <String[]> [-Scope <ConfigScope>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="daedd-106">BESCHRIJVING</span><span class="sxs-lookup"><span data-stu-id="daedd-106">DESCRIPTION</span></span>
+## <span data-ttu-id="7c29a-106">BESCHRIJVING</span><span class="sxs-lookup"><span data-stu-id="7c29a-106">DESCRIPTION</span></span>
 
-<span data-ttu-id="daedd-107">`Disable-ExperimentalFeature`Met de cmdlet worden experimentele functies uitgeschakeld door de genoemde experimentele functies te verwijderen uit het `powershell.config.json` instellingen bestand dat in Power shell is gelezen.</span><span class="sxs-lookup"><span data-stu-id="daedd-107">The `Disable-ExperimentalFeature` cmdlet disables experimental features by removing the named experimental features from the `powershell.config.json` settings file read on PowerShell startup.</span></span>
+<span data-ttu-id="7c29a-107">`Disable-ExperimentalFeature`Met de cmdlet worden experimentele functies uitgeschakeld door de genoemde experimentele functies te verwijderen uit het `powershell.config.json` instellingen bestand dat in Power shell is gelezen.</span><span class="sxs-lookup"><span data-stu-id="7c29a-107">The `Disable-ExperimentalFeature` cmdlet disables experimental features by removing the named experimental features from the `powershell.config.json` settings file read on PowerShell startup.</span></span>
 
-<span data-ttu-id="daedd-108">Deze cmdlet is geïntroduceerd in Power shell 6,2.</span><span class="sxs-lookup"><span data-stu-id="daedd-108">This cmdlet was introduced in PowerShell 6.2.</span></span>
+<span data-ttu-id="7c29a-108">Deze cmdlet is geïntroduceerd in Power shell 6,2.</span><span class="sxs-lookup"><span data-stu-id="7c29a-108">This cmdlet was introduced in PowerShell 6.2.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="daedd-109">Wijzigingen in de status van experimentele functies worden alleen van kracht bij het opnieuw opstarten van Power shell</span><span class="sxs-lookup"><span data-stu-id="daedd-109">Any changes to experimental feature state only takes effect on restart of PowerShell</span></span>
+> <span data-ttu-id="7c29a-109">Wijzigingen in de status van experimentele functies worden alleen van kracht bij het opnieuw opstarten van Power shell</span><span class="sxs-lookup"><span data-stu-id="7c29a-109">Any changes to experimental feature state only takes effect on restart of PowerShell</span></span>
 
-## <span data-ttu-id="daedd-110">VOORBEELDEN</span><span class="sxs-lookup"><span data-stu-id="daedd-110">EXAMPLES</span></span>
+## <span data-ttu-id="7c29a-110">VOORBEELDEN</span><span class="sxs-lookup"><span data-stu-id="7c29a-110">EXAMPLES</span></span>
 
-### <span data-ttu-id="daedd-111">Voor beeld 1: een experimentele functie uitschakelen</span><span class="sxs-lookup"><span data-stu-id="daedd-111">Example 1: Disable an experimental feature</span></span>
+### <span data-ttu-id="7c29a-111">Voor beeld 1: een experimentele functie uitschakelen</span><span class="sxs-lookup"><span data-stu-id="7c29a-111">Example 1: Disable an experimental feature</span></span>
 
-<span data-ttu-id="daedd-112">Als deze experimentele functie eerder was ingeschakeld, wordt het bestand in dit voor beeld `powershell.config.json` bijgewerkt zodat de gebruiker deze functie niet kan inschakelen nadat Power shell opnieuw is opgestart.</span><span class="sxs-lookup"><span data-stu-id="daedd-112">In this example, if this experimental feature was previously enabled, then the `powershell.config.json` file is updated for the user to not enable that feature once PowerShell is restarted.</span></span>
-<span data-ttu-id="daedd-113">Wanneer het succes is, wordt er niets naar de pijp lijn uitgevoerd en wordt er alleen een waarschuwings bericht weer gegeven.</span><span class="sxs-lookup"><span data-stu-id="daedd-113">Upon success nothing is output to the pipeline and only a warning message is displayed.</span></span>
+<span data-ttu-id="7c29a-112">Als deze experimentele functie eerder was ingeschakeld, wordt het bestand in dit voor beeld `powershell.config.json` bijgewerkt zodat de gebruiker deze functie niet kan inschakelen nadat Power shell opnieuw is opgestart.</span><span class="sxs-lookup"><span data-stu-id="7c29a-112">In this example, if this experimental feature was previously enabled, then the `powershell.config.json` file is updated for the user to not enable that feature once PowerShell is restarted.</span></span>
+<span data-ttu-id="7c29a-113">Wanneer het succes is, wordt er niets naar de pijp lijn uitgevoerd en wordt er alleen een waarschuwings bericht weer gegeven.</span><span class="sxs-lookup"><span data-stu-id="7c29a-113">Upon success nothing is output to the pipeline and only a warning message is displayed.</span></span>
 
 ```powershell
 PS C:\> Disable-ExperimentalFeature PSImplicitRemotingBatching
@@ -47,11 +48,11 @@ PS C:\> Disable-ExperimentalFeature PSImplicitRemotingBatching
 WARNING: Enabling and disabling experimental features do not take effect until next start of PowerShell.
 ```
 
-## <span data-ttu-id="daedd-114">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="daedd-114">PARAMETERS</span></span>
+## <span data-ttu-id="7c29a-114">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="7c29a-114">PARAMETERS</span></span>
 
-### <span data-ttu-id="daedd-115">-Confirm</span><span class="sxs-lookup"><span data-stu-id="daedd-115">-Confirm</span></span>
+### <span data-ttu-id="7c29a-115">-Confirm</span><span class="sxs-lookup"><span data-stu-id="7c29a-115">-Confirm</span></span>
 
-<span data-ttu-id="daedd-116">Hiermee wordt u gevraagd om bevestiging voordat u de cmdlet uitvoert.</span><span class="sxs-lookup"><span data-stu-id="daedd-116">Prompts you for confirmation before running the cmdlet.</span></span>
+<span data-ttu-id="7c29a-116">Hiermee wordt u gevraagd om bevestiging voordat u de cmdlet uitvoert.</span><span class="sxs-lookup"><span data-stu-id="7c29a-116">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -65,9 +66,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="daedd-117">-Name</span><span class="sxs-lookup"><span data-stu-id="daedd-117">-Name</span></span>
+### <span data-ttu-id="7c29a-117">-Name</span><span class="sxs-lookup"><span data-stu-id="7c29a-117">-Name</span></span>
 
-<span data-ttu-id="daedd-118">De naam of namen van de experimentele functies die moeten worden uitgeschakeld.</span><span class="sxs-lookup"><span data-stu-id="daedd-118">The name or names of the experimental features to disable.</span></span>
+<span data-ttu-id="7c29a-118">De naam of namen van de experimentele functies die moeten worden uitgeschakeld.</span><span class="sxs-lookup"><span data-stu-id="7c29a-118">The name or names of the experimental features to disable.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -81,9 +82,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="daedd-119">-Bereik</span><span class="sxs-lookup"><span data-stu-id="daedd-119">-Scope</span></span>
+### <span data-ttu-id="7c29a-119">-Bereik</span><span class="sxs-lookup"><span data-stu-id="7c29a-119">-Scope</span></span>
 
-<span data-ttu-id="daedd-120">Hiermee wordt bepaald welke `powershell.config.json` moet worden bijgewerkt of dit van invloed is op alle gebruikers of alleen de huidige gebruiker.</span><span class="sxs-lookup"><span data-stu-id="daedd-120">Determines which `powershell.config.json` to update whether it affects all users or just the current user.</span></span>
+<span data-ttu-id="7c29a-120">Hiermee wordt bepaald welke `powershell.config.json` moet worden bijgewerkt of dit van invloed is op alle gebruikers of alleen de huidige gebruiker.</span><span class="sxs-lookup"><span data-stu-id="7c29a-120">Determines which `powershell.config.json` to update whether it affects all users or just the current user.</span></span>
 
 ```yaml
 Type: System.Management.Automation.Configuration.ConfigScope
@@ -98,10 +99,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="daedd-121">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="daedd-121">-WhatIf</span></span>
+### <span data-ttu-id="7c29a-121">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="7c29a-121">-WhatIf</span></span>
 
-<span data-ttu-id="daedd-122">Hiermee wordt weergegeven wat er zou gebeuren als u de cmdlet uitvoert.</span><span class="sxs-lookup"><span data-stu-id="daedd-122">Shows what would happen if the cmdlet runs.</span></span>
-<span data-ttu-id="daedd-123">De cmdlet wordt niet uitgevoerd.</span><span class="sxs-lookup"><span data-stu-id="daedd-123">The cmdlet is not run.</span></span>
+<span data-ttu-id="7c29a-122">Hiermee wordt weergegeven wat er zou gebeuren als u de cmdlet uitvoert.</span><span class="sxs-lookup"><span data-stu-id="7c29a-122">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="7c29a-123">De cmdlet wordt niet uitgevoerd.</span><span class="sxs-lookup"><span data-stu-id="7c29a-123">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -115,29 +116,29 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="daedd-124">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="daedd-124">CommonParameters</span></span>
+### <span data-ttu-id="7c29a-124">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="7c29a-124">CommonParameters</span></span>
 
-<span data-ttu-id="daedd-125">Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="daedd-125">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="daedd-126">Zie [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)voor meer informatie.</span><span class="sxs-lookup"><span data-stu-id="daedd-126">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+<span data-ttu-id="7c29a-125">Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="7c29a-125">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="7c29a-126">Zie [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)voor meer informatie.</span><span class="sxs-lookup"><span data-stu-id="7c29a-126">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="daedd-127">INVOER</span><span class="sxs-lookup"><span data-stu-id="daedd-127">INPUTS</span></span>
+## <span data-ttu-id="7c29a-127">INVOER</span><span class="sxs-lookup"><span data-stu-id="7c29a-127">INPUTS</span></span>
 
-### <span data-ttu-id="daedd-128">ExperimentalFeature</span><span class="sxs-lookup"><span data-stu-id="daedd-128">ExperimentalFeature</span></span>
+### <span data-ttu-id="7c29a-128">ExperimentalFeature</span><span class="sxs-lookup"><span data-stu-id="7c29a-128">ExperimentalFeature</span></span>
 
-<span data-ttu-id="daedd-129">Pipe-exemplaren van ExperimentalFeature uit de `Get-ExperimentalFeature` cmdlet die moeten worden uitgeschakeld.</span><span class="sxs-lookup"><span data-stu-id="daedd-129">Pipe instances of ExperimentalFeature from `Get-ExperimentalFeature` cmdlet to disable.</span></span>
+<span data-ttu-id="7c29a-129">Pipe-exemplaren van ExperimentalFeature uit de `Get-ExperimentalFeature` cmdlet die moeten worden uitgeschakeld.</span><span class="sxs-lookup"><span data-stu-id="7c29a-129">Pipe instances of ExperimentalFeature from `Get-ExperimentalFeature` cmdlet to disable.</span></span>
 
-## <span data-ttu-id="daedd-130">UITVOER</span><span class="sxs-lookup"><span data-stu-id="daedd-130">OUTPUTS</span></span>
+## <span data-ttu-id="7c29a-130">UITVOER</span><span class="sxs-lookup"><span data-stu-id="7c29a-130">OUTPUTS</span></span>
 
-### <span data-ttu-id="daedd-131">Geen</span><span class="sxs-lookup"><span data-stu-id="daedd-131">None</span></span>
+### <span data-ttu-id="7c29a-131">Geen</span><span class="sxs-lookup"><span data-stu-id="7c29a-131">None</span></span>
 
-<span data-ttu-id="daedd-132">Met deze cmdlet wordt geen uitvoer geretourneerd.</span><span class="sxs-lookup"><span data-stu-id="daedd-132">This cmdlet does not return any output.</span></span>
+<span data-ttu-id="7c29a-132">Met deze cmdlet wordt geen uitvoer geretourneerd.</span><span class="sxs-lookup"><span data-stu-id="7c29a-132">This cmdlet does not return any output.</span></span>
 
-## <span data-ttu-id="daedd-133">OPMERKINGEN</span><span class="sxs-lookup"><span data-stu-id="daedd-133">NOTES</span></span>
+## <span data-ttu-id="7c29a-133">OPMERKINGEN</span><span class="sxs-lookup"><span data-stu-id="7c29a-133">NOTES</span></span>
 
-<span data-ttu-id="daedd-134">Wijzigingen in de status van een experimentele functie worden alleen van kracht bij het opnieuw opstarten van Power shell.</span><span class="sxs-lookup"><span data-stu-id="daedd-134">Changes to state of an experimental feature only take effect on restart of PowerShell.</span></span>
+<span data-ttu-id="7c29a-134">Wijzigingen in de status van een experimentele functie worden alleen van kracht bij het opnieuw opstarten van Power shell.</span><span class="sxs-lookup"><span data-stu-id="7c29a-134">Changes to state of an experimental feature only take effect on restart of PowerShell.</span></span>
 
-## <span data-ttu-id="daedd-135">GERELATEERDE KOPPELINGEN</span><span class="sxs-lookup"><span data-stu-id="daedd-135">RELATED LINKS</span></span>
+## <span data-ttu-id="7c29a-135">GERELATEERDE KOPPELINGEN</span><span class="sxs-lookup"><span data-stu-id="7c29a-135">RELATED LINKS</span></span>
 
-[<span data-ttu-id="daedd-136">Enable-ExperimentalFeature</span><span class="sxs-lookup"><span data-stu-id="daedd-136">Enable-ExperimentalFeature</span></span>](Enable-ExperimentalFeature.md)
+[<span data-ttu-id="7c29a-136">Enable-ExperimentalFeature</span><span class="sxs-lookup"><span data-stu-id="7c29a-136">Enable-ExperimentalFeature</span></span>](Enable-ExperimentalFeature.md)
 
-[<span data-ttu-id="daedd-137">Get-ExperimentalFeature</span><span class="sxs-lookup"><span data-stu-id="daedd-137">Get-ExperimentalFeature</span></span>](Get-ExperimentalFeature.md)
+[<span data-ttu-id="7c29a-137">Get-ExperimentalFeature</span><span class="sxs-lookup"><span data-stu-id="7c29a-137">Get-ExperimentalFeature</span></span>](Get-ExperimentalFeature.md)
 
