@@ -1,13 +1,15 @@
 ---
 description: Hierin wordt beschreven hoe u in geavanceerde functies parameter sets definieert en gebruikt.
 title: about_Parameter_Sets
+Locale: en-US
 ms.date: 01/05/2021
-ms.openlocfilehash: 8f3a33345a8e2fa19810c8ebd527d9a7dca7dec5
-ms.sourcegitcommit: eb7ad1850550032880f5529b4e4281514cba1673
+schema: 2.0.0
+ms.openlocfilehash: 583fed8d764a0c4a3aeb06575df4662383ea2303
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97917814"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103193929"
 ---
 # <a name="about-parameter-sets"></a>Over parameter sets
 

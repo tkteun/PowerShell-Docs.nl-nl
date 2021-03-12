@@ -1,17 +1,15 @@
 ---
 description: Bevat informatie over Power shell-thread taken. Een thread-taak is een type achtergrond taak waarmee een opdracht of expressie wordt uitgevoerd in een afzonderlijke thread binnen het huidige sessie proces.
-keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 11/11/2020
-online version: 1.0.0
 schema: 2.0.0
 title: about_Thread_Jobs
-ms.openlocfilehash: ba6251a195d3efdebd427b3f705386336b069211
-ms.sourcegitcommit: aac365f7813756e16b59322832a904e703e0465b
+ms.openlocfilehash: 67f3fc585a8c2d1c3ca98c7336a7e367ed6c66c7
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94524838"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103194250"
 ---
 # <a name="about-thread-jobs"></a>Over thread-taken
 
@@ -218,7 +216,7 @@ NPM(K)  PM(M)   WS(M) CPU(s)    Id SI ProcessName
   112  108.25  124.43  69.75 16272  1 pwsh
 ```
 
-## <a name="see-also"></a>Zie tevens
+## <a name="see-also"></a>Zie ook
 
 - [about_Remote_Jobs](about_Remote_Jobs.md)
 - [about_Thread_Jobs](about_Thread_Jobs.md)

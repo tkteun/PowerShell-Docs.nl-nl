@@ -2,12 +2,12 @@
 ms.date: 06/09/2017
 title: Pakket manifest waarden die van invloed zijn op de PowerShell Gallery-gebruikers interface
 description: In dit artikel worden de waarden gedocumenteerd van het module manifest dat door de PowerShell Gallery wordt gebruikt.
-ms.openlocfilehash: c59f65e72874a8a4ef946c954e1e8f12aad62b29
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 28dd707034f84fa752aba55b5ccc5bcbedff0d94
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92664144"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103196228"
 ---
 # <a name="package-manifest-values-that-impact-the-powershell-gallery-ui"></a>Pakket manifest waarden die van invloed zijn op de PowerShell Gallery-gebruikers interface
 
@@ -26,9 +26,9 @@ In de volgende tabel ziet u de elementen van de gebruikers interface van de Powe
 | **Versie** | De weer gegeven versie is de versie teken reeks in de meta gegevens en een prerelease als is opgegeven. Het primaire deel van de versie in een module manifest is het ModuleVersion. Voor een script wordt dit aangeduid als. Versie. Als er een teken reeks voor de voorlopige versie is opgegeven, wordt deze toegevoegd aan de ModuleVersion voor modules of opgegeven als onderdeel van. VERSIE voor scripts. Er is documentatie voor het opgeven van voorlopige teken reeksen in [modules](module-prerelease-support.md)en in [scripts](script-prerelease-support.md) | Ja | Ja |
 | **Beschrijving** | Dit is de beschrijving in het module manifest en in een script bestand manifest. BESCHRIJVINGEN | Ja | Ja |
 | **Acceptatie van de licentie vereisen** | Een module kan vereisen dat de gebruiker een licentie accepteert door het module manifest te wijzigen met RequireLicenseAcceptance = $true, een LicenseURI op te geven en een license.txt bestand op te geven in de hoofdmap van de module map. Meer informatie is beschikbaar in het onderwerp een [acceptatie van licenties nodig](../how-to/working-with-packages/packages-that-require-license-acceptance.md) . | Ja | Nee |
-| **Opmerkingen bij de release** | Voor-modules wordt deze informatie opgehaald uit de sectie ReleaseNotes onder PSData\PrivateData. In script manifesten is dit de. RELEASENOTES-element. | Ja | Ja |
+| **Releaseopmerkingen** | Voor-modules wordt deze informatie opgehaald uit de sectie ReleaseNotes onder PSData\PrivateData. In script manifesten is dit de. RELEASENOTES-element. | Ja | Ja |
 | **Eigenaren** | Eigen aren zijn de lijst met gebruikers in de PowerShell Gallery die een pakket kunnen bijwerken. De lijst met eigen aren is niet opgenomen in het pakket manifest. In aanvullende documentatie wordt beschreven hoe u [item eigenaren beheert](../how-to/publishing-packages/managing-package-owners.md). | Nee | Nee |
-| **Lijsten** | Dit is opgenomen in het module manifest als auteur en in een script manifest als. Lijsten. Het veld Auteur wordt vaak gebruikt om een bedrijf of organisatie op te geven dat is gekoppeld aan een pakket. | Ja | Ja |
+| **Auteur** | Dit is opgenomen in het module manifest als auteur en in een script manifest als. Lijsten. Het veld Auteur wordt vaak gebruikt om een bedrijf of organisatie op te geven dat is gekoppeld aan een pakket. | Ja | Ja |
 | **Gegevens** | Dit is het copyright veld in het module manifest en. COPYRIGHT in een script manifest. | Ja | Ja |
 | **File List** | De lijst met bestanden wordt uit het pakket gehaald wanneer het is gepubliceerd naar de PowerShell Gallery. Het kan niet worden bestuurd door de informatie in het manifest. Opmerking: er is een extra. nuspec-bestand dat wordt vermeld bij elk pakket in het PowerShell Gallery dat niet aanwezig is na installatie van het pakket op een systeem. Dit is het Nuget-pakket manifest voor het pakket en kan worden genegeerd. | Nee | Nee |
 | **Tags** | Voor modules worden tags opgenomen onder PSData\PrivateData. Voor scripts is de sectie gelabeld. Koptags. Houd er rekening mee dat Tags geen spaties kunnen bevatten, zelfs als ze zich in een aanhalings teken bevinden. Labels hebben aanvullende vereisten en betekenissen, die verderop in dit onderwerp worden beschreven in de sectie Label Details. | Ja | Ja |
@@ -77,7 +77,7 @@ Ter referentie zijn hier enkele meestgebruikte Tags vanaf 12/14/2017. In sommige
 | --- | --- |
 | Azure |  |
 | DSC | DesiredStateConfiguration is minder wenselijk, het is te lang |
-| ResourceManager | ARM wordt gebruikt voor het beschrijven van een groep processors en mag niet worden gebruikt voor Azure Resource Manager |
+| ResourceManager | "Arm" wordt gebruikt voor het beschrijven van een groep processors en mag niet worden gebruikt voor Azure Resource Manager |
 | DSCResourceKit |  |
 | SQL |  |
 | AWS |  |
@@ -91,7 +91,7 @@ Ter referentie zijn hier enkele meestgebruikte Tags vanaf 12/14/2017. In sommige
 | Database | Data bases (plural) zijn minder wenselijk |
 | DevOps |  |
 | Windows |  |
-| Ontwikkelen |  |
+| Build |  |
 | Implementatie | Implementeren wordt iets minder vaak gebruikt |
 | Cloud |  |
 | GIT |  |
@@ -104,13 +104,13 @@ Ter referentie zijn hier enkele meestgebruikte Tags vanaf 12/14/2017. In sommige
 | Linux |  |
 | IIS |  |
 | AzureAutomation |  |
-| Opslag |  |
+| Storage |  |
 | GitHub |  |
 | Json |  |
 | Exchange |  |
 | Netwerk | Netwerken zijn vergelijkbaar, minder vaak gebruikt |
 | SharePoint |  |
-| Rapporten | Rapportage is een actie, een ding van het rapport |
+| Rapportage | Rapportage is een actie, een ding van het rapport |
 | Rapport | Het rapport is een ding |
 | WinRM |  |
 | Bewaking |  |

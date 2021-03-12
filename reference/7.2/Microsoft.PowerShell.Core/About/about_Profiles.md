@@ -1,15 +1,16 @@
 ---
 description: Hierin wordt beschreven hoe u een Power shell-profiel maakt en gebruikt.
+Locale: en-US
 ms.date: 11/30/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Profiles
-ms.openlocfilehash: 3c739d6fd65714d5b6ef0f45990b614486d4e5ff
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 7604b8058a731939524769b6e1469b072a7eb2fe
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94705344"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103196168"
 ---
 # <a name="about-profiles"></a>Over profielen
 
@@ -32,7 +33,7 @@ Power shell ondersteunt meerdere profiel bestanden. Power shell-host-Program ma'
 
 De Power shell-console ondersteunt bijvoorbeeld de volgende basis profiel bestanden. De profielen worden in volg orde van prioriteit weer gegeven. Het eerste profiel heeft de hoogste prioriteit.
 
-|Description               | Pad                                          |
+|Beschrijving               | Pad                                          |
 |--------------------------|-----------------------------------------------|
 |Alle gebruikers, alle hosts      |$PSHOME \\Profile.ps1                           |
 |Alle gebruikers, huidige host   |$PSHOME \\Microsoft.PowerShell_profile.ps1      |
@@ -46,7 +47,7 @@ De profiel paden bevatten de volgende variabelen:
 
 Daarnaast kunnen andere Program ma's die Power shell hosten hun eigen profielen ondersteunen. Visual Studio code ondersteunt bijvoorbeeld de volgende sitespecifieke profielen.
 
-|Description               | Pad                                     |
+|Beschrijving               | Pad                                     |
 |--------------------------|------------------------------------------|
 |Alle gebruikers, huidige host   |$PSHOME \\Microsoft.VSCode_profile.ps1|
 |Huidige gebruiker, huidige host|$Home \\ [mijn] documenten \\ Power shell\\<br>Microsoft.VSCode_profile.ps1|

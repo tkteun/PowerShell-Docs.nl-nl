@@ -8,18 +8,18 @@ Module Name: PSReadLine
 ms.date: 02/10/2020
 schema: 2.0.0
 title: PSReadLine
-ms.openlocfilehash: a404461e2b92f269d581b18c3ebe7643aa86c3a4
-ms.sourcegitcommit: 9d95532afe81c235c8094eae28ab84b2f77f8c48
+ms.openlocfilehash: 3adfa4be7aae03120d2334a57c39d7e6351bcb16
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "93252027"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103196214"
 ---
 # PSReadLine-module
 
 ## Beschrijving
 
-De PSReadLine-module bevat cmdlets waarmee u de bewerkings omgeving van de opdracht regel in Power shell kunt aanpassen. In deze artikelen worden PSReadLine v 2.0 gedocumenteerd. Deze versie wordt geleverd in Power shell V6 en de update voor Windows 10 oktober 2018 (build 1809).
+De PSReadLine-module bevat cmdlets waarmee u de bewerkings omgeving van de opdracht regel in Power shell kunt aanpassen. Power shell 7,1 geleverd met PSReadLine v 2.1. Deze artikelen documenteren PSReadLine v 2.1.
 
 > [!NOTE]
 > Vanaf Power shell 7,0 wordt het automatisch laden van PSReadLine in Windows overs Laan als er een scherm lezer wordt gedetecteerd. Op dit moment werkt PSReadLine niet goed met scherm lezers. De standaard weergave en opmaak van Power shell 7,0 in Windows werkt op de juiste manier. U kunt de module hand matig laden, indien nodig.

@@ -1,16 +1,16 @@
 ---
 description: Hierin worden de syntaxis diagrammen beschreven die worden gebruikt in Power shell.
-keywords: powershell,cmdlet
+Locale: en-US
 ms.date: 06/27/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_command_syntax?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Command_Syntax
-ms.openlocfilehash: 180df88bb41b98bc308f192f7c4caf38aa7445ad
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: ff7a243a584ee336c0356200f5ba68fde55e0836
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93252630"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103194622"
 ---
 # <a name="about-command-syntax"></a>Over opdracht syntaxis
 
@@ -128,7 +128,7 @@ Deze parameter sets geven aan dat u de para meters **input object** en **Count**
 
 U geeft aan welke para meter die u wilt gebruiken met behulp van de para meters in die para meter zijn ingesteld.
 
-Voor elke cmdlet is echter ook een standaard parameterset ingesteld. De standaard parameterset wordt gebruikt wanneer u geen para meters opgeeft die uniek zijn voor een parameterset. Als u bijvoorbeeld `Get-Random` zonder para meters gebruikt, veronderstelt Windows Power shell dat u de para **Number** meter set gebruikt en retourneert deze een wille keurig getal.
+Voor elke cmdlet is echter ook een standaard parameterset ingesteld. De standaard parameterset wordt gebruikt wanneer u geen para meters opgeeft die uniek zijn voor een parameterset. Als u bijvoorbeeld `Get-Random` zonder para meters gebruikt, veronderstelt Windows Power shell dat u de para  meter set gebruikt en retourneert deze een wille keurig getal.
 
 In elke parameterset worden de para meters in positie volgorde weer gegeven. De volg orde van de para meters in een opdracht is alleen van belang wanneer u de optionele parameter namen weglaat. Wanneer parameter namen worden wegge laten, wijst Power shell waarden toe aan para meters op positie en type. Zie voor meer informatie over de positie van de para meter `about_Parameters` .
 

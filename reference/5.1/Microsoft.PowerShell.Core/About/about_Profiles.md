@@ -1,16 +1,16 @@
 ---
 description: Hierin wordt beschreven hoe u een Power shell-profiel maakt en gebruikt.
-keywords: powershell,cmdlet
+Locale: en-US
 ms.date: 11/30/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Profiles
-ms.openlocfilehash: 17b89df0ec0ce88127385287cee560996af7a628
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 65920fd9f11a1d9206ba3dbe899831ffe2ced5be
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93252589"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103194166"
 ---
 # <a name="about-profiles"></a>Over profielen
 
@@ -64,7 +64,7 @@ De `$PROFILE` variabele slaat het pad op naar het profiel huidige gebruiker, hui
 
 De `$PROFILE` variabele bevat bijvoorbeeld de volgende waarden in de Windows Power shell-console.
 
-|Beschrijving                |Naam                              |
+|Beschrijving                |Name                              |
 |---------------------------|----------------------------------|
 |Huidige gebruiker, huidige host |`$PROFILE`                        |
 |Huidige gebruiker, huidige host |`$PROFILE.CurrentUserCurrentHost` |
@@ -206,7 +206,7 @@ Zie [about_Prompts](about_Prompts.md)voor meer informatie over de Power shell-pr
 
 ## <a name="the-noprofile-parameter"></a>De para meter geen profiel
 
-Als u Power shell zonder profielen wilt starten, gebruikt u de para meter geen **profiel** van **PowerShell.exe** , het programma dat Power shell start.
+Als u Power shell zonder profielen wilt starten, gebruikt u de para meter geen **profiel** van **PowerShell.exe**, het programma dat Power shell start.
 
 Open om te beginnen een programma dat Power shell kan starten, zoals Cmd.exe of Power shell zelf. U kunt ook het dialoog venster uitvoeren in Windows gebruiken.
 

@@ -1,16 +1,16 @@
 ---
 description: Hierin wordt beschreven hoe u Help-onderwerpen op basis van opmerkingen schrijft voor-functies en-scripts.
-keywords: powershell,cmdlet
+Locale: en-US
 ms.date: 06/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comment_based_help?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Comment_Based_Help
-ms.openlocfilehash: 386ed8e1c28904c484261aa91d11ce028632cd16
-ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
+ms.openlocfilehash: 6dfc735e02e7155d70d5db05753c4abfc54149f8
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94391269"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103195934"
 ---
 # <a name="about-comment-based-help"></a>Informatie over op opmerkingen gebaseerde Help
 
@@ -21,7 +21,7 @@ Hierin wordt beschreven hoe u Help-onderwerpen op basis van opmerkingen schrijft
 
 U kunt Help-onderwerpen op basis van opmerkingen schrijven voor functies en scripts door speciale tref woorden voor opmerkingen te gebruiken.
 
-Met de cmdlet [Get-Help](xref:Microsoft.PowerShell.Core.Get-Help) wordt Help op basis van opmerkingen weer gegeven in dezelfde indeling waarin de Help-onderwerpen over cmdlets worden weer gegeven die zijn gegenereerd op basis van XML-bestanden. Gebruikers kunnen alle para meters van `Get-Help` , zoals **gedetailleerde** , **volledige** , **voor beelden** en **online** , gebruiken om de inhoud van op opmerkingen gebaseerde Help weer te geven.
+Met de cmdlet [Get-Help](xref:Microsoft.PowerShell.Core.Get-Help) wordt Help op basis van opmerkingen weer gegeven in dezelfde indeling waarin de Help-onderwerpen over cmdlets worden weer gegeven die zijn gegenereerd op basis van XML-bestanden. Gebruikers kunnen alle para meters van `Get-Help` , zoals **gedetailleerde**, **volledige**, **voor beelden** en **online**, gebruiken om de inhoud van op opmerkingen gebaseerde Help weer te geven.
 
 U kunt ook op XML gebaseerde Help-bestanden voor functies en scripts schrijven. `Get-Help`Gebruik het sleutel woord om de cmdlet in te scha kelen om het op XML gebaseerde Help-bestand voor een functie of script te vinden `.ExternalHelp` . Zonder dit sleutel woord `Get-Help` kunnen geen op XML gebaseerde Help-onderwerpen voor functies of scripts worden gevonden.
 
@@ -293,7 +293,7 @@ De naam, de syntaxis, de parameter lijst, de parameter kenmerk tabel, de algemen
 
 De sectie **naam** van het Help-onderwerp van een functie wordt opgehaald uit de functie naam in de syntaxis van de functie. De **naam** van een script Help-onderwerp wordt opgehaald uit de script bestandsnaam. Als u de naam of het hoofdletter gebruik wilt wijzigen, wijzigt u de syntaxis van de functie of de script bestands naam.
 
-### <a name="syntax"></a>Syntaxis
+### <a name="syntax"></a>Syntax
 
 De sectie **syntaxis** van het Help-onderwerp wordt gegenereerd met de syntaxis van de functie of het script. Als u details wilt toevoegen aan de syntaxis van het Help-onderwerp, zoals het .NET-type van een para meter, voegt u het detail toe aan de syntaxis. Als u geen parameter type opgeeft, wordt het **object** type ingevoegd als de standaard waarde.
 
@@ -307,7 +307,7 @@ De **algemene para meters** worden toegevoegd aan de lijst syntaxis en para mete
 
 ### <a name="parameter-attribute-table"></a>Parameter kenmerk tabel
 
-`Get-Help` Hiermee wordt de tabel met parameter kenmerken gegenereerd die wordt weer gegeven wanneer u de para meter **Full** of **para meter** van gebruikt `Get-Help` . De waarde van de kenmerken **vereist** , **positie** en **standaard** waarde wordt opgehaald uit de syntaxis van de functie of het script.
+`Get-Help` Hiermee wordt de tabel met parameter kenmerken gegenereerd die wordt weer gegeven wanneer u de para meter **Full** of **para meter** van gebruikt `Get-Help` . De waarde van de kenmerken **vereist**, **positie** en **standaard** waarde wordt opgehaald uit de syntaxis van de functie of het script.
 
 Standaard waarden en een waarde voor **joker tekens accepteren** worden niet weer gegeven in de parameter kenmerk tabel, zelfs niet wanneer ze zijn gedefinieerd in de functie of het script. Geef deze informatie op in de parameter beschrijving om gebruikers te helpen.
 
@@ -743,7 +743,7 @@ Displays information about PowerShell cmdlets and concepts.
 ...
 ```
 
-## <a name="see-also"></a>Zie tevens
+## <a name="see-also"></a>Zie ook
 
 [about_Functions](about_Functions.md)
 
