@@ -2,12 +2,12 @@
 title: PowerShell installeren in Linux
 description: Informatie over het installeren van Power shell op diverse Linux-distributies
 ms.date: 02/02/2021
-ms.openlocfilehash: 1e7fabdc94ba70a91eb5c6425893bc5af640e584
-ms.sourcegitcommit: 4f1c2fe700b8a0544c59e371eb7cfbc6d852b185
+ms.openlocfilehash: ab075a3570695f5a58b7e7fbf968243a4ff45929
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100563298"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103195269"
 ---
 # <a name="installing-powershell-on-linux"></a>PowerShell installeren in Linux
 
@@ -711,6 +711,15 @@ pwsh
 apt -y remove powershell
 ```
 
+## <a name="support-for-arm-processors"></a>Ondersteuning voor arm-processors
+
+Power shell kan worden geïnstalleerd op een aantal Linux-distributies. Power shell is afhankelijk van .NET-ondersteuning van arm. Power shell wordt ondersteund in de volgende distributies:
+
+- Alpine Linux v 3.11 +-.NET ondersteunt Arm64, maar er is op dit moment geen installeerbaar pakket voor Power shell
+- Raspbian-Zie de onderstaande installatie-instructies
+- Debian v9 +-ondersteunt Arm32 en Arm64 met behulp van de [binaire archief](#binary-archives) installatie methode
+- Ubuntu 20,10, 20,04, 18,04, 16,04-ondersteunt Arm32 en Arm64 met behulp van de [binaire archief](#binary-archives) installatie methode
+
 ## <a name="raspbian"></a>Raspbian
 
 > [!NOTE]
@@ -821,6 +830,12 @@ Als u binaire Power Shell-bestanden wilt implementeren op Linux-distributies die
 
 ### <a name="installation---binary-archives"></a>Installatie-binaire archieven
 
+In het volgende voor beeld ziet u de stappen voor het installeren van het binaire x64-archief. U moet het juiste binaire archief kiezen dat overeenkomt met het processor type voor uw platform.
+
+- PowerShell-7.1.2-Linux-arm32. tar. gz
+- PowerShell-7.1.2-Linux-arm64. tar. gz
+- PowerShell-7.1.2-Linux-x64. tar. gz
+
 #### <a name="linux"></a>Linux
 
 ```sh
@@ -849,11 +864,11 @@ sudo rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 ## <a name="paths"></a>Paden
 
 - `$PSHOME` is `/opt/microsoft/powershell/7/`
-- Gebruikers profielen worden gelezen van `~/.config/powershell/profile.ps1`
+- Gebruikers profielen worden gelezen uit `~/.config/powershell/profile.ps1`
 - Standaard profielen worden gelezen uit `$PSHOME/profile.ps1`
 - Gebruikers modules worden gelezen uit `~/.local/share/powershell/Modules`
-- Gedeelde modules worden gelezen van `/usr/local/share/powershell/Modules`
-- Standaard modules worden gelezen van `$PSHOME/Modules`
+- Gedeelde modules worden gelezen uit `/usr/local/share/powershell/Modules`
+- Standaard modules worden gelezen uit `$PSHOME/Modules`
 - De PSReadLine-geschiedenis wordt vastgelegd in `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
 
 De profielen respecteren de configuratie per host van Power shell, zodat de standaardhost-specifieke profielen op `Microsoft.PowerShell_profile.ps1` dezelfde locatie bestaan.
