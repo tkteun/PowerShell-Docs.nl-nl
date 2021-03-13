@@ -1,17 +1,16 @@
 ---
-description: Configuratie bestanden voor Power shell core, waarbij de Register configuratie wordt vervangen.
-keywords: powershell
+description: Configuratie bestanden voor Power shell, waarbij de Register configuratie wordt vervangen.
 Locale: en-US
-ms.date: 11/02/2018
+ms.date: 03/12/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_config?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_PowerShell_Config
-ms.openlocfilehash: 88e2f5fc5eaaf3ffffd5ceb3df0632866eee705e
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 1ba0472e52ff6fc810a0b357fb7fa60c008d0de2
+ms.sourcegitcommit: 2560a122fe3a85ea762c3af6f1cba9e237512b2d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93252701"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103412939"
 ---
 # <a name="about-powershell-config"></a>Over Power shell-configuratie
 
@@ -23,11 +22,7 @@ Configuratie bestanden voor Power shell core, waarbij de Register configuratie w
 Het `powershell.config.json` bestand bevat configuratie-instellingen voor Power shell core. Power shell laadt deze configuratie bij het opstarten. De instellingen kunnen tijdens runtime ook worden gewijzigd. Voorheen werden deze instellingen opgeslagen in het Windows-REGI ster voor Power shell, maar zijn ze nu opgenomen in een bestand om de configuratie in macOS en Linux in te scha kelen.
 
 > [!WARNING]
-> Als het `powershell.config.json` bestand een ongeldige JSON Power shell bevat, kan een interactieve sessie niet worden gestart.
-> Als dit het geval is, moet u het configuratie bestand herstellen.
-
-> [!NOTE]
-> Niet-herkende sleutels of ongeldige waarden in het configuratie bestand worden op de achtergrond genegeerd.
+> Niet-herkende sleutels of ongeldige waarden in het configuratie bestand worden op de achtergrond genegeerd. Als het `powershell.config.json` bestand een ongeldige JSON bevat, kan Power shell geen interactieve sessie starten. Als dit het geval is, moet u het configuratie bestand herstellen.
 
 ### <a name="allusers-shared-configuration"></a>AllUsers (gedeelde) configuratie
 
@@ -61,9 +56,7 @@ Hiermee wordt het beleid voor het uitvoeren **van CurrentUser ingesteld** .
 
 Waar:
 
-- `<shell-id>` verwijst naar de ID van de huidige Power shell-host.
-  Voor de normale Power shell Core is dit `Microsoft.PowerShell` .
-  In een Power shell-sessie kunt u deze detecteren met `$ShellId` .
+- `<shell-id>` verwijst naar de ID van de huidige Power shell-host. Voor de normale Power shell Core is dit `Microsoft.PowerShell` . In een Power shell-sessie kunt u deze detecteren met `$ShellId` .
 - `<execution-policy>` verwijst naar een geldige naam voor het uitvoerings beleid.
 
 In het volgende voor beeld wordt het uitvoerings beleid van Power shell ingesteld op `RemoteSigned` .
@@ -78,15 +71,14 @@ In Windows kunt u de equivalente register sleutels vinden in `\SOFTWARE\Microsof
 
 ### <a name="psmodulepath"></a>PSModulePath
 
-Hiermee wordt een PSModulePath-onderdeel voor deze Power shell-sessie onderdrukt. Als de configuratie voor de huidige gebruiker is, stelt het pad van de CurrentUser-module in. Als de configuratie voor alle gebruikers is ingesteld, stelt het pad naar de AllUser-module in.
+Onderdrukt de `PSModulePath` instellingen voor deze Power shell-sessie. Als de configuratie voor de huidige gebruiker is, stelt het pad van de **CurrentUser** -module in. Als de configuratie voor alle gebruikers is ingesteld, stelt het pad naar de **ALLUSERS** -module in.
 
 > [!WARNING]
-> Als u een pad naar een AllUsers of een CurrentUser-module configureert, wordt de installatie locatie met het bereik voor PowerShellGet-modules zoals [installatie-module](/powershell/module/powershellget/install-module)niet gewijzigd.
-> Deze cmdlets gebruiken altijd de *standaard* module paden.
+> Als u hier een pad naar een **ALLUSERS** of **CurrentUser** -module configureert, wordt de installatie locatie met het bereik voor PowerShellGet-cmdlets zoals [installatie-module](/powershell/module/powershellget/install-module)niet gewijzigd. Deze cmdlets gebruiken altijd de _standaard_ module paden.
 
-Als er geen waarde is ingesteld, wordt de standaard waarde voor het desbetreffende padcomponent-onderdeel gebruikt. Zie [about_Modules](./about_Modules.md#module-and-dsc-resource-locations-and-psmodulepath) voor meer informatie over deze standaard waarden.
+Als er geen waarde is ingesteld, gebruikt Power shell de standaard waarde voor de betreffende instelling van het pad naar de module. Zie [about_Modules](./about_Modules.md#module-and-dsc-resource-locations-and-psmodulepath)voor meer informatie over deze standaard waarden.
 
-Met deze instelling kunt u omgevings variabelen gebruiken door ze in te sluiten tussen `%` tekens, zoals `"%HOME%\Documents\PowerShell\Modules"` op dezelfde manier als cmd toestaat. Deze syntaxis is ook van toepassing op Linux en macOS. Hieronder vindt u voor beelden.
+Met deze instelling kunt u omgevings variabelen gebruiken door ze in te sluiten tussen `%` tekens, zoals `"%HOME%\Documents\PowerShell\Modules"` , op dezelfde manier als met Cmd. Deze syntaxis is ook van toepassing op Linux en macOS. Hieronder vindt u voor beelden.
 
 ```Schema
 "PSModulePath": "<ps-module-path>"
@@ -96,7 +88,7 @@ Waar:
 
 - `<ps-module-path>` is het absolute pad naar een module directory. Voor alle gebruikers configuraties is dit de map AllUsers Shared module. Voor de huidige gebruikers configuraties is dit de map van de CurrentUser-module.
 
-In dit voor beeld ziet u een PSModulePath-configuratie voor een Windows-omgeving:
+Dit voor beeld toont een `PSModulePath` configuratie voor een Windows-omgeving:
 
 ```json
 {
@@ -104,7 +96,7 @@ In dit voor beeld ziet u een PSModulePath-configuratie voor een Windows-omgeving
 }
 ```
 
-In dit voor beeld ziet u een PSModulePath-configuratie voor een macOS-of Linux-omgeving:
+Dit voor beeld toont een `PSModulePath` configuratie voor een macOS-of Linux-omgeving:
 
 ```json
 {
@@ -112,7 +104,7 @@ In dit voor beeld ziet u een PSModulePath-configuratie voor een macOS-of Linux-o
 }
 ```
 
-In dit voor beeld ziet u het insluiten van een omgevings variabele in een PSModulePath-configuratie. Houd er rekening mee dat met behulp `HOME` van de omgevings variabele en het `/` mappen scheidings teken dit werkt in Windows, MacOS en Linux.
+In dit voor beeld ziet u het insluiten van een omgevings variabele in een `PSModulePath` configuratie. Houd er rekening mee dat met behulp `HOME` van de omgevings variabele en het `/` mappen scheidings teken dit werkt in Windows, MacOS en Linux.
 
 ```json
 {
@@ -120,7 +112,7 @@ In dit voor beeld ziet u het insluiten van een omgevings variabele in een PSModu
 }
 ```
 
-In dit voor beeld ziet u het insluiten van een omgevings variabele in een PSModulePath-configuratie die alleen wordt gebruikt voor macOS en Linux:
+In dit voor beeld ziet u het insluiten van een omgevings variabele in een `PSModulePath` configuratie die alleen wordt gebruikt voor macOS en Linux:
 
 ```json
 {
@@ -129,14 +121,12 @@ In dit voor beeld ziet u het insluiten van een omgevings variabele in een PSModu
 ```
 
 > [!NOTE]
-> Power shell-variabelen kunnen niet worden inge sloten in PSModulePath-configuraties.
-> PSModulePath-configuraties voor Linux en macOS zijn hoofdletter gevoelig. Een PSModulePath-configuratie moet geldige mappen scheidings tekens voor het platform gebruiken. Op macOS en Linux betekent dit `/` . In Windows zijn beide `/` en `\` werkt.
+> Power shell-variabelen kunnen niet worden inge sloten in `PSModulePath` configuraties.
+> `PSModulePath` configuraties voor Linux en macOS zijn hoofdletter gevoelig. Een `PSModulePath` configuratie moet geldige mappen scheidings tekens voor het platform gebruiken. Op macOS en Linux betekent dit `/` . In Windows zijn beide `/` en `\` werkt.
 
 ### <a name="experimentalfeatures"></a>ExperimentalFeatures
 
-De namen van de experimentele functies die in Power shell moeten worden ingeschakeld.
-Standaard zijn er geen experimentele functies ingeschakeld.
-De standaard waarde is een lege matrix.
+De namen van de experimentele functies die in Power shell moeten worden ingeschakeld. Standaard zijn er geen experimentele functies ingeschakeld. De standaard waarde is een lege matrix.
 
 ```Schema
 "ExperimentalFeatures": ["<experimental-feature-name>", ...]
@@ -157,7 +147,7 @@ In het volgende voor beeld worden de experimentele functies **PSImplicitRemoting
 }
 ```
 
-Zie [Power shell RFC 29][RFC0029]voor meer informatie over experimentele functies.
+Zie [experimentele functies gebruiken](/powershell/scripting/learn/experimental-features)voor meer informatie over experimentele functies.
 
 ## <a name="non-windows-logging-configuration"></a>Configuratie van niet-Windows-logboek registratie
 
@@ -206,7 +196,7 @@ Hiermee geeft u het minimale Ernst niveau op waarmee Power shell moet registrere
 
 Waar:
 
-- `<log-level>` is een van:
+- `<log-level>` heeft een van de volgende waarden:
   - Altijd
   - Kritiek
   - Fout
@@ -242,7 +232,7 @@ Hiermee wordt bepaald welke registratie kanalen worden ingeschakeld.
 
 Waar:
 
-- `<log-channel>` is een van:
+- `<log-channel>` heeft een van de volgende waarden:
   - Operationeel: registreert basis informatie over Power shell-activiteiten
   - Analytische-registreert meer gedetailleerde diagnostische gegevens
 
@@ -267,7 +257,7 @@ Hiermee wordt bepaald welke delen van Power shell worden vastgelegd. Standaard z
 
 Waar:
 
-- `<log-keyword>` is een van:
+- `<log-keyword>` heeft een van de volgende waarden:
   - Runs Pace-beheer van runs Pace
   - Pijp lijn-pijplijn bewerkingen
   - Protocol-Communication handling, zoals PSRP
@@ -279,8 +269,7 @@ Waar:
   - ManagedPlugin-WSMan-invoeg toepassing
 
 > [!NOTE]
-> Het wordt over het algemeen aangeraden deze waarde uit te stellen, tenzij u probeert een bepaald gedrag in een bekend deel van Power shell op te sporen.
-> Als u deze waarde wijzigt, wordt alleen de hoeveelheid vastgelegde informatie verkleind.
+> Het wordt over het algemeen aangeraden deze waarde uit te stellen, tenzij u probeert een bepaald gedrag in een bekend deel van Power shell op te sporen. Als u deze waarde wijzigt, wordt alleen de hoeveelheid vastgelegde informatie verkleind.
 
 In dit voor beeld wordt de logboek registratie beperkt tot runs Pace-bewerkingen, pijplijn logica en cmdlet-gebruik. Alle andere logboek registratie wordt wegge laten.
 
@@ -333,7 +322,7 @@ Met deze configuratie wordt een aantal opties ingesteld die alleen in macOS of L
 
 - Het pad naar de CurrentUser-module is ingesteld op een aangepaste module directory in `$HOME`
 - De functie **PSImplicitRemotingBatching** experimentele is ingeschakeld
-- Het Power shell-logboek niveau is ingesteld op **uitgebreid** , voor meer logboek registratie
+- Het Power shell-logboek niveau is ingesteld op **uitgebreid**, voor meer logboek registratie
 - Met deze Power shell-installatie wordt er naar de logboeken geschreven met de **Home-Power shell-** identiteit.
 
 ```json
@@ -350,5 +339,3 @@ Met deze configuratie wordt een aantal opties ingesteld die alleen in macOS of L
 [Over uitvoerings beleid](./about_Execution_Policies.md)
 
 [Over automatische variabelen](./about_Automatic_Variables.md)
-
-[RFC0029]: https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0029-Support-Experimental-Features.md

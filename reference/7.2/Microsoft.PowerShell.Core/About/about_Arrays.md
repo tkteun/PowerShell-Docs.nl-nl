@@ -5,12 +5,12 @@ ms.date: 08/26/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_arrays?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Arrays
-ms.openlocfilehash: 2e7cf9c8f7d4e6f1d5bc66310f56d3de9461e592
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 4ec216a502f0031bc35cc7b04aacf5d262fd696d
+ms.sourcegitcommit: 2560a122fe3a85ea762c3af6f1cba9e237512b2d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94706129"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103412842"
 ---
 # <a name="about-arrays"></a>Over matrices
 
@@ -320,7 +320,7 @@ $a.Length
 
 ### <a name="rank"></a>Positie
 
-Retourneert het aantal dimensies in de matrix. De meeste matrices in Power Shell hebben één dimensie. Zelfs wanneer u denkt dat u een multidimensionale matrix bouwt. zoals in het volgende voor beeld:
+Retourneert het aantal dimensies in de matrix. De meeste matrices in Power Shell hebben één dimensie. Zelfs wanneer u denkt dat u een multidimensionale matrix bouwt zoals in het volgende voor beeld:
 
 ```powershell
 $a = @(
@@ -329,23 +329,72 @@ $a = @(
   @(Get-Process)
 )
 
-[int]$r = $a.Rank
-"`$a rank: $r"
+"`$a rank: $($a.Rank)"
+"`$a length: $($a.Length)"
+"`$a length: $($a.Length)"
+"Process `$a[2][1]: $($a[2][1].ProcessName)"
 ```
+
+In dit voor beeld maakt u een eendimensionale matrix die andere matrices bevat. Dit wordt ook wel een _gekartelde matrix_ genoemd. De eigenschap **Rank** heeft aangetoond dat dit eendimensionale is. Voor toegang tot items in een gekartelde matrix moeten de indexen tussen vier Kante haken ( `[]` ) staan.
 
 ```Output
 $a rank: 1
+$a length: 3
+$a[2] length: 348
+Process $a[2][1]: AcroRd32
 ```
 
-In het volgende voor beeld ziet u hoe u een echt multidimensionale matrix maakt met behulp van .NET Framework.
+Multidimensionale matrices worden opgeslagen in de [volg orde row-major](https://wikipedia.org/wiki/Row-_and_column-major_order). In het volgende voor beeld ziet u hoe u een echte multidimensionale matrix maakt.
 
 ```powershell
-[int[,]]$rank2 = [int[,]]::new(5,5)
+[string[,]]$rank2 = [string[,]]::New(3,2)
 $rank2.rank
+$rank2.Length
+$rank2[0,0] = 'a'
+$rank2[0,1] = 'b'
+$rank2[1,0] = 'c'
+$rank2[1,1] = 'd'
+$rank2[2,0] = 'e'
+$rank2[2,1] = 'f'
+$rank2[1,1]
 ```
 
 ```Output
 2
+6
+d
+```
+
+Als u toegang wilt krijgen tot items in een multidimensionale matrix, scheidt u de indexen met een komma ( `,` ) binnen één set haken ( `[]` ).
+
+Bij sommige bewerkingen op een multidimensionale matrix, zoals replicatie en samen voegen, moet de matrix worden afgevlakt. Met afvlakking wordt de matrix omgezet in een eendimensionale matrix van het type unperked. De resulterende matrix neemt alle elementen in de volg orde van de rij-groot op. Kijk eens naar het volgende voorbeeld:
+
+```powershell
+$a = "red",$true
+$b = (New-Object 'int[,]' 2,2)
+$b[0,0] = 10
+$b[0,1] = 20
+$b[1,0] = 30
+$b[1,1] = 40
+$c = $a + $b
+$a.GetType().Name
+$b.GetType().Name
+$c.GetType().Name
+$c
+```
+
+In de uitvoer ziet u `$c` een eendimensionale matrix met daarin de items van `$a` en in de `$b` volg orde van de rij-Major.
+
+```output
+Object[]
+Int32[,]
+Object[]
+red
+True
+10
+20
+30
+40
 ```
 
 ## <a name="methods-of-arrays"></a>Methoden van matrices

@@ -1,14 +1,14 @@
 ---
-ms.date: 09/13/2016
+ms.date: 03/12/2021
 ms.topic: reference
 title: Het PSModulePath-installatiepad wijzigen
 description: Het PSModulePath-installatiepad wijzigen
-ms.openlocfilehash: b802492bf9b49e8165e296817e3f80b9ae8265a6
-ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.openlocfilehash: 1bea1e8ed20f55352cc9b4270e95cf7f0f7e2faa
+ms.sourcegitcommit: 2560a122fe3a85ea762c3af6f1cba9e237512b2d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "92661938"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103412882"
 ---
 # <a name="modifying-the-psmodulepath-installation-path"></a>Het PSModulePath-installatiepad wijzigen
 
@@ -47,9 +47,12 @@ Gebruik een van de volgende methoden om paden aan deze variabele toe te voegen:
 
   ```
 
+U kunt ook de `PSModulePath` waarden in het `powershell.config.json` configuratie bestand instellen. Zie [about_PowerShell_Config](/powershell/module/microsoft.powershell.core/about/about_powershell_config#psmodulepath)voor meer informatie.
+
 ## <a name="to-remove-locations-from-the-psmodulepath"></a>Locaties verwijderen uit de PSModulePath
 
-U kunt paden uit de variabele verwijderen met soort gelijke methoden: als u bijvoorbeeld `$env:PSModulePath = $env:PSModulePath -replace "$([System.IO.Path]::PathSeparator)c:\\ModulePath"` het pad **c:\ModulePath** verwijdert uit de huidige sessie.
+U kunt paden uit de variabele verwijderen met soort gelijke methoden: bijvoorbeeld `$env:PSModulePath = $env:PSModulePath -replace "$([System.IO.Path]::PathSeparator)c:\\ModulePath"`
+het **c:\ModulePath** -pad wordt verwijderd uit de huidige sessie.
 
 ## <a name="see-also"></a>Zie ook
 

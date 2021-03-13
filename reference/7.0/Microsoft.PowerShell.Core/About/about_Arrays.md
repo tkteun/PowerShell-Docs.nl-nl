@@ -1,17 +1,16 @@
 ---
 description: Hierin worden matrices beschreven. Dit zijn gegevens structuren die zijn ontworpen om verzamelingen van items op te slaan.
-keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 08/26/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_arrays?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Arrays
-ms.openlocfilehash: 2283c36d899c3ea743f6c379dc686ec583d7a36c
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 2febf96d49003263cbcfd3f605db60b6c1d2437b
+ms.sourcegitcommit: 2560a122fe3a85ea762c3af6f1cba9e237512b2d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93252178"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103412927"
 ---
 # <a name="about-arrays"></a>Over matrices
 
@@ -52,13 +51,13 @@ $C = 5..8
 
 Als gevolg hiervan `$C` bevat vier waarden: 5, 6, 7 en 8.
 
-Als er geen gegevens type is opgegeven, maakt Power shell elke matrix als een object Matrix ( **System. object []** ). Gebruik de methode **gettype ()** om het gegevens type van een matrix te bepalen. Als u bijvoorbeeld het gegevens type van de matrix wilt bepalen `$A` , typt u:
+Als er geen gegevens type is opgegeven, maakt Power shell elke matrix als een object Matrix (**System. object []**). Gebruik de methode **gettype ()** om het gegevens type van een matrix te bepalen. Als u bijvoorbeeld het gegevens type van de matrix wilt bepalen `$A` , typt u:
 
 ```powershell
 $A.GetType()
 ```
 
-Als u een sterk getypeerde matrix wilt maken, dat wil zeggen een matrix die alleen waarden van een bepaald type kan bevatten, kunt u de variabele als een matrix type casten, zoals **String []** , **Long []** of **Int32 []**. Als u een matrix wilt casten, moet u vóór de naam van de variabele een matrix type opgeven tussen vier Kante haken. Als u bijvoorbeeld een matrix van 32-bits geheel getal met de naam `$ia` vier gehele getallen (1500, 2230, 3350 en 4000) wilt maken, typt u:
+Als u een sterk getypeerde matrix wilt maken, dat wil zeggen een matrix die alleen waarden van een bepaald type kan bevatten, kunt u de variabele als een matrix type casten, zoals **String []**, **Long []** of **Int32 []**. Als u een matrix wilt casten, moet u vóór de naam van de variabele een matrix type opgeven tussen vier Kante haken. Als u bijvoorbeeld een matrix van 32-bits geheel getal met de naam `$ia` vier gehele getallen (1500, 2230, 3350 en 4000) wilt maken, typt u:
 
 ```powershell
 [int32[]]$ia = 1500,2230,3350,4000
@@ -321,7 +320,7 @@ $a.Length
 
 ### <a name="rank"></a>Positie
 
-Retourneert het aantal dimensies in de matrix. De meeste matrices in Power Shell hebben één dimensie. Zelfs wanneer u denkt dat u een multidimensionale matrix bouwt. zoals in het volgende voor beeld:
+Retourneert het aantal dimensies in de matrix. De meeste matrices in Power Shell hebben één dimensie. Zelfs wanneer u denkt dat u een multidimensionale matrix bouwt zoals in het volgende voor beeld:
 
 ```powershell
 $a = @(
@@ -330,28 +329,77 @@ $a = @(
   @(Get-Process)
 )
 
-[int]$r = $a.Rank
-"`$a rank: $r"
+"`$a rank: $($a.Rank)"
+"`$a length: $($a.Length)"
+"`$a length: $($a.Length)"
+"Process `$a[2][1]: $($a[2][1].ProcessName)"
 ```
+
+In dit voor beeld maakt u een eendimensionale matrix die andere matrices bevat. Dit wordt ook wel een _gekartelde matrix_ genoemd. De eigenschap **Rank** heeft aangetoond dat dit eendimensionale is. Voor toegang tot items in een gekartelde matrix moeten de indexen tussen vier Kante haken ( `[]` ) staan.
 
 ```Output
 $a rank: 1
+$a length: 3
+$a[2] length: 348
+Process $a[2][1]: AcroRd32
 ```
 
-In het volgende voor beeld ziet u hoe u een echt multidimensionale matrix maakt met behulp van .NET Framework.
+Multidimensionale matrices worden opgeslagen in de [volg orde row-major](https://wikipedia.org/wiki/Row-_and_column-major_order). In het volgende voor beeld ziet u hoe u een echte multidimensionale matrix maakt.
 
 ```powershell
-[int[,]]$rank2 = [int[,]]::new(5,5)
+[string[,]]$rank2 = [string[,]]::New(3,2)
 $rank2.rank
+$rank2.Length
+$rank2[0,0] = 'a'
+$rank2[0,1] = 'b'
+$rank2[1,0] = 'c'
+$rank2[1,1] = 'd'
+$rank2[2,0] = 'e'
+$rank2[2,1] = 'f'
+$rank2[1,1]
 ```
 
 ```Output
 2
+6
+d
+```
+
+Als u toegang wilt krijgen tot items in een multidimensionale matrix, scheidt u de indexen met een komma ( `,` ) binnen één set haken ( `[]` ).
+
+Bij sommige bewerkingen op een multidimensionale matrix, zoals replicatie en samen voegen, moet de matrix worden afgevlakt. Met afvlakking wordt de matrix omgezet in een eendimensionale matrix van het type unperked. De resulterende matrix neemt alle elementen in de volg orde van de rij-groot op. Kijk eens naar het volgende voorbeeld:
+
+```powershell
+$a = "red",$true
+$b = (New-Object 'int[,]' 2,2)
+$b[0,0] = 10
+$b[0,1] = 20
+$b[1,0] = 30
+$b[1,1] = 40
+$c = $a + $b
+$a.GetType().Name
+$b.GetType().Name
+$c.GetType().Name
+$c
+```
+
+In de uitvoer ziet u `$c` een eendimensionale matrix met daarin de items van `$a` en in de `$b` volg orde van de rij-Major.
+
+```output
+Object[]
+Int32[,]
+Object[]
+red
+True
+10
+20
+30
+40
 ```
 
 ## <a name="methods-of-arrays"></a>Methoden van matrices
 
-### <a name="clear"></a>Clear
+### <a name="clear"></a>Veilig
 
 Hiermee stelt u alle element waarden in op de _standaard waarde_ van het element type van de matrix.
 De methode Clear () stelt de grootte van de matrix niet opnieuw in.
@@ -608,7 +656,7 @@ Het aantal geretourneerde items kan worden beperkt door een waarde door te geven
 >
 > `Until` retourneert de items **vóór** de eerste _fase_.
 >
-> `SkipUntil` retourneert alle items **na** de eerste _fase_ , inclusief het eerste door gegeven item.
+> `SkipUntil` retourneert alle items **na** de eerste _fase_, inclusief het eerste door gegeven item.
 
 #### <a name="split"></a>Splitsen
 
