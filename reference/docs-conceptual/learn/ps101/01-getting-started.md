@@ -4,12 +4,12 @@ description: Waar u kunt zoeken en hoe u Power shell kunt starten voor nieuwe ge
 ms.date: 06/02/2020
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
-ms.openlocfilehash: 8b9fee222347970df4e35f9ba0841232952a292d
-ms.sourcegitcommit: df5e6f032ee2d4b556d50406832732d2f7dc2502
+ms.openlocfilehash: cc634eb1732947dca953d7d91baedf8052edf718
+ms.sourcegitcommit: 080c8b05a1242348c365fe1684457e873325f11e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98216177"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103483471"
 ---
 # <a name="chapter-1---getting-started-with-powershell"></a>Hoofd stuk 1: aan de slag met Power shell
 
@@ -61,7 +61,7 @@ At line:1 char:29
 ```
 
 De oplossing voor dit probleem is om Power shell uit te voeren als een domein gebruiker die een lokale beheerder is.
-Dit is hoe mijn tweede domein gebruikers account is geconfigureerd. Met de principal van de minimale bevoegdheid moet dit account geen domein beheerder zijn of een verhoogde bevoegdheid hebben in het domein.
+Dit is hoe mijn tweede domein gebruikers account is geconfigureerd. Met het principe van minimale bevoegdheden moet dit account geen domein beheerder zijn of een verhoogde bevoegdheid hebben in het domein.
 
 Sluit Power shell. Start de Power shell-console opnieuw, behalve deze tijd, klik met de rechter muisknop op de snelkoppeling **Windows Power shell** en selecteer als **administrator uitvoeren** , zoals weer gegeven in afbeelding 1-5.
 

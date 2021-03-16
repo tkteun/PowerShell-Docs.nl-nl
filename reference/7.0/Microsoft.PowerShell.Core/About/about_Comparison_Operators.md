@@ -1,16 +1,16 @@
 ---
 description: Hierin worden de Opera tors beschreven waarmee waarden in Power shell worden vergeleken.
 Locale: en-US
-ms.date: 02/19/2021
+ms.date: 03/15/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Comparison_Operators
-ms.openlocfilehash: d99033caac2412852b3f3de0f7a15b74d7ef8e18
-ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
+ms.openlocfilehash: 9b287ca0c156d348141c3c1d1ab50aff1d2bcf9f
+ms.sourcegitcommit: 080c8b05a1242348c365fe1684457e873325f11e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101685931"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103483382"
 ---
 # <a name="about-comparison-operators"></a>Over vergelijkings operatoren
 
@@ -64,7 +64,7 @@ Er zijn enkele uitzonde ringen:
 
 - De containment-en type-Opera tors retour neren altijd een **Booleaanse** waarde
 - De `-replace` operator retourneert het vervangings resultaat
-- De `-match` `-notmatch` Opera tors en vullen ook de `$Matches` Automatische variabele
+- De `-match` `-notmatch` Opera tors en vullen ook de `$Matches` Automatische variabele in, tenzij de linkerkant van de expressie een verzameling is.
 
 ## <a name="equality-operators"></a>Gelijkheidsoperatoren
 
@@ -322,7 +322,7 @@ Scalaire voor beelden:
 'bag'        -notmatch 'b[iou]g'   # Output: True
 ```
 
-Als de invoer een verzameling is, retour neren de Opera tors de overeenkomende leden van die verzameling.
+Als de invoer een verzameling is, retour neren de Opera tors de overeenkomende leden van die verzameling en de `$Matches` Automatische variabele `$null` .
 
 Voor beelden van verzamelingen:
 

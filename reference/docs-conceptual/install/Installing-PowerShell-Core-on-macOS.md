@@ -1,13 +1,13 @@
 ---
 title: PowerShell installeren in macOS
 description: Informatie over het installeren van Power shell in macOS
-ms.date: 02/02/2021
-ms.openlocfilehash: 3ae1fe0eb29b4d826221a2c11db19bc18c3efba7
-ms.sourcegitcommit: 4f1c2fe700b8a0544c59e371eb7cfbc6d852b185
+ms.date: 03/15/2021
+ms.openlocfilehash: e69a757e761039799fe399c0e59c31c800a5094a
+ms.sourcegitcommit: 080c8b05a1242348c365fe1684457e873325f11e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100563212"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103483452"
 ---
 # <a name="installing-powershell-on-macos"></a>PowerShell installeren in macOS
 
@@ -112,12 +112,12 @@ brew upgrade powershell
 
 ## <a name="installation-via-direct-download"></a>Installatie via direct downloaden
 
-Down load het pakket Package `powershell-7.1.2-osx-x64.pkg` van de pagina [releases][] op uw macOS-computer.
+Down load het pakket Package `powershell-7.1.3-osx-x64.pkg` van de pagina [releases][] op uw macOS-computer.
 
 U kunt dubbel klikken op het bestand en de prompts volgen of installeren vanaf de terminal:
 
 ```sh
-sudo installer -pkg powershell-7.1.2-osx-x64.pkg -target /
+sudo installer -pkg powershell-7.1.3-osx-x64.pkg -target /
 ```
 
 Installeer [openssl](#installing-dependencies). OpenSSL is vereist voor externe communicatie met Power shell en CIM-bewerkingen.
@@ -140,23 +140,29 @@ Er zijn binaire Power shell- `tar.gz` archieven beschikbaar voor het macOS-platf
 
 Installeer [openssl](#installing-dependencies). OpenSSL is vereist voor externe communicatie met Power shell en CIM-bewerkingen.
 
+> [!NOTE]
+> U kunt deze methode gebruiken om een wille keurige versie van Power shell te installeren, met inbegrip van de nieuwste:
+> - Stabiele release: [https://aka.ms/powershell-release?tag=stable](https://aka.ms/powershell-release?tag=stable)
+> - Preview-versie: [https://aka.ms/powershell-release?tag=preview](https://aka.ms/powershell-release?tag=preview)
+> - LTS release: [https://aka.ms/powershell-release?tag=lts](https://aka.ms/powershell-release?tag=lts)
+
 ### <a name="installing-binary-archives-on-macos"></a>Binaire archieven installeren op macOS
 
 ```sh
 # Download the powershell '.tar.gz' archive
-curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v7.1.2/powershell-7.1.2-osx-x64.tar.gz
+curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v7.1.3/powershell-7.1.3-osx-x64.tar.gz
 
 # Create the target folder where powershell will be placed
-sudo mkdir -p /usr/local/microsoft/powershell/7.1.2
+sudo mkdir -p /usr/local/microsoft/powershell/7.1.3
 
 # Expand powershell to the target folder
-sudo tar zxf /tmp/powershell.tar.gz -C /usr/local/microsoft/powershell/7.1.2
+sudo tar zxf /tmp/powershell.tar.gz -C /usr/local/microsoft/powershell/7.1.3
 
 # Set execute permissions
-sudo chmod +x /usr/local/microsoft/powershell/7.1.2/pwsh
+sudo chmod +x /usr/local/microsoft/powershell/7.1.3/pwsh
 
 # Create the symbolic link that points to pwsh
-sudo ln -s /usr/local/microsoft/powershell/7.1.2/pwsh /usr/local/bin/pwsh
+sudo ln -s /usr/local/microsoft/powershell/7.1.3/pwsh /usr/local/bin/pwsh
 ```
 
 ## <a name="installing-dependencies"></a>Afhankelijkheden installeren
@@ -204,7 +210,7 @@ Als u de extra Power shell-paden wilt verwijderen, raadpleegt u de sectie [paden
 
 ## <a name="paths"></a>Paden
 
-- `$PSHOME` is `/usr/local/microsoft/powershell/7.1.2/`
+- `$PSHOME` is `/usr/local/microsoft/powershell/7.1.3/`
 - Gebruikers profielen worden gelezen van `~/.config/powershell/profile.ps1`
 - Standaard profielen worden gelezen uit `$PSHOME/profile.ps1`
 - Gebruikers modules worden gelezen uit `~/.local/share/powershell/Modules`
@@ -216,7 +222,7 @@ De profielen respecteren de configuratie van de Power shell per host. Het standa
 
 Power shell respecteert de [XDG-basis directory specificatie][xdg-bds] op macOS.
 
-Omdat macOS een afleiding van BSD is, wordt het voor voegsel `/usr/local` gebruikt in plaats van `/opt` . Dat `$PSHOME` wil zeggen `/usr/local/microsoft/powershell/7.1.2/` , en de symbolische koppeling wordt geplaatst op `/usr/local/bin/pwsh` .
+Omdat macOS een afleiding van BSD is, wordt het voor voegsel `/usr/local` gebruikt in plaats van `/opt` . Dat `$PSHOME` wil zeggen `/usr/local/microsoft/powershell/7.1.3/` , en de symbolische koppeling wordt geplaatst op `/usr/local/bin/pwsh` .
 
 ## <a name="installation-support"></a>Ondersteuning voor installatie
 
