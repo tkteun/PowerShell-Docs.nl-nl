@@ -1,17 +1,16 @@
 ---
 description: Hierin wordt beschreven hoe u methoden gebruikt om acties uit te voeren voor objecten in Power shell.
-keywords: powershell,cmdlet
 Locale: en-US
 ms.date: 04/08/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_methods?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Methods
-ms.openlocfilehash: 5ab106a029eca4f4db45b1466cfaffb16aad5530
-ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
+ms.openlocfilehash: b099dcecd3dbd713a7ade3d17194f27324fe2b3c
+ms.sourcegitcommit: 15f759ca68d17acecab46b52250298d4f2037c4d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94390929"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103575590"
 ---
 # <a name="about-methods"></a>Over methoden
 
@@ -79,7 +78,7 @@ Zoals in de vorige voor beelden wordt weer gegeven, kunt u een methode aanroepen
 
 Vanaf Power Shell 4,0 wordt de methode aanroep met behulp van dynamische methode namen ondersteund.
 
-### <a name="learning-about-methods"></a>Leren over methoden
+## <a name="learning-about-methods"></a>Leren over methoden
 
 Als u definities van de methoden van een object wilt vinden, gaat u naar Help-onderwerp voor het object type en zoekt u de pagina methoden. De volgende pagina beschrijft bijvoorbeeld de methoden van proces objecten [System. Diagnostics. process](/dotnet/api/system.diagnostics.process#methods).
 
@@ -111,7 +110,7 @@ In het volgende voor beeld wordt de tweede `CopyTo` methode gebruikt om het `Fin
 (Get-ChildItem c:\final.txt).CopyTo("c:\bin\final.txt", $true)
 ```
 
-### <a name="methods-of-scalar-objects-and-collections"></a>Methoden van scalaire objecten en verzamelingen
+## <a name="methods-of-scalar-objects-and-collections"></a>Methoden van scalaire objecten en verzamelingen
 
 De methoden van een object (' scalair ') van een bepaald type zijn vaak anders dan de methoden van een verzameling objecten van hetzelfde type.
 
@@ -173,7 +172,7 @@ Vanaf Power Shell 4,0 wordt verzamelings filtering met behulp van een methode sy
 
 Meer informatie over deze methoden vindt u in [about_arrays](about_arrays.md)
 
-### <a name="calling-a-specific-method-when-multiple-overloads-exist"></a>Aanroepen van een specifieke methode wanneer meerdere Overloads bestaan
+## <a name="calling-a-specific-method-when-multiple-overloads-exist"></a>Aanroepen van een specifieke methode wanneer meerdere Overloads bestaan
 
 Houd rekening met het volgende scenario bij het aanroepen van .NET-methoden. Als een methode een object aanneemt, maar een overbelasting heeft via een interface die een meer specifiek type heeft, kiest Power shell de methode die het object accepteert, tenzij u het expliciet naar die interface hebt gecast.
 
@@ -220,6 +219,12 @@ In dit voor beeld geven we de methode voor de interface **IFoo** om de meer spec
 int: 1
 ```
 
+## <a name="using-net-methods-that-take-filesystem-paths"></a>.NET-methoden gebruiken waarmee bestandssysteem paden worden gebruikt
+
+Power shell ondersteunt meerdere runspaces per proces. Elke runs Pace heeft zijn eigen _huidige map_. Dit is niet hetzelfde als de werkmap van het huidige proces: `[System.Environment]::CurrentDirectory` .
+
+.NET-methoden gebruiken de werk directory van het proces. Power shell-cmdlets gebruiken de runs Pace-locatie. .NET-methoden werken ook met systeem eigen bestandssysteem paden, geen Power shell-Padvariabelen. Als u Power shell-paden met .NET-methoden wilt gebruiken, moet u het pad naar een systeem eigen pad omzetten voordat u het door gegeven aan de .NET-methode.
+
 ## <a name="see-also"></a>Zie ook
 
 [about_Objects](about_Objects.md)
@@ -227,4 +232,3 @@ int: 1
 [about_Properties](about_Properties.md)
 
 [Get-member](xref:Microsoft.PowerShell.Utility.Get-Member)
-

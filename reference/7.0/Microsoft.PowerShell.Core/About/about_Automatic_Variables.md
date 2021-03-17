@@ -1,16 +1,16 @@
 ---
 description: Beschrijft variabelen waarin status informatie voor Power shell wordt opgeslagen. Deze variabelen worden gemaakt en onderhouden door Power shell.
 Locale: en-US
-ms.date: 12/14/2020
+ms.date: 03/15/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Automatic_Variables
-ms.openlocfilehash: d99d800680c5cf5ae01ac0cbb16ccaf6a91aada5
-ms.sourcegitcommit: 1628fd2a1f50aec2f31ffb1c451a3ce77c08983c
+ms.openlocfilehash: e64f06c91df68b10db195d4eede022be5998bb35
+ms.sourcegitcommit: 15f759ca68d17acecab46b52250298d4f2037c4d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97577254"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103575692"
 ---
 # <a name="about-automatic-variables"></a>Over automatische variabelen
 
@@ -393,7 +393,10 @@ Bevat een alleen-lezen hash-tabel waarin details worden weer gegeven over de ver
 
 ### <a name="pwd"></a>$PWD
 
-Bevat een Path-object dat staat voor het volledige pad van de huidige map.
+Bevat een Path-object dat het volledige pad vertegenwoordigt van de huidige maplocatie voor de huidige Power shell-runs Pace.
+
+> [!NOTE]
+> Power shell ondersteunt meerdere runspaces per proces. Elke runs Pace heeft zijn eigen _huidige map_. Dit is niet hetzelfde als de huidige map van het proces: `[System.Environment]::CurrentDirectory` .
 
 ### <a name="sender"></a>$Sender
 

@@ -1,28 +1,31 @@
 ---
 description: Hierin wordt beschreven hoe u toegang krijgt tot items vanaf de werk locatie in Power shell.
-keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 06/09/2017
+ms.date: 03/15/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_locations?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Locations
-ms.openlocfilehash: ed8d17b7f217c86ba3161f017e2794524d5da829
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 01905972b2c0844b9440cb00d1d8b04f0f8195a5
+ms.sourcegitcommit: 15f759ca68d17acecab46b52250298d4f2037c4d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93252600"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103575675"
 ---
 # <a name="about_locations"></a>about_Locations
 
-## <a name="short-description"></a>KORTE BESCHRIJVING
-
+## <a name="short-description"></a>Korte beschrijving
 Hierin wordt beschreven hoe u toegang krijgt tot items vanaf de werk locatie in Power shell.
 
-## <a name="long-description"></a>LANGE BESCHRIJVING
+## <a name="long-description"></a>Lange beschrijving
 
 De huidige werk locatie is de standaard locatie waarnaar opdrachten verwijzen.
-Met andere woorden, dit is de locatie die Power shell gebruikt als u geen expliciet pad opgeeft naar het item of de locatie waarop de opdracht betrekking heeft. In de meeste gevallen is de huidige werk locatie een station dat toegankelijk is via de Power shell-bestands provider en, in sommige gevallen, een map op dat station.
+Met andere woorden, dit is de locatie die Power shell gebruikt als u geen expliciet pad opgeeft naar het item of de locatie waarop de opdracht betrekking heeft.
+
+> [!NOTE]
+> Power shell ondersteunt meerdere runspaces per proces. Elke runs Pace heeft zijn eigen _huidige map_. Dit is niet hetzelfde als de huidige map van het proces: `[System.Environment]::CurrentDirectory` .
+
+In de meeste gevallen is de huidige werk locatie een station dat toegankelijk is via de Power shell-bestands provider en, in sommige gevallen, een map op dat station.
 U kunt bijvoorbeeld uw huidige werk locatie op de volgende locatie instellen:
 
 ```powershell
@@ -32,13 +35,13 @@ C:\Program Files\Windows PowerShell
 Als gevolg hiervan worden alle opdrachten vanaf deze locatie verwerkt, tenzij er expliciet een ander pad wordt gegeven.
 
 Power shell onderhoudt de huidige werk locatie voor elk station, zelfs wanneer het station niet het huidige station is. Hiermee hebt u toegang tot items vanaf de huidige werk locatie door alleen naar het station van een andere locatie te verwijzen.
-Stel bijvoorbeeld dat uw huidige werk locatie C: \\ Windows is. Stel nu dat u de volgende opdracht gebruikt om de huidige werk locatie te wijzigen in HKLM: station:
+Stel bijvoorbeeld dat uw huidige werk locatie is `C:\Windows` . Stel nu dat u de volgende opdracht gebruikt om de huidige werk locatie te wijzigen in HKLM: station:
 
 ```powershell
 Set-Location HKLM:
 ```
 
-Hoewel uw huidige locatie nu het register station is, hebt u nog steeds toegang tot items in de \\ map c: Windows door gewoon het station c: te gebruiken, zoals wordt weer gegeven in het volgende voor beeld:
+Hoewel uw huidige locatie nu het register station is, kunt u nog steeds toegang krijgen tot items in de `C:\Windows` map met behulp van het station C:, zoals wordt weer gegeven in het volgende voor beeld:
 
 ```powershell
 Get-ChildItem C:
@@ -70,21 +73,21 @@ Met Power shell kunt u ook speciale tekens gebruiken om de huidige werk locatie 
 Get-ChildItem .\system
 ```
 
-Als de huidige werk locatie C: \\ Windows is, wordt met deze opdracht een lijst met alle items in c: \\ Windows-systeem geretourneerd \\ . Als u echter twee Peri Oden gebruikt, wordt de bovenliggende map van de huidige werkmap gebruikt, zoals wordt weer gegeven in het volgende voor beeld:
+Als de huidige werk locatie is `C:\Windows` , retourneert deze opdracht een lijst met alle items in `C:\Windows\System` . Als u echter twee Peri Oden gebruikt, wordt de bovenliggende map van de huidige werkmap gebruikt, zoals wordt weer gegeven in het volgende voor beeld:
 
 ```powershell
 Get-ChildItem ..\"program files"
 ```
 
-In dit geval behandelt Power shell de twee Peri Oden als station C:, zodat de opdracht alle items ophaalt in de map C: \\ Program Files.
+In dit geval behandelt Power shell de twee Peri Oden als station C:, zodat de opdracht alle items in de map ophaalt `C:\Program Files` .
 
-Een pad dat begint met een slash identificeert een pad van de hoofdmap van het huidige station. Als uw huidige werk locatie bijvoorbeeld C: \\ programma bestanden \\ Power shell is, is de hoofdmap van de schijf c. Daarom worden met de volgende opdracht alle items in de map C: Windows weer gegeven \\ :
+Een pad dat begint met een slash identificeert een pad van de hoofdmap van het huidige station. Als uw huidige werk locatie bijvoorbeeld is `C:\Program Files\PowerShell` , is de hoofdmap van uw station C. Daarom worden met de volgende opdracht alle items in de `C:\Windows` map weer gegeven:
 
 ```powershell
 Get-ChildItem \windows
 ```
 
-Als u geen pad opgeeft dat begint met een stationsnaam, slash of periode bij het opgeven van de naam van een container of item, wordt ervan uitgegaan dat de container of het item zich op de huidige werk locatie bevindt. Als uw huidige werk locatie bijvoorbeeld C: \\ Windows is, retourneert de volgende opdracht alle items in de map C: \\ Windows \\ System:
+Als u geen pad opgeeft dat begint met een stationsnaam, slash of periode bij het opgeven van de naam van een container of item, wordt ervan uitgegaan dat de container of het item zich op de huidige werk locatie bevindt. Als uw huidige werk locatie bijvoorbeeld is `C:\Windows` , retourneert de volgende opdracht alle items in de `C:\Windows\System` map:
 
 ```powershell
 Get-ChildItem system
@@ -92,7 +95,7 @@ Get-ChildItem system
 
 Als u een bestands naam opgeeft in plaats van een mapnaam, retourneert Power shell Details over dat bestand (ervan uitgaande dat het bestand zich op de huidige werk locatie bevindt).
 
-## <a name="see-also"></a>ZIE OOK
+## <a name="see-also"></a>Zie ook
 
 [Set-Location](xref:Microsoft.PowerShell.Management.Set-Location)
 
