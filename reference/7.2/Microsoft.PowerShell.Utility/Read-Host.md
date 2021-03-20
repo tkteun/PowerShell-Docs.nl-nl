@@ -2,16 +2,16 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 03/02/2021
+ms.date: 03/18/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/read-host?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Read-Host
-ms.openlocfilehash: 5563413400abd28ce376265970631ad1206ca518
-ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
+ms.openlocfilehash: 6a5b698b06fef4a4e8f438e21f95692d44a516e8
+ms.sourcegitcommit: 16a02ae47d1a85b01692101aa0aa6e91e1ba398e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101685259"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104726686"
 ---
 # Read-Host
 
@@ -34,7 +34,7 @@ Read-Host [[-Prompt] <Object>] [-AsSecureString] [<CommonParameters>]
 
 ## BESCHRIJVING
 
-De `Read-Host` cmdlet leest een regel invoer van de-console. U kunt deze gebruiken om een gebruiker te vragen om invoer. Omdat u de invoer kunt opslaan als een beveiligde teken reeks, kunt u deze cmdlet gebruiken om gebruikers te vragen voor beveiligde gegevens, zoals wacht woorden, en gedeelde gegevens.
+De `Read-Host` cmdlet leest een regel invoer uit de-console (stdin). U kunt deze gebruiken om een gebruiker te vragen om invoer. Omdat u de invoer kunt opslaan als een beveiligde teken reeks, kunt u deze cmdlet gebruiken om gebruikers te vragen voor beveiligde gegevens, zoals wacht woorden.
 
 > [!NOTE]
 > `Read-Host` heeft een limiet van 1022 tekens die kan worden geaccepteerd als invoer van een gebruiker.
@@ -124,7 +124,7 @@ Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - Er
 
 ### Geen
 
-U kunt geen invoer van een pipe naar deze cmdlet.
+Deze cmdlet accepteert geen invoer van de Power shell-pijp lijn.
 
 ## UITVOER
 
@@ -133,6 +133,8 @@ U kunt geen invoer van een pipe naar deze cmdlet.
 Als de para meter **AsSecureString** wordt gebruikt, `Read-Host` retourneert een **SecureString**. Anders wordt een teken reeks geretourneerd.
 
 ## OPMERKINGEN
+
+Met deze cmdlet wordt alleen de stdin-stroom van het hostproces gelezen. Normaal gesp roken is de stdin-stroom verbonden met het toetsen bord van de host-console.
 
 ## GERELATEERDE KOPPELINGEN
 

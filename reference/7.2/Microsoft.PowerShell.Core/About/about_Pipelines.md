@@ -1,16 +1,16 @@
 ---
 description: Opdrachten in de Power shell combi neren in pijp lijnen
 Locale: en-US
-ms.date: 09/27/2019
+ms.date: 03/18/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pipelines?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Pipelines
-ms.openlocfilehash: e4ae85fbbfe5232048a90e1fe4f62db3e95e5f1b
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 6e3f15682caeecba6fa10166e1def7cc3d4a9eed
+ms.sourcegitcommit: 16a02ae47d1a85b01692101aa0aa6e91e1ba398e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94706224"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104726737"
 ---
 # <a name="about-pipelines"></a>Over pijp lijnen
 
@@ -114,6 +114,19 @@ In dit voor beeld ziet u hoe u de `Format-List` cmdlet gebruikt om een lijst met
 ```powershell
 Get-Process winlogon | Format-List -Property *
 ```
+
+U kunt ook de uitvoer van systeem eigen opdrachten door sluizen naar Power shell-cmdlets. Bijvoorbeeld:
+
+```powershell
+PS> ipconfig.exe | Select-String -Pattern 'IPv4'
+
+   IPv4 Address. . . . . . . . . . . : 172.24.80.1
+   IPv4 Address. . . . . . . . . . . : 192.168.1.45
+   IPv4 Address. . . . . . . . . . . : 100.64.108.37
+```
+
+> [!IMPORTANT]
+> De **slagen** -en **fout** stromen zijn vergelijkbaar met de stdin-en stderr-streams van andere shells. Stdin is echter niet verbonden met de Power shell-pijp lijn voor invoer. Zie [about_Redirection](about_Redirection.md)voor meer informatie.
 
 Met een beetje van de praktijk zult u zien dat het combi neren van eenvoudige opdrachten in pijp lijnen tijd en typen bespaart en uw scripting efficiënter maakt.
 

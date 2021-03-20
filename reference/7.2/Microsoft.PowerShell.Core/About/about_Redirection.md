@@ -1,16 +1,16 @@
 ---
 description: Hierin wordt uitgelegd hoe u de uitvoer omleidt van Power shell naar tekst bestanden.
 Locale: en-US
-ms.date: 10/14/2020
+ms.date: 03/18/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_redirection?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Redirection
-ms.openlocfilehash: 91eb3f524ddeeb729ce53749c9b0ae922ce21f18
-ms.sourcegitcommit: b9826dcf402db8a2b6d3eab37edb82c6af113343
+ms.openlocfilehash: 3ab418c99691a61840180c5475da0db4148629b4
+ms.sourcegitcommit: 16a02ae47d1a85b01692101aa0aa6e91e1ba398e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98040909"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104726754"
 ---
 # <a name="about-redirection"></a>Over omleiding
 
@@ -19,7 +19,7 @@ Hierin wordt uitgelegd hoe u de uitvoer omleidt van Power shell naar tekst besta
 
 ## <a name="long-description"></a>Lange beschrijving
 
-Power shell verzendt standaard uitvoer naar de Power shell-host. Doorgaans is dit de console toepassing. U kunt de uitvoer echter door sturen naar een tekst bestand en u kunt de fout uitvoer omleiden naar de normale uitvoer stroom.
+Power shell verzendt standaard uitvoer naar de Power shell-host. Doorgaans is dit de console toepassing. U kunt de uitvoer echter omleiden naar een tekst bestand en u kunt de fout uitvoer omleiden naar de normale uitvoer stroom.
 
 U kunt de volgende methoden gebruiken om uitvoer om te leiden:
 
@@ -36,7 +36,7 @@ Zie [about_Output_Streams](about_Output_Streams.md)voor meer informatie over str
 
 Power shell ondersteunt omleiding van de volgende uitvoer stromen.
 
-| Bitsnelheid # |      Description       | Geïntroduceerd in  |    Cmdlet schrijven     |
+| Bitsnelheid # |      Beschrijving       | Geïntroduceerd in  |    Cmdlet schrijven     |
 | -------- | ---------------------- | -------------- | ------------------- |
 | 1        | **Geslaagd** Bitsnelheid     | Power Shell 2,0 | `Write-Output`      |
 | 2        | **Fout** Bitsnelheid       | Power Shell 2,0 | `Write-Error`       |
@@ -46,8 +46,10 @@ Power shell ondersteunt omleiding van de volgende uitvoer stromen.
 | 6        | **Gegevens** Bitsnelheid | PowerShell 5.0 | `Write-Information` |
 | *        | Alle streams            | PowerShell 3.0 |                     |
 
-> [!NOTE]
-> Er is ook een **voortgangs** stroom in Power shell, maar de omleiding wordt niet ondersteund.
+Er is ook een **voortgangs** stroom in Power shell, maar de omleiding wordt niet ondersteund.
+
+> [!IMPORTANT]
+> De **slagen** -en **fout** stromen zijn vergelijkbaar met de stdin-en stderr-streams van andere shells. Stdin is echter niet verbonden met de Power shell-pijp lijn voor invoer.
 
 ### <a name="powershell-redirection-operators"></a>Omleidings operatoren voor Power shell
 
@@ -221,12 +223,11 @@ Er wordt geprobeerd om de omgekeerde vergelijking `<` (kleiner dan) te gebruiken
 
 ```powershell
 PS> if (36 < 42) { "true" } else { "false" }
-At line:1 char:8
-+ if (36 < 42) { "true" } else { "false" }
-+        ~
-The '<' operator is reserved for future use.
-    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
-    + FullyQualifiedErrorId : RedirectionNotSupported
+ParserError:
+Line |
+   1 |  if (36 < 42) { "true" } else { "false" }
+     |         ~
+     | The '<' operator is reserved for future use.
 ```
 
 Als numerieke vergelijking de vereiste bewerking is, `-lt` en deze `-gt` moet worden gebruikt. Zie de `-gt` operator in [about_Comparison_Operators](about_Comparison_Operators.md#-gt--ge--lt-and--le)voor meer informatie.

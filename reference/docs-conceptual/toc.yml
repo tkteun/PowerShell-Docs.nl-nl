@@ -51,6 +51,12 @@
           href: learn/ps101/10-script-modules.md
         - name: Bijlage A-Help-syntaxis
           href: learn/ps101/appendix-a.md
+    - name: Zelfstudies
+      items:
+        - name: Inleiding
+          href: learn/tutorials/00-introduction.md
+        - name: Power shell detecteren
+          href: learn/tutorials/01-discover-powershell.md
     - name: Uitgebreide presentaties
       items:
         - name: Overzicht

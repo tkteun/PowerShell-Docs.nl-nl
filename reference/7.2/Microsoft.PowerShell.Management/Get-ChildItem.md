@@ -6,12 +6,12 @@ ms.date: 03/27/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-childitem?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-ChildItem
-ms.openlocfilehash: dc47a7bc29d93e1784571f9e6b27dafcb8494bae
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: d5372b8b8a57c82e2d0c6ee731b810e9a2e0f987
+ms.sourcegitcommit: 16a02ae47d1a85b01692101aa0aa6e91e1ba398e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94706045"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104726703"
 ---
 # Get-ChildItem
 
@@ -316,7 +316,7 @@ In Power shell 6,2 is een alternatieve weer gave toegevoegd voor het ophalen van
 Get-ChildItem -Path C:\PathContainingHardLink | Format-Table -View childrenWithHardLink
 ```
 
-### Voor beeld 9: uitvoer voor niet-Windows-besturings systemen
+### Voor beeld 10: uitvoer voor niet-Windows-besturings systemen
 
 In Power shell 7,1 op UNIX-systemen `Get-ChildItem` biedt de UNIX-achtige uitvoer:
 

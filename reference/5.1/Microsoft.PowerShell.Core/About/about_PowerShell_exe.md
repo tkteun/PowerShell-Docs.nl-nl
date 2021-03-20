@@ -6,12 +6,12 @@ ms.date: 10/05/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_exe?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_PowerShell_exe
-ms.openlocfilehash: ef03558a6b58868b98c9da488934b0bfbbce9fe7
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 4025630ebb3abe4c0598c85940cfce383e9c7890
+ms.sourcegitcommit: 16a02ae47d1a85b01692101aa0aa6e91e1ba398e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93252762"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104726652"
 ---
 # <a name="about-powershellexe"></a>Over PowerShell.exe
 
@@ -113,7 +113,7 @@ Als u daarentegen `powershell.exe -File .\test.ps1 -TestParam $env:windir` in **
 Als u dezelfde opdracht uit een **batch script** wilt uitvoeren, gebruikt u `%~dp0` in plaats van `.\` of `$PSScriptRoot` om de huidige uitvoerings Directory te vertegenwoordigen: `powershell.exe -File %~dp0test.ps1 -TestParam %windir%` .
 Als u in plaats daarvan gebruikt `.\test.ps1` , genereert Power shell een fout omdat het letterlijke pad niet kan worden gevonden `.\test.ps1`
 
-Wanneer de **waarde van het bestand een** bestandspad is, **File** _moet_ het bestand de laatste para meter zijn in de opdracht omdat de tekens die na de naam van de **Bestands** parameter worden getypt, worden geïnterpreteerd als het pad naar het script bestand gevolgd door de script parameters.
+Wanneer de **waarde van het bestand een** bestandspad is,  _moet_ het bestand de laatste para meter zijn in de opdracht omdat de tekens die na de naam van de **Bestands** parameter worden getypt, worden geïnterpreteerd als het pad naar het script bestand gevolgd door de script parameters.
 
 U kunt de script parameters en waarden in de waarde van de **Bestands** parameter toevoegen. Bijvoorbeeld: `-File .\Get-Script.ps1 -Domain Central`
 
@@ -144,7 +144,7 @@ In `cmd.exe` is er geen script blok (of **script Block** -type), dus de waarde d
 Een teken reeks die aan de **opdracht** is door gegeven, wordt nog steeds uitgevoerd als Power shell-code, dus de accolades voor het blok keren van een script zijn in de eerste plaats vaak niet vereist tijdens de uitvoering van `cmd.exe` . Voor het uitvoeren van een inline-script blok dat in een teken reeks is gedefinieerd, kan de [aanroep operator](about_operators.md#special-operators) `&` worden gebruikt:
 
 ```cmd
-pwsh -Command "& {Get-WinEvent -LogName security}"
+powershell.exe -Command "& {Get-WinEvent -LogName security}"
 ```
 
 Als de waarde van de **opdracht** een teken reeks is, moet de **opdracht** de laatste para meter zijn voor pwsh, omdat alle argumenten die deze bevat, worden geïnterpreteerd als onderdeel van de opdracht die moet worden uitgevoerd.
@@ -175,18 +175,6 @@ out
 De afsluit code van het proces wordt bepaald door de status van de laatste (uitgevoerde) opdracht in het-script blok. De afsluit code is `0` `$?` `$true` of wanneer dat `1` `$?` zo is `$false` . Als de laatste opdracht een extern programma of een Power shell-script is waarmee expliciet een andere afsluit code dan of wordt ingesteld `0` `1` , wordt die afsluit code geconverteerd naar `1` voor de afsluit code van het proces. Als u de specifieke afsluit code wilt behouden, voegt `exit $LASTEXITCODE` u toe aan de opdracht reeks of het script blok.
 
 Op dezelfde manier wordt de waarde 1 geretourneerd als er een fout optreedt bij het beëindigen van een script (runs, afgebroken), zoals een `throw` of `-ErrorAction Stop` , wanneer de uitvoering wordt onderbroken door <kbd>CTRL</kbd> - <kbd>C</kbd>.
-
-_alleen_ mogelijk wanneer **PowerShell.exe** van een andere Power shell-host wordt uitgevoerd.
-Het type **script Block** kan worden opgenomen in een bestaande variabele, geretourneerd vanuit een expressie, of door de Power shell-host geparseerd als een letterlijk script blok tussen accolades `{}` voordat het wordt door gegeven aan **PowerShell.exe**.
-
-In **cmd.exe** is er geen script blok (of **script Block** -type), dus de waarde die wordt door gegeven aan de **opdracht** , is _altijd_ een teken reeks. U kunt een script blok schrijven in de teken reeks, maar in plaats van dat het wordt uitgevoerd, werkt het niet exact alsof u het hebt getypt bij een typische Power shell-prompt, waarbij de inhoud van het script blok wordt weer gegeven.
-
-Een teken reeks die is door gegeven aan de **opdracht** , wordt nog steeds uitgevoerd als Power shell, zodat de accolades voor het blok keren van een script in de eerste plaats vaak niet vereist zijn wanneer ze vanuit **cmd.exe** worden uitgevoerd. Voor het uitvoeren van een inline-script blok dat in een teken reeks is gedefinieerd, kan de [aanroep operator](about_operators.md#special-operators) 
- `&` worden gebruikt:
-
-```console
-"& {<command>}"
-```
 
 #### <a name="-help---"></a>-Help,-?,/?
 

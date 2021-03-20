@@ -1,17 +1,16 @@
 ---
 description: Opdrachten in de Power shell combi neren in pijp lijnen
-keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 09/27/2019
+ms.date: 03/18/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pipelines?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Pipelines
-ms.openlocfilehash: 651ba1f42743d83958d6711cff01fec030fa9a02
-ms.sourcegitcommit: ae8b89e12c6fa2108075888dd6da92788d6c2888
+ms.openlocfilehash: 0ad5daf9e63fa755bc48ab23538789063f1567b5
+ms.sourcegitcommit: 16a02ae47d1a85b01692101aa0aa6e91e1ba398e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "93253168"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104726635"
 ---
 # <a name="about-pipelines"></a>Over pijp lijnen
 
@@ -95,7 +94,7 @@ In deze voorbeeld pijplijn wordt de WMI-service op de computer gestart:
 Get-Service wmi | Start-Service
 ```
 
-Een ander voor beeld: u kunt de uitvoer van `Get-Item` of `Get-ChildItem` binnen de Power shell-register provider door geven aan de `New-ItemProperty` cmdlet. In dit voor beeld wordt een nieuwe register vermelding, **NoOfEmployees** , met de waarde **8124** , toegevoegd aan de register sleutel **mijn bedrijf** .
+Een ander voor beeld: u kunt de uitvoer van `Get-Item` of `Get-ChildItem` binnen de Power shell-register provider door geven aan de `New-ItemProperty` cmdlet. In dit voor beeld wordt een nieuwe register vermelding, **NoOfEmployees**, met de waarde **8124**, toegevoegd aan de register sleutel **mijn bedrijf** .
 
 ```powershell
 Get-Item -Path HKLM:\Software\MyCompany |
@@ -115,6 +114,19 @@ In dit voor beeld ziet u hoe u de `Format-List` cmdlet gebruikt om een lijst met
 ```powershell
 Get-Process winlogon | Format-List -Property *
 ```
+
+U kunt ook de uitvoer van systeem eigen opdrachten door sluizen naar Power shell-cmdlets. Bijvoorbeeld:
+
+```powershell
+PS> ipconfig.exe | Select-String -Pattern 'IPv4'
+
+   IPv4 Address. . . . . . . . . . . : 172.24.80.1
+   IPv4 Address. . . . . . . . . . . : 192.168.1.45
+   IPv4 Address. . . . . . . . . . . : 100.64.108.37
+```
+
+> [!IMPORTANT]
+> De **slagen** -en **fout** stromen zijn vergelijkbaar met de stdin-en stderr-streams van andere shells. Stdin is echter niet verbonden met de Power shell-pijp lijn voor invoer. Zie [about_Redirection](about_Redirection.md)voor meer informatie.
 
 Met een beetje van de praktijk zult u zien dat het combi neren van eenvoudige opdrachten in pijp lijnen tijd en typen bespaart en uw scripting efficiënter maakt.
 
@@ -171,11 +183,11 @@ Wanneer u objecten via de pijp lijn verzendt naar `Start-Service` , probeert Pow
 
 Cmdlets-para meters kunnen de invoer van de pijp lijn op twee verschillende manieren accepteren:
 
-- **ByValue** : de para meter accepteert waarden die overeenkomen met het verwachte .net-type of die kunnen worden geconverteerd naar dat type.
+- **ByValue**: de para meter accepteert waarden die overeenkomen met het verwachte .net-type of die kunnen worden geconverteerd naar dat type.
 
   De para meter **name** van accepteert de `Start-Service` invoer van de pijp lijn op waarde. Het kan teken reeks objecten of objecten accepteren die kunnen worden geconverteerd naar teken reeksen.
 
-- **ByPropertyName** : de para meter accepteert alleen invoer wanneer het invoer object een eigenschap heeft met dezelfde naam als de para meter.
+- **ByPropertyName**: de para meter accepteert alleen invoer wanneer het invoer object een eigenschap heeft met dezelfde naam als de para meter.
 
   De para meter name van kan bijvoorbeeld `Start-Service` objecten accepteren die een eigenschap **naam** hebben. Als u de eigenschappen van een object wilt weer geven, pipet u het naar `Get-Member` .
 

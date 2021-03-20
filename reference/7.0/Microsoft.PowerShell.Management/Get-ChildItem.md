@@ -7,12 +7,12 @@ ms.date: 03/27/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-childitem?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-ChildItem
-ms.openlocfilehash: f8a2276b6121958aedc4eb297d0565b369ee401f
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 22cc760d56d33edc952c31c1fa6422d05a5a1707
+ms.sourcegitcommit: 16a02ae47d1a85b01692101aa0aa6e91e1ba398e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93249418"
+ms.lasthandoff: 03/20/2021
+ms.locfileid: "104726442"
 ---
 # Get-ChildItem
 
@@ -72,7 +72,7 @@ d-----        2/15/2019     08:29                Logs
 -ar---        2/12/2019     14:31             27 ReadOnlyFile.txt
 ```
 
-Standaard `Get-ChildItem` worden de modus ( **kenmerken** ), **LastWriteTime** , bestands grootte ( **lengte** ) en de **naam** van het item weer gegeven. De letters in de **modus** eigenschap kunnen als volgt worden geïnterpreteerd:
+Standaard `Get-ChildItem` worden de modus (**kenmerken**), **LastWriteTime**, bestands grootte (**lengte**) en de **naam** van het item weer gegeven. De letters in de **modus** eigenschap kunnen als volgt worden geïnterpreteerd:
 
 - `l` gekoppeld
 - `d` uitvoermap
@@ -178,7 +178,7 @@ De para meter **include** maakt gebruik van een asterisk ( `*` ) als Joker teken
 
 Wanneer de para meter **include** wordt gebruikt, moet de para meter **Path** een asterisk () met een sterretje ( `*` ) gebruiken om de inhoud van de map op te geven. Bijvoorbeeld `-Path C:\Test\*`.
 
-- Als de **recursie** -para meter wordt toegevoegd aan de opdracht, is de afsluitende asterisk ( `*` ) in de para meter **Path** optioneel. De **recursie** -para meter haalt items op uit de map **pad** en de bijbehorende submappen. bijvoorbeeld `-Path C:\Test\ -Recurse -Include *.txt`
+- Als de **recursie** -para meter wordt toegevoegd aan de opdracht, is de afsluitende asterisk ( `*` ) in de para meter **Path** optioneel. De **recursie** -para meter haalt items op uit de map **pad** en de bijbehorende submappen. Bijvoorbeeld: `-Path C:\Test\ -Recurse -Include *.txt`
 - Als een eindigend sterretje ( `*` ) niet is opgenomen in de para meter **Path** , retourneert de opdracht geen uitvoer en keert deze terug naar de Power shell-prompt. Bijvoorbeeld `-Path C:\Test\`.
 
 ### Voor beeld 5: onderliggende items ophalen met de para meter exclude
@@ -317,7 +317,7 @@ In Power shell 6,2 is een alternatieve weer gave toegevoegd voor het ophalen van
 Get-ChildItem -Path C:\PathContainingHardLink | Format-Table -View childrenWithHardLink
 ```
 
-### Voor beeld 9: uitvoer voor experimentele functie PSUnixFileStat
+### Voor beeld 10: uitvoer voor experimentele functie PSUnixFileStat
 
 In Power shell 7 op UNIX-systemen biedt de experimentele functie **PSUnixFileStat** UNIX-achtige uitvoer:
 
@@ -359,7 +359,7 @@ Als u bijvoorbeeld niet-systeem bestanden (niet directory's) wilt ophalen die zi
 
 `Get-ChildItem -Attributes !Directory+!System+Encrypted, !Directory+!System+Compressed`
 
-Als u bestanden en mappen met veelgebruikte kenmerken wilt zoeken, gebruikt u de para meter **Attributes** . Of de para meters **map** , **bestand** , **verborgen** , **alleen-lezen** en **systeem**.
+Als u bestanden en mappen met veelgebruikte kenmerken wilt zoeken, gebruikt u de para meter **Attributes** . Of de para meters **map**, **bestand**, **verborgen**, **alleen-lezen** en **systeem**.
 
 De para meter **Attributes** ondersteunt de volgende eigenschappen:
 
@@ -417,7 +417,7 @@ Deze para meter is toegevoegd in Power shell 5,0 en stelt u in staat om de diept
 U kunt bijvoorbeeld `Depth 2` de para meter **Path** , het eerste niveau van submappen en het tweede niveau van submappen bevatten. Standaard worden mapnamen en bestands namen in de uitvoer opgenomen.
 
 > [!NOTE]
-> Op een Windows-computer in Power shell of **cmd.exe** , kunt u een grafische weer gave van een mapstructuur weer geven met de opdracht **tree.com** .
+> Op een Windows-computer in Power shell of **cmd.exe**, kunt u een grafische weer gave van een mapstructuur weer geven met de opdracht **tree.com** .
 
 ```yaml
 Type: System.UInt32
