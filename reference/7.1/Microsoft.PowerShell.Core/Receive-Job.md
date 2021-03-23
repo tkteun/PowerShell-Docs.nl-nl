@@ -3,16 +3,16 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 06/09/2017
+ms.date: 03/22/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/receive-job?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Receive-Job
-ms.openlocfilehash: 51cf0abc1a6362122f18812cd90e59a6ca7dc4ab
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: fcf124115be3642cec50fcab71385e1b604e73b3
+ms.sourcegitcommit: a0148ef8bf9757f68c788d24f2eaf92792c3979f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93251203"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104796342"
 ---
 # Receive-Job
 
@@ -180,9 +180,10 @@ Running AppMgmt     Application Management             Server02
 # Use the New-PSSession cmdlet to create three user-managed PSSessions on three servers, and save the sessions in the $s variable.
 $s = New-PSSession -ComputerName Server01, Server02, Server03
 # Use Invoke-Command run a Start-Job command in each of the PSSessions in the $s variable.
-# The job outputs the ComputerName of each server.
+# The creates a new job with a custom name to each server
+# The job outputs the datetime from each server
 # Save the job objects in the $j variable.
-$j = Invoke-Command -Session $s -ScriptBlock {Start-Job -ScriptBlock {$env:COMPUTERNAME}}
+$j = Invoke-Command -Session $s -ScriptBlock {Start-Job -Name $('MyJob-' +$env:COMPUTERNAME) -ScriptBlock {(Get-Date).ToString()}}
 # To confirm that these job objects are from the remote machines, run Get-Job to show no local jobs running.
 Get-Job
 ```
@@ -198,30 +199,27 @@ $j
 ```
 
 ```Output
-Id   Name     State      HasMoreData   Location   Command
---   ----     -----      -----------   --------   -------
-1    Job1     Completed  True          Localhost  $env:COMPUTERNAME
-2    Job2     Completed  True          Localhost  $env:COMPUTERNAME
-3    Job3     Completed  True          Localhost  $env:COMPUTERNAME
+Id   Name               State      HasMoreData   Location   Command
+--   ----               -----      -----------   --------   -------
+1    MyJob-Server01     Completed  True          Localhost  (Get-Date).ToString()
+2    MyJob-Server02     Completed  True          Localhost  (Get-Date).ToString()
+3    MyJob-Server03     Completed  True          Localhost  (Get-Date).ToString()
 ```
 
 ```powershell
-# Use Invoke-Command to run a Receive-Job command in each of the sessions in the $s variable and save the results in the $Results variable.
+# Use Invoke-Command to run a Receive-Job command in each of the sessions in the $s variable and save the results in the $results variable.
 # The Receive-Job command must be run in each session because the jobs were run locally on each server.
-$results = Invoke-Command -Session $s -ScriptBlock {Receive-Job -Job $Using:j}
+$results = Invoke-Command -Session $s -ScriptBlock {Receive-Job -Name $('MyJob-' +$env:COMPUTERNAME)}
 ```
 
 ```Output
-Server01
-Server02
-Server03
+3/22/2021 7:41:47 PM
+3/22/2021 7:41:47 PM
+3/22/2021 9:41:47 PM
 ```
 
 In dit voor beeld ziet u hoe de resultaten van achtergrond taken worden uitgevoerd op drie externe computers.
 In tegens telling tot het vorige voor beeld, gebruikt `Invoke-Command` om de opdracht uit te voeren, `Start-Job` drie onafhankelijke taken op elk van de drie computers. Als gevolg hiervan heeft de opdracht drie taak objecten geretourneerd die drie taken vertegenwoordigen die lokaal worden uitgevoerd op drie verschillende computers.
-
-> [!NOTE]
-> In de laatste opdracht, omdat `$j` een lokale variabele is, gebruikt het script blok de aanpassings functie voor het **gebruik van** de scope om de variabele te identificeren `$j` . Zie [about_Remote_Variables](./About/about_Remote_Variables.md)voor meer informatie **over de aanpassing van het** bereik.
 
 ### Voor beeld 5: toegang tot onderliggende taken
 
@@ -479,8 +477,8 @@ Accept wildcard characters: False
 ### -Sessie
 
 Hiermee geeft u een matrix met sessies op.
-Met deze cmdlet worden de resultaten opgehaald van taken die zijn uitgevoerd in de opgegeven Power shell-sessie ( **PSSession** ).
-Voer een variabele in die de **PSSession** bevat of een opdracht die de **PSSession** , zoals een opdracht, ophalen `Get-PSSession` .
+Met deze cmdlet worden de resultaten opgehaald van taken die zijn uitgevoerd in de opgegeven Power shell-sessie (**PSSession**).
+Voer een variabele in die de **PSSession** bevat of een opdracht die de **PSSession**, zoals een opdracht, ophalen `Get-PSSession` .
 
 ```yaml
 Type: System.Management.Automation.Runspaces.PSSession[]

@@ -2,16 +2,16 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
+ms.date: 03/22/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-host?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Host
-ms.openlocfilehash: 0775940f210cb028d7a0919bb8e5ca9f256b70d8
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: da48cdaf11a7dd0f1d8a169ca145fecc5052bf02
+ms.sourcegitcommit: a0148ef8bf9757f68c788d24f2eaf92792c3979f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94705448"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104796257"
 ---
 # Get-Host
 
@@ -35,7 +35,8 @@ De standaard weergave bevat het versie nummer van Windows Power shell en de huid
 ### Voor beeld 1: informatie over de host van de Power shell-console ophalen
 
 ```
-PS C:\> Get-Host
+Get-Host
+
 Name             : ConsoleHost
 Version          : 2.0
 InstanceId       : e4e0ab54-cc5e-4261-9117-4081f20ce7a2
@@ -47,26 +48,27 @@ IsRunspacePushed : False
 Runspace         : System.Management.Automation.Runspaces.LocalRunspace
 ```
 
-Met deze opdracht wordt informatie weer gegeven over de Windows Power shell-console, het huidige hostprogramma voor Windows Power shell in dit voor beeld. Het bevat de naam van de host, de versie van Windows Power shell die wordt uitgevoerd op de host en de huidige cultuur-en GEBRUIKERSINTERFACE cultuur.
+Met deze opdracht wordt informatie weer gegeven over de Power shell-console, het huidige hostprogramma voor Power shell in dit voor beeld. Het bevat de naam van de host, de versie van Power shell die wordt uitgevoerd op de host en de huidige cultuur-en GEBRUIKERSINTERFACE cultuur.
 
-De eigenschappen version, UI, CurrentCulture, CurrentUICulture, PrivateData en runs Pace bevatten elk een object met zeer nuttige eigenschappen. In latere voor beelden worden deze eigenschappen onderzocht.
+De eigenschappen **Version**, **UI**, **CurrentCulture**, **CurrentUICulture**, **PrivateData** en **runs Pace** bevatten elk een object met andere nuttige eigenschappen. In latere voor beelden worden deze eigenschappen onderzocht.
 
 ### Voor beeld 2: het formaat van het Power shell-venster wijzigen
 
 ```powershell
-PS C:\> $H = Get-Host
-PS C:\> $Win = $H.UI.RawUI.WindowSize
-PS C:\> $Win.Height = 10
-PS C:\> $Win.Width  = 10
-PS C:\> $H.UI.RawUI.Set_WindowSize($Win)
+$H = Get-Host
+$Win = $H.UI.RawUI.WindowSize
+$Win.Height = 10
+$Win.Width  = 10
+$H.UI.RawUI.Set_WindowSize($Win)
 ```
 
-Met deze opdracht wordt het formaat van het Windows Power shell-venster gewijzigd in 10 pixels van 10 pixels.
+Met deze opdracht wordt het formaat van het Windows Power shell-venster gewijzigd in 10 regels van 10 tekens.
 
 ### Voor beeld 3: de Power shell-versie voor de host ophalen
 
 ```powershell
-PS C:\> (Get-Host).Version | Format-List -Property *
+(Get-Host).Version | Format-List -Property *
+
 Major         : 2
 Minor         : 0
 Build         : -1
@@ -78,12 +80,13 @@ MinorRevision : -1
 Met deze opdracht wordt gedetailleerde informatie opgehaald over de versie van Windows Power shell die wordt uitgevoerd op de host.
 U kunt deze waarden weer geven, maar niet wijzigen.
 
-De versie-eigenschap van `Get-Host` bevat een **System. version** -object. Met deze opdracht wordt een pijplijn operator (|) gebruikt om het versie object naar de `Format-List` cmdlet te verzenden. De `Format-List` opdracht gebruikt de *eigenschap* para meter met de waarde all (*) om alle eigenschappen en eigenschaps waarden van het versie object weer te geven.
+De versie-eigenschap van `Get-Host` bevat een **System. version** -object. Met deze opdracht wordt een pijplijn operator ( `|` ) gebruikt om het versie object naar de `Format-List` cmdlet te verzenden. De `Format-List` opdracht gebruikt de **eigenschap** para meter met de waarde all ( `*` ) om alle eigenschappen en eigenschaps waarden van het versie object weer te geven.
 
 ### Voor beeld 4: de huidige cultuur voor de host ophalen
 
 ```powershell
-PS C:\> (Get-Host).CurrentCulture | Format-List -Property *
+(Get-Host).CurrentCulture | Format-List -Property *
+
 Parent                         : en
 LCID                           : 1033
 KeyboardLayoutId               : 1033
@@ -111,12 +114,13 @@ Met deze opdracht wordt gedetailleerde informatie over de huidige cultuur ingest
 
 Op dezelfde manier retourneert de eigenschap **CurrentUICulture** hetzelfde object `Get-UICulture` als dat retourneert.
 
-De eigenschap **CurrentCulture** van het object host bevat een object **System. Globalization. Culture info** . Met deze opdracht wordt een pijplijn operator (|) gebruikt om het **Culture info** -object naar de cmdlet te verzenden `Format-List` . De `Format-List` opdracht maakt gebruik van de *eigenschap* para meter met de waarde all (*) om alle eigenschappen en eigenschapwaarden van het **Culture info** -object weer te geven.
+De eigenschap **CurrentCulture** van het object host bevat een object **System. Globalization. Culture info** . Met deze opdracht wordt een pijplijn operator ( `|` ) gebruikt om het **Culture info** -object naar de cmdlet te verzenden `Format-List` . De `Format-List` opdracht gebruikt de **eigenschap** para meter met de waarde all ( `*` ) om alle eigenschappen en eigenschaps waarden van het **Culture info** -object weer te geven.
 
 ### Voor beeld 5: de date time format voor de huidige cultuur ophalen
 
 ```powershell
-PS C:\> (Get-Host).CurrentCulture.DateTimeFormat | Format-List -Property *
+(Get-Host).CurrentCulture.DateTimeFormat | Format-List -Property *
+
 AMDesignator                     : AM
 Calendar                         : System.Globalization.GregorianCalendar
 DateSeparator                    : /
@@ -154,7 +158,8 @@ Gebruik de cmdlet om het type van een object te vinden dat is opgeslagen in een 
 ### Voor beeld 6: de eigenschap RawUI voor de host ophalen
 
 ```
-PS C:\> (Get-Host).UI.RawUI | Format-List -Property *
+(Get-Host).UI.RawUI | Format-List -Property *
+
 ForegroundColor       : DarkYellow
 BackgroundColor       : DarkBlue
 CursorPosition        : 0,390
@@ -173,25 +178,25 @@ Met deze opdracht worden de eigenschappen van de eigenschap **RawUI** van het ob
 ### Voor beeld 7: de achtergrond kleur voor de Power shell-console instellen
 
 ```powershell
-PS C:\> (Get-Host).UI.RawUI.BackgroundColor = "Black"
-PS C:\> cls
+(Get-Host).UI.RawUI.BackgroundColor = "Black"
+cls
 ```
 
 Met deze opdrachten wordt de achtergrond kleur van de Windows Power shell-console gewijzigd in zwart. De **CLS** -opdracht is een alias voor de `Clear-Host` functie, waardoor het scherm wordt gewist en het hele scherm wordt gewijzigd in de nieuwe kleur.
 
-Deze wijziging is alleen effectief in de huidige sessie. Als u de achtergrond kleur van de console voor alle sessies wilt wijzigen, voegt u de opdracht toe aan uw Windows Power shell-profiel.
+Deze wijziging is alleen effectief in de huidige sessie. Als u de achtergrond kleur van de console voor alle sessies wilt wijzigen, voegt u de opdracht toe aan uw Power shell-profiel.
 
 ### Voor beeld 8: de achtergrond kleur voor fout berichten instellen
 
-```
-PS C:\> $Host.PrivateData.ErrorBackgroundColor = "white"
+```powershell
+$Host.PrivateData.ErrorBackgroundColor = "white"
 ```
 
 Met deze opdracht wordt de achtergrond kleur van fout berichten gewijzigd in wit.
 
 Met deze opdracht wordt de `$Host` Automatische variabele gebruikt, die het object host bevat voor het huidige host-programma. `Get-Host` retourneert hetzelfde object dat `$Host` bevat, zodat u ze kunt gebruiken.
 
-Deze opdracht maakt gebruik van de eigenschap **PrivateData** van `$Host` als de eigenschap ErrorBackgroundColor. Om alle eigenschappen van het object in de te bekijken `$Host` . Eigenschap PrivateData, type `$host.privatedata | format-list *` .
+Deze opdracht maakt gebruik van de eigenschap **PrivateData** van `$Host` als de eigenschap ErrorBackgroundColor. Om alle eigenschappen van het object in de te bekijken `$Host` . Eigenschap PrivateData, type `$host.PrivateData | format-list *` .
 
 ## PARAMETERS
 
@@ -202,6 +207,7 @@ Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - Er
 ## INVOER
 
 ### Geen
+
 U kunt geen invoer van een pipe naar deze cmdlet.
 
 ## UITVOER
@@ -223,4 +229,3 @@ Zie [about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automat
 [Read-host](Read-Host.md)
 
 [Write-host](Write-Host.md)
-
