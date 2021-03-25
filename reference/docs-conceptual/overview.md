@@ -1,157 +1,98 @@
 ---
-ms.date: 05/22/2020
+ms.date: 03/22/2021
 keywords: powershell,cmdlet
 title: Wat is PowerShell?
 description: Dit artikel is een inleiding tot de Power shell-script omgeving en de bijbehorende functies.
-ms.openlocfilehash: 91fc580af9a3adf43a24c40b4aaf3f1843882705
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
+ms.openlocfilehash: 3e1c2cae4b8d6507057ee8136265710a8dfe74f3
+ms.sourcegitcommit: 719debaed3cc32ba463b1d4cc56a491d8ecbce26
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92500773"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105029686"
 ---
-# <a name="what-is-powershell"></a><span data-ttu-id="03019-104">Wat is PowerShell?</span><span class="sxs-lookup"><span data-stu-id="03019-104">What is PowerShell?</span></span>
+# <a name="what-is-powershell"></a><span data-ttu-id="122e0-104">Wat is PowerShell?</span><span class="sxs-lookup"><span data-stu-id="122e0-104">What is PowerShell?</span></span>
 
-<span data-ttu-id="03019-105">Power shell is een platform voor taak automatisering en configuratie beheer voor meerdere platforms, dat bestaat uit een opdracht regel shell en script taal.</span><span class="sxs-lookup"><span data-stu-id="03019-105">PowerShell is a cross-platform task automation and configuration management framework, consisting of a command-line shell and scripting language.</span></span> <span data-ttu-id="03019-106">In tegens telling tot de meeste shells, die tekst accepteren en retour neren, is Power shell gebaseerd op de .NET common language runtime (CLR) en worden .NET-objecten geaccepteerd en geretourneerd.</span><span class="sxs-lookup"><span data-stu-id="03019-106">Unlike most shells, which accept and return text, PowerShell is built on top of the .NET Common Language Runtime (CLR), and accepts and returns .NET objects.</span></span> <span data-ttu-id="03019-107">Deze fundamentele wijziging brengt volledig nieuwe hulpprogram ma's en methoden voor automatisering in.</span><span class="sxs-lookup"><span data-stu-id="03019-107">This fundamental change brings entirely new tools and methods for automation.</span></span>
+<span data-ttu-id="122e0-105">Power shell is een oplossing voor het automatiseren van meerdere platforms die bestaat uit een opdracht regel shell, een script taal en een configuratie beheer raamwerk.</span><span class="sxs-lookup"><span data-stu-id="122e0-105">PowerShell is a cross-platform task automation solution made up of a command-line shell, a scripting language, and a configuration management framework.</span></span> <span data-ttu-id="122e0-106">Power shell wordt uitgevoerd op Windows, Linux en macOS.</span><span class="sxs-lookup"><span data-stu-id="122e0-106">PowerShell runs on Windows, Linux, and macOS.</span></span>
 
-<!-- removing images until we can get replacements
-:::row:::
-   :::column span="":::
-      Windows
-      [![PowerShell on Windows](media/overview/windows-desktop-660.gif)](media/overview/windows-desktop.gif#lightbox)
-      [Install on Windows](install/installing-powershell-core-on-windows.md)
-   :::column-end:::
-   :::column span="":::
-      Linux
-      [![PowerShell on Linux](media/overview/linux-desktop-660.gif)](media/overview/linux-desktop.gif#lightbox)
-      [Install on Linux](install/installing-powershell-core-on-linux.md)
-   :::column-end:::
-   :::column span="":::
-      macOS
-      [![PowerShell on macOS](media/overview/macos-desktop-660.gif)](media/overview/macos-desktop.gif#lightbox)
-      [Install on macOS](install/installing-powershell-core-on-macos.md)
-   :::column-end:::
-:::row-end:::
--->
+## <a name="shell"></a><span data-ttu-id="122e0-107">Shell</span><span class="sxs-lookup"><span data-stu-id="122e0-107">Shell</span></span>
 
-## <a name="output-is-object-based"></a><span data-ttu-id="03019-108">Uitvoer is op objecten gebaseerd</span><span class="sxs-lookup"><span data-stu-id="03019-108">Output is object-based</span></span>
+<span data-ttu-id="122e0-108">Power shell is een moderne opdracht shell die de beste functies van andere populaire shells bevat.</span><span class="sxs-lookup"><span data-stu-id="122e0-108">PowerShell is modern command shell that includes the best features of other popular shells.</span></span> <span data-ttu-id="122e0-109">In tegens telling tot de meeste shells die alleen tekst accepteren en retour neren, accepteert en retourneert Power shell .NET-objecten.</span><span class="sxs-lookup"><span data-stu-id="122e0-109">Unlike most shells that only accept and return text, PowerShell accepts and returns .NET objects.</span></span> <span data-ttu-id="122e0-110">De shell bevat de volgende functies:</span><span class="sxs-lookup"><span data-stu-id="122e0-110">The shell includes the following features:</span></span>
 
-<span data-ttu-id="03019-109">In tegens telling tot traditionele opdracht regel interfaces, zijn Power shell-cmdlets ontworpen om objecten te verwerken.</span><span class="sxs-lookup"><span data-stu-id="03019-109">Unlike traditional command-line interfaces, PowerShell cmdlets are designed to deal with objects.</span></span>
-<span data-ttu-id="03019-110">Een object is gestructureerde informatie die meer is dan alleen de teken reeks die wordt weer gegeven op het scherm.</span><span class="sxs-lookup"><span data-stu-id="03019-110">An object is structured information that is more than just the string of characters appearing on the screen.</span></span> <span data-ttu-id="03019-111">De opdracht uitvoer bevat altijd extra informatie die u kunt gebruiken als u deze nodig hebt.</span><span class="sxs-lookup"><span data-stu-id="03019-111">Command output always carries extra information that you can use if you need it.</span></span>
+- <span data-ttu-id="122e0-111">Robuuste opdracht regel [geschiedenis][]</span><span class="sxs-lookup"><span data-stu-id="122e0-111">Robust command-line [history][]</span></span>
+- <span data-ttu-id="122e0-112">Tabblad voltooiing en de voor spelling van opdrachten (Zie [about_PSReadLine][])</span><span class="sxs-lookup"><span data-stu-id="122e0-112">Tab completion and command prediction (See [about_PSReadLine][])</span></span>
+- <span data-ttu-id="122e0-113">Ondersteunt opdracht-en parameter [aliassen][]</span><span class="sxs-lookup"><span data-stu-id="122e0-113">Supports command and parameter [aliases][]</span></span>
+- <span data-ttu-id="122e0-114">[Pijp lijn][] voor het koppelen van opdrachten</span><span class="sxs-lookup"><span data-stu-id="122e0-114">[Pipeline][] for chaining commands</span></span>
+- <span data-ttu-id="122e0-115">[Help][] -systeem in de console, vergelijkbaar met Unix- `man` pagina's</span><span class="sxs-lookup"><span data-stu-id="122e0-115">In-console [help][] system, similar to Unix `man` pages</span></span>
 
-<span data-ttu-id="03019-112">Als u hulpprogram ma's voor tekst verwerking hebt gebruikt voor het verwerken van gegevens in het verleden, zult u merken dat ze anders werken wanneer ze worden gebruikt in Power shell.</span><span class="sxs-lookup"><span data-stu-id="03019-112">If you've used text-processing tools to process data in the past, you'll find that they behave differently when used in PowerShell.</span></span> <span data-ttu-id="03019-113">In de meeste gevallen hebt u geen hulp middelen voor tekst verwerking nodig om specifieke gegevens op te halen.</span><span class="sxs-lookup"><span data-stu-id="03019-113">In most cases, you don't need text-processing tools to extract specific information.</span></span> <span data-ttu-id="03019-114">U hebt rechtstreeks toegang tot delen van de gegevens met behulp van de standaard syntaxis van Power shell-objecten.</span><span class="sxs-lookup"><span data-stu-id="03019-114">You directly access portions of the data using standard PowerShell object syntax.</span></span>
+## <a name="scripting-language"></a><span data-ttu-id="122e0-116">Script taal</span><span class="sxs-lookup"><span data-stu-id="122e0-116">Scripting language</span></span>
 
-## <a name="the-command-family-is-extensible"></a><span data-ttu-id="03019-115">De opdracht familie is uitbreidbaar</span><span class="sxs-lookup"><span data-stu-id="03019-115">The command family is extensible</span></span>
+<span data-ttu-id="122e0-117">Als script taal wordt Power shell doorgaans gebruikt voor het automatiseren van het beheer van systemen.</span><span class="sxs-lookup"><span data-stu-id="122e0-117">As a scripting language, PowerShell is commonly used for automating the management of systems.</span></span> <span data-ttu-id="122e0-118">Het wordt ook gebruikt om oplossingen te bouwen, te testen en te implementeren, vaak in CI/CD-omgevingen.</span><span class="sxs-lookup"><span data-stu-id="122e0-118">It is also used to build, test, and deploy solutions, often in CI/CD environments.</span></span> <span data-ttu-id="122e0-119">Power shell is gebaseerd op de .NET common language runtime (CLR).</span><span class="sxs-lookup"><span data-stu-id="122e0-119">PowerShell is built on the .NET Common Language Runtime (CLR).</span></span> <span data-ttu-id="122e0-120">Alle invoer en uitvoer zijn .NET-objecten.</span><span class="sxs-lookup"><span data-stu-id="122e0-120">All inputs and outputs are .NET objects.</span></span> <span data-ttu-id="122e0-121">Het is niet nodig om tekst uitvoer te parseren om informatie uit de uitvoer op te halen.</span><span class="sxs-lookup"><span data-stu-id="122e0-121">No need to parse text output to extract information from output.</span></span> <span data-ttu-id="122e0-122">De Power shell-script taal bevat de volgende functies:</span><span class="sxs-lookup"><span data-stu-id="122e0-122">The PowerShell scripting language includes the following features:</span></span>
 
-<span data-ttu-id="03019-116">Interfaces zoals `cmd.exe` geen manier om u de ingebouwde opdrachtset direct uit te breiden.</span><span class="sxs-lookup"><span data-stu-id="03019-116">Interfaces such as `cmd.exe` don't provide a way for you to directly extend the built-in command set.</span></span> <span data-ttu-id="03019-117">U kunt externe opdracht regel Programma's maken die worden uitgevoerd in `cmd.exe` .</span><span class="sxs-lookup"><span data-stu-id="03019-117">You can create external command-line tools that run in `cmd.exe`.</span></span> <span data-ttu-id="03019-118">Deze externe hulpprogram ma's hebben echter geen services, zoals Help-integratie.</span><span class="sxs-lookup"><span data-stu-id="03019-118">But these external tools don't have services, such as Help integration.</span></span> <span data-ttu-id="03019-119">`cmd.exe` niet automatisch weet dat deze externe hulpprogram ma's geldige opdrachten zijn.</span><span class="sxs-lookup"><span data-stu-id="03019-119">`cmd.exe` doesn't automatically know that these external tools are valid commands.</span></span>
+- <span data-ttu-id="122e0-123">Uitbreidbaar tot [functies][], [klassen][], [scripts][]en [modules][]</span><span class="sxs-lookup"><span data-stu-id="122e0-123">Extensible through [functions][], [classes][], [scripts][], and [modules][]</span></span>
+- <span data-ttu-id="122e0-124">Uitbreidbaar [systeem][formatting] voor eenvoudige uitvoer</span><span class="sxs-lookup"><span data-stu-id="122e0-124">Extensible [formatting system][formatting] for easy output</span></span>
+- <span data-ttu-id="122e0-125">Uitbreidbaar [type systeem][types] voor het maken van dynamische typen</span><span class="sxs-lookup"><span data-stu-id="122e0-125">Extensible [type system][types] for creating dynamic types</span></span>
+- <span data-ttu-id="122e0-126">Ingebouwde ondersteuning voor algemene gegevens indelingen, zoals [CSV][], [JSON][]en [XML][]</span><span class="sxs-lookup"><span data-stu-id="122e0-126">Built-in support for common data formats like [CSV][], [JSON][], and [XML][]</span></span>
 
-<span data-ttu-id="03019-120">De opdrachten in Power shell worden _cmdlets_genoemd.</span><span class="sxs-lookup"><span data-stu-id="03019-120">The commands in PowerShell are known as _cmdlets_.</span></span> <span data-ttu-id="03019-121">U kunt elke cmdlet afzonderlijk gebruiken, maar de kracht ervan wordt gerealiseerd wanneer u deze combineert om complexe taken uit te voeren.</span><span class="sxs-lookup"><span data-stu-id="03019-121">You can use each cmdlet separately, but their power is realized when you combine them to perform complex tasks.</span></span> <span data-ttu-id="03019-122">Net als bij veel shells krijgt u toegang tot het bestands systeem op de computer.</span><span class="sxs-lookup"><span data-stu-id="03019-122">Like many shells, PowerShell gives you access to the file system on the computer.</span></span> <span data-ttu-id="03019-123">Met Power shell- _providers_ kunt u toegang krijgen tot andere gegevens archieven, zoals het REGI ster en de certificaat archieven, net zo eenvoudig als u toegang hebt tot het bestands systeem.</span><span class="sxs-lookup"><span data-stu-id="03019-123">PowerShell _providers_ enable you to access other data stores, such as the registry and the certificate stores, as easily as you access the file system.</span></span>
+## <a name="configuration-management"></a><span data-ttu-id="122e0-127">Configuratiebeheer</span><span class="sxs-lookup"><span data-stu-id="122e0-127">Configuration management</span></span>
 
-<span data-ttu-id="03019-124">U kunt uw eigen cmdlet-en functie modules maken met behulp van gecompileerde code of scripts.</span><span class="sxs-lookup"><span data-stu-id="03019-124">You can create your own cmdlet and function modules using compiled code or scripts.</span></span> <span data-ttu-id="03019-125">Met modules kunnen cmdlets en providers aan de shell worden toegevoegd.</span><span class="sxs-lookup"><span data-stu-id="03019-125">Modules can add cmdlets and providers to the shell.</span></span> <span data-ttu-id="03019-126">Power shell ondersteunt ook scripts die vergelijkbaar zijn met UNIX-shell scripts en `cmd.exe` batch-bestanden.</span><span class="sxs-lookup"><span data-stu-id="03019-126">PowerShell also supports scripts that are analogous to UNIX shell scripts and `cmd.exe` batch files.</span></span>
+<span data-ttu-id="122e0-128">Power shell desired state Configuration ([DSC][]) is een beheer raamwerk in Power shell waarmee u uw bedrijfs infrastructuur met configuratie als code kunt beheren.</span><span class="sxs-lookup"><span data-stu-id="122e0-128">PowerShell Desired State Configuration ([DSC][]) is a management framework in PowerShell that enables you to manage your enterprise infrastructure with configuration as code.</span></span> <span data-ttu-id="122e0-129">Met DSC kunt u het volgende doen:</span><span class="sxs-lookup"><span data-stu-id="122e0-129">With DSC, you can:</span></span>
 
-## <a name="support-for-command-aliases"></a><span data-ttu-id="03019-127">Biedt ondersteuning voor opdrachtaliassen</span><span class="sxs-lookup"><span data-stu-id="03019-127">Support for command aliases</span></span>
+- <span data-ttu-id="122e0-130">Declaratieve [configuraties][] en aangepaste scripts maken voor Herhaal bare implementaties</span><span class="sxs-lookup"><span data-stu-id="122e0-130">Create declarative [configurations][] and custom scripts for repeatable deployments</span></span>
+- <span data-ttu-id="122e0-131">Configuratie-instellingen en rapport op configuratie-drift afdwingen</span><span class="sxs-lookup"><span data-stu-id="122e0-131">Enforce configuration settings and report on configuration drift</span></span>
+- <span data-ttu-id="122e0-132">Configuratie implementeren met [push-of pull][push-pull] -modellen</span><span class="sxs-lookup"><span data-stu-id="122e0-132">Deploy configuration using [push or pull][push-pull] models</span></span>
 
-<span data-ttu-id="03019-128">Power shell ondersteunt aliassen om te verwijzen naar opdrachten op alternatieve namen.</span><span class="sxs-lookup"><span data-stu-id="03019-128">PowerShell supports aliases to refer to commands by alternate names.</span></span> <span data-ttu-id="03019-129">Met aliasing kunnen gebruikers ervaring hebben met andere shells om algemene opdracht namen te gebruiken die ze al kennen voor vergelijk bare bewerkingen in Power shell.</span><span class="sxs-lookup"><span data-stu-id="03019-129">Aliasing allows users with experience in other shells to use common command names that they already know for similar operations in PowerShell.</span></span>
+## <a name="next-steps"></a><span data-ttu-id="122e0-133">Volgende stappen</span><span class="sxs-lookup"><span data-stu-id="122e0-133">Next steps</span></span>
 
-<span data-ttu-id="03019-130">Met aliasing wordt een nieuwe naam gekoppeld aan een andere opdracht.</span><span class="sxs-lookup"><span data-stu-id="03019-130">Aliasing associates a new name with another command.</span></span> <span data-ttu-id="03019-131">Power Shell heeft bijvoorbeeld een interne functie `Clear-Host` met de naam waarmee het uitvoer venster wordt gewist.</span><span class="sxs-lookup"><span data-stu-id="03019-131">For example, PowerShell has an internal function named `Clear-Host` that clears the output window.</span></span> <span data-ttu-id="03019-132">U kunt ofwel de `cls` alias typen `clear` bij een opdracht prompt.</span><span class="sxs-lookup"><span data-stu-id="03019-132">You can type either the `cls` or `clear` alias at a command prompt.</span></span> <span data-ttu-id="03019-133">Power shell interpreteert deze aliassen en voert de `Clear-Host` functie uit.</span><span class="sxs-lookup"><span data-stu-id="03019-133">PowerShell interprets these aliases and runs the `Clear-Host` function.</span></span>
+### <a name="getting-started"></a><span data-ttu-id="122e0-134">Aan de slag</span><span class="sxs-lookup"><span data-stu-id="122e0-134">Getting started</span></span>
 
-<span data-ttu-id="03019-134">Deze functie helpt gebruikers bij het leren van Power shell.</span><span class="sxs-lookup"><span data-stu-id="03019-134">This feature helps users to learn PowerShell.</span></span> <span data-ttu-id="03019-135">`cmd.exe`De meeste en UNIX-gebruikers hebben een grote aanbod opdrachten die gebruikers al op naam kennen.</span><span class="sxs-lookup"><span data-stu-id="03019-135">First, most `cmd.exe` and Unix users have a large repertoire of commands that users already know by name.</span></span> <span data-ttu-id="03019-136">De Power shell-equivalenten kunnen geen identieke resultaten opleveren.</span><span class="sxs-lookup"><span data-stu-id="03019-136">The PowerShell equivalents may not produce identical results.</span></span> <span data-ttu-id="03019-137">De resultaten zijn echter bijna genoeg dat gebruikers kunnen werken zonder de naam van de Power shell-opdracht te weten.</span><span class="sxs-lookup"><span data-stu-id="03019-137">However, the results are close enough that users can do work without knowing the PowerShell command name.</span></span> <span data-ttu-id="03019-138">' Spier geheugen ' is een andere belang rijke bron van frustraties bij het leren van een nieuwe opdracht shell.</span><span class="sxs-lookup"><span data-stu-id="03019-138">"Muscle memory" is another major source of frustration when learning a new command shell.</span></span> <span data-ttu-id="03019-139">Als u jaren hebt gebruikt `cmd.exe` , kunt u reflexively de `cls` opdracht om het scherm te wissen.</span><span class="sxs-lookup"><span data-stu-id="03019-139">If you have used `cmd.exe` for years, you might reflexively type the `cls` command to clear the screen.</span></span> <span data-ttu-id="03019-140">Zonder de alias voor `Clear-Host` ontvangt u een fout bericht en weet u niet wat u kunt doen om de uitvoer te wissen.</span><span class="sxs-lookup"><span data-stu-id="03019-140">Without the alias for `Clear-Host`, you receive an error message and won't know what to do to clear the output.</span></span>
+<span data-ttu-id="122e0-135">Bent u nieuw in Power shell en weet u niet waar u moet beginnen?</span><span class="sxs-lookup"><span data-stu-id="122e0-135">Are you new to PowerShell and don't know where to start?</span></span> <span data-ttu-id="122e0-136">Bekijk deze bronnen.</span><span class="sxs-lookup"><span data-stu-id="122e0-136">Take a look at these resources.</span></span>
 
-## <a name="powershell-handles-console-input-and-display"></a><span data-ttu-id="03019-141">Power shell verwerkt console-invoer en-weer gave</span><span class="sxs-lookup"><span data-stu-id="03019-141">PowerShell handles console input and display</span></span>
+- <span data-ttu-id="122e0-137">[PowerShell installeren][install]</span><span class="sxs-lookup"><span data-stu-id="122e0-137">[Installing PowerShell][install]</span></span>
+- <span data-ttu-id="122e0-138">[PowerShell 101][PS101]</span><span class="sxs-lookup"><span data-stu-id="122e0-138">[PowerShell 101][PS101]</span></span>
+- <span data-ttu-id="122e0-139">[Zelf studies voor Power shell-bits][tutorials]</span><span class="sxs-lookup"><span data-stu-id="122e0-139">[PowerShell Bits tutorials][tutorials]</span></span>
+- <span data-ttu-id="122e0-140">[Power shell-modules voor leren][learn]</span><span class="sxs-lookup"><span data-stu-id="122e0-140">[PowerShell Learn modules][learn]</span></span>
 
-<span data-ttu-id="03019-142">Wanneer u een opdracht typt, verwerkt Power shell de invoer van de opdracht regel altijd rechtstreeks.</span><span class="sxs-lookup"><span data-stu-id="03019-142">When you type a command, PowerShell always processes the command-line input directly.</span></span> <span data-ttu-id="03019-143">Power shell formatteert ook de uitvoer die op het scherm wordt weer gegeven.</span><span class="sxs-lookup"><span data-stu-id="03019-143">PowerShell also formats the output that you see on the screen.</span></span> <span data-ttu-id="03019-144">Dit verschil is aanzienlijk omdat het de vereiste werk van elke cmdlet vermindert.</span><span class="sxs-lookup"><span data-stu-id="03019-144">This difference is significant because it reduces the work required of each cmdlet.</span></span> <span data-ttu-id="03019-145">Zo zorgt u ervoor dat u altijd op dezelfde manier kunt werken met elke cmdlet.</span><span class="sxs-lookup"><span data-stu-id="03019-145">It ensures that you can always do things the same way with any cmdlet.</span></span> <span data-ttu-id="03019-146">Cmdlet-ontwikkel aars hoeven geen code te schrijven voor het parseren van de opdracht regel argumenten of het format teren van de uitvoer.</span><span class="sxs-lookup"><span data-stu-id="03019-146">Cmdlet developers don't need to write code to parse the command-line arguments or format the output.</span></span>
+### <a name="powershell-in-action"></a><span data-ttu-id="122e0-141">Power shell in actie</span><span class="sxs-lookup"><span data-stu-id="122e0-141">PowerShell in action</span></span>
 
-<span data-ttu-id="03019-147">Traditionele opdracht regel Programma's hebben hun eigen schema's voor het aanvragen en weer geven van Help.</span><span class="sxs-lookup"><span data-stu-id="03019-147">Traditional command-line tools have their own schemes for requesting and displaying Help.</span></span> <span data-ttu-id="03019-148">Sommige opdracht regel Programma's gebruiken `/?` voor het activeren van de Help-weer gave; anderen gebruiken `-?` , `/H` of zelfs `//` .</span><span class="sxs-lookup"><span data-stu-id="03019-148">Some command-line tools use `/?` to trigger the Help display; others use `-?`, `/H`, or even `//`.</span></span> <span data-ttu-id="03019-149">De Help wordt in een GUI-venster weer gegeven, in plaats van in de-console weer te geven.</span><span class="sxs-lookup"><span data-stu-id="03019-149">Some will display Help in a GUI window, rather than in the console display.</span></span> <span data-ttu-id="03019-150">Als u de verkeerde para meter gebruikt, kan het hulp programma mogelijk negeren wat u hebt getypt en de uitvoering van een taak automatisch starten.</span><span class="sxs-lookup"><span data-stu-id="03019-150">If you use the wrong parameter, the tool might ignore what you typed and begin executing a task automatically.</span></span>
-<span data-ttu-id="03019-151">Omdat Power shell de opdracht regel automatisch parseert en verwerkt, `-?` betekent de para meter altijd Help voor deze opdracht weer geven.</span><span class="sxs-lookup"><span data-stu-id="03019-151">Since PowerShell automatically parses and processes the command line, the `-?` parameter always means "show me Help for this command".</span></span>
+<span data-ttu-id="122e0-142">Bekijk hoe Power shell wordt gebruikt in verschillende scenario's en op verschillende platforms.</span><span class="sxs-lookup"><span data-stu-id="122e0-142">Take a look at how PowerShell is being used in different scenarios and on different platforms.</span></span>
 
-> [!NOTE]
-> <span data-ttu-id="03019-152">Als u een grafische toepassing uitvoert in Power shell, wordt het venster voor de toepassing geopend.</span><span class="sxs-lookup"><span data-stu-id="03019-152">If you run a graphic application in PowerShell, the window for the application opens.</span></span>
-> <span data-ttu-id="03019-153">Power shell is alleen van toepassing op het verwerken van de opdracht regel invoer die u opgeeft of de toepassings uitvoer die wordt geretourneerd naar het console venster.</span><span class="sxs-lookup"><span data-stu-id="03019-153">PowerShell intervenes only when processing the command-line input you supply or the application output returned to the console window.</span></span> <span data-ttu-id="03019-154">Dit heeft geen invloed op de manier waarop de toepassing intern werkt.</span><span class="sxs-lookup"><span data-stu-id="03019-154">It does not affect how the application works internally.</span></span>
-
-## <a name="powershell-has-a-pipeline"></a><span data-ttu-id="03019-155">Power Shell heeft een pijp lijn</span><span class="sxs-lookup"><span data-stu-id="03019-155">PowerShell has a pipeline</span></span>
-
-<span data-ttu-id="03019-156">Pijp lijnen zijn weliswaar het meest waardevolle concept dat wordt gebruikt in opdracht regel interfaces.</span><span class="sxs-lookup"><span data-stu-id="03019-156">Pipelines are arguably the most valuable concept used in command-line interfaces.</span></span> <span data-ttu-id="03019-157">Wanneer u correct gebruikt, kunnen pijp lijnen de moeite van het gebruik van complexe opdrachten verminderen en is het eenvoudiger om de werk stroom te zien.</span><span class="sxs-lookup"><span data-stu-id="03019-157">When used properly, pipelines reduce the effort of using complex commands and make it easier to see the flow of work.</span></span> <span data-ttu-id="03019-158">Elke opdracht in een pijp lijn geeft de uitvoer, item op item, door aan de volgende opdracht.</span><span class="sxs-lookup"><span data-stu-id="03019-158">Each command in a pipeline passes its output, item by item, to the next command.</span></span> <span data-ttu-id="03019-159">Opdrachten hoeven niet meer dan één item tegelijk te verwerken.</span><span class="sxs-lookup"><span data-stu-id="03019-159">Commands don't have to handle more than one item at a time.</span></span> <span data-ttu-id="03019-160">Het resultaat is een gereduceerd Resource verbruik en de mogelijkheid om de uitvoer direct te verkrijgen.</span><span class="sxs-lookup"><span data-stu-id="03019-160">The result is reduced resource consumption and the ability to get output immediately.</span></span>
-
-<span data-ttu-id="03019-161">De notatie die wordt gebruikt voor pijp lijnen, is vergelijkbaar met de notatie die wordt gebruikt in andere schalen.</span><span class="sxs-lookup"><span data-stu-id="03019-161">The notation used for pipelines is similar to the notation used in other shells.</span></span> <span data-ttu-id="03019-162">In eerste instantie is het mogelijk niet duidelijk hoe pijp lijnen anders zijn in Power shell.</span><span class="sxs-lookup"><span data-stu-id="03019-162">At first glance, it may not be apparent how pipelines are different in PowerShell.</span></span> <span data-ttu-id="03019-163">Hoewel er tekst op het scherm wordt weer gegeven, Power shell pipes-objecten, geen tekst, tussen opdrachten.</span><span class="sxs-lookup"><span data-stu-id="03019-163">Although you see text on the screen, PowerShell pipes objects, not text, between commands.</span></span>
-
-<span data-ttu-id="03019-164">Als u bijvoorbeeld de `Out-Host` cmdlet gebruikt om een pagina-op-pagina weer te geven van uitvoer van een andere opdracht, ziet de uitvoer er net zo uit als de normale tekst die op het scherm wordt weer gegeven, onderverdeeld in pagina's:</span><span class="sxs-lookup"><span data-stu-id="03019-164">For example, if you use the `Out-Host` cmdlet to force a page-by-page display of output from another command, the output looks just like the normal text displayed on the screen, broken up into pages:</span></span>
-
-```powershell
-Get-ChildItem | Out-Host -Paging
-```
-
-```Output
-    Directory: /mnt/c/Git/PS-Docs/PowerShell-Docs/reference/7.0/Microsoft.PowerShell.Core
-
-Mode                 LastWriteTime         Length Name
-----                 -------------         ------ ----
-d----          05/22/2020    08:30                About
------          05/20/2020    14:36           9044 Add-History.md
------          05/20/2020    14:36          12227 Clear-History.md
------          05/20/2020    14:36           3566 Clear-Host.md
------          05/20/2020    14:36          29087 Connect-PSSession.md
------          05/20/2020    14:36           5705 Debug-Job.md
------          05/20/2020    14:36           3515 Disable-ExperimentalFeature.md
------          05/20/2020    14:36          25531 Disable-PSRemoting.md
------          05/20/2020    14:36           7852 Disable-PSSessionConfiguration.md
------          05/20/2020    14:36          25355 Disconnect-PSSession.md
------          05/20/2020    14:36           3491 Enable-ExperimentalFeature.md
------          05/20/2020    14:36          13310 Enable-PSRemoting.md
------          05/20/2020    14:36           8401 Enable-PSSessionConfiguration.md
------          05/20/2020    14:36           9531 Enter-PSHostProcess.md
-...
-<SPACE> next page; <CR> next line; Q quit
-```
-
-<span data-ttu-id="03019-165">Paginering vermindert ook het CPU-gebruik omdat er `Out-Host` een volledige pagina kan worden weer gegeven.</span><span class="sxs-lookup"><span data-stu-id="03019-165">Paging also reduces CPU utilization because processing transfers to the `Out-Host` cmdlet when it has a complete page ready to display.</span></span> <span data-ttu-id="03019-166">De cmdlets die voorafgaan aan de pijp lijn worden uitgevoerd, totdat de volgende pagina van uitvoer beschikbaar is.</span><span class="sxs-lookup"><span data-stu-id="03019-166">The cmdlets that precede it in the pipeline pause execution until the next page of output is available.</span></span>
-
-### <a name="objects-in-the-pipeline"></a><span data-ttu-id="03019-167">Objecten in de pijp lijn</span><span class="sxs-lookup"><span data-stu-id="03019-167">Objects in the pipeline</span></span>
-
-<span data-ttu-id="03019-168">Wanneer u een cmdlet in Power shell uitvoert, wordt tekst uitvoer weer gegeven, omdat het nodig is om objecten als tekst in een console venster aan te duiden.</span><span class="sxs-lookup"><span data-stu-id="03019-168">When you run a cmdlet in PowerShell, you see text output because it is necessary to represent objects as text in a console window.</span></span> <span data-ttu-id="03019-169">In de tekst uitvoer worden mogelijk niet alle eigenschappen weer gegeven van het object dat wordt uitgevoerd.</span><span class="sxs-lookup"><span data-stu-id="03019-169">The text output may not display all of the properties of the object being output.</span></span>
-
-<span data-ttu-id="03019-170">Denk bijvoorbeeld aan de `Get-Location` cmdlet.</span><span class="sxs-lookup"><span data-stu-id="03019-170">For example, consider the `Get-Location` cmdlet.</span></span> <span data-ttu-id="03019-171">De tekst uitvoer is een samen vatting van informatie, niet een volledige weer gave van het object dat wordt geretourneerd door `Get-Location` .</span><span class="sxs-lookup"><span data-stu-id="03019-171">The text output is a summary of information, not a complete representation of the object returned by `Get-Location`.</span></span> <span data-ttu-id="03019-172">De kop in de uitvoer wordt toegevoegd door het proces waarmee de gegevens voor het scherm worden opgemaakt.</span><span class="sxs-lookup"><span data-stu-id="03019-172">The heading in the output is added by the process that formats the data for onscreen display.</span></span>
-
-```powershell
-Get-Location
-```
-
-```Output
-Path
-----
-C:\
-```
-
-<span data-ttu-id="03019-173">Sluizen de uitvoer naar de `Get-Member` cmdlet geeft informatie weer over het object dat wordt geretourneerd door `Get-Location` .</span><span class="sxs-lookup"><span data-stu-id="03019-173">Piping the output to the `Get-Member` cmdlet displays information about the object returned by `Get-Location`.</span></span>
-
-```powershell
-Get-Location | Get-Member
-```
-
-```Output
-   TypeName: System.Management.Automation.PathInfo
-
-Name         MemberType Definition
-----         ---------- ----------
-Equals       Method     bool Equals(System.Object obj)
-GetHashCode  Method     int GetHashCode()
-GetType      Method     type GetType()
-ToString     Method     string ToString()
-Drive        Property   System.Management.Automation.PSDriveInfo Drive {get;}
-Path         Property   string Path {get;}
-Provider     Property   System.Management.Automation.ProviderInfo Provider {get;}
-ProviderPath Property   string ProviderPath {get;}
-```
-
-<span data-ttu-id="03019-174">`Get-Location` retourneert een **PathInfo** -object dat het huidige pad en andere informatie bevat.</span><span class="sxs-lookup"><span data-stu-id="03019-174">`Get-Location` returns a **PathInfo** object that contains the current path and other information.</span></span>
-
-## <a name="built-in-help-system"></a><span data-ttu-id="03019-175">Ingebouwd Help-systeem</span><span class="sxs-lookup"><span data-stu-id="03019-175">Built-in help system</span></span>
-
-<span data-ttu-id="03019-176">Net als Unix `man` -pagina's bevat Power shell gedetailleerde Help-artikelen waarin Power shell-concepten en opdracht syntaxis worden uitgelegd.</span><span class="sxs-lookup"><span data-stu-id="03019-176">Similar to Unix `man` pages, PowerShell includes detailed help articles that explain PowerShell concepts and command syntax.</span></span> <span data-ttu-id="03019-177">Gebruik de cmdlet [Get-Help][] om deze artikelen weer te geven bij de opdracht prompt of Bekijk de meest recent bijgewerkte versies van deze artikelen in de Power shell-documentatie online.</span><span class="sxs-lookup"><span data-stu-id="03019-177">Use the [Get-Help][] cmdlet to display these articles at the command prompt or view the most recently updated versions of these articles in the PowerShell documentation online.</span></span>
-
-## <a name="next-steps"></a><span data-ttu-id="03019-178">Volgende stappen</span><span class="sxs-lookup"><span data-stu-id="03019-178">Next steps</span></span>
-
-<span data-ttu-id="03019-179">Zie de sectie **Power shell** van deze site voor meer informatie over Power shell.</span><span class="sxs-lookup"><span data-stu-id="03019-179">To learn more about PowerShell, see the **Learning PowerShell** section of this site.</span></span>
+- <span data-ttu-id="122e0-143">[Externe communicatie van PowerShell via SSH][remoting]</span><span class="sxs-lookup"><span data-stu-id="122e0-143">[PowerShell remoting over SSH][remoting]</span></span>
+- <span data-ttu-id="122e0-144">[Aan de slag met Azure PowerShell][azure]</span><span class="sxs-lookup"><span data-stu-id="122e0-144">[Getting started with Azure PowerShell][azure]</span></span>
+- <span data-ttu-id="122e0-145">[Een CI/CD-pijp lijn bouwen met DSC][devops]</span><span class="sxs-lookup"><span data-stu-id="122e0-145">[Building a CI/CD pipeline with DSC][devops]</span></span>
+- <span data-ttu-id="122e0-146">[Micro soft Exchange beheren][exchange]</span><span class="sxs-lookup"><span data-stu-id="122e0-146">[Managing Microsoft Exchange][exchange]</span></span>
 
 <!-- link references -->
 
-[Get-Help]: /powershell/module/microsoft.powershell.core/Get-Help
+[transactie]: /powershell/module/microsoft.powershell.core/about/about_history
+[history]: /powershell/module/microsoft.powershell.core/about/about_history
+[about_PSReadLine]: /powershell/module/psreadline/about/about_psreadline
+[aliassen]: /powershell/module/microsoft.powershell.core/about/about_aliases
+[aliases]: /powershell/module/microsoft.powershell.core/about/about_aliases
+[Pijplijn]: /powershell/module/microsoft.powershell.core/about/about_pipelines
+[Pipeline]: /powershell/module/microsoft.powershell.core/about/about_pipelines
+[Help]: /powershell/module/microsoft.powershell.core/get-help
+[help]: /powershell/module/microsoft.powershell.core/get-help
+[modules]: /powershell/module/microsoft.powershell.core/about/about_modules
+[vervullen]: /powershell/module/microsoft.powershell.core/about/about_functions_advanced
+[functions]: /powershell/module/microsoft.powershell.core/about/about_functions_advanced
+[instructeur]: /powershell/module/microsoft.powershell.core/about/about_classes
+[classes]: /powershell/module/microsoft.powershell.core/about/about_classes
+[scriptmap]: /powershell/module/microsoft.powershell.core/about/about_scripts
+[scripts]: /powershell/module/microsoft.powershell.core/about/about_scripts
+[formatting]: /powershell/module/microsoft.powershell.core/about/about_format.ps1xml
+[types]: /powershell/module/microsoft.powershell.core/about/about_types.ps1xml
+[CSV]: /powershell/module/microsoft.powershell.utility/convertfrom-csv
+[JSON]: /powershell/module/microsoft.powershell.utility/convertfrom-json
+[XML]: /powershell/module/microsoft.powershell.utility/convertto-xml
+[configuraties]: /powershell/scripting/dsc/configurations/configurations
+[configurations]: /powershell/scripting/dsc/configurations/configurations
+[DSC]: /powershell/scripting/dsc/overview/dscforengineers
+[push-pull]: /powershell/scripting/dsc/pull-server/enactingconfigurations
+[install]: /powershell/scripting/install/installing-powershell
+[PS101]: /powershell/scripting/learn/ps101/00-introduction
+[tutorials]: /powershell/scripting/learn/tutorials/00-introduction
+[learn]: /learn/browse/?terms=PowerShell
+[azure]: /powershell/azure/get-started-azureps
+[devops]: /azure/devops/pipelines/release/dsc-cicd
+[exchange]: /powershell/exchange/exchange-management-shell
+[remoting]: /powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core
