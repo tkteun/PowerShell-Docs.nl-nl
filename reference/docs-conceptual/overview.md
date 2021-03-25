@@ -1,157 +1,90 @@
 ---
-ms.date: 05/22/2020
+ms.date: 03/22/2021
 keywords: powershell,cmdlet
 title: Wat is PowerShell?
 description: Dit artikel is een inleiding tot de Power shell-script omgeving en de bijbehorende functies.
-ms.openlocfilehash: 91fc580af9a3adf43a24c40b4aaf3f1843882705
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
+ms.openlocfilehash: 3e1c2cae4b8d6507057ee8136265710a8dfe74f3
+ms.sourcegitcommit: 719debaed3cc32ba463b1d4cc56a491d8ecbce26
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92500773"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105029686"
 ---
 # <a name="what-is-powershell"></a>Wat is PowerShell?
 
-Power shell is een platform voor taak automatisering en configuratie beheer voor meerdere platforms, dat bestaat uit een opdracht regel shell en script taal. In tegens telling tot de meeste shells, die tekst accepteren en retour neren, is Power shell gebaseerd op de .NET common language runtime (CLR) en worden .NET-objecten geaccepteerd en geretourneerd. Deze fundamentele wijziging brengt volledig nieuwe hulpprogram ma's en methoden voor automatisering in.
+Power shell is een oplossing voor het automatiseren van meerdere platforms die bestaat uit een opdracht regel shell, een script taal en een configuratie beheer raamwerk. Power shell wordt uitgevoerd op Windows, Linux en macOS.
 
-<!-- removing images until we can get replacements
-:::row:::
-   :::column span="":::
-      Windows
-      [![PowerShell on Windows](media/overview/windows-desktop-660.gif)](media/overview/windows-desktop.gif#lightbox)
-      [Install on Windows](install/installing-powershell-core-on-windows.md)
-   :::column-end:::
-   :::column span="":::
-      Linux
-      [![PowerShell on Linux](media/overview/linux-desktop-660.gif)](media/overview/linux-desktop.gif#lightbox)
-      [Install on Linux](install/installing-powershell-core-on-linux.md)
-   :::column-end:::
-   :::column span="":::
-      macOS
-      [![PowerShell on macOS](media/overview/macos-desktop-660.gif)](media/overview/macos-desktop.gif#lightbox)
-      [Install on macOS](install/installing-powershell-core-on-macos.md)
-   :::column-end:::
-:::row-end:::
--->
+## <a name="shell"></a>Shell
 
-## <a name="output-is-object-based"></a>Uitvoer is op objecten gebaseerd
+Power shell is een moderne opdracht shell die de beste functies van andere populaire shells bevat. In tegens telling tot de meeste shells die alleen tekst accepteren en retour neren, accepteert en retourneert Power shell .NET-objecten. De shell bevat de volgende functies:
 
-In tegens telling tot traditionele opdracht regel interfaces, zijn Power shell-cmdlets ontworpen om objecten te verwerken.
-Een object is gestructureerde informatie die meer is dan alleen de teken reeks die wordt weer gegeven op het scherm. De opdracht uitvoer bevat altijd extra informatie die u kunt gebruiken als u deze nodig hebt.
+- Robuuste opdracht regel [geschiedenis][]
+- Tabblad voltooiing en de voor spelling van opdrachten (Zie [about_PSReadLine][])
+- Ondersteunt opdracht-en parameter [aliassen][]
+- [Pijp lijn][] voor het koppelen van opdrachten
+- [Help][] -systeem in de console, vergelijkbaar met Unix- `man` pagina's
 
-Als u hulpprogram ma's voor tekst verwerking hebt gebruikt voor het verwerken van gegevens in het verleden, zult u merken dat ze anders werken wanneer ze worden gebruikt in Power shell. In de meeste gevallen hebt u geen hulp middelen voor tekst verwerking nodig om specifieke gegevens op te halen. U hebt rechtstreeks toegang tot delen van de gegevens met behulp van de standaard syntaxis van Power shell-objecten.
+## <a name="scripting-language"></a>Script taal
 
-## <a name="the-command-family-is-extensible"></a>De opdracht familie is uitbreidbaar
+Als script taal wordt Power shell doorgaans gebruikt voor het automatiseren van het beheer van systemen. Het wordt ook gebruikt om oplossingen te bouwen, te testen en te implementeren, vaak in CI/CD-omgevingen. Power shell is gebaseerd op de .NET common language runtime (CLR). Alle invoer en uitvoer zijn .NET-objecten. Het is niet nodig om tekst uitvoer te parseren om informatie uit de uitvoer op te halen. De Power shell-script taal bevat de volgende functies:
 
-Interfaces zoals `cmd.exe` geen manier om u de ingebouwde opdrachtset direct uit te breiden. U kunt externe opdracht regel Programma's maken die worden uitgevoerd in `cmd.exe` . Deze externe hulpprogram ma's hebben echter geen services, zoals Help-integratie. `cmd.exe` niet automatisch weet dat deze externe hulpprogram ma's geldige opdrachten zijn.
+- Uitbreidbaar tot [functies][], [klassen][], [scripts][]en [modules][]
+- Uitbreidbaar [systeem][formatting] voor eenvoudige uitvoer
+- Uitbreidbaar [type systeem][types] voor het maken van dynamische typen
+- Ingebouwde ondersteuning voor algemene gegevens indelingen, zoals [CSV][], [JSON][]en [XML][]
 
-De opdrachten in Power shell worden _cmdlets_genoemd. U kunt elke cmdlet afzonderlijk gebruiken, maar de kracht ervan wordt gerealiseerd wanneer u deze combineert om complexe taken uit te voeren. Net als bij veel shells krijgt u toegang tot het bestands systeem op de computer. Met Power shell- _providers_ kunt u toegang krijgen tot andere gegevens archieven, zoals het REGI ster en de certificaat archieven, net zo eenvoudig als u toegang hebt tot het bestands systeem.
+## <a name="configuration-management"></a>Configuratiebeheer
 
-U kunt uw eigen cmdlet-en functie modules maken met behulp van gecompileerde code of scripts. Met modules kunnen cmdlets en providers aan de shell worden toegevoegd. Power shell ondersteunt ook scripts die vergelijkbaar zijn met UNIX-shell scripts en `cmd.exe` batch-bestanden.
+Power shell desired state Configuration ([DSC][]) is een beheer raamwerk in Power shell waarmee u uw bedrijfs infrastructuur met configuratie als code kunt beheren. Met DSC kunt u het volgende doen:
 
-## <a name="support-for-command-aliases"></a>Biedt ondersteuning voor opdrachtaliassen
-
-Power shell ondersteunt aliassen om te verwijzen naar opdrachten op alternatieve namen. Met aliasing kunnen gebruikers ervaring hebben met andere shells om algemene opdracht namen te gebruiken die ze al kennen voor vergelijk bare bewerkingen in Power shell.
-
-Met aliasing wordt een nieuwe naam gekoppeld aan een andere opdracht. Power Shell heeft bijvoorbeeld een interne functie `Clear-Host` met de naam waarmee het uitvoer venster wordt gewist. U kunt ofwel de `cls` alias typen `clear` bij een opdracht prompt. Power shell interpreteert deze aliassen en voert de `Clear-Host` functie uit.
-
-Deze functie helpt gebruikers bij het leren van Power shell. `cmd.exe`De meeste en UNIX-gebruikers hebben een grote aanbod opdrachten die gebruikers al op naam kennen. De Power shell-equivalenten kunnen geen identieke resultaten opleveren. De resultaten zijn echter bijna genoeg dat gebruikers kunnen werken zonder de naam van de Power shell-opdracht te weten. ' Spier geheugen ' is een andere belang rijke bron van frustraties bij het leren van een nieuwe opdracht shell. Als u jaren hebt gebruikt `cmd.exe` , kunt u reflexively de `cls` opdracht om het scherm te wissen. Zonder de alias voor `Clear-Host` ontvangt u een fout bericht en weet u niet wat u kunt doen om de uitvoer te wissen.
-
-## <a name="powershell-handles-console-input-and-display"></a>Power shell verwerkt console-invoer en-weer gave
-
-Wanneer u een opdracht typt, verwerkt Power shell de invoer van de opdracht regel altijd rechtstreeks. Power shell formatteert ook de uitvoer die op het scherm wordt weer gegeven. Dit verschil is aanzienlijk omdat het de vereiste werk van elke cmdlet vermindert. Zo zorgt u ervoor dat u altijd op dezelfde manier kunt werken met elke cmdlet. Cmdlet-ontwikkel aars hoeven geen code te schrijven voor het parseren van de opdracht regel argumenten of het format teren van de uitvoer.
-
-Traditionele opdracht regel Programma's hebben hun eigen schema's voor het aanvragen en weer geven van Help. Sommige opdracht regel Programma's gebruiken `/?` voor het activeren van de Help-weer gave; anderen gebruiken `-?` , `/H` of zelfs `//` . De Help wordt in een GUI-venster weer gegeven, in plaats van in de-console weer te geven. Als u de verkeerde para meter gebruikt, kan het hulp programma mogelijk negeren wat u hebt getypt en de uitvoering van een taak automatisch starten.
-Omdat Power shell de opdracht regel automatisch parseert en verwerkt, `-?` betekent de para meter altijd Help voor deze opdracht weer geven.
-
-> [!NOTE]
-> Als u een grafische toepassing uitvoert in Power shell, wordt het venster voor de toepassing geopend.
-> Power shell is alleen van toepassing op het verwerken van de opdracht regel invoer die u opgeeft of de toepassings uitvoer die wordt geretourneerd naar het console venster. Dit heeft geen invloed op de manier waarop de toepassing intern werkt.
-
-## <a name="powershell-has-a-pipeline"></a>Power Shell heeft een pijp lijn
-
-Pijp lijnen zijn weliswaar het meest waardevolle concept dat wordt gebruikt in opdracht regel interfaces. Wanneer u correct gebruikt, kunnen pijp lijnen de moeite van het gebruik van complexe opdrachten verminderen en is het eenvoudiger om de werk stroom te zien. Elke opdracht in een pijp lijn geeft de uitvoer, item op item, door aan de volgende opdracht. Opdrachten hoeven niet meer dan één item tegelijk te verwerken. Het resultaat is een gereduceerd Resource verbruik en de mogelijkheid om de uitvoer direct te verkrijgen.
-
-De notatie die wordt gebruikt voor pijp lijnen, is vergelijkbaar met de notatie die wordt gebruikt in andere schalen. In eerste instantie is het mogelijk niet duidelijk hoe pijp lijnen anders zijn in Power shell. Hoewel er tekst op het scherm wordt weer gegeven, Power shell pipes-objecten, geen tekst, tussen opdrachten.
-
-Als u bijvoorbeeld de `Out-Host` cmdlet gebruikt om een pagina-op-pagina weer te geven van uitvoer van een andere opdracht, ziet de uitvoer er net zo uit als de normale tekst die op het scherm wordt weer gegeven, onderverdeeld in pagina's:
-
-```powershell
-Get-ChildItem | Out-Host -Paging
-```
-
-```Output
-    Directory: /mnt/c/Git/PS-Docs/PowerShell-Docs/reference/7.0/Microsoft.PowerShell.Core
-
-Mode                 LastWriteTime         Length Name
-----                 -------------         ------ ----
-d----          05/22/2020    08:30                About
------          05/20/2020    14:36           9044 Add-History.md
------          05/20/2020    14:36          12227 Clear-History.md
------          05/20/2020    14:36           3566 Clear-Host.md
------          05/20/2020    14:36          29087 Connect-PSSession.md
------          05/20/2020    14:36           5705 Debug-Job.md
------          05/20/2020    14:36           3515 Disable-ExperimentalFeature.md
------          05/20/2020    14:36          25531 Disable-PSRemoting.md
------          05/20/2020    14:36           7852 Disable-PSSessionConfiguration.md
------          05/20/2020    14:36          25355 Disconnect-PSSession.md
------          05/20/2020    14:36           3491 Enable-ExperimentalFeature.md
------          05/20/2020    14:36          13310 Enable-PSRemoting.md
------          05/20/2020    14:36           8401 Enable-PSSessionConfiguration.md
------          05/20/2020    14:36           9531 Enter-PSHostProcess.md
-...
-<SPACE> next page; <CR> next line; Q quit
-```
-
-Paginering vermindert ook het CPU-gebruik omdat er `Out-Host` een volledige pagina kan worden weer gegeven. De cmdlets die voorafgaan aan de pijp lijn worden uitgevoerd, totdat de volgende pagina van uitvoer beschikbaar is.
-
-### <a name="objects-in-the-pipeline"></a>Objecten in de pijp lijn
-
-Wanneer u een cmdlet in Power shell uitvoert, wordt tekst uitvoer weer gegeven, omdat het nodig is om objecten als tekst in een console venster aan te duiden. In de tekst uitvoer worden mogelijk niet alle eigenschappen weer gegeven van het object dat wordt uitgevoerd.
-
-Denk bijvoorbeeld aan de `Get-Location` cmdlet. De tekst uitvoer is een samen vatting van informatie, niet een volledige weer gave van het object dat wordt geretourneerd door `Get-Location` . De kop in de uitvoer wordt toegevoegd door het proces waarmee de gegevens voor het scherm worden opgemaakt.
-
-```powershell
-Get-Location
-```
-
-```Output
-Path
-----
-C:\
-```
-
-Sluizen de uitvoer naar de `Get-Member` cmdlet geeft informatie weer over het object dat wordt geretourneerd door `Get-Location` .
-
-```powershell
-Get-Location | Get-Member
-```
-
-```Output
-   TypeName: System.Management.Automation.PathInfo
-
-Name         MemberType Definition
-----         ---------- ----------
-Equals       Method     bool Equals(System.Object obj)
-GetHashCode  Method     int GetHashCode()
-GetType      Method     type GetType()
-ToString     Method     string ToString()
-Drive        Property   System.Management.Automation.PSDriveInfo Drive {get;}
-Path         Property   string Path {get;}
-Provider     Property   System.Management.Automation.ProviderInfo Provider {get;}
-ProviderPath Property   string ProviderPath {get;}
-```
-
-`Get-Location` retourneert een **PathInfo** -object dat het huidige pad en andere informatie bevat.
-
-## <a name="built-in-help-system"></a>Ingebouwd Help-systeem
-
-Net als Unix `man` -pagina's bevat Power shell gedetailleerde Help-artikelen waarin Power shell-concepten en opdracht syntaxis worden uitgelegd. Gebruik de cmdlet [Get-Help][] om deze artikelen weer te geven bij de opdracht prompt of Bekijk de meest recent bijgewerkte versies van deze artikelen in de Power shell-documentatie online.
+- Declaratieve [configuraties][] en aangepaste scripts maken voor Herhaal bare implementaties
+- Configuratie-instellingen en rapport op configuratie-drift afdwingen
+- Configuratie implementeren met [push-of pull][push-pull] -modellen
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie de sectie **Power shell** van deze site voor meer informatie over Power shell.
+### <a name="getting-started"></a>Aan de slag
+
+Bent u nieuw in Power shell en weet u niet waar u moet beginnen? Bekijk deze bronnen.
+
+- [PowerShell installeren][install]
+- [PowerShell 101][PS101]
+- [Zelf studies voor Power shell-bits][tutorials]
+- [Power shell-modules voor leren][learn]
+
+### <a name="powershell-in-action"></a>Power shell in actie
+
+Bekijk hoe Power shell wordt gebruikt in verschillende scenario's en op verschillende platforms.
+
+- [Externe communicatie van PowerShell via SSH][remoting]
+- [Aan de slag met Azure PowerShell][azure]
+- [Een CI/CD-pijp lijn bouwen met DSC][devops]
+- [Micro soft Exchange beheren][exchange]
 
 <!-- link references -->
 
-[Get-Help]: /powershell/module/microsoft.powershell.core/Get-Help
+[transactie]: /powershell/module/microsoft.powershell.core/about/about_history
+[about_PSReadLine]: /powershell/module/psreadline/about/about_psreadline
+[aliassen]: /powershell/module/microsoft.powershell.core/about/about_aliases
+[Pijplijn]: /powershell/module/microsoft.powershell.core/about/about_pipelines
+[Help]: /powershell/module/microsoft.powershell.core/get-help
+[modules]: /powershell/module/microsoft.powershell.core/about/about_modules
+[vervullen]: /powershell/module/microsoft.powershell.core/about/about_functions_advanced
+[instructeur]: /powershell/module/microsoft.powershell.core/about/about_classes
+[scriptmap]: /powershell/module/microsoft.powershell.core/about/about_scripts
+[formatting]: /powershell/module/microsoft.powershell.core/about/about_format.ps1xml
+[types]: /powershell/module/microsoft.powershell.core/about/about_types.ps1xml
+[CSV]: /powershell/module/microsoft.powershell.utility/convertfrom-csv
+[JSON]: /powershell/module/microsoft.powershell.utility/convertfrom-json
+[XML]: /powershell/module/microsoft.powershell.utility/convertto-xml
+[configuraties]: /powershell/scripting/dsc/configurations/configurations
+[DSC]: /powershell/scripting/dsc/overview/dscforengineers
+[push-pull]: /powershell/scripting/dsc/pull-server/enactingconfigurations
+[install]: /powershell/scripting/install/installing-powershell
+[PS101]: /powershell/scripting/learn/ps101/00-introduction
+[tutorials]: /powershell/scripting/learn/tutorials/00-introduction
+[learn]: /learn/browse/?terms=PowerShell
+[azure]: /powershell/azure/get-started-azureps
+[devops]: /azure/devops/pipelines/release/dsc-cicd
+[exchange]: /powershell/exchange/exchange-management-shell
+[remoting]: /powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core
