@@ -2,16 +2,16 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 09/08/2020
+ms.date: 03/26/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ForEach-Object
-ms.openlocfilehash: 8a79dcf9c2af7aed0c52c361467cab23f880a893
-ms.sourcegitcommit: fb9bafd041e3615b9dc9fb77c9245581b705cd02
+ms.openlocfilehash: 53759d50e622d2c840781c5bddfd91c6fddfea45
+ms.sourcegitcommit: ca5a89977913bad9efec6bcc23a792d113ec0396
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97725157"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105630979"
 ---
 # ForEach-Object
 
@@ -382,6 +382,9 @@ Output: 5
 
 `Output: 3` is nooit geschreven, omdat de parallelle script Block voor die herhaling is beëindigd.
 
+> [!NOTE]
+> [PipelineVariable](About/about_CommonParameters.md) common para meter-variabelen worden _niet_ ondersteund in scenario's, `Foreach-Object -Parallel` zelfs niet met het `$using:` sleutel woord.
+
 ## Parameters
 
 ### -Argument List
@@ -660,6 +663,8 @@ Deze cmdlet retourneert objecten die worden bepaald door de invoer.
   - Scripts die tijd wachten op resultaten of het uitvoeren van bestands bewerkingen
 
   Het gebruik van de **parallelle** para meter kan ertoe leiden dat scripts veel langzamer worden uitgevoerd dan normaal. Met name als de parallelle scripts trivial zijn. Experimenteer met **parallel** om te ontdekken waar het nuttig kan zijn.
+
+- [PipelineVariable](About/about_CommonParameters.md) common para meter-variabelen worden _niet_ ondersteund in scenario's, `Foreach-Object -Parallel` zelfs niet met het `$using:` sleutel woord.
 
   > [!IMPORTANT]
   > `ForEach-Object -Parallel`Met de parameterset worden script blokken parallel uitgevoerd in afzonderlijke proces threads. Met het `$using:` sleutel woord kunnen variabelen verwijzingen door geven van de aanroep thread van de cmdlet naar elke actieve script blok thread. Aangezien de script blokken worden uitgevoerd in verschillende threads, moeten de object variabelen die worden door gegeven door verwijzing, veilig worden gebruikt. Over het algemeen is het veilig om te lezen van objecten waarnaar wordt verwezen en die niet worden gewijzigd. Maar als de object status wordt gewijzigd, moet u de beveiligde objecten van de thread gebruiken, zoals .net **System. verzameling. gelijktijdige** typen (Zie voor beeld 11).

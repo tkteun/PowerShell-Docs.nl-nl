@@ -3,16 +3,16 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 02/18/2021
+ms.date: 03/26/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ForEach-Object
-ms.openlocfilehash: c8b674a895bb323b734f018e5e8654cfec4d0045
-ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
+ms.openlocfilehash: 7da05aed73fdb52132404bc08f0fd39fafbfc4ca
+ms.sourcegitcommit: ca5a89977913bad9efec6bcc23a792d113ec0396
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101685575"
+ms.lasthandoff: 03/27/2021
+ms.locfileid: "105631048"
 ---
 # ForEach-Object
 
@@ -42,7 +42,7 @@ ForEach-Object -Parallel <scriptblock> [-InputObject <PSObject>] [-ThrottleLimit
 [-UseNewRunspace] [-TimeoutSeconds <int>] [-AsJob] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Beschrijving
+## Description
 
 `ForEach-Object`Met de cmdlet wordt een bewerking uitgevoerd op elk item in een verzameling invoer objecten. De invoer objecten kunnen worden gesluizen naar de cmdlet of worden opgegeven met behulp van de para meter **input object** .
 
@@ -699,6 +699,8 @@ Deze cmdlet retourneert objecten die worden bepaald door de invoer.
   - Scripts die tijd wachten op resultaten of het uitvoeren van bestands bewerkingen
 
   Het gebruik van de **parallelle** para meter kan ertoe leiden dat scripts veel langzamer worden uitgevoerd dan normaal. Met name als de parallelle scripts trivial zijn. Experimenteer met **parallel** om te ontdekken waar het nuttig kan zijn.
+
+- [PipelineVariable](About/about_CommonParameters.md) common para meter-variabelen worden _niet_ ondersteund in scenario's, `Foreach-Object -Parallel` zelfs niet met het `$using:` sleutel woord.
 
   > [!IMPORTANT]
   > `ForEach-Object -Parallel`Met de parameterset worden script blokken parallel uitgevoerd in afzonderlijke proces threads. Met het `$using:` sleutel woord kunnen variabelen verwijzingen door geven van de aanroep thread van de cmdlet naar elke actieve script blok thread. Aangezien de script blokken worden uitgevoerd in verschillende threads, moeten de object variabelen die worden door gegeven door verwijzing, veilig worden gebruikt. Over het algemeen is het veilig om te lezen van objecten waarnaar wordt verwezen en die niet worden gewijzigd. Maar als de object status wordt gewijzigd, moet u de beveiligde objecten van de thread gebruiken, zoals .net **System. verzameling. gelijktijdige** typen (Zie voor beeld 11).
