@@ -7,12 +7,12 @@ ms.date: 04/27/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-typedata?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-TypeData
-ms.openlocfilehash: 431b768ba909ddbd3671f03fc52789ae56c01019
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 252915c63539ce4af2ae56a04c4488cc14a13826
+ms.sourcegitcommit: bdd0fedaf9ba534645b2f7eb1fe1241481f58715
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93250422"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105936492"
 ---
 # Get-TypeData
 
@@ -25,7 +25,7 @@ Hiermee worden de uitgebreide type gegevens in de huidige sessie opgehaald.
 Get-TypeData [[-TypeName] <String[]>] [<CommonParameters>]
 ```
 
-## Beschrijving
+## Description
 
 De `Get-TypeData` cmdlet haalt de uitgebreide type gegevens in de huidige sessie op. Dit omvat type gegevens die zijn toegevoegd aan de sessie per `Types.ps1xml` bestand en dynamische type gegevens die zijn toegevoegd met behulp van de para meter van de `Update-TypeData` cmdlet.
 
@@ -47,20 +47,19 @@ In dit voor beeld worden alle uitgebreide type gegevens in de huidige sessie opg
 Get-TypeData
 ```
 
-### Voor beeld 2: typen op naam ophalen
+### Voor beeld 2: type gegevens ophalen op naam
 
-In dit voor beeld worden alle typen in de huidige sessie opgehaald die gebeurtenissen bevatten.
+In dit voor beeld worden alle type gegevens in de huidige sessie opgehaald waarvan de naam is gekwalificeerd met ' System.IO '.
 
- ```powershell
-"*Eventing*" | Get-TypeData
+```powershell
+Get-TypeData -TypeName System.IO.*
 ```
 
 ```Output
-TypeName                                                  Members
---------                                                  -------
-System.Diagnostics.Eventing.Reader.EventLogConfiguration  {}System.Diagnostics.Eventing.Reader.EventLogRecord
-                                                          {}System.Diagnostics.Eventing.Reader.ProviderMetadata
-                                                          {[ProviderName, System.Management.Automation.Runspaces.AliasProper...
+TypeName                Members
+--------                -------
+System.IO.DirectoryInfo {[Mode, System.Management.Automation.Runspaces.CodePropert…
+System.IO.FileInfo      {[Mode, System.Management.Automation.Runspaces.CodePropert…
 ```
 
 ### Voor beeld 3: het script blok ophalen waarmee een eigenschaps waarde wordt gemaakt
@@ -132,11 +131,11 @@ Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - Er
 
 U kunt typen van het type sluizen naar `Get-TypeData` .
 
-## Uitvoer
+## Uitvoerwaarden
 
 ### System. Management. Automation. Runspaces. TypeData
 
-## Opmerkingen
+## Notities
 
 `Get-TypeData` haalt alleen de uitgebreide type gegevens in de huidige sessie op. Er worden geen uitgebreide type gegevens opgehaald die zich op de computer bevinden, maar die niet zijn toegevoegd aan de huidige sessie, zoals uitgebreide typen die zijn gedefinieerd in modules die niet in de huidige sessie zijn geïmporteerd.
 

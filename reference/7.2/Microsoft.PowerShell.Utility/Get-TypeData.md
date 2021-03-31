@@ -6,12 +6,12 @@ ms.date: 04/27/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-typedata?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-TypeData
-ms.openlocfilehash: db5dc586f2a165d83c25bdf2addaeb625f9e1ba0
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: a4f7106bfeadc963a265f5fb239f9fa6bab40800
+ms.sourcegitcommit: bdd0fedaf9ba534645b2f7eb1fe1241481f58715
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94704748"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105936509"
 ---
 # Get-TypeData
 
@@ -46,20 +46,19 @@ In dit voor beeld worden alle uitgebreide type gegevens in de huidige sessie opg
 Get-TypeData
 ```
 
-### Voor beeld 2: typen op naam ophalen
+### Voor beeld 2: type gegevens ophalen op naam
 
-In dit voor beeld worden alle typen in de huidige sessie opgehaald die gebeurtenissen bevatten.
+In dit voor beeld worden alle type gegevens in de huidige sessie opgehaald waarvan de naam is gekwalificeerd met ' System.IO '.
 
- ```powershell
-"*Eventing*" | Get-TypeData
+```powershell
+Get-TypeData -TypeName System.IO.*
 ```
 
 ```Output
-TypeName                                                  Members
---------                                                  -------
-System.Diagnostics.Eventing.Reader.EventLogConfiguration  {}System.Diagnostics.Eventing.Reader.EventLogRecord
-                                                          {}System.Diagnostics.Eventing.Reader.ProviderMetadata
-                                                          {[ProviderName, System.Management.Automation.Runspaces.AliasProper...
+TypeName                Members
+--------                -------
+System.IO.DirectoryInfo {[Mode, System.Management.Automation.Runspaces.CodePropert…
+System.IO.FileInfo      {[Mode, System.Management.Automation.Runspaces.CodePropert…
 ```
 
 ### Voor beeld 3: het script blok ophalen waarmee een eigenschaps waarde wordt gemaakt

@@ -1,16 +1,16 @@
 ---
 description: Beschrijft variabelen waarin status informatie voor Power shell wordt opgeslagen. Deze variabelen worden gemaakt en onderhouden door Power shell.
 Locale: en-US
-ms.date: 03/15/2021
+ms.date: 03/29/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Automatic_Variables
-ms.openlocfilehash: d06adeac446caf6589bf4e49db2bb7d4ec158dcf
-ms.sourcegitcommit: 15f759ca68d17acecab46b52250298d4f2037c4d
+ms.openlocfilehash: 68d67c341db46015da948fe24c2e16b305b669e9
+ms.sourcegitcommit: bdd0fedaf9ba534645b2f7eb1fe1241481f58715
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103575743"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105936696"
 ---
 # <a name="about-automatic-variables"></a>Over automatische variabelen
 
@@ -149,10 +149,13 @@ Bevat de afsluit code van het laatste op Windows gebaseerde programma dat is uit
 
 ### <a name="matches"></a>$Matches
 
-De `Matches` variabele werkt met de `-match` `-notmatch` Opera tors en.
+De `$Matches` variabele werkt met de `-match` `-notmatch` Opera tors en.
 Wanneer u scalaire invoer verzendt naar `-match` de `-notmatch` operator OR en één overeenkomst detecteert, wordt een Booleaanse waarde geretourneerd en wordt de `$Matches` Automatische variabele gevuld met een hash-tabel van de teken reeks waarden die overeenkomen. De `$Matches` hash-tabel kan ook worden gevuld met opnamen wanneer u reguliere expressies met de operator gebruikt `-match` .
 
 Zie about_Comparison_Operators voor meer informatie over de `-match` - [](about_comparison_operators.md)operator. Zie [about_Regular_Expressions](about_Regular_Expressions.md)voor meer informatie over reguliere expressies.
+
+De `$Matches` variabele werkt ook in een `switch` instructie met de `-Regex` para meter. Het is op dezelfde manier gevuld als de `-match` `-notmatch` Opera tors en.
+Zie about_Switch voor meer informatie over de `switch` - [](about_Switch.md)instructie.
 
 ### <a name="myinvocation"></a>$MyInvocation
 
