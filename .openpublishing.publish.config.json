@@ -57,7 +57,7 @@
         "PowershellCmdlet": "Content",
         "Conceptual": "Content"
       },
-      "xref_query_tags": ["/dotnet", "/uwp/api"],
+      "xref_query_tags": ["/dotnet", "/powershell","/uwp/api"],
       "version": 0
     }],
   "git_repository_branch_open_to_public_contributors": "live",
