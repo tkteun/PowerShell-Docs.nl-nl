@@ -1,29 +1,27 @@
 ---
 description: Hierin wordt uitgelegd hoe u de operator split gebruikt om een of meer teken reeksen te splitsen in subtekenreeksen.
-keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 12/20/2017
+ms.date: 03/30/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_split?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Split
-ms.openlocfilehash: e93f68265bf560b03ac503ca914a11dde1f6b061
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 1667964840c0ead67ccd72aac4697779b84f864e
+ms.sourcegitcommit: 4d6ed6f7d747a9bbb3fcfcf6c981c5aa8a973a08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93252554"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106072643"
 ---
 # <a name="about-split"></a>Over splitsen
 
 ## <a name="short-description"></a>KORTE BESCHRIJVING
-
 Hierin wordt uitgelegd hoe u de operator split gebruikt om een of meer teken reeksen te splitsen in subtekenreeksen.
 
 ## <a name="long-description"></a>LANGE BESCHRIJVING
 
 Met de operator Split worden een of meer teken reeksen gesplitst in subtekenreeksen. U kunt de volgende elementen van de gesplitste bewerking wijzigen:
 
-- Vorm. De standaard waarde is witruimte, maar u kunt tekens, teken reeksen, patronen of script blokken opgeven waarmee het scheidings teken wordt opgegeven. De Splits operator in Windows Power Shell maakt gebruik van een reguliere expressie in het scheidings teken, in plaats van een eenvoudig personage.
+- Vorm. De standaard waarde is witruimte, maar u kunt tekens, teken reeksen, patronen of script blokken opgeven waarmee het scheidings teken wordt opgegeven. De Splits operator in Power Shell maakt gebruik van een reguliere expressie in het scheidings teken, in plaats van een eenvoudig personage.
 - Het maximum aantal subtekenreeksen. Standaard worden alle subtekenreeksen geretourneerd. Als u een getal opgeeft dat kleiner is dan het aantal subtekenreeksen, worden de resterende subtekenreeksen samengevoegd in de laatste subtekenreeks.
 - Opties die de voor waarden opgeven waaronder het scheidings teken wordt vergeleken, zoals SimpleMatch en meerregelige.
 
@@ -62,7 +60,7 @@ green
 
 De tekens die het einde van een subtekenreeks identificeren. Het standaard scheidings teken is witruimte, inclusief spaties en niet-afdruk bare tekens, zoals nieuwe regel ( \` n) en tab ( \` t). Wanneer de teken reeksen zijn gesplitst, wordt het scheidings teken uit alle subtekenreeksen wegge laten. Voorbeeld:
 
-```
+```powershell
 "Lastname:FirstName:Address" -split ":"
 Lastname
 FirstName
@@ -70,11 +68,11 @@ Address
 ```
 
 Standaard wordt het scheidings teken uit de resultaten wegge laten. Als u het scheidings teken geheel of gedeeltelijk wilt behouden, plaatst u tussen haakjes het onderdeel dat u wilt behouden.
-Als de \<Max-substrings\> para meter wordt toegevoegd, heeft dit prioriteit wanneer uw opdracht de verzameling opsplitst. Als u ervoor kiest om een scheidings teken op te nemen als onderdeel van de uitvoer, retourneert de opdracht het scheidings teken als onderdeel van de uitvoer; het splitsen van de teken reeks om het scheidings teken als onderdeel van de uitvoer te retour neren, telt echter niet als een splitsing.
+Als de `<Max-substrings>` para meter wordt toegevoegd, heeft dit prioriteit wanneer uw opdracht de verzameling opsplitst. Als u ervoor kiest om een scheidings teken op te nemen als onderdeel van de uitvoer, retourneert de opdracht het scheidings teken als onderdeel van de uitvoer; het splitsen van de teken reeks om het scheidings teken als onderdeel van de uitvoer te retour neren, telt echter niet als een splitsing.
 
 Voorbeelden:
 
-```
+```powershell
 "Lastname:FirstName:Address" -split "(:)"
 Lastname
 :
@@ -90,26 +88,9 @@ FirstName
 Address
 ```
 
-In het volgende voor beeld \<Max-substrings\> is ingesteld op 3. Dit resulteert in drie delen van de teken reeks waarden, maar in totaal vijf teken reeksen in de resulterende uitvoer; het scheidings teken wordt opgenomen na de splitsing, totdat het maximum van de drie subtekenreeksen is bereikt. Extra scheidings tekens in de uiteindelijke subtekenreeks worden deel van de subtekenreeks.
+### `<Max-substrings>`
 
-```powershell
-'Chocolate-Vanilla-Strawberry-Blueberry' -split '(-)', 3
-```
-
-```output
-Chocolate
--
-Vanilla
--
-Strawberry-Blueberry
-```
-
-### \<Max-substrings\>
-
-Hiermee geeft u het maximum aantal keren op dat een teken reeks moet worden gesplitst. De standaard waarde is alle subtekenreeksen die door het scheidings teken worden gesplitst. Als er meer subtekenreeksen zijn, worden deze samengevoegd met de uiteindelijke subtekenreeks. Als er minder subtekenreeksen zijn, worden alle subtekenreeksen geretourneerd. De waarde 0 en negatieve waarden geven alle subtekenreeksen als resultaat.
-
-Max-subtekenreeksen geeft niet het maximum aantal objecten op dat wordt geretourneerd. de waarde is gelijk aan het maximum aantal keren dat een teken reeks wordt gesplitst.
-Als u meer dan één teken reeks (een matrix met teken reeksen) naar de Splits operator verzendt, wordt de limiet voor de maximale subtekenreeksen voor elke teken reeks afzonderlijk toegepast.
+Hiermee geeft u het maximum aantal subtekenreeksen op dat door de Splits bewerking wordt geretourneerd. De standaard waarde is alle subtekenreeksen die worden gesplitst door het scheidings teken. Als er meer subtekenreeksen zijn, worden deze samengevoegd met de uiteindelijke subtekenreeks. Als er minder subtekenreeksen zijn, worden alle subtekenreeksen geretourneerd. De waarde 0 retourneert alle subtekenreeksen.
 
 Voorbeeld:
 
@@ -118,13 +99,45 @@ $c = "Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune"
 $c -split ",", 5
 ```
 
-```output
+```Output
 Mercury
 Venus
 Earth
 Mars
 Jupiter,Saturn,Uranus,Neptune
 ```
+
+Als u meer dan één teken reeks (een matrix met teken reeksen) naar de `-split` operator verzendt, `Max-substrings` wordt de limiet voor elke teken reeks afzonderlijk toegepast.
+
+```powershell
+$c = 'a,b,c','1,2,3,4,5'
+$c -split ',', 3
+
+a
+b
+c
+1
+2
+3,4,5
+```
+
+`<Max-substrings>` geeft niet het maximum aantal objecten op dat wordt geretourneerd. In het volgende voor beeld `<Max-substrings>` is ingesteld op 3.
+Dit resulteert in drie subtekenreekswaarde waarden, maar in totaal vijf teken reeksen in de resulterende uitvoer. Het scheidings teken wordt opgenomen na de splitsing totdat het maximum van de drie subtekenreeksen is bereikt. Extra scheidings tekens in de uiteindelijke subtekenreeks worden deel van de subtekenreeks.
+
+```powershell
+'Chocolate-Vanilla-Strawberry-Blueberry' -split '(-)', 3
+```
+
+```Output
+Chocolate
+-
+Vanilla
+-
+Strawberry-Blueberry
+```
+
+Negatieve waarden worden genegeerd.
+
 
 ### \<ScriptBlock\>
 
@@ -137,7 +150,7 @@ $c = "Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune"
 $c -split {$_ -eq "e" -or $_ -eq "p"}
 ```
 
-```output
+```Output
 M
 rcury,V
 nus,
@@ -164,19 +177,19 @@ De syntaxis voor de para meter Options is:
 
 De SimpleMatch-opties zijn:
 
-- **SimpleMatch** : gebruik eenvoudige teken reeks vergelijking bij het evalueren van het scheidings teken. Kan niet worden gebruikt met RegexMatch.
-- **IgnoreCase** : dwingt niet-hoofdletter gevoelige overeenkomst af, zelfs als de operator-cSplit is opgegeven.
+- **SimpleMatch**: gebruik eenvoudige teken reeks vergelijking bij het evalueren van het scheidings teken. Kan niet worden gebruikt met RegexMatch.
+- **IgnoreCase**: dwingt niet-hoofdletter gevoelige overeenkomst af, zelfs als de operator-cSplit is opgegeven.
 
 De RegexMatch-opties zijn:
 
-- **RegexMatch** : gebruik reguliere expressie matching om het scheidings teken te evalueren. Dit is de standaardinstelling. Kan niet worden gebruikt met SimpleMatch.
-- **IgnoreCase** : dwingt niet-hoofdletter gevoelige overeenkomst af, zelfs als de operator-cSplit is opgegeven.
-- **CultureInvariant** : negeert culturele verschillen in taal wanneer het scheidings teken wordt evaluting. Alleen geldig voor RegexMatch.
-- **IgnorePatternWhitespace** : negeert witruimte zonder escape-teken en opmerkingen met het hekje (#). Alleen geldig voor RegexMatch.
+- **RegexMatch**: gebruik reguliere expressie matching om het scheidings teken te evalueren. Dit is de standaardinstelling. Kan niet worden gebruikt met SimpleMatch.
+- **IgnoreCase**: dwingt niet-hoofdletter gevoelige overeenkomst af, zelfs als de operator-cSplit is opgegeven.
+- **CultureInvariant**: negeert culturele verschillen in taal wanneer het scheidings teken wordt evaluting. Alleen geldig voor RegexMatch.
+- **IgnorePatternWhitespace**: negeert witruimte zonder escape-teken en opmerkingen met het hekje (#). Alleen geldig voor RegexMatch.
 - **Meerdere** regels: de modus `^` voor meerdere regels en `$` het begin einde van elke regel wordt vergeleken in plaats van het begin en het einde van de invoer teken reeks.
-- **Modus singleline** : de modus singleline-modus behandelt de invoer teken reeks als een *modus singleline*.
+- **Modus singleline**: de modus singleline-modus behandelt de invoer teken reeks als een *modus singleline*.
   Hiermee wordt het `.` teken afgedwongen dat overeenkomt met elk teken (inclusief nieuwe regels), in plaats van elk teken te vergelijken met de nieuwe regel `\n` .
-- **ExplicitCapture** : negeert niet-benoemde overeenkomende groepen, zodat alleen expliciete opname groepen worden geretourneerd in de lijst met resultaten. Alleen geldig voor RegexMatch.
+- **ExplicitCapture**: negeert niet-benoemde overeenkomende groepen, zodat alleen expliciete opname groepen worden geretourneerd in de lijst met resultaten. Alleen geldig voor RegexMatch.
 
 > [!NOTE]
 > Modus singleline is het standaard gedrag. Modus singleline en meerregelige kunnen niet worden gebruikt in combi natie met de para meter Options. Dit probleem is opgelost in Power shell 6,0.
@@ -235,7 +248,7 @@ De volgende instructie splitst de teken reeks op een spatie.
 -split "Windows PowerShell 2.0`nWindows PowerShell with remoting"
 ```
 
-```output
+```Output
 
 Windows
 PowerShell
@@ -252,7 +265,7 @@ De volgende instructie splitst de teken reeks op een wille keurige komma.
 "Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune" -split ','
 ```
 
-```output
+```Output
 Mercury
 Venus
 Earth
@@ -269,7 +282,7 @@ Met de volgende instructie wordt de teken reeks in het patroon ' er ' gesplitst.
 "Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune" -split 'er'
 ```
 
-```output
+```Output
 M
 cury,Venus,Earth,Mars,Jupit
 ,Saturn,Uranus,Neptune
@@ -281,7 +294,7 @@ De volgende instructie voert een hoofdletter gevoelige splitsing uit op de lette
 "Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune" -cSplit 'N'
 ```
 
-```output
+```Output
 Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,
 eptune
 ```
@@ -292,7 +305,7 @@ Met de volgende instructie wordt de teken reeks op ' e ' en ' t ' gesplitst.
 "Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune" -split '[et]'
 ```
 
-```output
+```Output
 M
 rcury,V
 nus,
@@ -311,7 +324,7 @@ Met de volgende instructie wordt de teken reeks op ' e ' en ' r ' gesplitst, maa
 "Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune" -split '[er]', 6
 ```
 
-```output
+```Output
 M
 
 cu
@@ -326,7 +339,7 @@ Met de volgende instructie wordt een teken reeks gesplitst in drie subtekenreeks
 "a,b,c,d,e,f,g,h" -split ",", 3
 ```
 
-```output
+```Output
 a
 b
 c,d,e,f,g,h
@@ -339,7 +352,7 @@ Met de volgende instructie splitst u twee teken reeksen in drie subtekenreeksen.
 "a,b,c,d", "e,f,g,h" -split ",", 3
 ```
 
-```output
+```Output
 a
 b
 c,d
@@ -378,7 +391,7 @@ Met de standaard waarde RegexMatch, de punt tussen aanhalings tekens (".") wordt
 "This.is.a.test" -split "\."
 ```
 
-```output
+```Output
 This
 is
 a
@@ -393,7 +406,7 @@ De 0 vertegenwoordigt de waarde ' return all ' van de para meter Max-subtekenree
 "This.is.a.test" -split ".", 0, "simplematch"
 ```
 
-```output
+```Output
 This
 is
 a
@@ -408,7 +421,7 @@ $c = "LastName, FirstName; Address, City, State, Zip"
 $c -split $(if ($i -lt 1) {","} else {";"})
 ```
 
-```output
+```Output
 LastName, FirstName
  Address, City, State, Zip
 ```

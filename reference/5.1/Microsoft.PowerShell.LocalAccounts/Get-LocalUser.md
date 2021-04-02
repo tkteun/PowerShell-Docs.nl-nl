@@ -7,12 +7,12 @@ ms.date: 02/10/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.localaccounts/get-localuser?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-LocalUser
-ms.openlocfilehash: 34210145bcddc8d9420552d637a6cd6e5f8e61cc
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 2b1831a854c4c61d4c4631ae475a59d8240a926b
+ms.sourcegitcommit: 4d6ed6f7d747a9bbb3fcfcf6c981c5aa8a973a08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93249923"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106072271"
 ---
 # Get-LocalUser
 
@@ -70,7 +70,7 @@ Name                                    Enabled  Description
 MicrosoftAccount\username@outlook.com  True     Description of this account.
 ```
 
-### Voor beeld 3: een account ophalen dat is verbonden met een Microsoft-account
+### Voor beeld 3: een account met de opgegeven SID ophalen
 
 In dit voor beeld wordt een lokale gebruikers account met de opgegeven SID opgehaald.
 
@@ -136,7 +136,7 @@ Met deze cmdlet worden lokale gebruikers accounts geretourneerd.
 
 ## OPMERKINGEN
 
-De eigenschap **PrincipalSource** in de objecten **lokalegebruiker** , **LocalGroup** en **LocalPrincipal** beschrijft de bron van het object. De mogelijke bronnen zijn als volgt:
+De eigenschap **PrincipalSource** in de objecten **lokalegebruiker**, **LocalGroup** en **LocalPrincipal** beschrijft de bron van het object. De mogelijke bronnen zijn als volgt:
 
 - Lokaal
 - Active Directory

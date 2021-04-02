@@ -1,17 +1,16 @@
 ---
 description: Hierin wordt beschreven hoe variabelen waarden opslaan die kunnen worden gebruikt in Power shell.
-keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 11/09/2020
+ms.date: 03/30/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_variables?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Variables
-ms.openlocfilehash: 858015f42ff58baf653d8d0f1502df0f7ed4a63f
-ms.sourcegitcommit: 768816a5c05cc2d07ffd84bed95b0499f4b49f2d
+ms.openlocfilehash: 691f6607c239cc8104daab55a380c1b64c5ba2ac
+ms.sourcegitcommit: 4d6ed6f7d747a9bbb3fcfcf6c981c5aa8a973a08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94483096"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106072454"
 ---
 # <a name="about-variables"></a>Over variabelen
 
@@ -128,6 +127,21 @@ Remove-Variable -Name MyVariable
 ```powershell
 Remove-Item -Path Variable:\MyVariable
 ```
+
+Het is ook mogelijk om waarden toe te staan op meerdere variabelen met één instructie. In de volgende voor beelden wordt dezelfde waarde toegewezen aan meerdere variabelen:
+
+```powershell
+$a = $b = $c = 0
+```
+
+In het volgende voor beeld worden meerdere waarden toegewezen aan meerdere variabelen.
+
+```powershell
+$i,$j,$k = 10, "red", $true    # $i is 10, $j is "red", $k is True
+$i,$j = 10, "red", $true       # $i is 10, $j is [object[]], Length 2
+```
+
+Zie de sectie **meerdere variabelen toewijzen** van [about_Assignment_Operators](about_assignment_operators.md#assigning-multiple-variables)voor meer gedetailleerde informatie.
 
 ## <a name="types-of-variables"></a>Typen variabelen
 
@@ -250,7 +264,7 @@ De best practice is dat namen van variabelen alleen alfanumerieke tekens en het 
 
 Alfanumerieke namen van variabelen kunnen de volgende tekens bevatten:
 
-- Unicode-tekens uit deze categorieën: **Lu** , **ll** , **lt** , **LM** , **lo** of **ND**.
+- Unicode-tekens uit deze categorieën: **Lu**, **ll**, **lt**, **LM**, **lo** of **ND**.
 - Onderstrepings `_` teken ().
 - Vraag teken ( `?` )-teken.
 
@@ -395,7 +409,7 @@ Als u hulp wilt krijgen voor een specifieke cmdlet, typt u:
 Get-Help <cmdlet-name>
 ```
 
-| Naam van cmdlet       | Beschrijving                                |
+| Naam van cmdlet       | Description                                |
 | ---------------   | ------------------------------------------ |
 | `Clear-Variable`  | Hiermee verwijdert u de waarde van een variabele.           |
 | `Get-Variable`    | Hiermee worden de variabelen in de huidige console opgehaald. |
@@ -418,4 +432,3 @@ Get-Help <cmdlet-name>
 [about_Scopes](about_Scopes.md)
 
 [about_Remote_Variables](about_Remote_Variables.md)
-

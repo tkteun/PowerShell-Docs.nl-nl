@@ -1,16 +1,16 @@
 ---
 description: Hierin wordt beschreven hoe u Opera tors kunt gebruiken om waarden toe te wijzen aan variabelen.
 Locale: en-US
-ms.date: 04/26/2020
+ms.date: 03/30/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_assignment_operators?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Assignment_Operators
-ms.openlocfilehash: adc54dd045fdffbb6605554b535c92680ee0d525
-ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
+ms.openlocfilehash: 15eba306e3d1e9831a90fdc10b0a9c3039791d50
+ms.sourcegitcommit: 4d6ed6f7d747a9bbb3fcfcf6c981c5aa8a973a08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/12/2021
-ms.locfileid: "103195251"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106072661"
 ---
 # <a name="about-assignment-operators"></a>Over toewijzings operatoren
 
@@ -665,7 +665,9 @@ Tuesday, May 31, 2005 12:00:00 AM
 
 ## <a name="assigning-multiple-variables"></a>Meerdere variabelen toewijzen
 
-In Power shell kunt u waarden toewijzen aan meerdere variabelen met behulp van één opdracht. Het eerste element van de toewijzings waarde wordt toegewezen aan de eerste variabele, het tweede element wordt toegewezen aan de tweede variabele, het derde element aan de derde variabele, enzovoort. Met de volgende opdracht wordt bijvoorbeeld de waarde 1 toegewezen aan de `$a` variabele, de waarde 2 aan de `$b` variabele en de waarde 3 aan de `$c` variabele:
+In Power shell kunt u waarden toewijzen aan meerdere variabelen met behulp van één opdracht. Het eerste element van de toewijzings waarde wordt toegewezen aan de eerste variabele, het tweede element wordt toegewezen aan de tweede variabele, het derde element aan de derde variabele, enzovoort. Dit wordt een _Meervoudige toewijzing_ genoemd.
+
+Met de volgende opdracht wordt bijvoorbeeld de waarde 1 toegewezen aan de `$a` variabele, de waarde 2 aan de `$b` variabele en de waarde 3 aan de `$c` variabele:
 
 ```powershell
 $a, $b, $c = 1, 2, 3
@@ -686,13 +688,13 @@ $d, $e, $f = $c
 
 Met deze opdracht wordt de waarde 3 toegewezen aan de `$d` variabele, de waarde 4 voor de `$e` variabele en de waarde 5 voor de `$f` variabele.
 
-Als de toewijzings waarde minder elementen dan variabelen bevat, worden aan alle resterende variabelen aan het einde geen waarden toegewezen. De volgende opdracht bevat bijvoorbeeld drie variabelen en twee waarden:
+Als de toewijzings waarde minder elementen dan variabelen bevat, krijgen de resterende variabelen de waarde toegewezen `$null` . De volgende opdracht bevat bijvoorbeeld drie variabelen en twee waarden:
 
 ```powershell
 $a, $b, $c = 1, 2
 ```
 
-Daarom wijst Power shell de waarde 1 toe aan de `$a` variabele en de waarde 2 aan de `$b` variabele. Er wordt geen waarde aan de variabele toegewezen `$c` .
+Daarom wijst Power shell de waarde 1 toe aan de `$a` variabele en de waarde 2 aan de `$b` variabele. De `$c` variabele is `$null` .
 
 U kunt ook een enkele waarde aan meerdere variabelen toewijzen door de variabelen te koppelen. Met de volgende opdracht wordt bijvoorbeeld de waarde ' drie ' toegewezen aan alle vier de variabelen:
 
@@ -721,4 +723,3 @@ Set-Variable -Name a -Value 1, 2, 3
 [Remove-variabele](xref:Microsoft.PowerShell.Utility.Remove-Variable)
 
 [Set-variabele](xref:Microsoft.PowerShell.Utility.Set-Variable)
-

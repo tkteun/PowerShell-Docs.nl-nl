@@ -1,16 +1,16 @@
 ---
 description: Hierin wordt beschreven hoe variabelen waarden opslaan die kunnen worden gebruikt in Power shell.
 Locale: en-US
-ms.date: 11/09/2020
+ms.date: 03/30/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_variables?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Variables
-ms.openlocfilehash: 8d8c8d3098d33980c9c802bf00846a21e8baeb40
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 9c9c9aa7604a39aa0cc84ec252334649965f6941
+ms.sourcegitcommit: 4d6ed6f7d747a9bbb3fcfcf6c981c5aa8a973a08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94705507"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106072674"
 ---
 # <a name="about-variables"></a>Over variabelen
 
@@ -127,6 +127,21 @@ Remove-Variable -Name MyVariable
 ```powershell
 Remove-Item -Path Variable:\MyVariable
 ```
+
+Het is ook mogelijk om waarden toe te staan op meerdere variabelen met één instructie. In de volgende voor beelden wordt dezelfde waarde toegewezen aan meerdere variabelen:
+
+```powershell
+$a = $b = $c = 0
+```
+
+In het volgende voor beeld worden meerdere waarden toegewezen aan meerdere variabelen.
+
+```powershell
+$i,$j,$k = 10, "red", $true    # $i is 10, $j is "red", $k is True
+$i,$j = 10, "red", $true       # $i is 10, $j is [object[]], Length 2
+```
+
+Zie de sectie **meerdere variabelen toewijzen** van [about_Assignment_Operators](about_assignment_operators.md#assigning-multiple-variables)voor meer gedetailleerde informatie.
 
 ## <a name="types-of-variables"></a>Typen variabelen
 
@@ -417,4 +432,3 @@ Get-Help <cmdlet-name>
 [about_Scopes](about_Scopes.md)
 
 [about_Remote_Variables](about_Remote_Variables.md)
-

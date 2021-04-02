@@ -1,16 +1,16 @@
 ---
 description: Hierin wordt uitgelegd hoe u de operator split gebruikt om een of meer teken reeksen te splitsen in subtekenreeksen.
 Locale: en-US
-ms.date: 03/24/2020
+ms.date: 03/30/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_split?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Split
-ms.openlocfilehash: c7944c710ae3b6803772de77f50b639de4953340
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 08c6e3e049cb107c2f1745ca6796b88a063b897b
+ms.sourcegitcommit: 4d6ed6f7d747a9bbb3fcfcf6c981c5aa8a973a08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94706205"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106072764"
 ---
 # <a name="about-split"></a>Over splitsen
 
@@ -60,7 +60,7 @@ green
 
 De tekens die het einde van een subtekenreeks identificeren. Het standaard scheidings teken is witruimte, inclusief spaties en niet-afdruk bare tekens, zoals nieuwe regel ( \` n) en tab ( \` t). Wanneer de teken reeksen zijn gesplitst, wordt het scheidings teken uit alle subtekenreeksen wegge laten. Voorbeeld:
 
-```
+```powershell
 "Lastname:FirstName:Address" -split ":"
 Lastname
 FirstName
@@ -68,11 +68,11 @@ Address
 ```
 
 Standaard wordt het scheidings teken uit de resultaten wegge laten. Als u het scheidings teken geheel of gedeeltelijk wilt behouden, plaatst u tussen haakjes het onderdeel dat u wilt behouden.
-Als de \<Max-substrings\> para meter wordt toegevoegd, heeft dit prioriteit wanneer uw opdracht de verzameling opsplitst. Als u ervoor kiest om een scheidings teken op te nemen als onderdeel van de uitvoer, retourneert de opdracht het scheidings teken als onderdeel van de uitvoer; het splitsen van de teken reeks om het scheidings teken als onderdeel van de uitvoer te retour neren, telt echter niet als een splitsing.
+Als de `<Max-substrings>` para meter wordt toegevoegd, heeft dit prioriteit wanneer uw opdracht de verzameling opsplitst. Als u ervoor kiest om een scheidings teken op te nemen als onderdeel van de uitvoer, retourneert de opdracht het scheidings teken als onderdeel van de uitvoer; het splitsen van de teken reeks om het scheidings teken als onderdeel van de uitvoer te retour neren, telt echter niet als een splitsing.
 
 Voorbeelden:
 
-```
+```powershell
 "Lastname:FirstName:Address" -split "(:)"
 Lastname
 :
@@ -88,29 +88,9 @@ FirstName
 Address
 ```
 
-In het volgende voor beeld \<Max-substrings\> is ingesteld op 3. Dit resulteert in drie delen van de teken reeks waarden, maar in totaal vijf teken reeksen in de resulterende uitvoer; het scheidings teken wordt opgenomen na de splitsing, totdat het maximum van de drie subtekenreeksen is bereikt. Extra scheidings tekens in de uiteindelijke subtekenreeks worden deel van de subtekenreeks.
+### `<Max-substrings>`
 
-```powershell
-'Chocolate-Vanilla-Strawberry-Blueberry' -split '(-)', 3
-```
-
-```Output
-Chocolate
--
-Vanilla
--
-Strawberry-Blueberry
-```
-
-### \<Max-substrings\>
-
-Hiermee geeft u het maximum aantal keren op dat een teken reeks moet worden gesplitst. De standaard waarde is alle subtekenreeksen die door het scheidings teken worden gesplitst. Als er meer subtekenreeksen zijn, worden deze samengevoegd met de uiteindelijke subtekenreeks. Als er minder subtekenreeksen zijn, worden alle subtekenreeksen geretourneerd. De waarde 0 retourneert alle subtekenreeksen. Negatieve waarden geven de hoeveelheid subtekenreeksen aan die is aangevraagd vanaf het einde van de invoer teken reeks.
-
-> [!NOTE]
-> Er is ondersteuning voor negatieve waarden toegevoegd aan Power shell 7.
-
-**Max-subtekenreeksen** geeft niet het maximum aantal objecten op dat wordt geretourneerd. De waarde is gelijk aan het maximum aantal keren dat een teken reeks wordt gesplitst.
-Als u meer dan één teken reeks (een matrix met teken reeksen) naar de `-split` operator verzendt, wordt de limiet voor de **maximale subtekenreeksen** voor elke teken reeks afzonderlijk toegepast.
+Hiermee geeft u het maximum aantal subtekenreeksen op dat door de Splits bewerking wordt geretourneerd. De standaard waarde is alle subtekenreeksen die worden gesplitst door het scheidings teken. Als er meer subtekenreeksen zijn, worden deze samengevoegd met de uiteindelijke subtekenreeks. Als er minder subtekenreeksen zijn, worden alle subtekenreeksen geretourneerd. De waarde 0 retourneert alle subtekenreeksen.
 
 Voorbeeld:
 
@@ -126,6 +106,40 @@ Earth
 Mars
 Jupiter,Saturn,Uranus,Neptune
 ```
+
+Als u meer dan één teken reeks (een matrix met teken reeksen) naar de `-split` operator verzendt, `Max-substrings` wordt de limiet voor elke teken reeks afzonderlijk toegepast.
+
+```powershell
+$c = 'a,b,c','1,2,3,4,5'
+$c -split ',', 3
+
+a
+b
+c
+1
+2
+3,4,5
+```
+
+`<Max-substrings>` geeft niet het maximum aantal objecten op dat wordt geretourneerd. In het volgende voor beeld `<Max-substrings>` is ingesteld op 3.
+Dit resulteert in drie subtekenreekswaarde waarden, maar in totaal vijf teken reeksen in de resulterende uitvoer. Het scheidings teken wordt opgenomen na de splitsing totdat het maximum van de drie subtekenreeksen is bereikt. Extra scheidings tekens in de uiteindelijke subtekenreeks worden deel van de subtekenreeks.
+
+```powershell
+'Chocolate-Vanilla-Strawberry-Blueberry' -split '(-)', 3
+```
+
+```Output
+Chocolate
+-
+Vanilla
+-
+Strawberry-Blueberry
+```
+
+Negatieve waarden geven de hoeveelheid subtekenreeksen aan die is aangevraagd vanaf het einde van de invoer teken reeks.
+
+> [!NOTE]
+> Er is ondersteuning voor negatieve waarden toegevoegd aan Power shell 7.
 
 ```powershell
 $c = "Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune"
@@ -443,4 +457,3 @@ LastName, FirstName
 [about_Comparison_Operators](about_Comparison_Operators.md)
 
 [about_Join](about_Join.md)
-

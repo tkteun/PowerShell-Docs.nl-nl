@@ -1,13 +1,13 @@
 ---
 title: PowerShell installeren in Windows
 description: Informatie over het installeren van Power shell in Windows
-ms.date: 02/02/2021
-ms.openlocfilehash: bd3643c1ca6beb60a8727478a1ae612dcb34c7fb
-ms.sourcegitcommit: 080c8b05a1242348c365fe1684457e873325f11e
+ms.date: 03/30/2021
+ms.openlocfilehash: 7e21a34ea4dd74d2d8a9108393009c9c2660dff9
+ms.sourcegitcommit: 4d6ed6f7d747a9bbb3fcfcf6c981c5aa8a973a08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "103483433"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106072711"
 ---
 # <a name="installing-powershell-on-windows"></a>PowerShell installeren in Windows
 
@@ -211,7 +211,7 @@ Als u de [.net core SDK](/dotnet/core/sdk) al hebt geïnstalleerd, kunt u Power 
 dotnet tool install --global PowerShell
 ```
 
-Het hulp programma DotNet tool wordt toegevoegd `$env:USERPROFILE\dotnet\tools` aan de `$env:PATH` omgevings variabele. De momenteel actieve shell beschikt echter niet over de bijgewerkte versie `$env:PATH` . U kunt Power shell starten vanuit een nieuwe shell door te typen `pwsh` .
+Het hulp programma DotNet tool wordt toegevoegd `$env:USERPROFILE\.dotnet\tools` aan de `$env:PATH` omgevings variabele. De momenteel actieve shell beschikt echter niet over de bijgewerkte versie `$env:PATH` . U kunt Power shell starten vanuit een nieuwe shell door te typen `pwsh` .
 
 ## <a name="install-powershell-via-winget"></a>Power Shell installeren via Winget
 
