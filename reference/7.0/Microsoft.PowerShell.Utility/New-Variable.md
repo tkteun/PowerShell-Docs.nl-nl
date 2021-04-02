@@ -3,23 +3,23 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
+ms.date: 03/30/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/new-variable?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-Variable
-ms.openlocfilehash: 8d45f8b6b0272394fe855be07243412bd3a15d71
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: f23f725a92d5157001a1327cff3dbb3e785fd776
+ms.sourcegitcommit: 4d6ed6f7d747a9bbb3fcfcf6c981c5aa8a973a08
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93249546"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106072781"
 ---
-# <span data-ttu-id="bcc4c-103">New-Variable</span><span class="sxs-lookup"><span data-stu-id="bcc4c-103">New-Variable</span></span>
+# <span data-ttu-id="14724-103">New-Variable</span><span class="sxs-lookup"><span data-stu-id="14724-103">New-Variable</span></span>
 
-## <span data-ttu-id="bcc4c-104">SAMENVATTING</span><span class="sxs-lookup"><span data-stu-id="bcc4c-104">SYNOPSIS</span></span>
-<span data-ttu-id="bcc4c-105">Hiermee maakt u een nieuwe variabele.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-105">Creates a new variable.</span></span>
+## <span data-ttu-id="14724-104">Samen vatting</span><span class="sxs-lookup"><span data-stu-id="14724-104">Synopsis</span></span>
+<span data-ttu-id="14724-105">Hiermee maakt u een nieuwe variabele.</span><span class="sxs-lookup"><span data-stu-id="14724-105">Creates a new variable.</span></span>
 
-## <span data-ttu-id="bcc4c-106">SYNTAXIS</span><span class="sxs-lookup"><span data-stu-id="bcc4c-106">SYNTAX</span></span>
+## <span data-ttu-id="14724-106">Syntax</span><span class="sxs-lookup"><span data-stu-id="14724-106">Syntax</span></span>
 
 ```
 New-Variable [-Name] <String> [[-Value] <Object>] [-Description <String>] [-Option <ScopedItemOptions>]
@@ -27,34 +27,33 @@ New-Variable [-Name] <String> [[-Value] <Object>] [-Description <String>] [-Opti
  [<CommonParameters>]
 ```
 
-## <span data-ttu-id="bcc4c-107">BESCHRIJVING</span><span class="sxs-lookup"><span data-stu-id="bcc4c-107">DESCRIPTION</span></span>
-<span data-ttu-id="bcc4c-108">Met de cmdlet **new-variable** maakt u een nieuwe variabele in Power shell.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-108">The **New-Variable** cmdlet creates a new variable in PowerShell.</span></span>
-<span data-ttu-id="bcc4c-109">U kunt een waarde aan de variabele toewijzen tijdens het maken of de waarde toewijzen of wijzigen nadat deze is gemaakt.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-109">You can assign a value to the variable while creating it or assign or change the value after it is created.</span></span>
+## <span data-ttu-id="14724-107">Description</span><span class="sxs-lookup"><span data-stu-id="14724-107">Description</span></span>
 
-<span data-ttu-id="bcc4c-110">U kunt de para meters van **new-variable** gebruiken om de eigenschappen van de variabele in te stellen, het bereik van een variabele in te stellen en te bepalen of variabelen openbaar of privé zijn.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-110">You can use the parameters of **New-Variable** to set the properties of the variable, set the scope of a variable, and determine whether variables are public or private.</span></span>
+<span data-ttu-id="14724-108">De `New-Variable` cmdlet maakt een nieuwe variabele in Windows Power shell.</span><span class="sxs-lookup"><span data-stu-id="14724-108">The `New-Variable` cmdlet creates a new variable in Windows PowerShell.</span></span> <span data-ttu-id="14724-109">U kunt een waarde aan de variabele toewijzen tijdens het maken of de waarde toewijzen of wijzigen nadat deze is gemaakt.</span><span class="sxs-lookup"><span data-stu-id="14724-109">You can assign a value to the variable while creating it or assign or change the value after it is created.</span></span>
 
-<span data-ttu-id="bcc4c-111">Normaal gesp roken maakt u een nieuwe variabele door de naam van de variabele en de bijbehorende waarde te typen, zoals `$Var = 3` , maar u kunt de cmdlet **new-variable** gebruiken om de para meters te gebruiken.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-111">Typically, you create a new variable by typing the variable name and its value, such as `$Var = 3`, but you can use the **New-Variable** cmdlet to use its parameters.</span></span>
+<span data-ttu-id="14724-110">U kunt de para meters van gebruiken `New-Variable` om de eigenschappen van de variabele in te stellen, het bereik van een variabele in te stellen en te bepalen of variabelen openbaar of privé zijn.</span><span class="sxs-lookup"><span data-stu-id="14724-110">You can use the parameters of `New-Variable` to set the properties of the variable, set the scope of a variable, and determine whether variables are public or private.</span></span>
 
-## <span data-ttu-id="bcc4c-112">VOORBEELDEN</span><span class="sxs-lookup"><span data-stu-id="bcc4c-112">EXAMPLES</span></span>
+<span data-ttu-id="14724-111">Normaal gesp roken maakt u een nieuwe variabele door de naam van de variabele en de bijbehorende waarde te typen, zoals `$Var = 3` , maar u kunt de `New-Variable` cmdlet gebruiken om de para meters te gebruiken.</span><span class="sxs-lookup"><span data-stu-id="14724-111">Typically, you create a new variable by typing the variable name and its value, such as `$Var = 3`, but you can use the `New-Variable` cmdlet to use its parameters.</span></span>
 
-### <span data-ttu-id="bcc4c-113">Voor beeld 1: een variabele maken</span><span class="sxs-lookup"><span data-stu-id="bcc4c-113">Example 1: Create a variable</span></span>
+## <span data-ttu-id="14724-112">Voorbeelden</span><span class="sxs-lookup"><span data-stu-id="14724-112">Examples</span></span>
 
-```
-PS C:\> New-Variable days
-```
-
-<span data-ttu-id="bcc4c-114">Met deze opdracht maakt u een nieuwe variabele met de naam Days.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-114">This command creates a new variable named days.</span></span>
-<span data-ttu-id="bcc4c-115">U hoeft de para meter *name* niet te typen.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-115">You are not required to type the *Name* parameter.</span></span>
-
-### <span data-ttu-id="bcc4c-116">Voor beeld 2: een variabele maken en hieraan een waarde toewijzen</span><span class="sxs-lookup"><span data-stu-id="bcc4c-116">Example 2: Create a variable and assign it a value</span></span>
+### <span data-ttu-id="14724-113">Voor beeld 1: een variabele maken</span><span class="sxs-lookup"><span data-stu-id="14724-113">Example 1: Create a variable</span></span>
 
 ```
-PS C:\> New-Variable -Name "zipcode" -Value 98033
+New-Variable days
 ```
 
-<span data-ttu-id="bcc4c-117">Met deze opdracht maakt u een variabele met de naam ZipCode en wijst u deze toe aan de waarde 98033.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-117">This command creates a variable named zipcode and assigns it the value 98033.</span></span>
+<span data-ttu-id="14724-114">Met deze opdracht maakt u een nieuwe variabele met de naam Days.</span><span class="sxs-lookup"><span data-stu-id="14724-114">This command creates a new variable named days.</span></span> <span data-ttu-id="14724-115">U hoeft de para meter **name** niet te typen.</span><span class="sxs-lookup"><span data-stu-id="14724-115">You are not required to type the **Name** parameter.</span></span>
 
-### <span data-ttu-id="bcc4c-118">Voor beeld 3: een variabele met de optie ReadOnly maken</span><span class="sxs-lookup"><span data-stu-id="bcc4c-118">Example 3: Create a variable with the ReadOnly option</span></span>
+### <span data-ttu-id="14724-116">Voor beeld 2: een variabele maken en hieraan een waarde toewijzen</span><span class="sxs-lookup"><span data-stu-id="14724-116">Example 2: Create a variable and assign it a value</span></span>
+
+```
+New-Variable -Name "zipcode" -Value 98033
+```
+
+<span data-ttu-id="14724-117">Met deze opdracht maakt u een variabele met de naam ZipCode en wijst u deze toe aan de waarde 98033.</span><span class="sxs-lookup"><span data-stu-id="14724-117">This command creates a variable named zipcode and assigns it the value 98033.</span></span>
+
+### <span data-ttu-id="14724-118">Voor beeld 3: een variabele met de optie ReadOnly maken</span><span class="sxs-lookup"><span data-stu-id="14724-118">Example 3: Create a variable with the ReadOnly option</span></span>
 
 ```
 PS C:\> New-Variable -Name Max -Value 256 -Option ReadOnly
@@ -70,18 +69,24 @@ At line:1 char:1
 PS C:\> New-Variable -Name max -Value 1024 -Force
 ```
 
-<span data-ttu-id="bcc4c-119">In dit voor beeld ziet u hoe u de optie ReadOnly van **new-variable** gebruikt om een variabele te beschermen tegen overschrijven.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-119">This example shows how to use the ReadOnly option of **New-Variable** to protect a variable from being overwritten.</span></span>
+<span data-ttu-id="14724-119">In dit voor beeld ziet u hoe u de `ReadOnly` optie gebruikt `New-Variable` om een variabele te beschermen tegen overschrijven.</span><span class="sxs-lookup"><span data-stu-id="14724-119">This example shows how to use the `ReadOnly` option of `New-Variable` to protect a variable from being overwritten.</span></span>
 
-<span data-ttu-id="bcc4c-120">Met de eerste opdracht maakt u een nieuwe variabele met de naam Max en stelt u de waarde ervan in op 256.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-120">The first command creates a new variable named Max and sets its value to 256.</span></span>
-<span data-ttu-id="bcc4c-121">De para meter *Option* wordt gebruikt met de waarde readonly.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-121">It uses the *Option* parameter with a value of ReadOnly.</span></span>
+<span data-ttu-id="14724-120">Met de eerste opdracht maakt u een nieuwe variabele met de naam Max en stelt u de waarde ervan in op 256.</span><span class="sxs-lookup"><span data-stu-id="14724-120">The first command creates a new variable named Max and sets its value to 256.</span></span> <span data-ttu-id="14724-121">Hierbij wordt de para meter **Option** gebruikt met de waarde `ReadOnly` .</span><span class="sxs-lookup"><span data-stu-id="14724-121">It uses the **Option** parameter with a value of `ReadOnly`.</span></span>
 
-<span data-ttu-id="bcc4c-122">Met de tweede opdracht wordt geprobeerd een tweede variabele met dezelfde naam te maken.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-122">The second command tries to create a second variable with the same name.</span></span>
-<span data-ttu-id="bcc4c-123">Met deze opdracht wordt een fout geretourneerd omdat de optie alleen-lezen is ingesteld voor de variabele.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-123">This command returns an error, because the read-only option is set on the variable.</span></span>
+<span data-ttu-id="14724-122">Met de tweede opdracht wordt geprobeerd een tweede variabele met dezelfde naam te maken.</span><span class="sxs-lookup"><span data-stu-id="14724-122">The second command tries to create a second variable with the same name.</span></span> <span data-ttu-id="14724-123">Met deze opdracht wordt een fout geretourneerd omdat de optie alleen-lezen is ingesteld voor de variabele.</span><span class="sxs-lookup"><span data-stu-id="14724-123">This command returns an error, because the read-only option is set on the variable.</span></span>
 
-<span data-ttu-id="bcc4c-124">De derde opdracht maakt gebruik van de para meter *Force* om de alleen-lezen beveiliging voor de variabele te onderdrukken.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-124">The third command uses the *Force* parameter to override the read-only protection on the variable.</span></span>
-<span data-ttu-id="bcc4c-125">In dit geval wordt de opdracht voor het maken van een nieuwe variabele met dezelfde naam geslaagd.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-125">In this case, the command to create a new variable with the same name succeeds.</span></span>
+<span data-ttu-id="14724-124">De derde opdracht maakt gebruik van de para meter **Force** om de alleen-lezen beveiliging voor de variabele te onderdrukken.</span><span class="sxs-lookup"><span data-stu-id="14724-124">The third command uses the **Force** parameter to override the read-only protection on the variable.</span></span>
+<span data-ttu-id="14724-125">In dit geval wordt de opdracht voor het maken van een nieuwe variabele met dezelfde naam geslaagd.</span><span class="sxs-lookup"><span data-stu-id="14724-125">In this case, the command to create a new variable with the same name succeeds.</span></span>
 
-### <span data-ttu-id="bcc4c-126">Voor beeld 4: een persoonlijke variabele maken</span><span class="sxs-lookup"><span data-stu-id="bcc4c-126">Example 4: Create a private variable</span></span>
+### <span data-ttu-id="14724-126">Voor beeld 4: meerdere opties toewijzen aan een variabele</span><span class="sxs-lookup"><span data-stu-id="14724-126">Example 4: Assign multiple options to a variable</span></span>
+
+```powershell
+New-Variable -Name 'TestVariable' -Value 'Test Value' -Option AllScope,Constant
+```
+
+<span data-ttu-id="14724-127">In dit voor beeld wordt een variabele gemaakt en worden de `AllScope` Opties en toegewezen `Constant` zodat de variabele beschikbaar is in het huidige bereik en eventuele nieuwe scopes die zijn gemaakt en niet kunnen worden gewijzigd of verwijderd.</span><span class="sxs-lookup"><span data-stu-id="14724-127">This example creates a variable and assigns the `AllScope` and `Constant` options so the variable will be available in the current scope and any new scopes created and cannot be changed or deleted.</span></span>
+
+### <span data-ttu-id="14724-128">Voor beeld 5: een persoonlijke variabele maken</span><span class="sxs-lookup"><span data-stu-id="14724-128">Example 5: Create a private variable</span></span>
 
 ```
 PS C:\> New-Variable -Name counter -Visibility Private
@@ -112,14 +117,11 @@ Counter1     3.1415
 ...
 ```
 
-<span data-ttu-id="bcc4c-127">Met deze opdracht wordt het gedrag van een persoonlijke variabele in een module gedemonstreerd.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-127">This command demonstrates the behavior of a private variable in a module.</span></span>
-<span data-ttu-id="bcc4c-128">De module bevat de cmdlet Get-Counter, die een persoonlijke variabele met de naam counter heeft.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-128">The module contains the Get-Counter cmdlet, which has a private variable named Counter.</span></span>
-<span data-ttu-id="bcc4c-129">De opdracht gebruikt de *zichtbaarheids* parameter met de waarde privé om de variabele te maken.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-129">The command uses the *Visibility* parameter with a value of Private to create the variable.</span></span>
+<span data-ttu-id="14724-129">Met deze opdracht wordt het gedrag van een persoonlijke variabele in een module gedemonstreerd.</span><span class="sxs-lookup"><span data-stu-id="14724-129">This command demonstrates the behavior of a private variable in a module.</span></span> <span data-ttu-id="14724-130">De module bevat de `Get-Counter` cmdlet, die een persoonlijke variabele met de naam counter heeft.</span><span class="sxs-lookup"><span data-stu-id="14724-130">The module contains the `Get-Counter` cmdlet, which has a private variable named Counter.</span></span> <span data-ttu-id="14724-131">De opdracht gebruikt de **zichtbaarheids** parameter met de waarde privé om de variabele te maken.</span><span class="sxs-lookup"><span data-stu-id="14724-131">The command uses the **Visibility** parameter with a value of Private to create the variable.</span></span>
 
-<span data-ttu-id="bcc4c-130">De voorbeeld uitvoer toont het gedrag van een persoonlijke variabele.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-130">The sample output shows the behavior of a private variable.</span></span>
-<span data-ttu-id="bcc4c-131">De gebruiker die de module heeft geladen kan de waarde van de item variabele niet weer geven of wijzigen, maar de teller variabele kan worden gelezen en gewijzigd door de opdrachten in de module.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-131">The user who has loaded the module cannot view or change the value of the Counter variable, but the Counter variable can be read and changed by the commands in the module.</span></span>
+<span data-ttu-id="14724-132">De voorbeeld uitvoer toont het gedrag van een persoonlijke variabele.</span><span class="sxs-lookup"><span data-stu-id="14724-132">The sample output shows the behavior of a private variable.</span></span> <span data-ttu-id="14724-133">De gebruiker die de module heeft geladen kan de waarde van de item variabele niet weer geven of wijzigen, maar de teller variabele kan worden gelezen en gewijzigd door de opdrachten in de module.</span><span class="sxs-lookup"><span data-stu-id="14724-133">The user who has loaded the module cannot view or change the value of the Counter variable, but the Counter variable can be read and changed by the commands in the module.</span></span>
 
-### <span data-ttu-id="bcc4c-132">Voor beeld 5: een variabele met een spatie maken</span><span class="sxs-lookup"><span data-stu-id="bcc4c-132">Example 5: Create a variable with a space</span></span>
+### <span data-ttu-id="14724-134">Voor beeld 6: een variabele met een spatie maken</span><span class="sxs-lookup"><span data-stu-id="14724-134">Example 6: Create a variable with a space</span></span>
 
 ```
 PS C:\> New-Variable -Name 'with space' -Value 'abc123xyz'
@@ -134,13 +136,13 @@ PS C:\> ${with space}
 abc123xyz
 ```
 
-<span data-ttu-id="bcc4c-133">Met deze opdracht wordt gedemonstreerd dat variabelen met spaties kunnen worden gemaakt.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-133">This command demonstrates that variables with spaces can be created.</span></span>
-<span data-ttu-id="bcc4c-134">De variabelen zijn toegankelijk met de cmdlet **Get-variable** of rechtstreeks door een variabele met accolades te scheiden.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-134">The variables can be accessed using the **Get-Variable** cmdlet or directly by delimiting a variable with braces.</span></span>
+<span data-ttu-id="14724-135">Met deze opdracht wordt gedemonstreerd dat variabelen met spaties kunnen worden gemaakt.</span><span class="sxs-lookup"><span data-stu-id="14724-135">This command demonstrates that variables with spaces can be created.</span></span> <span data-ttu-id="14724-136">U kunt toegang krijgen tot de variabelen met behulp van de `Get-Variable` cmdlet of rechtstreeks door een variabele met accolades te scheiden.</span><span class="sxs-lookup"><span data-stu-id="14724-136">The variables can be accessed using the `Get-Variable` cmdlet or directly by delimiting a variable with braces.</span></span>
 
-## <span data-ttu-id="bcc4c-135">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="bcc4c-135">PARAMETERS</span></span>
+## <span data-ttu-id="14724-137">Parameters</span><span class="sxs-lookup"><span data-stu-id="14724-137">Parameters</span></span>
 
-### <span data-ttu-id="bcc4c-136">-Beschrijving</span><span class="sxs-lookup"><span data-stu-id="bcc4c-136">-Description</span></span>
-<span data-ttu-id="bcc4c-137">Hiermee geeft u een beschrijving van de variabele.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-137">Specifies a description of the variable.</span></span>
+### <span data-ttu-id="14724-138">-Beschrijving</span><span class="sxs-lookup"><span data-stu-id="14724-138">-Description</span></span>
+
+<span data-ttu-id="14724-139">Hiermee geeft u een beschrijving van de variabele.</span><span class="sxs-lookup"><span data-stu-id="14724-139">Specifies a description of the variable.</span></span>
 
 ```yaml
 Type: System.String
@@ -154,11 +156,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="bcc4c-138">-Force</span><span class="sxs-lookup"><span data-stu-id="bcc4c-138">-Force</span></span>
-<span data-ttu-id="bcc4c-139">Geeft aan dat de cmdlet een variabele met dezelfde naam maakt als een bestaande alleen-lezen variabele.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-139">Indicates that the cmdlet creates a variable with the same name as an existing read-only variable.</span></span>
+### <span data-ttu-id="14724-140">-Force</span><span class="sxs-lookup"><span data-stu-id="14724-140">-Force</span></span>
 
-<span data-ttu-id="bcc4c-140">Standaard kunt u een variabele overschrijven, tenzij de variabele een optie waarde ReadOnly of constant heeft.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-140">By default, you can overwrite a variable unless the variable has an option value of ReadOnly or Constant.</span></span>
-<span data-ttu-id="bcc4c-141">Zie de para meter *Option* voor meer informatie.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-141">For more information, see the *Option* parameter.</span></span>
+<span data-ttu-id="14724-141">Geeft aan dat de cmdlet een variabele met dezelfde naam maakt als een bestaande alleen-lezen variabele.</span><span class="sxs-lookup"><span data-stu-id="14724-141">Indicates that the cmdlet creates a variable with the same name as an existing read-only variable.</span></span>
+
+<span data-ttu-id="14724-142">Standaard kunt u een variabele overschrijven, tenzij de variabele een optie waarde van of heeft `ReadOnly` `Constant` .</span><span class="sxs-lookup"><span data-stu-id="14724-142">By default, you can overwrite a variable unless the variable has an option value of `ReadOnly` or `Constant`.</span></span> <span data-ttu-id="14724-143">Zie de para meter **Option** voor meer informatie.</span><span class="sxs-lookup"><span data-stu-id="14724-143">For more information, see the **Option** parameter.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -172,8 +174,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="bcc4c-142">-Name</span><span class="sxs-lookup"><span data-stu-id="bcc4c-142">-Name</span></span>
-<span data-ttu-id="bcc4c-143">Hiermee geeft u een naam op voor de nieuwe variabele.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-143">Specifies a name for the new variable.</span></span>
+### <span data-ttu-id="14724-144">-Name</span><span class="sxs-lookup"><span data-stu-id="14724-144">-Name</span></span>
+
+<span data-ttu-id="14724-145">Hiermee geeft u een naam op voor de nieuwe variabele.</span><span class="sxs-lookup"><span data-stu-id="14724-145">Specifies a name for the new variable.</span></span>
 
 ```yaml
 Type: System.String
@@ -187,25 +190,19 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="bcc4c-144">-Optie</span><span class="sxs-lookup"><span data-stu-id="bcc4c-144">-Option</span></span>
-<span data-ttu-id="bcc4c-145">Hiermee geeft u de waarde van de eigenschap **Options** van de variabele. De acceptabele waarden voor deze para meter zijn:</span><span class="sxs-lookup"><span data-stu-id="bcc4c-145">Specifies the value of the **Options** property of the variable.The acceptable values for this parameter are:</span></span>
+### <span data-ttu-id="14724-146">-Optie</span><span class="sxs-lookup"><span data-stu-id="14724-146">-Option</span></span>
 
-- <span data-ttu-id="bcc4c-146">Geen.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-146">None.</span></span>
-<span data-ttu-id="bcc4c-147">Hiermee stelt u geen opties in.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-147">Sets no options.</span></span>
-<span data-ttu-id="bcc4c-148">(Geen is de standaard instelling.)</span><span class="sxs-lookup"><span data-stu-id="bcc4c-148">(None is the default.)</span></span>
-- <span data-ttu-id="bcc4c-149">Kenmerk.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-149">ReadOnly.</span></span>
-<span data-ttu-id="bcc4c-150">Kan worden verwijderd.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-150">Can be deleted.</span></span>
-<span data-ttu-id="bcc4c-151">Kan niet worden gewijzigd, behalve door gebruik te maken van de para meter *Forces* .</span><span class="sxs-lookup"><span data-stu-id="bcc4c-151">Cannot be changed, except by using the *Force* parameter.</span></span>
-- <span data-ttu-id="bcc4c-152">Eigen.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-152">Private.</span></span>
-<span data-ttu-id="bcc4c-153">De variabele is alleen beschikbaar in het huidige bereik.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-153">The variable is available only in the current scope.</span></span>
-- <span data-ttu-id="bcc4c-154">AllScope.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-154">AllScope.</span></span>
-<span data-ttu-id="bcc4c-155">De variabele wordt gekopieerd naar nieuwe bereiken die worden gemaakt.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-155">The variable is copied to any new scopes that are created.</span></span>
-- <span data-ttu-id="bcc4c-156">Constant hoog.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-156">Constant.</span></span>
-<span data-ttu-id="bcc4c-157">Kan niet worden verwijderd of gewijzigd.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-157">Cannot be deleted or changed.</span></span>
-<span data-ttu-id="bcc4c-158">Constante is alleen geldig wanneer u een variabele maakt.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-158">Constant is valid only when you are creating a variable.</span></span>
-<span data-ttu-id="bcc4c-159">U kunt de opties van een bestaande variabele niet wijzigen in constante.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-159">You cannot change the options of an existing variable to Constant.</span></span>
+<span data-ttu-id="14724-147">Hiermee geeft u de waarde van de eigenschap **Options** van de variabele.</span><span class="sxs-lookup"><span data-stu-id="14724-147">Specifies the value of the **Options** property of the variable.</span></span> <span data-ttu-id="14724-148">De aanvaardbare waarden voor deze parameter zijn:</span><span class="sxs-lookup"><span data-stu-id="14724-148">The acceptable values for this parameter are:</span></span>
 
-<span data-ttu-id="bcc4c-160">Als u de eigenschap **Options** van alle variabelen in de sessie wilt weer geven, typt u `Get-Variable | Format-Table -Property name, options -autosize` .</span><span class="sxs-lookup"><span data-stu-id="bcc4c-160">To see the **Options** property of all variables in the session, type `Get-Variable | Format-Table -Property name, options -autosize`.</span></span>
+- <span data-ttu-id="14724-149">`None` -Geen opties instellen.</span><span class="sxs-lookup"><span data-stu-id="14724-149">`None` - Sets no options.</span></span> <span data-ttu-id="14724-150">`None` is de standaardwaarde.</span><span class="sxs-lookup"><span data-stu-id="14724-150">`None` is the default.</span></span>
+- <span data-ttu-id="14724-151">`ReadOnly` -Kan worden verwijderd.</span><span class="sxs-lookup"><span data-stu-id="14724-151">`ReadOnly` - Can be deleted.</span></span> <span data-ttu-id="14724-152">Kan niet worden gewijzigd, behalve door gebruik te maken van de para meter **Forces** .</span><span class="sxs-lookup"><span data-stu-id="14724-152">Cannot be changed, except by using the **Force** parameter.</span></span>
+- <span data-ttu-id="14724-153">`Private` -De variabele is alleen beschikbaar in de huidige scope.</span><span class="sxs-lookup"><span data-stu-id="14724-153">`Private` - The variable is available only in the current scope.</span></span>
+- <span data-ttu-id="14724-154">`AllScope` -De variabele wordt gekopieerd naar een nieuwe scope die wordt gemaakt.</span><span class="sxs-lookup"><span data-stu-id="14724-154">`AllScope` - The variable is copied to any new scopes that are created.</span></span>
+- <span data-ttu-id="14724-155">`Constant` -Kan niet worden verwijderd of gewijzigd.</span><span class="sxs-lookup"><span data-stu-id="14724-155">`Constant` - Cannot be deleted or changed.</span></span> <span data-ttu-id="14724-156">`Constant` is alleen geldig wanneer u een variabele maakt.</span><span class="sxs-lookup"><span data-stu-id="14724-156">`Constant` is valid only when you are creating a variable.</span></span> <span data-ttu-id="14724-157">U kunt de opties van een bestaande variabele niet wijzigen in `Constant` .</span><span class="sxs-lookup"><span data-stu-id="14724-157">You cannot change the options of an existing variable to `Constant`.</span></span>
+
+<span data-ttu-id="14724-158">Deze waarden worden gedefinieerd als inventarisatie op basis van een vlag.</span><span class="sxs-lookup"><span data-stu-id="14724-158">These values are defined as a flag-based enumeration.</span></span> <span data-ttu-id="14724-159">U kunt meerdere waarden combi neren om meerdere vlaggen in te stellen met behulp van deze para meter.</span><span class="sxs-lookup"><span data-stu-id="14724-159">You can combine multiple values together to set multiple flags using this parameter.</span></span> <span data-ttu-id="14724-160">De waarden kunnen worden door gegeven aan de para meter **Option** als een matrix met waarden of als een door komma's gescheiden teken reeks van die waarden.</span><span class="sxs-lookup"><span data-stu-id="14724-160">The values can be passed to the **Option** parameter as an array of values or as a comma-separated string of those values.</span></span> <span data-ttu-id="14724-161">Met de cmdlet worden de waarden gecombineerd met behulp van een binaire waarde of bewerking.</span><span class="sxs-lookup"><span data-stu-id="14724-161">The cmdlet will combine the values using a binary-OR operation.</span></span> <span data-ttu-id="14724-162">Het door geven van waarden als een matrix is de eenvoudigste optie. Daarnaast kunt u met behulp van de waarden van het tabblad volt ooien.</span><span class="sxs-lookup"><span data-stu-id="14724-162">Passing values as an array is the simplest option and also allows you to use tab-completion on the values.</span></span>
+
+<span data-ttu-id="14724-163">Als u de eigenschap Options van alle variabelen in de sessie wilt weer geven, typt u `Get-Variable | Format-Table -Property name, options -AutoSize` .</span><span class="sxs-lookup"><span data-stu-id="14724-163">To see the Options property of all variables in the session, type `Get-Variable | Format-Table -Property name, options -AutoSize`.</span></span>
 
 ```yaml
 Type: System.Management.Automation.ScopedItemOptions
@@ -220,9 +217,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="bcc4c-161">-PassThru</span><span class="sxs-lookup"><span data-stu-id="bcc4c-161">-PassThru</span></span>
-<span data-ttu-id="bcc4c-162">Retourneert een object dat het item vertegenwoordigt waarmee u werkt.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-162">Returns an object representing the item with which you are working.</span></span>
-<span data-ttu-id="bcc4c-163">Deze cmdlet genereert standaard geen uitvoer.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-163">By default, this cmdlet does not generate any output.</span></span>
+### <span data-ttu-id="14724-164">-PassThru</span><span class="sxs-lookup"><span data-stu-id="14724-164">-PassThru</span></span>
+
+<span data-ttu-id="14724-165">Retourneert een object dat het item vertegenwoordigt waarmee u werkt.</span><span class="sxs-lookup"><span data-stu-id="14724-165">Returns an object representing the item with which you are working.</span></span> <span data-ttu-id="14724-166">Deze cmdlet genereert standaard geen uitvoer.</span><span class="sxs-lookup"><span data-stu-id="14724-166">By default, this cmdlet does not generate any output.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -236,25 +233,19 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="bcc4c-164">-Bereik</span><span class="sxs-lookup"><span data-stu-id="bcc4c-164">-Scope</span></span>
-<span data-ttu-id="bcc4c-165">Hiermee wordt het bereik van de nieuwe variabele opgegeven.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-165">Specifies the scope of the new variable.</span></span>
-<span data-ttu-id="bcc4c-166">De aanvaardbare waarden voor deze parameter zijn:</span><span class="sxs-lookup"><span data-stu-id="bcc4c-166">The acceptable values for this parameter are:</span></span>
+### <span data-ttu-id="14724-167">-Bereik</span><span class="sxs-lookup"><span data-stu-id="14724-167">-Scope</span></span>
 
-- <span data-ttu-id="bcc4c-167">Internationaal.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-167">Global.</span></span>
-<span data-ttu-id="bcc4c-168">Variabelen die in het globale bereik zijn gemaakt, zijn overal toegankelijk in een Power Shell-proces.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-168">Variables created in the global scope are accessible everywhere in a PowerShell process.</span></span>
-- <span data-ttu-id="bcc4c-169">Lokale.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-169">Local.</span></span>
-<span data-ttu-id="bcc4c-170">Het lokale bereik verwijst naar het huidige bereik. Dit kan elk bereik zijn, afhankelijk van de context.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-170">The local scope refers to the current scope, this can be any scope depending on the context.</span></span>
-- <span data-ttu-id="bcc4c-171">Schriften.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-171">Script.</span></span>
-<span data-ttu-id="bcc4c-172">Variabelen die in het script bereik zijn gemaakt, zijn alleen toegankelijk in het script bestand of de module waarin ze zijn gemaakt.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-172">Variables created in the script scope are accessible only within the script file or module they are created in.</span></span>
-- <span data-ttu-id="bcc4c-173">Eigen.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-173">Private.</span></span>
-<span data-ttu-id="bcc4c-174">Variabelen die in het persoonlijke bereik zijn gemaakt, zijn niet toegankelijk buiten het bereik waarin ze zich bevinden.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-174">Variables created in the private scope cannot be accessed outside the scope they exist in.</span></span>
-<span data-ttu-id="bcc4c-175">U kunt een privé bereik gebruiken om een persoonlijke versie van een item met dezelfde naam in een ander bereik te maken.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-175">You can use private scope to create a private version of an item with the same name in another scope.</span></span>
-- <span data-ttu-id="bcc4c-176">Een getal dat relatief is ten opzichte van het huidige bereik (0 tot en met het aantal bereiken, waarbij 0 het huidige bereik is, 1 de bovenliggende Scope, 2 het bovenliggende bereik, enzovoort).</span><span class="sxs-lookup"><span data-stu-id="bcc4c-176">A number relative to the current scope (0 through the number of scopes, where 0 is the current scope, 1 is its parent, 2 the parent of the parent scope, and so on).</span></span>
-<span data-ttu-id="bcc4c-177">Negatieve getallen kunnen niet worden gebruikt.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-177">Negative numbers cannot be used.</span></span>
+<span data-ttu-id="14724-168">Hiermee wordt het bereik van de nieuwe variabele opgegeven.</span><span class="sxs-lookup"><span data-stu-id="14724-168">Specifies the scope of the new variable.</span></span> <span data-ttu-id="14724-169">De aanvaardbare waarden voor deze parameter zijn:</span><span class="sxs-lookup"><span data-stu-id="14724-169">The acceptable values for this parameter are:</span></span>
 
-<span data-ttu-id="bcc4c-178">Local is het standaard bereik wanneer de para meter bereik niet is opgegeven.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-178">Local is the default scope when the scope parameter is not specified.</span></span>
+- <span data-ttu-id="14724-170">`Global` -Variabelen die in het globale bereik zijn gemaakt, zijn overal toegankelijk in een Power Shell-proces.</span><span class="sxs-lookup"><span data-stu-id="14724-170">`Global` - Variables created in the global scope are accessible everywhere in a PowerShell process.</span></span>
+- <span data-ttu-id="14724-171">`Local` -Het lokale bereik verwijst naar het huidige bereik. Dit kan elk bereik zijn, afhankelijk van de context.</span><span class="sxs-lookup"><span data-stu-id="14724-171">`Local` - The local scope refers to the current scope, this can be any scope depending on the context.</span></span>
+- <span data-ttu-id="14724-172">`Script` -Variabelen die in het script bereik zijn gemaakt, zijn alleen toegankelijk in het script bestand of de module waarin ze zijn gemaakt.</span><span class="sxs-lookup"><span data-stu-id="14724-172">`Script` - Variables created in the script scope are accessible only within the script file or module they are created in.</span></span>
+- <span data-ttu-id="14724-173">`Private` -Variabelen die in het persoonlijke bereik zijn gemaakt, zijn niet toegankelijk buiten het bereik waarin ze zich bevinden.</span><span class="sxs-lookup"><span data-stu-id="14724-173">`Private` - Variables created in the private scope cannot be accessed outside the scope they exist in.</span></span> <span data-ttu-id="14724-174">U kunt een privé bereik gebruiken om een persoonlijke versie van een item met dezelfde naam in een ander bereik te maken.</span><span class="sxs-lookup"><span data-stu-id="14724-174">You can use private scope to create a private version of an item with the same name in another scope.</span></span>
+- <span data-ttu-id="14724-175">Een getal dat relatief is ten opzichte van het huidige bereik (0 tot en met het aantal bereiken, waarbij 0 het huidige bereik is, 1 de bovenliggende Scope, 2 het bovenliggende bereik, enzovoort).</span><span class="sxs-lookup"><span data-stu-id="14724-175">A number relative to the current scope (0 through the number of scopes, where 0 is the current scope, 1 is its parent, 2 the parent of the parent scope, and so on).</span></span> <span data-ttu-id="14724-176">Negatieve getallen kunnen niet worden gebruikt.</span><span class="sxs-lookup"><span data-stu-id="14724-176">Negative numbers cannot be used.</span></span>
 
-<span data-ttu-id="bcc4c-179">Zie about_Scopes voor meer informatie.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-179">For more information, see about_Scopes.</span></span>
+<span data-ttu-id="14724-177">`Local` is het standaard bereik wanneer de para meter bereik niet is opgegeven.</span><span class="sxs-lookup"><span data-stu-id="14724-177">`Local` is the default scope when the scope parameter is not specified.</span></span>
+
+<span data-ttu-id="14724-178">Zie [about_Scopes](../Microsoft.PowerShell.Core/About/about_Scopes.md)voor meer informatie.</span><span class="sxs-lookup"><span data-stu-id="14724-178">For more information, see [about_Scopes](../Microsoft.PowerShell.Core/About/about_Scopes.md).</span></span>
 
 ```yaml
 Type: System.String
@@ -268,8 +259,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="bcc4c-180">-Waarde</span><span class="sxs-lookup"><span data-stu-id="bcc4c-180">-Value</span></span>
-<span data-ttu-id="bcc4c-181">Hiermee geeft u de begin waarde van de variabele.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-181">Specifies the initial value of the variable.</span></span>
+### <span data-ttu-id="14724-179">-Waarde</span><span class="sxs-lookup"><span data-stu-id="14724-179">-Value</span></span>
+
+<span data-ttu-id="14724-180">Hiermee geeft u de begin waarde van de variabele.</span><span class="sxs-lookup"><span data-stu-id="14724-180">Specifies the initial value of the variable.</span></span>
 
 ```yaml
 Type: System.Object
@@ -283,20 +275,14 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="bcc4c-182">-Zicht baarheid</span><span class="sxs-lookup"><span data-stu-id="bcc4c-182">-Visibility</span></span>
-<span data-ttu-id="bcc4c-183">Hiermee wordt bepaald of de variabele zichtbaar is buiten de sessie waarin deze is gemaakt.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-183">Determines whether the variable is visible outside of the session in which it was created.</span></span>
-<span data-ttu-id="bcc4c-184">Deze para meter is ontworpen voor gebruik in scripts en opdrachten die aan andere gebruikers worden geleverd.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-184">This parameter is designed for  use in scripts and commands that will be delivered to other users.</span></span>
-<span data-ttu-id="bcc4c-185">De aanvaardbare waarden voor deze parameter zijn:</span><span class="sxs-lookup"><span data-stu-id="bcc4c-185">The acceptable values for this parameter are:</span></span>
+### <span data-ttu-id="14724-181">-Zicht baarheid</span><span class="sxs-lookup"><span data-stu-id="14724-181">-Visibility</span></span>
 
-- <span data-ttu-id="bcc4c-186">Open.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-186">Public.</span></span>
-<span data-ttu-id="bcc4c-187">De variabele is zichtbaar.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-187">The variable is visible.</span></span>
-<span data-ttu-id="bcc4c-188">(Openbaar is de standaard instelling.)</span><span class="sxs-lookup"><span data-stu-id="bcc4c-188">(Public is the default.)</span></span>
-- <span data-ttu-id="bcc4c-189">Eigen.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-189">Private.</span></span>
-<span data-ttu-id="bcc4c-190">De variabele is niet zichtbaar.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-190">The variable is not visible.</span></span>
+<span data-ttu-id="14724-182">Hiermee wordt bepaald of de variabele zichtbaar is buiten de sessie waarin deze is gemaakt.</span><span class="sxs-lookup"><span data-stu-id="14724-182">Determines whether the variable is visible outside of the session in which it was created.</span></span> <span data-ttu-id="14724-183">Deze para meter is ontworpen voor gebruik in scripts en opdrachten die aan andere gebruikers worden geleverd.</span><span class="sxs-lookup"><span data-stu-id="14724-183">This parameter is designed for use in scripts and commands that will be delivered to other users.</span></span> <span data-ttu-id="14724-184">De aanvaardbare waarden voor deze parameter zijn:</span><span class="sxs-lookup"><span data-stu-id="14724-184">The acceptable values for this parameter are:</span></span>
 
-<span data-ttu-id="bcc4c-191">Wanneer een variabele privé is, wordt deze niet weer gegeven in lijst met variabelen, zoals die worden geretourneerd door Get-variable of in weer gaven van de variabele: station.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-191">When a variable is private, it does not appear in lists of variables, such as those returned by Get-Variable, or in displays of the Variable: drive.</span></span>
-<span data-ttu-id="bcc4c-192">Opdrachten om de waarde van een persoonlijke variabele te lezen of te wijzigen, retour neren een fout.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-192">Commands to read or change the value of a private variable return an error.</span></span>
-<span data-ttu-id="bcc4c-193">De gebruiker kan echter opdrachten uitvoeren die een persoonlijke variabele gebruiken als de opdrachten zijn geschreven in de sessie waarin de variabele is gedefinieerd.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-193">However, the user can run commands that use a private variable if the commands were written in the session in which the variable was defined.</span></span>
+- <span data-ttu-id="14724-185">`Public` -De variabele is zichtbaar.</span><span class="sxs-lookup"><span data-stu-id="14724-185">`Public` - The variable is visible.</span></span> <span data-ttu-id="14724-186">`Public` is de standaardwaarde.</span><span class="sxs-lookup"><span data-stu-id="14724-186">`Public` is the default.</span></span>
+- <span data-ttu-id="14724-187">`Private` -De variabele is niet zichtbaar.</span><span class="sxs-lookup"><span data-stu-id="14724-187">`Private` - The variable is not visible.</span></span>
+
+<span data-ttu-id="14724-188">Wanneer een variabele privé is, wordt deze niet weer gegeven in lijst met variabelen, zoals die worden geretourneerd door `Get-Variable` , of in de weer gaven van het `Variable:` station.</span><span class="sxs-lookup"><span data-stu-id="14724-188">When a variable is private, it does not appear in lists of variables, such as those returned by `Get-Variable`, or in displays of the `Variable:` drive.</span></span> <span data-ttu-id="14724-189">Opdrachten om de waarde van een persoonlijke variabele te lezen of te wijzigen, retour neren een fout.</span><span class="sxs-lookup"><span data-stu-id="14724-189">Commands to read or change the value of a private variable return an error.</span></span> <span data-ttu-id="14724-190">De gebruiker kan echter opdrachten uitvoeren die een persoonlijke variabele gebruiken als de opdrachten zijn geschreven in de sessie waarin de variabele is gedefinieerd.</span><span class="sxs-lookup"><span data-stu-id="14724-190">However, the user can run commands that use a private variable if the commands were written in the session in which the variable was defined.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SessionStateEntryVisibility
@@ -311,8 +297,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="bcc4c-194">-Confirm</span><span class="sxs-lookup"><span data-stu-id="bcc4c-194">-Confirm</span></span>
-<span data-ttu-id="bcc4c-195">Hiermee wordt u gevraagd om bevestiging voordat u de cmdlet uitvoert.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-195">Prompts you for confirmation before running the cmdlet.</span></span>
+### <span data-ttu-id="14724-191">-Confirm</span><span class="sxs-lookup"><span data-stu-id="14724-191">-Confirm</span></span>
+
+<span data-ttu-id="14724-192">Hiermee wordt u gevraagd om bevestiging voordat u de cmdlet uitvoert.</span><span class="sxs-lookup"><span data-stu-id="14724-192">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -326,9 +313,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="bcc4c-196">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="bcc4c-196">-WhatIf</span></span>
-<span data-ttu-id="bcc4c-197">Hiermee wordt weergegeven wat er zou gebeuren als u de cmdlet uitvoert.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-197">Shows what would happen if the cmdlet runs.</span></span>
-<span data-ttu-id="bcc4c-198">De cmdlet wordt niet uitgevoerd.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-198">The cmdlet is not run.</span></span>
+### <span data-ttu-id="14724-193">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="14724-193">-WhatIf</span></span>
+
+<span data-ttu-id="14724-194">Hiermee wordt weergegeven wat er zou gebeuren als u de cmdlet uitvoert.</span><span class="sxs-lookup"><span data-stu-id="14724-194">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="14724-195">De cmdlet wordt niet uitgevoerd.</span><span class="sxs-lookup"><span data-stu-id="14724-195">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -342,28 +329,30 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="bcc4c-199">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="bcc4c-199">CommonParameters</span></span>
-<span data-ttu-id="bcc4c-200">Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-200">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="bcc4c-201">Zie [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)voor meer informatie.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-201">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="14724-196">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="14724-196">CommonParameters</span></span>
 
-## <span data-ttu-id="bcc4c-202">INVOER</span><span class="sxs-lookup"><span data-stu-id="bcc4c-202">INPUTS</span></span>
+<span data-ttu-id="14724-197">Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="14724-197">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="14724-198">Zie [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)voor meer informatie.</span><span class="sxs-lookup"><span data-stu-id="14724-198">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-### <span data-ttu-id="bcc4c-203">System. object</span><span class="sxs-lookup"><span data-stu-id="bcc4c-203">System.Object</span></span>
-<span data-ttu-id="bcc4c-204">U kunt een waarde door sluizen naar een **nieuwe variabele**.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-204">You can pipe a value to **New-Variable**.</span></span>
+## <span data-ttu-id="14724-199">Invoerwaarden</span><span class="sxs-lookup"><span data-stu-id="14724-199">Inputs</span></span>
 
-## <span data-ttu-id="bcc4c-205">UITVOER</span><span class="sxs-lookup"><span data-stu-id="bcc4c-205">OUTPUTS</span></span>
+### <span data-ttu-id="14724-200">System. object</span><span class="sxs-lookup"><span data-stu-id="14724-200">System.Object</span></span>
 
-### <span data-ttu-id="bcc4c-206">Geen of System. Management. Automation. PSVariable</span><span class="sxs-lookup"><span data-stu-id="bcc4c-206">None or System.Management.Automation.PSVariable</span></span>
-<span data-ttu-id="bcc4c-207">Wanneer u de para meter *PassThru* gebruikt, genereert **new-variable** een **System. Management. Automation. PSVariable** -object dat de nieuwe variabele vertegenwoordigt.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-207">When you use the *PassThru* parameter, **New-Variable** generates a **System.Management.Automation.PSVariable** object representing the new variable.</span></span>
-<span data-ttu-id="bcc4c-208">Anders wordt met deze cmdlet geen uitvoer gegenereerd.</span><span class="sxs-lookup"><span data-stu-id="bcc4c-208">Otherwise, this cmdlet does not generate any output.</span></span>
+<span data-ttu-id="14724-201">U kunt een waarde door sluizen naar `New-Variable` .</span><span class="sxs-lookup"><span data-stu-id="14724-201">You can pipe a value to `New-Variable`.</span></span>
 
-## <span data-ttu-id="bcc4c-209">OPMERKINGEN</span><span class="sxs-lookup"><span data-stu-id="bcc4c-209">NOTES</span></span>
+## <span data-ttu-id="14724-202">Uitvoerwaarden</span><span class="sxs-lookup"><span data-stu-id="14724-202">Outputs</span></span>
 
-## <span data-ttu-id="bcc4c-210">GERELATEERDE KOPPELINGEN</span><span class="sxs-lookup"><span data-stu-id="bcc4c-210">RELATED LINKS</span></span>
+### <span data-ttu-id="14724-203">Geen of System. Management. Automation. PSVariable</span><span class="sxs-lookup"><span data-stu-id="14724-203">None or System.Management.Automation.PSVariable</span></span>
 
-[<span data-ttu-id="bcc4c-211">Clear-variabele</span><span class="sxs-lookup"><span data-stu-id="bcc4c-211">Clear-Variable</span></span>](Clear-Variable.md)
+<span data-ttu-id="14724-204">Wanneer u de para meter **PassThru** gebruikt, `New-Variable` genereert een **System. Management. Automation. PSVariable** -object dat de nieuwe variabele vertegenwoordigt.</span><span class="sxs-lookup"><span data-stu-id="14724-204">When you use the **PassThru** parameter, `New-Variable` generates a **System.Management.Automation.PSVariable** object representing the new variable.</span></span> <span data-ttu-id="14724-205">Anders wordt met deze cmdlet geen uitvoer gegenereerd.</span><span class="sxs-lookup"><span data-stu-id="14724-205">Otherwise, this cmdlet does not generate any output.</span></span>
 
-[<span data-ttu-id="bcc4c-212">Get-variabele</span><span class="sxs-lookup"><span data-stu-id="bcc4c-212">Get-Variable</span></span>](Get-Variable.md)
+## <span data-ttu-id="14724-206">Notities</span><span class="sxs-lookup"><span data-stu-id="14724-206">Notes</span></span>
 
-[<span data-ttu-id="bcc4c-213">Remove-variabele</span><span class="sxs-lookup"><span data-stu-id="bcc4c-213">Remove-Variable</span></span>](Remove-Variable.md)
+## <span data-ttu-id="14724-207">Verwante koppelingen</span><span class="sxs-lookup"><span data-stu-id="14724-207">Related Links</span></span>
 
-[<span data-ttu-id="bcc4c-214">Set-variabele</span><span class="sxs-lookup"><span data-stu-id="bcc4c-214">Set-Variable</span></span>](Set-Variable.md)
+[<span data-ttu-id="14724-208">Clear-variabele</span><span class="sxs-lookup"><span data-stu-id="14724-208">Clear-Variable</span></span>](Clear-Variable.md)
+
+[<span data-ttu-id="14724-209">Get-variabele</span><span class="sxs-lookup"><span data-stu-id="14724-209">Get-Variable</span></span>](Get-Variable.md)
+
+[<span data-ttu-id="14724-210">Remove-variabele</span><span class="sxs-lookup"><span data-stu-id="14724-210">Remove-Variable</span></span>](Remove-Variable.md)
+
+[<span data-ttu-id="14724-211">Set-variabele</span><span class="sxs-lookup"><span data-stu-id="14724-211">Set-Variable</span></span>](Set-Variable.md)
