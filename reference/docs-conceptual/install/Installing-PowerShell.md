@@ -1,18 +1,17 @@
 ---
-ms.date: 08/09/2018
-keywords: installeren, Windows, Linux, macOS, ARM, raspbian
+ms.date: 04/02/2021
 title: PowerShell installeren
 description: Waar u instructies kunt vinden voor het installeren van Power shell voor elk van de ondersteunde platforms.
-ms.openlocfilehash: 3bf52d012c28cf8569501705c2145f6604fd56b3
-ms.sourcegitcommit: 94d597c4fb38793bc49ca7610e2c9973b1e577c2
+ms.openlocfilehash: 03194c42ab13d6becaad65afb9c5016de34b536b
+ms.sourcegitcommit: c91f79576bc54e162bcc7adf78026417b2776687
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98620061"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106274269"
 ---
 # <a name="installing-various-versions-of-powershell"></a>Verschillende versies van PowerShell installeren
 
-In de jaren zijn er veel releases van Power shell. Windows Power shell is in eerste instantie gebaseerd op de .NET Framework en werkt alleen op Windows-systemen. In de huidige versie gebruikt Power shell .NET Core 5,0 als runtime. Power shell wordt uitgevoerd op Windows-, macOS-en Linux-platforms.
+In de jaren zijn er veel releases van Power shell. Windows Power shell is in eerste instantie gebaseerd op de .NET Framework en werkt alleen op Windows-systemen. Met de huidige versie gebruikt Power shell .NET 5,0 als runtime. Power shell wordt uitgevoerd op Windows-, macOS-en Linux-platforms.
 
 ## <a name="powershell"></a>PowerShell
 

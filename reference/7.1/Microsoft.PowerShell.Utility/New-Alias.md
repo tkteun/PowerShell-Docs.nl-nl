@@ -3,42 +3,40 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
+ms.date: 04/02/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/new-alias?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-Alias
-ms.openlocfilehash: b004cae919c32078d7c2d79174637a0fa4130ab1
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 17b31394161d98a19532f58c6822cbbbeb1e2756
+ms.sourcegitcommit: c91f79576bc54e162bcc7adf78026417b2776687
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93251289"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106274305"
 ---
 # New-Alias
 
-## SAMENVATTING
+## Samen vatting
 Hiermee maakt u een nieuwe alias.
 
-## SYNTAXIS
+## Syntax
 
 ```
 New-Alias [-Name] <String> [-Value] <String> [-Description <String>] [-Option <ScopedItemOptions>] [-PassThru]
  [-Scope <String>] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## BESCHRIJVING
+## Beschrijving
 
-Met de cmdlet **New-alias** maakt u een nieuwe alias in de huidige Power shell-sessie.
-Aliassen die zijn gemaakt met behulp van **New-alias** worden niet opgeslagen nadat u de sessie afsluit of Power shell sluiten.
-U kunt de Export-Alias cmdlet gebruiken om uw alias gegevens op te slaan in een bestand.
-U kunt later **import-alias** gebruiken om die opgeslagen alias gegevens op te halen.
+De `New-Alias` cmdlet maakt een nieuwe alias in de huidige Power shell-sessie. Aliassen die zijn gemaakt met behulp van `New-Alias` worden niet opgeslagen nadat u de sessie afsluit of Power shell sluiten.
+U kunt de- `Export-Alias` cmdlet gebruiken om uw alias gegevens op te slaan in een bestand. U kunt later gebruiken `Import-Alias` om die opgeslagen alias gegevens op te halen.
 
-## VOORBEELDEN
+## Voorbeelden
 
 ### Voor beeld 1: een alias maken voor een cmdlet
 
 ```
-PS C:\> New-Alias -Name "List" Get-ChildItem
+New-Alias -Name "List" Get-ChildItem
 ```
 
 Met deze opdracht maakt u een alias met de naam lijst die de Get-ChildItem-cmdlet vertegenwoordigt.
@@ -46,21 +44,17 @@ Met deze opdracht maakt u een alias met de naam lijst die de Get-ChildItem-cmdle
 ### Voor beeld 2: een alleen-lezen-alias maken voor een cmdlet
 
 ```
-PS C:\> New-Alias -Name "W" -Value Get-WmiObject -Description "quick wmi alias" -Option ReadOnly
-PS C:\> Get-Alias -Name "W" | Format-List *
+New-Alias -Name "C" -Value Get-ChildItem -Description "quick gci alias" -Option ReadOnly
+Get-Alias -Name "C" | Format-List *
 ```
 
-Met deze opdracht maakt u een alias met de naam W om de cmdlet Get-WmiObject te vertegenwoordigen.
-Er wordt een beschrijving, een snelle WMI-alias voor de alias gemaakt en deze wordt alleen-lezen.
-De laatste regel van de opdracht maakt gebruik van Get-Alias om de nieuwe alias te verkrijgen en deze te Format-List om alle informatie hierover weer te geven.
+Met deze opdracht maakt u een alias `C` met de naam die de `Get-ChildItem` cmdlet vertegenwoordigt. Er wordt een beschrijving, een snelle WMI-alias voor de alias gemaakt en deze wordt alleen-lezen. De laatste regel van de opdracht wordt gebruikt `Get-Alias` om de nieuwe alias op te halen en deze te Format-List om alle informatie hierover weer te geven.
 
-## PARAMETERS
+## Parameters
 
 ### -Beschrijving
 
-Hiermee geeft u een beschrijving van de alias.
-U kunt een wille keurige teken reeks typen.
-Als de beschrijving spaties bevat, plaatst u deze tussen aanhalings tekens.
+Hiermee geeft u een beschrijving van de alias. U kunt een wille keurige teken reeks typen. Als de beschrijving spaties bevat, plaatst u deze tussen aanhalings tekens.
 
 ```yaml
 Type: System.String
@@ -76,7 +70,7 @@ Accept wildcard characters: False
 
 ### -Force
 
-Geeft aan dat de cmdlet als Set-Alias fungeert als de alias met de naam al bestaat.
+Geeft aan dat de cmdlet fungeert `Set-Alias` als de alias die al bestaat.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -92,8 +86,7 @@ Accept wildcard characters: False
 
 ### -Name
 
-Hiermee geeft u de nieuwe alias.
-U kunt alle alfanumerieke tekens in een alias gebruiken, maar het eerste teken mag geen getal zijn.
+Hiermee geeft u de nieuwe alias. U kunt alle alfanumerieke tekens in een alias gebruiken, maar het eerste teken mag geen getal zijn.
 
 ```yaml
 Type: System.String
@@ -112,12 +105,14 @@ Accept wildcard characters: False
 Hiermee geeft u de waarde van de eigenschap **Options** van de alias.
 Geldige waarden zijn:
 
-- Geen: de alias heeft geen beperkingen (standaard waarde)
-- ReadOnly: de alias kan worden verwijderd, maar kan niet worden gewijzigd met behulp van de para meter **Force**
-- Constante: de alias kan niet worden verwijderd of gewijzigd
-- Persoonlijk: de alias is alleen beschikbaar in het huidige bereik
-- AllScope: de alias wordt gekopieerd naar een nieuwe scope die wordt gemaakt
-- Niet opgegeven: de optie is niet opgegeven
+- `None`: De alias heeft geen beperkingen (standaard waarde)
+- `ReadOnly`: De alias kan worden verwijderd, maar kan niet worden gewijzigd met behulp van de para meter **Force**
+- `Constant`: De alias kan niet worden verwijderd of gewijzigd
+- `Private`: De alias is alleen beschikbaar in het huidige bereik
+- `AllScope`: De alias wordt gekopieerd naar een nieuwe scope die wordt gemaakt
+- `Unspecified`: De optie is niet opgegeven
+
+Deze waarden worden gedefinieerd als inventarisatie op basis van een vlag. U kunt meerdere waarden combi neren om meerdere vlaggen in te stellen met behulp van deze para meter. De waarden kunnen worden door gegeven aan de para meter **Option** als een matrix met waarden of als een door komma's gescheiden teken reeks van die waarden. Met de cmdlet worden de waarden gecombineerd met behulp van een binaire waarde of bewerking. Het door geven van waarden als een matrix is de eenvoudigste optie. Daarnaast kunt u met behulp van de waarden van het tabblad volt ooien.
 
 Als u de eigenschap **Options** van alle aliassen in de sessie wilt weer geven, typt u `Get-Alias | Format-Table -Property Name, Options -AutoSize` .
 
@@ -136,8 +131,7 @@ Accept wildcard characters: False
 
 ### -PassThru
 
-Retourneert een object dat het item vertegenwoordigt waarmee u werkt.
-Deze cmdlet genereert standaard geen uitvoer.
+Retourneert een object dat het item vertegenwoordigt waarmee u werkt. Deze cmdlet genereert standaard geen uitvoer.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -153,16 +147,14 @@ Accept wildcard characters: False
 
 ### -Bereik
 
-Hiermee wordt het bereik van de nieuwe alias opgegeven.
-De aanvaardbare waarden voor deze parameter zijn:
+Hiermee wordt het bereik van de nieuwe alias opgegeven. De aanvaardbare waarden voor deze parameter zijn:
 
-- Globaal
-- Lokaal
-- Script
-- Een getal dat relatief is ten opzichte van het huidige bereik (0 tot en met het aantal bereiken, waarbij 0 het huidige bereik is en 1 de bovenliggende scope).
+- `Global`
+- `Local`
+- `Script`
+- Een getal dat relatief is ten opzichte van het huidige bereik (0 tot en met het aantal bereiken, waarbij `0` het huidige bereik is en de `1` bovenliggende scope).
 
-Local is de standaard instelling.
-Zie about_Scopes voor meer informatie.
+`Local` is de standaardwaarde. Zie [about_Scopes](../Microsoft.PowerShell.Core/About/about_Scopes.md)voor meer informatie.
 
 ```yaml
 Type: System.String
@@ -210,8 +202,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-Hiermee wordt weergegeven wat er zou gebeuren als u de cmdlet uitvoert.
-De cmdlet wordt niet uitgevoerd.
+Hiermee wordt weergegeven wat er zou gebeuren als u de cmdlet uitvoert. De cmdlet wordt niet uitgevoerd.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -229,24 +220,23 @@ Accept wildcard characters: False
 
 Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable. Zie [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)voor meer informatie.
 
-## INVOER
+## Invoerwaarden
 
 ### Geen
 
 U kunt geen invoer van een pipe naar deze cmdlet.
 
-## UITVOER
+## Uitvoerwaarden
 
 ### Geen of System. Management. Automation. AliasInfo
 
-Wanneer u de para meter *PassThru* gebruikt, genereert **New-alias** een **System. Management. Automation. AliasInfo** -object dat de nieuwe alias vertegenwoordigt.
-Anders wordt met deze cmdlet geen uitvoer gegenereerd.
+Wanneer u de para meter **PassThru** gebruikt, `New-Alias` genereert een **System. Management. Automation. AliasInfo** -object dat de nieuwe alias vertegenwoordigt. Anders wordt met deze cmdlet geen uitvoer gegenereerd.
 
-## OPMERKINGEN
+## Notities
 
-* Als u een nieuwe alias wilt maken, gebruikt u `Set-Alias` of `New-Alias` . Als u een alias wilt wijzigen, gebruikt u `Set-Alias` . Als u een alias wilt verwijderen, gebruikt u `Remove-Item` .
+- Als u een nieuwe alias wilt maken, gebruikt u `Set-Alias` of `New-Alias` . Als u een alias wilt wijzigen, gebruikt u `Set-Alias` . Als u een alias wilt verwijderen, gebruikt u `Remove-Item` .
 
-## GERELATEERDE KOPPELINGEN
+## Verwante koppelingen
 
 [Exporteren-alias](Export-Alias.md)
 
@@ -255,4 +245,3 @@ Anders wordt met deze cmdlet geen uitvoer gegenereerd.
 [Import-alias](Import-Alias.md)
 
 [Set-alias](Set-Alias.md)
-

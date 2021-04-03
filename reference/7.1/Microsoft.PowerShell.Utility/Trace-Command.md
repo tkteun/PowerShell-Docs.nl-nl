@@ -3,23 +3,23 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 04/09/2020
+ms.date: 04/01/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/trace-command?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Trace-Command
-ms.openlocfilehash: c26e1c46db8f7c6eeeb5c970bc17921622cd023e
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 744afbdf202f3daa3b82a17a53e4c9570c7cf9d7
+ms.sourcegitcommit: 5b48fe7b2593581b7d4f7dd7c22206d8a45bb8af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93249892"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106184440"
 ---
 # Trace-Command
 
-## SAMENVATTING
+## Samen vatting
 Hiermee wordt een tracering van de opgegeven expressie of opdracht geconfigureerd en gestart.
 
-## SYNTAXIS
+## Syntax
 
 ### expressieset (standaard)
 
@@ -37,11 +37,12 @@ Trace-Command [-InputObject <PSObject>] [-Name] <String[]> [[-Option] <PSTraceSo
  [-Debugger] [-PSHost] [<CommonParameters>]
 ```
 
-## BESCHRIJVING
+## Beschrijving
+
 De `Trace-Command` cmdlet configureert en start een tracering van de opgegeven expressie of opdracht.
 Het werkt zoals set-TraceSource, behalve dat deze alleen van toepassing is op de opgegeven opdracht.
 
-## VOORBEELDEN
+## Voorbeelden
 
 ### Voor beeld 1: verwerking van meta gegevens volgen, parameter binding en een expressie
 
@@ -71,7 +72,7 @@ Met de eerste opdracht wordt de teken reeks `i*` in de `$A` variabele opgeslagen
 
 De expressie die wordt verwerkt `Get-Alias $Input` , is, waarbij de `$Input` variabele is gekoppeld aan de para meter **input object** . De **input object** para meter geeft de variabele door `$A` aan de expressie. In feite is de opdracht die wordt verwerkt tijdens de tracering `Get-Alias -InputObject $A" or "$A | Get-Alias` .
 
-## PARAMETERS
+## Parameters
 
 ### -Argument List
 
@@ -191,17 +192,17 @@ Accept wildcard characters: False
 
 Hiermee geeft u optionele gegevens op voor het voor voegsel van elk tracerings bericht in de uitvoer. De aanvaardbare waarden voor deze parameter zijn:
 
-- Geen
-- LogicalOperationStack
-- DateTime
-- Tijdstempel
-- Process
-- Thread
-- Procedures
+- `None`
+- `LogicalOperationStack`
+- `DateTime`
+- `Timestamp`
+- `ProcessId`
+- `ThreadId`
+- `Callstack`
 
-**Geen** is de standaard instelling.
+`None` is de standaardwaarde.
 
-Als u meerdere opties wilt opgeven, scheidt u deze met komma's, maar zonder spaties, en plaatst u ze tussen dubbele aanhalings tekens, zoals ' ProcessID ', thread '.
+Deze waarden worden gedefinieerd als inventarisatie op basis van een vlag. U kunt meerdere waarden combi neren om meerdere vlaggen in te stellen met behulp van deze para meter. De waarden kunnen worden door gegeven aan de **ListenerOption** -para meter als een matrix met waarden of als een door komma's gescheiden teken reeks van die waarden. Met de cmdlet worden de waarden gecombineerd met behulp van een binaire waarde of bewerking. Het door geven van waarden als een matrix is de eenvoudigste optie. Daarnaast kunt u met behulp van de waarden van het tabblad volt ooien.
 
 ```yaml
 Type: System.Diagnostics.TraceOptions
@@ -236,36 +237,36 @@ Accept wildcard characters: False
 
 Bepaalt het type gebeurtenissen dat wordt getraceerd. De aanvaardbare waarden voor deze parameter zijn:
 
-- Geen
-- Constructor
-- Gooien
-- Volt ooien
-- Methode
-- Eigenschap
-- Gedelegeerden
-- Gebeurtenissen
-- Uitzondering
-- Vergrendelen
-- Fout
-- Fouten
-- Waarschuwing
-- Uitgebreid
-- WriteLine
-- Gegevens
-- Bereik
-- ExecutionFlow
-- Assert
-- Alles
+- `None`
+- `Constructor`
+- `Dispose`
+- `Finalizer`
+- `Method`
+- `Property`
+- `Delegates`
+- `Events`
+- `Exception`
+- `Lock`
+- `Error`
+- `Errors`
+- `Warning`
+- `Verbose`
+- `WriteLine`
+- `Data`
+- `Scope`
+- `ExecutionFlow`
+- `Assert`
+- `All`
 
-Dit is de standaard instelling.
+`All` is de standaardwaarde.
 
 De volgende waarden zijn combi Naties van andere waarden:
 
-- ExecutionFlow: (constructor, Dispose, FINALIZE, methode, gemachtigden, gebeurtenissen en bereik)
-- Gegevens: (constructor, Dispose, FINALIZE, eigenschap, verbose en WriteLine)
-- Fouten: (fout en uitzonde ring).
+- `ExecutionFlow`: `Constructor`, `Dispose`, `Finalizer`, `Method`, `Delegates`, `Events`, `Scope`
+- `Data`: `Constructor`, `Dispose`, `Finalizer`, `Property`, `Verbose`, `WriteLine`
+- `Errors`: `Error`, `Exception`
 
-Als u meerdere opties wilt opgeven, scheidt u deze met komma's, maar zonder spaties, en plaatst u ze tussen dubbele aanhalings tekens, zoals ' constructor, Dispose '.
+Deze waarden worden gedefinieerd als inventarisatie op basis van een vlag. U kunt meerdere waarden combi neren om meerdere vlaggen in te stellen met behulp van deze para meter. De waarden kunnen worden door gegeven aan de para meter **Option** als een matrix met waarden of als een door komma's gescheiden teken reeks van die waarden. Met de cmdlet worden de waarden gecombineerd met behulp van een binaire waarde of bewerking. Het door geven van waarden als een matrix is de eenvoudigste optie. Daarnaast kunt u met behulp van de waarden van het tabblad volt ooien.
 
 ```yaml
 Type: System.Management.Automation.PSTraceSourceOptions
@@ -300,19 +301,19 @@ Accept wildcard characters: False
 
 Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable. Zie [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)voor meer informatie.
 
-## INVOER
+## Invoerwaarden
 
 ### System. Management. Automation. PSObject
 
 U kunt objecten pipeen die de invoer voor de expressie vertegenwoordigen `Trace-Command` .
 
-## UITVOER
+## Uitvoerwaarden
 
 ### System. Management. Automation. PSObject
 
 Retourneert de opdracht tracering in de stroom voor fout opsporing.
 
-## OPMERKINGEN
+## Notities
 
 - Tracering is een methode die ontwikkel aars gebruiken voor het opsporen van fouten en het verfijnen van Program ma's. Bij het traceren worden gedetailleerde berichten over elke stap in de interne verwerking gegenereerd.
 
@@ -326,9 +327,9 @@ Retourneert de opdracht tracering in de stroom voor fout opsporing.
 
 - Wanneer u de opdrachtset para meter set gebruikt, verwerkt Power shell de opdracht net zoals deze in een pijp lijn zou worden verwerkt. Bijvoorbeeld: opdracht detectie wordt niet herhaald voor elk binnenkomend object.
 
-- De namen van de para meters **name** , **expressie** , **Option** en **Command** zijn optioneel. Als u de parameter namen weglaat, moeten de niet-genaamde parameter waarden in deze volg orde worden weer gegeven: **naam** , **expressie** , **optie** of **naam** , **opdracht** , **optie**. Als u de parameter namen toevoegt, kunnen de para meters in een wille keurige volg orde worden weer gegeven.
+- De namen van de para meters **name**, **expressie**, **Option** en **Command** zijn optioneel. Als u de parameter namen weglaat, moeten de niet-genaamde parameter waarden in deze volg orde worden weer gegeven: **naam**, **expressie**, **optie** of **naam**, **opdracht**, **optie**. Als u de parameter namen toevoegt, kunnen de para meters in een wille keurige volg orde worden weer gegeven.
 
-## GERELATEERDE KOPPELINGEN
+## Verwante koppelingen
 
 [Get-TraceSource](Get-TraceSource.md)
 

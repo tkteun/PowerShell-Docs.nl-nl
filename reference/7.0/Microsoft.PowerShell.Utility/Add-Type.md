@@ -1,23 +1,22 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 09/04/2020
+ms.date: 04/02/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/add-type?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-Type
-ms.openlocfilehash: cbf211f4ae5262255a74fa7fb97d2493202d71fa
-ms.sourcegitcommit: e0f9fe6335be1e0f94bedaa0e8baec2acaeaa076
+ms.openlocfilehash: 8c9c131a30b71cbd25bb05fcb187daedab95f183
+ms.sourcegitcommit: c91f79576bc54e162bcc7adf78026417b2776687
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "93251907"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106274201"
 ---
 # Add-Type
 
 ## SAMENVATTING
-Hiermee voegt u een Microsoft .NET kern klasse toe aan een Power shell-sessie.
+Hiermee wordt een Microsoft .NET klasse toegevoegd aan een Power shell-sessie.
 
 ## SYNTAXIS
 

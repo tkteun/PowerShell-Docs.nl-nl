@@ -1,19 +1,18 @@
 ---
 Download Help Link: https://go.microsoft.com/fwlink/?linkid=2113633
 Help Version: 7.0.1.0
-keywords: powershell,cmdlet
 Locale: en-US
 Module Guid: 1da87e53-152b-403e-98dc-74d7b4d63d59
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
+ms.date: 04/02/2021
 schema: 2.0.0
 title: Microsoft.PowerShell.Utility
-ms.openlocfilehash: 6afa678e516ca3f3f6af5be87d2bb7eea628fcf5
-ms.sourcegitcommit: 9d95532afe81c235c8094eae28ab84b2f77f8c48
+ms.openlocfilehash: 65801c5c75c449fc1ef074c2abe70ebeb8fae2a0
+ms.sourcegitcommit: c91f79576bc54e162bcc7adf78026417b2776687
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "93252030"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106274029"
 ---
 # Module micro soft. Power shell. Utility
 
@@ -27,7 +26,7 @@ Deze sectie bevat de Help-onderwerpen voor de cmdlets die worden geïnstalleerd 
 Hiermee voegt u aangepaste eigenschappen en methoden toe aan een exemplaar van een Power shell-object.
 
 ### [Add-type](Add-Type.md)
-Hiermee voegt u een Microsoft .NET kern klasse toe aan een Power shell-sessie.
+Hiermee wordt een Microsoft .NET klasse toegevoegd aan een Power shell-sessie.
 
 ### [Clear-variabele](Clear-Variable.md)
 Hiermee verwijdert u de waarde van een variabele.

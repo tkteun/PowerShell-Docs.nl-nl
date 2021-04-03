@@ -2,23 +2,23 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 05/11/2020
+ms.date: 04/02/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/send-mailmessage?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Send-MailMessage
-ms.openlocfilehash: 0a68c665e8a0b504cfef416134374c5598ba55a7
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: e1363b2f30420c130093fd92d4da2f7c8037d640
+ms.sourcegitcommit: c91f79576bc54e162bcc7adf78026417b2776687
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94704735"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106274322"
 ---
 # Send-MailMessage
 
-## SAMENVATTING
+## Samen vatting
 Hiermee verzendt u een e-mail bericht.
 
-## SYNTAXIS
+## Syntax
 
 ### Alles
 
@@ -30,7 +30,7 @@ Send-MailMessage [-Attachments <String[]>] [-Bcc <String[]>] [[-Body] <String>] 
  [<CommonParameters>]
 ```
 
-## BESCHRIJVING
+## Beschrijving
 
 De `Send-MailMessage` cmdlet verzendt een e-mail bericht vanuit Power shell.
 
@@ -40,7 +40,7 @@ De waarde die is toegewezen aan `$PSEmailServer` , is de standaard instelling vo
 > [!WARNING]
 > De `Send-MailMessage` cmdlet is verouderd. Met deze cmdlet worden geen beveiligde verbindingen met SMTP-servers gegarandeerd. Hoewel er geen directe vervanging beschikbaar is in Power shell, raden we u aan geen gebruik te maken van `Send-MailMessage` . Zie [platform Compatibility Note DE0005](https://aka.ms/SendMailMessage)(Engelstalig) voor meer informatie.
 
-## VOORBEELDEN
+## Voorbeelden
 
 ### Voor beeld 1: e-mail van een persoon naar een andere persoon verzenden
 
@@ -79,7 +79,7 @@ De `Send-MailMessage` cmdlet gebruikt de para meter **from** om de afzender van 
 
 De **referentie** parameter geeft aan dat de referenties van de domein beheerder worden gebruikt om het bericht te verzenden. De para meter **UseSsl** geeft aan dat SSL (Secure Socket Layer) een beveiligde verbinding maakt.
 
-## PARAMETERS
+## Parameters
 
 ### -Bijlagen
 
@@ -198,6 +198,8 @@ De acceptabele waarden voor deze para meter zijn als volgt:
 - `OnFailure`: U wordt gewaarschuwd als de levering mislukt.
 - `Delay`: U wordt gewaarschuwd als de levering is vertraagd.
 - `Never`: Nooit waarschuwen.
+
+Deze waarden worden gedefinieerd als inventarisatie op basis van een vlag. U kunt meerdere waarden combi neren om meerdere vlaggen in te stellen met behulp van deze para meter. De waarden kunnen worden door gegeven aan de **DeliveryNotification** -para meter als een matrix met waarden of als een door komma's gescheiden teken reeks van die waarden. Met de cmdlet worden de waarden gecombineerd met behulp van een binaire waarde of bewerking. Het door geven van waarden als een matrix is de eenvoudigste optie. Daarnaast kunt u met behulp van de waarden van het tabblad volt ooien.
 
 ```yaml
 Type: System.Net.Mail.DeliveryNotificationOptions
@@ -382,21 +384,21 @@ Accept wildcard characters: False
 
 Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable. Zie [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)voor meer informatie.
 
-## INVOER
+## Invoerwaarden
 
 ### System. String
 
 U kunt het pad en de bestands namen van bijlagen door sluizen naar `Send-MailMessage` .
 
-## UITVOER
+## Uitvoerwaarden
 
 ### Geen
 
 Met deze cmdlet wordt geen uitvoer gegenereerd.
 
-## OPMERKINGEN
+## Notities
 
-## GERELATEERDE KOPPELINGEN
+## Verwante koppelingen
 
 [about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md)
 

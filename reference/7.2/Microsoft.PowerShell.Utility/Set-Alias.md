@@ -2,23 +2,23 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 02/28/2019
+ms.date: 04/02/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/set-alias?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Alias
-ms.openlocfilehash: e9e80b4bf558dcf1e225868a1138979270ea304f
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 2c82c898dd4043d55d708eb30929580a91389845
+ms.sourcegitcommit: c91f79576bc54e162bcc7adf78026417b2776687
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94704744"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106274288"
 ---
 # Set-Alias
 
-## SAMENVATTING
+## Samen vatting
 Hiermee maakt of wijzigt u een alias voor een cmdlet of een andere opdracht in de huidige Power shell-sessie.
 
-## SYNTAXIS
+## Syntax
 
 ### Standaard (standaard instelling)
 
@@ -27,7 +27,7 @@ Set-Alias [-Name] <string> [-Value] <string> [-Description <string>] [-Option <S
  [-PassThru] [-Scope <string>] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## BESCHRIJVING
+## Beschrijving
 
 De `Set-Alias` cmdlet maakt of wijzigt een alias voor een cmdlet of een opdracht, zoals een functie, script, bestand of ander uitvoerbaar bestand. Een alias is een alternatieve naam die verwijst naar een cmdlet of opdracht.
 `sal`Is bijvoorbeeld de alias voor de `Set-Alias` cmdlet. Zie [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md)voor meer informatie.
@@ -36,7 +36,7 @@ Een cmdlet kan meerdere aliassen hebben, maar een alias kan slechts aan één cm
 
 Een alias die is gemaakt of gewijzigd door `Set-Alias` is niet permanent en is alleen beschikbaar tijdens de huidige Power shell-sessie. Wanneer de Power shell-sessie is gesloten, wordt de alias verwijderd.
 
-## VOORBEELDEN
+## Voorbeelden
 
 ### Voor beeld 1: een alias maken voor een cmdlet
 
@@ -135,18 +135,30 @@ In dit voor beeld ziet u hoe u een alias toewijst aan een opdracht met para mete
 U kunt een alias voor een cmdlet maken, zoals `Set-Location` . U kunt geen alias maken voor een opdracht met para meters en waarden, zoals `Set-Location -Path C:\Windows\System32` . Als u een alias voor een opdracht wilt maken, maakt u een functie die de opdracht bevat en maakt u vervolgens een alias voor de functie. Zie [about_Functions](../Microsoft.PowerShell.Core/about/about_Functions.md)voor meer informatie.
 
 ```
-PS> Function CD32 {Set-Location -Path C:\Windows\System32}
+Function CD32 {Set-Location -Path C:\Windows\System32}
 
-PS> Set-Alias -Name Go -Value CD32
+Set-Alias -Name Go -Value CD32
 ```
 
-Er wordt een functie gemaakt met de naam `CD32` . De functie gebruikt de- `Set-Location` cmdlet met de para meter **Path** om de map, **C:\Windows\System32** op te geven.
+Er wordt een functie gemaakt met de naam `CD32` . De functie gebruikt de `Set-Location` cmdlet met de para meter **Path** om de map op te geven `C:\Windows\System32` .
 
 De `Set-Alias` cmdlet maakt een alias voor de functie in de huidige Power shell-sessie. Met de para meter **name** wordt de naam van de alias opgegeven, `Go` . De **waarde** para meter geeft u de naam van de functie op `CD32` .
 
-Als u de alias wilt uitvoeren, typt u `Go` op de Power shell-opdracht regel. De `CD32` functie wordt uitgevoerd en wijzigingen worden aangebracht in de Directory **C:\Windows\System32**.
+Als u de alias wilt uitvoeren, typt u `Go` op de Power shell-opdracht regel. De `CD32` functie wordt uitgevoerd en de map wordt gewijzigd `C:\Windows\System32` .
 
-## PARAMETERS
+### Voor beeld 6: opties voor een bestaande alias bijwerken
+
+In dit voor beeld ziet u hoe u meerdere opties toewijst met behulp van de para meter **Option** .
+
+In het bovenstaande voor beeld wordt de alias ingesteld `Go` als `ReadOnly` en `Private` .
+
+```powershell
+Set-Alias -Name Go -Option ReadOnly, Private
+```
+
+De alias `Go` moet al bestaan. Nadat u de bovenstaande opdracht hebt uitgevoerd, kan de alias niet worden gewijzigd zonder de para meter **Force** te gebruiken en alleen beschikbaar is in het huidige bereik.
+
+## Parameters
 
 ### -Beschrijving
 
@@ -200,16 +212,18 @@ Accept wildcard characters: False
 
 ### -Optie
 
-Hiermee stelt u de waarde van de **optie** eigenschap van de alias. Waarden zoals **alleen-lezen** en **constant** een alias beveiligen tegen onbedoelde wijzigingen. Als u de **optie** -eigenschap van alle aliassen in de sessie wilt weer geven, typt u `Get-Alias | Format-Table -Property Name, Options -Autosize` .
+Hiermee stelt u de waarde van de **optie** eigenschap van de alias. Waarden zoals `ReadOnly` en `Constant` beveiligen een alias tegen onbedoelde wijzigingen. Als u de **optie** -eigenschap van alle aliassen in de sessie wilt weer geven, typt u `Get-Alias | Format-Table -Property Name, Options -Autosize` .
 
 De acceptabele waarden voor deze para meter zijn als volgt:
 
-- **AllScope** De alias wordt gekopieerd naar nieuwe bereiken die worden gemaakt.
-- **Constante** Kan niet worden gewijzigd of verwijderd.
-- **Geen** Stelt geen opties in en is de standaard waarde.
-- **Privé** De alias is alleen beschikbaar in de huidige scope.
-- **Alleen-lezen** Kan alleen worden gewijzigd of verwijderd als de para meter **Forces** wordt gebruikt.
-- **Niet opgegeven**
+- `AllScope` -De alias wordt gekopieerd naar een nieuwe scope die wordt gemaakt.
+- `Constant` -Kan niet worden gewijzigd of verwijderd.
+- `None` -Geen opties instellen en is de standaard instelling.
+- `Private` -De alias is alleen beschikbaar in de huidige scope.
+- `ReadOnly` -Kan alleen worden gewijzigd of verwijderd als de para meter **Forces** wordt gebruikt.
+- `Unspecified`
+
+Deze waarden worden gedefinieerd als inventarisatie op basis van een vlag. U kunt meerdere waarden combi neren om meerdere vlaggen in te stellen met behulp van deze para meter. De waarden kunnen worden door gegeven aan de para meter **Option** als een matrix met waarden of als een door komma's gescheiden teken reeks van die waarden. Met de cmdlet worden de waarden gecombineerd met behulp van een binaire waarde of bewerking. Het door geven van waarden als een matrix is de eenvoudigste optie. Daarnaast kunt u met behulp van de waarden van het tabblad volt ooien.
 
 ```yaml
 Type: System.Management.Automation.ScopedItemOptions
@@ -248,7 +262,7 @@ De acceptabele waarden zijn als volgt:
 
 - Globaal
 - Lokaal
-- Privé
+- Persoonlijk
 - Genummerde bereiken
 - Script
 
@@ -317,13 +331,13 @@ Accept wildcard characters: False
 
 Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable. Zie [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)voor meer informatie.
 
-## INVOER
+## Invoerwaarden
 
 ### Geen
 
 `Set-Alias` accepteert geen invoer van de pijp lijn.
 
-## UITVOER
+## Uitvoerwaarden
 
 ### Geen of System. Management. Automation. AliasInfo
 
