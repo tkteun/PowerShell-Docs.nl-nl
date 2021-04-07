@@ -2,23 +2,23 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 09/03/2020
+ms.date: 04/05/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-restmethod?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-RestMethod
-ms.openlocfilehash: 91cd2dda912d6e79177e8a961012a1604d9460ee
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 2dde1afca4241519f8ccd317d32660f789faf802
+ms.sourcegitcommit: d95a7255f6775b2973aa9473611185a5583881ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94705432"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106555596"
 ---
 # Invoke-RestMethod
 
-## SAMENVATTING
+## Samen vatting
 Hiermee verzendt u een HTTP-of HTTPS-aanvraag naar een REST webservice.
 
-## SYNTAXIS
+## Syntax
 
 ### StandardMethod (standaard)
 
@@ -86,7 +86,7 @@ Invoke-RestMethod -CustomMethod <String> [-FollowRelLink] [-MaximumFollowRelLink
  [-SkipHeaderValidation] [<CommonParameters>]
 ```
 
-## Description
+## Beschrijving
 
 De `Invoke-RestMethod` cmdlet verzendt HTTP-en HTTPS-aanvragen voor het representatief verzenden van (rest) webservices voor het retour neren van Rich gestructureerde gegevens.
 
@@ -96,7 +96,7 @@ Deze cmdlet is geïntroduceerd in Windows Power Shell 3,0.
 
 Vanaf Power shell 7,0 `Invoke-RestMethod` ondersteunt proxy configuratie die is gedefinieerd door omgevings variabelen. Zie de sectie [opmerkingen](#notes) van dit artikel.
 
-## VOORBEELDEN
+## Voorbeelden
 
 ### Voor beeld 1: de Power shell-RSS-feed ophalen
 
@@ -220,10 +220,10 @@ Hiermee geeft u het expliciete verificatie type op dat moet worden gebruikt voor
 
 Beschik bare verificatie opties:
 
-- **Geen**: dit is de standaard optie wanneer er geen **verificatie** is opgegeven. Er wordt geen expliciete authenticatie gebruikt.
-- **Basic**: vereist **referentie**. De referenties worden gebruikt voor het verzenden van een RFC 7617-basis verificatie `Authorization: Basic` header in de indeling van `base64(user:password)` .
-- **Bearer**: **token** vereist. Verzendt en RFC 6750- `Authorization: Bearer` header met het opgegeven token. Dit is een alias voor **OAuth**
-- **OAuth**: **token** vereist. Er wordt een RFC 6750- `Authorization: Bearer` header verzonden met het opgegeven token. Dit is een alias voor **Bearer**
+- `None`: Dit is de standaard optie wanneer er geen **verificatie** is opgegeven. Er wordt geen expliciete authenticatie gebruikt.
+- `Basic`: Vereist **referentie**. De referenties worden gebruikt voor het verzenden van een RFC 7617-basis verificatie `Authorization: Basic` header in de indeling van `base64(user:password)` .
+- `Bearer`: **Token** vereist. Verzendt en RFC 6750- `Authorization: Bearer` header met het opgegeven token. Dit is een alias voor **OAuth**
+- `OAuth`: **Token** vereist. Er wordt een RFC 6750- `Authorization: Bearer` header verzonden met het opgegeven token. Dit is een alias voor **Bearer**
 
 Bij het leveren van **verificatie** worden alle `Authorization` headers die zijn opgegeven in **headers** of opgenomen in **websessie**, overschreven.
 
@@ -546,16 +546,16 @@ Accept wildcard characters: False
 
 Hiermee geeft u de methode op die voor de webaanvraag wordt gebruikt. De aanvaardbare waarden voor deze parameter zijn:
 
-- Standaard
-- Verwijderen
-- Ophalen
-- Head
-- Samenvoegen
-- Opties
-- Patch
-- Plaatsen
-- Put
-- Tracering
+- `Default`
+- `Delete`
+- `Get`
+- `Head`
+- `Merge`
+- `Options`
+- `Patch`
+- `Post`
+- `Put`
+- `Trace`
 
 De para meter **CustomMethod** kan worden gebruikt voor aanvraag methoden die hierboven niet worden vermeld.
 
@@ -858,7 +858,7 @@ Accept wildcard characters: False
 
 Hiermee stelt u de SSL/TLS-protocollen die zijn toegestaan voor de webaanvraag. Standaard zijn alle SSL/TLS-protocollen die door het systeem worden ondersteund, toegestaan. Met **SslProtocol** wordt het beperken van specifieke protocollen voor nalevings doeleinden toegestaan.
 
-**SslProtocol** maakt gebruik van de `WebSslProtocol` Flag-opsomming. Het is mogelijk om meer dan één protocol aan te bieden met behulp van de vlag notatie of meerdere opties combi neren `WebSslProtocol` met `-bor` , maar het leveren van meerdere protocollen wordt niet op alle platforms ondersteund.
+Deze waarden worden gedefinieerd als inventarisatie op basis van een vlag. U kunt meerdere waarden combi neren om meerdere vlaggen in te stellen met behulp van deze para meter. De waarden kunnen worden door gegeven aan de **SslProtocol** -para meter als een matrix met waarden of als een door komma's gescheiden teken reeks van die waarden. Met de cmdlet worden de waarden gecombineerd met behulp van een binaire waarde of bewerking. Het door geven van waarden als een matrix is de eenvoudigste optie. Daarnaast kunt u met behulp van de waarden van het tabblad volt ooien. U kunt mogelijk niet meerdere waarden op alle platforms opgeven.
 
 > [!NOTE]
 > Op niet-Windows-platforms is het niet mogelijk om te leveren `Tls` of `Tls12` als optie. Ondersteuning voor `Tls13` is niet beschikbaar op alle besturings systemen en moet worden geverifieerd op basis van elk besturings systeem.
@@ -1060,13 +1060,13 @@ Accept wildcard characters: False
 
 Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable. Zie [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)voor meer informatie.
 
-## INVOER
+## Invoerwaarden
 
 ### System. object
 
 U kunt de hoofd tekst van een webaanvraag door sluizen naar `Invoke-RestMethod` .
 
-## UITVOER
+## Uitvoerwaarden
 
 ### Systeem. Int64, System. String, System.Xml.Xmldocument
 
@@ -1076,7 +1076,7 @@ De uitvoer van de cmdlet is afhankelijk van de indeling van de inhoud die wordt 
 
 Als de aanvraag JSON-teken reeksen retourneert, `Invoke-RestMethod` retourneert een **PSObject** die de teken reeksen vertegenwoordigt.
 
-## OPMERKINGEN
+## Notities
 
 Sommige functies zijn mogelijk niet beschikbaar op alle platforms.
 
@@ -1090,12 +1090,12 @@ De waarde van deze eigenschap is afhankelijk van het platform op verschillende r
 
 De omgevings variabelen die worden gebruikt voor de `DefaultProxy` initialisatie op Windows-en UNIX-platforms zijn:
 
-- ` HTTP_PROXY`: de hostnaam of het IP-adres van de proxy server die wordt gebruikt voor HTTP-aanvragen.
+- `HTTP_PROXY`: de hostnaam of het IP-adres van de proxy server die wordt gebruikt voor HTTP-aanvragen.
 - `HTTPS_PROXY`: de hostnaam of het IP-adres van de proxy server die wordt gebruikt voor HTTPS-aanvragen.
 - `ALL_PROXY`: de hostnaam of het IP-adres van de proxy server die wordt gebruikt voor HTTP-en HTTPS-aanvragen `HTTP_PROXY` of `HTTPS_PROXY` die niet zijn gedefinieerd.
 - `NO_PROXY`: een door komma's gescheiden lijst met hostnamen die moeten worden uitgesloten van de proxy.
 
-## GERELATEERDE KOPPELINGEN
+## Verwante koppelingen
 
 [ConvertTo-Json](ConvertTo-Json.md)
 

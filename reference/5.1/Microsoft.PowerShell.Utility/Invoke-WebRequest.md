@@ -2,23 +2,23 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 01/26/2021
+ms.date: 04/05/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-WebRequest
-ms.openlocfilehash: f3545065d4879830a5051ef687f210c7fbd1251e
-ms.sourcegitcommit: 11880ca974fe2df308191c9f6dcdfe0b89c2dc67
+ms.openlocfilehash: 4aa3b889ed00c6b0442a1191f055e1228f252631
+ms.sourcegitcommit: d95a7255f6775b2973aa9473611185a5583881ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98860657"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106555522"
 ---
 # Invoke-WebRequest
 
-## SAMENVATTING
+## Samen vatting
 Hiermee wordt inhoud opgehaald van een webpagina op internet.
 
-## SYNTAXIS
+## Syntax
 
 ```
 Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-WebSession <WebRequestSession>] [-SessionVariable <String>]
@@ -29,7 +29,7 @@ Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-WebSession <WebRequestSessio
  [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>] [-PassThru] [<CommonParameters>]
 ```
 
-## BESCHRIJVING
+## Beschrijving
 
 De `Invoke-WebRequest` cmdlet verzendt http-, HTTPS-, FTP-en file-aanvragen naar een webpagina of webservice.
 Hiermee wordt het antwoord geparseerd en worden verzamelingen van formulieren, koppelingen, afbeeldingen en andere belang rijke HTML-elementen geretourneerd.
@@ -37,10 +37,9 @@ Hiermee wordt het antwoord geparseerd en worden verzamelingen van formulieren, k
 Deze cmdlet is geïntroduceerd in Windows Power Shell 3,0.
 
 > [!NOTE]
-> Standaard kan script code op de webpagina worden uitgevoerd wanneer de pagina wordt geparseerd om de eigenschap in te vullen `ParsedHtml` .
-> Gebruik de `-UseBasicParsing` Schakel optie om dit te onderdrukken.
+> Standaard kan script code op de webpagina worden uitgevoerd wanneer de pagina wordt geparseerd om de eigenschap in te vullen `ParsedHtml` . Gebruik de `-UseBasicParsing` Schakel optie om dit te onderdrukken.
 
-## VOORBEELDEN
+## Voorbeelden
 
 ### Voor beeld 1: een webaanvraag verzenden
 
@@ -138,7 +137,7 @@ $StatusCode
 
 De afsluit fout wordt geblokkeerd door het `catch` blok, waardoor de **status** code wordt opgehaald uit het **uitzonderings** object.
 
-## PARAMETERS
+## Parameters
 
 ### -Hoofd tekst
 
@@ -323,16 +322,16 @@ Accept wildcard characters: False
 
 Hiermee geeft u de methode op die voor de webaanvraag wordt gebruikt. De aanvaardbare waarden voor deze parameter zijn:
 
-- Standaard
-- Verwijderen
-- Ophalen
-- Head
-- Samenvoegen
-- Opties
-- Patch
-- Plaatsen
-- Put
-- Tracering
+- `Default`
+- `Delete`
+- `Get`
+- `Head`
+- `Merge`
+- `Options`
+- `Patch`
+- `Post`
+- `Put`
+- `Trace`
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.WebRequestMethod
@@ -484,11 +483,11 @@ Accept wildcard characters: False
 
 Hiermee geeft u een waarde op voor de header van de HTTP-reactie voor overdracht/versleuteling. De aanvaardbare waarden voor deze parameter zijn:
 
-- Gesegmenteerde
-- Comprimeren
-- Deflate
-- GZip
-- Identiteit
+- `Chunked`
+- `Compress`
+- `Deflate`
+- `GZip`
+- `Identity`
 
 ```yaml
 Type: System.String
@@ -539,7 +538,7 @@ Accept wildcard characters: False
 
 ### -UseDefaultCredentials
 
-Geeft aan dat de cmdet de referenties van de huidige gebruiker gebruikt om de webaanvraag te verzenden.
+Geeft aan dat de cmdlet de referenties van de huidige gebruiker gebruikt om de webaanvraag te verzenden.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -599,19 +598,19 @@ Accept wildcard characters: False
 
 Deze cmdlet biedt ondersteuning voor de algemene para meters: `-Debug` , `-ErrorAction` , `-ErrorVariable` , `-InformationAction` , `-InformationVariable` , `-OutVariable` , `-OutBuffer` , `-PipelineVariable` , `-Verbose` , `-WarningAction` en `-WarningVariable` . Zie [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)voor meer informatie.
 
-## INVOER
+## Invoerwaarden
 
 ### System. object
 
 U kunt de hoofd tekst van een webaanvraag door sluizen naar `Invoke-WebRequest` .
 
-## UITVOER
+## Uitvoerwaarden
 
 ### Microsoft.PowerShell.Commands.HtmlWebResponseObject
 
-## OPMERKINGEN
+## Notities
 
-## GERELATEERDE KOPPELINGEN
+## Verwante koppelingen
 
 [Invoke-RestMethod](Invoke-RestMethod.md)
 

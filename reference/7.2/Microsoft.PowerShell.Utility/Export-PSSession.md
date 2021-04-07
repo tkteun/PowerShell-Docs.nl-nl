@@ -2,24 +2,24 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 04/23/2019
+ms.date: 04/05/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/export-pssession?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Export-PSSession
-ms.openlocfilehash: 334746589ed991ea817929eb31100f92c2dfda1f
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: cbc31f317876869658d813b0c0c566c8963b590d
+ms.sourcegitcommit: d95a7255f6775b2973aa9473611185a5583881ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94705460"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106555188"
 ---
 # Export-PSSession
 
-## SAMENVATTING
+## Samen vatting
 
 Exporteert opdrachten vanuit een andere sessie en slaat ze op in een Power shell-module.
 
-## SYNTAXIS
+## Syntax
 
 ### Alles
 
@@ -31,7 +31,7 @@ Export-PSSession [-OutputModule] <String> [-Force] [-Encoding <Encoding>]
  [<CommonParameters>]
 ```
 
-## BESCHRIJVING
+## Beschrijving
 
 De `Export-PSSession` cmdlet haalt cmdlets, functies, aliassen en andere opdracht typen van een andere Power shell-sessie (PSSession) op een lokale of externe computer op en slaat ze op in een Power shell-module. Gebruik de cmdlet om de opdrachten van de module toe te voegen aan de huidige sessie `Import-Module` .
 
@@ -43,7 +43,7 @@ Om conflicten met opdracht namen te voor komen, is de standaard instelling voor 
 
 De `Export-PSSession` cmdlet maakt gebruik van de impliciete externe functie van Power shell. Wanneer u opdrachten in de huidige sessie importeert, worden deze impliciet uitgevoerd in de oorspronkelijke sessie of in een vergelijk bare sessie op de oorspronkelijke computer.
 
-## VOORBEELDEN
+## Voorbeelden
 
 ### Voor beeld 1: opdrachten van een PSSession exporteren
 
@@ -122,7 +122,7 @@ De `Remove-PSSession` cmdlet verwijdert de PSSession in de `$S` variabele.
 
 De `New-PSSession` cmdlet maakt een nieuwe PSSession die verbinding maakt met de Server01-computer. De para meter **SessionOption** maakt gebruik van het object dat is opgeslagen in `$Options` . `Import-Module`Met de cmdlet worden de opdrachten uit de Server01-module geïmporteerd. De opdrachten in de module worden uitgevoerd in de PSSession op de Server01-computer.
 
-## PARAMETERS
+## Parameters
 
 ### -AllowClobber
 
@@ -204,15 +204,17 @@ Exporteert alleen de opgegeven typen opdracht objecten. Gebruik **CommandType** 
 
 De acceptabele waarden voor deze para meter zijn als volgt:
 
-- Toe. Alle Power shell-aliassen in de huidige sessie.
-- Hele. Alle opdracht typen. Het is het equivalent van `Get-Command -Name *` .
-- Modules. Alle bestanden met uitzonde ring van Power Shell-bestanden in paden die worden vermeld in de Path-omgevings variabele ( `$env:path` ), inclusief. txt,. exe en. dll-bestanden.
-- Cmdlet. De cmdlets in de huidige sessie. Cmdlet is de standaard waarde.
-- Configuratie. Een Power shell-configuratie. Zie [about_Session_Configurations](../Microsoft.PowerShell.Core/About/about_Session_Configurations.md)voor meer informatie.
-- ExternalScript. Alle. ps1-bestanden in de paden die worden vermeld in de Path-omgevings variabele ( `$env:path` ).
-- Filter en functie. Alle Power shell-functies.
-- Schriften. Script blokken in de huidige sessie.
-- Workflowconfiguraties. Een Power shell-werk stroom. Zie [about_Workflows](/powershell/module/PSWorkflow/About/about_Workflows)voor meer informatie.
+- `Alias`: Alle Power shell-aliassen in de huidige sessie.
+- `All`: Alle opdracht typen. Het is het equivalent van `Get-Command -Name *` .
+- `Application`: Alle bestanden met uitzonde ring van Power Shell-bestanden in paden die worden vermeld in de Path-omgevings variabele ( `$env:path` ), inclusief. txt,. exe en. dll-bestanden.
+- `Cmdlet`: De cmdlets in de huidige sessie. Cmdlet is de standaard waarde.
+- `Configuration`: Een Power shell-configuratie. Zie [about_Session_Configurations](../Microsoft.PowerShell.Core/About/about_Session_Configurations.md)voor meer informatie.
+- `ExternalScript`: Alle. ps1-bestanden in de paden die worden vermeld in de Path-omgevings variabele ( `$env:path` ).
+- `Filter` en `Function` : alle Power shell-functies.
+- `Script` Script blokken in de huidige sessie.
+- `Workflow` Een Power shell-werk stroom. Zie [about_Workflows](/powershell/module/PSWorkflow/About/about_Workflows)voor meer informatie.
+
+Deze waarden worden gedefinieerd als inventarisatie op basis van een vlag. U kunt meerdere waarden combi neren om meerdere vlaggen in te stellen met behulp van deze para meter. De waarden kunnen worden door gegeven aan de **CommandType** -para meter als een matrix met waarden of als een door komma's gescheiden teken reeks van die waarden. Met de cmdlet worden de waarden gecombineerd met behulp van een binaire waarde of bewerking. Het door geven van waarden als een matrix is de eenvoudigste optie. Daarnaast kunt u met behulp van de waarden van het tabblad volt ooien.
 
 ```yaml
 Type: System.Management.Automation.CommandTypes
@@ -376,19 +378,19 @@ Accept wildcard characters: False
 
 Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable. Zie [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)voor meer informatie.
 
-## INVOER
+## Invoerwaarden
 
 ### Geen
 
 U kunt geen objecten pipeen naar `Export-PSSession` .
 
-## UITVOER
+## Uitvoerwaarden
 
 ### System. IO. file info
 
 `Export-PSSession` retourneert een lijst met bestanden waaruit de module bestaat die deze heeft gemaakt.
 
-## OPMERKINGEN
+## Notities
 
 `Export-PSSession` is afhankelijk van de externe infra structuur van Power shell. Als u deze cmdlet wilt gebruiken, moet de computer zijn geconfigureerd voor externe toegang. Zie [about_Remote_Requirements](../Microsoft.PowerShell.Core/About/about_Remote_Requirements.md)voor meer informatie.
 
@@ -410,7 +412,7 @@ Omdat Power shell-profielen niet worden uitgevoerd in PSSessions, zijn de opdrac
 
 De module die `Export-PSSession` maakt, kan een opmaak bestand bevatten, zelfs als de opdracht geen indelings gegevens importeert. Als de opdracht geen indelings gegevens importeert, bevatten indelings bestanden die worden gemaakt geen opmaak gegevens.
 
-## GERELATEERDE KOPPELINGEN
+## Verwante koppelingen
 
 [about_Command_Precedence](../Microsoft.PowerShell.Core/About/about_Command_Precedence.md)
 

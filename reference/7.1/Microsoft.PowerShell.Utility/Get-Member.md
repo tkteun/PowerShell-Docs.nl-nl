@@ -3,36 +3,36 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 05/06/2020
+ms.date: 04/05/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-member?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Member
-ms.openlocfilehash: 833be15e4018a0c25b0f604b5c84ab077c584cae
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: c54b1ad15453e5e90d7b2dcb78c6dd86158212bc
+ms.sourcegitcommit: d95a7255f6775b2973aa9473611185a5583881ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93250220"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106555743"
 ---
 # Get-Member
 
-## SAMENVATTING
+## Samen vatting
 Hiermee worden de eigenschappen en methoden van objecten opgehaald.
 
-## SYNTAXIS
+## Syntax
 
 ```
 Get-Member [-InputObject <PSObject>] [[-Name] <String[]>] [-MemberType <PSMemberTypes>]
  [-View <PSMemberViewTypes>] [-Static] [-Force] [<CommonParameters>]
 ```
 
-## BESCHRIJVING
+## Beschrijving
 
 Met de `Get-Member` cmdlet worden de leden, eigenschappen en methoden van objecten opgehaald.
 
-Als u het object wilt opgeven, gebruikt u de para meter **input object** of pipet u een object naar `Get-Member` . Als u informatie wilt ophalen over statische leden, de leden van de klasse, niet van het exemplaar, gebruikt u de **statische** para meter. Als u alleen bepaalde typen leden wilt ophalen, bijvoorbeeld **NoteProperties** , gebruikt u de para meter **member type** .
+Als u het object wilt opgeven, gebruikt u de para meter **input object** of pipet u een object naar `Get-Member` . Als u informatie wilt ophalen over statische leden, de leden van de klasse, niet van het exemplaar, gebruikt u de **statische** para meter. Als u alleen bepaalde typen leden wilt ophalen, bijvoorbeeld **NoteProperties**, gebruikt u de para meter **member type** .
 
-## VOORBEELDEN
+## Voorbeelden
 
 ### Voor beeld 1: leden van proces objecten ophalen
 
@@ -90,7 +90,7 @@ ToString                  ScriptMethod  System.Object ToString();
 
 ### Voor beeld 2: leden van service objecten ophalen
 
-In dit voor beeld worden alle leden (eigenschappen en methoden) opgehaald van de service objecten die zijn opgehaald door de `Get-Service` cmdlet, met inbegrip van de intrinsieke leden, zoals **PSBase** , **PSObject** en de methoden **get_** en **set_** .
+In dit voor beeld worden alle leden (eigenschappen en methoden) opgehaald van de service objecten die zijn opgehaald door de `Get-Service` cmdlet, met inbegrip van de intrinsieke leden, zoals **PSBase**, **PSObject** en de methoden **get_** en **set_** .
 
 ```powershell
 Get-Service | Get-Member -Force
@@ -253,20 +253,20 @@ LastWriteTimeUtc
 Attributes
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -Force
 
 Voegt de intrinsieke leden en de **get_** van het door de compiler gegenereerde en **set_** -methoden toe aan de weer gave.
 In de volgende lijst worden de eigenschappen beschreven die worden toegevoegd wanneer u de para meter **Force** gebruikt:
 
-- **PSBase** : de oorspronkelijke eigenschappen van het .net-object zonder extensie of aanpassing. Dit zijn de eigenschappen die voor de object klasse zijn gedefinieerd.
-- **PSAdapted**. De eigenschappen en methoden die zijn gedefinieerd in het type systeem Power shell Extended.
-- **PSExtended**. De eigenschappen en methoden die zijn toegevoegd in de `Types.ps1xml` bestanden of met behulp van de- `Add-Member` cmdlet.
-- **PSObject**. De adapter die het basis object converteert naar een Power shell **PSObject** -object.
-- **PSTypeNames**. Een lijst met object typen die het object beschrijven, in volg orde van specificiteit. Bij het format teren van het object zoekt Power shell naar de typen in de `Format.ps1xml` bestanden in de installatie directory van Power shell ( `$PSHOME` ). De opmaak definitie wordt gebruikt voor het eerste type dat wordt gevonden.
+- `PSBase`: De oorspronkelijke eigenschappen van het .NET-object zonder extensie of aanpassing. Dit zijn de eigenschappen die voor de object klasse zijn gedefinieerd.
+- `PSAdapted`: De eigenschappen en methoden die zijn gedefinieerd in het type systeem Power shell Extended.
+- `PSExtended`: De eigenschappen en methoden die zijn toegevoegd aan de `Types.ps1xml` bestanden of door gebruik te maken van de `Add-Member` cmdlet.
+- `PSObject`: De adapter die het basis object converteert naar een Power shell **PSObject** -object.
+- `PSTypeNames`: Een lijst met object typen die het object beschrijven, in volg orde van specificiteit. Bij het format teren van het object zoekt Power shell naar de typen in de `Format.ps1xml` bestanden in de installatie directory van Power shell ( `$PSHOME` ). De opmaak definitie wordt gebruikt voor het eerste type dat wordt gevonden.
 
-`Get-Member`Deze eigenschappen worden standaard in alle weer gaven opgehaald, behalve **basis** en **aangepast** , maar ze worden niet weer gegeven.
+`Get-Member`Deze eigenschappen worden standaard in alle weer gaven opgehaald, behalve **basis** en **aangepast**, maar ze worden niet weer gegeven.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -303,32 +303,32 @@ Accept wildcard characters: False
 
 ### -Member type
 
-Hiermee geeft u het lidtype-type op dat met deze cmdlet wordt opgehaald. De standaardwaarde is **alle**.
+Hiermee geeft u het lidtype-type op dat met deze cmdlet wordt opgehaald. De standaardwaarde is `All`.
 
 De aanvaardbare waarden voor deze parameter zijn:
 
-- AliasProperty
-- CodeProperty
-- Eigenschap
-- NoteProperty
-- ScriptProperty
-- Eigenschappen
-- Eigenschappenset
-- Methode
-- CodeMethod
-- ScriptMethod
-- Methoden
-- ParameterizedProperty
-- Ledenset
-- Gebeurtenis
-- Dynamisch
-- Alles
+- `AliasProperty`
+- `CodeProperty`
+- `Property`
+- `NoteProperty`
+- `ScriptProperty`
+- `Properties`
+- `PropertySet`
+- `Method`
+- `CodeMethod`
+- `ScriptMethod`
+- `Methods`
+- `ParameterizedProperty`
+- `MemberSet`
+- `Event`
+- `Dynamic`
+- `All`
+
+Deze waarden worden gedefinieerd als inventarisatie op basis van een vlag. U kunt meerdere waarden combi neren om meerdere vlaggen in te stellen met behulp van deze para meter. De waarden kunnen worden door gegeven aan de **member type** -para meter als een matrix met waarden of als een door komma's gescheiden teken reeks van die waarden. Met de cmdlet worden de waarden gecombineerd met behulp van een binaire waarde of bewerking. Het door geven van waarden als een matrix is de eenvoudigste optie. Daarnaast kunt u met behulp van de waarden van het tabblad volt ooien.
 
 Zie [PSMemberTypes Enumeration (Engelstalig)](/dotnet/api/system.management.automation.psmembertypes)voor meer informatie over deze waarden.
 
-Niet alle objecten hebben elk type lid. Als u een lidtype opgeeft dat het object niet heeft, retourneert Power shell een null-waarde.
-
-Als u verwante typen leden wilt ophalen, bijvoorbeeld alle uitgebreide leden, gebruikt u de **weer gave** -para meter. Als u de para meter **member type** met de para meters **static** of **View** gebruikt, `Get-Member` worden de leden opgehaald die deel uitmaken van beide sets.
+Niet alle objecten hebben elk type lid. Als u een lidtype opgeeft dat het object niet heeft, retourneert Power shell een null-waarde. Als u verwante typen leden wilt ophalen, bijvoorbeeld alle uitgebreide leden, gebruikt u de **weer gave** -para meter. Als u de para meter **member type** met de para meters **static** of **View** gebruikt, `Get-Member` worden de leden opgehaald die deel uitmaken van beide sets.
 
 ```yaml
 Type: System.Management.Automation.PSMemberTypes
@@ -347,7 +347,7 @@ Accept wildcard characters: False
 
 Hiermee geeft u de namen van een of meer eigenschappen of methoden van het object op. `Get-Member` Hiermee worden alleen de opgegeven eigenschappen en methoden opgehaald.
 
-Als u de para meter **name** gebruikt met de para meter **member type** , **View** of **static** , worden `Get-Member` alleen de leden opgehaald die voldoen aan de criteria van alle para meters.
+Als u de para meter **name** gebruikt met de para meter **member type**, **View** of **static** , worden `Get-Member` alleen de leden opgehaald die voldoen aan de criteria van alle para meters.
 
 Als u een statisch lid wilt ophalen op naam, gebruikt u de **statische** para meter met de **naam** parameter.
 
@@ -384,7 +384,7 @@ Accept wildcard characters: False
 
 ### -Weer geven
 
-Hiermee geeft u op dat met deze cmdlet alleen bepaalde typen eigenschappen en-methoden worden opgehaald. Geef een of meer van de waarden op. De standaard waarde is **aangepast** , **uitgebreid**.
+Hiermee geeft u op dat met deze cmdlet alleen bepaalde typen eigenschappen en-methoden worden opgehaald. Geef een of meer van de waarden op. De standaard waarde is **aangepast**, **uitgebreid**.
 
 De aanvaardbare waarden voor deze parameter zijn:
 
@@ -414,27 +414,26 @@ Accept wildcard characters: False
 
 Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable. Zie [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)voor meer informatie.
 
-## INVOER
+## Invoerwaarden
 
 ### System. Management. Automation. PSObject
 
 U kunt elk object door sluizen naar `Get-Member` .
 
-## UITVOER
+## Uitvoerwaarden
 
 ### Micro soft. Power shell. commands. MemberDefinition
 
 `Get-Member` retourneert een object voor elke eigenschap of methode die wordt opgehaald.
 
-## OPMERKINGEN
+## Notities
 
 U kunt informatie over een verzamelings object ophalen met behulp van de para meter **input object** of door het object, voorafgegaan door een komma, te gebruiken in `Get-Member` .
 
-U kunt de `$This` Automatische variabele gebruiken in script blokken waarmee de waarden van nieuwe eigenschappen en methoden worden gedefinieerd. De `$This` variabele verwijst naar het exemplaar van het object waarnaar de eigenschappen en methoden worden toegevoegd. Zie about_Automatic_Variables voor meer informatie over de `$This` variabele [about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md).
+U kunt de `$This` Automatische variabele gebruiken in script blokken waarmee de waarden van nieuwe eigenschappen en methoden worden gedefinieerd. De `$This` variabele verwijst naar het exemplaar van het object waarnaar de eigenschappen en methoden worden toegevoegd. Zie about_Automatic_Variables voor meer informatie over de `$This` variabele [](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md).
 
 Als u een object door geven dat een _type_ vertegenwoordigt, zoals een letterlijke type, bijvoorbeeld `[int]` , geeft u `Get-Member` informatie over het `[System.RuntimeType]` type. Wanneer u echter de **statische** para meter gebruikt, `Get-Member` retourneert de statische leden van het specifieke type dat door het `System.RuntimeType` exemplaar wordt vertegenwoordigd.
 
-## GERELATEERDE KOPPELINGEN
+## Verwante koppelingen
 
 [Lid toevoegen](Add-Member.md)
-

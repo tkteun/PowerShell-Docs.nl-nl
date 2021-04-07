@@ -2,23 +2,23 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 05/20/2020
+ms.date: 04/05/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/get-command?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Command
-ms.openlocfilehash: 1d54082ee313c0e8d4ee7911f89da150aeba9d55
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 092b7bff345340a8e2d30136517537c375074df1
+ms.sourcegitcommit: d95a7255f6775b2973aa9473611185a5583881ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94705628"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106555454"
 ---
 # Get-Command
 
-## SAMENVATTING
+## Samen vatting
 Hiermee worden alle opdrachten opgehaald.
 
-## SYNTAXIS
+## Syntax
 
 ### Cmdletset (standaard)
 
@@ -39,7 +39,7 @@ Get-Command [[-Name] <String[]>] [-Module <String[]>]
  [-UseAbbreviationExpansion] [<CommonParameters>]
 ```
 
-## BESCHRIJVING
+## Beschrijving
 
 De `Get-Command` cmdlet haalt alle opdrachten op die zijn geïnstalleerd op de computer, zoals cmdlets, aliassen, functies, filters, scripts en toepassingen. `Get-Command` Hiermee worden de opdrachten opgehaald van Power shell-modules en-opdrachten die zijn geïmporteerd uit andere sessies. Als u alleen opdrachten wilt ophalen die in de huidige sessie zijn geïmporteerd, gebruikt u de para meter **ListImported** .
 
@@ -51,7 +51,7 @@ Zonder para meters worden `Get-Command` Alle cmdlets, functies en aliassen die o
 
 Vanaf Windows Power shell 5,0 worden de resultaten van de `Get-Command` cmdlet standaard een **versie** kolom weer gegeven. Er is een nieuwe **versie** -eigenschap toegevoegd aan de klasse **CommandInfo** .
 
-## VOORBEELDEN
+## Voorbeelden
 
 ### Voor beeld 1: cmdlets, functies en aliassen ophalen
 
@@ -116,7 +116,10 @@ De opdracht in het voor beeld gebruikt de `Get-DynamicParameters` functie om de 
 function Get-DynamicParameters
 {
     param ($Cmdlet, $PSDrive)
-    (Get-Command -Name $Cmdlet -ArgumentList $PSDrive).ParameterSets | ForEach-Object {$_.Parameters} | Where-Object { $_.IsDynamic } | Select-Object -Property Name -Unique
+    (Get-Command -Name $Cmdlet -ArgumentList $PSDrive).ParameterSets | 
+      ForEach-Object {$_.Parameters} | 
+        Where-Object { $_.IsDynamic } | 
+          Select-Object -Property Name -Unique
 }
 Get-DynamicParameters -Cmdlet Get-ChildItem -PSDrive Cert:
 ```
@@ -156,7 +159,7 @@ De para meter **parameter type** onderscheidt para meters die een **Authenticati
 In dit voor beeld ziet u hoe u de `Get-Command` cmdlet gebruikt met een alias.
 
 ```powershell
-Get-Command Name dir
+Get-Command -Name dir
 ```
 
 ```Output
@@ -272,7 +275,7 @@ Application     getconf                                            0.0.0.0    /u
 Application     command                                            0.0.0.0    /usr/bin/command
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -Alle
 
@@ -323,13 +326,15 @@ Hiermee geeft u de typen opdrachten op die met deze cmdlet worden opgehaald. Voe
 
 De aanvaardbare waarden voor deze parameter zijn:
 
-- Toe. Hiermee worden de aliassen opgehaald van alle Power shell-opdrachten. Zie [about_Aliases](About/about_Aliases.md)voor meer informatie.
-- Hele. Hiermee worden alle opdracht typen opgehaald. Deze parameter waarde is gelijk aan `Get-Command *` .
-- Modules. Hiermee worden niet-Power Shell-bestanden opgehaald in paden die worden vermeld in de omgevings variabele **Path** ($env:p AD), inclusief txt-, exe-en dll-bestanden. Zie about_Environment_Variables voor meer informatie over de omgevings variabele **Path** .
-- Cmdlet. Hiermee worden alle cmdlets opgehaald.
-- ExternalScript. Hiermee worden alle. ps1-bestanden opgehaald uit de paden die worden vermeld in de **Path** -omgevings variabele ($env:p AD).
-- Filter en functie. Hiermee worden alle geavanceerde en eenvoudige Power shell-functies en-filters opgehaald.
-- Schriften. Hiermee worden alle script blokken opgehaald. Als u Power shell-scripts (. ps1-bestanden) wilt ophalen, gebruikt u de ExternalScript-waarde.
+- `Alias`: Hiermee worden de aliassen van alle Power shell-opdrachten opgehaald. Zie [about_Aliases](About/about_Aliases.md)voor meer informatie.
+- `All`: Hiermee worden alle opdracht typen opgehaald. Deze parameter waarde is gelijk aan `Get-Command *` .
+- `Application`: Hiermee worden niet-Power Shell-bestanden in paden weer gegeven in de omgevings variabele **Path** ( `$env:path` ), inclusief. txt,. exe en. dll-bestanden. Zie [about_Environment_Variables](About/about_Environment_Variables.md)voor meer informatie over de omgevings variabele **Path** .
+- `Cmdlet`: Hiermee worden alle cmdlets opgehaald.
+- `ExternalScript`: Hiermee worden alle. ps1-bestanden opgehaald uit de paden die worden weer gegeven in de **Path** -omgevings variabele ( `$env:path` ).
+- `Filter` en `Function` : haalt alle geavanceerde en eenvoudige Power shell-functies en-filters op.
+- `Script`: Hiermee worden alle script blokken opgehaald. Als u Power shell-scripts (. ps1-bestanden) wilt ophalen, gebruikt u de `ExternalScript` waarde.
+
+Deze waarden worden gedefinieerd als inventarisatie op basis van een vlag. U kunt meerdere waarden combi neren om meerdere vlaggen in te stellen met behulp van deze para meter. De waarden kunnen worden door gegeven aan de **CommandType** -para meter als een matrix met waarden of als een door komma's gescheiden teken reeks van die waarden. Met de cmdlet worden de waarden gecombineerd met behulp van een binaire waarde of bewerking. Het door geven van waarden als een matrix is de eenvoudigste optie. Daarnaast kunt u met behulp van de waarden van het tabblad volt ooien.
 
 ```yaml
 Type: System.Management.Automation.CommandTypes
@@ -588,13 +593,13 @@ Accept wildcard characters: True
 
 Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable. Zie [about_CommonParameters](About/about_CommonParameters.md)voor meer informatie.
 
-## INVOER
+## Invoerwaarden
 
 ### System. String
 
 U kunt opdracht namen door sluizen naar deze cmdlet.
 
-## UITVOER
+## Uitvoerwaarden
 
 ### System. Management. Automation. CommandInfo
 
@@ -616,13 +621,13 @@ Vertegenwoordigt cmdlets.
 
 Hiermee worden functies en filters aangeduid.
 
-## OPMERKINGEN
+## Notities
 
-* Wanneer er meer dan één opdracht met dezelfde naam beschikbaar is voor de sessie, `Get-Command` wordt de opdracht weer gegeven die wordt uitgevoerd wanneer u de naam van de opdracht typt. Als u opdrachten met dezelfde naam wilt ophalen, gebruikt u de para meter **all** in volg orde uitvoeren. Zie [about_Command_Precedence](../Microsoft.PowerShell.Core/About/about_Command_Precedence.md)voor meer informatie.
-* Wanneer een module automatisch wordt geïmporteerd, is het effect hetzelfde als het gebruik van de `Import-Module` cmdlet. De module kan opdrachten, typen en indelings bestanden toevoegen en scripts uitvoeren in de sessie.
+- Wanneer er meer dan één opdracht met dezelfde naam beschikbaar is voor de sessie, `Get-Command` wordt de opdracht weer gegeven die wordt uitgevoerd wanneer u de naam van de opdracht typt. Als u opdrachten met dezelfde naam wilt ophalen, gebruikt u de para meter **all** in volg orde uitvoeren. Zie [about_Command_Precedence](../Microsoft.PowerShell.Core/About/about_Command_Precedence.md)voor meer informatie.
+- Wanneer een module automatisch wordt geïmporteerd, is het effect hetzelfde als het gebruik van de `Import-Module` cmdlet. De module kan opdrachten, typen en indelings bestanden toevoegen en scripts uitvoeren in de sessie.
   Als u het automatisch importeren van modules wilt inschakelen, uitschakelen en configureren, gebruikt u de `$PSModuleAutoLoadingPreference` Voorkeurs variabele. Zie [about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md)voor meer informatie.
 
-## GERELATEERDE KOPPELINGEN
+## Verwante koppelingen
 
 [Exporteren-PSSession](../Microsoft.PowerShell.Utility/Export-PSSession.md)
 
@@ -635,4 +640,3 @@ Hiermee worden functies en filters aangeduid.
 [Import-PSSession](../Microsoft.PowerShell.Utility/Import-PSSession.md)
 
 [about_Command_Precedence](About/about_Command_Precedence.md)
-

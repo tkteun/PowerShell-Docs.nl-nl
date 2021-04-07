@@ -3,23 +3,23 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 09/03/2020
+ms.date: 04/05/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-restmethod?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-RestMethod
-ms.openlocfilehash: d00885d0911d20dee0e5c498e5e339af4fa39a34
-ms.sourcegitcommit: eaac7af89171379df2e20464ebee9fc7e7d7674a
+ms.openlocfilehash: a5bed4574d6590272192cbcee09c4a8cd2e3a803
+ms.sourcegitcommit: d95a7255f6775b2973aa9473611185a5583881ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/05/2020
-ms.locfileid: "93251897"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106555710"
 ---
 # Invoke-RestMethod
 
-## SAMENVATTING
+## Samen vatting
 Hiermee verzendt u een HTTP-of HTTPS-aanvraag naar een REST webservice.
 
-## SYNTAXIS
+## Syntax
 
 ### StandardMethod (standaard)
 
@@ -97,7 +97,7 @@ Deze cmdlet is geïntroduceerd in Windows Power Shell 3,0.
 
 Vanaf Power shell 7,0 `Invoke-RestMethod` ondersteunt proxy configuratie die is gedefinieerd door omgevings variabelen. Zie de sectie [opmerkingen](#notes) van dit artikel.
 
-## VOORBEELDEN
+## Voorbeelden
 
 ### Voor beeld 1: de Power shell-RSS-feed ophalen
 
@@ -221,12 +221,12 @@ Hiermee geeft u het expliciete verificatie type op dat moet worden gebruikt voor
 
 Beschik bare verificatie opties:
 
-- **Geen** : dit is de standaard optie wanneer er geen **verificatie** is opgegeven. Er wordt geen expliciete authenticatie gebruikt.
-- **Basic** : vereist **referentie**. De referenties worden gebruikt voor het verzenden van een RFC 7617-basis verificatie `Authorization: Basic` header in de indeling van `base64(user:password)` .
-- **Bearer** : **token** vereist. Verzendt en RFC 6750- `Authorization: Bearer` header met het opgegeven token. Dit is een alias voor **OAuth**
-- **OAuth** : **token** vereist. Er wordt een RFC 6750- `Authorization: Bearer` header verzonden met het opgegeven token. Dit is een alias voor **Bearer**
+- `None`: Dit is de standaard optie wanneer er geen **verificatie** is opgegeven. Er wordt geen expliciete authenticatie gebruikt.
+- `Basic`: Vereist **referentie**. De referenties worden gebruikt voor het verzenden van een RFC 7617-basis verificatie `Authorization: Basic` header in de indeling van `base64(user:password)` .
+- `Bearer`: **Token** vereist. Verzendt en RFC 6750- `Authorization: Bearer` header met het opgegeven token. Dit is een alias voor **OAuth**
+- `OAuth`: **Token** vereist. Er wordt een RFC 6750- `Authorization: Bearer` header verzonden met het opgegeven token. Dit is een alias voor **Bearer**
 
-Bij het leveren van **verificatie** worden alle `Authorization` headers die zijn opgegeven in **headers** of opgenomen in **websessie** , overschreven.
+Bij het leveren van **verificatie** worden alle `Authorization` headers die zijn opgegeven in **headers** of opgenomen in **websessie**, overschreven.
 
 Deze functie is toegevoegd aan Power shell 6.0.0.
 
@@ -254,7 +254,7 @@ Wanneer de invoer een GET-aanvraag is en de hoofd tekst een `IDictionary` (meest
 
 Wanneer de hoofd tekst een formulier is of de uitvoer van een andere `Invoke-WebRequest` aanroep is, stelt Power shell de aanvraag inhoud in op de formulier velden.
 
-De para meter **Body** kan ook een **systeem .net. http. MultipartFormDataContent-** object accepteren. Hierdoor kunnen aanvragen worden vergemakkelijkt `multipart/form-data` . Wanneer een **MultipartFormDataContent** -object wordt opgegeven voor de **hoofd tekst** , worden alle aan de inhouds headers van het object gerelateerde kopteksten die zijn opgegeven voor de **Content type** -, **headers** -of **websessie** -para meters, overschreven `MultipartFormDataContent` . Deze functie is toegevoegd aan Power shell 6.0.0.
+De para meter **Body** kan ook een **systeem .net. http. MultipartFormDataContent-** object accepteren. Hierdoor kunnen aanvragen worden vergemakkelijkt `multipart/form-data` . Wanneer een **MultipartFormDataContent** -object wordt opgegeven voor de **hoofd tekst**, worden alle aan de inhouds headers van het object gerelateerde kopteksten die zijn opgegeven voor de **Content type**-, **headers**-of **websessie** -para meters, overschreven `MultipartFormDataContent` . Deze functie is toegevoegd aan Power shell 6.0.0.
 
 ```yaml
 Type: System.Object
@@ -333,7 +333,7 @@ Accept wildcard characters: False
 
 Hiermee geeft u een gebruikers account op dat gemachtigd is om de aanvraag te verzenden. Standaard is dit de huidige gebruiker.
 
-Typ een gebruikers naam, zoals **gebruiker01** of **Domain01\User01** , of voer een **PSCredential** -object in dat door de cmdlet wordt gegenereerd `Get-Credential` .
+Typ een gebruikers naam, zoals **gebruiker01** of **Domain01\User01**, of voer een **PSCredential** -object in dat door de cmdlet wordt gegenereerd `Get-Credential` .
 
 **Referentie** kan alleen worden gebruikt of in combi natie met bepaalde opties voor **verificatie** parameters. Als u alleen gebruikt, worden er alleen referenties voor de externe server verstrekt als de externe server een aanvraag voor verificatie controle verzendt. Wanneer u gebruikt met **verificatie** opties, worden de referenties expliciet verzonden.
 
@@ -547,16 +547,16 @@ Accept wildcard characters: False
 
 Hiermee geeft u de methode op die voor de webaanvraag wordt gebruikt. De aanvaardbare waarden voor deze parameter zijn:
 
-- Standaard
-- Verwijderen
-- Ophalen
-- Head
-- Samenvoegen
-- Opties
-- Patch
-- Plaatsen
-- Put
-- Tracering
+- `Default`
+- `Delete`
+- `Get`
+- `Head`
+- `Merge`
+- `Options`
+- `Patch`
+- `Post`
+- `Put`
+- `Trace`
 
 De para meter **CustomMethod** kan worden gebruikt voor aanvraag methoden die hierboven niet worden vermeld.
 
@@ -669,7 +669,7 @@ Accept wildcard characters: False
 
 Hiermee geeft u een gebruikers account op dat is gemachtigd voor het gebruik van de proxy server die is opgegeven door de para meter **proxy** . Standaard is dit de huidige gebruiker.
 
-Typ een gebruikers naam, zoals **gebruiker01** of **Domain01\User01** , **User@Domain.Com** of voer een `PSCredential` object in, bijvoorbeeld het type dat door de cmdlet wordt gegenereerd `Get-Credential` .
+Typ een gebruikers naam, zoals **gebruiker01** of **Domain01\User01**, **User@Domain.Com** of voer een `PSCredential` object in, bijvoorbeeld het type dat door de cmdlet wordt gegenereerd `Get-Credential` .
 
 Deze para meter is alleen geldig wanneer de **proxy** parameter ook in de opdracht wordt gebruikt. U kunt de para meters **ProxyCredential** en **ProxyUseDefaultCredentials** niet in dezelfde opdracht gebruiken.
 
@@ -820,7 +820,7 @@ Hiermee wordt aangegeven dat de cmdlet headers zonder validatie moet toevoegen a
 Deze schakel optie moet worden gebruikt voor sites waarvoor header waarden zijn vereist die niet voldoen aan de standaarden.
 Als u deze switch opgeeft, wordt de validatie uitgeschakeld zodat de waarde die wordt door gegeven, niet kan worden gecontroleerd. Als u deze opgeeft, worden alle headers zonder validatie toegevoegd.
 
-Hiermee wordt de validatie uitgeschakeld voor waarden die zijn door gegeven aan de para meters **Content type** , **headers** en **User agent** .
+Hiermee wordt de validatie uitgeschakeld voor waarden die zijn door gegeven aan de para meters **Content type**, **headers** en **User agent** .
 
 Deze functie is toegevoegd aan Power shell 6.0.0.
 
@@ -859,7 +859,7 @@ Accept wildcard characters: False
 
 Hiermee stelt u de SSL/TLS-protocollen die zijn toegestaan voor de webaanvraag. Standaard zijn alle SSL/TLS-protocollen die door het systeem worden ondersteund, toegestaan. Met **SslProtocol** wordt het beperken van specifieke protocollen voor nalevings doeleinden toegestaan.
 
-**SslProtocol** maakt gebruik van de `WebSslProtocol` Flag-opsomming. Het is mogelijk om meer dan één protocol aan te bieden met behulp van de vlag notatie of meerdere opties combi neren `WebSslProtocol` met `-bor` , maar het leveren van meerdere protocollen wordt niet op alle platforms ondersteund.
+Deze waarden worden gedefinieerd als inventarisatie op basis van een vlag. U kunt meerdere waarden combi neren om meerdere vlaggen in te stellen met behulp van deze para meter. De waarden kunnen worden door gegeven aan de **SslProtocol** -para meter als een matrix met waarden of als een door komma's gescheiden teken reeks van die waarden. Met de cmdlet worden de waarden gecombineerd met behulp van een binaire waarde of bewerking. Het door geven van waarden als een matrix is de eenvoudigste optie. Daarnaast kunt u met behulp van de waarden van het tabblad volt ooien. U kunt mogelijk niet meerdere waarden op alle platforms opgeven.
 
 > [!NOTE]
 > Op niet-Windows-platforms is het niet mogelijk om te leveren `Tls` of `Tls12` als optie. Ondersteuning voor `Tls13` is niet beschikbaar op alle besturings systemen en moet worden geverifieerd op basis van elk besturings systeem.
@@ -967,7 +967,7 @@ Accept wildcard characters: False
 
 Hiermee geeft u de URI (Uniform Resource Identifier) op van de Internet bron waarnaar de webaanvraag wordt verzonden. Deze para meter ondersteunt HTTP-, HTTPS-, FTP-en FILE-waarden.
 
-Deze parameter is vereist. De parameter naam ( **URI** ) is optioneel.
+Deze parameter is vereist. De parameter naam (**URI**) is optioneel.
 
 ```yaml
 Type: System.Uri
@@ -1061,13 +1061,13 @@ Accept wildcard characters: False
 
 Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable. Zie [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)voor meer informatie.
 
-## INVOER
+## Invoerwaarden
 
 ### System. object
 
 U kunt de hoofd tekst van een webaanvraag door sluizen naar `Invoke-RestMethod` .
 
-## UITVOER
+## Uitvoerwaarden
 
 ### Systeem. Int64, System. String, System.Xml.Xmldocument
 
@@ -1077,7 +1077,7 @@ De uitvoer van de cmdlet is afhankelijk van de indeling van de inhoud die wordt 
 
 Als de aanvraag JSON-teken reeksen retourneert, `Invoke-RestMethod` retourneert een **PSObject** die de teken reeksen vertegenwoordigt.
 
-## OPMERKINGEN
+## Notities
 
 Sommige functies zijn mogelijk niet beschikbaar op alle platforms.
 
@@ -1085,18 +1085,18 @@ Vanwege wijzigingen in .NET Core 3,1, Power shell 7,0 en hoger, gebruikt u de ei
 
 De waarde van deze eigenschap is afhankelijk van het platform op verschillende regels:
 
-- **Voor Windows** : Hiermee leest u de proxy configuratie van omgevings variabelen of, als deze niet zijn gedefinieerd, van de proxy-instellingen van de gebruiker.
-- **Voor macOS** : leest de proxy configuratie van omgevings variabelen of, als deze niet zijn gedefinieerd, uit de proxy-instellingen van het systeem.
-- **Voor Linux** : leest de proxy configuratie van omgevings variabelen of als deze niet zijn gedefinieerd, initialiseert deze eigenschap een niet-geconfigureerd exemplaar dat alle adressen omzeilt.
+- **Voor Windows**: Hiermee leest u de proxy configuratie van omgevings variabelen of, als deze niet zijn gedefinieerd, van de proxy-instellingen van de gebruiker.
+- **Voor macOS**: leest de proxy configuratie van omgevings variabelen of, als deze niet zijn gedefinieerd, uit de proxy-instellingen van het systeem.
+- **Voor Linux**: leest de proxy configuratie van omgevings variabelen of als deze niet zijn gedefinieerd, initialiseert deze eigenschap een niet-geconfigureerd exemplaar dat alle adressen omzeilt.
 
 De omgevings variabelen die worden gebruikt voor de `DefaultProxy` initialisatie op Windows-en UNIX-platforms zijn:
 
-- ` HTTP_PROXY`: de hostnaam of het IP-adres van de proxy server die wordt gebruikt voor HTTP-aanvragen.
+- `HTTP_PROXY`: de hostnaam of het IP-adres van de proxy server die wordt gebruikt voor HTTP-aanvragen.
 - `HTTPS_PROXY`: de hostnaam of het IP-adres van de proxy server die wordt gebruikt voor HTTPS-aanvragen.
 - `ALL_PROXY`: de hostnaam of het IP-adres van de proxy server die wordt gebruikt voor HTTP-en HTTPS-aanvragen `HTTP_PROXY` of `HTTPS_PROXY` die niet zijn gedefinieerd.
 - `NO_PROXY`: een door komma's gescheiden lijst met hostnamen die moeten worden uitgesloten van de proxy.
 
-## GERELATEERDE KOPPELINGEN
+## Verwante koppelingen
 
 [ConvertTo-Json](ConvertTo-Json.md)
 

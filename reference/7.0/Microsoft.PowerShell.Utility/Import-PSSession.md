@@ -3,23 +3,23 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
+ms.date: 04/05/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/import-pssession?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Import-PSSession
-ms.openlocfilehash: c64a59300cdaffe71de04c7843bf644df49530d5
-ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
+ms.openlocfilehash: b9a01c527969c2354397f237898f1f01a24f8229
+ms.sourcegitcommit: d95a7255f6775b2973aa9473611185a5583881ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94390113"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106555267"
 ---
 # Import-PSSession
 
-## SAMENVATTING
+## Samen vatting
 Importeert opdrachten vanuit een andere sessie in de huidige sessie.
 
-## SYNTAXIS
+## Syntax
 
 ```
 Import-PSSession [-Prefix <String>] [-DisableNameChecking] [[-CommandName] <String[]>] [-AllowClobber]
@@ -28,7 +28,7 @@ Import-PSSession [-Prefix <String>] [-DisableNameChecking] [[-CommandName] <Stri
  [-Certificate <X509Certificate2>] [-Session] <PSSession> [<CommonParameters>]
 ```
 
-## BESCHRIJVING
+## Beschrijving
 
 `Import-PSSession`Met de cmdlet worden opdrachten, zoals cmdlets, functies en aliassen, geïmporteerd van een PSSession op een lokale of externe computer in de huidige sessie. U kunt elke opdracht importeren die met de `Get-Command` cmdlet kan worden gevonden in de PSSession.
 
@@ -46,13 +46,13 @@ De `Import-PSSession` cmdlet maakt gebruik van de impliciete externe functie van
 
 Vanaf Windows Power Shell 3,0 kunt u met de `Import-Module` cmdlet modules uit een externe sessie importeren in de huidige sessie. Deze functie maakt gebruik van impliciete externe communicatie. Het is gelijk aan `Import-PSSession` het gebruik van om geselecteerde modules vanuit een externe sessie te importeren in de huidige sessie.
 
-## VOORBEELDEN
+## Voorbeelden
 
 ### Voor beeld 1: alle opdrachten uit een PSSession importeren
 
 ```
-PS C:\> $S = New-PSSession -ComputerName Server01
-PS C:\> Import-PSSession -Session $S
+$S = New-PSSession -ComputerName Server01
+Import-PSSession -Session $S
 ```
 
 Met deze opdracht worden alle opdrachten van een PSSession op de Server01-computer in de huidige sessie geïmporteerd, met uitzonde ring van opdrachten met dezelfde namen als opdrachten in de huidige sessie.
@@ -62,10 +62,10 @@ Omdat met deze opdracht de para meter **opdracht** naam niet wordt gebruikt, wor
 ### Voor beeld 2: opdrachten importeren die met een specifieke teken reeks eindigen
 
 ```
-PS C:\> $S = New-PSSession https://ps.testlabs.com/powershell
-PS C:\> Import-PSSession -Session $S -CommandName *-test -FormatTypeName *
-PS C:\> New-Test -Name Test1
-PS C:\> Get-Test test1 | Run-Test
+$S = New-PSSession https://ps.testlabs.com/powershell
+Import-PSSession -Session $S -CommandName *-test -FormatTypeName *
+New-Test -Name Test1
+Get-Test test1 | Run-Test
 ```
 
 Met deze opdrachten worden de opdrachten met namen die eindigen op '-test ' van een PSSession in de lokale sessie geïmporteerd. vervolgens wordt weer gegeven hoe u een geïmporteerde cmdlet gebruikt.
@@ -79,11 +79,11 @@ De derde en vierde opdracht gebruiken de geïmporteerde opdrachten in de huidige
 ### Voor beeld 3: cmdlets importeren uit een PSSession
 
 ```
-PS C:\> $S1 = New-PSSession -ComputerName s1
-PS C:\> $S2 = New-PSSession -ComputerName s2
-PS C:\> Import-PSSession -Session s1 -Type cmdlet -Name New-Test, Get-Test -FormatTypeName *
-PS C:\> Import-PSSession -Session s2 -Type Cmdlet -Name Set-Test -FormatTypeName *
-PS C:\> New-Test Test1 | Set-Test -RunType Full
+$S1 = New-PSSession -ComputerName s1
+$S2 = New-PSSession -ComputerName s2
+Import-PSSession -Session s1 -Type cmdlet -Name New-Test, Get-Test -FormatTypeName *
+Import-PSSession -Session s2 -Type Cmdlet -Name Set-Test -FormatTypeName *
+New-Test Test1 | Set-Test -RunType Full
 ```
 
 Dit voor beeld laat zien dat u geïmporteerde cmdlets kunt gebruiken, net zoals u lokale cmdlets zou gebruiken.
@@ -95,10 +95,10 @@ Hoewel de cmdlets uit verschillende PSSessions zijn geïmporteerd, kunt u zonder
 ### Voor beeld 4: een geïmporteerde opdracht uitvoeren als een achtergrond taak
 
 ```
-PS C:\> $S = New-PSSession -ComputerName Server01
-PS C:\> Import-PSSession -Session $S -CommandName *-test* -FormatTypeName *
-PS C:\> $batch = New-Test -Name Batch -AsJob
-PS C:\> Receive-Job $batch
+$S = New-PSSession -ComputerName Server01
+Import-PSSession -Session $S -CommandName *-test* -FormatTypeName *
+$batch = New-Test -Name Batch -AsJob
+Receive-Job $batch
 ```
 
 In dit voor beeld ziet u hoe u een geïmporteerde opdracht als achtergrond taak uitvoert.
@@ -116,9 +116,9 @@ De vierde opdracht gebruikt de `Receive-Job` cmdlet om de resultaten van de taak
 ### Voor beeld 5: cmdlets en functies importeren vanuit een Windows Power shell-module
 
 ```
-PS C:\> $S = New-PSSession -ComputerName Server01
-PS C:\> Invoke-Command -Session $S {Import-Module TestManagement}
-PS C:\> Import-PSSession -Session $S -Module TestManagement
+$S = New-PSSession -ComputerName Server01
+Invoke-Command -Session $S {Import-Module TestManagement}
+Import-PSSession -Session $S -Module TestManagement
 ```
 
 In dit voor beeld ziet u hoe u de cmdlets en functies van een Windows Power shell-module op een externe computer kunt importeren in de huidige sessie.
@@ -236,7 +236,7 @@ De **module** parameter heeft een teken reeks waarde die is ontworpen voor de mo
 
 De `Get-Command` opdracht is het equivalent van `Get-Command $M.Name` '.
 
-## PARAMETERS
+## Parameters
 
 ### -AllowClobber
 
@@ -320,13 +320,15 @@ Accept wildcard characters: False
 
 Hiermee wordt het type opdracht objecten opgegeven. De standaard waarde is cmdlet. Gebruik **CommandType** of de alias, **Typ**. De aanvaardbare waarden voor deze parameter zijn:
 
-- Toe. De Windows Power shell-aliassen in de externe sessie.
-- Hele. De cmdlets en functies in de externe sessie.
-- Modules. Alle bestanden met uitzonde ring van Windows-PowerShell bestanden in de paden die worden vermeld in de Path-omgevings variabele ( `$env:path` ) in de externe sessie, inclusief. txt,. exe en. dll-bestanden.
-- Cmdlet. De cmdlets in de externe sessie. ' Cmdlet ' is de standaard waarde.
-- ExternalScript. De. ps1-bestanden in de paden die worden weer gegeven in de omgevings variabele PATH ( `$env:path` ) in de externe sessie.
-- Filter en functie. De Windows Power shell-functies in de externe sessie.
-- Schriften. De script blokken in de externe sessie.
+- `Alias`: De Windows Power shell-aliassen in de externe sessie.
+- `All`: De cmdlets en functies in de externe sessie.
+- `Application`: Alle bestanden met uitzonde ring van Windows-PowerShell bestanden in de paden die worden vermeld in de omgevings variabele PATH ( `$env:path` ) in de externe sessie, inclusief. txt,. exe en. dll-bestanden.
+- `Cmdlet`: De cmdlets in de externe sessie. ' Cmdlet ' is de standaard waarde.
+- `ExternalScript`: De. ps1-bestanden in de paden die worden weer gegeven in de omgevings variabele PATH ( `$env:path` ) in de externe sessie.
+- `Filter` en `Function` : de Windows Power shell-functies in de externe sessie.
+- `Script`: De script blokken in de externe sessie.
+
+Deze waarden worden gedefinieerd als inventarisatie op basis van een vlag. U kunt meerdere waarden combi neren om meerdere vlaggen in te stellen met behulp van deze para meter. De waarden kunnen worden door gegeven aan de **CommandType** -para meter als een matrix met waarden of als een door komma's gescheiden teken reeks van die waarden. Met de cmdlet worden de waarden gecombineerd met behulp van een binaire waarde of bewerking. Het door geven van waarden als een matrix is de eenvoudigste optie. Daarnaast kunt u met behulp van de waarden van het tabblad volt ooien.
 
 ```yaml
 Type: System.Management.Automation.CommandTypes
@@ -472,20 +474,20 @@ Accept wildcard characters: False
 
 Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable. Zie [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)voor meer informatie.
 
-## INVOER
+## Invoerwaarden
 
 ### Geen
 
 U kunt geen objecten naar deze cmdlet pipeen.
 
-## UITVOER
+## Uitvoerwaarden
 
 ### System. Management. Automation. PSModuleInfo
 
 `Import-PSSession` retourneert hetzelfde module-object dat `New-Module` en `Get-Module` cmdlets retour neren.
 De geïmporteerde module is echter tijdelijk en bestaat alleen in de huidige sessie. Als u een permanente module op schijf wilt maken, gebruikt u de `Export-PSSession` cmdlet.
 
-## OPMERKINGEN
+## Notities
 
 - `Import-PSSession` is afhankelijk van de externe infra structuur van Power shell. Als u deze cmdlet wilt gebruiken, moet de computer zijn geconfigureerd voor WS-Management externe communicatie. Zie [about_Remote](../Microsoft.PowerShell.Core/about/about_Remote.md) en [about_Remote_Requirements](../Microsoft.PowerShell.Core/about/about_Remote_Requirements.md)voor meer informatie.
 - `Import-PSSession` variabelen of Power shell-providers worden niet geïmporteerd.
@@ -499,6 +501,6 @@ De geïmporteerde module is echter tijdelijk en bestaat alleen in de huidige ses
 - `Import-PSSession`Het uitvoerings beleid in de huidige sessie mag niet worden beperkt of alles ondertekend, omdat de tijdelijke module die wordt gemaakt, niet- `Import-PSSession` ondertekende script bestanden bevat die niet zijn toegestaan door dit beleid. Als u wilt gebruiken `Import-PSSession` zonder het uitvoerings beleid voor de lokale computer te wijzigen, gebruikt u de para meter **bereik** van `Set-ExecutionPolicy` om een minder beperkend uitvoerings beleid in te stellen voor één proces.
 - In Windows Power Shell 2,0 zijn Help-onderwerpen voor opdrachten die vanuit een andere sessie worden geïmporteerd niet het voor voegsel dat u toewijst met behulp van de para meter **prefix** . Als u hulp nodig hebt bij een geïmporteerde opdracht in Windows Power Shell 2,0, gebruikt u de oorspronkelijke (niet-voor-vaste) opdracht naam.
 
-## GERELATEERDE KOPPELINGEN
+## Verwante koppelingen
 
 [Exporteren-PSSession](Export-PSSession.md)

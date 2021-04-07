@@ -2,23 +2,23 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 01/26/2021
+ms.date: 04/05/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-WebRequest
-ms.openlocfilehash: 036f5aef42b9413747f4e738bf748fda8bb2d2d2
-ms.sourcegitcommit: 11880ca974fe2df308191c9f6dcdfe0b89c2dc67
+ms.openlocfilehash: 1c178c9a7683b9630cabf6165fae0341385d67a6
+ms.sourcegitcommit: d95a7255f6775b2973aa9473611185a5583881ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98860783"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106555760"
 ---
 # Invoke-WebRequest
 
-## SAMENVATTING
+## Samen vatting
 Hiermee wordt inhoud opgehaald van een webpagina op internet.
 
-## SYNTAXIS
+## Syntax
 
 ### StandardMethod (standaard)
 
@@ -82,7 +82,7 @@ Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-WebSession <WebRequestSessio
  [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation] [<CommonParameters>]
 ```
 
-## BESCHRIJVING
+## Beschrijving
 
 De `Invoke-WebRequest` cmdlet verzendt HTTP-en HTTPS-aanvragen naar een webpagina of webservice. Hiermee wordt het antwoord geparseerd en worden verzamelingen van koppelingen, afbeeldingen en andere belang rijke HTML-elementen geretourneerd.
 
@@ -90,7 +90,7 @@ Deze cmdlet is geïntroduceerd in Power Shell 3,0.
 
 Vanaf Power shell 7,0 `Invoke-WebRequest` ondersteunt proxy configuratie die is gedefinieerd door omgevings variabelen. Zie de sectie [opmerkingen](#notes) van dit artikel.
 
-## VOORBEELDEN
+## Voorbeelden
 
 ### Voor beeld 1: een webaanvraag verzenden
 
@@ -243,7 +243,7 @@ $StatusCode
 
 De afsluit fout wordt geblokkeerd door het `catch` blok, waardoor de **status** code wordt opgehaald uit het **uitzonderings** object.
 
-## PARAMETERS
+## Parameters
 
 ### -AllowUnencryptedAuthentication
 
@@ -273,10 +273,10 @@ Hiermee geeft u het expliciete verificatie type op dat moet worden gebruikt voor
 
 Beschik bare verificatie opties:
 
-- **Geen**: dit is de standaard optie wanneer er geen **verificatie** is opgegeven. Er wordt geen expliciete authenticatie gebruikt.
-- **Basic**: vereist **referentie**. De referenties worden verzonden in een RFC 7617-basis verificatie header in de indeling van `base64(user:password)` .
-- **Bearer**: **token** vereist. Verzendt een RFC 6750- `Authorization: Bearer` header met het opgegeven token. Dit is een alias voor **OAuth**
-- **OAuth**: **token** vereist. Verzendt een RFC 6750- `Authorization: Bearer` header met het opgegeven token. Dit is een alias voor **Bearer**
+- `None`: Dit is de standaard optie wanneer **authenticatie** niet is opgegeven. Er wordt geen expliciete authenticatie gebruikt.
+- `Basic`: Vereist **referentie**. De referenties worden verzonden in een RFC 7617-basis verificatie header in de indeling van `base64(user:password)` .
+- `Bearer`: **Token** vereist. Verzendt een RFC 6750- `Authorization: Bearer` header met het opgegeven token. Dit is een alias voor **OAuth**
+- `OAuth`: **Token** vereist. Verzendt een RFC 6750- `Authorization: Bearer` header met het opgegeven token. Dit is een alias voor **Bearer**
 
 Het opgeven van een **verificatie** heeft `Authorization` voor rang op alle headers die worden geleverd aan **headers** of die zijn opgenomen in **websessie**.
 
@@ -555,16 +555,16 @@ Accept wildcard characters: False
 
 Hiermee geeft u de methode op die voor de webaanvraag wordt gebruikt. De aanvaardbare waarden voor deze parameter zijn:
 
-- Standaard
-- Verwijderen
-- Ophalen
-- Head
-- Samenvoegen
-- Opties
-- Patch
-- Plaatsen
-- Put
-- Tracering
+- `Default`
+- `Delete`
+- `Get`
+- `Head`
+- `Merge`
+- `Options`
+- `Patch`
+- `Post`
+- `Put`
+- `Trace`
 
 De para meter **CustomMethod** kan worden gebruikt voor aanvraag methoden die hierboven niet worden vermeld.
 
@@ -846,7 +846,7 @@ Accept wildcard characters: False
 
 Hiermee stelt u de SSL/TLS-protocollen die zijn toegestaan voor de webaanvraag. Standaard zijn alle SSL/TLS-protocollen die door het systeem worden ondersteund, toegestaan. Met **SslProtocol** wordt het beperken van specifieke protocollen voor nalevings doeleinden toegestaan.
 
-**SslProtocol** maakt gebruik van de **WebSslProtocol** -markerings opsomming. Het is mogelijk om meer dan één protocol aan te bieden met behulp van de vlag notatie of meerdere **WebSslProtocol** -opties te combi neren met **BOF**, maar het leveren van meerdere protocollen wordt niet op alle platforms ondersteund.
+Deze waarden worden gedefinieerd als inventarisatie op basis van een vlag. U kunt meerdere waarden combi neren om meerdere vlaggen in te stellen met behulp van deze para meter. De waarden kunnen worden door gegeven aan de **SslProtocol** -para meter als een matrix met waarden of als een door komma's gescheiden teken reeks van die waarden. Met de cmdlet worden de waarden gecombineerd met behulp van een binaire waarde of bewerking. Het door geven van waarden als een matrix is de eenvoudigste optie. Daarnaast kunt u met behulp van de waarden van het tabblad volt ooien. U kunt mogelijk niet meerdere opties definiëren op alle platformen.
 
 > [!NOTE]
 > Op niet-Windows-platforms is het niet mogelijk om te leveren `Tls` of `Tls12` als optie. Ondersteuning voor `Tls13` is niet beschikbaar op alle besturings systemen en moet worden geverifieerd op basis van elk besturings systeem.
@@ -1033,17 +1033,17 @@ Accept wildcard characters: False
 
 Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable. Zie [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)voor meer informatie.
 
-## INVOER
+## Invoerwaarden
 
 ### System. object
 
 U kunt de hoofd tekst van een webaanvraag door sluizen naar `Invoke-WebRequest` .
 
-## UITVOER
+## Uitvoerwaarden
 
 ### Micro soft. Power shell. commands. BasicHtmlWebResponseObject
 
-## OPMERKINGEN
+## Notities
 
 Vanaf Power shell 6.0.0 `Invoke-WebRequest` ondersteunt alleen basis parsering.
 
@@ -1059,12 +1059,12 @@ De waarde van deze eigenschap wordt bepaald door uw platform:
 
 De omgevings variabelen die worden gebruikt voor de `DefaultProxy` initialisatie op Windows-en UNIX-platforms zijn:
 
-- ` HTTP_PROXY`: de hostnaam of het IP-adres van de proxy server die wordt gebruikt voor HTTP-aanvragen.
+- `HTTP_PROXY`: de hostnaam of het IP-adres van de proxy server die wordt gebruikt voor HTTP-aanvragen.
 - `HTTPS_PROXY`: de hostnaam of het IP-adres van de proxy server die wordt gebruikt voor HTTPS-aanvragen.
 - `ALL_PROXY`: de hostnaam of het IP-adres van de proxy server die wordt gebruikt voor HTTP-en HTTPS-aanvragen `HTTP_PROXY` of `HTTPS_PROXY` die niet zijn gedefinieerd.
 - `NO_PROXY`: een door komma's gescheiden lijst met hostnamen die moeten worden uitgesloten van de proxy.
 
-## GERELATEERDE KOPPELINGEN
+## Verwante koppelingen
 
 [Invoke-RestMethod](Invoke-RestMethod.md)
 

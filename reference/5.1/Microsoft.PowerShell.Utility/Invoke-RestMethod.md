@@ -3,16 +3,16 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/13/2018
+ms.date: 04/05/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-restmethod?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-RestMethod
-ms.openlocfilehash: c89f7351e9c874cea2cc0cd5e0912e3ca0d8b0bf
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 916c221a4fb0886494a4632e38f25a639d5d414e
+ms.sourcegitcommit: d95a7255f6775b2973aa9473611185a5583881ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93250406"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106555504"
 ---
 # Invoke-RestMethod
 
@@ -225,7 +225,7 @@ Accept wildcard characters: False
 
 Hiermee geeft u een gebruikers account op dat gemachtigd is om de aanvraag te verzenden. Standaard is dit de huidige gebruiker.
 
-Typ een gebruikers naam, zoals **gebruiker01** of **Domain01\User01** , of voer een **PSCredential** -object in dat door de cmdlet wordt gegenereerd `Get-Credential` .
+Typ een gebruikers naam, zoals **gebruiker01** of **Domain01\User01**, of voer een **PSCredential** -object in dat door de cmdlet wordt gegenereerd `Get-Credential` .
 
 Referenties worden opgeslagen in een [PSCredential](/dotnet/api/system.management.automation.pscredential) -object en het wacht woord wordt opgeslagen als [SecureString](/dotnet/api/system.security.securestring).
 
@@ -317,16 +317,16 @@ Accept wildcard characters: False
 
 Hiermee geeft u de methode op die voor de webaanvraag wordt gebruikt. De aanvaardbare waarden voor deze parameter zijn:
 
-- Standaard
-- Verwijderen
-- Ophalen
-- Head
-- Samenvoegen
-- Opties
-- Patch
-- Plaatsen
-- Put
-- Tracering
+- `Default`
+- `Delete`
+- `Get`
+- `Head`
+- `Merge`
+- `Options`
+- `Patch`
+- `Post`
+- `Put`
+- `Trace`
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.WebRequestMethod
@@ -475,11 +475,11 @@ Accept wildcard characters: False
 
 Hiermee geeft u een waarde op voor de header van de HTTP-reactie voor overdracht/versleuteling. De aanvaardbare waarden voor deze parameter zijn:
 
-- Gesegmenteerde
-- Comprimeren
-- Deflate
-- GZip
-- Identiteit
+- `Chunked`
+- `Compress`
+- `Deflate`
+- `GZip`
+- `Identity`
 
 ```yaml
 Type: System.String
@@ -498,7 +498,7 @@ Accept wildcard characters: False
 
 Hiermee geeft u de URI (Uniform Resource Identifier) op van de Internet bron waarnaar de webaanvraag wordt verzonden. Deze para meter ondersteunt HTTP-, HTTPS-, FTP-en FILE-waarden.
 
-Deze parameter is vereist. De parameter naam ( **URI** ) is optioneel.
+Deze parameter is vereist. De parameter naam (**URI**) is optioneel.
 
 ```yaml
 Type: System.Uri
@@ -598,7 +598,7 @@ Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - Er
 
 U kunt de hoofd tekst van een webaanvraag door sluizen naar `Invoke-RestMethod` .
 
-## Uitvoer
+## Uitvoerwaarden
 
 ### System.Xml.Xmldocument, Microsoft.PowerShell.Commands.HtmlWebResponseObject, System. String
 
@@ -608,7 +608,7 @@ De uitvoer van de cmdlet is afhankelijk van de indeling van de inhoud die wordt 
 
 Als de aanvraag JSON-teken reeksen retourneert, `Invoke-RestMethod` retourneert een PSObject die de teken reeksen vertegenwoordigt.
 
-## Opmerkingen
+## Notities
 
 ## Verwante koppelingen
 
