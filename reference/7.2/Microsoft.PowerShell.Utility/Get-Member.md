@@ -2,42 +2,42 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 05/06/2020
+ms.date: 04/05/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-member?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Member
-ms.openlocfilehash: 27e938b0264403d67066bb489a3b8c0870a7e661
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 15b546623f5b4287a8b1d30b63ba419d0744ea93
+ms.sourcegitcommit: d95a7255f6775b2973aa9473611185a5583881ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94705441"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106555182"
 ---
-# <span data-ttu-id="b8320-102">Get-Member</span><span class="sxs-lookup"><span data-stu-id="b8320-102">Get-Member</span></span>
+# <span data-ttu-id="4b972-102">Get-Member</span><span class="sxs-lookup"><span data-stu-id="4b972-102">Get-Member</span></span>
 
-## <span data-ttu-id="b8320-103">SAMENVATTING</span><span class="sxs-lookup"><span data-stu-id="b8320-103">SYNOPSIS</span></span>
-<span data-ttu-id="b8320-104">Hiermee worden de eigenschappen en methoden van objecten opgehaald.</span><span class="sxs-lookup"><span data-stu-id="b8320-104">Gets the properties and methods of objects.</span></span>
+## <span data-ttu-id="4b972-103">Samen vatting</span><span class="sxs-lookup"><span data-stu-id="4b972-103">Synopsis</span></span>
+<span data-ttu-id="4b972-104">Hiermee worden de eigenschappen en methoden van objecten opgehaald.</span><span class="sxs-lookup"><span data-stu-id="4b972-104">Gets the properties and methods of objects.</span></span>
 
-## <span data-ttu-id="b8320-105">SYNTAXIS</span><span class="sxs-lookup"><span data-stu-id="b8320-105">SYNTAX</span></span>
+## <span data-ttu-id="4b972-105">Syntax</span><span class="sxs-lookup"><span data-stu-id="4b972-105">Syntax</span></span>
 
 ```
 Get-Member [-InputObject <PSObject>] [[-Name] <String[]>] [-MemberType <PSMemberTypes>]
  [-View <PSMemberViewTypes>] [-Static] [-Force] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="b8320-106">BESCHRIJVING</span><span class="sxs-lookup"><span data-stu-id="b8320-106">DESCRIPTION</span></span>
+## <span data-ttu-id="4b972-106">Beschrijving</span><span class="sxs-lookup"><span data-stu-id="4b972-106">Description</span></span>
 
-<span data-ttu-id="b8320-107">Met de `Get-Member` cmdlet worden de leden, eigenschappen en methoden van objecten opgehaald.</span><span class="sxs-lookup"><span data-stu-id="b8320-107">The `Get-Member` cmdlet gets the members, the properties and methods, of objects.</span></span>
+<span data-ttu-id="4b972-107">Met de `Get-Member` cmdlet worden de leden, eigenschappen en methoden van objecten opgehaald.</span><span class="sxs-lookup"><span data-stu-id="4b972-107">The `Get-Member` cmdlet gets the members, the properties and methods, of objects.</span></span>
 
-<span data-ttu-id="b8320-108">Als u het object wilt opgeven, gebruikt u de para meter **input object** of pipet u een object naar `Get-Member` .</span><span class="sxs-lookup"><span data-stu-id="b8320-108">To specify the object, use the **InputObject** parameter or pipe an object to `Get-Member`.</span></span> <span data-ttu-id="b8320-109">Als u informatie wilt ophalen over statische leden, de leden van de klasse, niet van het exemplaar, gebruikt u de **statische** para meter.</span><span class="sxs-lookup"><span data-stu-id="b8320-109">To get information about static members, the members of the class, not of the instance, use the **Static** parameter.</span></span> <span data-ttu-id="b8320-110">Als u alleen bepaalde typen leden wilt ophalen, bijvoorbeeld **NoteProperties**, gebruikt u de para meter **member type** .</span><span class="sxs-lookup"><span data-stu-id="b8320-110">To get only certain types of members, such as **NoteProperties**, use the **MemberType** parameter.</span></span>
+<span data-ttu-id="4b972-108">Als u het object wilt opgeven, gebruikt u de para meter **input object** of pipet u een object naar `Get-Member` .</span><span class="sxs-lookup"><span data-stu-id="4b972-108">To specify the object, use the **InputObject** parameter or pipe an object to `Get-Member`.</span></span> <span data-ttu-id="4b972-109">Als u informatie wilt ophalen over statische leden, de leden van de klasse, niet van het exemplaar, gebruikt u de **statische** para meter.</span><span class="sxs-lookup"><span data-stu-id="4b972-109">To get information about static members, the members of the class, not of the instance, use the **Static** parameter.</span></span> <span data-ttu-id="4b972-110">Als u alleen bepaalde typen leden wilt ophalen, bijvoorbeeld **NoteProperties**, gebruikt u de para meter **member type** .</span><span class="sxs-lookup"><span data-stu-id="4b972-110">To get only certain types of members, such as **NoteProperties**, use the **MemberType** parameter.</span></span>
 
-## <span data-ttu-id="b8320-111">VOORBEELDEN</span><span class="sxs-lookup"><span data-stu-id="b8320-111">EXAMPLES</span></span>
+## <span data-ttu-id="4b972-111">Voorbeelden</span><span class="sxs-lookup"><span data-stu-id="4b972-111">Examples</span></span>
 
-### <span data-ttu-id="b8320-112">Voor beeld 1: leden van proces objecten ophalen</span><span class="sxs-lookup"><span data-stu-id="b8320-112">Example 1: Get the members of process objects</span></span>
+### <span data-ttu-id="4b972-112">Voor beeld 1: leden van proces objecten ophalen</span><span class="sxs-lookup"><span data-stu-id="4b972-112">Example 1: Get the members of process objects</span></span>
 
-<span data-ttu-id="b8320-113">Met deze opdracht worden de eigenschappen en methoden van de service objecten weer gegeven die door de cmdlet worden gegenereerd `Get-Service` .</span><span class="sxs-lookup"><span data-stu-id="b8320-113">This command displays the properties and methods of the service objects generated by the `Get-Service` cmdlet.</span></span>
+<span data-ttu-id="4b972-113">Met deze opdracht worden de eigenschappen en methoden van de service objecten weer gegeven die door de cmdlet worden gegenereerd `Get-Service` .</span><span class="sxs-lookup"><span data-stu-id="4b972-113">This command displays the properties and methods of the service objects generated by the `Get-Service` cmdlet.</span></span>
 
-<span data-ttu-id="b8320-114">Omdat het `Get-Member` onderdeel van de opdracht geen para meters heeft, worden standaard waarden voor de para meters gebruikt.</span><span class="sxs-lookup"><span data-stu-id="b8320-114">Because the `Get-Member` part of the command does not have any parameters, it uses default values for the parameters.</span></span> <span data-ttu-id="b8320-115">Standaard `Get-Member` krijgt geen statische of ingebouwde leden.</span><span class="sxs-lookup"><span data-stu-id="b8320-115">By default, `Get-Member` does not get static or intrinsic members.</span></span>
+<span data-ttu-id="4b972-114">Omdat het `Get-Member` onderdeel van de opdracht geen para meters heeft, worden standaard waarden voor de para meters gebruikt.</span><span class="sxs-lookup"><span data-stu-id="4b972-114">Because the `Get-Member` part of the command does not have any parameters, it uses default values for the parameters.</span></span> <span data-ttu-id="4b972-115">Standaard `Get-Member` krijgt geen statische of ingebouwde leden.</span><span class="sxs-lookup"><span data-stu-id="4b972-115">By default, `Get-Member` does not get static or intrinsic members.</span></span>
 
 ```powershell
 Get-Service | Get-Member
@@ -87,20 +87,20 @@ UserName                  Property      System.String {get;set;}
 ToString                  ScriptMethod  System.Object ToString();
 ```
 
-### <span data-ttu-id="b8320-116">Voor beeld 2: leden van service objecten ophalen</span><span class="sxs-lookup"><span data-stu-id="b8320-116">Example 2: Get members of service objects</span></span>
+### <span data-ttu-id="4b972-116">Voor beeld 2: leden van service objecten ophalen</span><span class="sxs-lookup"><span data-stu-id="4b972-116">Example 2: Get members of service objects</span></span>
 
-<span data-ttu-id="b8320-117">In dit voor beeld worden alle leden (eigenschappen en methoden) opgehaald van de service objecten die zijn opgehaald door de `Get-Service` cmdlet, met inbegrip van de intrinsieke leden, zoals **PSBase**, **PSObject** en de methoden **get_** en **set_** .</span><span class="sxs-lookup"><span data-stu-id="b8320-117">This example gets all of the members (properties and methods) of the service objects retrieved by the `Get-Service` cmdlet, including the intrinsic members, such as **PSBase**, **PSObject**, and the **get_** and **set_** methods.</span></span>
+<span data-ttu-id="4b972-117">In dit voor beeld worden alle leden (eigenschappen en methoden) opgehaald van de service objecten die zijn opgehaald door de `Get-Service` cmdlet, met inbegrip van de intrinsieke leden, zoals **PSBase**, **PSObject** en de methoden **get_** en **set_** .</span><span class="sxs-lookup"><span data-stu-id="4b972-117">This example gets all of the members (properties and methods) of the service objects retrieved by the `Get-Service` cmdlet, including the intrinsic members, such as **PSBase**, **PSObject**, and the **get_** and **set_** methods.</span></span>
 
 ```powershell
 Get-Service | Get-Member -Force
 (Get-Service Schedule).PSBase
 ```
 
-<span data-ttu-id="b8320-118">De `Get-Member` opdracht gebruikt de para meter **Force** om de ingebouwde leden en door het compileren gegenereerde leden van de objecten toe te voegen aan de weer gave.</span><span class="sxs-lookup"><span data-stu-id="b8320-118">The `Get-Member` command uses the **Force** parameter to add the intrinsic members and compiler-generated members of the objects to the display.</span></span> <span data-ttu-id="b8320-119">U kunt deze eigenschappen en methoden op dezelfde manier gebruiken als een aangepaste methode van het object.</span><span class="sxs-lookup"><span data-stu-id="b8320-119">You can use these properties and methods in the same way that you would use an adapted method of the object.</span></span> <span data-ttu-id="b8320-120">Met de tweede opdracht wordt aangegeven hoe de waarde van de eigenschap PSBase van de Schedule-service wordt weer gegeven.</span><span class="sxs-lookup"><span data-stu-id="b8320-120">The second command shows how to display the value of the PSBase property of the Schedule service.</span></span>
+<span data-ttu-id="4b972-118">De `Get-Member` opdracht gebruikt de para meter **Force** om de ingebouwde leden en door het compileren gegenereerde leden van de objecten toe te voegen aan de weer gave.</span><span class="sxs-lookup"><span data-stu-id="4b972-118">The `Get-Member` command uses the **Force** parameter to add the intrinsic members and compiler-generated members of the objects to the display.</span></span> <span data-ttu-id="4b972-119">U kunt deze eigenschappen en methoden op dezelfde manier gebruiken als een aangepaste methode van het object.</span><span class="sxs-lookup"><span data-stu-id="4b972-119">You can use these properties and methods in the same way that you would use an adapted method of the object.</span></span> <span data-ttu-id="4b972-120">Met de tweede opdracht wordt aangegeven hoe de waarde van de eigenschap PSBase van de Schedule-service wordt weer gegeven.</span><span class="sxs-lookup"><span data-stu-id="4b972-120">The second command shows how to display the value of the PSBase property of the Schedule service.</span></span>
 
-### <span data-ttu-id="b8320-121">Voor beeld 3: uitgebreide leden van service objecten ophalen</span><span class="sxs-lookup"><span data-stu-id="b8320-121">Example 3: Get extended members of service objects</span></span>
+### <span data-ttu-id="4b972-121">Voor beeld 3: uitgebreide leden van service objecten ophalen</span><span class="sxs-lookup"><span data-stu-id="4b972-121">Example 3: Get extended members of service objects</span></span>
 
-<span data-ttu-id="b8320-122">In dit voor beeld worden de methoden en eigenschappen van service objecten opgehaald die zijn uitgebreid met behulp van een `Types.ps1xml` bestand of de `Add-Member` cmdlet.</span><span class="sxs-lookup"><span data-stu-id="b8320-122">This example gets the methods and properties of service objects that were extended by using a `Types.ps1xml` file or the `Add-Member` cmdlet.</span></span>
+<span data-ttu-id="4b972-122">In dit voor beeld worden de methoden en eigenschappen van service objecten opgehaald die zijn uitgebreid met behulp van een `Types.ps1xml` bestand of de `Add-Member` cmdlet.</span><span class="sxs-lookup"><span data-stu-id="4b972-122">This example gets the methods and properties of service objects that were extended by using a `Types.ps1xml` file or the `Add-Member` cmdlet.</span></span>
 
 ```powershell
 Get-Service | Get-Member -View Extended
@@ -116,11 +116,11 @@ RequiredServices AliasProperty RequiredServices = ServicesDependedOn
 ToString         ScriptMethod  System.Object ToString();
 ```
 
-<span data-ttu-id="b8320-123">De `Get-Member` opdracht gebruikt de para meter **weer geven** om alleen de uitgebreide leden van de service objecten op te halen.</span><span class="sxs-lookup"><span data-stu-id="b8320-123">The `Get-Member` command uses the **View** parameter to get only the extended members of the service objects.</span></span> <span data-ttu-id="b8320-124">In dit geval is het uitgebreide lid de **naam** eigenschap, een alias eigenschap van de eigenschap **ServiceName** .</span><span class="sxs-lookup"><span data-stu-id="b8320-124">In this case, the extended member is the **Name** property, which is an alias property of the **ServiceName** property.</span></span>
+<span data-ttu-id="4b972-123">De `Get-Member` opdracht gebruikt de para meter **weer geven** om alleen de uitgebreide leden van de service objecten op te halen.</span><span class="sxs-lookup"><span data-stu-id="4b972-123">The `Get-Member` command uses the **View** parameter to get only the extended members of the service objects.</span></span> <span data-ttu-id="4b972-124">In dit geval is het uitgebreide lid de **naam** eigenschap, een alias eigenschap van de eigenschap **ServiceName** .</span><span class="sxs-lookup"><span data-stu-id="4b972-124">In this case, the extended member is the **Name** property, which is an alias property of the **ServiceName** property.</span></span>
 
-### <span data-ttu-id="b8320-125">Voor beeld 4: script eigenschappen van gebeurtenis logboek objecten ophalen</span><span class="sxs-lookup"><span data-stu-id="b8320-125">Example 4: Get script properties of event log objects</span></span>
+### <span data-ttu-id="4b972-125">Voor beeld 4: script eigenschappen van gebeurtenis logboek objecten ophalen</span><span class="sxs-lookup"><span data-stu-id="4b972-125">Example 4: Get script properties of event log objects</span></span>
 
-<span data-ttu-id="b8320-126">In dit voor beeld worden de script eigenschappen van gebeurtenis logboek objecten in het systeem logboek in Logboeken opgehaald.</span><span class="sxs-lookup"><span data-stu-id="b8320-126">This example gets the script properties of event log objects in the System log in Event Viewer.</span></span>
+<span data-ttu-id="4b972-126">In dit voor beeld worden de script eigenschappen van gebeurtenis logboek objecten in het systeem logboek in Logboeken opgehaald.</span><span class="sxs-lookup"><span data-stu-id="4b972-126">This example gets the script properties of event log objects in the System log in Event Viewer.</span></span>
 
 ```powershell
 Get-WinEvent -LogName System -MaxEvents 1 | Get-Member -MemberType NoteProperty
@@ -134,15 +134,15 @@ Name    MemberType   Definition
 Message NoteProperty string Message=The machine-default permission settings do not grant Local ...
 ```
 
-<span data-ttu-id="b8320-127">De para meter **member type** haalt alleen objecten op met de waarde `NoteProperty` voor de eigenschap **member type** .</span><span class="sxs-lookup"><span data-stu-id="b8320-127">The **MemberType** parameter gets only objects with a value of `NoteProperty` for their **MemberType** property.</span></span>
+<span data-ttu-id="4b972-127">De para meter **member type** haalt alleen objecten op met de waarde `NoteProperty` voor de eigenschap **member type** .</span><span class="sxs-lookup"><span data-stu-id="4b972-127">The **MemberType** parameter gets only objects with a value of `NoteProperty` for their **MemberType** property.</span></span>
 
-<span data-ttu-id="b8320-128">De opdracht retourneert de eigenschap **bericht** van het object **EventLogRecord** .</span><span class="sxs-lookup"><span data-stu-id="b8320-128">The command returns the **Message** property of the **EventLogRecord** object.</span></span>
+<span data-ttu-id="4b972-128">De opdracht retourneert de eigenschap **bericht** van het object **EventLogRecord** .</span><span class="sxs-lookup"><span data-stu-id="4b972-128">The command returns the **Message** property of the **EventLogRecord** object.</span></span>
 
-### <span data-ttu-id="b8320-129">Voor beeld 5: objecten ophalen met een opgegeven eigenschap</span><span class="sxs-lookup"><span data-stu-id="b8320-129">Example 5: Get objects with a specified property</span></span>
+### <span data-ttu-id="4b972-129">Voor beeld 5: objecten ophalen met een opgegeven eigenschap</span><span class="sxs-lookup"><span data-stu-id="4b972-129">Example 5: Get objects with a specified property</span></span>
 
-<span data-ttu-id="b8320-130">In dit voor beeld worden objecten opgehaald die de eigenschap **MachineName** hebben in de uitvoer van een lijst met cmdlets.</span><span class="sxs-lookup"><span data-stu-id="b8320-130">This example gets objects that have a **MachineName** property in the output from a list of cmdlets.</span></span>
+<span data-ttu-id="4b972-130">In dit voor beeld worden objecten opgehaald die de eigenschap **MachineName** hebben in de uitvoer van een lijst met cmdlets.</span><span class="sxs-lookup"><span data-stu-id="4b972-130">This example gets objects that have a **MachineName** property in the output from a list of cmdlets.</span></span>
 
-<span data-ttu-id="b8320-131">De `$list` variabele bevat een lijst met cmdlets die moeten worden geëvalueerd.</span><span class="sxs-lookup"><span data-stu-id="b8320-131">The `$list` variable contains a list of cmdlets to be evaluated.</span></span> <span data-ttu-id="b8320-132">De instructie **foreach** roept elke opdracht aan en stuurt de resultaten naar `Get-Member` .</span><span class="sxs-lookup"><span data-stu-id="b8320-132">The **foreach** statement invokes each command and sends the results to `Get-Member`.</span></span> <span data-ttu-id="b8320-133">De para meter **name** beperkt de resultaten van `Get-Member` aan leden met de naam **MachineName**.</span><span class="sxs-lookup"><span data-stu-id="b8320-133">The **Name** parameter limits the results from `Get-Member` to members that have the name **MachineName**.</span></span>
+<span data-ttu-id="4b972-131">De `$list` variabele bevat een lijst met cmdlets die moeten worden geëvalueerd.</span><span class="sxs-lookup"><span data-stu-id="4b972-131">The `$list` variable contains a list of cmdlets to be evaluated.</span></span> <span data-ttu-id="4b972-132">De instructie **foreach** roept elke opdracht aan en stuurt de resultaten naar `Get-Member` .</span><span class="sxs-lookup"><span data-stu-id="4b972-132">The **foreach** statement invokes each command and sends the results to `Get-Member`.</span></span> <span data-ttu-id="4b972-133">De para meter **name** beperkt de resultaten van `Get-Member` aan leden met de naam **MachineName**.</span><span class="sxs-lookup"><span data-stu-id="4b972-133">The **Name** parameter limits the results from `Get-Member` to members that have the name **MachineName**.</span></span>
 
 ```powershell
 $list = "Get-Process", "Get-Service", "Get-Culture", "Get-PSDrive", "Get-ExecutionPolicy"
@@ -163,12 +163,12 @@ Name        MemberType Definition
 MachineName Property   string MachineName {get;set;}
 ```
 
-<span data-ttu-id="b8320-134">De resultaten geven aan dat alleen objecten en service objecten verwerken een **MachineName** -eigenschap hebben.</span><span class="sxs-lookup"><span data-stu-id="b8320-134">The results show that only process objects and service objects have a **MachineName** property.</span></span>
+<span data-ttu-id="4b972-134">De resultaten geven aan dat alleen objecten en service objecten verwerken een **MachineName** -eigenschap hebben.</span><span class="sxs-lookup"><span data-stu-id="4b972-134">The results show that only process objects and service objects have a **MachineName** property.</span></span>
 
-### <span data-ttu-id="b8320-135">Voor beeld 6: leden voor een matrix ophalen</span><span class="sxs-lookup"><span data-stu-id="b8320-135">Example 6: Get members for an array</span></span>
+### <span data-ttu-id="4b972-135">Voor beeld 6: leden voor een matrix ophalen</span><span class="sxs-lookup"><span data-stu-id="4b972-135">Example 6: Get members for an array</span></span>
 
-<span data-ttu-id="b8320-136">In dit voor beeld ziet u hoe u de leden van een matrix met objecten kunt vinden.</span><span class="sxs-lookup"><span data-stu-id="b8320-136">This example demonstrates how to find the members of an array of objects.</span></span> <span data-ttu-id="b8320-137">Wanneer u een pipe en een matrix van objecten naar `Get-Member` , retourneert de cmdlet een leden lijst voor elk uniek object type in de matrix.</span><span class="sxs-lookup"><span data-stu-id="b8320-137">When you pipe and array of objects to `Get-Member`, the cmdlet returns a member list for each unique object type in the array.</span></span>
-<span data-ttu-id="b8320-138">Als u de matrix doorgeeft met behulp van de para meter **input object** , wordt de matrix beschouwd als één object.</span><span class="sxs-lookup"><span data-stu-id="b8320-138">If you pass the array using the **InputObject** parameter, the array is treated as a single object.</span></span>
+<span data-ttu-id="4b972-136">In dit voor beeld ziet u hoe u de leden van een matrix met objecten kunt vinden.</span><span class="sxs-lookup"><span data-stu-id="4b972-136">This example demonstrates how to find the members of an array of objects.</span></span> <span data-ttu-id="4b972-137">Wanneer u een pipe en een matrix van objecten naar `Get-Member` , retourneert de cmdlet een leden lijst voor elk uniek object type in de matrix.</span><span class="sxs-lookup"><span data-stu-id="4b972-137">When you pipe and array of objects to `Get-Member`, the cmdlet returns a member list for each unique object type in the array.</span></span>
+<span data-ttu-id="4b972-138">Als u de matrix doorgeeft met behulp van de para meter **input object** , wordt de matrix beschouwd als één object.</span><span class="sxs-lookup"><span data-stu-id="4b972-138">If you pass the array using the **InputObject** parameter, the array is treated as a single object.</span></span>
 
 ```powershell
 $array = @(1,'hello')
@@ -222,11 +222,11 @@ CompareTo      Method                int IStructuralComparable.CompareTo(System.
 ...
 ```
 
-<span data-ttu-id="b8320-139">De `$array` variabele bevat een **Int32** -object en een **teken reeks** object, zoals gezien wanneer de matrix wordt gesluisd `Get-Member` .</span><span class="sxs-lookup"><span data-stu-id="b8320-139">The `$array` variable contains an **Int32** object and a **string** object, as seen when the array is piped to `Get-Member`.</span></span> <span data-ttu-id="b8320-140">Wanneer `$array` wordt door gegeven met behulp van de para meter **input object** , worden `Get-Member` de leden van het type **object []** geretourneerd.</span><span class="sxs-lookup"><span data-stu-id="b8320-140">When `$array` is passed using the **InputObject** parameter `Get-Member` returns the members of the **Object[]** type.</span></span>
+<span data-ttu-id="4b972-139">De `$array` variabele bevat een **Int32** -object en een **teken reeks** object, zoals gezien wanneer de matrix wordt gesluisd `Get-Member` .</span><span class="sxs-lookup"><span data-stu-id="4b972-139">The `$array` variable contains an **Int32** object and a **string** object, as seen when the array is piped to `Get-Member`.</span></span> <span data-ttu-id="4b972-140">Wanneer `$array` wordt door gegeven met behulp van de para meter **input object** , worden `Get-Member` de leden van het type **object []** geretourneerd.</span><span class="sxs-lookup"><span data-stu-id="4b972-140">When `$array` is passed using the **InputObject** parameter `Get-Member` returns the members of the **Object[]** type.</span></span>
 
-### <span data-ttu-id="b8320-141">Voor beeld 7: bepalen welke object eigenschappen u kunt instellen</span><span class="sxs-lookup"><span data-stu-id="b8320-141">Example 7: Determine which object properties you can set</span></span>
+### <span data-ttu-id="4b972-141">Voor beeld 7: bepalen welke object eigenschappen u kunt instellen</span><span class="sxs-lookup"><span data-stu-id="4b972-141">Example 7: Determine which object properties you can set</span></span>
 
-<span data-ttu-id="b8320-142">In dit voor beeld ziet u hoe u kunt bepalen welke eigenschappen van een object kunnen worden gewijzigd.</span><span class="sxs-lookup"><span data-stu-id="b8320-142">This example shows how to determine which properties of an object can be changed.</span></span>
+<span data-ttu-id="4b972-142">In dit voor beeld ziet u hoe u kunt bepalen welke eigenschappen van een object kunnen worden gewijzigd.</span><span class="sxs-lookup"><span data-stu-id="4b972-142">This example shows how to determine which properties of an object can be changed.</span></span>
 
 ```powershell
 $File = Get-Item c:\test\textFile.txt
@@ -252,20 +252,20 @@ LastWriteTimeUtc
 Attributes
 ```
 
-## <span data-ttu-id="b8320-143">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="b8320-143">PARAMETERS</span></span>
+## <span data-ttu-id="4b972-143">Parameters</span><span class="sxs-lookup"><span data-stu-id="4b972-143">Parameters</span></span>
 
-### <span data-ttu-id="b8320-144">-Force</span><span class="sxs-lookup"><span data-stu-id="b8320-144">-Force</span></span>
+### <span data-ttu-id="4b972-144">-Force</span><span class="sxs-lookup"><span data-stu-id="4b972-144">-Force</span></span>
 
-<span data-ttu-id="b8320-145">Voegt de intrinsieke leden en de **get_** van het door de compiler gegenereerde en **set_** -methoden toe aan de weer gave.</span><span class="sxs-lookup"><span data-stu-id="b8320-145">Adds the intrinsic members and the compiler-generated **get_** and **set_** methods to the display.</span></span>
-<span data-ttu-id="b8320-146">In de volgende lijst worden de eigenschappen beschreven die worden toegevoegd wanneer u de para meter **Force** gebruikt:</span><span class="sxs-lookup"><span data-stu-id="b8320-146">The following list describes the properties that are added when you use the **Force** parameter:</span></span>
+<span data-ttu-id="4b972-145">Voegt de intrinsieke leden en de **get_** van het door de compiler gegenereerde en **set_** -methoden toe aan de weer gave.</span><span class="sxs-lookup"><span data-stu-id="4b972-145">Adds the intrinsic members and the compiler-generated **get_** and **set_** methods to the display.</span></span>
+<span data-ttu-id="4b972-146">In de volgende lijst worden de eigenschappen beschreven die worden toegevoegd wanneer u de para meter **Force** gebruikt:</span><span class="sxs-lookup"><span data-stu-id="4b972-146">The following list describes the properties that are added when you use the **Force** parameter:</span></span>
 
-- <span data-ttu-id="b8320-147">**PSBase**: de oorspronkelijke eigenschappen van het .net-object zonder extensie of aanpassing.</span><span class="sxs-lookup"><span data-stu-id="b8320-147">**PSBase**: The original properties of the .NET object without extension or adaptation.</span></span> <span data-ttu-id="b8320-148">Dit zijn de eigenschappen die voor de object klasse zijn gedefinieerd.</span><span class="sxs-lookup"><span data-stu-id="b8320-148">These are the properties defined for the object class.</span></span>
-- <span data-ttu-id="b8320-149">**PSAdapted**.</span><span class="sxs-lookup"><span data-stu-id="b8320-149">**PSAdapted**.</span></span> <span data-ttu-id="b8320-150">De eigenschappen en methoden die zijn gedefinieerd in het type systeem Power shell Extended.</span><span class="sxs-lookup"><span data-stu-id="b8320-150">The properties and methods defined in the PowerShell extended type system.</span></span>
-- <span data-ttu-id="b8320-151">**PSExtended**.</span><span class="sxs-lookup"><span data-stu-id="b8320-151">**PSExtended**.</span></span> <span data-ttu-id="b8320-152">De eigenschappen en methoden die zijn toegevoegd in de `Types.ps1xml` bestanden of met behulp van de- `Add-Member` cmdlet.</span><span class="sxs-lookup"><span data-stu-id="b8320-152">The properties and methods that were added in the `Types.ps1xml` files or by using the `Add-Member` cmdlet.</span></span>
-- <span data-ttu-id="b8320-153">**PSObject**.</span><span class="sxs-lookup"><span data-stu-id="b8320-153">**PSObject**.</span></span> <span data-ttu-id="b8320-154">De adapter die het basis object converteert naar een Power shell **PSObject** -object.</span><span class="sxs-lookup"><span data-stu-id="b8320-154">The adapter that converts the base object to a PowerShell **PSObject** object.</span></span>
-- <span data-ttu-id="b8320-155">**PSTypeNames**.</span><span class="sxs-lookup"><span data-stu-id="b8320-155">**PSTypeNames**.</span></span> <span data-ttu-id="b8320-156">Een lijst met object typen die het object beschrijven, in volg orde van specificiteit.</span><span class="sxs-lookup"><span data-stu-id="b8320-156">A list of object types that describe the object, in order of specificity.</span></span> <span data-ttu-id="b8320-157">Bij het format teren van het object zoekt Power shell naar de typen in de `Format.ps1xml` bestanden in de installatie directory van Power shell ( `$PSHOME` ).</span><span class="sxs-lookup"><span data-stu-id="b8320-157">When formatting the object, PowerShell searches for the types in the `Format.ps1xml` files in the PowerShell installation directory (`$PSHOME`).</span></span> <span data-ttu-id="b8320-158">De opmaak definitie wordt gebruikt voor het eerste type dat wordt gevonden.</span><span class="sxs-lookup"><span data-stu-id="b8320-158">It uses the formatting definition for the first type that it finds.</span></span>
+- <span data-ttu-id="4b972-147">`PSBase`: De oorspronkelijke eigenschappen van het .NET-object zonder extensie of aanpassing.</span><span class="sxs-lookup"><span data-stu-id="4b972-147">`PSBase`: The original properties of the .NET object without extension or adaptation.</span></span> <span data-ttu-id="4b972-148">Dit zijn de eigenschappen die voor de object klasse zijn gedefinieerd.</span><span class="sxs-lookup"><span data-stu-id="4b972-148">These are the properties defined for the object class.</span></span>
+- <span data-ttu-id="4b972-149">`PSAdapted`: De eigenschappen en methoden die zijn gedefinieerd in het type systeem Power shell Extended.</span><span class="sxs-lookup"><span data-stu-id="4b972-149">`PSAdapted`: The properties and methods defined in the PowerShell extended type system.</span></span>
+- <span data-ttu-id="4b972-150">`PSExtended`: De eigenschappen en methoden die zijn toegevoegd aan de `Types.ps1xml` bestanden of door gebruik te maken van de `Add-Member` cmdlet.</span><span class="sxs-lookup"><span data-stu-id="4b972-150">`PSExtended`: The properties and methods that were added in the `Types.ps1xml` files or by using the `Add-Member` cmdlet.</span></span>
+- <span data-ttu-id="4b972-151">`PSObject`: De adapter die het basis object converteert naar een Power shell **PSObject** -object.</span><span class="sxs-lookup"><span data-stu-id="4b972-151">`PSObject`: The adapter that converts the base object to a PowerShell **PSObject** object.</span></span>
+- <span data-ttu-id="4b972-152">`PSTypeNames`: Een lijst met object typen die het object beschrijven, in volg orde van specificiteit.</span><span class="sxs-lookup"><span data-stu-id="4b972-152">`PSTypeNames`: A list of object types that describe the object, in order of specificity.</span></span> <span data-ttu-id="4b972-153">Bij het format teren van het object zoekt Power shell naar de typen in de `Format.ps1xml` bestanden in de installatie directory van Power shell ( `$PSHOME` ).</span><span class="sxs-lookup"><span data-stu-id="4b972-153">When formatting the object, PowerShell searches for the types in the `Format.ps1xml` files in the PowerShell installation directory (`$PSHOME`).</span></span> <span data-ttu-id="4b972-154">De opmaak definitie wordt gebruikt voor het eerste type dat wordt gevonden.</span><span class="sxs-lookup"><span data-stu-id="4b972-154">It uses the formatting definition for the first type that it finds.</span></span>
 
-<span data-ttu-id="b8320-159">`Get-Member`Deze eigenschappen worden standaard in alle weer gaven opgehaald, behalve **basis** en **aangepast**, maar ze worden niet weer gegeven.</span><span class="sxs-lookup"><span data-stu-id="b8320-159">By default, `Get-Member` gets these properties in all views except **Base** and **Adapted**, but does not display them.</span></span>
+<span data-ttu-id="4b972-155">`Get-Member`Deze eigenschappen worden standaard in alle weer gaven opgehaald, behalve **basis** en **aangepast**, maar ze worden niet weer gegeven.</span><span class="sxs-lookup"><span data-stu-id="4b972-155">By default, `Get-Member` gets these properties in all views except **Base** and **Adapted**, but does not display them.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -279,14 +279,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b8320-160">-Input object</span><span class="sxs-lookup"><span data-stu-id="b8320-160">-InputObject</span></span>
+### <span data-ttu-id="4b972-156">-Input object</span><span class="sxs-lookup"><span data-stu-id="4b972-156">-InputObject</span></span>
 
-<span data-ttu-id="b8320-161">Hiermee geeft u het object op waarvan de leden worden opgehaald.</span><span class="sxs-lookup"><span data-stu-id="b8320-161">Specifies the object whose members are retrieved.</span></span>
+<span data-ttu-id="4b972-157">Hiermee geeft u het object op waarvan de leden worden opgehaald.</span><span class="sxs-lookup"><span data-stu-id="4b972-157">Specifies the object whose members are retrieved.</span></span>
 
-<span data-ttu-id="b8320-162">Het gebruik van de para meter **input object** is niet hetzelfde als het door sluizen van een object `Get-Member` .</span><span class="sxs-lookup"><span data-stu-id="b8320-162">Using the **InputObject** parameter is not the same as piping an object to `Get-Member`.</span></span> <span data-ttu-id="b8320-163">De verschillen zijn als volgt:</span><span class="sxs-lookup"><span data-stu-id="b8320-163">The differences are as follows:</span></span>
+<span data-ttu-id="4b972-158">Het gebruik van de para meter **input object** is niet hetzelfde als het door sluizen van een object `Get-Member` .</span><span class="sxs-lookup"><span data-stu-id="4b972-158">Using the **InputObject** parameter is not the same as piping an object to `Get-Member`.</span></span> <span data-ttu-id="4b972-159">De verschillen zijn als volgt:</span><span class="sxs-lookup"><span data-stu-id="4b972-159">The differences are as follows:</span></span>
 
-- <span data-ttu-id="b8320-164">Wanneer u een verzameling objecten naar een pipet `Get-Member` , worden `Get-Member` de leden van de afzonderlijke objecten in de verzameling opgehaald, zoals de eigenschappen van elke teken reeks in een matrix met teken reeksen.</span><span class="sxs-lookup"><span data-stu-id="b8320-164">When you pipe a collection of objects to `Get-Member`, `Get-Member` gets the members of the individual objects in the collection, such as the properties of each string in an array of strings.</span></span>
-- <span data-ttu-id="b8320-165">Wanneer u **input object** gebruikt om een verzameling objecten te verzenden, worden `Get-Member` de leden van de verzameling opgehaald, zoals de eigenschappen van de matrix in een matrix met teken reeksen.</span><span class="sxs-lookup"><span data-stu-id="b8320-165">When you use **InputObject** to submit a collection of objects, `Get-Member` gets the members of the collection, such as the properties of the array in an array of strings.</span></span>
+- <span data-ttu-id="4b972-160">Wanneer u een verzameling objecten naar een pipet `Get-Member` , worden `Get-Member` de leden van de afzonderlijke objecten in de verzameling opgehaald, zoals de eigenschappen van elke teken reeks in een matrix met teken reeksen.</span><span class="sxs-lookup"><span data-stu-id="4b972-160">When you pipe a collection of objects to `Get-Member`, `Get-Member` gets the members of the individual objects in the collection, such as the properties of each string in an array of strings.</span></span>
+- <span data-ttu-id="4b972-161">Wanneer u **input object** gebruikt om een verzameling objecten te verzenden, worden `Get-Member` de leden van de verzameling opgehaald, zoals de eigenschappen van de matrix in een matrix met teken reeksen.</span><span class="sxs-lookup"><span data-stu-id="4b972-161">When you use **InputObject** to submit a collection of objects, `Get-Member` gets the members of the collection, such as the properties of the array in an array of strings.</span></span>
 
 ```yaml
 Type: System.Management.Automation.PSObject
@@ -300,34 +300,34 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b8320-166">-Member type</span><span class="sxs-lookup"><span data-stu-id="b8320-166">-MemberType</span></span>
+### <span data-ttu-id="4b972-162">-Member type</span><span class="sxs-lookup"><span data-stu-id="4b972-162">-MemberType</span></span>
 
-<span data-ttu-id="b8320-167">Hiermee geeft u het lidtype-type op dat met deze cmdlet wordt opgehaald.</span><span class="sxs-lookup"><span data-stu-id="b8320-167">Specifies the member type that this cmdlet gets.</span></span> <span data-ttu-id="b8320-168">De standaardwaarde is **alle**.</span><span class="sxs-lookup"><span data-stu-id="b8320-168">The default is **All**.</span></span>
+<span data-ttu-id="4b972-163">Hiermee geeft u het lidtype-type op dat met deze cmdlet wordt opgehaald.</span><span class="sxs-lookup"><span data-stu-id="4b972-163">Specifies the member type that this cmdlet gets.</span></span> <span data-ttu-id="4b972-164">De standaardwaarde is `All`.</span><span class="sxs-lookup"><span data-stu-id="4b972-164">The default is `All`.</span></span>
 
-<span data-ttu-id="b8320-169">De aanvaardbare waarden voor deze parameter zijn:</span><span class="sxs-lookup"><span data-stu-id="b8320-169">The acceptable values for this parameter are:</span></span>
+<span data-ttu-id="4b972-165">De aanvaardbare waarden voor deze parameter zijn:</span><span class="sxs-lookup"><span data-stu-id="4b972-165">The acceptable values for this parameter are:</span></span>
 
-- <span data-ttu-id="b8320-170">AliasProperty</span><span class="sxs-lookup"><span data-stu-id="b8320-170">AliasProperty</span></span>
-- <span data-ttu-id="b8320-171">CodeProperty</span><span class="sxs-lookup"><span data-stu-id="b8320-171">CodeProperty</span></span>
-- <span data-ttu-id="b8320-172">Eigenschap</span><span class="sxs-lookup"><span data-stu-id="b8320-172">Property</span></span>
-- <span data-ttu-id="b8320-173">NoteProperty</span><span class="sxs-lookup"><span data-stu-id="b8320-173">NoteProperty</span></span>
-- <span data-ttu-id="b8320-174">ScriptProperty</span><span class="sxs-lookup"><span data-stu-id="b8320-174">ScriptProperty</span></span>
-- <span data-ttu-id="b8320-175">Eigenschappen</span><span class="sxs-lookup"><span data-stu-id="b8320-175">Properties</span></span>
-- <span data-ttu-id="b8320-176">Eigenschappenset</span><span class="sxs-lookup"><span data-stu-id="b8320-176">PropertySet</span></span>
-- <span data-ttu-id="b8320-177">Methode</span><span class="sxs-lookup"><span data-stu-id="b8320-177">Method</span></span>
-- <span data-ttu-id="b8320-178">CodeMethod</span><span class="sxs-lookup"><span data-stu-id="b8320-178">CodeMethod</span></span>
-- <span data-ttu-id="b8320-179">ScriptMethod</span><span class="sxs-lookup"><span data-stu-id="b8320-179">ScriptMethod</span></span>
-- <span data-ttu-id="b8320-180">Methoden</span><span class="sxs-lookup"><span data-stu-id="b8320-180">Methods</span></span>
-- <span data-ttu-id="b8320-181">ParameterizedProperty</span><span class="sxs-lookup"><span data-stu-id="b8320-181">ParameterizedProperty</span></span>
-- <span data-ttu-id="b8320-182">Ledenset</span><span class="sxs-lookup"><span data-stu-id="b8320-182">MemberSet</span></span>
-- <span data-ttu-id="b8320-183">Gebeurtenis</span><span class="sxs-lookup"><span data-stu-id="b8320-183">Event</span></span>
-- <span data-ttu-id="b8320-184">Dynamisch</span><span class="sxs-lookup"><span data-stu-id="b8320-184">Dynamic</span></span>
-- <span data-ttu-id="b8320-185">Alles</span><span class="sxs-lookup"><span data-stu-id="b8320-185">All</span></span>
+- `AliasProperty`
+- `CodeProperty`
+- `Property`
+- `NoteProperty`
+- `ScriptProperty`
+- `Properties`
+- `PropertySet`
+- `Method`
+- `CodeMethod`
+- `ScriptMethod`
+- `Methods`
+- `ParameterizedProperty`
+- `MemberSet`
+- `Event`
+- `Dynamic`
+- `All`
 
-<span data-ttu-id="b8320-186">Zie [PSMemberTypes Enumeration (Engelstalig)](/dotnet/api/system.management.automation.psmembertypes)voor meer informatie over deze waarden.</span><span class="sxs-lookup"><span data-stu-id="b8320-186">For information about these values, see [PSMemberTypes Enumeration](/dotnet/api/system.management.automation.psmembertypes).</span></span>
+<span data-ttu-id="4b972-166">Deze waarden worden gedefinieerd als inventarisatie op basis van een vlag.</span><span class="sxs-lookup"><span data-stu-id="4b972-166">These values are defined as a flag-based enumeration.</span></span> <span data-ttu-id="4b972-167">U kunt meerdere waarden combi neren om meerdere vlaggen in te stellen met behulp van deze para meter.</span><span class="sxs-lookup"><span data-stu-id="4b972-167">You can combine multiple values together to set multiple flags using this parameter.</span></span> <span data-ttu-id="4b972-168">De waarden kunnen worden door gegeven aan de **member type** -para meter als een matrix met waarden of als een door komma's gescheiden teken reeks van die waarden.</span><span class="sxs-lookup"><span data-stu-id="4b972-168">The values can be passed to the **MemberType** parameter as an array of values or as a comma-separated string of those values.</span></span> <span data-ttu-id="4b972-169">Met de cmdlet worden de waarden gecombineerd met behulp van een binaire waarde of bewerking.</span><span class="sxs-lookup"><span data-stu-id="4b972-169">The cmdlet will combine the values using a binary-OR operation.</span></span> <span data-ttu-id="4b972-170">Het door geven van waarden als een matrix is de eenvoudigste optie. Daarnaast kunt u met behulp van de waarden van het tabblad volt ooien.</span><span class="sxs-lookup"><span data-stu-id="4b972-170">Passing values as an array is the simplest option and also allows you to use tab-completion on the values.</span></span>
 
-<span data-ttu-id="b8320-187">Niet alle objecten hebben elk type lid.</span><span class="sxs-lookup"><span data-stu-id="b8320-187">Not all objects have every type of member.</span></span> <span data-ttu-id="b8320-188">Als u een lidtype opgeeft dat het object niet heeft, retourneert Power shell een null-waarde.</span><span class="sxs-lookup"><span data-stu-id="b8320-188">If you specify a member type that the object does not have, PowerShell returns a null value.</span></span>
+<span data-ttu-id="4b972-171">Zie [PSMemberTypes Enumeration (Engelstalig)](/dotnet/api/system.management.automation.psmembertypes)voor meer informatie over deze waarden.</span><span class="sxs-lookup"><span data-stu-id="4b972-171">For information about these values, see [PSMemberTypes Enumeration](/dotnet/api/system.management.automation.psmembertypes).</span></span>
 
-<span data-ttu-id="b8320-189">Als u verwante typen leden wilt ophalen, bijvoorbeeld alle uitgebreide leden, gebruikt u de **weer gave** -para meter.</span><span class="sxs-lookup"><span data-stu-id="b8320-189">To get related types of members, such as all extended members, use the **View** parameter.</span></span> <span data-ttu-id="b8320-190">Als u de para meter **member type** met de para meters **static** of **View** gebruikt, `Get-Member` worden de leden opgehaald die deel uitmaken van beide sets.</span><span class="sxs-lookup"><span data-stu-id="b8320-190">If you use the **MemberType** parameter with the **Static** or **View** parameters, `Get-Member` gets the members that belong to both sets.</span></span>
+<span data-ttu-id="4b972-172">Niet alle objecten hebben elk type lid.</span><span class="sxs-lookup"><span data-stu-id="4b972-172">Not all objects have every type of member.</span></span> <span data-ttu-id="4b972-173">Als u een lidtype opgeeft dat het object niet heeft, retourneert Power shell een null-waarde.</span><span class="sxs-lookup"><span data-stu-id="4b972-173">If you specify a member type that the object does not have, PowerShell returns a null value.</span></span> <span data-ttu-id="4b972-174">Als u verwante typen leden wilt ophalen, bijvoorbeeld alle uitgebreide leden, gebruikt u de **weer gave** -para meter.</span><span class="sxs-lookup"><span data-stu-id="4b972-174">To get related types of members, such as all extended members, use the **View** parameter.</span></span> <span data-ttu-id="4b972-175">Als u de para meter **member type** met de para meters **static** of **View** gebruikt, `Get-Member` worden de leden opgehaald die deel uitmaken van beide sets.</span><span class="sxs-lookup"><span data-stu-id="4b972-175">If you use the **MemberType** parameter with the **Static** or **View** parameters, `Get-Member` gets the members that belong to both sets.</span></span>
 
 ```yaml
 Type: System.Management.Automation.PSMemberTypes
@@ -342,13 +342,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b8320-191">-Name</span><span class="sxs-lookup"><span data-stu-id="b8320-191">-Name</span></span>
+### <span data-ttu-id="4b972-176">-Name</span><span class="sxs-lookup"><span data-stu-id="4b972-176">-Name</span></span>
 
-<span data-ttu-id="b8320-192">Hiermee geeft u de namen van een of meer eigenschappen of methoden van het object op.</span><span class="sxs-lookup"><span data-stu-id="b8320-192">Specifies the names of one or more properties or methods of the object.</span></span> <span data-ttu-id="b8320-193">`Get-Member` Hiermee worden alleen de opgegeven eigenschappen en methoden opgehaald.</span><span class="sxs-lookup"><span data-stu-id="b8320-193">`Get-Member` gets only the specified properties and methods.</span></span>
+<span data-ttu-id="4b972-177">Hiermee geeft u de namen van een of meer eigenschappen of methoden van het object op.</span><span class="sxs-lookup"><span data-stu-id="4b972-177">Specifies the names of one or more properties or methods of the object.</span></span> <span data-ttu-id="4b972-178">`Get-Member` Hiermee worden alleen de opgegeven eigenschappen en methoden opgehaald.</span><span class="sxs-lookup"><span data-stu-id="4b972-178">`Get-Member` gets only the specified properties and methods.</span></span>
 
-<span data-ttu-id="b8320-194">Als u de para meter **name** gebruikt met de para meter **member type**, **View** of **static** , worden `Get-Member` alleen de leden opgehaald die voldoen aan de criteria van alle para meters.</span><span class="sxs-lookup"><span data-stu-id="b8320-194">If you use the **Name** parameter with the **MemberType**, **View**, or **Static** parameter, `Get-Member` gets only the members that satisfy the criteria of all parameters.</span></span>
+<span data-ttu-id="4b972-179">Als u de para meter **name** gebruikt met de para meter **member type**, **View** of **static** , worden `Get-Member` alleen de leden opgehaald die voldoen aan de criteria van alle para meters.</span><span class="sxs-lookup"><span data-stu-id="4b972-179">If you use the **Name** parameter with the **MemberType**, **View**, or **Static** parameter, `Get-Member` gets only the members that satisfy the criteria of all parameters.</span></span>
 
-<span data-ttu-id="b8320-195">Als u een statisch lid wilt ophalen op naam, gebruikt u de **statische** para meter met de **naam** parameter.</span><span class="sxs-lookup"><span data-stu-id="b8320-195">To get a static member by name, use the **Static** parameter with the **Name** parameter.</span></span>
+<span data-ttu-id="4b972-180">Als u een statisch lid wilt ophalen op naam, gebruikt u de **statische** para meter met de **naam** parameter.</span><span class="sxs-lookup"><span data-stu-id="4b972-180">To get a static member by name, use the **Static** parameter with the **Name** parameter.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -362,12 +362,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b8320-196">-Static</span><span class="sxs-lookup"><span data-stu-id="b8320-196">-Static</span></span>
+### <span data-ttu-id="4b972-181">-Static</span><span class="sxs-lookup"><span data-stu-id="4b972-181">-Static</span></span>
 
-<span data-ttu-id="b8320-197">Geeft aan dat met deze cmdlet alleen de statische eigenschappen en methoden van het object worden opgehaald.</span><span class="sxs-lookup"><span data-stu-id="b8320-197">Indicates that this cmdlet gets only the static properties and methods of the object.</span></span> <span data-ttu-id="b8320-198">Statische eigenschappen en methoden worden gedefinieerd voor de object klasse, niet op een bepaalde instantie van de klasse.</span><span class="sxs-lookup"><span data-stu-id="b8320-198">Static properties and methods are defined on the class of objects, not on any particular instance of the class.</span></span>
+<span data-ttu-id="4b972-182">Geeft aan dat met deze cmdlet alleen de statische eigenschappen en methoden van het object worden opgehaald.</span><span class="sxs-lookup"><span data-stu-id="4b972-182">Indicates that this cmdlet gets only the static properties and methods of the object.</span></span> <span data-ttu-id="4b972-183">Statische eigenschappen en methoden worden gedefinieerd voor de object klasse, niet op een bepaalde instantie van de klasse.</span><span class="sxs-lookup"><span data-stu-id="4b972-183">Static properties and methods are defined on the class of objects, not on any particular instance of the class.</span></span>
 
-<span data-ttu-id="b8320-199">Als u de **statische** para meter met de **weer gave** -para meter gebruikt, wordt de **weer gave** -para meter genegeerd.</span><span class="sxs-lookup"><span data-stu-id="b8320-199">If you use the **Static** parameter with the **View** parameter, the **View** parameter is ignored.</span></span>
-<span data-ttu-id="b8320-200">Als u de **statische** para meter gebruikt met de para meter **member type** , worden `Get-Member` alleen de leden opgehaald die deel uitmaken van beide sets.</span><span class="sxs-lookup"><span data-stu-id="b8320-200">If you use the **Static** parameter with the **MemberType** parameter, `Get-Member` gets only the members that belong to both sets.</span></span>
+<span data-ttu-id="4b972-184">Als u de **statische** para meter met de **weer gave** -para meter gebruikt, wordt de **weer gave** -para meter genegeerd.</span><span class="sxs-lookup"><span data-stu-id="4b972-184">If you use the **Static** parameter with the **View** parameter, the **View** parameter is ignored.</span></span>
+<span data-ttu-id="4b972-185">Als u de **statische** para meter gebruikt met de para meter **member type** , worden `Get-Member` alleen de leden opgehaald die deel uitmaken van beide sets.</span><span class="sxs-lookup"><span data-stu-id="4b972-185">If you use the **Static** parameter with the **MemberType** parameter, `Get-Member` gets only the members that belong to both sets.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -381,20 +381,20 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b8320-201">-Weer geven</span><span class="sxs-lookup"><span data-stu-id="b8320-201">-View</span></span>
+### <span data-ttu-id="4b972-186">-Weer geven</span><span class="sxs-lookup"><span data-stu-id="4b972-186">-View</span></span>
 
-<span data-ttu-id="b8320-202">Hiermee geeft u op dat met deze cmdlet alleen bepaalde typen eigenschappen en-methoden worden opgehaald.</span><span class="sxs-lookup"><span data-stu-id="b8320-202">Specifies that this cmdlet gets only particular types properties and methods.</span></span> <span data-ttu-id="b8320-203">Geef een of meer van de waarden op.</span><span class="sxs-lookup"><span data-stu-id="b8320-203">Specify one or more of the values.</span></span> <span data-ttu-id="b8320-204">De standaard waarde is **aangepast**, **uitgebreid**.</span><span class="sxs-lookup"><span data-stu-id="b8320-204">The default is **Adapted**, **Extended**.</span></span>
+<span data-ttu-id="4b972-187">Hiermee geeft u op dat met deze cmdlet alleen bepaalde typen eigenschappen en-methoden worden opgehaald.</span><span class="sxs-lookup"><span data-stu-id="4b972-187">Specifies that this cmdlet gets only particular types properties and methods.</span></span> <span data-ttu-id="4b972-188">Geef een of meer van de waarden op.</span><span class="sxs-lookup"><span data-stu-id="4b972-188">Specify one or more of the values.</span></span> <span data-ttu-id="4b972-189">De standaard waarde is **aangepast**, **uitgebreid**.</span><span class="sxs-lookup"><span data-stu-id="4b972-189">The default is **Adapted**, **Extended**.</span></span>
 
-<span data-ttu-id="b8320-205">De aanvaardbare waarden voor deze parameter zijn:</span><span class="sxs-lookup"><span data-stu-id="b8320-205">The acceptable values for this parameter are:</span></span>
+<span data-ttu-id="4b972-190">De aanvaardbare waarden voor deze parameter zijn:</span><span class="sxs-lookup"><span data-stu-id="4b972-190">The acceptable values for this parameter are:</span></span>
 
-- <span data-ttu-id="b8320-206">Baseer.</span><span class="sxs-lookup"><span data-stu-id="b8320-206">Base.</span></span> <span data-ttu-id="b8320-207">Hiermee worden alleen de oorspronkelijke eigenschappen en methoden van het .NET-object (zonder extensie of aanpassing) opgehaald.</span><span class="sxs-lookup"><span data-stu-id="b8320-207">Gets only the original properties and methods of the .NET object (without extension or adaptation).</span></span>
-- <span data-ttu-id="b8320-208">Gebaseerd.</span><span class="sxs-lookup"><span data-stu-id="b8320-208">Adapted.</span></span> <span data-ttu-id="b8320-209">Hiermee worden alleen de eigenschappen en methoden opgehaald die in het systeem eigen Power shell Extended type zijn gedefinieerd.</span><span class="sxs-lookup"><span data-stu-id="b8320-209">Gets only the properties and methods defined in the PowerShell extended type system.</span></span>
-- <span data-ttu-id="b8320-210">Diakritische.</span><span class="sxs-lookup"><span data-stu-id="b8320-210">Extended.</span></span> <span data-ttu-id="b8320-211">Haalt alleen de eigenschappen en methoden op die zijn toegevoegd aan een `Types.ps1xml` bestand of met behulp van de- `Add-Member` cmdlet.</span><span class="sxs-lookup"><span data-stu-id="b8320-211">Gets only the properties and methods that were added in a `Types.ps1xml` files or by using the `Add-Member` cmdlet.</span></span>
-- <span data-ttu-id="b8320-212">Hele.</span><span class="sxs-lookup"><span data-stu-id="b8320-212">All.</span></span> <span data-ttu-id="b8320-213">Hiermee worden de leden in de basis-, aangepaste en uitgebreide weer gaven opgehaald.</span><span class="sxs-lookup"><span data-stu-id="b8320-213">Gets the members in the Base, Adapted, and Extended views.</span></span>
+- <span data-ttu-id="4b972-191">Baseer.</span><span class="sxs-lookup"><span data-stu-id="4b972-191">Base.</span></span> <span data-ttu-id="4b972-192">Hiermee worden alleen de oorspronkelijke eigenschappen en methoden van het .NET-object (zonder extensie of aanpassing) opgehaald.</span><span class="sxs-lookup"><span data-stu-id="4b972-192">Gets only the original properties and methods of the .NET object (without extension or adaptation).</span></span>
+- <span data-ttu-id="4b972-193">Gebaseerd.</span><span class="sxs-lookup"><span data-stu-id="4b972-193">Adapted.</span></span> <span data-ttu-id="4b972-194">Hiermee worden alleen de eigenschappen en methoden opgehaald die in het systeem eigen Power shell Extended type zijn gedefinieerd.</span><span class="sxs-lookup"><span data-stu-id="4b972-194">Gets only the properties and methods defined in the PowerShell extended type system.</span></span>
+- <span data-ttu-id="4b972-195">Diakritische.</span><span class="sxs-lookup"><span data-stu-id="4b972-195">Extended.</span></span> <span data-ttu-id="4b972-196">Haalt alleen de eigenschappen en methoden op die zijn toegevoegd aan een `Types.ps1xml` bestand of met behulp van de- `Add-Member` cmdlet.</span><span class="sxs-lookup"><span data-stu-id="4b972-196">Gets only the properties and methods that were added in a `Types.ps1xml` files or by using the `Add-Member` cmdlet.</span></span>
+- <span data-ttu-id="4b972-197">Hele.</span><span class="sxs-lookup"><span data-stu-id="4b972-197">All.</span></span> <span data-ttu-id="4b972-198">Hiermee worden de leden in de basis-, aangepaste en uitgebreide weer gaven opgehaald.</span><span class="sxs-lookup"><span data-stu-id="4b972-198">Gets the members in the Base, Adapted, and Extended views.</span></span>
 
-<span data-ttu-id="b8320-214">De **weer gave** -para meter bepaalt welke leden worden opgehaald, niet alleen de weer gave van deze leden.</span><span class="sxs-lookup"><span data-stu-id="b8320-214">The **View** parameter determines the members retrieved, not just the display of those members.</span></span>
+<span data-ttu-id="4b972-199">De **weer gave** -para meter bepaalt welke leden worden opgehaald, niet alleen de weer gave van deze leden.</span><span class="sxs-lookup"><span data-stu-id="4b972-199">The **View** parameter determines the members retrieved, not just the display of those members.</span></span>
 
-<span data-ttu-id="b8320-215">Gebruik de para meter **member type** om bepaalde leden typen, zoals script eigenschappen, op te halen.</span><span class="sxs-lookup"><span data-stu-id="b8320-215">To get particular member types, such as script properties, use the **MemberType** parameter.</span></span> <span data-ttu-id="b8320-216">Als u de para meters **member type** en **View** in dezelfde opdracht gebruikt, worden `Get-Member` de leden die deel uitmaken van beide sets opgehaald.</span><span class="sxs-lookup"><span data-stu-id="b8320-216">If you use the **MemberType** and **View** parameters in the same command, `Get-Member` gets the members that belong to both sets.</span></span> <span data-ttu-id="b8320-217">Als u de para meters **static** en **weer geven** in dezelfde opdracht gebruikt, wordt de **weer gave** -para meter genegeerd.</span><span class="sxs-lookup"><span data-stu-id="b8320-217">If you use the **Static** and **View** parameters in the same command, the **View** parameter is ignored.</span></span>
+<span data-ttu-id="4b972-200">Gebruik de para meter **member type** om bepaalde leden typen, zoals script eigenschappen, op te halen.</span><span class="sxs-lookup"><span data-stu-id="4b972-200">To get particular member types, such as script properties, use the **MemberType** parameter.</span></span> <span data-ttu-id="4b972-201">Als u de para meters **member type** en **View** in dezelfde opdracht gebruikt, worden `Get-Member` de leden die deel uitmaken van beide sets opgehaald.</span><span class="sxs-lookup"><span data-stu-id="4b972-201">If you use the **MemberType** and **View** parameters in the same command, `Get-Member` gets the members that belong to both sets.</span></span> <span data-ttu-id="4b972-202">Als u de para meters **static** en **weer geven** in dezelfde opdracht gebruikt, wordt de **weer gave** -para meter genegeerd.</span><span class="sxs-lookup"><span data-stu-id="4b972-202">If you use the **Static** and **View** parameters in the same command, the **View** parameter is ignored.</span></span>
 
 ```yaml
 Type: System.Management.Automation.PSMemberViewTypes
@@ -409,31 +409,30 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b8320-218">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="b8320-218">CommonParameters</span></span>
+### <span data-ttu-id="4b972-203">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="4b972-203">CommonParameters</span></span>
 
-<span data-ttu-id="b8320-219">Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="b8320-219">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="b8320-220">Zie [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)voor meer informatie.</span><span class="sxs-lookup"><span data-stu-id="b8320-220">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+<span data-ttu-id="4b972-204">Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="4b972-204">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="4b972-205">Zie [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)voor meer informatie.</span><span class="sxs-lookup"><span data-stu-id="4b972-205">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="b8320-221">INVOER</span><span class="sxs-lookup"><span data-stu-id="b8320-221">INPUTS</span></span>
+## <span data-ttu-id="4b972-206">Invoerwaarden</span><span class="sxs-lookup"><span data-stu-id="4b972-206">Inputs</span></span>
 
-### <span data-ttu-id="b8320-222">System. Management. Automation. PSObject</span><span class="sxs-lookup"><span data-stu-id="b8320-222">System.Management.Automation.PSObject</span></span>
+### <span data-ttu-id="4b972-207">System. Management. Automation. PSObject</span><span class="sxs-lookup"><span data-stu-id="4b972-207">System.Management.Automation.PSObject</span></span>
 
-<span data-ttu-id="b8320-223">U kunt elk object door sluizen naar `Get-Member` .</span><span class="sxs-lookup"><span data-stu-id="b8320-223">You can pipe any object to `Get-Member`.</span></span>
+<span data-ttu-id="4b972-208">U kunt elk object door sluizen naar `Get-Member` .</span><span class="sxs-lookup"><span data-stu-id="4b972-208">You can pipe any object to `Get-Member`.</span></span>
 
-## <span data-ttu-id="b8320-224">UITVOER</span><span class="sxs-lookup"><span data-stu-id="b8320-224">OUTPUTS</span></span>
+## <span data-ttu-id="4b972-209">Uitvoerwaarden</span><span class="sxs-lookup"><span data-stu-id="4b972-209">Outputs</span></span>
 
-### <span data-ttu-id="b8320-225">Micro soft. Power shell. commands. MemberDefinition</span><span class="sxs-lookup"><span data-stu-id="b8320-225">Microsoft.PowerShell.Commands.MemberDefinition</span></span>
+### <span data-ttu-id="4b972-210">Micro soft. Power shell. commands. MemberDefinition</span><span class="sxs-lookup"><span data-stu-id="4b972-210">Microsoft.PowerShell.Commands.MemberDefinition</span></span>
 
-<span data-ttu-id="b8320-226">`Get-Member` retourneert een object voor elke eigenschap of methode die wordt opgehaald.</span><span class="sxs-lookup"><span data-stu-id="b8320-226">`Get-Member` returns an object for each property or method that its gets.</span></span>
+<span data-ttu-id="4b972-211">`Get-Member` retourneert een object voor elke eigenschap of methode die wordt opgehaald.</span><span class="sxs-lookup"><span data-stu-id="4b972-211">`Get-Member` returns an object for each property or method that its gets.</span></span>
 
-## <span data-ttu-id="b8320-227">OPMERKINGEN</span><span class="sxs-lookup"><span data-stu-id="b8320-227">NOTES</span></span>
+## <span data-ttu-id="4b972-212">Notities</span><span class="sxs-lookup"><span data-stu-id="4b972-212">Notes</span></span>
 
-<span data-ttu-id="b8320-228">U kunt informatie over een verzamelings object ophalen met behulp van de para meter **input object** of door het object, voorafgegaan door een komma, te gebruiken in `Get-Member` .</span><span class="sxs-lookup"><span data-stu-id="b8320-228">You can get information about a collection object either by using the **InputObject** parameter or by piping the object, preceded by a comma, to `Get-Member`.</span></span>
+<span data-ttu-id="4b972-213">U kunt informatie over een verzamelings object ophalen met behulp van de para meter **input object** of door het object, voorafgegaan door een komma, te gebruiken in `Get-Member` .</span><span class="sxs-lookup"><span data-stu-id="4b972-213">You can get information about a collection object either by using the **InputObject** parameter or by piping the object, preceded by a comma, to `Get-Member`.</span></span>
 
-<span data-ttu-id="b8320-229">U kunt de `$This` Automatische variabele gebruiken in script blokken waarmee de waarden van nieuwe eigenschappen en methoden worden gedefinieerd.</span><span class="sxs-lookup"><span data-stu-id="b8320-229">You can use the `$This` automatic variable in script blocks that define the values of new properties and methods.</span></span> <span data-ttu-id="b8320-230">De `$This` variabele verwijst naar het exemplaar van het object waarnaar de eigenschappen en methoden worden toegevoegd.</span><span class="sxs-lookup"><span data-stu-id="b8320-230">The `$This` variable refers to the instance of the object to which the properties and methods are being added.</span></span> <span data-ttu-id="b8320-231">Zie about_Automatic_Variables voor meer informatie over de `$This` variabele [](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md).</span><span class="sxs-lookup"><span data-stu-id="b8320-231">For more information about the `$This` variable, see [about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md).</span></span>
+<span data-ttu-id="4b972-214">U kunt de `$This` Automatische variabele gebruiken in script blokken waarmee de waarden van nieuwe eigenschappen en methoden worden gedefinieerd.</span><span class="sxs-lookup"><span data-stu-id="4b972-214">You can use the `$This` automatic variable in script blocks that define the values of new properties and methods.</span></span> <span data-ttu-id="4b972-215">De `$This` variabele verwijst naar het exemplaar van het object waarnaar de eigenschappen en methoden worden toegevoegd.</span><span class="sxs-lookup"><span data-stu-id="4b972-215">The `$This` variable refers to the instance of the object to which the properties and methods are being added.</span></span> <span data-ttu-id="4b972-216">Zie about_Automatic_Variables voor meer informatie over de `$This` variabele [](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md).</span><span class="sxs-lookup"><span data-stu-id="4b972-216">For more information about the `$This` variable, see [about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md).</span></span>
 
-<span data-ttu-id="b8320-232">Als u een object door geven dat een _type_ vertegenwoordigt, zoals een letterlijke type, bijvoorbeeld `[int]` , geeft u `Get-Member` informatie over het `[System.RuntimeType]` type.</span><span class="sxs-lookup"><span data-stu-id="b8320-232">If you pass an object representing a _type_, like a type literal such as `[int]`, `Get-Member` return information about the `[System.RuntimeType]` type.</span></span> <span data-ttu-id="b8320-233">Wanneer u echter de **statische** para meter gebruikt, `Get-Member` retourneert de statische leden van het specifieke type dat door het `System.RuntimeType` exemplaar wordt vertegenwoordigd.</span><span class="sxs-lookup"><span data-stu-id="b8320-233">However, when you use the **Static** parameter, `Get-Member` returns the static members of the specific type represented by the `System.RuntimeType` instance.</span></span>
+<span data-ttu-id="4b972-217">Als u een object door geven dat een _type_ vertegenwoordigt, zoals een letterlijke type, bijvoorbeeld `[int]` , geeft u `Get-Member` informatie over het `[System.RuntimeType]` type.</span><span class="sxs-lookup"><span data-stu-id="4b972-217">If you pass an object representing a _type_, like a type literal such as `[int]`, `Get-Member` return information about the `[System.RuntimeType]` type.</span></span> <span data-ttu-id="4b972-218">Wanneer u echter de **statische** para meter gebruikt, `Get-Member` retourneert de statische leden van het specifieke type dat door het `System.RuntimeType` exemplaar wordt vertegenwoordigd.</span><span class="sxs-lookup"><span data-stu-id="4b972-218">However, when you use the **Static** parameter, `Get-Member` returns the static members of the specific type represented by the `System.RuntimeType` instance.</span></span>
 
-## <span data-ttu-id="b8320-234">GERELATEERDE KOPPELINGEN</span><span class="sxs-lookup"><span data-stu-id="b8320-234">RELATED LINKS</span></span>
+## <span data-ttu-id="4b972-219">Verwante koppelingen</span><span class="sxs-lookup"><span data-stu-id="4b972-219">Related Links</span></span>
 
-[<span data-ttu-id="b8320-235">Lid toevoegen</span><span class="sxs-lookup"><span data-stu-id="b8320-235">Add-Member</span></span>](Add-Member.md)
-
+[<span data-ttu-id="4b972-220">Lid toevoegen</span><span class="sxs-lookup"><span data-stu-id="4b972-220">Add-Member</span></span>](Add-Member.md)
