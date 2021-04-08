@@ -3,23 +3,23 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
+ms.date: 04/06/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/set-variable?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Variable
-ms.openlocfilehash: 2041d40803aac1afafad2a0855aa39ebba9ad814
-ms.sourcegitcommit: fcf7bd222f5ee3fdbe21ffddcae47050cffe7e42
+ms.openlocfilehash: a0a76ce53af872ef2004cf8bf8213265b435abe5
+ms.sourcegitcommit: 241071803915ab7d544576b5652ac23349a86369
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93253280"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107027172"
 ---
 # Set-Variable
 
-## SAMENVATTING
+## Samen vatting
 Hiermee stelt u de waarde van een variabele. Hiermee maakt u de variabele als er een met de aangevraagde naam niet bestaat.
 
-## SYNTAXIS
+## Syntax
 
 ```
 Set-Variable [-Name] <String[]> [[-Value] <Object>] [-Include <String[]>] [-Exclude <String[]>]
@@ -27,11 +27,11 @@ Set-Variable [-Name] <String[]> [[-Value] <Object>] [-Include <String[]>] [-Excl
  [-PassThru] [-Scope <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## BESCHRIJVING
+## Description
 
 De `Set-Variable` cmdlet wijst een waarde toe aan een opgegeven variabele of wijzigt de huidige waarde. Als de variabele niet bestaat, wordt deze door de cmdlet gemaakt.
 
-## VOORBEELDEN
+## Voorbeelden
 
 ### Voor beeld 1: een variabele instellen en de waarde ervan ophalen
 
@@ -99,7 +99,7 @@ PS C:\> .\use-counter.ps1
 
 Met deze opdracht wordt aangegeven hoe u de zicht baarheid van een variabele wijzigt in persoonlijk. Deze variabele kan worden gelezen en gewijzigd door scripts met de vereiste machtigingen, maar is niet zichtbaar voor de gebruiker.
 
-## PARAMETERS
+## Parameters
 
 ### -Beschrijving
 
@@ -190,11 +190,13 @@ Hiermee geeft u de waarde van de eigenschap **Options** van de variabele.
 
 Geldige waarden zijn:
 
-- `None`: Er worden geen opties ingesteld. (' Geen ' is de standaard instelling.)
+- `None`: Er worden geen opties ingesteld. ( `None` is de standaard instelling.)
 - `ReadOnly`: Kan worden verwijderd. Kan niet worden gewijzigd, behalve door gebruik te maken van de para meter Forces.
 - `Constant`: Kan niet worden verwijderd of gewijzigd. `Constant` is alleen geldig wanneer u een variabele maakt. U kunt de opties van een bestaande variabele niet wijzigen in `Constant` .
 - `Private`: De variabele is alleen beschikbaar in het huidige bereik.
 - `AllScope`: De variabele wordt gekopieerd naar een nieuwe scope die wordt gemaakt.
+
+Deze waarden worden gedefinieerd als inventarisatie op basis van een vlag. U kunt meerdere waarden combi neren om meerdere vlaggen in te stellen met behulp van deze para meter. De waarden kunnen worden door gegeven aan de para meter **Option** als een matrix met waarden of als een door komma's gescheiden teken reeks van die waarden. Met de cmdlet worden de waarden gecombineerd met behulp van een binaire waarde of bewerking. Het door geven van waarden als een matrix is de eenvoudigste optie. Daarnaast kunt u met behulp van de waarden van het tabblad volt ooien.
 
 ```yaml
 Type: System.Management.Automation.ScopedItemOptions
@@ -229,13 +231,13 @@ Accept wildcard characters: False
 
 Hiermee wordt het bereik van de variabele opgegeven. De acceptabele waarden voor deze para meter zijn:
 
-- Globaal
-- Lokaal
-- Script
-- Privé
+- `Global`
+- `Local`
+- `Script`
+- `Private`
 - Een getal dat relatief is ten opzichte van het huidige bereik (0 tot en met het aantal bereiken, waarbij 0 het huidige bereik is en 1 de bovenliggende scope).
 
-Local is de standaard instelling.
+`Local` is de standaardwaarde.
 
 Zie [about_Scopes](../Microsoft.PowerShell.Core/About/about_scopes.md)voor meer informatie.
 
@@ -273,8 +275,8 @@ Hiermee wordt bepaald of de variabele zichtbaar is buiten de sessie waarin deze 
 
 Geldige waarden zijn:
 
-- Openbaar: de variabele is zichtbaar. (' Openbaar ' is de standaard instelling.)
-- Persoonlijk: de variabele is niet zichtbaar.
+- `Public`: De variabele is zichtbaar. ( `Public` is de standaard instelling.)
+- `Private`: De variabele is niet zichtbaar.
 
 Wanneer een variabele privé is, wordt deze niet weer gegeven in lijst met variabelen, zoals die worden geretourneerd door `Get-Variable` , of in de weer gaven van de **variabele:** station. Opdrachten om de waarde van een persoonlijke variabele te lezen of te wijzigen, retour neren een fout. De gebruiker kan echter opdrachten uitvoeren die een persoonlijke variabele gebruiken als de opdrachten zijn geschreven in de sessie waarin de variabele is gedefinieerd.
 
@@ -327,22 +329,22 @@ Accept wildcard characters: False
 
 Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable. Zie [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)voor meer informatie.
 
-## INVOER
+## Invoerwaarden
 
 ### System. object
 
 U kunt een object dat de waarde van de variabele vertegenwoordigt, door sluizen naar `Set-Variable` .
 
-## UITVOER
+## Uitvoerwaarden
 
 ### Geen of System. Management. Automation. PSVariable
 
 Wanneer u de para meter **PassThru** gebruikt, `Set-Variable` genereert een **System. Management. Automation. PSVariable** -object dat de nieuwe of gewijzigde variabele vertegenwoordigt.
 Anders wordt met deze cmdlet geen uitvoer gegenereerd.
 
-## OPMERKINGEN
+## Notities
 
-## GERELATEERDE KOPPELINGEN
+## Verwante koppelingen
 
 [Clear-variabele](Clear-Variable.md)
 
