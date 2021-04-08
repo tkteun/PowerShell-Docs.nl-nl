@@ -176,6 +176,7 @@
       }
     },
     "globalMetadata": {
+      "bilingual_type": "hover over",
       "ROBOTS": "INDEX, FOLLOW",
       "_op_documentIdPathDepotMapping": {
         "reference/docs-conceptual/developer/": { "folder_relative_path_in_docset": "developer/" },
