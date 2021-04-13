@@ -2,18 +2,18 @@
 title: Community contributor-hal van Fame
 description: Lijst met de GitHub-gebruikers die de meeste bijdragen hebben over het PowerShell-Doc-project.
 ms.date: 04/01/2021
-ms.openlocfilehash: 145212e2182665202e3d74863c354426ed647281
-ms.sourcegitcommit: 79bec59588ad24bb41a3fb67740d123334c5d2b6
+ms.openlocfilehash: 15f5c9355e2b1c7341f055a750b5b3705affdc9a
+ms.sourcegitcommit: 74270273e9097352dab174c08123b82063225e2f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "106126422"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107297177"
 ---
 # <a name="community-contributor-hall-of-fame"></a>Community contributor-hal van Fame
 
 De Power shell-Community is een levendige en samen werkende groep. We stellen alle hulp en ondersteuning van de Community zeer op prijs. Meer informatie over hoe u kunt bijdragen door de [hand leiding van de mede werker][contrib]te lezen.
 
-Vanaf het einde van mei 2020 zijn deze GitHub-gebruikers de All-Time belangrijkste mede werkers van de community.
+Vanaf eind maart 2021 zijn deze GitHub-gebruikers de All-Time belangrijkste mede werkers van de community.
 
 ## <a name="pull-requests-opened"></a>Pull-aanvragen geopend
 

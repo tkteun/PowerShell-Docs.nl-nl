@@ -1,16 +1,16 @@
 ---
 description: Variabelen waarmee het gedrag van Power shell wordt aangepast.
 Locale: en-US
-ms.date: 04/22/2020
+ms.date: 04/12/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_preference_variables?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Preference_Variables
-ms.openlocfilehash: d8eadf88d486de4758b56738089f27e8adc3bc91
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: ffd640f7eac8b27cabce345f11da728945043e46
+ms.sourcegitcommit: 74270273e9097352dab174c08123b82063225e2f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94705349"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107297194"
 ---
 # <a name="about-preference-variables"></a>Over voorkeurs variabelen
 
@@ -387,7 +387,7 @@ Bepaalt de weergave notatie van fout berichten in Power shell.
 
 De geldige waarden zijn als volgt:
 
-- **ConciseView**: (standaard) biedt een beknopt fout bericht en een refactorische weer gave voor geavanceerde module bouwers. Als de fout wordt weer gegeven vanaf de opdracht regel, is er een fout bericht met één regel. Anders wordt er een fout bericht over meerdere regels weer gegeven met de fout en een verwijzing naar de fout die aangeeft waar deze zich op die regel voordoet. Als de Terminal virtuele terminal ondersteunt, worden ANSI-kleur codes gebruikt om kleur accenten te bieden. De accent kleur kan worden gewijzigd op `$Host.PrivateData.ErrorAccentColor` . Gebruik `Get-Error` cmdlet voor een uitgebreide gedetailleerde weer gave van de volledig gekwalificeerde fout, inclusief interne uitzonde ringen.
+- **ConciseView**: (standaard) biedt een beknopt fout bericht en een refactorische weer gave voor geavanceerde module bouwers. Vanaf Power shell 7,2, als de fout afkomstig is van de opdracht regel of een script module, is de uitvoer een fout bericht met één regel. Anders wordt er een fout bericht over meerdere regels weer gegeven met de fout en een verwijzing naar de fout die aangeeft waar deze zich op die regel voordoet. Als de Terminal virtuele terminal ondersteunt, worden ANSI-kleur codes gebruikt om kleur accenten te bieden. De accent kleur kan worden gewijzigd op `$Host.PrivateData.ErrorAccentColor` . Gebruik `Get-Error` cmdlet voor een uitgebreide gedetailleerde weer gave van de volledig gekwalificeerde fout, inclusief interne uitzonde ringen.
 
   **ConciseView** is toegevoegd aan Power shell 7.
 
