@@ -2,12 +2,12 @@
 ms.date: 12/14/2020
 title: Experimentele functies gebruiken in Power shell
 description: Een lijst met de momenteel beschik bare experimentele functies en hoe u deze kunt gebruiken.
-ms.openlocfilehash: f97cea1dff4030da22be1efbe3cd5cbb7a9f3527
-ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
+ms.openlocfilehash: 828a962ca46e5563874ff1c941c46c8a0624f3d8
+ms.sourcegitcommit: f6cc3752463b254f6ba7fc14c1e4532ad33f06bb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101685271"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107216891"
 ---
 # <a name="using-experimental-features-in-powershell"></a>Experimentele functies gebruiken in Power shell
 
@@ -108,7 +108,7 @@ UnderlineOff     Property   string UnderlineOff {get;}
 
 De basis leden retour neren teken reeksen van ANSI-escape reeksen die zijn toegewezen aan hun namen. De waarden kunnen worden ingesteld om aanpassing mogelijk te maken.
 
-Zie [about_Automatic_Variables](/reference/7.2/Microsoft.PowerShell.Core/About/about_Automatic_Variables.md) voor meer informatie.
+Zie [about_Automatic_Variables](/powershell/module/Microsoft.PowerShell.Core/About/about_Automatic_Variables.md) voor meer informatie.
 
 > [!NOTE]
 > Voor C#-ontwikkel aars kunt u `PSStyle` als Singleton toegang krijgen. Gebruik ziet er als volgt uit:

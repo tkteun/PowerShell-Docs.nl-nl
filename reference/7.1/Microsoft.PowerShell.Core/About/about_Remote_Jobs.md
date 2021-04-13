@@ -6,12 +6,12 @@ ms.date: 11/11/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_jobs?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Remote_Jobs
-ms.openlocfilehash: 470fecd5d8eb0ef567d5d68d6a0fa940b6c819db
-ms.sourcegitcommit: aac365f7813756e16b59322832a904e703e0465b
+ms.openlocfilehash: b0f2a078abb758ead68fd0d4c0b9be8389868dba
+ms.sourcegitcommit: f6cc3752463b254f6ba7fc14c1e4532ad33f06bb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94524753"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107216864"
 ---
 # <a name="about-remote-jobs"></a>Over externe taken
 
@@ -24,7 +24,7 @@ Met Power shell worden opdrachten en scripts gelijktijdig uitgevoerd via taken. 
 
 - `RemoteJob` -Opdrachten en scripts worden uitgevoerd in een externe sessie.
 - `BackgroundJob` -Opdrachten en scripts worden in een afzonderlijk proces op de lokale computer uitgevoerd. Zie [About Jobs](about_Jobs.md) (Taken) voor meer informatie.
-- `PSTaskJob` of `ThreadJob` -opdrachten en scripts worden uitgevoerd in een afzonderlijke thread binnen hetzelfde proces op de lokale computer. Zie [about_Thread_Jobs](/powershell/module/ThreadJob/about_Thread_Jobs)voor meer informatie.
+- `PSTaskJob` of `ThreadJob` -opdrachten en scripts worden uitgevoerd in een afzonderlijke thread binnen hetzelfde proces op de lokale computer. Zie [about_Thread_Jobs](about_Thread_Jobs.md)voor meer informatie.
 
 Scripts op afstand uitvoeren op een afzonderlijke machine of in een afzonderlijk proces, bieden een uitstekende isolatie. Fouten die optreden in de externe taak hebben geen invloed op andere actieve taken of de bovenliggende sessie die de taak heeft gestart. De externe laag voegt echter overhead toe, inclusief object serialisatie. Alle objecten worden geserialiseerd en gedeserialiseerd wanneer ze worden door gegeven tussen de bovenliggende sessie en de externe (taak) sessie. Serialisatie van grote complexe gegevens objecten kan grote hoeveel heden reken-en geheugen bronnen verbruiken en grote hoeveel heden gegevens via het netwerk overzetten.
 
@@ -278,7 +278,7 @@ Output 11
 Voor dit voor beeld zijn de taken nog steeds gekoppeld aan een bovenliggende Power shell-sessie.
 De bovenliggende sessie is echter niet de oorspronkelijke Power shell-sessie waar `Invoke-Command` werd uitgevoerd.
 
-## <a name="see-also"></a>Zie tevens
+## <a name="see-also"></a>Zie ook
 
 - [about_Jobs](about_Jobs.md)
 - [about_Job_Details](about_Job_Details.md)

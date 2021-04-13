@@ -5,12 +5,12 @@ ms.date: 11/11/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_jobs?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Remote_Jobs
-ms.openlocfilehash: 93e1d3aba1f4037cc3c5c18386488bf321fc2a64
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 4efeb4f4b89e6c44ace0b8b4099efd7d41821f66
+ms.sourcegitcommit: f6cc3752463b254f6ba7fc14c1e4532ad33f06bb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94705308"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107216830"
 ---
 # <a name="about-remote-jobs"></a>Over externe taken
 
@@ -23,7 +23,7 @@ Met Power shell worden opdrachten en scripts gelijktijdig uitgevoerd via taken. 
 
 - `RemoteJob` -Opdrachten en scripts worden uitgevoerd in een externe sessie.
 - `BackgroundJob` -Opdrachten en scripts worden in een afzonderlijk proces op de lokale computer uitgevoerd. Zie [About Jobs](about_Jobs.md) (Taken) voor meer informatie.
-- `PSTaskJob` of `ThreadJob` -opdrachten en scripts worden uitgevoerd in een afzonderlijke thread binnen hetzelfde proces op de lokale computer. Zie [about_Thread_Jobs](/powershell/module/ThreadJob/about_Thread_Jobs)voor meer informatie.
+- `PSTaskJob` of `ThreadJob` -opdrachten en scripts worden uitgevoerd in een afzonderlijke thread binnen hetzelfde proces op de lokale computer. Zie [about_Thread_Jobs](about_Thread_Jobs.md)voor meer informatie.
 
 Scripts op afstand uitvoeren op een afzonderlijke machine of in een afzonderlijk proces, bieden een uitstekende isolatie. Fouten die optreden in de externe taak hebben geen invloed op andere actieve taken of de bovenliggende sessie die de taak heeft gestart. De externe laag voegt echter overhead toe, inclusief object serialisatie. Alle objecten worden geserialiseerd en gedeserialiseerd wanneer ze worden door gegeven tussen de bovenliggende sessie en de externe (taak) sessie. Serialisatie van grote complexe gegevens objecten kan grote hoeveel heden reken-en geheugen bronnen verbruiken en grote hoeveel heden gegevens via het netwerk overzetten.
 

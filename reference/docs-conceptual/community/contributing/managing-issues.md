@@ -3,12 +3,12 @@ title: De manier waarop we problemen beheren
 description: In dit artikel wordt uitgelegd hoe het PowerShell-Docs-team problemen beheert.
 ms.date: 12/09/2020
 ms.topic: conceptual
-ms.openlocfilehash: 72267137a2657f51e5f616113adf92d80647acad
-ms.sourcegitcommit: 61765d08321623743dc5db5367160f6982fe7857
+ms.openlocfilehash: c6cb38bc37260b14e2a7c728879e2fa2a036133f
+ms.sourcegitcommit: f6cc3752463b254f6ba7fc14c1e4532ad33f06bb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97352706"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107216910"
 ---
 # <a name="how-we-manage-issues"></a>De manier waarop we problemen beheren
 
@@ -38,7 +38,7 @@ In dit artikel wordt beschreven hoe we problemen beheren in de PowerShell-Docs o
 | Probleem    | Hiermee wordt het type probleem aangegeven                                         |
 | Prioriteit | Hiermee wordt de prioriteit van het probleem aangegeven. Waardebereik 0 (hoog)-4 (laag)  |
 | Status   | Hiermee wordt de status van het werk item aangegeven of de reden waarom deze is gesloten          |
-| Label      | Labels die worden gebruikt voor extra classificatie                        |
+| Tag      | Labels die worden gebruikt voor extra classificatie                        |
 | Wachten  | Hiermee wordt aangegeven dat er wordt gewacht op iemand of een andere gebeurtenis         |
 
 #### <a name="milestones"></a>Mijlpalen
@@ -69,7 +69,6 @@ Team leden van Power shell-docs bekijken de problemen dagelijks en sorteren nieu
   | -------- | ---------------------------------------------------------------------------------------------------------------------------- |
   | dsc      | [https://windowsserver.uservoice.com/forums/301869-powershell](https://windowsserver.uservoice.com/forums/301869-powershell) |
   | galerie  | [https://github.com/powershell/powershellgallery/issues/new](https://github.com/powershell/powershellgallery/issues/new)     |
-  | JEA      | [https://github.com/powershell/jea/issues/new](https://github.com/powershell/jea/issues/new)                                 |
   | WMF      | [https://windowsserver.uservoice.com/forums/301869-powershell](https://windowsserver.uservoice.com/forums/301869-powershell) |
 
 ### <a name="support-requests"></a>Ondersteuningsaanvragen
