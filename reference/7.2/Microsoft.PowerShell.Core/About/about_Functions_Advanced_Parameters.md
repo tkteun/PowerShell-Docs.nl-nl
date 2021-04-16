@@ -1,40 +1,40 @@
 ---
-description: Hierin wordt uitgelegd hoe u para meters toevoegt aan geavanceerde functies.
+description: Legt uit hoe u parameters toevoegt aan geavanceerde functies.
 Locale: en-US
-ms.date: 10/27/2020
+ms.date: 04/14/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_advanced_parameters?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Functions_Advanced_Parameters
-ms.openlocfilehash: da21f6fb7d19fa2ffcd9cd6c5eea217792937ae4
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 00fcf9d07ab77ce2df6c0b8ff6c73fb87393f9b2
+ms.sourcegitcommit: 366304d096c1caf52f0e17962f6ed23d20f86e7b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94705382"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107543812"
 ---
-# <a name="about-functions-advanced-parameters"></a>Over functies geavanceerde para meters
+# <a name="about-functions-advanced-parameters"></a>Over geavanceerde functiesparameters
 
 ## <a name="short-description"></a>Korte beschrijving
 
-Hierin wordt uitgelegd hoe u para meters toevoegt aan geavanceerde functies.
+Legt uit hoe u parameters toevoegt aan geavanceerde functies.
 
 ## <a name="long-description"></a>Lange beschrijving
 
-U kunt para meters toevoegen aan de geavanceerde functies die u schrijft en parameter kenmerken en argumenten gebruiken om de parameter waarden te beperken die door gebruikers worden verzonden met de para meter.
+U kunt parameters toevoegen aan de geavanceerde functies die u schrijft en parameterkenmerken en argumenten gebruiken om de parameterwaarden te beperken die functiegebruikers verzenden met de parameter .
 
-De para meters die u aan de functie toevoegt, zijn beschikbaar voor gebruikers naast de algemene para meters die Power shell automatisch toevoegt aan alle cmdlets en geavanceerde functies. Zie [about_CommonParameters](about_CommonParameters.md)voor meer informatie over de algemene Power shell-para meters.
+De parameters die u aan uw functie toevoegt, zijn beschikbaar voor gebruikers, naast de algemene parameters die PowerShell automatisch toevoegt aan alle cmdlets en geavanceerde functies. Zie voor meer informatie over de algemene PowerShell-parameters [about_CommonParameters.](about_CommonParameters.md)
 
-Vanaf Power Shell 3,0 kunt u splatting gebruiken `@Args` om de para meters in een opdracht weer te geven. Splatting is geldig voor eenvoudige en geavanceerde functies. Zie [about_Functions](about_Functions.md) en [about_Splatting](about_Splatting.md)voor meer informatie.
+Vanaf PowerShell 3.0 kunt u splatting gebruiken met om de parameters in een `@Args` opdracht weer te geven. Splatting is geldig voor eenvoudige en geavanceerde functies. Zie voor meer informatie [about_Functions](about_Functions.md) en [about_Splatting.](about_Splatting.md)
 
-## <a name="type-conversion-of-parameter-values"></a>Type conversie van parameter waarden
+## <a name="type-conversion-of-parameter-values"></a>Typeconversie van parameterwaarden
 
-Wanneer u teken reeksen opgeeft als argumenten voor para meters die een ander type verwachten, converteert Power shell de teken reeksen impliciet naar het doel type van de para meter.
-Geavanceerde functies voeren Culture-invariant-parsering van parameter waarden uit.
+Wanneer u tekenreeksen als argumenten opgeeft voor parameters die een ander type verwachten, converteert PowerShell impliciet de tekenreeksen naar het doeltype van de parameter.
+Geavanceerde functies voeren cultuur-invariante parsering van parameterwaarden uit.
 
-Daarentegen wordt een cultuur-gevoelige conversie uitgevoerd tijdens de parameter binding van gecompileerde cmdlets.
+Daarentegen wordt een cultuurgevoelige conversie uitgevoerd tijdens parameterbinding voor gecompileerde cmdlets.
 
-In dit voor beeld maken we een cmdlet en een script functie die een `[datetime]` para meter gebruiken. De huidige cultuur wordt gewijzigd voor het gebruik van Duitse instellingen.
-Een datum in de Duitse notatie wordt door gegeven aan de para meter.
+In dit voorbeeld maken we een cmdlet en een scriptfunctie die een `[datetime]` parameter gebruiken. De huidige cultuur wordt gewijzigd om Duitse instellingen te gebruiken.
+Een datum in Duits-indeling wordt doorgegeven aan de parameter .
 
 ```powershell
 # Create a cmdlet that accepts a [datetime] argument.
@@ -63,7 +63,7 @@ Get-Date_Cmdlet $dateStr
 Dienstag, 19. Juni 2018 00:00:00
 ```
 
-Zoals hierboven wordt weer gegeven, gebruiken cmdlets cultuur gevoelige parseren om de teken reeks te converteren.
+Zoals hierboven wordt weergegeven, gebruiken cmdlets cultuurgevoelige parsering om de tekenreeks te converteren.
 
 ```powershell
 # Define an equivalent function.
@@ -85,7 +85,7 @@ $dateStr = '19-06-2018'
 Get-Date_Func $dateStr
 ```
 
-Geavanceerde functies gebruiken Culture-invariant-parsering, wat resulteert in de volgende fout.
+Bij geavanceerde functies wordt gebruik gemaakt van parseren van cultuur invariant, wat resulteert in de volgende fout.
 
 ```Output
 Get-Date_Func: Cannot process argument transformation on parameter 'Date'.
@@ -93,16 +93,16 @@ Cannot convert value "19-06-2018" to type "System.DateTime". Error: "String
 '19-06-2018' was not recognized as a valid DateTime."
 ```
 
-## <a name="static-parameters"></a>Statische para meters
+## <a name="static-parameters"></a>Statische parameters
 
-Statische para meters zijn para meters die altijd beschikbaar zijn in de functie.
-De meeste para meters in Power shell-cmdlets en-scripts zijn statische para meters.
+Statische parameters zijn parameters die altijd beschikbaar zijn in de functie .
+De meeste parameters in PowerShell-cmdlets en -scripts zijn statische parameters.
 
-In het volgende voor beeld ziet u de declaratie van een **ComputerName** -para meter met de volgende kenmerken:
+In het volgende voorbeeld ziet u de declaratie van een **parameter ComputerName** met de volgende kenmerken:
 
-- Het is verplicht (vereist).
-- Het neemt de invoer van de pijp lijn.
-- Er wordt een matrix met teken reeksen als invoer gebruikt.
+- Dit is verplicht (vereist).
+- Er wordt invoer uit de pijplijn gebruikt.
+- Er wordt een matrix met tekenreeksen als invoer gebruikt.
 
 ```powershell
 Param(
@@ -113,23 +113,23 @@ Param(
 )
 ```
 
-## <a name="attributes-of-parameters"></a>Kenmerken van para meters
+## <a name="attributes-of-parameters"></a>Kenmerken van parameters
 
-In deze sectie worden de kenmerken beschreven die u kunt toevoegen aan functie parameters.
+In deze sectie worden de kenmerken beschreven die u kunt toevoegen aan functieparameters.
 
-Alle kenmerken zijn optioneel. Als u echter het kenmerk **CmdletBinding** weglaat en vervolgens als een geavanceerde functie wordt herkend, moet de functie het **parameter** kenmerk bevatten.
+Alle kenmerken zijn optioneel. Als u echter het **kenmerk CmdletBinding** weglaat, moet de functie het **kenmerk Parameter** bevatten om te worden herkend als een geavanceerde functie.
 
-U kunt een of meer kenmerken in elke parameter declaratie toevoegen. Er is geen limiet voor het aantal kenmerken dat u aan een parameter declaratie kunt toevoegen.
+U kunt een of meer kenmerken toevoegen aan elke parameterdeclaratie. Er is geen limiet voor het aantal kenmerken dat u aan een parameterdeclaratie kunt toevoegen.
 
-### <a name="parameter-attribute"></a>Parameter kenmerk
+### <a name="parameter-attribute"></a>Parameterkenmerk
 
-Het **parameter** kenmerk wordt gebruikt voor het declareren van de kenmerken van functie parameters.
+Het **kenmerk Parameter** wordt gebruikt om de kenmerken van functieparameters te declaren.
 
-Het **parameter** kenmerk is optioneel en u kunt het weglaten als geen van de para meters van uw functies kenmerken nodig heeft. Maar om te worden herkend als een geavanceerde functie in plaats van een eenvoudige functie, moet een functie het kenmerk **CmdletBinding** of het kenmerk **para meter** of beide hebben.
+Het **kenmerk Parameter** is optioneel en u kunt dit weglaten als geen van de parameters van uw functies kenmerken nodig heeft. Maar om te worden herkend als een geavanceerde functie, in plaats van een eenvoudige functie, moet een functie ofwel het **kenmerk CmdletBinding,** het **kenmerk Parameter** of beide hebben.
 
-Het **parameter** kenmerk heeft argumenten waarmee de kenmerken van de para meter worden gedefinieerd, bijvoorbeeld of de para meter verplicht of optioneel is.
+Het **kenmerk Parameter** bevat argumenten die de kenmerken van de parameter definiëren, zoals of de parameter verplicht of optioneel is.
 
-Gebruik de volgende syntaxis om het **parameter** kenmerk, een argument en een argument waarde te declareren. De haakjes tussen het argument en de bijbehorende waarde moeten de **para meter** zonder tussenliggende ruimte volgen.
+Gebruik de volgende syntaxis om het **kenmerk Parameter,** een argument en een argumentwaarde te declaren. De haakjes die het argument en de waarde ervan tussensluiten, moeten **Parameter** volgen zonder tussenliggende ruimte.
 
 ```powershell
 Param(
@@ -138,7 +138,7 @@ Param(
 )
 ```
 
-Gebruik komma's om de argumenten tussen de haakjes te scheiden. Gebruik de volgende syntaxis om twee argumenten van het **parameter** kenmerk te declareren.
+Gebruik komma's om argumenten tussen haakjes te scheiden. Gebruik de volgende syntaxis om twee argumenten van het kenmerk **Parameter te** declareeren.
 
 ```powershell
 Param(
@@ -147,7 +147,7 @@ Param(
 )
 ```
 
-De Boole-argument typen van het **parameter** kenmerk zijn standaard ingesteld op **Onwaar** als u het **parameter** kenmerk weglaat. Stel de waarde van het argument in op `$true` of alleen een lijst met de naam van het argument. De volgende **parameter** kenmerken zijn bijvoorbeeld gelijkwaardig.
+De Booleaanse argumenttypen van het **kenmerk Parameter** worden standaard ingesteld op **False** wanneer ze worden weggelaten uit het **kenmerk Parameter.** Stel de argumentwaarde in op `$true` of vermeld het argument op naam. De volgende parameterkenmerken **zijn** bijvoorbeeld gelijkwaardig.
 
 ```powershell
 Param(
@@ -161,7 +161,7 @@ Param(
 )
 ```
 
-Als u het **parameter** kenmerk zonder argumenten gebruikt als alternatief voor het gebruik van het kenmerk **CmdletBinding** , moeten de haakjes die de kenmerk naam volgen, nog steeds vereist zijn.
+Als u het **kenmerk Parameter** zonder argumenten gebruikt, als alternatief voor het gebruik van het **kenmerk CmdletBinding,** zijn de haakjes die de kenmerknaam volgen nog steeds vereist.
 
 ```powershell
 Param(
@@ -172,9 +172,9 @@ Param(
 
 #### <a name="mandatory-argument"></a>Verplicht argument
 
-Het `Mandatory` argument geeft aan dat de para meter is vereist. Als dit argument niet wordt opgegeven, is de para meter optioneel.
+Het `Mandatory` argument geeft aan dat de parameter vereist is. Als dit argument niet is opgegeven, is de parameter optioneel.
 
-In het volgende voor beeld wordt de para meter **ComputerName** gedeclareerd. Het argument wordt gebruikt `Mandatory` om de para meter verplicht te maken.
+In het volgende voorbeeld wordt de **parameter ComputerName gedeclareert.** Het argument wordt `Mandatory` gebruikt om de parameter verplicht te maken.
 
 ```powershell
 Param(
@@ -184,20 +184,20 @@ Param(
 )
 ```
 
-#### <a name="position-argument"></a>Argument positie
+#### <a name="position-argument"></a>Argument Position
 
-Het `Position` argument bepaalt of de parameter naam vereist is wanneer de para meter in een opdracht wordt gebruikt. Wanneer een parameter declaratie het `Position` argument bevat, kan de parameter naam worden wegge laten en Power shell de niet-gegroepeerde parameter waarde identificeren met behulp van de positie of volg orde in de lijst met niet-genaamde parameter waarden in de opdracht.
+Het `Position` argument bepaalt of de parameternaam vereist is wanneer de parameter wordt gebruikt in een opdracht. Wanneer een parameterdeclaratie het argument bevat, kan de parameternaam worden weggelaten en identificeert PowerShell de naamloze parameterwaarde op basis van de positie of volgorde in de lijst met niet-naamloze parameterwaarden in de `Position` opdracht.
 
-Als het `Position` argument niet is opgegeven, de parameter naam of een alias naam of afkorting van de para meter moet vóór de parameter waarde worden voorafgegaan wanneer de para meter wordt gebruikt in een opdracht.
+Als het argument niet is opgegeven, moet de parameternaam of een alias of afkorting van de parameternaam voorafgaan aan de parameterwaarde wanneer de parameter wordt gebruikt `Position` in een opdracht.
 
-Standaard zijn alle functie parameters positioneel. Power shell wijst positie nummers toe aan para meters in de volg orde waarin de para meters in de functie zijn gedeclareerd. Als u deze functie wilt uitschakelen, stelt u de waarde van het `PositionalBinding` argument van het kenmerk **CmdletBinding** in op `$False` . Het `Position` argument heeft voor rang op de waarde van het `PositionalBinding` argument van het kenmerk **CmdletBinding** . Zie `PositionalBinding` in [about_Functions_CmdletBindingAttribute](about_Functions_CmdletBindingAttribute.md)voor meer informatie.
+Standaard zijn alle functieparameters positioneel. PowerShell wijst positienummers toe aan parameters in de volgorde waarin de parameters in de functie worden gedeclareerd. Als u deze functie wilt uitschakelen, stelt u de waarde van het `PositionalBinding` argument van het kenmerk **CmdletBinding** in op `$False` . Het `Position` argument heeft voorrang op de waarde van het argument van het kenmerk `PositionalBinding` **CmdletBinding.** Zie in about_Functions_CmdletBindingAttribute `PositionalBinding` voor [meer informatie.](about_Functions_CmdletBindingAttribute.md)
 
-De waarde van het `Position` argument wordt opgegeven als een geheel getal. Een positie waarde van **0** vertegenwoordigt de eerste positie in de opdracht, een positie waarde van **1** vertegenwoordigt de tweede positie in de opdracht, enzovoort.
+De waarde van het `Position` argument wordt opgegeven als een geheel getal. Een positiewaarde **van 0** vertegenwoordigt de eerste positie in de opdracht, een positiewaarde **van 1** vertegenwoordigt de tweede positie in de opdracht, en meer.
 
-Als een functie geen positionele para meters heeft, wijst Power shell posities toe aan elke para meter op basis van de volg orde waarin de para meters worden gedeclareerd.
-Als best practice, vertrouwt u echter niet op deze toewijzing. Gebruik het argument als u wilt dat de para meters positioneel zijn `Position` .
+Als een functie geen positionele parameters heeft, wijst PowerShell posities toe aan elke parameter op basis van de volgorde waarin de parameters worden gedeclareerd.
+Als een best practice, vertrouwt u echter niet op deze toewijzing. Als u wilt dat parameters positioneel zijn, gebruikt u het `Position` argument .
 
-In het volgende voor beeld wordt de para meter **ComputerName** gedeclareerd. Het argument wordt gebruikt `Position` met de waarde **0**. Als dit het geval `-ComputerName` is, moet de waarde van de opdracht worden wegge laten door de eerste of enige niet-genaamde parameter waarde in de opdracht.
+In het volgende voorbeeld wordt de **parameter ComputerName gedeclareert.** Hierbij wordt het `Position` argument met de waarde **0 gebruikt.** Als gevolg hiervan, wanneer wordt weggelaten uit de opdracht, moet de waarde ervan de eerste of alleen `-ComputerName` naamloze parameterwaarde in de opdracht.
 
 ```powershell
 Param(
@@ -207,14 +207,14 @@ Param(
 )
 ```
 
-#### <a name="parametersetname-argument"></a>ParameterSetName-argument
+#### <a name="parametersetname-argument"></a>Argument ParameterSetName
 
-Het `ParameterSetName` argument geeft de parameterset op waarvan een para meter deel uitmaakt. Als er geen parameterset is opgegeven, hoort de para meter bij alle parameter sets die zijn gedefinieerd door de functie. Daarom moet elke parameterset ten minste één para meter hebben die geen lid is van een andere parameterset.
+Het `ParameterSetName` argument geeft de parameterset aan waar een parameter bij hoort. Als er geen parameterset is opgegeven, behoort de parameter tot alle parametersets die door de functie zijn gedefinieerd. Om uniek te zijn, moet elke parameterset ten minste één parameter hebben die geen lid is van een andere parameterset.
 
 > [!NOTE]
-> Voor een cmdlet of functie geldt een limiet van 32 parameter sets.
+> Voor een cmdlet of functie geldt een limiet van 32 parametersets.
 
-In het volgende voor beeld wordt de para meter **ComputerName** gedeclareerd in de `Computer` parameterset, een **gebruikers naam** parameter in de `User` parameterset en een **samenvattings** parameter in beide parameter sets.
+In het volgende voorbeeld wordt een **computernaam** parameter in de parameterset, een Gebruikersnaam parameter in de parameterset en een samenvatting `Computer` parameter in beide  `User` parametersets gedeclareert. 
 
 ```powershell
 Param(
@@ -234,9 +234,9 @@ Param(
 )
 ```
 
-U kunt slechts één `ParameterSetName` waarde opgeven in elk argument en slechts één `ParameterSetName` argument in elk **parameter** kenmerk. Voeg extra **parameter** kenmerken toe om aan te geven dat een para meter in meer dan één parameterset wordt weer gegeven.
+U kunt slechts één waarde `ParameterSetName` opgeven in elk argument en slechts één argument in elk `ParameterSetName` **parameterkenmerk.** Als u wilt aangeven dat een parameter wordt weergegeven in meer dan één parameterset, voegt u aanvullende **parameterkenmerken** toe.
 
-In het volgende voor beeld wordt de **samenvattings** parameter expliciet aan de `Computer` `User` para meters en ingesteld. De **samenvattings** parameter is optioneel in de `Computer` parameterset en verplicht in de `User` parameterset.
+In het volgende voorbeeld wordt de parameter **Summary** expliciet toegevoegd aan de `Computer` `User` parametersets en . De **samenvatting** parameter is optioneel in de `Computer` parameterset en verplicht in de `User` parameterset.
 
 ```powershell
 Param(
@@ -257,13 +257,13 @@ Param(
 )
 ```
 
-Zie [about para meters](about_parameter_sets.md)voor meer informatie over parameter sets.
+Zie Over parametersets voor meer informatie [over parametersets.](about_parameter_sets.md)
 
-#### <a name="valuefrompipeline-argument"></a>ValueFromPipeline-argument
+#### <a name="valuefrompipeline-argument"></a>Argument ValueFromPipeline
 
-Het `ValueFromPipeline` argument geeft aan dat de para meter invoer accepteert van een pijplijn object. Geef dit argument op als de functie het volledige object accepteert, niet alleen een eigenschap van het object.
+Het `ValueFromPipeline` argument geeft aan dat de parameter invoer van een pijplijnobject accepteert. Geef dit argument op als de functie het hele object accepteert, niet alleen een eigenschap van het -object.
 
-In het volgende voor beeld wordt een para meter **ComputerName** gedeclareerd die verplicht is en wordt een object geaccepteerd dat wordt door gegeven aan de functie vanuit de pijp lijn.
+In het volgende voorbeeld wordt de parameter **ComputerName** gedeclareert die verplicht is en een object accepteert dat vanuit de pijplijn aan de functie wordt doorgegeven.
 
 ```powershell
 Param(
@@ -274,13 +274,13 @@ Param(
 )
 ```
 
-#### <a name="valuefrompipelinebypropertyname-argument"></a>ValueFromPipelineByPropertyName-argument
+#### <a name="valuefrompipelinebypropertyname-argument"></a>Argument ValueFromPipelineByPropertyName
 
-Het `ValueFromPipelineByPropertyName` argument geeft aan dat de para meter invoer accepteert van een eigenschap van een pijplijn object. De object eigenschap moet dezelfde naam of alias hebben als de para meter.
+Het `ValueFromPipelineByPropertyName` argument geeft aan dat de parameter invoer accepteert van een eigenschap van een pijplijnobject. De eigenschap object moet dezelfde naam of alias hebben als de parameter .
 
-Als de functie bijvoorbeeld de para meter **ComputerName** heeft en het object piped een eigenschap **ComputerName** heeft, wordt de waarde van de eigenschap **ComputerName** toegewezen aan de para meter **ComputerName** van de functie.
+Als de functie bijvoorbeeld een parameter **ComputerName** heeft en het object piped een **eigenschap ComputerName** heeft, wordt de waarde van de eigenschap **ComputerName** toegewezen aan de parameter **ComputerName** van de functie.
 
-In het volgende voor beeld wordt een para meter **ComputerName** gedeclareerd die verplicht is en accepteert de invoer van de eigenschap **ComputerName** van het object die wordt door gegeven aan de functie via de pijp lijn.
+In het volgende voorbeeld wordt een **parameter ComputerName** gedeclareert die verplicht is en invoer accepteert van de **eigenschap ComputerName** van het object die via de pijplijn wordt doorgegeven aan de functie.
 
 ```powershell
 Param(
@@ -292,17 +292,17 @@ Param(
 ```
 
 > [!NOTE]
-> Een getypeerde para meter die pijplijn invoer ( `by Value` ) of () accepteert, `by PropertyName` maakt het gebruik van script blokken met _vertragings bindingen_ mogelijk voor de para meter.
+> Een getypte parameter die pijplijninvoer ( ) of ( ) accepteert, maakt het gebruik van `by Value` `by PropertyName` _delay-bind-scriptblokken_ voor de parameter mogelijk.
 >
-> Het script blok voor de _vertragings binding_ wordt automatisch uitgevoerd tijdens **ParameterBinding**. Het resultaat is gebonden aan de para meter. De vertraagde binding werkt niet voor para meters die zijn gedefinieerd als type `ScriptBlock` of `System.Object` . Het script blok is door gegeven _zonder te_ worden aangeroepen.
+> Het _scriptblok delay-bind_ wordt automatisch uitgevoerd tijdens **ParameterBinding.** Het resultaat is gebonden aan de parameter . Vertragingsbinding werkt niet voor parameters die zijn gedefinieerd als type `ScriptBlock` of `System.Object` . Het scriptblok wordt doorgegeven zonder _te_ worden aangeroepen.
 >
-> U kunt hier meer lezen over de script blokken _met vertragings bindingen_ [about_Script_Blocks. MD](about_Script_Blocks.md).
+> U kunt hier meer lezen _over scriptblokken voor_ vertragingsbinding [about_Script_Blocks.md.](about_Script_Blocks.md)
 
-#### <a name="valuefromremainingarguments-argument"></a>ValueFromRemainingArguments-argument
+#### <a name="valuefromremainingarguments-argument"></a>Argument ValueFromRemainingArguments
 
-Het `ValueFromRemainingArguments` argument geeft aan dat de para meter alle waarden van de para meter in de opdracht accepteert die niet zijn toegewezen aan andere para meters van de functie.
+Het argument geeft aan dat de parameter alle waarden van de parameter in de opdracht accepteert die niet zijn toegewezen aan andere `ValueFromRemainingArguments` parameters van de functie.
 
-In het volgende voor beeld wordt een **waarde** -para meter gedeclareerd die verplicht is en een **resterende** para meter die alle resterende parameter waarden accepteert die worden verzonden naar de functie.
+In het volgende  voorbeeld wordt een waardeparameter gedeclareert die verplicht is en een **resterende** parameter die alle resterende parameterwaarden accepteert die naar de functie worden verzonden.
 
 ```powershell
 function Test-Remainder
@@ -330,15 +330,15 @@ Found 2 elements
 ```
 
 > [!NOTE]
-> Vóór Power shell 6,2 werd de **ValueFromRemainingArguments** -verzameling toegevoegd als één entiteit onder index **0**.
+> Vóór PowerShell 6.2 werd de verzameling **ValueFromRemainingArguments** toegevoegd als één entiteit onder index **0**.
 
-#### <a name="helpmessage-argument"></a>HelpMessage-argument
+#### <a name="helpmessage-argument"></a>Argument HelpMessage
 
-Het `HelpMessage` argument geeft een teken reeks die een korte beschrijving van de para meter of de waarde ervan bevat. In Power shell wordt dit bericht weer gegeven in de prompt die wordt weer gegeven wanneer een verplichte parameter waarde ontbreekt in een opdracht. Dit argument heeft geen effect op optionele para meters.
+Het `HelpMessage` argument geeft een tekenreeks op die een korte beschrijving van de parameter of de waarde ervan bevat. PowerShell geeft dit bericht weer in de prompt die wordt weergegeven wanneer een verplichte parameterwaarde ontbreekt in een opdracht. Dit argument heeft geen invloed op optionele parameters.
 
-In het volgende voor beeld declareert u een verplichte para meter **ComputerName** en een Help-bericht waarin de verwachte parameter waarde wordt uitgelegd.
+In het volgende voorbeeld wordt een verplichte **ComputerName-parameter** en een Help-bericht gedeclareert waarin de verwachte parameterwaarde wordt uitgelegd.
 
-Als er geen andere [Help-syntaxis op basis van opmerkingen](./about_comment_based_help.md) is voor de functie (bijvoorbeeld `.SYNOPSIS` ), wordt dit bericht ook weer gegeven in `Get-Help` uitvoer.
+Als er geen andere [helpsyntaxis](./about_comment_based_help.md) op basis van opmerkingen is voor de functie (bijvoorbeeld ) wordt dit bericht `.SYNOPSIS` ook weergegeven in de `Get-Help` uitvoer.
 
 ```powershell
 Param(
@@ -349,12 +349,12 @@ Param(
 )
 ```
 
-### <a name="alias-attribute"></a>Alias kenmerk
+### <a name="alias-attribute"></a>Aliaskenmerk
 
-Met het **alias** kenmerk wordt een alternatieve naam voor de para meter gemaakt.
-Er is geen limiet voor het aantal aliassen dat u aan een para meter kunt toewijzen.
+Met **het kenmerk Alias** wordt een alternatieve naam voor de parameter gemaakt.
+Er is geen limiet voor het aantal aliassen dat u aan een parameter kunt toewijzen.
 
-In het volgende voor beeld ziet u een parameter declaratie waarmee de **CN** -en **MachineName** -aliassen worden toegevoegd aan de verplichte para meter **ComputerName** .
+In het volgende voorbeeld ziet u een parameterdeclaratie die de **CN-** en **MachineName-aliassen** toevoegt aan de verplichte parameter **ComputerName.**
 
 ```powershell
 Param(
@@ -365,9 +365,9 @@ Param(
 )
 ```
 
-### <a name="supportswildcards-attribute"></a>SupportsWildcards-kenmerk
+### <a name="supportswildcards-attribute"></a>Ondersteunt het kenmerk SupportsWildcards
 
-Het kenmerk **SupportsWildcards** wordt gebruikt om aan te geven dat de para meter Joker teken waarden accepteert. In het volgende voor beeld ziet u een parameter declaratie voor een verplichte para meter **Path** die waarden voor joker tekens ondersteunt.
+Het **kenmerk SupportsWildcards** wordt gebruikt om aan te geven dat de parameter jokertekenwaarden accepteert. In het volgende voorbeeld ziet u een parameterdeclaratie voor een verplichte **padparameter** die jokertekenwaarden ondersteunt.
 
 ```powershell
 Param(
@@ -378,21 +378,21 @@ Param(
 )
 ```
 
-Als u dit kenmerk gebruikt, wordt ondersteuning voor joker tekens niet automatisch ingeschakeld. De cmdlet-ontwikkelaar moet de code implementeren voor het afhandelen van de invoer van het Joker teken. De ondersteunde joker tekens kunnen variëren, afhankelijk van de onderliggende API of Power shell-provider. Zie [about_Wildcards](about_Wildcards.md)voor meer informatie.
+Als u dit kenmerk gebruikt, wordt ondersteuning voor jokertekens niet automatisch ingeschakeld. De cmdlet-ontwikkelaar moet de code implementeren om de invoer met jokertekens te verwerken. De ondersteunde jokertekens kunnen variëren afhankelijk van de onderliggende API of PowerShell-provider. Zie voor meer informatie [about_Wildcards](about_Wildcards.md).
 
-### <a name="parameter-and-variable-validation-attributes"></a>Validatie kenmerken voor para meters en variabelen
+### <a name="parameter-and-variable-validation-attributes"></a>Validatiekenmerken voor parameters en variabelen
 
-Validatie kenmerken direct Power shell voor het testen van de parameter waarden die gebruikers verzenden wanneer ze de functie Advanced aanroepen. Als de parameter waarden de test niet uitvoeren, wordt er een fout gegenereerd en wordt de functie niet aangeroepen. Parameter validatie wordt alleen toegepast op de opgegeven invoer en andere waarden, zoals standaard waarden, worden niet gevalideerd.
+Validatiekenmerken zorgen ervoor dat PowerShell de parameterwaarden test die gebruikers verzenden wanneer ze de geavanceerde functie aanroepen. Als de parameterwaarden niet slagen voor de test, wordt er een fout gegenereerd en wordt de functie niet aangeroepen. Parametervalidatie wordt alleen toegepast op de opgegeven invoer en andere waarden, zoals standaardwaarden, worden niet gevalideerd.
 
-U kunt ook de validatie kenmerken gebruiken om de waarden te beperken die gebruikers voor variabelen kunnen opgeven. Wanneer u een type-Converter gebruikt in combi natie met een validatie kenmerk, moet het type Converter worden gedefinieerd vóór het kenmerk.
+U kunt ook de validatiekenmerken gebruiken om de waarden te beperken die gebruikers voor variabelen kunnen opgeven. Wanneer u een typeconverter samen met een validatiekenmerk gebruikt, moet de typeconverter worden gedefinieerd vóór het kenmerk .
 
 ```powershell
 [int32][AllowNull()] $number = 7
 ```
 
-### <a name="allownull-validation-attribute"></a>Validatie kenmerk AllowNull
+### <a name="allownull-validation-attribute"></a>AllowNull-validatiekenmerk
 
-Met het kenmerk **AllowNull** kan de waarde van een verplichte para meter zijn `$null` . In het volgende voor beeld wordt een hashtabel **ComputerInfo** -para meter gedeclareerd die een **Null** -waarde kan hebben.
+Met **het kenmerk AllowNull** kan de waarde van een verplichte parameter `$null` zijn. In het volgende voorbeeld wordt een **hashtabelcomputerinfo-parameter** gedeclareert die een **null-waarde kan** hebben.
 
 ```powershell
 Param(
@@ -404,11 +404,11 @@ Param(
 ```
 
 > [!NOTE]
-> Het kenmerk **AllowNull** werkt niet als het type Converter is ingesteld op teken reeks, omdat het teken reeks type geen null-waarde accepteert. U kunt het kenmerk **AllowEmptyString** gebruiken voor dit scenario.
+> Het **kenmerk AllowNull** werkt niet als de typeconverter is ingesteld op tekenreeks omdat het tekenreekstype geen null-waarde accepteert. U kunt het **kenmerk AllowEmptyString** gebruiken voor dit scenario.
 
-### <a name="allowemptystring-validation-attribute"></a>Validatie kenmerk AllowEmptyString
+### <a name="allowemptystring-validation-attribute"></a>Validatiekenmerk AllowEmptyString
 
-Met het kenmerk **AllowEmptyString** kan de waarde van een verplichte para meter een lege teken reeks ( `""` ) zijn. In het volgende voor beeld wordt een **ComputerName** -para meter gedeclareerd die een lege teken reeks waarde kan hebben.
+Met **het kenmerk AllowEmptyString** kan de waarde van een verplichte parameter een lege tekenreeks () `""` zijn. In het volgende voorbeeld wordt een **parameter ComputerName gedeclareert** die een lege tekenreekswaarde kan hebben.
 
 ```powershell
 Param(
@@ -419,9 +419,9 @@ Param(
 )
 ```
 
-### <a name="allowemptycollection-validation-attribute"></a>Validatie kenmerk AllowEmptyCollection
+### <a name="allowemptycollection-validation-attribute"></a>Validatiekenmerk AllowEmptyCollection
 
-Met het kenmerk **AllowEmptyCollection** kan de waarde van een verplichte para meter een lege verzameling zijn `@()` . In het volgende voor beeld wordt een **ComputerName** -para meter gedeclareerd die een lege verzamelings waarde kan hebben.
+Met **het kenmerk AllowEmptyCollection** kan de waarde van een verplichte parameter een lege verzameling `@()` zijn. In het volgende voorbeeld wordt een **parameter ComputerName gedeclareert** die een lege verzamelingswaarde kan hebben.
 
 ```powershell
 Param(
@@ -432,11 +432,11 @@ Param(
 )
 ```
 
-### <a name="validatecount-validation-attribute"></a>Validatie kenmerk ValidateCount
+### <a name="validatecount-validation-attribute"></a>Validatiekenmerk ValidateCount
 
-Het kenmerk **ValidateCount** geeft het minimale en maximale aantal parameter waarden op dat door een para meter wordt geaccepteerd. In Power shell wordt een fout gegenereerd als het aantal parameter waarden in de opdracht die de functie aanroept buiten dat bereik valt.
+Het **kenmerk ValidateCount** geeft het minimum- en maximum aantal parameterwaarden aan dat een parameter accepteert. PowerShell genereert een fout als het aantal parameterwaarden in de opdracht die de functie aanroept, buiten dat bereik valt.
 
-Met de volgende parameter declaratie wordt een **ComputerName** -para meter gemaakt die één tot vijf parameter waarden nodig heeft.
+Met de volgende parameterdeclaratie maakt u **een ComputerName-parameter** die één tot vijf parameterwaarden nodig heeft.
 
 ```powershell
 Param(
@@ -447,11 +447,11 @@ Param(
 )
 ```
 
-### <a name="validatelength-validation-attribute"></a>Validatie kenmerk ValidateLength
+### <a name="validatelength-validation-attribute"></a>Validatiekenmerk ValidateLength
 
-Het kenmerk **ValidateLength** geeft het minimale en maximale aantal tekens in een para meter of variabele waarde aan. Power shell genereert een fout als de lengte van een opgegeven waarde voor een para meter of variabele buiten het bereik valt.
+Het **kenmerk ValidateLength** geeft het minimum- en maximum aantal tekens in een parameter of variabele waarde aan. PowerShell genereert een fout als de lengte van een waarde die is opgegeven voor een parameter of een variabele buiten het bereik valt.
 
-In het volgende voor beeld moet elke computer naam een tot tien tekens bevatten.
+In het volgende voorbeeld moet elke computernaam één tot tien tekens bevatten.
 
 ```powershell
 Param(
@@ -462,20 +462,20 @@ Param(
 )
 ```
 
-In het volgende voor beeld moet de waarde van de variabele `$number` Mini maal één teken lang zijn en Maxi maal tien tekens bevatten.
+In het volgende voorbeeld moet de waarde van de variabele minimaal één teken lang en maximaal tien `$number` tekens zijn.
 
 ```powershell
 [Int32][ValidateLength(1,10)]$number = '01'
 ```
 
 > [!NOTE]
-> In dit voor beeld is de waarde van `01` wordt ingepakt in enkele aanhalings tekens. Het kenmerk **ValidateLength** accepteert geen getal zonder aanhalings tekens.
+> In dit voorbeeld wordt de waarde van `01` tussen enkele aanhalingstekens verpakt. Het **kenmerk ValidateLength** accepteert geen getal zonder tussen aanhalingstekens te worden verpakt.
 
-### <a name="validatepattern-validation-attribute"></a>Validatie kenmerk ValidatePattern
+### <a name="validatepattern-validation-attribute"></a>Validatiekenmerk ValidatePattern
 
-Het kenmerk **ValidatePattern** geeft een reguliere expressie aan die wordt vergeleken met de waarde van de para meter of variabele. Power shell genereert een fout als de waarde niet overeenkomt met het reguliere-expressie patroon.
+Het **kenmerk ValidatePattern** geeft een reguliere expressie op die wordt vergeleken met de parameter of variabele waarde. PowerShell genereert een fout als de waarde niet overeen komt met het patroon van de reguliere expressie.
 
-In het volgende voor beeld moet de parameter waarde een getal van vier cijfers bevatten en elk cijfer moet een getal van nul tot negen zijn.
+In het volgende voorbeeld moet de parameterwaarde een viercijferig getal bevatten en moet elk cijfer een getal van nul tot negen zijn.
 
 ```powershell
 Param(
@@ -486,25 +486,25 @@ Param(
 )
 ```
 
-In het volgende voor beeld moet de waarde van de variabele `$number` exact een getal van vier cijfers zijn en moet elk cijfer een getal van nul tot negen zijn.
+In het volgende voorbeeld moet de waarde van de variabele exact een getal van vier cijfers zijn en moet elk cijfer een getal nul tot `$number` negen zijn.
 
 ```powershell
 [Int32][ValidatePattern("^[0-9][0-9][0-9][0-9]$")]$number = 1111
 ```
 
-### <a name="validaterange-validation-attribute"></a>Validatie kenmerk ValidateRange
+### <a name="validaterange-validation-attribute"></a>Validatiekenmerk ValidateRange
 
-Het kenmerk **ValidateRange** geeft een numeriek bereik of een **ValidateRangeKind** -Enum-waarde voor elke para meter of variabele waarde aan.
-Power shell genereert een fout als een wille keurige waarde buiten dat bereik valt.
+Het **kenmerk ValidateRange** geeft een numeriek bereik of een **validateRangeKind-enumwaarde** op voor elke parameter of variabele waarde.
+PowerShell genereert een fout als een waarde buiten dat bereik valt.
 
-De **ValidateRangeKind** -opsomming kan de volgende waarden hebben:
+De **enum ValidateRangeKind** staat de volgende waarden toe:
 
-- Een **positief** getal dat groter is dan nul.
-- **Negatief** -een getal kleiner dan nul.
-- Niet- **positief** -een getal kleiner dan of gelijk aan nul.
-- Niet- **negatief** : een getal dat groter is dan of gelijk is aan nul.
+- **Positief:** een getal dat groter is dan nul.
+- **Negatief:** een getal dat kleiner is dan nul.
+- **Niet-gevoelig:** een getal dat kleiner is dan of gelijk is aan nul.
+- **Niet-nul:** een getal dat groter is dan of gelijk is aan nul.
 
-In het volgende voor beeld moet de waarde van de para meter **pogingen** tussen nul en tien zijn.
+In het volgende voorbeeld moet de waarde van de parameter **Attempts** tussen nul en tien zijn.
 
 ```powershell
 Param(
@@ -515,25 +515,25 @@ Param(
 )
 ```
 
-In het volgende voor beeld moet de waarde van de variabele `$number` tussen 0 en tien zijn.
+In het volgende voorbeeld moet de waarde van de variabele `$number` tussen nul en tien zijn.
 
 ```powershell
 [Int32][ValidateRange(0,10)]$number = 5
 ```
 
-In het volgende voor beeld moet de waarde van de variabele `$number` groter zijn dan nul.
+In het volgende voorbeeld moet de waarde van de `$number` variabele groter zijn dan nul.
 
 ```powershell
 [Int32][ValidateRange("Positive")]$number = 1
 ```
 
-### <a name="validatescript-validation-attribute"></a>Validatie kenmerk ValidateScript
+### <a name="validatescript-validation-attribute"></a>Validatiekenmerk ValidateScript
 
-Het kenmerk **ValidateScript** geeft een script op dat wordt gebruikt om een para meter of variabele waarde te valideren. Power shell Pipet de waarde naar het script en genereert een fout als het script wordt geretourneerd `$false` of als het script een uitzonde ring genereert.
+Het **kenmerk ValidateScript** bevat een script dat wordt gebruikt om een parameter of variabele waarde te valideren. PowerShell geeft de waarde door aan het script en genereert een fout als het script retourneert of als het `$false` script een uitzondering genereert.
 
-Wanneer u het kenmerk **ValidateScript** gebruikt, wordt de te valideren waarde toegewezen aan de `$_` variabele. U kunt de `$_` variabele gebruiken om te verwijzen naar de waarde in het script.
+Wanneer u het **kenmerk ValidateScript** gebruikt, wordt de waarde die wordt gevalideerd, aan de variabele `$_` toegesneden. U kunt de variabele `$_` gebruiken om te verwijzen naar de waarde in het script.
 
-In het volgende voor beeld moet de waarde van de para meter **EventDate** groter zijn dan of gelijk zijn aan de huidige datum.
+In het volgende voorbeeld moet de waarde van de parameter **EventDate** groter zijn dan of gelijk zijn aan de huidige datum.
 
 ```powershell
 Param(
@@ -544,18 +544,18 @@ Param(
 )
 ```
 
-In het volgende voor beeld moet de waarde van de variabele `$date` groter zijn dan of gelijk zijn aan de huidige datum en tijd.
+In het volgende voorbeeld moet de waarde van de variabele groter zijn dan of `$date` gelijk zijn aan de huidige datum en tijd.
 
 ```powershell
 [DateTime][ValidateScript({$_ -ge (Get-Date)})]$date = (Get-Date)
 ```
 
 > [!NOTE]
-> Als u **ValidateScript** gebruikt, kunt u geen waarde door geven `$null` aan de para meter. Wanneer u een null-waarde doorgeeft **ValidateScript** kan het argument niet valideren.
+> Als u **ValidateScript gebruikt,** kunt u geen waarde `$null` doorgeven aan de parameter . Wanneer u een null-waarde door **te geven,** kan ValidateScript het argument niet valideren.
 
-### <a name="validateset-attribute"></a>Het kenmerk validate
+### <a name="validateset-attribute"></a>ValidateSet-kenmerk
 
-Het kenmerk **Validate** bevat een set geldige waarden voor een para meter of variabele en schakelt het volt ooien van het tabblad in. Power shell genereert een fout als een para meter of variabele waarde niet overeenkomt met een waarde in de set. In het volgende voor beeld kan de waarde van de para meter **detail** alleen laag, gemiddeld of hoog zijn.
+Het **kenmerk ValidateSet** specificeert een set geldige waarden voor een parameter of variabele en maakt tab-voltooiing mogelijk. PowerShell genereert een fout als een parameter of variabele waarde niet overeen komt met een waarde in de set. In het volgende voorbeeld kan de waarde van de parameter **Detail** alleen Laag, Gemiddeld of Hoog zijn.
 
 ```powershell
 Param(
@@ -566,14 +566,14 @@ Param(
 )
 ```
 
-In het volgende voor beeld moet de waarde van de variabele `$flavor` Choco lade, aard beien of vanille zijn.
+In het volgende voorbeeld moet de waarde van de variabele `$flavor` Chocolade, Aardbeien of Vanille zijn.
 
 ```powershell
 [ValidateSet("Chocolate", "Strawberry", "Vanilla")]
 [String]$flavor = "Strawberry"
 ```
 
-De validatie wordt uitgevoerd wanneer deze variabele wordt toegewezen, zelfs binnen het script. Het volgende resulteert bijvoorbeeld in een fout tijdens runtime:
+De validatie vindt plaats wanneer die variabele wordt toegewezen, zelfs binnen het script. Het volgende resulteert bijvoorbeeld in een fout tijdens runtime:
 
 ```powershell
 Param(
@@ -584,9 +584,9 @@ Param(
 $Message = "bye"
 ```
 
-#### <a name="dynamic-validateset-values"></a>Dynamische validate-waarden
+#### <a name="dynamic-validateset-values"></a>Dynamische validateSet-waarden
 
-U kunt een **klasse** gebruiken voor het dynamisch genereren van de waarden voor **Validate** tijdens runtime. In het volgende voor beeld worden de geldige waarden voor de variabele `$Sound` gegenereerd via een **klasse** met de naam **SoundNames** die drie bestandssysteem paden controleert op beschik bare geluids bestanden:
+U kunt een klasse **gebruiken om** de waarden voor **ValidateSet** dynamisch te genereren tijdens runtime. In het volgende voorbeeld worden de geldige waarden voor de variabele gegenereerd via een klasse met de naam SoundNames die drie bestandssysteempaden controleert `$Sound` op beschikbare  geluidsbestanden: 
 
 ```powershell
 Class SoundNames : System.Management.Automation.IValidateSetValuesGenerator {
@@ -603,7 +603,7 @@ Class SoundNames : System.Management.Automation.IValidateSetValuesGenerator {
 }
 ```
 
-De `[SoundNames]` klasse wordt vervolgens als volgt geïmplementeerd als een dynamische **Validate** -waarde:
+De klasse wordt vervolgens als volgt geïmplementeerd als een dynamische `[SoundNames]` **ValidateSet-waarde:**
 
 ```powershell
 Param(
@@ -612,13 +612,16 @@ Param(
 )
 ```
 
-### <a name="validatenotnull-validation-attribute"></a>Validatie kenmerk ValidateNotNull
+> [!NOTE]
+> De `IValidateSetValuesGenerator` klasse is geïntroduceerd in PowerShell 6.0
 
-Het kenmerk **ValidateNotNull** geeft aan dat de parameter waarde niet kan zijn `$null` . Power shell genereert een fout als de waarde van de para meter `$null` .
+### <a name="validatenotnull-validation-attribute"></a>Validatiekenmerk ValidateNotNull
 
-Het kenmerk **ValidateNotNull** is ontworpen om te worden gebruikt wanneer de para meter optioneel is en het type is niet gedefinieerd of een type Converter heeft dat een null-waarde zoals een **object** niet impliciet kan converteren. Als u een type opgeeft dat impliciet een null-waarde, zoals een **teken reeks**, converteert, wordt de null-waarde omgezet in een lege teken reeks, zelfs wanneer het kenmerk **ValidateNotNull** wordt gebruikt. Voor dit scenario gebruikt u de **ValidateNotNullOrEmpty**
+Het **kenmerk ValidateNotNull** geeft aan dat de parameterwaarde niet mag `$null` zijn. PowerShell genereert een fout als de parameterwaarde `$null` is.
 
-In het volgende voor beeld kan de waarde van de para meter **id** niet zijn `$null` .
+Het **kenmerk ValidateNotNull** is ontworpen om te worden gebruikt wanneer de parameter optioneel is en het type niet is gedefinieerd of een typeconverter heeft die niet impliciet een null-waarde kan converteren, zoals **object**. Als u een type opgeeft dat impliciet een null-waarde converteert, zoals een tekenreeks, wordt de null-waarde geconverteerd naar een lege tekenreeks, zelfs wanneer het **kenmerk ValidateNotNull wordt** gebruikt. Gebruik voor dit scenario **de ValidateNotNullOrEmpty**
+
+In het volgende voorbeeld mag de waarde van de **id-parameter** niet `$null` zijn.
 
 ```powershell
 Param(
@@ -628,9 +631,9 @@ Param(
 )
 ```
 
-### <a name="validatenotnullorempty-validation-attribute"></a>Validatie kenmerk ValidateNotNullOrEmpty
+### <a name="validatenotnullorempty-validation-attribute"></a>Validatiekenmerk ValidateNotNullOrEmpty
 
-Het kenmerk **ValidateNotNullOrEmpty** geeft aan dat de parameter waarde niet kan zijn `$null` en mag geen lege teken reeks ( `""` ) zijn. Power shell genereert een fout als de para meter wordt gebruikt in een functie aanroep, maar de waarde hiervan is `$null` , een lege teken reeks ( `""` ) of een lege matrix `@()` .
+Het **kenmerk ValidateNotNullOrEmpty** geeft aan dat de parameterwaarde niet mag zijn en geen `$null` lege tekenreeks () mag `""` zijn. PowerShell genereert een fout als de parameter wordt gebruikt in een functie-aanroep, maar de waarde ervan is , een lege tekenreeks `$null` ( ) of een lege matrix `""` `@()` .
 
 ```powershell
 Param(
@@ -641,11 +644,11 @@ Param(
 )
 ```
 
-### <a name="validatedrive-validation-attribute"></a>Validatie kenmerk ValidateDrive
+### <a name="validatedrive-validation-attribute"></a>Validatiekenmerk ValidateDrive
 
-Het kenmerk **ValidateDrive** geeft aan dat de parameter waarde het pad moet vertegenwoordigen, dat alleen verwijst naar de toegestane stations. Power shell genereert een fout als de waarde van de para meter verwijst naar andere stations dan toegestaan. Het bestaan van het pad, met uitzonde ring van het station zelf, wordt niet gecontroleerd.
+Het **kenmerk ValidateDrive** geeft aan dat de parameterwaarde het pad moet vertegenwoordigen, dat alleen verwijst naar toegestane stations. PowerShell genereert een fout als de parameterwaarde verwijst naar andere stations dan de toegestane. Het bestaan van het pad, met uitzondering van het station zelf, wordt niet geverifieerd.
 
-Als u een relatief pad gebruikt, moet het huidige station zich in de lijst met toegestane stations bevinden.
+Als u een relatief pad gebruikt, moet het huidige station in de lijst met toegestane station.
 
 ```powershell
 Param(
@@ -654,11 +657,11 @@ Param(
 )
 ```
 
-### <a name="validateuserdrive-validation-attribute"></a>Validatie kenmerk ValidateUserDrive
+### <a name="validateuserdrive-validation-attribute"></a>Validatiekenmerk ValidateUserDrive
 
-Het kenmerk **ValidateUserDrive** geeft aan dat de parameter waarde het pad moet vertegenwoordigen dat verwijst naar een `User` station. Power shell genereert een fout melding als het pad naar een ander station verwijst. Het validatie kenmerk test alleen op het bestaan van het station gedeelte van het pad.
+Het **kenmerk ValidateUserDrive** geeft aan dat de parameterwaarde het pad moet vertegenwoordigen, dat verwijst naar `User` station. PowerShell genereert een fout als het pad naar een ander station verwijst. Het validatiekenmerk test alleen op het bestaan van het stationgedeelte van het pad.
 
-Als u een relatief pad gebruikt, moet het huidige station zijn `User` .
+Als u een relatief pad gebruikt, moet het huidige station `User` zijn.
 
 ```powershell
 function Test-UserDrivePath{
@@ -687,7 +690,7 @@ Test-UserDrivePath: Cannot validate argument on parameter 'Path'. Cannot
 find drive. A drive with the name 'User' does not exist.
 ```
 
-U kunt een `User` station definiëren in net voldoende beheer-en JEA-sessie configuraties. Voor dit voor beeld maken we de gebruiker: station.
+U kunt het `User` station definiëren in JEA-sessieconfiguraties (Just Enough Administration). Voor dit voorbeeld maken we het station Gebruiker: .
 
 ```powershell
 New-PSDrive -Name 'User' -PSProvider FileSystem -Root $env:HOMEPATH
@@ -706,36 +709,36 @@ Test-UserDrivePath -Path 'User:\A_folder_that_does_not_exist'
 True
 ```
 
-### <a name="validatetrusteddata-validation-attribute"></a>Validatie kenmerk ValidateTrustedData
+### <a name="validatetrusteddata-validation-attribute"></a>Validatiekenmerk ValidateTrustedData
 
-Dit kenmerk is toegevoegd aan Power shell 6.1.1.
+Dit kenmerk is toegevoegd in PowerShell 6.1.1.
 
-Op dit moment wordt het kenmerk intern gebruikt door Power shell zelf en is het niet bedoeld voor extern gebruik.
+Op dit moment wordt het kenmerk intern gebruikt door PowerShell zelf en is het niet bedoeld voor extern gebruik.
 
 ## <a name="dynamic-parameters"></a>Dynamische parameters
 
-Dynamische para meters zijn para meters van een cmdlet, functie of script die alleen beschikbaar zijn onder bepaalde voor waarden.
+Dynamische parameters zijn parameters van een cmdlet, functie of script die alleen onder bepaalde voorwaarden beschikbaar zijn.
 
-Meerdere provider-cmdlets hebben bijvoorbeeld para meters die alleen beschikbaar zijn wanneer de cmdlet wordt gebruikt in het provider station of in een bepaald pad van het provider station. De para meter **Encoding** is bijvoorbeeld alleen beschikbaar in de `Add-Content` `Get-Content` `Set-Content` cmdlets, en alleen als deze wordt gebruikt in een bestandssysteem station.
+Zo hebben verschillende provider-cmdlets parameters die alleen beschikbaar zijn wanneer de cmdlet wordt gebruikt in het providerstation of in een bepaald pad van het providerstation. De parameter **Encoding** is bijvoorbeeld alleen beschikbaar voor de cmdlets , en wanneer deze wordt gebruikt `Add-Content` `Get-Content` in een `Set-Content` bestandssysteemstation.
 
-U kunt ook een para meter maken die alleen wordt weer gegeven wanneer een andere para meter wordt gebruikt in de functie opdracht of wanneer een andere para meter een bepaalde waarde heeft.
+U kunt ook een parameter maken die alleen wordt weergegeven wanneer een andere parameter wordt gebruikt in de functieopdracht of wanneer een andere parameter een bepaalde waarde heeft.
 
-Dynamische para meters kunnen nuttig zijn, maar alleen gebruiken wanneer dat nodig is, omdat ze moeilijk kunnen worden gedetecteerd door gebruikers. Als u een dynamische para meter wilt zoeken, moet de gebruiker zich in het pad van de provider bevinden, de para meter **argument List** van de `Get-Command` cmdlet gebruiken of de para meter **Path** van gebruiken `Get-Help` .
+Dynamische parameters kunnen handig zijn, maar ze alleen gebruiken wanneer dat nodig is, omdat ze moeilijk te vinden zijn voor gebruikers. Als u een dynamische parameter wilt zoeken, moet de gebruiker zich in het pad van de provider, de parameter **ArgumentList** van de `Get-Command` cmdlet gebruiken of de parameter **Path** van `Get-Help` gebruiken.
 
-Als u een dynamische para meter voor een functie of script wilt maken, gebruikt u het `DynamicParam` sleutel woord.
+Gebruik het trefwoord om een dynamische parameter voor een functie of script `DynamicParam` te maken.
 
 De syntaxis is als volgt:
 
 `DynamicParam {<statement-list>}`
 
-Gebruik in de lijst overzicht een `If` instructie om de voor waarden op te geven waaronder de para meter beschikbaar is in de functie.
+Gebruik in de lijst met -instructie een `If` -instructie om de voorwaarden op te geven waaronder de parameter beschikbaar is in de functie.
 
-Gebruik de `New-Object` cmdlet om een **System. Management. Automation. RuntimeDefinedParameter** -object te maken dat de para meter weergeeft en geef de naam op.
+Gebruik de `New-Object` cmdlet om een **System.Management.Automation.RuntimeDefinedParameter-object** te maken dat de parameter vertegenwoordigt en de naam ervan opgeeft.
 
-U kunt een `New-Object` opdracht gebruiken om een **System. Management. Automation. ParameterAttribute** -object te maken om kenmerken van de para meter weer te geven, zoals **verplicht**, **positie** of **ValueFromPipeline** of de bijbehorende parameterset.
+U kunt een opdracht gebruiken om een `New-Object` **System.Management.Automation.ParameterAttribute-object** te maken om kenmerken van de parameter weer te geven, zoals **Verplicht**, **Positie** of **ValueFromPipeline** of de parameterset.
 
-In het volgende voor beeld ziet u een voorbeeld functie met de standaard parameters **name** en **Path** en een optionele dynamische para meter met de naam **DP1**. De **DP1** -para meter bevindt zich in de `PSet1` parameterset en heeft een type van `Int32` .
-De para meter **DP1** is alleen beschikbaar in de `Get-Sample` functie wanneer de waarde van de para meter **Path** begint met `HKLM:` , wat aangeeft dat deze wordt gebruikt in het `HKEY_LOCAL_MACHINE` register station.
+In het volgende voorbeeld ziet u een voorbeeldfunctie met standaardparameters met de naam **Naam** en **Pad,** en een optionele dynamische parameter met de **naam DP1.** De **parameter DP1** staat in de `PSet1` parameterset en heeft het type `Int32` .
+De **DP1** parameter is alleen beschikbaar in de functie wanneer de waarde van de pad parameter begint met , waarmee wordt aangegeven dat deze wordt gebruikt `Get-Sample` in het  `HKLM:` `HKEY_LOCAL_MACHINE` registerstation.
 
 ```powershell
 function Get-Sample {
@@ -767,15 +770,15 @@ function Get-Sample {
 }
 ```
 
-Zie [RuntimeDefinedParameter](/dotnet/api/system.management.automation.runtimedefinedparameter)voor meer informatie.
+Zie [RuntimeDefinedParameter voor meer informatie.](/dotnet/api/system.management.automation.runtimedefinedparameter)
 
-## <a name="switch-parameters"></a>Switch parameters
+## <a name="switch-parameters"></a>Schakelen tussen parameters
 
-Switch parameters zijn para meters zonder parameter waarde. Ze zijn alleen effectief als ze worden gebruikt en slechts één effect hebben.
+Switchparameters zijn parameters zonder parameterwaarde. Ze zijn alleen effectief wanneer ze worden gebruikt en hebben slechts één effect.
 
-De para meter geen **profiel** van **powershell.exe** is bijvoorbeeld een para meter switch.
+De parameter **NoProfile van** powershell.exe **is** bijvoorbeeld een switchparameter.
 
-Als u een switch parameter in een functie wilt maken, geeft u het `Switch` type op in de parameter definitie.
+Als u een switchparameter in een functie wilt maken, geeft u `Switch` het type op in de parameterdefinitie.
 
 Bijvoorbeeld:
 
@@ -793,24 +796,24 @@ Param(
 )
 ```
 
-Switch parameters zijn gemakkelijk te gebruiken en hebben de voor keur boven Boole-para meters, die een moeilijkerere syntaxis hebben.
+Switchparameters zijn eenvoudig te gebruiken en hebben de voorkeur boven Booleaanse parameters, die een moeilijkere syntaxis hebben.
 
-Als u bijvoorbeeld een para meter switch wilt gebruiken, typt de gebruiker de para meter in de opdracht.
+Als u bijvoorbeeld een switchparameter wilt gebruiken, moet de gebruiker de parameter in de opdracht typen.
 
 `-IncludeAll`
 
-Als u een Boole-para meter wilt gebruiken, typt de gebruiker de para meter en een Booleaanse waarde.
+Als u een Booleaanse parameter wilt gebruiken, geeft de gebruiker de parameter en een Booleaanse waarde op.
 
 `-IncludeAll:$true`
 
-Wanneer u switch parameters maakt, moet u de parameter naam zorgvuldig kiezen. Zorg ervoor dat de parameter naam het effect van de para meter communiceert naar de gebruiker.
-Vermijd dubbel zinnige termen, zoals het **filter** of het **maximum** waarmee een waarde kan worden opgelegd.
+Kies bij het maken van switchparameters de parameternaam zorgvuldig. Zorg ervoor dat de parameternaam het effect van de parameter aan de gebruiker doorgeeft.
+Vermijd niet-eenduidige termen, zoals **Filter** of **Maximum,** die kunnen impliceren dat een waarde vereist is.
 
 ## <a name="argumentcompleter-attribute"></a>ArgumentCompleter-kenmerk
 
-Met het kenmerk **ArgumentCompleter** kunt u waarden voor het volt ooien van tabs toevoegen aan een specifieke para meter. Er moet een **ArgumentCompleter** -kenmerk worden gedefinieerd voor elke para meter die het tabblad moet volt ooien. Net als bij **DynamicParameters** worden de beschik bare waarden tijdens runtime berekend wanneer de gebruiker op <kbd>Tab</kbd> drukt na de parameter naam.
+Met **het kenmerk ArgumentCompleter** kunt u tabinvullingswaarden toevoegen aan een specifieke parameter. Er **moet een kenmerk ArgumentCompleter** worden gedefinieerd voor elke parameter die tab-voltooiing nodig heeft. Net als **bij DynamicParameters** worden de beschikbare waarden berekend tijdens runtime wanneer de gebruiker op <kbd>Tab drukt</kbd> na de parameternaam.
 
-Om een **ArgumentCompleter** -kenmerk toe te voegen, moet u een script blok definiëren waarmee de waarden worden bepaald. Het script blok moet de volgende para meters in de opgegeven volg orde volgen. De namen van de para meters zijn niet belang rijk, omdat de waarden positioneel worden gegeven.
+Als u een **ArgumentCompleter-kenmerk** wilt toevoegen, moet u een scriptblok definiëren dat de waarden bepaalt. Het scriptblok moet de volgende parameters hebben in de onderstaande volgorde. De namen van de parameter zijn niet van belang omdat de waarden positioneel worden opgegeven.
 
 De syntaxis is als volgt:
 
@@ -828,22 +831,22 @@ Param(
 )
 ```
 
-### <a name="argumentcompleter-script-block"></a>ArgumentCompleter-script blok
+### <a name="argumentcompleter-script-block"></a>ArgumentCompleter-scriptblok
 
-De script Block-para meters worden ingesteld op de volgende waarden:
+De parameters voor het scriptblok zijn ingesteld op de volgende waarden:
 
-- `$commandName` (Positie 0): deze para meter is ingesteld op de naam van de opdracht waarvoor het script blok het volt ooien van het tabblad oplevert.
-- `$parameterName` (Positie 1)-deze para meter wordt ingesteld op de para meter waarvan de waarde het volt ooien van het tabblad vereist.
-- `$wordToComplete` (Positie 2): deze para meter is ingesteld op waarde die de gebruiker heeft opgegeven voordat deze <kbd>Tab</kbd>werd ingedrukt. Het script blok moet deze waarde gebruiken om de waarden voor het volt ooien van tabs te bepalen.
-- `$commandAst` (Positie 3): deze para meter is ingesteld op de abstracte syntaxis structuur (AST) voor de huidige invoer regel. Zie [AST class](/dotnet/api/system.management.automation.language.ast)(Engelstalig) voor meer informatie.
-- `$fakeBoundParameters` (Positie 4): deze para meter is ingesteld op een hashtabel die de `$PSBoundParameters` voor de cmdlet bevat, voordat het <kbd>tabblad</kbd>van de gebruiker wordt ingedrukt. Zie [about_Automatic_Variables](about_Automatic_Variables.md)voor meer informatie.
+- `$commandName` (Positie 0) - Deze parameter is ingesteld op de naam van de opdracht waarvoor het scriptblok tab-voltooiing biedt.
+- `$parameterName` (Positie 1) - Deze parameter is ingesteld op de parameter waarvan de waarde tab-voltooiing vereist.
+- `$wordToComplete` (Positie 2) - Deze parameter is ingesteld op de waarde die de gebruiker heeft opgegeven voordat deze op <kbd>Tab heeft gedrukt.</kbd> Uw scriptblok moet deze waarde gebruiken om tab-voltooiingswaarden te bepalen.
+- `$commandAst` (Positie 3) - Deze parameter is ingesteld op de Abstract Syntax Tree (AST) voor de huidige invoerregel. Zie [Ast Class voor meer informatie.](/dotnet/api/system.management.automation.language.ast)
+- `$fakeBoundParameters` (Positie 4) - Deze parameter is ingesteld op een hashtabel met de voor de `$PSBoundParameters` cmdlet voordat de gebruiker op Tab heeft <kbd>gedrukt.</kbd> Zie voor meer informatie [about_Automatic_Variables](about_Automatic_Variables.md).
 
-Het **ArgumentCompleter** -script blok moet de waarden van de pijp lijn, zoals `ForEach-Object` , `Where-Object` of een andere geschikte methode, ongedaan maken.
-Als u een matrix met waarden retourneert, wordt de gehele matrix als **één** waarde voor het volt ooien van een tab behandeld.
+Het **scriptblok ArgumentCompleter** moet de waarden uitschrijven met behulp van de pijplijn, zoals `ForEach-Object` , of een andere geschikte `Where-Object` methode.
+Het retourneren van een matrix met waarden  zorgt ervoor dat PowerShell de hele matrix als één tab-voltooiingswaarde behandelt.
 
-In het volgende voor beeld wordt Tab-aanvulling toegevoegd aan de **waarde** -para meter. Als alleen de **waarde** para meter is opgegeven, worden alle mogelijke waarden, of argumenten, voor **waarde** weer gegeven. Als de para meter **type** is opgegeven, geeft de para meter **Value** alleen de mogelijke waarden voor dat type weer.
+In het volgende voorbeeld wordt tab-aanvulling toegevoegd aan de parameter **Value.** Als alleen de **parameter Waarde** is opgegeven, worden alle mogelijke waarden of argumenten voor **Waarde** weergegeven. Wanneer de **parameter Type** is opgegeven, geeft de parameter **Waarde** alleen de mogelijke waarden voor dat type weer.
 
-De operator zorgt er ook voor `-like` dat als de gebruiker de volgende opdracht typt en het <kbd>tabblad</kbd> aanvulling gebruikt, alleen **Apple** wordt geretourneerd.
+Bovendien zorgt de operator ervoor dat als de gebruiker de volgende opdracht intimpt en `-like` <kbd>Tab-voltooiing</kbd> gebruikt, alleen **Apple** wordt geretourneerd.
 
 `Test-ArgumentCompleter -Type Fruits -Value A`
 

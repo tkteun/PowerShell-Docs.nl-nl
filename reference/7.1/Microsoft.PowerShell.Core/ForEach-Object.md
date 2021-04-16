@@ -7,17 +7,17 @@ ms.date: 03/26/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ForEach-Object
-ms.openlocfilehash: 7da05aed73fdb52132404bc08f0fd39fafbfc4ca
-ms.sourcegitcommit: ca5a89977913bad9efec6bcc23a792d113ec0396
+ms.openlocfilehash: e1680e5ad182051bce217efd6f1eb48d44798146
+ms.sourcegitcommit: 366304d096c1caf52f0e17962f6ed23d20f86e7b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/27/2021
-ms.locfileid: "105631048"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107543837"
 ---
 # ForEach-Object
 
-## Samen vatting
-Hiermee wordt een bewerking uitgevoerd voor elk item in een verzameling invoer objecten.
+## Synopsis
+Voert een bewerking uit op elk item in een verzameling invoerobjecten.
 
 ## Syntax
 
@@ -44,44 +44,44 @@ ForEach-Object -Parallel <scriptblock> [-InputObject <PSObject>] [-ThrottleLimit
 
 ## Description
 
-`ForEach-Object`Met de cmdlet wordt een bewerking uitgevoerd op elk item in een verzameling invoer objecten. De invoer objecten kunnen worden gesluizen naar de cmdlet of worden opgegeven met behulp van de para meter **input object** .
+De `ForEach-Object` cmdlet voert een bewerking uit op elk item in een verzameling invoerobjecten. De invoerobjecten kunnen worden doorgegeven aan de cmdlet of worden opgegeven met behulp van de **parameter InputObject.**
 
-Vanaf Windows Power Shell 3,0 zijn er twee verschillende manieren om een opdracht te maken `ForEach-Object` .
+Vanaf Windows PowerShell 3.0 zijn er twee verschillende manieren om een opdracht te `ForEach-Object` maken.
 
-- **Script blok**. U kunt een script blok gebruiken om de bewerking op te geven. In het-script blok gebruikt `$_` u de variabele om het huidige object weer te geven. Het script blok is de waarde van de para meter **process** . Het script blok kan elk Power shell-script bevatten.
+- **Scriptblok.** U kunt een scriptblok gebruiken om de bewerking op te geven. Gebruik in het scriptblok de variabele `$_` om het huidige object weer te geven. Het scriptblok is de waarde van de **procesparameter.** Het scriptblok kan elk PowerShell-script bevatten.
 
-  Met de volgende opdracht wordt bijvoorbeeld de waarde van de eigenschap **proces** naam van elk proces op de computer opgehaald.
+  Met de volgende opdracht wordt bijvoorbeeld de waarde van de eigenschap **ProcessName** van elk proces op de computer opgeslagen.
 
   `Get-Process | ForEach-Object {$_.ProcessName}`
 
-  `ForEach-Object` ondersteunt de `begin` , `process` , en `end` blokken zoals beschreven in [about_functions](about/about_functions.md#piping-objects-to-functions).
+  `ForEach-Object` ondersteunt de `begin` blokken , en zoals `process` `end` beschreven in [about_functions](about/about_functions.md#piping-objects-to-functions).
 
   > [!NOTE]
-  > De script blokken worden uitgevoerd in het bereik van de aanroeper. De blokken hebben daarom toegang tot variabelen in dat bereik en kunnen nieuwe variabelen maken die in dat bereik behouden blijven nadat de cmdlet is voltooid.
+  > De scriptblokken worden uitgevoerd in het bereik van de aanroeper. Daarom hebben de blokken toegang tot variabelen in dat bereik en kunnen nieuwe variabelen worden gemaakt die in dat bereik blijven bestaan nadat de cmdlet is voltooid.
 
-- **Bewerkings instructie**. U kunt ook een bewerkings instructie schrijven die veel meer lijkt op natuurlijke taal. U kunt de bewerkings instructie gebruiken om een eigenschaps waarde op te geven of een methode aan te roepen. Er zijn bewerkings instructies geïntroduceerd in Windows Power Shell 3,0.
+- **Bewerkings-instructie**. U kunt ook een bewerkingsverklaring schrijven, die veel meer lijkt op natuurlijke taal. U kunt de bewerkings-instructie gebruiken om een eigenschapswaarde op te geven of een methode aan te roepen. Bewerkingsverklaringen zijn geïntroduceerd in Windows PowerShell 3.0.
 
-  Met de volgende opdracht wordt ook de waarde van de eigenschap **proces** naam van elk proces op de computer opgehaald.
+  Met de volgende opdracht wordt bijvoorbeeld ook de waarde van de eigenschap **ProcessName** van elk proces op de computer opgeslagen.
 
   `Get-Process | ForEach-Object ProcessName`
 
-- **Parallel uitgevoerd script blok**. Vanaf Power shell 7,0 is een derde parameterset beschikbaar die elk script blok parallel uitvoert. De para meter **ThrottleLimit** beperkt het aantal parallelle scripts dat op een bepaald moment wordt uitgevoerd. Net als voorheen kunt u met de `$_` variabele het huidige invoer object weer geven in het-script blok. Gebruik het `$using:` sleutel woord om variabele verwijzingen door te geven aan het script dat wordt uitgevoerd.
+- **Parallel uitvoerend scriptblok**. Vanaf PowerShell 7.0 is er een derde parameterset beschikbaar die elk scriptblok parallel wordt uitgevoerd. Met **de parameter ThrottleLimit** beperkt u het aantal parallelle scripts dat tegelijk wordt uitgevoerd. Net als voorheen gebruikt u de `$_` variabele om het huidige invoerobject in het scriptblok weer te geven. Gebruik het `$using:` trefwoord om variabeleverwijzingen door te geven aan het script dat wordt uitgevoerd.
 
-  In Power shell 7 wordt een nieuwe runs Pace voor elke lus-iteratie gemaakt om de maximale isolatie te garanderen.
-  Dit kan een grote prestatie en een bron zijn als het werk dat u uitvoert klein is in vergelijking met het maken van nieuwe runspaces of als er veel iteraties zijn die een aanzienlijke hoeveelheid werk uitvoeren. Vanaf Power shell 7,1 worden runspaces uit een runs Pace-groep standaard opnieuw gebruikt. De grootte van de runs Pace-groep wordt opgegeven met de para meter **ThrottleLimit** . De standaard grootte van de runs Pace-groep is 5. U kunt nog steeds een nieuwe runs Pace maken voor elke iteratie met behulp van de **UseNewRunspace** -switch.
+  In PowerShell 7 wordt voor elke lus-iteratie een nieuwe runspace gemaakt om maximale isolatie te garanderen.
+  Dit kan een grote prestatie- en resource-hit zijn als het werk dat u doet klein is in vergelijking met het maken van nieuwe runspaces of als er veel iteraties zijn die aanzienlijk werk verrichten. Vanaf PowerShell 7.1 worden runspaces uit een runspacegroep standaard opnieuw gebruikt. De grootte van de runspacegroep wordt opgegeven door de parameter **ThrottleLimit.** De standaardgrootte van de runspacegroep is 5. U kunt nog steeds een nieuwe runspace maken voor elke iteratie met behulp van **de switch UseNewRunspace.**
 
-  Standaard gebruikt de parallelle scriptblocks de huidige werkmap van de aanroeper die de parallelle taken heeft gestart.
+  De parallelle scriptblokkeringen gebruiken standaard de huidige werkmap van de aanroeper die de parallelle taken heeft gestart.
 
-  Niet-afsluit fouten worden naar de cmdlet-fout stroom geschreven, zoals deze optreden in parallelle uitvoering van scriptblocks. Omdat de volg orde van de parallelle script Block niet kan worden bepaald, is de volg orde waarin fouten worden weer gegeven in de fout stroom wille keurig. Op dezelfde manier worden berichten die zijn geschreven naar andere gegevens stromen, zoals waarschuwing, uitgebreide gegevens of informatie, naar deze gegevens stromen geschreven in een onbepaalde volg orde.
+  Niet-beëindigingsfouten worden naar de foutstroom van de cmdlet geschreven wanneer deze zich voordoen in parallelle scriptblokkeringen. Omdat de uitvoeringsorder voor parallelle scriptblokkering niet kan worden bepaald, is de volgorde waarin fouten worden weergegeven in de foutstroom willekeurig. Berichten die naar andere gegevensstromen worden geschreven, zoals waarschuwing, uitgebreid of informatie, worden in een onbepaalde volgorde naar deze gegevensstromen geschreven.
 
-  Als u fouten afsluit, zoals uitzonde ringen, beëindigt u de afzonderlijke parallelle instantie van de scriptblocks waarin deze zich voordoen. Een afsluit fout in één scriptblocks veroorzaakt mogelijk geen beëindiging van de `Foreach-Object` cmdlet. De andere scriptblocks, die parallel worden uitgevoerd, blijven worden uitgevoerd, tenzij er ook een afsluit fout optreedt. De afsluit fout wordt naar de gegevens stroom van de fout geschreven als een **ErrorRecord** met een **FullyQualifiedErrorId** van `PSTaskException` .
-  Het beëindigen van fouten kan worden geconverteerd naar niet-afsluit fouten met behulp van Power shell-try/catch-of trap-blokken.
+  Het beëindigen van fouten, zoals uitzonderingen, beëindigt de afzonderlijke parallelle instantie van de scriptblokkeringen waarin ze optreden. Een beëindigingsfout in één scriptblokkering veroorzaakt mogelijk niet de beëindiging van de `Foreach-Object` cmdlet. De andere scriptblokkeringen, die parallel worden uitgevoerd, blijven actief, tenzij ze ook een beëindigingsfout tegenkomen. De eindfout wordt naar de foutgegevensstroom geschreven als een **ErrorRecord** met een **FullyQualifiedErrorId** van `PSTaskException` .
+  Beëindigingsfouten kunnen worden geconverteerd naar niet-beëindigingsfouten met behulp van PowerShell-try-/catch- of trapblokken.
 
 ## Voorbeelden
 
-### Voor beeld 1: gehele getallen in een matrix delen
+### Voorbeeld 1: Gehele getallen in een matrix delen
 
-In dit voor beeld wordt een matrix van drie gehele getallen gebruikt en worden elke reeks gedeeld door 1024.
+In dit voorbeeld wordt een matrix van drie gehele getallen gebruikt en wordt elk van deze door 1024 verdeeld.
 
 ```powershell
 30000, 56798, 12432 | ForEach-Object -Process {$_/1024}
@@ -93,49 +93,49 @@ In dit voor beeld wordt een matrix van drie gehele getallen gebruikt en worden e
 12.140625
 ```
 
-### Voor beeld 2: de lengte van alle bestanden in een map ophalen
+### Voorbeeld 2: de lengte van alle bestanden in een map op te halen
 
-In dit voor beeld worden de bestanden en mappen in de installatie directory van Power shell verwerkt `$PSHOME` .
+In dit voorbeeld worden de bestanden en mappen in de PowerShell-installatiemap `$PSHOME` verwerkt.
 
 ```powershell
 Get-ChildItem $PSHOME |
   ForEach-Object -Process {if (!$_.PSIsContainer) {$_.Name; $_.Length / 1024; " " }}
 ```
 
-Als het object geen map is, wordt de naam van het bestand door het script blok opgehaald, wordt de waarde van de eigenschap **Length** gedeeld door 1024 en wordt een spatie ("") toegevoegd om het te scheiden van de volgende vermelding. De cmdlet gebruikt de eigenschap **PSISContainer** om te bepalen of een object een directory is.
+Als het object geen map is, haalt het scriptblok de naam van het bestand op, deelt de waarde van de eigenschap **Length** door 1024 en voegt een spatie ("") toe om het te scheiden van de volgende vermelding. De cmdlet gebruikt de **eigenschap PSISContainer** om te bepalen of een object een map is.
 
-### Voor beeld 3: uitvoeren op de meest recente systeem gebeurtenissen
+### Voorbeeld 3: Werken met de meest recente systeemgebeurtenissen
 
-In dit voor beeld worden de 1000 meest recente gebeurtenissen van het systeem gebeurtenis logboek naar een tekst bestand geschreven. De huidige tijd wordt weer gegeven vóór en na de verwerking van de gebeurtenissen.
+In dit voorbeeld worden de 1000 meest recente gebeurtenissen uit het systeemgebeurtenislogboek naar een tekstbestand geschreven. De huidige tijd wordt weergegeven voor en na het verwerken van de gebeurtenissen.
 
 ```powershell
 $Events = Get-EventLog -LogName System -Newest 1000
 $events | ForEach-Object -Begin {Get-Date} -Process {Out-File -FilePath Events.txt -Append -InputObject $_.Message} -End {Get-Date}
 ```
 
-`Get-EventLog` Hiermee worden de 1000 meest recente gebeurtenissen van het systeem gebeurtenis logboek opgehaald en opgeslagen in de `$Events` variabele. `$Events` wordt vervolgens door gegeven aan de `ForEach-Object` cmdlet. Met de para meter **begin** worden de huidige datum en tijd weer gegeven. Vervolgens gebruikt de para meter **process** de `Out-File` cmdlet om een tekst bestand te maken met de naam events.txt en wordt de bericht eigenschap van elk van de gebeurtenissen in dat bestand opgeslagen. De laatste para meter **End** wordt gebruikt om de datum en tijd weer te geven nadat alle verwerking is voltooid.
+`Get-EventLog` haalt de 1000 meest recente gebeurtenissen uit het gebeurtenislogboek van het systeem op en slaat deze op in de `$Events` variabele . `$Events` wordt vervolgens doorspijpt naar `ForEach-Object` de cmdlet . De **begin** parameter geeft de huidige datum en tijd. Vervolgens gebruikt de parameter **Process** de cmdlet om een tekstbestand met de naam events.txt te maken en slaat de bericht-eigenschap van elk van de gebeurtenissen `Out-File` in dat bestand op. Ten laatste wordt de parameter **End** gebruikt om de datum en tijd weer te geven nadat alle verwerking is voltooid.
 
-### Voor beeld 4: de waarde van een register sleutel wijzigen
+### Voorbeeld 4: De waarde van een registersleutel wijzigen
 
-In dit voor beeld wordt de waarde van de register vermelding **remotepath** in alle subsleutels onder de sleutel gewijzigd in `HKCU:\Network` hoofd letters.
+In dit voorbeeld wordt de waarde van de **RemotePath-registerinvoer** in alle subsleutels onder de sleutel gewijzigd in `HKCU:\Network` hoofdletters.
 
 ```powershell
 Get-ItemProperty -Path HKCU:\Network\* |
   ForEach-Object {Set-ItemProperty -Path $_.PSPath -Name RemotePath -Value $_.RemotePath.ToUpper();}
 ```
 
-U kunt deze indeling gebruiken om het formulier of de inhoud van een register vermelding te wijzigen.
+U kunt deze indeling gebruiken om het formulier of de inhoud van een registerinvoerwaarde te wijzigen.
 
-Elke subsleutel in de **netwerk** sleutel vertegenwoordigt een toegewezen netwerk station waarmee opnieuw verbinding wordt gemaakt bij het aanmelden. De vermelding **remotepath** bevat het UNC-pad van het verbonden station. Als u bijvoorbeeld het station E: toewijst aan `\\Server\Share` , wordt er een **e** -subsleutel gemaakt in `HKCU:\Network` met de register waarde **remotepath** ingesteld op `\\Server\Share` .
+Elke subsleutel in de **netwerksleutel** vertegenwoordigt een gekoppeld netwerkstation dat opnieuw verbinding maakt bij aanmelding. De **vermelding RemotePath** bevat het UNC-pad van het verbonden station. Als u bijvoorbeeld het E:-station toe wijst aan , wordt `\\Server\Share` er een **E-subsleutel** gemaakt in met de `HKCU:\Network` **registerwaarde RemotePath** ingesteld op `\\Server\Share` .
 
-De opdracht gebruikt de `Get-ItemProperty` cmdlet om alle subsleutels van de **netwerk** sleutel en de `Set-ItemProperty` cmdlet te verkrijgen om de waarde van de register **vermelding remotepath** in elke sleutel te wijzigen.
-In de `Set-ItemProperty` opdracht is het pad de waarde van de eigenschap **PSPath** van de register sleutel. Dit is een eigenschap van het Microsoft .NET Framework-object dat de register sleutel vertegenwoordigt, niet een register vermelding. De opdracht maakt gebruik van de methode **ToUpper ()** van de **remotepath** -waarde. Dit is een teken reeks (REG_SZ).
+De opdracht gebruikt de cmdlet om alle subsleutels van de netwerksleutel op te halen en de cmdlet om de waarde van de `Get-ItemProperty`  `Set-ItemProperty` **RemotePath-registerinvoer** in elke sleutel te wijzigen.
+In de `Set-ItemProperty` opdracht is het pad de waarde van de eigenschap **PSPath** van de registersleutel. Dit is een eigenschap van het Microsoft .NET Framework-object dat de registersleutel vertegenwoordigt, niet een registerinvoer. De opdracht maakt gebruik **van de methode ToUpper()** van de **waarde RemotePath.** Dit is een tekenreeks (REG_SZ).
 
-Omdat `Set-ItemProperty` de eigenschap van elke sleutel wordt gewijzigd, `ForEach-Object` is de cmdlet vereist voor toegang tot de eigenschap.
+Omdat `Set-ItemProperty` de eigenschap van elke sleutel verandert, is de `ForEach-Object` cmdlet vereist voor toegang tot de eigenschap .
 
-### Voor beeld 5: de $Null automatische variabele gebruiken
+### Voorbeeld 5: de automatische $Null gebruiken
 
-In dit voor beeld ziet u het effect van de `$Null` Automatische variabele voor de `ForEach-Object` cmdlet.
+In dit voorbeeld ziet u het effect van het doorspitten van `$Null` de automatische variabele naar de `ForEach-Object` cmdlet .
 
 ```powershell
 1, 2, $null, 4 | ForEach-Object {"Hello"}
@@ -148,24 +148,24 @@ Hello
 Hello
 ```
 
-Omdat in Power shell NULL wordt behandeld als een expliciete tijdelijke aanduiding, `ForEach-Object` genereert de cmdlet een waarde voor `$Null` , net zoals voor andere objecten die u naar de pipet.
+Omdat PowerShell null als een expliciete tijdelijke aanduiding behandelt, genereert de cmdlet een waarde voor , net als voor andere objecten die u er `ForEach-Object` naar doorspijpt. `$Null`
 
-### Voor beeld 6: eigenschaps waarden ophalen
+### Voorbeeld 6: eigenschapswaarden op halen
 
-In dit voor beeld wordt de waarde van de eigenschap **Path** van alle geïnstalleerde Power shell-modules opgehaald met behulp van de para meter **membernaam** van de `ForEach-Object` cmdlet.
+In dit voorbeeld wordt de waarde van de **eigenschap Path** van alle geïnstalleerde PowerShell-modules met behulp van de **parameter MemberName** van de `ForEach-Object` cmdlet .
 
 ```powershell
 Get-Module -ListAvailable | ForEach-Object -MemberName Path
 Get-Module -ListAvailable | Foreach Path
 ```
 
-De tweede opdracht is gelijk aan de eerste. Het gebruikt de `Foreach` alias van de `ForEach-Object` cmdlet en laat de naam van de para meter **lidnaam** , die optioneel is.
+De tweede opdracht is gelijk aan de eerste. Hierbij wordt de alias van de cmdlet gebruikt en wordt de naam van de `Foreach` `ForEach-Object` parameter **MemberName** weglaat, wat optioneel is.
 
-De `ForEach-Object` cmdlet is handig voor het ophalen van eigenschaps waarden, omdat deze de waarde ophaalt zonder het type te wijzigen, in tegens telling tot de **notatie** -cmdlets of de `Select-Object` cmdlet, waarmee het type eigenschaps waarde wordt gewijzigd.
+De cmdlet is handig voor het verkrijgen van eigenschapswaarden, omdat deze de waarde krijgt zonder het type te wijzigen, in tegenstelling tot de cmdlets Format of `ForEach-Object` de cmdlet , waarmee het waardetype van de eigenschap wordt  `Select-Object` gewijzigd.
 
-### Voor beeld 7: module namen splitsen in onderdeel namen
+### Voorbeeld 7: Modulenamen splitsen in onderdeelnamen
 
-In dit voor beeld ziet u drie manieren om twee punt-gescheiden module namen te splitsen in hun onderdeel namen.
+In dit voorbeeld ziet u drie manieren om twee modulenamen met punten te splitsen in de onderdeelnamen.
 
 ```powershell
 "Microsoft.PowerShell.Core", "Microsoft.PowerShell.Host" | ForEach-Object {$_.Split(".")}
@@ -182,17 +182,17 @@ PowerShell
 Host
 ```
 
-Met de opdrachten wordt de **Splits** methode van teken reeksen aangeroepen. De drie opdrachten gebruiken een andere syntaxis, maar ze zijn gelijkwaardig en kunnen worden gewijzigd.
+Met de opdrachten wordt de **methode Split van** tekenreeksen aanroepen. De drie opdrachten gebruiken een andere syntaxis, maar ze zijn gelijkwaardig en uitwisselbaar.
 
-De eerste opdracht maakt gebruik van de traditionele syntaxis, die een script blok en de huidige object operator bevat `$_` . De punt notatie wordt gebruikt om de methode en haakjes op te geven voor het argument scheidings teken.
+De eerste opdracht maakt gebruik van de traditionele syntaxis, die een scriptblok en de huidige objectoperator `$_` bevat. Er wordt gebruikgemaakt van de puntsyntaxis om de methode en haakjes op te geven om het scheidingsteken te omsluiten.
 
-De tweede opdracht gebruikt de para meter **lidnaam** om de **Split** -methode en de para meter **argumentnaam** op te geven om de punt (".") als scheidings teken te identificeren.
+De tweede opdracht maakt gebruik van de **parameter MemberName** om de methode **Split** en de parameter **ArgumentName** op te geven om de punt (".") te identificeren als het scheidingsteken voor splitsen.
 
-De derde opdracht maakt gebruik van de **foreach** -alias van de `ForEach-Object` cmdlet en laat de namen van de para meters **lidnaam** en **argument List** , die optioneel zijn.
+De derde opdracht maakt gebruik van de **Foreach-alias** van de cmdlet en laat de namen van de `ForEach-Object` parameters **MemberName** en **ArgumentList** weg, die optioneel zijn.
 
-### Voor beeld 8: ForEach-Object gebruiken met twee script blokken
+### Voorbeeld 8: Een ForEach-Object twee scriptblokken gebruiken
 
-In dit voor beeld worden twee script blokken positioneel door gegeven. Alle script blokken binden aan de **proces** parameter. Ze worden echter behandeld alsof ze zijn door gegeven aan de **begin** -en **proces** parameters.
+In dit voorbeeld geven we twee scriptblokken positioneel door. Alle scriptblokken worden aan de parameter **Process** binden. Ze worden echter behandeld alsof ze zijn doorgegeven aan de **parameters Begin** **en Process.**
 
 ```powershell
 1..2 | ForEach-Object { 'begin' } { 'process' }
@@ -204,9 +204,9 @@ process
 process
 ```
 
-### Voor beeld 9: ForEach-Object gebruiken met meer dan twee script blokken
+### Voorbeeld 9: Een ForEach-Object meer dan twee scriptblokken gebruiken
 
-In dit voor beeld worden twee script blokken positioneel door gegeven. Alle script blokken binden aan de **proces** parameter. Ze worden echter behandeld alsof ze zijn door gegeven aan de **begin**-, **proces**-en **End** -para meters.
+In dit voorbeeld geven we twee scriptblokken positioneel door. Alle scriptblokken worden aan de parameter **Process** binden. Ze worden echter behandeld alsof ze zijn doorgegeven aan de parameters **Begin,** **Process** en **End.**
 
 ```powershell
 1..2 | ForEach-Object { 'begin' } { 'process A' }  { 'process B' }  { 'end' }
@@ -222,11 +222,11 @@ end
 ```
 
 > [!NOTE]
-> Het eerste script blok wordt altijd toegewezen aan het `begin` blok, het laatste blok wordt toegewezen aan het `end` blok en de blokken tussen zijn allemaal toegewezen aan het blok `process` .
+> Het eerste scriptblok wordt altijd aan het blok toegesneden, het laatste blok is aan het blok en de blokken ertussen worden allemaal aan het `begin` `end` blok `process` toegesneden.
 
-### Voor beeld 10: meerdere script blokken uitvoeren voor elk pijplijn item
+### Voorbeeld 10: Meerdere scriptblokken uitvoeren voor elk pijplijnitem
 
-Zoals weer gegeven in het vorige voor beeld, worden er meerdere script blokken door gegeven met behulp van de **proces** parameter Get toegewezen aan de **begin** -en **End** -para meters. Om deze toewijzing te vermijden, moet u expliciete waarden opgeven voor de **begin** -en **eind** parameters.
+Zoals u in het vorige voorbeeld kunt zien, worden meerdere scriptblokken die zijn doorgegeven met behulp van de parameter **Process,** aan de parameters **Begin** en **End** doorgegeven. Als u deze toewijzing wilt voorkomen, moet u expliciete waarden opgeven voor de parameters **Begin** **en End.**
 
 ```powershell
 1..2 | ForEach-Object -Begin $null -Process { 'one' }, { 'two' }, { 'three' } -End $null
@@ -241,9 +241,9 @@ two
 three
 ```
 
-### Voor beeld 11: een langzaam script uitvoeren in parallelle batches
+### Voorbeeld 11: Langzaam script uitvoeren in parallelle batches
 
-In dit voor beeld wordt een eenvoudig script blok uitgevoerd waarmee een teken reeks en slaap stand gedurende één seconde worden geëvalueerd.
+In dit voorbeeld wordt een eenvoudig scriptblok uitgevoerd dat een tekenreeks evalueert en één seconde in de slaapstand gaat.
 
 ```powershell
 $Message = "Output:"
@@ -265,12 +265,12 @@ Output: 7
 Output: 8
 ```
 
-De waarde van de para meter **ThrottleLimit** is ingesteld op 4 zodat de invoer wordt verwerkt in batches van vier.
-Het `$using:` sleutel woord wordt gebruikt om de variabele door te geven aan `$Message` elk parallel-script blok.
+De **parameterwaarde ThrottleLimit** is ingesteld op 4, zodat de invoer wordt verwerkt in batches van vier.
+Het `$using:` trefwoord wordt gebruikt om de variabele `$Message` door te geven aan elk parallel scriptblok.
 
-### Voor beeld 12: logboek vermeldingen parallel ophalen
+### Voorbeeld 12: Logboekgegevens parallel ophalen
 
-In dit voor beeld worden 50.000 logboek vermeldingen van 5 systeem logboeken op een lokale Windows-computer opgehaald.
+In dit voorbeeld worden 50.000 logboekgegevens opgehaald uit 5 systeemlogboeken op een lokale Windows-computer.
 
 ```powershell
 $logNames = 'Security','Application','System','Windows PowerShell','Microsoft-Windows-Store/Operational'
@@ -286,11 +286,11 @@ $logEntries.Count
 50000
 ```
 
-Met de **parallelle** para meter wordt het script blok opgegeven dat parallel wordt uitgevoerd voor elke invoer logboek naam. De para meter **ThrottleLimit** zorgt ervoor dat alle vijf de script blokken tegelijk worden uitgevoerd.
+De **parameter Parallel** geeft het scriptblok aan dat parallel wordt uitgevoerd voor elke naam van het invoerlogboek. De **parameter ThrottleLimit** zorgt ervoor dat alle vijf scriptblokken tegelijkertijd worden uitgevoerd.
 
-### Voor beeld 13: parallel uitvoeren als een taak
+### Voorbeeld 13: Parallel uitvoeren als een taak
 
-In dit voor beeld wordt een eenvoudig script blok parallel uitgevoerd, waarbij twee achtergrond taken tegelijk worden gemaakt.
+In dit voorbeeld wordt een eenvoudig scriptblok parallel uitgevoerd, waardoor er twee achtergrondtaken tegelijk worden gemaakt.
 
 ```powershell
 $job = 1..10 | ForEach-Object -Parallel {
@@ -314,12 +314,12 @@ Output: 9
 Output: 10
 ```
 
-de `$job` variabele ontvangt het taak object waarmee uitvoer gegevens worden verzameld en de status van monitors wordt uitgevoerd.
-Het taak object wordt gepiped `Receive-Job` met de para meter **wait** switch. En deze streams worden uitgevoerd naar de-console, net zoals bij het `ForEach-Object -Parallel` uitvoeren zonder **AsJob**.
+De `$job` variabele ontvangt het taakobject dat uitvoergegevens verzamelt en de status van de uitvoer bewaakt.
+Het taakobject wordt doorspijpt `Receive-Job` naar met de parameter **Wait** switch. En deze streamt uitvoer naar de console, alsof `ForEach-Object -Parallel` deze is uitgevoerd zonder **AsJob**.
 
-### Voor beeld 14: met behulp van thread safe-verwijzingen naar variabelen
+### Voorbeeld 14: Verwijzingen naar veilige threadvariabelen gebruiken
 
-In dit voor beeld worden script blokken parallel aangeroepen om unieke benoemde proces objecten te verzamelen.
+In dit voorbeeld worden scriptblokken parallel aanroepen om unieke procesobjecten te verzamelen.
 
 ```powershell
 $threadSafeDictionary = [System.Collections.Concurrent.ConcurrentDictionary[string,object]]::new()
@@ -337,14 +337,14 @@ $threadSafeDictionary["pwsh"]
      82    82.87     130.85      15.55    2808   2 pwsh
 ```
 
-Er wordt één exemplaar van een **ConcurrentDictionary** -object door gegeven aan elk script blok om de objecten te verzamelen. Omdat de **ConcurrentDictionary** thread-safe is, is het veilig om door elk parallel schrift te worden gewijzigd. Een niet-thread-veilig object, zoals **System. Collections. generic. Dictionary**, is hier niet veilig te gebruiken.
+Er wordt één exemplaar van een **ConcurrentDictionary-object** doorgegeven aan elk scriptblok om de objecten te verzamelen. Omdat **concurrentDictionary thread-veilig** is, is het veilig om te worden gewijzigd door elk parallel script. Een niet-thread-veilig object, zoals **System.Collections.Generic.Dictionary,** is hier niet veilig te gebruiken.
 
 > [!NOTE]
-> Dit voor beeld is een zeer inefficiënt gebruik van een **parallelle** para meter. Het script voegt eenvoudigweg het invoer object toe aan een object met een gelijktijdig woorden lijst. Het is lastig en niet de overhead van het aanroepen van elk script in een afzonderlijke thread. `ForEach-Object`Normaal gesp roken werkt **zonder parallelle** switch veel efficiënter en sneller. Dit voor beeld is alleen bedoeld om te laten zien hoe u thread-safe variabelen kunt gebruiken.
+> Dit voorbeeld is een zeer inefficiënt gebruik van **de parameter Parallel.** Het script voegt gewoon het invoerobject toe aan een gelijktijdig woordenboekobject. Het is eenvoudig en de overhead van het aanroepen van elk script in een afzonderlijke thread niet waard. Normaal `ForEach-Object` uitvoeren zonder de **parallelle** switch is veel efficiënter en sneller. Dit voorbeeld is alleen bedoeld om te laten zien hoe u thread-veilige variabelen gebruikt.
 
-### Voor beeld 15: fouten schrijven met parallelle uitvoering
+### Voorbeeld 15: Fouten schrijven met parallelle uitvoering
 
-In dit voor beeld wordt de fout stroom parallel geschreven, waarbij de volg orde van de geschreven fouten wille keurig is.
+In dit voorbeeld wordt parallel naar de foutstroom geschreven, waarbij de volgorde van geschreven fouten willekeurig is.
 
 ```powershell
 1..3 | ForEach-Object -Parallel {
@@ -358,9 +358,9 @@ Write-Error: Error: 3
 Write-Error: Error: 2
 ```
 
-### Voor beeld 16: fouten bij parallelle uitvoering beëindigen
+### Voorbeeld 16: Fouten bij parallelle uitvoering beëindigen
 
-In dit voor beeld wordt een afsluit fout in één parallel uitgevoerde script Block gedemonstreerd.
+In dit voorbeeld wordt een beëindigingsfout in één parallel uitgevoerd scriptblok gedemonstreerd.
 
 ```powershell
 1..5 | ForEach-Object -Parallel {
@@ -381,11 +381,11 @@ Output: 2
 Output: 5
 ```
 
-`Output: 3` is nooit geschreven, omdat de parallelle script Block voor die herhaling is beëindigd.
+`Output: 3` wordt nooit geschreven omdat het parallelle scriptblok voor die iteratie is beëindigd.
 
-### Voor beeld 17: variabelen door geven in geneste parallelle script ScriptBlockSet
+### Voorbeeld 17: Variabelen doorgeven in genest parallel script ScriptBlockSet
 
-U kunt een variabele buiten een `Foreach-Object -Parallel` scoped script Block maken en deze in de script Block gebruiken met het `$using` sleutel woord.
+U kunt een variabele buiten een `Foreach-Object -Parallel` scoped scriptblock maken en deze gebruiken in het scriptblok met het trefwoord `$using` .
 
 ```powershell
 $test1 = 'TestA'
@@ -419,15 +419,15 @@ Line |
      | The value of the using variable '$using:test2' cannot be retrieved because it has not been set in the local session.
 ```
 
-De geneste script Block heeft geen toegang tot de `$test2` variabele en er wordt een fout gegenereerd.
+Het geneste scriptblok heeft geen toegang tot de `$test2` variabele en er wordt een foutmelding weergegeven.
 
 ## Parameters
 
-### -Argument List
+### -ArgumentList
 
-Hiermee geeft u een matrix op met argumenten voor een methode aanroep. Zie [about_Splatting](about/about_Splatting.md#splatting-with-arrays)voor meer informatie over het gedrag van **argument List**.
+Hiermee geeft u een matrix van argumenten op voor een methode-aanroep. Zie voor meer informatie over het gedrag van **ArgumentList** [about_Splatting](about/about_Splatting.md#splatting-with-arrays).
 
-Deze para meter is geïntroduceerd in Windows Power Shell 3,0.
+Deze parameter is geïntroduceerd in Windows PowerShell 3.0.
 
 ```yaml
 Type: System.Object[]
@@ -443,7 +443,7 @@ Accept wildcard characters: False
 
 ### -Begin
 
-Hiermee geeft u een script blok op dat wordt uitgevoerd voordat deze cmdlet invoer objecten verwerkt. Dit script blok wordt slechts één keer uitgevoerd voor de volledige pijp lijn. Zie about_Functions voor meer informatie over het `begin` blok [](about/about_functions.md#piping-objects-to-functions).
+Hiermee geeft u een scriptblok op dat wordt uitgevoerd voordat deze cmdlet invoerobjecten verwerkt. Dit scriptblok wordt slechts één keer uitgevoerd voor de hele pijplijn. Zie voor meer informatie `begin` over het [blok about_Functions.](about/about_functions.md#piping-objects-to-functions)
 
 ```yaml
 Type: System.Management.Automation.ScriptBlock
@@ -459,7 +459,7 @@ Accept wildcard characters: False
 
 ### -End
 
-Hiermee geeft u een script blok op dat wordt uitgevoerd nadat deze cmdlet alle invoer objecten heeft verwerkt. Dit script blok wordt slechts één keer uitgevoerd voor de volledige pijp lijn. Zie about_Functions voor meer informatie over het `end` blok [](about/about_functions.md#piping-objects-to-functions).
+Hiermee geeft u een scriptblok op dat wordt uitgevoerd nadat deze cmdlet alle invoerobjecten verwerkt. Dit scriptblok wordt slechts één keer uitgevoerd voor de hele pijplijn. Zie voor meer informatie over het `end` [blok about_Functions](about/about_functions.md#piping-objects-to-functions).
 
 ```yaml
 Type: System.Management.Automation.ScriptBlock
@@ -473,12 +473,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Input object
+### -InputObject
 
-Hiermee worden de invoer objecten opgegeven. `ForEach-Object` Hiermee wordt het script blok of de bewerkings instructie voor elk invoer object uitgevoerd. Voer een variabele in die de objecten bevat, of typ een opdracht of expressie waarmee de objecten worden opgehaald.
+Hiermee geeft u de invoerobjecten. `ForEach-Object` voert het scriptblok of de bewerkingsin instructie uit op elk invoerobject. Voer een variabele in die de objecten bevat of typ een opdracht of expressie die de objecten op haalt.
 
-Wanneer u de para meter **input object** gebruikt in `ForEach-Object` plaats van de resultaten van de pijpleiding opdracht, `ForEach-Object` wordt de waarde van **input object** behandeld als een enkel object. Dit geldt ook als de waarde een verzameling is die het resultaat is van een opdracht, zoals `-InputObject (Get-Process)` .
-Omdat **input object** geen individuele eigenschappen van een matrix of verzameling van objecten kan retour neren, raden we u aan dat als u gebruikt `ForEach-Object` om bewerkingen uit te voeren op een verzameling objecten voor objecten met specifieke waarden in gedefinieerde eigenschappen, u `ForEach-Object` in de pijp lijn gebruikt, zoals wordt weer gegeven in de voor beelden in dit onderwerp.
+Wanneer u de **parameter InputObject** gebruikt met , in plaats van opdrachtresultaten door te spitten naar , wordt de `ForEach-Object` waarde `ForEach-Object` **InputObject** behandeld als één object. Dit geldt zelfs als de waarde een verzameling is die het resultaat is van een opdracht, zoals `-InputObject (Get-Process)` .
+Omdat **InputObject** geen afzonderlijke eigenschappen van een matrix of verzameling objecten kan retourneren, raden we u aan om in de pijplijn te gebruiken om bewerkingen uit te voeren op een verzameling objecten voor objecten die specifieke waarden in gedefinieerde eigenschappen hebben, zoals wordt weergegeven in de voorbeelden `ForEach-Object` in dit `ForEach-Object` onderwerp.
 
 ```yaml
 Type: System.Management.Automation.PSObject
@@ -492,14 +492,14 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Lidnaam
+### -MemberName
 
-Hiermee geeft u de eigenschap op die moet worden opgehaald of de methode die moet worden aangeroepen.
+Hiermee geeft u de eigenschap op die moet worden get of de methode die moet worden aanroepen.
 
-Joker tekens zijn toegestaan, maar werken alleen als de resulterende teken reeks wordt omgezet in een unieke waarde.
-Als u bijvoorbeeld uitvoert `Get-Process | ForEach -MemberName *Name` , komt het Joker teken patroon overeen met meer dan één lid waardoor de opdracht mislukt.
+Jokertekens zijn toegestaan, maar werken alleen als de resulterende tekenreeks wordt opgelost naar een unieke waarde.
+Als u bijvoorbeeld gebruikt, komt het jokertekenpatroon overeen met meer dan één lid, waardoor `Get-Process | ForEach -MemberName *Name` de opdracht mislukt.
 
-Deze para meter is geïntroduceerd in Windows Power Shell 3,0.
+Deze parameter is geïntroduceerd in Windows PowerShell 3.0.
 
 ```yaml
 Type: System.String
@@ -515,9 +515,9 @@ Accept wildcard characters: True
 
 ### -Proces
 
-Hiermee geeft u de bewerking op die op elk invoer object wordt uitgevoerd. Dit script blok wordt uitgevoerd voor elk object in de pijp lijn. Zie about_Functions voor meer informatie over het `process` blok [](about/about_functions.md#piping-objects-to-functions).
+Hiermee geeft u de bewerking die wordt uitgevoerd op elk invoerobject. Dit scriptblok wordt uitgevoerd voor elk object in de pijplijn. Zie voor meer informatie over het `process` [blok about_Functions](about/about_functions.md#piping-objects-to-functions).
 
-Wanneer u meerdere script blokken voor de para meter **process** opgeeft, wordt het eerste script blok altijd toegewezen aan het `begin` blok. Als er slechts twee script blokken zijn, wordt het tweede blok toegewezen aan het `process` blok. Als er drie of meer script blokken zijn, wordt het eerste script blok altijd toegewezen aan het `begin` blok, wordt het laatste blok toegewezen aan het `end` blok en worden de blokken tussen beide toegewezen aan het `process` blok.
+Wanneer u meerdere scriptblokken aan de parameter **Process** opgeeft, wordt het eerste scriptblok altijd aan het blok `begin` doorgegeven. Als er slechts twee scriptblokken zijn, wordt het tweede blok aan het blok `process` toegesneden. Als er drie of meer scriptblokken zijn, wordt het eerste scriptblok altijd aan het blok toe te staan, wordt het laatste blok aan het blok toe te staan en worden de blokken daartussen allemaal aan het blok `begin` `end` `process` toegesneden.
 
 ```yaml
 Type: System.Management.Automation.ScriptBlock[]
@@ -533,9 +533,9 @@ Accept wildcard characters: False
 
 ### -RemainingScripts
 
-Hiermee geeft u alle script blokken op die niet worden gebruikt door de **proces** parameter.
+Hiermee geeft u alle scriptblokken op die niet worden gebruikt door de parameter **Process.**
 
-Deze para meter is geïntroduceerd in Windows Power Shell 3,0.
+Deze parameter is geïntroduceerd in Windows PowerShell 3.0.
 
 ```yaml
 Type: System.Management.Automation.ScriptBlock[]
@@ -551,9 +551,9 @@ Accept wildcard characters: False
 
 ### -Parallel
 
-Hiermee geeft u het script blok op dat moet worden gebruikt voor parallelle verwerking van invoer objecten. Voer een script blok in dat de bewerking beschrijft.
+Hiermee geeft u het scriptblok moet worden gebruikt voor parallelle verwerking van invoerobjecten. Voer een scriptblok in dat de bewerking beschrijft.
 
-Deze para meter is geïntroduceerd in Power shell 7,0.
+Deze parameter is geïntroduceerd in PowerShell 7.0.
 
 ```yaml
 Type: System.Management.Automation.ScriptBlock
@@ -569,9 +569,9 @@ Accept wildcard characters: False
 
 ### -ThrottleLimit
 
-Hiermee geeft u het aantal script blokken op dat parallel is. Invoer objecten worden geblokkeerd totdat het aantal actieve script blokken onder het **ThrottleLimit** valt. De standaardwaarde is `5`.
+Hiermee geeft u het aantal scriptblokken op dat parallel wordt uitgevoerd. Invoerobjecten worden geblokkeerd totdat het aantal blokkeringen van lopende scripts onder **throttleLimit valt.** De standaardwaarde is `5`.
 
-Deze para meter is geïntroduceerd in Power shell 7,0.
+Deze parameter is geïntroduceerd in PowerShell 7.0.
 
 ```yaml
 Type: System.Int32
@@ -587,9 +587,9 @@ Accept wildcard characters: False
 
 ### -TimeoutSeconds
 
-Hiermee geeft u het aantal seconden op dat moet worden gewacht totdat alle invoer parallel wordt verwerkt. Na de opgegeven time-outperiode worden alle actieve scripts gestopt. En alle resterende invoer objecten die moeten worden verwerkt, worden genegeerd. De standaard waarde van `0` de time-out uitschakelen en `ForEach-Object -Parallel` kan oneindig worden uitgevoerd. Als u <kbd>CTRL</kbd> + <kbd>C</kbd> op de opdracht regel typt, wordt een uitvoering van de `ForEach-Object -Parallel` opdracht gestopt. Deze para meter kan niet worden gebruikt in combi natie met de para meter **AsJob** .
+Hiermee geeft u het aantal seconden op dat moet worden gewacht totdat alle invoer parallel wordt verwerkt. Na de opgegeven time-outtijd worden alle scripts gestopt die worden uitgevoerd. En alle resterende invoerobjecten die moeten worden verwerkt, worden genegeerd. De standaardwaarde `0` van schakelt de time-out uit en `ForEach-Object -Parallel` kan voor onbepaalde tijd worden uitgevoerd. Als <kbd>u Ctrl</kbd> + <kbd>C op</kbd> de opdrachtregel typt, wordt een lopende opdracht `ForEach-Object -Parallel` gestopt. Deze parameter kan niet worden gebruikt samen met de **AsJob** parameter.
 
-Deze para meter is geïntroduceerd in Power shell 7,0.
+Deze parameter is geïntroduceerd in PowerShell 7.0.
 
 ```yaml
 Type: System.Int32
@@ -605,11 +605,11 @@ Accept wildcard characters: False
 
 ### -UseNewRunspace
 
-Zorgt ervoor dat de parallelle aanroep een nieuwe runs Pace voor elke lus-iteratie maakt in plaats van runspaces uit de runs Pace-groep opnieuw te gebruiken.
+Zorgt ervoor dat de parallelle aanroep een nieuwe runspace maakt voor elke herhaling van lussen in plaats van runspaces uit de runspace-pool opnieuw te gebruiken.
 
-Deze para meter is geïntroduceerd in Power shell 7,1
+Deze parameter is geïntroduceerd in PowerShell 7.1
 
-```yml
+```yaml
 Type: SwitchParameter
 Parameter Sets: ParallelParameterSet
 Aliases:
@@ -623,9 +623,9 @@ Accept wildcard characters: False
 
 ### -AsJob
 
-Zorgt ervoor dat de parallelle aanroep als een Power shell-taak wordt uitgevoerd. Er wordt één taak object geretourneerd in plaats van uitvoer van de actieve script blokken. Het taak object bevat onderliggende taken voor elk parallel-script blok dat wordt uitgevoerd. Het taak object kan worden gebruikt door alle Power shell-taak-cmdlets, om de uitvoerings status te controleren en gegevens op te halen.
+Zorgt ervoor dat de parallelle aanroep wordt uitgevoerd als een PowerShell-taak. Er wordt één taakobject geretourneerd in plaats van uitvoer van de lopende scriptblokken. Het taakobject bevat onderliggende taken voor elk parallel scriptblok dat wordt uitgevoerd. Het taakobject kan worden gebruikt door alle PowerShell-taak-cmdlets om de status van de lopende taak te bewaken en gegevens op te halen.
 
-Deze para meter is geïntroduceerd in Power shell 7,0.
+Deze parameter is geïntroduceerd in PowerShell 7.0.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -673,52 +673,52 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable. Zie [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)voor meer informatie.
+Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable. Zie voor meer informatie [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## Invoerwaarden
 
-### System. Management. Automation. PSObject
+### System.Management.Automation.PSObject
 
-U kunt elk object door sluizen naar deze cmdlet.
+U kunt elk object doorseen naar deze cmdlet.
 
 ## Uitvoerwaarden
 
-### System. Management. Automation. PSObject
+### System.Management.Automation.PSObject
 
 Deze cmdlet retourneert objecten die worden bepaald door de invoer.
 
 ## Notities
 
-- De `ForEach-Object` cmdlet werkt op dezelfde manier als de **foreach** -instructie, behalve dat u invoer niet kunt door sluizen naar een **foreach** -instructie. Zie [about_Foreach](./About/about_Foreach.md)voor meer informatie over de instructie **foreach** .
+- De `ForEach-Object` cmdlet werkt op dezelfde als de **Foreach-instructie,** behalve dat u geen invoer kunt doorspijpen naar een **Foreach-instructie.** Zie voor meer informatie over de **Foreach-instructie** [about_Foreach.](./About/about_Foreach.md)
 
-- Vanaf Power Shell 4,0 `Where` en `ForEach` methoden zijn toegevoegd voor gebruik met verzamelingen. U kunt hier meer lezen over deze nieuwe methoden [about_arrays](./About/about_Arrays.md)
+- Vanaf PowerShell 4.0 zijn er methoden toegevoegd voor `Where` `ForEach` gebruik met verzamelingen. Meer informatie over deze nieuwe methoden vindt u [hier about_arrays](./About/about_Arrays.md)
 
-- De `ForEach-Object -Parallel` para meter set gebruikt de interne API van Power shell om elk script blok uit te voeren. Dit is aanzienlijk meer overhead dan `ForEach-Object` normaal uitvoeren met sequentiële verwerking. Het is belang rijk om **parallel** te gebruiken waarbij de overhead van parallelle uitvoering klein is in vergelijking met het werk dat door het script blok wordt uitgevoerd. Bijvoorbeeld:
+- De `ForEach-Object -Parallel` parameterset maakt gebruik van de interne API van PowerShell om elk scriptblok uit te voeren. Dit is aanzienlijk meer overhead dan normaal `ForEach-Object` uitvoeren met sequentiële verwerking. Het is belangrijk om Parallel te **gebruiken,** waarbij de overhead van het parallel uitvoeren klein is in vergelijking met het werk dat het scriptblok uitvoert. Bijvoorbeeld:
 
-  - Computerintensieve scripts op multicore-computers
-  - Scripts die tijd wachten op resultaten of het uitvoeren van bestands bewerkingen
+  - Rekenintensieve scripts op computers met meerdere kernen
+  - Scripts die tijd besteden aan het wachten op resultaten of het uitvoeren van bestandsbewerkingen
 
-  Het gebruik van de **parallelle** para meter kan ertoe leiden dat scripts veel langzamer worden uitgevoerd dan normaal. Met name als de parallelle scripts trivial zijn. Experimenteer met **parallel** om te ontdekken waar het nuttig kan zijn.
+  Het gebruik **van de** parameter Parallel kan ertoe leiden dat scripts veel langzamer worden uitgevoerd dan normaal. Met name als de parallelle scripts eenvoudig zijn. Experimenteer **met Parallel** om te ontdekken waar het nuttig kan zijn.
 
-- [PipelineVariable](About/about_CommonParameters.md) common para meter-variabelen worden _niet_ ondersteund in scenario's, `Foreach-Object -Parallel` zelfs niet met het `$using:` sleutel woord.
+- [Veelvoorkomende parametervariabelen voor PipelineVariable](About/about_CommonParameters.md) worden niet ondersteund in  `Foreach-Object -Parallel` scenario's, zelfs niet met het `$using:` trefwoord .
 
   > [!IMPORTANT]
-  > `ForEach-Object -Parallel`Met de parameterset worden script blokken parallel uitgevoerd in afzonderlijke proces threads. Met het `$using:` sleutel woord kunnen variabelen verwijzingen door geven van de aanroep thread van de cmdlet naar elke actieve script blok thread. Aangezien de script blokken worden uitgevoerd in verschillende threads, moeten de object variabelen die worden door gegeven door verwijzing, veilig worden gebruikt. Over het algemeen is het veilig om te lezen van objecten waarnaar wordt verwezen en die niet worden gewijzigd. Maar als de object status wordt gewijzigd, moet u de beveiligde objecten van de thread gebruiken, zoals .net **System. verzameling. gelijktijdige** typen (Zie voor beeld 11).
+  > Met `ForEach-Object -Parallel` de parameterset worden scriptblokken parallel uitgevoerd op afzonderlijke procesthreads. Met `$using:` het trefwoord kunnen variabelenverwijzingen van de cmdlet-aanroepthread worden doorgeven aan elke thread met het lopende scriptblok. Omdat de scriptblokken worden uitgevoerd in verschillende threads, moeten de objectvariabelen die worden doorgegeven door verwijzing veilig worden gebruikt. Over het algemeen is het veilig om te lezen van objecten waarnaar wordt verwezen en die niet worden gewijzigd. Maar als de objecttoestand wordt gewijzigd, moet u thread-veilige objecten gebruiken, zoals .NET **System.Collection.Concurrent-typen** (zie voorbeeld 11).
 
 ## Verwante koppelingen
 
-[Compare-object](../Microsoft.PowerShell.Utility/Compare-Object.md)
+[Compare-Object](../Microsoft.PowerShell.Utility/Compare-Object.md)
 
-[Where-object](Where-Object.md)
+[Where-Object](Where-Object.md)
 
-[Groep-object](../Microsoft.PowerShell.Utility/Group-Object.md)
+[Group-Object](../Microsoft.PowerShell.Utility/Group-Object.md)
 
-[Meting object](../Microsoft.PowerShell.Utility/Measure-Object.md)
+[Measure-Object](../Microsoft.PowerShell.Utility/Measure-Object.md)
 
 [New-Object](../Microsoft.PowerShell.Utility/New-Object.md)
 
 [Select-Object](../Microsoft.PowerShell.Utility/Select-Object.md)
 
-[Sorteer object](../Microsoft.PowerShell.Utility/Sort-Object.md)
+[Sort-Object](../Microsoft.PowerShell.Utility/Sort-Object.md)
 
-[T-object](../Microsoft.PowerShell.Utility/Tee-Object.md)
+[Tee-Object](../Microsoft.PowerShell.Utility/Tee-Object.md)

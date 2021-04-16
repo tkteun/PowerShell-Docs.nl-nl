@@ -7,17 +7,17 @@ ms.date: 07/27/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/convertfrom-securestring?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertFrom-SecureString
-ms.openlocfilehash: ed9ef1102c1e34670b3cb5664a227f86124812a0
-ms.sourcegitcommit: b7ff031a12afd04910aeb98345ebee92f5845b0c
+ms.openlocfilehash: d1d85df9d1620bb55a7ef80394dc0f84bf99926d
+ms.sourcegitcommit: 366304d096c1caf52f0e17962f6ed23d20f86e7b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "93251683"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107543831"
 ---
 # ConvertFrom-SecureString
 
 ## SAMENVATTING
-Converteert een beveiligde teken reeks naar een versleutelde standaard teken reeks.
+Converteert een beveiligde tekenreeks naar een versleutelde standaardreeks.
 
 ## SYNTAXIS
 
@@ -41,47 +41,47 @@ ConvertFrom-SecureString [-SecureString] <SecureString> [-Key <Byte[]>] [<Common
 
 ## BESCHRIJVING
 
-Met de cmdlet **ConvertFrom-SecureString** wordt een beveiligde teken reeks ( **System. Security. SecureString** ) geconverteerd naar een versleutelde standaard teken reeks ( **System. String** ). In tegens telling tot een beveiligde teken reeks kan een gecodeerde standaard teken reeks worden opgeslagen in een bestand voor later gebruik. De versleutelde standaard teken reeks kan worden teruggeconverteerd naar de beveiligde teken reeks indeling met behulp van de- `ConvertTo-SecureString` cmdlet.
+De **cmdlet ConvertFrom-SecureString** converteert een beveiligde tekenreeks (**System.Security.SecureString**) naar een versleutelde standaardtekenreeks (**System.String**). In tegenstelling tot een beveiligde tekenreeks kan een versleutelde standaardreeks worden opgeslagen in een bestand voor later gebruik. De versleutelde standaardreeks kan met behulp van de cmdlet worden geconverteerd naar de veilige `ConvertTo-SecureString` tekenreeksindeling.
 
-Als een versleutelings sleutel is opgegeven met behulp van de **sleutel** -of **SecureKey** para meters, wordt het versleutelings ALGORITME voor Advanced Encryption Standard (AES) gebruikt. De opgegeven sleutel moet een lengte hebben van 128, 192 of 256 bits, omdat dit de sleutel lengtes zijn die worden ondersteund door de AES-versleutelings algoritme. Als er geen sleutel is opgegeven, wordt de Windows Data Protection API (DPAPI) gebruikt om de standaard teken reeks representatie te versleutelen.
+Als een versleutelingssleutel wordt opgegeven met behulp van de parameters **Sleutel** of **SecureKey,** wordt Advanced Encryption Standard AES-versleutelingsalgoritme gebruikt. De opgegeven sleutel moet een lengte van 128, 192 of 256 bits hebben, omdat dit de sleutellengten zijn die worden ondersteund door het AES-versleutelingsalgoritme. Als er geen sleutel is opgegeven, wordt de Windows Data Protection API (DPAPI) gebruikt voor het versleutelen van de standaardreeksweergave.
 
 > [!NOTE]
-> Houd er rekening mee dat de inhoud van een SecureString per [DotNet](/dotnet/api/system.security.securestring?view=netcore-2.1#remarks)niet wordt versleuteld op niet-Windows-systemen.
+> Houd er rekening mee dat de inhoud van een SecureString per [DotNet](/dotnet/api/system.security.securestring?view=netcore-2.1#remarks)niet is versleuteld op niet-Windows-systemen.
 
 ## VOORBEELDEN
 
-### Voor beeld 1: een veilige teken reeks maken
+### Voorbeeld 1: Een beveiligde tekenreeks maken
 
 ```powershell
 $SecureString = Read-Host -AsSecureString
 ```
 
-Met deze opdracht maakt u een beveiligde teken reeks van tekens die u typt bij de opdracht prompt. Nadat u de opdracht hebt ingevoerd, typt u de teken reeks die u wilt opslaan als een veilige teken reeks. Er wordt een asterisk ( `*` ) weer gegeven voor elk teken dat u typt.
+Met deze opdracht maakt u een beveiligde tekenreeks van tekens die u typt bij de opdrachtprompt. Nadat u de opdracht hebt invoeren, typt u de tekenreeks die u wilt opslaan als een beveiligde tekenreeks. Er wordt een sterretje ( `*` ) weergegeven om elk teken weer te geven dat u typt.
 
-### Voor beeld 2: een beveiligde teken reeks converteren naar een versleutelde standaard teken reeks
+### Voorbeeld 2: Een beveiligde tekenreeks converteren naar een versleutelde standaardreeks
 
 ```powershell
 $StandardString = ConvertFrom-SecureString $SecureString
 ```
 
-Met deze opdracht wordt de beveiligde teken reeks in de `$SecureString` variabele geconverteerd naar een versleutelde standaard teken reeks. De resulterende versleutelde standaard teken reeks wordt opgeslagen in de `$StandardString` variabele.
+Met deze opdracht wordt de beveiligde tekenreeks in de `$SecureString` variabele ge converteerd naar een versleutelde standaardreeks. De resulterende versleutelde standaardreeks wordt opgeslagen in de `$StandardString` variabele .
 
-### Voor beeld 3: een beveiligde teken reeks converteren naar een versleutelde standaard teken reeks met een 192-bits sleutel
+### Voorbeeld 3: Een beveiligde tekenreeks converteren naar een versleutelde standaardreeks met een 192-bits sleutel
 
 ```powershell
 $Key = (3,4,2,3,56,34,254,222,1,1,2,23,42,54,33,233,1,34,2,7,6,5,35,43)
 $StandardString = ConvertFrom-SecureString $SecureString -Key $Key
 ```
 
-Deze opdrachten gebruiken het Advanced Encryption Standard (AES)-algoritme voor het converteren van de beveiligde teken reeks die is opgeslagen in de `$SecureString` variabele naar een versleutelde standaard teken reeks met een 192-bits sleutel. De resulterende versleutelde standaard teken reeks wordt opgeslagen in de `$StandardString` variabele.
+Deze opdrachten gebruiken het AES-algoritme (Advanced Encryption Standard) om de beveiligde tekenreeks die is opgeslagen in de variabele te converteren naar een versleutelde standaardreeks met een `$SecureString` 192-bits sleutel. De resulterende versleutelde standaardreeks wordt opgeslagen in de `$StandardString` variabele .
 
-Met de eerste opdracht wordt een sleutel in de `$Key` variabele opgeslagen. De sleutel is een matrix van 24 decimale cijfers, die elk kleiner dan 256 moeten zijn om te passen binnen één niet-ondertekende byte.
+De eerste opdracht slaat een sleutel op in de `$Key` variabele . De sleutel is een matrix van 24 decimale cijfers, die elk minder dan 256 moeten zijn om binnen één niet-ondertekende byte te passen.
 
-Omdat elk decimaal getal bestaat uit één byte (8 bits), heeft de sleutel 24 cijfers voor een totaal van 192 bits (8 x 24). Dit is een geldige sleutel lengte voor het AES-algoritme.
+Omdat elk decimaal getal één byte (8 bits) vertegenwoordigt, heeft de sleutel 24 cijfers voor een totaal van 192 bits (8 x 24). Dit is een geldige sleutellengte voor het AES-algoritme.
 
-Met de tweede opdracht wordt de sleutel in de `$Key` variabele gebruikt om de beveiligde teken reeks om te zetten in een versleutelde standaard teken reeks.
+De tweede opdracht maakt gebruik van de sleutel in de `$Key` variabele om de beveiligde tekenreeks te converteren naar een versleutelde standaardreeks.
 
-### Voor beeld 4: een beveiligde teken reeks rechtstreeks naar een teken reeks met lees bare tekst converteren
+### Voorbeeld 4: Een beveiligde tekenreeks rechtstreeks converteren naar een tekenreeks met tekst zonder tekst
 
 ```powershell
 $secureString = ConvertTo-SecureString -String 'Example' -AsPlainText
@@ -93,9 +93,9 @@ ConvertFrom-SecureString -SecureString $secureString -AsPlainText # 'Example'
 
 ### -AsPlainText
 
-Als deze instelling is ingesteld, `ConvertFrom-SecureString` worden beveiligde teken reeksen geconverteerd naar de ontsleutelde teken reeks als uitvoer.
+Wanneer deze is ingesteld, `ConvertFrom-SecureString` converteert beveiligde tekenreeksen naar de ontsleutelde tekenreeks met platte tekst als uitvoer.
 
-Deze para meter is toegevoegd aan Power shell 7,0.
+Deze parameter is toegevoegd in PowerShell 7.0.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -111,7 +111,7 @@ Accept wildcard characters: False
 
 ### -Sleutel
 
-Hiermee geeft u de versleutelings sleutel als een byte matrix.
+Hiermee geeft u de versleutelingssleutel op als een bytematrix.
 
 ```yaml
 Type: System.Byte[]
@@ -127,7 +127,7 @@ Accept wildcard characters: False
 
 ### -SecureKey
 
-Hiermee geeft u de versleutelings sleutel als een beveiligde teken reeks. De waarde van de beveiligde teken reeks wordt geconverteerd naar een byte matrix voordat deze wordt gebruikt als de sleutel.
+Hiermee geeft u de versleutelingssleutel op als een beveiligde tekenreeks. De waarde van de beveiligde tekenreeks wordt geconverteerd naar een bytematrice voordat deze als sleutel wordt gebruikt.
 
 ```yaml
 Type: System.Security.SecureString
@@ -143,7 +143,7 @@ Accept wildcard characters: False
 
 ### -SecureString
 
-Hiermee geeft u de beveiligde teken reeks op die moet worden geconverteerd naar een versleutelde standaard teken reeks.
+Hiermee geeft u de beveiligde tekenreeks om te converteren naar een versleutelde standaardreeks.
 
 ```yaml
 Type: System.Security.SecureString
@@ -159,30 +159,30 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-Deze cmdlet biedt ondersteuning voor de algemene para meters: `-Debug` , `-ErrorAction` , `-ErrorVariable` , `-InformationAction` , `-InformationVariable` , `-OutVariable` , `-OutBuffer` , `-PipelineVariable` , `-Verbose` , `-WarningAction` en `-WarningVariable` .
-Zie [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)voor meer informatie.
+Deze cmdlet ondersteunt de algemene parameters: `-Debug` , , , , , , , , `-ErrorAction` , , en `-ErrorVariable` `-InformationAction` `-InformationVariable` `-OutVariable` `-OutBuffer` `-PipelineVariable` `-Verbose` `-WarningAction` `-WarningVariable` .
+Zie voor meer informatie [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INVOER
 
-### System. Security. SecureString
+### System.Security.SecureString
 
-U kunt een **SecureString** -object door sluizen naar ConvertFrom-SecureString.
+U kunt een **SecureString-object** doorseen naar ConvertFrom-SecureString.
 
 ## UITVOER
 
-### System. String
+### System.String
 
-ConvertFrom-SecureString retourneert een standaard teken reeks object.
+ConvertFrom-SecureString retourneert een standaard-tekenreeksobject.
 
 ## OPMERKINGEN
 
-- Gebruik de para meter **AsSecureString** van de cmdlet om een beveiligde teken reeks te maken van tekens die worden getypt bij de opdracht prompt `Read-Host` .
-- Wanneer u de para meters **Key** of **SecureKey** gebruikt om een sleutel op te geven, moet de sleutel lengte juist zijn. Een sleutel van 128 bits kan bijvoorbeeld worden opgegeven als een byte matrix van 16 decimalen.
-  Op dezelfde manier komen 192 bits-en 256-bits sleutels overeen met een byte matrix van respectievelijk 24 en 32 decimale cijfers.
-- Sommige tekens, zoals emoticons, komen overeen met verschillende code punten in de teken reeks die ze bevatten. Vermijd het gebruik van deze tekens omdat deze problemen kunnen veroorzaken en de oorzaak is van het gebruik van een wacht woord.
+- Als u een beveiligde tekenreeks wilt maken van tekens die zijn getypt bij de opdrachtprompt, gebruikt u de parameter **AsSecureString** van de `Read-Host` cmdlet .
+- Wanneer u de parameters **Sleutel** of **SecureKey gebruikt om** een sleutel op te geven, moet de sleutellengte juist zijn. Een sleutel van 128 bits kan bijvoorbeeld worden opgegeven als een bytematrix van 16 decimale cijfers.
+  Op dezelfde manier komen 192-bits en 256-bits sleutels overeen met bytematrixen van respectievelijk 24 en 32 decimale cijfers.
+- Sommige tekens, zoals emoticons, komen overeen met verschillende codepunten in de tekenreeks die ze bevat. Vermijd het gebruik van deze tekens, omdat deze problemen en misvattingen kunnen veroorzaken bij gebruik in een wachtwoord.
 
 ## GERELATEERDE KOPPELINGEN
 
 [ConvertTo-SecureString](ConvertTo-SecureString.md)
 
-[Read-host](../Microsoft.PowerShell.Utility/Read-Host.md)
+[Read-Host](../Microsoft.PowerShell.Utility/Read-Host.md)

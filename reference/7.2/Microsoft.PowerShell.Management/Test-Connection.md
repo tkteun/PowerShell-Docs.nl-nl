@@ -6,17 +6,17 @@ ms.date: 12/12/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/test-connection?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Test-Connection
-ms.openlocfilehash: af8a953536bb9683ba737522ad738348c5c695e2
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: f859ed0fd704ccdaf2561db9c952cbada88f18d8
+ms.sourcegitcommit: 366304d096c1caf52f0e17962f6ed23d20f86e7b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94705948"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107543760"
 ---
 # Test-Connection
 
 ## SAMENVATTING
-Verzendt ICMP echo aanvraag pakketten of pings naar een of meer computers.
+VERZENDT ICMP-echoaanvraagpakketten of pings naar een of meer computers.
 
 ## SYNTAXIS
 
@@ -43,7 +43,7 @@ Test-Connection [-TargetName] <string[]> -MtuSize [-IPv4] [-IPv6] [-ResolveDesti
  [-TimeoutSeconds <int>] [-Quiet] [<CommonParameters>]
 ```
 
-### TraceRoute
+### Traceroute
 
 ```
 Test-Connection [-TargetName] <string[]> -Traceroute [-IPv4] [-IPv6] [-ResolveDestination]
@@ -59,17 +59,17 @@ Test-Connection [-TargetName] <string[]> -TcpPort <int> [-IPv4] [-IPv6] [-Resolv
 
 ## BESCHRIJVING
 
-De `Test-Connection` cmdlet stuurt Internet Control Message Protocol (ICMP) Echo aanvraag pakketten of pings naar een of meer externe computers en retourneert de antwoorden op de echo reactie. U kunt deze cmdlet gebruiken om te bepalen of er verbinding kan worden gemaakt met een bepaalde computer via een IP-netwerk.
+De `Test-Connection` cmdlet verzendt Internet Control Message Protocol (ICMP) echoaanvraagpakketten, of pings, naar een of meer externe computers en retourneert de antwoorden op de echoreactie. U kunt deze cmdlet gebruiken om te bepalen of er contact kan worden gemaakt met een bepaalde computer via een IP-netwerk.
 
-U kunt de para meters van gebruiken `Test-Connection` om zowel de verzendende als ontvangende computers op te geven om de opdracht als achtergrond taak uit te voeren, om een time-out en een aantal pings in te stellen en om de verbinding en verificatie te configureren.
+U kunt de parameters van gebruiken om zowel de verzendende als ontvangende computers op te geven, de opdracht uit te voeren als achtergrondopdracht, een time-out en aantal pings in te stellen en de verbinding en verificatie `Test-Connection` te configureren.
 
-In tegens telling tot de bekende **ping** -opdracht `Test-Connection` retourneert een **TestConnectionCommand + PingStatus** -object dat u kunt onderzoeken in Power shell. De **stille** para meter retourneert een **Boole** -waarde in een object **System. Boolean** voor elke geteste verbinding. Als er meerdere verbindingen worden getest, wordt een matrix met **Boole** -waarden geretourneerd.
+In tegenstelling tot de **bekende ping** opdracht `Test-Connection` retourneert een **TestConnectionCommand + PingStatus-object** dat u kunt onderzoeken in PowerShell. De **parameter Quiet** retourneert een **Booleaanse waarde** in een **System.Boolean-object** voor elke geteste verbinding. Als meerdere verbindingen worden getest, wordt een matrix met **Booleaanse** waarden geretourneerd.
 
 ## VOORBEELDEN
 
-### Voor beeld 1: ECHO aanvragen verzenden naar een externe computer
+### Voorbeeld 1: Echoaanvragen verzenden naar een externe computer
 
-In dit voor beeld worden ECHO aanvraag pakketten van de lokale computer verzonden naar de Server01-computer.
+In dit voorbeeld verzendt echoaanvraagpakketten van de lokale computer naar de computer Server01.
 
 ```powershell
 Test-Connection -TargetName Server01 -IPv4
@@ -87,60 +87,60 @@ Ping Source           Address                   Latency BufferSize Status
    4 ADMIN1           10.59.137.44                   28         32 Success
 ```
 
-`Test-Connection` maakt gebruik van de **TargetName** -para meter om de Server01-computer op te geven. De **IPv4** -para meter geeft u het protocol voor de test op.
+`Test-Connection` gebruikt de **TargetName** parameter opgeven voor de Server01-computer. De **IPv4** parameter geeft u het protocol voor de test.
 
-Er wordt een reeks TestConnectionCommand-en **PingStatus** -objecten verzonden naar de uitvoer stroom, één object per ping-antwoord van de doel computer.
+Er wordt een **reeks TestConnectionCommand+PingStatus-objecten** verzonden naar de uitvoerstroom, één object per pingantwoord van de doelmachine.
 
-### Voor beeld 2: ECHO aanvragen verzenden naar verschillende computers
+### Voorbeeld 2: Echoaanvragen verzenden naar verschillende computers
 
-In dit voor beeld worden pings van de lokale computer naar verschillende externe computers verzonden.
+In dit voorbeeld worden pings vanaf de lokale computer naar verschillende externe computers verzendt.
 
 ```powershell
 Test-Connection -TargetName Server01, Server02, Server12
 ```
 
-### Voor beeld 3: para meters gebruiken voor het aanpassen van de test opdracht
+### Voorbeeld 3: Parameters gebruiken om de testopdracht aan te passen
 
-In dit voor beeld worden de para meters van gebruikt `Test-Connection` voor het aanpassen van de opdracht. De lokale computer verzendt een ping-test naar een externe computer.
+In dit voorbeeld worden de parameters van gebruikt `Test-Connection` om de opdracht aan te passen. De lokale computer verzendt een pingtest naar een externe computer.
 
 ```powershell
 Test-Connection -TargetName Server01 -Count 3 -Delay 2 -MaxHops 255 -BufferSize 256
 ```
 
-`Test-Connection` maakt gebruik van de para meter **TargetName** om Server01 op te geven. De para meter **aantal** geeft aan dat drie pings worden verzonden naar de Server01-computer, met een **vertraging** van twee seconden intervallen.
+`Test-Connection` gebruikt de **TargetName** parameter server01 opgeven. De **aantal** parameter geeft u drie pings worden verzonden naar de server01 computer met een **vertraging** van 2 seconden intervallen.
 
-U kunt deze opties gebruiken wanneer het ping-antwoord naar verwachting langer duurt dan normaal, ofwel vanwege een uitgebreid aantal hops of een netwerk toestand met een hoog verkeer.
+U kunt deze opties gebruiken wanneer het ping-antwoord naar verwachting langer duurt dan normaal, vanwege een groot aantal hops of een netwerkvoorwaarde met veel verkeer.
 
-### Voor beeld 4: een test uitvoeren als een achtergrond taak
+### Voorbeeld 4: Een test uitvoeren als achtergrond job
 
-In dit voor beeld ziet u hoe u een `Test-Connection` opdracht uitvoert als een Power shell-achtergrond taak.
+In dit voorbeeld ziet u hoe u een opdracht `Test-Connection` kunt uitvoeren als een PowerShell-achtergrondopdracht.
 
 ```powershell
 $job = Start-Job -ScriptBlock { Test-Connection -TargetName (Get-Content -Path "Servers.txt") }
 $Results = Receive-Job $job -Wait
 ```
 
-De `Start-Job` opdracht gebruikt de `Test-Connection` cmdlet voor het pingen van veel computers in een onderneming.
-De waarde van de **TargetName** -para meter is een `Get-Content` opdracht waarmee een lijst met computer namen uit het `Servers.txt` bestand wordt gelezen. De opdracht gebruikt de `Start-Job` cmdlet om de opdracht uit te voeren als een achtergrond taak en de taak wordt opgeslagen in de `$job` variabele.
+De `Start-Job` opdracht gebruikt de `Test-Connection` cmdlet om veel computers in een onderneming te pingen.
+De waarde van de **TargetName** parameter is een opdracht die een lijst met `Get-Content` computernamen uit het bestand `Servers.txt` leest. De opdracht gebruikt de cmdlet om de opdracht als achtergrond job uit te voeren en `Start-Job` slaat de taak op in de variabele `$job` .
 
-De `Receive-Job` opdracht wordt geïnstrueerd `-Wait` totdat de taak is voltooid, waarna de resultaten worden opgehaald en opgeslagen in de `$Results` variabele.
+De `Receive-Job` opdracht wordt geïnstrueerd totdat de taak is voltooid, waarna de resultaten worden op halen `-Wait` en in de variabele worden op `$Results` slaat.
 
-### Voor beeld 5: een sessie alleen maken als de verbindings test is geslaagd
+### Voorbeeld 5: Alleen een sessie maken als een verbindingstest is geslaagd
 
-In dit voor beeld wordt alleen een sessie op de Server01-computer gemaakt als ten minste één van de pings die naar de computer worden verzonden, slaagt.
+In dit voorbeeld maakt u een sessie op de computer Server01 alleen als ten minste een van de pings verzonden naar de computer slaagt.
 
 ```powershell
 if (Test-Connection -TargetName Server01 -Quiet) { New-PSSession -ComputerName Server01 }
 ```
 
-De `Test-Connection` cmdlet pingt de `Server01` computer, waarbij de **stille** para meter wordt gegeven.
+De `Test-Connection` cmdlet pingt de `Server01` computer, met de **parameter Quiet** opgegeven.
 De resulterende waarde is `$True` als een van de vier pings slaagt. Als geen van de pings slaagt, is de waarde `$False` .
 
-Als de `Test-Connection` opdracht een waarde retourneert `$True` , gebruikt de opdracht de `New-PSSession` cmdlet om de **PSSession** te maken.
+Als de `Test-Connection` opdracht een waarde van retourneert, gebruikt de opdracht de `$True` `New-PSSession` cmdlet om de **PSSession te maken.**
 
-### Voor beeld 6: de para meter traceroute gebruiken
+### Voorbeeld 6: De parameter Traceroute gebruiken
 
-De **traceroute** -para meter is geïntroduceerd in power shell 6,0 en wijst een route toe tussen de lokale computer en de externe bestemming die u opgeeft met de para meter **TargetName** .
+De parameter **Traceroute,** geïntroduceerd in PowerShell 6.0, wijs een route toe tussen de lokale computer en de externe bestemming die u opgeeft met de parameter **TargetName.**
 
 ```powershell
 Test-Connection -TargetName www.google.com -Traceroute
@@ -187,13 +187,13 @@ Hop Hostname                  Ping Latency Status           Source       TargetA
  11 172.217.9.174                3      22 Success          Lira         172.217.9.174
 ```
 
-De `Test-Connection` opdracht wordt aangeroepen met de para meter **traceroute** . De resultaten, die `[Microsoft.PowerShell.Commands.TestConnectionCommand+TraceStatus]` objecten zijn, worden uitgevoerd naar de uitvoer stroom **geslaagd** .
+De `Test-Connection` opdracht wordt aangeroepen met de parameter **Traceroute.** De resultaten, die objecten `[Microsoft.PowerShell.Commands.TestConnectionCommand+TraceStatus]` zijn, worden uitgevoerd naar de **uitvoerstroom Geslaagd.**
 
 ## PARAMETERS
 
 ### -BufferSize
 
-Hiermee geeft u de grootte, in bytes, van de buffer die met deze opdracht wordt verzonden. De standaard waarde is 32.
+Hiermee geeft u de grootte, in bytes, van de buffer verzonden met deze opdracht. De standaardwaarde is 32.
 
 ```yaml
 Type: System.Int32
@@ -207,9 +207,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -REPEAT
+### -Herhalen
 
-Zorgt ervoor dat de cmdlet doorlopend ping-aanvragen verzendt. Deze para meter kan niet worden gebruikt met de para meter **Count** .
+Zorgt ervoor dat de cmdlet continu ping-aanvragen verzendt. Deze parameter kan niet worden gebruikt met de parameter **Count.**
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -225,7 +225,7 @@ Accept wildcard characters: False
 
 ### -Aantal
 
-Hiermee geeft u het aantal ECHO aanvragen dat moet worden verzonden. De standaardwaarde is 4.
+Hiermee geeft u het aantal echoaanvragen te verzenden. De standaardwaarde is 4.
 
 ```yaml
 Type: System.Int32
@@ -241,7 +241,7 @@ Accept wildcard characters: False
 
 ### -Vertraging
 
-Hiermee geeft u het interval tussen pings op, in seconden.
+Hiermee geeft u het interval tussen pings, in seconden.
 
 ```yaml
 Type: System.Int32
@@ -257,7 +257,7 @@ Accept wildcard characters: False
 
 ### -DontFragment
 
-Met deze para meter wordt de vlag **don't fragment** in de IP-header ingesteld. U kunt deze para meter met de waarde **BufferSize** gebruiken om de grootte van het pad MTU te testen. Zie het artikel [Path MTU Discovery](https://wikipedia.org/wiki/Path_MTU_Discovery) in Wikipedia voor meer informatie over Path MTU.
+Met deze parameter stelt u **de vlag Niet fragment in** de IP-header in. U kunt deze parameter gebruiken met de **parameter BufferSize** om de MTU-grootte van het pad te testen. Zie het artikel Path MTU Discovery (MTU-detectiepad) op Wikipedia voor meer informatie over Path [MTU.](https://wikipedia.org/wiki/Path_MTU_Discovery)
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -273,7 +273,7 @@ Accept wildcard characters: False
 
 ### -IPv4
 
-Hiermee wordt de cmdlet gedwongen het IPv4-protocol voor de test te gebruiken.
+Dwingt de cmdlet om het IPv4-protocol voor de test te gebruiken.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -289,7 +289,7 @@ Accept wildcard characters: False
 
 ### -IPv6
 
-Hiermee wordt de cmdlet gedwongen het IPv6-protocol voor de test te gebruiken.
+Dwingt de cmdlet om het IPv6-protocol voor de test te gebruiken.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -305,7 +305,7 @@ Accept wildcard characters: False
 
 ### -MaxHops
 
-Hiermee stelt u het maximum aantal hops in dat een ICMP-aanvraag bericht kan worden verzonden. De standaard waarde wordt beheerd door het besturings systeem. De standaard waarde voor Windows 10 is 128 hops.
+Hiermee stelt u het maximum aantal hops in dat een ICMP-aanvraagbericht kan worden verzonden. De standaardwaarde wordt bepaald door het besturingssysteem. De standaardwaarde voor Windows 10 is 128 hops.
 
 ```yaml
 Type: System.Int32
@@ -321,7 +321,7 @@ Accept wildcard characters: False
 
 ### -Ping
 
-Zorgt ervoor dat de cmdlet een ping-test doet. Dit is de standaard modus voor de `Test-Connection` cmdlet.
+Zorgt ervoor dat de cmdlet een ping-test uitvoeren. Dit is de standaardmodus voor de `Test-Connection` cmdlet.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -337,9 +337,9 @@ Accept wildcard characters: False
 
 ### -Quiet
 
-De **stille** para meter retourneert een **Booleaanse** waarde. Als u deze para meter gebruikt, worden alle fouten onderdrukt.
+De **parameter Quiet** retourneert een **Booleaanse** waarde. Met deze parameter worden alle fouten onderdrukt.
 
-Elke geteste verbinding retourneert een **Booleaanse** waarde. Als de **TargetName** -para meter meerdere computers opgeeft, wordt een matrix met **Boole** -waarden geretourneerd.
+Elke geteste verbinding retourneert een **Booleaanse** waarde. Als de **parameter TargetName** meerdere computers opgeeft, wordt een matrix met **Booleaanse** waarden geretourneerd.
 
 Als **een** ping naar een bepaald doel slaagt, `$True` wordt geretourneerd.
 
@@ -359,7 +359,7 @@ Accept wildcard characters: False
 
 ### -ResolveDestination
 
-Zorgt ervoor dat de cmdlet probeert de DNS-naam van het doel op te lossen. Bij gebruik in combi natie met de para meter **traceroute** worden ook de DNS-namen van alle tussenliggende hosts opgehaald, indien mogelijk.
+Zorgt ervoor dat de cmdlet probeert om te lossen van de DNS-naam van het doel. Wanneer u deze gebruikt in combinatie met de parameter **Traceroute,** worden indien mogelijk ook de DNS-namen van alle tussenliggende hosts opgehaald.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -375,10 +375,10 @@ Accept wildcard characters: False
 
 ### -Source
 
-Hiermee geeft u de namen van de computers waarvan de ping afkomstig is. Voer een door komma's gescheiden lijst met computer namen in. Standaard is dit de lokale computer.
+Hiermee geeft u de namen van de computers waar de ping afkomstig is. Voer een door komma's gescheiden lijst met computernamen in. Standaard is dit de lokale computer.
 
-**Opmerking:** Deze para meter is niet functioneel in Power shell versie 6 en hoger.
-Het opgeven van deze para meter heeft geen effect op de opdracht.
+> [!NOTE]
+> Deze parameter wordt niet ondersteund in PowerShell versie 6 en nieuwe versies. Het opgeven van deze parameter veroorzaakt een fout.
 
 ```yaml
 Type: System.String
@@ -392,9 +392,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Doel naam
+### -TargetName
 
-Hiermee geeft u de computer (s) op die u wilt testen. Typ de computer namen of typ de IP-adressen in de IPv4-of IPv6-indeling.
+Hiermee geeft u de computer(s) te testen. Typ de computernamen of ip-adressen in IPv4- of IPv6-indeling.
 
 ```yaml
 Type: System.String[]
@@ -410,9 +410,9 @@ Accept wildcard characters: False
 
 ### -TimeoutSeconds
 
-Hiermee stelt u de time-outwaarde voor de test. De test mislukt als er geen antwoord wordt ontvangen voordat de time-out is verstreken. De standaard waarde is vijf seconden.
+Hiermee stelt u de time-outwaarde voor de test in. De test mislukt als er geen antwoord wordt ontvangen voordat de time-out verloopt. De standaardwaarde is vijf seconden.
 
-Deze para meter is geïntroduceerd in Power shell 6,0.
+Deze parameter is geïntroduceerd in PowerShell 6.0.
 
 ```yaml
 Type: System.Int32
@@ -428,7 +428,7 @@ Accept wildcard characters: False
 
 ### -Traceroute
 
-Zorgt ervoor dat de cmdlet een traceroute-test doet. Als deze para meter wordt gebruikt, retourneert de cmdlet een- `TestConnectionCommand+TraceStatus` object.
+Zorgt ervoor dat de cmdlet een traceroute-test moet uitvoeren. Wanneer deze parameter wordt gebruikt, retourneert de cmdlet een `TestConnectionCommand+TraceStatus` -object.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -444,7 +444,7 @@ Accept wildcard characters: False
 
 ### -MtuSize
 
-Deze para meter wordt gebruikt om de MTU-grootte van het pad te detecteren. De cmdlet retourneert een **PingReply # MTUSize** -object dat de MTU-grootte van het pad naar het doel bevat. Zie het artikel [Path MTU Discovery](https://wikipedia.org/wiki/Path_MTU_Discovery) in Wikipedia voor meer informatie over Path MTU.
+Deze parameter wordt gebruikt om de MTU-grootte van het pad te ontdekken. De cmdlet retourneert een **PingReply#MTUSize-object** dat de MTU-padgrootte naar het doel bevat. Zie het artikel Path MTU Discovery (MTU-detectiepad) op Wikipedia voor meer informatie over Path [MTU.](https://wikipedia.org/wiki/Path_MTU_Discovery)
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -460,7 +460,7 @@ Accept wildcard characters: False
 
 ### -TcpPort
 
-Hiermee geeft u het TCP-poort nummer op het doel dat moet worden gebruikt in de TCP-verbindings test. De cmdlet probeert een TCP-verbinding tot stand te brengen met de opgegeven poort op het doel.
+Hiermee geeft u het TCP-poortnummer op het doel dat moet worden gebruikt in de TCP-verbindingstest. De cmdlet probeert een TCP-verbinding te maken met de opgegeven poort op het doel.
 
 Als er een verbinding kan worden gemaakt, `$True` wordt geretourneerd.
 
@@ -480,23 +480,23 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable. Zie [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)voor meer informatie.
+Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable. Zie voor meer informatie [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INVOER
 
 ### Geen
 
-U kunt invoer niet naar deze cmdlet pipeen.
+U kunt geen invoer doorspijpen naar deze cmdlet.
 
 ## UITVOER
 
-### TestConnectionCommand + PingStatus, TestConnectionCommand + TraceStatus, Boolean, TestConnectionCommand + PingMtuStatus
+### TestConnectionCommand+PingStatus, TestConnectionCommand+TraceStatus, Boolean, TestConnectionCommand+PingMtuStatus
 
-`Test-Connection`Retourneert standaard een **TestConnectionCommand + PingStatus** -object voor elk ping-antwoord.
+Retourneert `Test-Connection` standaard een **TestConnectionCommand +PingStatus-object** voor elk pingantwoord.
 
-Als u de para meter **traceroute** opgeeft, retourneert de cmdlet een **TestConnectionCommand + TraceStatus** -object voor elk ping-antwoord op de route.
+Als u de **parameter Traceroute opgeeft,** retourneert de cmdlet een **TestConnectionCommand+TraceStatus-object** voor elk pingantwoord langs de route.
 
-Als u de para meters **quiet** of **TcpPort** opgeeft, wordt een **Booleaanse** waarde geretourneerd. Als er meerdere verbindingen worden getest, wordt een matrix met **Boole** -waarden geretourneerd.
+Als u de **parameters Quiet** of **TcpPort opgeeft,** wordt een **Booleaanse waarde** retourneert. Als meerdere verbindingen worden getest, wordt een matrix met **Booleaanse** waarden geretourneerd.
 
 ## OPMERKINGEN
 
@@ -504,5 +504,5 @@ Als u de para meters **quiet** of **TcpPort** opgeeft, wordt een **Booleaanse** 
 
 [Restart-Computer](Restart-Computer.md)
 
-[Stop-computer](Stop-Computer.md)
+[Stop-Computer](Stop-Computer.md)
 
