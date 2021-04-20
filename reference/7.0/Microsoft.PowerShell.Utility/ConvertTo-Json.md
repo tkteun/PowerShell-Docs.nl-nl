@@ -1,23 +1,22 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
+ms.date: 04/19/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convertto-json?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertTo-Json
-ms.openlocfilehash: bd68ee4175a5e5a3e3e544e745113255a6f7a865
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: f9c441249c2c096158dd2ffc4dc2bd65d6ecff6f
+ms.sourcegitcommit: 2ad76cd528338f8c2cc10a84c5c56c0e25b93436
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93249486"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107729889"
 ---
 # ConvertTo-Json
 
 ## SAMENVATTING
-Converteert een object naar een teken reeks in JSON-indeling.
+Converteert een object naar een tekenreeks in JSON-indeling.
 
 ## SYNTAXIS
 
@@ -29,13 +28,13 @@ ConvertTo-Json [-InputObject] <Object> [-Depth <Int32>] [-Compress]
 
 ## BESCHRIJVING
 
-`ConvertTo-Json`Met de cmdlet wordt een .net-object geconverteerd naar een teken reeks in de indeling van de JavaScript object Notation (JSON). De eigenschappen worden geconverteerd naar veld namen, de veld waarden worden geconverteerd naar eigenschaps waarden en de methoden worden verwijderd.
+De `ConvertTo-Json` cmdlet converteert elk .NET-object naar een tekenreeks in JavaScript Object Notation indeling (JSON). De eigenschappen worden geconverteerd naar veldnamen, de veldwaarden worden geconverteerd naar eigenschapswaarden en de methoden worden verwijderd.
 
-U kunt de cmdlet vervolgens gebruiken `ConvertFrom-Json` om een JSON-indelings teken reeks te converteren naar een JSON-object, dat eenvoudig kan worden beheerd in Power shell.
+Vervolgens kunt u de cmdlet gebruiken om een tekenreeks in JSON-indeling te converteren naar een JSON-object, dat eenvoudig kan `ConvertFrom-Json` worden beheerd in PowerShell.
 
 Veel websites gebruiken JSON in plaats van XML om gegevens te serialiseren voor communicatie tussen servers en web-apps.
 
-Deze cmdlet is geïntroduceerd in Windows Power Shell 3,0.
+Deze cmdlet is geïntroduceerd in Windows PowerShell 3.0.
 
 ## VOORBEELDEN
 
@@ -59,7 +58,7 @@ Deze cmdlet is geïntroduceerd in Windows Power Shell 3,0.
 }
 ```
 
-Met deze opdracht wordt de `ConvertTo-Json` cmdlet gebruikt om een GregorianCalendar-object te converteren naar een JSON-indelings teken reeks.
+Met deze opdracht wordt de `ConvertTo-Json` cmdlet gebruikt om een Object CategorisianCalendar te converteren naar een tekenreeks in JSON-indeling.
 
 ### Voorbeeld 2
 
@@ -82,7 +81,7 @@ Get-Date | ConvertTo-Json; Get-Date | ConvertTo-Json -AsArray
 ]
 ```
 
-In dit voor beeld ziet u de uitvoer van de `ConvertTo-Json` cmdlet with en zonder de para meter **AsArray** . U ziet dat het tweede gedeelte van de uitvoer wordt verpakt in een matrix van haakjes.
+In dit voorbeeld ziet u de uitvoer van `ConvertTo-Json` de cmdlet met en zonder de **asArray-switchparameter.** U ziet dat het tweede deel van de uitvoer tussen matrixhaken is verpakt.
 
 ### Voorbeeld 3
 
@@ -94,7 +93,7 @@ In dit voor beeld ziet u de uitvoer van de `ConvertTo-Json` cmdlet with en zonde
 {"Domain":"Domain01","Account":"User01","Admin":"True"}
 ```
 
-Met deze opdracht wordt het effect van het gebruik van de para meter **compress** van gebruikt `ConvertTo-Json` . De compressie is alleen van invloed op de weer gave van de teken reeks, niet op de geldigheids duur.
+Deze opdracht toont het effect van het gebruik van de parameter **Compress** van `ConvertTo-Json` . De compressie is alleen van invloed op het uiterlijk van de tekenreeks, niet op de geldigheid ervan.
 
 ### Voorbeeld 4
 
@@ -134,7 +133,7 @@ Get-Date | Select-Object -Property * | ConvertTo-Json
 }
 ```
 
-In dit voor beeld wordt de `ConvertTo-Json` cmdlet gebruikt voor het converteren van een **System. datetime** -object van de `Get-Date` cmdlet naar een teken reeks in JSON-indeling. De opdracht gebruikt de `Select-Object` cmdlet om alle ( `*` ) van de eigenschappen van het **DateTime** -object op te halen. In de uitvoer ziet u de JSON-teken reeks die is `ConvertTo-Json` geretourneerd.
+In dit voorbeeld wordt de cmdlet gebruikt om een System.DateTime-object van de cmdlet te converteren naar een `ConvertTo-Json`  `Get-Date` tekenreeks in JSON-indeling. De opdracht gebruikt de `Select-Object` cmdlet om alle ( ) eigenschappen `*` van het **DateTime-object op te** halen. In de uitvoer ziet u de JSON-tekenreeks die is `ConvertTo-Json` geretourneerd.
 
 ### Voorbeeld 5
 
@@ -162,13 +161,13 @@ TimeOfDay   : @{Ticks=825527683372; Days=0; Hours=22; Milliseconds=768; Minutes=
 Year        : 2018
 ```
 
-In dit voor beeld ziet u hoe u de `ConvertTo-Json` cmdlets en kunt gebruiken `ConvertFrom-Json` om een object te converteren naar een JSON-teken reeks en een JSON-object.
+In dit voorbeeld ziet u hoe u de cmdlets en gebruikt om een object te converteren naar een `ConvertTo-Json` `ConvertFrom-Json` JSON-tekenreeks en een JSON-object.
 
 ## PARAMETERS
 
 ### -AsArray
 
-Hiermee wordt het object in een matrix tussen haakjes uitgevoerd, zelfs als de invoer een enkel object is.
+Het object wordt uitgevoerd tussen matrixhaken, zelfs als de invoer één object is.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -184,7 +183,7 @@ Accept wildcard characters: False
 
 ### -Comprimeren
 
-Witruimte en Inge sprongen opmaak in de uitvoer teken reeks weglaten.
+Geen witruimte en ingesprongen opmaak in de uitvoertekenreeks.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -200,7 +199,7 @@ Accept wildcard characters: False
 
 ### -Diepte
 
-Hiermee geeft u op hoeveel niveaus van Inge sloten objecten worden opgenomen in de JSON-weer gave. De standaardwaarde is 2.
+Hiermee geeft u op hoeveel niveaus van ingesloten objecten zijn opgenomen in de JSON-weergave. De waarde kan een getal van tot `1` `[Int]::MaxValue` zijn. De standaardwaarde is `2`. `ConvertTo-Json` geeft een waarschuwing weer als het aantal niveaus in een invoerobject dit aantal overschrijdt.
 
 ```yaml
 Type: System.Int32
@@ -216,7 +215,7 @@ Accept wildcard characters: False
 
 ### -EnumsAsStrings
 
-Biedt een alternatieve serialisatie optie waarmee alle opsommingen worden geconverteerd naar de teken reeks weergave.
+Biedt een alternatieve serialisatieoptie die alle enumeraties converteert naar hun tekenreeksweergave.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -232,15 +231,15 @@ Accept wildcard characters: False
 
 ### -EscapeHandling
 
-Hiermee wordt bepaald hoe bepaalde tekens worden geescapet in de resulterende JSON-uitvoer. Standaard worden alleen besturings tekens (zoals nieuwe regel) met escape-teken.
+Hiermee bepaalt u hoe bepaalde tekens worden uitgesloten in de resulterende JSON-uitvoer. Standaard worden alleen besturingselementtekens (zoals nieuwe regel) als escape-teken gebruikt.
 
 Acceptabele waarden zijn:
 
-- Standaard-alleen besturings tekens worden met escape-teken.
-- EscapeNonAscii: alle niet-ASCII-en besturings tekens worden voorafgegaan.
-- EscapeHtml-HTML ( `<` ,,, `>` `&` `'` `"` ) en de besturings tekens worden voorafgegaan.
+- Standaard: alleen besturingselementtekens krijgen een escape-teken.
+- EscapeNonAscii: alle niet-ASCII- en besturingstekens krijgen een escape-teken.
+- EscapeHtml - HTML ( `<` , , , , , ) en `>` `&` `'` `"` besturingselementtekens worden als escape-teken gebruikt.
 
-Deze para meter is geïntroduceerd in Power shell 6,2.
+Deze parameter is geïntroduceerd in PowerShell 6.2.
 
 ```yaml
 Type: Newtonsoft.Json.StringEscapeHandling
@@ -254,12 +253,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Input object
+### -InputObject
 
-Hiermee geeft u de objecten die moeten worden geconverteerd naar de JSON-indeling. Voer een variabele in die de objecten bevat, of typ een opdracht of expressie waarmee de objecten worden opgehaald. U kunt ook een object pipet naar `ConvertTo-Json` .
+Hiermee geeft u de objecten om te converteren naar JSON-indeling. Voer een variabele in die de objecten bevat of typ een opdracht of expressie die de objecten op haalt. U kunt een object ook doorspijpen naar `ConvertTo-Json` .
 
-De para meter **input object** is vereist, maar de waarde kan Null ( `$null` ) of een lege teken reeks zijn.
-Wanneer het invoer object is `$null` , wordt `ConvertTo-Json` er geen uitvoer gegenereerd. Wanneer het invoer object een lege teken reeks is, `ConvertTo-Json` retourneert een lege teken reeks.
+De **parameter InputObject** is vereist, maar de waarde kan null ( `$null` ) of een lege tekenreeks zijn.
+Wanneer het invoerobject `$null` is, `ConvertTo-Json` genereert geen uitvoer. Wanneer het invoerobject een lege tekenreeks is, `ConvertTo-Json` retourneert een lege tekenreeks.
 
 ```yaml
 Type: System.Object
@@ -275,27 +274,27 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable. Zie [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md)voor meer informatie.
+Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable. Zie voor meer informatie [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INVOER
 
-### System. object
+### System.Object
 
-U kunt elk object door sluizen naar `ConvertTo-Json` .
+U kunt elk object doorspijpen naar `ConvertTo-Json` .
 
 ## UITVOER
 
-### System. String
+### System.String
 
 ## OPMERKINGEN
 
-De `ConvertTo-Json` cmdlet wordt geïmplementeerd met behulp van [Newton Soft JSON.net](https://www.newtonsoft.com/json).
+De `ConvertTo-Json` cmdlet wordt geïmplementeerd met [Newtonsoft Json.NET](https://www.newtonsoft.com/json).
 
 ## GERELATEERDE KOPPELINGEN
 
-[Een inleiding tot JavaScript Object Notation (JSON) in Java script en .NET](/previous-versions/dotnet/articles/bb299886(v=msdn.10))
+[Een inleiding tot JavaScript Object Notation (JSON) in JavaScript en .NET](/previous-versions/dotnet/articles/bb299886(v=msdn.10))
 
-[ConvertFrom-JSON](ConvertFrom-Json.md)
+[ConvertFrom-Json](ConvertFrom-Json.md)
 
 [Get-Content](../Microsoft.PowerShell.Management/Get-Content.md)
 
@@ -305,4 +304,4 @@ De `ConvertTo-Json` cmdlet wordt geïmplementeerd met behulp van [Newton Soft JS
 
 [Invoke-RestMethod](Invoke-RestMethod.md)
 
-[NewtonSoft.Jsop. StringEscapeHandling](https://www.newtonsoft.com/json/help/html/T_Newtonsoft_Json_StringEscapeHandling.htm)
+[NewtonSoft.Jsaan. StringEscapeHandling](https://www.newtonsoft.com/json/help/html/T_Newtonsoft_Json_StringEscapeHandling.htm)

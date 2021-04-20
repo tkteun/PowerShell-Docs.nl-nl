@@ -2,21 +2,21 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 12/18/2020
+ms.date: 04/19/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-item?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Item
-ms.openlocfilehash: 67d9f351b8ef4936dcb4e9cff6583da0f464bc12
-ms.sourcegitcommit: bf07cffb2a66dec94bf3576e197090f958701f18
+ms.openlocfilehash: 8949f4fed84272b8748f11e312d01134ad630489
+ms.sourcegitcommit: 2ad76cd528338f8c2cc10a84c5c56c0e25b93436
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/19/2020
-ms.locfileid: "97693048"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107729846"
 ---
 # Get-Item
 
 ## SAMENVATTING
-Hiermee wordt het item op de opgegeven locatie opgehaald.
+Hiermee haalt u het item op de opgegeven locatie.
 
 ## SYNTAXIS
 
@@ -36,15 +36,15 @@ Get-Item -LiteralPath <String[]> [-Filter <String>] [-Include <String[]>] [-Excl
 
 ## BESCHRIJVING
 
-`Get-Item`Met de cmdlet wordt het item op de opgegeven locatie opgehaald. De inhoud van het item op de locatie wordt niet opgehaald, tenzij u een Joker teken ( `*` ) gebruikt om alle inhoud van het item aan te vragen.
+De `Get-Item` cmdlet haalt het item op de opgegeven locatie op. De inhoud van het item wordt niet op de locatie opgevraagd, tenzij u een jokerteken ( ) gebruikt om alle inhoud van het `*` item aan te vragen.
 
-Deze cmdlet wordt gebruikt door Power shell-providers om door verschillende typen gegevens archieven te navigeren.
+Deze cmdlet wordt gebruikt door PowerShell-providers om door verschillende typen gegevensopslag te navigeren.
 
 ## VOORBEELDEN
 
-### Voor beeld 1: de huidige map ophalen
+### Voorbeeld 1: de huidige map op te halen
 
-In dit voor beeld wordt de huidige map opgehaald. De punt ('. ') staat voor het item op de huidige locatie (niet de inhoud).
+In dit voorbeeld wordt de huidige map. De punt ('.') vertegenwoordigt het item op de huidige locatie (niet de inhoud ervan).
 
 ```powershell
 Get-Item .
@@ -58,9 +58,9 @@ Mode                LastWriteTime     Length Name
 d----         7/26/2006  10:01 AM            ps-test
 ```
 
-### Voor beeld 2: alle items in de huidige map ophalen
+### Voorbeeld 2: alle items in de huidige map op te halen
 
-In dit voor beeld worden alle items in de huidige map opgehaald. Het Joker teken ( `*` ) vertegenwoordigt alle inhoud van het huidige item.
+In dit voorbeeld worden alle items in de huidige map. Het jokerteken ( `*` ) vertegenwoordigt alle inhoud van het huidige item.
 
 ```powershell
 Get-Item *
@@ -79,59 +79,59 @@ d----         7/26/2006   9:26 AM            Recs
 -a---         7/14/2006  10:47 AM         30 test.txt
 ```
 
-### Voor beeld 3: de huidige map van een station ophalen
+### Voorbeeld 3: De huidige map van een station op te halen
 
-In dit voor beeld wordt de huidige map van het `C:` station opgehaald. Het opgehaalde object staat alleen voor de map en niet de inhoud ervan.
+In dit voorbeeld wordt de huidige map van het `C:` station. Het object dat wordt opgehaald vertegenwoordigt alleen de map, niet de inhoud ervan.
 
 ```powershell
-Get-Item C:\
+Get-Item C:
 ```
 
-### Voor beeld 4: items in het opgegeven station ophalen
+### Voorbeeld 4: Items in het opgegeven station op halen
 
-In dit voor beeld worden de items in het `C:` station opgehaald. Het Joker teken ( `*` ) vertegenwoordigt alle items in de container, niet alleen de container.
+In dit voorbeeld worden de items in het `C:` station. Het jokerteken ( `*` ) vertegenwoordigt alle items in de container, niet alleen de container.
 
 ```powershell
 Get-Item C:\*
 ```
 
-Gebruik in Power shell één asterisk ( `*` ) om inhoud op te halen in plaats van de traditionele `*.*` . De indeling wordt letterlijk geïnterpreteerd, waardoor `*.*` er geen mappen of bestands namen worden opgehaald zonder een punt.
+Gebruik in PowerShell één sterretje () om inhoud op te halen in plaats `*` van de traditionele `*.*` . De indeling wordt letterlijk geïnterpreteerd, zodat er geen map of bestandsnaam zonder `*.*` een punt wordt opgehaald.
 
-### Voor beeld 5: een eigenschap ophalen in de opgegeven map
+### Voorbeeld 5: Een eigenschap in de opgegeven map op te halen
 
-In dit voor beeld wordt de eigenschap **LastAccessTime** van de `C:\Windows` Directory opgehaald. **LastAccessTime** is slechts één eigenschap van File System directory's. Als u alle eigenschappen van een map wilt weer geven, typt u `(Get-Item <directory-name>) | Get-Member` .
+In dit voorbeeld wordt de **eigenschap LastAccessTime** van de `C:\Windows` map . **LastAccessTime** is slechts één eigenschap van bestandssysteemdirecties. Als u alle eigenschappen van een map wilt zien, typt u `(Get-Item <directory-name>) | Get-Member` .
 
 ```powershell
 (Get-Item C:\Windows).LastAccessTime
 ```
 
-### Voor beeld 6: de inhoud van een register sleutel weer geven
+### Voorbeeld 6: De inhoud van een registersleutel weergeven
 
-In dit voor beeld wordt de inhoud van de register sleutel **micro soft. Power shell** weer gegeven. U kunt deze cmdlet gebruiken met de Power shell-register provider om register sleutels en subsleutels op te halen, maar u moet de `Get-ItemProperty` cmdlet gebruiken om de register waarden en-gegevens op te halen.
+In dit voorbeeld ziet u de inhoud van de **Microsoft.PowerShell-registersleutel.** U kunt deze cmdlet gebruiken met de PowerShell-registerprovider om registersleutels en subsleutels op te halen, maar u moet de cmdlet gebruiken om de registerwaarden en -gegevens `Get-ItemProperty` op te halen.
 
 ```powershell
 Get-Item HKLM:\Software\Microsoft\Powershell\1\Shellids\Microsoft.Powershell\
 ```
 
-### Voor beeld 7: items in een directory met een uitsluiting ophalen
+### Voorbeeld 7: Items in een directory met een uitsluiting op halen
 
-In dit voor beeld worden items in de Windows-map met namen die een punt ( `.` ) bevatten, maar niet beginnen met `w*` . Dit voor beeld werkt alleen wanneer het pad een Joker teken ( `*` ) bevat om de inhoud van het item op te geven.
+In dit voorbeeld worden items in de Windows-map met namen met een punt ( ) , maar `.` niet met . `w*` Dit voorbeeld werkt alleen als het pad een jokerteken ( ) bevat om de inhoud van het `*` item op te geven.
 
 ```powershell
 Get-Item C:\Windows\*.* -Exclude "w*"
 ```
 
-### Voor beeld 8: koppelings gegevens ophalen
+### Voorbeeld 8: Hardlink-informatie verkrijgen
 
-In Power shell 6,2 is een alternatieve weer gave toegevoegd om koppelings gegevens op te halen. Als u de vaste gegevens wilt ophalen, pipet u de uitvoer naar `Format-Table -View childrenWithHardlink`
+In PowerShell 6.2 is een alternatieve weergave toegevoegd om hardlinkgegevens op te halen. Als u de hardlink-informatie wilt op halen, slinkt u de uitvoer door naar `Format-Table -View childrenWithHardlink`
 
 ```powershell
 Get-Item -Path C:\PathWhichIsAHardLink | Format-Table -View childrenWithHardlink
 ```
 
-### Voor beeld 9: uitvoer voor niet-Windows-besturings systemen
+### Voorbeeld 9: Uitvoer voor niet-Windows-besturingssystemen
 
-In Power shell 7,1 op UNIX-systemen `Get-Item` biedt de cmdlet UNIX-achtige uitvoer:
+In PowerShell 7.1 op Unix-systemen biedt de `Get-Item` cmdlet Unix-achtige uitvoer:
 
 ```powershell
 PS> Get-Item /Users
@@ -147,24 +147,24 @@ drwxr-xr-x  root  admin   12/20/2019 11:46   192   Users
 
 De nieuwe eigenschappen die nu deel uitmaken van de uitvoer zijn:
 
-- **UnixMode** is de bestands machtigingen die worden weer gegeven op een UNIX-systeem
-- De **gebruiker** is de bestands eigenaar
-- **Groep** is de eigenaar van de groep
-- **Grootte** is de grootte van het bestand of de map zoals deze wordt weer gegeven op een UNIX-systeem
+- **UnixMode** is de bestandsmachtigingen zoals weergegeven in een Unix-systeem
+- **Gebruiker** is de bestandseigenaar
+- **Groep** is de groepseigenaar
+- **Grootte** is de grootte van het bestand of de map zoals weergegeven op een Unix-systeem
 
 > [!NOTE]
-> Deze functie is verplaatst van experimentele naar mainstream in Power shell 7,1.
+> Deze functie is verplaatst van experimenteel naar standaard in PowerShell 7.1.
 
 ## PARAMETERS
 
 ### -Stream
 
 > [!NOTE]
-> Deze para meter is alleen beschikbaar in Windows.
+> Deze parameter is alleen beschikbaar in Windows.
 
-Hiermee wordt de opgegeven alternatieve gegevens stroom opgehaald uit het bestand. Voer de naam van de stream in. Joker tekens worden ondersteund. Als u alle streams wilt ophalen, gebruikt u een asterisk ( `*` ). Deze para meter is geldig voor directory's, maar houd er rekening mee dat directory's niet standaard gegevens stromen hebben.
+Hiermee haalt u de opgegeven alternatieve gegevensstroom van het bestand. Voer de naam van de stream in. Jokertekens worden ondersteund. Als u alle streams wilt op halen, gebruikt u een sterretje ( `*` ). Deze parameter is geldig voor -directories, maar houd er rekening mee dat er standaard geen gegevensstromen in de directories staan.
 
-Deze para meter is geïntroduceerd in Power Shell 3,0.  Vanaf Power shell 7,2 `Get-Item` kunnen alternatieve gegevens stromen van mappen en bestanden worden ontvangen.
+Deze parameter is geïntroduceerd in PowerShell 3.0.  Vanaf PowerShell 7.2 kunt u alternatieve gegevensstromen van `Get-Item` mappen en bestanden krijgen.
 
 ```yaml
 Type: System.String[]
@@ -181,8 +181,8 @@ Accept wildcard characters: True
 ### -Credential
 
 > [!NOTE]
-> Deze para meter wordt niet ondersteund door providers die zijn geïnstalleerd met Power shell.
-> Gebruik [invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md)om een andere gebruiker te imiteren of uw referenties te verhogen wanneer u deze cmdlet uitvoert.
+> Deze parameter wordt niet ondersteund door providers die zijn geïnstalleerd met PowerShell.
+> Als u een andere gebruiker wilt imiteren of uw referenties wilt verhogen bij het uitvoeren van deze cmdlet, gebruikt [u Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md).
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -198,7 +198,7 @@ Accept wildcard characters: False
 
 ### -Uitsluiten
 
-Hiermee geeft u als een teken reeks matrix een item of items die met deze cmdlet worden uitgesloten in de bewerking. De waarde van deze para meter komt in aanmerking voor de para meter **Path** . Voer een element of patroon van een pad in, zoals `*.txt` . Joker tekens zijn toegestaan. De **exclude** -para meter is alleen effectief wanneer de inhoud van een item wordt opgenomen, zoals `C:\Windows\*` , waarbij het Joker teken de inhoud van de `C:\Windows` map bevat.
+Hiermee geeft u als tekenreeksmatrix een item of items op die deze cmdlet uitsluit in de bewerking. De waarde van deze parameter komt in aanmerking voor de **parameter Path.** Voer een padelement of -patroon in, zoals `*.txt` . Jokertekens zijn toegestaan. De **uitsluiten** parameter is alleen van kracht wanneer de opdracht bevat de inhoud van een item, zoals , waarbij het jokerteken geeft de inhoud `C:\Windows\*` van de `C:\Windows` map.
 
 ```yaml
 Type: System.String[]
@@ -214,7 +214,7 @@ Accept wildcard characters: True
 
 ### -Filter
 
-Hiermee geeft u een filter op om de para meter **Path** te kwalificeren. De [File System](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md) -provider is de enige geïnstalleerde Power shell-provider die filters ondersteunt. Filters zijn efficiënter dan andere para meters. De provider past filter toe wanneer de cmdlet de objecten ophaalt in plaats van dat Power shell de objecten heeft gefilterd nadat ze zijn opgehaald. De filter teken reeks wordt door gegeven aan de .NET API om bestanden te inventariseren. De API ondersteunt alleen `*` en `?` joker tekens.
+Hiermee geeft u een filter op om de **padparameter te kwalificeren.** De [FileSystem-provider](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md) is de enige geïnstalleerde PowerShell-provider die filters ondersteunt. Filters zijn efficiënter dan andere parameters. De provider past een filter toe wanneer de cmdlet de objecten op haalt in plaats van de objecten te laten filteren door PowerShell nadat deze zijn opgehaald. De filterreeks wordt doorgegeven aan de .NET API om bestanden op te semuleren. De API ondersteunt alleen `*` `?` jokertekens en .
 
 ```yaml
 Type: System.String
@@ -230,8 +230,8 @@ Accept wildcard characters: True
 
 ### -Force
 
-Geeft aan dat met deze cmdlet items worden opgehaald die niet kunnen worden geopend, zoals verborgen items.
-De implementatie varieert van provider tot provider. Zie [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)voor meer informatie. Zelfs met behulp van de para meter **forceren** , kunnen de cmdlet geen beveiligings beperkingen opheffen.
+Geeft aan dat met deze cmdlet items worden opgeslagen die anders niet toegankelijk zijn, zoals verborgen items.
+Implementatie varieert per provider. Zie voor meer informatie [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md). Zelfs met **de** parameter Force kan de cmdlet geen beveiligingsbeperkingen overschrijven.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -247,7 +247,7 @@ Accept wildcard characters: False
 
 ### -Include
 
-Hiermee wordt een teken reeks matrix opgegeven, een item of items die met deze cmdlet in de bewerking zijn opgenomen. De waarde van deze para meter komt in aanmerking voor de para meter **Path** . Voer een element of patroon van een pad in, zoals `*.txt` . Joker tekens zijn toegestaan. De para meter **include** is alleen effectief wanneer de inhoud van een item wordt opgenomen, zoals `C:\Windows\*` , waarbij het Joker teken de inhoud van de `C:\Windows` map bevat.
+Hiermee geeft u als tekenreeksmatrix een item of items op die deze cmdlet in de bewerking op bevat. De waarde van deze parameter komt in aanmerking voor de **parameter Path.** Voer een padelement of -patroon in, zoals `*.txt` . Jokertekens zijn toegestaan. De **parameter Include** is alleen van kracht wanneer de opdracht de inhoud van een item bevat, zoals , waarbij het jokerteken de inhoud van de map `C:\Windows\*` `C:\Windows` specificeert.
 
 ```yaml
 Type: System.String[]
@@ -263,9 +263,9 @@ Accept wildcard characters: True
 
 ### -LiteralPath
 
-Hiermee geeft u een pad naar een of meer locaties. De waarde van **LiteralPath** wordt precies zo gebruikt als deze wordt getypt. Geen tekens worden geïnterpreteerd als joker tekens. Als het pad escape tekens bevat, plaatst u het tussen enkele aanhalings tekens. Enkele aanhalings tekens geven aan dat Power shell geen karakters interpreteert als escape reeksen.
+Hiermee geeft u een pad naar een of meer locaties. De waarde van **LiteralPath** wordt exact gebruikt zoals deze wordt getypt. Er worden geen tekens geïnterpreteerd als jokertekens. Als het pad escape-tekens bevat, sluit u het tussen enkele aanhalingstekens. Enkele aanhalingstekens geven aan PowerShell door dat er geen tekens als escapereeksen moeten worden geïnterpreteerd.
 
-Zie [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md)voor meer informatie.
+Zie voor meer informatie [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
 
 ```yaml
 Type: System.String[]
@@ -281,9 +281,9 @@ Accept wildcard characters: False
 
 ### -Path
 
-Hiermee geeft u het pad naar een item. Met deze cmdlet wordt het item op de opgegeven locatie opgehaald. Joker tekens zijn toegestaan. Deze para meter is vereist, maar het **pad naar** de parameter naam is optioneel.
+Hiermee geeft u het pad naar een item. Met deze cmdlet wordt het item op de opgegeven locatie opgeslagen. Jokertekens zijn toegestaan. Deze parameter is vereist, maar de parameternaam **Pad** is optioneel.
 
-Gebruik een punt ( `.` ) om de huidige locatie op te geven. Gebruik het Joker teken ( `*` ) om alle items op de huidige locatie op te geven.
+Gebruik een punt ( `.` ) om de huidige locatie op te geven. Gebruik het jokerteken ( `*` ) om alle items op de huidige locatie op te geven.
 
 ```yaml
 Type: System.String[]
@@ -299,52 +299,51 @@ Accept wildcard characters: True
 
 ### CommonParameters
 
-Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable. Zie [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)voor meer informatie.
+Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable. Zie voor meer informatie [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INVOER
 
-### System. String
+### System.String
 
-U kunt een teken reeks met een pad naar deze cmdlet door sluizen.
+U kunt een tekenreeks die een pad naar deze cmdlet bevat doorseen.
 
 ## UITVOER
 
-### System. object
+### System.Object
 
-Deze cmdlet retourneert de objecten die worden opgehaald. Het type wordt bepaald door het type objecten in het pad.
+Deze cmdlet retourneert de objecten die deze krijgt. Het type wordt bepaald door het type objecten in het pad.
 
 ## OPMERKINGEN
 
-Deze cmdlet heeft geen **recursieve** para meter, omdat alleen een item wordt opgehaald, niet de inhoud ervan.
-Als u de inhoud van een item recursief wilt ophalen, gebruikt u `Get-ChildItem` .
+Deze cmdlet heeft geen **Recurse-parameter,** omdat deze alleen een item krijgt, niet de inhoud ervan.
+Gebruik om de inhoud van een item recursief op te `Get-ChildItem` halen.
 
-Als u door het REGI ster wilt navigeren, gebruikt u deze cmdlet voor het ophalen van register sleutels en de `Get-ItemProperty` om register waarden en-gegevens op te halen. De register waarden worden beschouwd als eigenschappen van de register sleutel.
+Als u door het register wilt navigeren, gebruikt u deze cmdlet om registersleutels op te halen en de om `Get-ItemProperty` registerwaarden en -gegevens op te halen. De registerwaarden worden beschouwd als eigenschappen van de registersleutel.
 
-Deze cmdlet is ontworpen om te werken met de gegevens die door elke provider worden weer gegeven. Als u een lijst wilt weer geven van de providers die beschikbaar zijn in uw sessie, typt u `Get-PsProvider` . Zie [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)voor meer informatie.
+Deze cmdlet is ontworpen om te werken met de gegevens die beschikbaar worden gemaakt door elke provider. Typ om de providers weer te geven die beschikbaar zijn in uw `Get-PsProvider` sessie. Zie voor meer informatie [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
 ## GERELATEERDE KOPPELINGEN
 
-[Wissen-item](Clear-Item.md)
+[Clear-Item](Clear-Item.md)
 
-[Kopie-item](Copy-Item.md)
+[Copy-Item](Copy-Item.md)
 
-[Invoke-item](Invoke-Item.md)
+[Invoke-Item](Invoke-Item.md)
 
 [Item verplaatsen](Move-Item.md)
 
-[Nieuw-item](New-Item.md)
+[Nieuw item](New-Item.md)
 
-[Verwijderen-item](Remove-Item.md)
+[Item verwijderen](Remove-Item.md)
 
-[Naam wijzigen-item](Rename-Item.md)
+[Rename-Item](Rename-Item.md)
 
-[Set-item](Set-Item.md)
+[Set-Item](Set-Item.md)
 
-[Get-Child item](Get-ChildItem.md)
+[Get-ChildItem](Get-ChildItem.md)
 
-[Get-item Property](Get-ItemProperty.md)
+[Get-ItemProperty](Get-ItemProperty.md)
 
 [Get-PSProvider](Get-PSProvider.md)
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
-
