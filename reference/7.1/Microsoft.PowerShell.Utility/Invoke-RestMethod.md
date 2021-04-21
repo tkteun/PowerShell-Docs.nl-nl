@@ -1,23 +1,22 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 04/05/2021
+ms.date: 04/20/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-restmethod?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-RestMethod
-ms.openlocfilehash: a5bed4574d6590272192cbcee09c4a8cd2e3a803
-ms.sourcegitcommit: d95a7255f6775b2973aa9473611185a5583881ff
+ms.openlocfilehash: 1570ae7dce6bc7f6348e9a6eda159265d9adeee1
+ms.sourcegitcommit: b10731301412afd4111743b85da95e8c25583533
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "106555710"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107756338"
 ---
 # Invoke-RestMethod
 
-## Samen vatting
-Hiermee verzendt u een HTTP-of HTTPS-aanvraag naar een REST webservice.
+## Synopsis
+Verzendt een HTTP- of HTTPS-aanvraag naar een RESTful-webservice.
 
 ## Syntax
 
@@ -87,21 +86,24 @@ Invoke-RestMethod -CustomMethod <String> [-FollowRelLink] [-MaximumFollowRelLink
  [-SkipHeaderValidation] [<CommonParameters>]
 ```
 
-## Beschrijving
+## Description
 
-De `Invoke-RestMethod` cmdlet verzendt HTTP-en HTTPS-aanvragen voor het representatief verzenden van (rest) webservices voor het retour neren van Rich gestructureerde gegevens.
+De `Invoke-RestMethod` cmdlet verzendt HTTP- en HTTPS-aanvragen naar Representational State Transfer (REST)-webservices die rijke gestructureerde gegevens retourneren.
 
-Power shell formatteert het antwoord op basis van het gegevens type. Voor een RSS-of ATOM-feed retourneert Power shell het item of de XML-knoop punten van de vermelding. Voor JavaScript Object Notation (JSON) of XML, wordt de inhoud door Power shell geconverteerd of gedeserialiseerd naar objecten.
+PowerShell formatteert het antwoord op basis van het gegevenstype. Voor een RSS- of ATOM-feed retourneert PowerShell de XML-knooppunten Item of Entry. Voor JavaScript Object Notation (JSON) of XML converteert of deserialiseert PowerShell de inhoud naar `[PSCustomObject]` objecten.
 
-Deze cmdlet is geïntroduceerd in Windows Power Shell 3,0.
+> [!NOTE]
+> Wanneer het REST-eindpunt meerdere objecten retourneert, worden de objecten ontvangen als een matrix. Als u de uitvoer doorspijpt `Invoke-RestMethod` van naar een andere opdracht, wordt deze als één object `[Object[]]` verzonden. De inhoud van die matrix wordt niet geïndefeerd voor de volgende opdracht in de pijplijn.
 
-Vanaf Power shell 7,0 `Invoke-RestMethod` ondersteunt proxy configuratie die is gedefinieerd door omgevings variabelen. Zie de sectie [opmerkingen](#notes) van dit artikel.
+Deze cmdlet is geïntroduceerd in Windows PowerShell 3.0.
+
+Vanaf PowerShell 7.0 ondersteunt proxyconfiguratie gedefinieerd `Invoke-RestMethod` door omgevingsvariabelen. Zie de [sectie Opmerkingen](#notes) van dit artikel.
 
 ## Voorbeelden
 
-### Voor beeld 1: de Power shell-RSS-feed ophalen
+### Voorbeeld 1: de PowerShell RSS-feed op halen
 
-In dit voor beeld wordt de `Invoke-RestMethod` cmdlet gebruikt om informatie op te halen uit de RSS-feed voor het Power shell-blog. De opdracht gebruikt de `Format-Table` cmdlet om de waarden van de eigenschappen **title** en **pubDate** van elke blog in een tabel weer te geven.
+In dit voorbeeld wordt de `Invoke-RestMethod` cmdlet gebruikt om informatie op te halen uit de RSS-feed van het PowerShell-blog. De opdracht gebruikt de cmdlet om de waarden van de eigenschappen Titel en `Format-Table` **pubDate** van elke  blog in een tabel weer te geven.
 
 ```powershell
 Invoke-RestMethod -Uri https://blogs.msdn.microsoft.com/powershell/feed/ |
@@ -123,9 +125,9 @@ PowerShell DSC and implicit remoting broken in KB3176934             Tue, 23 Aug
 PowerShell on Linux and Open Source!                                 Thu, 18 Aug 2016 15:32:02 +0000
 ```
 
-### Voor beeld 2: een POST-aanvraag uitvoeren
+### Voorbeeld 2: Een POST-aanvraag uitvoeren
 
-In dit voor beeld wordt een gebruiker uitgevoerd `Invoke-RestMethod` om een post-aanvraag uit te voeren op een intranet website in de organisatie van de gebruiker.
+In dit voorbeeld voert een gebruiker uit om `Invoke-RestMethod` een POST-aanvraag uit te doen op een intranetwebsite in de organisatie van de gebruiker.
 
 ```powershell
 $Cred = Get-Credential
@@ -139,24 +141,24 @@ $Body = @{
 Invoke-RestMethod -Method 'Post' -Uri $url -Credential $Cred -Body $body -OutFile output.csv
 ```
 
-De referenties worden gevraagd en vervolgens opgeslagen in `$Cred` en de URL waartoe toegang wordt gegeven, wordt gedefinieerd in `$Url` .
+De referenties worden gevraagd en vervolgens opgeslagen in en de `$Cred` URL die wordt gebruikt, wordt gedefinieerd in `$Url` .
 
-De `$Body` variabele beschrijft de zoek criteria, geeft CSV op als uitvoer modus en geeft een periode op voor de geretourneerde gegevens die twee dagen geleden worden gestart en eindigt een dag geleden. De variabele body geeft waarden op voor para meters die van toepassing zijn op het specifieke REST API waarmee `Invoke-RestMethod` wordt gecommuniceerd.
+De variabele beschrijft de zoekcriteria, geeft CSV op als uitvoermodus en geeft een tijdsperiode op voor geretourneerde gegevens die twee dagen geleden begint en één dag `$Body` geleden eindigt. De variabele body geeft waarden op voor parameters die van toepassing zijn op de REST API waarmee `Invoke-RestMethod` wordt gecommuniceerd.
 
-De `Invoke-RestMethod` opdracht wordt uitgevoerd met alle variabelen op locatie, waarbij een pad en een bestands naam voor het resulterende CSV-uitvoer bestand worden opgegeven.
+De opdracht wordt uitgevoerd met alle variabelen op locatie, waarbij een pad en bestandsnaam voor het resulterende `Invoke-RestMethod` CSV-uitvoerbestand worden opgegeven.
 
-### Voor beeld 3: relatie koppelingen volgen
+### Voorbeeld 3: Relationele koppelingen volgen
 
-Sommige REST Api's ondersteunen paginering via relatie koppelingen per [RFC5988](https://tools.ietf.org/html/rfc5988#page-6). In plaats van de header te parseren om de URL voor de volgende pagina op te halen, kunt u de cmdlet dit voor u laten doen. In dit voor beeld worden de eerste twee pagina's met problemen uit de Power shell GitHub-opslag plaats geretourneerd.
+Sommige REST API's ondersteunen paginering via Relation Links per [RFC5988.](https://tools.ietf.org/html/rfc5988#page-6) In plaats van de header te parseren om de URL voor de volgende pagina op te halen, kunt u de cmdlet dit voor u laten doen. In dit voorbeeld worden de eerste twee pagina's met problemen uit de PowerShell GitHub-opslagplaats weergegeven.
 
 ```powershell
 $url = 'https://api.github.com/repos/powershell/powershell/issues'
 Invoke-RestMethod $url -FollowRelLink -MaximumFollowRelLink 2
 ```
 
-### Voor beeld 4: vereenvoudigd meerdelige/formulier-data verzen ding
+### Voorbeeld 4: Vereenvoudigde verzending van meerdere onderdelen/formuliergegevens
 
-Voor sommige Api's zijn `multipart/form-data` inzendingen vereist om bestanden en gemengde inhoud te uploaden. In dit voor beeld ziet u hoe u het profiel van een gebruiker bijwerkt.
+Sommige API's vereisen `multipart/form-data` inzendingen om bestanden en gemengde inhoud te uploaden. In dit voorbeeld wordt gedemonstreerd hoe u het profiel van een gebruiker bijwerkt.
 
 ```powershell
 $Uri = 'https://api.contoso.com/v2/profile'
@@ -171,17 +173,17 @@ $Form = @{
 $Result = Invoke-RestMethod -Uri $Uri -Method Post -Form $Form
 ```
 
-Voor het profiel formulier zijn de volgende velden vereist: `firstName` ,, `lastName` ,, `email` `avatar` `birthday` en `hobbies` . De API verwacht een installatie kopie voor het gebruikers profiel pic dat in het veld moet worden opgegeven `avatar` . In de API worden ook meerdere `hobbies` vermeldingen geaccepteerd die in hetzelfde formulier moeten worden ingediend.
+Voor het profielformulier zijn de volgende `firstName` velden `lastName` vereist: , `email` , , , en `avatar` `birthday` `hobbies` . De API verwacht een afbeelding voor de afbeelding van het gebruikersprofiel die in het veld moet worden `avatar` opgegeven. De API accepteert ook meerdere `hobbies` vermeldingen die in dezelfde vorm moeten worden ingediend.
 
-Wanneer u de `$Form` hashtabel maakt, worden de sleutel namen gebruikt als formulier veld namen. Standaard worden de waarden van de hashtabel geconverteerd naar teken reeksen. Als er een `System.IO.FileInfo` waarde aanwezig is, wordt de inhoud van het bestand verzonden. Als er een verzameling zoals matrices of lijsten aanwezig is, wordt het formulier veld meerdere keren verzonden.
+Bij het maken `$Form` van de hashtabel worden de sleutelnamen gebruikt als formulierveldnamen. Standaard worden de waarden van de hashtabel geconverteerd naar tekenreeksen. Als er `System.IO.FileInfo` een waarde aanwezig is, wordt de bestandsinhoud verzonden. Als een verzameling zoals matrices of lijsten aanwezig is, wordt het formulierveld meerdere keren verzonden.
 
-Door `Get-Item` op de sleutel te gebruiken `avatar` , `FileInfo` wordt het object ingesteld als de waarde. Het resultaat is dat de afbeeldings gegevens voor worden `jdoe.png` verzonden.
+Door op `Get-Item` de `avatar` sleutel te gebruiken, wordt het object `FileInfo` ingesteld als de waarde. Het resultaat is dat de afbeeldingsgegevens `jdoe.png` voor worden verzonden.
 
-Door een lijst aan de sleutel toe te voegen `hobbies` , `hobbies` wordt het veld voor elk lijst item één keer weer gegeven in de-verzen ding.
+Door een lijst op te geven voor de sleutel, wordt het veld eenmaal voor elk `hobbies` `hobbies` lijstitem in de inzendingen weergegeven.
 
-### Voor beeld 5: meerdere headers door geven
+### Voorbeeld 5: Meerdere headers doorgeven
 
-Api's vereisen vaak door gegeven headers voor verificatie of validatie. In dit voor beeld ziet u hoe u meerdere headers van een `hash-table` naar een rest API doorgeeft.
+API's vereisen vaak doorgegeven headers voor verificatie of validatie. In dit voorbeeld wordt gedemonstreerd hoe u meerdere headers van een naar `hash-table` een REST API.
 
 ```powershell
 $headers = @{
@@ -191,16 +193,40 @@ $headers = @{
 Invoke-RestMethod -Uri $uri -Method Post -Headers $headers -Body $body
 ```
 
+### Voorbeeld 6: Geretourneerde items in de pijplijn opsnoemen
+
+GitHub retourneert meerdere objecten in een matrix. Als u de uitvoer doorspijpt naar een andere opdracht, wordt deze als één `[Object[]]` object verzonden.
+
+Als u de objecten in de pijplijn wilt opsnoemen, sloop de resultaten door naar of verpakt u de `Write-Output` cmdlet tussen haakjes. In het volgende voorbeeld wordt het aantal objecten geteld dat door GitHub wordt geretourneerd. Vervolgens wordt het aantal objecten geteld dat in de pijplijn is geïnsemaneerd.
+
+```powershell
+$uri = 'https://api.github.com/repos/microsoftdocs/powershell-docs/issues'
+$x = 0
+Invoke-RestMethod -Uri $uri | ForEach-Object { $x++ }
+$x
+1
+
+$x = 0
+(Invoke-RestMethod -Uri $uri) | ForEach-Object { $x++ }
+$x
+30
+
+$x = 0
+Invoke-RestMethod -Uri $uri | Write-Output | ForEach-Object { $x++ }
+$x
+30
+```
+
 ## Parameters
 
 ### -AllowUnencryptedAuthentication
 
-Hiermee staat u het verzenden van referenties en geheimen over niet-versleutelde verbindingen toe. Standaard leidt het leveren van **referenties** of een **authenticatie** optie met een **URI** die niet begint met een `https://` fout en wordt de aanvraag afgebroken om onbedoeld geheimen te communiceren in tekst zonder opmaak over niet-versleutelde verbindingen. U kunt dit gedrag voor eigen risico negeren door de para meter **AllowUnencryptedAuthentication** op te geven.
+Hiermee kunt u referenties en geheimen verzenden via niet-versleutelde verbindingen. Standaard leidt  het verstrekken  van referenties of een verificatieoptie met een **URI** die niet begint met tot een fout en wordt de aanvraag afgebroken om te voorkomen dat geheimen per ongeluk worden gecommuniceerd in tekst zonder fouten via niet-versleutelde `https://` verbindingen. Als u dit gedrag op eigen risico wilt overschrijven, geeft u de parameter **AllowUnencryptedAuthentication** op.
 
 > [!WARNING]
-> Het gebruik van deze para meter is niet beveiligd en wordt niet aanbevolen. Het is alleen beschikbaar voor compatibiliteit met oudere systemen die geen versleutelde verbindingen kunnen bieden. Gebruiken op eigen risico.
+> Het gebruik van deze parameter is niet veilig en wordt niet aanbevolen. Het wordt alleen verstrekt voor compatibiliteit met oudere systemen die geen versleutelde verbindingen kunnen bieden. Gebruik op uw eigen risico.
 
-Deze functie is toegevoegd aan Power shell 6.0.0.
+Deze functie is toegevoegd in PowerShell 6.0.0.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -216,19 +242,19 @@ Accept wildcard characters: False
 
 ### -Verificatie
 
-Hiermee geeft u het expliciete verificatie type op dat moet worden gebruikt voor de aanvraag. De standaardwaarde is **None**.
-**Authenticatie** kan niet worden gebruikt met **UseDefaultCredentials**.
+Hiermee geeft u het expliciete verificatietype op dat voor de aanvraag moet worden gebruikt. De standaardwaarde is **None**.
+**Verificatie** kan niet worden gebruikt met **UseDefaultCredentials.**
 
-Beschik bare verificatie opties:
+Beschikbare verificatieopties:
 
-- `None`: Dit is de standaard optie wanneer er geen **verificatie** is opgegeven. Er wordt geen expliciete authenticatie gebruikt.
-- `Basic`: Vereist **referentie**. De referenties worden gebruikt voor het verzenden van een RFC 7617-basis verificatie `Authorization: Basic` header in de indeling van `base64(user:password)` .
-- `Bearer`: **Token** vereist. Verzendt en RFC 6750- `Authorization: Bearer` header met het opgegeven token. Dit is een alias voor **OAuth**
-- `OAuth`: **Token** vereist. Er wordt een RFC 6750- `Authorization: Bearer` header verzonden met het opgegeven token. Dit is een alias voor **Bearer**
+- `None`: Dit is de standaardoptie wanneer **verificatie** niet is opgegeven. Er wordt geen expliciete verificatie gebruikt.
+- `Basic`: Vereist **referentie**. De referenties worden gebruikt voor het verzenden van een RFC 7617 Basic `Authorization: Basic` Authentication-header in de indeling `base64(user:password)` van .
+- `Bearer`: hiervoor is **Token vereist.** Verzendt en RFC 6750-header `Authorization: Bearer` met het opgegeven token. Dit is een alias voor **OAuth**
+- `OAuth`: hiervoor is **Token vereist.** Verzendt een RFC 6750-header `Authorization: Bearer` met het opgegeven token. Dit is een alias voor **Bearer**
 
-Bij het leveren van **verificatie** worden alle `Authorization` headers die zijn opgegeven in **headers** of opgenomen in **websessie**, overschreven.
+Als **verificatie wordt** opgegeven, overschrijven alle headers die worden geleverd aan `Authorization` **headers** of die zijn opgenomen in **WebSession**.
 
-Deze functie is toegevoegd aan Power shell 6.0.0.
+Deze functie is toegevoegd in PowerShell 6.0.0.
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.WebAuthenticationType
@@ -243,18 +269,18 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Hoofd tekst
+### -Body
 
-Hiermee geeft u de hoofd tekst van de aanvraag. De hoofd tekst is de inhoud van de aanvraag die de headers volgt.
-U kunt ook de waarde van een hoofd tekst sluist naar `Invoke-RestMethod` .
+Hiermee geeft u de body van de aanvraag. De hoofdtekst is de inhoud van de aanvraag die volgt op de headers.
+U kunt ook een bodywaarde doorspijpen naar `Invoke-RestMethod` .
 
-De para meter **Body** kan worden gebruikt om een lijst met query parameters op te geven of de inhoud van het antwoord op te geven.
+De **parameter Body** kan worden gebruikt om een lijst met queryparameters op te geven of om de inhoud van het antwoord op te geven.
 
-Wanneer de invoer een GET-aanvraag is en de hoofd tekst een `IDictionary` (meestal een hash-tabel) is, wordt de hoofd tekst als query parameters aan de URI (Uniform Resource Identifier) toegevoegd. Voor andere aanvraag typen (zoals POST) wordt de hoofd tekst ingesteld als de waarde van de aanvraag tekst in de notatie standaard naam = waarde.
+Wanneer de invoer een GET-aanvraag is en de body een is (meestal een hash-tabel), wordt de body als queryparameters toegevoegd aan de `IDictionary` Uniform Resource Identifier (URI). Voor andere aanvraagtypen (zoals POST) wordt de body ingesteld als de waarde van de aanvraag body in de standaardindeling name=value.
 
-Wanneer de hoofd tekst een formulier is of de uitvoer van een andere `Invoke-WebRequest` aanroep is, stelt Power shell de aanvraag inhoud in op de formulier velden.
+Wanneer de body een formulier is of de uitvoer van een andere aanroep, stelt PowerShell de aanvraaginhoud in `Invoke-WebRequest` op de formuliervelden.
 
-De para meter **Body** kan ook een **systeem .net. http. MultipartFormDataContent-** object accepteren. Hierdoor kunnen aanvragen worden vergemakkelijkt `multipart/form-data` . Wanneer een **MultipartFormDataContent** -object wordt opgegeven voor de **hoofd tekst**, worden alle aan de inhouds headers van het object gerelateerde kopteksten die zijn opgegeven voor de **Content type**-, **headers**-of **websessie** -para meters, overschreven `MultipartFormDataContent` . Deze functie is toegevoegd aan Power shell 6.0.0.
+De **parameter Body** kan ook een **System.Net.Http.MultipartFormDataContent-object** accepteren. Hierdoor worden aanvragen `multipart/form-data` gefaciliiliteert. Wanneer een **MultipartFormDataContent-object** wordt opgegeven voor **Hoofdtekst,** worden alle inhoudsgerelateerde headers die worden geleverd aan de parameters **ContentType,** **Headers** of **WebSession** overschrijven door de inhoudsheaders van het `MultipartFormDataContent` object. Deze functie is toegevoegd in PowerShell 6.0.0.
 
 ```yaml
 Type: System.Object
@@ -270,9 +296,9 @@ Accept wildcard characters: False
 
 ### -Certificaat
 
-Hiermee geeft u het client certificaat op dat wordt gebruikt voor een beveiligde webaanvraag. Voer een variabele in die een certificaat of een opdracht of expressie bevat waarmee het certificaat wordt opgehaald.
+Hiermee geeft u het clientcertificaat op dat wordt gebruikt voor een beveiligde webaanvraag. Voer een variabele in die een certificaat bevat of een opdracht of expressie die het certificaat op haalt.
 
-Als u een certificaat wilt zoeken, gebruikt `Get-PfxCertificate` of gebruikt u de `Get-ChildItem` cmdlet in het certificaat `Cert:` station. Als het certificaat ongeldig is of niet voldoende autoriteit heeft, mislukt de opdracht.
+Als u een certificaat wilt zoeken, `Get-PfxCertificate` gebruikt of gebruikt u de `Get-ChildItem` cmdlet in het station Certificaat ( `Cert:` ). Als het certificaat niet geldig is of onvoldoende bevoegdheid heeft, mislukt de opdracht.
 
 ```yaml
 Type: System.Security.Cryptography.X509Certificates.X509Certificate
@@ -288,14 +314,14 @@ Accept wildcard characters: False
 
 ### -CertificateThumbprint
 
-Hiermee geeft u het digitale open bare-sleutel certificaat (x509) op van een gebruikers account dat gemachtigd is om de aanvraag te verzenden. Voer de vinger afdruk van het certificaat in.
+Hiermee geeft u het digitale openbare-sleutelcertificaat (X509) op van een gebruikersaccount dat toestemming heeft om de aanvraag te verzenden. Voer de vingerafdruk van het certificaat in.
 
-Certificaten worden gebruikt in authenticatie op basis van client certificaten. Ze kunnen alleen worden toegewezen aan lokale gebruikers accounts. ze werken niet met domein accounts.
+Certificaten worden gebruikt bij verificatie op basis van clientcertificaten. Ze kunnen alleen worden toe te wijs aan lokale gebruikersaccounts; ze werken niet met domeinaccounts.
 
-Gebruik de `Get-Item` `Get-ChildItem` opdracht of in het Power Shell-station om een certificaat vingerafdruk te verkrijgen `Cert:` .
+Gebruik de opdracht of in het PowerShell-station om een vingerafdruk van het `Get-Item` `Get-ChildItem` certificaat op te `Cert:` halen.
 
 > [!NOTE]
-> Deze functie wordt momenteel alleen ondersteund op Windows-besturings systemen.
+> Deze functie wordt momenteel alleen ondersteund op Windows-besturingssysteemplatforms.
 
 ```yaml
 Type: System.String
@@ -309,13 +335,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Content type
+### -ContentType
 
-Hiermee geeft u het type inhoud van de webaanvraag.
+Hiermee geeft u het inhoudstype van de webaanvraag.
 
-Als deze para meter wordt wegge laten en de aanvraag methode is `Invoke-RestMethod` ingesteld op post, stelt het inhouds type in op `application/x-www-form-urlencoded` . Anders is het inhouds type niet opgegeven in de aanroep.
+Als deze parameter wordt weggelaten en de aanvraagmethode POST is, `Invoke-RestMethod` stelt u het inhoudstype in op `application/x-www-form-urlencoded` . Anders wordt het inhoudstype niet opgegeven in de aanroep.
 
-**Content type** wordt overschreven wanneer een `MultipartFormDataContent` object wordt opgegeven voor de **hoofd tekst**.
+**ContentType** wordt overschrijven wanneer een `MultipartFormDataContent` object wordt opgegeven voor **Body**.
 
 ```yaml
 Type: System.String
@@ -331,16 +357,16 @@ Accept wildcard characters: False
 
 ### -Credential
 
-Hiermee geeft u een gebruikers account op dat gemachtigd is om de aanvraag te verzenden. Standaard is dit de huidige gebruiker.
+Hiermee geeft u een gebruikersaccount op dat toestemming heeft om de aanvraag te verzenden. Standaard is dit de huidige gebruiker.
 
-Typ een gebruikers naam, zoals **gebruiker01** of **Domain01\User01**, of voer een **PSCredential** -object in dat door de cmdlet wordt gegenereerd `Get-Credential` .
+Typ een gebruikersnaam, zoals **User01** of **Domain01\User01,** of voer een **PSCredential-object** in dat door de `Get-Credential` cmdlet is gegenereerd.
 
-**Referentie** kan alleen worden gebruikt of in combi natie met bepaalde opties voor **verificatie** parameters. Als u alleen gebruikt, worden er alleen referenties voor de externe server verstrekt als de externe server een aanvraag voor verificatie controle verzendt. Wanneer u gebruikt met **verificatie** opties, worden de referenties expliciet verzonden.
+**Referenties** kunnen alleen worden gebruikt of in combinatie met bepaalde opties voor verificatieparameters.  Als u alleen gebruikt, geeft deze alleen referenties aan de externe server als de externe server een aanvraag voor verificatie-vraag verzendt. Wanneer u **verificatieopties** gebruikt, worden de referenties expliciet verzonden.
 
-Referenties worden opgeslagen in een [PSCredential](/dotnet/api/system.management.automation.pscredential) -object en het wacht woord wordt opgeslagen als [SecureString](/dotnet/api/system.security.securestring).
+Referenties worden opgeslagen in een [PSCredential-object](/dotnet/api/system.management.automation.pscredential) en het wachtwoord wordt opgeslagen als een [SecureString](/dotnet/api/system.security.securestring).
 
 > [!NOTE]
-> Zie [Hoe veilig is securestring?](/dotnet/api/system.security.securestring#how-secure-is-securestring)voor meer informatie over **securestring** Data Protection.
+> Zie How secure is SecureString? (Hoe veilig [is SecureString?) voor meer informatie over SecureString-gegevensbeveiliging.](/dotnet/api/system.security.securestring#how-secure-is-securestring) 
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -356,15 +382,15 @@ Accept wildcard characters: False
 
 ### -CustomMethod
 
-Hiermee geeft u de aangepaste methode op die voor de webaanvraag wordt gebruikt. Dit kan worden gebruikt met de aanvraag methode die door het eind punt wordt vereist, is geen beschik bare optie voor de **methode**. **Methode** en **CustomMethod** kunnen niet tegelijk worden gebruikt.
+Hiermee geeft u de aangepaste methode op die wordt gebruikt voor de webaanvraag. Dit kan worden gebruikt met de aanvraagmethode die vereist is voor het eindpunt is geen beschikbare optie in de **methode**. **Methode** en **CustomMethod** kunnen niet samen worden gebruikt.
 
 Voorbeeld:
 
 `Invoke-RestMethod -uri 'https://api.contoso.com/widget/' -CustomMethod 'TEST'`
 
-Hiermee maakt `TEST` u een HTTP-aanvraag voor de API.
+Hiermee wordt een `TEST` HTTP-aanvraag naar de API ingediend.
 
-Deze functie is toegevoegd aan Power shell 6.0.0.
+Deze functie is toegevoegd in PowerShell 6.0.0.
 
 ```yaml
 Type: System.String
@@ -380,7 +406,7 @@ Accept wildcard characters: False
 
 ### -DisableKeepAlive
 
-Geeft aan dat de cmdlet de **keepalive** -waarde in de http-header instelt op false. Standaard is **keepalive** ingesteld op True. Met **keepalive** wordt een permanente verbinding met de server tot stand gebracht om volgende aanvragen te vergemakkelijken.
+Geeft aan dat de cmdlet de **KeepAlive-waarde** in de HTTP-header in stelt op False. **KeepAlive** is standaard Waar. **KeepAlive brengt** een permanente verbinding met de server tot stand om volgende aanvragen mogelijk te maken.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -396,13 +422,13 @@ Accept wildcard characters: False
 
 ### -FollowRelLink
 
-Hiermee wordt aangegeven dat de cmdlet relatie koppelingen moet volgen.
+Geeft aan dat de cmdlet relationele koppelingen moet volgen.
 
-Sommige REST Api's ondersteunen paginering via relatie koppelingen per [RFC5988](https://tools.ietf.org/html/rfc5988#page-6). In plaats van de header te parseren om de URL voor de volgende pagina op te halen, kunt u de cmdlet dit voor u laten doen. Als u wilt instellen hoe vaak de relatie koppelingen moet worden gevolgd, gebruikt u de para meter **MaximumFollowRelLink** .
+Sommige REST API's ondersteunen paginering via Relation Links per [RFC5988.](https://tools.ietf.org/html/rfc5988#page-6) In plaats van de header te parseren om de URL voor de volgende pagina op te halen, kunt u de cmdlet dit voor u laten doen. Als u wilt instellen hoe vaak u de relatiekoppelingen wilt volgen, gebruikt u de parameter **MaximumFollowRelLink.**
 
-Wanneer u deze switch gebruikt, retourneert de cmdlet een verzameling pagina's met resultaten. Elke pagina met resultaten kan meerdere resultaten items bevatten.
+Wanneer u deze switch gebruikt, retourneert de cmdlet een verzameling pagina's met resultaten. Elke pagina met resultaten kan meerdere resultaatitems bevatten.
 
-Deze functie is toegevoegd aan Power shell 6.0.0.
+Deze functie is toegevoegd in PowerShell 6.0.0.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -416,15 +442,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Vorm
+### -Form
 
-Converteert een woorden lijst naar een `multipart/form-data` inzending. Het **formulier** kan niet worden gebruikt met een **hoofd tekst**.
-Als **Content type** wordt genegeerd.
+Converteert een woordenlijst naar een `multipart/form-data` inzending. **Formulier** kan niet worden gebruikt met **Body**.
+Als **ContentType** wordt genegeerd.
 
-De sleutels van de woorden lijst worden gebruikt als de veld namen van het formulier. Standaard worden formulier waarden geconverteerd naar teken reeks waarden.
+De sleutels van de woordenlijst worden gebruikt als de namen van formulierveld. Formulierwaarden worden standaard geconverteerd naar tekenreekswaarden.
 
-Als de waarde een **System. io. file info** -object is, wordt de inhoud van het binaire bestand verzonden.
-De naam van het bestand wordt verzonden als `filename` . De MIME wordt ingesteld als `application/octet-stream` . `Get-Item` kan worden gebruikt om het object **System. io. file info** te vereenvoudigen.
+Als de waarde een **System.IO.FileInfo-object** is, wordt de inhoud van het binaire bestand verzonden.
+De naam van het bestand wordt verzonden als de `filename` . De MIME wordt ingesteld als `application/octet-stream` . `Get-Item` kan worden gebruikt om het leveren van het **object System.IO.FileInfo te** vereenvoudigen.
 
 ```powershell
 $Form = @{
@@ -432,7 +458,7 @@ $Form = @{
 }
 ```
 
-Als de waarde een verzamelings type is, zoals een matrix of lijst, wordt het veld voor meerdere keren verzonden. De waarden van de lijst worden standaard beschouwd als teken reeksen. Als de waarde een **System. io. file info** -object is, wordt de inhoud van het binaire bestand verzonden. Geneste verzamelingen worden niet ondersteund.
+Als de waarde een verzamelingstype is, zoals een matrix of lijst, wordt het veld voor meerdere keren verzonden. De waarden van de lijst worden standaard behandeld als tekenreeksen. Als de waarde een **System.IO.FileInfo-object** is, wordt de inhoud van het binaire bestand verzonden. Geneste verzamelingen worden niet ondersteund.
 
 ```powershell
 $Form = @{
@@ -441,9 +467,9 @@ $Form = @{
 }
 ```
 
-In het bovenstaande voor beeld `tags` wordt het veld drie keer in het formulier opgegeven, eenmaal voor elk van `Vacation` , `Italy` en `2017` . Het `pictures` veld wordt ook één keer verzonden voor elk bestand in de `2017-Italy` map. De binaire inhoud van de bestanden in die map wordt verzonden als de waarden.
+In het bovenstaande voorbeeld wordt het veld drie keer in het formulier opgegeven, eenmaal `tags` voor elk van , en `Vacation` `Italy` `2017` . Het `pictures` veld wordt ook eenmaal verzonden voor elk bestand in de `2017-Italy` map. De binaire inhoud van de bestanden in die map wordt verzonden als de waarden.
 
-Deze functie is toegevoegd aan Power shell 6.1.0.
+Deze functie is toegevoegd in PowerShell 6.1.0.
 
 ```yaml
 Type: System.Collections.IDictionary
@@ -459,11 +485,11 @@ Accept wildcard characters: False
 
 ### -Headers
 
-Hiermee geeft u de kopteksten van de webaanvraag. Voer een hash-tabel of-woorden lijst in.
+Hiermee geeft u de headers van de webaanvraag. Voer een hashtabel of -woordenlijst in.
 
-Gebruik de **agent** -para meter om de agent headers in te stellen. U kunt deze para meter niet gebruiken om headers op te geven `User-Agent` of te cookie.
+Als u UserAgent-headers wilt instellen, gebruikt u de parameter **UserAgent.** U kunt deze parameter niet gebruiken om `User-Agent` headers of cookies op te geven.
 
-Aan inhoud gerelateerde kopteksten, zoals `Content-Type` wordt overschreven wanneer een `MultipartFormDataContent` object wordt opgegeven voor de **hoofd tekst**.
+Inhoudsgerelateerde headers, zoals `Content-Type` , worden overschrijven wanneer een `MultipartFormDataContent` object wordt opgegeven voor **Hoofdtekst.**
 
 ```yaml
 Type: System.Collections.IDictionary
@@ -477,11 +503,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Inbestand
+### -InFile
 
-Hiermee wordt de inhoud van de webaanvraag opgehaald uit een bestand.
+Haalt de inhoud van de webaanvraag op uit een bestand.
 
-Voer een pad en een bestands naam in. Als u het pad weglaat, de standaard instelling is de huidige locatie.
+Voer een pad en bestandsnaam in. Als u het pad weglaten, is de standaardwaarde de huidige locatie.
 
 ```yaml
 Type: System.String
@@ -497,7 +523,7 @@ Accept wildcard characters: False
 
 ### -MaximumFollowRelLink
 
-Hiermee geeft u op hoe vaak de relatie koppelingen moeten worden gevolgd als **FollowRelLink** wordt gebruikt. Een kleinere waarde kan nodig zijn als de REST API-beperking door te veel aanvragen is. De standaardwaarde is `[Int32]::MaxValue`. Een waarde van 0 (nul) voor komt de volgende relatie koppelingen.
+Hiermee geeft u op hoe vaak u de relatiekoppelingen moet volgen **als FollowRelLink** wordt gebruikt. Mogelijk is er een kleinere waarde nodig als de REST API wordt beperkt vanwege te veel aanvragen. De standaardwaarde is `[Int32]::MaxValue`. Een waarde van 0 (nul) voorkomt het volgen van relatiekoppelingen.
 
 ```yaml
 Type: System.Int32
@@ -513,7 +539,7 @@ Accept wildcard characters: False
 
 ### -MaximumRedirection
 
-Hiermee geeft u op hoe vaak Power shell een verbinding met een alternatieve URI (Uniform Resource Identifier) omleidt voordat de verbinding is mislukt. De standaard waarde is 5. Een waarde van 0 (nul) voor komt dat alle omleidingen.
+Hiermee geeft u op hoe vaak PowerShell een verbinding omleiden naar een alternatieve Uniform Resource Identifier (URI) voordat de verbinding mislukt. De standaardwaarde is 5. Met de waarde 0 (nul) wordt alle omleiding voorkomen.
 
 ```yaml
 Type: System.Int32
@@ -529,7 +555,7 @@ Accept wildcard characters: False
 
 ### -MaximumRetryCount
 
-Hiermee geeft u op hoe vaak Power shell een verbinding probeert te verbreken wanneer een fout code tussen 400 en 599, inclusief of 304 wordt ontvangen. Zie ook de para meter **RetryIntervalSec** voor het opgeven van het aantal nieuwe pogingen.
+Hiermee geeft u op hoe vaak PowerShell opnieuw verbinding maakt wanneer een foutcode tussen 400 en 599 wordt ontvangen, inclusief of 304. Zie ook **de parameter RetryIntervalSec** voor het opgeven van het aantal nieuwe poging.
 
 ```yaml
 Type: System.Int32
@@ -545,7 +571,7 @@ Accept wildcard characters: False
 
 ### -Methode
 
-Hiermee geeft u de methode op die voor de webaanvraag wordt gebruikt. De aanvaardbare waarden voor deze parameter zijn:
+Hiermee geeft u de methode die wordt gebruikt voor de webaanvraag. De aanvaardbare waarden voor deze parameter zijn:
 
 - `Default`
 - `Delete`
@@ -558,7 +584,7 @@ Hiermee geeft u de methode op die voor de webaanvraag wordt gebruikt. De aanvaar
 - `Put`
 - `Trace`
 
-De para meter **CustomMethod** kan worden gebruikt voor aanvraag methoden die hierboven niet worden vermeld.
+De **parameter CustomMethod** kan worden gebruikt voor aanvraagmethoden die hierboven niet worden vermeld.
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.WebRequestMethod
@@ -573,13 +599,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -De proxy
+### -NoProxy
 
-Geeft aan dat de cmdlet geen gebruik maakt van een proxy om de bestemming te bereiken.
+Geeft aan dat de cmdlet geen proxy gebruikt om de bestemming te bereiken.
 
-Als u de geconfigureerde proxy in Internet Explorer wilt overs Laan of een proxy die in de omgeving is opgegeven, gebruikt u deze schakel optie.
+Wanneer u de proxy wilt omzeilen die is geconfigureerd in Internet Explorer, of een proxy die is opgegeven in de omgeving, gebruikt u deze switch.
 
-Deze para meter is geïntroduceerd in Power shell 6,0.
+Deze parameter is geïntroduceerd in PowerShell 6.0.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -593,11 +619,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Outfile
+### -OutFile
 
-Hiermee wordt de antwoord tekst in het opgegeven uitvoer bestand opgeslagen. Voer een pad en een bestands naam in. Als u het pad weglaat, de standaard instelling is de huidige locatie. De naam wordt beschouwd als een letterlijk pad. Namen die vier Kante haakjes () bevatten, `[]` moeten tussen enkele aanhalings tekens () worden geplaatst `'` .
+Slaat de antwoord-body in het opgegeven uitvoerbestand. Voer een pad en bestandsnaam in. Als u het pad weglaten, is de standaardwaarde de huidige locatie. De naam wordt behandeld als een letterlijk pad. Namen met haken ( `[]` ) moeten tussen enkele aanhalingstekens () worden ingesloten. `'`
 
-`Invoke-RestMethod`De resultaten worden standaard naar de pijp lijn geretourneerd. Als u de resultaten naar een bestand en naar de pijp lijn wilt verzenden, gebruikt u de para meter **PassThru** .
+Retourneert `Invoke-RestMethod` standaard de resultaten naar de pijplijn. Als u de resultaten wilt verzenden naar een bestand en naar de pijplijn, gebruikt u de parameter **Passthru.**
 
 ```yaml
 Type: System.String
@@ -613,7 +639,7 @@ Accept wildcard characters: False
 
 ### -PassThru
 
-Hiermee worden de resultaten geretourneerd, naast het schrijven naar een bestand. Deze para meter is alleen geldig wanneer de **outfile** -para meter ook in de opdracht wordt gebruikt.
+Retourneert de resultaten, naast het schrijven ervan naar een bestand. Deze parameter is alleen geldig wanneer **de OutFile** parameter wordt ook gebruikt in de opdracht.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -629,11 +655,11 @@ Accept wildcard characters: False
 
 ### -PreserveAuthorizationOnRedirect
 
-Hiermee wordt aangegeven dat de cmdlet de header moet behouden `Authorization` , indien aanwezig, over de omleidingen.
+Geeft aan dat de cmdlet de header, indien aanwezig, moet behouden `Authorization` tussen omleidingen.
 
-De-cmdlet verwijdert standaard de `Authorization` header voordat deze wordt omgeleid. Als u deze para meter opgeeft, wordt deze logica uitgeschakeld voor gevallen waarin de header moet worden verzonden naar de omleidings locatie.
+De cmdlet ontdoet de `Authorization` header standaard voordat deze wordt omgeleid. Als u deze parameter opgeeft, wordt deze logica uitgeschakeld voor gevallen waarin de header naar de omleidingslocatie moet worden verzonden.
 
-Deze functie is toegevoegd aan Power shell 6.0.0.
+Deze functie is toegevoegd in PowerShell 6.0.0.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -649,9 +675,9 @@ Accept wildcard characters: False
 
 ### -Proxy
 
-Maakt gebruik van een proxy server voor de aanvraag, in plaats van rechtstreeks verbinding te maken met de Internet resource. Geef de URI (Uniform Resource Identifier) van een netwerk proxy server op.
+Maakt gebruik van een proxyserver voor de aanvraag, in plaats van rechtstreeks verbinding te maken met de internetresource. Voer de Uniform Resource Identifier (URI) van een netwerkproxyserver in.
 
-Deze functie is toegevoegd aan Power shell 6.0.0.
+Deze functie is toegevoegd in PowerShell 6.0.0.
 
 ```yaml
 Type: System.Uri
@@ -667,11 +693,11 @@ Accept wildcard characters: False
 
 ### -ProxyCredential
 
-Hiermee geeft u een gebruikers account op dat is gemachtigd voor het gebruik van de proxy server die is opgegeven door de para meter **proxy** . Standaard is dit de huidige gebruiker.
+Hiermee geeft u een gebruikersaccount dat is gemachtigd voor het gebruik van de proxyserver die is opgegeven door de **proxyparameter.** Standaard is dit de huidige gebruiker.
 
-Typ een gebruikers naam, zoals **gebruiker01** of **Domain01\User01**, **User@Domain.Com** of voer een `PSCredential` object in, bijvoorbeeld het type dat door de cmdlet wordt gegenereerd `Get-Credential` .
+Typ een gebruikersnaam, zoals **User01** of **Domain01\User01,** of voer een -object in, zoals een object dat wordt gegenereerd door **User@Domain.Com** `PSCredential` de `Get-Credential` cmdlet .
 
-Deze para meter is alleen geldig wanneer de **proxy** parameter ook in de opdracht wordt gebruikt. U kunt de para meters **ProxyCredential** en **ProxyUseDefaultCredentials** niet in dezelfde opdracht gebruiken.
+Deze parameter is alleen geldig wanneer de **proxy** parameter wordt ook gebruikt in de opdracht. U kunt de parameters **ProxyCredential** en **ProxyUseDefaultCredentials** niet gebruiken in dezelfde opdracht.
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -687,9 +713,9 @@ Accept wildcard characters: False
 
 ### -ProxyUseDefaultCredentials
 
-Geeft aan dat de cmdlet de referenties van de huidige gebruiker gebruikt om toegang te krijgen tot de proxy server die is opgegeven door de para meter **proxy** .
+Geeft aan dat de cmdlet de referenties van de huidige gebruiker gebruikt voor toegang tot de proxyserver die is opgegeven door de **proxyparameter.**
 
-Deze para meter is alleen geldig wanneer de **proxy** parameter ook in de opdracht wordt gebruikt. U kunt de para meters **ProxyCredential** en **ProxyUseDefaultCredentials** niet in dezelfde opdracht gebruiken.
+Deze parameter is alleen geldig wanneer de **proxy** parameter wordt ook gebruikt in de opdracht. U kunt de parameters **ProxyCredential** en **ProxyUseDefaultCredentials** niet gebruiken in dezelfde opdracht.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -705,9 +731,9 @@ Accept wildcard characters: False
 
 ### -ResponseHeadersVariable
 
-Hiermee maakt u een woorden lijst met antwoord koppen en slaat u deze op in de waarde van de opgegeven variabele. De sleutels van de woorden lijst bevatten de veld namen van de antwoord header die door de webserver wordt geretourneerd en de waarden zijn de respectieve veld waarden.
+Hiermee maakt u een woordenlijst antwoordheaders en slaat u deze op in de waarde van de opgegeven variabele. De sleutels van de woordenlijst bevatten de veldnamen van de antwoordheader die wordt geretourneerd door de webserver en de waarden zijn de respectieve veldwaarden.
 
-Deze functie is toegevoegd aan Power shell 6.0.0.
+Deze functie is toegevoegd in PowerShell 6.0.0.
 
 ```yaml
 Type: System.String
@@ -723,21 +749,21 @@ Accept wildcard characters: False
 
 ### -Hervatten
 
-Hiermee wordt een beste poging gedaan om het downloaden van een gedeeltelijk bestand te hervatten. De para meter **Resume** vereist de **outfile** -para meter.
+Voert een poging uit om het downloaden van een gedeeltelijk bestand te hervatten. Voor de parameter **Resume** is de parameter **OutFile** vereist.
 
-**Resume** werkt alleen op de grootte van het lokale bestand en het externe bestand en voert geen andere validatie uit dat het lokale bestand en het externe bestand hetzelfde zijn.
+**Hervatten** werkt alleen op de grootte van het lokale bestand en externe bestand en voert geen andere validatie uit dat het lokale bestand en het externe bestand hetzelfde zijn.
 
-Als de lokale bestands grootte kleiner is dan de grootte van het externe bestand, probeert de cmdlet het downloaden van het bestand te hervatten en de resterende bytes toe te voegen aan het einde van het bestand.
+Als de grootte van het lokale bestand kleiner is dan de externe bestandsgrootte, probeert de cmdlet het downloaden van het bestand te hervatten en de resterende bytes toe te toevoegen aan het einde van het bestand.
 
-Als de grootte van het lokale bestand hetzelfde is als de grootte van het externe bestand, wordt er geen actie ondernomen en wordt ervan uitgegaan dat de down load al is voltooid.
+Als de lokale bestandsgrootte hetzelfde is als de grootte van het externe bestand, wordt er geen actie ondernomen en wordt ervan uitgenomen dat de download al is voltooid.
 
-Als de grootte van het lokale bestand groter is dan de grootte van het externe bestand, wordt het lokale bestand overschreven en wordt het hele externe bestand volledig opnieuw gedownload. Dit gedrag is hetzelfde als het gebruik van een **bestand** zonder de bewerking te **hervatten**.
+Als de lokale bestandsgrootte groter is dan de grootte van het externe bestand, wordt het lokale bestand overschreven en wordt het hele externe bestand volledig opnieuw gedownload. Dit gedrag is hetzelfde als het gebruik van **OutFile** zonder **Hervatten.**
 
-Als de externe server downloaden niet kan hervatten, wordt het lokale bestand overschreven en wordt het hele externe bestand volledig opnieuw gedownload. Dit gedrag is hetzelfde als het gebruik van een **bestand** zonder de bewerking te **hervatten**.
+Als de externe server geen ondersteuning biedt voor het downloaden van het downloaden, wordt het lokale bestand overschreven en wordt het hele externe bestand volledig opnieuw gedownload. Dit gedrag is hetzelfde als het gebruik van **OutFile** zonder **Hervatten.**
 
-Als het lokale bestand niet bestaat, wordt het lokale bestand gemaakt en wordt het hele externe bestand volledig gedownload. Dit gedrag is hetzelfde als het gebruik van een **bestand** zonder de bewerking te **hervatten**.
+Als het lokale bestand niet bestaat, wordt het lokale bestand gemaakt en wordt het hele externe bestand volledig gedownload. Dit gedrag is hetzelfde als het gebruik van **OutFile** zonder **Hervatten.**
 
-Deze functie is toegevoegd aan Power shell 6.1.0.
+Deze functie is toegevoegd in PowerShell 6.1.0.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -753,7 +779,7 @@ Accept wildcard characters: False
 
 ### -RetryIntervalSec
 
-Hiermee geeft u het interval tussen nieuwe pogingen voor de verbinding op wanneer er een fout code tussen 400 en 599, inclusief of 304 wordt ontvangen. Zie ook de para meter **MaximumRetryCount** voor het opgeven van het aantal nieuwe pogingen.
+Hiermee geeft u het interval op tussen nieuwe proberen voor de verbinding wanneer een foutcode tussen 400 en 599, inclusief of 304 wordt ontvangen. Zie ook **MaximumRetryCount** parameter voor het opgeven van het aantal nieuwe poging.
 
 ```yaml
 Type: System.Int32
@@ -769,16 +795,16 @@ Accept wildcard characters: False
 
 ### -SessionVariable
 
-Hiermee geeft u een variabele op waarvoor deze cmdlet een sessie voor een webaanvraag maakt en opslaat in de waarde.
-Geef een naam op voor de variabele zonder het dollar teken ( `$` )-symbool.
+Hiermee geeft u een variabele waarvoor deze cmdlet maakt een webaanvraagsessie en slaat deze in de waarde.
+Voer een variabelenaam in zonder het dollarteken ( `$` ).
 
-Wanneer u een sessie variabele opgeeft, `Invoke-RestMethod` maakt een webaanvraag sessie object en wijst deze toe aan een variabele met de opgegeven naam in uw Power shell-sessie. U kunt de variabele in uw sessie gebruiken zodra de opdracht is voltooid.
+Wanneer u een sessievariabele opgeeft, maakt een webaanvraagsessieobject en wijst u dit toe aan een variabele met de opgegeven `Invoke-RestMethod` naam in uw PowerShell-sessie. U kunt de variabele in uw sessie gebruiken zodra de opdracht is voltooid.
 
-In tegens telling tot een externe sessie is de sessie van de webaanvraag geen permanente verbinding. Het is een object dat informatie bevat over de verbinding en de aanvraag, inclusief cookies, referenties, de maximum omleidings waarde en de teken reeks van de gebruikers agent. U kunt deze gebruiken om de status en gegevens te delen tussen webaanvragen.
+In tegenstelling tot een externe sessie is de webaanvraagsessie geen permanente verbinding. Het is een object dat informatie bevat over de verbinding en de aanvraag, waaronder cookies, referenties, de maximale omleidingswaarde en de tekenreeks van de gebruikersagent. U kunt deze gebruiken om de status en gegevens te delen tussen webaanvragen.
 
-Als u de webaanvraag sessie in volgende webaanvragen wilt gebruiken, geeft u de sessie variabele op in de waarde van de para meter **websessie** . Power shell gebruikt de gegevens in het sessie object voor webaanvragen bij het tot stand brengen van de nieuwe verbinding. Als u een waarde in de sessie voor webaanvragen wilt overschrijven, gebruikt u een cmdlet-para meter, zoals **User agent** of **Credential**. Parameter waarden hebben prioriteit boven waarden in de webaanvraag sessie.
+Als u de webaanvraagsessie in volgende webaanvragen wilt gebruiken, geeft u de sessievariabele op in de waarde van de parameter **WebSession.** PowerShell gebruikt de gegevens in het webaanvraagsessieobject bij het tot stand brengen van de nieuwe verbinding. Als u een waarde in de webaanvraagsessie wilt overschrijven, gebruikt u een cmdlet-parameter, zoals **UserAgent** of **Credential.** Parameterwaarden hebben voorrang op waarden in de webaanvraagsessie.
 
-U kunt de para meters **SessionVariable** en **websession** niet gebruiken in dezelfde opdracht.
+U kunt de parameters **SessionVariable en** **WebSession** niet gebruiken in dezelfde opdracht.
 
 ```yaml
 Type: System.String
@@ -794,12 +820,12 @@ Accept wildcard characters: False
 
 ### -SkipCertificateCheck
 
-Hiermee worden controles van certificaat validaties overgeslagen die alle validaties bevatten, zoals verval datum, intrekking, vertrouwde basis instantie, enzovoort.
+Slaat certificaatvalidatiecontroles over die alle validaties bevatten, zoals verloop, intrekking, vertrouwde basisinstantie, enzovoort.
 
 > [!WARNING]
-> Het gebruik van deze para meter is niet beveiligd en wordt niet aanbevolen. Deze schakel optie is alleen bedoeld om te worden gebruikt voor bekende hosts met behulp van een zelfondertekend certificaat voor test doeleinden. Gebruiken op eigen risico.
+> Het gebruik van deze parameter is niet veilig en wordt niet aanbevolen. Deze switch is alleen bedoeld om te worden gebruikt voor bekende hosts die een zelf-ondertekend certificaat gebruiken voor testdoeleinden. Gebruik dit op uw eigen risico.
 
-Deze functie is toegevoegd aan Power shell 6.0.0.
+Deze functie is toegevoegd in PowerShell 6.0.0.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -815,14 +841,14 @@ Accept wildcard characters: False
 
 ### -SkipHeaderValidation
 
-Hiermee wordt aangegeven dat de cmdlet headers zonder validatie moet toevoegen aan de aanvraag.
+Geeft aan dat de cmdlet headers moet toevoegen aan de aanvraag zonder validatie.
 
-Deze schakel optie moet worden gebruikt voor sites waarvoor header waarden zijn vereist die niet voldoen aan de standaarden.
-Als u deze switch opgeeft, wordt de validatie uitgeschakeld zodat de waarde die wordt door gegeven, niet kan worden gecontroleerd. Als u deze opgeeft, worden alle headers zonder validatie toegevoegd.
+Deze switch moet worden gebruikt voor sites waarvoor headerwaarden zijn vereist die niet voldoen aan de standaarden.
+Als u deze switch opgeeft, wordt validatie uitgeschakeld zodat de waarde niet kan worden doorgegeven. Indien opgegeven, worden alle headers zonder validatie toegevoegd.
 
-Hiermee wordt de validatie uitgeschakeld voor waarden die zijn door gegeven aan de para meters **Content type**, **headers** en **User agent** .
+Hiermee wordt validatie uitgeschakeld voor waarden die worden doorgegeven aan de parameters **ContentType,** **Headers** en **UserAgent.**
 
-Deze functie is toegevoegd aan Power shell 6.0.0.
+Deze functie is toegevoegd in PowerShell 6.0.0.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -838,10 +864,10 @@ Accept wildcard characters: False
 
 ### -SkipHttpErrorCheck
 
-Deze para meter zorgt ervoor dat de cmdlet HTTP-fout statussen negeert en de antwoorden blijft verwerken.
-De fout reacties worden naar de pijp lijn geschreven alsof ze zijn geslaagd.
+Deze parameter zorgt ervoor dat de cmdlet HTTP-foutstatussen negeert en antwoorden blijft verwerken.
+De foutreacties worden naar de pijplijn geschreven alsof ze zijn geslaagd.
 
-Deze para meter is geïntroduceerd in Power shell 7.
+Deze parameter is geïntroduceerd in PowerShell 7.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -857,14 +883,14 @@ Accept wildcard characters: False
 
 ### -SslProtocol
 
-Hiermee stelt u de SSL/TLS-protocollen die zijn toegestaan voor de webaanvraag. Standaard zijn alle SSL/TLS-protocollen die door het systeem worden ondersteund, toegestaan. Met **SslProtocol** wordt het beperken van specifieke protocollen voor nalevings doeleinden toegestaan.
+Hiermee stelt u de SSL/TLS-protocollen in die toegestaan zijn voor de webaanvraag. Standaard zijn alle SSL/TLS-protocollen toegestaan die door het systeem worden ondersteund. **Met SslProtocol** kunt u beperken tot specifieke protocollen voor nalevingsdoeleinden.
 
-Deze waarden worden gedefinieerd als inventarisatie op basis van een vlag. U kunt meerdere waarden combi neren om meerdere vlaggen in te stellen met behulp van deze para meter. De waarden kunnen worden door gegeven aan de **SslProtocol** -para meter als een matrix met waarden of als een door komma's gescheiden teken reeks van die waarden. Met de cmdlet worden de waarden gecombineerd met behulp van een binaire waarde of bewerking. Het door geven van waarden als een matrix is de eenvoudigste optie. Daarnaast kunt u met behulp van de waarden van het tabblad volt ooien. U kunt mogelijk niet meerdere waarden op alle platforms opgeven.
+Deze waarden worden gedefinieerd als een op vlag gebaseerde enumeratie. U kunt meerdere waarden combineren om meerdere vlaggen in te stellen met behulp van deze parameter. De waarden kunnen worden doorgegeven aan de parameter **SslProtocol** als een matrix met waarden of als een door komma's gescheiden tekenreeks van deze waarden. De cmdlet combineert de waarden met behulp van een binaire-OR-bewerking. Het doorgeven van waarden als een matrix is de eenvoudigste optie en biedt u ook de mogelijkheid om tab-aanvulling op de waarden te gebruiken. Mogelijk kunt u niet op alle platformen meerdere waarden leveren.
 
 > [!NOTE]
-> Op niet-Windows-platforms is het niet mogelijk om te leveren `Tls` of `Tls12` als optie. Ondersteuning voor `Tls13` is niet beschikbaar op alle besturings systemen en moet worden geverifieerd op basis van elk besturings systeem.
+> Op niet-Windows-platforms is het mogelijk niet mogelijk of als `Tls` `Tls12` optie op te geven. Ondersteuning voor is niet beschikbaar op alle besturingssystemen en moet per besturingssysteem `Tls13` worden geverifieerd.
 
-Deze functie is toegevoegd aan Power shell 6.0.0 en ondersteuning voor `Tls13` is toegevoegd in Power shell 7,1.
+Deze functie is toegevoegd in PowerShell 6.0.0 en ondersteuning voor `Tls13` is toegevoegd in PowerShell 7.1.
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.WebSslProtocol
@@ -881,11 +907,11 @@ Accept wildcard characters: False
 
 ### -StatusCodeVariable
 
-Met deze para meter geeft u een variabele op waaraan de waarde van het gehele getal van de status code is toegewezen. Met de para meter kunnen succes berichten of fout berichten worden geïdentificeerd wanneer deze worden gebruikt in combi natie met de para meter **SkipHttpErrorCheck** .
+Met deze parameter geeft u een variabele op die het gehele getal van een statuscode krijgt toegewezen. De parameter kan succesberichten of foutberichten identificeren wanneer deze worden gebruikt met de parameter **SkipHttpErrorCheck.**
 
-Voer de variabele naam van de para meter in als een teken reeks zoals `-StatusCodeVariable "scv"` .
+Voer de variabelenaam van de parameter in als een tekenreeks zoals `-StatusCodeVariable "scv"` .
 
-Deze para meter is geïntroduceerd in Power shell 7.
+Deze parameter is geïntroduceerd in PowerShell 7.
 
 ```yaml
 Type: System.String
@@ -902,9 +928,9 @@ Accept wildcard characters: False
 
 ### -TimeoutSec
 
-Hiermee geeft u op hoe lang de aanvraag in behandeling kan zijn voordat er een time-out optreedt. Voer een waarde in seconden in. De standaard waarde, 0, geeft een onbeperkte time-outwaarde.
+Hiermee geeft u op hoe lang de aanvraag in behandeling kan zijn voordat er een times-out is. Voer een waarde in seconden in. De standaardwaarde, 0, geeft een onbeperkte time-out aan.
 
-Het kan tot vijf tien seconden duren voordat een Domain Name System query (DNS) wordt uitgevoerd of een time-out kan worden geretourneerd. Als uw aanvraag een hostnaam bevat waarvoor omzetting vereist is en u **TimeoutSec** instelt op een waarde die groter is dan nul, maar minder dan 15 seconden, kan het vijf tien seconden of langer duren voordat een webuitzondering wordt gegenereerd en er een time-out optreedt voor uw aanvraag.
+Het Domain Name System (DNS)-query kan tot 15 seconden duren voordat er een time-out of retourneren is. Als uw aanvraag een hostnaam bevat die een oplossing vereist en u **TimeoutSec** in stelt op een waarde die groter is dan nul, maar minder dan 15 seconden, kan het 15 seconden of langer duren voordat een WebException wordt gegeven en uw aanvraag een time-out heeft.
 
 ```yaml
 Type: System.Int32
@@ -920,13 +946,13 @@ Accept wildcard characters: False
 
 ### -Token
 
-Het OAuth-of Bearer-token dat in de aanvraag moet worden meegenomen. Het **token** is vereist voor bepaalde **verificatie** opties. Deze kan niet onafhankelijk worden gebruikt.
+Het OAuth- of Bearer-token dat in de aanvraag moet worden op te nemen. **Token** is vereist voor bepaalde **verificatieopties.** Deze kan niet onafhankelijk worden gebruikt.
 
-**Token** neemt een `SecureString` met het token. Als u het token wilt opgeven, gebruikt u hand matig het volgende:
+**Token** neemt een `SecureString` die het token bevat. Gebruik het volgende handmatig om het token op te leveren:
 
 `Invoke-RestMethod -Uri $uri -Authentication OAuth -Token (Read-Host -AsSecureString)`
 
-Deze para meter is geïntroduceerd in Power shell 6,0.
+Deze parameter is geïntroduceerd in PowerShell 6.0.
 
 ```yaml
 Type: System.Security.SecureString
@@ -942,12 +968,12 @@ Accept wildcard characters: False
 
 ### -TransferEncoding
 
-Hiermee geeft u een waarde op voor de header van de HTTP-reactie voor overdracht/versleuteling. De aanvaardbare waarden voor deze parameter zijn:
+Hiermee geeft u een waarde op voor de HTTP-antwoordheader voor overdrachtcoderen. De aanvaardbare waarden voor deze parameter zijn:
 
-- Gesegmenteerde
+- Ge chunked
 - Comprimeren
 - Deflate
-- GZip
+- Gzip
 - Identiteit
 
 ```yaml
@@ -965,9 +991,9 @@ Accept wildcard characters: False
 
 ### -URI
 
-Hiermee geeft u de URI (Uniform Resource Identifier) op van de Internet bron waarnaar de webaanvraag wordt verzonden. Deze para meter ondersteunt HTTP-, HTTPS-, FTP-en FILE-waarden.
+Hiermee geeft u de Uniform Resource Identifier (URI) op van de internetresource waar de webaanvraag naar wordt verzonden. Deze parameter ondersteunt http-, HTTPS-, FTP- en BESTANDswaarden.
 
-Deze parameter is vereist. De parameter naam (**URI**) is optioneel.
+Deze parameter is vereist. De parameternaam (**URI**) is optioneel.
 
 ```yaml
 Type: System.Uri
@@ -983,7 +1009,7 @@ Accept wildcard characters: False
 
 ### -UseBasicParsing
 
-Deze para meter is afgeschaft. Vanaf Power shell 6.0.0 gebruiken alle webaanvragen alleen basis parsering. Deze para meter is alleen opgenomen voor achterwaartse compatibiliteit en het gebruik ervan heeft geen invloed op de werking van de cmdlet.
+Deze parameter is afgeschaft. Vanaf PowerShell 6.0.0 gebruiken alle webaanvragen alleen basisparsering. Deze parameter is alleen opgenomen voor achterwaartse compatibiliteit en elk gebruik ervan heeft geen invloed op de werking van de cmdlet.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -999,7 +1025,7 @@ Accept wildcard characters: False
 
 ### -UseDefaultCredentials
 
-Geeft aan dat de cmdlet de referenties van de huidige gebruiker gebruikt om de webaanvraag te verzenden. Deze kan niet worden gebruikt met **verificatie** of **referentie** en wordt mogelijk niet ondersteund op alle platforms.
+Geeft aan dat de cmdlet de referenties van de huidige gebruiker gebruikt om de webaanvraag te verzenden. Dit kan niet worden gebruikt met **verificatie of** **referentie** en wordt mogelijk niet ondersteund op alle platforms.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -1013,13 +1039,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -User agent
+### -UserAgent
 
-Hiermee geeft u een teken reeks voor de gebruikers agent op voor de webaanvraag.
+Hiermee geeft u een tekenreeks voor de gebruikersagent op voor de webaanvraag.
 
-De standaard gebruikers agent is vergelijkbaar `Mozilla/5.0 (Windows NT 10.0; Microsoft Windows 10.0.15063; en-US) PowerShell/6.0.0` met kleine variaties voor elk besturings systeem en platform.
+De standaardgebruikersagent is vergelijkbaar met `Mozilla/5.0 (Windows NT 10.0; Microsoft Windows 10.0.15063; en-US) PowerShell/6.0.0` met kleine variaties voor elk besturingssysteem en platform.
 
-Als u een website wilt testen met de standaard teken reeks van de gebruikers agent die wordt gebruikt door de meeste Internet browsers, gebruikt u de eigenschappen van de [PSUserAgent](/dotnet/api/microsoft.powershell.commands.psuseragent) -klasse, zoals Chrome, Firefox, InternetExplorer, Opera en Safari.
+Als u een website wilt testen met de standaard tekenreeks van de gebruikersagent die door de meeste internetbrowsers wordt gebruikt, gebruikt u de eigenschappen van de [klasse PSUserAgent,](/dotnet/api/microsoft.powershell.commands.psuseragent) zoals Chrome, FireFox, InternetExplorer, Opera en Safari.
 
 ```yaml
 Type: System.String
@@ -1033,17 +1059,17 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Websessie
+### -WebSession
 
-Hiermee geeft u een sessie voor webaanvragen. Voer de naam van de variabele in, met inbegrip van het dollar teken ( `$` ).
+Hiermee geeft u een webaanvraagsessie. Voer de naam van de variabele in, inclusief het dollarteken ( `$` ).
 
-Als u een waarde in de sessie voor webaanvragen wilt overschrijven, gebruikt u een cmdlet-para meter, zoals **User agent** of **Credential**. Parameter waarden hebben prioriteit boven waarden in de webaanvraag sessie. Inhouds gerelateerde kopteksten, zoals `Content-Type` , worden ook genegeerd wanneer een **MultipartFormDataContent** -object wordt opgegeven voor de **hoofd tekst**.
+Als u een waarde in de webaanvraagsessie wilt overschrijven, gebruikt u een cmdlet-parameter, zoals **UserAgent** of **Credential.** Parameterwaarden hebben voorrang op waarden in de webaanvraagsessie. Inhoudsgerelateerde headers, zoals , worden ook overschrijven wanneer een `Content-Type` **MultipartFormDataContent-object** wordt opgegeven voor **Hoofdtekst.**
 
-In tegens telling tot een externe sessie is de sessie van de webaanvraag geen permanente verbinding. Het is een object dat informatie bevat over de verbinding en de aanvraag, inclusief cookies, referenties, de maximum omleidings waarde en de teken reeks van de gebruikers agent. U kunt deze gebruiken om de status en gegevens te delen tussen webaanvragen.
+In tegenstelling tot een externe sessie is de webaanvraagsessie geen permanente verbinding. Het is een object dat informatie bevat over de verbinding en de aanvraag, inclusief cookies, referenties, de maximale omleidingswaarde en de tekenreeks van de gebruikersagent. U kunt deze gebruiken om de status en gegevens te delen tussen webaanvragen.
 
-Als u een webonderdeelverzoek wilt maken, voert u de naam van een variabele zonder een dollar teken in de waarde van de para meter **SessionVariable** van een `Invoke-RestMethod` opdracht in. `Invoke-RestMethod` Hiermee maakt u de sessie en slaat u deze op in de variabele. Gebruik in volgende opdrachten de variabele als de waarde van de para meter **websession** .
+Als u een webaanvraagsessie wilt maken, voert u een variabelenaam in, zonder dollarteken, in de waarde van de parameter **SessionVariable** van een `Invoke-RestMethod` opdracht. `Invoke-RestMethod` maakt de sessie en slaat deze op in de variabele . In volgende opdrachten gebruikt u de variabele als de waarde van de parameter **WebSession.**
 
-U kunt de para meters **SessionVariable** en **websession** niet gebruiken in dezelfde opdracht.
+U kunt de parameters **SessionVariable en** **WebSession** niet gebruiken in dezelfde opdracht.
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.WebRequestSession
@@ -1059,47 +1085,47 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable. Zie [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)voor meer informatie.
+Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable. Zie voor meer informatie [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## Invoerwaarden
 
-### System. object
+### System.Object
 
-U kunt de hoofd tekst van een webaanvraag door sluizen naar `Invoke-RestMethod` .
+U kunt de body van een webaanvraag doorseen naar `Invoke-RestMethod` .
 
 ## Uitvoerwaarden
 
-### Systeem. Int64, System. String, System.Xml.Xmldocument
+### System.Int64, System.String, System.Xml.XmlDocument
 
 De uitvoer van de cmdlet is afhankelijk van de indeling van de inhoud die wordt opgehaald.
 
 ### PSObject
 
-Als de aanvraag JSON-teken reeksen retourneert, `Invoke-RestMethod` retourneert een **PSObject** die de teken reeksen vertegenwoordigt.
+Als de aanvraag JSON-tekenreeksen retourneert, `Invoke-RestMethod` retourneert een **PSObject** dat de tekenreeksen vertegenwoordigt.
 
 ## Notities
 
-Sommige functies zijn mogelijk niet beschikbaar op alle platforms.
+Sommige functies zijn mogelijk niet op alle platforms beschikbaar.
 
-Vanwege wijzigingen in .NET Core 3,1, Power shell 7,0 en hoger, gebruikt u de eigenschap [httpclient maakt. DefaultProxy](/dotnet/api/system.net.http.httpclient.defaultproxy?view=netcore-3.1) om de proxy configuratie te bepalen.
+Vanwege wijzigingen in .NET Core 3.1 gebruikt PowerShell 7.0 en hoger de eigenschap [HttpClient.DefaultProxy](/dotnet/api/system.net.http.httpclient.defaultproxy?view=netcore-3.1) om de proxyconfiguratie te bepalen.
 
-De waarde van deze eigenschap is afhankelijk van het platform op verschillende regels:
+De waarde van deze eigenschap is afhankelijk van uw platform:
 
-- **Voor Windows**: Hiermee leest u de proxy configuratie van omgevings variabelen of, als deze niet zijn gedefinieerd, van de proxy-instellingen van de gebruiker.
-- **Voor macOS**: leest de proxy configuratie van omgevings variabelen of, als deze niet zijn gedefinieerd, uit de proxy-instellingen van het systeem.
-- **Voor Linux**: leest de proxy configuratie van omgevings variabelen of als deze niet zijn gedefinieerd, initialiseert deze eigenschap een niet-geconfigureerd exemplaar dat alle adressen omzeilt.
+- **Voor Windows:** leest proxyconfiguratie uit omgevingsvariabelen of, als deze niet zijn gedefinieerd, uit de proxy-instellingen van de gebruiker.
+- **Voor macOS:** leest proxyconfiguratie uit omgevingsvariabelen of, als deze niet zijn gedefinieerd, vanuit de proxy-instellingen van het systeem.
+- **Voor Linux:** leest proxyconfiguratie uit omgevingsvariabelen of, als deze niet zijn gedefinieerd, initialiseert deze eigenschap een niet-geconfigureerd exemplaar dat alle adressen omzeilt.
 
-De omgevings variabelen die worden gebruikt voor de `DefaultProxy` initialisatie op Windows-en UNIX-platforms zijn:
+De omgevingsvariabelen die worden gebruikt `DefaultProxy` voor initialisatie op Windows- en Unix-platforms zijn:
 
-- `HTTP_PROXY`: de hostnaam of het IP-adres van de proxy server die wordt gebruikt voor HTTP-aanvragen.
-- `HTTPS_PROXY`: de hostnaam of het IP-adres van de proxy server die wordt gebruikt voor HTTPS-aanvragen.
-- `ALL_PROXY`: de hostnaam of het IP-adres van de proxy server die wordt gebruikt voor HTTP-en HTTPS-aanvragen `HTTP_PROXY` of `HTTPS_PROXY` die niet zijn gedefinieerd.
-- `NO_PROXY`: een door komma's gescheiden lijst met hostnamen die moeten worden uitgesloten van de proxy.
+- `HTTP_PROXY`: de hostnaam of het IP-adres van de proxyserver die wordt gebruikt voor HTTP-aanvragen.
+- `HTTPS_PROXY`: de hostnaam of het IP-adres van de proxyserver die wordt gebruikt voor HTTPS-aanvragen.
+- `ALL_PROXY`: de hostnaam of het IP-adres van de proxyserver die wordt gebruikt voor HTTP- en HTTPS-aanvragen voor het geval `HTTP_PROXY` of `HTTPS_PROXY` niet zijn gedefinieerd.
+- `NO_PROXY`: een door komma's gescheiden lijst met hostnamen die moeten worden uitgesloten van proxying.
 
 ## Verwante koppelingen
 
 [ConvertTo-Json](ConvertTo-Json.md)
 
-[ConvertFrom-JSON](ConvertFrom-Json.md)
+[ConvertFrom-Json](ConvertFrom-Json.md)
 
 [Invoke-WebRequest](Invoke-WebRequest.md)

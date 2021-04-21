@@ -6,21 +6,21 @@ ms.date: 07/23/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enter-pssession?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Enter-PSSession
-ms.openlocfilehash: 9c08e78d840815a396b55eb26bf8e21d73cb81aa
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 0fac823666277621c3bed0f961ae2ce22d8d8408
+ms.sourcegitcommit: b10731301412afd4111743b85da95e8c25583533
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94705761"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107756236"
 ---
 # Enter-PSSession
 
-## SAMENVATTING
+## Synopsis
 Start een interactieve sessie met een externe computer.
 
-## SYNTAXIS
+## Syntax
 
-### Computer naam (standaard)
+### ComputerName (standaard)
 
 ```
 Enter-PSSession [-ComputerName] <String> [-EnableNetworkAccess] [[-Credential] <PSCredential>]
@@ -33,7 +33,7 @@ Enter-PSSession [-ComputerName] <String> [-EnableNetworkAccess] [[-Credential] <
 
 ```
 Enter-PSSession [-HostName] <String> [-Port <Int32>] [-UserName <String>] [-KeyFilePath <String>]
- [-SSHTransport] [<CommonParameters>]
+ [-SSHTransport] [-ConnectingTimeout <int>] [<CommonParameters>]
 ```
 
 ### Sessie
@@ -42,7 +42,7 @@ Enter-PSSession [-HostName] <String> [-Port <Int32>] [-UserName <String>] [-KeyF
 Enter-PSSession [[-Session] <PSSession>] [<CommonParameters>]
 ```
 
-### URI
+### Uri
 
 ```
 Enter-PSSession [[-ConnectionUri] <Uri>] [-EnableNetworkAccess] [[-Credential] <PSCredential>]
@@ -88,39 +88,39 @@ Enter-PSSession [-ContainerId] <String> [-ConfigurationName <String>] [-RunAsAdm
  [<CommonParameters>]
 ```
 
-## BESCHRIJVING
+## Description
 
-`Enter-PSSession`Met de cmdlet wordt een interactieve sessie met één externe computer gestart.
-Tijdens de sessie worden de opdrachten die u typt op de externe computer uitgevoerd, net alsof u rechtstreeks op de externe computer typt. U kunt slechts één interactieve sessie tegelijk hebben.
+De `Enter-PSSession` cmdlet start een interactieve sessie met één externe computer.
+Tijdens de sessie worden de opdrachten die u typt, uitgevoerd op de externe computer, net alsof u rechtstreeks op de externe computer typt. U kunt slechts één interactieve sessie tegelijk hebben.
 
-Normaal gesp roken gebruikt u de para meter **ComputerName** om de naam van de externe computer op te geven.
-U kunt echter ook een sessie gebruiken die u maakt met behulp van de `New-PSSession` cmdlet voor de interactieve sessie. U kunt echter de-, `Disconnect-PSSession` `Connect-PSSession` -of-cmdlets niet gebruiken om de verbinding met `Receive-PSSession` een interactieve sessie te verbreken of opnieuw te verbinden.
+Normaal gesproken gebruikt u de **ComputerName** parameter opgeven voor de naam van de externe computer.
+U kunt echter ook een sessie gebruiken die u maakt met behulp van de `New-PSSession` cmdlet voor de interactieve sessie. U kunt de cmdlets , of echter niet gebruiken om de verbinding met een interactieve sessie te verbreken of opnieuw verbinding `Disconnect-PSSession` `Connect-PSSession` te `Receive-PSSession` maken.
 
-Vanaf Power shell 6,0 kunt u Secure Shell (SSH) gebruiken om een verbinding met een externe computer tot stand te brengen, als SSH beschikbaar is op de lokale computer en de externe computer is geconfigureerd met een Power shell-SSH-eind punt. Het voor deel van een op SSH gebaseerde Power shell-externe sessie is dat deze werkt op meerdere platformen (Windows, Linux, macOS). Voor op SSH gebaseerde externe communicatie gebruikt u de para meter **hostname** om de externe computer en de relevante verbindings gegevens op te geven. Zie voor meer informatie over het instellen van externe toegang tot Power shell [via SSH Power shell](/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core).
+Vanaf PowerShell 6.0 kunt u Secure Shell (SSH) gebruiken om verbinding te maken met een externe computer, als SSH beschikbaar is op de lokale computer en de externe computer is geconfigureerd met een PowerShell SSH-eindpunt. Het voordeel van een externe PowerShell-sessie op basis van SSH is dat deze op meerdere platforms (Windows, Linux, macOS) werkt. Voor externe toegang op basis van SSH gebruikt u de **parameterset HostName** om de externe computer en relevante verbindingsgegevens op te geven. Zie Voor meer informatie over het instellen van SSH-remoting voor [PowerShell Via SSH.](/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core)
 
-Als u de interactieve sessie wilt beëindigen en de verbinding wilt verbreken met de externe computer, gebruikt u de `Exit-PSSession` cmdlet of het type `exit` .
+Als u de interactieve sessie wilt beëindigen en de verbinding met de externe computer wilt verbreken, gebruikt u `Exit-PSSession` de cmdlet of typt u `exit` .
 
-## VOORBEELDEN
+## Voorbeelden
 
-### Voor beeld 1: een interactieve sessie starten
+### Voorbeeld 1: Een interactieve sessie starten
 
 ```
 PS> Enter-PSSession
 [localhost]: PS>
 ```
 
-Met deze opdracht wordt een interactieve sessie gestart op de lokale computer. De opdracht prompt wordt gewijzigd om aan te geven dat u nu opdrachten uitvoert in een andere sessie.
+Met deze opdracht start u een interactieve sessie op de lokale computer. De opdrachtprompt wordt gewijzigd om aan te geven dat u nu opdrachten in een andere sessie uitvoeren.
 
-De opdrachten die u invoert, worden uitgevoerd in de nieuwe sessie en de resultaten worden geretourneerd naar de standaard sessie als tekst.
+De opdrachten die u op te geven, worden uitgevoerd in de nieuwe sessie en de resultaten worden als tekst geretourneerd naar de standaardsessie.
 
-### Voor beeld 2: werken met een interactieve sessie
+### Voorbeeld 2: Werken met een interactieve sessie
 
-Met de eerste opdracht wordt de `Enter-PSSession` cmdlet gebruikt voor het starten van een interactieve sessie met Server01, een externe computer. Wanneer de sessie wordt gestart, wordt de computer naam in de opdracht prompt gewijzigd.
+De eerste opdracht gebruikt de `Enter-PSSession` cmdlet voor het starten van een interactieve sessie met Server01, een externe computer. Wanneer de sessie wordt gestart, wordt de opdrachtprompt gewijzigd om de computernaam op te nemen.
 
-Met de tweede opdracht wordt het Power Shell-proces opgehaald en wordt de uitvoer omgeleid naar het Process.txt-bestand. De opdracht wordt verzonden naar de externe computer en het bestand wordt opgeslagen op de externe computer.
+Met de tweede opdracht wordt het PowerShell-proces opgeslagen en wordt de uitvoer omgeleid naar Process.txt bestand. De opdracht wordt verzonden naar de externe computer en het bestand wordt opgeslagen op de externe computer.
 
-De derde opdracht maakt gebruik van het sleutel woord **Exit** om de interactieve sessie te beëindigen en sluit de verbinding.
-Met de vierde opdracht wordt bevestigd dat het Process.txt-bestand zich op de externe computer bevindt. Een `Get-ChildItem` ("dir") opdracht op de lokale computer kan het bestand niet vinden.
+De derde opdracht maakt gebruik van **het trefwoord Afsluiten** om de interactieve sessie te beëindigen en de verbinding te sluiten.
+De vierde opdracht bevestigt dat het Process.txt bestand zich op de externe computer. Een `Get-ChildItem` opdracht ("dir") op de lokale computer kan het bestand niet vinden.
 
 ```powershell
 PS C:\> Enter-PSSession -ComputerName Server01
@@ -134,9 +134,9 @@ At line:1 char:4
 + dir <<<<  c:\ps-test\process.txt
 ```
 
-Met deze opdracht wordt aangegeven hoe u kunt werken in een interactieve sessie met een externe computer.
+Deze opdracht laat zien hoe u in een interactieve sessie met een externe computer werkt.
 
-### Voor beeld 3: de sessie parameter gebruiken
+### Voorbeeld 3: De sessieparameter gebruiken
 
 ```powershell
 PS> $s = New-PSSession -ComputerName Server01
@@ -144,18 +144,18 @@ PS> Enter-PSSession -Session $s
 [Server01]: PS>
 ```
 
-Met deze opdrachten wordt de **sessie** parameter van gebruikt `Enter-PSSession` voor het uitvoeren van de interactieve sessie in een bestaande Power shell-sessie (**PSSession**).
+Deze opdrachten gebruiken de **sessieparameter** van om de interactieve sessie `Enter-PSSession` uit te voeren in een bestaande PowerShell-sessie **(PSSession).**
 
-### Voor beeld 4: een interactieve sessie starten en de poort en de referentie parameters opgeven
+### Voorbeeld 4: Een interactieve sessie starten en de parameters Port en Credential opgeven
 
 ```powershell
 PS> Enter-PSSession -ComputerName Server01 -Port 90 -Credential Domain01\User01
 [Server01]: PS>
 ```
 
-Met deze opdracht wordt een interactieve sessie gestart met de Server01-computer. De para meter **poort** wordt gebruikt om de poort en de **referentie** parameter op te geven om het account op te geven van een gebruiker die gemachtigd is om verbinding te maken met de externe computer.
+Met deze opdracht start u een interactieve sessie met de computer Server01. Hierbij de **poort** parameter opgeven voor de poort en de **referentie** parameter opgeven voor het account van een gebruiker die is machtigingen om verbinding te maken met de externe computer.
 
-### Voor beeld 5: een interactieve sessie stoppen
+### Voorbeeld 5: Een interactieve sessie stoppen
 
 ```powershell
 PS> Enter-PSSession -ComputerName Server01
@@ -163,36 +163,36 @@ PS> Enter-PSSession -ComputerName Server01
 PS>
 ```
 
-In dit voor beeld ziet u hoe u een interactieve sessie start en stopt. Met de eerste opdracht wordt de `Enter-PSSession` cmdlet gebruikt om een interactieve sessie met de Server01-computer te starten.
+In dit voorbeeld ziet u hoe u een interactieve sessie start en stopt. De eerste opdracht gebruikt de `Enter-PSSession` cmdlet om een interactieve sessie met de computer Server01 te starten.
 
-De tweede opdracht gebruikt de `Exit-PSSession` cmdlet om de sessie te beëindigen. U kunt ook het sleutel woord **Exit** gebruiken om de interactieve sessie te beëindigen. `Exit-PSSession` en **Afsluiten** hebben hetzelfde effect.
+De tweede opdracht gebruikt de `Exit-PSSession` cmdlet om de sessie te beëindigen. U kunt ook het **trefwoord Afsluiten** gebruiken om de interactieve sessie te beëindigen. `Exit-PSSession` en **Afsluiten** hebben hetzelfde effect.
 
-### Voor beeld 6: een interactieve sessie starten met SSH
+### Voorbeeld 6: Een interactieve sessie starten met SSH
 
 ```powershell
 PS> Enter-PSSession -HostName UserA@LinuxServer01
 ```
 
-In dit voor beeld ziet u hoe u een interactieve sessie start met behulp van Secure Shell (SSH). Als SSH op de externe computer is geconfigureerd om te vragen om wacht woorden, wordt u gevraagd om een wacht woord op te geven.
-Anders moet u gebruikmaken van SSH-sleutel op basis van gebruikers verificatie.
+In dit voorbeeld ziet u hoe u een interactieve sessie start met behulp van Secure Shell (SSH). Als SSH is geconfigureerd op de externe computer om te vragen om wachtwoorden, krijgt u een wachtwoordprompt.
+Anders moet u gebruikersverificatie op basis van een SSH-sleutel gebruiken.
 
-### Voor beeld 7: een interactieve sessie starten met SSH en de poort en gebruikers verificatie sleutel opgeven
+### Voorbeeld 7: Een interactieve sessie starten met SSH en de sleutel voor poort- en gebruikersverificatie opgeven
 
 ```powershell
 PS> Enter-PSSession -HostName UserA@LinuxServer02:22 -KeyFilePath c:\<path>\userAKey_rsa
 ```
 
-In dit voor beeld ziet u hoe u een interactieve sessie start met SSH. De para meter **poort** wordt gebruikt om de te gebruiken poort op te geven **en de para** meter voor het sleutelpad om een RSA-sleutel op te geven die wordt gebruikt om de gebruiker te verifiëren op de externe computer.
+In dit voorbeeld ziet u hoe u een interactieve sessie start met behulp van SSH. De parameter **Port wordt** gebruikt om de poort op te geven die moet worden gebruikt en de parameter **KeyFilePath** om een RSA-sleutel op te geven die wordt gebruikt om de gebruiker op de externe computer te verifiëren.
 
-## PARAMETERS
+## Parameters
 
 ### -AllowRedirection
 
-Hiermee kan de verbinding worden omgeleid naar een alternatieve URI (Uniform Resource Identifier). Omleiding is standaard niet toegestaan.
+Staat omleiding van deze verbinding naar een alternatieve Uniform Resource Identifier (URI) toe. Omleiding is standaard niet toegestaan.
 
-Wanneer u de para meter **ConnectionURI** gebruikt, kan de externe bestemming een instructie retour neren die wordt omgeleid naar een andere URI. Standaard worden verbindingen niet door Power shell omgeleid, maar u kunt deze para meter gebruiken om de verbinding te omleiden.
+Wanneer u de **parameter ConnectionURI** gebruikt, kan de externe bestemming een instructie retourneren om om te leiden naar een andere URI. PowerShell leidt verbindingen standaard niet om, maar u kunt deze parameter gebruiken om de verbinding om te leiden.
 
-U kunt ook het aantal keren beperken dat de verbinding wordt omgeleid door de waarde van de **MaximumConnectionRedirectionCount** -sessie optie te wijzigen. Gebruik de para meter **MaximumRedirection** van de `New-PSSessionOption` cmdlet of stel de eigenschap **MaximumConnectionRedirectionCount** van de `$PSSessionOption` Voorkeurs variabele in. De standaard waarde is 5.
+U kunt ook het aantal keren beperken dat de verbinding wordt omgeleid door de **optiewaarde maximumConnectionRedirectionCount-sessie** te wijzigen. Gebruik de **parameter MaximumRedirection** van de cmdlet of stel de eigenschap `New-PSSessionOption` **MaximumConnectionRedirectionCount** van de `$PSSessionOption` voorkeursvariabele in. De standaardwaarde is 5.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -208,11 +208,11 @@ Accept wildcard characters: False
 
 ### -ApplicationName
 
-Hiermee geeft u het segment van de toepassings naam van de verbindings-URI op. Gebruik deze para meter om de naam van de toepassing op te geven wanneer u de para meter **ConnectionURI** niet gebruikt in de opdracht.
+Hiermee geeft u het toepassingsnaamsegment van de verbindings-URI op. Gebruik deze parameter om de naam van de toepassing op te geven wanneer u de **parameter ConnectionURI** niet gebruikt in de opdracht .
 
-De standaard waarde is de waarde van de `$PSSessionApplicationName` Voorkeurs variabele op de lokale computer. Als deze voorkeurs variabele niet is gedefinieerd, is de standaard waarde WSMAN. Deze waarde is geschikt voor de meeste toepassingen. Zie [about_Preference_Variables](About/about_Preference_Variables.md)voor meer informatie.
+De standaardwaarde is de waarde van de `$PSSessionApplicationName` voorkeursvariabele op de lokale computer. Als deze voorkeursvariabele niet is gedefinieerd, is de standaardwaarde WSMAN. Deze waarde is geschikt voor de meeste toepassingen. Zie voor meer informatie [about_Preference_Variables.](About/about_Preference_Variables.md)
 
-De **WinRM** -service gebruikt de naam van de toepassing om een listener te selecteren om de verbindings aanvraag te onderhouden. De waarde van deze para meter moet overeenkomen met de waarde van de eigenschap **URLPrefix** van een listener op de externe computer.
+De **WinRM-service** gebruikt de toepassingsnaam om een listener te selecteren om de verbindingsaanvraag te verwerken. De waarde van deze parameter moet overeenkomen met de waarde van de **eigenschap URLPrefix** van een listener op de externe computer.
 
 ```yaml
 Type: System.String
@@ -232,19 +232,19 @@ Hiermee geeft u het mechanisme op dat wordt gebruikt om de referenties van de ge
 
 - Standaard
 - Basic
-- CredSSP
+- Credssp
 - Samenvatting
 - Kerberos
 - Negotiate
 - NegotiateWithImplicitCredential
 
-De standaard waarde is standaard.
+De standaardwaarde is Standaard.
 
-CredSSP-verificatie is alleen beschikbaar in Windows Vista, Windows Server 2008 en latere versies van het Windows-besturings systeem.
+CredSSP-verificatie is alleen beschikbaar in Windows Vista, Windows Server 2008 en latere versies van het Windows-besturingssysteem.
 
-Zie [AuthenticationMechanism Enum](/dotnet/api/system.management.automation.runspaces.authenticationmechanism)voor meer informatie over de waarden van deze para meter.
+Zie [AuthenticationMechanism Enum](/dotnet/api/system.management.automation.runspaces.authenticationmechanism)voor meer informatie over de waarden van deze parameter.
 
-Let op: de verificatie van de referentie provider (CredSSP), waarbij de referenties van de gebruiker worden door gegeven aan een externe computer die moet worden geverifieerd, is ontworpen voor opdrachten die verificatie vereisen voor meer dan één bron, zoals het openen van een externe netwerk share. Dit mechanisme verhoogt het beveiligings risico van de externe bewerking. Als er is geknoeid met de externe computer, kunnen de referenties die aan worden door gegeven, worden gebruikt om de netwerk sessie te beheren.
+Let op: CredSSP-verificatie (Credential Security Support Provider), waarbij de referenties van de gebruiker worden doorgegeven aan een externe computer om te worden geverifieerd, is ontworpen voor opdrachten waarvoor verificatie op meer dan één resource is vereist, zoals toegang tot een externe netwerk share. Dit mechanisme verhoogt het beveiligingsrisico van de externe bewerking. Als de externe computer is gecompromitteerd, kunnen de referenties die worden doorgegeven aan de computer worden gebruikt voor het beheer van de netwerksessie.
 
 ```yaml
 Type: System.Management.Automation.Runspaces.AuthenticationMechanism
@@ -261,11 +261,11 @@ Accept wildcard characters: False
 
 ### -CertificateThumbprint
 
-Hiermee geeft u het digitale open bare-sleutel certificaat (x509) op van een gebruikers account dat is gemachtigd om deze actie uit te voeren. Voer de vinger afdruk van het certificaat in.
+Hiermee geeft u het digitale openbare-sleutelcertificaat (X509) op van een gebruikersaccount dat is machtigingen heeft om deze actie uit te voeren. Voer de vingerafdruk van het certificaat in.
 
-Certificaten worden gebruikt in authenticatie op basis van client certificaten. Ze kunnen alleen worden toegewezen aan lokale gebruikers accounts. ze werken niet met domein accounts.
+Certificaten worden gebruikt bij verificatie op basis van clientcertificaten. Ze kunnen alleen worden toe te wijs aan lokale gebruikersaccounts; ze werken niet met domeinaccounts.
 
-Als u een certificaat wilt ophalen, gebruikt u de `Get-Item` of- `Get-ChildItem` opdracht in het Power shell-certificaat: station.
+Als u een certificaat wilt verkrijgen, gebruikt u `Get-Item` de opdracht of in het `Get-ChildItem` PowerShell-station Certificaat: .
 
 ```yaml
 Type: System.String
@@ -281,13 +281,13 @@ Accept wildcard characters: False
 
 ### -ComputerName
 
-Hiermee geeft u een computer naam op. Met deze cmdlet wordt een interactieve sessie gestart met de opgegeven externe computer. Voer slechts één computer naam in. Standaard is dit de lokale computer.
+Hiermee geeft u een computernaam. Deze cmdlet start een interactieve sessie met de opgegeven externe computer. Voer slechts één computernaam in. Standaard is dit de lokale computer.
 
-Typ de NetBIOS-naam, het IP-adres of de Fully Qualified Domain Name van de computer. U kunt ook een computer naam door geven aan `Enter-PSSession` .
+Typ de NetBIOS-naam, het IP-adres of de fully qualified domain name van de computer. U kunt ook een computernaam doorspijpen naar `Enter-PSSession` .
 
-Als u een IP-adres wilt gebruiken in de waarde van de para meter **ComputerName** , moet de opdracht de para meter **Credential** bevatten. De computer moet ook worden geconfigureerd voor HTTPS-Trans Port of het IP-adres van de externe computer moet worden opgenomen in de WinRM TrustedHosts-lijst op de lokale computer. Zie "een computer toevoegen aan de lijst met vertrouwde hosts" in [about_Remote_Troubleshooting](About/about_Remote_Troubleshooting.md)voor instructies voor het toevoegen van een computer naam aan de lijst TrustedHosts.
+Als u een IP-adres wilt gebruiken in de waarde van de parameter **ComputerName,** moet de opdracht de parameter **Credential** bevatten. De computer moet ook worden geconfigureerd voor HTTPS-transport of het IP-adres van de externe computer moet worden opgenomen in de WinRM TrustedHosts-lijst op de lokale computer. Zie 'How to Add a Computer to the Trusted Host List' in about_Remote_Troubleshooting voor instructies voor het toevoegen van een computernaam [aan de](About/about_Remote_Troubleshooting.md)lijst met TrustedHosts.
 
-Opmerking: in Windows Vista en latere versies van het Windows-besturings systeem moet u Power shell starten met de optie als administrator uitvoeren om de lokale computer op te geven in de waarde van de para meter **ComputerName** .
+Opmerking: in Windows Vista en latere versies van het Windows-besturingssysteem moet u PowerShell starten met de optie Als administrator uitvoeren om de lokale computer op te nemen in de waarde van de parameter **ComputerName.**
 
 ```yaml
 Type: System.String
@@ -301,17 +301,17 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
-### -Configuratiepad
+### -ConfigurationName
 
-Hiermee geeft u de sessie configuratie op die wordt gebruikt voor de interactieve sessie.
+Hiermee geeft u de sessieconfiguratie die wordt gebruikt voor de interactieve sessie.
 
-Voer een configuratie naam of de volledig gekwalificeerde resource-URI in voor een sessie configuratie. Als u alleen de configuratie naam opgeeft, wordt de volgende schema-URI voor voegsel: `http://schemas.microsoft.com/powershell` .
+Voer een configuratienaam of de volledig gekwalificeerde resource-URI in voor een sessieconfiguratie. Als u alleen de configuratienaam opgeeft, wordt de volgende schema-URI toegevoegd: `http://schemas.microsoft.com/powershell` .
 
-Bij gebruik in combi natie met SSH geeft dit het subsysteem op dat op het doel moet worden gebruikt, zoals gedefinieerd in sshd_config. De standaard waarde voor SSH is het `powershell` subsysteem.
+Bij gebruik met SSH geeft u hiermee het subsysteem op dat moet worden gebruikt op het doel, zoals gedefinieerd in sshd_config. De standaardwaarde voor SSH is het `powershell` subsysteem.
 
-De sessie configuratie voor een sessie bevindt zich op de externe computer. Als de opgegeven sessie configuratie niet bestaat op de externe computer, mislukt de opdracht.
+De sessieconfiguratie voor een sessie bevindt zich op de externe computer. Als de opgegeven sessieconfiguratie niet bestaat op de externe computer, mislukt de opdracht.
 
-De standaard waarde is de waarde van de `$PSSessionConfigurationName` Voorkeurs variabele op de lokale computer. Als deze voorkeurs variabele niet is ingesteld, is de standaard instelling micro soft. Power shell. Zie [about_Preference_Variables](About/about_Preference_Variables.md)voor meer informatie.
+De standaardwaarde is de waarde van de `$PSSessionConfigurationName` voorkeursvariabele op de lokale computer. Als deze voorkeursvariabele niet is ingesteld, is de standaardwaarde Microsoft.PowerShell. Zie voor meer informatie [about_Preference_Variables.](About/about_Preference_Variables.md)
 
 ```yaml
 Type: System.String
@@ -325,21 +325,39 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+### -ConnectingTimeout
+
+Hiermee geeft u de hoeveelheid tijd in milliseconden op die is toegestaan voor het voltooien van de eerste SSH-verbinding. Als de verbinding niet binnen de opgegeven tijd wordt voltooid, wordt er een fout geretourneerd.
+
+Deze parameter is geïntroduceerd in PowerShell 7.2
+
+```yaml
+Type: System.Int32
+Parameter Sets: SSHHost
+Aliases:
+
+Required: False
+Position: Named
+Default value: unlimited
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -ConnectionUri
 
-Hiermee geeft u een URI op die het verbindings eindpunt voor de sessie definieert. De URI moet volledig gekwalificeerd zijn. De indeling van deze teken reeks is als volgt:
+Hiermee geeft u een URI op die het verbindings-eindpunt voor de sessie definieert. De URI moet volledig gekwalificeerd zijn. De indeling van deze tekenreeks is als volgt:
 
 `<Transport>://<ComputerName>:<Port>/<ApplicationName>`
 
-De standaard waarde is als volgt:
+De standaardwaarde is als volgt:
 
 `http://localhost:5985/WSMAN`
 
-Als u geen **ConnectionURI** opgeeft, kunt u de para meters **UseSSL**, **ComputerName**, **Port** en **ApplicationName** gebruiken om de **ConnectionURI** -waarden op te geven.
+Als u geen **ConnectionURI** opgeeft, kunt u de parameters **UseSSL,** **ComputerName,** **Port** en **ApplicationName** gebruiken om de **ConnectionURI-waarden op te** geven.
 
-Geldige waarden voor het transport segment van de URI zijn HTTP en HTTPS. Als u een verbindings-URI met een transport segment opgeeft, maar geen poort opgeeft, wordt de sessie gemaakt met behulp van standaard poorten: 80 voor HTTP en 443 voor HTTPS. Als u de standaard poorten voor externe communicatie van Power shell wilt gebruiken, geeft u poort 5985 voor HTTP of 5986 op voor HTTPS.
+Geldige waarden voor het segment Transport van de URI zijn HTTP en HTTPS. Als u een verbindings-URI opgeeft met een Transport-segment, maar geen poort opgeeft, wordt de sessie gemaakt met behulp van standaardenpoorten: 80 voor HTTP en 443 voor HTTPS. Als u de standaardpoorten wilt gebruiken voor remoting van PowerShell, geeft u poort 5985 voor HTTP of 5986 voor HTTPS op.
 
-Als de doel computer de verbinding omleidt naar een andere URI, wordt de omleiding door Power shell voor komen, tenzij u de para meter **AllowRedirection** in de opdracht gebruikt.
+Als de doelcomputer de verbinding omleiden naar een andere URI, PowerShell voorkomt de omleiding, tenzij u de **parameter AllowRedirection** in de opdracht.
 
 ```yaml
 Type: System.Uri
@@ -355,7 +373,7 @@ Accept wildcard characters: False
 
 ### -ContainerId
 
-Hiermee geeft u de ID van een container op.
+Hiermee geeft u de id van een container op.
 
 ```yaml
 Type: System.String
@@ -371,14 +389,14 @@ Accept wildcard characters: False
 
 ### -Credential
 
-Hiermee geeft u een gebruikers account op dat is gemachtigd om deze actie uit te voeren. Standaard is dit de huidige gebruiker.
+Hiermee geeft u een gebruikersaccount op dat is machtigingen heeft om deze actie uit te voeren. Standaard is dit de huidige gebruiker.
 
-Typ een gebruikers naam, zoals **gebruiker01** of **Domain01\User01**, of voer een **PSCredential** -object in dat door de cmdlet wordt gegenereerd `Get-Credential` . Als u een gebruikers naam typt, wordt u gevraagd het wacht woord in te voeren.
+Typ een gebruikersnaam, zoals **User01** of **Domain01\User01,** of voer een **PSCredential-object** in dat is gegenereerd door de `Get-Credential` cmdlet . Als u een gebruikersnaam typt, wordt u gevraagd het wachtwoord in te voeren.
 
-Referenties worden opgeslagen in een [PSCredential](/dotnet/api/system.management.automation.pscredential) -object en het wacht woord wordt opgeslagen als [SecureString](/dotnet/api/system.security.securestring).
+Referenties worden opgeslagen in een [PSCredential-object](/dotnet/api/system.management.automation.pscredential) en het wachtwoord wordt opgeslagen als een [SecureString](/dotnet/api/system.security.securestring).
 
 > [!NOTE]
-> Zie [Hoe veilig is securestring?](/dotnet/api/system.security.securestring#how-secure-is-securestring)voor meer informatie over **securestring** Data Protection.
+> Zie How secure is SecureString? (Hoe veilig [is SecureString?) voor meer informatie over SecureString-gegevensbeveiliging.](/dotnet/api/system.security.securestring#how-secure-is-securestring) 
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -394,17 +412,17 @@ Accept wildcard characters: False
 
 ### -EnableNetworkAccess
 
-Geeft aan dat met deze cmdlet een interactief beveiligings token wordt toegevoegd aan loop Back-sessies. Met het interactieve token kunt u opdrachten uitvoeren in de loop back-sessie die gegevens van andere computers ophalen. U kunt bijvoorbeeld een opdracht uitvoeren in de sessie waarmee XML-bestanden van een externe computer naar de lokale computer worden gekopieerd.
+Geeft aan dat deze cmdlet een interactief beveiliging token toevoegt aan loopback-sessies. Met het interactieve token kunt u opdrachten uitvoeren in de loopback-sessie die gegevens van andere computers op halen. U kunt bijvoorbeeld een opdracht uitvoeren in de sessie die XML-bestanden kopieert van een externe computer naar de lokale computer.
 
-Een loop back-sessie is een **PSSession** die afkomstig is van en eindigt op dezelfde computer. Als u een loop back-sessie wilt maken, laat u de para meter **ComputerName** weg of stelt u de waarde in op. (punt), localhost of de naam van de lokale computer.
+Een loopback-sessie is **een PSSession** die afkomstig is van en eindigt op dezelfde computer. Als u een loopback-sessie wilt maken, laat u de parameter **ComputerName** weg of stelt u de waarde ervan in op . (punt), localhost of de naam van de lokale computer.
 
-Loop Back-sessies worden standaard gemaakt met behulp van een netwerk token, wat mogelijk niet voldoende machtigingen biedt om te verifiëren bij externe computers.
+Loopback-sessies worden standaard gemaakt met behulp van een netwerk-token, dat mogelijk onvoldoende machtigingen biedt voor verificatie bij externe computers.
 
-De para meter **EnableNetworkAccess** is alleen effectief in loop Back-sessies. Als u **EnableNetworkAccess** gebruikt wanneer u een sessie op een externe computer maakt, mislukt de opdracht, maar wordt de para meter genegeerd.
+De **parameter EnableNetworkAccess** is alleen effectief in loopback-sessies. Als u **EnableNetworkAccess** gebruikt wanneer u een sessie op een externe computer maakt, slaagt de opdracht, maar de parameter wordt genegeerd.
 
-U kunt externe toegang ook toestaan in een loop back-sessie met behulp van de **CredSSP** -waarde van de **verificatie** parameter, die de sessie referenties delegeert naar andere computers.
+U kunt ook externe toegang toestaan in een loopback-sessie  met behulp van de **CredSSP-waarde** van de verificatieparameter, die de sessiereferenties delegeert naar andere computers.
 
-Deze para meter is geïntroduceerd in Windows Power Shell 3,0.
+Deze parameter is geïntroduceerd in Windows PowerShell 3.0.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -418,11 +436,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Hostnaam
+### -HostName
 
-Hiermee geeft u een computer naam voor een verbinding op basis van SSH (Secure Shell). Dit is vergelijkbaar met de para meter **ComputerName** , behalve dat de verbinding met de externe computer wordt gemaakt met behulp van SSH in plaats van Windows WinRM. Met deze para meter kunt u de gebruikers naam en/of poort opgeven als onderdeel van de waarde van de para meter voor de naam van de hostnaam met behulp van het formulier `user@hostname:port` . De gebruikers naam en/of poort die is opgegeven als onderdeel van de hostnaam, hebben voor rang op de `-UserName` `-Port` para meters en, indien opgegeven. Hierdoor kunnen meerdere computer namen worden door gegeven aan deze para meter, waarbij sommige specifieke gebruikers namen en/of poorten worden gebruikt, terwijl anderen de gebruikers naam en/of poort van de `-UserName` `-Port` para meters en gebruiken.
+Hiermee geeft u een computernaam op voor een SSH-verbinding (Secure Shell). Dit is vergelijkbaar met de **ComputerName** parameter behalve dat de verbinding met de externe computer wordt gemaakt met behulp van SSH in plaats van Windows WinRM. Deze parameter ondersteunt het opgeven van de gebruikersnaam en/of poort als onderdeel van de parameterwaarde van de hostnaam met behulp van het formulier `user@hostname:port` . De gebruikersnaam en/of poort die zijn opgegeven als onderdeel van de hostnaam heeft voorrang op de `-UserName` `-Port` parameters en, indien opgegeven. Hierdoor kunnen meerdere computernamen worden doorgegeven aan deze parameter, waarbij sommige specifieke gebruikersnamen en/of poorten hebben, terwijl andere de gebruikersnaam en/of poort van de `-UserName` `-Port` parameters en gebruiken.
 
-Deze para meter is geïntroduceerd in Power shell 6,0.
+Deze parameter is geïntroduceerd in PowerShell 6.0.
 
 ```yaml
 Type: System.String
@@ -438,9 +456,9 @@ Accept wildcard characters: False
 
 ### -Id
 
-Hiermee geeft u de ID op van een bestaande sessie. `Enter-PSSession` maakt gebruik van de opgegeven sessie voor de interactieve sessie.
+Hiermee geeft u de id van een bestaande sessie. `Enter-PSSession` gebruikt de opgegeven sessie voor de interactieve sessie.
 
-Gebruik de cmdlet om de ID van een sessie te vinden `Get-PSSession` .
+Gebruik de cmdlet om de id van een `Get-PSSession` sessie te vinden.
 
 ```yaml
 Type: System.Int32
@@ -456,9 +474,9 @@ Accept wildcard characters: False
 
 ### -InstanceId
 
-Hiermee geeft u de exemplaar-ID van een bestaande sessie. `Enter-PSSession` maakt gebruik van de opgegeven sessie voor de interactieve sessie.
+Hiermee geeft u de exemplaar-id van een bestaande sessie. `Enter-PSSession` gebruikt de opgegeven sessie voor de interactieve sessie.
 
-De exemplaar-ID is een GUID. Gebruik de cmdlet om de exemplaar-ID van een sessie te vinden `Get-PSSession` . U kunt ook de para meters voor de **sessie**, **naam** of **id** gebruiken om een bestaande sessie op te geven. U kunt ook de para meter **ComputerName** gebruiken om een tijdelijke sessie te starten.
+De exemplaar-id is een GUID. Gebruik de cmdlet om de exemplaar-id van een `Get-PSSession` sessie te vinden. U kunt ook de parameters **Sessie,** **Naam** of **Id** gebruiken om een bestaande sessie op te geven. U kunt ook de **parameter ComputerName gebruiken** om een tijdelijke sessie te starten.
 
 ```yaml
 Type: System.Guid
@@ -472,13 +490,13 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Bestandspad
+### -KeyFilePath
 
-Hiermee geeft u een pad naar een sleutel bestand dat door een Secure Shell (SSH) wordt gebruikt om een gebruiker op een externe computer te verifiëren.
+Hiermee geeft u een sleutelbestandspad op dat door Secure Shell (SSH) wordt gebruikt om een gebruiker op een externe computer te verifiëren.
 
-Met SSH kan gebruikers verificatie worden uitgevoerd via persoonlijke/open bare sleutels als alternatief voor de basis wachtwoord verificatie. Als de externe computer is geconfigureerd voor sleutel verificatie, kan deze para meter worden gebruikt om de sleutel op te geven waarmee de gebruiker wordt geïdentificeerd.
+Met SSH kan gebruikersverificatie worden uitgevoerd via persoonlijke/openbare sleutels als alternatief voor basiswachtwoordverificatie. Als de externe computer is geconfigureerd voor sleutelverificatie, kan deze parameter worden gebruikt om de sleutel op te geven waarmee de gebruiker wordt geïdentificeerd.
 
-Deze para meter is geïntroduceerd in Power shell 6,0.
+Deze parameter is geïntroduceerd in PowerShell 6.0.
 
 ```yaml
 Type: System.String
@@ -494,11 +512,11 @@ Accept wildcard characters: False
 
 ### -Name
 
-Hiermee geeft u de beschrijvende naam van een bestaande sessie. `Enter-PSSession` maakt gebruik van de opgegeven sessie voor de interactieve sessie.
+Hiermee geeft u de naam van een bestaande sessie. `Enter-PSSession` gebruikt de opgegeven sessie voor de interactieve sessie.
 
-Als de naam die u opgeeft, overeenkomt met meer dan één sessie, mislukt de opdracht. U kunt ook de para meters **Session**, **InstanceId** of **id** gebruiken om een bestaande sessie op te geven. U kunt ook de para meter **ComputerName** gebruiken om een tijdelijke sessie te starten.
+Als de naam die u opgeeft overeenkomt met meer dan één sessie, mislukt de opdracht. U kunt ook de parameters **Session,** **InstanceID** of **ID** gebruiken om een bestaande sessie op te geven. U kunt ook de **parameter ComputerName gebruiken** om een tijdelijke sessie te starten.
 
-Als u een beschrijvende naam voor een sessie wilt instellen, gebruikt u de para meter **name** van de `New-PSSession` cmdlet.
+Als u een gebruiksvriendelijke naam voor een sessie wilt maken, gebruikt u de parameter **Name** van de `New-PSSession` cmdlet .
 
 ```yaml
 Type: System.String
@@ -514,24 +532,24 @@ Accept wildcard characters: False
 
 ### -Port
 
-Hiermee geeft u de netwerk poort op de externe computer die wordt gebruikt voor deze opdracht.
+Hiermee geeft u de netwerkpoort op de externe computer die wordt gebruikt voor deze opdracht.
 
-In Power shell 6,0 is deze para meter Inlcuded in de para meter **hostname** die ondersteuning biedt voor ssh-verbindingen (Secure Shell).
+In PowerShell 6.0 is deze parameter in de **parameterset HostName** gebruikt die ondersteuning biedt voor SSH-verbindingen (Secure Shell).
 
-**WinRM (ComputerName para meter set)**
+**WinRM (parameterset ComputerName)**
 
-Als u verbinding wilt maken met een externe computer, moet op de externe computer worden geluisterd op de poort die door de verbinding wordt gebruikt. De standaard poorten zijn 5985, de WinRM-poort voor HTTP en 5986, de WinRM-poort voor HTTPS.
+Als u verbinding wilt maken met een externe computer, moet de externe computer luisteren op de poort die de verbinding gebruikt. De standaardpoorten zijn 5985, de WinRM-poort voor HTTP, en 5986, de WinRM-poort voor HTTPS.
 
-Voordat u een andere poort gebruikt, moet u de WinRM-listener op de externe computer configureren om op die poort te Luis teren. Gebruik de volgende opdrachten om de listener te configureren:
+Voordat u een alternatieve poort gebruikt, moet u de WinRM-listener op de externe computer configureren om naar die poort te luisteren. Gebruik de volgende opdrachten om de listener te configureren:
 
 1. `winrm delete winrm/config/listener?Address=*+Transport=HTTP`
 2. `winrm create winrm/config/listener?Address=*+Transport=HTTP @{Port="\<port-number\>"}`
 
-Gebruik de para meter **poort** alleen als dat nodig is. De poort instelling in de opdracht is van toepassing op alle computers of sessies waarop de opdracht wordt uitgevoerd. Een alternatieve poort instelling kan verhinderen dat de opdracht wordt uitgevoerd op alle computers.
+Gebruik de parameter **Port alleen** als dat nodig is. De poortinstelling in de opdracht is van toepassing op alle computers of sessies waarop de opdracht wordt uitgevoerd. Een alternatieve poortinstelling kan verhinderen dat de opdracht wordt uitgevoerd op alle computers.
 
-**SSH (HostName para meter set)**
+**SSH (set hostnaamparameters)**
 
-Als u verbinding wilt maken met een externe computer, moet de externe computer zijn geconfigureerd met de SSH-service (SSHD) en moet u Luis teren op de poort die door de verbinding wordt gebruikt. De standaard poort voor SSH is 22.
+Als u verbinding wilt maken met een externe computer, moet de externe computer zijn geconfigureerd met de SSH-service (SSHD) en moet deze luisteren op de poort die door de verbinding wordt gebruikt. De standaardpoort voor SSH is 22.
 
 ```yaml
 Type: System.Int32
@@ -547,7 +565,7 @@ Accept wildcard characters: False
 
 ### -RunAsAdministrator
 
-Geeft aan dat de **PSSession** wordt uitgevoerd als beheerder.
+Geeft aan dat **pssession wordt uitgevoerd** als beheerder.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -563,11 +581,11 @@ Accept wildcard characters: False
 
 ### -Sessie
 
-Hiermee geeft u een Power shell-sessie (**PSSession**) op die moet worden gebruikt voor de interactieve sessie. Deze para meter gebruikt een sessie object. U kunt ook de para meters **name**, **InstanceId** of **id** gebruiken om een **PSSession** op te geven.
+Hiermee geeft u een PowerShell-sessie **(PSSession**) op die moet worden gebruikt voor de interactieve sessie. Deze parameter gebruikt een sessieobject. U kunt ook de parameters **Name,** **InstanceID** of **ID** gebruiken om een **PSSession op te geven.**
 
-Voer een variabele in die een sessie object bevat of een opdracht waarmee een sessie object wordt gemaakt of opgehaald, zoals een `New-PSSession` of- `Get-PSSession` opdracht. U kunt ook een sessie object door sluizen naar `Enter-PSSession` . U kunt slechts één **PSSession** verzenden met behulp van deze para meter. Als u een variabele opgeeft die meer dan één **PSSession** bevat, mislukt de opdracht.
+Voer een variabele in die een sessieobject bevat of een opdracht die een sessieobject maakt of op haalt, zoals een `New-PSSession` - of `Get-PSSession` -opdracht. U kunt ook een sessieobject doorspijpen naar `Enter-PSSession` . U kunt slechts één **PSSession verzenden met** behulp van deze parameter. Als u een variabele met meer dan één **PSSession opgeeft,** mislukt de opdracht.
 
-Wanneer u `Exit-PSSession` of het sleutel woord **Exit** gebruikt, wordt de interactieve sessie beëindigd, maar de **PSSession** die u hebt gemaakt, blijft open en beschikbaar voor gebruik.
+Wanneer u of `Exit-PSSession` het **trefwoord EXIT** gebruikt, wordt de interactieve sessie beëindigd, maar de **PSSession** die u hebt gemaakt, blijft geopend en beschikbaar voor gebruik.
 
 ```yaml
 Type: System.Management.Automation.Runspaces.PSSession
@@ -583,14 +601,14 @@ Accept wildcard characters: False
 
 ### -SessionOption
 
-Hiermee stelt u geavanceerde opties in voor de sessie. Voer een **SessionOption** -object in, zoals het, dat u maakt met behulp van de `New-PSSessionOption` cmdlet of een hash-tabel waarin de sleutels de naam van de sessie optie zijn en de waarden voor de waarden van de sessie.
+Hiermee stelt u geavanceerde opties voor de sessie. Voer een **SessionOption-object** in, zoals een object dat u maakt met behulp van de cmdlet of een hash-tabel waarin de sleutels sessieoptienamen zijn en de waarden `New-PSSessionOption` sessieoptiewaarden zijn.
 
-De standaard waarden voor de opties worden bepaald door de waarde van de `$PSSessionOption` Voorkeurs variabele, als deze is ingesteld. Anders worden de standaard waarden bepaald door opties die zijn ingesteld in de sessie configuratie.
+De standaardwaarden voor de opties worden bepaald door de waarde van de `$PSSessionOption` voorkeursvariabele als deze is ingesteld. Anders worden de standaardwaarden ingesteld door opties die zijn ingesteld in de sessieconfiguratie.
 
-De waarden van de sessie optie hebben voor rang op de standaard waarden voor sessies die zijn ingesteld in de `$PSSessionOption` Voorkeurs variabele en in de sessie configuratie. Ze hebben echter geen voor rang op de maximum waarden, quota's of limieten die zijn ingesteld in de sessie configuratie.
+De waarden van de sessieoptie hebben voorrang op de standaardwaarden voor sessies die zijn ingesteld in de `$PSSessionOption` voorkeursvariabele en in de sessieconfiguratie. Ze hebben echter geen voorrang op maximumwaarden, quota of limieten die zijn ingesteld in de sessieconfiguratie.
 
-Zie voor een beschrijving van de sessie opties, met inbegrip van de standaard waarden `New-PSSessionOption` .
-Zie about_Preference_Variables voor meer informatie over de `$PSSessionOption` voorkeurs [](About/about_Preference_Variables.md)variabele. Zie [about_Session_Configurations](About/about_Session_Configurations.md) (Engelstalig) voor meer informatie over sessieconfiguraties.
+Zie voor een beschrijving van de sessieopties, met inbegrip van de `New-PSSessionOption` standaardwaarden.
+Zie voor meer informatie `$PSSessionOption` over de voorkeursvariabele [about_Preference_Variables.](About/about_Preference_Variables.md) Zie [about_Session_Configurations](About/about_Session_Configurations.md) (Engelstalig) voor meer informatie over sessieconfiguraties.
 
 ```yaml
 Type: System.Management.Automation.Remoting.PSSessionOption
@@ -608,9 +626,9 @@ Accept wildcard characters: False
 
 Geeft aan dat de externe verbinding tot stand is gebracht met behulp van Secure Shell (SSH).
 
-Power Shell maakt standaard gebruik van Windows WinRM om verbinding te maken met een externe computer. Met deze switch wordt Power shell gedwongen de para meter HostName te gebruiken die is ingesteld voor het maken van een externe SSH-verbinding.
+PowerShell maakt standaard gebruik van Windows WinRM om verbinding te maken met een externe computer. Deze schakelknop dwingt PowerShell om de parameterset HostName te gebruiken voor het tot stand brengen van een externe SSH-verbinding.
 
-Deze para meter is geïntroduceerd in Power shell 6,0.
+Deze parameter is geïntroduceerd in PowerShell 6.0.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -629,9 +647,9 @@ Accept wildcard characters: False
 
 Hiermee geeft u het SSH-subsysteem op dat wordt gebruikt voor de nieuwe **PSSession**.
 
-Hiermee geeft u het subsysteem op dat moet worden gebruikt op het doel zoals gedefinieerd in sshd_config. Het subsysteem start een specifieke versie van Power shell met vooraf gedefinieerde para meters. Als het opgegeven subsysteem niet bestaat op de externe computer, mislukt de opdracht.
+Hiermee geeft u het subsysteem op dat moet worden gebruikt op het doel, zoals gedefinieerd in sshd_config. Het subsysteem start een specifieke versie van PowerShell met vooraf gedefinieerde parameters. Als het opgegeven subsysteem niet bestaat op de externe computer, mislukt de opdracht.
 
-Als deze para meter niet wordt gebruikt, is de standaard het subsysteem Power shell.
+Als deze parameter niet wordt gebruikt, is de standaardwaarde het subsysteem 'powershell'.
 
 ```yaml
 Type: System.String
@@ -647,15 +665,15 @@ Accept wildcard characters: False
 
 ### -GebruikersNaam
 
-Hiermee geeft u de gebruikers naam op voor het account dat wordt gebruikt om een sessie te maken op de externe computer. De verificatie methode voor de gebruiker is afhankelijk van hoe Secure Shell (SSH) is geconfigureerd op de externe computer.
+Hiermee geeft u de gebruikersnaam voor het account dat wordt gebruikt voor het maken van een sessie op de externe computer. De verificatiemethode voor gebruikers is afhankelijk van hoe Secure Shell (SSH) is geconfigureerd op de externe computer.
 
-Als SSH is geconfigureerd voor basis wachtwoord verificatie, wordt u gevraagd om het wacht woord van de gebruiker.
+Als SSH is geconfigureerd voor basisverificatie van wachtwoorden, wordt u gevraagd om het gebruikerswachtwoord.
 
-Als SSH is geconfigureerd voor sleutel op basis van gebruikers verificatie, kan een pad naar een sleutel bestand worden opgegeven **via de para** meter voor het sleutelpad en er wordt geen wachtwoord prompt weer gegeven. Houd er rekening mee dat als het sleutel bestand van de client gebruiker zich bevindt op een bekende SSH-locatie, de para meter voor het **bestandspad** niet nodig is voor op sleutels gebaseerde verificatie en de gebruikers verificatie automatisch wordt uitgevoerd op basis van de gebruikers naam. Raadpleeg SSH-documentatie over op sleutels gebaseerde gebruikers verificatie voor meer informatie.
+Als SSH is geconfigureerd voor gebruikersverificatie op basis van sleutels, kan er een pad naar een sleutelbestand worden opgegeven via de parameter **KeyFilePath** en wordt er geen wachtwoordprompt uitgevoerd. Houd er rekening mee dat als het clientgebruikerssleutelbestand zich op een bekende SSH-locatie bevindt, de parameter **KeyFilePath** niet nodig is voor verificatie op basis van sleutels en dat gebruikersverificatie automatisch wordt uitgevoerd op basis van de gebruikersnaam. Zie SSH-documentatie over op sleutels gebaseerde gebruikersverificatie voor meer informatie.
 
-Dit is geen vereiste para meter. Als er geen **username** -para meter is opgegeven, wordt de naam van de huidige aanmeldings gebruiker gebruikt voor de verbinding.
+Dit is geen vereiste parameter. Als er **geen userName** parameter is opgegeven, wordt de huidige gebruikersnaam voor aanmelden gebruikt voor de verbinding.
 
-Deze para meter is geïntroduceerd in Power shell 6,0.
+Deze parameter is geïntroduceerd in PowerShell 6.0.
 
 ```yaml
 Type: System.String
@@ -671,11 +689,11 @@ Accept wildcard characters: False
 
 ### -UseSSL
 
-Geeft aan dat deze cmdlet het Secure Sockets Layer-Protocol (SSL) gebruikt om verbinding te maken met de externe computer. Standaard wordt SSL niet gebruikt.
+Geeft aan dat deze cmdlet het SSL-protocol (Secure Sockets Layer) gebruikt om een verbinding met de externe computer tot stand te brengen. Standaard wordt SSL niet gebruikt.
 
-WS-Management versleutelt alle Power shell-inhoud die via het netwerk wordt verzonden. De para meter **UseSSL** is een extra beveiliging waarmee de gegevens worden verzonden via een HTTPS-verbinding in plaats van via een http-verbinding.
+WS-Management versleutelt alle PowerShell-inhoud die via het netwerk wordt verzonden. De **parameter UseSSL** is een extra beveiliging die de gegevens via een HTTPS-verbinding verzendt in plaats van een HTTP-verbinding.
 
-Als u deze para meter gebruikt, maar SSL is niet beschikbaar op de poort die wordt gebruikt voor de opdracht, mislukt de opdracht.
+Als u deze parameter gebruikt, maar SSL niet beschikbaar is op de poort die wordt gebruikt voor de opdracht, mislukt de opdracht.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -691,7 +709,7 @@ Accept wildcard characters: False
 
 ### -VMId
 
-Hiermee geeft u de ID van een virtuele machine op.
+Hiermee geeft u de id van een virtuele machine.
 
 ```yaml
 Type: System.Guid
@@ -707,7 +725,7 @@ Accept wildcard characters: False
 
 ### -VMName
 
-Hiermee geeft u de naam van een virtuele machine op.
+Hiermee geeft u de naam van een virtuele machine.
 
 ```yaml
 Type: System.String
@@ -723,41 +741,41 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable. Zie [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)voor meer informatie.
+Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable. Zie voor meer informatie [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INVOER
+## Invoerwaarden
 
-### System. String, System. Management. Automation. Runspaces. PSSession
+### System.String, System.Management.Automation.Runspaces.PSSession
 
-U kunt een computer naam, als een teken reeks of een sessie object door geven aan deze cmdlet.
+U kunt een computernaam, als een tekenreeks of een sessieobject doorseen naar deze cmdlet.
 
-## UITVOER
+## Uitvoerwaarden
 
 ### Geen
 
-De cmdlet retourneert geen uitvoer.
+De cmdlet retourneerde geen uitvoer.
 
-## OPMERKINGEN
+## Notities
 
-Als u verbinding wilt maken met een externe computer, moet u lid zijn van de groep Administrators op de externe computer. Als u een interactieve sessie op de lokale computer wilt starten, moet u Power shell starten met de optie **als administrator uitvoeren** .
+Als u verbinding wilt maken met een externe computer, moet u lid zijn van de groep Administrators op de externe computer. Als u een interactieve sessie op de lokale computer wilt starten, moet u PowerShell starten met de **optie Als administrator** uitvoeren.
 
-Wanneer u gebruikt `Enter-PSSession` , wordt uw gebruikers profiel op de externe computer gebruikt voor de interactieve sessie. De opdrachten in het profiel voor externe gebruikers, met inbegrip van opdrachten voor het toevoegen van Power shell-modules en het wijzigen van de opdracht prompt, uitvoeren voordat de prompt op afstand wordt weer gegeven.
+Wanneer u `Enter-PSSession` gebruikt, wordt uw gebruikersprofiel op de externe computer gebruikt voor de interactieve sessie. De opdrachten in het profiel van de externe gebruiker, inclusief opdrachten voor het toevoegen van PowerShell-modules en om de opdrachtprompt te wijzigen, voert u uit voordat de externe prompt wordt weergegeven.
 
-`Enter-PSSession` maakt gebruik van de GEBRUIKERSINTERFACE cultuur-instelling op de lokale computer voor de interactieve sessie. Gebruik de automatische variabele om de lokale GEBRUIKERSINTERFACE cultuur te vinden `$UICulture` .
+`Enter-PSSession` gebruikt de cultuurinstelling ui op de lokale computer voor de interactieve sessie. Gebruik de automatische variabele om de lokale UI-cultuur `$UICulture` te vinden.
 
-`Enter-PSSession` vereist de `Get-Command` `Out-Default` `Exit-PSSession` cmdlets, en. Als deze cmdlets niet zijn opgenomen in de sessie configuratie op de externe computer, `Enter-PSSession` mislukt de opdrachten.
+`Enter-PSSession` vereist `Get-Command` de `Out-Default` `Exit-PSSession` cmdlets , en . Als deze cmdlets niet zijn opgenomen in de sessieconfiguratie op de externe computer, mislukt `Enter-PSSession` de opdrachten.
 
-In tegens telling tot `Invoke-Command` , waarbij de opdrachten worden geparseerd en geïnterpreteerd voordat deze naar de externe computer worden verzonden, `Enter-PSSession` verzendt de opdrachten rechtstreeks naar de externe computer zonder interpretatie.
+In tegenstelling tot , die de opdrachten parseert en interpreteert voordat deze naar de externe computer worden verzendt, verzendt de opdrachten rechtstreeks naar de externe `Invoke-Command` `Enter-PSSession` computer zonder interpretatie.
 
-Als de sessie die u wilt invoeren, bezig is met het verwerken van een opdracht, kan er een vertraging optreden voordat Power shell reageert op de `Enter-PSSession` opdracht. U bent verbonden zodra de sessie beschikbaar is. U annuleert de `Enter-PSSession` opdracht door op <kbd>CTRL</kbd> + <kbd>C</kbd>te drukken.
+Als de sessie die u wilt invoeren bezig is met het verwerken van een opdracht, kan er een vertraging zijn voordat PowerShell op de opdracht `Enter-PSSession` reageert. U bent verbonden zodra de sessie beschikbaar is. Druk op `Enter-PSSession` <kbd>CTRL C</kbd>om de opdracht + <kbd>te annuleren.</kbd>
 
-De para meter **hostname** is opgenomen vanaf power shell 6,0. Het is toegevoegd om externe communicatie van Power shell op te geven op basis van de Secure Shell (SSH). SSH en Power shell worden ondersteund op meerdere platformen (Windows, Linux, macOS) en externe communicatie met Power shell werkt op deze platforms waarin Power shell en SSH zijn geïnstalleerd en geconfigureerd. Dit is gescheiden van de vorige Windows-functie voor externe toegang die is gebaseerd op WinRM en veel van de specifieke WinRM-functies en-beperkingen zijn niet van toepassing. Zo worden op WinRM gebaseerde quota's, sessie opties, aangepaste eindpunt configuratie en functies voor ontkoppelen en opnieuw verbinden op dit moment niet ondersteund. Zie voor meer informatie over het instellen van externe toegang tot Power shell [via SSH Power shell](/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core).
+De **parameterset HostName** is opgenomen vanaf PowerShell 6.0. Het is toegevoegd om Toegang tot PowerShell te bieden op basis van Secure Shell (SSH). Zowel SSH als PowerShell worden ondersteund op meerdere platforms (Windows, Linux, macOS) en voor het voor mobiele gebruik van PowerShell worden deze platformen gebruikt waarop PowerShell en SSH zijn geïnstalleerd en geconfigureerd. Dit staat los van de vorige windows-remoting die is gebaseerd op WinRM en veel van de specifieke WinRM-functies en -beperkingen zijn niet van toepassing. Op WinRM gebaseerde quota, sessieopties, aangepaste eindpuntconfiguratie en functies voor verbreken/opnieuw verbinden worden momenteel bijvoorbeeld niet ondersteund. Zie Voor meer informatie over het instellen van SSH-remoting voor [PowerShell Via SSH.](/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core)
 
-Voorafgaand aan Power shell 7,1 heeft externe toegang via SSH geen ondersteuning voor externe sessies van de tweede hop. Deze mogelijkheid is beperkt tot sessies met WinRM. Met Power shell 7,1 kunt `Enter-PSSession` `Enter-PSHostProcess` u binnen elke interactieve externe sessie werken.
+Vóór PowerShell 7.1 biedt externe externe sessies geen ondersteuning voor externe sessies via externe toegang via SSH. Deze mogelijkheid was beperkt tot sessies met WinRM. Met PowerShell 7.1 kunnen `Enter-PSSession` en werken vanuit elke interactieve externe `Enter-PSHostProcess` sessie.
 
-## GERELATEERDE KOPPELINGEN
+## Verwante koppelingen
 
-[Afsluiten-PSSession](Exit-PSSession.md)
+[Exit-PSSession](Exit-PSSession.md)
 
 [Get-PSSession](Get-PSSession.md)
 
@@ -769,7 +787,7 @@ Voorafgaand aan Power shell 7,1 heeft externe toegang via SSH geen ondersteuning
 
 [Connect-PSSession](Connect-PSSession.md)
 
-[Verbinding verbreken-PSSession](Disconnect-PSSession.md)
+[Verbinding verbreken met PSSession](Disconnect-PSSession.md)
 
 [Receive-PSSession](Receive-PSSession.md)
 

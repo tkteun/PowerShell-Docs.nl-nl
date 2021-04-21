@@ -6,21 +6,21 @@ ms.date: 04/08/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/invoke-command?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-opdracht
-ms.openlocfilehash: d8f0a8a56792a39371a307166788f047fec99a9a
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: bd34c20843720b5900e3a6d594939934624d1b13
+ms.sourcegitcommit: b10731301412afd4111743b85da95e8c25583533
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94705760"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107756321"
 ---
 # Invoke-opdracht
 
-## SAMENVATTING
-Voert opdrachten uit op lokale en externe computers.
+## Synopsis
+Opdrachten worden uitgevoerd op lokale en externe computers.
 
-## SYNTAXIS
+## Syntax
 
-### Inproces (standaard)
+### InProcess (standaard)
 
 ```
 Invoke-Command [-ScriptBlock] <ScriptBlock> [-NoNewScope] [-InputObject <PSObject>]
@@ -66,7 +66,7 @@ Invoke-Command [[-ComputerName] <String[]>] [-Credential <PSCredential>] [-Port 
  [<CommonParameters>]
 ```
 
-### URI
+### Uri
 
 ```
 Invoke-Command [-Credential <PSCredential>] [-ConfigurationName <String>] [-ThrottleLimit <Int32>]
@@ -125,7 +125,7 @@ Invoke-Command -Credential <PSCredential> [-ConfigurationName <String>] [-Thrott
 Invoke-Command [-Port <Int32>] [-AsJob] [-HideComputerName] [-JobName <String>]
  [-ScriptBlock] <ScriptBlock> -HostName <String[]> [-UserName <String>] [-KeyFilePath <String>]
  [-SSHTransport] [-RemoteDebug] [-InputObject <PSObject>] [-ArgumentList <Object[]>]
- [-Subsystem <String>] [<CommonParameters>]
+ [-Subsystem <String>] [-ConnectingTimeout <int>] [<CommonParameters>]
 ```
 
 ### ContainerId
@@ -167,63 +167,63 @@ Invoke-Command [-AsJob] [-HideComputerName] -FilePath <String> -SSHConnection <H
  [-RemoteDebug] [-InputObject <PSObject>] [-ArgumentList <Object[]>] [<CommonParameters>]
 ```
 
-## BESCHRIJVING
+## Description
 
-De `Invoke-Command` cmdlet voert opdrachten uit op een lokale of externe computer en retourneert alle uitvoer van de opdrachten, met inbegrip van fouten. Met één `Invoke-Command` opdracht kunt u opdrachten uitvoeren op meerdere computers.
+De cmdlet voert opdrachten uit op een lokale of externe computer en retourneert alle uitvoer van de `Invoke-Command` opdrachten, inclusief fouten. Met één opdracht `Invoke-Command` kunt u opdrachten uitvoeren op meerdere computers.
 
-Als u één opdracht wilt uitvoeren op een externe computer, gebruikt u de para meter **ComputerName** . Als u een reeks gerelateerde opdrachten wilt uitvoeren die gegevens delen, gebruikt u de `New-PSSession` cmdlet om een **PSSession** (een permanente verbinding) te maken op de externe computer en gebruikt u vervolgens de **sessie** parameter van `Invoke-Command` om de opdracht uit te voeren in de **PSSession**. Als u een opdracht wilt uitvoeren in een sessie zonder verbinding, gebruikt u de para meter **InDisconnectedSession** . Als u een opdracht in een achtergrond taak wilt uitvoeren, gebruikt u de para meter **AsJob** .
+Als u één opdracht wilt uitvoeren op een externe computer, gebruikt u de parameter **ComputerName.** Als u een reeks gerelateerde opdrachten wilt uitvoeren die gegevens delen, gebruikt u de cmdlet om een `New-PSSession` **PSSession** (een permanente verbinding) te maken op de externe computer en gebruikt u vervolgens de parameter **Session** van om de opdracht uit te voeren `Invoke-Command` in de **PSSession**. Als u een opdracht wilt uitvoeren in een sessie zonder verbinding, gebruikt u de parameter **InDisconnectedSession.** Als u een opdracht wilt uitvoeren in een achtergrondjob, gebruikt u de parameter **AsJob.**
 
-U kunt ook `Invoke-Command` op een lokale computer met een script blok als een opdracht. Power Shell voert het script blok onmiddellijk uit in een onderliggend bereik van de huidige scope.
+U kunt ook op `Invoke-Command` een lokale computer gebruiken om een blok script als een opdracht. PowerShell voert het scriptblok onmiddellijk uit in een onderliggend bereik van het huidige bereik.
 
-`Invoke-Command`Lees [about_Remote](./About/about_Remote.md)voordat u opdrachten uitvoert op een externe computer.
+Lees voordat u gebruikt om opdrachten uit te voeren op een `Invoke-Command` externe computer [about_Remote.](./About/about_Remote.md)
 
-Vanaf Power shell 6,0 kunt u Secure Shell (SSH) gebruiken om een verbinding te maken met en opdrachten op externe computers aan te roepen. SSH moet worden geïnstalleerd op de lokale computer en de externe computer moet worden geconfigureerd met een Power shell-SSH-eind punt. Het voor deel van een op SSH gebaseerde Power shell-externe sessie is dat deze werkt op meerdere platformen (Windows, Linux, macOS). Voor SSH-sessie gebruikt u de para meter **hostname** of **SSHConnection** om de externe computer en de relevante verbindings gegevens op te geven. Zie voor meer informatie over het instellen van externe toegang tot Power shell [via SSH Power shell](/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core).
+Vanaf PowerShell 6.0 kunt u Secure Shell (SSH) gebruiken om verbinding te maken met en opdrachten aan te roepen op externe computers. SSH moet worden geïnstalleerd op de lokale computer en de externe computer moet worden geconfigureerd met een PowerShell SSH-eindpunt. Het voordeel van een externe PowerShell-sessie op basis van SSH is dat deze op meerdere platforms werkt (Windows, Linux, macOS). Voor een SSH-sessie gebruikt u de parameters **HostName** of **SSHConnection** om de externe computer en relevante verbindingsgegevens op te geven. Zie Voor meer informatie over het instellen van remoting via PowerShell SSH [Via SSH.](/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core)
 
-Sommige code voorbeelden gebruiken splatting om de lengte van de lijn te verkleinen. Zie [about_Splatting](./About/about_Splatting.md)voor meer informatie.
+Sommige codevoorbeelden gebruiken splatting om de regellengte te verminderen. Zie voor meer informatie [about_Splatting](./About/about_Splatting.md).
 
-## VOORBEELDEN
+## Voorbeelden
 
-### Voor beeld 1: een script uitvoeren op een server
+### Voorbeeld 1: een script uitvoeren op een server
 
-In dit voor beeld wordt het `Test.ps1` script op de Server01-computer uitgevoerd.
+In dit voorbeeld wordt het `Test.ps1` script uitgevoerd op de computer Server01.
 
 ```powershell
 Invoke-Command -FilePath c:\scripts\test.ps1 -ComputerName Server01
 ```
 
-De **filepath** para meter geeft u een script op dat zich op de lokale computer bevindt. Het script wordt uitgevoerd op de externe computer en de resultaten worden geretourneerd naar de lokale computer.
+De **FilePath** parameter geeft u een script dat zich op de lokale computer bevindt. Het script wordt uitgevoerd op de externe computer en de resultaten worden geretourneerd naar de lokale computer.
 
-### Voor beeld 2: een opdracht uitvoeren op een externe server
+### Voorbeeld 2: een opdracht uitvoeren op een externe server
 
-In dit voor beeld wordt een `Get-Culture` opdracht uitgevoerd op de externe computer Server01.
+In dit voorbeeld wordt een `Get-Culture` opdracht uitgevoerd op de externe computer Server01.
 
 ```powershell
 Invoke-Command -ComputerName Server01 -Credential Domain01\User01 -ScriptBlock { Get-Culture }
 ```
 
-De **ComputerName** para meter geeft de naam van de externe computer. De para meter **Credential** wordt gebruikt om de opdracht uit te voeren in de beveiligings context van Domain01\User01, een gebruiker die gemachtigd is om opdrachten uit te voeren. De **script Block** para meter geeft u de opdracht op die moet worden uitgevoerd op de externe computer.
+De **ComputerName** parameter geeft u de naam van de externe computer. De **referentie** parameter wordt gebruikt voor het uitvoeren van de opdracht in de beveiligingscontext van Domain01\User01, een gebruiker die is machtigingen voor het uitvoeren van opdrachten. De **ScriptBlock** parameter geeft u de opdracht moet worden uitgevoerd op de externe computer.
 
-Als antwoord Power shell vraagt het wacht woord en een verificatie methode voor het gebruiker01-account.
-Vervolgens wordt de opdracht op de computer Server01 uitgevoerd en wordt het resultaat geretourneerd.
+Als antwoord vraagt PowerShell het wachtwoord en een verificatiemethode voor het account User01 aan.
+Vervolgens wordt de opdracht uitgevoerd op de computer Server01 en wordt het resultaat retourneert.
 
-### Voor beeld 3: een opdracht uitvoeren in een permanente verbinding
+### Voorbeeld 3: Een opdracht uitvoeren in een permanente verbinding
 
-In dit voor beeld wordt dezelfde `Get-Culture` opdracht uitgevoerd in een sessie, met behulp van een permanente verbinding op de externe computer met de naam Server02.
+In dit voorbeeld wordt dezelfde opdracht uitgevoerd in een sessie, met behulp van `Get-Culture` een permanente verbinding, op de externe computer met de naam Server02.
 
 ```powershell
 $s = New-PSSession -ComputerName Server02 -Credential Domain01\User01
 Invoke-Command -Session $s -ScriptBlock {Get-Culture}
 ```
 
-`New-PSSession`Met de cmdlet wordt een sessie gemaakt op de externe computer Server02 en opgeslagen in de `$s` variabele. Normaal gesp roken maakt u alleen een sessie wanneer u een reeks opdrachten op de externe computer uitvoert.
+De `New-PSSession` cmdlet maakt een sessie op de externe computer Server02 en slaat deze op in de `$s` variabele . Normaal gesproken maakt u een sessie alleen wanneer u een reeks opdrachten op de externe computer uitvoeren.
 
-`Invoke-Command`Met de cmdlet wordt de `Get-Culture` opdracht uitgevoerd op Server02. Met de **sessie** parameter wordt de sessie opgegeven die is opgeslagen in de `$s` variabele.
+De `Invoke-Command` cmdlet voert de `Get-Culture` opdracht uit op Server02. De **sessie** parameter geeft u de sessie opgeslagen in de `$s` variabele.
 
-Als antwoord Power Shell voert de opdracht uit in de sessie op de Server02-computer.
+Als antwoord voert PowerShell de opdracht uit in de sessie op de server02-computer.
 
-### Voor beeld 4: een sessie gebruiken om een reeks opdrachten uit te voeren die gegevens delen
+### Voorbeeld 4: Een sessie gebruiken om een reeks opdrachten uit te voeren die gegevens delen
 
-In dit voor beeld worden de gevolgen van **computer naam** en **sessie** parameters van gebruikt `Invoke-Command` . U ziet hoe u een sessie gebruikt om een reeks opdrachten uit te voeren die dezelfde gegevens delen.
+In dit voorbeeld worden de effecten van het gebruik van **de parameters ComputerName** en **Session** van `Invoke-Command` vergeleken. U ziet hoe u een sessie gebruikt om een reeks opdrachten uit te voeren die dezelfde gegevens delen.
 
 ```powershell
 Invoke-Command -ComputerName Server02 -ScriptBlock {$p = Get-Process PowerShell}
@@ -237,19 +237,19 @@ Invoke-Command -Session $s -ScriptBlock {$p.VirtualMemorySize}
 17930240
 ```
 
-De eerste twee opdrachten gebruiken de para meter **ComputerName** van `Invoke-Command` om opdrachten uit te voeren op de externe computer Server02. De eerste opdracht gebruikt de `Get-Process` cmdlet om het Power Shell-proces op de externe computer op te halen en om het in de variabele op te slaan `$p` . Met de tweede opdracht wordt de waarde van de eigenschap **VirtualMemorySize** van het Power Shell-proces opgehaald.
+De eerste twee opdrachten gebruiken de **ComputerName** parameter van `Invoke-Command` om opdrachten uit te voeren op de externe computer Server02. De eerste opdracht gebruikt de `Get-Process` cmdlet om het PowerShell-proces op de externe computer op te halen en op te slaan in de `$p` variabele . Met de tweede opdracht wordt de waarde van de eigenschap **VirtualMemorySize van** het PowerShell-proces opgeslagen.
 
-Wanneer u de para meter **ComputerName** gebruikt, maakt Power shell een nieuwe sessie om de opdracht uit te voeren.
-De sessie wordt gesloten wanneer de opdracht is voltooid. De `$p` variabele is gemaakt in één verbinding, maar bestaat niet in de verbinding die is gemaakt voor de tweede opdracht.
+Wanneer u de **parameter ComputerName gebruikt,** maakt PowerShell een nieuwe sessie om de opdracht uit te voeren.
+De sessie wordt gesloten wanneer de opdracht is voltooid. De variabele is gemaakt in één verbinding, maar deze bestaat niet in de verbinding die is gemaakt `$p` voor de tweede opdracht.
 
 Het probleem wordt opgelost door een permanente sessie te maken op de externe computer en vervolgens beide opdrachten in dezelfde sessie uit te voeren.
 
-Met de `New-PSSession` cmdlet wordt een permanente sessie gemaakt op de computer Server02 en wordt de sessie opgeslagen in de `$s` variabele. `Invoke-Command`Op de regels die volgen, wordt de para meter **Session** gebruikt om beide opdrachten in dezelfde sessie uit te voeren. Omdat beide opdrachten in dezelfde sessie worden uitgevoerd, `$p` blijft de waarde actief.
+De `New-PSSession` cmdlet maakt een permanente sessie op de computer Server02 en slaat de sessie op in de `$s` variabele . De `Invoke-Command` volgende regels gebruiken de **sessieparameter** om beide opdrachten in dezelfde sessie uit te voeren. Omdat beide opdrachten in dezelfde sessie worden uitgevoerd, blijft `$p` de waarde actief.
 
-### Voor beeld 5: Voer een opdracht in die is opgeslagen in een lokale variabele
+### Voorbeeld 5: Voer een opdracht in die is opgeslagen in een lokale variabele
 
-In dit voor beeld ziet u hoe u een opdracht maakt die is opgeslagen als een script blok in een lokale variabele.
-Wanneer het script blok wordt opgeslagen in een lokale variabele, kunt u de variabele opgeven als de waarde van de para meter **script Block** .
+In dit voorbeeld ziet u hoe u een opdracht maakt die is opgeslagen als een scriptblok in een lokale variabele.
+Wanneer het scriptblok wordt opgeslagen in een lokale variabele, kunt u de variabele opgeven als de waarde van de parameter **ScriptBlock.**
 
 ```powershell
 $command = { Get-WinEvent -LogName PowerShellCore/Operational |
@@ -257,11 +257,11 @@ $command = { Get-WinEvent -LogName PowerShellCore/Operational |
 Invoke-Command -ComputerName S1, S2 -ScriptBlock $command
 ```
 
-De `$command` variabele slaat de `Get-WinEvent` opdracht op die is opgemaakt als een script blok. Hiermee `Invoke-Command` wordt de opdracht uitgevoerd die is opgeslagen in `$command` op de externe computers S1 en S2.
+De `$command` variabele slaat de opdracht op die is opgemaakt als een `Get-WinEvent` scriptblok. De `Invoke-Command` voert de opdracht uit die is opgeslagen in op de externe computers `$command` S1 en S2.
 
-### Voor beeld 6: één opdracht op meerdere computers uitvoeren
+### Voorbeeld 6: Een enkele opdracht uitvoeren op verschillende computers
 
-In dit voor beeld ziet u hoe u kunt gebruiken `Invoke-Command` om één opdracht op meerdere computers uit te voeren.
+In dit voorbeeld wordt gedemonstreerd hoe `Invoke-Command` u gebruikt om één opdracht uit te voeren op meerdere computers.
 
 ```powershell
 $parameters = @{
@@ -272,25 +272,25 @@ $parameters = @{
 Invoke-Command @parameters
 ```
 
-De para meter **ComputerName** bevat een door komma's gescheiden lijst met computer namen. De lijst met computers bevat de localhost-waarde, die de lokale computer vertegenwoordigt. Met de para meter **configuratiepad** wordt een alternatieve sessie configuratie opgegeven. De para meter **script Block** wordt uitgevoerd `Get-WinEvent` om de PowerShellCore/operationele gebeurtenis logboeken van elke computer op te halen.
+De **ComputerName** parameter geeft u een door komma's gescheiden lijst met computernamen. De lijst met computers bevat de localhost-waarde, die de lokale computer vertegenwoordigt. De **ConfigurationName** parameter geeft u een alternatieve sessieconfiguratie. De **parameter ScriptBlock** wordt uitgevoerd `Get-WinEvent` om de gebeurtenislogboeken van PowerShellCore/Operational op te halen van elke computer.
 
-### Voor beeld 7: de versie van het hostprogramma op meerdere computers ophalen
+### Voorbeeld 7: de versie van het hostprogramma op meerdere computers op halen
 
-In dit voor beeld wordt de versie van het Power shell-host-programma uitgevoerd op 200 externe computers.
+In dit voorbeeld wordt de versie van het PowerShell-hostprogramma op 200 externe computers uitgevoerd.
 
 ```powershell
 $version = Invoke-Command -ComputerName (Get-Content Machines.txt) -ScriptBlock {(Get-Host).Version}
 ```
 
-Omdat er slechts één opdracht wordt uitgevoerd, hoeft u geen permanente verbindingen te maken met elk van de computers. In plaats daarvan gebruikt de opdracht de para meter **ComputerName** om de computers aan te geven. Als u de computers wilt opgeven, wordt de `Get-Content` cmdlet gebruikt om de inhoud van het Machine.txt bestand, een bestand met computer namen, op te halen.
+Omdat er slechts één opdracht wordt uitgevoerd, hoeft u geen permanente verbindingen met elk van de computers te maken. In plaats daarvan gebruikt de opdracht de **Parameter ComputerName** om de computers aan te geven. Als u de computers wilt opgeven, wordt de cmdlet gebruikt om de inhoud van het Machine.txt op te halen, een bestand `Get-Content` met computernamen.
 
-`Invoke-Command`Met de cmdlet wordt een `Get-Host` opdracht op de externe computers uitgevoerd. De teken punt notatie wordt gebruikt om de eigenschap **Version** van de Power shell-host op te halen.
+De `Invoke-Command` cmdlet voert een `Get-Host` opdracht uit op de externe computers. Er wordt een punt-notatie gebruikt om de **eigenschap Version van** de PowerShell-host op te halen.
 
-Deze opdrachten worden een voor een uitgevoerd. Wanneer de opdrachten zijn voltooid, wordt de uitvoer van de opdrachten van alle computers in de variabele opgeslagen `$version` . De uitvoer bevat de naam van de computer waarvan de gegevens afkomstig zijn.
+Deze opdrachten worden één voor één uitgevoerd. Wanneer de opdrachten zijn voltooid, wordt de uitvoer van de opdrachten van alle computers opgeslagen in de `$version` variabele . De uitvoer bevat de naam van de computer van waaruit de gegevens afkomstig zijn.
 
-### Voor beeld 8: een achtergrond taak op meerdere externe computers uitvoeren
+### Voorbeeld 8: een achtergrond taak uitvoeren op verschillende externe computers
 
-In dit voor beeld wordt een opdracht op twee externe computers uitgevoerd. De `Invoke-Command` opdracht maakt gebruik van de para meter **AsJob** , zodat de opdracht als achtergrond taak wordt uitgevoerd. De opdrachten worden uitgevoerd op de externe computers, maar de taak bestaat op de lokale computer. De resultaten worden verzonden naar de lokale computer.
+In dit voorbeeld wordt een opdracht uitgevoerd op twee externe computers. De `Invoke-Command` opdracht maakt gebruik van de Parameter **AsJob** zodat de opdracht wordt uitgevoerd als een achtergrond job. De opdrachten worden uitgevoerd op de externe computers, maar de taak bestaat op de lokale computer. De resultaten worden verzonden naar de lokale computer.
 
 ```powershell
 $s = New-PSSession -ComputerName Server01, Server02
@@ -332,25 +332,25 @@ StateChanged  :
 $results = $j | Receive-Job
 ```
 
-De `New-PSSession` cmdlet maakt sessies op de externe computers Server01 en Server02. De `Invoke-Command` cmdlet voert een achtergrond taak in elk van de sessies uit. De opdracht gebruikt de para meter **AsJob** om de opdracht als achtergrond taak uit te voeren. Met deze opdracht wordt een taak object geretourneerd dat twee onderliggende taak objecten bevat, één voor elk van de taken die op de twee externe computers worden uitgevoerd.
+De `New-PSSession` cmdlet maakt sessies op de externe computers Server01 en Server02. De `Invoke-Command` cmdlet voert in elk van de sessies een achtergrond job uit. De opdracht gebruikt de **parameter AsJob** om de opdracht uit te voeren als achtergrondjob. Deze opdracht retourneert een taakobject dat twee onderliggende taakobjecten bevat, één voor elk van de taken die op de twee externe computers worden uitgevoerd.
 
-De `Get-Job` opdracht slaat het taak object op in de `$j` variabele. De `$j` variabele wordt vervolgens naar de cmdlet geleid `Format-List` om alle eigenschappen van het taak object in een lijst weer te geven. Met de laatste opdracht worden de resultaten van de taken opgehaald. Hiermee wordt het taak object in `$j` naar de `Receive-Job` cmdlet sluizen en worden de resultaten opgeslagen in de `$results` variabele.
+De `Get-Job` opdracht slaat het taakobject op in de variabele `$j` . De `$j` variabele wordt vervolgens doorspijpt naar de cmdlet om alle eigenschappen van het `Format-List` taakobject in een lijst weer te geven. De laatste opdracht haalt de resultaten van de taken op. Het taakobject wordt naar de `$j` `Receive-Job` cmdlet doorgespijpt en de resultaten worden opgeslagen in de `$results` variabele .
 
-### Voor beeld 9: lokale variabelen insluiten in een opdracht die wordt uitgevoerd op een externe computer
+### Voorbeeld 9: lokale variabelen opnemen in een opdracht die wordt uitgevoerd op een externe computer
 
-In dit voor beeld ziet u hoe u de waarden van lokale variabelen opneemt in een opdracht die wordt uitgevoerd op een externe computer. De opdracht gebruikt de `Using` aanpassings functie van het bereik om een lokale variabele in een externe opdracht te identificeren. Standaard worden alle variabelen geacht te zijn gedefinieerd in de externe sessie. De `Using` aanpassing van het bereik is geïntroduceerd in Power shell 3,0. `Using`Zie [about_Remote_Variables](./About/about_Remote_Variables.md) en [about_Scopes](./about/about_scopes.md)voor meer informatie over de aanpassing van het bereik.
+In dit voorbeeld ziet u hoe u de waarden van lokale variabelen op te nemen in een opdracht die wordt uitgevoerd op een externe computer. De opdracht maakt gebruik van `Using` de scope-modifier om een lokale variabele in een externe opdracht te identificeren. Standaard wordt aangenomen dat alle variabelen worden gedefinieerd in de externe sessie. De `Using` scope-modifier is geïntroduceerd in PowerShell 3.0. Zie voor meer informatie over `Using` de scope-modifier [about_Remote_Variables](./About/about_Remote_Variables.md) en [about_Scopes.](./about/about_scopes.md)
 
 ```powershell
 $Log = "PowerShellCore/Operational"
 Invoke-Command -ComputerName Server01 -ScriptBlock {Get-WinEvent -LogName $Using:Log -MaxEvents 10}
 ```
 
-De `$Log` variabele bevat de naam van het gebeurtenis logboek, PowerShellCore/Operation. De `Invoke-Command` cmdlet wordt uitgevoerd `Get-WinEvent` op Server01 om de tien nieuwste gebeurtenissen uit het gebeurtenis logboek op te halen. De waarde van de para meter **LogName** is de `$Log` variabele die wordt voorafgegaan door de `Using` wijzigings functie van het bereik om aan te geven dat deze is gemaakt in de lokale sessie, niet in de externe sessie.
+De `$Log` variabele slaat de naam op van het gebeurtenislogboek, PowerShellCore/Operational. De `Invoke-Command` cmdlet wordt uitgevoerd op Server01 om de tien nieuwste gebeurtenissen uit `Get-WinEvent` het gebeurtenislogboek op te halen. De waarde van de **LogName** parameter is de variabele die wordt voorafgemaakt door de bereik modifier om aan te geven dat deze is gemaakt in de lokale sessie, niet in de `$Log` `Using` externe sessie.
 
-### Voor beeld 10: de computer naam verbergen
+### Voorbeeld 10: de computernaam verbergen
 
-In dit voor beeld ziet u het effect van het gebruik van de para meter **HideComputerName** van `Invoke-Command` .
-**HideComputerName** heeft geen invloed op het object dat met deze cmdlet wordt geretourneerd. Alleen de weer gave wordt gewijzigd. U kunt nog steeds de **Format** -cmdlets gebruiken om de eigenschap **PsComputerName** van de betrokken objecten weer te geven.
+In dit voorbeeld ziet u het effect van het gebruik van de parameter **HideComputerName** van `Invoke-Command` .
+**HideComputerName** wijzigt het object dat deze cmdlet retourneert niet. Alleen de weergave wordt gewijzigd. U kunt nog  steeds de Opmaak-cmdlets gebruiken om de eigenschap **PsComputerName** van een van de betrokken objecten weer te geven.
 
 ```powershell
 Invoke-Command -ComputerName S1, S2 -ScriptBlock {Get-Process PowerShell}
@@ -374,13 +374,13 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id   ProcessName
 777      14        35100      30988   150     3.68     67   PowerShell
 ```
 
-De eerste twee opdrachten gebruiken `Invoke-Command` om een `Get-Process` opdracht voor het Power Shell-proces uit te voeren. De uitvoer van de eerste opdracht bevat de eigenschap **PsComputerName** , die de naam bevat van de computer waarop de opdracht is uitgevoerd. De uitvoer van de tweede opdracht, die gebruikmaakt van **HideComputerName**, bevat niet de kolom **PsComputerName** .
+De eerste twee opdrachten gebruiken om `Invoke-Command` een opdracht uit te voeren voor het `Get-Process` PowerShell-proces. De uitvoer van de eerste opdracht bevat de eigenschap **PsComputerName,** die de naam bevat van de computer waarop de opdracht is uitgevoerd. De uitvoer van de tweede opdracht, die **gebruikmaakt van HideComputerName,** bevat niet de **kolom PsComputerName.**
 
-### Voor beeld 11: het sleutel woord param in een script blok gebruiken
+### Voorbeeld 11: Het sleutelwoord Param gebruiken in een scriptblok
 
-Het `Param` sleutel woord en de para meter **argument List** worden gebruikt om variabele waarden door te geven aan benoemde para meters in een-script blok. In dit voor beeld worden bestands namen weer gegeven die beginnen met de letter `a` en de `.pdf` uitbrei ding hebben.
+Het `Param` trefwoord en de **parameter ArgumentList** worden gebruikt om variabele waarden door te geven aan benoemde parameters in een scriptblok. In dit voorbeeld worden bestandsnamen weergegeven die beginnen met de letter `a` en de extensie `.pdf` hebben.
 
-Zie about_Language_Keywords voor meer informatie over het `Param` tref [](./about/about_language_keywords.md#param)woord.
+Zie voor meer informatie over `Param` het [trefwoord about_Language_Keywords](./about/about_language_keywords.md#param).
 
 ```powershell
 $parameters = @{
@@ -398,14 +398,14 @@ ac.pdf
 az.pdf
 ```
 
-`Invoke-Command` maakt gebruik van de para meter **script Block** die twee variabelen definieert, `$param1` en `$param2` . `Get-ChildItem` maakt gebruik van de benoemde para meters, **naam** en **bevatten** met de namen van variabelen. De **argument List** geeft de waarden door aan de variabelen.
+`Invoke-Command` gebruikt de **parameter ScriptBlock** die twee variabelen definieert, `$param1` en `$param2` . `Get-ChildItem` maakt gebruik van de benoemde **parameters, Naam** **en Opnemen** met de namen van variabelen. De **ArgumentList** geeft de waarden door aan de variabelen.
 
-### Voor beeld 12: de $args automatische variabele in een script blok gebruiken
+### Voorbeeld 12: De automatische $args in een scriptblok gebruiken
 
-De `$args` Automatische variabele en de para meter **argument List** worden gebruikt om matrix waarden door te geven aan parameter posities in een-script blok. In dit voor beeld wordt de mapinhoud van de server weer gegeven `.txt` . De `Get-ChildItem` para meter **Path** is positie 0 en de **filter** parameter is positie
+De automatische variabele en de parameter ArgumentList worden gebruikt om matrixwaarden door te geven aan `$args` parameterposities  in een scriptblok. In dit voorbeeld wordt de mapinhoud van bestanden van een `.txt` server weergegeven. De `Get-ChildItem` **parameter Path** is positie 0 en de **filterparameter** is positie
 1.
 
-Zie about_Automatic_Variables voor meer informatie over de `$args` variabele [](./about/about_automatic_variables.md#args)
+Zie voor meer informatie `$args` over de [variabele about_Automatic_Variables](./about/about_automatic_variables.md#args)
 
 ```powershell
 $parameters = @{
@@ -426,21 +426,21 @@ Mode                 LastWriteTime         Length Name
 -a---           9/28/2019    17:10             64 zlog.txt
 ```
 
-`Invoke-Command` Hiermee wordt een **script Block** -para meter gebruikt en worden `Get-ChildItem` de-en- `$args[0]` `$args[1]` matrix waarden opgegeven. De **argument List** geeft de `$args` matrix waarden door aan de `Get-ChildItem` parameter posities voor **Path** en **filter**.
+`Invoke-Command` gebruikt een **ScriptBlock-parameter** en `Get-ChildItem` geeft de `$args[0]` matrixwaarden en `$args[1]` op. De **ArgumentList geeft** de `$args` matrixwaarden door aan de `Get-ChildItem` parameterposities **voor Pad** en **Filter.**
 
-### Voor beeld 13: een script uitvoeren op alle computers die worden vermeld in een tekst bestand
+### Voorbeeld 13: Een script uitvoeren op alle computers die worden vermeld in een tekstbestand
 
-In dit voor beeld wordt de `Invoke-Command` cmdlet gebruikt om het script uit te voeren `Sample.ps1` op alle computers die worden vermeld in het `Servers.txt` bestand. De opdracht gebruikt de **filepath** -para meter om het script bestand op te geven. Met deze opdracht kunt u het script uitvoeren op de externe computers, zelfs als het script bestand niet toegankelijk is voor de externe computers.
+In dit voorbeeld wordt de `Invoke-Command` cmdlet gebruikt om het `Sample.ps1` script uit te voeren op alle computers die in het bestand worden `Servers.txt` vermeld. De opdracht gebruikt de **parameter FilePath** om het scriptbestand op te geven. Met deze opdracht kunt u het script uitvoeren op de externe computers, zelfs als het scriptbestand niet toegankelijk is voor de externe computers.
 
 ```powershell
 Invoke-Command -ComputerName (Get-Content Servers.txt) -FilePath C:\Scripts\Sample.ps1 -ArgumentList Process, Service
 ```
 
-Wanneer u de opdracht verzendt, wordt de inhoud van het `Sample.ps1` bestand gekopieerd naar een script blok en wordt het script blok op elke externe computer uitgevoerd. Deze procedure is gelijk aan het gebruik van de para meter **script Block** om de inhoud van het script te verzenden.
+Wanneer u de opdracht indient, wordt de inhoud van het bestand gekopieerd naar een scriptblok en wordt het `Sample.ps1` scriptblok uitgevoerd op elk van de externe computers. Deze procedure is gelijk aan het gebruik van de parameter **ScriptBlock** om de inhoud van het script in te dienen.
 
-### Voor beeld 14: een opdracht uitvoeren op een externe computer met behulp van een URI
+### Voorbeeld 14: Een opdracht uitvoeren op een externe computer met behulp van een URI
 
-In dit voor beeld ziet u hoe u een opdracht uitvoert op een externe computer die wordt geïdentificeerd door een URI (Uniform Resource Identifier). In dit voor beeld wordt een `Set-Mailbox` opdracht uitgevoerd op een externe Exchange-Server.
+In dit voorbeeld ziet u hoe u een opdracht kunt uitvoeren op een externe computer die wordt geïdentificeerd door een Uniform Resource Identifier (URI). In dit specifieke voorbeeld wordt een `Set-Mailbox` opdracht uitgevoerd op een externe Exchange-server.
 
 ```powershell
 $LiveCred = Get-Credential
@@ -454,29 +454,29 @@ $parameters = @{
 Invoke-Command @parameters
 ```
 
-De eerste regel gebruikt de `Get-Credential` cmdlet voor het opslaan van Windows Live ID-referenties in de `$LiveCred` variabele. Power shell vraagt de gebruiker om Windows Live ID-referenties in te voeren.
+De eerste regel maakt gebruik van `Get-Credential` de cmdlet voor het opslaan van Windows Live ID-referenties in de `$LiveCred` variabele . PowerShell vraagt de gebruiker om Windows Live ID-referenties in te voeren.
 
-De `$parameters` variabele is een hash-tabel met de para meters die moeten worden door gegeven aan de `Invoke-Command` cmdlet. `Invoke-Command`Met de cmdlet wordt een `Set-Mailbox` opdracht uitgevoerd met behulp van de **micro soft. Exchange** -sessie configuratie. De **ConnectionURI** para meter geeft u de URL van het Exchange Server-eind punt. De **referentie** parameter bevat de referenties die zijn opgeslagen in de `$LiveCred` variabele. De para meter **AuthenticationMechanism** bepaalt het gebruik van basis verificatie. De para meter **script Block** geeft een script blok dat de opdracht bevat.
+De `$parameters` variabele is een hashtabel met de parameters die moeten worden doorgegeven aan de `Invoke-Command` cmdlet . De `Invoke-Command` cmdlet voert een opdracht `Set-Mailbox` uit met behulp van de **sessieconfiguratie Microsoft.Exchange.** Met **de parameter ConnectionURI** wordt de URL van het Exchange-server-eindpunt opgegeven. De **referentie** parameter geeft u de referenties die zijn opgeslagen in de `$LiveCred` variabele. De **AuthenticationMechanism** parameter geeft u het gebruik van basisverificatie. Met de parameter **ScriptBlock** geeft u een scriptblok op dat de opdracht bevat.
 
-### Voor beeld 15: een sessie optie gebruiken
+### Voorbeeld 15: Een sessieoptie gebruiken
 
-In dit voor beeld ziet u hoe u een **SessionOption** -para meter maakt en gebruikt.
+In dit voorbeeld ziet u hoe u een **SessionOption-parameter maakt en** gebruikt.
 
 ```powershell
 $so = New-PSSessionOption -SkipCACheck -SkipCNCheck -SkipRevocationCheck
 Invoke-Command -ComputerName server01 -UseSSL -ScriptBlock { Get-HotFix } -SessionOption $so -Credential server01\user01
 ```
 
-De `New-PSSessionOption` cmdlet maakt een sessie optie object dat ervoor zorgt dat het externe einde de certificerings instantie, canonieke naam en intrekkings lijsten niet verifieert tijdens het evalueren van de binnenkomende https-verbinding. Het **SessionOption** -object wordt opgeslagen in de `$so` variabele.
+De cmdlet maakt een sessieoptieobject dat ervoor zorgt dat de externe end de certificeringsinstantie, canonieke naam en intrekkingslijsten niet verifieert tijdens het evalueren van de binnenkomende `New-PSSessionOption` HTTPS-verbinding. Het **object SessionOption** wordt opgeslagen in de `$so` variabele .
 
 > [!NOTE]
-> Het uitschakelen van deze controles is handig voor het oplossen van problemen, maar is uiteraard niet veilig.
+> Het uitschakelen van deze controles is handig voor het oplossen van problemen, maar is natuurlijk niet veilig.
 
-Met de `Invoke-Command` cmdlet wordt `Get-HotFix` op afstand een opdracht uitgevoerd. De **SessionOption** -para meter krijgt de `$so` variabele.
+De `Invoke-Command` cmdlet voert een `Get-HotFix` opdracht op afstand uit. De **parameter SessionOption** krijgt de `$so` variabele .
 
-### Voor beeld 16: URI-omleiding beheren in een externe opdracht
+### Voorbeeld 16: URI-omleiding beheren in een externe opdracht
 
-In dit voor beeld ziet u hoe u de para meters **AllowRedirection** en **SessionOption** gebruikt voor het beheren van URI-omleiding in een externe opdracht.
+In dit voorbeeld ziet u hoe u de **parameters AllowRedirection** en **SessionOption** gebruikt voor het beheren van URI-omleiding in een externe opdracht.
 
 ```powershell
 $max = New-PSSessionOption -MaximumRedirection 1
@@ -489,17 +489,17 @@ $parameters = @{
 Invoke-Command @parameters
 ```
 
-`New-PSSessionOption`Met de cmdlet maakt u een **PSSessionOption** -object dat is opgeslagen in de `$max` variabele. De opdracht gebruikt de para meter **MaximumRedirection** om de eigenschap **MaximumConnectionRedirectionCount** van het object **PSSessionOption** in te stellen op 1.
+De `New-PSSessionOption` cmdlet maakt een **PSSessionOption-object** dat wordt opgeslagen in de `$max` variabele . De opdracht gebruikt de **parameter MaximumRedirection** om de eigenschap **MaximumConnectionRedirectionCount** van het **PSSessionOption-object** in te stellen op 1.
 
-`Invoke-Command`Met de cmdlet wordt een `Get-Mailbox` opdracht uitgevoerd op een externe micro soft Exchange-Server. De para meter **AllowRedirection** biedt expliciete machtigingen voor het omleiden van de verbinding met een ander eind punt. De para meter **SessionOption** maakt gebruik van het sessie object dat is opgeslagen in de `$max` variabele.
+De `Invoke-Command` cmdlet voert een `Get-Mailbox` opdracht uit op een externe Microsoft Exchange-server. De **parameter AllowRedirection** biedt expliciete machtigingen om de verbinding om te leiden naar een alternatief eindpunt. De **parameter SessionOption** maakt gebruik van het sessieobject dat is opgeslagen in de `$max` variabele .
 
-Als de externe computer die wordt opgegeven door **ConnectionURI** een omleidings bericht retourneert, wordt de verbinding door Power shell omgeleid, maar als de nieuwe bestemming een andere omleidings bericht retourneert, wordt de waarde van het aantal omleidingen van 1 overschreden en `Invoke-Command` wordt een niet-afsluit fout geretourneerd.
+Als gevolg hiervan, als de externe computer die is opgegeven door **ConnectionURI** een omleidingsbericht retourneert, wordt de verbinding door PowerShell omgeleid, maar als de nieuwe bestemming een ander omleidingsbericht retourneert, wordt de waarde van het aantal omleidingen van 1 overschreden en wordt een `Invoke-Command` niet-beëindigingsfout retourneert.
 
-### Voor beeld 17: toegang tot een netwerk share in een externe sessie
+### Voorbeeld 17: Toegang tot een netwerk share in een externe sessie
 
-In dit voor beeld ziet u hoe u een netwerk share opent vanuit een externe sessie. Er worden drie computers gebruikt om het voor beeld te demonstreren. Server01 is de lokale computer, Server02 is de externe computer en Net03 bevat de netwerk share. Server01 maakt verbinding met Server02 en vervolgens wordt Server02 een tweede hop naar Net03 om toegang te krijgen tot de netwerk share. Zie [de tweede hop in Power shell Remoting maken](/powershell/scripting/learn/remoting/ps-remoting-second-hop)voor meer informatie over de manier waarop externe communicatie tussen computers door Power shell wordt ondersteund.
+In dit voorbeeld ziet u hoe u toegang krijgt tot een netwerk share vanuit een externe sessie. Er worden drie computers gebruikt om het voorbeeld te demonstreren. Server01 is de lokale computer, Server02 is de externe computer en Net03 bevat de netwerk share. Server01 maakt verbinding met Server02 en server02 maakt vervolgens een tweede hop naar Net03 om toegang te krijgen tot de netwerk share. Zie Making the second hop in PowerShell Remoting (De tweede [hop maken in Remoting van PowerShell) voor meer](/powershell/scripting/learn/remoting/ps-remoting-second-hop)informatie over hoe remoting van PowerShell hops tussen computers ondersteunt.
 
-De vereiste CredSSP-overdracht (Credential Security Support Provider) is ingeschakeld in de client instellingen op de lokale computer en in de service-instellingen op de externe computer. Als u de opdrachten in dit voor beeld wilt uitvoeren, moet u lid zijn van de groep **Administrators** op de lokale computer en de externe computer.
+De vereiste credSSP-delegering (Credential Security Support Provider) wordt ingeschakeld in de clientinstellingen op de lokale computer en in de service-instellingen op de externe computer. Als u de opdrachten in dit voorbeeld wilt uitvoeren, moet u lid zijn van de groep **Administrators** op de lokale computer en de externe computer.
 
 ```powershell
 Enable-WSManCredSSP -Role Client -DelegateComputer Server02
@@ -514,18 +514,18 @@ $parameters = @{
 Invoke-Command @parameters
 ```
 
-`Enable-WSManCredSSP`Met de cmdlet wordt CredSSP delegering van de lokale Server01-computer naar de externe computer van Server02 ingeschakeld. De para meter **Role** specificeert de **client** voor het configureren van de CredSSP client-instelling op de lokale computer.
+De `Enable-WSManCredSSP` cmdlet schakelt CredSSP-overdracht van de lokale computer Server01 naar de externe computer Server02. De **rol** parameter geeft u **client voor** het configureren van de CredSSP-clientinstelling op de lokale computer.
 
-`New-PSSession` Hiermee maakt u een **PSSession** -object voor Server02 en slaat u het object op in de `$s` variabele.
+`New-PSSession` maakt een **PSSession-object** voor Server02 en slaat het object op in de `$s` variabele .
 
-De `Invoke-Command` cmdlet gebruikt de `$s` variabele om verbinding te maken met de externe computer, Server02. De para meter **script Block** wordt uitgevoerd `Enable-WSManCredSSP` op de externe computer. De para meter **Role** specificeert de **Server** voor het configureren van de CredSSP-server instelling op de externe computer.
+De `Invoke-Command` cmdlet gebruikt de `$s` variabele om verbinding te maken met de externe computer Server02. De **ScriptBlock** parameter wordt `Enable-WSManCredSSP` uitgevoerd op de externe computer. De **rol** parameter geeft u **Server** voor het configureren van de CredSSP-serverinstelling op de externe computer.
 
-De `$parameters` variabele bevat de parameter waarden om verbinding te maken met de netwerk share. De `Invoke-Command` cmdlet voert een `Get-Item` opdracht in de sessie in uit `$s` . Met deze opdracht wordt een script opgehaald van de `\\Net03\Scripts` netwerk share. De opdracht gebruikt de **verificatie** parameter met de waarde **CredSSP** en de para meter **Credential** met de waarde **Domain01\Admin01**.
+De `$parameters` variabele bevat de parameterwaarden om verbinding te maken met de netwerk share. De `Invoke-Command` cmdlet voert een `Get-Item` opdracht uit in de sessie in `$s` . Met deze opdracht haalt u een script op uit de `\\Net03\Scripts` netwerk share. De opdracht gebruikt de **verificatie** parameter met de waarde van **CredSSP en** de **referentie** parameter met de waarde **van Domain01\Admin01.**
 
-### Voor beeld 18: scripts op veel externe computers starten
+### Voorbeeld 18: Scripts starten op veel externe computers
 
-In dit voor beeld wordt een script uitgevoerd op meer dan honderd computers. Om de impact op de lokale computer tot een minimum te beperken, wordt er verbinding gemaakt met elke computer, wordt het script gestart en wordt de verbinding met elke computer verbroken.
-Het script wordt nog steeds uitgevoerd in de verbroken sessies.
+In dit voorbeeld wordt een script uitgevoerd op meer dan honderd computers. Om de impact op de lokale computer te minimaliseren, maakt deze verbinding met elke computer, start het script en wordt vervolgens de verbinding met elke computer verbroken.
+Het script blijft worden uitgevoerd in de niet-verbonden sessies.
 
 ```powershell
 $parameters = @{
@@ -537,32 +537,32 @@ $parameters = @{
 Invoke-Command @parameters
 ```
 
-De opdracht wordt gebruikt `Invoke-Command` om het script uit te voeren. De waarde van de para meter **ComputerName** is een `Get-Content` opdracht waarmee de namen van de externe computers uit een tekst bestand worden opgehaald. De **InDisconnectedSession** para meter verbreekt de verbinding van de sessies zodra de opdracht wordt gestart. De waarde van de **filepath** para meter is het script dat `Invoke-Command` op elke computer wordt uitgevoerd.
+De opdracht gebruikt om `Invoke-Command` het script uit te voeren. De waarde van de **ComputerName** parameter is een opdracht die de namen van de externe `Get-Content` computers uit een tekstbestand. Met de parameter **InDisconnectedSession** worden de sessies verbroken zodra de opdracht wordt gestart. De waarde van de **FilePath** parameter is het script dat `Invoke-Command` wordt uitgevoerd op elke computer.
 
-De waarde van **SessionOption** is een hash-tabel. De **OutputBufferingMode** -waarde is ingesteld op **Drop** en de waarde **IdleTimeout** is ingesteld op **43200000** milliseconden (12 uur).
+De waarde van **SessionOption** is een hash-tabel. De **waarde OutputBufferingMode** is ingesteld op **Drop** en de **waarde IdleTimeout** op **43200000** milliseconden (12 uur).
 
-Gebruik de cmdlet om de resultaten op te halen van opdrachten en scripts die worden uitgevoerd in verbroken sessies `Receive-PSSession` .
+Gebruik de cmdlet om de resultaten op te halen van opdrachten en scripts die worden uitgevoerd in niet-verbonden `Receive-PSSession` sessies.
 
-### Voor beeld 19: een opdracht uitvoeren op een externe computer via SSH
+### Voorbeeld 19: een opdracht uitvoeren op een externe computer met behulp van SSH
 
-In dit voor beeld ziet u hoe u een opdracht op een externe computer uitvoert met behulp van Secure Shell (SSH). Als SSH op de externe computer is geconfigureerd om te vragen om wacht woorden, wordt u gevraagd een wacht woord op te geven.
-Anders moet u op SSH-sleutel gebaseerde gebruikers verificatie gebruiken.
+In dit voorbeeld ziet u hoe u een opdracht kunt uitvoeren op een externe computer met behulp van Secure Shell (SSH). Als SSH is geconfigureerd op de externe computer om te vragen om wachtwoorden, krijgt u een wachtwoordprompt.
+Anders moet u gebruikersverificatie op basis van een SSH-sleutel gebruiken.
 
 ```powershell
 Invoke-Command -HostName UserA@LinuxServer01 -ScriptBlock { Get-MailBox * }
 ```
 
-### Voor beeld 20: een opdracht uitvoeren op een externe computer met SSH en een gebruikers verificatie sleutel opgeven
+### Voorbeeld 20: een opdracht uitvoeren op een externe computer met behulp van SSH en een sleutel voor gebruikersverificatie opgeven
 
-In dit voor beeld ziet u hoe u een opdracht op een externe computer uitvoert met SSH en een sleutel bestand opgeeft voor gebruikers verificatie. U wordt niet gevraagd om een wacht woord tenzij de sleutel verificatie mislukt en de externe computer zo is geconfigureerd dat basis wachtwoord verificatie is toegestaan.
+In dit voorbeeld ziet u hoe u een opdracht op een externe computer kunt uitvoeren met behulp van SSH en een sleutelbestand voor gebruikersverificatie kunt opgeven. U wordt niet om een wachtwoord gevraagd, tenzij de sleutelverificatie mislukt en de externe computer is geconfigureerd om eenvoudige wachtwoordverificatie toe te staan.
 
 ```powershell
 Invoke-Command -HostName UserA@LinuxServer01 -ScriptBlock { Get-MailBox * } -KeyFilePath /UserA/UserAKey_rsa
 ```
 
-### Voor beeld 21: een script bestand op meerdere externe computers uitvoeren met SSH als een taak
+### Voorbeeld 21: Een scriptbestand uitvoeren op meerdere externe computers met SSH als taak
 
-In dit voor beeld ziet u hoe u een script bestand op meerdere externe computers kunt uitvoeren met behulp van SSH en de para meter **SSHConnection** . De para meter **SSHConnection** gebruikt een matrix van hash-tabellen die verbindings gegevens voor elke computer bevatten. Dit voor beeld vereist dat de doel-externe computers SSH hebben geconfigureerd ter ondersteuning van de verificatie op basis van sleutel-gebruikers.
+In dit voorbeeld ziet u hoe u een scriptbestand op meerdere externe computers kunt uitvoeren met behulp van SSH en de **parameterset SSHConnection.** De **parameter SSHConnection** maakt gebruik van een matrix met hashtabellen die verbindingsgegevens voor elke computer bevatten. Voor dit voorbeeld is vereist dat op de externe doelcomputers SSH is geconfigureerd ter ondersteuning van op sleutels gebaseerde gebruikersverificatie.
 
 ```powershell
 $sshConnections =
@@ -571,15 +571,15 @@ $sshConnections =
 $results = Invoke-Command -FilePath c:\Scripts\CollectEvents.ps1 -SSHConnection $sshConnections
 ```
 
-## PARAMETERS
+## Parameters
 
 ### -AllowRedirection
 
-Hiermee kan de verbinding worden omgeleid naar een alternatieve URI (Uniform Resource Identifier).
+Staat omleiding van deze verbinding naar een alternatieve Uniform Resource Identifier (URI) toe.
 
-Wanneer u de para meter **ConnectionURI** gebruikt, kan de externe bestemming een instructie retour neren die wordt omgeleid naar een andere URI. Standaard worden verbindingen niet door Power shell omgeleid, maar u kunt deze para meter gebruiken om de verbinding door te sturen.
+Wanneer u de **parameter ConnectionURI** gebruikt, kan de externe bestemming een instructie retourneren om om te leiden naar een andere URI. PowerShell leidt verbindingen standaard niet om, maar u kunt deze parameter gebruiken om de verbinding om te leiden.
 
-U kunt ook het aantal keren beperken dat de verbinding wordt omgeleid door de waarde van de **MaximumConnectionRedirectionCount** -sessie optie te wijzigen. Gebruik de para meter **MaximumRedirection** van de `New-PSSessionOption` cmdlet of stel de eigenschap **MaximumConnectionRedirectionCount** van de `$PSSessionOption` Voorkeurs variabele in. De standaard waarde is 5.
+U kunt ook het aantal keren beperken dat de verbinding wordt omgeleid door de **optiewaarde maximumConnectionRedirectionCount-sessie** te wijzigen. Gebruik de **parameter MaximumRedirection** van de cmdlet of stel de eigenschap `New-PSSessionOption` **MaximumConnectionRedirectionCount** van de `$PSSessionOption` voorkeursvariabele in. De standaardwaarde is 5.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -595,12 +595,12 @@ Accept wildcard characters: False
 
 ### -ApplicationName
 
-Hiermee geeft u het segment van de toepassings naam van de verbindings-URI op. Gebruik deze para meter om de naam van de toepassing op te geven wanneer u de para meter **ConnectionURI** niet in de opdracht gebruikt.
+Hiermee geeft u het toepassingsnaamsegment van de verbindings-URI op. Gebruik deze parameter om de naam van de toepassing op te geven wanneer u de **parameter ConnectionURI** niet gebruikt in de opdracht .
 
-De standaard waarde is de waarde van de `$PSSessionApplicationName` Voorkeurs variabele op de lokale computer. Als deze voorkeurs variabele niet is gedefinieerd, is de standaard waarde WSMAN. Deze waarde is geschikt voor de meeste toepassingen. Zie [about_Preference_Variables](./About/about_Preference_Variables.md)voor meer informatie.
+De standaardwaarde is de waarde van de `$PSSessionApplicationName` voorkeursvariabele op de lokale computer. Als deze voorkeursvariabele niet is gedefinieerd, is de standaardwaarde WSMAN. Deze waarde is geschikt voor de meeste toepassingen. Zie voor meer informatie [about_Preference_Variables](./About/about_Preference_Variables.md).
 
-De WinRM-service gebruikt de naam van de toepassing om een listener te selecteren om de verbindings aanvraag te onderhouden.
-De waarde van deze para meter moet overeenkomen met de waarde van de eigenschap **URLPrefix** van een listener op de externe computer.
+De WinRM-service gebruikt de toepassingsnaam om een listener te selecteren om de verbindingsaanvraag te verwerken.
+De waarde van deze parameter moet overeenkomen met de waarde van de **eigenschap URLPrefix** van een listener op de externe computer.
 
 ```yaml
 Type: System.String
@@ -614,17 +614,17 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Argument List
+### -ArgumentList
 
-Levert de waarden van lokale variabelen in de opdracht. De variabelen in de opdracht worden vervangen door deze waarden voordat de opdracht wordt uitgevoerd op de externe computer. Voer de waarden in een door komma's gescheiden lijst in. Waarden worden aan variabelen gekoppeld in de volg orde waarin ze worden weer gegeven. De alias voor **argument List** is args.
+Levert de waarden van lokale variabelen in de opdracht. De variabelen in de opdracht worden vervangen door deze waarden voordat de opdracht wordt uitgevoerd op de externe computer. Voer de waarden in een door komma's gescheiden lijst in. Waarden zijn gekoppeld aan variabelen in de volgorde waarin ze worden weergegeven. De alias voor **ArgumentList** is Args.
 
-De waarden in de para meter **argument List** kunnen werkelijke waarden zijn, zoals 1024, of ze kunnen verwijzingen zijn naar lokale variabelen, zoals `$max` .
+De waarden in de parameter **ArgumentList** kunnen werkelijke waarden zijn, zoals 1024, of ze kunnen verwijzingen zijn naar lokale variabelen, zoals `$max` .
 
-Als u lokale variabelen wilt gebruiken in een opdracht, gebruikt u de volgende opdracht indeling:
+Als u lokale variabelen in een opdracht wilt gebruiken, gebruikt u de volgende opdrachtindeling:
 
-`{param($<name1>[, $<name2>]...) <command-with-local-variables>} -ArgumentList <value>` of `<local-variable>`
+`{param($<name1>[, $<name2>]...) <command-with-local-variables>} -ArgumentList <value>` -or- `<local-variable>`
 
-Het sleutel woord **param** bevat de lokale variabelen die worden gebruikt in de opdracht. **Argument List** levert de waarden van de variabelen in de volg orde waarin ze worden weer gegeven. Zie [about_Splatting](about/about_Splatting.md#splatting-with-arrays)voor meer informatie over het gedrag van **argument List**.
+Het **sleutelwoord param** bevat de lokale variabelen die worden gebruikt in de opdracht. **ArgumentList** levert de waarden van de variabelen in de volgorde waarin ze worden vermeld. Zie voor meer informatie over het gedrag van **ArgumentList** [about_Splatting](about/about_Splatting.md#splatting-with-arrays).
 
 ```yaml
 Type: System.Object[]
@@ -640,13 +640,13 @@ Accept wildcard characters: False
 
 ### -AsJob
 
-Geeft aan dat met deze cmdlet de opdracht wordt uitgevoerd als een achtergrond taak op een externe computer. Gebruik deze para meter om opdrachten uit te voeren die veel tijd in beslag nemen.
+Geeft aan dat deze cmdlet wordt uitgevoerd de opdracht als achtergrond taak op een externe computer. Gebruik deze parameter om opdrachten uit te voeren die lang duren.
 
-Wanneer u de para meter **AsJob** gebruikt, retourneert de opdracht een object dat de taak vertegenwoordigt, waarna de opdracht prompt wordt weer gegeven. U kunt in de sessie blijven werken terwijl de taak is voltooid. Als u de taak wilt beheren, gebruikt u de- `*-Job` cmdlets. Gebruik de cmdlet om de taak resultaten te verkrijgen `Receive-Job` .
+Wanneer u de **Parameter AsJob** gebruikt, retourneert de opdracht een -object dat de taak vertegenwoordigt en geeft vervolgens de opdrachtprompt weer. U kunt in de sessie blijven werken terwijl de taak is voltooien. Gebruik de cmdlets om de `*-Job` taak te beheren. Gebruik de cmdlet om de `Receive-Job` taakresultaten op te halen.
 
-De para meter **AsJob** lijkt op het gebruik van de `Invoke-Command` cmdlet om een `Start-Job` cmdlet op afstand uit te voeren. Met **AsJob** wordt de taak echter gemaakt op de lokale computer, zelfs als de taak wordt uitgevoerd op een externe computer. De resultaten van de externe taak worden automatisch geretourneerd naar de lokale computer.
+De **Parameter AsJob** lijkt op het gebruik van `Invoke-Command` de cmdlet om een `Start-Job` cmdlet op afstand uit te voeren. Met **AsJob wordt de** taak echter gemaakt op de lokale computer, ook al wordt de taak uitgevoerd op een externe computer. De resultaten van de externe taak worden automatisch geretourneerd naar de lokale computer.
 
-Zie [about_Jobs](About/about_Jobs.md) en [about_Remote_Jobs](About/about_Remote_Jobs.md)voor meer informatie over Power shell-achtergrond taken.
+Zie PowerShell-achtergrondtaken voor meer [informatie about_Jobs](About/about_Jobs.md) en [about_Remote_Jobs.](About/about_Remote_Jobs.md)
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -662,24 +662,24 @@ Accept wildcard characters: False
 
 ### -Verificatie
 
-Hiermee geeft u het mechanisme op dat wordt gebruikt om de referenties van de gebruiker te verifiëren. CredSSP-verificatie is alleen beschikbaar in Windows Vista, Windows Server 2008 en latere versies van het Windows-besturings systeem.
+Hiermee geeft u het mechanisme op dat wordt gebruikt om de referenties van de gebruiker te verifiëren. CredSSP-verificatie is alleen beschikbaar in Windows Vista, Windows Server 2008 en latere versies van het Windows-besturingssysteem.
 
-De acceptabele waarden voor deze para meter zijn als volgt:
+De acceptabele waarden voor deze parameter zijn als volgt:
 
 - Standaard
 - Basic
-- CredSSP
+- Credssp
 - Samenvatting
 - Kerberos
 - Negotiate
 - NegotiateWithImplicitCredential
 
-De standaard waarde is standaard.
+De standaardwaarde is Standaard.
 
-Zie [AuthenticationMechanism Enumeration (Engelstalig)](/dotnet/api/system.management.automation.runspaces.authenticationmechanism)voor meer informatie over de waarden van deze para meter.
+Zie [AuthenticationMechanism Enumeration](/dotnet/api/system.management.automation.runspaces.authenticationmechanism)voor meer informatie over de waarden van deze parameter.
 
 > [!CAUTION]
-> De verificatie van de referentie provider (CredSSP), waarbij de referenties van de gebruiker worden door gegeven aan een externe computer die moet worden geverifieerd, is ontworpen voor opdrachten waarvoor verificatie is vereist voor meer dan één bron, zoals het openen van een externe netwerk share. Dit mechanisme verhoogt het beveiligings risico van de externe bewerking. Als er is geknoeid met de externe computer, kunnen de referenties die aan worden door gegeven, worden gebruikt om de netwerk sessie te beheren. Zie [Credential Security Support Provider](/windows/win32/secauthn/credential-security-support-provider)(Engelstalig) voor meer informatie.
+> CredSSP-verificatie (Credential Security Support Provider), waarbij de referenties van de gebruiker worden doorgegeven aan een externe computer die moet worden geverifieerd, is ontworpen voor opdrachten waarvoor verificatie op meer dan één resource is vereist, zoals toegang tot een externe netwerk share. Dit mechanisme verhoogt het beveiligingsrisico van de externe bewerking. Als de externe computer is aangetast, kunnen de referenties die worden doorgegeven aan deze worden gebruikt voor het beheer van de netwerksessie. Zie Credential [Security Support Provider (Referentiebeveiligingsondersteuningsprovider) voor meer informatie.](/windows/win32/secauthn/credential-security-support-provider)
 
 ```yaml
 Type: System.Management.Automation.Runspaces.AuthenticationMechanism
@@ -696,11 +696,11 @@ Accept wildcard characters: False
 
 ### -CertificateThumbprint
 
-Hiermee geeft u het digitale open bare-sleutel certificaat (x509) op van een gebruikers account dat is gemachtigd om verbinding te maken met de verbroken sessie. Voer de vinger afdruk van het certificaat in.
+Hiermee geeft u het digitale openbare-sleutelcertificaat (X509) op van een gebruikersaccount dat is machtigingen heeft om verbinding te maken met de niet-verbonden sessie. Voer de vingerafdruk van het certificaat in.
 
-Certificaten worden gebruikt in authenticatie op basis van client certificaten. Ze kunnen alleen worden toegewezen aan lokale gebruikers accounts en ze werken niet met domein accounts.
+Certificaten worden gebruikt bij verificatie op basis van clientcertificaten. Ze kunnen alleen worden toe te staan aan lokale gebruikersaccounts en ze werken niet met domeinaccounts.
 
-Als u een certificaat vingerafdruk wilt ophalen, gebruikt u een `Get-Item` of- `Get-ChildItem` opdracht in het Power shell-certificaat: station.
+Gebruik een - of -opdracht in het PowerShell-certificaatstation om een vingerafdruk van het `Get-Item` `Get-ChildItem` certificaat op te halen.
 
 ```yaml
 Type: System.String
@@ -718,13 +718,13 @@ Accept wildcard characters: False
 
 Hiermee geeft u de computers waarop de opdracht wordt uitgevoerd. Standaard is dit de lokale computer.
 
-Wanneer u de para meter **ComputerName** gebruikt, maakt Power shell een tijdelijke verbinding die alleen wordt gebruikt om de opgegeven opdracht uit te voeren en vervolgens gesloten. Als u een permanente verbinding nodig hebt, gebruikt u de para meter **Session** .
+Wanneer u de **parameter ComputerName** gebruikt, maakt PowerShell een tijdelijke verbinding die alleen wordt gebruikt om de opgegeven opdracht uit te voeren en vervolgens wordt gesloten. Als u een permanente verbinding nodig hebt, gebruikt u de parameter **Sessie.**
 
-Typ de NETBIOS-naam, het IP-adres of de Fully Qualified Domain Name van een of meer computers in een lijst met door komma's gescheiden waarden. Typ de computer naam, localhost of een punt () om de lokale computer op te geven `.` .
+Typ de NETBIOS-naam, het IP-adres of de Fully Qualified Domain Name van een of meer computers in een door komma's gescheiden lijst. Als u de lokale computer wilt opgeven, typt u de computernaam, localhost of een punt ( `.` ).
 
-Als u een IP-adres in de waarde **computer naam** wilt gebruiken, moet de opdracht de para meter **Credential** bevatten. De computer moet zijn geconfigureerd voor het HTTPS-Trans Port of het IP-adres van de externe computer moet zijn opgenomen in de lijst met WinRM **TrustedHosts** van de lokale computer. Zie [een computer toevoegen aan de lijst met vertrouwde hosts](./about/about_remote_troubleshooting.md#how-to-add-a-computer-to-the-trusted-hosts-list)voor instructies om een computer naam toe te voegen aan de lijst met **TrustedHosts** .
+Als u een IP-adres in de waarde **computernaam** wilt gebruiken, moet de opdracht de parameter **Credential** bevatten. De computer moet worden geconfigureerd voor het HTTPS-transport of het IP-adres van de externe computer moet worden opgenomen in de WinRM **TrustedHosts-lijst van de** lokale computer. Zie How to Add a Computer to the Trusted Host List (Een computer toevoegen aan de lijst met vertrouwde [host)](./about/about_remote_troubleshooting.md#how-to-add-a-computer-to-the-trusted-hosts-list)voor instructies voor het toevoegen van een computernaam aan de **lijst met TrustedHosts.**
 
-In Windows Vista en latere versies van het Windows-besturings systeem moet u Power shell uitvoeren met de optie **als administrator uitvoeren** om de lokale computer op te vragen met de waarde **computer naam**.
+In Windows Vista en latere versies van het Windows-besturingssysteem moet u PowerShell uitvoeren met  de optie Als administrator uitvoeren om de lokale computer op te nemen in de waarde **computernaam.**
 
 ```yaml
 Type: System.String[]
@@ -738,17 +738,17 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Configuratiepad
+### -ConfigurationName
 
-Hiermee geeft u de sessie configuratie op die wordt gebruikt voor de nieuwe **PSSession**.
+Hiermee geeft u de sessieconfiguratie op die wordt gebruikt voor de nieuwe **PSSession**.
 
-Voer een configuratie naam of de volledig gekwalificeerde resource-URI in voor een sessie configuratie. Als u alleen de configuratie naam opgeeft, wordt de volgende schema-URI voor voegsel: `http://schemas.microsoft.com/PowerShell` .
+Voer een configuratienaam of de volledig gekwalificeerde resource-URI in voor een sessieconfiguratie. Als u alleen de configuratienaam opgeeft, wordt de volgende schema-URI toegevoegd: `http://schemas.microsoft.com/PowerShell` .
 
-Als deze para meter wordt gebruikt in combi natie met SSH, geeft u het subsysteem op dat moet worden gebruikt voor het doel zoals gedefinieerd in `sshd_config` . De standaard waarde voor SSH is het `powershell` subsysteem.
+Wanneer u deze parameter gebruikt met SSH, geeft u het subsysteem op dat moet worden gebruikt op het doel, zoals gedefinieerd in `sshd_config` . De standaardwaarde voor SSH is het `powershell` subsysteem.
 
-De sessie configuratie voor een sessie bevindt zich op de externe computer. Als de opgegeven sessie configuratie niet bestaat op de externe computer, mislukt de opdracht.
+De sessieconfiguratie voor een sessie bevindt zich op de externe computer. Als de opgegeven sessieconfiguratie niet bestaat op de externe computer, mislukt de opdracht.
 
-De standaard waarde is de waarde van de `$PSSessionConfigurationName` Voorkeurs variabele op de lokale computer. Als deze voorkeurs variabele niet is ingesteld, is de standaard instelling **micro soft. Power shell**. Zie [about_Preference_Variables](about/about_Preference_Variables.md)voor meer informatie.
+De standaardwaarde is de waarde van de `$PSSessionConfigurationName` voorkeursvariabele op de lokale computer. Als deze voorkeursvariabele niet is ingesteld, is de **standaardwaarde Microsoft.PowerShell.** Zie voor meer informatie [about_Preference_Variables.](about/about_Preference_Variables.md)
 
 ```yaml
 Type: System.String
@@ -762,24 +762,42 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+### -ConnectingTimeout
+
+Hiermee geeft u de hoeveelheid tijd in milliseconden op die is toegestaan voor het voltooien van de eerste SSH-verbinding. Als de verbinding niet binnen de opgegeven tijd is voltooid, wordt er een fout geretourneerd.
+
+Deze parameter is geïntroduceerd in PowerShell 7.2
+
+```yaml
+Type: System.Int32
+Parameter Sets: SSHHost
+Aliases:
+
+Required: False
+Position: Named
+Default value: unlimited
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -ConnectionUri
 
-Hiermee geeft u een URI (Uniform Resource Identifier) op die het verbindings eindpunt van de sessie definieert.
+Hiermee geeft u een Uniform Resource Identifier (URI) op die het verbindings-eindpunt van de sessie definieert.
 De URI moet volledig gekwalificeerd zijn.
 
-De indeling van deze teken reeks is als volgt:
+De indeling van deze tekenreeks is als volgt:
 
 `<Transport>://<ComputerName>:<Port>/<ApplicationName>`
 
-De standaard waarde is als volgt:
+De standaardwaarde is als volgt:
 
 `http://localhost:5985/WSMAN`
 
-Als u geen verbindings-URI opgeeft, kunt u de para meters **UseSSL** en **Port** gebruiken om de verbindings-URI-waarden op te geven.
+Als u geen verbindings-URI opgeeft, kunt u de parameters **UseSSL** en **Port** gebruiken om de waarden voor de verbindings-URI op te geven.
 
-Geldige waarden voor het **transport** segment van de URI zijn http en HTTPS. Als u een verbindings-URI met een transport segment opgeeft, maar geen poort opgeeft, wordt de sessie gemaakt met de standaard poorten: 80 voor HTTP en 443 voor HTTPS. Als u de standaard poorten voor externe communicatie van Power shell wilt gebruiken, geeft u poort 5985 voor HTTP of 5986 op voor HTTPS.
+Geldige waarden voor het **segment Transport** van de URI zijn HTTP en HTTPS. Als u een verbindings-URI opgeeft met een Transport-segment, maar geen poort opgeeft, wordt de sessie gemaakt met de standaardpoorten: 80 voor HTTP en 443 voor HTTPS. Geef poort 5985 voor HTTP of 5986 voor HTTPS op als u de standaardpoorten wilt gebruiken voor het op andere locatie gebruiken van PowerShell.
 
-Als de doel computer de verbinding omleidt naar een andere URI, wordt de omleiding door Power shell voor komen, tenzij u de para meter **AllowRedirection** in de opdracht gebruikt.
+Als de doelcomputer de verbinding omleiden naar een andere URI, PowerShell voorkomt de omleiding, tenzij u de **allowRedirection** parameter in de opdracht.
 
 ```yaml
 Type: System.Uri[]
@@ -795,7 +813,7 @@ Accept wildcard characters: False
 
 ### -ContainerId
 
-Hiermee geeft u een matrix met container-Id's op.
+Hiermee geeft u een matrix met container-ID's op.
 
 ```yaml
 Type: System.String[]
@@ -811,14 +829,14 @@ Accept wildcard characters: False
 
 ### -Credential
 
-Hiermee geeft u een gebruikers account op dat is gemachtigd om deze actie uit te voeren. Standaard is dit de huidige gebruiker.
+Hiermee geeft u een gebruikersaccount op dat is machtigingen heeft om deze actie uit te voeren. Standaard is dit de huidige gebruiker.
 
-Typ een gebruikers naam, zoals **gebruiker01** of **Domain01\User01**, of voer een **PSCredential** -object in dat door de cmdlet wordt gegenereerd `Get-Credential` . Als u een gebruikers naam typt, wordt u gevraagd het wacht woord in te voeren.
+Typ een gebruikersnaam, zoals **User01** of **Domain01\User01,** of voer een **PSCredential-object** in dat door de `Get-Credential` cmdlet is gegenereerd. Als u een gebruikersnaam typt, wordt u gevraagd het wachtwoord in te voeren.
 
-Referenties worden opgeslagen in een [PSCredential](/dotnet/api/system.management.automation.pscredential) -object en het wacht woord wordt opgeslagen als [SecureString](/dotnet/api/system.security.securestring).
+Referenties worden opgeslagen in een [PSCredential-object](/dotnet/api/system.management.automation.pscredential) en het wachtwoord wordt opgeslagen als een [SecureString](/dotnet/api/system.security.securestring).
 
 > [!NOTE]
-> Zie [Hoe veilig is securestring?](/dotnet/api/system.security.securestring#how-secure-is-securestring)voor meer informatie over **securestring** Data Protection.
+> Zie How secure is **SecureString?** (Hoe veilig is SecureString?) voor meer informatie over [SecureString-gegevensbeveiliging.](/dotnet/api/system.security.securestring#how-secure-is-securestring)
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -834,19 +852,19 @@ Accept wildcard characters: False
 
 ### -EnableNetworkAccess
 
-Geeft aan dat met deze cmdlet een interactief beveiligings token wordt toegevoegd aan loop Back-sessies. Met het interactieve token kunt u opdrachten uitvoeren in de loop back-sessie die gegevens van andere computers ophalen. U kunt bijvoorbeeld een opdracht uitvoeren in de sessie waarmee XML-bestanden van een externe computer naar de lokale computer worden gekopieerd.
+Geeft aan dat deze cmdlet een interactief beveiliging token toevoegt aan loopback-sessies. Met het interactieve token kunt u opdrachten uitvoeren in de loopback-sessie die gegevens van andere computers op halen. U kunt bijvoorbeeld een opdracht uitvoeren in de sessie die XML-bestanden kopieert van een externe computer naar de lokale computer.
 
-Een loop back-sessie is een **PSSession** die afkomstig is van en eindigt op dezelfde computer. Als u een loop back-sessie wilt maken, laat u de para meter **ComputerName** weg of stelt u de waarde in op punt ( `.` ), localhost of de naam van de lokale computer.
+Een loopback-sessie is **een PSSession** die afkomstig is van en eindigt op dezelfde computer. Als u een loopback-sessie wilt maken, laat u de parameter **ComputerName** weg of stelt u de waarde ervan in op dot ( ), localhost of de `.` naam van de lokale computer.
 
-Loop Back-sessies worden standaard gemaakt met behulp van een netwerk token, wat mogelijk niet voldoende machtigingen biedt om te verifiëren bij externe computers.
+Loopback-sessies worden standaard gemaakt met behulp van een netwerk-token, dat mogelijk onvoldoende machtigingen biedt voor verificatie bij externe computers.
 
-De para meter **EnableNetworkAccess** is alleen effectief in loop Back-sessies. Als u **EnableNetworkAccess** gebruikt wanneer u een sessie op een externe computer maakt, mislukt de opdracht, maar wordt de para meter genegeerd.
+De **parameter EnableNetworkAccess** is alleen van kracht in loopback-sessies. Als u **EnableNetworkAccess** gebruikt wanneer u een sessie op een externe computer maakt, slaagt de opdracht, maar de parameter wordt genegeerd.
 
-U kunt externe toegang toestaan in een loop back-sessie met behulp van de **CredSSP** -waarde van de **verificatie** parameter, waarmee de sessie referenties worden gedelegeerd aan andere computers.
+U kunt externe toegang toestaan in een loopback-sessie  met behulp van de **CredSSP-waarde** van de verificatieparameter, die de sessiereferenties delegeert naar andere computers.
 
-Om de computer te beschermen tegen kwaadwillende toegang, kunnen niet-verbonden loop Back-sessies met interactieve tokens, die zijn gemaakt met behulp van **EnableNetworkAccess**, alleen opnieuw verbinding maken vanaf de computer waarop de sessie is gemaakt. Verbroken sessies die gebruikmaken van CredSSP-verificatie, kunnen opnieuw worden aangesloten op andere computers. Voor meer informatie raadpleegt u `Disconnect-PSSession`.
+Om de computer te beschermen tegen schadelijke toegang, kunnen losgekoppelde loopback-sessies met interactieve tokens, die zijn gemaakt met **EnableNetworkAccess,** alleen opnieuw worden verbonden vanaf de computer waarop de sessie is gemaakt. Niet-verbonden sessies die gebruikmaken van CredSSP-verificatie kunnen opnieuw worden verbonden vanaf andere computers. Voor meer informatie raadpleegt u `Disconnect-PSSession`.
 
-Deze para meter is geïntroduceerd in Power Shell 3,0.
+Deze parameter is geïntroduceerd in PowerShell 3.0.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -862,9 +880,9 @@ Accept wildcard characters: False
 
 ### -FilePath
 
-Hiermee geeft u een lokaal script op dat met deze cmdlet wordt uitgevoerd op een of meer externe computers. Voer het pad en de bestands naam van het script in of pipet een scriptpad naar `Invoke-Command` . Het script moet bestaan op de lokale computer of in een map waartoe de lokale computer toegang heeft. Gebruik **argument List** om de waarden van para meters in het script op te geven.
+Hiermee geeft u een lokaal script dat deze cmdlet wordt uitgevoerd op een of meer externe computers. Voer het pad en de bestandsnaam van het script in of geef een scriptpad door naar `Invoke-Command` . Het script moet bestaan op de lokale computer of in een map waar de lokale computer toegang toe heeft. Gebruik **ArgumentList om** de waarden van parameters in het script op te geven.
 
-Wanneer u deze para meter gebruikt, wordt de inhoud van het opgegeven script bestand door Power shell naar een script blok geconverteerd, wordt het script blok verzonden naar de externe computer en uitgevoerd op de externe computer.
+Wanneer u deze parameter gebruikt, converteert PowerShell de inhoud van het opgegeven scriptbestand naar een scriptblok, verzendt het scriptblok naar de externe computer en voert het uit op de externe computer.
 
 ```yaml
 Type: System.String
@@ -880,9 +898,9 @@ Accept wildcard characters: False
 
 ### -HideComputerName
 
-Geeft aan dat met deze cmdlet de computer naam van elk object uit de uitvoer weergave wordt wegge laten. De naam van de computer die het object heeft gegenereerd, wordt standaard weer gegeven in de weer gave.
+Geeft aan dat deze cmdlet de computernaam van elk object weglaat uit de uitvoerweergave. De naam van de computer die het object heeft gegenereerd, wordt standaard weergegeven in de weergave.
 
-Deze para meter is alleen van invloed op de uitvoer weergave. Het object wordt niet gewijzigd.
+Deze parameter is alleen van invloed op de uitvoerweergave. Het object wordt niet gewijzigd.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -896,11 +914,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Hostnaam
+### -HostName
 
-Hiermee geeft u een matrix van computer namen voor een verbinding op basis van SSH (Secure Shell). Dit is vergelijkbaar met de para meter **ComputerName** , behalve dat de verbinding met de externe computer wordt gemaakt met behulp van SSH in plaats van Windows WinRM.
+Hiermee geeft u een matrix met computernamen op voor een SSH-verbinding (Secure Shell). Dit is vergelijkbaar met de **ComputerName** parameter behalve dat de verbinding met de externe computer wordt gemaakt met behulp van SSH in plaats van Windows WinRM.
 
-Deze para meter is geïntroduceerd in Power shell 6,0.
+Deze parameter is geïntroduceerd in PowerShell 6.0.
 
 ```yaml
 Type: System.String[]
@@ -916,19 +934,19 @@ Accept wildcard characters: False
 
 ### -InDisconnectedSession
 
-Geeft aan dat met deze cmdlet een opdracht of script wordt uitgevoerd in een sessie waarbij de verbinding is verbroken.
+Geeft aan dat deze cmdlet een opdracht of script in een niet-verbonden sessie wordt uitgevoerd.
 
-Wanneer u de para meter **InDisconnectedSession** gebruikt, `Invoke-Command` wordt op elke externe computer een permanente sessie gemaakt, wordt de opdracht gestart die is opgegeven door de para meter **script Block** of **filepath** en wordt de verbinding met de sessie verbroken. De opdrachten blijven worden uitgevoerd in de verbroken sessies. Met **InDisconnectedSession** kunt u opdrachten uitvoeren zonder een verbinding met de externe sessies te onderhouden. En omdat de verbinding van de sessie wordt verbroken voordat er resultaten worden geretourneerd, zorgt **InDisconnectedSession** ervoor dat alle opdracht resultaten worden geretourneerd naar de opnieuw verbonden sessie, in plaats van te worden gesplitst tussen sessies.
+Wanneer u de **parameter InDisconnectedSession** gebruikt, maakt een permanente sessie op elke externe computer, start u de opdracht die is opgegeven door de parameter ScriptBlock of FilePath en wordt de verbinding met de sessie `Invoke-Command` verbroken.   De opdrachten blijven worden uitgevoerd in de niet-verbonden sessies. **Met InDisconnectedSession kunt** u opdrachten uitvoeren zonder een verbinding met de externe sessies te onderhouden. En omdat de sessie wordt verbroken voordat er resultaten worden geretourneerd, zorgt **InDisconnectedSession** ervoor dat alle opdrachtresultaten worden geretourneerd naar de opnieuw verbonden sessie, in plaats van te worden gesplitst tussen sessies.
 
-U kunt **InDisconnectedSession** niet gebruiken met de para meter **Session** of de para meter **AsJob** .
+U kunt **InDisconnectedSession** niet gebruiken met de parameter **Session** of **de parameter AsJob.**
 
-Opdrachten die gebruikmaken van **InDisconnectedSession** retour neren een **PSSession** -object dat de niet-verbonden sessie vertegenwoordigt. Ze retour neren niet de uitvoer van de opdracht. Gebruik de cmdlets of om verbinding te maken met de verbroken sessie `Connect-PSSession` `Receive-PSSession` . Gebruik de cmdlet om de resultaten op te halen van de opdrachten die in de sessie worden uitgevoerd `Receive-PSSession` . Om opdrachten uit te voeren die uitvoer genereren in een verbroken sessie, stelt u de waarde van de **OutputBufferingMode** -sessie optie in op **Drop**. Als u van plan bent om verbinding te maken met de verbroken sessie, stelt u de time-out voor inactiviteit in de sessie zo in dat u voldoende tijd hebt om verbinding te maken voordat u de sessie verwijdert.
+Opdrachten die **gebruikmaken van InDisconnectedSession retourneren** een **PSSession-object** dat de niet-verbonden sessie vertegenwoordigt. Ze retourneren de opdrachtuitvoer niet. Gebruik de cmdlets of om verbinding te maken met de sessie zonder `Connect-PSSession` `Receive-PSSession` verbinding. Gebruik de cmdlet om de resultaten op te halen van opdrachten die in de `Receive-PSSession` sessie zijn gemaakt. Als u opdrachten wilt uitvoeren die uitvoer genereren in een niet-verbonden sessie, stelt u de waarde van de **sessieoptie OutputBufferingMode** in op **Drop**. Als u verbinding wilt maken met de niet-verbonden sessie, stelt u de time-out voor inactiefheid in de sessie in, zodat u voldoende tijd hebt om verbinding te maken voordat u de sessie kunt verwijderen.
 
-U kunt de uitvoer buffer modus en time-out voor inactiviteit instellen in de para meter **SessionOption** of in de `$PSSessionOption` Voorkeurs variabele. Zie en about_Preference_Variables voor meer informatie over sessie `New-PSSessionOption` opties [](./about/about_preference_variables.md).
+U kunt de uitvoerbuffermodus en niet-actieve time-out instellen in de parameter **SessionOption** of in de `$PSSessionOption` voorkeursvariabele. Zie en about_Preference_Variables voor `New-PSSessionOption` [meer informatie over sessieopties.](./about/about_preference_variables.md)
 
-Zie [about_Remote_Disconnected_Sessions](about/about_Remote_Disconnected_Sessions.md)voor meer informatie over de functie voor verbroken sessies.
+Zie voor meer informatie over de functie Niet-verbonden [sessies about_Remote_Disconnected_Sessions.](about/about_Remote_Disconnected_Sessions.md)
 
-Deze para meter is geïntroduceerd in Power Shell 3,0.
+Deze parameter is geïntroduceerd in PowerShell 3.0.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -942,11 +960,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Input object
+### -InputObject
 
-Hiermee geeft u de invoer aan de opdracht. Voer een variabele in die de objecten bevat of typ een opdracht of expressie waarmee de objecten worden opgehaald.
+Hiermee geeft u invoer voor de opdracht. Voer een variabele in die de objecten bevat of typ een opdracht of expressie die de objecten op haalt.
 
-Gebruik bij het gebruik van de para meter **input object** de `$Input` Automatische variabele in de waarde van de para meter **script Block** om de invoer objecten weer te geven.
+Wanneer u de **parameter InputObject** gebruikt, gebruikt u de automatische variabele in de waarde van de `$Input` parameter **ScriptBlock** om de invoerobjecten weer te geven.
 
 ```yaml
 Type: System.Management.Automation.PSObject
@@ -962,11 +980,11 @@ Accept wildcard characters: False
 
 ### -JobName
 
-Hiermee geeft u een beschrijvende naam op voor de achtergrond taak. Taken worden standaard benoemd `Job<n>` , waarbij `<n>` een rang nummer is.
+Hiermee geeft u een gebruiksvriendelijke naam voor de achtergrond taak. Taken hebben standaard de naam `Job<n>` , waarbij `<n>` een rangnummer is.
 
-Als u de para meter **JobName** in een opdracht gebruikt, wordt de opdracht uitgevoerd als een taak en `Invoke-Command` wordt een taak object geretourneerd, zelfs als u geen **AsJob** in de opdracht opneemt.
+Als u de parameter **JobName** in een opdracht gebruikt, wordt de opdracht uitgevoerd als een taak en wordt een taakobject retourneert, zelfs als u AsJob niet in de opdracht `Invoke-Command` opgeeft. 
 
-Zie [about_Jobs](./About/about_Jobs.md)voor meer informatie over Power shell-achtergrond taken.
+Zie voor meer informatie over PowerShell-achtergrondtaken [about_Jobs.](./About/about_Jobs.md)
 
 ```yaml
 Type: System.String
@@ -980,13 +998,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Bestandspad
+### -KeyFilePath
 
-Hiermee geeft u een pad naar een sleutel bestand dat door een Secure Shell (SSH) wordt gebruikt om een gebruiker op een externe computer te verifiëren.
+Hiermee geeft u een sleutelbestandspad op dat door Secure Shell (SSH) wordt gebruikt om een gebruiker op een externe computer te verifiëren.
 
-Met SSH kan gebruikers verificatie worden uitgevoerd via persoonlijke en open bare sleutels als alternatief voor de basis wachtwoord verificatie. Als de externe computer is geconfigureerd voor sleutel verificatie, kan deze para meter worden gebruikt om de sleutel op te geven waarmee de gebruiker wordt geïdentificeerd.
+Met SSH kan gebruikersverificatie worden uitgevoerd via persoonlijke en openbare sleutels als alternatief voor basiswachtwoordverificatie. Als de externe computer is geconfigureerd voor sleutelverificatie, kan deze parameter worden gebruikt om de sleutel op te geven waarmee de gebruiker wordt geïdentificeerd.
 
-Deze para meter is geïntroduceerd in Power shell 6,0.
+Deze parameter is geïntroduceerd in PowerShell 6.0.
 
 ```yaml
 Type: System.String
@@ -1002,11 +1020,11 @@ Accept wildcard characters: False
 
 ### -NoNewScope
 
-Geeft aan dat met deze cmdlet de opgegeven opdracht wordt uitgevoerd in het huidige bereik. `Invoke-Command`Voert standaard opdrachten uit in hun eigen bereik.
+Geeft aan dat deze cmdlet de opgegeven opdracht in het huidige bereik wordt uitgevoerd. Opdrachten worden `Invoke-Command` standaard uitgevoerd in hun eigen bereik.
 
-Deze para meter is alleen geldig in opdrachten die worden uitgevoerd in de huidige sessie, dat wil zeggen opdrachten die de **computer naam** en de **sessie** parameters weglaten.
+Deze parameter is alleen geldig in opdrachten die worden uitgevoerd in de huidige sessie, dat wil zeggen opdrachten die weglaten zowel de **ComputerName** en **sessie** parameters.
 
-Deze para meter is geïntroduceerd in Power Shell 3,0.
+Deze parameter is geïntroduceerd in PowerShell 3.0.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -1022,15 +1040,15 @@ Accept wildcard characters: False
 
 ### -Port
 
-Hiermee geeft u de netwerk poort op de externe computer die wordt gebruikt voor deze opdracht. Als u verbinding wilt maken met een externe computer, moet op de externe computer worden geluisterd op de poort die door de verbinding wordt gebruikt. De standaard poorten zijn 5985 (WinRM-poort voor HTTP) en 5986 (WinRM-poort voor HTTPS).
+Hiermee geeft u de netwerkpoort op de externe computer die wordt gebruikt voor deze opdracht. Als u verbinding wilt maken met een externe computer, moet de externe computer luisteren op de poort die de verbinding gebruikt. De standaardpoorten zijn 5985 (WinRM-poort voor HTTP) en 5986 (WinRM-poort voor HTTPS).
 
-Voordat u een andere poort gebruikt, configureert u de WinRM-listener op de externe computer om op die poort te Luis teren. Als u de listener wilt configureren, typt u de volgende twee opdrachten bij de Power shell-prompt:
+Voordat u een alternatieve poort gebruikt, configureert u de WinRM-listener op de externe computer om naar die poort te luisteren. Als u de listener wilt configureren, typt u de volgende twee opdrachten bij de PowerShell-prompt:
 
 `Remove-Item -Path WSMan:\Localhost\listener\listener* -Recurse`
 
 `New-Item -Path WSMan:\Localhost\listener -Transport http -Address * -Port \<port-number\>`
 
-Gebruik de para meter **poort** alleen als dat nodig is. De poort die in de opdracht is ingesteld, is van toepassing op alle computers of sessies waarop de opdracht wordt uitgevoerd. Een alternatieve poort instelling kan verhinderen dat de opdracht wordt uitgevoerd op alle computers.
+Gebruik de parameter **Port niet,** tenzij dat nodig is. De poort die is ingesteld in de opdracht is van toepassing op alle computers of sessies waarop de opdracht wordt uitgevoerd. Een alternatieve poortinstelling kan verhinderen dat de opdracht wordt uitgevoerd op alle computers.
 
 ```yaml
 Type: System.Int32
@@ -1046,7 +1064,7 @@ Accept wildcard characters: False
 
 ### -RemoteDebug
 
-Wordt gebruikt om de aangeroepen opdracht in de foutopsporingsmodus in de externe Power shell-sessie uit te voeren.
+Wordt gebruikt om de aangeroepen opdracht uit te voeren in de foutopsporingsmodus in de externe PowerShell-sessie.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -1076,12 +1094,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Script Block
+### -ScriptBlock
 
-Hiermee geeft u de opdrachten op die moeten worden uitgevoerd. Plaats de opdrachten tussen accolades `{ }` om een script blok te maken.
+Hiermee geeft u de opdrachten uit te voeren. Sluit de opdrachten tussen accolades om `{ }` een scriptblok te maken.
 Deze parameter is vereist.
 
-Standaard worden alle variabelen in de opdracht geëvalueerd op de externe computer. Als u lokale variabelen wilt toevoegen aan de opdracht, gebruikt u **argument List**.
+Standaard worden variabelen in de opdracht geëvalueerd op de externe computer. Gebruik **ArgumentList** om lokale variabelen op te nemen in de opdracht .
 
 ```yaml
 Type: System.Management.Automation.ScriptBlock
@@ -1097,9 +1115,9 @@ Accept wildcard characters: False
 
 ### -Sessie
 
-Hiermee geeft u een matrix met sessies waarin met deze cmdlet de opdracht wordt uitgevoerd. Voer een variabele in die **PSSession** -objecten bevat of een opdracht waarmee de **PSSession** -objecten, zoals een of-opdracht, worden gemaakt of opgehaald `New-PSSession` `Get-PSSession` .
+Hiermee geeft u een matrix van sessies waarin deze cmdlet de opdracht wordt uitgevoerd. Voer een variabele in die **PSSession-objecten** bevat of een opdracht die de **PSSession-objecten** maakt of op haalt, zoals een `New-PSSession` - of `Get-PSSession` -opdracht.
 
-Wanneer u een **PSSession** maakt, brengt Power shell een permanente verbinding met de externe computer tot stand. Gebruik een **PSSession** om een reeks gerelateerde opdrachten uit te voeren die gegevens delen. Als u één opdracht of een reeks niet-gerelateerde opdrachten wilt uitvoeren, gebruikt u de para meter **ComputerName** . Zie [about_PSSessions](./About/about_PSSessions.md)voor meer informatie.
+Wanneer u een **PSSession maakt,** maakt PowerShell een permanente verbinding met de externe computer. Gebruik een **PSSession om** een reeks gerelateerde opdrachten uit te voeren die gegevens delen. Als u één opdracht of een reeks niet-gerelateerde opdrachten wilt uitvoeren, gebruikt u de parameter **ComputerName.** Zie voor meer informatie [about_PSSessions](./About/about_PSSessions.md).
 
 ```yaml
 Type: System.Management.Automation.Runspaces.PSSession[]
@@ -1113,11 +1131,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Sessie naam
+### -SessionName
 
-Hiermee geeft u een beschrijvende naam op voor een niet-verbonden sessie. U kunt de naam gebruiken om te verwijzen naar de sessie in volgende opdrachten, zoals een `Get-PSSession` opdracht. Deze para meter is alleen geldig voor de para meter **InDisconnectedSession** .
+Hiermee geeft u een gebruiksvriendelijke naam op voor een niet-verbonden sessie. U kunt de naam gebruiken om te verwijzen naar de sessie in volgende opdrachten, zoals een `Get-PSSession` opdracht. Deze parameter is alleen geldig met **de parameter InDisconnectedSession.**
 
-Deze para meter is geïntroduceerd in Power Shell 3,0.
+Deze parameter is geïntroduceerd in PowerShell 3.0.
 
 ```yaml
 Type: System.String[]
@@ -1133,13 +1151,13 @@ Accept wildcard characters: False
 
 ### -SessionOption
 
-Hiermee geeft u geavanceerde opties voor de sessie op. Voer een **SessionOption** -object in, zoals het account dat u maakt met behulp van de `New-PSSessionOption` cmdlet of een hash-tabel waarin de sleutels de namen van sessie opties zijn en de waarden zijn waarden voor de sessie.
+Hiermee geeft u geavanceerde opties voor de sessie. Voer een **SessionOption-object** in, zoals een object dat u maakt met behulp van de cmdlet of een hash-tabel waarin de sleutels sessieoptienamen zijn en de waarden `New-PSSessionOption` sessieoptiewaarden zijn.
 
-De standaard waarden voor de opties worden bepaald door de waarde van de `$PSSessionOption` Voorkeurs variabele, als deze is ingesteld. Anders worden de standaard waarden bepaald door opties die zijn ingesteld in de sessie configuratie.
+De standaardwaarden voor de opties worden bepaald door de waarde van de `$PSSessionOption` voorkeursvariabele als deze is ingesteld. Anders worden de standaardwaarden ingesteld door opties die zijn ingesteld in de sessieconfiguratie.
 
-De waarden van de sessie optie hebben voor rang op de standaard waarden voor sessies die zijn ingesteld in de `$PSSessionOption` Voorkeurs variabele en in de sessie configuratie. Ze hebben echter geen voor rang op de maximum waarden, quota's of limieten die zijn ingesteld in de sessie configuratie.
+De waarden van de sessieoptie hebben voorrang op standaardwaarden voor sessies die zijn ingesteld in de `$PSSessionOption` voorkeursvariabele en in de sessieconfiguratie. Ze hebben echter geen voorrang op maximumwaarden, quota of limieten die zijn ingesteld in de sessieconfiguratie.
 
-Zie voor een beschrijving van de sessie opties die de standaard waarden bevatten `New-PSSessionOption` . Zie about_Preference_Variables voor meer informatie over de `$PSSessionOption` voorkeurs [](About/about_Preference_Variables.md)variabele.
+Zie voor een beschrijving van de sessieopties die de standaardwaarden `New-PSSessionOption` bevatten. Zie voor meer informatie `$PSSessionOption` over de voorkeursvariabele [about_Preference_Variables.](About/about_Preference_Variables.md)
 Zie [about_Session_Configurations](About/about_Session_Configurations.md) (Engelstalig) voor meer informatie over sessieconfiguraties.
 
 ```yaml
@@ -1156,18 +1174,18 @@ Accept wildcard characters: False
 
 ### -SSHConnection
 
-Deze para meter gebruikt een matrix van hash-tabellen waarbij elke hash-tabel een of meer verbindings parameters bevat die nodig zijn om een SSH-verbinding (Secure Shell) tot stand te brengen. De **SSHConnection** -para meter is handig voor het maken van meerdere sessies waarbij voor elke sessie verschillende verbindings gegevens zijn vereist.
+Deze parameter maakt gebruik van een matrix met hashtabellen waarbij elke hash-tabel een of meer verbindingsparameters bevat die nodig zijn om een SSH-verbinding (Secure Shell) tot stand te brengen. De **parameter SSHConnection** is handig voor het maken van meerdere sessies waarbij elke sessie andere verbindingsgegevens vereist.
 
-De hashtabel bevat de volgende leden:
+De hashtabel heeft de volgende leden:
 
-- **ComputerName** (of **hostnaam**)
+- **ComputerName** (of **HostName**)
 - **Poort**
-- **Gebruikers**
-- Het **bestandspad** (of **IdentityFilePath**)
+- **Gebruikersnaam**
+- **KeyFilePath** (of **IdentityFilePath**)
 
-**ComputerName** (of **hostnaam**) is het enige sleutel-waardepaar dat vereist is.
+**ComputerName** (of **HostName)** is het enige sleutel-waardepaar dat vereist is.
 
-Deze para meter is geïntroduceerd in Power shell 6,0.
+Deze parameter is geïntroduceerd in PowerShell 6.0.
 
 ```yaml
 Type: System.Collections.Hashtable[]
@@ -1185,9 +1203,9 @@ Accept wildcard characters: False
 
 Geeft aan dat de externe verbinding tot stand is gebracht met behulp van Secure Shell (SSH).
 
-Power Shell maakt standaard gebruik van Windows WinRM om verbinding te maken met een externe computer. Met deze switch wordt Power shell gedwongen de para meter **hostname** te gebruiken om een externe verbinding op basis van SSH tot stand te brengen.
+PowerShell maakt standaard gebruik van Windows WinRM om verbinding te maken met een externe computer. Deze schakelknop dwingt PowerShell om de **parameter HostName** te gebruiken voor het tot stand brengen van een externe SSH-verbinding.
 
-Deze para meter is geïntroduceerd in Power shell 6,0.
+Deze parameter is geïntroduceerd in PowerShell 6.0.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -1204,10 +1222,10 @@ Accept wildcard characters: False
 
 ### -ThrottleLimit
 
-Hiermee geeft u het maximum aantal gelijktijdige verbindingen op dat tot stand kan worden gebracht om deze opdracht uit te voeren.
-Als u deze para meter weglaat of een waarde van 0 invoert, wordt de standaard waarde 32 gebruikt.
+Hiermee geeft u het maximum aantal gelijktijdige verbindingen die kunnen worden ingesteld voor het uitvoeren van deze opdracht.
+Als u deze parameter weglaten of een waarde van 0, de standaardwaarde, 32, wordt gebruikt.
 
-De beperkings limiet geldt alleen voor de huidige opdracht, niet voor de sessie of voor de computer.
+De beperkingslimiet geldt alleen voor de huidige opdracht, niet voor de sessie of voor de computer.
 
 ```yaml
 Type: System.Int32
@@ -1223,15 +1241,15 @@ Accept wildcard characters: False
 
 ### -GebruikersNaam
 
-Hiermee geeft u de gebruikers naam op voor het account dat wordt gebruikt om een opdracht uit te voeren op de externe computer. De verificatie methode voor de gebruiker is afhankelijk van hoe Secure Shell (SSH) is geconfigureerd op de externe computer.
+Hiermee geeft u de gebruikersnaam voor het account dat wordt gebruikt voor het uitvoeren van een opdracht op de externe computer. De gebruikersverificatiemethode is afhankelijk van hoe Secure Shell (SSH) is geconfigureerd op de externe computer.
 
-Als SSH is geconfigureerd voor basis wachtwoord verificatie, wordt u gevraagd om het wacht woord van de gebruiker.
+Als SSH is geconfigureerd voor basiswachtwoordverificatie, wordt u gevraagd om het gebruikerswachtwoord.
 
-Als SSH is geconfigureerd voor gebruikers authenticatie op basis van sleutels, kan een pad naar een sleutel bestand worden opgegeven **via de para** meter voor het sleutelpad en wordt er geen wachtwoord prompt weer gegeven. Als het sleutel bestand van de client gebruiker zich in een bekende SSH-locatie bevindt, is de para meter voor het sleutelpad niet nodig voor verificatie op basis van een sleutel en **wordt de gebruikers** verificatie automatisch uitgevoerd op basis van de gebruikers naam. Zie de SSH-documentatie van uw platform over gebruikers verificatie op basis van een sleutel voor meer informatie.
+Als SSH is geconfigureerd voor op sleutels gebaseerde gebruikersverificatie, kan een sleutelbestandspad worden opgegeven via de parameter **KeyFilePath** en wordt er geen wachtwoordprompt gegeven. Als het clientgebruikerssleutelbestand zich op een bekende SSH-locatie bevindt, is de parameter **KeyFilePath** niet nodig voor verificatie op basis van een sleutel en vindt gebruikersverificatie automatisch plaats op basis van de gebruikersnaam. Zie de SSH-documentatie van uw platform over op sleutels gebaseerde gebruikersverificatie voor meer informatie.
 
-Dit is geen vereiste para meter. Als de para meter **username** niet is opgegeven, wordt de huidige aangemelde gebruikers naam gebruikt voor de verbinding.
+Dit is geen vereiste parameter. Als de **gebruikersnaam** parameter niet is opgegeven, wordt de huidige aangemelde gebruikersnaam gebruikt voor de verbinding.
 
-Deze para meter is geïntroduceerd in Power shell 6,0.
+Deze parameter is geïntroduceerd in PowerShell 6.0.
 
 ```yaml
 Type: System.String
@@ -1247,11 +1265,11 @@ Accept wildcard characters: False
 
 ### -UseSSL
 
-Geeft aan dat deze cmdlet het Secure Sockets Layer-Protocol (SSL) gebruikt om verbinding te maken met de externe computer. SSL wordt standaard niet gebruikt.
+Geeft aan dat deze cmdlet het SSL-protocol (Secure Sockets Layer) gebruikt om een verbinding met de externe computer tot stand te brengen. Standaard wordt SSL niet gebruikt.
 
-WS-Management versleutelt alle Power shell-inhoud die via het netwerk wordt verzonden. De para meter **UseSSL** is een extra beveiliging waarbij de gegevens worden verzonden via een HTTPS, in plaats van via http.
+WS-Management versleutelt alle PowerShell-inhoud die via het netwerk wordt verzonden. De **parameter UseSSL** is een extra beveiliging die de gegevens via een HTTPS verzendt in plaats van HTTP.
 
-Als u deze para meter gebruikt, maar SSL niet beschikbaar is op de poort die wordt gebruikt voor de opdracht, mislukt de opdracht.
+Als u deze parameter gebruikt, maar SSL niet beschikbaar is op de poort die wordt gebruikt voor de opdracht, mislukt de opdracht.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -1267,7 +1285,7 @@ Accept wildcard characters: False
 
 ### -VMId
 
-Hiermee geeft u een matrix met Id's van virtuele machines op.
+Hiermee geeft u een matrix van de ID's van virtuele machines.
 
 ```yaml
 Type: System.Guid[]
@@ -1283,7 +1301,7 @@ Accept wildcard characters: False
 
 ### -VMName
 
-Hiermee geeft u een matrix met namen van virtuele machines op.
+Hiermee geeft u een matrix met namen van virtuele machines.
 
 ```yaml
 Type: System.String[]
@@ -1301,11 +1319,11 @@ Accept wildcard characters: False
 
 Hiermee geeft u het SSH-subsysteem op dat wordt gebruikt voor de nieuwe **PSSession**.
 
-Hiermee geeft u het subsysteem op dat moet worden gebruikt op het doel zoals gedefinieerd in sshd_config.
-Het subsysteem start een specifieke versie van Power shell met vooraf gedefinieerde para meters.
+Hiermee geeft u het subsysteem op dat moet worden gebruikt op het doel, zoals gedefinieerd in sshd_config.
+Het subsysteem start een specifieke versie van PowerShell met vooraf gedefinieerde parameters.
 Als het opgegeven subsysteem niet bestaat op de externe computer, mislukt de opdracht.
 
-Als deze para meter niet wordt gebruikt, is de standaard het subsysteem Power shell.
+Als deze parameter niet wordt gebruikt, is de standaardwaarde het subsysteem 'powershell'.
 
 ```yaml
 Type: System.String
@@ -1321,40 +1339,40 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable. Zie [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)voor meer informatie.
+Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable. Zie voor meer informatie [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## INVOER
+## Invoerwaarden
 
-### System. Management. Automation. script Block
+### System.Management.Automation.ScriptBlock
 
-U kunt een opdracht in een script blok door sluizen naar `Invoke-Command` . Gebruik de `$Input` Automatische variabele om de invoer objecten in de opdracht weer te geven.
+U kunt een opdracht in een scriptblok doorseen naar `Invoke-Command` . Gebruik de `$Input` automatische variabele om de invoerobjecten in de opdracht weer te geven.
 
-## UITVOER
+## Uitvoerwaarden
 
-### System. Management. Automation. PSRemotingJob, System. Management. Automation. Runspaces. PSSession, of de uitvoer van de aangeroepen opdracht
+### System.Management.Automation.PSRemotingJob, System.Management.Automation.Runspaces.PSSession of de uitvoer van de aangeroepen opdracht
 
-Met deze cmdlet wordt een taak object geretourneerd als u de para meter **AsJob** gebruikt. Als u de para meter **InDisconnectedSession** opgeeft, `Invoke-Command` wordt een **PSSession** -object geretourneerd. Anders wordt de uitvoer van de aangeroepen opdracht geretourneerd. Dit is de waarde van de para meter **script Block** .
+Deze cmdlet retourneert een taakobject als u de **parameter AsJob** gebruikt. Als u de **parameter InDisconnectedSession opgeeft,** `Invoke-Command` retourneert een **PSSession-object.** Anders wordt de uitvoer van de aangeroepen opdracht, de waarde van de **parameter ScriptBlock,** retourneert.
 
-## OPMERKINGEN
+## Notities
 
-In Windows Vista en latere versies van het Windows-besturings systeem  `Invoke-Command` moet u Power shell uitvoeren met de optie **als administrator uitvoeren** om de para meter ComputerName van te gebruiken voor het uitvoeren van een opdracht op de lokale computer.
+Op Windows Vista, en latere versies van het Windows-besturingssysteem, moet u PowerShell uitvoeren met de optie Als administrator uitvoeren om de parameter **ComputerName** van te gebruiken om een opdracht uit te voeren op de lokale `Invoke-Command` computer. 
 
-Wanneer u opdrachten op meerdere computers uitvoert, maakt Power shell verbinding met de computers in de volg orde waarin ze worden weer gegeven in de lijst. De uitvoer van de opdracht wordt echter weer gegeven in de volg orde waarin deze worden ontvangen van de externe computers. Dit kan anders zijn.
+Wanneer u opdrachten op meerdere computers uitvoeren, maakt PowerShell verbinding met de computers in de volgorde waarin ze worden weergegeven in de lijst. De uitvoer van de opdracht wordt echter weergegeven in de volgorde waarin deze wordt ontvangen van de externe computers, wat mogelijk anders is.
 
-Fouten die het resultaat zijn van de opdracht die `Invoke-Command` wordt uitgevoerd, worden opgenomen in de opdracht resultaten.
-Fouten waarvoor fouten in een lokale opdracht zouden worden beëindigd, worden beschouwd als niet-afsluit fouten in een externe opdracht. Deze strategie zorgt ervoor dat het beëindigen van fouten op één computer de opdracht niet sluit op alle computers waarop deze wordt uitgevoerd. Deze procedure wordt ook gebruikt wanneer een externe opdracht wordt uitgevoerd op één computer.
+Fouten die het resultaat zijn van de opdracht `Invoke-Command` die wordt uitgevoerd, zijn opgenomen in de opdrachtresultaten.
+Fouten die fouten in een lokale opdracht zouden beëindigen, worden in een externe opdracht behandeld als niet-beëindigingsfouten. Deze strategie zorgt ervoor dat het beëindigen van fouten op één computer de opdracht niet sluit op alle computers waarop deze wordt uitgevoerd. Deze oefening wordt zelfs gebruikt wanneer een externe opdracht wordt uitgevoerd op één computer.
 
-Als de externe computer zich niet in een domein bevindt dat de lokale computer vertrouwt, is de computer mogelijk niet in staat om de referenties van de gebruiker te verifiëren. Als u de externe computer wilt toevoegen aan de lijst met vertrouwde hosts in WS-Management, gebruikt u de volgende opdracht in de `WSMAN` provider, waarbij `<Remote-Computer-Name>` de naam is van de externe computer:
+Als de externe computer zich niet in een domein dat de lokale computer vertrouwt, kan de computer mogelijk niet de referenties van de gebruiker verifiëren. Als u de externe computer wilt toevoegen aan de lijst met vertrouwde hosts in WS-Management, gebruikt u de volgende opdracht in de provider, waarbij de naam `WSMAN` van de externe computer `<Remote-Computer-Name>` is:
 
 `Set-Item -Path WSMan:\Localhost\Client\TrustedHosts -Value \<Remote-Computer-Name\>`
 
-Wanneer u een **PSSession** verbreekt met de para meter **InDisconnectedSession** , wordt de sessie status **losgekoppeld** en is de beschik baarheid **geen**. De waarde van de eigenschap **State** is relatief ten opzichte van de huidige sessie. Als de waarde voor de **verbinding is verbroken** , betekent dit dat de **PSSession** niet is verbonden met de huidige sessie. Dit betekent echter niet dat de **PSSession** van de verbinding met alle sessies is verbroken. Deze is mogelijk verbonden met een andere sessie. Gebruik de eigenschap **Beschik baarheid** om te bepalen of u verbinding kunt maken met de sessie of er opnieuw verbinding mee wilt maken.
+Wanneer u de verbinding met **een PSSession** verbreekt met behulp van de parameter **InDisconnectedSession,** wordt de sessietoestand **Verbroken** en is de beschikbaarheid **Geen.** De waarde van de **eigenschap State** is relatief ten opzichte van de huidige sessie. De waarde **Verbroken** betekent dat **de PSSession** niet is verbonden met de huidige sessie. Dit betekent echter niet dat de **PSSession** is losgekoppeld van alle sessies. Deze kan zijn verbonden met een andere sessie. Gebruik de eigenschap Beschikbaarheid om te bepalen of u verbinding kunt maken of opnieuw verbinding kunt maken met **de** sessie.
 
-Een **beschikbaarheids** waarde van **geen** geeft aan dat u verbinding kunt maken met de sessie. De waarde **bezet** geeft aan dat u geen verbinding kunt maken met de **PSSession** , omdat deze is verbonden met een andere sessie. Zie [RunspaceState](/dotnet/api/system.management.automation.runspaces.runspacestate)voor meer informatie over de waarden van de eigenschap **State** van sessies. Zie [RunspaceAvailability](/dotnet/api/system.management.automation.runspaces.runspaceavailability)voor meer informatie over de waarden van de eigenschap **Beschik baarheid** van sessies.
+De **waarde** Beschikbaarheid **van Geen** geeft aan dat u verbinding kunt maken met de sessie. De waarde **Bezet geeft** aan dat u geen verbinding kunt maken met de **PSSession** omdat deze is verbonden met een andere sessie. Zie [RunspaceState](/dotnet/api/system.management.automation.runspaces.runspacestate)voor meer informatie over de waarden van de **eigenschap Status** van sessies. Zie [RunspaceAvailability](/dotnet/api/system.management.automation.runspaces.runspaceavailability)voor meer informatie over de waarden van de **eigenschap Beschikbaarheid** van sessies.
 
-De para meters **hostname** en **SSHConnection** zijn opgenomen vanaf Power shell 6,0. Ze zijn toegevoegd om Power shell Remoting te bieden op basis van de Secure Shell (SSH). Power shell en SSH worden ondersteund op meerdere platformen (Windows, Linux, macOS) en externe communicatie van Power shell werkt op deze platforms waarin Power shell en SSH zijn geïnstalleerd en geconfigureerd. Dit is gescheiden van de vorige Windows-functie voor externe toegang die is gebaseerd op WinRM en veel van de specifieke WinRM-functies en-beperkingen zijn niet van toepassing. Bijvoorbeeld: op WinRM gebaseerde quota's, sessie opties, aangepaste eindpunt configuratie en functies voor ontkoppelen/opnieuw verbinden worden op dit moment niet ondersteund. Zie voor meer informatie over het instellen van externe toegang tot Power shell [via SSH Power shell](/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core).
+De **parameters HostName** en **SSHConnection** zijn vanaf PowerShell 6.0 opgenomen. Ze zijn toegevoegd om powershell voor remoting te bieden op basis van Secure Shell (SSH). PowerShell en SSH worden ondersteund op meerdere platformen (Windows, Linux, macOS) en voor remoting van PowerShell werkt via deze platformen waarop PowerShell en SSH zijn geïnstalleerd en geconfigureerd. Dit staat los van de vorige windows-remoting die is gebaseerd op WinRM en veel specifieke WinRM-functies en -beperkingen zijn niet van toepassing. Bijvoorbeeld quota op basis van WinRM, sessieopties, aangepaste eindpuntconfiguratie en functies voor verbreken/opnieuw verbinden worden momenteel niet ondersteund. Zie Voor meer informatie over het instellen van SSH-remoting voor [PowerShell Via SSH.](/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core)
 
-## GERELATEERDE KOPPELINGEN
+## Verwante koppelingen
 
 [about_PSSessions](./About/about_PSSessions.md)
 
@@ -1370,15 +1388,14 @@ De para meters **hostname** en **SSHConnection** zijn opgenomen vanaf Power shel
 
 [Enter-PSSession](Enter-PSSession.md)
 
-[Afsluiten-PSSession](Exit-PSSession.md)
+[Exit-PSSession](Exit-PSSession.md)
 
 [Get-PSSession](Get-PSSession.md)
 
-[Invoke-item](../Microsoft.PowerShell.Management/Invoke-Item.md)
+[Invoke-Item](../Microsoft.PowerShell.Management/Invoke-Item.md)
 
 [New-PSSession](New-PSSession.md)
 
 [Remove-PSSession](Remove-PSSession.md)
 
 [WSMan Provider](../Microsoft.WsMan.Management/About/about_WSMan_Provider.md)
-

@@ -1,23 +1,22 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 04/05/2021
+ms.date: 04/20/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-restmethod?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-RestMethod
-ms.openlocfilehash: 916c221a4fb0886494a4632e38f25a639d5d414e
-ms.sourcegitcommit: d95a7255f6775b2973aa9473611185a5583881ff
+ms.openlocfilehash: 136ae55388256076e1b5843f0569c6ab4b28f0b6
+ms.sourcegitcommit: b10731301412afd4111743b85da95e8c25583533
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "106555504"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107756258"
 ---
 # Invoke-RestMethod
 
-## Samen vatting
-Hiermee verzendt u een HTTP-of HTTPS-aanvraag naar een REST webservice.
+## Synopsis
+Verzendt een HTTP- of HTTPS-aanvraag naar een RESTful-webservice.
 
 ## Syntax
 
@@ -31,20 +30,23 @@ Invoke-RestMethod [-Method <WebRequestMethod>] [-UseBasicParsing] [-Uri] <Uri>
  [-PassThru] [<CommonParameters>]
 ```
 
-## Beschrijving
+## Description
 
-De `Invoke-RestMethod` cmdlet verzendt HTTP-en HTTPS-aanvragen voor het representatief-webservices (rest) voor het retour neren van gegevens die Rich structured data worden geretourneerd.
+De `Invoke-RestMethod` cmdlet verzendt HTTP- en HTTPS-aanvragen naar Representational State Transfer (REST)-webservices die rijke gestructureerde gegevens retourneren.
 
-Windows Power shell formatteert de reactie op basis van het gegevens type. Voor een RSS-of ATOM-feed retourneert Windows Power shell het item of de XML-knoop punten van de vermelding. Voor JavaScript Object Notation (JSON) of XML, wordt de inhoud door Windows Power shell geconverteerd (of gedeserialiseerd) naar objecten.
-
-Deze cmdlet is geïntroduceerd in Windows Power Shell 3,0.
+PowerShell formatteert het antwoord op basis van het gegevenstype. Voor een RSS- of ATOM-feed retourneert PowerShell de XML-knooppunten Item of Entry. Voor JavaScript Object Notation (JSON) of XML converteert of deserialiseert PowerShell de inhoud naar `[PSCustomObject]` objecten.
 
 > [!NOTE]
-> Standaard kan script code op de webpagina worden uitgevoerd wanneer de pagina wordt geparseerd om de eigenschap in te vullen `ParsedHtml` . Gebruik de schakel optie **UseBasicParsing** om dit te onderdrukken.
+> Wanneer het REST-eindpunt meerdere objecten retourneert, worden de objecten ontvangen als een matrix. Als u de uitvoer doorspijpt `Invoke-RestMethod` van naar een andere opdracht, wordt deze als één object `[Object[]]` verzonden. De inhoud van die matrix wordt niet geïndefeerd voor de volgende opdracht in de pijplijn.
+
+Deze cmdlet is geïntroduceerd in Windows PowerShell 3.0.
+
+> [!NOTE]
+> Standaard kan scriptcode op de webpagina worden uitgevoerd wanneer de pagina wordt geparseerd om de eigenschap te `ParsedHtml` vullen. Gebruik de **schakelknop UseBasicParsing** om dit te onderdrukken.
 
 ## Voorbeelden
 
-### Voor beeld 1: de Power shell-RSS-feed ophalen
+### Voorbeeld 1: de PowerShell RSS-feed op halen
 
 ```powershell
 Invoke-RestMethod -Uri https://devblogs.microsoft.com/powershell/feed/ |
@@ -66,11 +68,11 @@ PowerShell DSC and implicit remoting broken in KB3176934             Tue, 23 Aug
 PowerShell on Linux and Open Source!                                 Thu, 18 Aug 2016 15:32:02 +0000
 ```
 
-Met deze opdracht wordt de `Invoke-RestMethod` cmdlet gebruikt om informatie op te halen uit de RSS-feed voor het Power shell-blog. De opdracht gebruikt de `Format-Table` cmdlet om de waarden van de eigenschappen **title** en **pubDate** van elke blog in een tabel weer te geven.
+Met deze opdracht wordt de `Invoke-RestMethod` cmdlet gebruikt om informatie op te halen uit de RSS-feed van het PowerShell-blog. De opdracht gebruikt de cmdlet om de waarden van de eigenschappen Titel en `Format-Table` **pubDate** van elke  blog in een tabel weer te geven.
 
 ### Voorbeeld 2
 
-In het volgende voor beeld wordt een gebruiker uitgevoerd `Invoke-RestMethod` om een post-aanvraag uit te voeren op een intranet website in de organisatie van de gebruiker.
+In het volgende voorbeeld wordt een gebruiker uitgevoerd om `Invoke-RestMethod` een POST-aanvraag uit te voeren op een intranetwebsite in de organisatie van de gebruiker.
 
 ```powershell
 $Cred = Get-Credential
@@ -112,9 +114,9 @@ Invoke-RestMethod -Method Post -Uri $url -Credential $Cred -Body $body -OutFile 
 {"preview":true,"offset":3,"result":{"sourcetype":"contoso4","count":"15277"}}
 ```
 
-### Voor beeld 3: meerdere headers door geven
+### Voorbeeld 3: Meerdere headers doorgeven
 
-In dit voor beeld ziet u hoe u meerdere headers kunt door geven van een- `hash-table` naar-rest API.
+In dit voorbeeld wordt gedemonstreerd hoe u meerdere headers van een naar `hash-table` een REST API.
 
 ```powershell
 $headers = @{
@@ -124,11 +126,11 @@ $headers = @{
 Invoke-RestMethod -Uri $uri -Method Post -Headers $headers -Body $body
 ```
 
-Api's vereisen vaak door gegeven headers voor verificatie, validatie, enzovoort.
+API's vereisen vaak doorgegeven headers voor verificatie, validatie, enzovoort.
 
-### Voor beeld 3: formulier gegevens verzenden
+### Voorbeeld 3: Formuliergegevens verzenden
 
-Wanneer de hoofd tekst een formulier is of de uitvoer van een andere `Invoke-WebRequest` aanroep, stelt Power shell de aanvraag inhoud in op de formulier velden.
+Wanneer de body een formulier is of de uitvoer van een andere aanroep is, stelt PowerShell de aanvraaginhoud in `Invoke-WebRequest` op de formuliervelden.
 
 Bijvoorbeeld:
 
@@ -139,19 +141,43 @@ $R.Forms[0].Password = "MyPassword"
 Invoke-RestMethod https://website.com/service.aspx -Body $R.Forms[0]
 ```
 
+### Voorbeeld 4: Geretourneerde items in de pijplijn opsnoemen
+
+GitHub retourneert meerdere objecten in een matrix. Als u de uitvoer doorspijpt naar een andere opdracht, wordt deze als één `[Object[]]` object verzonden.
+
+Als u de objecten in de pijplijn wilt opsnoemen, sloop de resultaten door naar of verpakt u de `Write-Output` cmdlet tussen haakjes. In het volgende voorbeeld wordt het aantal objecten geteld dat door GitHub wordt geretourneerd. Vervolgens wordt het aantal objecten geteld dat in de pijplijn is geïnsemaneerd.
+
+```powershell
+$uri = 'https://api.github.com/repos/microsoftdocs/powershell-docs/issues'
+$x = 0
+Invoke-RestMethod -Uri $uri | ForEach-Object { $x++ }
+$x
+1
+
+$x = 0
+(Invoke-RestMethod -Uri $uri) | ForEach-Object { $x++ }
+$x
+30
+
+$x = 0
+Invoke-RestMethod -Uri $uri | Write-Output | ForEach-Object { $x++ }
+$x
+30
+```
+
 ## Parameters
 
-### -Hoofd tekst
+### -Body
 
-Hiermee geeft u de hoofd tekst van de aanvraag. De hoofd tekst is de inhoud van de aanvraag die de headers volgt.
-U kunt ook de waarde van een hoofd tekst sluist naar `Invoke-RestMethod` .
+Hiermee geeft u de body van de aanvraag. De hoofdtekst is de inhoud van de aanvraag die volgt op de headers.
+U kunt ook een bodywaarde doorspijpen naar `Invoke-RestMethod` .
 
-De para meter **Body** kan worden gebruikt om een lijst met query parameters op te geven of de inhoud van het antwoord op te geven.
+De **parameter Body** kan worden gebruikt om een lijst met queryparameters op te geven of om de inhoud van het antwoord op te geven.
 
-Wanneer de invoer een GET-aanvraag is en de hoofd tekst een IDictionary is (meestal een hash-tabel), wordt de hoofd tekst als query parameters toegevoegd aan de URI. Voor andere aanvraag typen (zoals POST) wordt de hoofd tekst ingesteld als de waarde van de aanvraag tekst in de notatie standaard naam = waarde.
+Wanneer de invoer een GET-aanvraag is en de body een IDictionary is (meestal een hash-tabel), wordt de body als queryparameters toegevoegd aan de URI. Voor andere aanvraagtypen (zoals POST) wordt de body ingesteld als de waarde van de aanvraag body in de standaardindeling name=value.
 
 > [!WARNING]
-> De uitgebreide uitvoer van een POST hoofdtekst eindigt met, hoewel `with -1-byte payload` de hoofd tekst zowel bekend als in de `Content-Length` http-header wordt verzonden.
+> De uitgebreide uitvoer van een POST-hoofdtekst eindigt met , ook al is de grootte van de hoofdtekst bekend en `with -1-byte payload` verzonden in de `Content-Length` HTTP-header.
 
 ```yaml
 Type: System.Object
@@ -167,9 +193,9 @@ Accept wildcard characters: False
 
 ### -Certificaat
 
-Hiermee geeft u het client certificaat op dat wordt gebruikt voor een beveiligde webaanvraag. Voer een variabele in die een certificaat of een opdracht of expressie bevat waarmee het certificaat wordt opgehaald.
+Hiermee geeft u het clientcertificaat op dat wordt gebruikt voor een beveiligde webaanvraag. Voer een variabele in die een certificaat bevat of een opdracht of expressie die het certificaat op haalt.
 
-Als u een certificaat wilt zoeken, gebruikt `Get-PfxCertificate` of gebruikt u de `Get-ChildItem` cmdlet in het certificaat `Cert:` station. Als het certificaat ongeldig is of niet voldoende autoriteit heeft, mislukt de opdracht.
+Als u een certificaat wilt zoeken, `Get-PfxCertificate` gebruikt of gebruikt u de `Get-ChildItem` cmdlet in het station Certificaat ( `Cert:` ). Als het certificaat niet geldig is of onvoldoende bevoegdheid heeft, mislukt de opdracht.
 
 ```yaml
 Type: System.Security.Cryptography.X509Certificates.X509Certificate
@@ -185,11 +211,11 @@ Accept wildcard characters: False
 
 ### -CertificateThumbprint
 
-Hiermee geeft u het digitale open bare-sleutel certificaat (x509) op van een gebruikers account dat gemachtigd is om de aanvraag te verzenden. Voer de vinger afdruk van het certificaat in.
+Hiermee geeft u het digitale openbare-sleutelcertificaat (X509) op van een gebruikersaccount dat toestemming heeft om de aanvraag te verzenden. Voer de vingerafdruk van het certificaat in.
 
-Certificaten worden gebruikt in authenticatie op basis van client certificaten. Ze kunnen alleen worden toegewezen aan lokale gebruikers accounts. ze werken niet met domein accounts.
+Certificaten worden gebruikt in verificatie op basis van clientcertificaten. Ze kunnen alleen worden toe te staan aan lokale gebruikersaccounts; ze werken niet met domeinaccounts.
 
-Gebruik de `Get-Item` `Get-ChildItem` opdracht of in het Windows Power Shell-station () om een certificaat vingerafdruk te verkrijgen `Cert:` .
+Als u een vingerafdruk van het certificaat wilt verkrijgen, gebruikt u `Get-Item` de opdracht of op het Windows PowerShell ( `Get-ChildItem` `Cert:` ).
 
 ```yaml
 Type: System.String
@@ -203,11 +229,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Content type
+### -ContentType
 
-Hiermee geeft u het type inhoud van de webaanvraag.
+Hiermee geeft u het inhoudstype van de webaanvraag.
 
-Als deze para meter wordt wegge laten en de aanvraag methode is `Invoke-RestMethod` ingesteld op post, stelt het inhouds type in op ' Application/x-www-form-urlencoded '. Anders is het inhouds type niet opgegeven in de aanroep.
+Als deze parameter wordt weggelaten en de aanvraagmethode POST is, stelt u het inhoudstype in op `Invoke-RestMethod` 'application/x-www-form-urlencoded'. Anders wordt het inhoudstype niet opgegeven in de aanroep.
 
 ```yaml
 Type: System.String
@@ -223,14 +249,14 @@ Accept wildcard characters: False
 
 ### -Credential
 
-Hiermee geeft u een gebruikers account op dat gemachtigd is om de aanvraag te verzenden. Standaard is dit de huidige gebruiker.
+Hiermee geeft u een gebruikersaccount op dat toestemming heeft om de aanvraag te verzenden. Standaard is dit de huidige gebruiker.
 
-Typ een gebruikers naam, zoals **gebruiker01** of **Domain01\User01**, of voer een **PSCredential** -object in dat door de cmdlet wordt gegenereerd `Get-Credential` .
+Typ een gebruikersnaam, zoals **User01** of **Domain01\User01,** of voer een **PSCredential-object** in dat door de `Get-Credential` cmdlet is gegenereerd.
 
-Referenties worden opgeslagen in een [PSCredential](/dotnet/api/system.management.automation.pscredential) -object en het wacht woord wordt opgeslagen als [SecureString](/dotnet/api/system.security.securestring).
+Referenties worden opgeslagen in een [PSCredential-object](/dotnet/api/system.management.automation.pscredential) en het wachtwoord wordt opgeslagen als een [SecureString](/dotnet/api/system.security.securestring).
 
 > [!NOTE]
-> Zie [Hoe veilig is securestring?](/dotnet/api/system.security.securestring#how-secure-is-securestring)voor meer informatie over **securestring** Data Protection.
+> Zie How secure is **SecureString?** (Hoe veilig is SecureString?) voor meer informatie over [SecureString-gegevensbeveiliging.](/dotnet/api/system.security.securestring#how-secure-is-securestring)
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -246,8 +272,8 @@ Accept wildcard characters: False
 
 ### -DisableKeepAlive
 
-Hiermee stelt u de **keepalive** -waarde in de http-header in op ONWAAR. Standaard is **keepalive** ingesteld op True.
-Met **keepalive** wordt een permanente verbinding met de server tot stand gebracht om volgende aanvragen te vergemakkelijken.
+Hiermee stelt **u de KeepAlive-waarde** in de HTTP-header in op False. **KeepAlive** is standaard Waar.
+**KeepAlive brengt** een permanente verbinding met de server tot stand om volgende aanvragen mogelijk te maken.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -263,9 +289,9 @@ Accept wildcard characters: False
 
 ### -Headers
 
-Hiermee geeft u de kopteksten van de webaanvraag. Voer een hash-tabel of-woorden lijst in.
+Hiermee geeft u de headers van de webaanvraag. Voer een hashtabel of -woordenlijst in.
 
-Gebruik de **agent** -para meter om de agent headers in te stellen. U kunt deze para meter niet gebruiken om de headers van User agent of cookie op te geven.
+Als u UserAgent-headers wilt instellen, gebruikt u de parameter **UserAgent.** U kunt deze parameter niet gebruiken om UserAgent- of cookieheaders op te geven.
 
 ```yaml
 Type: System.Collections.IDictionary
@@ -279,11 +305,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Inbestand
+### -InFile
 
-Hiermee wordt de inhoud van de webaanvraag opgehaald uit een bestand.
+Haalt de inhoud van de webaanvraag op uit een bestand.
 
-Voer een pad en een bestands naam in. Als u het pad weglaat, de standaard instelling is de huidige locatie.
+Voer een pad en bestandsnaam in. Als u het pad weglaten, is de standaardwaarde de huidige locatie.
 
 ```yaml
 Type: System.String
@@ -299,7 +325,7 @@ Accept wildcard characters: False
 
 ### -MaximumRedirection
 
-Bepaalt hoe vaak Windows Power shell een verbinding met een alternatieve URI (Uniform Resource Identifier) omleidt voordat de verbinding is mislukt. De standaard waarde is 5. Een waarde van 0 (nul) voor komt dat alle omleidingen.
+Hiermee bepaalt u hoe vaak Windows PowerShell verbinding omleiden naar een alternatieve Uniform Resource Identifier (URI) voordat de verbinding mislukt. De standaardwaarde is 5. Met de waarde 0 (nul) wordt alle omleiding voorkomen.
 
 ```yaml
 Type: System.Int32
@@ -315,7 +341,7 @@ Accept wildcard characters: False
 
 ### -Methode
 
-Hiermee geeft u de methode op die voor de webaanvraag wordt gebruikt. De aanvaardbare waarden voor deze parameter zijn:
+Hiermee geeft u de methode die wordt gebruikt voor de webaanvraag. De aanvaardbare waarden voor deze parameter zijn:
 
 - `Default`
 - `Delete`
@@ -341,11 +367,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Outfile
+### -OutFile
 
-Hiermee wordt de antwoord tekst in het opgegeven uitvoer bestand opgeslagen. Voer een pad en een bestands naam in. Als u het pad weglaat, de standaard instelling is de huidige locatie.
+Slaat de antwoord-body in het opgegeven uitvoerbestand. Voer een pad en bestandsnaam in. Als u het pad weglaten, is de standaardwaarde de huidige locatie.
 
-`Invoke-RestMethod`De resultaten worden standaard naar de pijp lijn geretourneerd. Als u de resultaten naar een bestand en naar de pijp lijn wilt verzenden, gebruikt u de para meter **PassThru** .
+Retourneert `Invoke-RestMethod` standaard de resultaten naar de pijplijn. Als u de resultaten wilt verzenden naar een bestand en naar de pijplijn, gebruikt u de parameter **Passthru.**
 
 ```yaml
 Type: System.String
@@ -361,7 +387,7 @@ Accept wildcard characters: False
 
 ### -PassThru
 
-Hiermee worden de resultaten geretourneerd, naast het schrijven naar een bestand. Deze para meter is alleen geldig wanneer de **outfile** -para meter ook in de opdracht wordt gebruikt.
+Retourneert de resultaten, naast het schrijven ervan naar een bestand. Deze parameter is alleen geldig wanneer **de OutFile** parameter wordt ook gebruikt in de opdracht.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -377,7 +403,7 @@ Accept wildcard characters: False
 
 ### -Proxy
 
-Maakt gebruik van een proxy server voor de aanvraag, in plaats van rechtstreeks verbinding te maken met de Internet resource. Voer de URI van een netwerk proxy server in.
+Maakt gebruik van een proxyserver voor de aanvraag, in plaats van rechtstreeks verbinding te maken met de internetresource. Voer de URI van een netwerkproxyserver in.
 
 ```yaml
 Type: System.Uri
@@ -393,11 +419,11 @@ Accept wildcard characters: False
 
 ### -ProxyCredential
 
-Hiermee geeft u een gebruikers account op dat is gemachtigd voor het gebruik van de proxy server die is opgegeven door de para meter **proxy** . Standaard is dit de huidige gebruiker.
+Hiermee geeft u een gebruikersaccount dat is gemachtigd voor het gebruik van de proxyserver die is opgegeven door de **proxyparameter.** Standaard is dit de huidige gebruiker.
 
-Typ een gebruikers naam, zoals "gebruiker01" of "Domain01\User01", of voer een **PSCredential** -object in, zoals het account dat is gegenereerd door de `Get-Credential` cmdlet.
+Typ een gebruikersnaam, zoals 'User01' of 'Domain01\User01', of voer een **PSCredential-object** in, zoals een object dat wordt gegenereerd door de `Get-Credential` cmdlet .
 
-Deze para meter is alleen geldig wanneer de **proxy** parameter ook in de opdracht wordt gebruikt. U kunt de para meters **ProxyCredential** en **ProxyUseDefaultCredentials** niet in dezelfde opdracht gebruiken.
+Deze parameter is alleen geldig wanneer de **Proxy** parameter wordt ook gebruikt in de opdracht. U kunt de parameters **ProxyCredential** en **ProxyUseDefaultCredentials** niet gebruiken in dezelfde opdracht.
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -413,9 +439,9 @@ Accept wildcard characters: False
 
 ### -ProxyUseDefaultCredentials
 
-Gebruikt de referenties van de huidige gebruiker om toegang te krijgen tot de proxy server die is opgegeven door de **proxy** -para meter.
+Gebruikt de referenties van de huidige gebruiker voor toegang tot de proxyserver die is opgegeven door de **proxyparameter.**
 
-Deze para meter is alleen geldig wanneer de **proxy** parameter ook in de opdracht wordt gebruikt. U kunt de para meters **ProxyCredential** en **ProxyUseDefaultCredentials** niet in dezelfde opdracht gebruiken.
+Deze parameter is alleen geldig wanneer de **Proxy** parameter wordt ook gebruikt in de opdracht. U kunt de parameters **ProxyCredential** en **ProxyUseDefaultCredentials** niet gebruiken in dezelfde opdracht.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -431,15 +457,15 @@ Accept wildcard characters: False
 
 ### -SessionVariable
 
-Hiermee maakt u een web Request-sessie en slaat u deze op in de waarde van de opgegeven variabele. Geef een naam op voor de variabele zonder het dollar teken ( `$` )-symbool.
+Hiermee maakt u een webaanvraagsessie en slaat u deze op in de waarde van de opgegeven variabele. Voer een variabelenaam in zonder het dollarteken ( `$` ).
 
-Wanneer u een sessie variabele opgeeft, `Invoke-RestMethod` maakt een webaanvraag sessie object en wijst deze toe aan een variabele met de opgegeven naam in uw Power shell-sessie. U kunt de variabele in uw sessie gebruiken zodra de opdracht is voltooid.
+Wanneer u een sessievariabele opgeeft, maakt een webaanvraagsessieobject en wijst u dit toe aan een variabele met de opgegeven `Invoke-RestMethod` naam in uw PowerShell-sessie. U kunt de variabele in uw sessie gebruiken zodra de opdracht is voltooid.
 
-In tegens telling tot een externe sessie is de sessie voor webaanvragen geen permanente verbinding. Het is een object dat informatie bevat over de verbinding en de aanvraag, inclusief cookies, referenties, de maximum omleidings waarde en de teken reeks van de gebruikers agent. U kunt deze gebruiken om de status en gegevens te delen tussen webaanvragen.
+In tegenstelling tot een externe sessie is de webaanvraagsessie geen permanente verbinding. Het is een object dat informatie bevat over de verbinding en de aanvraag, inclusief cookies, referenties, de maximale omleidingswaarde en de tekenreeks van de gebruikersagent. U kunt deze gebruiken om de status en gegevens te delen tussen webaanvragen.
 
-Als u de webaanvraag sessie in volgende webaanvragen wilt gebruiken, geeft u de sessie variabele op in de waarde van de para meter **websessie** . Windows Power shell gebruikt de gegevens in het sessie object voor webaanvragen wanneer de nieuwe verbinding tot stand wordt gebracht. Als u een waarde in de sessie voor webaanvragen wilt overschrijven, gebruikt u een cmdlet-para meter, zoals **User agent** of **Credential**. Parameter waarden hebben prioriteit boven waarden in de webaanvraag sessie.
+Als u de webaanvraagsessie in volgende webaanvragen wilt gebruiken, geeft u de sessievariabele op in de waarde van de parameter **WebSession.** Windows PowerShell gebruikt de gegevens in het webaanvraagsessieobject bij het tot stand brengen van de nieuwe verbinding. Als u een waarde in de webaanvraagsessie wilt overschrijven, gebruikt u een cmdlet-parameter, zoals **UserAgent** of **Credential.** Parameterwaarden hebben voorrang op waarden in de webaanvraagsessie.
 
-U kunt de para meters **SessionVariable** en **websession** niet gebruiken in dezelfde opdracht.
+U kunt de parameters **SessionVariable en** **WebSession** niet gebruiken in dezelfde opdracht.
 
 ```yaml
 Type: System.String
@@ -455,9 +481,9 @@ Accept wildcard characters: False
 
 ### -TimeoutSec
 
-Hiermee geeft u op hoe lang de aanvraag in behandeling kan zijn voordat er een time-out optreedt. Voer een waarde in seconden in. De standaard waarde, 0, geeft een onbeperkte time-outwaarde.
+Hiermee geeft u op hoe lang de aanvraag in behandeling kan zijn voordat er een times-out wordt uitgevoerd. Voer een waarde in seconden in. De standaardwaarde, 0, geeft een onbeperkte time-out aan.
 
-Het kan tot vijf tien seconden duren voordat een Domain Name System query (DNS) wordt uitgevoerd of een time-out kan worden geretourneerd. Als uw aanvraag een hostnaam bevat waarvoor omzetting vereist is en u TimeoutSec instelt op een waarde die groter is dan nul, maar minder dan 15 seconden, kan het vijf tien seconden of langer duren voordat een webuitzondering wordt gegenereerd en er een time-out optreedt voor uw aanvraag.
+Het Domain Name System (DNS)-query kan tot 15 seconden duren om een retour- of time-out te retourneren. Als uw aanvraag een hostnaam bevat die een oplossing vereist en u TimeoutSec in stelt op een waarde die groter is dan nul, maar minder dan 15 seconden, kan het 15 seconden of langer duren voordat een WebException wordt gegeven en er een time-out van uw aanvraag wordt gegeven.
 
 ```yaml
 Type: System.Int32
@@ -473,7 +499,7 @@ Accept wildcard characters: False
 
 ### -TransferEncoding
 
-Hiermee geeft u een waarde op voor de header van de HTTP-reactie voor overdracht/versleuteling. De aanvaardbare waarden voor deze parameter zijn:
+Hiermee geeft u een waarde op voor de HTTP-antwoordheader voor overdrachtcoderen. De aanvaardbare waarden voor deze parameter zijn:
 
 - `Chunked`
 - `Compress`
@@ -496,9 +522,9 @@ Accept wildcard characters: False
 
 ### -URI
 
-Hiermee geeft u de URI (Uniform Resource Identifier) op van de Internet bron waarnaar de webaanvraag wordt verzonden. Deze para meter ondersteunt HTTP-, HTTPS-, FTP-en FILE-waarden.
+Hiermee geeft u de Uniform Resource Identifier (URI) op van de internetresource waar de webaanvraag naar wordt verzonden. Deze parameter ondersteunt de waarden HTTP, HTTPS, FTP en FILE.
 
-Deze parameter is vereist. De parameter naam (**URI**) is optioneel.
+Deze parameter is vereist. De parameternaam (**URI**) is optioneel.
 
 ```yaml
 Type: System.Uri
@@ -514,7 +540,7 @@ Accept wildcard characters: False
 
 ### -UseBasicParsing
 
-Geeft aan dat de cmdlet gebruikmaakt van basis parsering. De cmdlet retourneert de onbewerkte HTML in een **teken reeks** object.
+Geeft aan dat de cmdlet basisparsering gebruikt. De cmdlet retourneert de onbewerkte HTML in een **tekenreeksobject.**
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -544,13 +570,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -User agent
+### -UserAgent
 
-Hiermee geeft u een teken reeks voor de gebruikers agent op voor de webaanvraag.
+Hiermee geeft u een tekenreeks voor de gebruikersagent op voor de webaanvraag.
 
-De standaard gebruikers agent is vergelijkbaar met ' Mozilla/5.0 ' (Windows NT; Windows NT 6,1; en-US) WindowsPowerShell/3.0 ' met kleine variaties voor elk besturings systeem en platform.
+De standaardgebruikersagent is vergelijkbaar met Mozilla/5.0 (Windows NT; Windows NT 6.1; en-US) WindowsPowerShell/3.0" met kleine variaties voor elk besturingssysteem en platform.
 
-Als u een website wilt testen met de standaard teken reeks van de gebruikers agent die wordt gebruikt door de meeste Internet browsers, gebruikt u de eigenschappen van de [PSUserAgent](/dotnet/api/microsoft.powershell.commands) -klasse, zoals Chrome, Firefox, Internet Explorer, Opera en Safari.
+Als u een website wilt testen met de standaard gebruikersagentreeks die door de meeste internetbrowsers wordt gebruikt, gebruikt u de eigenschappen van de [klasse PSUserAgent,](/dotnet/api/microsoft.powershell.commands) zoals Chrome, FireFox, Internet Explorer, Opera en Safari.
 
 ```yaml
 Type: System.String
@@ -564,17 +590,17 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Websessie
+### -WebSession
 
-Hiermee geeft u een sessie voor webaanvragen. Voer de naam van de variabele in, met inbegrip van het dollar teken ( `$` ).
+Hiermee geeft u een webaanvraagsessie. Voer de naam van de variabele in, inclusief het dollarteken ( `$` ).
 
-Als u een waarde in de sessie voor webaanvragen wilt overschrijven, gebruikt u een cmdlet-para meter, zoals **User agent** of **Credential**. Parameter waarden hebben prioriteit boven waarden in de webaanvraag sessie.
+Als u een waarde in de webaanvraagsessie wilt overschrijven, gebruikt u een cmdlet-parameter, zoals **UserAgent** of **Credential.** Parameterwaarden hebben voorrang op waarden in de webaanvraagsessie.
 
-In tegens telling tot een externe sessie is de sessie voor webaanvragen geen permanente verbinding. Het is een object dat informatie bevat over de verbinding en de aanvraag, inclusief cookies, referenties, de maximum omleidings waarde en de teken reeks van de gebruikers agent. U kunt deze gebruiken om de status en gegevens te delen tussen webaanvragen.
+In tegenstelling tot een externe sessie is de webaanvraagsessie geen permanente verbinding. Het is een object dat informatie bevat over de verbinding en de aanvraag, inclusief cookies, referenties, de maximale omleidingswaarde en de tekenreeks van de gebruikersagent. U kunt deze gebruiken om de status en gegevens te delen tussen webaanvragen.
 
-Als u een webaanvraag sessie wilt maken, voert u een naam in voor de variabele (zonder een dollar teken) in de waarde van de para meter **SessionVariable** van een `Invoke-RestMethod` opdracht. `Invoke-RestMethod` Hiermee maakt u de sessie en slaat u deze op in de variabele. Gebruik in volgende opdrachten de variabele als de waarde van de para meter **websession** .
+Als u een webaanvraagsessie wilt maken, voert u een variabelenaam (zonder dollarteken) in de waarde van de parameter **SessionVariable** van een `Invoke-RestMethod` opdracht in. `Invoke-RestMethod` maakt de sessie en slaat deze op in de variabele . In volgende opdrachten gebruikt u de variabele als de waarde van de parameter **WebSession.**
 
-U kunt de para meters **SessionVariable** en **websession** niet gebruiken in dezelfde opdracht.
+U kunt de parameters **SessionVariable en** **WebSession** niet gebruiken in dezelfde opdracht.
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.WebRequestSession
@@ -590,23 +616,23 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable. Zie [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)voor meer informatie.
+Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable. Zie voor meer informatie [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## Invoerwaarden
 
-### System. object
+### System.Object
 
-U kunt de hoofd tekst van een webaanvraag door sluizen naar `Invoke-RestMethod` .
+U kunt de body van een webaanvraag doorseen naar `Invoke-RestMethod` .
 
 ## Uitvoerwaarden
 
-### System.Xml.Xmldocument, Microsoft.PowerShell.Commands.HtmlWebResponseObject, System. String
+### System.Xml.XmlDocument, Microsoft.PowerShell.Commands.HtmlWebResponseObject, System.String
 
 De uitvoer van de cmdlet is afhankelijk van de indeling van de inhoud die wordt opgehaald.
 
 ### PSObject
 
-Als de aanvraag JSON-teken reeksen retourneert, `Invoke-RestMethod` retourneert een PSObject die de teken reeksen vertegenwoordigt.
+Als de aanvraag JSON-tekenreeksen retourneert, `Invoke-RestMethod` retourneert een PSObject dat de tekenreeksen vertegenwoordigt.
 
 ## Notities
 
@@ -614,6 +640,6 @@ Als de aanvraag JSON-teken reeksen retourneert, `Invoke-RestMethod` retourneert 
 
 [ConvertTo-Json](ConvertTo-Json.md)
 
-[ConvertFrom-JSON](ConvertFrom-Json.md)
+[ConvertFrom-Json](ConvertFrom-Json.md)
 
 [Invoke-WebRequest](Invoke-WebRequest.md)
