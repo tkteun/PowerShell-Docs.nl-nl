@@ -1,38 +1,38 @@
 ---
-title: Wat is een Power shell-opdracht?
-description: Met Power shell kunt u elke opdracht uitvoeren die beschikbaar is op uw systeem en een Power shell-specifieke opdracht die wordt aangeduid als cmdlets.
+title: Wat is een PowerShell-opdracht?
+description: Opdrachten voor PowerShell worden cmdlets genoemd (uitgesproken als command-lets)
 ms.date: 03/31/2021
-ms.openlocfilehash: b6e54349ec15df3327c1f0525dce1a30ad35a6ac
-ms.sourcegitcommit: eeedd4472b6cc6158494296c355579791e688baa
+ms.openlocfilehash: 3980ed53f0e0c6f86a5ebab7b6ca64aeee6b173e
+ms.sourcegitcommit: d63769de0e59d117d90171799bda6544bf2f2f0b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106104070"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107855563"
 ---
-# <a name="powershell-commands"></a>PowerShell-opdrachten
+# <a name="what-is-a-powershell-command-cmdlet"></a>Wat is een PowerShell-opdracht (cmdlet)?
 
-Met Power shell kunt u elke opdracht uitvoeren die beschikbaar is op uw systeem, met inbegrip van Power shell-opdrachten die worden aangeduid als cmdlets (uitgesp roken opdracht-staat).
+Opdrachten voor PowerShell worden cmdlets genoemd (uitgesproken als command-lets). Naast cmdlets kunt u met PowerShell elke opdracht uitvoeren die beschikbaar is op uw systeem.
 
 ## <a name="what-is-a-cmdlet"></a>Wat is een cmdlet?
 
-Een cmdlet is één opdracht die deel uitmaakt van de pijp lijn semantiek van Power shell en retourneert meestal een .NET-object. Cmdlets zijn systeem eigen Power shell-opdrachten, geen zelfstandige uitvoer bare bestanden. Cmdlets worden verzameld in Power shell-modules die op aanvraag kunnen worden geladen. Cmdlets kunnen worden geschreven in elke gecompileerde .NET-taal of in de Power shell-script taal zelf.
+Cmdlets zijn native PowerShell-opdrachten, geen stand-alone uitvoerbare bestanden. Cmdlets worden verzameld in PowerShell-modules die op aanvraag kunnen worden geladen. Cmdlets kunnen worden geschreven in elke gecompileerde .NET-taal of in de PowerShell-scripttaal zelf.
 
-## <a name="cmdlet-names"></a>Namen van cmdlets
+## <a name="cmdlet-names"></a>Cmdlet-namen
 
-Power shell gebruikt een combi natie van naam woorden en namen van _termen_ . De `Get-Command` cmdlet die is opgenomen in Power shell wordt bijvoorbeeld gebruikt om alle cmdlets op te halen die zijn geregistreerd in de opdracht shell. De opdracht geeft de actie aan die door de cmdlet wordt uitgevoerd en het zelfstandig naam woord identificeert de resource waarop de cmdlet de actie uitvoert.
+PowerShell maakt gebruik van een _werkwoord-zelfstandig naampaar_ om cmdlets te noemen. De cmdlet die is opgenomen in PowerShell wordt bijvoorbeeld gebruikt om alle cmdlets op te halen `Get-Command` die zijn geregistreerd in de opdrachtshell. De werkwoord identificeert de actie die de cmdlet uitvoert en het zelfstandig naamwoord identificeert de resource waarop de cmdlet de actie uitvoert.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Meer informatie over Power shell en het vinden van andere cmdlets vindt u in de zelf studie Power shell-bits [Discover Power shell](learn/tutorials/01-discover-powershell.md).
+Zie de PowerShell Bits-zelfstudie PowerShell ontdekken voor meer [](learn/tutorials/01-discover-powershell.md)informatie over PowerShell en het vinden van andere cmdlets.
 
-Raadpleeg de volgende bronnen voor meer informatie over het maken van uw eigen cmdlets:
+Zie de volgende bronnen voor meer informatie over het maken van uw eigen cmdlets:
 
-Op scripts gebaseerde cmdlets
+Cmdlets op basis van scripts
 
 - [about_Functions_Advanced](/powershell/module/microsoft.powershell.core/about/about_functions_advanced)
 - [about_Functions_CmdletBindingAttribute](/powershell/module/microsoft.powershell.core/about/about_functions_cmdletbindingattribute)
 - [about_Functions_Advanced_Methods](/powershell/module/microsoft.powershell.core/about/about_functions_advanced_methods)
 
-Gecompileerde cmdlets (Power shell SDK docs)
+Gecompileerde cmdlets (PowerShell SDK-documenten)
 
-- [Overzicht van de cmdlet](developer/cmdlet/cmdlet-overview.md)
+- [Overzicht van cmdlet](developer/cmdlet/cmdlet-overview.md)
