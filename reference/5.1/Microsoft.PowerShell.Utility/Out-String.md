@@ -7,17 +7,17 @@ ms.date: 01/20/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/out-string?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Out-String
-ms.openlocfilehash: c0a9557c0139af5abbe24fade07c0d018c6bffc0
-ms.sourcegitcommit: 94d597c4fb38793bc49ca7610e2c9973b1e577c2
+ms.openlocfilehash: 8a00342d8e1d84860076efcabfb2011a220f67c1
+ms.sourcegitcommit: 1e1535cb22d16de06f80beafe77a37a7c77de6d3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98620027"
+ms.lasthandoff: 04/27/2021
+ms.locfileid: "108025633"
 ---
 # Out-String
 
-## Samen vatting
-Voert invoer objecten uit als teken reeksen.
+## Synopsis
+Invoerobjecten worden uitgevoerd als een tekenreeks.
 
 ## Syntax
 
@@ -29,13 +29,13 @@ Out-String [-Stream] [-Width <Int32>] [-InputObject <PSObject>] [<CommonParamete
 
 ## Beschrijving
 
-Met de `Out-String` cmdlet worden invoer objecten geconverteerd naar teken reeksen. `Out-String`De teken reeksen worden standaard gecumuleerd en geretourneerd als een enkele teken reeks, maar u kunt de **Stream** -para meter gebruiken om direct `Out-String` één regel tegelijk te retour neren of om een matrix van teken reeksen te maken. Met deze cmdlet kunt u de teken reeks uitvoer zoeken en manipuleren, net zoals bij traditionele schalen, wanneer het bewerken van objecten minder handig is.
+De `Out-String` cmdlet converteert invoerobjecten naar tekenreeksen. Standaard worden de tekenreeksen verzameld en als één tekenreeks retourneert, maar u kunt de Stream-parameter gebruiken om één regel tegelijk te retourneren of een matrix met tekenreeksen `Out-String` te  `Out-String` maken. Met deze cmdlet kunt u tekenreeksuitvoer zoeken en bewerken zoals in traditionele shells wanneer het bewerken van objecten minder handig is.
 
 ## Voorbeelden
 
-### Voor beeld 1: de huidige cultuur ophalen en de gegevens converteren naar teken reeksen
+### Voorbeeld 1: De huidige cultuur op halen en de gegevens converteren naar tekenreeksen
 
-In dit voor beeld worden de regionale instellingen voor de huidige gebruiker opgehaald en worden de object gegevens geconverteerd naar teken reeksen.
+In dit voorbeeld worden de regionale instellingen voor de huidige gebruiker en worden de objectgegevens ge converteert naar tekenreeksen.
 
 ```powershell
 $C = Get-Culture | Select-Object -Property *
@@ -67,18 +67,18 @@ UseUserOverride                : True
 IsReadOnly                     : False
 ```
 
-De `$C` variabele bevat een **Selected.System. Globalisatie. Culture info** -object. Het object is het resultaat van het `Get-Culture` verzenden van de uitvoer van de pijp lijn naar `Select-Object` . De **eigenschaps** parameter maakt gebruik van een asterisk ( `*` )-Joker teken om alle eigenschappen op te geven die in het object zijn opgenomen.
+De `$C` variabele slaat eenSelected.Sys **op. Globalization.CultureInfo-object.** Het -object is het resultaat van `Get-Culture` het verzenden van uitvoer in de pijplijn naar `Select-Object` . De **eigenschap** parameter maakt gebruik van een sterretje ( ) jokerteken om op te geven `*` alle eigenschappen zijn opgenomen in het object.
 
-`Out-String` maakt gebruik van de para meter **input object** om het **Culture info** -object op te geven dat is opgeslagen in de `$C` variabele. De objecten in `$C` worden geconverteerd naar een teken reeks.
+`Out-String` gebruikt de **parameter InputObject** om het object **CultureInfo op** te geven dat is opgeslagen in de `$C` variabele . De objecten in `$C` worden geconverteerd naar een tekenreeks.
 
 > [!NOTE]
-> Als u de matrix wilt weer geven `Out-String` , slaat u de uitvoer op in een variabele en gebruikt u een matrix index om de elementen weer te geven. Zie [about_Arrays](../microsoft.powershell.core/about/about_arrays.md)voor meer informatie over de matrix index.
+> Als u de `Out-String` matrix wilt weergeven, moet u de uitvoer opslaan in een variabele en een matrixindex gebruiken om de elementen weer te geven. Zie voor meer informatie over de matrixindex [about_Arrays.](../microsoft.powershell.core/about/about_arrays.md)
 >
 > `$str = Out-String -InputObject $C -Width 100`
 
-### Voor beeld 2: werken met objecten
+### Voorbeeld 2: Werken met objecten
 
-In dit voor beeld wordt het verschil gedemonstreerd tussen het werken met objecten en het werken met teken reeksen. Met de opdracht wordt een alias weer gegeven met de tekst **GCM**, de alias voor `Get-Command` .
+In dit voorbeeld wordt het verschil gedemonstreerd tussen het werken met objecten en het werken met tekenreeksen. De opdracht geeft een alias weer die de tekst **gcm** bevat, de alias voor `Get-Command` .
 
 ```powershell
 Get-Alias | Out-String -Stream | Select-String -Pattern "gcm"
@@ -88,14 +88,15 @@ Get-Alias | Out-String -Stream | Select-String -Pattern "gcm"
 Alias           gcm -> Get-Command
 ```
 
-`Get-Alias` Hiermee worden de objecten **System. Management. Automation. AliasInfo** , een voor elke alias, opgehaald en worden de objecten van de pijp lijn omlaag verzonden. `Out-String` gebruikt de **Stream** -para meter om elk object te converteren naar een teken reeks, in plaats van alle objecten te koppelen aan één teken reeks. De **System. String** -objecten worden via de pijp lijn verzonden en er `Select-String` wordt gebruikgemaakt van de **patroon** parameter om overeenkomsten te vinden voor de tekst **GCM**.
+`Get-Alias` haalt de **System.Management.Automation.AliasInfo-objecten** op, één voor elke alias, en verzendt de objecten in de pijplijn. `Out-String` gebruikt de **Stream-parameter** om elk object te converteren naar een tekenreeks in plaats van alle objecten samen tevoegen in één tekenreeks.
+De **System.String-objecten** worden naar de pijplijn verzonden en gebruiken de parameter Pattern om overeenkomsten voor de tekst `Select-String`  **gcm te vinden.**
 
 > [!NOTE]
-> Als u de **Stream** -para meter weglaat, wordt met de opdracht alle aliassen weer gegeven, omdat `Select-String` de tekst **GCM** wordt gevonden in de teken reeks die `Out-String` als resultaat wordt gegeven.
+> Als u de **Stream-parameter weglaten,** de opdracht geeft alle aliassen omdat vindt de tekst gcm in de enkele tekenreeks `Select-String` die  `Out-String` retourneert.
 
-### Voor beeld 3: gebruik de para meter breedte om afkap ping te voor komen.
+### Voorbeeld 3: gebruik de parameter Width om afroepen te voorkomen.
 
-Hoewel de meeste uitvoer van `Out-String` wordt ingepakt naar de volgende regel, zijn er scenario's waarin de uitvoer wordt afgekapt door het format teren systeem voordat deze wordt door gegeven aan `Out-String` . U kunt afkap ping vermijden met de para meter **width** .
+Hoewel de meeste uitvoer van wordt verpakt naar de volgende regel, zijn er scenario's waarin de uitvoer wordt afgekapt door het opmaaksysteem voordat deze `Out-String` wordt doorgegeven aan `Out-String` . U kunt afroepen voorkomen met behulp van de parameter **Width.**
 
 ```powershell
 PS> @{TestKey = ('x' * 200)} | Out-String
@@ -114,9 +115,9 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 ## PARAMETERS
 
-### -Input object
+### -InputObject
 
-Geeft aan welke objecten moeten worden geschreven naar een teken reeks. Voer een variabele in die de objecten bevat, of typ een opdracht of expressie waarmee de objecten worden opgehaald.
+Hiermee geeft u de objecten moet worden geschreven naar een tekenreeks. Voer een variabele in die de objecten bevat of typ een opdracht of expressie die de objecten op haalt.
 
 ```yaml
 Type: System.Management.Automation.PSObject
@@ -132,7 +133,7 @@ Accept wildcard characters: False
 
 ### -Stream
 
-Standaard wordt `Out-String` een enkele teken reeks opgemaakt zoals u deze in de-console zou zien, met inbegrip van lege kopteksten of achterstallige nieuwe regels. Met de para meter **Stream** kan `Out-String` elke regel één voor één worden uitgevoerd. De enige uitzonde ring hierop zijn meerregelige teken reeksen. In dat geval `Out-String` zal de teken reeks nog steeds worden uitgevoerd als één teken reeks met meerdere regels.
+Standaard wordt één tekenreeks uitgevoerd die is opgemaakt zoals u deze zou zien in de console, inclusief lege headers of `Out-String` na een nieuwe lijn. Met **de parameter Stream** kan elke regel één voor één worden `Out-String` uitgevoerd. De enige uitzondering hierop zijn meerdere regelreeksen. In dat geval wordt `Out-String` de tekenreeks nog steeds uitgevoerd als één tekenreeks met meerdere reeksen.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -146,9 +147,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Breedte
+### -Width
 
-Hiermee geeft u het aantal tekens in elke regel van uitvoer op. Eventuele extra tekens worden ingepakt naar de volgende regel of worden afgekapt, afhankelijk van de gebruikte formatter-cmdlet. De para meter **width** is alleen van toepassing op objecten die worden opgemaakt. Als u deze para meter weglaat, wordt de breedte bepaald door de kenmerken van het hostprogramma. In Terminal (console) Windows wordt de breedte van het huidige venster als de standaard waarde gebruikt. Power shell-console Windows standaard ingesteld op een breedte van 80 tekens tijdens de installatie.
+Hiermee geeft u het aantal tekens in elke regel uitvoer. Eventuele extra tekens worden verpakt op de volgende regel of afgekapt, afhankelijk van de gebruikte cmdlet formatter. De **parameter Width** is alleen van toepassing op objecten die worden geformatteerd. Als u deze parameter weglaten, wordt de breedte bepaald door de kenmerken van het hostprogramma. In terminalvensters (console) wordt de huidige vensterbreedte gebruikt als de standaardwaarde. Windows in de PowerShell-console hebben standaard een breedte van 80 tekens bij de installatie.
 
 ```yaml
 Type: System.Int32
@@ -164,33 +165,33 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable. Zie [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)voor meer informatie.
+Deze cmdlet biedt ondersteuning voor de meest gebruikte parameters: -Debug, - ErrorAction, - ErrorVariable, - InformationAction, -InformationVariable, - OutVariable,-OutBuffer, - PipelineVariable - Verbose, - WarningAction en -WarningVariable. Zie voor meer informatie [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INVOER
 
-### System. Management. Automation. PSObject
+### System.Management.Automation.PSObject
 
-U kunt objecten naar beneden verplaatsen in de pijp lijn `Out-String` .
+U kunt objecten in de pijplijn verzenden naar `Out-String` .
 
 ## UITVOER
 
-### System. String
+### System.String
 
-`Out-String` retourneert de teken reeks die wordt gemaakt op basis van het invoer object.
+`Out-String` retourneert de tekenreeks die wordt gemaakt op basis van het invoerobject.
 
 ## OPMERKINGEN
 
-De cmdlets die de term bevatten, hebben `Out` geen objecten. `Out`Met de cmdlets worden objecten verzonden naar de formatter voor het opgegeven weergave doel.
+De cmdlets die het werkwoord `Out` bevatten, maken geen objecten op. De `Out` cmdlets verzenden objecten naar de formatter voor de opgegeven weergavebestemming.
 
 ## GERELATEERDE KOPPELINGEN
 
 [about_Formatting](../Microsoft.PowerShell.Core/About/about_Format.ps1xml.md)
 
-[Out-standaard](../Microsoft.PowerShell.Core/Out-Default.md)
+[Out-Default](../Microsoft.PowerShell.Core/Out-Default.md)
 
-[Out-file](Out-File.md)
+[Out-File](Out-File.md)
 
-[Out-host](../Microsoft.PowerShell.Core/Out-Host.md)
+[Out-Host](../Microsoft.PowerShell.Core/Out-Host.md)
 
 [Out-Null](../Microsoft.PowerShell.Core/Out-Null.md)
 
